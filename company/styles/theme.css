@@ -1,0 +1,420 @@
+@import "tailwindcss";
+
+/* Every class the theme types lives in a .pzl file, so those are what Tailwind
+   scans. Naming the sources explicitly keeps the build the same wherever it
+   runs — a laptop, the worker — rather than depending on what happens to be
+   next to the entry. */
+@source "../layouts/**/*.pzl";
+@source "../templates/**/*.pzl";
+@source "../sections/**/*.pzl";
+@source "../components/**/*.pzl";
+
+/* Sites writes the site's current design tokens into <head> as --sites-*
+   custom properties. Mapping them into Tailwind's own token names is the whole
+   styling contract: every utility below resolves through a variable at runtime,
+   so changing a token in the admin restyles the site without recompiling the
+   theme. Nothing in this theme uses a raw value — if a value is missing here,
+   add it to the design block in theme.json first. */
+@theme {
+	/* The palette: three brand colors, five greys, four utility bg/fg pairs. */
+	--color-brand-primary: var(--sites-color-brand-primary);
+	--color-brand-secondary: var(--sites-color-brand-secondary);
+	--color-brand-accent: var(--sites-color-brand-accent);
+
+	--color-grey-extra-light: var(--sites-color-grey-extra-light);
+	--color-grey-light: var(--sites-color-grey-light);
+	--color-grey-medium: var(--sites-color-grey-medium);
+	--color-grey-dark: var(--sites-color-grey-dark);
+	--color-grey-extra-dark: var(--sites-color-grey-extra-dark);
+
+	--color-info-bg: var(--sites-color-info-bg);
+	--color-info-fg: var(--sites-color-info-fg);
+	--color-success-bg: var(--sites-color-success-bg);
+	--color-success-fg: var(--sites-color-success-fg);
+	--color-warning-bg: var(--sites-color-warning-bg);
+	--color-warning-fg: var(--sites-color-warning-fg);
+	--color-error-bg: var(--sites-color-error-bg);
+	--color-error-fg: var(--sites-color-error-fg);
+}
+
+/* The scheme properties change per element, so they are mapped with `@theme
+   inline`: the utility Tailwind generates then reads --sites-scheme-* on the
+   element it lands on. Without `inline` Tailwind emits
+   `--color-scheme-background: var(--sites-scheme-background)` on :root, CSS
+   substitutes it there once, and every section inherits the default scheme's
+   color however it is classed. */
+@theme inline {
+	/* The current color scheme. Sites writes the first scheme's properties at
+	   :root and one .sites-scheme-<name> rule per scheme; a section set to a
+	   scheme carries that class, so every utility below recolors with it. Reach
+	   for these on anything inside a section — bg-scheme-background,
+	   text-scheme-heading — and for the palette names above only where a color
+	   must not follow the surface. */
+	--color-scheme-background: var(--sites-scheme-background);
+	--color-scheme-foreground: var(--sites-scheme-foreground);
+	--color-scheme-heading: var(--sites-scheme-heading);
+	--color-scheme-links: var(--sites-scheme-links);
+	--color-scheme-icons: var(--sites-scheme-icons);
+	--color-scheme-input-background: var(--sites-scheme-input-background);
+	--color-scheme-input-foreground: var(--sites-scheme-input-foreground);
+	--color-scheme-input-border: var(--sites-scheme-input-border);
+	--color-scheme-chip-background: var(--sites-scheme-chip-background);
+	--color-scheme-chip-foreground: var(--sites-scheme-chip-foreground);
+	--color-scheme-chip-border: var(--sites-scheme-chip-border);
+	--color-scheme-button-background: var(--sites-scheme-button-background);
+	--color-scheme-button-foreground: var(--sites-scheme-button-foreground);
+	--color-scheme-button-hover-background: var(--sites-scheme-button-hover-background);
+	--color-scheme-button-hover-foreground: var(--sites-scheme-button-hover-foreground);
+	--color-scheme-secondary-button-background: var(--sites-scheme-secondary-button-background);
+	--color-scheme-secondary-button-foreground: var(--sites-scheme-secondary-button-foreground);
+	--color-scheme-secondary-button-hover-background: var(--sites-scheme-secondary-button-hover-background);
+	--color-scheme-secondary-button-hover-foreground: var(--sites-scheme-secondary-button-hover-foreground);
+}
+
+@theme {
+	/* A font token carries the family only, because that is all a site can
+	   change. The fallback stack after it belongs to the theme. */
+	--font-heading: var(--sites-font-heading-family), Georgia, "Times New Roman", serif;
+	--font-body: var(--sites-font-body-family), ui-sans-serif, system-ui, sans-serif;
+	--font-mono: var(--sites-font-mono-family), SFMono-Regular, Menlo, monospace;
+
+	/* Tailwind pairs a line height with every size, so each step names one of
+	   the leading tokens: reading sizes get normal, headline sizes get tight. A
+	   leading-* utility still overrides it. */
+	--text-xs: var(--sites-type-scale-xs);
+	--text-xs--line-height: var(--sites-type-leading-normal);
+	--text-sm: var(--sites-type-scale-sm);
+	--text-sm--line-height: var(--sites-type-leading-normal);
+	--text-base: var(--sites-type-scale-base);
+	--text-base--line-height: var(--sites-type-leading-normal);
+	--text-lg: var(--sites-type-scale-lg);
+	--text-lg--line-height: var(--sites-type-leading-relaxed);
+	--text-xl: var(--sites-type-scale-xl);
+	--text-xl--line-height: var(--sites-type-leading-relaxed);
+	--text-2xl: var(--sites-type-scale-2xl);
+	--text-2xl--line-height: var(--sites-type-leading-tight);
+	--text-3xl: var(--sites-type-scale-3xl);
+	--text-3xl--line-height: var(--sites-type-leading-tight);
+	--text-4xl: var(--sites-type-scale-4xl);
+	--text-4xl--line-height: var(--sites-type-leading-tight);
+	--text-5xl: var(--sites-type-scale-5xl);
+	--text-5xl--line-height: var(--sites-type-leading-tight);
+
+	--leading-tight: var(--sites-type-leading-tight);
+	--leading-normal: var(--sites-type-leading-normal);
+	--leading-relaxed: var(--sites-type-leading-relaxed);
+
+	/* Tailwind's --spacing-* namespace backs the sizing utilities as well as the
+	   spacing ones, and a key there outranks --container-*: a bare --spacing-2xl
+	   would turn max-w-2xl into a padding value. So the six steps are keyed
+	   space-*, a name no Tailwind default uses — px-space-lg, gap-space-md — and
+	   max-w-2xl keeps meaning a container width. */
+	--spacing-space-xs: var(--sites-spacing-xs);
+	--spacing-space-sm: var(--sites-spacing-sm);
+	--spacing-space-md: var(--sites-spacing-md);
+	--spacing-space-lg: var(--sites-spacing-lg);
+	--spacing-space-xl: var(--sites-spacing-xl);
+	--spacing-space-2xl: var(--sites-spacing-2xl);
+
+	--radius-none: var(--sites-radius-none);
+	--radius-sm: var(--sites-radius-sm);
+	--radius-md: var(--sites-radius-md);
+	--radius-lg: var(--sites-radius-lg);
+	--radius-full: var(--sites-radius-full);
+
+	--shadow-sm: var(--sites-shadow-sm);
+	--shadow-md: var(--sites-shadow-md);
+	--shadow-lg: var(--sites-shadow-lg);
+}
+
+/* The page gutter, in one place. Every section opens with it, and a section
+   that wants a narrower measure adds a max-w-* of its own inside. */
+@utility sites-container {
+	width: 100%;
+	max-width: 76rem;
+	margin-inline: auto;
+	padding-inline: var(--sites-spacing-md);
+}
+
+/* The browser surfaces no utility reaches. */
+:root {
+	font-size: var(--sites-type-base);
+}
+
+::selection {
+	background: var(--sites-color-brand-accent);
+	color: #ffffff;
+}
+
+:focus-visible {
+	outline: 2px solid var(--sites-input-focus-ring);
+	outline-offset: 3px;
+}
+
+/* Anchored scrolling clears the sticky header, and only ever smoothly for
+   people who have not asked for less motion. */
+html {
+	scroll-padding-top: 6rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+	}
+}
+
+/* The component classes this theme owes its sections, built only from tokens so
+   a section never restyles a button, a field or a chip for itself. They read
+   the scheme properties, which is why a button inside an inverse section
+   inverts with it. */
+@layer components {
+	.sites-button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: var(--sites-spacing-sm);
+		padding: var(--sites-button-padding-y) var(--sites-button-padding-x);
+		border: var(--sites-border-width) solid transparent;
+		border-radius: var(--sites-button-radius);
+		background: var(--sites-scheme-button-background);
+		color: var(--sites-scheme-button-foreground);
+		font-weight: var(--sites-button-weight);
+		font-size: var(--sites-type-scale-sm);
+		line-height: var(--sites-type-leading-normal);
+		text-decoration: none;
+		cursor: pointer;
+		transition: background-color 160ms ease, color 160ms ease;
+	}
+
+	.sites-button:hover {
+		background: var(--sites-scheme-button-hover-background);
+		color: var(--sites-scheme-button-hover-foreground);
+	}
+
+	.sites-button-secondary {
+		border-color: var(--sites-scheme-input-border);
+		background: var(--sites-scheme-secondary-button-background);
+		color: var(--sites-scheme-secondary-button-foreground);
+	}
+
+	.sites-button-secondary:hover {
+		background: var(--sites-scheme-secondary-button-hover-background);
+		color: var(--sites-scheme-secondary-button-hover-foreground);
+	}
+
+	/* A third tone with no box: the same metrics, so it lines up in a row of
+	   buttons, and the scheme's link color instead of a fill. */
+	.sites-button-quiet {
+		background: transparent;
+		color: var(--sites-scheme-links);
+		text-decoration-line: underline;
+		text-underline-offset: 0.3em;
+	}
+
+	.sites-button-quiet:hover {
+		background: transparent;
+		color: var(--sites-scheme-heading);
+	}
+
+	.sites-label {
+		display: block;
+		margin-bottom: var(--sites-spacing-xs);
+		color: var(--sites-scheme-heading);
+		font-size: var(--sites-type-scale-sm);
+		font-weight: 600;
+	}
+
+	.sites-input {
+		display: block;
+		width: 100%;
+		padding: var(--sites-button-padding-y) var(--sites-button-padding-x);
+		border: var(--sites-border-width) solid var(--sites-scheme-input-border);
+		border-radius: var(--sites-input-radius);
+		background: var(--sites-scheme-input-background);
+		color: var(--sites-scheme-input-foreground);
+		font: inherit;
+		font-size: var(--sites-type-scale-base);
+	}
+
+	.sites-input::placeholder {
+		color: var(--sites-input-placeholder);
+	}
+
+	/* A chip is the small standing label a section uses above a heading — an
+	   eyebrow, a tag, a post's content type. */
+	.sites-chip {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--sites-spacing-xs);
+		padding: var(--sites-spacing-xs) var(--sites-spacing-sm);
+		border: var(--sites-border-width) solid var(--sites-scheme-chip-border);
+		border-radius: var(--sites-radius-full);
+		background: var(--sites-scheme-chip-background);
+		color: var(--sites-scheme-chip-foreground);
+		font-size: var(--sites-type-scale-xs);
+		font-weight: 500;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+	}
+
+	.sites-prose {
+		color: var(--sites-scheme-foreground);
+		font-size: var(--sites-type-scale-lg);
+		line-height: var(--sites-type-leading-relaxed);
+	}
+
+	.sites-prose > * + * {
+		margin-top: var(--sites-spacing-md);
+	}
+
+	.sites-prose h2,
+	.sites-prose h3 {
+		color: var(--sites-scheme-heading);
+		font-family: var(--sites-font-heading-family), Georgia, serif;
+		font-weight: 600;
+		line-height: var(--sites-type-leading-tight);
+	}
+
+	.sites-prose h2 {
+		margin-top: var(--sites-spacing-xl);
+		font-size: var(--sites-type-scale-2xl);
+	}
+
+	.sites-prose h3 {
+		margin-top: var(--sites-spacing-lg);
+		font-size: var(--sites-type-scale-xl);
+	}
+
+	.sites-prose a {
+		color: var(--sites-scheme-links);
+		text-decoration-line: underline;
+		text-underline-offset: 0.2em;
+	}
+
+	.sites-prose a:hover {
+		color: var(--sites-scheme-heading);
+	}
+
+	.sites-prose blockquote {
+		padding-left: var(--sites-spacing-md);
+		border-left: 2px solid var(--sites-color-brand-accent);
+		color: var(--sites-scheme-heading);
+		font-family: var(--sites-font-heading-family), Georgia, serif;
+		font-style: italic;
+	}
+
+	.sites-prose code {
+		padding-inline: var(--sites-spacing-xs);
+		border-radius: var(--sites-radius-sm);
+		background: var(--sites-scheme-chip-background);
+		color: var(--sites-scheme-chip-foreground);
+		font-family: var(--sites-font-mono-family), monospace;
+		font-size: var(--sites-type-scale-sm);
+	}
+
+	.sites-prose ul,
+	.sites-prose ol {
+		padding-inline-start: var(--sites-spacing-lg);
+		list-style: revert;
+	}
+
+	.sites-prose img {
+		border-radius: var(--sites-radius-lg);
+	}
+}
+
+/* What utilities cannot say. */
+
+/* An inlined {#svg} keeps its own width and height attributes, and Tailwind
+   never sees a class written inside assets/, so the wrapper sizes the icon and
+   this one rule makes the icon fill it. */
+@layer components {
+	.sites-icon {
+		display: inline-block;
+		flex: none;
+	}
+}
+
+.sites-icon > svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/* The FAQ is <details>: the native disclosure, with the default marker dropped
+   so the theme's own chevron can rotate in its place. */
+.sites-faq summary {
+	list-style: none;
+	cursor: pointer;
+}
+
+.sites-faq summary::-webkit-details-marker {
+	display: none;
+}
+
+.sites-faq[open] summary .sites-faq-chevron {
+	transform: rotate(180deg);
+}
+
+.sites-faq-chevron {
+	transition: transform 160ms ease;
+}
+
+/* Dialogs. The mobile menu is modal and slides in from the top; the notice is
+   non-modal and sits at the bottom, so the page stays usable behind it. The
+   reset sits in @layer base: an unlayered rule outranks every Tailwind
+   utility, so `dialog { background }` would quietly beat bg-scheme-background
+   on the element it is written on. */
+@layer base {
+	dialog {
+		border: 0;
+		padding: 0;
+		color: inherit;
+	}
+}
+
+dialog::backdrop {
+	background: color-mix(in srgb, var(--sites-color-grey-extra-dark) 55%, transparent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	dialog[open] {
+		animation: sites-dialog-in 220ms ease both;
+	}
+}
+
+@keyframes sites-dialog-in {
+	from {
+		opacity: 0;
+		transform: translateY(-0.75rem);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* A modal dialog must not leave the page scrolling behind it. */
+body:has(dialog[open]:modal) {
+	overflow: hidden;
+}
+
+/* The sticky header. The renderer owns the section's wrapper <div>, and a
+   sticky child can only travel inside its parent's box — which here is exactly
+   the header's own height, so it would never move. Sticking the wrapper is the
+   only thing that works, and :has() keeps the setting in charge of it. */
+[data-section="header"]:has([data-sticky]) {
+	position: sticky;
+	top: 0;
+	z-index: 40;
+}

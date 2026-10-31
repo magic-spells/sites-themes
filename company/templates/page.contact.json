@@ -1,0 +1,76 @@
+{
+  "label": "Page \u2014 Visit us",
+  "selectable": false,
+  "sections": [
+    {
+      "id": "s_page_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "chip": "",
+        "heading": "",
+        "standfirst": "",
+        "align": "left",
+        "color_scheme": "default"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_contact",
+      "type": "contact",
+      "settings": {
+        "heading": "Send us a note",
+        "text": "Orders, valuations, room hire, or a book you cannot name but can describe. We answer everything within a day.",
+        "show_details": true,
+        "note": "We only use your address to reply.",
+        "form": "contact",
+        "color_scheme": "default"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_contact_faq",
+      "type": "faq",
+      "settings": {
+        "heading": "Questions we are asked",
+        "text": "",
+        "padding": "normal",
+        "color_scheme": "default"
+      },
+      "blocks": [
+        {
+          "id": "b_faq_orders",
+          "type": "item",
+          "settings": {
+            "question": "Do you take orders for books you do not have?",
+            "answer": "<p>Yes, and most arrive within three days. Leave a note at the counter or send an email and we will hold it for a fortnight.</p>"
+          }
+        },
+        {
+          "id": "b_faq_buy",
+          "type": "item",
+          "settings": {
+            "question": "Do you buy second-hand books?",
+            "answer": "<p>We look at anything on a Tuesday morning. Bring a box, not a car load, and we will go through it with you.</p>"
+          }
+        },
+        {
+          "id": "b_faq_room",
+          "type": "item",
+          "settings": {
+            "question": "Can I hire the back room?",
+            "answer": "<p>For readings, small launches and reading groups, yes. It seats about twenty-five, and there is no charge for local writers.</p>"
+          }
+        },
+        {
+          "id": "b_faq_access",
+          "type": "item",
+          "settings": {
+            "question": "Is the shop step-free?",
+            "answer": "<p>The front room is level with the street. The back room is up two steps; there is a ramp behind the counter and somebody will always put it out.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+name: Release
+
+# On a version tag, zip the whole tree (minus .git and .github) and attach the
+# zip and its SHA-256 to the GitHub release. Sites pins that zip by version and
+# hash (engine/sites-themes.txt there), so a published zip must never change:
+# fix a mistake with a new tag, never by re-uploading.
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Build the zip
+        id: zip
+        run: |
+          set -eu
+          version=${GITHUB_REF_NAME#v}
+          name=sites-themes-v$version
+          # git archive takes exactly the committed tree, so nothing a local
+          # install or build left behind can reach the zip. .github is dropped
+          # here; .git is never part of an archive.
+          git archive --format=zip -o "$RUNNER_TEMP/$name.zip" HEAD -- . ':(exclude).github'
+          (cd "$RUNNER_TEMP" && sha256sum "$name.zip" | cut -d ' ' -f 1 > "$name.sha256")
+          echo "zip=$RUNNER_TEMP/$name.zip" >> "$GITHUB_OUTPUT"
+          echo "sha=$RUNNER_TEMP/$name.sha256" >> "$GITHUB_OUTPUT"
+          echo "$name.zip sha256 $(cat "$RUNNER_TEMP/$name.sha256")" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Attach to the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -eu
+          gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1 ||
+            gh release create "$GITHUB_REF_NAME" --verify-tag --title "$GITHUB_REF_NAME" --notes-file CHANGELOG.md
+          gh release upload "$GITHUB_REF_NAME" "${{ steps.zip.outputs.zip }}" "${{ steps.zip.outputs.sha }}"

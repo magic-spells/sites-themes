@@ -1,0 +1,385 @@
+{
+  "forms": {
+    "contact": {
+      "name": "Contact",
+      "fields": [
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Name",
+          "required": true,
+          "max_length": 120
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        },
+        {
+          "id": "subject",
+          "type": "text",
+          "label": "Subject",
+          "max_length": 200
+        },
+        {
+          "id": "message",
+          "type": "textarea",
+          "label": "Message",
+          "required": true,
+          "max_length": 4000
+        }
+      ],
+      "success_message": "Thanks — your note is with us.",
+      "submit_label": "Send"
+    },
+    "newsletter": {
+      "name": "Newsletter",
+      "fields": [
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        }
+      ],
+      "success_message": "Thanks for subscribing.",
+      "submit_label": "Subscribe"
+    }
+  },
+  "site": {
+    "name": "Marlow & Finch",
+    "url": "https://marlowandfinch.example",
+    "locale": "en",
+    "settings": {
+      "tagline": "Books, prints and a small room for looking at them.",
+      "contact_email": "hello@marlowandfinch.example",
+      "phone": "+1 555 0142",
+      "address": "18 Wharf Lane\nOld Town",
+      "hours": "Tue – Sat, 10 – 6 · Thu until 9"
+    }
+  },
+  "menus": {
+    "main": {
+      "handle": "main",
+      "title": "Main menu",
+      "items": [
+        { "id": "mi_home", "label": "Home", "target": { "kind": "page", "page_id": "pg_home" }, "children": [] },
+        {
+          "id": "mi_about",
+          "label": "The shop",
+          "target": { "kind": "page", "page_id": "pg_about" },
+          "children": [
+            { "id": "mi_about_story", "label": "Our story", "target": { "kind": "page", "page_id": "pg_about" }, "children": [] },
+            { "id": "mi_about_room", "label": "Hire the back room", "target": { "kind": "page", "page_id": "pg_contact" }, "children": [] }
+          ]
+        },
+        { "id": "mi_journal", "label": "Journal", "target": { "kind": "page", "page_id": "pg_journal" }, "children": [] },
+        { "id": "mi_contact", "label": "Visit", "target": { "kind": "page", "page_id": "pg_contact" }, "children": [] }
+      ]
+    },
+    "footer": {
+      "handle": "footer",
+      "title": "Around the site",
+      "items": [
+        { "id": "mf_about", "label": "The shop", "target": { "kind": "page", "page_id": "pg_about" }, "children": [] },
+        { "id": "mf_journal", "label": "Journal", "target": { "kind": "page", "page_id": "pg_journal" }, "children": [] },
+        { "id": "mf_contact", "label": "Visit us", "target": { "kind": "page", "page_id": "pg_contact" }, "children": [] },
+        { "id": "mf_orders", "label": "Special orders", "target": { "kind": "page", "page_id": "pg_contact" }, "children": [] }
+      ]
+    },
+    "legal": {
+      "handle": "legal",
+      "title": "Small print",
+      "items": [
+        { "id": "ml_privacy", "label": "Privacy", "target": { "kind": "page", "page_id": "pg_privacy" }, "children": [] },
+        { "id": "ml_access", "label": "Accessibility", "target": { "kind": "page", "page_id": "pg_privacy" }, "children": [] }
+      ]
+    }
+  },
+  "galleries": {
+    "shop": {
+      "handle": "shop",
+      "title": "Inside the shop",
+      "items": [
+        { "asset_id": "as_shelf_a", "caption": "Fiction, first room" },
+        { "asset_id": "as_shelf_b", "caption": "The print wall" },
+        { "asset_id": "as_shelf_c", "caption": "New this week" },
+        { "asset_id": "as_tour", "caption": "A minute in the back room" },
+        { "asset_id": "as_shelf_d", "caption": "Poetry, by the window" },
+        { "asset_id": "as_reading_room", "caption": "Thursday evening" }
+      ]
+    }
+  },
+  "assets": {
+    "as_storefront": {
+      "id": "as_storefront", "status": "ready", "file_name": "storefront.svg", "mime": "image/svg+xml",
+      "byte_size": 520, "url": "/assets/photos/storefront.svg", "width": 1600, "height": 1000,
+      "alt": "The shopfront on Wharf Lane, three lit windows under a dark sign",
+      "created_at": "2026-01-04T09:00:00Z"
+    },
+    "as_interior": {
+      "id": "as_interior", "status": "ready", "file_name": "interior.svg", "mime": "image/svg+xml",
+      "byte_size": 760, "url": "/assets/photos/interior.svg", "width": 1200, "height": 1500,
+      "alt": "Full shelves either side of a narrow aisle, a lamp at the far end",
+      "created_at": "2026-01-04T09:02:00Z"
+    },
+    "as_reading_room": {
+      "id": "as_reading_room", "status": "ready", "file_name": "reading-room.svg", "mime": "image/svg+xml",
+      "byte_size": 480, "url": "/assets/photos/reading-room.svg", "width": 1600, "height": 1000,
+      "alt": "The back room set out with chairs for a reading",
+      "created_at": "2026-01-04T09:04:00Z"
+    },
+    "as_shelf_a": {
+      "id": "as_shelf_a", "status": "ready", "file_name": "shelf-a.svg", "mime": "image/svg+xml",
+      "byte_size": 430, "url": "/assets/photos/shelf-a.svg", "width": 1000, "height": 1000,
+      "alt": "A run of hardbacks in mixed colours",
+      "created_at": "2026-01-04T09:06:00Z"
+    },
+    "as_shelf_b": {
+      "id": "as_shelf_b", "status": "ready", "file_name": "shelf-b.svg", "mime": "image/svg+xml",
+      "byte_size": 360, "url": "/assets/photos/shelf-b.svg", "width": 1000, "height": 1000,
+      "alt": "Framed prints hung close together on a warm wall",
+      "created_at": "2026-01-04T09:08:00Z"
+    },
+    "as_shelf_c": {
+      "id": "as_shelf_c", "status": "ready", "file_name": "shelf-c.svg", "mime": "image/svg+xml",
+      "byte_size": 300, "url": "/assets/photos/shelf-c.svg", "width": 1000, "height": 1000,
+      "alt": "A table of new arrivals, face out",
+      "created_at": "2026-01-04T09:10:00Z"
+    },
+    "as_shelf_d": {
+      "id": "as_shelf_d", "status": "ready", "file_name": "shelf-d.svg", "mime": "image/svg+xml",
+      "byte_size": 340, "url": "/assets/photos/shelf-d.svg", "width": 1000, "height": 1000,
+      "alt": "The poetry shelf under the window",
+      "created_at": "2026-01-04T09:12:00Z"
+    },
+    "as_tour": {
+      "id": "as_tour", "status": "ready", "file_name": "back-room.mp4", "mime": "video/mp4",
+      "byte_size": 2411008, "url": "https://cdn.marlowandfinch.example/back-room.mp4", "width": 1280, "height": 720,
+      "alt": "A slow walk through the back room, set out for a reading",
+      "created_at": "2026-01-04T09:14:00Z"
+    },
+    "as_journal_binding": {
+      "id": "as_journal_binding", "status": "ready", "file_name": "journal-binding.svg", "mime": "image/svg+xml",
+      "byte_size": 520, "url": "/assets/photos/journal-binding.svg", "width": 1600, "height": 1000,
+      "alt": "Two open books side by side on a bench",
+      "created_at": "2026-02-02T09:00:00Z"
+    },
+    "as_journal_paper": {
+      "id": "as_journal_paper", "status": "ready", "file_name": "journal-paper.svg", "mime": "image/svg+xml",
+      "byte_size": 470, "url": "/assets/photos/journal-paper.svg", "width": 1600, "height": 1000,
+      "alt": "Ruled paper under a wide band of colour",
+      "created_at": "2026-03-02T09:00:00Z"
+    },
+    "as_journal_window": {
+      "id": "as_journal_window", "status": "ready", "file_name": "journal-window.svg", "mime": "image/svg+xml",
+      "byte_size": 430, "url": "/assets/photos/journal-window.svg", "width": 1600, "height": 1000,
+      "alt": "Four panes of a shop window seen from inside",
+      "created_at": "2026-04-06T09:00:00Z"
+    },
+    "as_logo_quill": {
+      "id": "as_logo_quill", "status": "ready", "file_name": "logo-quill.svg", "mime": "image/svg+xml",
+      "byte_size": 320, "url": "/assets/photos/logo-quill.svg", "width": 320, "height": 80,
+      "alt": "Quill & Co", "created_at": "2026-01-05T09:00:00Z"
+    },
+    "as_logo_northbank": {
+      "id": "as_logo_northbank", "status": "ready", "file_name": "logo-northbank.svg", "mime": "image/svg+xml",
+      "byte_size": 320, "url": "/assets/photos/logo-northbank.svg", "width": 320, "height": 80,
+      "alt": "Northbank", "created_at": "2026-01-05T09:01:00Z"
+    },
+    "as_logo_verso": {
+      "id": "as_logo_verso", "status": "ready", "file_name": "logo-verso.svg", "mime": "image/svg+xml",
+      "byte_size": 300, "url": "/assets/photos/logo-verso.svg", "width": 320, "height": 80,
+      "alt": "Verso", "created_at": "2026-01-05T09:02:00Z"
+    },
+    "as_logo_halcyon": {
+      "id": "as_logo_halcyon", "status": "ready", "file_name": "logo-halcyon.svg", "mime": "image/svg+xml",
+      "byte_size": 300, "url": "/assets/photos/logo-halcyon.svg", "width": 320, "height": 80,
+      "alt": "Halcyon", "created_at": "2026-01-05T09:03:00Z"
+    },
+    "as_logo_foxglove": {
+      "id": "as_logo_foxglove", "status": "ready", "file_name": "logo-foxglove.svg", "mime": "image/svg+xml",
+      "byte_size": 320, "url": "/assets/photos/logo-foxglove.svg", "width": 320, "height": 80,
+      "alt": "Foxglove", "created_at": "2026-01-05T09:04:00Z"
+    }
+  },
+  "content": {
+    "posts": {
+      "name": "Journal",
+      "fields": [
+        { "id": "topic", "type": "text", "label": "Topic" },
+        { "id": "date", "type": "date", "label": "Date" },
+        { "id": "author", "type": "text", "label": "Author" },
+        { "id": "reading_minutes", "type": "number", "label": "Reading minutes" },
+        { "id": "standfirst", "type": "textarea", "label": "Standfirst" },
+        { "id": "image", "type": "image", "label": "Image" },
+        { "id": "image_alt", "type": "text", "label": "Image alt text" },
+        { "id": "body", "type": "richtext", "label": "Body" }
+      ],
+      "entries": [
+        {
+          "id": "en_post_binding",
+          "handle": "what-a-binding-tells-you",
+          "title": "What a binding tells you",
+          "fields": {
+            "topic": "Craft",
+            "date": "2026-04-06T09:00:00Z",
+            "author": "Ada Marlow",
+            "reading_minutes": 6,
+            "standfirst": "Boards, thread and glue, and what each of them says about how long a book was meant to last.",
+            "image": "as_journal_binding",
+            "image_alt": "Two open books side by side on a bench",
+            "body": "<p>Pick up two copies of the same title, thirty years apart, and the difference is in the spine before it is anywhere else.</p><h2>Sewn, glued, or neither</h2><p>A sewn book opens flat and stays open. A glued one is cheaper to make and, in time, cheaper to throw away. Neither is a moral failing; they are answers to different questions.</p><blockquote>A book is a machine for staying open at the right page.</blockquote><p>We keep a small shelf of rebound copies at the back. They are not first editions and they are not worth anything, and they will outlast almost everything else in the shop.</p>"
+          }
+        },
+        {
+          "id": "en_post_shelf",
+          "handle": "how-we-choose-the-shelf",
+          "title": "How we choose the shelf",
+          "fields": {
+            "topic": "The shop",
+            "date": "2026-03-02T09:00:00Z",
+            "author": "Rhys Finch",
+            "reading_minutes": 4,
+            "standfirst": "Four thousand titles, no algorithm, and one rule about the second copy.",
+            "image": "as_journal_paper",
+            "image_alt": "Ruled paper under a wide band of colour",
+            "body": "<p>People assume a small shop stocks the obvious things. It is closer to the opposite: the obvious things are everywhere already.</p><h2>The second-copy rule</h2><p>We only order a second copy of something one of us has read. It sounds precious. In practice it is the only way three people can keep one taste.</p><ul><li>Everything face-out has been read by somebody here.</li><li>Everything on the table by the door arrived this week.</li><li>Nothing stays on the table for more than a month.</li></ul>"
+          }
+        },
+        {
+          "id": "en_post_thursday",
+          "handle": "thursday-evenings",
+          "title": "Thursday evenings",
+          "fields": {
+            "topic": "Events",
+            "date": "2026-02-02T09:00:00Z",
+            "author": "Ada Marlow",
+            "reading_minutes": 3,
+            "standfirst": "Twenty-five chairs, one reader, and no obligation to say anything afterwards.",
+            "image": "as_journal_window",
+            "image_alt": "Four panes of a shop window seen from inside",
+            "body": "<p>The back room holds twenty-five people if nobody minds their knees. On the first Thursday of the month somebody reads for half an hour and then we all stand about for another one.</p><p>There is no sign-up and no charge. If you would like to read, say so at the counter; we are booked about two months ahead.</p>"
+          }
+        }
+      ]
+    }
+  },
+  "pages": {
+    "/": {
+      "id": "pg_home",
+      "template": "home",
+      "title": "Home",
+      "seo": {
+        "description": "Two rooms of new and second-hand books, a wall of prints, and somewhere to sit while you decide.",
+        "image": "as_storefront"
+      }    },
+    "/about": {
+      "id": "pg_about",
+      "template": "page.about",
+      "title": "The shop",
+      "content": "<p>We are two rooms, three people and about four thousand books. We sell new and second-hand titles side by side, because that is how people actually read.</p>",
+      "seo": {
+        "description": "Two rooms, three people and about four thousand books, on the same street since 1998.",
+        "image": "as_interior"
+      }    },
+    "/contact": {
+      "id": "pg_contact",
+      "template": "page.contact",
+      "title": "Visit us",
+      "seo": {
+        "description": "Where to find us, and when. Tuesday to Saturday, ten until six, and Thursdays until nine."
+      }    },
+    "/journal": {
+      "id": "pg_journal",
+      "template": "blog-list",
+      "title": "Journal",
+      "seo": { "description": "Notes on the shop, the shelf and the back room." }    },
+    "/journal/what-a-binding-tells-you": {
+      "id": "pg_post_binding",
+      "template": "post",
+      "title": "What a binding tells you",
+      "params": { "handle": "what-a-binding-tells-you" },
+      "seo": {
+        "description": "Boards, thread and glue, and what each of them says about how long a book was meant to last.",
+        "image": "as_journal_binding"
+      },
+      "entry": {
+        "id": "en_post_binding",
+        "handle": "what-a-binding-tells-you",
+        "title": "What a binding tells you",
+        "fields": {
+          "topic": "Craft",
+          "date": "2026-04-06T09:00:00Z",
+          "author": "Ada Marlow",
+          "reading_minutes": 6,
+          "standfirst": "Boards, thread and glue, and what each of them says about how long a book was meant to last.",
+          "image": "as_journal_binding",
+          "image_alt": "Two open books side by side on a bench",
+          "body": "<p>Pick up two copies of the same title, thirty years apart, and the difference is in the spine before it is anywhere else.</p><h2>Sewn, glued, or neither</h2><p>A sewn book opens flat and stays open. A glued one is cheaper to make and, in time, cheaper to throw away. Neither is a moral failing; they are answers to different questions.</p><blockquote>A book is a machine for staying open at the right page.</blockquote><p>We keep a small shelf of rebound copies at the back. They are not first editions and they are not worth anything, and they will outlast almost everything else in the shop.</p>"
+        }
+      }    },
+    "/journal/how-we-choose-the-shelf": {
+      "id": "pg_post_shelf",
+      "template": "post",
+      "title": "How we choose the shelf",
+      "params": { "handle": "how-we-choose-the-shelf" },
+      "seo": {
+        "description": "Four thousand titles, no algorithm, and one rule about the second copy.",
+        "image": "as_journal_paper"
+      },
+      "entry": {
+        "id": "en_post_shelf",
+        "handle": "how-we-choose-the-shelf",
+        "title": "How we choose the shelf",
+        "fields": {
+          "topic": "The shop",
+          "date": "2026-03-02T09:00:00Z",
+          "author": "Rhys Finch",
+          "reading_minutes": 4,
+          "standfirst": "Four thousand titles, no algorithm, and one rule about the second copy.",
+          "image": "as_journal_paper",
+          "image_alt": "Ruled paper under a wide band of colour",
+          "body": "<p>People assume a small shop stocks the obvious things. It is closer to the opposite: the obvious things are everywhere already.</p><h2>The second-copy rule</h2><p>We only order a second copy of something one of us has read. It sounds precious. In practice it is the only way three people can keep one taste.</p><ul><li>Everything face-out has been read by somebody here.</li><li>Everything on the table by the door arrived this week.</li><li>Nothing stays on the table for more than a month.</li></ul>"
+        }
+      }    },
+    "/journal/thursday-evenings": {
+      "id": "pg_post_thursday",
+      "template": "post",
+      "title": "Thursday evenings",
+      "params": { "handle": "thursday-evenings" },
+      "seo": {
+        "description": "Twenty-five chairs, one reader, and no obligation to say anything afterwards.",
+        "image": "as_journal_window"
+      },
+      "entry": {
+        "id": "en_post_thursday",
+        "handle": "thursday-evenings",
+        "title": "Thursday evenings",
+        "fields": {
+          "topic": "Events",
+          "date": "2026-02-02T09:00:00Z",
+          "author": "Ada Marlow",
+          "reading_minutes": 3,
+          "standfirst": "Twenty-five chairs, one reader, and no obligation to say anything afterwards.",
+          "image": "as_journal_window",
+          "image_alt": "Four panes of a shop window seen from inside",
+          "body": "<p>The back room holds twenty-five people if nobody minds their knees. On the first Thursday of the month somebody reads for half an hour and then we all stand about for another one.</p><p>There is no sign-up and no charge. If you would like to read, say so at the counter; we are booked about two months ahead.</p>"
+        }
+      }    },
+    "/privacy": {
+      "id": "pg_privacy",
+      "template": "page.privacy",
+      "title": "Privacy and accessibility",
+      "content": "<p><strong>This is a placeholder. Replace it with your own privacy notice before you publish.</strong> Only you know what you do with the information this site collects, so only you can write it.</p><p>Say who you are and how to reach you; what the contact and newsletter forms collect, why, and how long you keep it; that the notice at the bottom of the page remembers its dismissal in the visitor's browser; anything you add that loads from another company, such as embedded videos, maps or scripts; and how someone can ask to see or delete what you hold about them.</p>",
+      "seo": { "description": "How this site handles your information, and how to get into the shop." }    },
+    "/password": {
+      "id": "pg_password",
+      "template": "password",
+      "title": "Password",
+      "seo": { "noindex": true }    }
+  }
+}

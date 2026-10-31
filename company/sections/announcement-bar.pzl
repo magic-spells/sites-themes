@@ -1,0 +1,30 @@
+<aside class="bg-scheme-background text-scheme-foreground">
+  <div class="sites-container flex flex-wrap items-center justify-center gap-space-sm py-space-sm text-center text-sm">
+    <p>{ settings.text }</p>
+    {#if settings.link_label}
+      <a class="inline-flex items-center gap-space-xs font-semibold text-scheme-links underline underline-offset-2" href="{ settings.link }">
+        { settings.link_label }
+        <span class="sites-icon size-4">{#svg 'icons/arrow-right.svg'}</span>
+      </a>
+    {/if}
+  </div>
+</aside>
+
+<schema>
+{
+  "name": "Announcement bar",
+  "settings": [
+    { "type": "text", "id": "text", "label": "Text", "default": "Late opening every first Thursday — until 9pm." },
+    { "type": "text", "id": "link_label", "label": "Link label", "info": "Leave empty for a bar with no link.", "default": "What's on" },
+    { "type": "url", "id": "link", "label": "Link", "default": "/journal" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "accent",
+      "info": "The surface this bar is rendered on. Schemes are declared in design.json under schemes." }
+  ],
+  "presets": [
+    { "name": "Default",
+      "settings": { "text": "Late opening every first Thursday — until 9pm.", "link_label": "What's on", "link": "/journal", "color_scheme": "accent" } },
+    { "name": "Quiet",
+      "settings": { "text": "Free local delivery on orders over 40.", "link_label": "", "link": "/", "color_scheme": "default" } }
+  ]
+}
+</schema>

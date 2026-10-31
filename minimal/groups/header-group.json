@@ -1,0 +1,13 @@
+{
+  "sections": [
+    {
+      "id": "sg_header",
+      "type": "header",
+      "settings": {
+        "menu": "main",
+        "color_scheme": "default"
+      },
+      "blocks": []
+    }
+  ]
+}

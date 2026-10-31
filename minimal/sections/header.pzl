@@ -1,0 +1,26 @@
+<header class="border-b border-scheme-chip-border bg-scheme-background text-scheme-foreground">
+  <div class="mx-auto flex max-w-3xl flex-wrap items-baseline justify-between gap-space-md px-space-lg py-space-md">
+    <a class="font-heading text-lg font-semibold tracking-tight text-scheme-heading" href="/">{ site.name }</a>
+    {#if settings.menu.items.length}
+      <nav class="flex flex-wrap gap-space-md text-sm" aria-label="{ settings.menu.title }">
+        {#for item in settings.menu.items}
+          <a class="{ item.active ? 'text-scheme-heading' : 'text-scheme-foreground' } hover:text-scheme-heading" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active ? 'page' : null }>{ item.label }</a>
+        {/for}
+      </nav>
+    {/if}
+  </div>
+</header>
+
+<schema>
+{
+  "name": "Header",
+  "settings": [
+    { "type": "menu", "id": "menu", "label": "Menu" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default",
+      "info": "The surface this section is rendered on. Schemes are declared in design.json under schemes." }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "menu": "main", "color_scheme": "default" } }
+  ]
+}
+</schema>

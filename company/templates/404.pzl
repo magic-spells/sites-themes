@@ -1,0 +1,13 @@
+<!-- template: NotFound -->
+<!-- layout: default -->
+<div class="sites-container py-space-2xl">
+  <div class="mx-auto max-w-2xl text-center">
+    <Chip>404</Chip>
+    <h1 class="mt-space-md font-heading text-4xl tracking-tight text-balance text-scheme-heading">{ t('not_found_title') }</h1>
+    <p class="mt-space-md text-lg text-pretty text-scheme-foreground">{ t('not_found_body') }</p>
+    <div class="mt-space-lg flex flex-wrap justify-center gap-space-sm">
+      <Button href="/">{ t('back_home') }</Button>
+      <Button href="/contact" tone="secondary">{ t('get_in_touch') }</Button>
+    </div>
+  </div>
+</div>

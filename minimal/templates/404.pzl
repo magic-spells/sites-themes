@@ -1,0 +1,8 @@
+<!-- template: NotFound -->
+<!-- layout: default -->
+<div class="mx-auto max-w-3xl px-space-lg py-space-2xl">
+  <p class="font-mono text-sm text-grey-medium">404</p>
+  <h1 class="mt-space-sm font-heading text-4xl tracking-tight text-grey-dark">{ t('not_found_title') }</h1>
+  <p class="mt-space-md max-w-2xl text-lg text-secondary">{ t('not_found_body') }</p>
+  <p class="mt-space-lg"><Button href="/">{ t('back_home') }</Button></p>
+</div>

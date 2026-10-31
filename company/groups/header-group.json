@@ -1,0 +1,28 @@
+{
+  "sections": [
+    {
+      "id": "sg_announcement",
+      "type": "announcement-bar",
+      "settings": {
+        "color_scheme": "accent",
+        "link": "/journal",
+        "link_label": "What's on",
+        "text": "Late opening every first Thursday — until 9pm."
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_header",
+      "type": "header",
+      "settings": {
+        "bordered": true,
+        "color_scheme": "default",
+        "cta_href": "/contact",
+        "cta_label": "Visit us",
+        "menu": "main",
+        "sticky": true
+      },
+      "blocks": []
+    }
+  ]
+}

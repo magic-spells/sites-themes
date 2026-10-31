@@ -1,0 +1,33 @@
+{
+  "label": "Page",
+  "description": "A title, then the page\u2019s own writing.",
+  "sections": [
+    {
+      "id": "s_page_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "chip": "",
+        "heading": "",
+        "standfirst": "",
+        "align": "left",
+        "color_scheme": "default"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_body",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "body": "",
+        "width": "narrow",
+        "align": "left",
+        "padding": "normal",
+        "color_scheme": "default"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+<section class="bg-scheme-background text-scheme-foreground">
+  <div class="sites-container { settings.padding == 'compact' ? 'py-space-xl' : 'py-space-2xl' }">
+    <div class="mx-auto max-w-3xl">
+      <h2 class="font-heading text-3xl tracking-tight text-balance text-scheme-heading">{ settings.heading }</h2>
+      {#if settings.text}<p class="mt-space-md text-lg text-pretty">{ settings.text }</p>{/if}
+      <div class="mt-space-lg divide-y divide-grey-light border-y border-grey-light">
+        {#for block in blocks}
+          <details class="sites-faq py-space-md" data-block={ block.editor_id }>
+            <summary class="flex items-center justify-between gap-space-md font-heading text-xl text-scheme-heading">
+              { block.settings.question }
+              <span class="sites-faq-chevron sites-icon size-5 text-scheme-icons">{#svg 'icons/chevron-down.svg'}</span>
+            </summary>
+            <div class="sites-prose mt-space-sm text-base">{ block.settings.answer }</div>
+          </details>
+        {/for}
+      </div>
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "FAQ",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Questions we are asked" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "" },
+    { "type": "select", "id": "padding", "label": "Padding", "default": "normal",
+      "options": [
+        { "value": "normal", "label": "Normal" },
+        { "value": "compact", "label": "Compact" }
+      ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default" }
+  ],
+  "blocks": [
+    { "type": "item", "name": "Question", "settings": [
+      { "type": "text", "id": "question", "label": "Question", "default": "A question" },
+      { "type": "richtext", "id": "answer", "label": "Answer", "default": "<p>The answer, in as few words as it takes.</p>" }
+    ] }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    { "name": "Default",
+      "settings": { "heading": "Questions we are asked", "padding": "normal", "color_scheme": "default" },
+      "blocks": [
+        { "type": "item", "settings": { "question": "Do you take orders for books you do not have?", "answer": "<p>Yes, and most arrive within three days. Leave a note at the counter or send an email and we will hold it for a fortnight.</p>" } },
+        { "type": "item", "settings": { "question": "Do you buy second-hand books?", "answer": "<p>We look at anything on a Tuesday morning. Bring a box, not a car load, and we will go through it with you.</p>" } },
+        { "type": "item", "settings": { "question": "Can I hire the back room?", "answer": "<p>For readings, small launches and reading groups, yes. It seats about twenty-five.</p>" } }
+      ] }
+  ]
+}
+</schema>

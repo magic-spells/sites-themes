@@ -1,0 +1,34 @@
+{
+  "label": "Home",
+  "sections": [
+    {
+      "id": "s_hero",
+      "type": "hero",
+      "settings": {
+        "body": "Everything on it comes from two files: the section markup in sections/, and the data in sites.fixtures.json.",
+        "heading": "This is your home page"
+      },
+      "blocks": [
+        {
+          "id": "b_about",
+          "type": "link",
+          "settings": {
+            "href": "/about",
+            "label": "Read on",
+            "tone": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_intro",
+      "type": "rich-text",
+      "settings": {
+        "body": "<p>A page is a stack of sections. This one is <code>rich-text</code>: one rich text setting and a width, which is enough for most of the writing on a site.</p><p>The header and footer are not in this stack. They are <em>section groups</em> \u2014 site-level stacks that render in every page's layout.</p>",
+        "width": "narrow",
+        "color_scheme": "default"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "sections": [
+    {
+      "id": "sg_mobile_menu",
+      "type": "mobile-menu",
+      "settings": {
+        "color_scheme": "default",
+        "cta_href": "/contact",
+        "cta_label": "Visit us",
+        "menu": "main"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_notice",
+      "type": "cookie-notice",
+      "settings": {
+        "accept_label": "Fine by me",
+        "body": "\u003cp\u003eWe set no cookies. Your browser's local storage remembers that you have read this, and nothing else is measured.\u003c/p\u003e",
+        "color_scheme": "inverse",
+        "heading": "A word about cookies",
+        "key": "notice-2026-01",
+        "link_href": "/privacy",
+        "link_label": "Read the policy"
+      },
+      "blocks": []
+    }
+  ]
+}

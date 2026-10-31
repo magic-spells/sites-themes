@@ -1,0 +1,48 @@
+{#if forms[settings.form]}
+  <section class="bg-scheme-background text-scheme-foreground">
+    <div class="mx-auto max-w-3xl px-space-lg py-space-xl">
+      {#if settings.heading}
+        <h2 class="font-heading text-3xl tracking-tight text-balance text-scheme-heading">{ settings.heading }</h2>
+      {/if}
+      {#if settings.text}<p class="mt-space-md text-lg text-pretty">{ settings.text }</p>{/if}
+      <Form handle={ settings.form } class="mt-space-lg grid gap-space-md">
+        {#if form.sent}
+          <p class="rounded-md bg-success-bg p-space-md text-success-fg" role="status">{ form.success_message }</p>
+        {:else}
+          {#for field in form.fields}
+            <Field name={ field.id } label={ field.label } type={ field.type }
+              required={ field.required } maxlength={ field.max_length }
+              options={ field.options } value={ field.value } error={ field.error }
+              prefix={ section.id } />
+          {/for}
+          {#if form.error}
+            <p class="rounded-md bg-error-bg p-space-md text-error-fg" role="alert">{ t(form.error == 'expired' ? 'form_field_expired' : 'form_error') }</p>
+          {/if}
+          <div><button class="sites-button min-h-11 w-full justify-center sm:w-auto" type="submit">{ form.submit_label }</button></div>
+          <noscript><p>{ t('form_requires_javascript') }</p></noscript>
+        {/if}
+      </Form>
+    </div>
+  </section>
+{:else if request.preview}
+  <section class="bg-scheme-background text-scheme-foreground">
+    <p class="mx-auto max-w-3xl px-space-lg py-space-xl">{ t('form_pick_hint') }</p>
+  </section>
+{/if}
+
+<schema>
+{
+  "name": "Form",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Contact us" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "" },
+    { "type": "form", "id": "form", "label": "Form", "default": "contact",
+      "info": "Pick a site form. Create forms and manage their fields in the Forms panel." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default",
+      "info": "The surface this section is rendered on. Schemes are declared in design.json under schemes." }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "heading": "Contact us", "text": "", "form": "contact", "color_scheme": "default" } }
+  ]
+}
+</schema>

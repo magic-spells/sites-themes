@@ -1,0 +1,17 @@
+{
+  "label": "Page",
+  "description": "A title and the page's own writing.",
+  "sections": [
+    {
+      "id": "s_body",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {
+        "body": "",
+        "width": "narrow",
+        "color_scheme": "default"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+<section class="bg-scheme-background text-scheme-foreground">
+  <div class="sites-container { settings.padding == 'compact' ? 'py-space-xl' : 'py-space-2xl' }">
+    {#if settings.heading}
+      <div class="max-w-2xl">
+        <h2 class="font-heading text-3xl tracking-tight text-balance text-scheme-heading">{ settings.heading }</h2>
+        {#if settings.text}<p class="mt-space-md text-lg text-pretty">{ settings.text }</p>{/if}
+      </div>
+    {/if}
+    <ul class="mt-space-xl grid gap-space-lg sm:grid-cols-2 { settings.columns == '2' ? 'lg:grid-cols-2' : settings.columns == '4' ? 'lg:grid-cols-4' : 'lg:grid-cols-3' }">
+      {#for block in blocks}
+        <li class="rounded-lg border border-grey-light p-space-lg" data-block={ block.editor_id }>
+          <span class="sites-icon size-8 text-scheme-icons">
+            {#case block.settings.icon}
+              {:when "leaf"}{#svg 'icons/leaf.svg'}
+              {:when "clock"}{#svg 'icons/clock.svg'}
+              {:when "truck"}{#svg 'icons/truck.svg'}
+              {:when "heart"}{#svg 'icons/heart.svg'}
+              {:when "sparkle"}{#svg 'icons/sparkle.svg'}
+              {:when "star"}{#svg 'icons/star.svg'}
+              {:else}{#svg 'icons/book.svg'}
+            {/case}
+          </span>
+          <h3 class="mt-space-md font-heading text-xl font-semibold text-scheme-heading">{ block.settings.title }</h3>
+          <p class="mt-space-sm text-pretty">{ block.settings.text }</p>
+        </li>
+      {/for}
+    </ul>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Features grid",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What you will find" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "A small shop, chosen by hand. Everything on the shelves is here because someone here read it." },
+    { "type": "select", "id": "columns", "label": "Columns", "default": "3",
+      "options": [
+        { "value": "2", "label": "Two" },
+        { "value": "3", "label": "Three" },
+        { "value": "4", "label": "Four" }
+      ] },
+    { "type": "select", "id": "padding", "label": "Padding", "default": "normal",
+      "options": [
+        { "value": "normal", "label": "Normal" },
+        { "value": "compact", "label": "Compact" }
+      ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default" }
+  ],
+  "blocks": [
+    { "type": "feature", "name": "Feature", "settings": [
+      { "type": "select", "id": "icon", "label": "Icon", "default": "book",
+        "options": [
+          { "value": "book", "label": "Book" },
+          { "value": "leaf", "label": "Leaf" },
+          { "value": "clock", "label": "Clock" },
+          { "value": "truck", "label": "Delivery" },
+          { "value": "heart", "label": "Heart" },
+          { "value": "sparkle", "label": "Sparkle" },
+          { "value": "star", "label": "Star" }
+        ] },
+      { "type": "text", "id": "title", "label": "Title", "default": "A title" },
+      { "type": "textarea", "id": "text", "label": "Text", "default": "One or two sentences about it." }
+    ] }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    { "name": "Default",
+      "settings": { "heading": "What you will find", "text": "A small shop, chosen by hand. Everything on the shelves is here because someone here read it.", "columns": "3", "padding": "normal", "color_scheme": "default" },
+      "blocks": [
+        { "type": "feature", "settings": { "icon": "book", "title": "Chosen by hand", "text": "Around four thousand titles, and no algorithm anywhere near them." } },
+        { "type": "feature", "settings": { "icon": "sparkle", "title": "Prints and editions", "text": "A changing wall of local printmakers, framed while you wait." } },
+        { "type": "feature", "settings": { "icon": "clock", "title": "Open late on Thursdays", "text": "Until nine, with something to drink and usually somebody reading aloud." } }
+      ] }
+  ]
+}
+</schema>

@@ -1,0 +1,39 @@
+<section class="bg-scheme-background text-scheme-foreground">
+  <div class="sites-container py-space-2xl">
+    <div class="flex flex-col items-start justify-between gap-space-lg lg:flex-row lg:items-center">
+      <div class="max-w-2xl">
+        <h2 class="font-heading text-3xl tracking-tight text-balance text-scheme-heading">{ settings.heading }</h2>
+        {#if settings.text}<p class="mt-space-md text-lg text-pretty">{ settings.text }</p>{/if}
+      </div>
+      <div class="flex flex-wrap gap-space-sm">
+        {#if settings.primary_label}<Button href={ settings.primary_href }>{ settings.primary_label }</Button>{/if}
+        {#if settings.secondary_label}<Button href={ settings.secondary_href } tone="secondary">{ settings.secondary_label }</Button>{/if}
+      </div>
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "CTA band",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Come and have a look" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Tuesday to Saturday, ten until six. Thursdays until nine." },
+    { "type": "text", "id": "primary_label", "label": "First button", "default": "Find us" },
+    { "type": "url", "id": "primary_href", "label": "First link", "default": "/contact" },
+    { "type": "text", "id": "secondary_label", "label": "Second button", "default": "Read the journal" },
+    { "type": "url", "id": "secondary_href", "label": "Second link", "default": "/journal" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "accent" }
+  ],
+  "presets": [
+    { "name": "Default",
+      "settings": { "heading": "Come and have a look", "text": "Tuesday to Saturday, ten until six. Thursdays until nine.",
+        "primary_label": "Find us", "primary_href": "/contact",
+        "secondary_label": "Read the journal", "secondary_href": "/journal", "color_scheme": "accent" } },
+    { "name": "Inverse",
+      "settings": { "heading": "Come and have a look", "text": "Tuesday to Saturday, ten until six. Thursdays until nine.",
+        "primary_label": "Find us", "primary_href": "/contact",
+        "secondary_label": "", "secondary_href": "/journal", "color_scheme": "inverse" } }
+  ]
+}
+</schema>

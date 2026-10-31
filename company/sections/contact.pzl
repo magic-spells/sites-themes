@@ -1,0 +1,78 @@
+<section class="bg-scheme-background text-scheme-foreground">
+  <div class="sites-container py-space-2xl">
+    <div class="grid gap-space-xl lg:grid-cols-2">
+      <div>
+        <h2 class="font-heading text-3xl tracking-tight text-balance text-scheme-heading">{ settings.heading }</h2>
+        {#if settings.text}<p class="mt-space-md text-lg text-pretty">{ settings.text }</p>{/if}
+        {#if settings.show_details}
+          <ul class="mt-space-lg grid gap-space-md text-base">
+            <li class="flex gap-space-sm">
+              <span class="sites-icon mt-space-xs size-5 text-scheme-icons">{#svg 'icons/map-pin.svg'}</span>
+              <span class="whitespace-pre-line">{ site.settings.address }</span>
+            </li>
+            <li class="flex gap-space-sm">
+              <span class="sites-icon mt-space-xs size-5 text-scheme-icons">{#svg 'icons/clock.svg'}</span>
+              <span>{ site.settings.hours }</span>
+            </li>
+            <li class="flex gap-space-sm">
+              <span class="sites-icon mt-space-xs size-5 text-scheme-icons">{#svg 'icons/mail.svg'}</span>
+              <a class="text-scheme-links underline underline-offset-2" href="mailto:{ site.settings.contact_email }">{ site.settings.contact_email }</a>
+            </li>
+            <li class="flex gap-space-sm">
+              <span class="sites-icon mt-space-xs size-5 text-scheme-icons">{#svg 'icons/phone.svg'}</span>
+              <a class="text-scheme-links underline underline-offset-2" href="tel:{ site.settings.phone }">{ site.settings.phone }</a>
+            </li>
+          </ul>
+        {/if}
+      </div>
+
+      <!-- The site owns the fields; this theme chooses their markup. The card is
+           its own surface, so its labels, inputs and button follow the card's
+           scheme rather than the section's. -->
+      <Form handle={ settings.form } class="sites-scheme-{ settings.form_color_scheme } grid gap-space-md rounded-lg border border-scheme-input-border bg-scheme-background p-space-lg text-scheme-foreground">
+        {#if form.sent}
+          <p class="text-success-fg" role="status">{ form.success_message }</p>
+        {:else}
+          {#for field in form.fields}
+            <Field name={ field.id } label={ field.label } type={ field.type }
+              rows={ 5 } maxlength={ field.max_length } required={ field.required }
+              options={ field.options } value={ field.value } error={ field.error }
+              prefix={ section.id } />
+          {/for}
+          <div>
+            {#if form.error}
+              <p class="mb-space-sm text-sm text-error-fg" role="alert">{ t(form.error == 'expired' ? 'form_field_expired' : 'form_error') }</p>
+            {/if}
+            <button class="sites-button w-full" type="submit">{ form.submit_label }</button>
+            <noscript><p class="mt-space-sm text-sm">{ t('form_requires_javascript') }</p></noscript>
+            {#if settings.note}<p class="mt-space-sm text-sm">{ settings.note }</p>{/if}
+          </div>
+        {/if}
+      </Form>
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Contact form",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Send us a note" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Orders, valuations, room hire, or a book you cannot name but can describe. We answer everything within a day." },
+    { "type": "checkbox", "id": "show_details", "label": "Show the address and opening hours", "default": true },
+    { "type": "text", "id": "note", "label": "Note under the button", "default": "We only use your address to reply." },
+    { "type": "form", "id": "form", "label": "Form",
+      "info": "The site form this section renders. Manage its fields in the Sites app.",
+      "default": "contact" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default" },
+    { "type": "color_scheme", "id": "form_color_scheme", "label": "Form color scheme", "default": "default" }
+  ],
+  "presets": [
+    { "name": "Default",
+      "settings": { "heading": "Send us a note",
+        "text": "Orders, valuations, room hire, or a book you cannot name but can describe. We answer everything within a day.",
+        "show_details": true, "note": "We only use your address to reply.",
+        "form": "contact", "color_scheme": "default", "form_color_scheme": "default" } }
+  ]
+}
+</schema>

@@ -1,0 +1,23 @@
+<!-- component: Field -->
+<!-- props: name label type required maxlength options value error prefix -->
+<div class="min-w-0">
+  {#if type == 'checkbox'}
+    <label class="flex min-h-11 cursor-pointer items-center gap-space-sm" for="field-{ prefix }-{ name }">
+      <input class="size-5 shrink-0 accent-scheme-links" id="field-{ prefix }-{ name }" name={ name } type="checkbox" value="on" checked={ value == 'on' } required={ required } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null } />
+      <span>{ label }{#if required}<span class="ml-space-xs text-sm">({ t('form_required') })</span>{/if}</span>
+    </label>
+  {:else}
+    <label class="mb-space-xs block font-medium" for="field-{ prefix }-{ name }">{ label }{#if required}<span class="ml-space-xs text-sm font-normal">({ t('form_required') })</span>{/if}</label>
+    {#if type == 'textarea'}
+      <textarea class="sites-input" id="field-{ prefix }-{ name }" name={ name } rows="5" maxlength={ maxlength } required={ required } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null }>{ value }</textarea>
+    {:else if type == 'select'}
+      <select class="sites-input" id="field-{ prefix }-{ name }" name={ name } required={ required } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null }>
+        <option value="">{ t('form_choose_option') }</option>
+        {#for option in options}<option value={ option } selected={ value == option }>{ option }</option>{/for}
+      </select>
+    {:else}
+      <input class="sites-input" id="field-{ prefix }-{ name }" name={ name } type={ type ?? 'text' } autocomplete={ type == 'email' ? 'email' : (name == 'name' ? 'name' : 'off') } maxlength={ maxlength } required={ required } value={ value } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null } />
+    {/if}
+  {/if}
+  {#if error}<p class="mt-space-xs rounded-md bg-error-bg px-space-sm py-space-xs text-sm text-error-fg" id="error-{ prefix }-{ name }">{ t('form_field_' + error) }</p>{/if}
+</div>

@@ -1,0 +1,14 @@
+{
+  "sections": [
+    {
+      "id": "sg_footer",
+      "type": "footer",
+      "settings": {
+        "copyright": "All rights reserved.",
+        "menu": "main",
+        "color_scheme": "inverse"
+      },
+      "blocks": []
+    }
+  ]
+}

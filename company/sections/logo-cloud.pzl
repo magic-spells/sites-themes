@@ -1,0 +1,56 @@
+<section class="bg-scheme-background text-scheme-foreground">
+  <div class="sites-container py-space-xl">
+    {#if settings.heading}
+      <p class="text-center text-sm tracking-wide text-grey-medium">{ settings.heading }</p>
+    {/if}
+    <!-- A logo with no image yet shows its name, so a fresh section is
+         still a row of partners and never an empty <img>. -->
+    <ul class="mt-space-lg flex flex-wrap items-center justify-center gap-x-space-xl gap-y-space-lg">
+      {#for block in blocks}
+        <li class="opacity-70 transition-opacity hover:opacity-100" data-block={ block.editor_id }>
+          {#if block.settings.url}
+            <a href="{ block.settings.url }" rel="noopener">
+              {#if block.settings.image}
+                <img class="h-8 w-auto" src="{ image_url(block.settings.image, 320) }" alt="{ block.settings.name }" loading="lazy" width="{ block.settings.image.width }" height="{ block.settings.image.height }" />
+              {:else}
+                <span class="font-heading text-xl font-semibold text-scheme-heading">{ block.settings.name }</span>
+              {/if}
+            </a>
+          {:else if block.settings.image}
+            <img class="h-8 w-auto" src="{ image_url(block.settings.image, 320) }" alt="{ block.settings.name }" loading="lazy" width="{ block.settings.image.width }" height="{ block.settings.image.height }" />
+          {:else}
+            <span class="font-heading text-xl font-semibold text-scheme-heading">{ block.settings.name }</span>
+          {/if}
+        </li>
+      {/for}
+    </ul>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Logo cloud",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Stocked and supported by" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default" }
+  ],
+  "blocks": [
+    { "type": "logo", "name": "Logo", "settings": [
+      { "type": "image", "id": "image", "label": "Logo" },
+      { "type": "text", "id": "name", "label": "Name", "info": "Used as the image's alt text.", "default": "A partner" },
+      { "type": "url", "id": "url", "label": "Link", "default": "" }
+    ] }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    { "name": "Default",
+      "settings": { "heading": "Stocked and supported by", "color_scheme": "default" },
+      "blocks": [
+        { "type": "logo", "settings": { "name": "Quill & Co" } },
+        { "type": "logo", "settings": { "name": "Northbank" } },
+        { "type": "logo", "settings": { "name": "Verso" } },
+        { "type": "logo", "settings": { "name": "Halcyon" } }
+      ] }
+  ]
+}
+</schema>

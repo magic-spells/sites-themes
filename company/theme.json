@@ -1,0 +1,71 @@
+{
+  "name": "Company",
+  "version": "0.1.0",
+  "default_template": "page",
+  "not_found_template": "404",
+  "maintenance_template": "maintenance",
+  "groups": {
+    "header-group": {
+      "label": "Header",
+      "accepts": ["announcement-bar", "header"]
+    },
+    "footer-group": {
+      "label": "Footer",
+      "accepts": ["footer"]
+    },
+    "panel-group": {
+      "label": "Dialogs",
+      "accepts": ["mobile-menu", "cookie-notice"]
+    }
+  },
+  "settings": [
+    {
+      "name": "Brand information",
+      "settings": [
+        {
+          "type": "image",
+          "id": "favicon",
+          "label": "Favicon",
+          "info": "The small icon in the browser tab. A square image works best."
+        },
+        {
+          "type": "text",
+          "id": "tagline",
+          "label": "Tagline",
+          "info": "One line under the business name in the footer.",
+          "default": "Books, prints and a small room for looking at them."
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "settings": [
+        {
+          "type": "text",
+          "id": "contact_email",
+          "label": "Contact email",
+          "default": "hello@example.com"
+        },
+        {
+          "type": "text",
+          "id": "phone",
+          "label": "Phone",
+          "default": "+1 555 000 0000"
+        },
+        {
+          "type": "textarea",
+          "id": "address",
+          "label": "Address",
+          "info": "One line per line; it is printed as written.",
+          "default": "123 Example Street\nYour Town"
+        },
+        {
+          "type": "text",
+          "id": "hours",
+          "label": "Opening hours",
+          "default": "Tue – Sat, 10 – 6"
+        }
+      ]
+    }
+  ]
+}

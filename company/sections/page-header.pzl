@@ -1,0 +1,33 @@
+<section class="bg-scheme-background text-scheme-foreground">
+  <header class="sites-container pt-space-xl pb-space-lg">
+    <div class="mx-auto max-w-3xl { settings.align == 'center' ? 'text-center' : '' }">
+      {#if settings.chip}<Chip>{ settings.chip }</Chip>{/if}
+      <h1 class="{ settings.chip ? 'mt-space-md' : '' } font-heading text-4xl tracking-tight text-balance text-scheme-heading">{ settings.heading || page.title }</h1>
+      {#if settings.standfirst || page.seo.description}
+        <p class="mt-space-md text-xl text-pretty text-scheme-foreground">{ settings.standfirst || page.seo.description }</p>
+      {/if}
+    </div>
+  </header>
+</section>
+
+<schema>
+{
+  "name": "Page header",
+  "description": "The page's title, and the line under it. Leave both empty and it says what the page is called.",
+  "settings": [
+    { "type": "text", "id": "chip", "label": "Label", "info": "A short word above the title.", "default": "" },
+    { "type": "text", "id": "heading", "label": "Heading", "info": "Leave empty to use the page's title.", "default": "" },
+    { "type": "text", "id": "standfirst", "label": "Standfirst", "info": "Leave empty to use the page's search description.", "default": "" },
+    { "type": "select", "id": "align", "label": "Alignment", "default": "left",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Centered" }
+      ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "chip": "", "heading": "", "standfirst": "", "align": "left", "color_scheme": "default" } },
+    { "name": "Centered", "settings": { "chip": "", "heading": "", "standfirst": "", "align": "center", "color_scheme": "default" } }
+  ]
+}
+</schema>

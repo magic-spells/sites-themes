@@ -1,0 +1,206 @@
+{
+  "colors": {
+    "brand": {
+      "primary": "#18181b",
+      "secondary": "#52525b",
+      "accent": "#2f5fd0"
+    },
+    "grey": {
+      "extra_light": "#f4f4f5",
+      "light": "#e4e4e7",
+      "medium": "#51515b",
+      "dark": "#18181b",
+      "extra_dark": "#09090b"
+    },
+    "info": {
+      "bg": "#dbeafe",
+      "fg": "#1d4ed8"
+    },
+    "success": {
+      "bg": "#dcfce7",
+      "fg": "#15803d"
+    },
+    "warning": {
+      "bg": "#fef3c7",
+      "fg": "#b45309"
+    },
+    "error": {
+      "bg": "#fee2e2",
+      "fg": "#b91c1c"
+    }
+  },
+  "fonts": {
+    "heading": {
+      "family": "system-ui",
+      "weights": [
+        400,
+        600
+      ],
+      "source": "system"
+    },
+    "body": {
+      "family": "system-ui",
+      "weights": [
+        400,
+        600
+      ],
+      "source": "system"
+    },
+    "mono": {
+      "family": "ui-monospace",
+      "weights": [
+        400
+      ],
+      "source": "system"
+    }
+  },
+  "type": {
+    "base": "1rem",
+    "scale": {
+      "xs": "0.75rem",
+      "sm": "0.875rem",
+      "base": "1rem",
+      "lg": "1.125rem",
+      "xl": "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2.25rem",
+      "5xl": "3.25rem"
+    },
+    "leading": {
+      "tight": "1.1",
+      "normal": "1.5",
+      "relaxed": "1.7"
+    }
+  },
+  "spacing": {
+    "xs": "0.25rem",
+    "sm": "0.5rem",
+    "md": "1rem",
+    "lg": "1.5rem",
+    "xl": "2.5rem",
+    "2xl": "4.5rem"
+  },
+  "radius": {
+    "none": "0",
+    "sm": "0.125rem",
+    "md": "0.25rem",
+    "lg": "0.5rem",
+    "full": "9999rem"
+  },
+  "shadow": {
+    "sm": "0 1px 2px #18181b14",
+    "md": "0 4px 12px #18181b1a",
+    "lg": "0 16px 40px #18181b1f"
+  },
+  "border": {
+    "width": "1px",
+    "color": "#e4e4e7"
+  },
+  "input": {
+    "background": "#ffffff",
+    "border": "#e4e4e7",
+    "radius": "0.25rem",
+    "text": "#18181b",
+    "placeholder": "#8a8a94",
+    "focus_ring": "#2f5fd0"
+  },
+  "button": {
+    "radius": "0.25rem",
+    "padding_x": "1.125rem",
+    "padding_y": "0.625rem",
+    "weight": "600",
+    "primary_bg": "#18181b",
+    "primary_text": "#ffffff",
+    "secondary_bg": "#f4f4f5",
+    "secondary_text": "#18181b"
+  },
+  "link": {
+    "color": "#2f5fd0",
+    "hover_color": "#1e3f9c",
+    "underline": "always"
+  },
+  "suggested_palettes": [
+    {
+      "name": "Dusk",
+      "colors": {
+        "brand": {
+          "primary": "#e8e6e1",
+          "secondary": "#b9b5ad",
+          "accent": "#8ea7e0"
+        },
+        "grey": {
+          "extra_light": "#26262b",
+          "light": "#3a3a41",
+          "medium": "#7c7c87",
+          "dark": "#f2f1ee",
+          "extra_dark": "#ffffff"
+        },
+        "info": {
+          "bg": "#1e2a44",
+          "fg": "#a8c4ff"
+        },
+        "success": {
+          "bg": "#16301f",
+          "fg": "#8fd6a4"
+        },
+        "warning": {
+          "bg": "#33260f",
+          "fg": "#e2b866"
+        },
+        "error": {
+          "bg": "#3a1a1a",
+          "fg": "#f0a0a0"
+        }
+      }
+    }
+  ],
+  "schemes": [
+    {
+      "handle": "default",
+      "name": "Default",
+      "background": "#ffffff",
+      "foreground": "$brand-secondary",
+      "heading": "$grey-dark",
+      "input_background": "#ffffff",
+      "input_foreground": "$grey-dark",
+      "input_border": "$grey-light",
+      "chip_background": "$grey-extra-light",
+      "chip_foreground": "$grey-dark",
+      "chip_border": "$grey-light",
+      "icons": "$grey-medium",
+      "links": "$brand-accent",
+      "button_background": "$brand-primary",
+      "button_foreground": "#ffffff",
+      "button_hover_background": "$brand-secondary",
+      "button_hover_foreground": "#ffffff",
+      "secondary_button_background": "$grey-extra-light",
+      "secondary_button_foreground": "$grey-dark",
+      "secondary_button_hover_background": "$grey-light",
+      "secondary_button_hover_foreground": "$grey-dark"
+    },
+    {
+      "handle": "inverse",
+      "name": "Inverse",
+      "background": "$grey-dark",
+      "foreground": "$grey-light",
+      "heading": "#ffffff",
+      "input_background": "$grey-dark",
+      "input_foreground": "#ffffff",
+      "input_border": "$grey-light",
+      "chip_background": "$grey-medium",
+      "chip_foreground": "#ffffff",
+      "chip_border": "$grey-light",
+      "icons": "$grey-light",
+      "links": "#ffffff",
+      "button_background": "#ffffff",
+      "button_foreground": "$grey-dark",
+      "button_hover_background": "$grey-light",
+      "button_hover_foreground": "$grey-dark",
+      "secondary_button_background": "$grey-medium",
+      "secondary_button_foreground": "#ffffff",
+      "secondary_button_hover_background": "$grey-light",
+      "secondary_button_hover_foreground": "$grey-dark"
+    }
+  ]
+}

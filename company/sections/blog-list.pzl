@@ -1,0 +1,74 @@
+<section class="bg-scheme-background text-scheme-foreground">
+  <div class="sites-container { settings.padding == 'compact' ? 'py-space-xl' : 'py-space-2xl' }">
+    {#if settings.heading}
+      <div class="flex flex-wrap items-end justify-between gap-space-md">
+        <h2 class="font-heading text-3xl tracking-tight text-balance text-scheme-heading">{ settings.heading }</h2>
+        {#if settings.view_all_label}
+          <a class="inline-flex items-center gap-space-xs text-sm font-semibold text-scheme-links underline underline-offset-2" href="{ settings.base_path }">
+            { settings.view_all_label }
+            <span class="sites-icon size-4">{#svg 'icons/arrow-right.svg'}</span>
+          </a>
+        {/if}
+      </div>
+    {/if}
+    <ul class="mt-space-lg grid gap-space-lg sm:grid-cols-2 { settings.columns == '2' ? 'lg:grid-cols-2' : 'lg:grid-cols-3' }">
+      {#for entry in settings.collection.entries, i}
+        {#if i < settings.limit}
+          <li class="group flex flex-col">
+            <a class="flex flex-1 flex-col" href="{ settings.base_path }/{ entry.handle }">
+              {#if entry.fields.image}
+                <img class="aspect-video w-full rounded-lg object-cover"
+                  src="{ image_url(entry.fields.image, 768) }"
+                  srcset="{ image_url(entry.fields.image, 480) } 480w, { image_url(entry.fields.image, 768) } 768w, { image_url(entry.fields.image, 1280) } 1280w"
+                  sizes="(min-width: 64rem) 33vw, (min-width: 40rem) 50vw, 100vw"
+                  alt="{ entry.fields.image_alt }" loading="lazy" width="{ entry.fields.image.width }" height="{ entry.fields.image.height }" />
+              {/if}
+              <p class="mt-space-md flex flex-wrap items-center gap-space-sm text-sm text-grey-medium">
+                {#if entry.fields.topic}<Chip>{ entry.fields.topic }</Chip>{/if}
+                <time datetime="{ entry.fields.date }">{ entry.fields.date | date }</time>
+              </p>
+              <h3 class="mt-space-sm font-heading text-xl text-balance text-scheme-heading group-hover:underline group-hover:underline-offset-4">{ entry.title }</h3>
+              {#if entry.fields.standfirst}
+                <p class="mt-space-sm flex-1 text-pretty">{ entry.fields.standfirst | truncate(160) }</p>
+              {/if}
+            </a>
+          </li>
+        {/if}
+      {/for}
+    </ul>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Journal list",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "From the journal" },
+    { "type": "collection", "id": "collection", "label": "Content type",
+      "info": "The content type the cards are built from." },
+    { "type": "url", "id": "base_path", "label": "Index path",
+      "info": "Each card links to this path plus the entry's handle.", "default": "/journal" },
+    { "type": "range", "id": "limit", "label": "Posts shown", "min": 1, "max": 12, "step": 1, "default": 6 },
+    { "type": "text", "id": "view_all_label", "label": "View-all label", "default": "Everything in the journal" },
+    { "type": "select", "id": "columns", "label": "Columns", "default": "3",
+      "options": [
+        { "value": "2", "label": "Two" },
+        { "value": "3", "label": "Three" }
+      ] },
+    { "type": "select", "id": "padding", "label": "Padding", "default": "normal",
+      "options": [
+        { "value": "normal", "label": "Normal" },
+        { "value": "compact", "label": "Compact" }
+      ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default" }
+  ],
+  "presets": [
+    { "name": "Default",
+      "settings": { "heading": "From the journal", "collection": "posts", "base_path": "/journal", "limit": 6,
+        "view_all_label": "Everything in the journal", "columns": "3", "padding": "normal", "color_scheme": "default" } },
+    { "name": "Index",
+      "settings": { "heading": "", "collection": "posts", "base_path": "/journal", "limit": 12,
+        "view_all_label": "", "columns": "3", "padding": "normal", "color_scheme": "default" } }
+  ]
+}
+</schema>

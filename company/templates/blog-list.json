@@ -1,0 +1,47 @@
+{
+  "label": "Journal",
+  "description": "The journal index: a heading and the list of entries.",
+  "sections": [
+    {
+      "id": "s_page_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "chip": "Journal",
+        "heading": "",
+        "standfirst": "",
+        "align": "center",
+        "color_scheme": "default"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_journal_index",
+      "type": "blog-list",
+      "settings": {
+        "heading": "",
+        "collection": "posts",
+        "base_path": "/journal",
+        "limit": 12,
+        "view_all_label": "",
+        "columns": "3",
+        "padding": "compact",
+        "color_scheme": "default"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_journal_newsletter",
+      "type": "newsletter",
+      "settings": {
+        "heading": "A letter, once a month",
+        "text": "What came in, what we are reading, and who is speaking in the back room.",
+        "placeholder": "you@example.com",
+        "note": "One email a month. Leave whenever you like.",
+        "form": "newsletter",
+        "color_scheme": "inverse"
+      },
+      "blocks": []
+    }
+  ]
+}

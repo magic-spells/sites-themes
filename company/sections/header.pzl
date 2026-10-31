@@ -1,0 +1,63 @@
+<header class="bg-scheme-background text-scheme-foreground { settings.bordered ? 'border-b border-grey-light' : '' }" data-sticky={ settings.sticky }>
+  <div class="sites-container flex items-center justify-between gap-space-md py-space-md">
+    <a class="flex items-center gap-space-sm" href="/">
+      {#if settings.logo}
+        <img class="h-9 w-auto" src="{ image_url(settings.logo, 320) }" alt="{ settings.logo.alt }" width="{ settings.logo.width }" height="{ settings.logo.height }" />
+      {:else}
+        <span class="font-heading text-xl font-semibold tracking-tight text-scheme-heading">{ settings.logo_text ?? site.name }</span>
+      {/if}
+    </a>
+
+    {#if settings.menu.items.length}
+      <nav class="hidden items-center gap-space-lg md:flex" aria-label="{ settings.menu.title }">
+        {#for item in settings.menu.items}
+          {#if item.children.length}
+            <div class="group relative">
+              <a class="{ item.active ? 'text-scheme-heading' : '' } inline-flex items-center gap-space-xs py-space-xs text-sm font-medium hover:text-scheme-heading" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active ? 'page' : null }>
+                { item.label }
+                <span class="sites-icon size-4">{#svg 'icons/chevron-down.svg'}</span>
+              </a>
+              <div class="invisible absolute left-0 top-full z-10 w-56 rounded-lg border border-grey-light bg-white p-space-sm opacity-0 shadow-md transition-opacity group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                {#for child in item.children}
+                  <a class="block rounded-md px-space-sm py-space-xs text-sm text-grey-dark hover:bg-grey-extra-light" href="{ child.href }" target={ child.open_in_new ? '_blank' : null } rel={ child.open_in_new ? 'noopener' : null }>{ child.label }</a>
+                {/for}
+              </div>
+            </div>
+          {:else}
+            <a class="{ item.active ? 'text-scheme-heading' : '' } py-space-xs text-sm font-medium hover:text-scheme-heading" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active ? 'page' : null }>{ item.label }</a>
+          {/if}
+        {/for}
+      </nav>
+    {/if}
+
+    <div class="flex items-center gap-space-sm">
+      {#if settings.cta_label}
+        <span class="hidden sm:inline-flex"><Button href={ settings.cta_href }>{ settings.cta_label }</Button></span>
+      {/if}
+      <button class="sites-button sites-button-secondary md:hidden" type="button" data-dialog-open="dialog-mobile-menu" aria-haspopup="dialog">
+        <span class="sites-icon size-5">{#svg 'icons/menu.svg'}</span>
+        <span class="sr-only">{ t('open_menu') }</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<schema>
+{
+  "name": "Header",
+  "settings": [
+    { "type": "image", "id": "logo", "label": "Logo", "info": "Leave empty to print the business name instead." },
+    { "type": "text", "id": "logo_text", "label": "Logo text", "info": "Used when there is no logo image. Defaults to the site name." },
+    { "type": "menu", "id": "menu", "label": "Menu" },
+    { "type": "text", "id": "cta_label", "label": "Button label", "default": "Visit us" },
+    { "type": "url", "id": "cta_href", "label": "Button link", "default": "/contact" },
+    { "type": "checkbox", "id": "sticky", "label": "Stick to the top of the page", "default": true },
+    { "type": "checkbox", "id": "bordered", "label": "Show a bottom border", "default": true },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default" }
+  ],
+  "presets": [
+    { "name": "Default",
+      "settings": { "menu": "main", "cta_label": "Visit us", "cta_href": "/contact", "sticky": true, "bordered": true, "color_scheme": "default" } }
+  ]
+}
+</schema>

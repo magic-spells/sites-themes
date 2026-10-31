@@ -1,0 +1,50 @@
+<dialog class="m-0 w-full max-w-none bg-scheme-background text-scheme-foreground" id="dialog-mobile-menu" data-dialog-light-dismiss aria-label="{ settings.menu.title }">
+  <div class="sites-container flex max-h-screen flex-col gap-space-lg py-space-md">
+    <div class="flex items-center justify-between gap-space-md">
+      <a class="font-heading text-xl font-semibold tracking-tight text-scheme-heading" href="/">{ site.name }</a>
+      <button class="sites-button sites-button-secondary" type="button" data-dialog-close>
+        <span class="sites-icon size-5">{#svg 'icons/close.svg'}</span>
+        <span class="sr-only">{ t('close_menu') }</span>
+      </button>
+    </div>
+
+    {#if settings.menu.items.length}
+      <nav class="overflow-y-auto">
+        <ul class="grid gap-space-xs">
+          {#for item in settings.menu.items}
+            <li>
+              <a class="{ item.active ? 'text-scheme-heading' : '' } block py-space-sm font-heading text-2xl hover:text-scheme-heading" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active ? 'page' : null }>{ item.label }</a>
+              {#if item.children.length}
+                <ul class="mb-space-sm grid gap-space-xs pl-space-md">
+                  {#for child in item.children}
+                    <li><a class="block py-space-xs text-base hover:text-scheme-heading" href="{ child.href }" target={ child.open_in_new ? '_blank' : null } rel={ child.open_in_new ? 'noopener' : null }>{ child.label }</a></li>
+                  {/for}
+                </ul>
+              {/if}
+            </li>
+          {/for}
+        </ul>
+      </nav>
+    {/if}
+
+    {#if settings.cta_label}
+      <p><Button href={ settings.cta_href } wide={ true }>{ settings.cta_label }</Button></p>
+    {/if}
+  </div>
+</dialog>
+
+<schema>
+{
+  "name": "Mobile menu",
+  "settings": [
+    { "type": "menu", "id": "menu", "label": "Menu" },
+    { "type": "text", "id": "cta_label", "label": "Button label", "default": "Visit us" },
+    { "type": "url", "id": "cta_href", "label": "Button link", "default": "/contact" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default" }
+  ],
+  "presets": [
+    { "name": "Default",
+      "settings": { "menu": "main", "cta_label": "Visit us", "cta_href": "/contact", "color_scheme": "default" } }
+  ]
+}
+</schema>

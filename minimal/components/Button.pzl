@@ -1,0 +1,3 @@
+<!-- component: Button -->
+<!-- props: href tone editor_id -->
+<a class="{ tone == 'secondary' ? 'sites-button sites-button-secondary' : 'sites-button' }" href="{ href }" data-block={ editor_id }><Children/></a>

@@ -1,0 +1,8 @@
+<!-- template: Maintenance -->
+<!-- layout: default -->
+<div class="mx-auto max-w-3xl px-space-lg py-space-2xl">
+  <p class="font-mono text-sm text-grey-medium">503</p>
+  <h1 class="mt-space-sm font-heading text-4xl tracking-tight text-grey-dark">{ t('maintenance_title') }</h1>
+  <p class="mt-space-md max-w-2xl text-lg text-secondary">{ t('maintenance_body') }</p>
+  <p class="mt-space-lg text-sm text-grey-medium">{ site.settings.contact_email }</p>
+</div>

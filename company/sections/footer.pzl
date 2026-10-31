@@ -1,0 +1,99 @@
+<footer class="bg-scheme-background text-scheme-foreground">
+  <div class="sites-container py-space-2xl">
+    <div class="grid gap-space-xl lg:grid-cols-4">
+      <div class="lg:col-span-2">
+        <p class="font-heading text-xl font-semibold tracking-tight text-scheme-heading">{ site.name }</p>
+        <p class="mt-space-sm max-w-sm text-pretty">{ site.settings.tagline }</p>
+        {#if blocks.length}
+          <ul class="mt-space-lg flex gap-space-sm">
+            {#for block in blocks}
+              <li data-block={ block.editor_id }>
+                <a class="sites-button sites-button-secondary" href="{ block.settings.url }" rel="noopener">
+                  <span class="sites-icon size-5">
+                    {#case block.settings.icon}
+                      {:when "camera"}{#svg 'icons/camera.svg'}
+                      {:when "message"}{#svg 'icons/message.svg'}
+                      {:when "video"}{#svg 'icons/video.svg'}
+                      {:when "mail"}{#svg 'icons/mail.svg'}
+                      {:else}{#svg 'icons/globe.svg'}
+                    {/case}
+                  </span>
+                  <span class="sr-only">{ block.settings.label }</span>
+                </a>
+              </li>
+            {/for}
+          </ul>
+        {/if}
+      </div>
+
+      {#if settings.menu_primary.items.length}
+        <nav aria-label="{ settings.menu_primary.title }">
+          <h2 class="text-sm font-semibold text-scheme-heading">{ settings.menu_primary.title }</h2>
+          <ul class="mt-space-md grid gap-space-sm text-sm">
+            {#for item in settings.menu_primary.items}
+              <li><a class="hover:text-scheme-heading" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null }>{ item.label }</a></li>
+            {/for}
+          </ul>
+        </nav>
+      {/if}
+
+      <div>
+        <h2 class="text-sm font-semibold text-scheme-heading">{ t('visit_us') }</h2>
+        <address class="mt-space-md grid gap-space-sm text-sm not-italic">
+          <span class="whitespace-pre-line">{ site.settings.address }</span>
+          <span>{ site.settings.hours }</span>
+          <a class="text-scheme-links underline underline-offset-2" href="mailto:{ site.settings.contact_email }">{ site.settings.contact_email }</a>
+          <a class="hover:text-scheme-heading" href="tel:{ site.settings.phone }">{ site.settings.phone }</a>
+        </address>
+      </div>
+    </div>
+
+    <div class="mt-space-xl flex flex-wrap items-center justify-between gap-space-md border-t border-scheme-chip-border pt-space-lg text-xs">
+      <p>{ settings.copyright }</p>
+      {#if settings.menu_secondary.items.length}
+        <nav aria-label="{ settings.menu_secondary.title }">
+          <ul class="flex flex-wrap gap-space-md">
+            {#for item in settings.menu_secondary.items}
+              <li><a class="hover:text-scheme-heading" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null }>{ item.label }</a></li>
+            {/for}
+          </ul>
+        </nav>
+      {/if}
+    </div>
+  </div>
+</footer>
+
+<schema>
+{
+  "name": "Footer",
+  "settings": [
+    { "type": "menu", "id": "menu_primary", "label": "Main footer menu" },
+    { "type": "menu", "id": "menu_secondary", "label": "Small print menu" },
+    { "type": "text", "id": "copyright", "label": "Copyright line", "default": "All rights reserved." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "inverse" }
+  ],
+  "blocks": [
+    { "type": "social", "name": "Social link", "settings": [
+      { "type": "text", "id": "label", "label": "Label", "default": "Follow us" },
+      { "type": "url", "id": "url", "label": "URL", "default": "" },
+      { "type": "select", "id": "icon", "label": "Icon", "default": "globe",
+        "options": [
+          { "value": "globe", "label": "Website" },
+          { "value": "camera", "label": "Photos" },
+          { "value": "message", "label": "Messages" },
+          { "value": "video", "label": "Video" },
+          { "value": "mail", "label": "Email" }
+        ] }
+    ] }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    { "name": "Default",
+      "settings": { "menu_primary": "main", "menu_secondary": "legal", "copyright": "All rights reserved.", "color_scheme": "inverse" },
+      "blocks": [
+        { "type": "social", "settings": { "label": "Photos", "url": "https://example.com/photos", "icon": "camera" } },
+        { "type": "social", "settings": { "label": "Newsletter", "url": "/journal", "icon": "mail" } }
+      ] }
+  ]
+}
+</schema>

@@ -1,0 +1,33 @@
+{
+  "name": "Minimal",
+  "version": "0.1.0",
+  "default_template": "page",
+  "not_found_template": "404",
+  "maintenance_template": "maintenance",
+  "groups": {
+    "header-group": { "label": "Header", "accepts": ["header"] },
+    "footer-group": { "label": "Footer", "accepts": ["footer"] },
+    "panel-group": { "label": "Dialogs" }
+  },
+  "settings": [
+    {
+      "type": "image",
+      "id": "favicon",
+      "label": "Favicon",
+      "info": "The small icon in the browser tab. A square image works best."
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "info": "One line under the site name in the footer.",
+      "default": "A small site, made well."
+    },
+    {
+      "type": "text",
+      "id": "contact_email",
+      "label": "Contact email",
+      "default": "hello@example.com"
+    }
+  ]
+}

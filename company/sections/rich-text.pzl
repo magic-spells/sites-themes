@@ -1,0 +1,43 @@
+<section class="bg-scheme-background text-scheme-foreground">
+  <div class="sites-container { settings.padding == 'compact' ? 'py-space-xl' : 'py-space-2xl' }">
+    <div class="{ settings.width == 'wide' ? 'max-w-5xl' : 'max-w-3xl' } { settings.align == 'center' ? 'mx-auto text-center' : '' }">
+      {#if settings.heading}
+        <h2 class="mb-space-lg font-heading text-3xl tracking-tight text-balance text-scheme-heading">{ settings.heading }</h2>
+      {/if}
+      <div class="sites-prose">{ settings.body || page.content }</div>
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Rich text",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "info": "Leave empty for body copy on its own.", "default": "" },
+    { "type": "richtext", "id": "body", "label": "Body", "default": "<p>Write something here.</p>",
+      "info": "Leave this empty and the section shows the page's own writing." },
+    { "type": "select", "id": "width", "label": "Width", "default": "narrow",
+      "info": "Narrow keeps a comfortable reading measure.",
+      "options": [
+        { "value": "narrow", "label": "Narrow" },
+        { "value": "wide", "label": "Wide" }
+      ] },
+    { "type": "select", "id": "align", "label": "Alignment", "default": "left",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Centered" }
+      ] },
+    { "type": "select", "id": "padding", "label": "Padding", "default": "normal",
+      "options": [
+        { "value": "normal", "label": "Normal" },
+        { "value": "compact", "label": "Compact" }
+      ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "body": "<p>Write something here.</p>", "width": "narrow", "align": "left", "padding": "normal", "color_scheme": "default" } },
+    { "name": "Wide", "settings": { "body": "<p>Write something here.</p>", "width": "wide", "align": "left", "padding": "normal", "color_scheme": "default" } },
+    { "name": "Statement", "settings": { "body": "<p>Write something here.</p>", "width": "narrow", "align": "center", "padding": "normal", "color_scheme": "inverse" } }
+  ]
+}
+</schema>

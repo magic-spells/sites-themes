@@ -1,0 +1,58 @@
+{
+  "forms": {
+    "contact": {
+      "name": "Contact",
+      "fields": [
+        { "id": "name", "type": "text", "label": "Name", "required": true, "max_length": 120 },
+        { "id": "email", "type": "email", "label": "Email", "required": true, "max_length": 250 },
+        { "id": "message", "type": "textarea", "label": "Message", "required": true, "max_length": 4000 }
+      ],
+      "success_message": "Thanks for your message.",
+      "submit_label": "Send message"
+    }
+  },
+  "site": {
+    "name": "A new site",
+    "url": "https://example.com",
+    "locale": "en",
+    "settings": {
+      "tagline": "A small site, made well.",
+      "contact_email": "hello@example.com"
+    }
+  },
+  "menus": {
+    "main": {
+      "handle": "main",
+      "title": "Main menu",
+      "items": [
+        {
+          "id": "mi_home",
+          "label": "Home",
+          "target": { "kind": "page", "page_id": "pg_home" },
+          "children": []
+        },
+        {
+          "id": "mi_about",
+          "label": "About",
+          "target": { "kind": "page", "page_id": "pg_about" },
+          "children": []
+        }
+      ]
+    }
+  },
+  "assets": {},
+  "content": {},
+  "pages": {
+    "/": {
+      "id": "pg_home",
+      "template": "index",
+      "title": "Home",
+      "seo": { "description": "The starting point for a new Sites site." }    },
+    "/about": {
+      "id": "pg_about",
+      "template": "page",
+      "title": "About",
+      "content": "<h1>About</h1><p>This page uses the <code>page</code> template: one <code>rich-text</code> section, left empty, so it shows what you write here.</p><p>The home page uses <code>index</code>, whose sections are written into <code>templates/index.json</code> and are the same on every page that uses it.</p>",
+      "seo": { "description": "What the page template does with a section stack." }    }
+  }
+}

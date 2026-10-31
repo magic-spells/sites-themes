@@ -1,0 +1,43 @@
+{
+  "sections": [
+    {
+      "id": "sg_footer",
+      "type": "footer",
+      "settings": {
+        "color_scheme": "inverse",
+        "copyright": "All rights reserved.",
+        "menu_primary": "footer",
+        "menu_secondary": "legal"
+      },
+      "blocks": [
+        {
+          "id": "b_social_photos",
+          "type": "social",
+          "settings": {
+            "icon": "camera",
+            "label": "Photos",
+            "url": "https://example.com/photos"
+          }
+        },
+        {
+          "id": "b_social_notes",
+          "type": "social",
+          "settings": {
+            "icon": "message",
+            "label": "Notes",
+            "url": "https://example.com/notes"
+          }
+        },
+        {
+          "id": "b_social_mail",
+          "type": "social",
+          "settings": {
+            "icon": "mail",
+            "label": "Email us",
+            "url": "mailto:hello@example.com"
+          }
+        }
+      ]
+    }
+  ]
+}

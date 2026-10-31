@@ -1,0 +1,264 @@
+{
+  "label": "Home",
+  "sections": [
+    {
+      "id": "s_hero",
+      "type": "hero",
+      "settings": {
+        "align": "left",
+        "color_scheme": "inverse",
+        "eyebrow": "Since 1998",
+        "heading": "A shop for books worth keeping",
+        "height": "medium",
+        "image": "as_storefront",
+        "overlay": "medium",
+        "text": "Two rooms of new and second-hand books, a wall of prints, and somewhere to sit while you decide."
+      },
+      "blocks": [
+        {
+          "id": "b_hero_visit",
+          "type": "link",
+          "settings": {
+            "href": "/contact",
+            "label": "Plan a visit",
+            "tone": "primary"
+          }
+        },
+        {
+          "id": "b_hero_journal",
+          "type": "link",
+          "settings": {
+            "href": "/journal",
+            "label": "Read the journal",
+            "tone": "secondary"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_logos",
+      "type": "logo-cloud",
+      "settings": {
+        "color_scheme": "default",
+        "heading": "Stocked and supported by"
+      },
+      "blocks": [
+        {
+          "id": "b_logo_quill",
+          "type": "logo",
+          "settings": {
+            "image": "as_logo_quill",
+            "name": "Quill \u0026 Co",
+            "url": ""
+          }
+        },
+        {
+          "id": "b_logo_northbank",
+          "type": "logo",
+          "settings": {
+            "image": "as_logo_northbank",
+            "name": "Northbank",
+            "url": ""
+          }
+        },
+        {
+          "id": "b_logo_verso",
+          "type": "logo",
+          "settings": {
+            "image": "as_logo_verso",
+            "name": "Verso",
+            "url": ""
+          }
+        },
+        {
+          "id": "b_logo_halcyon",
+          "type": "logo",
+          "settings": {
+            "image": "as_logo_halcyon",
+            "name": "Halcyon",
+            "url": ""
+          }
+        },
+        {
+          "id": "b_logo_foxglove",
+          "type": "logo",
+          "settings": {
+            "image": "as_logo_foxglove",
+            "name": "Foxglove",
+            "url": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_features",
+      "type": "features-grid",
+      "settings": {
+        "color_scheme": "default",
+        "columns": "3",
+        "heading": "What you will find",
+        "padding": "normal",
+        "text": "A small shop, chosen by hand. Everything on the shelves is here because someone here read it."
+      },
+      "blocks": [
+        {
+          "id": "b_feat_books",
+          "type": "feature",
+          "settings": {
+            "icon": "book",
+            "text": "Around four thousand titles, and no algorithm anywhere near them.",
+            "title": "Chosen by hand"
+          }
+        },
+        {
+          "id": "b_feat_prints",
+          "type": "feature",
+          "settings": {
+            "icon": "sparkle",
+            "text": "A changing wall of local printmakers, framed while you wait.",
+            "title": "Prints and editions"
+          }
+        },
+        {
+          "id": "b_feat_late",
+          "type": "feature",
+          "settings": {
+            "icon": "clock",
+            "text": "Until nine, with something to drink and usually somebody reading aloud.",
+            "title": "Open late on Thursdays"
+          }
+        },
+        {
+          "id": "b_feat_orders",
+          "type": "feature",
+          "settings": {
+            "icon": "truck",
+            "text": "Most titles arrive within three days, held at the counter for a fortnight.",
+            "title": "Special orders"
+          }
+        },
+        {
+          "id": "b_feat_buy",
+          "type": "feature",
+          "settings": {
+            "icon": "heart",
+            "text": "Tuesday mornings, a box at a time, gone through with you at the table.",
+            "title": "We buy books"
+          }
+        },
+        {
+          "id": "b_feat_room",
+          "type": "feature",
+          "settings": {
+            "icon": "leaf",
+            "text": "Twenty-five chairs for readings, launches and reading groups.",
+            "title": "The back room"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_about",
+      "type": "image-with-text",
+      "settings": {
+        "body": "\u003cp\u003eAda opened the front room in 1998 with about six hundred books and a folding table. The back room came later, and with it the chairs, the readings, and the habit of staying open late.\u003c/p\u003e\u003cp\u003eIt is still two people and a cat, and still the same rule: nothing on the shelf that nobody here has read.\u003c/p\u003e",
+        "color_scheme": "default",
+        "eyebrow": "Our room",
+        "heading": "Eighteen years on the same street",
+        "image": "as_interior",
+        "layout": "text_first",
+        "link": "/about",
+        "link_label": "About the shop",
+        "padding": "normal",
+        "ratio": "portrait"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_gallery",
+      "type": "gallery",
+      "settings": {
+        "color_scheme": "default",
+        "columns": "3",
+        "gallery": "shop",
+        "heading": "Inside the shop",
+        "padding": "normal",
+        "ratio": "square",
+        "text": ""
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_testimonials",
+      "type": "testimonials",
+      "settings": {
+        "color_scheme": "default",
+        "columns": "3",
+        "heading": "What people say",
+        "padding": "normal",
+        "text": ""
+      },
+      "blocks": [
+        {
+          "id": "b_quote_1",
+          "type": "quote",
+          "settings": {
+            "name": "Imogen R.",
+            "quote": "I came in for a birthday card and left an hour later with three books and a recommendation I am still thinking about.",
+            "rating": 5,
+            "role": "Old Town"
+          }
+        },
+        {
+          "id": "b_quote_2",
+          "type": "quote",
+          "settings": {
+            "name": "Daniel O.",
+            "quote": "They found a print I had been after for two years, framed it, and would not let me pay for the rush.",
+            "rating": 5,
+            "role": "Ferry Road"
+          }
+        },
+        {
+          "id": "b_quote_3",
+          "type": "quote",
+          "settings": {
+            "name": "Priya N.",
+            "quote": "The Thursday readings are the best hour of my week, and nobody minds if you only listen.",
+            "rating": 4,
+            "role": "Regular since 2019"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_journal",
+      "type": "blog-list",
+      "settings": {
+        "base_path": "/journal",
+        "collection": "posts",
+        "color_scheme": "default",
+        "columns": "3",
+        "heading": "From the journal",
+        "limit": 3,
+        "padding": "compact",
+        "view_all_label": "Everything in the journal"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "settings": {
+        "color_scheme": "accent",
+        "heading": "Come and have a look",
+        "primary_href": "/contact",
+        "primary_label": "Find us",
+        "secondary_href": "/journal",
+        "secondary_label": "Read the journal",
+        "text": "Tuesday to Saturday, ten until six. Thursdays until nine."
+      },
+      "blocks": []
+    }
+  ]
+}

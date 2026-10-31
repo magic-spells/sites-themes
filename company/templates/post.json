@@ -1,0 +1,30 @@
+{
+  "label": "Post",
+  "description": "One journal entry, followed by whatever every entry ends with.",
+  "sections": [
+    {
+      "id": "s_post",
+      "type": "post-article",
+      "preset": "Default",
+      "settings": {
+        "show_meta": true,
+        "show_image": true,
+        "color_scheme": "default"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_post_shelf_newsletter",
+      "type": "newsletter",
+      "settings": {
+        "heading": "A letter, once a month",
+        "text": "What came in, what we are reading, and who is speaking in the back room.",
+        "placeholder": "you@example.com",
+        "note": "One email a month. Leave whenever you like.",
+        "form": "newsletter",
+        "color_scheme": "inverse"
+      },
+      "blocks": []
+    }
+  ]
+}

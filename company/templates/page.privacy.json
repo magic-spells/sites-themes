@@ -1,0 +1,46 @@
+{
+  "label": "Page \u2014 Privacy",
+  "selectable": false,
+  "sections": [
+    {
+      "id": "s_page_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "chip": "",
+        "heading": "",
+        "standfirst": "",
+        "align": "left",
+        "color_scheme": "default"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_content",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "body": "",
+        "width": "narrow",
+        "align": "left",
+        "padding": "normal",
+        "color_scheme": "default"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_privacy_body",
+      "type": "rich-text",
+      "settings": {
+        "heading": "Getting in",
+        "body": "<p>The front room is level with the street and the door is 860mm wide. The back room is up two steps and there is a ramp behind the counter \u2014 ask and somebody will put it out.</p><p>If anything on this site is hard to use, write to us and we will fix it.</p>",
+        "width": "narrow",
+        "align": "left",
+        "padding": "compact",
+        "color_scheme": "default"
+      },
+      "blocks": []
+    }
+  ]
+}

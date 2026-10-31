@@ -1,0 +1,15 @@
+<!-- template: Maintenance -->
+<!-- layout: default -->
+<div class="sites-container py-space-2xl">
+  <div class="mx-auto max-w-2xl text-center">
+    <Chip>503</Chip>
+    <h1 class="mt-space-md font-heading text-4xl tracking-tight text-balance text-scheme-heading">{ t('maintenance_title') }</h1>
+    <p class="mt-space-md text-lg text-pretty text-scheme-foreground">{ t('maintenance_body') }</p>
+    <dl class="mt-space-lg inline-grid grid-cols-2 gap-x-space-md gap-y-space-xs text-left text-sm">
+      <dt class="text-scheme-heading">{ t('label_email') }</dt>
+      <dd><a class="text-scheme-links underline underline-offset-2" href="mailto:{ site.settings.contact_email }">{ site.settings.contact_email }</a></dd>
+      <dt class="text-scheme-heading">{ t('label_phone') }</dt>
+      <dd>{ site.settings.phone }</dd>
+    </dl>
+  </div>
+</div>

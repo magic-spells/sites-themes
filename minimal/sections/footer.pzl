@@ -1,0 +1,34 @@
+<footer class="border-t border-scheme-chip-border bg-scheme-background text-scheme-foreground">
+  <div class="mx-auto max-w-3xl px-space-lg py-space-xl">
+    <div class="flex flex-wrap items-baseline justify-between gap-space-md">
+      <div>
+        <p class="font-heading text-lg font-semibold tracking-tight text-scheme-heading">{ site.name }</p>
+        <p class="mt-space-xs text-sm text-scheme-foreground">{ site.settings.tagline }</p>
+      </div>
+      {#if settings.menu.items.length}
+        <nav class="flex flex-wrap gap-space-md text-sm">
+          {#for item in settings.menu.items}
+            <a class="text-scheme-foreground hover:text-scheme-heading" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null }>{ item.label }</a>
+          {/for}
+          <a class="text-scheme-foreground hover:text-scheme-heading" href="mailto:{ site.settings.contact_email }">{ site.settings.contact_email }</a>
+        </nav>
+      {/if}
+    </div>
+    <p class="mt-space-xl text-xs text-scheme-foreground">{ settings.copyright }</p>
+  </div>
+</footer>
+
+<schema>
+{
+  "name": "Footer",
+  "settings": [
+    { "type": "menu", "id": "menu", "label": "Menu" },
+    { "type": "text", "id": "copyright", "label": "Copyright", "default": "All rights reserved." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "inverse",
+      "info": "The surface this section is rendered on. Schemes are declared in design.json under schemes." }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "menu": "main", "copyright": "All rights reserved.", "color_scheme": "inverse" } }
+  ]
+}
+</schema>

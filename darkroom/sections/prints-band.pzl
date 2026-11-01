@@ -1,0 +1,128 @@
+<!-- The prints offer: a photograph, bare or on a pale mat with a hairline
+     frame, beside an eyebrow, a heading, a short text, a button and the edition note.
+     It sits on the Matte band by default. -->
+{#let
+  image = settings.image
+  mat = settings.frame == 'mat'
+  text_first = settings.layout == 'text_first'
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto flex max-w-column flex-col gap-step-xl md:flex-row md:items-center md:gap-step-3xl { text_first ? 'md:flex-row-reverse md:justify-between' : '' }">
+    {#if image}
+      <div class="md:w-1/2 lg:max-w-mat { mat ? 'border border-scheme-rule bg-scheme-foreground p-step-2xl' : '' }">
+        <img class="aspect-3/2 w-full bg-scheme-surface object-cover" src="{ image_url(image, 1280) }" srcset="{ image_srcset(image, [480, 768, 1280]) }" sizes="(min-width: 48rem) 45vw, 100vw" alt="{ image.alt }" loading="lazy" width={ image.width } height={ image.height } />
+      </div>
+    {/if}
+    <div class="grid max-w-text content-start justify-items-start gap-step-sm md:flex-1">
+      {#if settings.eyebrow}<p class="font-mono text-meta tracking-meta text-scheme-meta uppercase">{ settings.eyebrow }</p>{/if}
+      {#if settings.heading}<h2 class="font-heading text-h2 font-medium text-balance text-scheme-heading">{ settings.heading }</h2>{/if}
+      {#if settings.text}<p class="text-body text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+      {#if settings.button_label}<a class="sites-button mt-step-xs" href="{ settings.button_href }">{ settings.button_label }</a>{/if}
+      {#if settings.edition_note}<p class="font-mono text-caption text-scheme-meta">{ settings.edition_note }</p>{/if}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Prints band",
+  "description": "A print beside edition details and a contact link.",
+  "settings": [
+    {
+      "type": "image",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Prints"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Prints and editions"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Selected photographs are available as signed prints. Each is made in the studio, checked in daylight and numbered by hand."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Enquire about a print"
+    },
+    {
+      "type": "url",
+      "id": "button_href",
+      "label": "Button href",
+      "default": "/contact?subject=Prints"
+    },
+    {
+      "type": "text",
+      "id": "edition_note",
+      "label": "Edition note",
+      "default": "Editions of ten. Signed and numbered."
+    },
+    {
+      "type": "select",
+      "id": "frame",
+      "label": "Frame",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "mat",
+          "label": "Mat"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "image_first",
+      "options": [
+        {
+          "value": "image_first",
+          "label": "Image first"
+        },
+        {
+          "value": "text_first",
+          "label": "Text first"
+        }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "band"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "eyebrow": "Prints",
+        "heading": "Prints and editions",
+        "text": "Selected photographs are available as signed prints. Each is made in the studio, checked in daylight and numbered by hand.",
+        "button_label": "Enquire about a print",
+        "button_href": "/contact?subject=Prints",
+        "edition_note": "Editions of ten. Signed and numbered.",
+        "frame": "none",
+        "layout": "image_first",
+        "color_scheme": "band"
+      }
+    }
+  ]
+}
+</schema>

@@ -1,0 +1,31 @@
+{
+  "label": "Page",
+  "description": "The page title and its writing.",
+  "sections": [
+    {
+      "id": "s_page_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "chip": "",
+        "heading": "",
+        "standfirst": "",
+        "align": "left",
+        "color_scheme": "surface"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_rich_text",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "body": "",
+        "width": "reading",
+        "color_scheme": "surface"
+      },
+      "blocks": []
+    }
+  ]
+}

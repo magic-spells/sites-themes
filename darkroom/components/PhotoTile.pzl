@@ -1,0 +1,21 @@
+<!-- component: PhotoTile -->
+<!-- props: item ratio sizes captions lightbox_id index -->
+<!-- One photograph of a grid or masonry: the picture in its aspect well, and
+     its caption below it or over it on hover. With a lightbox id the picture
+     is a button that opens the companion carousel's lightbox at this index. -->
+{#let
+  well = ratio == '4:5' ? 'aspect-4/5' : ratio == '1:1' ? 'aspect-square' : ratio == '2:3' ? 'aspect-2/3' : ratio == '16:9' ? 'aspect-video' : ratio == 'natural' ? '' : 'aspect-3/2'
+  img = 'block w-full bg-scheme-surface object-cover ' + well
+}
+<figure class="group relative grid content-start gap-step-xs">
+  {#if lightbox_id}
+    <button class="block w-full cursor-zoom-in" type="button" data-lightbox-open={ lightbox_id } data-index={ index } aria-label="{ t('open_lightbox', { index: index + 1 }) }"><img class={ img } src="{ image_url(item.asset, 768) }" srcset="{ image_srcset(item.asset, [480, 768, 1280]) }" sizes={ sizes } alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } /></button>
+  {:else}
+    <img class={ img } src="{ image_url(item.asset, 768) }" srcset="{ image_srcset(item.asset, [480, 768, 1280]) }" sizes={ sizes } alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } />
+  {/if}
+  {#if item.caption && captions == 'below'}
+    <figcaption class="font-mono text-caption text-scheme-muted">{ item.caption }</figcaption>
+  {:else if item.caption && captions == 'hover'}
+    <figcaption class="pointer-events-none absolute inset-x-0 bottom-0 bg-linear-to-t from-scrim p-step-sm font-mono text-caption text-on-photo opacity-0 transition-opacity duration-hover ease-out-soft group-hover:opacity-100 group-focus-within:opacity-100" data-reveal>{ item.caption }</figcaption>
+  {/if}
+</figure>

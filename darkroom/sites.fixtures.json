@@ -1,0 +1,1347 @@
+{
+  "site": {
+    "name": "Mara Lindqvist",
+    "url": "https://maralindqvist.example",
+    "locale": "en",
+    "settings": {
+      "wordmark": "Mara Lindqvist",
+      "copyright": "All photographs © 2026 Mara Lindqvist",
+      "photographer_name": "Mara Lindqvist",
+      "photographer_bio": "Documentary landscape photographer based in Gothenburg. Personal series and commissioned work.",
+      "representation": "Galleri Format, Stockholm",
+      "instagram": "https://www.instagram.com/maralindqvist/",
+      "address": "Klippan 1\n414 51 Gothenburg\nSweden",
+      "contact_email": "studio@maralindqvist.se",
+      "photographer_portrait": "as_4x5_1"
+    }
+  },
+  "menus": {
+    "main": {
+      "handle": "main",
+      "title": "Main menu",
+      "items": [
+        {
+          "id": "main_0",
+          "label": "Work",
+          "target": {
+            "kind": "page",
+            "page_id": "pg_work"
+          },
+          "children": []
+        },
+        {
+          "id": "main_1",
+          "label": "About",
+          "target": {
+            "kind": "page",
+            "page_id": "pg_about"
+          },
+          "children": []
+        },
+        {
+          "id": "main_2",
+          "label": "Prints",
+          "target": {
+            "kind": "page",
+            "page_id": "pg_prints"
+          },
+          "children": []
+        },
+        {
+          "id": "main_3",
+          "label": "Contact",
+          "target": {
+            "kind": "page",
+            "page_id": "pg_contact"
+          },
+          "children": []
+        }
+      ]
+    },
+    "social": {
+      "handle": "social",
+      "title": "Social links",
+      "items": [
+        {
+          "id": "social_0",
+          "label": "Instagram",
+          "target": {
+            "kind": "url",
+            "url": "https://www.instagram.com/maralindqvist/"
+          },
+          "children": []
+        },
+        {
+          "id": "social_1",
+          "label": "Email",
+          "target": {
+            "kind": "url",
+            "url": "mailto:studio@maralindqvist.se"
+          },
+          "children": []
+        }
+      ]
+    }
+  },
+  "galleries": {
+    "salt-roads": {
+      "handle": "salt-roads",
+      "title": "Salt Roads",
+      "items": [
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Salt Roads 01 — Salt crust before sunrise",
+          "alt": "Salt crust before sunrise"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Salt Roads 02 — The service road, looking east",
+          "alt": "The service road, looking east"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Salt Roads 03 — Tyre marks after rain",
+          "alt": "Tyre marks after rain"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "Salt Roads 04 — A survey stake at the edge of the flats",
+          "alt": "A survey stake at the edge of the flats"
+        },
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "Salt Roads 05 — The first water in the drainage channel",
+          "alt": "The first water in the drainage channel"
+        },
+        {
+          "asset_id": "as_4x5_1",
+          "caption": "Salt Roads 06 — Mountains through the heat",
+          "alt": "Mountains through the heat"
+        },
+        {
+          "asset_id": "as_4x5_2",
+          "caption": "Salt Roads 07 — A fence ending in salt",
+          "alt": "A fence ending in salt"
+        },
+        {
+          "asset_id": "as_4x5_3",
+          "caption": "Salt Roads 08 — The road at noon",
+          "alt": "The road at noon"
+        },
+        {
+          "asset_id": "as_1x1_1",
+          "caption": "Salt Roads 09 — Standing water beside the access track",
+          "alt": "Standing water beside the access track"
+        },
+        {
+          "asset_id": "as_1x1_2",
+          "caption": "Salt Roads 10 — A line of stones at the turnout",
+          "alt": "A line of stones at the turnout"
+        },
+        {
+          "asset_id": "as_2x3_1",
+          "caption": "Salt Roads 11 — The western edge, late afternoon",
+          "alt": "The western edge, late afternoon"
+        },
+        {
+          "asset_id": "as_16x9_1",
+          "caption": "Salt Roads 12 — A marker with its paint worn away",
+          "alt": "A marker with its paint worn away"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Salt Roads 13 — Cloud shadow across the flats",
+          "alt": "Cloud shadow across the flats"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Salt Roads 14 — Roadside grass after a dry week",
+          "alt": "Roadside grass after a dry week"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Salt Roads 15 — The last truck, heading west",
+          "alt": "The last truck, heading west"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "Salt Roads 16 — Salt gathered beneath the barrier",
+          "alt": "Salt gathered beneath the barrier"
+        },
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "Salt Roads 17 — The mountains just before dark",
+          "alt": "The mountains just before dark"
+        },
+        {
+          "asset_id": "as_4x5_1",
+          "caption": "Salt Roads 18 — The service road on the last morning",
+          "alt": "The service road on the last morning"
+        }
+      ]
+    },
+    "night-ferry": {
+      "handle": "night-ferry",
+      "title": "Night Ferry",
+      "items": [
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Night Ferry 01 — The terminal after the last announcement",
+          "alt": "The terminal after the last announcement"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "Night Ferry 02 — Wake beneath the stern light",
+          "alt": "Wake beneath the stern light"
+        },
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "Night Ferry 03 — An empty table on deck seven",
+          "alt": "An empty table on deck seven"
+        },
+        {
+          "asset_id": "as_4x5_1",
+          "caption": "Night Ferry 04 — The corridor at three in the morning",
+          "alt": "The corridor at three in the morning"
+        },
+        {
+          "asset_id": "as_4x5_2",
+          "caption": "Night Ferry 05 — A curtain moving beside the window",
+          "alt": "A curtain moving beside the window"
+        },
+        {
+          "asset_id": "as_4x5_3",
+          "caption": "Night Ferry 06 — The stairwell between decks",
+          "alt": "The stairwell between decks"
+        },
+        {
+          "asset_id": "as_1x1_1",
+          "caption": "Night Ferry 07 — Running lights beyond the glass",
+          "alt": "Running lights beyond the glass"
+        },
+        {
+          "asset_id": "as_1x1_2",
+          "caption": "Night Ferry 08 — A chair facing the dark",
+          "alt": "A chair facing the dark"
+        },
+        {
+          "asset_id": "as_2x3_1",
+          "caption": "Night Ferry 09 — The first grey light over the water",
+          "alt": "The first grey light over the water"
+        },
+        {
+          "asset_id": "as_16x9_1",
+          "caption": "Night Ferry 10 — A cup left on the outer deck",
+          "alt": "A cup left on the outer deck"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Night Ferry 11 — The coast before the harbour",
+          "alt": "The coast before the harbour"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Night Ferry 12 — Ropes ready beside the ramp",
+          "alt": "Ropes ready beside the ramp"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Night Ferry 13 — The quay through rain",
+          "alt": "The quay through rain"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "Night Ferry 14 — Passengers leaving at dawn",
+          "alt": "Passengers leaving at dawn"
+        }
+      ]
+    },
+    "hollow-season": {
+      "handle": "hollow-season",
+      "title": "Hollow Season",
+      "items": [
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "Hollow Season 01 — Ice remaining beneath the bridge",
+          "alt": "Ice remaining beneath the bridge"
+        },
+        {
+          "asset_id": "as_4x5_1",
+          "caption": "Hollow Season 02 — The clearing after the thaw",
+          "alt": "The clearing after the thaw"
+        },
+        {
+          "asset_id": "as_4x5_2",
+          "caption": "Hollow Season 03 — A birch beside the drainage ditch",
+          "alt": "A birch beside the drainage ditch"
+        },
+        {
+          "asset_id": "as_4x5_3",
+          "caption": "Hollow Season 04 — Branches over dark water",
+          "alt": "Branches over dark water"
+        },
+        {
+          "asset_id": "as_1x1_1",
+          "caption": "Hollow Season 05 — A track used for firewood",
+          "alt": "A track used for firewood"
+        },
+        {
+          "asset_id": "as_1x1_2",
+          "caption": "Hollow Season 06 — Snow in the northern hollow",
+          "alt": "Snow in the northern hollow"
+        },
+        {
+          "asset_id": "as_2x3_1",
+          "caption": "Hollow Season 07 — The first uncovered stones",
+          "alt": "The first uncovered stones"
+        },
+        {
+          "asset_id": "as_16x9_1",
+          "caption": "Hollow Season 08 — A shed at the tree line",
+          "alt": "A shed at the tree line"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Hollow Season 09 — Water moving under old snow",
+          "alt": "Water moving under old snow"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Hollow Season 10 — The edge of a recently cut stand",
+          "alt": "The edge of a recently cut stand"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Hollow Season 11 — An abandoned stack of timber",
+          "alt": "An abandoned stack of timber"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "Hollow Season 12 — Rain on the forest road",
+          "alt": "Rain on the forest road"
+        },
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "Hollow Season 13 — A gate without a fence",
+          "alt": "A gate without a fence"
+        },
+        {
+          "asset_id": "as_4x5_1",
+          "caption": "Hollow Season 14 — The stream below the mill",
+          "alt": "The stream below the mill"
+        },
+        {
+          "asset_id": "as_4x5_2",
+          "caption": "Hollow Season 15 — Moss beside a wheel rut",
+          "alt": "Moss beside a wheel rut"
+        },
+        {
+          "asset_id": "as_4x5_3",
+          "caption": "Hollow Season 16 — A roof seen through bare branches",
+          "alt": "A roof seen through bare branches"
+        },
+        {
+          "asset_id": "as_1x1_1",
+          "caption": "Hollow Season 17 — The field behind the last house",
+          "alt": "The field behind the last house"
+        },
+        {
+          "asset_id": "as_1x1_2",
+          "caption": "Hollow Season 18 — The path after a night of rain",
+          "alt": "The path after a night of rain"
+        },
+        {
+          "asset_id": "as_2x3_1",
+          "caption": "Hollow Season 19 — A fallen trunk across the hollow",
+          "alt": "A fallen trunk across the hollow"
+        },
+        {
+          "asset_id": "as_16x9_1",
+          "caption": "Hollow Season 20 — The first leaves near the water",
+          "alt": "The first leaves near the water"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Hollow Season 21 — Footprints at the footbridge",
+          "alt": "Footprints at the footbridge"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Hollow Season 22 — The clearing six weeks later",
+          "alt": "The clearing six weeks later"
+        }
+      ]
+    },
+    "harbour-light": {
+      "handle": "harbour-light",
+      "title": "Harbour Light",
+      "items": [
+        {
+          "asset_id": "as_4x5_2",
+          "caption": "Harbour Light 01 — The crane before the morning shift",
+          "alt": "The crane before the morning shift"
+        },
+        {
+          "asset_id": "as_4x5_3",
+          "caption": "Harbour Light 02 — A mooring ring at low water",
+          "alt": "A mooring ring at low water"
+        },
+        {
+          "asset_id": "as_1x1_1",
+          "caption": "Harbour Light 03 — Window light on the repair shed",
+          "alt": "Window light on the repair shed"
+        },
+        {
+          "asset_id": "as_1x1_2",
+          "caption": "Harbour Light 04 — The channel from the south bank",
+          "alt": "The channel from the south bank"
+        },
+        {
+          "asset_id": "as_2x3_1",
+          "caption": "Harbour Light 05 — A ladder disappearing below the quay",
+          "alt": "A ladder disappearing below the quay"
+        },
+        {
+          "asset_id": "as_16x9_1",
+          "caption": "Harbour Light 06 — The ferry landing in February",
+          "alt": "The ferry landing in February"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Harbour Light 07 — Rain across the loading yard",
+          "alt": "Rain across the loading yard"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Harbour Light 08 — A rope drying on the rail",
+          "alt": "A rope drying on the rail"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Harbour Light 09 — The breakwater at the end of the day",
+          "alt": "The breakwater at the end of the day"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "Harbour Light 10 — Two windows after closing time",
+          "alt": "Two windows after closing time"
+        },
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "Harbour Light 11 — The crane seen from the studio road",
+          "alt": "The crane seen from the studio road"
+        },
+        {
+          "asset_id": "as_4x5_1",
+          "caption": "Harbour Light 12 — Evening tide at Klippan",
+          "alt": "Evening tide at Klippan"
+        }
+      ]
+    },
+    "interiors-borrowed": {
+      "handle": "interiors-borrowed",
+      "title": "Interiors, Borrowed",
+      "items": [
+        {
+          "asset_id": "as_1x1_1",
+          "caption": "Interiors, Borrowed 01 — A chair beside the north window",
+          "alt": "A chair beside the north window"
+        },
+        {
+          "asset_id": "as_1x1_2",
+          "caption": "Interiors, Borrowed 02 — Kitchen table, early afternoon",
+          "alt": "Kitchen table, early afternoon"
+        },
+        {
+          "asset_id": "as_2x3_1",
+          "caption": "Interiors, Borrowed 03 — The hall with both doors open",
+          "alt": "The hall with both doors open"
+        },
+        {
+          "asset_id": "as_16x9_1",
+          "caption": "Interiors, Borrowed 04 — Light reaching the back wall",
+          "alt": "Light reaching the back wall"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Interiors, Borrowed 05 — A curtain above the radiator",
+          "alt": "A curtain above the radiator"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Interiors, Borrowed 06 — The room used for storing frames",
+          "alt": "The room used for storing frames"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Interiors, Borrowed 07 — A glass on the windowsill",
+          "alt": "A glass on the windowsill"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "Interiors, Borrowed 08 — The landing at four o’clock",
+          "alt": "The landing at four o’clock"
+        },
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "Interiors, Borrowed 09 — An unmade bed in the spare room",
+          "alt": "An unmade bed in the spare room"
+        },
+        {
+          "asset_id": "as_4x5_1",
+          "caption": "Interiors, Borrowed 10 — The floor where a rug had been",
+          "alt": "The floor where a rug had been"
+        },
+        {
+          "asset_id": "as_4x5_2",
+          "caption": "Interiors, Borrowed 11 — A coat left on the kitchen chair",
+          "alt": "A coat left on the kitchen chair"
+        },
+        {
+          "asset_id": "as_4x5_3",
+          "caption": "Interiors, Borrowed 12 — The window reflected in a cupboard",
+          "alt": "The window reflected in a cupboard"
+        },
+        {
+          "asset_id": "as_1x1_1",
+          "caption": "Interiors, Borrowed 13 — Two bowls beside the sink",
+          "alt": "Two bowls beside the sink"
+        },
+        {
+          "asset_id": "as_1x1_2",
+          "caption": "Interiors, Borrowed 14 — The last light on the table",
+          "alt": "The last light on the table"
+        },
+        {
+          "asset_id": "as_2x3_1",
+          "caption": "Interiors, Borrowed 15 — The room from the doorway",
+          "alt": "The room from the doorway"
+        },
+        {
+          "asset_id": "as_16x9_1",
+          "caption": "Interiors, Borrowed 16 — The key returned to the sill",
+          "alt": "The key returned to the sill"
+        }
+      ]
+    },
+    "first-snow-last-light": {
+      "handle": "first-snow-last-light",
+      "title": "First Snow, Last Light",
+      "items": [
+        {
+          "asset_id": "as_2x3_1",
+          "caption": "First Snow, Last Light 01 — First snow beside the railway",
+          "alt": "First snow beside the railway"
+        },
+        {
+          "asset_id": "as_16x9_1",
+          "caption": "First Snow, Last Light 02 — The lake before it froze",
+          "alt": "The lake before it froze"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "First Snow, Last Light 03 — A birch in the afternoon light",
+          "alt": "A birch in the afternoon light"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "First Snow, Last Light 04 — The road beyond the village",
+          "alt": "The road beyond the village"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "First Snow, Last Light 05 — Tracks across the thin snow",
+          "alt": "Tracks across the thin snow"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "First Snow, Last Light 06 — A red marker above the path",
+          "alt": "A red marker above the path"
+        },
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "First Snow, Last Light 07 — The shore in a northerly wind",
+          "alt": "The shore in a northerly wind"
+        },
+        {
+          "asset_id": "as_4x5_1",
+          "caption": "First Snow, Last Light 08 — The hillside before noon",
+          "alt": "The hillside before noon"
+        },
+        {
+          "asset_id": "as_4x5_2",
+          "caption": "First Snow, Last Light 09 — A low cloud over the valley",
+          "alt": "A low cloud over the valley"
+        },
+        {
+          "asset_id": "as_4x5_3",
+          "caption": "First Snow, Last Light 10 — The last open water by the inlet",
+          "alt": "The last open water by the inlet"
+        },
+        {
+          "asset_id": "as_1x1_1",
+          "caption": "First Snow, Last Light 11 — Snow collecting on a fence",
+          "alt": "Snow collecting on a fence"
+        },
+        {
+          "asset_id": "as_1x1_2",
+          "caption": "First Snow, Last Light 12 — The station at the end of the day",
+          "alt": "The station at the end of the day"
+        },
+        {
+          "asset_id": "as_2x3_1",
+          "caption": "First Snow, Last Light 13 — The mountain visible for a minute",
+          "alt": "The mountain visible for a minute"
+        },
+        {
+          "asset_id": "as_16x9_1",
+          "caption": "First Snow, Last Light 14 — A footpath under new snow",
+          "alt": "A footpath under new snow"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "First Snow, Last Light 15 — The road after the plough",
+          "alt": "The road after the plough"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "First Snow, Last Light 16 — Ice beside the drainage pipe",
+          "alt": "Ice beside the drainage pipe"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "First Snow, Last Light 17 — The village from the lower slope",
+          "alt": "The village from the lower slope"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "First Snow, Last Light 18 — Light at the edge of the lake",
+          "alt": "Light at the edge of the lake"
+        },
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "First Snow, Last Light 19 — The railway before the evening train",
+          "alt": "The railway before the evening train"
+        },
+        {
+          "asset_id": "as_4x5_1",
+          "caption": "First Snow, Last Light 20 — The last afternoon, looking south",
+          "alt": "The last afternoon, looking south"
+        }
+      ]
+    },
+    "home-hero": {
+      "handle": "home-hero",
+      "title": "Home hero",
+      "items": [
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Salt Roads · Bonneville",
+          "alt": "Salt crust before sunrise"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Night Ferry · Baltic Sea",
+          "alt": "The terminal after the last announcement"
+        },
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "Hollow Season · Dalarna",
+          "alt": "Ice remaining beneath the bridge"
+        },
+        {
+          "asset_id": "as_4x5_2",
+          "caption": "Harbour Light · Gothenburg",
+          "alt": "The crane before the morning shift"
+        },
+        {
+          "asset_id": "as_1x1_1",
+          "caption": "Interiors, Borrowed · Västra Götaland",
+          "alt": "A chair beside the north window"
+        }
+      ]
+    },
+    "prints": {
+      "handle": "prints",
+      "title": "Prints",
+      "items": [
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Salt Roads 04 · 40 × 50 cm · edition of 10",
+          "alt": "Print study 1 from Salt Roads"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Night Ferry 05 · 40 × 50 cm · edition of 10",
+          "alt": "Print study 2 from Night Ferry"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Hollow Season 06 · 40 × 50 cm · edition of 10",
+          "alt": "Print study 3 from Hollow Season"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "Harbour Light 07 · 40 × 50 cm · edition of 10",
+          "alt": "Print study 4 from Harbour Light"
+        },
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "Interiors, Borrowed 08 · 40 × 50 cm · edition of 10",
+          "alt": "Print study 5 from Interiors, Borrowed"
+        },
+        {
+          "asset_id": "as_4x5_1",
+          "caption": "First Snow, Last Light 09 · 40 × 50 cm · edition of 10",
+          "alt": "Print study 6 from First Snow, Last Light"
+        },
+        {
+          "asset_id": "as_4x5_2",
+          "caption": "Salt Roads 10 · 40 × 50 cm · edition of 10",
+          "alt": "Print study 7 from Salt Roads"
+        },
+        {
+          "asset_id": "as_4x5_3",
+          "caption": "Night Ferry 11 · 40 × 50 cm · edition of 10",
+          "alt": "Print study 8 from Night Ferry"
+        },
+        {
+          "asset_id": "as_1x1_1",
+          "caption": "Hollow Season 12 · 40 × 50 cm · edition of 10",
+          "alt": "Print study 9 from Hollow Season"
+        }
+      ]
+    },
+    "live": {
+      "handle": "live",
+      "title": "Live",
+      "items": [
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "Live 01 — The stage before soundcheck",
+          "alt": "The stage before soundcheck"
+        },
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "Live 02 — A microphone in the side light",
+          "alt": "A microphone in the side light"
+        },
+        {
+          "asset_id": "as_4x5_1",
+          "caption": "Live 03 — The first entrance",
+          "alt": "The first entrance"
+        },
+        {
+          "asset_id": "as_4x5_2",
+          "caption": "Live 04 — Hands on the piano lid",
+          "alt": "Hands on the piano lid"
+        },
+        {
+          "asset_id": "as_4x5_3",
+          "caption": "Live 05 — A cable crossing the empty stage",
+          "alt": "A cable crossing the empty stage"
+        },
+        {
+          "asset_id": "as_1x1_1",
+          "caption": "Live 06 — The singer between songs",
+          "alt": "The singer between songs"
+        },
+        {
+          "asset_id": "as_1x1_2",
+          "caption": "Live 07 — The brass section waiting",
+          "alt": "The brass section waiting"
+        },
+        {
+          "asset_id": "as_2x3_1",
+          "caption": "Live 08 — Light through the stage curtain",
+          "alt": "Light through the stage curtain"
+        },
+        {
+          "asset_id": "as_16x9_1",
+          "caption": "Live 09 — A seat at the back of the room",
+          "alt": "A seat at the back of the room"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Live 10 — The drummer after the final number",
+          "alt": "The drummer after the final number"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Live 11 — The interval from the balcony",
+          "alt": "The interval from the balcony"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Live 12 — A bow under the working lights",
+          "alt": "A bow under the working lights"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "Live 13 — The corridor behind the stage",
+          "alt": "The corridor behind the stage"
+        },
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "Live 14 — The hall after everyone has left",
+          "alt": "The hall after everyone has left"
+        }
+      ]
+    }
+  },
+  "assets": {
+    "as_3x2_1": {
+      "id": "as_3x2_1",
+      "status": "ready",
+      "file_name": "3x2_1.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 271,
+      "url": "/assets/photos/3x2_1.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Geometric placeholder study 1, 3:2 format",
+      "created_at": "2026-10-31T09:00:00Z"
+    },
+    "as_3x2_2": {
+      "id": "as_3x2_2",
+      "status": "ready",
+      "file_name": "3x2_2.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 292,
+      "url": "/assets/photos/3x2_2.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Geometric placeholder study 2, 3:2 format",
+      "created_at": "2026-10-31T09:00:00Z"
+    },
+    "as_3x2_3": {
+      "id": "as_3x2_3",
+      "status": "ready",
+      "file_name": "3x2_3.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 342,
+      "url": "/assets/photos/3x2_3.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Geometric placeholder study 3, 3:2 format",
+      "created_at": "2026-10-31T09:00:00Z"
+    },
+    "as_3x2_4": {
+      "id": "as_3x2_4",
+      "status": "ready",
+      "file_name": "3x2_4.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 311,
+      "url": "/assets/photos/3x2_4.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Geometric placeholder study 4, 3:2 format",
+      "created_at": "2026-10-31T09:00:00Z"
+    },
+    "as_3x2_5": {
+      "id": "as_3x2_5",
+      "status": "ready",
+      "file_name": "3x2_5.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 309,
+      "url": "/assets/photos/3x2_5.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Geometric placeholder study 5, 3:2 format",
+      "created_at": "2026-10-31T09:00:00Z"
+    },
+    "as_4x5_1": {
+      "id": "as_4x5_1",
+      "status": "ready",
+      "file_name": "4x5_1.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 317,
+      "url": "/assets/photos/4x5_1.svg",
+      "width": 800,
+      "height": 1000,
+      "alt": "Geometric placeholder study 6, 4:5 format",
+      "created_at": "2026-10-31T09:00:00Z"
+    },
+    "as_4x5_2": {
+      "id": "as_4x5_2",
+      "status": "ready",
+      "file_name": "4x5_2.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 364,
+      "url": "/assets/photos/4x5_2.svg",
+      "width": 800,
+      "height": 1000,
+      "alt": "Geometric placeholder study 7, 4:5 format",
+      "created_at": "2026-10-31T09:00:00Z"
+    },
+    "as_4x5_3": {
+      "id": "as_4x5_3",
+      "status": "ready",
+      "file_name": "4x5_3.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 303,
+      "url": "/assets/photos/4x5_3.svg",
+      "width": 800,
+      "height": 1000,
+      "alt": "Geometric placeholder study 8, 4:5 format",
+      "created_at": "2026-10-31T09:00:00Z"
+    },
+    "as_1x1_1": {
+      "id": "as_1x1_1",
+      "status": "ready",
+      "file_name": "1x1_1.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 307,
+      "url": "/assets/photos/1x1_1.svg",
+      "width": 900,
+      "height": 900,
+      "alt": "Geometric placeholder study 9, 1:1 format",
+      "created_at": "2026-10-31T09:00:00Z"
+    },
+    "as_1x1_2": {
+      "id": "as_1x1_2",
+      "status": "ready",
+      "file_name": "1x1_2.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 310,
+      "url": "/assets/photos/1x1_2.svg",
+      "width": 900,
+      "height": 900,
+      "alt": "Geometric placeholder study 10, 1:1 format",
+      "created_at": "2026-10-31T09:00:00Z"
+    },
+    "as_2x3_1": {
+      "id": "as_2x3_1",
+      "status": "ready",
+      "file_name": "2x3_1.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 297,
+      "url": "/assets/photos/2x3_1.svg",
+      "width": 800,
+      "height": 1200,
+      "alt": "Geometric placeholder study 11, 2:3 format",
+      "created_at": "2026-10-31T09:00:00Z"
+    },
+    "as_16x9_1": {
+      "id": "as_16x9_1",
+      "status": "ready",
+      "file_name": "16x9_1.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 345,
+      "url": "/assets/photos/16x9_1.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "Geometric placeholder study 12, 16:9 format",
+      "created_at": "2026-10-31T09:00:00Z"
+    }
+  },
+  "forms": {
+    "contact": {
+      "name": "Contact",
+      "fields": [
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Name",
+          "required": true,
+          "max_length": 120
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        },
+        {
+          "id": "subject",
+          "type": "select",
+          "label": "Subject",
+          "required": true,
+          "options": [
+            "Prints",
+            "Commission",
+            "Press",
+            "Other"
+          ]
+        },
+        {
+          "id": "message",
+          "type": "textarea",
+          "label": "Message",
+          "required": true,
+          "max_length": 4000
+        },
+        {
+          "id": "consent",
+          "type": "checkbox",
+          "label": "I agree to the use of these details to reply to my enquiry.",
+          "required": true
+        }
+      ],
+      "success_message": "Thank you. Your enquiry is with Mara.",
+      "submit_label": "Send"
+    }
+  },
+  "content": {
+    "series": {
+      "name": "Series",
+      "fields": [
+        {
+          "type": "text",
+          "id": "year",
+          "label": "Year"
+        },
+        {
+          "type": "text",
+          "id": "location",
+          "label": "Location"
+        },
+        {
+          "type": "richtext",
+          "id": "statement",
+          "label": "Statement"
+        },
+        {
+          "type": "image",
+          "id": "cover",
+          "label": "Cover"
+        },
+        {
+          "type": "text",
+          "id": "cover_alt",
+          "label": "Cover alt"
+        },
+        {
+          "type": "gallery",
+          "id": "photos",
+          "label": "Photos"
+        },
+        {
+          "type": "text",
+          "id": "edition_note",
+          "label": "Edition note"
+        }
+      ],
+      "entries": [
+        {
+          "id": "en_salt_roads",
+          "handle": "salt-roads",
+          "title": "Salt Roads",
+          "fields": {
+            "year": "2025",
+            "location": "Bonneville",
+            "statement": "<p>A road leaves a mark long after the traffic has gone. I spent three weeks beside the salt flats, photographing the ground at the beginning and end of each day.</p>",
+            "cover": "as_3x2_1",
+            "cover_alt": "Salt crust before sunrise",
+            "photos": "salt-roads",
+            "edition_note": "Selected photographs available as signed prints in editions of ten."
+          }
+        },
+        {
+          "id": "en_night_ferry",
+          "handle": "night-ferry",
+          "title": "Night Ferry",
+          "fields": {
+            "year": "2024",
+            "location": "Baltic Sea",
+            "statement": "<p>The crossing lasts a night. The ship holds its own hours: a corridor lit at three, a window turning grey, the shore arriving while most people sleep.</p>",
+            "cover": "as_3x2_3",
+            "cover_alt": "The terminal after the last announcement",
+            "photos": "night-ferry",
+            "edition_note": "Selected photographs available as signed prints in editions of ten."
+          }
+        },
+        {
+          "id": "en_hollow_season",
+          "handle": "hollow-season",
+          "title": "Hollow Season",
+          "fields": {
+            "year": "2023",
+            "location": "Dalarna",
+            "statement": "<p>Between the thaw and the first leaves, the ground is briefly exposed. I returned to the same small area of forest over six weeks, keeping to the paths used by the people who live there.</p>",
+            "cover": "as_3x2_5",
+            "cover_alt": "Ice remaining beneath the bridge",
+            "photos": "hollow-season",
+            "edition_note": "Selected photographs available as signed prints in editions of ten."
+          }
+        },
+        {
+          "id": "en_harbour_light",
+          "handle": "harbour-light",
+          "title": "Harbour Light",
+          "fields": {
+            "year": "2022",
+            "location": "Gothenburg",
+            "statement": "<p>These photographs were made within walking distance of the studio. The harbour changes by shift, tide and season; the structures remain, and the light gives them a different use.</p>",
+            "cover": "as_4x5_2",
+            "cover_alt": "The crane before the morning shift",
+            "photos": "harbour-light",
+            "edition_note": "Selected photographs available as signed prints in editions of ten."
+          }
+        },
+        {
+          "id": "en_interiors_borrowed",
+          "handle": "interiors-borrowed",
+          "title": "Interiors, Borrowed",
+          "fields": {
+            "year": "2021",
+            "location": "Västra Götaland",
+            "statement": "<p>Rooms lent for an afternoon. I photographed them without moving what was there, using the light that reached each room and leaving when it went.</p>",
+            "cover": "as_1x1_1",
+            "cover_alt": "A chair beside the north window",
+            "photos": "interiors-borrowed",
+            "edition_note": "Selected photographs available as signed prints in editions of ten."
+          }
+        },
+        {
+          "id": "en_first_snow_last_light",
+          "handle": "first-snow-last-light",
+          "title": "First Snow, Last Light",
+          "fields": {
+            "year": "2020",
+            "location": "Abisko",
+            "statement": "<p>The days shortened while I was in Abisko. These photographs follow the remaining light along the road, the lake and the low slopes above the village.</p>",
+            "cover": "as_2x3_1",
+            "cover_alt": "First snow beside the railway",
+            "photos": "first-snow-last-light",
+            "edition_note": "Selected photographs available as signed prints in editions of ten."
+          }
+        }
+      ]
+    }
+  },
+  "pages": {
+    "/": {
+      "id": "pg_home",
+      "template": "home",
+      "title": "Home",
+      "seo": {
+        "description": "Documentary landscapes and commissioned photographs by Mara Lindqvist, Gothenburg."
+      }
+    },
+    "/work": {
+      "id": "pg_work",
+      "template": "work",
+      "title": "Work",
+      "seo": {
+        "description": "Six series, 2020 to 2025"
+      }
+    },
+    "/work/salt-roads": {
+      "id": "pg_work_salt_roads",
+      "template": "series",
+      "title": "Salt Roads",
+      "seo": {
+        "description": "Bonneville · 2025"
+      },
+      "entry": {
+        "id": "en_salt_roads",
+        "handle": "salt-roads",
+        "title": "Salt Roads",
+        "fields": {
+          "year": "2025",
+          "location": "Bonneville",
+          "statement": "<p>A road leaves a mark long after the traffic has gone. I spent three weeks beside the salt flats, photographing the ground at the beginning and end of each day.</p>",
+          "cover": "as_3x2_1",
+          "cover_alt": "Salt crust before sunrise",
+          "photos": "salt-roads",
+          "edition_note": "Selected photographs available as signed prints in editions of ten."
+        }
+      },
+      "params": {
+        "series": "salt-roads"
+      }
+    },
+    "/work/night-ferry": {
+      "id": "pg_work_night_ferry",
+      "template": "series",
+      "title": "Night Ferry",
+      "seo": {
+        "description": "Baltic Sea · 2024"
+      },
+      "entry": {
+        "id": "en_night_ferry",
+        "handle": "night-ferry",
+        "title": "Night Ferry",
+        "fields": {
+          "year": "2024",
+          "location": "Baltic Sea",
+          "statement": "<p>The crossing lasts a night. The ship holds its own hours: a corridor lit at three, a window turning grey, the shore arriving while most people sleep.</p>",
+          "cover": "as_3x2_3",
+          "cover_alt": "The terminal after the last announcement",
+          "photos": "night-ferry",
+          "edition_note": "Selected photographs available as signed prints in editions of ten."
+        }
+      },
+      "params": {
+        "series": "night-ferry"
+      }
+    },
+    "/work/hollow-season": {
+      "id": "pg_work_hollow_season",
+      "template": "series",
+      "title": "Hollow Season",
+      "seo": {
+        "description": "Dalarna · 2023"
+      },
+      "entry": {
+        "id": "en_hollow_season",
+        "handle": "hollow-season",
+        "title": "Hollow Season",
+        "fields": {
+          "year": "2023",
+          "location": "Dalarna",
+          "statement": "<p>Between the thaw and the first leaves, the ground is briefly exposed. I returned to the same small area of forest over six weeks, keeping to the paths used by the people who live there.</p>",
+          "cover": "as_3x2_5",
+          "cover_alt": "Ice remaining beneath the bridge",
+          "photos": "hollow-season",
+          "edition_note": "Selected photographs available as signed prints in editions of ten."
+        }
+      },
+      "params": {
+        "series": "hollow-season"
+      }
+    },
+    "/work/harbour-light": {
+      "id": "pg_work_harbour_light",
+      "template": "series",
+      "title": "Harbour Light",
+      "seo": {
+        "description": "Gothenburg · 2022"
+      },
+      "entry": {
+        "id": "en_harbour_light",
+        "handle": "harbour-light",
+        "title": "Harbour Light",
+        "fields": {
+          "year": "2022",
+          "location": "Gothenburg",
+          "statement": "<p>These photographs were made within walking distance of the studio. The harbour changes by shift, tide and season; the structures remain, and the light gives them a different use.</p>",
+          "cover": "as_4x5_2",
+          "cover_alt": "The crane before the morning shift",
+          "photos": "harbour-light",
+          "edition_note": "Selected photographs available as signed prints in editions of ten."
+        }
+      },
+      "params": {
+        "series": "harbour-light"
+      }
+    },
+    "/work/interiors-borrowed": {
+      "id": "pg_work_interiors_borrowed",
+      "template": "series",
+      "title": "Interiors, Borrowed",
+      "seo": {
+        "description": "Västra Götaland · 2021"
+      },
+      "entry": {
+        "id": "en_interiors_borrowed",
+        "handle": "interiors-borrowed",
+        "title": "Interiors, Borrowed",
+        "fields": {
+          "year": "2021",
+          "location": "Västra Götaland",
+          "statement": "<p>Rooms lent for an afternoon. I photographed them without moving what was there, using the light that reached each room and leaving when it went.</p>",
+          "cover": "as_1x1_1",
+          "cover_alt": "A chair beside the north window",
+          "photos": "interiors-borrowed",
+          "edition_note": "Selected photographs available as signed prints in editions of ten."
+        }
+      },
+      "params": {
+        "series": "interiors-borrowed"
+      }
+    },
+    "/work/first-snow-last-light": {
+      "id": "pg_work_first_snow_last_light",
+      "template": "series",
+      "title": "First Snow, Last Light",
+      "seo": {
+        "description": "Abisko · 2020"
+      },
+      "entry": {
+        "id": "en_first_snow_last_light",
+        "handle": "first-snow-last-light",
+        "title": "First Snow, Last Light",
+        "fields": {
+          "year": "2020",
+          "location": "Abisko",
+          "statement": "<p>The days shortened while I was in Abisko. These photographs follow the remaining light along the road, the lake and the low slopes above the village.</p>",
+          "cover": "as_2x3_1",
+          "cover_alt": "First snow beside the railway",
+          "photos": "first-snow-last-light",
+          "edition_note": "Selected photographs available as signed prints in editions of ten."
+        }
+      },
+      "params": {
+        "series": "first-snow-last-light"
+      }
+    },
+    "/about": {
+      "id": "pg_about",
+      "template": "page.about",
+      "title": "About",
+      "seo": {
+        "description": "Mara Lindqvist, documentary landscape photographer based in Gothenburg."
+      }
+    },
+    "/prints": {
+      "id": "pg_prints",
+      "template": "page.prints",
+      "title": "Prints",
+      "seo": {
+        "description": "Editions of ten, printed in the studio."
+      }
+    },
+    "/contact": {
+      "id": "pg_contact",
+      "template": "page.contact",
+      "title": "Contact",
+      "seo": {
+        "description": "Prints, commissions, press and other enquiries."
+      }
+    },
+    "/packages": {
+      "id": "pg_packages",
+      "template": "page.packages",
+      "title": "Packages",
+      "seo": {
+        "description": "Sessions, days and editorial rates."
+      }
+    },
+    "/live": {
+      "id": "pg_live",
+      "template": "page.gallery-masonry",
+      "title": "Live",
+      "seo": {
+        "description": "Stage photographs, 2019 to 2025"
+      }
+    },
+    "/live/grid": {
+      "id": "pg_live_grid",
+      "template": "page.gallery-grid",
+      "title": "Live",
+      "seo": {
+        "description": "Stage photographs, 2019 to 2025"
+      }
+    },
+    "/live/carousel": {
+      "id": "pg_live_carousel",
+      "template": "page.gallery-carousel",
+      "title": "Live",
+      "seo": {
+        "description": "Stage photographs, 2019 to 2025"
+      }
+    },
+    "/privacy": {
+      "id": "pg_privacy",
+      "template": "page",
+      "title": "Privacy",
+      "seo": {
+        "description": "How enquiries and browser preferences are handled."
+      },
+      "content": "<p>This is a demonstration privacy notice. Replace it with the workspace’s own notice before publishing.</p><p>The contact form asks for your name, email, subject, message and consent so the studio can reply. State how long enquiries are kept and how someone can request their deletion. The privacy notice remembers dismissal in local storage. Body and mono fonts are requested from Google; describe that request and any other services you add.</p>"
+    }
+  }
+}

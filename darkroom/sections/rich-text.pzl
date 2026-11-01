@@ -1,0 +1,68 @@
+<!-- A heading and rich text in the reading column, or the column's full
+     width. With no body it shows the page's own text. -->
+{#let body = settings.body || page.content}
+{#if settings.heading || body}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <div class="grid gap-step-md { settings.width == 'wide' ? '' : 'max-w-reading' }">
+      {#if settings.heading}<h2 class="font-heading text-h2 font-medium text-balance text-scheme-heading">{ settings.heading }</h2>{/if}
+      {#if body}<div class="sites-prose text-body-lg text-scheme-foreground">{ body }</div>{/if}
+    </div>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Rich text",
+  "description": "Writing in a reading or wide column; an empty body uses page.content.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": ""
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "",
+      "info": "Leave empty to use page.content."
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "default": "reading",
+      "options": [
+        {
+          "value": "reading",
+          "label": "Reading"
+        },
+        {
+          "value": "wide",
+          "label": "Wide"
+        }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "heading": "",
+        "body": "",
+        "width": "reading",
+        "color_scheme": "surface"
+      }
+    }
+  ]
+}
+</schema>

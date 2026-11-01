@@ -1,0 +1,18 @@
+<!-- component: ServiceTile -->
+<!-- props: name description photo href enquire_label editor_id -->
+<!-- A 3:4 photograph with the service's name over a bottom scrim. Hover or
+     focus grows the photograph past its hover scale and settles it there,
+     raises the scrim and fades in the description and "Enquire"; on a
+     touch screen they show at rest (theme.css). The whole tile links to
+     Contact with its subject. -->
+<a class="group relative block aspect-3/4 overflow-hidden bg-scheme-surface" href="{ href }" data-block={ editor_id }>
+  {#if photo}<img class="absolute inset-0 size-full object-cover transition-transform duration-hover ease-out-soft group-hover:scale-hover group-hover:duration-settle group-hover:ease-overshoot group-focus-visible:scale-hover group-focus-visible:duration-settle group-focus-visible:ease-overshoot" data-zoom src="{ image_url(photo, 768) }" srcset="{ image_srcset(photo, [480, 768]) }" sizes="(min-width: 64rem) 25vw, (min-width: 48rem) 40vw, 70vw" alt="" loading="lazy" width={ photo.width } height={ photo.height } />{/if}
+  <span class="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-scrim transition-all duration-hover ease-out-soft group-hover:h-1/2 group-focus-visible:h-1/2" aria-hidden="true" data-fade></span>
+  <span class="absolute inset-x-0 bottom-0 grid p-step-md text-on-photo">
+    <span class="font-heading text-h4 font-medium">{ name }</span>
+    <span class="grid max-h-0 overflow-hidden opacity-0 transition-all duration-hover ease-out-soft group-hover:max-h-40 group-hover:opacity-100 group-focus-visible:max-h-40 group-focus-visible:opacity-100" data-reveal>
+      {#if description}<span class="mt-step-xs text-body-sm">{ description }</span>{/if}
+      <span class="mt-step-xs font-mono text-meta tracking-meta uppercase">{ enquire_label }</span>
+    </span>
+  </span>
+</a>

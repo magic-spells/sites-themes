@@ -1,0 +1,268 @@
+<!-- Packages as rows (a 3:2 print, the name and who it is for, the
+     inclusions, and the price at the right) or as tiles (a 4:5 photograph
+     with the price on a square tab, the category, name and an Enquire
+     button). A featured package carries the accent dot and "Most booked". -->
+{#let tiles = settings.layout == 'tiles'}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-step-xl">
+    <div class="flex flex-wrap items-end justify-between gap-gap-lg">
+      <div class="grid gap-step-xs">
+        {#if settings.eyebrow}<p class="font-mono text-meta tracking-meta text-scheme-meta uppercase">{ settings.eyebrow }</p>{/if}
+        {#if settings.heading}<h2 class="font-heading text-h2 font-medium text-scheme-heading">{ settings.heading }</h2>{/if}
+      </div>
+      {#if settings.standfirst}<p class="max-w-text text-body-lg text-scheme-muted">{ settings.standfirst }</p>{/if}
+    </div>
+
+    {#if tiles}
+      <ul class="grid gap-gap-lg md:grid-cols-2">
+        {#for block in blocks}
+          <li class="group grid content-start gap-step-xs" data-block={ block.editor_id }>
+            <div class="relative overflow-hidden">
+              {#if block.settings.photo}<img class="aspect-4/5 w-full bg-scheme-surface object-cover transition-transform duration-hover ease-out-soft group-hover:scale-hover group-hover:duration-settle group-hover:ease-overshoot" data-zoom src="{ image_url(block.settings.photo, 1280) }" srcset="{ image_srcset(block.settings.photo, [480, 768, 1280]) }" sizes="(min-width: 48rem) 50vw, 100vw" alt="" loading="lazy" width={ block.settings.photo.width } height={ block.settings.photo.height } />{:else}<div class="aspect-4/5 bg-scheme-surface"></div>{/if}
+              {#if block.settings.price}<p class="absolute bottom-0 left-0 bg-scheme-background px-step-sm py-step-xs font-mono text-counter text-scheme-foreground">{ (block.settings.from_label || t('from_label')) | downcase } { block.settings.price }</p>{/if}
+            </div>
+            <p class="flex items-center gap-step-sm pt-step-sm">
+              {#if block.settings.featured}<span class="flex items-center gap-step-xs font-mono text-meta tracking-meta text-scheme-links uppercase"><span class="size-1.5 rounded-full bg-scheme-links" aria-hidden="true"></span>{ t('most_booked') }</span>{/if}
+              {#if block.settings.category}<span class="font-mono text-meta tracking-meta text-scheme-meta uppercase">{ block.settings.category }</span>{/if}
+            </p>
+            <h3 class="font-heading text-h3 font-medium text-scheme-heading">{ block.settings.name }</h3>
+            {#if block.settings.for}<p class="text-body-sm text-scheme-muted">{ block.settings.for }</p>{/if}
+            {#if settings.enquire_label}<p class="pt-step-sm"><a class="sites-button sites-button-outline min-w-button" href="{ settings.enquire_href }">{ settings.enquire_label }</a></p>{/if}
+          </li>
+        {/for}
+      </ul>
+    {:else}
+      <ul class="border-t border-scheme-rule">
+        {#for block in blocks}
+          <li class="grid gap-gap-lg border-b border-scheme-rule py-step-lg md:grid-cols-package-row-md lg:grid-cols-package-row" data-block={ block.editor_id }>
+            {#if block.settings.photo}<img class="hidden aspect-3/2 w-40 bg-scheme-surface object-cover md:row-span-2 md:block md:self-center lg:row-span-1 lg:self-auto" src="{ image_url(block.settings.photo, 320) }" alt="" loading="lazy" width={ block.settings.photo.width } height={ block.settings.photo.height } />{:else}<span class="hidden md:row-span-2 md:block lg:row-span-1"></span>{/if}
+            <div class="grid content-start gap-step-xs">
+              {#if block.settings.featured}<p class="flex items-center gap-step-xs font-mono text-meta tracking-meta text-scheme-links uppercase"><span class="size-1.5 rounded-full bg-scheme-links" aria-hidden="true"></span>{ t('most_booked') }</p>{/if}
+              <h3 class="font-heading text-h3 font-medium text-scheme-heading">{ block.settings.name }</h3>
+              {#if block.settings.for}<p class="text-body-sm text-scheme-muted">{ block.settings.for }</p>{/if}
+            </div>
+            {#if block.settings.inclusions}
+              <ul class="grid content-start gap-step-2xs text-body-sm text-scheme-foreground md:col-start-2 lg:col-start-auto">
+                {#for line in block.settings.inclusions | split('\n') | compact}<li>{ line }</li>{/for}
+              </ul>
+            {:else}<span class="hidden md:col-start-2 md:block lg:col-start-auto"></span>{/if}
+            <div class="grid content-start justify-items-start gap-step-sm md:col-start-3 md:row-span-2 md:row-start-1 md:justify-items-end md:text-right lg:col-start-auto lg:row-span-1 lg:row-start-auto">
+              <div class="grid gap-step-2xs md:justify-items-end">
+                {#if block.settings.price}
+                  <p class="font-mono text-meta tracking-meta text-scheme-meta uppercase">{ block.settings.from_label || t('from_label') }</p>
+                  <p class="font-heading text-h2 font-medium text-scheme-heading">{ block.settings.price }</p>
+                {/if}
+                {#if block.settings.note}<p class="font-mono text-caption text-scheme-muted">{ block.settings.note }</p>{/if}
+              </div>
+              {#if settings.enquire_label}<a class="sites-button sites-button-outline min-w-button" href="{ settings.enquire_href }">{ settings.enquire_label }</a>{/if}
+            </div>
+          </li>
+        {/for}
+      </ul>
+    {/if}
+
+    {#if settings.footnote}<div class="sites-prose text-body-sm text-scheme-muted">{ settings.footnote }</div>{/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Packages",
+  "description": "Photographic packages as rows or photo tiles.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Working together"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Packages"
+    },
+    {
+      "type": "text",
+      "id": "standfirst",
+      "label": "Standfirst",
+      "default": "Sessions, days and editorial rates."
+    },
+    {
+      "type": "richtext",
+      "id": "footnote",
+      "label": "Footnote",
+      "default": "<p>All rates exclude travel and applicable tax. Usage is agreed in writing. <a href=\"/contact\">Write</a> for a proposal.</p>"
+    },
+    {
+      "type": "text",
+      "id": "enquire_label",
+      "label": "Enquire label",
+      "default": "Enquire"
+    },
+    {
+      "type": "url",
+      "id": "enquire_href",
+      "label": "Enquire href",
+      "default": "/contact?subject=Commission"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "rows",
+      "options": [
+        {
+          "value": "rows",
+          "label": "Rows"
+        },
+        {
+          "value": "tiles",
+          "label": "Tiles"
+        }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "package",
+      "name": "Package",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": ""
+        },
+        {
+          "type": "text",
+          "id": "for",
+          "label": "For",
+          "default": ""
+        },
+        {
+          "type": "textarea",
+          "id": "inclusions",
+          "label": "Inclusions",
+          "default": ""
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": ""
+        },
+        {
+          "type": "text",
+          "id": "from_label",
+          "label": "From label",
+          "default": "From"
+        },
+        {
+          "type": "text",
+          "id": "note",
+          "label": "Note",
+          "default": ""
+        },
+        {
+          "type": "checkbox",
+          "id": "featured",
+          "label": "Featured",
+          "default": false
+        },
+        {
+          "type": "image",
+          "id": "photo",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "category",
+          "label": "Category",
+          "default": ""
+        }
+      ]
+    }
+  ],
+  "max_blocks": 24,
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "eyebrow": "Working together",
+        "heading": "Packages",
+        "standfirst": "Sessions, days and editorial rates.",
+        "footnote": "<p>All rates exclude travel and applicable tax. Usage is agreed in writing. <a href=\"/contact\">Write</a> for a proposal.</p>",
+        "enquire_label": "Enquire",
+        "enquire_href": "/contact?subject=Commission",
+        "layout": "rows",
+        "color_scheme": "surface"
+      },
+      "blocks": [
+        {
+          "type": "package",
+          "settings": {
+            "name": "Session",
+            "for": "A portrait, a room or a short editorial assignment.",
+            "inclusions": "Planning call\nUp to three hours photographing\nEdited image selection",
+            "price": "€ 1,200",
+            "from_label": "From",
+            "note": "Usage and travel agreed separately.",
+            "featured": false,
+            "photo": "as_3x2_1",
+            "category": "On site"
+          }
+        },
+        {
+          "type": "package",
+          "settings": {
+            "name": "Day",
+            "for": "Time on location, with room for the weather.",
+            "inclusions": "Planning and location research\nOne day photographing\nEdited image selection and delivery gallery",
+            "price": "€ 2,400",
+            "from_label": "From",
+            "note": "Usage and travel agreed separately.",
+            "featured": true,
+            "photo": "as_3x2_2",
+            "category": "On site"
+          }
+        },
+        {
+          "type": "package",
+          "settings": {
+            "name": "Project",
+            "for": "A body of work, from the first conversation to the final sequence.",
+            "inclusions": "Research and a written proposal\nAgreed days photographing\nEditing, sequencing and production advice",
+            "price": "By conversation",
+            "from_label": "",
+            "note": "A proposal follows our first conversation.",
+            "featured": false,
+            "photo": "as_4x5_2",
+            "category": "Studio"
+          }
+        },
+        {
+          "type": "package",
+          "settings": {
+            "name": "Workshop",
+            "for": "A day in the darkroom for up to six.",
+            "inclusions": "One day in the studio\nPaper and printing materials\nIndividual print review",
+            "price": "€ 480",
+            "from_label": "From",
+            "note": "Per person. Dates by arrangement.",
+            "featured": false,
+            "photo": "as_1x1_2",
+            "category": "Studio"
+          }
+        }
+      ]
+    }
+  ]
+}
+</schema>

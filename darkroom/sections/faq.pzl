@@ -1,0 +1,151 @@
+<!-- Questions that open one at a time, each a <collapsible-content> row
+     under a hairline. The heading and note sit at the left from 64rem, the
+     rows at the right; stacked below that. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto flex max-w-column flex-col gap-step-xl lg:flex-row lg:gap-step-3xl">
+    <div class="grid content-start gap-step-sm lg:w-faq-aside lg:shrink-0">
+      {#if settings.heading}<h2 class="font-heading text-h2 font-medium text-scheme-heading">{ settings.heading }</h2>{/if}
+      {#if settings.note}<p class="text-body text-scheme-muted">{ settings.note }</p>{/if}
+    </div>
+    <collapsible-group class="flex-1 border-t border-scheme-rule" exclusive>
+      {#for block in blocks}
+        <collapsible-component class="block border-b border-scheme-rule" data-block={ block.editor_id }>
+          <button class="group flex items-center justify-between gap-step-md py-step-md text-left text-body-lg text-scheme-foreground hover:text-scheme-links" type="button">
+            <span>{ block.settings.question }</span>
+            <span class="sites-icon size-6 text-scheme-muted group-aria-expanded:hidden">{#svg 'icons/plus.svg'}</span>
+            <span class="sites-icon hidden size-6 text-scheme-muted group-aria-expanded:block">{#svg 'icons/minus.svg'}</span>
+          </button>
+          <collapsible-content>
+            <div class="sites-prose pb-step-sm">{ block.settings.answer }</div>
+          </collapsible-content>
+        </collapsible-component>
+      {/for}
+    </collapsible-group>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Faq",
+  "description": "Questions and answers in collapsible rows.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "FAQs"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note",
+      "default": "Write if your question is not here."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": ""
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": ""
+        }
+      ]
+    }
+  ],
+  "max_blocks": 24,
+  "presets": [
+    {
+      "name": "Prints",
+      "settings": {
+        "heading": "FAQs",
+        "note": "Write if your question is not here.",
+        "color_scheme": "surface"
+      },
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "question": "How are the prints made?",
+            "answer": "<p>I print on archival cotton paper with pigment inks in the Gothenburg studio. Each print is checked before it is signed.</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "What sizes are available?",
+            "answer": "<p>The usual sizes are 30 × 40 cm and 40 × 50 cm. Ask about a particular photograph if you need another size.</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "What does an edition of ten mean?",
+            "answer": "<p>Ten numbered prints are made at each stated size, with two artist’s proofs. The edition is not extended.</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Do you ship outside Sweden?",
+            "answer": "<p>Yes. Prints travel flat or rolled, depending on size. I confirm packing, shipping and any customs costs before payment.</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Can a print arrive framed?",
+            "answer": "<p>Framing can be arranged in Sweden. Elsewhere I send the unframed print and the paper and mounting details for your framer.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Packages",
+      "settings": {
+        "heading": "FAQs",
+        "note": "Write if your question is not here.",
+        "color_scheme": "surface"
+      },
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "question": "How far ahead should I book?",
+            "answer": "<p>Four to six weeks usually leaves enough time to plan. Write with your dates if the job is sooner.</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "What is included in the rate?",
+            "answer": "<p>Planning, the agreed time photographing, editing and a private delivery gallery. Usage, travel and print costs are listed separately in the proposal.</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Can you travel for a commission?",
+            "answer": "<p>Yes. I work from Gothenburg and travel by arrangement. Travel days and expenses are agreed before the booking.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+</schema>

@@ -1,0 +1,16 @@
+<!-- component: SeriesCard -->
+<!-- props: entry href ratio show_counts sizes -->
+<!-- A grid card: the cover in 4:5 or 3:2, the title, and the year with the
+     photograph count in Meta. -->
+<li>
+  <a class="group grid gap-step-xs" href="{ href }">
+    <span class="block overflow-hidden bg-scheme-surface">
+      <img class="w-full object-cover transition-transform duration-hover ease-out-soft group-hover:scale-hover group-hover:duration-settle group-hover:ease-overshoot { ratio == '3:2' ? 'aspect-3/2' : 'aspect-4/5' }" data-zoom
+        src="{ image_url(entry.fields.cover, 768) }"
+        srcset="{ image_srcset(entry.fields.cover, [480, 768, 1280]) }"
+        sizes={ sizes } alt="{ entry.fields.cover_alt }" loading="lazy" width={ entry.fields.cover.width } height={ entry.fields.cover.height } />
+    </span>
+    <h3 class="font-heading text-h4 font-medium text-scheme-heading decoration-1 underline-offset-4 group-hover:underline">{ entry.title }</h3>
+    <p class="font-mono text-meta tracking-meta text-scheme-meta uppercase">{ entry.fields.year }{#if show_counts}<span aria-hidden="true"> · </span>{ t('photograph_count', { count: size(entry.fields.photos.items) }) }{/if}</p>
+  </a>
+</li>

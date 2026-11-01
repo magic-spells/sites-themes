@@ -1,0 +1,106 @@
+{
+  "label": "Page — Prints",
+  "description": "Available print editions and practical questions.",
+  "sections": [
+    {
+      "id": "s_page_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "chip": "",
+        "heading": "Prints",
+        "standfirst": "Editions of ten, printed in the studio.",
+        "align": "left",
+        "color_scheme": "surface-alt"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_photo_grid",
+      "type": "photo-grid",
+      "preset": "Default",
+      "settings": {
+        "columns": "3",
+        "gap": "normal",
+        "ratio": "3:2",
+        "captions": "below",
+        "lightbox": true,
+        "limit": 0,
+        "offset": 0,
+        "color_scheme": "surface-alt",
+        "gallery": "prints"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Prints",
+      "settings": {
+        "heading": "FAQs",
+        "note": "Write if your question is not here.",
+        "color_scheme": "surface-alt"
+      },
+      "blocks": [
+        {
+          "id": "s_faq_b_1",
+          "type": "item",
+          "settings": {
+            "question": "How are the prints made?",
+            "answer": "<p>I print on archival cotton paper with pigment inks in the Gothenburg studio. Each print is checked before it is signed.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b_2",
+          "type": "item",
+          "settings": {
+            "question": "What sizes are available?",
+            "answer": "<p>The usual sizes are 30 × 40 cm and 40 × 50 cm. Ask about a particular photograph if you need another size.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b_3",
+          "type": "item",
+          "settings": {
+            "question": "What does an edition of ten mean?",
+            "answer": "<p>Ten numbered prints are made at each stated size, with two artist’s proofs. The edition is not extended.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b_4",
+          "type": "item",
+          "settings": {
+            "question": "Do you ship outside Sweden?",
+            "answer": "<p>Yes. Prints travel flat or rolled, depending on size. I confirm packing, shipping and any customs costs before payment.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b_5",
+          "type": "item",
+          "settings": {
+            "question": "Can a print arrive framed?",
+            "answer": "<p>Framing can be arranged in Sweden. Elsewhere I send the unframed print and the paper and mounting details for your framer.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_prints_band",
+      "type": "prints-band",
+      "preset": "Default",
+      "settings": {
+        "eyebrow": "Prints",
+        "heading": "Prints and editions",
+        "text": "Selected photographs are available as signed prints. Each is made in the studio, checked in daylight and numbered by hand.",
+        "button_label": "Enquire about a print",
+        "button_href": "/contact?subject=Prints",
+        "edition_note": "Editions of ten. Signed and numbered.",
+        "frame": "none",
+        "layout": "image_first",
+        "color_scheme": "band",
+        "image": "as_3x2_1"
+      },
+      "blocks": []
+    }
+  ]
+}

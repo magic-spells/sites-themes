@@ -95,7 +95,6 @@
         "show_details": true,
         "show_address": false,
         "show_service_strip": true,
-        "color_scheme": "paper",
         "photo": "as_3x2_1"
       }
     }

@@ -160,8 +160,7 @@
         "back_label": "Back to menu",
         "menu_path": "/menu",
         "well_shape": "rounded",
-        "show_tag": true,
-        "color_scheme": "paper"
+        "show_tag": true
       }
     }
   ],

@@ -75,8 +75,7 @@
         "heading": "Book a table",
         "text": "Tables for 2 to 10. For larger parties call us.",
         "form": "reservation",
-        "note": "We hold the table for 15 minutes.",
-        "color_scheme": "paper"
+        "note": "We hold the table for 15 minutes."
       }
     }
   ]

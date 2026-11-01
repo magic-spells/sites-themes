@@ -168,7 +168,6 @@
         "show_legend": true,
         "base_path": "/dishes",
         "show_category_description": true,
-        "color_scheme": "paper",
         "collection": "menu_items",
         "categories": "menu_categories"
       }

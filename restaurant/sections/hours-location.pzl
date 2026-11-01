@@ -70,7 +70,6 @@
         "heading": "Hours & location",
         "show_map": true,
         "directions_label": "Open in Maps",
-        "color_scheme": "paper",
         "map_image": "as_3x2_1"
       }
     }

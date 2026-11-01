@@ -39,8 +39,7 @@
       "name": "Default",
       "settings": {
         "heading": "Where to next",
-        "show_heading": false,
-        "color_scheme": "paper"
+        "show_heading": false
       },
       "blocks": [
         {

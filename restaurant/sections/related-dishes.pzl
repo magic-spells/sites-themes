@@ -114,7 +114,6 @@
         "photo_style": "photo",
         "see_all_label": "See all {category}",
         "show_dots": false,
-        "color_scheme": "paper",
         "collection": "menu_items"
       }
     },
@@ -128,7 +127,6 @@
         "photo_style": "cutout",
         "see_all_label": "See all {category}",
         "show_dots": false,
-        "color_scheme": "paper",
         "collection": "menu_items"
       }
     }

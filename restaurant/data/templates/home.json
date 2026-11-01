@@ -23,7 +23,6 @@
         "height": "full",
         "autoplay": true,
         "interval": 5,
-        "color_scheme": "paper",
         "image": "as_4x5_1"
       },
       "blocks": []
@@ -40,7 +39,6 @@
         "menu_path": "/menu",
         "columns": "6",
         "show_counts": true,
-        "color_scheme": "paper",
         "categories": "menu_categories",
         "collection": "menu_items"
       },
@@ -61,7 +59,6 @@
         "full_menu_label": "Full menu",
         "menu_path": "/menu",
         "base_path": "/dishes",
-        "color_scheme": "paper",
         "collection": "menu_items",
         "categories": "menu_categories"
       },
@@ -80,7 +77,6 @@
         "body": "<p>Halfmoon began with a simple idea: a good meal, a warm room and a place to come back to.</p><p>We cook with the season and the boats, bake each morning and keep a seat for our neighbours.</p>",
         "link_label": "About us",
         "link": "/about",
-        "color_scheme": "paper",
         "image": "as_3x2_1"
       },
       "blocks": []
@@ -119,7 +115,6 @@
         "info_style": "plain",
         "show_dots": false,
         "see_all_label": "See all",
-        "color_scheme": "paper",
         "collection": "menu_items"
       },
       "blocks": []
@@ -132,8 +127,7 @@
         "heading": "This month",
         "show_heading": true,
         "loop": true,
-        "show_dots": true,
-        "color_scheme": "paper"
+        "show_dots": true
       },
       "blocks": [
         {
@@ -236,7 +230,6 @@
         "limit": 3,
         "view_all_label": "All events",
         "view_all_href": "/events",
-        "color_scheme": "paper",
         "collection": "events"
       },
       "blocks": []
@@ -300,7 +293,6 @@
         "show_heading": false,
         "stagger": "none",
         "lightbox": true,
-        "color_scheme": "paper",
         "gallery": "the-room"
       },
       "blocks": []
@@ -368,7 +360,6 @@
         "heading": "Hours & location",
         "show_map": true,
         "directions_label": "Open in Maps",
-        "color_scheme": "paper",
         "map_image": "as_3x2_1"
       },
       "blocks": []

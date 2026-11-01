@@ -107,7 +107,6 @@
         "limit": 3,
         "view_all_label": "All events",
         "view_all_href": "/events",
-        "color_scheme": "paper",
         "collection": "events"
       }
     },
@@ -120,7 +119,6 @@
         "limit": 12,
         "view_all_label": "All events",
         "view_all_href": "/events",
-        "color_scheme": "paper",
         "collection": "events"
       }
     }

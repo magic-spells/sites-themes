@@ -98,7 +98,6 @@
         "menu_path": "/menu",
         "book_label": "Book a table",
         "show_phone": true,
-        "color_scheme": "paper",
         "menu": "main",
         "categories": "menu_categories"
       }

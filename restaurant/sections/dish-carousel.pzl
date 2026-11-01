@@ -187,7 +187,6 @@
         "info_style": "plain",
         "show_dots": false,
         "see_all_label": "See all",
-        "color_scheme": "paper",
         "category": "cat_small_plates",
         "collection": "menu_items"
       }
@@ -207,7 +206,6 @@
         "info_style": "plain",
         "show_dots": false,
         "see_all_label": "See all",
-        "color_scheme": "paper",
         "collection": "menu_items"
       }
     }

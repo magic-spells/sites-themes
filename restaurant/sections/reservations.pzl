@@ -86,7 +86,6 @@
         "show_intro": false,
         "form": "reservation",
         "note": "We hold the table for 15 minutes.",
-        "color_scheme": "paper",
         "image": "as_3x2_1"
       }
     }

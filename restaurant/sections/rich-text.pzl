@@ -57,8 +57,7 @@
       "settings": {
         "heading": "",
         "body": "",
-        "width": "reading",
-        "color_scheme": "paper"
+        "width": "reading"
       }
     },
     {
@@ -66,8 +65,7 @@
       "settings": {
         "heading": "",
         "body": "",
-        "width": "wide",
-        "color_scheme": "paper"
+        "width": "wide"
       }
     }
   ]

@@ -15,7 +15,6 @@
         "body": "<p>Halfmoon began with a simple idea: a good meal, a warm room and a place to come back to.</p><p>We cook with the season and the boats, bake each morning and keep a seat for our neighbours.</p>",
         "link_label": "See the menu",
         "link": "/menu",
-        "color_scheme": "paper",
         "image": "as_3x2_1"
       },
       "blocks": []
@@ -89,8 +88,7 @@
       "settings": {
         "heading": "The kitchen",
         "show_heading": true,
-        "well_shape": "rounded",
-        "color_scheme": "paper"
+        "well_shape": "rounded"
       },
       "blocks": [
         {
@@ -125,7 +123,6 @@
         "ratio": "4:3",
         "limit": 8,
         "lightbox": true,
-        "color_scheme": "paper",
         "gallery": "the-room"
       },
       "blocks": []
@@ -192,8 +189,7 @@
       "settings": {
         "heading": "Good to know",
         "note": "A few things before you visit.",
-        "first_open": true,
-        "color_scheme": "paper"
+        "first_open": true
       },
       "blocks": [
         {

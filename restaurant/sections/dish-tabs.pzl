@@ -188,7 +188,6 @@
         "full_menu_label": "Full menu",
         "menu_path": "/menu",
         "base_path": "/dishes",
-        "color_scheme": "paper",
         "collection": "menu_items",
         "categories": "menu_categories"
       }

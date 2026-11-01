@@ -65,8 +65,7 @@
       "settings": {
         "heading": "The kitchen",
         "show_heading": true,
-        "well_shape": "rounded",
-        "color_scheme": "paper"
+        "well_shape": "rounded"
       },
       "blocks": [
         {

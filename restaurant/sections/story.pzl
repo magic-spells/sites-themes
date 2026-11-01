@@ -134,7 +134,6 @@
         "body": "<p>Halfmoon began with a simple idea: a good meal, a warm room and a place to come back to.</p><p>We cook with the season and the boats, bake each morning and keep a seat for our neighbours.</p>",
         "link_label": "About us",
         "link": "/about",
-        "color_scheme": "paper",
         "image": "as_3x2_1"
       }
     },
@@ -149,7 +148,6 @@
         "body": "<p>Halfmoon began with a simple idea: a good meal, a warm room and a place to come back to.</p><p>We cook with the season and the boats, bake each morning and keep a seat for our neighbours.</p>",
         "link_label": "About us",
         "link": "/about",
-        "color_scheme": "paper",
         "image": "as_3x2_1"
       }
     }

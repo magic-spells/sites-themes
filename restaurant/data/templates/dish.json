@@ -14,8 +14,7 @@
         "back_label": "Back to menu",
         "menu_path": "/menu",
         "well_shape": "rounded",
-        "show_tag": true,
-        "color_scheme": "paper"
+        "show_tag": true
       },
       "blocks": []
     },
@@ -31,7 +30,6 @@
         "photo_style": "photo",
         "see_all_label": "See all {category}",
         "show_dots": false,
-        "color_scheme": "paper",
         "collection": "menu_items"
       },
       "blocks": []

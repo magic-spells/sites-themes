@@ -77,8 +77,7 @@
         "standfirst": "",
         "align": "left",
         "show_eyebrow": true,
-        "show_standfirst": true,
-        "color_scheme": "paper"
+        "show_standfirst": true
       }
     },
     {
@@ -89,8 +88,7 @@
         "standfirst": "",
         "align": "center",
         "show_eyebrow": true,
-        "show_standfirst": true,
-        "color_scheme": "paper"
+        "show_standfirst": true
       }
     }
   ]

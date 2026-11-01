@@ -1,0 +1,84 @@
+<!-- D5 supplies the section markup against this frozen schema. -->
+<section class="bg-scheme-background text-scheme-foreground"></section>
+
+<schema>
+{
+  "name": "Lead story",
+  "description": "One lead story and a rail of two to four stories, with square thumbnails.",
+  "settings": [
+    {
+      "type": "entry",
+      "id": "post",
+      "label": "Lead story",
+      "info": "Leave empty to use the newest entry by date."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Content type",
+      "info": "Uses posts fields topic, date, author, reading_minutes, standfirst, image, image_alt and body; image_credit, updated and key_facts are optional. Dates are calendar dates, never relative times."
+    },
+    {
+      "type": "url",
+      "id": "base_path",
+      "label": "Index path",
+      "default": "/news"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "label": "Show the picture",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "read_label",
+      "label": "Read link label",
+      "default": "Read the story"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rail",
+      "label": "Show the story rail",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "rail_limit",
+      "label": "Rail stories",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rail_rule",
+      "label": "Show the rail rule",
+      "info": "Use a divider between the lead and rail from tablet up; omit on mobile.",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "base_path": "/news",
+        "show_image": true,
+        "read_label": "Read the story",
+        "show_rail": true,
+        "rail_limit": 4,
+        "show_rail_rule": true,
+        "color_scheme": "paper",
+        "collection": "posts"
+      }
+    }
+  ]
+}
+</schema>

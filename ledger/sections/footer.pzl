@@ -1,0 +1,88 @@
+<!-- D5 supplies the section markup against this frozen schema. -->
+<section class="bg-scheme-background text-scheme-foreground"></section>
+
+<schema>
+{
+  "name": "Footer",
+  "description": "Brand, Topics and About columns, a strong top rule and social links; no signup form.",
+  "settings": [
+    {
+      "type": "menu",
+      "id": "menu_primary",
+      "label": "Topics menu"
+    },
+    {
+      "type": "menu",
+      "id": "menu_secondary",
+      "label": "About menu"
+    },
+    {
+      "type": "text",
+      "id": "copyright",
+      "label": "Copyright line",
+      "default": "© 2026 The Daily Ledger"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "social",
+      "name": "Social link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "RSS"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL",
+          "default": ""
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "copyright": "© 2026 The Daily Ledger",
+        "color_scheme": "paper",
+        "menu_primary": "topics",
+        "menu_secondary": "about"
+      },
+      "blocks": [
+        {
+          "type": "social",
+          "settings": {
+            "label": "RSS",
+            "url": "https://dailyledger.example/feed.xml"
+          }
+        },
+        {
+          "type": "social",
+          "settings": {
+            "label": "Instagram",
+            "url": "https://www.instagram.com/"
+          }
+        },
+        {
+          "type": "social",
+          "settings": {
+            "label": "Email",
+            "url": "mailto:tips@example.com"
+          }
+        }
+      ]
+    }
+  ]
+}
+</schema>

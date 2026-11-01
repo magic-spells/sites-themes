@@ -1,0 +1,103 @@
+<!-- D5 supplies the section markup against this frozen schema. -->
+<section class="bg-scheme-background text-scheme-foreground"></section>
+
+<schema>
+{
+  "name": "Image with text",
+  "description": "An image beside a heading and writing; the image comes first on mobile.",
+  "settings": [
+    {
+      "type": "image",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "ratio",
+      "label": "Image shape",
+      "default": "landscape",
+      "options": [
+        {
+          "value": "portrait",
+          "label": "Portrait (4:5)"
+        },
+        {
+          "value": "landscape",
+          "label": "Landscape (3:2)"
+        },
+        {
+          "value": "square",
+          "label": "Square (1:1)"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "image_first",
+      "options": [
+        {
+          "value": "image_first",
+          "label": "Image first"
+        },
+        {
+          "value": "text_first",
+          "label": "Text first"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Since 1962"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "A newsroom above the mill"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>Eleven reporters, two photographers and one editor work from the second floor of the old mill, a short walk from the bridge.</p><p>We publish every day and print a weekend edition that still sells out at the station kiosk.</p>"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": "About the Ledger"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link",
+      "default": "/about"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "ratio": "landscape",
+        "layout": "image_first",
+        "eyebrow": "Since 1962",
+        "heading": "A newsroom above the mill",
+        "body": "<p>Eleven reporters, two photographers and one editor work from the second floor of the old mill, a short walk from the bridge.</p><p>We publish every day and print a weekend edition that still sells out at the station kiosk.</p>",
+        "link_label": "About the Ledger",
+        "link": "/about",
+        "color_scheme": "paper"
+      }
+    }
+  ]
+}
+</schema>

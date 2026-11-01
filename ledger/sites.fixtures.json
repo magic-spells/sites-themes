@@ -1,0 +1,1302 @@
+{
+  "site": {
+    "name": "The Daily Ledger",
+    "url": "https://dailyledger.example",
+    "locale": "en",
+    "settings": {
+      "tagline": "News for the valley since 1962. Independent, local, and read every morning.",
+      "reveal_on_scroll": true,
+      "posts_path": "/news",
+      "writer_name": "Priya Nand",
+      "writer_bio": "Priya has covered the valley’s weather, water and wildlife for The Daily Ledger since 2019. Before that she kept the rain gauge at the mill bridge herself.",
+      "contact_email": "tips@example.com",
+      "address": "Second floor, The Old Mill, Mill Bridge",
+      "hours": "Monday to Friday, 9 to 5",
+      "writer_portrait": "as_priya",
+      "writer_links": "social"
+    }
+  },
+  "assets": {
+    "as_bakery": {
+      "id": "as_bakery",
+      "status": "ready",
+      "file_name": "bakery.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 363,
+      "url": "/assets/photos/bakery.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "The bakery before dawn — placeholder",
+      "created_at": "2026-10-31"
+    },
+    "as_cafe": {
+      "id": "as_cafe",
+      "status": "ready",
+      "file_name": "cafe.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 373,
+      "url": "/assets/photos/cafe.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "The café beside the high street — placeholder",
+      "created_at": "2026-10-31"
+    },
+    "as_coast": {
+      "id": "as_coast",
+      "status": "ready",
+      "file_name": "coast.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 378,
+      "url": "/assets/photos/coast.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "The lighthouse on the east coast — placeholder",
+      "created_at": "2026-10-31"
+    },
+    "as_newsroom": {
+      "id": "as_newsroom",
+      "status": "ready",
+      "file_name": "newsroom.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 368,
+      "url": "/assets/photos/newsroom.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "The newsroom above the mill — placeholder",
+      "created_at": "2026-10-31"
+    },
+    "as_priya": {
+      "id": "as_priya",
+      "status": "ready",
+      "file_name": "priya.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 337,
+      "url": "/assets/photos/priya.svg",
+      "width": 800,
+      "height": 1000,
+      "alt": "Priya Nand — placeholder",
+      "created_at": "2026-10-31"
+    },
+    "as_railway": {
+      "id": "as_railway",
+      "status": "ready",
+      "file_name": "railway.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 366,
+      "url": "/assets/photos/railway.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "The old railway line — placeholder",
+      "created_at": "2026-10-31"
+    },
+    "as_rain": {
+      "id": "as_rain",
+      "status": "ready",
+      "file_name": "rain.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 375,
+      "url": "/assets/photos/rain.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "Rain gauge at the mill bridge — placeholder",
+      "created_at": "2026-10-31"
+    },
+    "as_screen": {
+      "id": "as_screen",
+      "status": "ready",
+      "file_name": "screen.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 366,
+      "url": "/assets/photos/screen.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "The old Regal cinema — placeholder",
+      "created_at": "2026-10-31"
+    },
+    "as_tom": {
+      "id": "as_tom",
+      "status": "ready",
+      "file_name": "tom.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 337,
+      "url": "/assets/photos/tom.svg",
+      "width": 800,
+      "height": 1000,
+      "alt": "Tom Reilly — placeholder",
+      "created_at": "2026-10-31"
+    },
+    "as_town": {
+      "id": "as_town",
+      "status": "ready",
+      "file_name": "town.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 364,
+      "url": "/assets/photos/town.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "The valley and its town — placeholder",
+      "created_at": "2026-10-31"
+    }
+  },
+  "menus": {
+    "main": {
+      "handle": "main",
+      "title": "Latest and topics",
+      "items": [
+        {
+          "id": "main_0",
+          "label": "Latest",
+          "target": {
+            "kind": "url",
+            "url": "/news"
+          },
+          "children": []
+        },
+        {
+          "id": "main_1",
+          "label": "Politics",
+          "target": {
+            "kind": "url",
+            "url": "/news/council-votes-tonight-on-the-closed-path-above-the-town"
+          },
+          "children": []
+        },
+        {
+          "id": "main_2",
+          "label": "Business",
+          "target": {
+            "kind": "url",
+            "url": "/news/the-one-cafe-raises-prices-for-the-first-time-in-nine-years"
+          },
+          "children": []
+        },
+        {
+          "id": "main_3",
+          "label": "Science",
+          "target": {
+            "kind": "url",
+            "url": "/news/valley-rain-arrives-at-four-study-confirms"
+          },
+          "children": []
+        },
+        {
+          "id": "main_4",
+          "label": "Culture",
+          "target": {
+            "kind": "url",
+            "url": "/news/bus-driver-s-first-novel-sells-out-at-the-station-kiosk"
+          },
+          "children": []
+        },
+        {
+          "id": "main_5",
+          "label": "Weather",
+          "target": {
+            "kind": "url",
+            "url": "/news/fog-season-begins-two-weeks-early"
+          },
+          "children": []
+        },
+        {
+          "id": "main_6",
+          "label": "Opinion",
+          "target": {
+            "kind": "url",
+            "url": "/news/we-should-take-the-sign-down-ourselves"
+          },
+          "children": []
+        }
+      ]
+    },
+    "topics": {
+      "handle": "topics",
+      "title": "Topics",
+      "items": [
+        {
+          "id": "topics_0",
+          "label": "Politics",
+          "target": {
+            "kind": "url",
+            "url": "/news/council-votes-tonight-on-the-closed-path-above-the-town"
+          },
+          "children": []
+        },
+        {
+          "id": "topics_1",
+          "label": "Business",
+          "target": {
+            "kind": "url",
+            "url": "/news/the-one-cafe-raises-prices-for-the-first-time-in-nine-years"
+          },
+          "children": []
+        },
+        {
+          "id": "topics_2",
+          "label": "Science",
+          "target": {
+            "kind": "url",
+            "url": "/news/valley-rain-arrives-at-four-study-confirms"
+          },
+          "children": []
+        },
+        {
+          "id": "topics_3",
+          "label": "Culture",
+          "target": {
+            "kind": "url",
+            "url": "/news/bus-driver-s-first-novel-sells-out-at-the-station-kiosk"
+          },
+          "children": []
+        },
+        {
+          "id": "topics_4",
+          "label": "Weather",
+          "target": {
+            "kind": "url",
+            "url": "/news/fog-season-begins-two-weeks-early"
+          },
+          "children": []
+        },
+        {
+          "id": "topics_5",
+          "label": "Opinion",
+          "target": {
+            "kind": "url",
+            "url": "/news/we-should-take-the-sign-down-ourselves"
+          },
+          "children": []
+        }
+      ]
+    },
+    "about": {
+      "handle": "about",
+      "title": "About",
+      "items": [
+        {
+          "id": "about_0",
+          "label": "About the Ledger",
+          "target": {
+            "kind": "url",
+            "url": "/about"
+          },
+          "children": []
+        },
+        {
+          "id": "about_1",
+          "label": "Contact",
+          "target": {
+            "kind": "url",
+            "url": "/contact"
+          },
+          "children": []
+        },
+        {
+          "id": "about_2",
+          "label": "Advertise",
+          "target": {
+            "kind": "url",
+            "url": "/contact#advertising"
+          },
+          "children": []
+        },
+        {
+          "id": "about_3",
+          "label": "Corrections",
+          "target": {
+            "kind": "url",
+            "url": "/contact#corrections"
+          },
+          "children": []
+        },
+        {
+          "id": "about_4",
+          "label": "Privacy",
+          "target": {
+            "kind": "url",
+            "url": "/privacy"
+          },
+          "children": []
+        }
+      ]
+    },
+    "legal": {
+      "handle": "legal",
+      "title": "Legal",
+      "items": [
+        {
+          "id": "legal_0",
+          "label": "Privacy",
+          "target": {
+            "kind": "url",
+            "url": "/privacy"
+          },
+          "children": []
+        },
+        {
+          "id": "legal_1",
+          "label": "Corrections",
+          "target": {
+            "kind": "url",
+            "url": "/contact#corrections"
+          },
+          "children": []
+        }
+      ]
+    },
+    "social": {
+      "handle": "social",
+      "title": "Elsewhere",
+      "items": [
+        {
+          "id": "social_0",
+          "label": "RSS",
+          "target": {
+            "kind": "url",
+            "url": "https://dailyledger.example/feed.xml"
+          },
+          "children": []
+        },
+        {
+          "id": "social_1",
+          "label": "Instagram",
+          "target": {
+            "kind": "url",
+            "url": "https://www.instagram.com/"
+          },
+          "children": []
+        },
+        {
+          "id": "social_2",
+          "label": "Email",
+          "target": {
+            "kind": "url",
+            "url": "mailto:tips@example.com"
+          },
+          "children": []
+        }
+      ]
+    }
+  },
+  "galleries": {},
+  "forms": {
+    "contact": {
+      "name": "Contact",
+      "fields": [
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Name",
+          "required": true,
+          "max_length": 120
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        },
+        {
+          "id": "message",
+          "type": "textarea",
+          "label": "Message",
+          "required": true,
+          "max_length": 4000
+        }
+      ],
+      "success_message": "Thanks — your note is with the newsroom.",
+      "submit_label": "Send"
+    },
+    "newsletter": {
+      "name": "Newsletter",
+      "fields": [
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        }
+      ],
+      "success_message": "Thanks for subscribing. The next letter will find you here.",
+      "submit_label": "Sign up"
+    }
+  },
+  "content": {
+    "posts": {
+      "name": "Stories",
+      "fields": [
+        {
+          "id": "topic",
+          "type": "text",
+          "label": "Topic"
+        },
+        {
+          "id": "date",
+          "type": "date",
+          "label": "Date"
+        },
+        {
+          "id": "author",
+          "type": "text",
+          "label": "Author"
+        },
+        {
+          "id": "reading_minutes",
+          "type": "number",
+          "label": "Reading minutes"
+        },
+        {
+          "id": "standfirst",
+          "type": "textarea",
+          "label": "Standfirst"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "body",
+          "type": "richtext",
+          "label": "Body"
+        },
+        {
+          "id": "image_credit",
+          "type": "text",
+          "label": "Image credit"
+        },
+        {
+          "id": "updated",
+          "type": "date",
+          "label": "Updated date"
+        },
+        {
+          "id": "key_facts",
+          "type": "textarea",
+          "label": "Key facts (one per line)"
+        }
+      ],
+      "entries": [
+        {
+          "id": "en_valley_rain_arrives_at_four_study_confirms",
+          "handle": "valley-rain-arrives-at-four-study-confirms",
+          "title": "Valley rain arrives at four, study confirms",
+          "fields": {
+            "topic": "Science",
+            "date": "2026-10-31",
+            "author": "Priya Nand",
+            "reading_minutes": 4,
+            "standfirst": "A six-year study finds the afternoon showers are as regular as residents have always claimed, and more so in October.",
+            "image": "as_rain",
+            "image_alt": "Rain gauge at the mill bridge — placeholder",
+            "body": "<p>The showers begin, on average, at 4:07 in the afternoon and last twenty-two minutes. The study, which logged every rainfall in the valley since 2020, found the pattern held on most days from May to October.</p><p>It held on 71 per cent of days between May and October, and on almost every day in the first two weeks of October, when the warm valley floor meets the first cold air off the ridge.</p><p>Residents at the mill bridge say they have planned their walks around it for years. The authors now want to know why October is the most punctual month of all, and they will keep the gauge running through next spring.</p>",
+            "image_credit": "The gauge at the mill bridge, Thursday afternoon. Photo: Tom Reilly",
+            "updated": "2026-10-31",
+            "key_facts": "Days with afternoon rain, May to October: 71 per cent\nAverage shower: 22 minutes\nMedian start: 4:07 in the afternoon"
+          }
+        },
+        {
+          "id": "en_the_one_cafe_raises_prices_for_the_first_time_in_nine_years",
+          "handle": "the-one-cafe-raises-prices-for-the-first-time-in-nine-years",
+          "title": "The one café raises prices for the first time in nine years",
+          "fields": {
+            "topic": "Business",
+            "date": "2026-10-30",
+            "author": "Tom Reilly",
+            "reading_minutes": 5,
+            "standfirst": "The valley’s one café is raising its prices after nine years.",
+            "image": "as_cafe",
+            "image_alt": "The café beside the high street — placeholder",
+            "body": "<p>The valley’s one café is raising its prices after nine years.</p>",
+            "image_credit": "Photo: Tom Reilly",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_council_votes_tonight_on_the_closed_path_above_the_town",
+          "handle": "council-votes-tonight-on-the-closed-path-above-the-town",
+          "title": "Council votes tonight on the closed path above the town",
+          "fields": {
+            "topic": "Politics",
+            "date": "2026-10-30",
+            "author": "Priya Nand",
+            "reading_minutes": 5,
+            "standfirst": "The council will vote on the closed path above the town.",
+            "image": "as_town",
+            "image_alt": "The valley and its town — placeholder",
+            "body": "<p>The council will vote on the closed path above the town.</p>",
+            "image_credit": "Photo: Tom Reilly",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_bus_driver_s_first_novel_sells_out_at_the_station_kiosk",
+          "handle": "bus-driver-s-first-novel-sells-out-at-the-station-kiosk",
+          "title": "Bus driver's first novel sells out at the station kiosk",
+          "fields": {
+            "topic": "Culture",
+            "date": "2026-10-30",
+            "author": "Tom Reilly",
+            "reading_minutes": 5,
+            "standfirst": "The first novel by a local bus driver has sold out at the station kiosk.",
+            "image": "as_town",
+            "image_alt": "The valley and its town — placeholder",
+            "body": "<p>The first novel by a local bus driver has sold out at the station kiosk.</p>",
+            "image_credit": "Photo: Tom Reilly",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_we_should_take_the_sign_down_ourselves",
+          "handle": "we-should-take-the-sign-down-ourselves",
+          "title": "We should take the sign down ourselves",
+          "fields": {
+            "topic": "Opinion",
+            "date": "2026-10-30",
+            "author": "Priya Nand",
+            "reading_minutes": 5,
+            "standfirst": "An editorial on the sign above the town and who should take it down.",
+            "image": "as_town",
+            "image_alt": "The valley and its town — placeholder",
+            "body": "<p>An editorial on the sign above the town and who should take it down.</p>",
+            "image_credit": "Photo: Tom Reilly",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_the_last_lighthouse_keeper_on_the_east_coast_hands_over_the_keys",
+          "handle": "the-last-lighthouse-keeper-on-the-east-coast-hands-over-the-keys",
+          "title": "The last lighthouse keeper on the east coast hands over the keys",
+          "fields": {
+            "topic": "Culture",
+            "date": "2026-10-29",
+            "author": "Tom Reilly",
+            "reading_minutes": 5,
+            "standfirst": "Forty-one years, three storms that made the news and one that did not.",
+            "image": "as_coast",
+            "image_alt": "The lighthouse on the east coast — placeholder",
+            "body": "<p>Forty-one years, three storms that made the news and one that did not.</p>",
+            "image_credit": "Photo: Tom Reilly",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_inside_the_bakery_that_has_opened_at_4am_every_day_since_1958",
+          "handle": "inside-the-bakery-that-has-opened-at-4am-every-day-since-1958",
+          "title": "Inside the bakery that has opened at 4am every day since 1958",
+          "fields": {
+            "topic": "Business",
+            "date": "2026-10-29",
+            "author": "Priya Nand",
+            "reading_minutes": 5,
+            "standfirst": "Two ovens, one family and a queue that starts before the first bus.",
+            "image": "as_bakery",
+            "image_alt": "The bakery before dawn — placeholder",
+            "body": "<p>Two ovens, one family and a queue that starts before the first bus.</p>",
+            "image_credit": "Photo: Ana Ruiz",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_what_a_year_of_tracking_every_bus_in_the_valley_taught_us",
+          "handle": "what-a-year-of-tracking-every-bus-in-the-valley-taught-us",
+          "title": "What a year of tracking every bus in the valley taught us",
+          "fields": {
+            "topic": "Science",
+            "date": "2026-10-29",
+            "author": "Tom Reilly",
+            "reading_minutes": 5,
+            "standfirst": "The 7:40 is late on 62 per cent of days. The 7:55 almost never is.",
+            "image": "as_town",
+            "image_alt": "The valley and its town — placeholder",
+            "body": "<p>The 7:40 is late on 62 per cent of days. The 7:55 almost never is.</p>",
+            "image_credit": "Photo: Priya Nand",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_the_allotment_waiting_list_is_now_eleven_years_long",
+          "handle": "the-allotment-waiting-list-is-now-eleven-years-long",
+          "title": "The allotment waiting list is now eleven years long",
+          "fields": {
+            "topic": "Politics",
+            "date": "2026-10-29",
+            "author": "Priya Nand",
+            "reading_minutes": 5,
+            "standfirst": "Why plots stay empty while the list grows, and what the council plans.",
+            "image": "as_town",
+            "image_alt": "The valley and its town — placeholder",
+            "body": "<p>Why plots stay empty while the list grows, and what the council plans.</p>",
+            "image_credit": "Photo: Sam Okafor",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_a_walk_along_the_old_railway_line_before_it_becomes_a_road",
+          "handle": "a-walk-along-the-old-railway-line-before-it-becomes-a-road",
+          "title": "A walk along the old railway line before it becomes a road",
+          "fields": {
+            "topic": "Culture",
+            "date": "2026-10-29",
+            "author": "Tom Reilly",
+            "reading_minutes": 5,
+            "standfirst": "Nine miles of cuttings, bridges and one surprised heron.",
+            "image": "as_railway",
+            "image_alt": "The old railway line — placeholder",
+            "body": "<p>Nine miles of cuttings, bridges and one surprised heron.</p>",
+            "image_credit": "Photo: Mei Lin",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_why_are_so_many_thai_restaurants_hidden_in_london_pubs",
+          "handle": "why-are-so-many-thai-restaurants-hidden-in-london-pubs",
+          "title": "Why are so many Thai restaurants hidden in London pubs?",
+          "fields": {
+            "topic": "Culture",
+            "date": "2026-10-28",
+            "author": "Tom Reilly",
+            "reading_minutes": 5,
+            "standfirst": "Behind the bar of a hundred old pubs, a small kitchen turns out some of the city's best green curry. How a licensing quirk of the 1980s built a tradition.",
+            "image": "as_cafe",
+            "image_alt": "The café beside the high street — placeholder",
+            "body": "<p>Behind the bar of a hundred old pubs, a small kitchen turns out some of the city&#x27;s best green curry. How a licensing quirk of the 1980s built a tradition.</p>",
+            "image_credit": "Photo: Mei Lin",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_12_of_the_best_tv_shows_to_watch_this_november",
+          "handle": "12-of-the-best-tv-shows-to-watch-this-november",
+          "title": "12 of the best TV shows to watch this November",
+          "fields": {
+            "topic": "Culture",
+            "date": "2026-10-31",
+            "author": "Tom Reilly",
+            "reading_minutes": 5,
+            "standfirst": "A heist in the fog, a slow-burn courtroom drama and the comedy everyone at the office is quoting. Our critics pick the month.",
+            "image": "as_screen",
+            "image_alt": "The old Regal cinema — placeholder",
+            "body": "<p>A heist in the fog, a slow-burn courtroom drama and the comedy everyone at the office is quoting. Our critics pick the month.</p>",
+            "image_credit": "Photo: Ana Ruiz",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_12_of_the_best_films_to_watch_in_november",
+          "handle": "12-of-the-best-films-to-watch-in-november",
+          "title": "12 of the best films to watch in November",
+          "fields": {
+            "topic": "Culture",
+            "date": "2026-10-31",
+            "author": "Priya Nand",
+            "reading_minutes": 5,
+            "standfirst": "From the festival winner opening at the old Regal to two reissues worth the drive, the films to see before the year turns.",
+            "image": "as_screen",
+            "image_alt": "The old Regal cinema — placeholder",
+            "body": "<p>From the festival winner opening at the old Regal to two reissues worth the drive, the films to see before the year turns.</p>",
+            "image_credit": "Photo: Sam Okafor",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_fog_season_begins_two_weeks_early",
+          "handle": "fog-season-begins-two-weeks-early",
+          "title": "Fog season begins two weeks early",
+          "fields": {
+            "topic": "Weather",
+            "date": "2026-10-30",
+            "author": "Tom Reilly",
+            "reading_minutes": 5,
+            "standfirst": "Fog season has begun two weeks earlier than usual.",
+            "image": "as_town",
+            "image_alt": "The valley and its town — placeholder",
+            "body": "<p>Fog season has begun two weeks earlier than usual.</p>",
+            "image_credit": "Photo: Tom Reilly",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_river_levels_and_what_the_gauge_at_the_bridge_means",
+          "handle": "river-levels-and-what-the-gauge-at-the-bridge-means",
+          "title": "River levels, and what the gauge at the bridge means",
+          "fields": {
+            "topic": "Weather",
+            "date": "2026-10-30",
+            "author": "Priya Nand",
+            "reading_minutes": 5,
+            "standfirst": "What the river-level gauge at the bridge tells the valley.",
+            "image": "as_rain",
+            "image_alt": "Rain gauge at the mill bridge — placeholder",
+            "body": "<p>What the river-level gauge at the bridge tells the valley.</p>",
+            "image_credit": "Photo: Priya Nand",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_what_the_forecast_got_wrong_this_week",
+          "handle": "what-the-forecast-got-wrong-this-week",
+          "title": "What the forecast got wrong this week",
+          "fields": {
+            "topic": "Weather",
+            "date": "2026-10-30",
+            "author": "Tom Reilly",
+            "reading_minutes": 5,
+            "standfirst": "A look at the forecast and the weather the valley actually saw.",
+            "image": "as_town",
+            "image_alt": "The valley and its town — placeholder",
+            "body": "<p>A look at the forecast and the weather the valley actually saw.</p>",
+            "image_credit": "Photo: Ana Ruiz",
+            "updated": "",
+            "key_facts": ""
+          }
+        }
+      ]
+    }
+  },
+  "pages": {
+    "/": {
+      "id": "pg_home",
+      "template": "home",
+      "title": "Home",
+      "seo": {
+        "description": "News for the valley since 1962. Independent, local, and read every morning.",
+        "image": "as_rain"
+      }
+    },
+    "/news": {
+      "id": "pg_news",
+      "template": "news-list",
+      "title": "All stories",
+      "seo": {
+        "description": "Sixteen stories from the valley, newest first."
+      }
+    },
+    "/news/valley-rain-arrives-at-four-study-confirms": {
+      "id": "pg_valley_rain_arrives_at_four_study_confirms",
+      "template": "post",
+      "title": "Valley rain arrives at four, study confirms",
+      "params": {
+        "handle": "valley-rain-arrives-at-four-study-confirms"
+      },
+      "entry": {
+        "id": "en_valley_rain_arrives_at_four_study_confirms",
+        "handle": "valley-rain-arrives-at-four-study-confirms",
+        "title": "Valley rain arrives at four, study confirms",
+        "fields": {
+          "topic": "Science",
+          "date": "2026-10-31",
+          "author": "Priya Nand",
+          "reading_minutes": 4,
+          "standfirst": "A six-year study finds the afternoon showers are as regular as residents have always claimed, and more so in October.",
+          "image": "as_rain",
+          "image_alt": "Rain gauge at the mill bridge — placeholder",
+          "body": "<p>The showers begin, on average, at 4:07 in the afternoon and last twenty-two minutes. The study, which logged every rainfall in the valley since 2020, found the pattern held on most days from May to October.</p><p>It held on 71 per cent of days between May and October, and on almost every day in the first two weeks of October, when the warm valley floor meets the first cold air off the ridge.</p><p>Residents at the mill bridge say they have planned their walks around it for years. The authors now want to know why October is the most punctual month of all, and they will keep the gauge running through next spring.</p>",
+          "image_credit": "The gauge at the mill bridge, Thursday afternoon. Photo: Tom Reilly",
+          "updated": "2026-10-31",
+          "key_facts": "Days with afternoon rain, May to October: 71 per cent\nAverage shower: 22 minutes\nMedian start: 4:07 in the afternoon"
+        }
+      },
+      "seo": {
+        "description": "A six-year study finds the afternoon showers are as regular as residents have always claimed, and more so in October.",
+        "image": "as_rain"
+      }
+    },
+    "/news/the-one-cafe-raises-prices-for-the-first-time-in-nine-years": {
+      "id": "pg_the_one_cafe_raises_prices_for_the_first_time_in_nine_years",
+      "template": "post",
+      "title": "The one café raises prices for the first time in nine years",
+      "params": {
+        "handle": "the-one-cafe-raises-prices-for-the-first-time-in-nine-years"
+      },
+      "entry": {
+        "id": "en_the_one_cafe_raises_prices_for_the_first_time_in_nine_years",
+        "handle": "the-one-cafe-raises-prices-for-the-first-time-in-nine-years",
+        "title": "The one café raises prices for the first time in nine years",
+        "fields": {
+          "topic": "Business",
+          "date": "2026-10-30",
+          "author": "Tom Reilly",
+          "reading_minutes": 5,
+          "standfirst": "The valley’s one café is raising its prices after nine years.",
+          "image": "as_cafe",
+          "image_alt": "The café beside the high street — placeholder",
+          "body": "<p>The valley’s one café is raising its prices after nine years.</p>",
+          "image_credit": "Photo: Tom Reilly",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "The valley’s one café is raising its prices after nine years.",
+        "image": "as_cafe"
+      }
+    },
+    "/news/council-votes-tonight-on-the-closed-path-above-the-town": {
+      "id": "pg_council_votes_tonight_on_the_closed_path_above_the_town",
+      "template": "post",
+      "title": "Council votes tonight on the closed path above the town",
+      "params": {
+        "handle": "council-votes-tonight-on-the-closed-path-above-the-town"
+      },
+      "entry": {
+        "id": "en_council_votes_tonight_on_the_closed_path_above_the_town",
+        "handle": "council-votes-tonight-on-the-closed-path-above-the-town",
+        "title": "Council votes tonight on the closed path above the town",
+        "fields": {
+          "topic": "Politics",
+          "date": "2026-10-30",
+          "author": "Priya Nand",
+          "reading_minutes": 5,
+          "standfirst": "The council will vote on the closed path above the town.",
+          "image": "as_town",
+          "image_alt": "The valley and its town — placeholder",
+          "body": "<p>The council will vote on the closed path above the town.</p>",
+          "image_credit": "Photo: Tom Reilly",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "The council will vote on the closed path above the town.",
+        "image": "as_town"
+      }
+    },
+    "/news/bus-driver-s-first-novel-sells-out-at-the-station-kiosk": {
+      "id": "pg_bus_driver_s_first_novel_sells_out_at_the_station_kiosk",
+      "template": "post",
+      "title": "Bus driver's first novel sells out at the station kiosk",
+      "params": {
+        "handle": "bus-driver-s-first-novel-sells-out-at-the-station-kiosk"
+      },
+      "entry": {
+        "id": "en_bus_driver_s_first_novel_sells_out_at_the_station_kiosk",
+        "handle": "bus-driver-s-first-novel-sells-out-at-the-station-kiosk",
+        "title": "Bus driver's first novel sells out at the station kiosk",
+        "fields": {
+          "topic": "Culture",
+          "date": "2026-10-30",
+          "author": "Tom Reilly",
+          "reading_minutes": 5,
+          "standfirst": "The first novel by a local bus driver has sold out at the station kiosk.",
+          "image": "as_town",
+          "image_alt": "The valley and its town — placeholder",
+          "body": "<p>The first novel by a local bus driver has sold out at the station kiosk.</p>",
+          "image_credit": "Photo: Tom Reilly",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "The first novel by a local bus driver has sold out at the station kiosk.",
+        "image": "as_town"
+      }
+    },
+    "/news/we-should-take-the-sign-down-ourselves": {
+      "id": "pg_we_should_take_the_sign_down_ourselves",
+      "template": "post",
+      "title": "We should take the sign down ourselves",
+      "params": {
+        "handle": "we-should-take-the-sign-down-ourselves"
+      },
+      "entry": {
+        "id": "en_we_should_take_the_sign_down_ourselves",
+        "handle": "we-should-take-the-sign-down-ourselves",
+        "title": "We should take the sign down ourselves",
+        "fields": {
+          "topic": "Opinion",
+          "date": "2026-10-30",
+          "author": "Priya Nand",
+          "reading_minutes": 5,
+          "standfirst": "An editorial on the sign above the town and who should take it down.",
+          "image": "as_town",
+          "image_alt": "The valley and its town — placeholder",
+          "body": "<p>An editorial on the sign above the town and who should take it down.</p>",
+          "image_credit": "Photo: Tom Reilly",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "An editorial on the sign above the town and who should take it down.",
+        "image": "as_town"
+      }
+    },
+    "/news/the-last-lighthouse-keeper-on-the-east-coast-hands-over-the-keys": {
+      "id": "pg_the_last_lighthouse_keeper_on_the_east_coast_hands_over_the_keys",
+      "template": "post",
+      "title": "The last lighthouse keeper on the east coast hands over the keys",
+      "params": {
+        "handle": "the-last-lighthouse-keeper-on-the-east-coast-hands-over-the-keys"
+      },
+      "entry": {
+        "id": "en_the_last_lighthouse_keeper_on_the_east_coast_hands_over_the_keys",
+        "handle": "the-last-lighthouse-keeper-on-the-east-coast-hands-over-the-keys",
+        "title": "The last lighthouse keeper on the east coast hands over the keys",
+        "fields": {
+          "topic": "Culture",
+          "date": "2026-10-29",
+          "author": "Tom Reilly",
+          "reading_minutes": 5,
+          "standfirst": "Forty-one years, three storms that made the news and one that did not.",
+          "image": "as_coast",
+          "image_alt": "The lighthouse on the east coast — placeholder",
+          "body": "<p>Forty-one years, three storms that made the news and one that did not.</p>",
+          "image_credit": "Photo: Tom Reilly",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "Forty-one years, three storms that made the news and one that did not.",
+        "image": "as_coast"
+      }
+    },
+    "/news/inside-the-bakery-that-has-opened-at-4am-every-day-since-1958": {
+      "id": "pg_inside_the_bakery_that_has_opened_at_4am_every_day_since_1958",
+      "template": "post",
+      "title": "Inside the bakery that has opened at 4am every day since 1958",
+      "params": {
+        "handle": "inside-the-bakery-that-has-opened-at-4am-every-day-since-1958"
+      },
+      "entry": {
+        "id": "en_inside_the_bakery_that_has_opened_at_4am_every_day_since_1958",
+        "handle": "inside-the-bakery-that-has-opened-at-4am-every-day-since-1958",
+        "title": "Inside the bakery that has opened at 4am every day since 1958",
+        "fields": {
+          "topic": "Business",
+          "date": "2026-10-29",
+          "author": "Priya Nand",
+          "reading_minutes": 5,
+          "standfirst": "Two ovens, one family and a queue that starts before the first bus.",
+          "image": "as_bakery",
+          "image_alt": "The bakery before dawn — placeholder",
+          "body": "<p>Two ovens, one family and a queue that starts before the first bus.</p>",
+          "image_credit": "Photo: Ana Ruiz",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "Two ovens, one family and a queue that starts before the first bus.",
+        "image": "as_bakery"
+      }
+    },
+    "/news/what-a-year-of-tracking-every-bus-in-the-valley-taught-us": {
+      "id": "pg_what_a_year_of_tracking_every_bus_in_the_valley_taught_us",
+      "template": "post",
+      "title": "What a year of tracking every bus in the valley taught us",
+      "params": {
+        "handle": "what-a-year-of-tracking-every-bus-in-the-valley-taught-us"
+      },
+      "entry": {
+        "id": "en_what_a_year_of_tracking_every_bus_in_the_valley_taught_us",
+        "handle": "what-a-year-of-tracking-every-bus-in-the-valley-taught-us",
+        "title": "What a year of tracking every bus in the valley taught us",
+        "fields": {
+          "topic": "Science",
+          "date": "2026-10-29",
+          "author": "Tom Reilly",
+          "reading_minutes": 5,
+          "standfirst": "The 7:40 is late on 62 per cent of days. The 7:55 almost never is.",
+          "image": "as_town",
+          "image_alt": "The valley and its town — placeholder",
+          "body": "<p>The 7:40 is late on 62 per cent of days. The 7:55 almost never is.</p>",
+          "image_credit": "Photo: Priya Nand",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "The 7:40 is late on 62 per cent of days. The 7:55 almost never is.",
+        "image": "as_town"
+      }
+    },
+    "/news/the-allotment-waiting-list-is-now-eleven-years-long": {
+      "id": "pg_the_allotment_waiting_list_is_now_eleven_years_long",
+      "template": "post",
+      "title": "The allotment waiting list is now eleven years long",
+      "params": {
+        "handle": "the-allotment-waiting-list-is-now-eleven-years-long"
+      },
+      "entry": {
+        "id": "en_the_allotment_waiting_list_is_now_eleven_years_long",
+        "handle": "the-allotment-waiting-list-is-now-eleven-years-long",
+        "title": "The allotment waiting list is now eleven years long",
+        "fields": {
+          "topic": "Politics",
+          "date": "2026-10-29",
+          "author": "Priya Nand",
+          "reading_minutes": 5,
+          "standfirst": "Why plots stay empty while the list grows, and what the council plans.",
+          "image": "as_town",
+          "image_alt": "The valley and its town — placeholder",
+          "body": "<p>Why plots stay empty while the list grows, and what the council plans.</p>",
+          "image_credit": "Photo: Sam Okafor",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "Why plots stay empty while the list grows, and what the council plans.",
+        "image": "as_town"
+      }
+    },
+    "/news/a-walk-along-the-old-railway-line-before-it-becomes-a-road": {
+      "id": "pg_a_walk_along_the_old_railway_line_before_it_becomes_a_road",
+      "template": "post",
+      "title": "A walk along the old railway line before it becomes a road",
+      "params": {
+        "handle": "a-walk-along-the-old-railway-line-before-it-becomes-a-road"
+      },
+      "entry": {
+        "id": "en_a_walk_along_the_old_railway_line_before_it_becomes_a_road",
+        "handle": "a-walk-along-the-old-railway-line-before-it-becomes-a-road",
+        "title": "A walk along the old railway line before it becomes a road",
+        "fields": {
+          "topic": "Culture",
+          "date": "2026-10-29",
+          "author": "Tom Reilly",
+          "reading_minutes": 5,
+          "standfirst": "Nine miles of cuttings, bridges and one surprised heron.",
+          "image": "as_railway",
+          "image_alt": "The old railway line — placeholder",
+          "body": "<p>Nine miles of cuttings, bridges and one surprised heron.</p>",
+          "image_credit": "Photo: Mei Lin",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "Nine miles of cuttings, bridges and one surprised heron.",
+        "image": "as_railway"
+      }
+    },
+    "/news/why-are-so-many-thai-restaurants-hidden-in-london-pubs": {
+      "id": "pg_why_are_so_many_thai_restaurants_hidden_in_london_pubs",
+      "template": "post",
+      "title": "Why are so many Thai restaurants hidden in London pubs?",
+      "params": {
+        "handle": "why-are-so-many-thai-restaurants-hidden-in-london-pubs"
+      },
+      "entry": {
+        "id": "en_why_are_so_many_thai_restaurants_hidden_in_london_pubs",
+        "handle": "why-are-so-many-thai-restaurants-hidden-in-london-pubs",
+        "title": "Why are so many Thai restaurants hidden in London pubs?",
+        "fields": {
+          "topic": "Culture",
+          "date": "2026-10-28",
+          "author": "Tom Reilly",
+          "reading_minutes": 5,
+          "standfirst": "Behind the bar of a hundred old pubs, a small kitchen turns out some of the city's best green curry. How a licensing quirk of the 1980s built a tradition.",
+          "image": "as_cafe",
+          "image_alt": "The café beside the high street — placeholder",
+          "body": "<p>Behind the bar of a hundred old pubs, a small kitchen turns out some of the city&#x27;s best green curry. How a licensing quirk of the 1980s built a tradition.</p>",
+          "image_credit": "Photo: Mei Lin",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "Behind the bar of a hundred old pubs, a small kitchen turns out some of the city's best green curry. How a licensing quirk of the 1980s built a tradition.",
+        "image": "as_cafe"
+      }
+    },
+    "/news/12-of-the-best-tv-shows-to-watch-this-november": {
+      "id": "pg_12_of_the_best_tv_shows_to_watch_this_november",
+      "template": "post",
+      "title": "12 of the best TV shows to watch this November",
+      "params": {
+        "handle": "12-of-the-best-tv-shows-to-watch-this-november"
+      },
+      "entry": {
+        "id": "en_12_of_the_best_tv_shows_to_watch_this_november",
+        "handle": "12-of-the-best-tv-shows-to-watch-this-november",
+        "title": "12 of the best TV shows to watch this November",
+        "fields": {
+          "topic": "Culture",
+          "date": "2026-10-31",
+          "author": "Tom Reilly",
+          "reading_minutes": 5,
+          "standfirst": "A heist in the fog, a slow-burn courtroom drama and the comedy everyone at the office is quoting. Our critics pick the month.",
+          "image": "as_screen",
+          "image_alt": "The old Regal cinema — placeholder",
+          "body": "<p>A heist in the fog, a slow-burn courtroom drama and the comedy everyone at the office is quoting. Our critics pick the month.</p>",
+          "image_credit": "Photo: Ana Ruiz",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "A heist in the fog, a slow-burn courtroom drama and the comedy everyone at the office is quoting. Our critics pick the month.",
+        "image": "as_screen"
+      }
+    },
+    "/news/12-of-the-best-films-to-watch-in-november": {
+      "id": "pg_12_of_the_best_films_to_watch_in_november",
+      "template": "post",
+      "title": "12 of the best films to watch in November",
+      "params": {
+        "handle": "12-of-the-best-films-to-watch-in-november"
+      },
+      "entry": {
+        "id": "en_12_of_the_best_films_to_watch_in_november",
+        "handle": "12-of-the-best-films-to-watch-in-november",
+        "title": "12 of the best films to watch in November",
+        "fields": {
+          "topic": "Culture",
+          "date": "2026-10-31",
+          "author": "Priya Nand",
+          "reading_minutes": 5,
+          "standfirst": "From the festival winner opening at the old Regal to two reissues worth the drive, the films to see before the year turns.",
+          "image": "as_screen",
+          "image_alt": "The old Regal cinema — placeholder",
+          "body": "<p>From the festival winner opening at the old Regal to two reissues worth the drive, the films to see before the year turns.</p>",
+          "image_credit": "Photo: Sam Okafor",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "From the festival winner opening at the old Regal to two reissues worth the drive, the films to see before the year turns.",
+        "image": "as_screen"
+      }
+    },
+    "/news/fog-season-begins-two-weeks-early": {
+      "id": "pg_fog_season_begins_two_weeks_early",
+      "template": "post",
+      "title": "Fog season begins two weeks early",
+      "params": {
+        "handle": "fog-season-begins-two-weeks-early"
+      },
+      "entry": {
+        "id": "en_fog_season_begins_two_weeks_early",
+        "handle": "fog-season-begins-two-weeks-early",
+        "title": "Fog season begins two weeks early",
+        "fields": {
+          "topic": "Weather",
+          "date": "2026-10-30",
+          "author": "Tom Reilly",
+          "reading_minutes": 5,
+          "standfirst": "Fog season has begun two weeks earlier than usual.",
+          "image": "as_town",
+          "image_alt": "The valley and its town — placeholder",
+          "body": "<p>Fog season has begun two weeks earlier than usual.</p>",
+          "image_credit": "Photo: Tom Reilly",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "Fog season has begun two weeks earlier than usual.",
+        "image": "as_town"
+      }
+    },
+    "/news/river-levels-and-what-the-gauge-at-the-bridge-means": {
+      "id": "pg_river_levels_and_what_the_gauge_at_the_bridge_means",
+      "template": "post",
+      "title": "River levels, and what the gauge at the bridge means",
+      "params": {
+        "handle": "river-levels-and-what-the-gauge-at-the-bridge-means"
+      },
+      "entry": {
+        "id": "en_river_levels_and_what_the_gauge_at_the_bridge_means",
+        "handle": "river-levels-and-what-the-gauge-at-the-bridge-means",
+        "title": "River levels, and what the gauge at the bridge means",
+        "fields": {
+          "topic": "Weather",
+          "date": "2026-10-30",
+          "author": "Priya Nand",
+          "reading_minutes": 5,
+          "standfirst": "What the river-level gauge at the bridge tells the valley.",
+          "image": "as_rain",
+          "image_alt": "Rain gauge at the mill bridge — placeholder",
+          "body": "<p>What the river-level gauge at the bridge tells the valley.</p>",
+          "image_credit": "Photo: Priya Nand",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "What the river-level gauge at the bridge tells the valley.",
+        "image": "as_rain"
+      }
+    },
+    "/news/what-the-forecast-got-wrong-this-week": {
+      "id": "pg_what_the_forecast_got_wrong_this_week",
+      "template": "post",
+      "title": "What the forecast got wrong this week",
+      "params": {
+        "handle": "what-the-forecast-got-wrong-this-week"
+      },
+      "entry": {
+        "id": "en_what_the_forecast_got_wrong_this_week",
+        "handle": "what-the-forecast-got-wrong-this-week",
+        "title": "What the forecast got wrong this week",
+        "fields": {
+          "topic": "Weather",
+          "date": "2026-10-30",
+          "author": "Tom Reilly",
+          "reading_minutes": 5,
+          "standfirst": "A look at the forecast and the weather the valley actually saw.",
+          "image": "as_town",
+          "image_alt": "The valley and its town — placeholder",
+          "body": "<p>A look at the forecast and the weather the valley actually saw.</p>",
+          "image_credit": "Photo: Ana Ruiz",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "A look at the forecast and the weather the valley actually saw.",
+        "image": "as_town"
+      }
+    },
+    "/about": {
+      "id": "pg_about",
+      "template": "page.about",
+      "title": "About the Ledger",
+      "seo": {
+        "description": "News for the valley since 1962.",
+        "image": "as_newsroom"
+      }
+    },
+    "/contact": {
+      "id": "pg_contact",
+      "template": "page.contact",
+      "title": "Send us a story",
+      "seo": {
+        "description": "Tips, corrections and letters to the newsroom."
+      }
+    },
+    "/privacy": {
+      "id": "pg_privacy",
+      "template": "page",
+      "title": "Privacy",
+      "content": "<p>This fixture newsroom keeps contact and newsletter submissions only to answer your message or send the morning letter. Your address is never shared.</p><p>Your browser remembers dismissed notices and your preferred story-list view. Write to tips@example.com with privacy questions.</p>",
+      "seo": {
+        "description": "How the Ledger handles messages and reader settings."
+      }
+    }
+  }
+}

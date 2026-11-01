@@ -1,0 +1,67 @@
+<!-- D5 supplies the section markup against this frozen schema. -->
+<section class="bg-scheme-background text-scheme-foreground"></section>
+
+<schema>
+{
+  "name": "Author card",
+  "description": "An author portrait, role, biography and links, using Editor settings when empty.",
+  "settings": [
+    {
+      "type": "image",
+      "id": "portrait",
+      "label": "Portrait",
+      "info": "Leave empty to use the Editor portrait."
+    },
+    {
+      "type": "text",
+      "id": "name",
+      "label": "Name",
+      "default": "",
+      "info": "Leave empty to use the Editor name."
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Role line",
+      "default": "Science correspondent"
+    },
+    {
+      "type": "textarea",
+      "id": "bio",
+      "label": "Biography",
+      "default": "",
+      "info": "Leave empty to use the Editor biography."
+    },
+    {
+      "type": "menu",
+      "id": "links",
+      "label": "Links menu",
+      "info": "Leave empty to use the Editor links menu."
+    },
+    {
+      "type": "checkbox",
+      "id": "use_post_author",
+      "label": "Use the current post author",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "name": "",
+        "label": "Science correspondent",
+        "bio": "",
+        "use_post_author": false,
+        "color_scheme": "paper"
+      }
+    }
+  ]
+}
+</schema>

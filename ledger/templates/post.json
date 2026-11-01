@@ -1,0 +1,82 @@
+{
+  "label": "Post",
+  "description": "One story, key facts, author, more from its topic and the morning letter.",
+  "sections": [
+    {
+      "id": "s_article",
+      "type": "article",
+      "preset": "Default",
+      "settings": {
+        "show_meta": true,
+        "show_image": true,
+        "show_byline": true,
+        "drop_cap": false,
+        "show_end_rule": true,
+        "show_updated": true,
+        "show_image_credit": true,
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_facts",
+      "type": "key-facts",
+      "preset": "Default",
+      "settings": {
+        "heading": "Key numbers",
+        "color_scheme": "slate"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_author",
+      "type": "author-card",
+      "preset": "Default",
+      "settings": {
+        "name": "",
+        "label": "Science correspondent",
+        "bio": "",
+        "use_post_author": true,
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_more",
+      "type": "topic-block",
+      "preset": "More from",
+      "settings": {
+        "heading": "More from",
+        "base_path": "/news",
+        "layout": "grid",
+        "show_images": true,
+        "show_toggle": false,
+        "columns": "3",
+        "limit": 3,
+        "offset": 0,
+        "topic": "",
+        "exclude_current": true,
+        "show_count": false,
+        "view_all_label": "",
+        "view_all_href": "",
+        "color_scheme": "paper",
+        "collection": "posts"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Default",
+      "settings": {
+        "heading": "Six stories by seven",
+        "text": "The morning's six stories in your inbox by seven, every weekday. Free.",
+        "placeholder": "you@example.com",
+        "note": "Unsubscribe in one click. We never share your address.",
+        "form": "newsletter",
+        "color_scheme": "ink"
+      },
+      "blocks": []
+    }
+  ]
+}

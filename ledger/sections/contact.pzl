@@ -1,0 +1,67 @@
+<!-- D5 supplies the section markup against this frozen schema. -->
+<section class="bg-scheme-background text-scheme-foreground"></section>
+
+<schema>
+{
+  "name": "Contact form",
+  "description": "A contact form with optional heading and site contact details.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Send us a story"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show the heading",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Seen something the valley should know about? Write to the newsroom. We read everything, and we protect our sources."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_details",
+      "label": "Show the postal address and reply hours",
+      "default": true
+    },
+    {
+      "type": "form",
+      "id": "form",
+      "label": "Form",
+      "default": "contact"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note under the button",
+      "default": ""
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "heading": "Send us a story",
+        "show_heading": true,
+        "text": "Seen something the valley should know about? Write to the newsroom. We read everything, and we protect our sources.",
+        "show_details": true,
+        "form": "contact",
+        "note": "",
+        "color_scheme": "paper"
+      }
+    }
+  ]
+}
+</schema>

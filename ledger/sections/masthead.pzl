@@ -1,0 +1,81 @@
+<!-- D5 supplies the section markup against this frozen schema. -->
+<section class="bg-scheme-background text-scheme-foreground"></section>
+
+<schema>
+{
+  "name": "Masthead",
+  "description": "Wordmark left, Subscribe right and Menu on mobile, a strong rule and scrolling topic strip. No date.",
+  "settings": [
+    {
+      "type": "image",
+      "id": "logo",
+      "label": "Logo",
+      "info": "Leave empty to use logo text or the site name."
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo text",
+      "default": "",
+      "info": "Leave empty to use the site name."
+    },
+    {
+      "type": "menu",
+      "id": "menu",
+      "label": "Topic strip menu",
+      "info": "Scrollable topic navigation beneath the wordmark."
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky",
+      "label": "Stick to the top of the page",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bordered",
+      "label": "Show a bottom border",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_subscribe",
+      "label": "Show Subscribe",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "subscribe_label",
+      "label": "Subscribe label",
+      "default": "Subscribe"
+    },
+    {
+      "type": "url",
+      "id": "subscribe_href",
+      "label": "Subscribe link",
+      "default": "/#section-s_newsletter"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "logo_text": "",
+        "sticky": true,
+        "bordered": true,
+        "show_subscribe": true,
+        "subscribe_label": "Subscribe",
+        "subscribe_href": "/#section-s_newsletter",
+        "color_scheme": "paper",
+        "menu": "main"
+      }
+    }
+  ]
+}
+</schema>

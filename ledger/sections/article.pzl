@@ -1,0 +1,77 @@
+<!-- D5 supplies the section markup against this frozen schema. -->
+<section class="bg-scheme-background text-scheme-foreground"></section>
+
+<schema>
+{
+  "name": "Article",
+  "description": "One story, byline, calendar publication and update dates, hero credit and body.",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_meta",
+      "label": "Show the topic, date and reading time",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "label": "Show the picture",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_byline",
+      "label": "Show the byline",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "drop_cap",
+      "label": "Show a drop cap",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_end_rule",
+      "label": "Show the end rule",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_updated",
+      "label": "Show the updated date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image_credit",
+      "label": "Show the image credit",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "templates": [
+    "post"
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "show_meta": true,
+        "show_image": true,
+        "show_byline": true,
+        "drop_cap": false,
+        "show_end_rule": true,
+        "show_updated": true,
+        "show_image_credit": true,
+        "color_scheme": "paper"
+      }
+    }
+  ]
+}
+</schema>

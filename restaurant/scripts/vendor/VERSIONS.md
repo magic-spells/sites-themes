@@ -16,7 +16,6 @@ them is an npm dependency of the theme; the build resolves only these relative i
 | collapsible-content.js, ../styles/vendor/collapsible-content.css | @magic-spells/collapsible-content | 1.2.0 | npm |
 | sticky-header.js, ../styles/vendor/sticky-header.css | @magic-spells/sticky-header | 0.2.0 | npm (copied from Folio's vendored copy) |
 | reveal.js, ../styles/vendor/reveal.css | @magic-spells/reveal | 0.1.1 | npm (copied from Folio's vendored copy) |
-| tab-group.js, ../styles/vendor/tab-group.css | @magic-spells/tab-group | 1.2.0 | npm (dist/tab-group.esm.js and the structural dist/tab-group.css) |
 
 Tarot and tarot-plugins are unpublished and intentionally absent from package.json. All runtime builds here are imported by theme.ts; all vendor stylesheets are imported into the components layer. CSS lengths other than borders and shadows have been converted from px to rem at 16:1 for the theme rules; JavaScript builds are unchanged.
 

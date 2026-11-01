@@ -31,7 +31,6 @@
         "show_legend": true,
         "base_path": "/dishes",
         "show_category_description": true,
-        "show_dietary_filter": false,
         "color_scheme": "paper",
         "collection": "menu_items",
         "categories": "menu_categories"
@@ -65,6 +64,7 @@
       "preset": "Default",
       "settings": {
         "text": "A table by the water, tonight.",
+        "subline": "Walk-ins welcome at the counter.",
         "book_label": "Book a table",
         "color_scheme": "tomato"
       },

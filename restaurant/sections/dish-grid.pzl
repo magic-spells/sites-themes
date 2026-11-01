@@ -17,7 +17,7 @@
         <nav aria-label="{ t('menu_categories') }" data-rail>
           <ul class="-mx-gutter flex gap-step-xs overflow-x-auto px-gutter md:mx-0 md:flex-wrap md:px-0" data-strip>
             {#for category in categories}
-              <li class="shrink-0" data-tint={ category.fields.tint }><a class="block rounded-full border border-tint bg-tint px-step-sm py-step-xs font-mono text-code font-medium tracking-code text-tint-ink uppercase transition-colors duration-panel hover:border-scheme-foreground current:border-scheme-foreground" href="#{ category.handle }">{ category.title }</a></li>
+              <li class="shrink-0" data-tint={ category.fields.tint }><a class="flex min-h-control-small items-center rounded-full border border-tint bg-tint px-step-sm py-step-xs font-mono text-code font-medium tracking-code text-tint-ink uppercase transition-colors duration-panel hover:border-scheme-foreground current:border-scheme-foreground" href="#{ category.handle }">{ category.title }</a></li>
             {/for}
           </ul>
         </nav>
@@ -148,12 +148,6 @@
       "default": true
     },
     {
-      "type": "checkbox",
-      "id": "show_dietary_filter",
-      "label": "Show dietary filter",
-      "default": false
-    },
-    {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme",
@@ -173,7 +167,6 @@
         "show_legend": true,
         "base_path": "/dishes",
         "show_category_description": true,
-        "show_dietary_filter": false,
         "color_scheme": "paper",
         "collection": "menu_items",
         "categories": "menu_categories"

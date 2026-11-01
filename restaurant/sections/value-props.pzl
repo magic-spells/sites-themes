@@ -2,9 +2,9 @@
      scheme's surface, Boxes its second surface. 2 × 2 at 48rem, stacked
      below. A prop with booking makes its button a Book a table, the primary
      pill; the others are outline. -->
-<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" aria-label={ settings.show_heading ? null : settings.heading } aria-labelledby={ settings.show_heading ? 'props-' + section.id : null }>
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" aria-labelledby={ settings.heading ? 'props-' + section.id : null }>
   <div class="mx-auto grid max-w-column gap-step-xl">
-    {#if settings.show_heading && settings.heading}<h2 class="font-heading text-h2 font-bold text-scheme-heading" id="props-{ section.id }">{ settings.heading }</h2>{/if}
+    {#if settings.heading}<h2 class="{ settings.show_heading ? 'font-heading text-h2 font-bold text-scheme-heading' : 'sr-only' }" id="props-{ section.id }">{ settings.heading }</h2>{/if}
     <ul class="grid gap-gap-lg md:grid-cols-2 { settings.columns == '4' ? 'lg:grid-cols-4' : 'lg:grid-cols-3' }">
       {#for block in blocks}
         {#let b = block.settings}

@@ -7,12 +7,13 @@
   rows = settings.layout == 'rows'
 }
 {#if items.length}
-<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" aria-label={ settings.show_heading ? null : settings.heading } aria-labelledby={ settings.show_heading ? id + '-title' : null }>
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" aria-labelledby={ settings.heading ? id + '-title' : null }>
   <div class="mx-auto grid max-w-column gap-step-xl">
+    {#if settings.heading && !settings.show_heading}<h2 class="sr-only" id="{ id }-title">{ settings.heading }</h2>{/if}
     {#if settings.show_heading || settings.view_all_label}
       <div class="flex items-end justify-between gap-step-lg">
         {#if settings.show_heading && settings.heading}<h2 class="font-heading text-h2 font-bold text-scheme-heading" id="{ id }-title">{ settings.heading }</h2>{:else}<span></span>{/if}
-        {#if settings.view_all_label && settings.view_all_href && page.path != settings.view_all_href}<a class="font-mono text-code font-medium tracking-code whitespace-nowrap text-scheme-links uppercase hover:underline" href="{ settings.view_all_href }">{ settings.view_all_label }</a>{/if}
+        {#if settings.view_all_label && settings.view_all_href && page.path != settings.view_all_href}<a class="-my-step-sm inline-block py-step-sm font-mono text-code font-medium tracking-code whitespace-nowrap text-scheme-links uppercase hover:underline" href="{ settings.view_all_href }">{ settings.view_all_label }</a>{/if}
       </div>
     {/if}
     {#if rows}

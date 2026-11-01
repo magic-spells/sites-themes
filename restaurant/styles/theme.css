@@ -9,7 +9,6 @@
 @import "./vendor/scrollbar.css" layer(components);
 @import "./vendor/select-dropdown.css" layer(components);
 @import "./vendor/sticky-header.css" layer(components);
-@import "./vendor/tab-group.css" layer(components);
 @import "./vendor/tarot.css" layer(components);
 
 @source "../layouts/**/*.pzl";
@@ -37,9 +36,9 @@
 	--color-tint-tomato: #F6CFC5;
 	--color-tint-tomato-ink: #7A2113;
 	--color-tint-saffron: #F8E2A6;
-	--color-tint-saffron-ink: #6B4A00;
+	--color-tint-saffron-ink: #5A3E00;
 	--color-tint-leaf: #D2E4C8;
-	--color-tint-leaf-ink: #22511F;
+	--color-tint-leaf-ink: #1C461A;
 	--color-tint-sea: #CBDFE9;
 	--color-tint-sea-ink: #16455A;
 	--color-tint-plum: #E4D2E6;
@@ -195,9 +194,10 @@
 	--spacing-button-x: var(--sites-button-padding-x);
 	--spacing-button-y: var(--sites-button-padding-y);
 	--spacing-control: 3rem;
-	--spacing-control-small: 2.25rem;
+	--spacing-control-small: 2.5rem;
 	--spacing-textarea: 6rem;
 	--spacing-icon: 1.25rem;
+	--spacing-checkbox: 1.25rem;
 	--spacing-icon-button: 2.75rem;
 	--scale-hover: 103%;
 	--transition-duration-settle: 700ms;
@@ -501,8 +501,11 @@ tarot-carousel {
 	--color-pagination-dot-active: var(--sites-scheme-links);
 }
 
+/* Each dot is a 1.5rem hit box with the 0.5rem dot painted in its middle
+   (padding plus content-box), so the boxes touch and the dots keep their
+   spacing. */
 .tarot-dots-list {
-	gap: var(--restaurant-step-xs);
+	gap: 0;
 	margin: 0 auto;
 }
 
@@ -513,8 +516,16 @@ tarot-carousel > .tarot-dots-list {
 }
 
 .tarot-dots-button {
-	width: 0.5rem;
-	height: 0.5rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	padding: 0.5rem;
+	background-clip: content-box;
+}
+
+/* With no JavaScript the header's Menu panel never opens, so its links
+   stay out of the tab order. */
+dropdown-component:not(:defined) dropdown-panel {
+	display: none;
 }
 
 /* Before tarot upgrades, or with no JavaScript, its stylesheet hides every

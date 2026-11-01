@@ -42,6 +42,7 @@
       "preset": "Default",
       "settings": {
         "text": "A table by the water, tonight.",
+        "subline": "Walk-ins welcome at the counter.",
         "book_label": "Book a table",
         "color_scheme": "tomato"
       },

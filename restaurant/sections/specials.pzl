@@ -3,7 +3,7 @@
      Each docket row is a button that shows its dish's photograph; the row of
      the photograph on show is aria-current, its number in the link colour,
      whichever way the slide changed (theme.ts). A counter sits on the
-     picture. Stacked below 64rem, the docket first. -->
+     picture, on a dark pill so it reads on any photograph. Stacked below 64rem, the docket first. -->
 {#let
   items = settings.collection.entries | where('fields.featured') | sort('fields.order') | slice(0, settings.limit)
   id = 'specials-' + section.id
@@ -49,7 +49,7 @@
             {/for}
           </tarot-track>
         </tarot-viewport>
-        {#if settings.show_counter}<div class="pointer-events-none absolute bottom-step-sm left-step-sm z-10"><Counter index={ 1 } total={ items.length } carousel_id={ id } tone="photo" /></div>{/if}
+        {#if settings.show_counter}<div class="pointer-events-none absolute bottom-step-sm left-step-sm z-10 rounded-full bg-backdrop px-step-xs py-step-2xs"><Counter index={ 1 } total={ items.length } carousel_id={ id } tone="photo" /></div>{/if}
       </tarot-carousel>
     </div>
   </div>
@@ -98,12 +98,6 @@
       "info": "Reads menu_items entries: title, handle, description, ingredients, price, category, dietary, image, image_alt, featured, tag and photos."
     },
     {
-      "type": "url",
-      "id": "base_path",
-      "label": "Base path",
-      "default": "/dishes"
-    },
-    {
       "type": "range",
       "id": "limit",
       "label": "Limit",
@@ -134,7 +128,6 @@
         "show_intro": false,
         "intro": "A few favourites from the kitchen.",
         "book_label": "Book a table",
-        "base_path": "/dishes",
         "limit": 4,
         "show_counter": true,
         "color_scheme": "charcoal",

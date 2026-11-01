@@ -95,7 +95,6 @@
         "show_intro": false,
         "intro": "A few favourites from the kitchen.",
         "book_label": "Book a table",
-        "base_path": "/dishes",
         "limit": 4,
         "show_counter": true,
         "color_scheme": "charcoal",
@@ -380,6 +379,7 @@
       "preset": "Default",
       "settings": {
         "text": "A table by the water, tonight.",
+        "subline": "Walk-ins welcome at the counter.",
         "book_label": "Book a table",
         "color_scheme": "tomato"
       },

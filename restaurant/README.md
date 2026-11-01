@@ -133,7 +133,7 @@ theme has no separate test command.
 ## The vendored components
 
 Tarot (the carousels) with its lightbox, lazy-load and scrollbar plugins, and the bottom-sheet,
-dialog-panel, dropdown-panel, select-dropdown, collapsible-content, sticky-header, tab-group and
+dialog-panel, dropdown-panel, select-dropdown, collapsible-content, sticky-header and
 reveal components are copied into `scripts/vendor/` and `styles/vendor/`, because the theme
 build resolves only the builder's own packages. `scripts/vendor/VERSIONS.md` lists each file's
 package and version. To move one to npm once the engine links a theme's installs: add the

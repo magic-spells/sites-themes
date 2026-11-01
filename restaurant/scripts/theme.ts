@@ -17,7 +17,6 @@ import './vendor/lightbox.min.js';
 import './vendor/scrollbar.esm.js';
 import './vendor/select-dropdown.js';
 import './vendor/sticky-header.js';
-import './vendor/tab-group.js';
 import './vendor/tarot.esm.js';
 import Reveal from './vendor/reveal.js';
 

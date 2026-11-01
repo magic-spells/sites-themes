@@ -16,7 +16,7 @@
     <div class="mb-step-xl flex items-end justify-between gap-step-lg px-gutter md:px-0">
       <h2 class="font-heading text-h2 font-bold text-scheme-heading" id="{ id }-title">{ settings.heading | replace('{category}', category.title) }</h2>
       <div class="flex shrink-0 items-center gap-step-md">
-        {#if settings.see_all_label}<a class="font-mono text-code font-medium tracking-code whitespace-nowrap text-scheme-links uppercase hover:underline" href="{ settings.menu_path }#{ category.handle }">{ settings.see_all_label | replace('{category}', category.title) }</a>{/if}
+        {#if settings.see_all_label}<a class="-my-step-sm inline-block py-step-sm font-mono text-code font-medium tracking-code whitespace-nowrap text-scheme-links uppercase hover:underline" href="{ settings.menu_path }#{ category.handle }">{ settings.see_all_label | replace('{category}', category.title) }</a>{/if}
         <Arrows />
       </div>
     </div>

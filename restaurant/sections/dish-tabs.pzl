@@ -19,7 +19,7 @@
     <script type="application/json" data-tarot-options>{ options | json }</script>
     <div class="mb-step-lg flex items-end justify-between gap-step-lg px-gutter md:px-0">
       <h2 class="font-heading text-h2 font-bold text-scheme-heading" id="{ id }-title">{ settings.heading }</h2>
-      {#if settings.full_menu_label}<a class="shrink-0 font-mono text-code font-medium tracking-code whitespace-nowrap text-scheme-links uppercase hover:underline" href="{ settings.menu_path }">{ settings.full_menu_label }</a>{/if}
+      {#if settings.full_menu_label}<a class="-my-step-sm inline-block shrink-0 py-step-sm font-mono text-code font-medium tracking-code whitespace-nowrap text-scheme-links uppercase hover:underline" href="{ settings.menu_path }">{ settings.full_menu_label }</a>{/if}
     </div>
     <div class="mb-step-xl flex items-center justify-between gap-step-md">
       <div class="flex gap-step-2xs overflow-x-auto px-gutter md:flex-wrap md:px-0" role="group" aria-label="{ t('filter_by_category') }" data-filter-for={ id } data-strip>

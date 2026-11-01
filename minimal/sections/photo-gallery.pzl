@@ -39,7 +39,7 @@
         { "value": "4", "label": "Four" }
       ] },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default",
-      "info": "The surface this section is rendered on. Schemes are declared in design.json under schemes." }
+      "info": "The surface this section is rendered on. Schemes are declared in settings/design.json under schemes." }
   ],
   "presets": [
     { "name": "Default", "settings": { "heading": "Gallery", "columns": "3", "color_scheme": "default" } }

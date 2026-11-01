@@ -1,6 +1,6 @@
 {
-  "label": "Home · Cover",
-  "description": "Home · Cover page sections.",
+  "label": "Cover",
+  "description": "A landing page that opens with a full-height Cover hero under an overlaid header.",
   "sections": [
     {
       "id": "s_hero",

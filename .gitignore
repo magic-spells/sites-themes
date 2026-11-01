@@ -2,3 +2,12 @@ node_modules/
 dist/
 .sites/
 .DS_Store
+
+# Constellation working memory (local conversational memory; never tracked)
+.constellation/
+
+# Local agent material: briefs, dumps and renders, MCP and tool settings
+.briefs/
+.claude/
+.mcp.json
+.playwright-mcp/

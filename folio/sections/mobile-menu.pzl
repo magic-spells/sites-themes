@@ -2,7 +2,7 @@
      scrim. It closes on the scrim, on Escape and on its × button, and hands
      focus back to the header's Menu button. -->
 <dialog-panel id="mobile-menu" position="left">
-  <dialog-backdrop class="bg-scheme-surface/90"></dialog-backdrop>
+  <dialog-backdrop class="bg-scheme-foreground/50 backdrop-blur-sm"></dialog-backdrop>
   <dialog class="h-dvh w-full max-w-drawer overflow-y-auto bg-scheme-background text-scheme-foreground shadow-none" aria-label="{ t('menu_label') }">
     <div class="grid gap-step-xl px-gutter pt-step-md pb-step-xl">
       <div class="flex items-center justify-between gap-step-md">

@@ -2,7 +2,8 @@
 // <dialog-panel> and the header a <sticky-header>, both Magic Spells web
 // components; this file registers them and adds the three small behaviours
 // they do not cover: opening a panel from a button elsewhere on the page, the
-// once-per-visitor notice, and the dismissible announcement bar.
+// once-per-visitor notice, the dismissible announcement bar, and the post
+// list's list/grid switch. Scroll reveals come from @magic-spells/reveal.
 //
 // State lives on data- attributes, never on classes: Tailwind generates only
 // what it reads in .pzl and styles/ files, so the stylesheet reacts to
@@ -10,6 +11,7 @@
 
 import './vendor/dialog-panel.js';
 import './vendor/sticky-header.js';
+import Reveal from './vendor/reveal.js';
 
 const DISMISSED_PREFIX = 'sites:dismissed:';
 
@@ -84,3 +86,47 @@ for (const bar of document.querySelectorAll<HTMLElement>('[data-dismiss-key]')) 
 		if (key) remember(key);
 	});
 }
+
+// A post list with the switch renders both views and shows the one its
+// data-view names. The reader's last choice is remembered for every list that
+// offers the switch: the layout's inline pre-paint script copies it onto
+// <html> as data-post-list-view before the body paints, and the view variants
+// in theme.css key off that. Without JavaScript the editor's layout shows and
+// the switch stays hidden.
+const VIEW_KEY = 'sites:post-list-view';
+
+function showView(view: string): void {
+	document.documentElement.setAttribute('data-post-list-view', view);
+	for (const list of document.querySelectorAll('[data-view]')) {
+		if (!list.querySelector('[data-view-set]')) continue;
+		list.setAttribute('data-view', view);
+		for (const button of list.querySelectorAll('[data-view-set]')) {
+			button.setAttribute('aria-pressed', String(button.getAttribute('data-view-set') === view));
+		}
+	}
+}
+
+const savedView = document.documentElement.getAttribute('data-post-list-view');
+if (savedView === 'list' || savedView === 'grid') showView(savedView);
+for (const group of document.querySelectorAll<HTMLElement>('[data-view-switch]')) group.hidden = false;
+
+document.addEventListener('click', (event) => {
+	const button = (event.target as Element | null)?.closest?.('[data-view-set]');
+	const view = button?.getAttribute('data-view-set');
+	if (!button?.closest('[data-view]') || (view !== 'list' && view !== 'grid')) return;
+	showView(view);
+	try {
+		localStorage.setItem(VIEW_KEY, view);
+	} catch {
+		/* remembered for this page only */
+	}
+});
+
+// Scroll reveals. The sections write `reveal reveal-fade-up` only while the
+// Reveal cards on scroll setting is on, so with it off there is nothing to arm
+// and the library never starts. Offset 0 puts the trigger line on the bottom
+// edge of the viewport: whatever is on screen at load reveals at once, the
+// rest as it arrives, once each. Reduced motion is handled by the library's
+// own media query; the layout's <noscript> rule and load watchdog cover a
+// script that never runs.
+if (document.querySelector('.reveal')) Reveal.init({ offset: 0, duration: 400, once: true });

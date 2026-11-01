@@ -6,6 +6,12 @@
 @import "./vendor/dialog-panel.css" layer(components);
 @import "./vendor/sticky-header.css" layer(components);
 
+/* @magic-spells/reveal's Tailwind entry: every rule is a @utility, so only
+   the marker and the one effect the theme writes (reveal reveal-fade-up) are
+   generated. Its resting state applies before the script runs; the layout's
+   <noscript> rule and load watchdog make sure nothing stays hidden. */
+@import "./vendor/reveal.css";
+
 /* Every class the theme types lives in a .pzl file, so those are what Tailwind
    scans. Naming the sources explicitly keeps the build the same wherever it
    runs. */
@@ -13,6 +19,28 @@
 @source "../templates/**/*.pzl";
 @source "../sections/**/*.pzl";
 @source "../components/**/*.pzl";
+
+/* The post list's two views. A list with the reader's switch carries the
+   editor's view as data-view on its section. A reader's saved choice is set on
+   <html> as data-post-list-view by the layout's pre-paint script, before the
+   body paints, and wins over it. Each variant hides the view that is not
+   chosen. */
+@custom-variant view-list {
+	&:where([data-view="list"] *):not(:where([data-post-list-view="grid"] *)) {
+		@slot;
+	}
+	&:where([data-post-list-view="list"] [data-view] *) {
+		@slot;
+	}
+}
+@custom-variant view-grid {
+	&:where([data-view="grid"] *):not(:where([data-post-list-view="list"] *)) {
+		@slot;
+	}
+	&:where([data-post-list-view="grid"] [data-view] *) {
+		@slot;
+	}
+}
 
 /* Sites writes the site's design tokens into <head> as --sites-* custom
    properties. Mapping them into Tailwind's token names is the styling
@@ -207,6 +235,12 @@
 	--spacing-textarea: 9rem;
 	--spacing-logo: 2.25rem;
 	--spacing-portrait: 4.5rem;
+	/* The 3:2 thumbnail in a post row, and its mobile size. */
+	--spacing-thumb: 7.5rem;
+	--spacing-thumb-sm: 4.5rem;
+	/* The post list's view switch: a square icon button and its icon. */
+	--spacing-icon-button: 2.5rem;
+	--spacing-icon: 1.25rem;
 }
 
 /* Desktop takes each scale step itself; mobile and tablet take the design
@@ -281,10 +315,11 @@
 	}
 }
 
-/* The post-row grid: a date column, the title and standfirst, and the topic
-   and reading time at the right. */
+/* The post-row grid: a date column, the title and standfirst (with the
+   thumbnail), and the topic and reading time at the right. The last column
+   holds at least 9rem so every row's thumbnail lands on the same line. */
 @utility grid-cols-post-row {
-	grid-template-columns: 8.125rem minmax(0, 1fr) auto;
+	grid-template-columns: 8.125rem minmax(0, 1fr) minmax(9rem, auto);
 }
 
 /* Newsreader is self-hosted because the engine's Google request carries no

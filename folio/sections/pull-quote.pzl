@@ -1,5 +1,5 @@
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <figure class="mx-auto flex max-w-reading gap-step-xs">
+  <figure class="mx-auto flex max-w-reading gap-step-xs { site.settings.reveal_on_scroll ? 'reveal reveal-fade-up' : '' }">
     <!-- The opening mark hangs in its own column, so the quote's lines align. -->
     <span class="font-heading text-h1 leading-none font-light text-scheme-links italic" aria-hidden="true">“</span>
     <div class="grid gap-step-md">

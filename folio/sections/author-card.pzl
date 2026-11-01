@@ -6,7 +6,7 @@
   links = settings.links.items.length ? settings.links : site.settings.writer_links
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto flex max-w-reading flex-wrap items-center gap-step-lg">
+  <div class="mx-auto flex max-w-reading flex-wrap items-center gap-step-lg { site.settings.reveal_on_scroll ? 'reveal reveal-fade-up' : '' }">
     {#if portrait}
       <img class="size-portrait shrink-0 rounded-full bg-scheme-surface object-cover" src="{ image_url(portrait, 160, { height: 160 }) }" srcset="{ image_url(portrait, 160, { height: 160 }) } 1x, { image_url(portrait, 320, { height: 320 }) } 2x" alt="{ portrait.alt }" width="72" height="72" loading="lazy" />
     {/if}

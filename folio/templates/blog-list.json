@@ -16,15 +16,32 @@
       "blocks": []
     },
     {
+      "id": "s_journal_featured",
+      "type": "featured-post",
+      "preset": "Default",
+      "settings": {
+        "base_path": "/journal",
+        "italic_tail": "after rain",
+        "show_image": true,
+        "read_label": "Read the essay",
+        "color_scheme": "paper",
+        "collection": "posts"
+      },
+      "blocks": []
+    },
+    {
       "id": "s_journal_index",
       "type": "post-list",
       "preset": "Index",
       "settings": {
         "heading": "All posts",
         "base_path": "/journal",
-        "layout": "list",
-        "columns": "3",
+        "layout": "grid",
+        "show_images": true,
+        "show_toggle": true,
+        "columns": "2",
         "limit": 12,
+        "offset": 1,
         "topic": "",
         "exclude_current": false,
         "show_count": true,

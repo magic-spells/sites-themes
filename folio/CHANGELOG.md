@@ -12,6 +12,9 @@
   for readers: the editor's layout shows first, and the reader's choice is remembered.
   The journal index turns both on; More to read turns the thumbnails off.
 - Every fixture post has a picture now, four of them with captions.
+- The journal and home pages open on the featured essay, then the posts after it as a grid of
+  two cards per row (Recent and Index presets: `layout: "grid"`, `columns: "2"`). Grid rows sit
+  a full step apart (`step-xl`) so each card reads on its own.
 - Mobile menu and sticky header built on `@magic-spells/dialog-panel` 2.0.3 and
   `@magic-spells/sticky-header` 0.2.0.
 - Newsreader roman and italic self-hosted under the OFL; IBM Plex Mono for labels.

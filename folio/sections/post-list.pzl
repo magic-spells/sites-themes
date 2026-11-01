@@ -25,7 +25,7 @@
       <p class="border-t border-scheme-rule pt-step-md text-body text-scheme-muted">{ t('posts_empty') }</p>
     {:else}
       {#if toggle || view == 'grid'}
-        <ul class="grid md:grid-cols-2 { settings.columns == '2' ? 'gap-space-sm md:gap-space-md' : 'gap-x-space-xs gap-y-step-lg md:gap-x-space-sm lg:grid-cols-3' } view-list:hidden" data-grid>
+        <ul class="grid gap-x-space-sm gap-y-step-xl md:grid-cols-2 md:gap-x-space-md { settings.columns == '2' ? '' : 'lg:grid-cols-3' } view-list:hidden" data-grid>
           {#for entry in posts}<PostCard entry={ entry } href="{ settings.base_path }/{ entry.handle }" columns={ settings.columns } />{/for}
         </ul>
       {/if}
@@ -176,10 +176,10 @@
       "settings": {
         "heading": "Recent",
         "base_path": "/journal",
-        "layout": "list",
+        "layout": "grid",
         "show_images": true,
         "show_toggle": false,
-        "columns": "3",
+        "columns": "2",
         "limit": 4,
         "topic": "",
         "exclude_current": false,
@@ -195,10 +195,10 @@
       "settings": {
         "heading": "All posts",
         "base_path": "/journal",
-        "layout": "list",
+        "layout": "grid",
         "show_images": true,
         "show_toggle": true,
-        "columns": "3",
+        "columns": "2",
         "limit": 12,
         "topic": "",
         "exclude_current": false,

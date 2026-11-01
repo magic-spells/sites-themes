@@ -19,6 +19,8 @@
 <schema>
 {
   "name": "Image with text",
+  "kind": "Content",
+  "icon": "columns-2",
   "settings": [
     { "type": "image", "id": "image", "label": "Image" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Our room" },
@@ -42,7 +44,7 @@
         { "value": "normal", "label": "Normal" },
         { "value": "compact", "label": "Compact" }
       ] },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
     { "name": "Default",

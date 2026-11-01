@@ -31,6 +31,8 @@
 <schema>
 {
   "name": "Features grid",
+  "kind": "Content",
+  "icon": "layout-grid",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "What you will find" },
     { "type": "textarea", "id": "text", "label": "Text", "default": "A small shop, chosen by hand. Everything on the shelves is here because someone here read it." },
@@ -45,7 +47,7 @@
         { "value": "normal", "label": "Normal" },
         { "value": "compact", "label": "Compact" }
       ] },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "blocks": [
     { "type": "feature", "name": "Feature", "settings": [

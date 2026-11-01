@@ -41,11 +41,13 @@
 {
   "name": "Post",
   "description": "One journal entry: its byline, its picture, and its writing.",
+  "kind": "Content",
+  "icon": "file-text",
   "templates": ["post"],
   "settings": [
     { "type": "checkbox", "id": "show_meta", "label": "Show the topic and date", "default": true },
     { "type": "checkbox", "id": "show_image", "label": "Show the picture", "default": true },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
     { "name": "Default", "settings": { "show_meta": true, "show_image": true, "color_scheme": "default" } }

@@ -30,6 +30,8 @@
 <schema>
 {
   "name": "Hero",
+  "kind": "Hero",
+  "icon": "image",
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "info": "A short standing label above the heading.", "default": "Since 1998" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "A shop for books worth keeping" },

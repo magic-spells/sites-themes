@@ -16,6 +16,8 @@
 <schema>
 {
   "name": "Notice",
+  "kind": "Panels",
+  "icon": "cookie",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "A word about cookies" },
     { "type": "richtext", "id": "body", "label": "Body", "default": "<p>We set no cookies. Your browser's local storage remembers that you have read this, and nothing else is measured.</p>" },

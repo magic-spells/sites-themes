@@ -51,12 +51,12 @@ while [ "$i" -lt "$count" ]; do
     problem "$at" "minimal is the engine's scaffold and is never in the catalog"
   fi
 
-  if [ -z "$name" ] || [ ! -f "$name/theme.json" ]; then
-    problem "$at" "no theme folder $name/ with a theme.json"
+  if [ -z "$name" ] || [ ! -f "$name/settings/theme.json" ]; then
+    problem "$at" "no theme folder $name/ with a settings/theme.json"
   else
-    folder_version=$(jq -r '.version // ""' "$name/theme.json")
+    folder_version=$(jq -r '.version // ""' "$name/settings/theme.json")
     if [ "$version" != "$folder_version" ]; then
-      problem "$at" "version $version, but $name/theme.json says $folder_version"
+      problem "$at" "version $version, but $name/settings/theme.json says $folder_version"
     fi
   fi
 

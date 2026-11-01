@@ -1,5 +1,17 @@
-<!-- D5 supplies the section markup against this frozen schema. -->
-<section class="bg-scheme-background text-scheme-foreground"></section>
+<!-- A page's kicker, title and dek in a 47.5rem block, over a 3px rule the
+     width of the page column. Centred, the block sits in the middle of the
+     column. The chip setting is the red kicker. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column border-b-3 border-scheme-rule-strong pb-step-md { settings.align == 'center' ? 'justify-items-center' : '' }">
+    <header class="grid max-w-reading gap-step-sm { settings.align == 'center' ? 'justify-items-center text-center' : '' }">
+      {#if settings.chip}<p class="font-body text-kicker font-semibold text-scheme-links uppercase">{ settings.chip }</p>{/if}
+      <h1 class="font-heading text-h1 font-bold text-pretty text-scheme-heading">{ settings.heading || page.title }</h1>
+      {#if settings.standfirst || page.seo.description}
+        <p class="text-dek text-pretty text-scheme-muted">{ settings.standfirst || page.seo.description }</p>
+      {/if}
+    </header>
+  </div>
+</section>
 
 <schema>
 {

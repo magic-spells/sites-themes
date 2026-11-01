@@ -1,5 +1,42 @@
-<!-- D5 supplies the section markup against this frozen schema. -->
-<section class="bg-scheme-background text-scheme-foreground"></section>
+{#let
+  sorted = settings.collection.entries | sort('fields.date') | reverse
+  by_topic = settings.topic ? (sorted | where('fields.topic', settings.topic)) : sorted
+  pool = settings.exclude_current && page.entry ? (by_topic | reject('handle', page.entry.handle)) : by_topic
+  posts = pool | slice(settings.offset ?? 0, settings.limit)
+  view_all = settings.view_all_label && settings.view_all_href
+  view = settings.layout == 'grid' ? 'grid' : 'list'
+  toggle = settings.show_toggle
+}
+<!-- The latest headlines, newest first: the day in the left column and the
+     headline, a hairline between rows. Days only: the page is cached, so no
+     time of day, no "ago" and no "updated at" clock. The count and view-all
+     link sit in the head when they are on. -->
+{#if posts.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-view={ toggle ? view : false }>
+  <div class="mx-auto grid max-w-column">
+    <div class="flex flex-wrap items-baseline justify-between gap-x-step-md gap-y-step-2xs border-t-3 border-scheme-rule-strong py-step-xs">
+      <h2 class="font-heading text-h4 font-semibold text-scheme-heading uppercase">{ settings.heading }</h2>
+      <div class="flex items-center gap-step-sm">
+        {#if settings.show_count}<p class="font-mono text-meta text-scheme-meta">{ t('post_count', { shown: posts.length, total: pool.length }) }</p>{/if}
+        {#if view_all}<a class="font-body text-kicker font-semibold text-scheme-links uppercase decoration-1 underline-offset-4 hover:underline" href="{ settings.view_all_href }">{ settings.view_all_label }</a>{/if}
+        {#if toggle}<ViewSwitch view={ view } />{/if}
+      </div>
+    </div>
+    {#if toggle || view == 'list'}
+      <ul class="view-grid:hidden" data-list>
+        {#for entry in posts}<StoryRow entry={ entry } href="{ settings.base_path }/{ entry.handle }" image={ settings.show_images } />{/for}
+      </ul>
+    {/if}
+    {#if toggle || view == 'grid'}
+      <ul class="grid gap-gap-md pt-step-sm md:grid-cols-2 { settings.columns == '3' ? 'lg:grid-cols-3' : '' } view-list:hidden" data-grid>
+        {#for entry in posts}
+          <li><StoryCard entry={ entry } href="{ settings.base_path }/{ entry.handle }" heading="h4" wide={ false } kicker={ true } dek={ false } byline={ true } topic={ false } sizes="(min-width: 75rem) 37rem, (min-width: 48rem) 50vw, 100vw" reveal={ true } /></li>
+        {/for}
+      </ul>
+    {/if}
+  </div>
+</section>
+{/if}
 
 <schema>
 {

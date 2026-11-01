@@ -1,3 +1,30 @@
+<!-- template: NotFound -->
 <!-- layout: default -->
-<!-- D5 supplies this template’s markup. -->
-<section class="bg-scheme-background text-scheme-foreground"><h1>{ t('not_found_title') }</h1></section>
+{#let
+  sorted = content.posts.entries | sort('fields.date') | reverse
+  posts = sorted | slice(0, 5)
+}
+<!-- The 404 page as the design draws it: a page header (kicker, headline,
+     dek, 3px rule), then the five newest headlines on Slate. -->
+<section class="sites-scheme-paper bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column border-b-3 border-scheme-rule-strong pb-step-md">
+    <header class="grid max-w-reading gap-step-sm">
+      <p class="font-body text-kicker font-semibold text-scheme-links uppercase">404</p>
+      <h1 class="font-heading text-h1 font-bold text-pretty text-scheme-heading">{ t('not_found_title') }</h1>
+      <p class="text-dek text-pretty text-scheme-muted">{ t('not_found_body') } <a class="text-scheme-heading underline decoration-1 underline-offset-4 hover:text-scheme-links" href="/">{ t('not_found_link') }</a></p>
+    </header>
+  </div>
+</section>
+{#if posts.length}
+<section class="sites-scheme-slate bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column">
+    <div class="flex flex-wrap items-baseline justify-between gap-x-step-md border-t-3 border-scheme-rule-strong py-step-xs">
+      <h2 class="font-heading text-h4 font-semibold text-scheme-heading uppercase">{ t('latest') }</h2>
+      <a class="font-body text-kicker font-semibold text-scheme-links uppercase decoration-1 underline-offset-4 hover:underline" href="{ site.settings.posts_path }">{ t('view_all_posts') }</a>
+    </div>
+    <ul>
+      {#for entry in posts}<StoryRow entry={ entry } href="{ site.settings.posts_path }/{ entry.handle }" image={ false } />{/for}
+    </ul>
+  </div>
+</section>
+{/if}

@@ -1,5 +1,37 @@
-<!-- D5 supplies the section markup against this frozen schema. -->
-<section class="bg-scheme-background text-scheme-foreground"></section>
+<!-- The morning letter: a kicker, the heading in capitals and a line of text
+     on the left; the email field and the red Sign up button on the right,
+     with the privacy note under them. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-center gap-gap-lg md:grid-cols-2">
+    <div class="grid gap-step-sm">
+      <p class="font-body text-kicker font-semibold text-scheme-links uppercase">{ t('newsletter_kicker') }</p>
+      <h2 class="font-heading text-h2 font-bold text-pretty text-scheme-heading uppercase">{ settings.heading }</h2>
+      {#if settings.text}<p class="text-body-sm text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+    </div>
+    <div class="grid gap-step-sm">
+      <Form handle={ settings.form } class="grid gap-step-sm">
+        {#if form.sent}
+          <p class="text-body-lg font-semibold text-scheme-heading" role="status">{ form.success_message }</p>
+        {:else}
+          <div class="flex flex-wrap items-center gap-step-sm">
+            {#for field in form.fields}
+              <Field name={ field.id } label={ field.label } type={ field.type } autocomplete={ null } rows={ 4 }
+                maxlength={ field.max_length } required={ field.required }
+                options={ field.options } value={ field.value } error={ field.error }
+                placeholder={ settings.placeholder || field.label } prefix={ section.id } wrapper_class="min-w-0 grow basis-60" filled={ false } />
+            {/for}
+            <button class="sites-button sites-button-secondary w-full md:w-auto md:min-w-50" type="submit">{ form.submit_label }</button>
+          </div>
+          {#if form.error}
+            <p class="font-mono text-meta text-scheme-error" role="alert">{ t(form.error == 'expired' ? 'form_field_expired' : 'form_error') }</p>
+          {/if}
+          <noscript><p class="font-mono text-meta text-scheme-meta">{ t('form_requires_javascript') }</p></noscript>
+        {/if}
+      </Form>
+      {#if settings.note}<p class="font-mono text-meta text-pretty text-scheme-meta">{ settings.note }</p>{/if}
+    </div>
+  </div>
+</section>
 
 <schema>
 {

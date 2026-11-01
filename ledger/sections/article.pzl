@@ -1,5 +1,54 @@
-<!-- D5 supplies the section markup against this frozen schema. -->
-<section class="bg-scheme-background text-scheme-foreground"></section>
+{#let
+  entry = page.entry
+  image = entry.fields.image
+  author = entry.fields.author
+  is_writer = author && author == site.settings.writer_name
+  portrait = is_writer ? site.settings.writer_portrait : null
+  updated = settings.show_updated && entry.fields.updated && entry.fields.updated != entry.fields.date
+}
+<!-- One story in the 47.5rem reading column: kicker, headline, dek, the
+     byline row between two hairlines (avatar, name, then the date, the
+     update date and the reading time), the photo with its credit under it,
+     the body and a short red end mark. Dates only, never a time of day. -->
+<article class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-reading gap-step-md">
+    {#if settings.show_meta && entry.fields.topic}<p class="font-body text-kicker font-semibold text-scheme-links uppercase">{ entry.fields.topic }</p>{/if}
+    <h1 class="font-heading text-h1 font-bold text-pretty text-scheme-heading">{ entry.title ?? page.title }</h1>
+    {#if entry.fields.standfirst}<p class="text-dek text-pretty text-scheme-muted">{ entry.fields.standfirst }</p>{/if}
+
+    {#if settings.show_byline}
+      <div class="flex items-center gap-step-sm border-y border-scheme-rule py-step-sm">
+        {#if author}
+          {#if portrait}
+            <img class="size-avatar shrink-0 rounded-full bg-scheme-surface object-cover" src="{ image_url(portrait, 160, { height: 160 }) }" alt="" width="28" height="28" />
+          {:else}
+            <span class="grid size-avatar shrink-0 place-items-center rounded-full bg-scheme-heading font-heading text-body-sm font-bold text-scheme-background" aria-hidden="true">{ author | slice(0, 1) }</span>
+          {/if}
+        {/if}
+        <div class="grid min-w-0 gap-step-2xs">
+          {#if author}<p class="text-body-sm font-semibold text-scheme-heading">{ author }</p>{/if}
+          <p class="font-mono text-meta text-scheme-meta">
+            {#if settings.show_meta}<PostDate value={ entry.fields.date } year={ true } />{/if}{#if updated}{#if settings.show_meta}<span aria-hidden="true"> · </span>{/if}{ t('label_updated') } <PostDate value={ entry.fields.updated } year={ true } />{/if}{#if entry.fields.reading_minutes}<span aria-hidden="true"> · </span>{ t('reading_time', { minutes: entry.fields.reading_minutes }) }{/if}
+          </p>
+        </div>
+      </div>
+    {/if}
+
+    {#if settings.show_image && image}
+      <figure class="grid gap-step-xs">
+        <img class="aspect-video w-full bg-scheme-surface object-cover"
+          src="{ image_url(image, 1280) }"
+          srcset="{ image_url(image, 480) } 480w, { image_url(image, 768) } 768w, { image_url(image, 1280) } 1280w, { image_url(image, 1600) } 1600w"
+          sizes="(min-width: 51rem) 47.5rem, 100vw"
+          alt="{ entry.fields.image_alt }" loading="eager" fetchpriority="high" width="{ image.width }" height="{ image.height }" />
+        {#if settings.show_image_credit && entry.fields.image_credit}<figcaption class="font-mono text-meta text-scheme-meta">{ entry.fields.image_credit }</figcaption>{/if}
+      </figure>
+    {/if}
+
+    <div class="sites-prose { settings.drop_cap ? 'ledger-drop-cap' : '' }">{ entry.fields.body }</div>
+    {#if settings.show_end_rule}<span class="h-0.75 w-6 bg-scheme-links" aria-hidden="true"></span>{/if}
+  </div>
+</article>
 
 <schema>
 {

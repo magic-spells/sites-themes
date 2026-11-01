@@ -1,5 +1,49 @@
-<!-- D5 supplies the section markup against this frozen schema. -->
-<section class="bg-scheme-background text-scheme-foreground"></section>
+{#let
+  sorted = settings.collection.entries | sort('fields.date') | reverse
+  by_topic = settings.topic ? (sorted | where('fields.topic', settings.topic)) : sorted
+  pool = settings.exclude_current && page.entry ? (by_topic | reject('handle', page.entry.handle)) : by_topic
+  posts = pool | slice(settings.offset ?? 0, settings.limit)
+  view_all = settings.view_all_label && settings.view_all_href
+  view = settings.layout == 'list' ? 'list' : 'grid'
+  toggle = settings.show_toggle
+  columns = settings.columns == '2' ? '' : (settings.columns == '3' ? 'lg:grid-cols-3' : 'lg:grid-cols-4')
+  card_sizes = settings.columns == '2' ? '(min-width: 75rem) 37rem, (min-width: 48rem) 50vw, 100vw' : (settings.columns == '3' ? '(min-width: 75rem) 24.5rem, (min-width: 48rem) 50vw, 100vw' : '(min-width: 75rem) 18rem, (min-width: 64rem) 25vw, (min-width: 48rem) 50vw, 100vw')
+}
+<!-- The index body: cards four, two or one across, then the count ("12 of
+     21 stories") and an optional view-all link under a hairline. With the
+     reader's switch on, both views render and the chosen one shows. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-view={ toggle ? view : false }>
+  <div class="mx-auto grid max-w-column gap-step-lg">
+    {#if settings.heading || toggle}
+      <div class="flex items-center justify-between gap-step-sm { settings.heading ? 'border-t-3 border-scheme-rule-strong pt-step-xs' : '' }">
+        {#if settings.heading}<h2 class="font-heading text-h4 font-semibold text-scheme-heading uppercase">{ settings.heading }</h2>{/if}
+        {#if toggle}<div class="ms-auto"><ViewSwitch view={ view } /></div>{/if}
+      </div>
+    {/if}
+    {#if posts.length == 0}
+      <p class="text-body text-scheme-muted">{ t('posts_empty') }</p>
+    {:else}
+      {#if toggle || view == 'grid'}
+        <ul class="grid gap-gap-md md:grid-cols-2 { columns } view-list:hidden" data-grid>
+          {#for entry in posts}
+            <li><StoryCard entry={ entry } href="{ settings.base_path }/{ entry.handle }" heading="h4" wide={ false } kicker={ true } dek={ false } byline={ true } topic={ false } sizes="{ card_sizes }" reveal={ true } /></li>
+          {/for}
+        </ul>
+      {/if}
+      {#if toggle || view == 'list'}
+        <ul class="border-t border-scheme-rule view-grid:hidden" data-list>
+          {#for entry in posts}<PostRow entry={ entry } href="{ settings.base_path }/{ entry.handle }" image={ settings.show_images } />{/for}
+        </ul>
+      {/if}
+    {/if}
+    {#if (settings.show_count && posts.length) || view_all}
+      <div class="flex flex-wrap items-baseline justify-between gap-step-sm border-t border-scheme-rule pt-step-sm">
+        {#if settings.show_count && posts.length}<p class="font-mono text-meta text-scheme-meta">{ t('post_count', { shown: posts.length, total: pool.length }) }</p>{:else}<span></span>{/if}
+        {#if view_all}<a class="font-body text-kicker font-semibold text-scheme-links uppercase decoration-1 underline-offset-4 hover:underline" href="{ settings.view_all_href }">{ settings.view_all_label }</a>{/if}
+      </div>
+    {/if}
+  </div>
+</section>
 
 <schema>
 {

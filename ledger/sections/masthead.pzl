@@ -1,5 +1,42 @@
-<!-- D5 supplies the section markup against this frozen schema. -->
-<section class="bg-scheme-background text-scheme-foreground"></section>
+<!-- The masthead is a @magic-spells <sticky-header>: with "Stick to the top"
+     on it follows the scroll and settles shown or hidden; off, it is
+     disabled and sits in the page like any other band. Wordmark left,
+     Subscribe right (Menu below 48rem), the 3px rule, then the topic strip,
+     which scrolls sideways on a phone. No date: pages are cached, and a date
+     there would go stale. -->
+<sticky-header class="block bg-scheme-background text-scheme-foreground" settle-overshoot="0" disabled={ !settings.sticky }>
+  <header class="px-gutter">
+    <div class="mx-auto max-w-column">
+      <div class="flex items-center justify-between gap-step-md border-b-3 border-scheme-rule-strong py-step-md">
+        <a class="flex min-w-0 items-center" href="/">
+          {#if settings.logo}
+            <img class="h-logo w-auto" src="{ image_url(settings.logo, 640) }" alt="{ settings.logo.alt || site.name }" width="{ settings.logo.width }" height="{ settings.logo.height }" />
+          {:else}
+            <span class="font-heading text-h1 font-bold text-scheme-heading uppercase">{ settings.logo_text || site.name }</span>
+          {/if}
+        </a>
+        <div class="flex shrink-0 items-center gap-step-md">
+          {#if settings.show_subscribe && settings.subscribe_label}<a class="sites-button hidden md:inline-flex" href="{ settings.subscribe_href }">{ settings.subscribe_label }</a>{/if}
+          <button class="-my-step-xs py-step-xs font-body text-kicker font-semibold text-scheme-heading uppercase hover:text-scheme-links md:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu">{ t('menu_label') }<span class="sr-only">: { t('open_menu') }</span></button>
+        </div>
+      </div>
+
+      {#if settings.menu.items.length}
+        <!-- The first item is the strip's lead link and takes the link colour.
+             Topic items may point at an anchor on the index, so only an exact
+             page match is marked as the current page. Below 48rem the strip
+             runs to the screen edges and scrolls. -->
+        <nav class="{ settings.bordered ? 'border-b border-scheme-rule' : '' }" aria-label="{ t('main_navigation') }">
+          <ul class="-mx-gutter flex scroll-px-gutter gap-step-lg overflow-x-auto px-gutter py-step-sm scrollbar-none md:mx-0 md:px-0">
+            {#for item in settings.menu.items, i}
+              <li class="shrink-0"><a class="font-body text-kicker font-semibold whitespace-nowrap uppercase decoration-1 underline-offset-4 hover:underline { i == 0 ? 'text-scheme-links' : 'text-scheme-muted hover:text-scheme-heading' }" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active && !contains(item.href, '#') ? 'page' : null }>{ item.label }</a></li>
+            {/for}
+          </ul>
+        </nav>
+      {/if}
+    </div>
+  </header>
+</sticky-header>
 
 <schema>
 {

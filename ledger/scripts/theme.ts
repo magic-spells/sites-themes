@@ -1,9 +1,10 @@
-// The whole of Folio's browser JavaScript. The mobile menu is a
-// <dialog-panel> and the header a <sticky-header>, both Magic Spells web
-// components; this file registers them and adds the three small behaviours
-// they do not cover: opening a panel from a button elsewhere on the page, the
-// once-per-visitor notice, the dismissible announcement bar, and the post
-// list's list/grid switch. Scroll reveals come from @magic-spells/reveal.
+// The whole of Ledger's browser JavaScript. The mobile menu is a
+// <dialog-panel>, the masthead a <sticky-header> and the editor's picks a
+// <tarot-carousel>, all Magic Spells web components; this file registers them
+// and adds the small behaviours they do not cover: opening a panel from a
+// button elsewhere on the page, the once-per-visitor notice, the dismissible
+// announcement bar, the story grid's list/grid switch and the picks' card
+// width. Scroll reveals come from @magic-spells/reveal.
 //
 // State lives on data- attributes, never on classes: Tailwind generates only
 // what it reads in .pzl and styles/ files, so the stylesheet reacts to
@@ -12,6 +13,7 @@
 import './vendor/dialog-panel.js';
 import './vendor/sticky-header.js';
 import Reveal from './vendor/reveal.js';
+import './vendor/tarot.esm.js';
 
 const DISMISSED_PREFIX = 'sites:dismissed:';
 
@@ -87,7 +89,7 @@ for (const bar of document.querySelectorAll<HTMLElement>('[data-dismiss-key]')) 
 	});
 }
 
-// A post list with the switch renders both views and shows the one its
+// A story grid with the switch renders both views and shows the one its
 // data-view names. The reader's last choice is remembered for every list that
 // offers the switch: the layout's inline pre-paint script copies it onto
 // <html> as data-post-list-view before the body paints, and the view variants
@@ -130,3 +132,37 @@ document.addEventListener('click', (event) => {
 // own media query; the layout's <noscript> rule and load watchdog cover a
 // script that never runs.
 if (document.querySelector('.reveal')) Reveal.init({ offset: 0, duration: 400, once: true });
+
+// The editor's picks. Tarot sizes its slides from slidesPerView, and the
+// design's cards are a fixed 18rem with the next one peeking, so the count is
+// worked out from the track's inner width (its padding and gap come from the
+// section's options, which change with the gutters at 48rem and 64rem) and
+// set again whenever the window changes size. The arrows in the section head
+// are bound by Tarot itself through its navigation selectors.
+interface Picks extends HTMLElement {
+	readonly viewport: HTMLElement | null;
+	readonly options: { paddingLeft?: string; paddingRight?: string; gap?: string; slidesPerView?: number };
+	on(event: string, handler: () => void): void;
+	updateOptions(options: { slidesPerView: number }): void;
+}
+
+const remToPx = (value = '0'): number => (parseFloat(value) || 0) * (value.endsWith('rem') ? 16 : 1);
+
+function fitPicks(picks: Picks): void {
+	const width = picks.viewport?.offsetWidth;
+	if (!width) return;
+	const { paddingLeft, paddingRight, gap, slidesPerView } = picks.options;
+	const space = remToPx(gap);
+	const inner = width - remToPx(paddingLeft) - remToPx(paddingRight);
+	const perView = Math.max(1, Math.round(((inner + space) / (remToPx(picks.dataset.card) + space)) * 100) / 100);
+	if (Math.abs(perView - (slidesPerView ?? 0)) > 0.01) picks.updateOptions({ slidesPerView: perView });
+}
+
+for (const picks of document.querySelectorAll<Picks>('tarot-carousel[data-card]')) {
+	picks.on('carousel:ready', () => fitPicks(picks));
+	let frame = 0;
+	addEventListener('resize', () => {
+		cancelAnimationFrame(frame);
+		frame = requestAnimationFrame(() => fitPicks(picks));
+	});
+}

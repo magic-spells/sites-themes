@@ -1,5 +1,33 @@
-<!-- D5 supplies the section markup against this frozen schema. -->
-<section class="bg-scheme-background text-scheme-foreground"></section>
+{#let
+  facts = page.entry.fields.key_facts ?? ''
+  lines = facts | split('\n')
+}
+<!-- The story's key_facts, one fact per line. A line written "Label: value"
+     shows the label in the meta grey over the value; a line with no colon is
+     the value alone. The aside takes the scheme's second surface (Slate by
+     default) and the band around it stays the page's own colour. Nothing
+     renders when the field is empty. -->
+{#if (facts | strip) != ''}
+<section class="px-gutter py-section text-scheme-foreground">
+  <aside class="mx-auto grid max-w-reading gap-step-sm bg-scheme-surface p-step-md" aria-labelledby="facts-{ section.id }">
+    <h2 class="font-heading text-h5 font-semibold text-scheme-heading uppercase" id="facts-{ section.id }">{ settings.heading }</h2>
+    <dl class="grid">
+      {#for line in lines}
+        {#if (line | strip) != ''}
+          {#let
+            parts = line | split(': ')
+            has_label = parts.length > 1
+          }
+          <div class="grid gap-step-2xs border-t border-scheme-rule py-step-sm first:border-t-0">
+            {#if has_label}<dt class="font-mono text-meta text-scheme-meta">{ parts | first | strip }</dt>{/if}
+            <dd class="text-body text-scheme-heading">{ has_label ? (parts | slice(1) | join(': ') | strip) : (line | strip) }</dd>
+          </div>
+        {/if}
+      {/for}
+    </dl>
+  </aside>
+</section>
+{/if}
 
 <schema>
 {

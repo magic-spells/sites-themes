@@ -26,7 +26,7 @@
     },
     "error": {
       "bg": "#FDF2F0",
-      "fg": "#7E0707"
+      "fg": "#B91C1C"
     }
   },
   "fonts": {
@@ -110,7 +110,7 @@
   "button": {
     "radius": "0.5rem",
     "padding_x": "1.5rem",
-    "padding_y": "1rem",
+    "padding_y": "0.625rem",
     "weight": "600",
     "primary_bg": "#111318",
     "primary_text": "#FBFBFC",
@@ -122,41 +122,6 @@
     "hover_color": "#A30F0F",
     "underline": "hover"
   },
-  "suggested_palettes": [
-    {
-      "name": "Ledger",
-      "colors": {
-        "brand": {
-          "primary": "#111318",
-          "secondary": "#3A404B",
-          "accent": "#D11A1A"
-        },
-        "grey": {
-          "extra_light": "#FBFBFC",
-          "light": "#EEF0F3",
-          "medium": "#6B7280",
-          "dark": "#3A404B",
-          "extra_dark": "#111318"
-        },
-        "info": {
-          "bg": "#E5EEFF",
-          "fg": "#1249B2"
-        },
-        "success": {
-          "bg": "#ECFCF2",
-          "fg": "#1F5035"
-        },
-        "warning": {
-          "bg": "#FFFAEB",
-          "fg": "#93370D"
-        },
-        "error": {
-          "bg": "#FDF2F0",
-          "fg": "#7E0707"
-        }
-      }
-    }
-  ],
   "schemes": [
     {
       "handle": "paper",

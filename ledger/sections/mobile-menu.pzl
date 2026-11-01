@@ -1,5 +1,47 @@
-<!-- D5 supplies the section markup against this frozen schema. -->
-<section class="bg-scheme-background text-scheme-foreground"></section>
+<!-- The mobile menu is a @magic-spells <dialog-panel>, a left drawer over a
+     scrim of the scheme's text colour at 50%. It closes on the scrim, on
+     Escape and on its × button, and hands focus back to the masthead's Menu
+     button. Topics in Heading 3, a 3px rule, then the secondary links. -->
+<dialog-panel id="mobile-menu" position="left">
+  <dialog-backdrop class="bg-scheme-foreground/50 backdrop-blur-sm"></dialog-backdrop>
+  <dialog class="h-dvh w-full max-w-drawer overflow-y-auto bg-scheme-background text-scheme-foreground shadow-none" aria-label="{ t('menu_label') }">
+    <div class="grid gap-step-xl px-gutter py-step-lg">
+      <div class="flex items-center justify-between gap-step-md">
+        <a class="font-heading text-h3 font-bold text-scheme-heading uppercase" href="/">{ site.name }</a>
+        <button class="sites-icon -m-step-xs size-10 p-step-xs text-scheme-heading hover:text-scheme-links" type="button" data-action-hide-dialog>{#svg 'icons/close.svg'}<span class="sr-only">{ t('close_menu') }</span></button>
+      </div>
+
+      {#if settings.menu.items.length}
+        <nav aria-label="{ t('main_navigation') }">
+          <ul class="grid gap-step-sm">
+            {#for item in settings.menu.items, i}
+              <li>
+                <a class="font-heading text-h3 font-semibold hover:text-scheme-links { i == 0 ? 'text-scheme-links' : 'text-scheme-heading' }" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active && !contains(item.href, '#') ? 'page' : null }>{ item.label }</a>
+                {#if item.children.length}
+                  <ul class="mt-step-xs grid gap-step-xs pl-step-md">
+                    {#for child in item.children}
+                      <li><a class="text-body-lg text-scheme-muted hover:text-scheme-links" href="{ child.href }" target={ child.open_in_new ? '_blank' : null } rel={ child.open_in_new ? 'noopener' : null }>{ child.label }</a></li>
+                    {/for}
+                  </ul>
+                {/if}
+              </li>
+            {/for}
+          </ul>
+        </nav>
+      {/if}
+
+      {#if settings.menu_secondary.items.length}
+        <nav class="border-t-3 border-scheme-rule-strong pt-step-xl" aria-label="{ settings.menu_secondary.title }">
+          <ul class="grid gap-step-xs">
+            {#for item in settings.menu_secondary.items}
+              <li><a class="font-mono text-meta text-scheme-muted hover:text-scheme-links" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null }>{ item.label }</a></li>
+            {/for}
+          </ul>
+        </nav>
+      {/if}
+    </div>
+  </dialog>
+</dialog-panel>
 
 <schema>
 {

@@ -1,5 +1,59 @@
-<!-- D5 supplies the section markup against this frozen schema. -->
-<section class="bg-scheme-background text-scheme-foreground"></section>
+{#let
+  picks = blocks | where('settings.entry')
+  previous_id = 'picks-previous-' + section.id
+  next_id = 'picks-next-' + section.id
+  arrows = settings.show_arrows && picks.length > 1
+  options = {
+    effect: 'carousel',
+    loop: false,
+    slidesPerView: 1,
+    gap: '0.75rem',
+    paddingLeft: '1rem',
+    paddingRight: '0rem',
+    navigation: { showButtons: arrows, previousButtonSelector: '#' + previous_id, nextButtonSelector: '#' + next_id, showPagination: false },
+    breakpoints: {
+      '768': { gap: '1rem', paddingLeft: '1.5rem', paddingRight: '1.5rem' },
+      '1024': { gap: '1rem', paddingLeft: '3rem', paddingRight: '3rem' }
+    }
+  }
+}
+<!-- The editor's picks: a @magic-spells <tarot-carousel>, one slide per pick,
+     each an 18rem story card (theme.ts works out how many fit, so the next
+     one always peeks). The section has no side padding of its own: the rule
+     and the head sit in the gutters, and the track's padding is the gutter on
+     the left and, below 48rem, nothing on the right, so the cards run to the
+     edge of the screen. From 48rem the track sits in the column with both
+     gutters, and the arrows in the head drive it. Tarot's paddings above
+     mirror the gutter tokens (1, 1.5 and 3rem). Cards here never reveal on
+     scroll: the carousel moves them. -->
+{#if picks.length}
+<section class="bg-scheme-background py-section text-scheme-foreground" aria-labelledby="picks-heading-{ section.id }">
+  <div class="mx-auto grid max-w-carousel grid-cols-1 gap-step-sm">
+    <div class="px-gutter" aria-hidden="true"><div class="border-t-3 border-scheme-rule-strong"></div></div>
+    <div class="flex items-center justify-between gap-step-md px-gutter pt-step-xs">
+      <h2 class="font-heading text-h4 font-semibold text-scheme-heading uppercase" id="picks-heading-{ section.id }">{ settings.heading }<span class="text-scheme-links" aria-hidden="true"> ›</span></h2>
+      {#if arrows}
+        <div class="hidden gap-step-xs md:flex">
+          <button class="sites-icon grid size-icon-button place-items-center rounded-button border border-scheme-rule text-scheme-heading hover:border-scheme-heading disabled:cursor-default disabled:opacity-50 disabled:hover:border-scheme-rule" type="button" id="{ previous_id }"><span class="size-icon">{#svg 'icons/arrow-left.svg'}</span><span class="sr-only">{ t('previous_pick') }</span></button>
+          <button class="sites-icon grid size-icon-button place-items-center rounded-button border border-scheme-rule text-scheme-heading hover:border-scheme-heading disabled:cursor-default disabled:opacity-50 disabled:hover:border-scheme-rule" type="button" id="{ next_id }"><span class="size-icon">{#svg 'icons/arrow-right.svg'}</span><span class="sr-only">{ t('next_pick') }</span></button>
+        </div>
+      {/if}
+    </div>
+    <tarot-carousel class="block min-w-0" data-card="18rem" aria-label="{ settings.heading }">
+      <script type="application/json" data-tarot-options>{ options | json }</script>
+      <tarot-viewport>
+        <tarot-track>
+          {#for block in picks}
+            <tarot-slide data-block={ block.editor_id }>
+              <StoryCard entry={ block.settings.entry } href="{ settings.base_path }/{ block.settings.entry.handle }" heading="h5" wide={ true } kicker={ false } dek={ true } byline={ false } topic={ true } sizes="18rem" reveal={ false } />
+            </tarot-slide>
+          {/for}
+        </tarot-track>
+      </tarot-viewport>
+    </tarot-carousel>
+  </div>
+</section>
+{/if}
 
 <schema>
 {

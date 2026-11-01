@@ -1,5 +1,61 @@
-<!-- D5 supplies the section markup against this frozen schema. -->
-<section class="bg-scheme-background text-scheme-foreground"></section>
+<!-- The tips desk: a kicker, heading and text over the newsroom's contact
+     details (from the Contact site settings) on the left, the site form on
+     the right with its fields on the second surface. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-start gap-x-gap-lg gap-y-step-xl md:grid-cols-2">
+    <div class="grid gap-step-md">
+      {#if settings.show_heading}
+        <p class="font-body text-kicker font-semibold text-scheme-links uppercase">{ t('contact_kicker') }</p>
+        <h2 class="font-heading text-h2 font-bold text-pretty text-scheme-heading">{ settings.heading }</h2>
+      {/if}
+      {#if settings.text}<p class="text-body text-pretty">{ settings.text }</p>{/if}
+      {#if settings.show_details && (site.settings.contact_email || site.settings.address || site.settings.hours)}
+        <dl class="grid gap-step-md border-t border-scheme-rule pt-step-md">
+          {#if site.settings.contact_email}
+            <div class="grid gap-step-2xs" id="tips">
+              <dt class="font-body text-kicker font-semibold text-scheme-meta uppercase">{ t('label_tips') }</dt>
+              <dd class="text-body"><a class="decoration-1 underline-offset-4 hover:text-scheme-links hover:underline" href="mailto:{ site.settings.contact_email }">{ site.settings.contact_email }</a></dd>
+            </div>
+          {/if}
+          {#if site.settings.address}
+            <div class="grid gap-step-2xs">
+              <dt class="font-body text-kicker font-semibold text-scheme-meta uppercase">{ t('label_post') }</dt>
+              <dd class="text-body whitespace-pre-line">{ site.settings.address }</dd>
+            </div>
+          {/if}
+          {#if site.settings.hours}
+            <div class="grid gap-step-2xs">
+              <dt class="font-body text-kicker font-semibold text-scheme-meta uppercase">{ t('label_hours') }</dt>
+              <dd class="text-body">{ site.settings.hours }</dd>
+            </div>
+          {/if}
+        </dl>
+      {/if}
+    </div>
+
+    <!-- The site owns the fields; this theme chooses their markup. -->
+    <Form handle={ settings.form } class="grid gap-step-sm" aria-label="{ settings.heading }">
+      {#if form.sent}
+        <p class="text-body-lg font-semibold text-scheme-heading" role="status">{ form.success_message }</p>
+      {:else}
+        {#for field in form.fields}
+          <Field name={ field.id } label={ field.label } type={ field.type } autocomplete={ null }
+            rows={ 3 } maxlength={ field.max_length } required={ field.required }
+            options={ field.options } value={ field.value } error={ field.error }
+            placeholder={ field.label } prefix={ section.id } wrapper_class="" filled={ true } />
+        {/for}
+        {#if form.error}
+          <p class="font-mono text-meta text-scheme-error" role="alert">{ t(form.error == 'expired' ? 'form_field_expired' : 'form_error') }</p>
+        {/if}
+        <div class="grid justify-items-start gap-step-xs">
+          <button class="sites-button min-w-35" type="submit">{ form.submit_label }</button>
+          <noscript><p class="font-mono text-meta text-scheme-meta">{ t('form_requires_javascript') }</p></noscript>
+          {#if settings.note}<p class="font-mono text-meta text-scheme-meta">{ settings.note }</p>{/if}
+        </div>
+      {/if}
+    </Form>
+  </div>
+</section>
 
 <schema>
 {

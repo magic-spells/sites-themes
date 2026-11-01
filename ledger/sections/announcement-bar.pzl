@@ -1,5 +1,15 @@
-<!-- D5 supplies the section markup against this frozen schema. -->
-<section class="bg-scheme-background text-scheme-foreground"></section>
+<!-- A one-line notice: a red kicker, the message and an optional link,
+     centred, with a × that hides it for good (theme.ts remembers the key). -->
+<aside class="bg-scheme-background px-gutter py-step-sm text-scheme-foreground" data-dismiss-key="{ settings.key }" aria-label="{ t('announcement_label') }">
+  <div class="mx-auto flex max-w-column items-center gap-step-sm">
+    <span class="size-5 shrink-0" aria-hidden="true"></span>
+    <p class="flex-1 text-center text-body-sm text-pretty">
+      <span class="mr-step-xs font-body text-kicker font-semibold text-scheme-links uppercase">{ t('announcement_kicker') }</span>{ settings.text }
+      {#if settings.link_label}<a class="ml-step-xs font-semibold text-scheme-heading underline decoration-1 underline-offset-4 hover:text-scheme-links" href="{ settings.link }">{ settings.link_label }</a>{/if}
+    </p>
+    <button class="sites-icon size-5 shrink-0 text-scheme-heading hover:text-scheme-links" type="button" data-dismiss>{#svg 'icons/close.svg'}<span class="sr-only">{ t('dismiss_announcement') }</span></button>
+  </div>
+</aside>
 
 <schema>
 {

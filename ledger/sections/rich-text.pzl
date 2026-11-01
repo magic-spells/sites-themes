@@ -1,5 +1,13 @@
-<!-- D5 supplies the section markup against this frozen schema. -->
-<section class="bg-scheme-background text-scheme-foreground"></section>
+<!-- A heading and writing in the reading column (or the page column, when
+     wide). With no writing of its own it shows the page's content. -->
+{#if settings.heading || settings.body || page.content}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid { settings.width == 'wide' ? 'max-w-column' : 'max-w-reading' } gap-step-md">
+    {#if settings.heading}<h2 class="font-heading text-h2 font-bold text-pretty text-scheme-heading">{ settings.heading }</h2>{/if}
+    <div class="sites-prose">{ settings.body || page.content }</div>
+  </div>
+</section>
+{/if}
 
 <schema>
 {

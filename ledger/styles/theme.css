@@ -1,15 +1,17 @@
 @import "tailwindcss";
 
-/* The two Magic Spells web components' own stylesheets, vendored beside the
+/* The Magic Spells web components' own stylesheets, vendored beside the
    scripts (see scripts/vendor/). They sit in the components layer so a
-   Tailwind utility on the same element always wins. */
+   Tailwind utility on the same element always wins. Tarot draws the editor's
+   picks carousel. */
 @import "./vendor/dialog-panel.css" layer(components);
 @import "./vendor/sticky-header.css" layer(components);
+@import "./vendor/tarot.css" layer(components);
 
 /* @magic-spells/reveal's Tailwind entry: every rule is a @utility, so only
    the marker and the one effect the theme writes (reveal reveal-fade-up) are
    generated. Its resting state applies before the script runs; the layout's
-   <noscript> rule and load watchdog make sure nothing stays hidden. */
+   pre-paint script and load watchdog make sure nothing stays hidden. */
 @import "./vendor/reveal.css";
 
 /* Every class the theme types lives in a .pzl file, so those are what Tailwind
@@ -20,10 +22,10 @@
 @source "../sections/**/*.pzl";
 @source "../components/**/*.pzl";
 
-/* The post list's two views. A list with the reader's switch carries the
-   editor's view as data-view on its section. A reader's saved choice is set on
-   <html> as data-post-list-view by the layout's pre-paint script, before the
-   body paints, and wins over it. Each variant hides the view that is not
+/* The story grid's two views. A grid with the reader's switch carries the
+   editor's view as data-view on its section. A reader's saved choice is set
+   on <html> as data-post-list-view by the layout's pre-paint script, before
+   the body paints, and wins over it. Each variant hides the view that is not
    chosen. */
 @custom-variant view-list {
 	&:where([data-view="list"] *):not(:where([data-post-list-view="grid"] *)) {
@@ -91,33 +93,35 @@
 	--color-scheme-secondary-button-hover-background: var(--sites-scheme-secondary-button-hover-background);
 	--color-scheme-secondary-button-hover-foreground: var(--sites-scheme-secondary-button-hover-foreground);
 
-	/* Folio reads four roles the engine's scheme has no slot for: a muted
-	   text, a meta grey for datelines, a rule and a second surface. They ride
-	   on the chip and icon slots, which design.json fills with those values. */
+	/* Ledger reads five roles the engine's scheme has no slot for: a muted
+	   text (deks), a meta grey (bylines, credits, counts), a hairline rule, a
+	   second surface (photo wells, the key-facts aside) and the strong 3px
+	   rule over every section head. The first four ride on the chip and icon
+	   slots, which design.json fills with the design file's values; the
+	   strong rule is the heading colour, as in the design file. */
 	--color-scheme-muted: var(--sites-scheme-chip-foreground);
 	--color-scheme-meta: var(--sites-scheme-icons);
 	--color-scheme-rule: var(--sites-scheme-chip-border);
 	--color-scheme-rule-strong: var(--sites-scheme-heading);
 	--color-scheme-surface: var(--sites-scheme-chip-background);
 
-	/* Errors take the palette's error red on the light schemes and a lighter
-	   red on Ink, where that red falls to 2.6:1. The value is set per scheme
-	   class below. */
+	/* Inputs/error from the design file: the palette's error red on Paper
+	   (6.3:1) and Slate (5.7:1), a light red on Ink (8.1:1), where the
+	   palette red falls to 2.6:1. The value is set per scheme class below. */
 	--color-scheme-error: var(--ledger-scheme-error);
 }
 
-/* Inputs/error from each scheme in the Figma dump. */
 :root,
 .sites-scheme-paper,
 .sites-scheme-slate {
-	--ledger-scheme-error: #b91c1c;
+	--ledger-scheme-error: var(--sites-color-error-fg);
 }
 .sites-scheme-ink {
 	--ledger-scheme-error: #ff8a80;
 }
 
 @theme {
-	--font-heading: var(--sites-font-heading-family), Arial, sans-serif;
+	--font-heading: var(--sites-font-heading-family), "Arial Narrow", Arial, sans-serif;
 	--font-body: var(--sites-font-body-family), Arial, sans-serif;
 	--font-mono: var(--sites-font-mono-family), SFMono-Regular, Menlo, monospace;
 
@@ -128,9 +132,9 @@
 	--text-base: var(--sites-type-scale-base);
 	--text-base--line-height: var(--sites-type-leading-normal);
 	--text-lg: var(--sites-type-scale-lg);
-	--text-lg--line-height: var(--sites-type-leading-relaxed);
+	--text-lg--line-height: var(--sites-type-leading-normal);
 	--text-xl: var(--sites-type-scale-xl);
-	--text-xl--line-height: var(--sites-type-leading-relaxed);
+	--text-xl--line-height: var(--sites-type-leading-normal);
 	--text-2xl: var(--sites-type-scale-2xl);
 	--text-2xl--line-height: var(--sites-type-leading-tight);
 	--text-3xl: var(--sites-type-scale-3xl);
@@ -163,12 +167,15 @@
 	--shadow-md: var(--sites-shadow-md);
 	--shadow-lg: var(--sites-shadow-lg);
 
-	/* Role tokens. The engine's tokens are single values, and Folio's type and
-	   rhythm step down at tablet and mobile. Each role reads a --ledger-*
-	   property that :root sets three times below, so markup writes `text-h1`
-	   or `py-section` once and the size follows the viewport. */
+	/* Role tokens, one per text style in the design file. The engine's
+	   tokens are single values, and the design's type and rhythm step down at
+	   tablet and mobile, so each role reads a --ledger-* property that :root
+	   sets three times below; markup writes `text-h1` or `py-section` once and
+	   the size follows the viewport. Line heights and tracking are the text
+	   styles' own. */
 	--text-display: var(--ledger-text-display);
 	--text-display--line-height: 0.92;
+	--text-display--letter-spacing: -0.01em;
 	--text-h1: var(--ledger-text-h1);
 	--text-h1--line-height: 1.1;
 	--text-h2: var(--ledger-text-h2);
@@ -177,26 +184,29 @@
 	--text-h3--line-height: 1.1;
 	--text-h4: var(--ledger-text-h4);
 	--text-h4--line-height: 1.3;
+	--text-h5: var(--ledger-text-h5);
+	--text-h5--line-height: 1.3;
 	--text-body: var(--ledger-text-body);
 	--text-body--line-height: 1.3;
 	--text-body-lg: var(--ledger-text-body-lg);
 	--text-body-lg--line-height: 1.3;
+	/* Dek: Body lg with more lead. */
+	--text-dek: var(--ledger-text-body-lg);
+	--text-dek--line-height: 1.4;
+	/* Body sm, Byline name: one size at every width. */
+	--text-body-sm: 0.875rem;
+	--text-body-sm--line-height: 1.3;
+	/* Kicker (Archivo caps) and Byline / Caption (Plex Mono) share the
+	   overline size, 11 / 11 / 12. */
+	--text-kicker: var(--ledger-text-meta);
+	--text-kicker--line-height: 1.4;
+	--text-kicker--letter-spacing: 0.1em;
 	--text-meta: var(--ledger-text-meta);
-	--text-overline: var(--ledger-text-meta);
-	--text-overline--line-height: 1;
 	--text-meta--line-height: 1.5;
-	/* Buttons and chips keep one size at every width. */
+	--text-meta--letter-spacing: 0.04em;
+	/* Buttons keep one size at every width. */
 	--text-control: 1rem;
 	--text-control--line-height: 1;
-	--text-chip: 0.875rem;
-	--text-chip--line-height: 1.5;
-
-	--leading-standfirst: 1.45;
-	--leading-prose: 1.55;
-
-	--tracking-meta: 0.06em;
-	--tracking-caption: 0.04em;
-	--tracking-note: 0.02em;
 
 	--spacing-section: var(--ledger-section);
 	--spacing-gutter: var(--ledger-gutter);
@@ -207,112 +217,149 @@
 	--spacing-step-lg: var(--ledger-step-lg);
 	--spacing-step-xl: var(--ledger-step-xl);
 	--spacing-step-2xl: var(--ledger-step-2xl);
+	--spacing-step-3xl: var(--ledger-step-3xl);
+	/* The design file's layout gaps: between cards (md), between columns
+	   (lg) and around small controls (sm). */
+	--spacing-gap-sm: var(--ledger-gap-sm);
+	--spacing-gap-md: var(--ledger-gap-md);
+	--spacing-gap-lg: var(--ledger-gap-lg);
 
-	/* Measures: the page column, the reading column, a display heading or
-	   quote inside the reading column (the design's line breaks), a narrow
-	   card, the image well beside text, and the mobile drawer. */
+	/* Measures: the page column, the reading column, the carousel's column
+	   (the page column plus a desktop gutter each side, so the track can run
+	   into the gutters), the lead and feature columns at desktop, a narrow
+	   column (password page, notice card), the footer's brand text and the
+	   mobile drawer. */
 	--container-column: 75rem;
 	--container-reading: 47.5rem;
-	--container-heading: 41.25rem;
+	--container-carousel: 81rem;
+	--container-lead: 46rem;
+	--container-rail: 28rem;
+	--container-feature: 44rem;
+	--container-feature-text: 30rem;
 	--container-narrow: 25rem;
-	--container-well: 30rem;
+	--container-notice: 35rem;
+	--container-brand: 22.5rem;
 	--container-drawer: 23.4375rem;
+	--container-footer-menu: 10rem;
 
-	/* Flex measures: the footer's brand column and its menu columns, the
-	   writer's bio beside the portrait, a notice or form button, and the
-	   newsletter's email field and subscribe button. */
-	--container-footer-brand: 18rem;
-	--container-footer-menu: 10.5rem;
-	--container-bio: 20rem;
-	--container-button: 8.75rem;
-	--container-field: 17.5rem;
-	--container-subscribe: 12rem;
-
-	/* Fixed sizes: an input's height (the newsletter button matches it at
-	   desktop), a textarea's minimum, the header logo and the writer
-	   portrait. */
+	/* Fixed sizes: an input's height, a textarea's minimum, the header logo,
+	   the rail thumbnail, the byline avatar, the writer portrait, a picks card
+	   and the square arrow and view buttons with their icon. */
 	--spacing-control: 3.375rem;
-	--spacing-textarea: 9rem;
-	--spacing-logo: 2.25rem;
+	--spacing-textarea: 6rem;
+	--spacing-logo: 2.5rem;
+	--spacing-thumb: 4rem;
+	--spacing-avatar: 1.75rem;
 	--spacing-portrait: 4.5rem;
-	/* The 3:2 thumbnail in a post row, and its mobile size. */
-	--spacing-thumb: 7.5rem;
-	--spacing-thumb-sm: 4.5rem;
-	/* The post list's view switch: a square icon button and its icon. */
+	--spacing-pick: 18rem;
+	--spacing-row-thumb: 10rem;
+	--spacing-row-thumb-sm: 6rem;
 	--spacing-icon-button: 2.5rem;
 	--spacing-icon: 1.25rem;
 }
 
-/* Responsive roles: Figma mobile / tablet / desktop, rem = px / 16. */
+/* Desktop takes each scale step itself; mobile and tablet take the design
+   file's ratio of it (Font Sizes and Spacing, mobile / tablet / desktop), so
+   a site that changes a step keeps the proportions. */
 :root {
 	--ledger-text-display: calc(var(--sites-type-scale-5xl) * 44 / 84);
 	--ledger-text-h1: calc(var(--sites-type-scale-4xl) * 36 / 56);
 	--ledger-text-h2: calc(var(--sites-type-scale-3xl) * 30 / 40);
 	--ledger-text-h3: calc(var(--sites-type-scale-2xl) * 22 / 26);
 	--ledger-text-h4: calc(var(--sites-type-scale-xl) * 18 / 20);
+	--ledger-text-h5: calc(var(--sites-type-scale-xl) * 19 / 20);
 	--ledger-text-body: calc(var(--sites-type-scale-base) * 16 / 17);
 	--ledger-text-body-lg: calc(var(--sites-type-scale-lg) * 18 / 20);
 	--ledger-text-meta: calc(var(--sites-type-scale-sm) * 11 / 12);
+
 	--ledger-section: calc(var(--sites-spacing-xl) * 24 / 48);
 	--ledger-gutter: var(--sites-spacing-sm);
-	--ledger-step-2xs: calc(var(--sites-spacing-xs) * 4 / 8);
+
+	--ledger-step-2xs: calc(var(--sites-spacing-xs) * 4 / 12);
 	--ledger-step-xs: calc(var(--sites-spacing-xs) * 8 / 12);
 	--ledger-step-sm: calc(var(--sites-spacing-sm) * 12 / 16);
 	--ledger-step-md: calc(var(--sites-spacing-md) * 16 / 24);
 	--ledger-step-lg: calc(var(--sites-spacing-lg) * 24 / 32);
 	--ledger-step-xl: calc(var(--sites-spacing-xl) * 32 / 48);
 	--ledger-step-2xl: calc(var(--sites-spacing-2xl) * 48 / 64);
+	--ledger-step-3xl: var(--sites-spacing-2xl);
+
+	--ledger-gap-sm: calc(var(--sites-spacing-xs) * 8 / 12);
+	--ledger-gap-md: var(--sites-spacing-xs);
+	--ledger-gap-lg: var(--sites-spacing-sm);
 }
 
 @media (min-width: 48rem) {
-:root {
-	--ledger-text-display: calc(var(--sites-type-scale-5xl) * 60 / 84);
-	--ledger-text-h1: calc(var(--sites-type-scale-4xl) * 44 / 56);
-	--ledger-text-h2: calc(var(--sites-type-scale-3xl) * 34 / 40);
-	--ledger-text-h3: calc(var(--sites-type-scale-2xl) * 24 / 26);
-	--ledger-text-h4: calc(var(--sites-type-scale-xl) * 19 / 20);
-	--ledger-text-body: calc(var(--sites-type-scale-base) * 16 / 17);
-	--ledger-text-body-lg: calc(var(--sites-type-scale-lg) * 19 / 20);
-	--ledger-text-meta: calc(var(--sites-type-scale-sm) * 11 / 12);
-	--ledger-section: calc(var(--sites-spacing-xl) * 32 / 48);
-	--ledger-gutter: var(--sites-spacing-md);
-	--ledger-step-2xs: calc(var(--sites-spacing-xs) * 6 / 8);
-	--ledger-step-xs: calc(var(--sites-spacing-xs) * 10 / 12);
-	--ledger-step-sm: calc(var(--sites-spacing-sm) * 14 / 16);
-	--ledger-step-md: calc(var(--sites-spacing-md) * 20 / 24);
-	--ledger-step-lg: calc(var(--sites-spacing-lg) * 28 / 32);
-	--ledger-step-xl: calc(var(--sites-spacing-xl) * 40 / 48);
-	--ledger-step-2xl: calc(var(--sites-spacing-2xl) * 56 / 64);
-}
+	:root {
+		--ledger-text-display: calc(var(--sites-type-scale-5xl) * 60 / 84);
+		--ledger-text-h1: calc(var(--sites-type-scale-4xl) * 44 / 56);
+		--ledger-text-h2: calc(var(--sites-type-scale-3xl) * 34 / 40);
+		--ledger-text-h3: calc(var(--sites-type-scale-2xl) * 24 / 26);
+		--ledger-text-h4: calc(var(--sites-type-scale-xl) * 19 / 20);
+		--ledger-text-body-lg: calc(var(--sites-type-scale-lg) * 19 / 20);
+
+		--ledger-section: calc(var(--sites-spacing-xl) * 32 / 48);
+		--ledger-gutter: var(--sites-spacing-md);
+
+		--ledger-step-2xs: calc(var(--sites-spacing-xs) * 6 / 12);
+		--ledger-step-xs: calc(var(--sites-spacing-xs) * 10 / 12);
+		--ledger-step-sm: calc(var(--sites-spacing-sm) * 14 / 16);
+		--ledger-step-md: calc(var(--sites-spacing-md) * 20 / 24);
+		--ledger-step-lg: calc(var(--sites-spacing-lg) * 28 / 32);
+		--ledger-step-xl: calc(var(--sites-spacing-xl) * 40 / 48);
+		--ledger-step-2xl: calc(var(--sites-spacing-2xl) * 56 / 64);
+		--ledger-step-3xl: calc(var(--sites-spacing-2xl) * 80 / 64);
+
+		--ledger-gap-sm: var(--sites-spacing-xs);
+		--ledger-gap-md: var(--sites-spacing-sm);
+		--ledger-gap-lg: var(--sites-spacing-md);
+	}
 }
 
 @media (min-width: 64rem) {
-:root {
-	--ledger-text-display: var(--sites-type-scale-5xl);
-	--ledger-text-h1: var(--sites-type-scale-4xl);
-	--ledger-text-h2: var(--sites-type-scale-3xl);
-	--ledger-text-h3: var(--sites-type-scale-2xl);
-	--ledger-text-h4: var(--sites-type-scale-xl);
-	--ledger-text-body: var(--sites-type-scale-base);
-	--ledger-text-body-lg: var(--sites-type-scale-lg);
-	--ledger-text-meta: var(--sites-type-scale-sm);
-	--ledger-section: calc(var(--sites-spacing-xl) * 40 / 48);
-	--ledger-gutter: var(--sites-spacing-xl);
-	--ledger-step-2xs: var(--sites-spacing-xs);
-	--ledger-step-xs: var(--sites-spacing-xs);
-	--ledger-step-sm: var(--sites-spacing-sm);
-	--ledger-step-md: var(--sites-spacing-md);
-	--ledger-step-lg: var(--sites-spacing-lg);
-	--ledger-step-xl: var(--sites-spacing-xl);
-	--ledger-step-2xl: var(--sites-spacing-2xl);
-}
+	:root {
+		--ledger-text-display: var(--sites-type-scale-5xl);
+		--ledger-text-h1: var(--sites-type-scale-4xl);
+		--ledger-text-h2: var(--sites-type-scale-3xl);
+		--ledger-text-h3: var(--sites-type-scale-2xl);
+		--ledger-text-h4: var(--sites-type-scale-xl);
+		--ledger-text-h5: calc(var(--sites-type-scale-xl) * 21 / 20);
+		--ledger-text-body: var(--sites-type-scale-base);
+		--ledger-text-body-lg: var(--sites-type-scale-lg);
+		--ledger-text-meta: var(--sites-type-scale-sm);
+
+		--ledger-section: calc(var(--sites-spacing-xl) * 40 / 48);
+		--ledger-gutter: var(--sites-spacing-xl);
+
+		--ledger-step-2xs: calc(var(--sites-spacing-xs) * 8 / 12);
+		--ledger-step-xs: var(--sites-spacing-xs);
+		--ledger-step-sm: var(--sites-spacing-sm);
+		--ledger-step-md: var(--sites-spacing-md);
+		--ledger-step-lg: var(--sites-spacing-lg);
+		--ledger-step-xl: var(--sites-spacing-xl);
+		--ledger-step-2xl: var(--sites-spacing-2xl);
+		--ledger-step-3xl: calc(var(--sites-spacing-2xl) * 96 / 64);
+	}
 }
 
-/* The post-row grid: a date column, the title and standfirst (with the
-   thumbnail), and the topic and reading time at the right. The last column
-   holds at least 9rem so every row's thumbnail lands on the same line. */
-@utility grid-cols-post-row {
-	grid-template-columns: 8.125rem minmax(0, 1fr) minmax(9rem, auto);
+/* Column tracks the utilities cannot name: the lead and its rail, and the
+   feature's picture and text, at the design's desktop widths. */
+@utility grid-cols-lead {
+	grid-template-columns: minmax(0, var(--container-lead)) minmax(0, var(--container-rail));
+}
+@utility grid-cols-feature {
+	grid-template-columns: minmax(0, var(--container-feature)) minmax(0, var(--container-feature-text));
+}
+@utility grid-cols-feature-reverse {
+	grid-template-columns: minmax(0, var(--container-feature-text)) minmax(0, var(--container-feature));
+}
+
+/* The topic strip scrolls sideways on a phone without a scrollbar under it. */
+@utility scrollbar-none {
+	scrollbar-width: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
 }
 
 /* The browser surfaces no utility reaches. */
@@ -321,11 +368,11 @@
 }
 
 ::selection {
-	background: var(--sites-color-brand-accent);
-	color: var(--sites-color-grey-extra-light);
+	background: var(--sites-scheme-links);
+	color: var(--sites-scheme-background);
 }
 
-/* Focus takes the scheme's link colour, so it reads on paper, tint and ink. */
+/* Focus takes the scheme's link colour, so it reads on paper, slate and ink. */
 :focus-visible {
 	outline: 2px solid var(--sites-scheme-links);
 	outline-offset: 3px;
@@ -368,7 +415,7 @@ html {
 		border-radius: var(--sites-button-radius);
 		background: var(--sites-scheme-button-background);
 		color: var(--sites-scheme-button-foreground);
-		font-family: var(--sites-font-mono-family), SFMono-Regular, Menlo, monospace;
+		font-family: var(--sites-font-body-family), Arial, sans-serif;
 		font-size: 1rem;
 		font-weight: var(--sites-button-weight);
 		line-height: 1;
@@ -431,24 +478,24 @@ html {
 		outline-offset: 2px;
 	}
 
-	/* A chip is the small pill above a page heading. */
+	/* A chip: the outlined label on the 404 page. */
 	.sites-chip {
 		display: inline-flex;
 		align-items: center;
-		padding: calc(var(--sites-spacing-xs) * 2 / 3) 0.875rem;
+		padding: var(--ledger-step-2xs) var(--ledger-step-xs);
 		border: 1.5px solid var(--sites-scheme-heading);
-		border-radius: var(--sites-radius-full);
-		background: var(--sites-scheme-background);
+		border-radius: var(--sites-radius-sm);
 		color: var(--sites-scheme-heading);
 		font-family: var(--sites-font-mono-family), SFMono-Regular, Menlo, monospace;
 		font-size: 0.875rem;
 		font-weight: 500;
-		line-height: 1.5;
+		line-height: 1;
 	}
 
-	/* Rich text from the editor and from post bodies. Its children carry no
-	   classes, so the rhythm is set here: body-lg paragraphs a step apart,
-	   headings with more air above, oxblood bullets and links. */
+	/* Rich text from the editor and from story bodies. Its children carry no
+	   classes, so the rhythm is set here, from the rich-text board: Body lg
+	   paragraphs a step apart, headings with more air above, square red
+	   bullets and underlined red links. */
 	.sites-prose {
 		color: var(--sites-scheme-foreground);
 		font-size: var(--ledger-text-body-lg);
@@ -467,13 +514,14 @@ html {
 	.sites-prose h3,
 	.sites-prose h4 {
 		color: var(--sites-scheme-heading);
-		font-family: var(--sites-font-heading-family), Arial, sans-serif;
-		font-weight: 500;
+		font-family: var(--sites-font-heading-family), "Arial Narrow", Arial, sans-serif;
+		font-weight: 600;
 		line-height: 1.1;
 	}
 
 	.sites-prose h2 {
 		font-size: var(--ledger-text-h2);
+		font-weight: 700;
 	}
 
 	.sites-prose h3 {
@@ -496,16 +544,19 @@ html {
 		color: var(--sites-scheme-heading);
 	}
 
+	.sites-prose strong {
+		font-weight: 600;
+	}
+
 	.sites-prose ul,
 	.sites-prose ol {
 		display: grid;
 		gap: var(--ledger-step-xs);
-		padding-inline-start: 1.25em;
+		padding-inline-start: 1rem;
 	}
 
-	/* Bullets hang at the column edge, as the design sets them: the dot sits
-	   flush left in the list's indent and the item text starts past it. A
-	   ::marker cannot be placed, so the dot is drawn and the marker made
+	/* The design's bullet is a small red square hung in the indent. A ::marker
+	   cannot be drawn square, so the square is drawn and the marker made
 	   clear; list-style stays on so the list keeps its list semantics. */
 	.sites-prose ul {
 		list-style: disc;
@@ -521,9 +572,12 @@ html {
 
 	.sites-prose ul > li::before {
 		position: absolute;
-		inset-inline-start: -1.25em;
-		color: var(--sites-scheme-links);
-		content: "\2022";
+		top: 0.5em;
+		inset-inline-start: -1rem;
+		width: 0.25rem;
+		height: 0.25rem;
+		background: var(--sites-scheme-links);
+		content: "";
 	}
 
 	.sites-prose ol {
@@ -532,14 +586,15 @@ html {
 
 	.sites-prose ol > li::marker {
 		color: var(--sites-scheme-links);
+		font-weight: 600;
 	}
 
 	.sites-prose blockquote {
 		color: var(--sites-scheme-heading);
-		font-family: var(--sites-font-heading-family), Arial, sans-serif;
-		font-size: var(--ledger-text-h4);
-		font-style: italic;
-		font-weight: 300;
+		font-family: var(--sites-font-heading-family), "Arial Narrow", Arial, sans-serif;
+		font-size: var(--ledger-text-h3);
+		font-weight: 600;
+		line-height: 1.1;
 	}
 
 	.sites-prose img {
@@ -558,20 +613,20 @@ html {
 	height: 100%;
 }
 
-/* The drop cap opens a post. A browser with initial-letter sinks it two
-   lines into the paragraph; the rest float it. */
-.folio-drop-cap > p:first-child::first-letter {
+/* The drop cap opens a story when the article sets it. A browser with
+   initial-letter sinks it two lines into the paragraph; the rest float it. */
+.ledger-drop-cap > p:first-child::first-letter {
 	float: left;
 	margin: 0.06em var(--ledger-step-xs) 0 0;
-	color: var(--sites-scheme-links);
-	font-family: var(--sites-font-heading-family), Arial, sans-serif;
+	color: var(--sites-scheme-heading);
+	font-family: var(--sites-font-heading-family), "Arial Narrow", Arial, sans-serif;
 	font-size: 3em;
-	font-weight: 400;
+	font-weight: 700;
 	line-height: 0.9;
 }
 
 @supports (initial-letter: 2) {
-	.folio-drop-cap > p:first-child::first-letter {
+	.ledger-drop-cap > p:first-child::first-letter {
 		margin: 0 var(--ledger-step-xs) 0 0;
 		font-size: inherit;
 		line-height: inherit;
@@ -592,8 +647,8 @@ body:has([data-bare]) [data-group] {
 
 /* @magic-spells/sticky-header pins the element it is, so it needs the whole
    page as its scroll container. The renderer's section wrapper would cage it
-   to the header's own height; display: contents takes that box out of the way
-   and leaves its attributes for the editor. */
+   to the masthead's own height; display: contents takes that box out of the
+   way and leaves its attributes for the editor. */
 [data-section="masthead"]:has(sticky-header) {
 	display: contents;
 }
@@ -610,11 +665,11 @@ body:has([data-bare]) [data-group] {
 
 @media (prefers-reduced-motion: no-preference) {
 	[data-notice]:not([hidden]) {
-		animation: folio-notice-in 220ms ease-out both;
+		animation: ledger-notice-in 220ms ease-out both;
 	}
 }
 
-@keyframes folio-notice-in {
+@keyframes ledger-notice-in {
 	from {
 		transform: translateY(0.75rem);
 		opacity: 0;
@@ -625,7 +680,7 @@ body:has([data-bare]) [data-group] {
 	}
 }
 
-/* @magic-spells/sticky-header, switched off by the header's setting: the
+/* @magic-spells/sticky-header, switched off by the masthead's setting: the
    element stays for the editor but no longer pins or translates. */
 sticky-header[disabled] {
 	position: static;
@@ -633,9 +688,26 @@ sticky-header[disabled] {
 }
 
 /* The package paints a cap of the header's background 2rem above it to
-   cover the show settle's overshoot. Folio settles without overshoot, and
-   the announcement bar sits in that space in its own section, so the cap
+   cover the show settle's overshoot. The masthead settles without overshoot,
+   and the announcement bar sits in that space in its own section, so the cap
    goes. */
 sticky-header::before {
 	content: none;
+}
+
+/* @magic-spells/tarot: the picks carousel. Its stylesheet hides every slide
+   until the script has measured the track; until then (and with JavaScript
+   off) the slides show as a plain row, so the first paint is the same
+   carousel at rest. The arrows Tarot binds in the section head take the
+   disabled attribute at either end. */
+tarot-carousel:not(:defined) tarot-track {
+	display: flex;
+	gap: var(--ledger-gap-md);
+}
+tarot-carousel:not(:defined) tarot-slide {
+	flex: none;
+	width: var(--spacing-pick);
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
 }

@@ -47,7 +47,7 @@
           "id": "reveal_on_scroll",
           "label": "Reveal cards on scroll",
           "default": true,
-          "info": "Post cards, rows and a few blocks fade up gently as they come into view. Readers who ask their device for less motion see everything at once."
+          "info": "Story cards and rows below the first screen fade up gently as they come into view. Readers who ask their device for less motion see everything at once."
         }
       ]
     },

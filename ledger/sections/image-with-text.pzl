@@ -1,5 +1,27 @@
-<!-- D5 supplies the section markup against this frozen schema. -->
-<section class="bg-scheme-background text-scheme-foreground"></section>
+{#let
+  ratio = settings.ratio == 'landscape' ? 'aspect-3/2' : (settings.ratio == 'square' ? 'aspect-square' : 'aspect-4/5')
+  text_first = settings.layout == 'text_first'
+}
+<!-- A picture and a column of writing, half the page column each from 48rem.
+     The picture comes first on a phone whichever side it takes from 48rem
+     up. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-center gap-gap-lg md:grid-cols-2">
+    <div class="{ text_first ? 'md:order-last' : '' }">
+      {#if settings.image}
+        { image_tag(settings.image, { class: 'w-full bg-scheme-surface object-cover ' + ratio, sizes: '(min-width: 75rem) 37rem, (min-width: 48rem) 50vw, 100vw', alt: settings.image.alt ?? '' }) }
+      {:else}
+        <div class="w-full bg-scheme-surface { ratio }"></div>
+      {/if}
+    </div>
+    <div class="grid content-center justify-items-start gap-step-md">
+      {#if settings.eyebrow}<p class="font-body text-kicker font-semibold text-scheme-links uppercase">{ settings.eyebrow }</p>{/if}
+      {#if settings.heading}<h2 class="font-heading text-h2 font-bold text-pretty text-scheme-heading">{ settings.heading }</h2>{/if}
+      {#if settings.body}<div class="sites-prose text-body text-pretty">{ settings.body }</div>{/if}
+      {#if settings.link_label}<Button href="{ settings.link }" tone="primary" wide={ false }>{ settings.link_label }</Button>{/if}
+    </div>
+  </div>
+</section>
 
 <schema>
 {

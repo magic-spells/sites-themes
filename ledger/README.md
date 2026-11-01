@@ -1,21 +1,29 @@
 # Ledger
 
-Schema layer for The Daily Ledger, an invented local newsroom. Section bodies and the 404, password and maintenance templates are placeholders for D5.
+The News reference theme for Magic Spells Sites: The Daily Ledger, an invented local newsroom in a valley town. A condensed sans headline face over a plain body face, a strong 3px rule above every section, red kickers and three schemes (Paper, Ink, Slate).
 
-The `posts` contract preserves `topic`, `date`, `author`, `reading_minutes`, `standfirst`, `image`, `image_alt` and `body`; optional additions are `image_credit`, `updated` and `key_facts` (one fact per non-empty line). Publication and update metadata use calendar dates only.
+## Sections
 
-Shared section setting ids and the theme’s `writer_*` ids are preserved for workspace theme switching; the latter are labelled Editor. `topic-block` with `exclude_current` and an empty topic uses the current story’s topic. List-style sections retain `show_images`, `show_toggle`, `offset` and `columns`.
+Masthead (sticky, with a scrolling topic strip), announcement bar, mobile menu, cookie notice and footer in the groups; lead story with a rail of the newest stories, editors' picks carousel, topic block, story grid, latest list, feature story, article, key facts, author card, page header, rich text, image with text, newsletter and contact. The 404, password and maintenance templates carry their own markup.
 
-Fixtures contain sixteen stories by Priya Nand and Tom Reilly, six topics, eight landscape SVG placeholders and two author portraits. Headlines, authored deks and credits come from the Figma dump. Where it supplies no authored dek, a short title-derived summary stands in. Food maps to Business; Data to Science; Community to Politics; Travel, TV and Film to Culture; Explainer to Weather. Other named reporters are normalized to the two fixture authors; photo credits remain as supplied.
+The `posts` contract keeps `topic`, `date`, `author`, `reading_minutes`, `standfirst`, `image`, `image_alt` and `body`; `image_credit`, `updated` and `key_facts` (one fact per line, `Label: value`) are optional. Dates are calendar dates only: no time of day, no "ago".
 
-There are no topic archives: topic menus link to a representative story. About, advertising, corrections, privacy and social menus are provided; advertising and corrections use the contact page’s anchors.
+The story grid and topic block can offer a list/grid switch; the reader's choice is saved per browser. Cards and rows below the first screen reveal on scroll; the lead story and the first screen never wait, and reduced motion shows everything.
 
-D5 must implement the carousel with Tarot’s core effect and navigation. Below 48rem the section has no horizontal padding: track padding-left and scroll-padding-left use the gutter, padding-right is zero. Tablet and desktop restore both gutters. Arrows show from tablet up. The rule row is a separate 3px strong rule inside the gutter.
+## Fixtures
 
-Tarot 0.1.0 is temporarily vendored in `scripts/vendor/tarot.esm.js` and `styles/vendor/tarot.css`, each with `TAROT-LICENSE` alongside. Neither is imported yet. The unimported Tarot bundle is excluded from the D4 TypeScript check: TypeScript 7 rejects its private static-field access at `_.constructor.#getPluginKey` (the supplied JavaScript passes `node --check`). D5 must resolve that integration diagnostic before importing it. Replace with the npm release when available. The license is the package’s own; Ledger’s root LICENSE covers the theme code. Dialog, sticky-header and reveal distributions and `scripts/theme.ts` are copied unchanged from Folio.
+Twenty-one stories across six topics by Priya Nand, Tom Reilly and a few named contributors, including five short briefs without images. There are no topic archives yet, so topic menus link to `/news#<topic>`.
+
+## Carousel
+
+Editors' picks use Tarot 0.1.0, vendored in `scripts/vendor/tarot.esm.js` and `styles/vendor/tarot.css` with `TAROT-LICENSE` alongside, until the npm release. `scripts/theme.ts` fits `slidesPerView` so every card is 18rem wide and the next one peeks on a phone. Below 48rem the track runs to the right edge of the screen while the rule row stays inside the gutter; arrows show from 48rem up.
+
+TypeScript 7 rejects one line of the bundle (`_.constructor.#getPluginKey`, which runs fine), so `tsconfig.json` excludes the bundle and `scripts/vendor/tarot.esm.d.ts` declares its types.
+
+## Run it
 
 ```sh
 npm install
 sites check .
-sites dev . --addr 127.0.0.1:3951
+sites dev . --addr 127.0.0.1:3961
 ```

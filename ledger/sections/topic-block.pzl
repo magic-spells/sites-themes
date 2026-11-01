@@ -1,5 +1,51 @@
-<!-- D5 supplies the section markup against this frozen schema. -->
-<section class="bg-scheme-background text-scheme-foreground"></section>
+{#let
+  current_topic = page.entry ? page.entry.fields.topic : null
+  follows_story = settings.exclude_current && !settings.topic && current_topic
+  topic = settings.topic || (follows_story ? current_topic : '')
+  title = follows_story ? (settings.heading ? settings.heading + ' ' + current_topic : t('more_from', { topic: current_topic })) : (settings.heading || topic)
+  sorted = settings.collection.entries | sort('fields.date') | reverse
+  by_topic = topic ? (sorted | where('fields.topic', topic)) : sorted
+  pool = settings.exclude_current && page.entry ? (by_topic | reject('handle', page.entry.handle)) : by_topic
+  posts = pool | slice(settings.offset ?? 0, settings.limit)
+  two_up = settings.columns == '2'
+  view_all = settings.view_all_label && settings.view_all_href
+  view = settings.layout == 'list' ? 'list' : 'grid'
+  toggle = settings.show_toggle
+}
+<!-- Stories in one topic under a 3px rule: the topic title (a link to the
+     view-all page, with the red ›) and "N stories · all" at the right. Three
+     columns of 3:2 cards with kicker and byline, or two of 16:9 cards with the
+     dek. On a story page with no topic set, it follows the story's topic and
+     leaves the story out ("More from Science"). -->
+{#if posts.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-view={ toggle ? view : false }>
+  <div class="mx-auto grid max-w-column gap-step-sm">
+    <div class="flex flex-wrap items-baseline justify-between gap-x-step-md gap-y-step-2xs border-t-3 border-scheme-rule-strong pt-step-xs">
+      <h2 class="font-heading text-h4 font-semibold text-scheme-heading uppercase">
+        {#if view_all}<a class="decoration-1 underline-offset-4 hover:underline" href="{ settings.view_all_href }">{ title }<span class="text-scheme-links" aria-hidden="true"> ›</span></a>{:else}{ title }{/if}
+      </h2>
+      <div class="flex items-center gap-step-sm">
+        {#if settings.show_count}
+          <p class="font-mono text-meta text-scheme-meta">{ t('topic_count', { count: pool.length }) }{#if view_all}<span aria-hidden="true"> · </span><a class="hover:text-scheme-links hover:underline" href="{ settings.view_all_href }" aria-label="{ settings.view_all_label }">{ t('topic_all') }</a>{/if}</p>
+        {/if}
+        {#if toggle}<ViewSwitch view={ view } />{/if}
+      </div>
+    </div>
+    {#if toggle || view == 'grid'}
+      <ul class="grid gap-gap-md md:grid-cols-2 { two_up ? '' : 'lg:grid-cols-3' } view-list:hidden" data-grid>
+        {#for entry in posts}
+          <li><StoryCard entry={ entry } href="{ settings.base_path }/{ entry.handle }" heading={ two_up ? 'h3' : 'h4' } wide={ two_up } kicker={ true } dek={ two_up } byline={ true } topic={ false } sizes="{ two_up ? '(min-width: 75rem) 37rem, (min-width: 48rem) 50vw, 100vw' : '(min-width: 75rem) 24.5rem, (min-width: 48rem) 50vw, 100vw' }" reveal={ true } /></li>
+        {/for}
+      </ul>
+    {/if}
+    {#if toggle || view == 'list'}
+      <ul class="view-grid:hidden" data-list>
+        {#for entry in posts}<PostRow entry={ entry } href="{ settings.base_path }/{ entry.handle }" image={ settings.show_images } />{/for}
+      </ul>
+    {/if}
+  </div>
+</section>
+{/if}
 
 <schema>
 {

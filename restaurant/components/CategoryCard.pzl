@@ -1,0 +1,24 @@
+<!-- component: CategoryCard -->
+<!-- props: entry href style show_counts count -->
+<!-- A menu category, linking to its group on the menu. Cards: a white card,
+     the photo in a wide well over the name and the dish count. Circles: the
+     photo in a disc on the category's tint ring, the name under it. Tints
+     stay on the ring; card bodies carry none. -->
+{#let image = entry.fields.image}
+{#if style == 'circles'}
+<a class="group grid justify-items-center gap-step-sm text-center" href="{ href }" data-tint={ entry.fields.tint }>
+  <span class="block aspect-square w-full max-w-circle rounded-full bg-tint p-step-sm">
+    <span class="block size-full overflow-hidden rounded-full bg-scheme-surface-2">{#if image}<img class="size-full object-cover transition-transform duration-hover ease-out-soft group-hover:scale-hover" data-zoom src="{ image_url(image, 320) }" alt="" loading="lazy" width={ image.width } height={ image.height } />{/if}</span>
+  </span>
+  <span class="text-body-lg font-semibold text-scheme-heading group-hover:text-scheme-links">{ entry.title }</span>
+  {#if show_counts}<span class="-mt-step-xs font-mono text-code font-medium tracking-code text-scheme-meta uppercase">{ t('dish_count', { count }) }</span>{/if}
+</a>
+{:else}
+<a class="group flex h-full flex-col overflow-hidden rounded-lg border border-scheme-rule bg-scheme-surface" href="{ href }">
+  {#if image}<span class="block aspect-5/2 overflow-hidden bg-scheme-surface-2"><img class="size-full object-cover transition-transform duration-hover ease-out-soft group-hover:scale-hover" data-zoom src="{ image_url(image, 640) }" srcset="{ image_srcset(image, [320, 480, 640, 768]) }" sizes="(min-width: 48rem) 30vw, 90vw" alt="" loading="lazy" width={ image.width } height={ image.height } /></span>{/if}
+  <span class="grid gap-step-2xs p-step-sm">
+    <span class="font-heading text-dish font-bold text-scheme-heading">{ entry.title }</span>
+    {#if show_counts}<span class="font-mono text-code font-medium tracking-code text-scheme-meta uppercase">{ t('dish_count', { count }) }</span>{/if}
+  </span>
+</a>
+{/if}

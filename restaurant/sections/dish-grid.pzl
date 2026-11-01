@@ -1,0 +1,177 @@
+<!-- The menu: every dish, grouped by category in the categories' order.
+     Above the groups a rail of the categories on their tints; from 48rem it
+     pins under the header and marks the category being read (theme.ts); at
+     375 it is one scrolling row. Each group is the target of its category's
+     links (/menu#mains): its heading with the tint swatch and the dish
+     count, the description, then the cards 3 / 2 / 1 across (4 / 3 / 2 with
+     four columns). The dietary legend closes the section. -->
+{#let
+  all = settings.collection.entries | sort('fields.order')
+  categories = settings.categories.entries | sort('fields.order')
+  grid = settings.columns == '4' ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4' : 'md:grid-cols-2 lg:grid-cols-3'
+}
+<section class="bg-scheme-background px-gutter pb-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-step-2xl">
+    {#if settings.show_rail && categories.length}
+      <sticky-content class="-mx-gutter min-w-0 bg-scheme-background px-gutter py-step-sm max-md:static">
+        <nav aria-label="{ t('menu_categories') }" data-rail>
+          <ul class="-mx-gutter flex gap-step-xs overflow-x-auto px-gutter md:mx-0 md:flex-wrap md:px-0" data-strip>
+            {#for category in categories}
+              <li class="shrink-0" data-tint={ category.fields.tint }><a class="flex min-h-control-small items-center rounded-full border border-tint bg-tint px-step-sm py-step-xs font-mono text-code font-medium tracking-code text-tint-ink uppercase transition-colors duration-panel hover:border-scheme-foreground current:border-scheme-foreground" href="#{ category.handle }">{ category.title }</a></li>
+            {/for}
+          </ul>
+        </nav>
+      </sticky-content>
+    {/if}
+    {#for category in categories}
+      {#let items = all | where('fields.category.id', category.id)}
+      {#if items.length}
+        <div class="grid gap-step-lg" id={ category.handle } data-tint={ category.fields.tint }>
+          <div class="grid gap-step-xs">
+            <div class="flex items-baseline justify-between gap-step-md">
+              <h2 class="flex items-center gap-step-sm font-heading text-h1 font-bold text-scheme-heading"><span class="size-step-sm shrink-0 rounded-sm bg-tint" aria-hidden="true"></span>{ category.title }</h2>
+              <p class="shrink-0 font-mono text-code font-medium tracking-code text-scheme-meta uppercase">{ t('dish_count', { count: items.length }) }</p>
+            </div>
+            {#if settings.show_category_description && category.fields.description}<p class="text-body text-scheme-muted">{ category.fields.description }</p>{/if}
+          </div>
+          <ul class="grid gap-gap-lg { grid }">
+            {#for entry in items}<li><DishCard entry={ entry } href="{ settings.base_path }/{ entry.handle }" photo_style={ settings.photo_style } info_style={ settings.info_style } hide_ingredients={ !settings.show_ingredients } hide_dietary={ !settings.show_dietary } reveal={ site.settings.reveal } /></li>{/for}
+          </ul>
+        </div>
+      {/if}
+    {/for}
+    {#if settings.show_legend}
+      <DietaryLegend />
+    {/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Dish grid",
+  "description": "The complete menu grouped by category with a category rail.",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Reads menu_items entries: title, handle, description, ingredients, price, category, dietary, image, image_alt, featured, tag and photos."
+    },
+    {
+      "type": "collection",
+      "id": "categories",
+      "label": "Categories",
+      "info": "Reads menu_categories entries: title, handle, description, image, image_alt and tint."
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Columns",
+      "default": "3",
+      "options": [
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rail",
+      "label": "Show rail",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_ingredients",
+      "label": "Show ingredients",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dietary",
+      "label": "Show dietary",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "photo_style",
+      "label": "Photo style",
+      "default": "photo",
+      "options": [
+        {
+          "value": "photo",
+          "label": "Photo"
+        },
+        {
+          "value": "cutout",
+          "label": "Cutout"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "info_style",
+      "label": "Info style",
+      "default": "plain",
+      "options": [
+        {
+          "value": "plain",
+          "label": "Plain"
+        },
+        {
+          "value": "tinted",
+          "label": "Tinted"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_legend",
+      "label": "Show legend",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "base_path",
+      "label": "Base path",
+      "default": "/dishes"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_category_description",
+      "label": "Show category description",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "columns": "3",
+        "show_rail": true,
+        "show_ingredients": true,
+        "show_dietary": true,
+        "photo_style": "photo",
+        "info_style": "plain",
+        "show_legend": true,
+        "base_path": "/dishes",
+        "show_category_description": true,
+        "color_scheme": "paper",
+        "collection": "menu_items",
+        "categories": "menu_categories"
+      }
+    }
+  ]
+}
+</schema>

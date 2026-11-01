@@ -1,0 +1,97 @@
+<!-- A page's heading: the eyebrow, the <h1> (the page's title when the
+     heading is empty) and the standfirst, left or centred. -->
+{#let centre = settings.align == 'center'}
+<section class="bg-scheme-background px-gutter pt-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-step-sm { centre ? 'justify-items-center text-center' : 'justify-items-start' }">
+    {#if settings.show_eyebrow && settings.eyebrow}<p class="font-mono text-code font-medium tracking-code text-scheme-meta uppercase">{ settings.eyebrow }</p>{/if}
+    <h1 class="font-heading text-h1 font-bold text-balance text-scheme-heading">{ settings.heading || page.title }</h1>
+    {#if settings.show_standfirst && settings.standfirst}<p class="max-w-reading text-body-lg text-pretty text-scheme-muted">{ settings.standfirst }</p>{/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Page header",
+  "description": "A plain page heading with an optional eyebrow and introduction.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "standfirst",
+      "label": "Standfirst",
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "align",
+      "label": "Align",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_eyebrow",
+      "label": "Show eyebrow",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_standfirst",
+      "label": "Show standfirst",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Left",
+      "settings": {
+        "eyebrow": "",
+        "heading": "",
+        "standfirst": "",
+        "align": "left",
+        "show_eyebrow": true,
+        "show_standfirst": true,
+        "color_scheme": "paper"
+      }
+    },
+    {
+      "name": "Centered",
+      "settings": {
+        "eyebrow": "",
+        "heading": "",
+        "standfirst": "",
+        "align": "center",
+        "show_eyebrow": true,
+        "show_standfirst": true,
+        "color_scheme": "paper"
+      }
+    }
+  ]
+}
+</schema>

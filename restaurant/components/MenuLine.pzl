@@ -1,0 +1,15 @@
+<!-- component: MenuLine -->
+<!-- props: entry href prices show_ingredients show_dietary -->
+<!-- One dish in the text menu, on a hairline: the name (a link to the dish
+     page) with its dietary codes, a dotted leader or plain space, the price
+     in the category's ink, the ingredients under it. -->
+{#let f = entry.fields}
+<li class="grid gap-step-2xs border-b border-scheme-rule py-step-sm" data-tint={ f.category.fields.tint }>
+  <div class="flex items-baseline gap-step-xs">
+    <h3 class="font-heading text-dish font-bold text-scheme-heading"><a class="hover:text-scheme-links" href="{ href }">{ entry.title }</a></h3>
+    {#if show_dietary && f.dietary}<DietaryBadges dietary={ f.dietary } tone="shrink-0 self-center" />{/if}
+    <span class="min-w-step-lg flex-1 { prices == 'dotted' ? 'border-b-2 border-dotted border-scheme-rule' : '' }" aria-hidden="true"></span>
+    {#if f.price != null}<Price value={ f.price } tone="text-tint-ink deep:text-scheme-foreground" />{/if}
+  </div>
+  {#if show_ingredients && f.ingredients}<p class="text-body-sm text-scheme-muted">{ f.ingredients | replace(', ', ' · ') }</p>{/if}
+</li>

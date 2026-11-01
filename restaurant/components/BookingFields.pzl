@@ -1,0 +1,29 @@
+<!-- component: BookingFields -->
+<!-- props: fields prefix -->
+<!-- The reservation form's fields, shared by the booking sheet and the
+     reservations section. The engine's field types are text, textarea,
+     email, checkbox and select, so the field id picks the input: "date" is a
+     date picker, "phone" a telephone field. Selects are <select-dropdown>s,
+     time and party side by side. -->
+<div class="grid grid-cols-2 gap-step-sm">
+  {#for field in fields}
+    {#if field.type == 'select'}
+      <div class="{ field.id == 'time' || field.id == 'party' ? 'col-span-1' : 'col-span-2' }">
+        <label class="sr-only" id="label-{ prefix }-{ field.id }">{ field.label }</label>
+        <select-dropdown class="text-body" aria-labelledby="label-{ prefix }-{ field.id }">
+          <select-trigger class="flex min-h-control items-center justify-between gap-step-sm rounded-input border border-scheme-input-border bg-scheme-input-background px-step-sm text-scheme-input-foreground">
+            <span class="select-label-text">{ field.label }</span>
+            <span class="sites-icon size-icon rotate-90" aria-hidden="true">{#svg 'icons/angle-right.svg'}</span>
+          </select-trigger>
+          <input type="hidden" name={ field.id } value={ field.value } />
+          <select-panel>
+            {#for option in field.options}<select-option value={ option } selected={ field.value == option }>{ option }</select-option>{/for}
+          </select-panel>
+        </select-dropdown>
+        {#if field.error}<p class="mt-step-2xs font-mono text-code text-scheme-error">{ t('form_field_' + field.error) }</p>{/if}
+      </div>
+    {:else}
+      <Field wrapper_class="col-span-2" name={ field.id } label={ field.label } type={ field.id == 'date' ? 'date' : field.id == 'phone' ? 'tel' : field.type } autocomplete={ field.id == 'phone' ? 'tel' : null } required={ field.required } maxlength={ field.max_length } value={ field.value } error={ field.error } prefix={ prefix } rows={ 3 } />
+    {/if}
+  {/for}
+</div>

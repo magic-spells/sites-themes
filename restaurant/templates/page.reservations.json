@@ -1,0 +1,57 @@
+{
+  "label": "Reservations",
+  "description": "Reservations page sections.",
+  "sections": [
+    {
+      "id": "s_page_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "eyebrow": "",
+        "heading": "Book a table",
+        "standfirst": "",
+        "align": "left",
+        "show_eyebrow": false,
+        "show_standfirst": false,
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_reservations",
+      "type": "reservations",
+      "preset": "Default",
+      "settings": {
+        "heading": "Book a table",
+        "text": "Come for breakfast, settle in for lunch, stay for dinner.",
+        "show_intro": false,
+        "form": "reservation",
+        "note": "We hold the table for 15 minutes.",
+        "color_scheme": "paper",
+        "image": "as_3x2_1"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Private dining",
+      "settings": {
+        "heading": "A table for a few more",
+        "note": "A few things before you visit.",
+        "first_open": true,
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "id": "b_1",
+          "type": "item",
+          "settings": {
+            "question": "Do you take private dining bookings?",
+            "answer": "<p>Yes. Write to us with a date and the number of people, and we will make a plan together.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}

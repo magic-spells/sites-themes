@@ -1,0 +1,671 @@
+@import "tailwindcss";
+@import "./vendor/bottom-sheet.css" layer(components);
+@import "./vendor/collapsible-content.css" layer(components);
+@import "./vendor/dialog-panel.css" layer(components);
+@import "./vendor/dropdown-panel.css" layer(components);
+@import "./vendor/dropdown-panel.effects.css" layer(components);
+@import "./vendor/lightbox.css" layer(components);
+@import "./vendor/reveal.css";
+@import "./vendor/scrollbar.css" layer(components);
+@import "./vendor/select-dropdown.css" layer(components);
+@import "./vendor/sticky-header.css" layer(components);
+@import "./vendor/tarot.css" layer(components);
+
+@source "../layouts/**/*.pzl";
+@source "../templates/**/*.pzl";
+@source "../sections/**/*.pzl";
+@source "../components/**/*.pzl";
+
+@theme {
+	--color-brand-primary: var(--sites-color-brand-primary);
+	--color-brand-secondary: var(--sites-color-brand-secondary);
+	--color-brand-accent: var(--sites-color-brand-accent);
+	--color-grey-extra-light: var(--sites-color-grey-extra-light);
+	--color-grey-light: var(--sites-color-grey-light);
+	--color-grey-medium: var(--sites-color-grey-medium);
+	--color-grey-dark: var(--sites-color-grey-dark);
+	--color-grey-extra-dark: var(--sites-color-grey-extra-dark);
+	--color-info-bg: var(--sites-color-info-bg);
+	--color-info-fg: var(--sites-color-info-fg);
+	--color-success-bg: var(--sites-color-success-bg);
+	--color-success-fg: var(--sites-color-success-fg);
+	--color-warning-bg: var(--sites-color-warning-bg);
+	--color-warning-fg: var(--sites-color-warning-fg);
+	--color-error-bg: var(--sites-color-error-bg);
+	--color-error-fg: var(--sites-color-error-fg);
+	--color-tint-tomato: #F6CFC5;
+	--color-tint-tomato-ink: #7A2113;
+	--color-tint-saffron: #F8E2A6;
+	--color-tint-saffron-ink: #5A3E00;
+	--color-tint-leaf: #D2E4C8;
+	--color-tint-leaf-ink: #1C461A;
+	--color-tint-sea: #CBDFE9;
+	--color-tint-sea-ink: #16455A;
+	--color-tint-plum: #E4D2E6;
+	--color-tint-plum-ink: #4F2457;
+	--color-tint-clay: #E7D5C5;
+	--color-tint-clay-ink: #5A3A24;
+}
+
+@theme inline {
+	--color-scheme-background: var(--sites-scheme-background);
+	--color-scheme-foreground: var(--sites-scheme-foreground);
+	--color-scheme-heading: var(--sites-scheme-heading);
+	--color-scheme-input-background: var(--sites-scheme-input-background);
+	--color-scheme-input-foreground: var(--sites-scheme-input-foreground);
+	--color-scheme-input-border: var(--sites-scheme-input-border);
+	--color-scheme-chip-background: var(--sites-scheme-chip-background);
+	--color-scheme-chip-foreground: var(--sites-scheme-chip-foreground);
+	--color-scheme-chip-border: var(--sites-scheme-chip-border);
+	--color-scheme-icons: var(--sites-scheme-icons);
+	--color-scheme-links: var(--sites-scheme-links);
+	--color-scheme-button-background: var(--sites-scheme-button-background);
+	--color-scheme-button-foreground: var(--sites-scheme-button-foreground);
+	--color-scheme-button-hover-background: var(--sites-scheme-button-hover-background);
+	--color-scheme-button-hover-foreground: var(--sites-scheme-button-hover-foreground);
+	--color-scheme-secondary-button-background: var(--sites-scheme-secondary-button-background);
+	--color-scheme-secondary-button-foreground: var(--sites-scheme-secondary-button-foreground);
+	--color-scheme-secondary-button-hover-background: var(--sites-scheme-secondary-button-hover-background);
+	--color-scheme-secondary-button-hover-foreground: var(--sites-scheme-secondary-button-hover-foreground);
+	--color-scheme-muted: var(--sites-scheme-chip-foreground);
+	--color-scheme-meta: var(--sites-scheme-icons);
+	--color-scheme-rule: var(--sites-scheme-chip-border);
+	--color-scheme-surface: var(--sites-scheme-input-background);
+	--color-scheme-surface-2: var(--sites-scheme-chip-background);
+	--color-scheme-error: var(--sites-scheme-links);
+	--color-scheme-scrim: color-mix(in srgb, var(--sites-scheme-foreground) 50%, transparent);
+	--color-tint: var(--tint);
+	--color-tint-ink: var(--tint-ink);
+}
+
+@custom-variant deep (&:where(.sites-scheme-charcoal *, .sites-scheme-tomato *, .sites-scheme-wine *, .sites-scheme-navy *));
+
+@theme {
+	--font-heading: var(--sites-font-heading-family), Arial, sans-serif;
+	--font-body: var(--sites-font-body-family), Arial, sans-serif;
+	--font-mono: var(--sites-font-mono-family), SFMono-Regular, Menlo, monospace;
+	--text-xs: var(--sites-type-scale-xs);
+	--text-xs--line-height: var(--sites-type-leading-normal);
+	--text-sm: var(--sites-type-scale-sm);
+	--text-sm--line-height: var(--sites-type-leading-normal);
+	--text-base: var(--sites-type-scale-base);
+	--text-base--line-height: var(--sites-type-leading-normal);
+	--text-lg: var(--sites-type-scale-lg);
+	--text-lg--line-height: var(--sites-type-leading-normal);
+	--text-xl: var(--sites-type-scale-xl);
+	--text-xl--line-height: var(--sites-type-leading-normal);
+	--text-2xl: var(--sites-type-scale-2xl);
+	--text-2xl--line-height: var(--sites-type-leading-tight);
+	--text-3xl: var(--sites-type-scale-3xl);
+	--text-3xl--line-height: var(--sites-type-leading-tight);
+	--text-4xl: var(--sites-type-scale-4xl);
+	--text-4xl--line-height: var(--sites-type-leading-tight);
+	--text-5xl: var(--sites-type-scale-5xl);
+	--text-5xl--line-height: var(--sites-type-leading-tight);
+	--leading-tight: var(--sites-type-leading-tight);
+	--leading-normal: var(--sites-type-leading-normal);
+	--leading-relaxed: var(--sites-type-leading-relaxed);
+	--spacing-space-xs: var(--sites-spacing-xs);
+	--spacing-space-sm: var(--sites-spacing-sm);
+	--spacing-space-md: var(--sites-spacing-md);
+	--spacing-space-lg: var(--sites-spacing-lg);
+	--spacing-space-xl: var(--sites-spacing-xl);
+	--spacing-space-2xl: var(--sites-spacing-2xl);
+	--radius-none: var(--sites-radius-none);
+	--radius-sm: var(--sites-radius-sm);
+	--radius-md: var(--sites-radius-md);
+	--radius-lg: var(--sites-radius-lg);
+	--radius-full: var(--sites-radius-full);
+	--shadow-sm: var(--sites-shadow-sm);
+	--shadow-md: var(--sites-shadow-md);
+	--shadow-lg: var(--sites-shadow-lg);
+	--radius-button: var(--sites-button-radius);
+	--radius-input: var(--sites-input-radius);
+	--text-display: var(--restaurant-text-display);
+	--text-display--line-height: 0.92;
+	--text-h1: var(--restaurant-text-h1);
+	--text-h1--line-height: 1.1;
+	--text-h2: var(--restaurant-text-h2);
+	--text-h2--line-height: 1.1;
+	--text-h3: var(--restaurant-text-h3);
+	--text-h3--line-height: 1.1;
+	--text-h4: var(--restaurant-text-h4);
+	--text-h4--line-height: 1.3;
+	--text-overline: var(--restaurant-text-overline);
+	--text-overline--line-height: 1;
+	--text-body: var(--restaurant-text-body);
+	--text-body--line-height: 1.3;
+	--text-body-lg: var(--restaurant-text-body-lg);
+	--text-body-lg--line-height: 1.3;
+	--text-body-sm: var(--restaurant-text-body-sm);
+	--text-body-sm--line-height: 1.3;
+	--text-body-xs: var(--restaurant-text-body-xs);
+	--text-body-xs--line-height: 1.3;
+	--text-meta: var(--restaurant-text-overline);
+	--text-meta--line-height: 1;
+	--text-caption: var(--restaurant-text-body-xs);
+	--text-caption--line-height: 1.3;
+	--text-counter: var(--restaurant-text-body-sm);
+	--text-counter--line-height: 1;
+	--text-dish: var(--restaurant-text-h4);
+	--text-dish--line-height: 1;
+	--text-price: var(--restaurant-text-body);
+	--text-price--line-height: 1;
+	--text-code: var(--restaurant-text-body-xs);
+	--text-code--line-height: 1;
+	--text-docket: var(--restaurant-text-body-sm);
+	--text-docket--line-height: 1.5;
+	--text-control: var(--restaurant-text-control);
+	--text-control--line-height: 1;
+	--text-control-small: var(--restaurant-text-control-small);
+	--text-control-small--line-height: 1;
+	--text-chip: var(--restaurant-text-chip);
+	--text-chip--line-height: 1;
+	--text-label: var(--restaurant-text-label);
+	--text-label--line-height: 1.3;
+	--text-nav: var(--restaurant-text-nav);
+	--text-nav--line-height: 1.3;
+	--text-nav-label: var(--restaurant-text-nav-label);
+	--text-nav-label--line-height: 1.3;
+	--text-badge: var(--restaurant-text-badge);
+	--text-badge--line-height: 1;
+	--text-display--letter-spacing: -0.02em;
+	--tracking-meta: 0.0625rem;
+	--tracking-code: 0.06em;
+	--tracking-caption: 0;
+	--leading-prose: 1.5;
+	--spacing-section: var(--restaurant-section);
+	--spacing-gutter: var(--restaurant-gutter);
+	--spacing-step-2xs: var(--restaurant-step-2xs);
+	--spacing-step-xs: var(--restaurant-step-xs);
+	--spacing-step-sm: var(--restaurant-step-sm);
+	--spacing-step-md: var(--restaurant-step-md);
+	--spacing-step-lg: var(--restaurant-step-lg);
+	--spacing-step-xl: var(--restaurant-step-xl);
+	--spacing-step-2xl: var(--restaurant-step-2xl);
+	--spacing-step-3xl: var(--restaurant-step-3xl);
+	--spacing-gap-sm: var(--restaurant-gap-sm);
+	--spacing-gap-md: var(--restaurant-gap-md);
+	--spacing-gap-lg: var(--restaurant-gap-lg);
+	--container-column: 82.5rem;
+	--container-reading: 40rem;
+	--container-wide: 55rem;
+	--container-drawer: 23.4375rem;
+	--spacing-button-x: var(--sites-button-padding-x);
+	--spacing-button-y: var(--sites-button-padding-y);
+	--spacing-control: 3rem;
+	--spacing-control-small: 2.5rem;
+	--spacing-textarea: 6rem;
+	--spacing-icon: 1.25rem;
+	--spacing-checkbox: 1.25rem;
+	--spacing-icon-button: 2.75rem;
+	--scale-hover: 103%;
+	--transition-duration-settle: 700ms;
+	--transition-duration-hover: 400ms;
+	--transition-duration-panel: 200ms;
+	--ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+	--reveal-distance: 1.5rem;
+	--reveal-perspective: 75rem;
+	--reveal-blur: 0.25rem;
+}
+
+:root {
+	--restaurant-text-display: calc(var(--sites-type-scale-5xl) * 48 / 96);
+	--restaurant-text-h1: calc(var(--sites-type-scale-4xl) * 40 / 72);
+	--restaurant-text-h2: calc(var(--sites-type-scale-3xl) * 32 / 52);
+	--restaurant-text-h3: calc(var(--sites-type-scale-2xl) * 24 / 32);
+	--restaurant-text-h4: calc(var(--sites-type-scale-xl) * 20 / 24);
+	--restaurant-text-overline: calc(var(--sites-type-scale-xs) * 11 / 12);
+	--restaurant-text-body: calc(var(--sites-type-scale-base) * 16 / 17);
+	--restaurant-text-body-lg: calc(var(--sites-type-scale-lg) * 18 / 20);
+	--restaurant-text-body-sm: calc(var(--sites-type-scale-sm) * 14 / 15);
+	--restaurant-text-body-xs: calc(var(--sites-type-scale-xs) * 12 / 12);
+	--restaurant-text-control: 0.9375rem;
+	--restaurant-text-control-small: 0.8125rem;
+	--restaurant-text-chip: 0.75rem;
+	--restaurant-text-label: 0.8125rem;
+	--restaurant-text-nav: 1.0625rem;
+	--restaurant-text-nav-label: 0.8125rem;
+	--restaurant-text-badge: 0.6875rem;
+	--restaurant-section: calc(var(--sites-spacing-2xl) * 32 / 64);
+	--restaurant-gutter: calc(var(--sites-spacing-md) * 16 / 24);
+	--restaurant-step-2xs: calc(var(--sites-spacing-xs) * 4 / 12);
+	--restaurant-step-xs: calc(var(--sites-spacing-xs) * 8 / 12);
+	--restaurant-step-sm: calc(var(--sites-spacing-sm) * 12 / 16);
+	--restaurant-step-md: calc(var(--sites-spacing-md) * 16 / 24);
+	--restaurant-step-lg: calc(var(--sites-spacing-lg) * 24 / 32);
+	--restaurant-step-xl: calc(var(--sites-spacing-xl) * 32 / 48);
+	--restaurant-step-2xl: calc(var(--sites-spacing-2xl) * 48 / 64);
+	--restaurant-step-3xl: calc(var(--sites-spacing-2xl) * 64 / 64);
+	--restaurant-gap-sm: calc(var(--sites-spacing-xs) * 8 / 12);
+	--restaurant-gap-md: calc(var(--sites-spacing-sm) * 12 / 16);
+	--restaurant-gap-lg: calc(var(--sites-spacing-md) * 16 / 24);
+}
+
+@media (min-width: 48rem) {
+:root {
+	--restaurant-text-display: calc(var(--sites-type-scale-5xl) * 72 / 96);
+	--restaurant-text-h1: calc(var(--sites-type-scale-4xl) * 56 / 72);
+	--restaurant-text-h2: calc(var(--sites-type-scale-3xl) * 40 / 52);
+	--restaurant-text-h3: calc(var(--sites-type-scale-2xl) * 28 / 32);
+	--restaurant-text-h4: calc(var(--sites-type-scale-xl) * 22 / 24);
+	--restaurant-text-overline: calc(var(--sites-type-scale-xs) * 12 / 12);
+	--restaurant-text-body: calc(var(--sites-type-scale-base) * 17 / 17);
+	--restaurant-text-body-lg: calc(var(--sites-type-scale-lg) * 19 / 20);
+	--restaurant-text-body-sm: calc(var(--sites-type-scale-sm) * 14 / 15);
+	--restaurant-text-body-xs: calc(var(--sites-type-scale-xs) * 12 / 12);
+	--restaurant-text-control: 0.9375rem;
+	--restaurant-text-control-small: 0.8125rem;
+	--restaurant-text-chip: 0.75rem;
+	--restaurant-text-label: 0.8125rem;
+	--restaurant-text-nav: 1.125rem;
+	--restaurant-text-nav-label: 0.8125rem;
+	--restaurant-text-badge: 0.6875rem;
+	--restaurant-section: calc(var(--sites-spacing-2xl) * 40 / 64);
+	--restaurant-gutter: calc(var(--sites-spacing-md) * 24 / 24);
+	--restaurant-step-2xs: calc(var(--sites-spacing-xs) * 6 / 12);
+	--restaurant-step-xs: calc(var(--sites-spacing-xs) * 10 / 12);
+	--restaurant-step-sm: calc(var(--sites-spacing-sm) * 14 / 16);
+	--restaurant-step-md: calc(var(--sites-spacing-md) * 20 / 24);
+	--restaurant-step-lg: calc(var(--sites-spacing-lg) * 28 / 32);
+	--restaurant-step-xl: calc(var(--sites-spacing-xl) * 40 / 48);
+	--restaurant-step-2xl: calc(var(--sites-spacing-2xl) * 56 / 64);
+	--restaurant-step-3xl: calc(var(--sites-spacing-2xl) * 80 / 64);
+	--restaurant-gap-sm: calc(var(--sites-spacing-xs) * 12 / 12);
+	--restaurant-gap-md: calc(var(--sites-spacing-sm) * 16 / 16);
+	--restaurant-gap-lg: calc(var(--sites-spacing-md) * 24 / 24);
+}
+}
+
+@media (min-width: 64rem) {
+:root {
+	--restaurant-text-display: calc(var(--sites-type-scale-5xl) * 96 / 96);
+	--restaurant-text-h1: calc(var(--sites-type-scale-4xl) * 72 / 72);
+	--restaurant-text-h2: calc(var(--sites-type-scale-3xl) * 52 / 52);
+	--restaurant-text-h3: calc(var(--sites-type-scale-2xl) * 32 / 32);
+	--restaurant-text-h4: calc(var(--sites-type-scale-xl) * 24 / 24);
+	--restaurant-text-overline: calc(var(--sites-type-scale-xs) * 12 / 12);
+	--restaurant-text-body: calc(var(--sites-type-scale-base) * 17 / 17);
+	--restaurant-text-body-lg: calc(var(--sites-type-scale-lg) * 20 / 20);
+	--restaurant-text-body-sm: calc(var(--sites-type-scale-sm) * 15 / 15);
+	--restaurant-text-body-xs: calc(var(--sites-type-scale-xs) * 12 / 12);
+	--restaurant-text-control: 1rem;
+	--restaurant-text-control-small: 0.8125rem;
+	--restaurant-text-chip: 0.75rem;
+	--restaurant-text-label: 0.875rem;
+	--restaurant-text-nav: 1.125rem;
+	--restaurant-text-nav-label: 0.875rem;
+	--restaurant-text-badge: 0.6875rem;
+	--restaurant-section: calc(var(--sites-spacing-2xl) * 56 / 64);
+	--restaurant-gutter: calc(var(--sites-spacing-md) * 40 / 24);
+	--restaurant-step-2xs: calc(var(--sites-spacing-xs) * 8 / 12);
+	--restaurant-step-xs: calc(var(--sites-spacing-xs) * 12 / 12);
+	--restaurant-step-sm: calc(var(--sites-spacing-sm) * 16 / 16);
+	--restaurant-step-md: calc(var(--sites-spacing-md) * 24 / 24);
+	--restaurant-step-lg: calc(var(--sites-spacing-lg) * 32 / 32);
+	--restaurant-step-xl: calc(var(--sites-spacing-xl) * 48 / 48);
+	--restaurant-step-2xl: calc(var(--sites-spacing-2xl) * 64 / 64);
+	--restaurant-step-3xl: calc(var(--sites-spacing-2xl) * 96 / 64);
+	--restaurant-gap-sm: calc(var(--sites-spacing-xs) * 12 / 12);
+	--restaurant-gap-md: calc(var(--sites-spacing-sm) * 16 / 16);
+	--restaurant-gap-lg: calc(var(--sites-spacing-md) * 24 / 24);
+}
+}
+
+/* Category tints are independent of the section scheme. */
+:root, [data-tint] {
+	--tint: var(--sites-scheme-chip-background);
+	--tint-ink: var(--sites-scheme-foreground);
+}
+[data-tint="tomato"] { --tint: var(--color-tint-tomato); --tint-ink: var(--color-tint-tomato-ink); }
+[data-tint="saffron"] { --tint: var(--color-tint-saffron); --tint-ink: var(--color-tint-saffron-ink); }
+[data-tint="leaf"] { --tint: var(--color-tint-leaf); --tint-ink: var(--color-tint-leaf-ink); }
+[data-tint="sea"] { --tint: var(--color-tint-sea); --tint-ink: var(--color-tint-sea-ink); }
+[data-tint="plum"] { --tint: var(--color-tint-plum); --tint-ink: var(--color-tint-plum-ink); }
+[data-tint="clay"] { --tint: var(--color-tint-clay); --tint-ink: var(--color-tint-clay-ink); }
+
+:is(h1, h2, h3, h4, .font-heading) {
+	font-variation-settings: "wdth" 100, "opsz" 96;
+}
+[data-heading-case="upper"] :is(h1, h2, h3, h4, h5, h6, .font-heading) {
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+}
+
+[data-dismissed] { display: none; }
+body:has([data-bare]) [data-group] { display: none; }
+
+html.reveal-off .reveal:not(.is-revealed) {
+	opacity: 1;
+	transform: none;
+	filter: none;
+}
+
+@theme {
+	--color-on-photo: #F1F1EF;
+	--color-backdrop: rgb(31 33 36 / 0.92);
+	--container-circle: 10rem;
+	--container-panel: 35rem;
+	--container-docket: 40rem;
+	--container-menu: 47.5rem;
+	--spacing-roundel: 4.5rem;
+	--spacing-thumb: 7.5rem;
+	--spacing-hero-tall: 75svh;
+	--spacing-chevron: 1rem;
+	--spacing-dot: 0.625rem;
+}
+
+/* The header's Overlay style lies over a page that opens with a Cover hero
+   and is solid everywhere else; the variant reaches the header and all in
+   it only on such a page. */
+@custom-variant overlaid {
+	&:where(body:has(main > [data-section="hero"]:first-of-type [data-layout="cover"]) [data-header-style="overlay"]),
+	&:where(body:has(main > [data-section="hero"]:first-of-type [data-layout="cover"]) [data-header-style="overlay"] *) {
+		@slot;
+	}
+}
+
+/* The slide a carousel shows: tarot marks it aria-current. Before tarot
+   upgrades the first slide stands in for it. */
+@custom-variant slide-current {
+	&:where(tarot-slide[aria-current="true"] *),
+	&:where(tarot-carousel:not(:defined) tarot-slide:first-child *) {
+		@slot;
+	}
+}
+
+/* A docket row, a rail link or a chip theme.ts marks as the current one. */
+@custom-variant current {
+	&[aria-current="true"],
+	&:where([aria-current="true"] *) {
+		@slot;
+	}
+}
+
+/* A strip of chips that scrolls sideways on a phone shows no scrollbar. */
+[data-strip] {
+	scrollbar-width: none;
+}
+
+/* The browser surfaces no utility reaches. */
+:root {
+	font-size: var(--sites-type-base);
+}
+
+::selection {
+	background: var(--sites-color-brand-accent);
+	color: #FFFFFF;
+}
+
+:focus-visible {
+	outline: 2px solid var(--sites-scheme-links);
+	outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+@layer base {
+	dialog {
+		border: 0;
+		padding: 0;
+		color: inherit;
+	}
+
+	/* A heading a menu link lands on clears the pinned header. */
+	[id] {
+		scroll-margin-top: calc(var(--header-group-height, 0rem) + 4.5rem);
+	}
+}
+
+/* Rich text from the editor carries no classes, so its rhythm is set here. */
+@layer components {
+	.sites-prose {
+		font-size: var(--restaurant-text-body);
+		line-height: 1.5;
+	}
+
+	.sites-prose > * + * {
+		margin-top: var(--restaurant-step-sm);
+	}
+
+	.sites-prose :is(h2, h3, h4) {
+		font-family: var(--sites-font-heading-family), Arial, sans-serif;
+		font-weight: 700;
+		line-height: 1.1;
+		color: var(--sites-scheme-heading);
+	}
+
+	.sites-prose h2 {
+		font-size: var(--restaurant-text-h3);
+	}
+
+	.sites-prose :is(h3, h4) {
+		font-size: var(--restaurant-text-h4);
+	}
+
+	.sites-prose a {
+		color: var(--sites-scheme-links);
+		text-decoration-line: underline;
+		text-underline-offset: 0.2em;
+	}
+
+	.sites-prose :is(ul, ol) {
+		display: grid;
+		gap: var(--restaurant-step-xs);
+		padding-inline-start: 1.25em;
+	}
+
+	.sites-prose ul {
+		list-style: disc;
+	}
+
+	.sites-prose ol {
+		list-style: decimal;
+	}
+}
+
+.sites-icon > svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/* @magic-spells/sticky-header pins the element it is, so it needs the page
+   as its scroll container: display: contents takes the renderer's wrapper
+   out of the way. Switched off it sits in the page. The overlay header keeps
+   its wrapper: the body is a flex column, and an absolute flex child would
+   start at the top of the page, over the announcement bar. */
+[data-section="header"]:has(sticky-header:not([data-header-style="overlay"])) {
+	display: contents;
+}
+
+@layer components {
+	sticky-header[disabled] {
+		position: static;
+		transform: none;
+	}
+
+	sticky-header::before {
+		content: none;
+	}
+}
+
+/* The carousels. Tarot's stylesheet is neutral; these map its properties
+   onto the scheme the carousel sits in. */
+tarot-carousel {
+	--color-pagination-dot: color-mix(in srgb, var(--sites-scheme-foreground) 35%, transparent);
+	--color-pagination-dot-active: var(--sites-scheme-links);
+}
+
+/* Each dot is a 1.5rem hit box with the 0.5rem dot painted in its middle
+   (padding plus content-box), so the boxes touch and the dots keep their
+   spacing. */
+.tarot-dots-list {
+	gap: 0;
+	margin: 0 auto;
+}
+
+/* Dots a carousel appends under its track sit centred a step below it;
+   dots placed in a [data-tarot-pagination] slot sit where the slot is. */
+tarot-carousel > .tarot-dots-list {
+	margin-top: var(--restaurant-step-xl);
+}
+
+.tarot-dots-button {
+	width: 1.5rem;
+	height: 1.5rem;
+	padding: 0.5rem;
+	background-clip: content-box;
+}
+
+/* With no JavaScript the header's Menu panel never opens, so its links
+   stay out of the tab order. */
+dropdown-component:not(:defined) dropdown-panel {
+	display: none;
+}
+
+/* Before tarot upgrades, or with no JavaScript, its stylesheet hides every
+   slide. A one-up carousel shows its first slide; a card track lays its
+   slides out as a row that scrolls, at about the width tarot will give them. */
+tarot-carousel:not(:defined) tarot-slide:first-child {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+tarot-carousel[data-track]:not(:defined) tarot-track {
+	display: flex;
+	gap: var(--restaurant-gap-lg);
+	overflow-x: auto;
+	padding-inline-start: var(--restaurant-gutter);
+}
+
+tarot-carousel[data-track]:not(:defined) tarot-slide {
+	flex: none;
+	width: var(--track-slide, 76%);
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+[data-track="cards"] { --track-slide: 76%; }
+[data-track="circles"] { --track-slide: 40%; }
+[data-track="promos"] { --track-slide: 86%; }
+[data-track="photos"] { --track-slide: 76%; }
+
+@media (min-width: 48rem) {
+	tarot-carousel[data-track]:not(:defined) tarot-track {
+		padding-inline-start: 0;
+	}
+	[data-track="cards"] { --track-slide: 38%; }
+	[data-track="circles"] { --track-slide: 24%; }
+	[data-track="promos"] { --track-slide: 60%; }
+	[data-track="photos"] { --track-slide: 38%; }
+}
+
+@media (min-width: 64rem) {
+	[data-track="cards"] { --track-slide: 24%; }
+	[data-track="circles"] { --track-slide: 15%; }
+	[data-track="promos"] { --track-slide: 44%; }
+	[data-track="photos"] { --track-slide: 27%; }
+}
+
+/* A photograph's dots and counter sit on the picture: light, the current
+   one solid. */
+[data-on-photo] tarot-carousel,
+tarot-carousel[data-on-photo] {
+	--color-pagination-dot: color-mix(in srgb, var(--color-on-photo) 45%, transparent);
+	--color-pagination-dot-active: var(--color-on-photo);
+}
+
+/* The lightbox is the tarot plugin's overlay, drawn as the lightbox board:
+   the Charcoal backdrop, round surface-2 buttons 1rem in, the counter in
+   the Price mono, the caption in Code. */
+:root {
+	--tarot-lightbox-backdrop: var(--color-backdrop);
+	--tarot-lightbox-chrome-color: var(--color-on-photo);
+	--tarot-lightbox-chrome-size: 2.75rem;
+	--tarot-lightbox-chrome-inset: 1rem;
+	--tarot-lightbox-image-height: calc(100dvh - 8rem);
+}
+
+.tarot-lightbox__counter {
+	font-family: var(--sites-font-mono-family), monospace;
+	font-size: var(--restaurant-text-body);
+	font-weight: 500;
+}
+
+.tarot-lightbox__close,
+.tarot-lightbox .tarot-button {
+	background: #1E2023;
+}
+
+.tarot-lightbox__close:hover,
+.tarot-lightbox .tarot-button:hover {
+	background: #2B2E32;
+}
+
+.tarot-lightbox [data-caption] {
+	display: block;
+	margin-top: 1rem;
+	color: #B6B9BE;
+	font-family: var(--sites-font-mono-family), monospace;
+	font-size: var(--restaurant-text-body-xs);
+	font-weight: 500;
+	letter-spacing: 0.06em;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+@media (max-width: 47.99rem) {
+	.tarot-lightbox .tarot-button {
+		display: none;
+	}
+}
+
+/* The sheets: the mobile menu and the booking form rise from the bottom on
+   the scheme's surface over the scheme text at half strength with a small
+   blur. From 48rem the booking sheet is a 35rem column. */
+dialog-panel:has(bottom-sheet) {
+	--bs-panel-background: var(--sites-scheme-input-background);
+	--bs-panel-border-radius: var(--sites-radius-lg);
+	--bs-panel-box-shadow: none;
+	--bs-handle-color: var(--sites-scheme-chip-border);
+	--bs-handle-width: 2.25rem;
+	--bs-handle-height: 0.25rem;
+	--bs-content-padding: var(--restaurant-step-lg);
+	--bs-content-padding-block: 0 var(--restaurant-step-lg);
+	--bs-overlay-background: color-mix(in srgb, var(--sites-scheme-foreground) 50%, transparent);
+	--bs-overlay-blur: 0.25rem;
+}
+
+/* The select lists, drawn on the scheme. */
+select-dropdown {
+	--select-shadow: none;
+	--select-shadow-soft: none;
+	--select-color-text: var(--sites-scheme-input-foreground);
+	--select-color-background: var(--sites-scheme-input-background);
+	--select-color-border: var(--sites-scheme-input-border);
+	--select-color-border-hover: var(--sites-scheme-input-foreground);
+	--select-color-border-dark: var(--sites-scheme-input-foreground);
+	--select-color-primary: var(--sites-scheme-links);
+	--select-color-hover: var(--sites-scheme-chip-background);
+	--select-color-focus: var(--sites-scheme-chip-background);
+	--select-color-selected: var(--sites-scheme-chip-background);
+	display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
+	[data-zoom] { scale: none !important; }
+	.reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+}

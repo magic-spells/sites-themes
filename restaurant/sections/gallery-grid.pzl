@@ -1,0 +1,111 @@
+<!-- The room as a grid of photographs in one ratio, 2 / 3 across. With the
+     lightbox on, each tile is a button that opens the photo full size from a
+     hidden companion carousel (the lightbox opens from a carousel slide),
+     and focus comes back to the tile when it closes. -->
+{#let
+  items = (settings.gallery.items ?? []) | slice(0, settings.limit)
+  id = 'grid-' + section.id
+  ratio = settings.ratio == '3:2' ? 'aspect-3/2' : (settings.ratio == '1:1' ? 'aspect-square' : 'aspect-4/3')
+  options = { lightbox: true, navigation: { showButtons: false, showPagination: false } }
+}
+{#if items.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" aria-label={ settings.show_heading ? null : settings.heading } aria-labelledby={ settings.show_heading ? id + '-title' : null }>
+  <div class="mx-auto grid max-w-column gap-step-xl">
+    {#if settings.show_heading && settings.heading}<h2 class="font-heading text-h2 font-bold text-scheme-heading" id="{ id }-title">{ settings.heading }</h2>{/if}
+    <ul class="grid grid-cols-2 gap-step-sm md:grid-cols-3">
+      {#for item in items, i}
+        <li>
+          {#if settings.lightbox}
+            <button class="group block w-full cursor-zoom-in overflow-hidden rounded-md bg-scheme-surface-2" type="button" data-lightbox-open={ id } data-index="{ i }" aria-label="{ t('open_photo', { index: i + 1 }) }"><img class="{ ratio } w-full object-cover transition-transform duration-hover ease-out-soft group-hover:scale-hover" data-zoom src="{ image_url(item.asset, 640) }" srcset="{ image_srcset(item.asset, [320, 480, 640, 960]) }" sizes="(min-width: 48rem) 30vw, 50vw" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } /></button>
+          {:else}
+            <img class="{ ratio } w-full rounded-md bg-scheme-surface-2 object-cover" src="{ image_url(item.asset, 640) }" srcset="{ image_srcset(item.asset, [320, 480, 640, 960]) }" sizes="(min-width: 48rem) 30vw, 50vw" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } />
+          {/if}
+        </li>
+      {/for}
+    </ul>
+  </div>
+  {#if settings.lightbox}<LightboxCompanion id={ id } items={ items }><script type="application/json" data-tarot-options>{ options | json }</script></LightboxCompanion>{/if}
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Gallery grid",
+  "description": "A grid of photographs with an optional lightbox.",
+  "settings": [
+    {
+      "type": "gallery",
+      "id": "gallery",
+      "label": "Gallery",
+      "info": "Reads gallery items: asset, alt and caption."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The room"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "ratio",
+      "label": "Ratio",
+      "default": "4:3",
+      "options": [
+        {
+          "value": "4:3",
+          "label": "4:3"
+        },
+        {
+          "value": "3:2",
+          "label": "3:2"
+        },
+        {
+          "value": "1:1",
+          "label": "1:1"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Limit",
+      "default": 8,
+      "min": 1,
+      "max": 24,
+      "step": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "lightbox",
+      "label": "Lightbox",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "heading": "The room",
+        "show_heading": true,
+        "ratio": "4:3",
+        "limit": 8,
+        "lightbox": true,
+        "color_scheme": "paper",
+        "gallery": "the-room"
+      }
+    }
+  ]
+}
+</schema>

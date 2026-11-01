@@ -1,0 +1,41 @@
+<!-- component: DishCard -->
+<!-- props: entry href photo_style info_style emphasis reveal hide_ingredients hide_dietary -->
+<!-- The signature card, one link to the dish page. The photo always on top
+     in a 4:3 well flush to the card's top edge, the info always below: the
+     name, the price on its baseline, the ingredients in the Docket mono.
+     Over the photo the category pill (or the dish's tag) and the dietary
+     codes, both on the category's tint. A cut-out stands on a disc in a
+     transparent well. A dish with no photograph has no empty well: its pill
+     and codes move into the info. Tinted info paints the info block in the
+     tint; plain info on a deep scheme sets the price in the text colour,
+     because tint inks do not read on a dark surface. With emphasis "centre"
+     the card a carousel shows is raised and outlined. -->
+{#let
+  f = entry.fields
+  category = f.category
+  image = f.image
+  label = f.tag || category.title
+  tinted = info_style == 'tinted'
+  cutout = photo_style == 'cutout'
+}
+<a class="group block h-full rounded-lg { reveal ? 'reveal reveal-fade-up' : '' }" href="{ href }" data-tint={ category.fields.tint }>
+  <article class="flex h-full flex-col overflow-hidden rounded-lg border border-scheme-rule bg-scheme-surface transition-transform duration-hover ease-out-soft { emphasis == 'centre' ? 'slide-current:scale-106 slide-current:border-scheme-foreground' : '' }">
+    {#if image}
+      <div class="relative aspect-4/3 overflow-hidden { cutout ? '' : 'bg-scheme-surface-2' }">
+        {#if cutout}<span class="absolute inset-y-step-md left-1/2 aspect-square -translate-x-1/2 rounded-full bg-scheme-surface-2" aria-hidden="true"></span>{/if}
+        <img class="relative size-full { cutout ? 'object-contain' : 'object-cover' } transition-transform duration-hover ease-out-soft group-hover:scale-hover" data-zoom src="{ image_url(image, 640) }" srcset="{ image_srcset(image, [320, 480, 640, 768]) }" sizes="(min-width: 64rem) 20rem, (min-width: 48rem) 40vw, 80vw" alt="" loading="lazy" width={ image.width } height={ image.height } />
+        {#if label}<span class="absolute top-step-sm left-step-sm rounded-full bg-tint px-step-xs py-step-2xs font-mono text-code font-medium tracking-code text-tint-ink uppercase">{ label }</span>{/if}
+        {#if f.dietary && !hide_dietary}<DietaryBadges dietary={ f.dietary } tone="absolute right-step-sm bottom-step-sm justify-end" />{/if}
+      </div>
+    {/if}
+    <div class="flex flex-1 flex-col gap-step-2xs p-step-md { tinted ? 'bg-tint text-tint-ink' : '' }">
+      {#unless image}{#if label}<span class="mb-step-xs self-start rounded-full bg-tint px-step-xs py-step-2xs font-mono text-code font-medium tracking-code text-tint-ink uppercase">{ label }</span>{/if}{/unless}
+      <div class="flex items-baseline justify-between gap-step-sm">
+        <h3 class="font-heading text-dish font-bold { tinted ? 'text-tint-ink' : 'text-scheme-heading' }">{ entry.title }</h3>
+        {#if f.price != null}<Price value={ f.price } tone="{ tinted ? 'text-tint-ink' : 'text-tint-ink deep:text-scheme-foreground' }" />{/if}
+      </div>
+      {#if f.ingredients && !hide_ingredients}<p class="font-mono text-docket { tinted ? 'text-tint-ink opacity-85' : 'text-scheme-meta' }">{ f.ingredients | replace(', ', ' · ') }</p>{/if}
+      {#unless image}{#if f.dietary && !hide_dietary}<DietaryBadges dietary={ f.dietary } tone="mt-step-xs" />{/if}{/unless}
+    </div>
+  </article>
+</a>

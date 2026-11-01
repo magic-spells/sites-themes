@@ -1,0 +1,74 @@
+<!-- Free text: an optional heading over the body (the setting, or the page's
+     own body when the setting is empty), in the reading column or wider. -->
+{#let body = settings.body || page.content}
+{#if settings.heading || body}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid gap-step-lg { settings.width == 'wide' ? 'max-w-wide' : 'max-w-reading' }">
+    {#if settings.heading}<h2 class="font-heading text-h2 font-bold text-scheme-heading">{ settings.heading }</h2>{/if}
+    {#if body}<div class="sites-prose text-body">{ body }</div>{/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Rich text",
+  "description": "Long-form text in a reading or wide column.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": ""
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "default": "reading",
+      "options": [
+        {
+          "value": "reading",
+          "label": "Reading"
+        },
+        {
+          "value": "wide",
+          "label": "Wide"
+        }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "heading": "",
+        "body": "",
+        "width": "reading",
+        "color_scheme": "paper"
+      }
+    },
+    {
+      "name": "Wide",
+      "settings": {
+        "heading": "",
+        "body": "",
+        "width": "wide",
+        "color_scheme": "paper"
+      }
+    }
+  ]
+}
+</schema>

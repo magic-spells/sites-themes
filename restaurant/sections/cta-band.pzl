@@ -1,0 +1,59 @@
+<!-- A closing band: one line, an optional muted subline under it, and Book
+     a table, the phone under the button.
+     Stacked below 48rem. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto flex max-w-column flex-col gap-step-lg md:flex-row md:items-center md:justify-between">
+    <div class="grid gap-step-xs">
+      {#if settings.text}<h2 class="font-heading text-h2 font-bold text-balance text-scheme-heading">{ settings.text }</h2>{/if}
+      {#if settings.subline}<p class="text-body text-scheme-muted">{ settings.subline }</p>{/if}
+    </div>
+    <div class="grid shrink-0 justify-items-start gap-step-xs md:justify-items-center">
+      {#if settings.book_label}<Button booking={ true }>{ settings.book_label }</Button>{/if}
+      {#if site.settings.phone}<a class="font-mono text-code font-medium tracking-code hover:underline" href="tel:{ site.settings.phone | replace(' ', '') }">{ site.settings.phone }</a>{/if}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Cta band",
+  "description": "A simple invitation to book a table.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "A table by the water, tonight."
+    },
+    {
+      "type": "text",
+      "id": "subline",
+      "label": "Subline",
+      "default": "Walk-ins welcome at the counter."
+    },
+    {
+      "type": "text",
+      "id": "book_label",
+      "label": "Book label",
+      "default": "Book a table"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "tomato"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "text": "A table by the water, tonight.",
+        "subline": "Walk-ins welcome at the counter.",
+        "book_label": "Book a table",
+        "color_scheme": "tomato"
+      }
+    }
+  ]
+}
+</schema>

@@ -1,0 +1,242 @@
+{
+  "label": "About",
+  "description": "About page sections.",
+  "sections": [
+    {
+      "id": "s_story",
+      "type": "story",
+      "preset": "Left",
+      "settings": {
+        "ratio": "3:2",
+        "layout": "image_left",
+        "well_shape": "rounded",
+        "eyebrow": "Since 2019",
+        "heading": "A canteen by the harbour",
+        "body": "<p>Halfmoon began with a simple idea: a good meal, a warm room and a place to come back to.</p><p>We cook with the season and the boats, bake each morning and keep a seat for our neighbours.</p>",
+        "link_label": "See the menu",
+        "link": "/menu",
+        "color_scheme": "paper",
+        "image": "as_3x2_1"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_value_props",
+      "type": "value-props",
+      "preset": "Boxes",
+      "settings": {
+        "style": "boxes",
+        "heading": "Why Halfmoon",
+        "show_heading": false,
+        "columns": "4",
+        "color_scheme": "navy"
+      },
+      "blocks": [
+        {
+          "id": "b_1",
+          "type": "prop",
+          "settings": {
+            "heading": "Sourcing",
+            "subline": "",
+            "text": "Close to home, with the season in mind.",
+            "link_label": "",
+            "link": "",
+            "booking": false
+          }
+        },
+        {
+          "id": "b_2",
+          "type": "prop",
+          "settings": {
+            "heading": "Kitchen",
+            "subline": "",
+            "text": "Good ingredients, handled with care.",
+            "link_label": "",
+            "link": "",
+            "booking": false
+          }
+        },
+        {
+          "id": "b_3",
+          "type": "prop",
+          "settings": {
+            "heading": "Room",
+            "subline": "",
+            "text": "A warm welcome and space to settle in.",
+            "link_label": "",
+            "link": "",
+            "booking": false
+          }
+        },
+        {
+          "id": "b_4",
+          "type": "prop",
+          "settings": {
+            "heading": "Bread",
+            "subline": "",
+            "text": "Baked here each morning.",
+            "link_label": "",
+            "link": "",
+            "booking": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_team",
+      "type": "team",
+      "preset": "Default",
+      "settings": {
+        "heading": "The kitchen",
+        "show_heading": true,
+        "well_shape": "rounded",
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "id": "b_1",
+          "type": "chef",
+          "settings": {
+            "portrait": "as_4x5_1",
+            "name": "Ines Marchetti",
+            "role": "Head chef",
+            "bio": "Ines cooks with the season and whatever the boats bring in."
+          }
+        },
+        {
+          "id": "b_2",
+          "type": "chef",
+          "settings": {
+            "portrait": "as_4x5_2",
+            "name": "Tobi Adeyemi",
+            "role": "Pastry chef",
+            "bio": "Tobi is first in each morning, filling the room with the smell of bread."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_gallery_grid",
+      "type": "gallery-grid",
+      "preset": "Default",
+      "settings": {
+        "heading": "The room",
+        "show_heading": true,
+        "ratio": "4:3",
+        "limit": 8,
+        "lightbox": true,
+        "color_scheme": "paper",
+        "gallery": "the-room"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_testimonials",
+      "type": "testimonials",
+      "preset": "Grid",
+      "settings": {
+        "layout": "grid",
+        "heading": "At the table",
+        "show_heading": false,
+        "show_rating": true,
+        "autoplay": false,
+        "color_scheme": "navy"
+      },
+      "blocks": [
+        {
+          "id": "b_1",
+          "type": "review",
+          "settings": {
+            "quote": "The fish stew alone is worth missing the ferry.",
+            "name": "Mara Ellis",
+            "source": "Bellport Gazette",
+            "rating": 5
+          }
+        },
+        {
+          "id": "b_2",
+          "type": "review",
+          "settings": {
+            "quote": "A generous room and a kitchen that knows when to keep things simple.",
+            "name": "The Harbour Guide",
+            "source": "Local guide",
+            "rating": 5
+          }
+        },
+        {
+          "id": "b_3",
+          "type": "review",
+          "settings": {
+            "quote": "Our favourite table in town. Book early, and ask for the bread twice.",
+            "name": "Elliot P.",
+            "source": "Guest",
+            "rating": 5
+          }
+        },
+        {
+          "id": "b_4",
+          "type": "review",
+          "settings": {
+            "quote": "Long lunches have a way of becoming dinner here.",
+            "name": "Sana R.",
+            "source": "Guest",
+            "rating": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "General",
+      "settings": {
+        "heading": "Good to know",
+        "note": "A few things before you visit.",
+        "first_open": true,
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "id": "b_1",
+          "type": "item",
+          "settings": {
+            "question": "Do you take private dining bookings?",
+            "answer": "<p>Yes. Write to us with a date and the number of people, and we will make a plan together.</p>"
+          }
+        },
+        {
+          "id": "b_2",
+          "type": "item",
+          "settings": {
+            "question": "Can you help with allergies?",
+            "answer": "<p>Please speak to our team about allergies. Tell us when you book and again at the table.</p>"
+          }
+        },
+        {
+          "id": "b_3",
+          "type": "item",
+          "settings": {
+            "question": "Is there parking nearby?",
+            "answer": "<p>The harbour car park is a short walk along Quay Street.</p>"
+          }
+        },
+        {
+          "id": "b_4",
+          "type": "item",
+          "settings": {
+            "question": "Can we bring a dog?",
+            "answer": "<p>Well-behaved dogs are welcome on the terrace.</p>"
+          }
+        },
+        {
+          "id": "b_5",
+          "type": "item",
+          "settings": {
+            "question": "Do you have gift cards?",
+            "answer": "<p>Ask the team when you visit, or write to us.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}

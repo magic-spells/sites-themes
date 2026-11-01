@@ -1,0 +1,50 @@
+{
+  "label": "Gallery",
+  "description": "Gallery page sections.",
+  "sections": [
+    {
+      "id": "s_page_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "eyebrow": "Gallery",
+        "heading": "The room",
+        "standfirst": "A look around Halfmoon.",
+        "align": "left",
+        "show_eyebrow": true,
+        "show_standfirst": true,
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_gallery_grid",
+      "type": "gallery-grid",
+      "preset": "Default",
+      "settings": {
+        "heading": "The room",
+        "show_heading": false,
+        "ratio": "4:3",
+        "limit": 8,
+        "lightbox": true,
+        "color_scheme": "paper",
+        "gallery": "the-room"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_gallery_strip",
+      "type": "gallery-strip",
+      "preset": "Alternate",
+      "settings": {
+        "heading": "Around Halfmoon",
+        "show_heading": false,
+        "stagger": "alternate",
+        "lightbox": true,
+        "color_scheme": "paper",
+        "gallery": "the-room"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "label": "Events",
+  "description": "Events page sections.",
+  "sections": [
+    {
+      "id": "s_page_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "eyebrow": "What's on",
+        "heading": "Events",
+        "standfirst": "A few dates for the diary.",
+        "align": "left",
+        "show_eyebrow": true,
+        "show_standfirst": true,
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_events_list",
+      "type": "events-list",
+      "preset": "Rows",
+      "settings": {
+        "heading": "What's on",
+        "show_heading": false,
+        "layout": "rows",
+        "limit": 12,
+        "view_all_label": "All events",
+        "view_all_href": "/events",
+        "color_scheme": "paper",
+        "collection": "events"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Default",
+      "settings": {
+        "heading": "First to hear about oyster nights and supper clubs.",
+        "text": "A note from the kitchen when there is something to share.",
+        "form": "newsletter",
+        "placeholder": "Your email",
+        "note": "One email a month. Unsubscribe any time.",
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta_band",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "text": "A table by the water, tonight.",
+        "subline": "Walk-ins welcome at the counter.",
+        "book_label": "Book a table",
+        "color_scheme": "tomato"
+      },
+      "blocks": []
+    }
+  ]
+}

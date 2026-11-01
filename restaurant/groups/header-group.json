@@ -1,0 +1,37 @@
+{
+  "sections": [
+    {
+      "id": "sg_announcement_bar",
+      "type": "announcement-bar",
+      "preset": "Default",
+      "settings": {
+        "text": "Closed Monday 23 November for a private event. Book the weekend early.",
+        "link_label": "Book a table",
+        "link": "/reservations",
+        "key": "restaurant-announcement-2026-11",
+        "show_close": true,
+        "color_scheme": "tomato"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_header",
+      "type": "header",
+      "preset": "Solid",
+      "settings": {
+        "logo_text": "",
+        "style": "solid",
+        "sticky": true,
+        "show_phone": false,
+        "book_label": "Book a table",
+        "menu_label": "Menu",
+        "menu_path": "/menu",
+        "show_chevron": true,
+        "color_scheme": "paper",
+        "menu": "main",
+        "categories": "menu_categories"
+      },
+      "blocks": []
+    }
+  ]
+}

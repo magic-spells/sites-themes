@@ -1,0 +1,139 @@
+<!-- The docket: the featured dishes as a kitchen ticket on the left, a fade
+     carousel of their photographs on the right, the heading above both.
+     Each docket row is a button that shows its dish's photograph; the row of
+     the photograph on show is aria-current, its number in the link colour,
+     whichever way the slide changed (theme.ts). A counter sits on the
+     picture, on a dark pill so it reads on any photograph. Stacked below 64rem, the docket first. -->
+{#let
+  items = settings.collection.entries | where('fields.featured') | sort('fields.order') | slice(0, settings.limit)
+  id = 'specials-' + section.id
+  options = { effect: 'fade', draggable: true, navigation: { showButtons: false, showPagination: false } }
+}
+{#if items.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" aria-labelledby="{ id }-title">
+  <div class="mx-auto grid max-w-column gap-step-2xl">
+    <div class="grid justify-items-start gap-step-sm">
+      <h2 class="font-heading text-h2 font-bold text-scheme-heading" id="{ id }-title">{ settings.heading }</h2>
+      {#if settings.text}<p class="text-body text-scheme-muted">{ settings.text }</p>{/if}
+      {#if settings.show_intro}
+        {#if settings.intro}<p class="max-w-reading text-body-lg">{ settings.intro }</p>{/if}
+        {#if settings.book_label}<div class="pt-step-xs"><Button booking={ true } tone="outline">{ settings.book_label }</Button></div>{/if}
+      {/if}
+    </div>
+    <div class="flex flex-col gap-step-xl lg:flex-row lg:items-start lg:justify-between">
+      <div class="w-full lg:max-w-docket">
+        <ol class="rounded-t-lg bg-scheme-surface-2 px-step-lg pt-step-lg pb-step-xl" data-slides-for={ id }>
+          {#for entry in items, i}
+            <li class="first:border-t first:border-scheme-rule">
+              <button class="group flex w-full items-start gap-step-md border-b border-scheme-rule py-step-md text-left current:border-scheme-links" type="button" data-slide-to="{ i }" aria-current="{ i == 0 ? 'true' : 'false' }" aria-controls={ id }>
+                <span class="font-mono text-docket text-scheme-meta tabular-nums current:text-scheme-links">{ i < 9 ? '0' : '' }{ i + 1 }</span>
+                <span class="grid flex-1 gap-step-2xs">
+                  <span class="font-mono text-docket text-scheme-foreground group-hover:underline">{ entry.title }</span>
+                  {#if entry.fields.ingredients}<span class="font-mono text-code font-medium tracking-code text-scheme-meta uppercase">{ entry.fields.ingredients | replace(', ', ' · ') }</span>{/if}
+                </span>
+                {#if entry.fields.price != null}<Price value={ entry.fields.price } tone="text-scheme-foreground" />{/if}
+              </button>
+            </li>
+          {/for}
+        </ol>
+        <span class="block h-step-xs text-scheme-surface-2 *:size-full" aria-hidden="true">{#svg 'torn-edge.svg'}</span>
+      </div>
+      <tarot-carousel class="relative block w-full min-w-0 overflow-hidden rounded-lg bg-scheme-surface-2 lg:max-w-panel" id={ id } aria-label="{ settings.heading }">
+        <script type="application/json" data-tarot-options>{ options | json }</script>
+        <tarot-viewport>
+          <tarot-track>
+            {#for entry in items, i}
+              <tarot-slide>
+                {#if entry.fields.image}<img class="aspect-4/5 w-full object-cover md:aspect-4/3" src="{ image_url(entry.fields.image, 1024) }" srcset="{ image_srcset(entry.fields.image, [480, 768, 1024, 1280]) }" sizes="(min-width: 64rem) 35rem, 100vw" alt="{ entry.fields.image_alt || entry.title }" loading={ i == 0 ? 'eager' : 'lazy' } width={ entry.fields.image.width } height={ entry.fields.image.height } />{:else}<span class="block aspect-4/5 md:aspect-4/3"></span>{/if}
+              </tarot-slide>
+            {/for}
+          </tarot-track>
+        </tarot-viewport>
+        {#if settings.show_counter}<div class="pointer-events-none absolute bottom-step-sm left-step-sm z-10 rounded-full bg-backdrop px-step-xs py-step-2xs"><Counter index={ 1 } total={ items.length } carousel_id={ id } tone="photo" /></div>{/if}
+      </tarot-carousel>
+    </div>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Specials",
+  "description": "A selectable specials docket beside a carousel of photographs.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Chef's specials"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Four plates that change with the boats. Ask about the catch."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_intro",
+      "label": "Show intro",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "intro",
+      "label": "Intro",
+      "default": "A few favourites from the kitchen."
+    },
+    {
+      "type": "text",
+      "id": "book_label",
+      "label": "Book label",
+      "default": "Book a table"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Reads menu_items entries: title, handle, description, ingredients, price, category, dietary, image, image_alt, featured, tag and photos."
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Limit",
+      "default": 4,
+      "min": 3,
+      "max": 6,
+      "step": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "show_counter",
+      "label": "Show counter",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "charcoal"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "heading": "Chef's specials",
+        "text": "Four plates that change with the boats. Ask about the catch.",
+        "show_intro": false,
+        "intro": "A few favourites from the kitchen.",
+        "book_label": "Book a table",
+        "limit": 4,
+        "show_counter": true,
+        "color_scheme": "charcoal",
+        "collection": "menu_items"
+      }
+    }
+  ]
+}
+</schema>

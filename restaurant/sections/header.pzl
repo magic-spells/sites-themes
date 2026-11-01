@@ -1,0 +1,180 @@
+<!-- The wordmark, the main menu and Book a table. The menu item that points
+     at the menu path opens a <dropdown-panel> of the categories, each with
+     its photo and tint dot. Below 48rem: the wordmark, a small Book and a
+     hamburger that opens the mobile menu's sheet. While a panel is open one
+     shared dim lies under the header (theme.ts); a click on it closes the
+     panel. The nav has no gap: each link's padding is its hit area, so the
+     pointer passes from one trigger straight to the next. The Overlay style
+     lies over a page whose first section is a Cover hero (and on the
+     home.cover template it is chosen for you); an overlaid header cannot
+     stick, so it scrolls away with the hero. -->
+{#let
+  wordmark = settings.logo_text || site.settings.wordmark || site.name
+  categories = settings.categories.entries | sort('fields.order')
+  overlay = settings.style == 'overlay' || page.template == 'home.cover'
+}
+<div class="pointer-events-none fixed inset-0 z-20 bg-scheme-scrim opacity-0 transition-opacity duration-panel data-open:pointer-events-auto data-open:opacity-50" data-page-dim aria-hidden="true"></div>
+<sticky-header class="block overlaid:absolute overlaid:inset-x-0 overlaid:top-auto" settle-overshoot="0" disabled={ !settings.sticky || overlay } data-header-style={ overlay ? 'overlay' : 'solid' }>
+  <header class="border-b border-scheme-rule bg-scheme-background px-gutter py-step-md text-scheme-foreground overlaid:border-transparent overlaid:bg-transparent overlaid:text-on-photo">
+    <div class="mx-auto flex max-w-column items-center justify-between gap-step-md">
+      <a class="font-heading text-h4 font-extrabold whitespace-nowrap" href="/">{ wordmark }</a>
+
+      <div class="flex items-center gap-step-xl">
+        {#if settings.menu.items.length}
+          <nav class="hidden md:block" aria-label="{ t('main_navigation') }">
+            <ul class="-me-step-sm flex items-center font-medium text-nav">
+              {#for item in settings.menu.items}
+                {#if item.href == settings.menu_path && categories.length}
+                  <li>
+                    <dropdown-component trigger="both" close-delay="150">
+                      <dropdown-trigger class="flex cursor-pointer items-center gap-step-2xs px-step-sm py-step-xs">{ settings.menu_label || item.label }{#if settings.show_chevron}<span class="sites-icon size-chevron rotate-90" aria-hidden="true">{#svg 'icons/angle-right.svg'}</span>{/if}</dropdown-trigger>
+                      <dropdown-panel class="border-y border-scheme-rule bg-scheme-surface px-gutter py-step-lg text-scheme-foreground" wide effect="fade">
+                        <div class="mx-auto flex max-w-column flex-wrap items-start gap-step-lg">
+                          {#for category in categories}
+                            <a class="group grid gap-step-xs" href="{ settings.menu_path }#{ category.handle }" data-tint={ category.fields.tint }>
+                              <span class="block aspect-3/2 w-circle overflow-hidden rounded-md bg-scheme-surface-2">{#if category.fields.image}<img class="size-full object-cover transition-transform duration-hover ease-out-soft group-hover:scale-hover" data-zoom src="{ image_url(category.fields.image, 320) }" alt="" loading="lazy" width={ category.fields.image.width } height={ category.fields.image.height } />{/if}</span>
+                              <span class="flex items-center gap-step-xs text-body whitespace-nowrap"><span class="size-dot shrink-0 rounded-full bg-tint" aria-hidden="true"></span><span class="decoration-1 underline-offset-4 group-hover:underline">{ category.title }</span></span>
+                            </a>
+                          {/for}
+                          <a class="ml-auto self-end font-mono text-code font-medium tracking-code whitespace-nowrap text-scheme-links uppercase underline decoration-1 underline-offset-4" href="{ settings.menu_path }">{ t('full_menu') }</a>
+                        </div>
+                      </dropdown-panel>
+                    </dropdown-component>
+                  </li>
+                {:else}
+                  <li><a class="block px-step-sm py-step-xs { item.active ? '' : 'text-scheme-muted overlaid:text-on-photo' } decoration-1 underline-offset-4 hover:text-scheme-foreground hover:underline overlaid:hover:text-on-photo" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>
+                {/if}
+              {/for}
+            </ul>
+          </nav>
+        {/if}
+        <div class="flex items-center gap-step-md md:gap-step-lg">
+          {#if settings.show_phone && site.settings.phone}<a class="hidden font-mono text-code font-medium tracking-code text-scheme-muted lg:inline overlaid:text-on-photo" href="tel:{ site.settings.phone | replace(' ', '') }">{ site.settings.phone }</a>{/if}
+          {#if settings.book_label}
+            <span class="hidden md:inline-flex"><Button booking={ true } tone="overlay">{ settings.book_label }</Button></span>
+            <span class="md:hidden"><Button booking={ true } size="small" tone="overlay">{ t('book') }</Button></span>
+          {/if}
+          <button class="-m-step-xs flex size-icon-button items-center justify-center md:hidden overlaid:text-on-photo" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu"><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/menu.svg'}</span><span class="sr-only">{ t('menu') }</span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+</sticky-header>
+
+<schema>
+{
+  "name": "Header",
+  "description": "The wordmark, navigation, category panel and reservation action.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo text",
+      "default": ""
+    },
+    {
+      "type": "menu",
+      "id": "menu",
+      "label": "Menu"
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "default": "solid",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "overlay",
+          "label": "Overlay"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky",
+      "label": "Sticky",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_phone",
+      "label": "Show phone",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "book_label",
+      "label": "Book label",
+      "default": "Book a table"
+    },
+    {
+      "type": "text",
+      "id": "menu_label",
+      "label": "Menu label",
+      "default": "Menu"
+    },
+    {
+      "type": "collection",
+      "id": "categories",
+      "label": "Categories",
+      "info": "Reads menu_categories entries: title, handle, description, image, image_alt and tint."
+    },
+    {
+      "type": "url",
+      "id": "menu_path",
+      "label": "Menu path",
+      "default": "/menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_chevron",
+      "label": "Show chevron",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Solid",
+      "settings": {
+        "logo_text": "",
+        "style": "solid",
+        "sticky": true,
+        "show_phone": false,
+        "book_label": "Book a table",
+        "menu_label": "Menu",
+        "menu_path": "/menu",
+        "show_chevron": true,
+        "color_scheme": "paper",
+        "menu": "main",
+        "categories": "menu_categories"
+      }
+    },
+    {
+      "name": "Overlay",
+      "settings": {
+        "logo_text": "",
+        "style": "overlay",
+        "sticky": true,
+        "show_phone": false,
+        "book_label": "Book a table",
+        "menu_label": "Menu",
+        "menu_path": "/menu",
+        "show_chevron": true,
+        "color_scheme": "paper",
+        "menu": "main",
+        "categories": "menu_categories"
+      }
+    }
+  ]
+}
+</schema>

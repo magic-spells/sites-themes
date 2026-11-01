@@ -1,0 +1,7 @@
+<!-- component: Roundel -->
+<!-- props: text tint -->
+<!-- The promo card's round price or day: the tint's ink filled, the tint's
+     light colour for the text, in the Price mono. Wine and navy have no tint
+     of their own, so they take the nearest: tomato and sea. -->
+{#let key = tint == 'navy' ? 'sea' : (tint == 'wine' ? 'tomato' : tint)}
+<span class="flex size-roundel items-center justify-center rounded-full bg-tint-ink font-mono text-price font-medium text-tint" data-tint={ key }>{ text }</span>

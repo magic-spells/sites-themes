@@ -1,0 +1,6 @@
+<!-- component: Counter -->
+<!-- props: index total carousel_id tone -->
+<!-- "01 / 04" in the Price mono. With a carousel id theme.ts keeps the first
+     number on the slide the carousel shows. tone "photo" sets it light, for a
+     counter laid over a photograph. -->
+<p class="font-mono text-price font-medium tabular-nums { tone == 'photo' ? 'text-on-photo' : 'text-scheme-meta' }" data-counter-for={ carousel_id }><span data-counter-index>{ index < 10 ? '0' : '' }{ index }</span> / { total < 10 ? '0' : '' }{ total }</p>

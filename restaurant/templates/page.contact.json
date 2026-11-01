@@ -1,0 +1,50 @@
+{
+  "label": "Contact",
+  "description": "Contact page sections.",
+  "sections": [
+    {
+      "id": "s_page_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "eyebrow": "",
+        "heading": "Contact",
+        "standfirst": "",
+        "align": "left",
+        "show_eyebrow": false,
+        "show_standfirst": false,
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_contact",
+      "type": "contact",
+      "preset": "Default",
+      "settings": {
+        "heading": "Write to us",
+        "text": "A question, a celebration, a table for a few more?",
+        "form": "contact",
+        "show_details": true,
+        "show_address": false,
+        "show_service_strip": true,
+        "color_scheme": "paper",
+        "photo": "as_3x2_1"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_hours_location",
+      "type": "hours-location",
+      "preset": "Default",
+      "settings": {
+        "heading": "Hours & location",
+        "show_map": true,
+        "directions_label": "Open in Maps",
+        "color_scheme": "paper",
+        "map_image": "as_3x2_1"
+      },
+      "blocks": []
+    }
+  ]
+}

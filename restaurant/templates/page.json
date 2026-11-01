@@ -1,0 +1,33 @@
+{
+  "label": "Page",
+  "description": "Page page sections.",
+  "sections": [
+    {
+      "id": "s_page_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "eyebrow": "",
+        "heading": "",
+        "standfirst": "",
+        "align": "left",
+        "show_eyebrow": true,
+        "show_standfirst": true,
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_rich_text",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "body": "",
+        "width": "reading",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    }
+  ]
+}

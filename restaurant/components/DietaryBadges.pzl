@@ -1,0 +1,13 @@
+<!-- component: DietaryBadges -->
+<!-- props: dietary tone -->
+<!-- The dietary codes (V, VG, GF, DF, N, HOT) as small mono badges on the
+     tint of the element around them; each code's meaning is read out. -->
+{#let codes = dietary | split(',')}
+{#if codes.length}
+<ul class="flex flex-wrap gap-step-2xs { tone }">
+  {#for code in codes}
+    {#let c = code | strip | upcase}
+    {#if c}<li class="rounded-sm bg-tint px-step-xs py-step-2xs font-mono text-code font-medium tracking-code text-tint-ink"><span aria-hidden="true">{ c }</span><span class="sr-only">{ t('dietary.' + c) }</span></li>{/if}
+  {/for}
+</ul>
+{/if}

@@ -1,0 +1,3 @@
+<!-- component: Chip -->
+<!-- An ingredient on the dish page: a hairline pill. -->
+<span class="inline-flex items-center rounded-full border border-scheme-rule px-step-sm py-step-2xs text-body-sm text-scheme-foreground"><Children/></span>

@@ -1,0 +1,311 @@
+<!-- The opening. Split: the headline, the line and the two buttons on the
+     left, the photo on the right in a 4:5 well over an offset block of the
+     tint; stacked below 48rem, the text first. Cover: the photo (or the
+     gallery as a fading slideshow) fills the section under a dark scrim, the
+     text centred on it in the light photo colour; the slideshow has dots, a
+     counter and a pause button bottom right (an autoplaying slideshow needs
+     one). The headline is the page's <h1> when the hero opens the page. -->
+{#let
+  cover = settings.layout == 'cover'
+  arch = settings.well_shape == 'arch'
+  cutout = settings.photo_style == 'cutout'
+  slides = cover && settings.slideshow && settings.gallery ? settings.gallery.items : []
+  id = 'hero-' + section.id
+  options = { effect: 'fade', loop: true, draggable: true, autoplay: { interval: settings.autoplay ? settings.interval * 1000 : 0 }, navigation: { showButtons: false, showPagination: true } }
+  heading_class = 'font-heading font-extrabold text-display text-balance ' + (cover ? 'text-on-photo' : 'text-scheme-heading')
+}
+{#if cover}
+<section class="relative isolate flex items-center justify-center overflow-hidden bg-scheme-background px-gutter py-section text-on-photo { settings.height == 'tall' ? 'min-h-hero-tall' : 'min-h-svh' }" data-layout="cover" data-on-photo>
+  {#if slides.length}
+    <tarot-carousel class="absolute inset-0 -z-10 block" id={ id } aria-label="{ t('slideshow') }">
+      <script type="application/json" data-tarot-options>{ options | json }</script>
+      <tarot-viewport class="block h-full">
+        <tarot-track class="h-full">
+          {#for item in slides, i}
+            <tarot-slide class="h-full"><img class="size-full object-cover" src="{ image_url(item.asset, 1920) }" srcset="{ image_srcset(item.asset, [768, 1280, 1920, 2560]) }" sizes="100vw" alt="{ item.alt }" loading={ i == 0 ? 'eager' : 'lazy' } fetchpriority={ i == 0 ? 'high' : null } width={ item.asset.width } height={ item.asset.height } /></tarot-slide>
+          {/for}
+        </tarot-track>
+      </tarot-viewport>
+      <div class="absolute right-gutter bottom-step-lg z-10 flex items-center gap-step-sm">
+        <div data-tarot-pagination></div>
+        <Counter index={ 1 } total={ slides.length } carousel_id={ id } tone="photo" />
+        {#if settings.autoplay}<button class="group flex size-icon-button items-center justify-center rounded-full text-on-photo hover:bg-backdrop" type="button" aria-pressed="false" aria-label="{ t('pause') }" data-autoplay-toggle={ id } data-interval={ settings.interval * 1000 }><span class="sites-icon size-icon group-aria-pressed:hidden" aria-hidden="true">{#svg 'icons/pause.svg'}</span><span class="sites-icon hidden size-icon group-aria-pressed:block" aria-hidden="true">{#svg 'icons/play.svg'}</span></button>{/if}
+      </div>
+    </tarot-carousel>
+  {:else if settings.image}
+    <img class="absolute inset-0 -z-10 size-full object-cover" src="{ image_url(settings.image, 1920) }" srcset="{ image_srcset(settings.image, [768, 1280, 1920, 2560]) }" sizes="100vw" alt="" fetchpriority="high" width={ settings.image.width } height={ settings.image.height } />
+  {/if}
+  <span class="pointer-events-none absolute inset-0 -z-10 bg-backdrop opacity-70" aria-hidden="true"></span>
+  <div class="grid max-w-wide justify-items-center gap-step-lg text-center">
+    {#if settings.show_eyebrow && settings.eyebrow}<p class="font-mono text-code font-medium tracking-code uppercase">{ settings.eyebrow }</p>{/if}
+    {#if section.index == 0}<h1 class={ heading_class }>{ settings.heading }</h1>{:else}<h2 class={ heading_class }>{ settings.heading }</h2>{/if}
+    {#if settings.text}<p class="max-w-reading text-body-lg text-pretty opacity-85">{ settings.text }</p>{/if}
+    <div class="flex flex-wrap justify-center gap-step-sm">
+      {#if settings.book_label}<Button booking={ true }>{ settings.book_label }</Button>{/if}
+      {#if settings.menu_label}<Button href={ settings.menu_path } tone="photo">{ settings.menu_label }</Button>{/if}
+    </div>
+    {#if settings.show_service_strip && site.settings.service_strip}<p class="font-mono text-code font-medium tracking-code uppercase">{ site.settings.service_strip }</p>{/if}
+  </div>
+</section>
+{:else}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-layout="split">
+  <div class="mx-auto grid max-w-column items-center gap-step-2xl md:grid-cols-2">
+    <div class="grid justify-items-start gap-step-lg">
+      {#if settings.show_eyebrow && settings.eyebrow}<p class="font-mono text-code font-medium tracking-code text-scheme-meta uppercase">{ settings.eyebrow }</p>{/if}
+      {#if section.index == 0}<h1 class={ heading_class }>{ settings.heading }</h1>{:else}<h2 class={ heading_class }>{ settings.heading }</h2>{/if}
+      {#if settings.text}<p class="max-w-reading text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+      <div class="flex flex-wrap gap-step-sm">
+        {#if settings.book_label}<Button booking={ true }>{ settings.book_label }</Button>{/if}
+        {#if settings.menu_label}<Button href={ settings.menu_path } tone="outline">{ settings.menu_label }</Button>{/if}
+      </div>
+      {#if settings.show_service_strip && site.settings.service_strip}<p class="font-mono text-code font-medium tracking-code text-scheme-meta uppercase">{ site.settings.service_strip }</p>{/if}
+    </div>
+    <div class="relative pr-step-xl pb-step-xl" data-tint={ settings.tint }>
+      <span class="absolute inset-0 top-step-xl left-step-xl bg-tint { arch ? 'rounded-t-full rounded-b-lg' : 'rounded-lg' }" aria-hidden="true"></span>
+      <div class="relative aspect-4/5 overflow-hidden { cutout ? '' : 'bg-scheme-surface-2' } { arch ? 'rounded-t-full rounded-b-md' : 'rounded-md' }">
+        {#if settings.image}<img class="size-full { cutout ? 'object-contain' : 'object-cover' }" src="{ image_url(settings.image, 1280) }" srcset="{ image_srcset(settings.image, [480, 768, 1024, 1280]) }" sizes="(min-width: 48rem) 45vw, 100vw" alt="" fetchpriority="high" width={ settings.image.width } height={ settings.image.height } />{/if}
+      </div>
+    </div>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Hero",
+  "description": "A split introduction or a full-height photographic cover.",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "split",
+      "options": [
+        {
+          "value": "split",
+          "label": "Split"
+        },
+        {
+          "value": "cover",
+          "label": "Cover"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Breakfast until three, dinner until late."
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "An all-day canteen by the harbour. Good food, a warm room, a table for you."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_eyebrow",
+      "label": "Show eyebrow",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Halfmoon Canteen · Bellport"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_service_strip",
+      "label": "Show service strip",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "book_label",
+      "label": "Book label",
+      "default": "Book a table"
+    },
+    {
+      "type": "text",
+      "id": "menu_label",
+      "label": "Menu label",
+      "default": "View menu"
+    },
+    {
+      "type": "url",
+      "id": "menu_path",
+      "label": "Menu path",
+      "default": "/menu"
+    },
+    {
+      "type": "image",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "photo_style",
+      "label": "Photo style",
+      "default": "photo",
+      "options": [
+        {
+          "value": "photo",
+          "label": "Photo"
+        },
+        {
+          "value": "cutout",
+          "label": "Cutout"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "tint",
+      "label": "Tint",
+      "default": "tomato",
+      "options": [
+        {
+          "value": "tomato",
+          "label": "Tomato"
+        },
+        {
+          "value": "saffron",
+          "label": "Saffron"
+        },
+        {
+          "value": "leaf",
+          "label": "Leaf"
+        },
+        {
+          "value": "sea",
+          "label": "Sea"
+        },
+        {
+          "value": "plum",
+          "label": "Plum"
+        },
+        {
+          "value": "clay",
+          "label": "Clay"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "well_shape",
+      "label": "Well shape",
+      "default": "rounded",
+      "options": [
+        {
+          "value": "rounded",
+          "label": "Rounded"
+        },
+        {
+          "value": "arch",
+          "label": "Arch"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "slideshow",
+      "label": "Slideshow",
+      "default": false
+    },
+    {
+      "type": "gallery",
+      "id": "gallery",
+      "label": "Gallery",
+      "info": "Reads gallery items: asset, alt and caption."
+    },
+    {
+      "type": "select",
+      "id": "height",
+      "label": "Height",
+      "default": "full",
+      "options": [
+        {
+          "value": "full",
+          "label": "Full"
+        },
+        {
+          "value": "tall",
+          "label": "Tall"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "interval",
+      "label": "Interval",
+      "default": 5,
+      "min": 3,
+      "max": 10,
+      "step": 1
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Split",
+      "settings": {
+        "layout": "split",
+        "heading": "Breakfast until three, dinner until late.",
+        "text": "An all-day canteen by the harbour. Good food, a warm room, a table for you.",
+        "show_eyebrow": false,
+        "eyebrow": "Halfmoon Canteen · Bellport",
+        "show_service_strip": false,
+        "book_label": "Book a table",
+        "menu_label": "View menu",
+        "menu_path": "/menu",
+        "photo_style": "photo",
+        "tint": "saffron",
+        "well_shape": "rounded",
+        "slideshow": false,
+        "height": "full",
+        "autoplay": true,
+        "interval": 5,
+        "color_scheme": "paper",
+        "image": "as_4x5_1"
+      }
+    },
+    {
+      "name": "Cover",
+      "settings": {
+        "layout": "cover",
+        "heading": "Breakfast until three, dinner until late.",
+        "text": "An all-day canteen by the harbour. Good food, a warm room, a table for you.",
+        "show_eyebrow": false,
+        "eyebrow": "Halfmoon Canteen · Bellport",
+        "show_service_strip": false,
+        "book_label": "Book a table",
+        "menu_label": "View menu",
+        "menu_path": "/menu",
+        "photo_style": "photo",
+        "tint": "tomato",
+        "well_shape": "rounded",
+        "slideshow": true,
+        "height": "full",
+        "autoplay": true,
+        "interval": 5,
+        "color_scheme": "charcoal",
+        "gallery": "home-hero",
+        "image": "as_16x9_1"
+      }
+    }
+  ]
+}
+</schema>

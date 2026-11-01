@@ -1,5 +1,16 @@
-<!-- section: rich-text; D1 placeholder -->
-<section>rich-text</section>
+<!-- A heading and rich text in the reading column, or the column's full
+     width. With no body it shows the page's own text. -->
+{#let body = settings.body || page.content}
+{#if settings.heading || body}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <div class="grid gap-step-md { settings.width == 'wide' ? '' : 'max-w-reading' }">
+      {#if settings.heading}<h2 class="font-heading text-h2 font-medium text-balance text-scheme-heading">{ settings.heading }</h2>{/if}
+      {#if body}<div class="sites-prose text-body-lg text-scheme-foreground">{ body }</div>{/if}
+    </div>
+  </div>
+</section>
+{/if}
 
 <schema>
 {

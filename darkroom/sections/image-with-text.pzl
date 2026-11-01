@@ -1,5 +1,25 @@
-<!-- section: image-with-text; D1 placeholder -->
-<section>image-with-text</section>
+<!-- A photograph (the photographer's portrait by default) beside a short
+     text: eyebrow, heading, body and a link. Image first puts the picture on
+     the left; text first puts it on the right, flush to the column edge. The
+     picture always comes first below 48rem. -->
+{#let
+  image = settings.image || site.settings.photographer_portrait
+  well = settings.ratio == 'landscape' ? 'aspect-3/2' : settings.ratio == 'square' ? 'aspect-square' : 'aspect-4/5'
+  text_first = settings.layout == 'text_first'
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto flex max-w-column flex-col gap-step-xl md:flex-row md:items-center md:gap-step-3xl { text_first ? 'md:flex-row-reverse md:justify-between' : '' }">
+    {#if image}
+      <img class="w-full bg-scheme-surface object-cover md:w-1/2 lg:max-w-image { well }" src="{ image_url(image, 1280) }" srcset="{ image_srcset(image, [480, 768, 1280]) }" sizes="(min-width: 48rem) 40vw, 100vw" alt="{ image.alt }" loading="lazy" width={ image.width } height={ image.height } />
+    {/if}
+    <div class="grid max-w-text content-start justify-items-start gap-step-sm md:flex-1">
+      {#if settings.eyebrow}<p class="font-mono text-meta tracking-meta text-scheme-meta uppercase">{ settings.eyebrow }</p>{/if}
+      {#if settings.heading}<h2 class="font-heading text-h2 font-medium text-balance text-scheme-heading">{ settings.heading }</h2>{/if}
+      {#if settings.body}<div class="sites-prose">{ settings.body }</div>{/if}
+      {#if settings.link_label && settings.link}<a class="mt-step-xs text-body text-scheme-links underline decoration-1 underline-offset-4 hover:text-scheme-foreground" href="{ settings.link }">{ settings.link_label }</a>{/if}
+    </div>
+  </div>
+</section>
 
 <schema>
 {

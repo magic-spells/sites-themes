@@ -1,6 +1,48 @@
-<!-- section: services; D1 placeholder -->
-<section>services
-  {#for block in blocks}<span data-block={ block.editor_id }>service</span>{/for}</section>
+<!-- The services as a strip of 3:4 photograph tiles, four across on
+     desktop, 2.5 on tablet, 1.4 on a phone, with the eyebrow and heading at
+     the left of the head row and the arrows at its right. A tile reveals its
+     description and "Enquire" on hover (at rest on touch) and links to
+     Contact with its subject preselected. Below 48rem there are no arrows,
+     the strip runs past the right edge and a 1px bar tracks it. -->
+{#let
+  id = 'services-' + section.id
+  options = { slidesPerView: 1.4, gap: '0.5rem', paddingLeft: '1rem', slidesPerMove: 1, navigation: { showButtons: false, showPagination: false }, scrollbar: { show: true, selector: '#' + id + '-bar' }, breakpoints: { '768': { slidesPerView: 2.5, gap: '0.75rem', paddingLeft: 0, slidesPerMove: 'auto', scrollbar: { show: false }, navigation: { showButtons: settings.show_arrows, showPagination: false } }, '1024': { slidesPerView: 4, gap: '0.75rem', paddingLeft: 0, slidesPerMove: 'auto', scrollbar: { show: false }, navigation: { showButtons: settings.show_arrows, showPagination: false } } } }
+  head = settings.eyebrow || settings.heading || settings.standfirst
+}
+{#if blocks.length}
+<section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter" aria-roledescription="carousel" aria-label="{ settings.heading || settings.eyebrow || t('carousel_label') }">
+  <tarot-carousel class="mx-auto block max-w-column" id={ id }>
+    <script type="application/json" data-tarot-options>{ options | json }</script>
+    {#if head || settings.show_arrows}
+      <div class="mb-step-xl flex items-end justify-between gap-gap-lg px-gutter md:px-0 { head ? '' : 'hidden md:flex md:justify-end' }">
+        {#if head}
+          <div class="grid gap-step-xs">
+            {#if settings.eyebrow}<p class="font-mono text-meta tracking-meta text-scheme-meta uppercase">{ settings.eyebrow }</p>{/if}
+            {#if settings.heading}<h2 class="font-heading text-h2 font-medium text-scheme-heading">{ settings.heading }</h2>{/if}
+            {#if settings.standfirst}<p class="max-w-text text-body-lg text-scheme-muted">{ settings.standfirst }</p>{/if}
+          </div>
+        {/if}
+        {#if settings.show_arrows}
+          <div class="hidden shrink-0 gap-step-xs md:flex">
+            <button class="flex size-8 items-center justify-center border border-scheme-rule hover:border-scheme-foreground disabled:opacity-40" type="button" data-action-tarot-previous aria-label="{ t('previous') }"><span class="sites-icon size-6">{#svg 'icons/angle-left.svg'}</span></button>
+            <button class="flex size-8 items-center justify-center border border-scheme-rule hover:border-scheme-foreground disabled:opacity-40" type="button" data-action-tarot-next aria-label="{ t('next') }"><span class="sites-icon size-6">{#svg 'icons/angle-right.svg'}</span></button>
+          </div>
+        {/if}
+      </div>
+    {/if}
+    <tarot-viewport>
+      <tarot-track>
+        {#for block in blocks}
+          <tarot-slide>
+            <ServiceTile name={ block.settings.name } description={ block.settings.description } photo={ block.settings.photo } href="{ settings.contact_path }?subject={ encodeURIComponent(block.settings.subject) }" enquire_label={ settings.enquire_label || t('enquire') } editor_id={ block.editor_id } />
+          </tarot-slide>
+        {/for}
+      </tarot-track>
+    </tarot-viewport>
+  </tarot-carousel>
+  <div class="mt-step-md px-gutter md:hidden" id="{ id }-bar"></div>
+</section>
+{/if}
 
 <schema>
 {

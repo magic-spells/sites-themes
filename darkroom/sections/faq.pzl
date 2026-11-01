@@ -1,6 +1,28 @@
-<!-- section: faq; D1 placeholder -->
-<section>faq
-  {#for block in blocks}<span data-block={ block.editor_id }>item</span>{/for}</section>
+<!-- Questions that open one at a time, each a <collapsible-content> row
+     under a hairline. The heading and note sit at the left from 64rem, the
+     rows at the right; stacked below that. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto flex max-w-column flex-col gap-step-xl lg:flex-row lg:gap-step-3xl">
+    <div class="grid content-start gap-step-sm lg:w-faq-aside lg:shrink-0">
+      {#if settings.heading}<h2 class="font-heading text-h2 font-medium text-scheme-heading">{ settings.heading }</h2>{/if}
+      {#if settings.note}<p class="text-body text-scheme-muted">{ settings.note }</p>{/if}
+    </div>
+    <collapsible-group class="flex-1 border-t border-scheme-rule" exclusive>
+      {#for block in blocks}
+        <collapsible-component class="block border-b border-scheme-rule" data-block={ block.editor_id }>
+          <button class="group flex items-center justify-between gap-step-md py-step-md text-left text-body-lg text-scheme-foreground hover:text-scheme-links" type="button">
+            <span>{ block.settings.question }</span>
+            <span class="sites-icon size-6 text-scheme-muted group-aria-expanded:hidden">{#svg 'icons/plus.svg'}</span>
+            <span class="sites-icon hidden size-6 text-scheme-muted group-aria-expanded:block">{#svg 'icons/minus.svg'}</span>
+          </button>
+          <collapsible-content>
+            <div class="sites-prose pb-step-sm">{ block.settings.answer }</div>
+          </collapsible-content>
+        </collapsible-component>
+      {/for}
+    </collapsible-group>
+  </div>
+</section>
 
 <schema>
 {

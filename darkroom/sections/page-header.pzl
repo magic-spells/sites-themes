@@ -1,5 +1,16 @@
-<!-- section: page-header; D1 placeholder -->
-<section>page-header</section>
+<!-- An eyebrow in Meta, the page heading and a standfirst, in a reading
+     column at the left or centred. No bottom padding: the section below
+     brings its own. The heading falls back to the page title. -->
+{#let center = settings.align == 'center'}
+<section class="bg-scheme-background px-gutter pt-section text-scheme-foreground">
+  <div class="mx-auto flex max-w-column flex-col { center ? 'items-center text-center' : '' }">
+    <div class="grid max-w-reading gap-step-sm">
+      {#if settings.chip}<p class="font-mono text-meta tracking-meta text-scheme-meta uppercase">{ settings.chip }</p>{/if}
+      <h1 class="font-heading text-h1 font-medium text-balance text-scheme-heading">{ settings.heading || page.title }</h1>
+      {#if settings.standfirst}<p class="text-body-lg text-pretty text-scheme-muted">{ settings.standfirst }</p>{/if}
+    </div>
+  </div>
+</section>
 
 <schema>
 {

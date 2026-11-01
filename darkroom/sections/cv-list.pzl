@@ -1,6 +1,21 @@
-<!-- section: cv-list; D1 placeholder -->
-<section>cv-list
-  {#for block in blocks}<span data-block={ block.editor_id }>row</span>{/for}</section>
+<!-- A list under a Meta heading: year, entry and place, one hairline per
+     row. The place folds under the entry below 48rem. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <h2 class="border-b border-scheme-rule pb-step-xs font-mono text-meta tracking-meta text-scheme-meta uppercase">{ settings.heading }</h2>
+    <ul>
+      {#for block in blocks}
+        <li class="grid grid-cols-cv-row items-baseline gap-x-step-md border-b border-scheme-rule py-step-sm" data-block={ block.editor_id }>
+          <span class="font-mono text-counter tabular-nums text-scheme-meta">{ block.settings.year }</span>
+          <span class="flex flex-col gap-step-2xs md:flex-row md:items-baseline md:justify-between md:gap-step-md">
+            <span class="text-body text-scheme-foreground">{ block.settings.text }</span>
+            {#if block.settings.place}<span class="text-body-sm text-scheme-muted md:text-right">{ block.settings.place }</span>{/if}
+          </span>
+        </li>
+      {/for}
+    </ul>
+  </div>
+</section>
 
 <schema>
 {

@@ -74,5 +74,6 @@
   "subject_commission": "Commission",
   "subject_press": "Press",
   "subject_other": "Other",
-  "view_label": "View"
+  "view_label": "View",
+  "series_count": "{count} series"
 }

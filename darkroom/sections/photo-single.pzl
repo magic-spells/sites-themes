@@ -1,5 +1,22 @@
-<!-- section: photo-single; D1 placeholder -->
-<section>photo-single</section>
+<!-- One photograph at full bleed, the column's width or the reading
+     column's, with its caption. With no image chosen it takes photograph
+     number index from the series of the page it is on, so one series template
+     serves every series. -->
+{#let
+  item = settings.image ? { asset: settings.image, caption: '', alt: settings.image.alt } : page.entry.fields.photos.items[settings.index]
+  caption = settings.caption || item.caption
+  number = (settings.index + 1 < 10 ? '0' : '') + (settings.index + 1)
+  bleed = settings.width == 'bleed'
+  well = settings.ratio == '4:5' ? 'aspect-4/5' : settings.ratio == '1:1' ? 'aspect-square' : settings.ratio == '3:2' ? 'aspect-3/2' : settings.ratio == 'natural' ? '' : 'aspect-video'
+}
+{#if item.asset}
+<section class="bg-scheme-background py-section text-scheme-foreground { bleed ? '' : 'px-gutter' }">
+  <figure class="mx-auto grid gap-step-xs { bleed ? '' : settings.width == 'reading' ? 'max-w-reading' : 'max-w-column' }">
+    <img class="w-full bg-scheme-surface object-cover { well }" src="{ image_url(item.asset, 1600) }" srcset="{ image_srcset(item.asset, [768, 1280, 1600, 2560]) }" sizes="{ settings.width == 'reading' ? '(min-width: 40rem) 40rem, 100vw' : '100vw' }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } />
+    {#if caption}<figcaption class="font-mono text-caption text-scheme-muted { bleed ? 'px-gutter' : '' }">{#if settings.number}{ number } — {/if}{ caption }</figcaption>{/if}
+  </figure>
+</section>
+{/if}
 
 <schema>
 {

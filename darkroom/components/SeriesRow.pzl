@@ -1,3 +1,16 @@
 <!-- component: SeriesRow -->
 <!-- props: entry href show_counts -->
-<span>SeriesRow</span>
+<!-- One row of the index: a 3:2 thumbnail, the title, then the location,
+     year and photograph count. Below 48rem the details fold under the
+     title. -->
+<li class="border-b border-scheme-rule">
+  <a class="group grid grid-cols-series-row-sm items-center gap-x-step-md gap-y-step-2xs py-step-md md:grid-cols-series-row md:gap-x-step-lg" href="{ href }">
+    <img class="row-span-2 aspect-3/2 w-20 bg-scheme-surface object-cover md:row-span-1 md:w-30" src="{ image_url(entry.fields.cover, 320) }" alt="" loading="lazy" width={ entry.fields.cover.width } height={ entry.fields.cover.height } />
+    <h3 class="self-end font-heading text-h3 font-medium text-scheme-heading decoration-1 underline-offset-4 group-hover:underline md:self-center">{ entry.title }</h3>
+    <p class="flex flex-wrap items-baseline gap-x-step-lg gap-y-step-2xs self-start md:self-center">
+      <span class="text-body-sm text-scheme-muted md:w-location">{ entry.fields.location }</span>
+      <span class="font-mono text-counter tabular-nums text-scheme-foreground">{ entry.fields.year }</span>
+      {#if show_counts}<span class="font-mono text-counter tabular-nums text-scheme-meta"><span aria-hidden="true">{ size(entry.fields.photos.items) }</span><span class="sr-only">{ t('photograph_count', { count: size(entry.fields.photos.items) }) }</span></span>{/if}
+    </p>
+  </a>
+</li>

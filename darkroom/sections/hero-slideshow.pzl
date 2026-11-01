@@ -1,5 +1,61 @@
-<!-- section: hero-slideshow; D1 placeholder -->
-<section>hero-slideshow</section>
+<!-- A full-bleed slideshow of a gallery: a tarot carousel that fades (or
+     slides) between photographs, with each slide's series, a counter and
+     dots. A caption that starts with a series title ("Salt Roads · ...")
+     takes that series' place, year and link. Arrows show on hover, always or
+     never from 48rem; below that the slideshow is swiped. -->
+{#let
+  items = settings.gallery.items
+  id = 'hero-' + section.id
+  arrows = settings.show_arrows != 'never'
+  options = { effect: settings.effect, loop: settings.loop, autoplay: { interval: settings.autoplay ? settings.interval * 1000 : 0 }, navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { navigation: { showButtons: arrows, showPagination: settings.show_dots } } } }
+  height = settings.height == 'tall' ? 'h-hero-tall' : settings.height == 'wide' ? 'aspect-video' : 'h-dvh'
+}
+{#if items.length}
+<section class="relative bg-scheme-surface text-on-photo { height }" aria-roledescription="carousel" aria-label="{ settings.gallery.title || t('carousel_label') }">
+  <tarot-carousel class="group/hero h-full" id={ id }>
+    <script type="application/json" data-tarot-options>{ options | json }</script>
+    <tarot-viewport class="h-full">
+      <tarot-track class="h-full">
+        {#for item in items, i}
+          {#let
+            title = item.caption | split(' · ') | first
+            entry = content.series.entries | find('title', title)
+          }
+          <tarot-slide class="h-full">
+            <img class="absolute inset-0 size-full object-cover" src="{ image_url(item.asset, 1600) }" srcset="{ image_srcset(item.asset, [768, 1280, 1600, 2560]) }" sizes="100vw" alt="{ item.alt }" loading={ i == 0 ? 'eager' : 'lazy' } fetchpriority={ i == 0 ? 'high' : null } width={ item.asset.width } height={ item.asset.height } />
+            <span class="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-scrim" aria-hidden="true"></span>
+            {#if settings.show_caption && item.caption}
+              <div class="absolute inset-x-0 bottom-0 px-gutter pt-step-3xl pb-step-xl">
+                <div class="grid max-w-column justify-items-start gap-step-xs">
+                  {#if entry}
+                    <p class="font-mono text-meta tracking-meta text-on-photo/70 uppercase">{ entry.fields.location }, { entry.fields.year }</p>
+                    <h2 class="font-heading text-h2 font-medium">{ entry.title }</h2>
+                    <a class="border-b border-scheme-links pb-step-2xs font-mono text-meta tracking-meta uppercase hover:text-scheme-links" href="/work/{ entry.handle }">{ t('view_series') }</a>
+                  {:else}
+                    <h2 class="font-heading text-h2 font-medium">{ item.caption }</h2>
+                  {/if}
+                </div>
+              </div>
+            {/if}
+          </tarot-slide>
+        {/for}
+      </tarot-track>
+    </tarot-viewport>
+
+    {#if settings.show_counter || settings.show_dots}
+      <div class="pointer-events-none absolute right-gutter bottom-step-xl z-10 flex items-center gap-step-md">
+        {#if settings.show_counter}<Counter index={ 1 } total={ items.length } carousel_id={ id } tone="photo" />{/if}
+        {#if settings.show_dots}<div class="pointer-events-auto hidden md:block" data-tarot-pagination></div>{/if}
+      </div>
+    {/if}
+
+    {#if arrows}
+      <button class="absolute top-1/2 left-gutter z-10 hidden size-8 -translate-y-1/2 items-center justify-center border border-scheme-rule bg-scheme-background text-scheme-foreground transition-opacity md:flex { settings.show_arrows == 'hover' ? 'opacity-0 group-hover/hero:opacity-100 focus-visible:opacity-100 motion-reduce:opacity-100' : '' }" type="button" data-action-tarot-previous aria-label="{ t('previous') }"><span class="sites-icon size-6">{#svg 'icons/angle-left.svg'}</span></button>
+      <button class="absolute top-1/2 right-gutter z-10 hidden size-8 -translate-y-1/2 items-center justify-center border border-scheme-rule bg-scheme-background text-scheme-foreground transition-opacity md:flex { settings.show_arrows == 'hover' ? 'opacity-0 group-hover/hero:opacity-100 focus-visible:opacity-100 motion-reduce:opacity-100' : '' }" type="button" data-action-tarot-next aria-label="{ t('next') }"><span class="sites-icon size-6">{#svg 'icons/angle-right.svg'}</span></button>
+    {/if}
+  </tarot-carousel>
+</section>
+{/if}
 
 <schema>
 {

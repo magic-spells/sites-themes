@@ -7,9 +7,9 @@
       "type": "page-header",
       "preset": "Left",
       "settings": {
-        "chip": "",
-        "heading": "Work",
-        "standfirst": "Six series, 2020 to 2025",
+        "chip": "Work",
+        "heading": "Six series, 2020 to 2025",
+        "standfirst": "Documentary landscapes, in long stays, printed by hand.",
         "align": "left",
         "color_scheme": "surface"
       },
@@ -20,11 +20,11 @@
       "type": "series-index",
       "preset": "Index",
       "settings": {
-        "heading": "",
+        "heading": "All series",
         "base_path": "/work",
         "layout": "list",
-        "columns": "3",
-        "ratio": "4:5",
+        "columns": "2",
+        "ratio": "3:2",
         "limit": 12,
         "show_counts": true,
         "show_toggle": true,

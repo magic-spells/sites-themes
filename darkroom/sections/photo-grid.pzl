@@ -1,5 +1,42 @@
-<!-- section: photo-grid; D1 placeholder -->
-<section>photo-grid</section>
+<!-- A grid of a gallery's photographs at one ratio (or their own), with
+     captions below, over them on hover, or none. Columns step down at each
+     breakpoint and no tile is ever hidden. With the lightbox on, a tile opens
+     it with a fade (see the companion carousel below). With no gallery chosen
+     it shows the series of the page it is on. -->
+{#let
+  gallery = settings.gallery.items.length ? settings.gallery : page.entry.fields.photos
+  pool = gallery.items | slice(settings.offset ?? 0)
+  items = settings.limit ? (pool | slice(0, settings.limit)) : pool
+  id = 'lightbox-' + section.id
+  cols = settings.columns == '4' ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4' : settings.columns == '2' ? 'md:grid-cols-2' : 'grid-cols-2 lg:grid-cols-3'
+  gap = settings.gap == 'tight' ? 'gap-step-2xs' : settings.gap == 'loose' ? 'gap-gap-lg' : 'gap-gap-sm'
+  sizes = settings.columns == '2' ? '(min-width: 48rem) 50vw, 100vw' : '(min-width: 64rem) 33vw, 50vw'
+}
+{#if items.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <ul class="mx-auto grid max-w-column { cols } { settings.captions == 'below' ? 'gap-y-step-lg' : '' } { gap }" aria-label="{ gallery.title || t('gallery_label') }">
+    {#for item in items, i}
+      <li><PhotoTile item={ item } ratio={ settings.ratio } sizes={ sizes } captions={ settings.captions } lightbox_id={ settings.lightbox ? id : null } index={ i } /></li>
+    {/for}
+  </ul>
+  {#if settings.lightbox}
+    <!-- The lightbox opens from a carousel slide, so the same photographs sit in a visually hidden companion carousel; each tile asks theme.ts to open it at its index. -->
+    <tarot-carousel class="sr-only" id={ id } aria-hidden="true">
+      <script type="application/json" data-tarot-options>{ { lightbox: true, draggable: false, navigation: { showButtons: false, showPagination: false } } | json }</script>
+      <tarot-viewport>
+        <tarot-track>
+          {#for item in items}
+            <tarot-slide>
+              <img src="{ image_url(item.asset, 480) }" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } />
+              {#if item.caption}<p data-caption data-tarot-lightbox-fade>{ item.caption }</p>{/if}
+            </tarot-slide>
+          {/for}
+        </tarot-track>
+      </tarot-viewport>
+    </tarot-carousel>
+  {/if}
+</section>
+{/if}
 
 <schema>
 {

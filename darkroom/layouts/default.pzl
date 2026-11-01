@@ -16,9 +16,10 @@
     <meta property="og:image:alt" content="{ page.seo.image.alt }" />
     <meta name="twitter:card" content="summary_large_image" />
     {:else}<meta name="twitter:card" content="summary" />{/if}
-    {#if page.entry.fields.date}<meta property="article:published_time" content="{ date(page.entry.fields.date, 'iso') }" />{/if}
-    {#if site.settings.favicon}<link rel="icon" type="image/png" href="{ image_url(site.settings.favicon, 160, { height: 160, format: 'png' }) }" />
+        {#if site.settings.favicon}<link rel="icon" type="image/png" href="{ image_url(site.settings.favicon, 160, { height: 160, format: 'png' }) }" />
     {:else}<link rel="icon" type="image/svg+xml" href="{ asset_url('favicon.svg') }" />{/if}
+    <!-- The series index's saved view, copied onto <html> before the body paints so a reload does not flash the other view. -->
+    <script>{#raw}try{var v=localStorage.getItem('sites:series-view');if(v==='list'||v==='grid')document.documentElement.setAttribute('data-series-view',v)}catch(e){}{/raw}</script>
     <Slot name="head-content"/>
   </head>
   <body class="flex min-h-screen flex-col bg-scheme-background font-body text-body text-scheme-foreground antialiased">

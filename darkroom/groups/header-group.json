@@ -3,10 +3,10 @@
     {
       "id": "sg_header",
       "type": "header",
-      "preset": "Solid",
+      "preset": "Overlay",
       "settings": {
         "logo_text": "",
-        "style": "solid",
+        "style": "overlay",
         "sticky": true,
         "work_label": "Work",
         "work_path": "/work",

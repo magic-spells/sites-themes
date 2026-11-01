@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./vendor/dialog-panel.css" layer(components);
 @import "./vendor/bottom-sheet.css" layer(components);
 @import "./vendor/collapsible-content.css" layer(components);
 @import "./vendor/dropdown-panel.css" layer(components);
@@ -139,7 +140,7 @@
 	--text-body-xs--line-height: 1.5;
 	--text-overline: var(--darkroom-text-overline);
 	--text-overline--line-height: 1.5;
-	--text-meta: var(--darkroom-text-meta);
+	--text-meta: var(--darkroom-text-overline);
 	--text-meta--line-height: 1.5;
 	--text-control: 1rem;
 	--text-control--line-height: 1;
@@ -164,6 +165,8 @@
 	--spacing-gap-md: var(--darkroom-gap-md);
 	--spacing-gap-lg: var(--darkroom-gap-lg);
 	--spacing-stage: var(--darkroom-stage);
+	--spacing-stage-tall: calc(var(--darkroom-stage) * 1.25);
+	--spacing-stage-short: calc(var(--darkroom-stage) * 0.75);
 	--spacing-strip: var(--darkroom-strip);
 	--spacing-overlap: var(--darkroom-overlap);
 	--container-column: 82.5rem;
@@ -171,10 +174,42 @@
 	--container-text: 30rem;
 	--container-mat: 37.5rem;
 	--container-panel: 35rem;
+	--container-location: 12.5rem;
+	--container-notice: 25rem;
+	--container-image: 32.5rem;
+	--container-faq-aside: 25rem;
+	--container-button: 8.75rem;
+	--grid-template-columns-series-row: 7.5rem 1fr auto;
+	--grid-template-columns-series-row-sm: 5rem 1fr;
+	--grid-template-columns-statement: 12.5rem 1fr;
+	--grid-template-columns-cv-row: 4rem 1fr;
+	--grid-template-columns-package-row: 10rem 1fr 1fr 18rem;
 	--spacing-control: 3.375rem;
 	--spacing-textarea: 9rem;
+	--spacing-hero-tall: 80dvh;
+
+	/* Statement and Quote, the two text styles that are neither heading nor
+	   body: the statement in the body face at the h2 size, the quote in the
+	   heading italic at the h3 size. */
+	--text-statement: var(--darkroom-text-h2);
+	--text-statement--line-height: 1.1;
+	--text-quote: var(--darkroom-text-h3);
+	--text-quote--line-height: 1.3;
+	--text-caption: var(--darkroom-text-body-xs);
+	--text-caption--line-height: 1.5;
+	--text-counter: var(--darkroom-text-body-sm);
+	--text-counter--line-height: 1;
+	--text-display--letter-spacing: -0.01em;
+
+	/* Text laid on a photograph stays light on every scheme and palette, and
+	   the scrim under it stays dark: both are constants, not scheme roles. */
+	--color-on-photo: #f6f5f2;
+	--color-scrim: rgb(0 0 0 / 0.6);
 }
 
+/* The role sizes per breakpoint, from the Figma Font Sizes and Spacing
+   modes (mobile / tablet / desktop), each scaled from the site token it
+   stands for, so changing a token in the admin still moves them. */
 :root {
 	--darkroom-text-display: calc(var(--sites-type-scale-5xl) * 56 / 112);
 	--darkroom-text-h1: calc(var(--sites-type-scale-4xl) * 40 / 72);
@@ -186,20 +221,19 @@
 	--darkroom-text-body-sm: calc(var(--sites-type-scale-sm) * 13 / 14);
 	--darkroom-text-body-xs: calc(var(--sites-type-scale-xs) * 12 / 12);
 	--darkroom-text-overline: calc(var(--sites-type-scale-xs) * 11 / 12);
-	--darkroom-text-meta: calc(var(--sites-type-scale-xs) * 11 / 12);
 	--darkroom-section: calc(var(--sites-spacing-2xl) * 24 / 64);
 	--darkroom-gutter: calc(var(--sites-spacing-md) * 16 / 24);
-	--darkroom-step-2xs: calc(var(--sites-spacing-xs) * 8 / 12);
-	--darkroom-step-xs: calc(var(--sites-spacing-xs) * 12 / 12);
-	--darkroom-step-sm: calc(var(--sites-spacing-sm) * 16 / 16);
-	--darkroom-step-md: calc(var(--sites-spacing-md) * 24 / 24);
-	--darkroom-step-lg: calc(var(--sites-spacing-lg) * 32 / 32);
-	--darkroom-step-xl: calc(var(--sites-spacing-xl) * 48 / 48);
-	--darkroom-step-2xl: calc(var(--sites-spacing-2xl) * 64 / 64);
-	--darkroom-step-3xl: calc(var(--sites-spacing-2xl) * 96 / 64);
+	--darkroom-step-2xs: calc(var(--sites-spacing-xs) * 4 / 12);
+	--darkroom-step-xs: calc(var(--sites-spacing-xs) * 8 / 12);
+	--darkroom-step-sm: calc(var(--sites-spacing-sm) * 12 / 16);
+	--darkroom-step-md: calc(var(--sites-spacing-md) * 16 / 24);
+	--darkroom-step-lg: calc(var(--sites-spacing-lg) * 24 / 32);
+	--darkroom-step-xl: calc(var(--sites-spacing-xl) * 32 / 48);
+	--darkroom-step-2xl: calc(var(--sites-spacing-2xl) * 48 / 64);
+	--darkroom-step-3xl: calc(var(--sites-spacing-2xl) * 64 / 64);
 	--darkroom-gap-sm: calc(var(--sites-spacing-xs) * 8 / 12);
 	--darkroom-gap-md: calc(var(--sites-spacing-sm) * 12 / 16);
-	--darkroom-gap-lg: calc(var(--sites-spacing-md) * 12 / 24);
+	--darkroom-gap-lg: calc(var(--sites-spacing-md) * 16 / 24);
 	--darkroom-stage: calc(var(--sites-spacing-2xl) * 300 / 64);
 	--darkroom-strip: calc(var(--sites-spacing-2xl) * 360 / 64);
 	--darkroom-overlap: calc(var(--sites-spacing-2xl) * 0 / 64);
@@ -216,20 +250,19 @@
 	--darkroom-text-body-sm: calc(var(--sites-type-scale-sm) * 13 / 14);
 	--darkroom-text-body-xs: calc(var(--sites-type-scale-xs) * 12 / 12);
 	--darkroom-text-overline: calc(var(--sites-type-scale-xs) * 11 / 12);
-	--darkroom-text-meta: calc(var(--sites-type-scale-xs) * 11 / 12);
 	--darkroom-section: calc(var(--sites-spacing-2xl) * 32 / 64);
 	--darkroom-gutter: calc(var(--sites-spacing-md) * 24 / 24);
-	--darkroom-step-2xs: calc(var(--sites-spacing-xs) * 8 / 12);
-	--darkroom-step-xs: calc(var(--sites-spacing-xs) * 12 / 12);
-	--darkroom-step-sm: calc(var(--sites-spacing-sm) * 16 / 16);
-	--darkroom-step-md: calc(var(--sites-spacing-md) * 24 / 24);
-	--darkroom-step-lg: calc(var(--sites-spacing-lg) * 32 / 32);
-	--darkroom-step-xl: calc(var(--sites-spacing-xl) * 48 / 48);
-	--darkroom-step-2xl: calc(var(--sites-spacing-2xl) * 64 / 64);
-	--darkroom-step-3xl: calc(var(--sites-spacing-2xl) * 96 / 64);
+	--darkroom-step-2xs: calc(var(--sites-spacing-xs) * 6 / 12);
+	--darkroom-step-xs: calc(var(--sites-spacing-xs) * 10 / 12);
+	--darkroom-step-sm: calc(var(--sites-spacing-sm) * 14 / 16);
+	--darkroom-step-md: calc(var(--sites-spacing-md) * 20 / 24);
+	--darkroom-step-lg: calc(var(--sites-spacing-lg) * 28 / 32);
+	--darkroom-step-xl: calc(var(--sites-spacing-xl) * 40 / 48);
+	--darkroom-step-2xl: calc(var(--sites-spacing-2xl) * 56 / 64);
+	--darkroom-step-3xl: calc(var(--sites-spacing-2xl) * 80 / 64);
 	--darkroom-gap-sm: calc(var(--sites-spacing-xs) * 12 / 12);
 	--darkroom-gap-md: calc(var(--sites-spacing-sm) * 16 / 16);
-	--darkroom-gap-lg: calc(var(--sites-spacing-md) * 16 / 24);
+	--darkroom-gap-lg: calc(var(--sites-spacing-md) * 24 / 24);
 	--darkroom-stage: calc(var(--sites-spacing-2xl) * 480 / 64);
 	--darkroom-strip: calc(var(--sites-spacing-2xl) * 440 / 64);
 	--darkroom-overlap: calc(var(--sites-spacing-2xl) * 80 / 64);
@@ -247,7 +280,6 @@
 	--darkroom-text-body-sm: calc(var(--sites-type-scale-sm) * 14 / 14);
 	--darkroom-text-body-xs: calc(var(--sites-type-scale-xs) * 12 / 12);
 	--darkroom-text-overline: calc(var(--sites-type-scale-xs) * 12 / 12);
-	--darkroom-text-meta: calc(var(--sites-type-scale-xs) * 12 / 12);
 	--darkroom-section: calc(var(--sites-spacing-2xl) * 40 / 64);
 	--darkroom-gutter: calc(var(--sites-spacing-md) * 40 / 24);
 	--darkroom-step-2xs: calc(var(--sites-spacing-xs) * 8 / 12);
@@ -296,24 +328,380 @@
 	src: url("/_sites/theme/fonts/spectral-latin-400-italic.woff2") format("woff2");
 }
 
+/* The header's Overlay style lies over a page that opens with a hero
+   slideshow, and is solid everywhere else. The variant reaches the header
+   and everything in it on such a page. */
+@custom-variant overlaid {
+	&:where(body:has(main > div:first-of-type[data-section="hero-slideshow"]) [data-header-style="overlay"]),
+	&:where(body:has(main > div:first-of-type[data-section="hero-slideshow"]) [data-header-style="overlay"] *) {
+		@slot;
+	}
+}
+
+/* The series index's two views. A list with the reader's switch carries the
+   editor's view as data-view on its section. A reader's saved choice is set
+   on <html> as data-series-view by the layout's pre-paint script, before the
+   body paints, and wins over it. Each variant hides the view not chosen. */
+@custom-variant view-list {
+	&:where([data-view="list"] *):not(:where([data-series-view="grid"] *)) {
+		@slot;
+	}
+	&:where([data-series-view="list"] [data-view] *) {
+		@slot;
+	}
+}
+@custom-variant view-grid {
+	&:where([data-view="grid"] *):not(:where([data-series-view="list"] *)) {
+		@slot;
+	}
+	&:where([data-series-view="grid"] [data-view] *) {
+		@slot;
+	}
+}
+
+/* The browser surfaces no utility reaches. */
 :root {
- --darkroom-scrim: rgb(0 0 0 / 0.6);
- --tarot-lightbox-backdrop: rgb(0 0 0 / 0.92);
- --tarot-lightbox-chrome-color: #E8E6E1;
- --tarot-lightbox-chrome-size: 2.75rem;
- --tarot-lightbox-chrome-inset: 1rem;
- --tarot-lightbox-image-height: calc(100dvh - 6.5rem);
+	font-size: var(--sites-type-base);
 }
+
+::selection {
+	background: var(--sites-color-brand-accent);
+	color: var(--sites-color-grey-extra-dark);
+}
+
+:focus-visible {
+	outline: 2px solid var(--sites-scheme-links);
+	outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+@layer base {
+	dialog {
+		border: 0;
+		padding: 0;
+		color: inherit;
+	}
+}
+
+/* The component classes the sections share, built only from tokens. They
+   read the scheme properties, so a button in the Gallery scheme inverts. The
+   `- 1.5px` takes the 1.5px border out of the box, as Folio's do. */
+@layer components {
+	.sites-button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: var(--darkroom-step-xs);
+		min-height: 3rem;
+		padding: calc(0.625rem - 1.5px) var(--sites-button-padding-x);
+		border: 1.5px solid var(--sites-scheme-button-background);
+		border-radius: var(--sites-button-radius);
+		background: var(--sites-scheme-button-background);
+		color: var(--sites-scheme-button-foreground);
+		font-family: var(--sites-font-body-family), Arial, sans-serif;
+		font-size: 0.875rem;
+		font-weight: var(--sites-button-weight);
+		line-height: 1;
+		text-decoration: none;
+		cursor: pointer;
+		transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+	}
+
+	.sites-button:hover {
+		border-color: var(--sites-scheme-button-hover-background);
+		background: var(--sites-scheme-button-hover-background);
+		color: var(--sites-scheme-button-hover-foreground);
+	}
+
+	.sites-button-secondary {
+		border-color: var(--sites-scheme-secondary-button-background);
+		background: var(--sites-scheme-secondary-button-background);
+		color: var(--sites-scheme-secondary-button-foreground);
+	}
+
+	.sites-button-secondary:hover {
+		border-color: var(--sites-scheme-secondary-button-hover-background);
+		background: var(--sites-scheme-secondary-button-hover-background);
+		color: var(--sites-scheme-secondary-button-hover-foreground);
+	}
+
+	/* The outline button: the primary's border, no fill. */
+	.sites-button-outline {
+		background: transparent;
+		color: var(--sites-scheme-heading);
+	}
+
+	.sites-button-outline:hover {
+		border-color: var(--sites-scheme-button-background);
+		background: var(--sites-scheme-chip-background);
+		color: var(--sites-scheme-heading);
+	}
+
+	.sites-input {
+		display: block;
+		width: 100%;
+		min-height: var(--spacing-control);
+		padding: calc(var(--darkroom-step-sm) - 1.5px) var(--darkroom-step-sm);
+		border: 1.5px solid var(--sites-scheme-input-border);
+		border-radius: var(--sites-input-radius);
+		background: var(--sites-scheme-input-background);
+		color: var(--sites-scheme-input-foreground);
+		font: inherit;
+		font-size: var(--darkroom-text-body);
+		line-height: 1.3;
+	}
+
+	.sites-input::placeholder {
+		color: var(--sites-scheme-chip-foreground);
+		opacity: 1;
+	}
+
+	.sites-input:focus-visible {
+		border-color: var(--sites-scheme-input-foreground);
+		outline-offset: 2px;
+	}
+
+	.sites-chip {
+		display: inline-flex;
+		align-items: center;
+		padding: var(--darkroom-step-2xs) var(--darkroom-step-sm);
+		border: 1px solid var(--sites-scheme-chip-border);
+		border-radius: var(--sites-radius-full);
+		color: var(--sites-scheme-foreground);
+		font-family: var(--sites-font-mono-family), SFMono-Regular, Menlo, monospace;
+		font-size: var(--darkroom-text-overline);
+		letter-spacing: 0.08em;
+		line-height: 1.5;
+		text-transform: uppercase;
+	}
+
+	/* Rich text from the editor and from series statements. Its children
+	   carry no classes, so the rhythm is set here. */
+	.sites-prose {
+		color: var(--sites-scheme-chip-foreground);
+		font-size: var(--darkroom-text-body);
+		line-height: 1.5;
+	}
+
+	.sites-prose > * + * {
+		margin-top: var(--darkroom-step-sm);
+	}
+
+	.sites-prose > * + :is(h2, h3, h4) {
+		margin-top: var(--darkroom-step-lg);
+	}
+
+	.sites-prose :is(h2, h3, h4) {
+		color: var(--sites-scheme-heading);
+		font-family: var(--sites-font-heading-family), Georgia, serif;
+		font-weight: 500;
+		line-height: 1.1;
+	}
+
+	.sites-prose h2 {
+		font-size: var(--darkroom-text-h2);
+	}
+
+	.sites-prose h3 {
+		font-size: var(--darkroom-text-h3);
+	}
+
+	.sites-prose h4 {
+		font-size: var(--darkroom-text-h4);
+		line-height: 1.3;
+	}
+
+	.sites-prose strong {
+		color: var(--sites-scheme-foreground);
+		font-weight: 500;
+	}
+
+	.sites-prose a {
+		color: var(--sites-scheme-links);
+		text-decoration-line: underline;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 0.2em;
+	}
+
+	.sites-prose a:hover {
+		color: var(--sites-scheme-heading);
+	}
+
+	.sites-prose ul,
+	.sites-prose ol {
+		display: grid;
+		gap: var(--darkroom-step-xs);
+		padding-inline-start: 1.25em;
+	}
+
+	.sites-prose ul {
+		list-style: disc;
+	}
+
+	.sites-prose ol {
+		list-style: decimal;
+	}
+
+	.sites-prose img {
+		width: 100%;
+	}
+
+	.sites-icon {
+		display: inline-block;
+		flex: none;
+	}
+}
+
+.sites-icon > svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/* The statement is set in the body face; its <em> words switch to the
+   heading's italic, which no utility can reach inside rich text. */
+.statement em {
+	font-family: var(--sites-font-heading-family), Georgia, serif;
+	font-style: italic;
+	font-weight: 400;
+}
+
+/* The header: sticky when its setting says so, and laid over the opening
+   hero in the Overlay style. The renderer's wrapper is what has to move. */
+[data-section="header"]:has([data-sticky]) {
+	position: sticky;
+	top: 0;
+	z-index: 30;
+}
+
+body:has(main > div:first-of-type[data-section="hero-slideshow"]) [data-section="header"]:has([data-header-style="overlay"]) {
+	position: absolute;
+	inset-inline: 0;
+	top: 0;
+	z-index: 30;
+}
+
+/* The carousels. Tarot's own stylesheet is neutral; these map its custom
+   properties onto the scheme the carousel sits in. The mobile strip bar is a
+   1px line, track the rule and thumb the text. */
+tarot-carousel {
+	--tarot-scrollbar-height: 1px;
+	--tarot-scrollbar-bg: var(--sites-scheme-chip-border);
+	--tarot-scrollbar-thumb-bg: var(--sites-scheme-foreground);
+	--tarot-scrollbar-thumb-hover-bg: var(--sites-scheme-foreground);
+	--tarot-scrollbar-thumb-active-bg: var(--sites-scheme-foreground);
+	--tarot-scrollbar-border-radius: 0;
+	--tarot-scrollbar-margin: var(--darkroom-step-md);
+	--color-pagination-dot: var(--sites-scheme-chip-foreground);
+	--color-pagination-dot-active: var(--sites-scheme-foreground);
+}
+
+/* The hero's dots sit on a photograph: light, the current one in the link
+   colour. */
+[data-section="hero-slideshow"] tarot-carousel {
+	--color-pagination-dot: #f6f5f2;
+	--color-pagination-dot-active: var(--sites-scheme-links);
+}
+
+.tarot-dots-list {
+	gap: var(--darkroom-step-xs);
+	margin: 0;
+}
+
+.tarot-dots-button {
+	width: 0.375rem;
+	height: 0.375rem;
+	opacity: 0.6;
+}
+
+.tarot-dots-button[aria-selected="true"] {
+	opacity: 1;
+}
+
+/* The lightbox is the tarot plugin's overlay; the board maps onto its
+   properties. Its chrome stays light on every palette. */
+:root {
+	--tarot-lightbox-backdrop: rgb(0 0 0 / 0.92);
+	--tarot-lightbox-chrome-color: #e8e6e1;
+	--tarot-lightbox-chrome-size: 2.75rem;
+	--tarot-lightbox-chrome-inset: 1rem;
+	--tarot-lightbox-image-height: calc(100dvh - 6.5rem);
+}
+
 .tarot-lightbox [data-caption] {
- font-family: var(--sites-font-mono-family), monospace;
- font-size: var(--darkroom-text-body-xs);
- color: #A8A49C;
- text-align: center;
- margin-bottom: 1.125rem;
+	display: block;
+	margin-top: 1.125rem;
+	color: #a8a49c;
+	font-family: var(--sites-font-mono-family), monospace;
+	font-size: var(--darkroom-text-body-xs);
+	line-height: 1.5;
+	text-align: center;
 }
-.statement em { font-family: var(--sites-font-heading-family), Georgia, serif; font-style: italic; font-weight: 400; }
-[data-dismissed] { display: none; }
-body:has([data-bare]) [data-group] { display: none; }
+
+/* The mobile menu's sheet takes the scheme's second surface and the board's
+   square corners and short handle. The properties sit on the panel, the
+   sheet's ancestor, where the package reads them. */
+dialog-panel:has(bottom-sheet) {
+	--bs-panel-background: var(--sites-scheme-chip-background);
+	--bs-panel-border-radius: 0;
+	--bs-panel-box-shadow: none;
+	--bs-handle-color: var(--sites-scheme-chip-border);
+	--bs-handle-width: 2.25rem;
+	--bs-handle-height: 0.25rem;
+	--bs-content-padding: var(--darkroom-step-lg);
+	--bs-content-padding-block: 0 var(--darkroom-step-lg);
+	--bs-overlay-background: rgb(0 0 0 / 0.92);
+	--bs-overlay-blur: 0;
+}
+
+/* The contact form's subject list, drawn on the scheme. */
+select-dropdown {
+	--select-shadow: none;
+	--select-shadow-soft: none;
+	--select-color-text: var(--sites-scheme-input-foreground);
+	--select-color-background: var(--sites-scheme-background);
+	--select-color-border: var(--sites-scheme-input-border);
+	--select-color-border-hover: var(--sites-scheme-input-foreground);
+	--select-color-border-dark: var(--sites-scheme-input-foreground);
+	--select-color-primary: var(--sites-scheme-links);
+	--select-color-hover: var(--sites-scheme-chip-background);
+	--select-color-focus: var(--sites-scheme-chip-background);
+	--select-color-selected: var(--sites-scheme-chip-background);
+	display: block;
+}
+
+/* A dismissed notice stays gone; theme.ts sets the attribute. */
+[data-dismissed] {
+	display: none;
+}
+
+/* The password and maintenance documents stand alone: no header, footer or
+   panels around them. */
+body:has([data-bare]) [data-group] {
+	display: none;
+}
+
+/* Touch screens have no hover, so a service tile's description and Enquire
+   line show at rest there. */
+@media (hover: none) {
+	[data-reveal] {
+		max-height: none;
+		opacity: 1;
+	}
+}
+
 @media (prefers-reduced-motion: reduce) {
- *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
 }

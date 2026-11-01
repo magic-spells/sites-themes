@@ -10,6 +10,7 @@ them is an npm dependency of the theme; the build resolves only these relative i
 | lazy-load.esm.js | @magic-spells/tarot-plugins | 0.1.0 (unpublished) | packages/tarot-plugins/dist |
 | scrollbar.esm.js, ../styles/vendor/scrollbar.css | @magic-spells/tarot-plugins | 0.1.0 (unpublished) | packages/tarot-plugins/dist (the mobile strip's proportional bar) |
 | bottom-sheet.js, ../styles/vendor/bottom-sheet.css | @magic-spells/bottom-sheet | 2.0.2 | npm |
+| dialog-panel.js, ../styles/vendor/dialog-panel.css | @magic-spells/dialog-panel | 2.0.3 | npm (bottom-sheet's peer; copied from Folio's vendored copy) |
 | dropdown-panel.js, ../styles/vendor/dropdown-panel.css + .effects.css | @magic-spells/dropdown-panel | 2.1.1 | npm |
 | select-dropdown.js, ../styles/vendor/select-dropdown.css | @magic-spells/select-dropdown | 0.3.0 | npm |
 | collapsible-content.js, ../styles/vendor/collapsible-content.css | @magic-spells/collapsible-content | 1.2.0 | npm |

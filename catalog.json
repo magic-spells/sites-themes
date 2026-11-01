@@ -10,7 +10,7 @@
       "publisher": "Magic Spells",
       "version": "0.1.0",
       "zip": "https://github.com/magic-spells/sites-themes/releases/download/company/v0.1.0/company-v0.1.0.zip",
-      "sha256": null,
+      "sha256": "2f961272a2e99a9d1794450c7ff01e02e61110098e560c7228f3619f3625cac0",
       "screenshots": []
     },
     {
@@ -23,7 +23,7 @@
       "publisher": "Magic Spells",
       "version": "0.1.0",
       "zip": "https://github.com/magic-spells/sites-themes/releases/download/folio/v0.1.0/folio-v0.1.0.zip",
-      "sha256": null,
+      "sha256": "0940dfad296478265d4ef436798108298b6523f02a680e2f3ae8fc507c864564",
       "screenshots": []
     },
     {
@@ -36,7 +36,7 @@
       "publisher": "Magic Spells",
       "version": "0.1.0",
       "zip": "https://github.com/magic-spells/sites-themes/releases/download/ledger/v0.1.0/ledger-v0.1.0.zip",
-      "sha256": null,
+      "sha256": "92c7e430a83f6e39d87c1e92ac86141730f113270afd77b5dda38b00d576a3a3",
       "screenshots": []
     },
     {
@@ -49,7 +49,7 @@
       "publisher": "Magic Spells",
       "version": "0.1.0",
       "zip": "https://github.com/magic-spells/sites-themes/releases/download/darkroom/v0.1.0/darkroom-v0.1.0.zip",
-      "sha256": null,
+      "sha256": "66b3ca078e42459415f068f0bacb40e5ff66948c5a993c5fa03a0d758e697984",
       "screenshots": []
     }
   ]

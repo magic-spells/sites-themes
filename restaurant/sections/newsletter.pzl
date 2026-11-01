@@ -26,6 +26,8 @@
 {
   "name": "Newsletter",
   "description": "A short invitation to the restaurant’s newsletter.",
+  "kind": "Contact",
+  "icon": "send",
   "settings": [
     {
       "type": "text",

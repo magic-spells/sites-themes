@@ -31,6 +31,8 @@
 {
   "name": "Menu list",
   "description": "A text menu with dotted leaders or right-aligned prices.",
+  "kind": "Collections",
+  "icon": "scroll-text",
   "settings": [
     {
       "type": "collection",
@@ -93,8 +95,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [

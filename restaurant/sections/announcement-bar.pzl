@@ -14,6 +14,8 @@
 {
   "name": "Announcement bar",
   "description": "A dismissible announcement with an optional link.",
+  "kind": "Header",
+  "icon": "megaphone",
   "settings": [
     {
       "type": "text",

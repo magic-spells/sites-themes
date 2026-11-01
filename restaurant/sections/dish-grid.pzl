@@ -50,6 +50,8 @@
 {
   "name": "Dish grid",
   "description": "The complete menu grouped by category with a category rail.",
+  "kind": "Collections",
+  "icon": "layout-grid",
   "settings": [
     {
       "type": "collection",
@@ -150,8 +152,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [

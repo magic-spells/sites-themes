@@ -18,6 +18,8 @@
 {
   "name": "Cta band",
   "description": "A simple invitation to book a table.",
+  "kind": "Content",
+  "icon": "mouse-pointer-click",
   "settings": [
     {
       "type": "text",

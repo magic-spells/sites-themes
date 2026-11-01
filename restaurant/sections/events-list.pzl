@@ -33,6 +33,8 @@
 {
   "name": "Events list",
   "description": "Events as photographic cards or compact rows.",
+  "kind": "Collections",
+  "icon": "calendar-days",
   "settings": [
     {
       "type": "text",
@@ -92,8 +94,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [

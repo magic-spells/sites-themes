@@ -13,6 +13,8 @@
 {
   "name": "Photo links",
   "description": "Photographs with links to the menu, events and reservations.",
+  "kind": "Content",
+  "icon": "link",
   "settings": [
     {
       "type": "text",
@@ -29,8 +31,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [

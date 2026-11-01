@@ -28,6 +28,8 @@
 {
   "name": "Faq",
   "description": "Answers to questions about visiting the restaurant.",
+  "kind": "Content",
+  "icon": "list",
   "settings": [
     {
       "type": "text",
@@ -50,8 +52,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [

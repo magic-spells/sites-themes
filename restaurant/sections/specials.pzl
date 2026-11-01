@@ -60,6 +60,8 @@
 {
   "name": "Specials",
   "description": "A selectable specials docket beside a carousel of photographs.",
+  "kind": "Collections",
+  "icon": "sparkles",
   "settings": [
     {
       "type": "text",

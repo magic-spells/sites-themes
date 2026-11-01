@@ -13,6 +13,8 @@
 {
   "name": "Page header",
   "description": "A plain page heading with an optional eyebrow and introduction.",
+  "kind": "Hero",
+  "icon": "heading-1",
   "settings": [
     {
       "type": "text",
@@ -63,8 +65,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [

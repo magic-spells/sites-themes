@@ -1,4 +1,33 @@
-<section>Reservations</section>
+<!-- The reservation form on its own page: the form in a card on the scheme's
+     surface, over the edge of a 3:2 photo from 48rem; the intro (heading and
+     line) above it when the page-header does not already say it. -->
+{#let note = settings.note || site.settings.booking_note}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-step-2xl">
+    {#if settings.show_intro}
+      <div class="grid max-w-reading gap-step-sm">
+        <h2 class="font-heading text-h2 font-bold text-scheme-heading">{ settings.heading }</h2>
+        {#if settings.text}<p class="text-body text-scheme-muted">{ settings.text }</p>{/if}
+      </div>
+    {/if}
+    <div class="grid items-center md:grid-cols-12">
+      <div class="relative z-10 rounded-lg border border-scheme-rule bg-scheme-surface p-step-lg md:col-start-1 md:col-end-7 md:row-start-1 md:p-step-xl lg:col-end-6">
+        <Form handle={ settings.form || site.settings.booking_form } class="grid gap-step-sm" id="reservations-form">
+          {#if form.sent}
+            <p class="text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
+          {:else}
+            {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
+            <BookingFields fields={ form.fields } prefix="reservations" />
+            <Submit wide={ true }>{ form.submit_label || t('book_a_table') }</Submit>
+            {#if note}<p class="font-mono text-code font-medium tracking-code text-scheme-meta uppercase">{ note }</p>{/if}
+            <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+          {/if}
+        </Form>
+      </div>
+      {#if settings.image}<img class="hidden aspect-3/2 w-full rounded-lg bg-scheme-surface-2 object-cover md:col-start-6 md:col-end-13 md:row-start-1 md:block lg:col-start-5" src="{ image_url(settings.image, 1280) }" srcset="{ image_srcset(settings.image, [768, 1024, 1280]) }" sizes="55vw" alt="" loading="lazy" width={ settings.image.width } height={ settings.image.height } />{/if}
+    </div>
+  </div>
+</section>
 
 <schema>
 {

@@ -1,4 +1,22 @@
-<section>Team</section>
+<!-- The people in the kitchen: a portrait in a 4:5 well (the arch rounds
+     its top), the name, the role and a short bio. Two or three across from
+     48rem, stacked below. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" aria-label={ settings.show_heading ? null : settings.heading } aria-labelledby={ settings.show_heading ? 'team-' + section.id : null }>
+  <div class="mx-auto grid max-w-column gap-step-xl">
+    {#if settings.show_heading && settings.heading}<h2 class="font-heading text-h2 font-bold text-scheme-heading" id="team-{ section.id }">{ settings.heading }</h2>{/if}
+    <ul class="grid gap-x-step-3xl gap-y-step-2xl md:grid-cols-2 { blocks.length > 2 ? 'lg:grid-cols-3' : '' }">
+      {#for block in blocks}
+        {#let b = block.settings}
+        <li class="grid content-start gap-step-xs" data-block={ block.editor_id }>
+          <div class="mb-step-sm aspect-4/5 overflow-hidden bg-scheme-surface-2 { settings.well_shape == 'arch' ? 'rounded-t-full rounded-b-lg' : 'rounded-lg' }">{#if b.portrait}<img class="size-full object-cover" src="{ image_url(b.portrait, 960) }" srcset="{ image_srcset(b.portrait, [480, 640, 960]) }" sizes="(min-width: 48rem) 40vw, 100vw" alt="" loading="lazy" width={ b.portrait.width } height={ b.portrait.height } />{/if}</div>
+          {#if b.name}<h3 class="font-heading text-h3 font-bold text-scheme-heading">{ b.name }</h3>{/if}
+          {#if b.role}<p class="font-mono text-code font-medium tracking-code text-scheme-meta uppercase">{ b.role }</p>{/if}
+          {#if b.bio}<p class="text-body-sm text-scheme-muted">{ b.bio }</p>{/if}
+        </li>
+      {/for}
+    </ul>
+  </div>
+</section>
 
 <schema>
 {

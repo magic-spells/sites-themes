@@ -1,3 +1,21 @@
 <!-- template: 404 -->
 <!-- layout: default -->
-<section><h1>Nothing on this plate</h1></section>
+<!-- The page header's column with the 404, then the menu's categories as
+     cards, so a wrong path still leads to the food. -->
+{#let categories = content.menu_categories.entries | sort('fields.order')}
+<section class="bg-scheme-background px-gutter pt-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <div class="grid max-w-reading justify-items-start gap-step-sm">
+      <p class="font-mono text-code font-medium tracking-code text-scheme-meta uppercase">404</p>
+      <h1 class="font-heading text-h1 font-bold text-balance text-scheme-heading">{ t('not_found_title') }</h1>
+      <p class="text-body-lg text-pretty text-scheme-muted">{ t('not_found_body') }</p>
+    </div>
+  </div>
+</section>
+{#if categories.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <ul class="mx-auto grid max-w-column gap-gap-lg md:grid-cols-2 lg:grid-cols-3">
+    {#for category in categories}<li><CategoryCard entry={ category } href="/menu#{ category.handle }" style="cards" show_counts={ false } /></li>{/for}
+  </ul>
+</section>
+{/if}

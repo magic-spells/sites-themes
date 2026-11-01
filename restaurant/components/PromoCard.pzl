@@ -1,3 +1,17 @@
 <!-- component: PromoCard -->
 <!-- props: kicker heading text roundel tint link_label link image photo_style -->
-<span>Promocard</span>
+<!-- A promotion: the photo in a 3:2 well on top, then on the white body the
+     kicker, the heading, the line and an outline button. Only the roundel,
+     where the body meets the photo, takes the tint. -->
+<article class="flex h-full flex-col overflow-hidden rounded-lg border border-scheme-rule bg-scheme-surface">
+  <div class="aspect-3/2 overflow-hidden { photo_style == 'cutout' ? '' : 'bg-scheme-surface-2' }">
+    {#if image}<img class="size-full { photo_style == 'cutout' ? 'object-contain' : 'object-cover' }" src="{ image_url(image, 960) }" srcset="{ image_srcset(image, [480, 640, 960, 1280]) }" sizes="(min-width: 64rem) 30rem, (min-width: 48rem) 60vw, 86vw" alt="" loading="lazy" width={ image.width } height={ image.height } />{/if}
+  </div>
+  <div class="relative flex flex-1 flex-col items-start gap-step-2xs p-step-lg">
+    {#if roundel}<span class="absolute top-0 right-step-lg -translate-y-1/2"><Roundel text={ roundel } tint={ tint } /></span>{/if}
+    {#if kicker}<p class="font-mono text-code font-medium tracking-code text-scheme-meta uppercase">{ kicker }</p>{/if}
+    {#if heading}<h3 class="font-heading text-h3 font-bold text-scheme-heading">{ heading }</h3>{/if}
+    {#if text}<p class="text-body-sm text-scheme-muted">{ text }</p>{/if}
+    {#if link_label && link}<div class="mt-auto pt-step-sm"><Button href={ link } tone="outline">{ link_label }</Button></div>{/if}
+  </div>
+</article>

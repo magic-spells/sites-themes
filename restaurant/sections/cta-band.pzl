@@ -1,4 +1,14 @@
-<section>Cta band</section>
+<!-- A closing band: one line and Book a table, the phone under the button.
+     Stacked below 48rem. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto flex max-w-column flex-col gap-step-lg md:flex-row md:items-center md:justify-between">
+    {#if settings.text}<h2 class="font-heading text-h2 font-bold text-balance text-scheme-heading">{ settings.text }</h2>{/if}
+    <div class="grid shrink-0 justify-items-start gap-step-xs md:justify-items-center">
+      {#if settings.book_label}<Button booking={ true }>{ settings.book_label }</Button>{/if}
+      {#if site.settings.phone}<a class="font-mono text-code font-medium tracking-code hover:underline" href="tel:{ site.settings.phone | replace(' ', '') }">{ site.settings.phone }</a>{/if}
+    </div>
+  </div>
+</section>
 
 <schema>
 {

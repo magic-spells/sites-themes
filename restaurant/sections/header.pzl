@@ -51,10 +51,10 @@
         <div class="flex items-center gap-step-md md:gap-step-lg">
           {#if settings.show_phone && site.settings.phone}<a class="hidden font-mono text-code font-medium tracking-code text-scheme-muted lg:inline overlaid:text-on-photo" href="tel:{ site.settings.phone | replace(' ', '') }">{ site.settings.phone }</a>{/if}
           {#if settings.book_label}
-            <span class="hidden md:inline-flex"><Button booking={ true }>{ settings.book_label }</Button></span>
-            <span class="md:hidden"><Button booking={ true } size="small">{ t('book') }</Button></span>
+            <span class="hidden md:inline-flex"><Button booking={ true } tone="overlay">{ settings.book_label }</Button></span>
+            <span class="md:hidden"><Button booking={ true } size="small" tone="overlay">{ t('book') }</Button></span>
           {/if}
-          <button class="-m-step-xs flex size-icon-button items-center justify-center md:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu"><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/menu.svg'}</span><span class="sr-only">{ t('menu') }</span></button>
+          <button class="-m-step-xs flex size-icon-button items-center justify-center md:hidden overlaid:text-on-photo" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu"><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/menu.svg'}</span><span class="sr-only">{ t('menu') }</span></button>
         </div>
       </div>
     </div>

@@ -1,4 +1,13 @@
-<section>Photo links</section>
+<!-- Up to four doors into the site, each a 4:3 photo over an outline pill;
+     three or four across from 48rem, stacked below. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" aria-label={ settings.show_heading ? null : settings.heading } aria-labelledby={ settings.show_heading ? 'photo-links-' + section.id : null }>
+  <div class="mx-auto grid max-w-column gap-step-xl">
+    {#if settings.show_heading && settings.heading}<h2 class="font-heading text-h2 font-bold text-scheme-heading" id="photo-links-{ section.id }">{ settings.heading }</h2>{/if}
+    <ul class="grid gap-gap-lg md:grid-cols-3 { blocks.length == 4 ? 'lg:grid-cols-4' : '' }">
+      {#for block in blocks}<li data-block={ block.editor_id }><Door image={ block.settings.image } label={ block.settings.label } link={ block.settings.link } booking={ block.settings.booking } /></li>{/for}
+    </ul>
+  </div>
+</section>
 
 <schema>
 {

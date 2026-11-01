@@ -1,3 +1,13 @@
 <!-- component: Door -->
 <!-- props: image label link booking -->
-<span>Door</span>
+<!-- One way into the site: a 4:3 photo over a full-width outline pill, the
+     whole door one link. With booking it is a Book a table, opening the
+     booking sheet as every other one does. -->
+{#let
+  url = booking ? (site.settings.booking_url || site.settings.reservations_path || link) : link
+  sheet = booking && !site.settings.booking_url ? 'booking' : null
+}
+<a class="group grid gap-step-sm" href="{ url }" data-panel-open={ sheet } aria-haspopup={ sheet ? 'dialog' : null }>
+  <span class="block aspect-4/3 overflow-hidden rounded-md bg-scheme-surface-2">{#if image}<img class="size-full object-cover transition-transform duration-hover ease-out-soft group-hover:scale-hover" data-zoom src="{ image_url(image, 960) }" srcset="{ image_srcset(image, [480, 640, 960, 1280]) }" sizes="(min-width: 48rem) 30vw, 100vw" alt="" loading="lazy" width={ image.width } height={ image.height } />{/if}</span>
+  <span class="flex min-h-control items-center justify-center rounded-button border border-scheme-secondary-button-foreground bg-scheme-secondary-button-background px-button-x text-control font-semibold text-scheme-secondary-button-foreground transition-colors duration-panel ease-out-soft group-hover:border-scheme-secondary-button-hover-background group-hover:bg-scheme-secondary-button-hover-background group-hover:text-scheme-secondary-button-hover-foreground">{ label }</span>
+</a>

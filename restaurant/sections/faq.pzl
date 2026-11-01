@@ -1,4 +1,28 @@
-<section>Faq</section>
+<!-- Questions and answers: the heading and note on the left, the questions
+     on the right as rows on hairlines that open and close (a plus, a minus
+     when open), the first open if the setting says so. Without JavaScript
+     every answer shows. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-step-xl md:grid-cols-3 md:gap-step-3xl">
+    <div class="grid content-start gap-step-sm">
+      <h2 class="font-heading text-h2 font-bold text-scheme-heading">{ settings.heading }</h2>
+      {#if settings.note}<p class="text-body text-scheme-muted">{ settings.note }</p>{/if}
+    </div>
+    <ul class="border-t border-scheme-rule md:col-span-2">
+      {#for block in blocks, i}
+        {#let b = block.settings}
+        <li class="border-b border-scheme-rule" data-block={ block.editor_id }>
+          <collapsible-component>
+            <h3><button class="group flex items-center justify-between gap-step-md py-step-md text-left text-body-lg font-medium text-scheme-heading" type="button">{ b.question }<span class="sites-icon size-icon shrink-0 group-aria-expanded:hidden" aria-hidden="true">{#svg 'icons/plus.svg'}</span><span class="sites-icon hidden size-icon shrink-0 group-aria-expanded:block" aria-hidden="true">{#svg 'icons/minus.svg'}</span></button></h3>
+            <collapsible-content open={ settings.first_open && i == 0 }>
+              <div class="sites-prose pb-step-md text-body text-scheme-muted">{ b.answer }</div>
+            </collapsible-content>
+          </collapsible-component>
+        </li>
+      {/for}
+    </ul>
+  </div>
+</section>
 
 <schema>
 {

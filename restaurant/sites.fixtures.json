@@ -659,6 +659,18 @@
       "name": "Contact",
       "fields": [
         {
+          "id": "subject",
+          "type": "select",
+          "label": "Subject",
+          "required": true,
+          "options": [
+            "Booking",
+            "Private dining",
+            "Press",
+            "Other"
+          ]
+        },
+        {
           "id": "name",
           "type": "text",
           "label": "Name",
@@ -671,18 +683,6 @@
           "label": "Email",
           "required": true,
           "max_length": 250
-        },
-        {
-          "id": "subject",
-          "type": "select",
-          "label": "Subject",
-          "required": true,
-          "options": [
-            "Booking",
-            "Private dining",
-            "Press",
-            "Other"
-          ]
         },
         {
           "id": "message",

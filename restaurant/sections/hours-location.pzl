@@ -1,4 +1,31 @@
-<section>Hours location</section>
+<!-- Hours on the left: the site's hours, one "Day | times" per line, as a
+     two-column table on hairlines (no day is marked as today: there is no
+     clock). Where to find us on the right: the address, the phone and email
+     as links, Open in Maps and the map image. Stacked below 48rem. -->
+{#let s = site.settings}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-step-2xl md:grid-cols-2 md:gap-step-3xl">
+    <div class="grid content-start gap-step-lg">
+      <h2 class="font-heading text-h2 font-bold text-scheme-heading">{ settings.heading }</h2>
+      {#if s.hours}
+        <dl class="border-t border-scheme-rule">
+          {#for line in s.hours | split('\n')}
+            {#let cells = line | split('|')}
+            {#if line | strip}<div class="flex items-baseline justify-between gap-step-md border-b border-scheme-rule py-step-sm"><dt class="font-mono text-code font-medium tracking-code text-scheme-meta uppercase">{ cells[0] | strip }</dt><dd class="font-mono text-docket tabular-nums">{ cells[1] | strip }</dd></div>{/if}
+          {/for}
+        </dl>
+      {/if}
+    </div>
+    <div class="grid content-start justify-items-start gap-step-md">
+      <h2 class="font-heading text-h2 font-bold text-scheme-heading">{ t('find_us') }</h2>
+      {#if s.address}<p class="text-body-lg">{ s.address | replace('\n', ', ') }</p>{/if}
+      {#if s.phone}<a class="text-body text-scheme-links underline decoration-1 underline-offset-4 hover:no-underline" href="tel:{ s.phone | replace(' ', '') }">{ s.phone }</a>{/if}
+      {#if s.email}<a class="text-body text-scheme-links underline decoration-1 underline-offset-4 hover:no-underline" href="mailto:{ s.email }">{ s.email }</a>{/if}
+      {#if s.map_url && settings.directions_label}<div class="pt-step-xs"><Button href={ s.map_url } tone="outline">{ settings.directions_label }</Button></div>{/if}
+      {#if settings.show_map && settings.map_image}<img class="mt-step-xs aspect-3/2 w-full rounded-lg bg-scheme-surface-2 object-cover" src="{ image_url(settings.map_image, 1280) }" srcset="{ image_srcset(settings.map_image, [480, 768, 1024, 1280]) }" sizes="(min-width: 48rem) 45vw, 100vw" alt="" loading="lazy" width={ settings.map_image.width } height={ settings.map_image.height } />{/if}
+    </div>
+  </div>
+</section>
 
 <schema>
 {

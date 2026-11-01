@@ -1,3 +1,38 @@
 <!-- component: EventCard -->
-<!-- props: entry layout -->
-<span>Eventcard</span>
+<!-- props: entry layout reveal -->
+<!-- An event as a card (a 3:2 photo with the date badge on it, the title,
+     the time line, the description and a Details link) or as a row (a small
+     photo, the badge, the title and time, Details on the right). The date
+     has no weekday: the engine's date() has none, so the badge is the day
+     and the short month, and a weekday belongs in the time text. -->
+{#let
+  f = entry.fields
+  iso = date(f.date, 'iso')
+  parts = iso | split('-')
+  day = parts.length == 3 ? parseInt(parts[2], 10) + ' ' + t('months_short.' + parseInt(parts[1], 10)) : ''
+  rows = layout == 'rows'
+}
+{#if rows}
+<article class="flex items-center gap-step-lg border-b border-scheme-rule py-step-md">
+  <span class="w-thumb shrink-0 overflow-hidden rounded-md bg-scheme-surface-2">{#if f.image}<img class="aspect-3/2 w-full object-cover" src="{ image_url(f.image, 320) }" alt="" loading="lazy" width={ f.image.width } height={ f.image.height } />{:else}<span class="block aspect-3/2"></span>{/if}</span>
+  <div class="grid flex-1 justify-items-start gap-step-2xs">
+    {#if day}<time class="rounded-full bg-tint px-step-xs py-step-2xs font-mono text-code font-medium tracking-code text-tint-ink uppercase" datetime="{ iso }" data-tint="saffron">{ day }</time>{/if}
+    <h3 class="font-heading text-h4 font-bold text-scheme-heading">{ entry.title }</h3>
+    {#if f.time}<p class="font-mono text-code font-medium tracking-code text-scheme-meta uppercase">{ f.time }</p>{/if}
+  </div>
+  {#if f.link}<a class="shrink-0 text-body-sm text-scheme-links underline decoration-1 underline-offset-4 hover:no-underline" href="{ f.link }">{ t('details') }<span class="sr-only">: { entry.title }</span></a>{/if}
+</article>
+{:else}
+<article class="flex h-full flex-col overflow-hidden rounded-lg border border-scheme-rule bg-scheme-surface { reveal ? 'reveal reveal-fade-up' : '' }">
+  <div class="relative aspect-3/2 overflow-hidden bg-scheme-surface-2">
+    {#if f.image}<img class="size-full object-cover" src="{ image_url(f.image, 960) }" srcset="{ image_srcset(f.image, [480, 640, 960]) }" sizes="(min-width: 64rem) 27rem, (min-width: 48rem) 45vw, 100vw" alt="{ f.image_alt }" loading="lazy" width={ f.image.width } height={ f.image.height } />{/if}
+    {#if day}<time class="absolute top-step-md left-step-md rounded-full bg-tint px-step-xs py-step-2xs font-mono text-code font-medium tracking-code text-tint-ink uppercase" datetime="{ iso }" data-tint="saffron">{ day }</time>{/if}
+  </div>
+  <div class="flex flex-1 flex-col items-start gap-step-xs p-step-lg">
+    <h3 class="font-heading text-h3 font-bold text-scheme-heading">{ entry.title }</h3>
+    {#if f.time}<p class="font-mono text-code font-medium tracking-code text-scheme-meta uppercase">{ f.time }</p>{/if}
+    {#if f.description}<div class="sites-prose text-body-sm text-scheme-muted">{ f.description }</div>{/if}
+    {#if f.link}<a class="mt-auto pt-step-2xs text-body-sm text-scheme-links underline decoration-1 underline-offset-4 hover:no-underline" href="{ f.link }">{ t('details') }<span class="sr-only">: { entry.title }</span></a>{/if}
+  </div>
+</article>
+{/if}

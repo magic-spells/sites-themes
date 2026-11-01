@@ -1,4 +1,26 @@
-<section>Newsletter</section>
+<!-- A sign-up band: the heading and line on the left, the email field and
+     Subscribe on the right with the note under them. Stacked below 48rem. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-center gap-step-xl md:grid-cols-2 md:gap-step-3xl">
+    <div class="grid gap-step-sm">
+      <h2 class="font-heading text-h3 font-bold text-balance text-scheme-heading">{ settings.heading }</h2>
+      {#if settings.text}<p class="text-body-sm text-scheme-muted">{ settings.text }</p>{/if}
+    </div>
+    <Form handle={ settings.form } class="grid gap-step-xs md:justify-self-end" id="newsletter-{ section.id }">
+      {#if form.sent}
+        <p class="text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
+      {:else}
+        {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
+        <div class="flex flex-wrap gap-step-sm">
+          {#for field in form.fields}<Field wrapper_class="min-w-0 flex-1 basis-circle" name={ field.id } label={ field.label } type={ field.type } required={ field.required } maxlength={ field.max_length } value={ field.value } error={ field.error } placeholder={ settings.placeholder || null } prefix="newsletter-{ section.id }" />{/for}
+          <Submit>{ form.submit_label || t('subscribe') }</Submit>
+        </div>
+        {#if settings.note}<p class="font-mono text-code font-medium tracking-code text-scheme-meta uppercase">{ settings.note }</p>{/if}
+        <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+      {/if}
+    </Form>
+  </div>
+</section>
 
 <schema>
 {

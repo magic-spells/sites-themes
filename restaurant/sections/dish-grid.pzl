@@ -1,6 +1,7 @@
 <!-- The menu: every dish, grouped by category in the categories' order.
      Above the groups a rail of the categories on their tints; from 48rem it
-     pins under the header and marks the category being read (theme.ts). Each group is the target of its category's
+     pins under the header and marks the category being read (theme.ts); at
+     375 it is one scrolling row. Each group is the target of its category's
      links (/menu#mains): its heading with the tint swatch and the dish
      count, the description, then the cards 3 / 2 / 1 across (4 / 3 / 2 with
      four columns). The dietary legend closes the section. -->
@@ -14,9 +15,9 @@
     {#if settings.show_rail && categories.length}
       <sticky-content class="-mx-gutter min-w-0 bg-scheme-background px-gutter py-step-sm max-md:static">
         <nav aria-label="{ t('menu_categories') }" data-rail>
-          <ul class="flex flex-wrap gap-step-xs">
+          <ul class="-mx-gutter flex gap-step-xs overflow-x-auto px-gutter md:mx-0 md:flex-wrap md:px-0" data-strip>
             {#for category in categories}
-              <li data-tint={ category.fields.tint }><a class="block rounded-full border border-tint bg-tint px-step-sm py-step-xs font-mono text-code font-medium tracking-code text-tint-ink uppercase transition-colors duration-panel hover:border-scheme-foreground current:border-scheme-foreground" href="#{ category.handle }">{ category.title }</a></li>
+              <li class="shrink-0" data-tint={ category.fields.tint }><a class="block rounded-full border border-tint bg-tint px-step-sm py-step-xs font-mono text-code font-medium tracking-code text-tint-ink uppercase transition-colors duration-panel hover:border-scheme-foreground current:border-scheme-foreground" href="#{ category.handle }">{ category.title }</a></li>
             {/for}
           </ul>
         </nav>

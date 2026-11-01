@@ -1,4 +1,35 @@
-<section>Contact</section>
+<!-- Write to us: the heading, the line and the ways to reach the canteen
+     (phone and email links, the address, the service strip) over a photo on
+     the left; the contact form in a card on the right, its subject a
+     select list. Stacked below 48rem, the form after the details. -->
+{#let s = site.settings}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-start gap-step-2xl md:grid-cols-2 md:gap-step-3xl">
+    <div class="grid justify-items-start gap-step-md">
+      <h2 class="font-heading text-h2 font-bold text-scheme-heading">{ settings.heading }</h2>
+      {#if settings.text}<p class="text-body-lg">{ settings.text }</p>{/if}
+      {#if settings.show_address && s.address}<p class="text-body">{ s.address | replace('\n', ', ') }</p>{/if}
+      {#if settings.show_details}
+        {#if s.phone}<a class="text-body text-scheme-links underline decoration-1 underline-offset-4 hover:no-underline" href="tel:{ s.phone | replace(' ', '') }">{ s.phone }</a>{/if}
+        {#if s.email}<a class="text-body text-scheme-links underline decoration-1 underline-offset-4 hover:no-underline" href="mailto:{ s.email }">{ s.email }</a>{/if}
+      {/if}
+      {#if settings.show_service_strip && s.service_strip}<p class="font-mono text-code font-medium tracking-code text-scheme-meta uppercase">{ s.service_strip }</p>{/if}
+      {#if settings.photo}<img class="mt-step-xs aspect-2/1 w-full rounded-lg bg-scheme-surface-2 object-cover" src="{ image_url(settings.photo, 1280) }" srcset="{ image_srcset(settings.photo, [480, 768, 1024, 1280]) }" sizes="(min-width: 48rem) 45vw, 100vw" alt="" loading="lazy" width={ settings.photo.width } height={ settings.photo.height } />{/if}
+    </div>
+    <div class="rounded-lg border border-scheme-rule bg-scheme-surface p-step-lg md:p-step-xl">
+      <Form handle={ settings.form } class="grid gap-step-sm" id="contact-{ section.id }">
+        {#if form.sent}
+          <p class="text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
+        {:else}
+          {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
+          <BookingFields fields={ form.fields } prefix="contact-{ section.id }" />
+          <Submit wide={ true }>{ form.submit_label || t('send') }</Submit>
+          <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+        {/if}
+      </Form>
+    </div>
+  </div>
+</section>
 
 <schema>
 {

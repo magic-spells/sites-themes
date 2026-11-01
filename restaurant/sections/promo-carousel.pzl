@@ -1,4 +1,30 @@
-<section>Promo carousel</section>
+<!-- This month's promotions as a carousel of promo cards, 1.15 / 1.6 / 2.2
+     across, the dots below, looping. Below 48rem the track keeps the left
+     gutter and runs off the right edge, with no arrows. -->
+{#let
+  id = 'promos-' + section.id
+  dots = settings.show_dots
+  options = { slidesPerView: 1.15, gap: '1rem', paddingLeft: '1rem', paddingRight: 0, loop: settings.loop, navigation: { showButtons: false, showPagination: dots }, breakpoints: { '768': { slidesPerView: 1.6, gap: '1.5rem', paddingLeft: 0, paddingRight: 0, loop: settings.loop, navigation: { showButtons: true, showPagination: dots } }, '1024': { slidesPerView: 2.2, gap: '1.5rem', paddingLeft: 0, paddingRight: 0, loop: settings.loop, navigation: { showButtons: true, showPagination: dots } } } }
+}
+{#if blocks.length}
+<section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter" aria-label="{ settings.heading }">
+  <tarot-carousel class="mx-auto block max-w-column" id={ id } data-track="promos">
+    <script type="application/json" data-tarot-options>{ options | json }</script>
+    <div class="mb-step-xl flex items-end justify-between gap-step-lg px-gutter md:px-0">
+      {#if settings.show_heading && settings.heading}<h2 class="font-heading text-h2 font-bold text-scheme-heading">{ settings.heading }</h2>{:else}<span></span>{/if}
+      <Arrows />
+    </div>
+    <tarot-viewport>
+      <tarot-track>
+        {#for block in blocks}
+          {#let b = block.settings}
+          <tarot-slide data-block={ block.editor_id }><PromoCard kicker={ b.kicker } heading={ b.heading } text={ b.text } roundel={ b.roundel } tint={ b.tint } link_label={ b.link_label } link={ b.link } image={ b.image } photo_style={ b.photo_style } /></tarot-slide>
+        {/for}
+      </tarot-track>
+    </tarot-viewport>
+  </tarot-carousel>
+</section>
+{/if}
 
 <schema>
 {

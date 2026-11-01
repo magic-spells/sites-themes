@@ -348,6 +348,9 @@ html.reveal-off .reveal:not(.is-revealed) {
 	--container-panel: 35rem;
 	--container-docket: 40rem;
 	--container-menu: 47.5rem;
+	--spacing-roundel: 4.5rem;
+	--spacing-thumb: 7.5rem;
+	--spacing-hero-tall: 75svh;
 	--spacing-chevron: 1rem;
 	--spacing-dot: 0.625rem;
 }
@@ -473,8 +476,10 @@ html.reveal-off .reveal:not(.is-revealed) {
 
 /* @magic-spells/sticky-header pins the element it is, so it needs the page
    as its scroll container: display: contents takes the renderer's wrapper
-   out of the way. Switched off (or overlaid) it sits in the page. */
-[data-section="header"]:has(sticky-header) {
+   out of the way. Switched off it sits in the page. The overlay header keeps
+   its wrapper: the body is a flex column, and an absolute flex child would
+   start at the top of the page, over the announcement bar. */
+[data-section="header"]:has(sticky-header:not([data-header-style="overlay"])) {
 	display: contents;
 }
 
@@ -498,7 +503,13 @@ tarot-carousel {
 
 .tarot-dots-list {
 	gap: var(--restaurant-step-xs);
-	margin: 0;
+	margin: 0 auto;
+}
+
+/* Dots a carousel appends under its track sit centred a step below it;
+   dots placed in a [data-tarot-pagination] slot sit where the slot is. */
+tarot-carousel > .tarot-dots-list {
+	margin-top: var(--restaurant-step-xl);
 }
 
 .tarot-dots-button {

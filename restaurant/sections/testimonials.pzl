@@ -1,4 +1,50 @@
-<section>Testimonials</section>
+<!-- What guests say. Carousel: one quote at a time, centred, the next one
+     peeking at 375; the rating as five dots over it, the name and source
+     under it, the arrows at the sides from 48rem, dots below at 375 and a
+     counter. Grid: the quotes on the scheme's surface, 2 / 4 across. -->
+{#let
+  id = 'reviews-' + section.id
+  options = { slidesPerView: 1.1, gap: '1rem', paddingLeft: '1rem', paddingRight: 0, loop: true, autoplay: { interval: settings.autoplay ? 6000 : 0 }, navigation: { showButtons: false, showPagination: true }, breakpoints: { '768': { slidesPerView: 1, gap: 0, paddingLeft: 0, paddingRight: 0, loop: true, autoplay: { interval: settings.autoplay ? 6000 : 0 }, navigation: { showButtons: true, showPagination: false } } } }
+}
+{#if blocks.length}
+<section class="bg-scheme-background py-section text-scheme-foreground { settings.layout == 'grid' ? 'px-gutter' : 'md:px-gutter' }" aria-label={ settings.show_heading ? null : settings.heading } aria-labelledby={ settings.show_heading ? id + '-title' : null }>
+  <div class="mx-auto grid max-w-column gap-step-xl">
+    {#if settings.show_heading && settings.heading}<h2 class="font-heading text-h2 font-bold text-scheme-heading { settings.layout == 'grid' ? '' : 'px-gutter text-center md:px-0' }" id="{ id }-title">{ settings.heading }</h2>{/if}
+    {#if settings.layout == 'grid'}
+      <ul class="grid gap-gap-lg md:grid-cols-2 lg:grid-cols-4">
+        {#for block in blocks}
+          {#let b = block.settings}
+          <li class="flex flex-col gap-step-md rounded-lg bg-scheme-surface p-step-lg" data-block={ block.editor_id }>
+            {#if settings.show_rating}<p class="flex gap-step-2xs"><span class="sr-only">{ t('rating', { rating: b.rating }) }</span>{#for n in [1, 2, 3, 4, 5]}<span class="size-dot rounded-full { n <= b.rating ? 'bg-scheme-links' : 'bg-scheme-rule' }" aria-hidden="true"></span>{/for}</p>{/if}
+            <blockquote class="font-heading text-h4 font-bold text-scheme-heading">“{ b.quote }”</blockquote>
+            <p class="mt-auto grid gap-step-2xs"><span class="text-body-sm">{ b.name }</span>{#if b.source}<span class="font-mono text-code font-medium tracking-code text-scheme-meta uppercase">{ b.source }</span>{/if}</p>
+          </li>
+        {/for}
+      </ul>
+    {:else}
+      <tarot-carousel class="relative block min-w-0" id={ id } aria-label="{ settings.heading }">
+        <script type="application/json" data-tarot-options>{ options | json }</script>
+        <Arrows tone="pointer-events-none absolute inset-x-0 top-1/2 z-10 -translate-y-1/2 justify-between *:pointer-events-auto lg:inset-x-step-3xl" />
+        <tarot-viewport>
+          <tarot-track>
+            {#for block in blocks}
+              {#let b = block.settings}
+              <tarot-slide data-block={ block.editor_id }>
+                <figure class="mx-auto grid max-w-wide justify-items-center gap-step-lg text-center md:px-step-3xl">
+                  {#if settings.show_rating}<p class="flex gap-step-xs"><span class="sr-only">{ t('rating', { rating: b.rating }) }</span>{#for n in [1, 2, 3, 4, 5]}<span class="size-dot rounded-full { n <= b.rating ? 'bg-scheme-links' : 'bg-scheme-rule' }" aria-hidden="true"></span>{/for}</p>{/if}
+                  <blockquote class="font-heading text-h3 font-bold text-balance text-scheme-heading">“{ b.quote }”</blockquote>
+                  <figcaption class="grid gap-step-2xs"><span class="text-body">{ b.name }</span>{#if b.source}<span class="font-mono text-code font-medium tracking-code text-scheme-meta uppercase">{ b.source }</span>{/if}</figcaption>
+                </figure>
+              </tarot-slide>
+            {/for}
+          </tarot-track>
+        </tarot-viewport>
+        <div class="mt-step-xl flex justify-center"><Counter index={ 1 } total={ blocks.length } carousel_id={ id } /></div>
+      </tarot-carousel>
+    {/if}
+  </div>
+</section>
+{/if}
 
 <schema>
 {

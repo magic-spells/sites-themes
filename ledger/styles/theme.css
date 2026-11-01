@@ -97,7 +97,7 @@
 	   text (deks), a meta grey (bylines, credits, counts), a hairline rule, a
 	   second surface (photo wells, the key-facts aside) and the strong 3px
 	   rule over every section head. The first four ride on the chip and icon
-	   slots, which design.json fills with the design file's values; the
+	   slots, which settings/design.json fills with the design file's values; the
 	   strong rule is the heading colour, as in the design file. */
 	--color-scheme-muted: var(--sites-scheme-chip-foreground);
 	--color-scheme-meta: var(--sites-scheme-icons);
@@ -108,7 +108,7 @@
 	/* Inputs/error from the design file: the palette's error red on Paper
 	   (6.3:1) and Slate (5.7:1), a light red on Ink (8.1:1), where the
 	   palette red falls to 2.6:1. The value is set per scheme class below.
-	   Ink's #ff8a80 is the one colour outside design.json: the engine's
+	   Ink's #ff8a80 is the one colour outside settings/design.json: the engine's
 	   scheme has no error slot to carry it. */
 	--color-scheme-error: var(--ledger-scheme-error);
 }

@@ -8,12 +8,12 @@ The fixtures are an invented walking journal, **The Slow Mile**, so `sites dev` 
 essays, an about page and a contact form instead of placeholder text.
 
 ```
-theme.json          template roles, 3 section groups, Brand, Journal, Writer and Contact settings
-design.json         every design token, 4 color schemes and 3 suggested palettes
+settings/theme.json template roles, 3 section groups, Brand, Journal, Writer and Contact settings
+settings/design.json every design token, 4 color schemes and 3 suggested palettes
 layouts/default.pzl the <html> document: SEO, Open Graph (article dates on posts), skip link, five slots
-templates/          home.json, blog-list.json, post.json, page.json (+ page.about, page.contact),
-                    404.pzl, password.pzl, maintenance.pzl
-groups/             header-group.json, footer-group.json, panel-group.json
+data/templates/     home.json, blog-list.json, post.json, page.json (+ page.about, page.contact)
+data/groups/        header-group.json, footer-group.json, panel-group.json
+templates/          404.pzl, password.pzl, maintenance.pzl
 sections/           16, each with a full <schema>
 components/         Button, Field, Chip, Dateline, PostDate, PostRow, PostCard
 styles/theme.css    the Tailwind entry: @theme maps --sites-* tokens and Folio's role sizes

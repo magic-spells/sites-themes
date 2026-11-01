@@ -25,7 +25,7 @@
     { "type": "menu", "id": "menu", "label": "Menu" },
     { "type": "text", "id": "copyright", "label": "Copyright", "default": "All rights reserved." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "inverse",
-      "info": "The surface this section is rendered on. Schemes are declared in design.json under schemes." }
+      "info": "The surface this section is rendered on. Schemes are declared in settings/design.json under schemes." }
   ],
   "presets": [
     { "name": "Default", "settings": { "menu": "main", "copyright": "All rights reserved.", "color_scheme": "inverse" } }

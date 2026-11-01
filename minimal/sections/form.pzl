@@ -39,7 +39,7 @@
     { "type": "form", "id": "form", "label": "Form", "default": "contact",
       "info": "Pick a site form. Create forms and manage their fields in the Forms panel." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default",
-      "info": "The surface this section is rendered on. Schemes are declared in design.json under schemes." }
+      "info": "The surface this section is rendered on. Schemes are declared in settings/design.json under schemes." }
   ],
   "presets": [
     { "name": "Default", "settings": { "heading": "Contact us", "text": "", "form": "contact", "color_scheme": "default" } }

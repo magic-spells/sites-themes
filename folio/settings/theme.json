@@ -19,7 +19,7 @@
       ]
     },
     "panel-group": {
-      "label": "Dialogs",
+      "label": "Panels",
       "accepts": [
         "mobile-menu",
         "cookie-notice"

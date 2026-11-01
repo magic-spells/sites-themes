@@ -7,11 +7,12 @@ token vocabulary, two color schemes, and the three component classes a theme
 owes its sections.
 
 ```
-theme.json          templates, section groups, three site settings
-design.json         every design token and two color schemes
+settings/theme.json template roles, section groups, three site settings
+settings/design.json every design token and two color schemes
 layouts/default.pzl the <html> document and its five slots: head-content and the header/footer/panel groups
-templates/          index.json, page.json, 404.pzl, maintenance.pzl
-groups/             header-group.json, footer-group.json, panel-group.json
+data/templates/     home.json, page.json
+data/groups/        header-group.json, footer-group.json, panel-group.json
+templates/          404.pzl, maintenance.pzl
 sections/           hero, rich-text, photo-gallery, form, header, footer
 components/         Button, Field
 styles/theme.css    the Tailwind entry: @theme maps --sites-* into Tailwind's token names
@@ -41,7 +42,7 @@ inverse section inverts with it.
 Three rules follow from that, and this theme keeps all three:
 
 - No arbitrary values. `p-[13px]` and `bg-[#070c16]` bypass the vocabulary. If a
-  value is missing, add it to `design.json` first.
+  value is missing, add it to `settings/design.json` first.
 - Custom classes are for what utilities cannot express. `@layer components` here
   holds exactly three: `.sites-button` (with a `.sites-button-secondary`
   modifier), `.sites-input`, and `.sites-prose`. Sections use them rather than
@@ -54,22 +55,21 @@ Three rules follow from that, and this theme keeps all three:
 ## Sections and groups
 
 `hero`, `rich-text`, `photo-gallery`, and `form` are page sections: an editor
-stacks them on a page, and `theme.json` names the preset each template starts
-with. `header` and
-`footer` are the same kind of file, placed instead in the `header` and
-`footer` section groups, which are site-level stacks rendered by the layout's
-named slots on every page — including the not-found page.
+stacks them on a page, and each template's stack in `data/templates/` is where a
+new page starts. `header` and `footer` are the same kind of file, placed instead
+in the `header-group` and `footer-group` section groups (`data/groups/`), which
+are site-level stacks rendered by the layout's named slots on every page —
+including the not-found page.
 
-The `dialog` group is declared and slotted but ships empty. An overlay-placed
-group needs no `<Slot>` to work; this one has one so a popup section added later
-appears without touching the layout.
+The `panel-group` (labelled Panels) is declared and slotted but ships empty, so
+a drawer or pop-up section added later appears without touching the layout.
 
 ## Forms
 
 Add the Form section to a page and pick a site form in its settings. The seed
 in `sites.fixtures.json` creates a simple Contact form with name, email, and
 message fields. Forms belong to the site and are managed in the Forms panel;
-`theme.json` contains no form definitions.
+`settings/theme.json` contains no form definitions.
 
 The section writes its own fields inside `<Form handle={ settings.form }>`,
 using `Field` for labels, required indicators, text inputs, textareas, selects,
@@ -81,7 +81,7 @@ create a form.
 ## The Maintenance template
 
 The theme declares `templates/maintenance.pzl` through `maintenance_template`
-in `theme.json`. A maintenance request renders it with no page or page sections;
+in `settings/theme.json`. A maintenance request renders it with no page or page sections;
 the site's section groups still render. `sites dev` does not trigger maintenance
 mode. Like the not-found template, it is not selectable: neither appears in the
 page picker.

@@ -17,7 +17,7 @@
   "settings": [
     { "type": "menu", "id": "menu", "label": "Menu" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default",
-      "info": "The surface this section is rendered on. Schemes are declared in design.json under schemes." }
+      "info": "The surface this section is rendered on. Schemes are declared in settings/design.json under schemes." }
   ],
   "presets": [
     { "name": "Default", "settings": { "menu": "main", "color_scheme": "default" } }

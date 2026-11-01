@@ -1628,7 +1628,7 @@
     },
     "/cover": {
       "id": "pg_cover",
-      "template": "home.cover",
+      "template": "page.cover",
       "title": "Halfmoon Canteen",
       "seo": {
         "description": "Good food, warm bread and a place at the table."

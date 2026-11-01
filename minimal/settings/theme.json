@@ -7,7 +7,7 @@
   "groups": {
     "header-group": { "label": "Header", "accepts": ["header"] },
     "footer-group": { "label": "Footer", "accepts": ["footer"] },
-    "panel-group": { "label": "Dialogs" }
+    "panel-group": { "label": "Panels" }
   },
   "settings": [
     {

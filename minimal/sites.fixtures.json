@@ -45,14 +45,14 @@
   "pages": {
     "/": {
       "id": "pg_home",
-      "template": "index",
+      "template": "home",
       "title": "Home",
       "seo": { "description": "The starting point for a new Sites site." }    },
     "/about": {
       "id": "pg_about",
       "template": "page",
       "title": "About",
-      "content": "<h1>About</h1><p>This page uses the <code>page</code> template: one <code>rich-text</code> section, left empty, so it shows what you write here.</p><p>The home page uses <code>index</code>, whose sections are written into <code>templates/index.json</code> and are the same on every page that uses it.</p>",
+      "content": "<h1>About</h1><p>This page uses the <code>page</code> template: one <code>rich-text</code> section, left empty, so it shows what you write here.</p><p>The home page uses <code>home</code>, whose sections are written into <code>data/templates/home.json</code>.</p>",
       "seo": { "description": "What the page template does with a section stack." }    }
   }
 }

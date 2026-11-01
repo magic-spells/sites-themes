@@ -11,12 +11,13 @@ dev` shows six categories, 36 dishes, four events, galleries and three forms ins
 placeholder text. The photographs are SVG placeholders; replace them before publishing.
 
 ```
-theme.json          template roles, 3 section groups, Brand, Place and Booking settings
-design.json         every design token, the six colour schemes and the category tints
+settings/theme.json template roles, 3 section groups, Brand, Place and Booking settings
+settings/design.json every design token, the six colour schemes and the category tints
 layouts/default.pzl the <html> document: SEO, Open Graph, the reveal pre-paint script, skip link, slots
-templates/          home, home.cover, dish, page (+ about, contact, events, gallery, menu, menu-list,
-                    reservations) as JSON; 404.pzl, password.pzl, maintenance.pzl
-groups/             header-group.json, footer-group.json, panel-group.json
+data/templates/     home, dish, page (+ about, contact, cover, events, gallery, menu, menu-list,
+                    reservations) as JSON
+data/groups/        header-group.json, footer-group.json, panel-group.json
+templates/          404.pzl, password.pzl, maintenance.pzl
 sections/           32, each with a full <schema>
 components/         Arrows, BookingFields, Button, CategoryCard, Chip, Counter, DietaryBadges,
                     DietaryLegend, DishCard, Door, EventCard, Field, FilterChip, LightboxCompanion,
@@ -61,7 +62,7 @@ cards as a row that scrolls.
   band, specials, dish page) opens the booking sheet. With a **Booking URL** set it links there
   instead; without JavaScript it goes to the **Reservations path**.
 - Header **Style: Overlay** lies over a page that opens with a Cover hero and cannot stick; the
-  `home.cover` template chooses it for you. The header's menu item whose link is the **Menu
+  `page.cover` template chooses it for you. The header's menu item whose link is the **Menu
   path** opens the categories panel.
 - **Dish card** options on every dish section: **Photo** (photo or cutout on a disc), **Info**
   (plain or tinted with the category's tint), and on the carousels **Emphasis: Centre**, which

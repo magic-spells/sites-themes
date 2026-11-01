@@ -18,7 +18,7 @@
     { "type": "text", "id": "link_label", "label": "Link label", "info": "Leave empty for a bar with no link.", "default": "What's on" },
     { "type": "url", "id": "link", "label": "Link", "default": "/journal" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "accent",
-      "info": "The surface this bar is rendered on. Schemes are declared in design.json under schemes." }
+      "info": "The surface this bar is rendered on. Schemes are declared in settings/design.json under schemes." }
   ],
   "presets": [
     { "name": "Default",

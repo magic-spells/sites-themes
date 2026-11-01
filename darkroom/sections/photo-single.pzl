@@ -1,0 +1,120 @@
+<!-- One photograph at full bleed, the column's width or the reading
+     column's, with its caption. With no image chosen it takes photograph
+     number index from the series of the page it is on, so one series template
+     serves every series. -->
+{#let
+  item = settings.image ? { asset: settings.image, caption: '', alt: settings.image.alt } : page.entry.fields.photos.items[settings.index]
+  caption = settings.caption || item.caption
+  number = (settings.index + 1 < 10 ? '0' : '') + (settings.index + 1)
+  bleed = settings.width == 'bleed'
+  well = settings.ratio == '4:5' ? 'aspect-4/5' : settings.ratio == '1:1' ? 'aspect-square' : settings.ratio == '3:2' ? 'aspect-3/2' : settings.ratio == 'natural' ? '' : 'aspect-video'
+}
+{#if item.asset}
+<section class="bg-scheme-background py-section text-scheme-foreground { bleed ? '' : 'px-gutter' }">
+  <figure class="mx-auto grid gap-step-xs { bleed ? '' : settings.width == 'reading' ? 'max-w-reading' : 'max-w-column' }">
+    <img class="w-full bg-scheme-surface object-cover { well }" src="{ image_url(item.asset, 1600) }" srcset="{ image_srcset(item.asset, [768, 1280, 1600, 2560]) }" sizes="{ settings.width == 'reading' ? '(min-width: 40rem) 40rem, 100vw' : '100vw' }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } />
+    {#if caption}<figcaption class="font-mono text-caption text-scheme-muted { bleed ? 'px-gutter' : '' }">{#if settings.number}{ number } — {/if}{ caption }</figcaption>{/if}
+  </figure>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Photo single",
+  "description": "One photograph, or a photograph selected by index from the current series.",
+  "settings": [
+    {
+      "type": "image",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "number",
+      "id": "index",
+      "label": "Index",
+      "default": 0,
+      "min": 0,
+      "info": "Zero-based index into page.entry.fields.photos.items when no image is selected."
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption",
+      "default": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "number",
+      "label": "Show photograph number",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "default": "wide",
+      "options": [
+        {
+          "value": "bleed",
+          "label": "Bleed"
+        },
+        {
+          "value": "wide",
+          "label": "Wide"
+        },
+        {
+          "value": "reading",
+          "label": "Reading"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "ratio",
+      "label": "Ratio",
+      "default": "16:9",
+      "options": [
+        {
+          "value": "16:9",
+          "label": "16:9"
+        },
+        {
+          "value": "3:2",
+          "label": "3:2"
+        },
+        {
+          "value": "4:5",
+          "label": "4:5"
+        },
+        {
+          "value": "1:1",
+          "label": "1:1"
+        },
+        {
+          "value": "natural",
+          "label": "Natural"
+        }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "index": 0,
+        "caption": "",
+        "number": false,
+        "width": "wide",
+        "ratio": "16:9",
+        "color_scheme": "surface"
+      }
+    }
+  ]
+}
+</schema>

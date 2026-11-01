@@ -1,0 +1,87 @@
+<!-- The previous and next series around this one, newest first and wrapping
+     at both ends, with 3:2 thumbnails, and the way back to all work between
+     them. Stacked below 48rem. -->
+{#let sorted = settings.collection.entries | sort('fields.year') | reverse}
+{#if page.entry && sorted.length > 1}
+<nav class="bg-scheme-background px-gutter py-section text-scheme-foreground" aria-label="{ t('all_work') }">
+  <div class="mx-auto grid max-w-column items-center gap-gap-lg border-t border-scheme-rule pt-step-xl md:grid-cols-3">
+    {#for entry in sorted, i}
+      {#if entry.handle == page.entry.handle}
+        {#let
+          previous = sorted[i - 1] ?? sorted[sorted.length - 1]
+          next = sorted[i + 1] ?? sorted[0]
+        }
+        <a class="group flex items-center gap-step-md" href="{ settings.base_path }/{ previous.handle }" rel="prev">
+          <img class="aspect-3/2 w-24 shrink-0 bg-scheme-surface object-cover" src="{ image_url(previous.fields.cover, 320) }" alt="" loading="lazy" width={ previous.fields.cover.width } height={ previous.fields.cover.height } />
+          <span class="grid gap-step-2xs">
+            <span class="font-mono text-meta tracking-meta text-scheme-meta uppercase">{ t('previous') }</span>
+            <span class="font-heading text-h4 font-medium text-scheme-heading decoration-1 underline-offset-4 group-hover:underline">{ previous.title }</span>
+          </span>
+        </a>
+        <p class="md:text-center"><a class="border-b border-scheme-links pb-step-2xs font-mono text-meta tracking-meta uppercase hover:text-scheme-links" href="{ settings.all_href }">{ settings.all_label }</a></p>
+        <a class="group flex items-center gap-step-md md:flex-row-reverse md:text-right" href="{ settings.base_path }/{ next.handle }" rel="next">
+          <img class="aspect-3/2 w-24 shrink-0 bg-scheme-surface object-cover" src="{ image_url(next.fields.cover, 320) }" alt="" loading="lazy" width={ next.fields.cover.width } height={ next.fields.cover.height } />
+          <span class="grid gap-step-2xs">
+            <span class="font-mono text-meta tracking-meta text-scheme-meta uppercase">{ t('next') }</span>
+            <span class="font-heading text-h4 font-medium text-scheme-heading decoration-1 underline-offset-4 group-hover:underline">{ next.title }</span>
+          </span>
+        </a>
+      {/if}
+    {/for}
+  </div>
+</nav>
+{/if}
+
+<schema>
+{
+  "name": "Series nav",
+  "description": "Previous and next series from the same year-sorted collection.",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Create the workspace content type series with year, location, statement (richtext), cover (image), cover_alt, photos (gallery handle) and edition_note. Reads title, handle and those fields; orders year newest first."
+    },
+    {
+      "type": "url",
+      "id": "base_path",
+      "label": "Base path",
+      "default": "/work"
+    },
+    {
+      "type": "text",
+      "id": "all_label",
+      "label": "All label",
+      "default": "All work"
+    },
+    {
+      "type": "url",
+      "id": "all_href",
+      "label": "All href",
+      "default": "/work"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "base_path": "/work",
+        "all_label": "All work",
+        "all_href": "/work",
+        "color_scheme": "surface",
+        "collection": "series"
+      }
+    }
+  ],
+  "templates": [
+    "series"
+  ]
+}
+</schema>

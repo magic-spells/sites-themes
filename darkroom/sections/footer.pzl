@@ -1,0 +1,73 @@
+<!-- A hairline, the copyright and city on the left, and the two menus as
+     one row on the right. It stays on the Darkroom surface on every page. -->
+<footer class="border-t border-scheme-rule bg-scheme-background px-gutter py-step-xl text-scheme-foreground">
+  <div class="mx-auto flex max-w-column flex-wrap items-start justify-between gap-x-gap-lg gap-y-step-lg">
+    <div class="grid gap-step-2xs">
+      <p class="text-body-sm text-scheme-muted">{ settings.copyright || site.settings.copyright }</p>
+      {#if settings.show_colophon && site.settings.address}<p class="font-mono text-caption text-scheme-meta">{ site.settings.address | split('\n') | slice(1) | join(', ') }</p>{/if}
+    </div>
+    <div class="flex flex-wrap gap-x-gap-lg gap-y-step-sm">
+      {#for menu in [settings.menu_primary, settings.menu_secondary]}
+        {#if menu.items.length}
+          <nav aria-label="{ menu.title }">
+            <ul class="-mx-space-xs flex flex-wrap gap-y-step-xs text-body-sm">
+              {#for item in menu.items}
+                <li><a class="block px-space-xs text-scheme-muted decoration-1 underline-offset-4 hover:text-scheme-foreground hover:underline" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>
+              {/for}
+            </ul>
+          </nav>
+        {/if}
+      {/for}
+    </div>
+  </div>
+</footer>
+
+<schema>
+{
+  "name": "Footer",
+  "description": "The photographer’s colophon, main menu and social links.",
+  "settings": [
+    {
+      "type": "menu",
+      "id": "menu_primary",
+      "label": "Menu primary"
+    },
+    {
+      "type": "menu",
+      "id": "menu_secondary",
+      "label": "Menu secondary"
+    },
+    {
+      "type": "text",
+      "id": "copyright",
+      "label": "Copyright",
+      "default": "",
+      "info": "Leave empty to use the Brand copyright."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_colophon",
+      "label": "Show colophon",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "copyright": "",
+        "show_colophon": true,
+        "color_scheme": "surface",
+        "menu_primary": "main",
+        "menu_secondary": "social"
+      }
+    }
+  ]
+}
+</schema>

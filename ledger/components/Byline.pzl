@@ -1,0 +1,8 @@
+<!-- component: Byline -->
+<!-- The design's byline: Plex Mono in the meta grey, the author and the date
+     ("Tom Reilly · 31 Oct 2026"), with "By" in front where the design writes
+     it and the reading time where there is room for it. Dates only: never a
+     time of day, never "ago". -->
+<p class="font-mono text-meta text-scheme-meta">
+  {#if author && entry.fields.author}{#if by}{ t('by_line') } {/if}{ entry.fields.author }<span aria-hidden="true"> · </span>{/if}<PostDate value={ entry.fields.date } year={ true } />{#if read && entry.fields.reading_minutes}<span aria-hidden="true"> · </span>{ t('reading_time', { minutes: entry.fields.reading_minutes }) }{/if}
+</p>

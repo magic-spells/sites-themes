@@ -1,0 +1,18 @@
+<!-- component: StoryRow -->
+<!-- One row of the latest list: the day in the meta column and the headline,
+     with a hairline under every row but the last. With `image` on, a small
+     square thumbnail sits at the right (an empty well when the story has no
+     picture, so the rows line up). -->
+<li class="border-b border-scheme-rule last:border-b-0 { site.settings.reveal_on_scroll ? 'reveal reveal-fade-up' : '' }" data-reveal-group={ site.settings.reveal_on_scroll ? 'rows-' + section.id + ':50' : false }>
+  <a class="group flex items-baseline gap-step-md py-step-sm" href="{ href }">
+    <p class="shrink-0 font-mono text-meta whitespace-nowrap text-scheme-meta"><PostDate value={ entry.fields.date } year={ false } /></p>
+    <h3 class="min-w-0 flex-1 font-heading text-h5 font-semibold text-pretty text-scheme-heading decoration-1 underline-offset-4 group-hover:underline">{ entry.title }</h3>
+    {#if image}
+      {#if entry.fields.image}
+        <img class="size-thumb shrink-0 self-center bg-scheme-surface object-cover" src="{ image_url(entry.fields.image, 160, { height: 160 }) }" srcset="{ image_url(entry.fields.image, 160, { height: 160 }) } 1x, { image_url(entry.fields.image, 320, { height: 320 }) } 2x" alt="{ entry.fields.image_alt }" loading="lazy" width="64" height="64" />
+      {:else}
+        <span class="size-thumb shrink-0 self-center bg-scheme-surface" aria-hidden="true"></span>
+      {/if}
+    {/if}
+  </a>
+</li>

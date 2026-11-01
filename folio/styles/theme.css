@@ -1,0 +1,667 @@
+@import "tailwindcss";
+
+/* The two Magic Spells web components' own stylesheets, vendored beside the
+   scripts (see scripts/vendor/). They sit in the components layer so a
+   Tailwind utility on the same element always wins. */
+@import "./vendor/dialog-panel.css" layer(components);
+@import "./vendor/sticky-header.css" layer(components);
+
+/* @magic-spells/reveal's Tailwind entry: every rule is a @utility, so only
+   the marker and the one effect the theme writes (reveal reveal-fade-up) are
+   generated. Its resting state applies before the script runs; the layout's
+   <noscript> rule and load watchdog make sure nothing stays hidden. */
+@import "./vendor/reveal.css";
+
+/* Every class the theme types lives in a .pzl file, so those are what Tailwind
+   scans. Naming the sources explicitly keeps the build the same wherever it
+   runs. */
+@source "../layouts/**/*.pzl";
+@source "../templates/**/*.pzl";
+@source "../sections/**/*.pzl";
+@source "../components/**/*.pzl";
+
+/* The post list's two views. A list with the reader's switch carries the
+   editor's view as data-view on its section. A reader's saved choice is set on
+   <html> as data-post-list-view by the layout's pre-paint script, before the
+   body paints, and wins over it. Each variant hides the view that is not
+   chosen. */
+@custom-variant view-list {
+	&:where([data-view="list"] *):not(:where([data-post-list-view="grid"] *)) {
+		@slot;
+	}
+	&:where([data-post-list-view="list"] [data-view] *) {
+		@slot;
+	}
+}
+@custom-variant view-grid {
+	&:where([data-view="grid"] *):not(:where([data-post-list-view="list"] *)) {
+		@slot;
+	}
+	&:where([data-post-list-view="grid"] [data-view] *) {
+		@slot;
+	}
+}
+
+/* Sites writes the site's design tokens into <head> as --sites-* custom
+   properties. Mapping them into Tailwind's token names is the styling
+   contract: every utility resolves through a variable at runtime, so changing
+   a token in the admin restyles the site without recompiling the theme. */
+@theme {
+	--color-brand-primary: var(--sites-color-brand-primary);
+	--color-brand-secondary: var(--sites-color-brand-secondary);
+	--color-brand-accent: var(--sites-color-brand-accent);
+
+	--color-grey-extra-light: var(--sites-color-grey-extra-light);
+	--color-grey-light: var(--sites-color-grey-light);
+	--color-grey-medium: var(--sites-color-grey-medium);
+	--color-grey-dark: var(--sites-color-grey-dark);
+	--color-grey-extra-dark: var(--sites-color-grey-extra-dark);
+
+	--color-info-bg: var(--sites-color-info-bg);
+	--color-info-fg: var(--sites-color-info-fg);
+	--color-success-bg: var(--sites-color-success-bg);
+	--color-success-fg: var(--sites-color-success-fg);
+	--color-warning-bg: var(--sites-color-warning-bg);
+	--color-warning-fg: var(--sites-color-warning-fg);
+	--color-error-bg: var(--sites-color-error-bg);
+	--color-error-fg: var(--sites-color-error-fg);
+}
+
+/* The scheme properties change per element, so they are mapped with `@theme
+   inline`: the generated utility reads --sites-scheme-* on the element it
+   lands on, and a section classed sites-scheme-ink recolors everything in it. */
+@theme inline {
+	--color-scheme-background: var(--sites-scheme-background);
+	--color-scheme-foreground: var(--sites-scheme-foreground);
+	--color-scheme-heading: var(--sites-scheme-heading);
+	--color-scheme-links: var(--sites-scheme-links);
+	--color-scheme-icons: var(--sites-scheme-icons);
+	--color-scheme-input-background: var(--sites-scheme-input-background);
+	--color-scheme-input-foreground: var(--sites-scheme-input-foreground);
+	--color-scheme-input-border: var(--sites-scheme-input-border);
+	--color-scheme-chip-background: var(--sites-scheme-chip-background);
+	--color-scheme-chip-foreground: var(--sites-scheme-chip-foreground);
+	--color-scheme-chip-border: var(--sites-scheme-chip-border);
+	--color-scheme-button-background: var(--sites-scheme-button-background);
+	--color-scheme-button-foreground: var(--sites-scheme-button-foreground);
+	--color-scheme-button-hover-background: var(--sites-scheme-button-hover-background);
+	--color-scheme-button-hover-foreground: var(--sites-scheme-button-hover-foreground);
+	--color-scheme-secondary-button-background: var(--sites-scheme-secondary-button-background);
+	--color-scheme-secondary-button-foreground: var(--sites-scheme-secondary-button-foreground);
+	--color-scheme-secondary-button-hover-background: var(--sites-scheme-secondary-button-hover-background);
+	--color-scheme-secondary-button-hover-foreground: var(--sites-scheme-secondary-button-hover-foreground);
+
+	/* Folio reads four roles the engine's scheme has no slot for: a muted
+	   text, a meta grey for datelines, a rule and a second surface. They ride
+	   on the chip and icon slots, which design.json fills with those values. */
+	--color-scheme-muted: var(--sites-scheme-chip-foreground);
+	--color-scheme-meta: var(--sites-scheme-icons);
+	--color-scheme-rule: var(--sites-scheme-chip-border);
+	--color-scheme-surface: var(--sites-scheme-chip-background);
+
+	/* Errors take the palette's error red on the light schemes and a lighter
+	   red on Ink, where that red falls to 2.6:1. The value is set per scheme
+	   class below. */
+	--color-scheme-error: var(--folio-scheme-error);
+}
+
+/* The error colour per scheme. Paper 5.70:1, Cream 5.12:1, Tint 4.88:1 with
+   the palette red; Ink 5.92:1 with #E5786E. */
+:root,
+.sites-scheme-paper,
+.sites-scheme-cream,
+.sites-scheme-tint {
+	--folio-scheme-error: var(--sites-color-error-fg);
+}
+
+.sites-scheme-ink {
+	--folio-scheme-error: #e5786e;
+}
+
+@theme {
+	--font-heading: var(--sites-font-heading-family), Georgia, "Times New Roman", serif;
+	--font-body: var(--sites-font-body-family), Georgia, "Times New Roman", serif;
+	--font-mono: var(--sites-font-mono-family), SFMono-Regular, Menlo, monospace;
+
+	--text-xs: var(--sites-type-scale-xs);
+	--text-xs--line-height: var(--sites-type-leading-normal);
+	--text-sm: var(--sites-type-scale-sm);
+	--text-sm--line-height: var(--sites-type-leading-normal);
+	--text-base: var(--sites-type-scale-base);
+	--text-base--line-height: var(--sites-type-leading-normal);
+	--text-lg: var(--sites-type-scale-lg);
+	--text-lg--line-height: var(--sites-type-leading-relaxed);
+	--text-xl: var(--sites-type-scale-xl);
+	--text-xl--line-height: var(--sites-type-leading-relaxed);
+	--text-2xl: var(--sites-type-scale-2xl);
+	--text-2xl--line-height: var(--sites-type-leading-tight);
+	--text-3xl: var(--sites-type-scale-3xl);
+	--text-3xl--line-height: var(--sites-type-leading-tight);
+	--text-4xl: var(--sites-type-scale-4xl);
+	--text-4xl--line-height: var(--sites-type-leading-tight);
+	--text-5xl: var(--sites-type-scale-5xl);
+	--text-5xl--line-height: var(--sites-type-leading-tight);
+
+	--leading-tight: var(--sites-type-leading-tight);
+	--leading-normal: var(--sites-type-leading-normal);
+	--leading-relaxed: var(--sites-type-leading-relaxed);
+
+	--spacing-space-xs: var(--sites-spacing-xs);
+	--spacing-space-sm: var(--sites-spacing-sm);
+	--spacing-space-md: var(--sites-spacing-md);
+	--spacing-space-lg: var(--sites-spacing-lg);
+	--spacing-space-xl: var(--sites-spacing-xl);
+	--spacing-space-2xl: var(--sites-spacing-2xl);
+
+	--radius-none: var(--sites-radius-none);
+	--radius-sm: var(--sites-radius-sm);
+	--radius-md: var(--sites-radius-md);
+	--radius-lg: var(--sites-radius-lg);
+	--radius-full: var(--sites-radius-full);
+	--radius-button: var(--sites-button-radius);
+	--radius-input: var(--sites-input-radius);
+
+	--shadow-sm: var(--sites-shadow-sm);
+	--shadow-md: var(--sites-shadow-md);
+	--shadow-lg: var(--sites-shadow-lg);
+
+	/* Role tokens. The engine's tokens are single values, and Folio's type and
+	   rhythm step down at tablet and mobile. Each role reads a --folio-*
+	   property that :root sets three times below, so markup writes `text-h1`
+	   or `py-section` once and the size follows the viewport. */
+	--text-display: var(--folio-text-display);
+	--text-display--line-height: 1;
+	--text-h1: var(--folio-text-h1);
+	--text-h1--line-height: 1.1;
+	--text-h2: var(--folio-text-h2);
+	--text-h2--line-height: 1.1;
+	--text-h3: var(--folio-text-h3);
+	--text-h3--line-height: 1.1;
+	--text-h4: var(--folio-text-h4);
+	--text-h4--line-height: 1.3;
+	--text-body: var(--folio-text-body);
+	--text-body--line-height: 1.3;
+	--text-body-lg: var(--folio-text-body-lg);
+	--text-body-lg--line-height: 1.3;
+	--text-meta: var(--folio-text-meta);
+	--text-meta--line-height: 1.5;
+	/* Buttons and chips keep one size at every width. */
+	--text-control: 1rem;
+	--text-control--line-height: 1;
+	--text-chip: 0.875rem;
+	--text-chip--line-height: 1.5;
+
+	--leading-standfirst: 1.45;
+	--leading-prose: 1.55;
+
+	--tracking-meta: 0.06em;
+	--tracking-caption: 0.04em;
+	--tracking-note: 0.02em;
+
+	--spacing-section: var(--folio-section);
+	--spacing-gutter: var(--folio-gutter);
+	--spacing-step-2xs: var(--folio-step-2xs);
+	--spacing-step-xs: var(--folio-step-xs);
+	--spacing-step-sm: var(--folio-step-sm);
+	--spacing-step-md: var(--folio-step-md);
+	--spacing-step-lg: var(--folio-step-lg);
+	--spacing-step-xl: var(--folio-step-xl);
+	--spacing-step-2xl: var(--folio-step-2xl);
+
+	/* Measures: the page column, the reading column, a display heading or
+	   quote inside the reading column (the design's line breaks), a narrow
+	   card, the image well beside text, and the mobile drawer. */
+	--container-column: 70rem;
+	--container-reading: 45rem;
+	--container-heading: 41.25rem;
+	--container-narrow: 25rem;
+	--container-well: 30rem;
+	--container-drawer: 23.4375rem;
+
+	/* Flex measures: the footer's brand column and its menu columns, the
+	   writer's bio beside the portrait, a notice or form button, and the
+	   newsletter's email field and subscribe button. */
+	--container-footer-brand: 18rem;
+	--container-footer-menu: 10.5rem;
+	--container-bio: 20rem;
+	--container-button: 8.75rem;
+	--container-field: 17.5rem;
+	--container-subscribe: 12rem;
+
+	/* Fixed sizes: an input's height (the newsletter button matches it at
+	   desktop), a textarea's minimum, the header logo and the writer
+	   portrait. */
+	--spacing-control: 3.375rem;
+	--spacing-textarea: 9rem;
+	--spacing-logo: 2.25rem;
+	--spacing-portrait: 4.5rem;
+	/* The 3:2 thumbnail in a post row, and its mobile size. */
+	--spacing-thumb: 7.5rem;
+	--spacing-thumb-sm: 4.5rem;
+	/* The post list's view switch: a square icon button and its icon. */
+	--spacing-icon-button: 2.5rem;
+	--spacing-icon: 1.25rem;
+}
+
+/* Desktop takes each scale step itself; mobile and tablet take the design
+   file's ratio of it, so a site that changes a step keeps the proportions.
+   The step-* spacing is the design file's responsive spacing scale (4, 8, 12,
+   16, 24, 32 and 48 at mobile), built from the engine's spacing tokens. */
+:root {
+	--folio-text-display: calc(var(--sites-type-scale-5xl) * 48 / 90);
+	--folio-text-h1: calc(var(--sites-type-scale-4xl) * 40 / 72);
+	--folio-text-h2: calc(var(--sites-type-scale-3xl) * 32 / 48);
+	--folio-text-h3: calc(var(--sites-type-scale-2xl) * 26 / 36);
+	--folio-text-h4: calc(var(--sites-type-scale-xl) * 21 / 24);
+	--folio-text-body: calc(var(--sites-type-scale-base) * 17 / 18);
+	--folio-text-body-lg: calc(var(--sites-type-scale-lg) * 18 / 20);
+	--folio-text-meta: calc(var(--sites-type-scale-sm) * 12 / 13);
+
+	--folio-section: calc(var(--sites-spacing-2xl) * 2 / 3);
+	--folio-gutter: var(--sites-spacing-sm);
+
+	--folio-step-2xs: calc(var(--sites-spacing-xs) * 4 / 12);
+	--folio-step-xs: calc(var(--sites-spacing-xs) * 8 / 12);
+	--folio-step-sm: calc(var(--sites-spacing-sm) * 12 / 16);
+	--folio-step-md: calc(var(--sites-spacing-md) * 16 / 24);
+	--folio-step-lg: calc(var(--sites-spacing-lg) * 24 / 32);
+	--folio-step-xl: calc(var(--sites-spacing-2xl) * 32 / 48);
+	--folio-step-2xl: var(--sites-spacing-2xl);
+}
+
+@media (min-width: 48rem) {
+	:root {
+		--folio-text-display: calc(var(--sites-type-scale-5xl) * 61 / 90);
+		--folio-text-h1: calc(var(--sites-type-scale-4xl) * 52 / 72);
+		--folio-text-h2: calc(var(--sites-type-scale-3xl) * 38 / 48);
+		--folio-text-h3: calc(var(--sites-type-scale-2xl) * 30 / 36);
+		--folio-text-h4: calc(var(--sites-type-scale-xl) * 22 / 24);
+		--folio-text-body-lg: calc(var(--sites-type-scale-lg) * 19 / 20);
+
+		--folio-section: calc(var(--sites-spacing-2xl) * 2.5 / 3);
+		--folio-gutter: var(--sites-spacing-md);
+
+		--folio-step-2xs: calc(var(--sites-spacing-xs) * 6 / 12);
+		--folio-step-xs: calc(var(--sites-spacing-xs) * 10 / 12);
+		--folio-step-sm: calc(var(--sites-spacing-sm) * 14 / 16);
+		--folio-step-md: calc(var(--sites-spacing-md) * 20 / 24);
+		--folio-step-lg: calc(var(--sites-spacing-lg) * 28 / 32);
+		--folio-step-xl: calc(var(--sites-spacing-2xl) * 40 / 48);
+		--folio-step-2xl: calc(var(--sites-spacing-2xl) * 56 / 48);
+	}
+}
+
+@media (min-width: 64rem) {
+	:root {
+		--folio-text-display: var(--sites-type-scale-5xl);
+		--folio-text-h1: var(--sites-type-scale-4xl);
+		--folio-text-h2: var(--sites-type-scale-3xl);
+		--folio-text-h3: var(--sites-type-scale-2xl);
+		--folio-text-h4: var(--sites-type-scale-xl);
+		--folio-text-body: var(--sites-type-scale-base);
+		--folio-text-body-lg: var(--sites-type-scale-lg);
+		--folio-text-meta: var(--sites-type-scale-sm);
+
+		--folio-section: var(--sites-spacing-2xl);
+		--folio-gutter: var(--sites-spacing-2xl);
+
+		--folio-step-2xs: calc(var(--sites-spacing-xs) * 8 / 12);
+		--folio-step-xs: var(--sites-spacing-xs);
+		--folio-step-sm: var(--sites-spacing-sm);
+		--folio-step-md: var(--sites-spacing-md);
+		--folio-step-lg: var(--sites-spacing-lg);
+		--folio-step-xl: var(--sites-spacing-2xl);
+		--folio-step-2xl: calc(var(--sites-spacing-2xl) * 64 / 48);
+	}
+}
+
+/* The post-row grid: a date column, the title and standfirst (with the
+   thumbnail), and the topic and reading time at the right. The last column
+   holds at least 9rem so every row's thumbnail lands on the same line. */
+@utility grid-cols-post-row {
+	grid-template-columns: 8.125rem minmax(0, 1fr) minmax(9rem, auto);
+}
+
+/* Newsreader is self-hosted because the engine's Google request carries no
+   italic axis, and the standfirst, pull quote and featured title are set in
+   its italic. Both files are variable over weight. */
+@font-face {
+	font-family: "Newsreader";
+	font-style: normal;
+	font-weight: 200 800;
+	font-display: swap;
+	src: url("/_sites/theme/fonts/newsreader-latin-wght-normal.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Newsreader";
+	font-style: italic;
+	font-weight: 200 800;
+	font-display: swap;
+	src: url("/_sites/theme/fonts/newsreader-latin-wght-italic.woff2") format("woff2");
+}
+
+/* The browser surfaces no utility reaches. */
+:root {
+	font-size: var(--sites-type-base);
+}
+
+::selection {
+	background: var(--sites-color-brand-accent);
+	color: var(--sites-color-grey-extra-light);
+}
+
+/* Focus takes the scheme's link colour, so it reads on paper, tint and ink. */
+:focus-visible {
+	outline: 2px solid var(--sites-scheme-links);
+	outline-offset: 3px;
+}
+
+html {
+	scroll-padding-top: calc(var(--header-group-height, 0rem) + 1rem);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+	}
+}
+
+/* The component classes the sections share, built only from tokens. They
+   read the scheme properties, so a button inside the ink band inverts. */
+@layer components {
+	/* The `- 1.5px` in the button and input padding takes the 1.5px border
+	   out of the box, so the outer size stays on the rem grid. It is an
+	   accepted px value, like the border itself. */
+	.sites-button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: var(--sites-spacing-xs);
+		min-height: 3rem;
+		padding: calc(var(--sites-button-padding-y) - 1.5px) var(--sites-button-padding-x);
+		border: 1.5px solid var(--sites-scheme-button-background);
+		border-radius: var(--sites-button-radius);
+		background: var(--sites-scheme-button-background);
+		color: var(--sites-scheme-button-foreground);
+		font-family: var(--sites-font-mono-family), SFMono-Regular, Menlo, monospace;
+		font-size: 1rem;
+		font-weight: var(--sites-button-weight);
+		line-height: 1;
+		text-decoration: none;
+		cursor: pointer;
+		transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+	}
+
+	.sites-button:hover {
+		border-color: var(--sites-scheme-button-hover-background);
+		background: var(--sites-scheme-button-hover-background);
+		color: var(--sites-scheme-button-hover-foreground);
+	}
+
+	.sites-button-secondary {
+		border-color: var(--sites-scheme-secondary-button-background);
+		background: var(--sites-scheme-secondary-button-background);
+		color: var(--sites-scheme-secondary-button-foreground);
+	}
+
+	.sites-button-secondary:hover {
+		border-color: var(--sites-scheme-secondary-button-hover-background);
+		background: var(--sites-scheme-secondary-button-hover-background);
+		color: var(--sites-scheme-secondary-button-hover-foreground);
+	}
+
+	/* The outline button: the primary's border, no fill. */
+	.sites-button-outline {
+		background: transparent;
+		color: var(--sites-scheme-heading);
+	}
+
+	.sites-button-outline:hover {
+		border-color: var(--sites-scheme-button-background);
+		background: var(--sites-scheme-chip-background);
+		color: var(--sites-scheme-heading);
+	}
+
+	.sites-input {
+		display: block;
+		width: 100%;
+		min-height: var(--spacing-control);
+		padding: calc(var(--sites-spacing-sm) - 1.5px) var(--sites-spacing-sm);
+		border: 1.5px solid var(--sites-scheme-input-border);
+		border-radius: var(--sites-input-radius);
+		background: var(--sites-scheme-input-background);
+		color: var(--sites-scheme-input-foreground);
+		font: inherit;
+		font-size: var(--folio-text-body);
+		line-height: 1.3;
+	}
+
+	.sites-input::placeholder {
+		color: var(--sites-scheme-icons);
+		opacity: 1;
+	}
+
+	.sites-input:focus-visible {
+		border-color: var(--sites-scheme-input-foreground);
+		outline-offset: 2px;
+	}
+
+	/* A chip is the small pill above a page heading. */
+	.sites-chip {
+		display: inline-flex;
+		align-items: center;
+		padding: calc(var(--sites-spacing-xs) * 2 / 3) 0.875rem;
+		border: 1.5px solid var(--sites-scheme-heading);
+		border-radius: var(--sites-radius-full);
+		background: var(--sites-scheme-background);
+		color: var(--sites-scheme-heading);
+		font-family: var(--sites-font-mono-family), SFMono-Regular, Menlo, monospace;
+		font-size: 0.875rem;
+		font-weight: 500;
+		line-height: 1.5;
+	}
+
+	/* Rich text from the editor and from post bodies. Its children carry no
+	   classes, so the rhythm is set here: body-lg paragraphs a step apart,
+	   headings with more air above, oxblood bullets and links. */
+	.sites-prose {
+		color: var(--sites-scheme-foreground);
+		font-size: var(--folio-text-body-lg);
+		line-height: 1.3;
+	}
+
+	.sites-prose > * + * {
+		margin-top: var(--folio-step-md);
+	}
+
+	.sites-prose > * + :is(h2, h3, h4) {
+		margin-top: var(--folio-step-lg);
+	}
+
+	.sites-prose h2,
+	.sites-prose h3,
+	.sites-prose h4 {
+		color: var(--sites-scheme-heading);
+		font-family: var(--sites-font-heading-family), Georgia, serif;
+		font-weight: 500;
+		line-height: 1.1;
+	}
+
+	.sites-prose h2 {
+		font-size: var(--folio-text-h2);
+	}
+
+	.sites-prose h3 {
+		font-size: var(--folio-text-h3);
+	}
+
+	.sites-prose h4 {
+		font-size: var(--folio-text-h4);
+		line-height: 1.3;
+	}
+
+	.sites-prose a {
+		color: var(--sites-scheme-links);
+		text-decoration-line: underline;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 0.2em;
+	}
+
+	.sites-prose a:hover {
+		color: var(--sites-scheme-heading);
+	}
+
+	.sites-prose ul,
+	.sites-prose ol {
+		display: grid;
+		gap: var(--folio-step-xs);
+		padding-inline-start: 1.25em;
+	}
+
+	/* Bullets hang at the column edge, as the design sets them: the dot sits
+	   flush left in the list's indent and the item text starts past it. A
+	   ::marker cannot be placed, so the dot is drawn and the marker made
+	   clear; list-style stays on so the list keeps its list semantics. */
+	.sites-prose ul {
+		list-style: disc;
+	}
+
+	.sites-prose ul > li::marker {
+		color: transparent;
+	}
+
+	.sites-prose ul > li {
+		position: relative;
+	}
+
+	.sites-prose ul > li::before {
+		position: absolute;
+		inset-inline-start: -1.25em;
+		color: var(--sites-scheme-links);
+		content: "\2022";
+	}
+
+	.sites-prose ol {
+		list-style: decimal;
+	}
+
+	.sites-prose ol > li::marker {
+		color: var(--sites-scheme-links);
+	}
+
+	.sites-prose blockquote {
+		color: var(--sites-scheme-heading);
+		font-family: var(--sites-font-heading-family), Georgia, serif;
+		font-size: var(--folio-text-h4);
+		font-style: italic;
+		font-weight: 300;
+	}
+
+	.sites-prose img {
+		width: 100%;
+	}
+
+	.sites-icon {
+		display: inline-block;
+		flex: none;
+	}
+}
+
+.sites-icon > svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/* The drop cap opens a post. A browser with initial-letter sinks it two
+   lines into the paragraph; the rest float it. */
+.folio-drop-cap > p:first-child::first-letter {
+	float: left;
+	margin: 0.06em var(--folio-step-xs) 0 0;
+	color: var(--sites-scheme-links);
+	font-family: var(--sites-font-heading-family), Georgia, serif;
+	font-size: 3em;
+	font-weight: 400;
+	line-height: 0.9;
+}
+
+@supports (initial-letter: 2) {
+	.folio-drop-cap > p:first-child::first-letter {
+		margin: 0 var(--folio-step-xs) 0 0;
+		font-size: inherit;
+		line-height: inherit;
+		initial-letter: 2;
+	}
+}
+
+/* A dismissed announcement stays gone; theme.ts sets the attribute. */
+[data-dismissed] {
+	display: none;
+}
+
+/* The password and maintenance documents stand alone: no header, footer or
+   panels around them. */
+body:has([data-bare]) [data-group] {
+	display: none;
+}
+
+/* @magic-spells/sticky-header pins the element it is, so it needs the whole
+   page as its scroll container. The renderer's section wrapper would cage it
+   to the header's own height; display: contents takes that box out of the way
+   and leaves its attributes for the editor. */
+[data-section="header"]:has(sticky-header) {
+	display: contents;
+}
+
+/* The mobile menu's <dialog> inside <dialog-panel>: reset the user-agent
+   box so utilities place it. */
+@layer base {
+	dialog {
+		border: 0;
+		padding: 0;
+		color: inherit;
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	[data-notice]:not([hidden]) {
+		animation: folio-notice-in 220ms ease-out both;
+	}
+}
+
+@keyframes folio-notice-in {
+	from {
+		transform: translateY(0.75rem);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+/* @magic-spells/sticky-header, switched off by the header's setting: the
+   element stays for the editor but no longer pins or translates. */
+sticky-header[disabled] {
+	position: static;
+	transform: none;
+}
+
+/* The package paints a cap of the header's background 2rem above it to
+   cover the show settle's overshoot. Folio settles without overshoot, and
+   the announcement bar sits in that space in its own section, so the cap
+   goes. */
+sticky-header::before {
+	content: none;
+}

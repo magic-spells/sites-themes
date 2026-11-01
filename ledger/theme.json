@@ -1,0 +1,112 @@
+{
+  "name": "Ledger",
+  "version": "0.1.0",
+  "default_template": "page",
+  "not_found_template": "404",
+  "maintenance_template": "maintenance",
+  "groups": {
+    "header-group": {
+      "label": "Header",
+      "accepts": [
+        "announcement-bar",
+        "masthead"
+      ]
+    },
+    "footer-group": {
+      "label": "Footer",
+      "accepts": [
+        "footer"
+      ]
+    },
+    "panel-group": {
+      "label": "Dialogs",
+      "accepts": [
+        "mobile-menu",
+        "cookie-notice"
+      ]
+    }
+  },
+  "settings": [
+    {
+      "name": "Brand",
+      "settings": [
+        {
+          "type": "image",
+          "id": "favicon",
+          "label": "Favicon",
+          "info": "The small icon in the browser tab. A square image works best."
+        },
+        {
+          "type": "text",
+          "id": "tagline",
+          "label": "Tagline",
+          "default": "News for the valley since 1962. Independent, local, and read every morning."
+        },
+        {
+          "type": "checkbox",
+          "id": "reveal_on_scroll",
+          "label": "Reveal cards on scroll",
+          "default": true,
+          "info": "Story cards and rows below the first screen fade up gently as they come into view. Readers who ask their device for less motion see everything at once."
+        }
+      ]
+    },
+    {
+      "name": "Newsroom",
+      "settings": [
+        {
+          "type": "text",
+          "id": "posts_path",
+          "label": "News path",
+          "default": "/news",
+          "info": "Where stories live: this path plus each story handle."
+        },
+        {
+          "type": "text",
+          "id": "writer_name",
+          "label": "Editor name",
+          "default": "Priya Nand"
+        },
+        {
+          "type": "textarea",
+          "id": "writer_bio",
+          "label": "Editor biography",
+          "default": "Priya has covered the valley’s weather, water and wildlife for The Daily Ledger since 2019. Before that she kept the rain gauge at the mill bridge herself."
+        },
+        {
+          "type": "image",
+          "id": "writer_portrait",
+          "label": "Editor portrait"
+        },
+        {
+          "type": "menu",
+          "id": "writer_links",
+          "label": "Editor links menu"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "settings": [
+        {
+          "type": "text",
+          "id": "contact_email",
+          "label": "Contact email",
+          "default": "tips@example.com"
+        },
+        {
+          "type": "textarea",
+          "id": "address",
+          "label": "Postal address",
+          "default": "Second floor, The Old Mill, Mill Bridge"
+        },
+        {
+          "type": "text",
+          "id": "hours",
+          "label": "Reply hours",
+          "default": "Monday to Friday, 9 to 5"
+        }
+      ]
+    }
+  ]
+}

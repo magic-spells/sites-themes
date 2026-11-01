@@ -1,0 +1,103 @@
+<!-- The mobile menu is a @magic-spells <bottom-sheet> inside its
+     <dialog-panel>: it rises from the bottom over a dark backdrop, drags down
+     to dismiss, closes on the backdrop and on Escape, and hands focus back to
+     the header's Menu button. Menu items are set in the heading face; the
+     item that leads to the Work path lists the series of its collection
+     under it, newest first. -->
+{#let series = settings.collection.entries | sort('fields.year') | reverse}
+<dialog-panel>
+  <dialog class="text-scheme-foreground" aria-label="{ t('menu_label') }">
+    <bottom-sheet id="mobile-menu">
+      <bottom-sheet-header class="flex justify-end pt-step-sm">
+        <button class="sites-icon -m-step-xs size-10 p-step-xs text-scheme-muted hover:text-scheme-foreground" type="button" data-action-hide-dialog>{#svg 'icons/close.svg'}<span class="sr-only">{ t('close_menu') }</span></button>
+      </bottom-sheet-header>
+      <bottom-sheet-content>
+        <div class="grid gap-step-lg">
+          {#if settings.menu.items.length}
+            <nav aria-label="{ t('main_navigation') }">
+              <ul class="grid gap-step-md">
+                {#for item in settings.menu.items}
+                  <li class="grid gap-step-md">
+                    <a class="font-heading text-h2 font-medium text-scheme-heading hover:text-scheme-links" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active ? 'page' : null }>{ item.label }</a>
+                    {#if item.children.length}
+                      <ul class="grid gap-step-xs">
+                        {#for child in item.children}
+                          <li><a class="text-body text-scheme-muted hover:text-scheme-foreground" href="{ child.href }" target={ child.open_in_new ? '_blank' : null } rel={ child.open_in_new ? 'noopener' : null }>{ child.label }</a></li>
+                        {/for}
+                      </ul>
+                    {:else if item.href == settings.work_path && series.length}
+                      <ul class="grid gap-step-xs">
+                        {#for entry in series}
+                          <li><a class="text-body text-scheme-muted hover:text-scheme-foreground" href="{ settings.work_path }/{ entry.handle }">{ entry.title }</a></li>
+                        {/for}
+                      </ul>
+                    {/if}
+                  </li>
+                {/for}
+              </ul>
+            </nav>
+          {/if}
+          {#if settings.menu_secondary.items.length}
+            <nav class="border-t border-scheme-rule pt-step-lg" aria-label="{ settings.menu_secondary.title }">
+              <ul class="flex flex-wrap gap-step-lg">
+                {#for item in settings.menu_secondary.items}
+                  <li><a class="font-mono text-meta tracking-meta text-scheme-muted uppercase hover:text-scheme-foreground" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null }>{ item.label }</a></li>
+                {/for}
+              </ul>
+            </nav>
+          {/if}
+        </div>
+      </bottom-sheet-content>
+    </bottom-sheet>
+  </dialog>
+</dialog-panel>
+
+<schema>
+{
+  "name": "Mobile menu",
+  "description": "A bottom sheet containing the main and social menus.",
+  "settings": [
+    {
+      "type": "menu",
+      "id": "menu",
+      "label": "Menu"
+    },
+    {
+      "type": "menu",
+      "id": "menu_secondary",
+      "label": "Menu secondary"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "The series listed under the Work item. Create the workspace content type series (see the header); orders year newest first."
+    },
+    {
+      "type": "url",
+      "id": "work_path",
+      "label": "Work path",
+      "default": "/work",
+      "info": "The menu item with this link lists the series under it."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "color_scheme": "surface",
+        "menu": "main",
+        "menu_secondary": "social",
+        "collection": "series",
+        "work_path": "/work"
+      }
+    }
+  ]
+}
+</schema>

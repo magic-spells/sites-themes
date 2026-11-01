@@ -1,0 +1,87 @@
+<!-- The header is a @magic-spells <sticky-header>: with "Stick to the top"
+     on it follows the scroll and settles shown or hidden; off, it is
+     disabled and sits in the page like any other band. The settle has no
+     overshoot, so the package's cap above the header is not needed and
+     cannot cover an announcement bar. -->
+<sticky-header class="block bg-scheme-background text-scheme-foreground" settle-overshoot="0" disabled={ !settings.sticky }>
+  <header class="px-gutter py-step-md { settings.bordered ? 'border-b border-scheme-rule' : '' }">
+    <div class="mx-auto flex max-w-column items-center justify-between gap-step-md">
+      <a class="flex items-center" href="/">
+        {#if settings.logo}
+          <img class="h-logo w-auto" src="{ image_url(settings.logo, 320) }" alt="{ settings.logo.alt || site.name }" width="{ settings.logo.width }" height="{ settings.logo.height }" />
+        {:else}
+          <span class="font-heading text-h3 font-medium text-scheme-heading">{ settings.logo_text || site.name }</span>
+        {/if}
+      </a>
+
+      {#if settings.menu.items.length}
+        <nav class="hidden md:block" aria-label="{ t('main_navigation') }">
+          <ul class="flex items-center gap-step-lg">
+            {#for item in settings.menu.items, i}
+              <li><a class="{ i == settings.menu.items.length - 1 ? 'text-scheme-links' : (item.active ? 'text-scheme-heading' : 'text-scheme-muted') } text-body decoration-1 underline-offset-4 hover:underline" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>
+            {/for}
+          </ul>
+        </nav>
+        <button class="-my-step-xs py-step-xs font-mono text-meta font-medium tracking-meta text-scheme-meta uppercase hover:text-scheme-heading md:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu">{ t('menu_label') }<span class="sr-only">: { t('open_menu') }</span></button>
+      {/if}
+    </div>
+  </header>
+</sticky-header>
+
+<schema>
+{
+  "name": "Header",
+  "description": "The site wordmark and main menu, with a mobile menu toggle.",
+  "settings": [
+    {
+      "type": "image",
+      "id": "logo",
+      "label": "Logo",
+      "info": "Leave empty to use logo text or the site name."
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo text",
+      "default": "",
+      "info": "Leave empty to use the site name."
+    },
+    {
+      "type": "menu",
+      "id": "menu",
+      "label": "Menu",
+      "info": "The last item is set in the link colour, as the menu's call to action."
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky",
+      "label": "Stick to the top of the page",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bordered",
+      "label": "Show a bottom border",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "logo_text": "",
+        "sticky": true,
+        "bordered": true,
+        "color_scheme": "paper",
+        "menu": "main"
+      }
+    }
+  ]
+}
+</schema>

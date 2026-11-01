@@ -1,0 +1,70 @@
+{
+  "label": "Home",
+  "description": "The featured essay, recent entries, writer and letter signup.",
+  "sections": [
+    {
+      "id": "s_featured",
+      "type": "featured-post",
+      "preset": "Default",
+      "settings": {
+        "base_path": "/journal",
+        "italic_tail": "after rain",
+        "show_image": true,
+        "read_label": "Read the essay",
+        "color_scheme": "paper",
+        "collection": "posts"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_recent",
+      "type": "post-list",
+      "preset": "Recent",
+      "settings": {
+        "heading": "Recent",
+        "base_path": "/journal",
+        "layout": "grid",
+        "show_images": true,
+        "show_toggle": false,
+        "columns": "2",
+        "limit": 4,
+        "offset": 1,
+        "topic": "",
+        "exclude_current": false,
+        "show_count": true,
+        "view_all_label": "Everything in the journal",
+        "view_all_href": "/journal",
+        "color_scheme": "paper",
+        "collection": "posts"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_writer",
+      "type": "author-card",
+      "preset": "Default",
+      "settings": {
+        "name": "",
+        "label": "The writer",
+        "bio": "",
+        "use_post_author": false,
+        "color_scheme": "tint"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Default",
+      "settings": {
+        "heading": "A letter when there is something to say",
+        "text": "Usually once a month. Never more than twice.",
+        "placeholder": "you@example.com",
+        "note": "One click to leave. Your address goes nowhere else.",
+        "form": "newsletter",
+        "color_scheme": "ink"
+      },
+      "blocks": []
+    }
+  ]
+}

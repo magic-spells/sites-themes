@@ -1,0 +1,35 @@
+{
+  "label": "Page — Gallery carousel",
+  "description": "Stage photographs, 2019 to 2025.",
+  "sections": [
+    {
+      "id": "s_page_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "chip": "",
+        "heading": "Live",
+        "standfirst": "Stage photographs, 2019 to 2025",
+        "align": "left",
+        "color_scheme": "surface"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_photo_carousel",
+      "type": "photo-carousel",
+      "preset": "Default",
+      "settings": {
+        "height": "tall",
+        "loop": true,
+        "show_captions": true,
+        "show_counter": true,
+        "show_arrows": true,
+        "lightbox": true,
+        "color_scheme": "surface",
+        "gallery": "live"
+      },
+      "blocks": []
+    }
+  ]
+}

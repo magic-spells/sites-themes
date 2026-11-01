@@ -1,0 +1,142 @@
+<!-- A one-up carousel of a gallery, each photograph contained in the stage
+     with its caption, a counter and arrows below. With no gallery chosen it
+     shows the series of the page it is on. Below 48rem the slides are 3:2,
+     the next one peeks at the right edge and there are no arrows. Clicking a
+     photograph opens the lightbox, which flies it into place. -->
+{#let
+  gallery = settings.gallery.items.length ? settings.gallery : page.entry.fields.photos
+  items = gallery.items
+  id = 'carousel-' + section.id
+  stage = settings.height == 'tall' ? 'md:h-stage-tall' : settings.height == 'short' ? 'md:h-stage-short' : 'md:h-stage'
+  options = { loop: settings.loop, gap: '0.75rem', paddingLeft: '1rem', paddingRight: '1.75rem', lightbox: settings.lightbox, navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { gap: 0, paddingLeft: 0, paddingRight: 0, navigation: { showButtons: settings.show_arrows, showPagination: false } } } }
+}
+{#if items.length}
+<section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter" aria-roledescription="carousel" aria-label="{ gallery.title || t('carousel_label') }">
+  <tarot-carousel class="mx-auto block max-w-column" id={ id }>
+    <script type="application/json" data-tarot-options>{ options | json }</script>
+    <tarot-viewport>
+      <tarot-track>
+        {#for item in items, i}
+          <tarot-slide>
+            <figure class="grid gap-step-sm">
+              {#if settings.lightbox}
+                <a class="block cursor-zoom-in" href="{ image_url(item.asset, 2560) }" data-tarot-lightbox aria-label="{ t('open_lightbox', { index: i + 1 }) }"><img class="aspect-3/2 w-full bg-scheme-surface object-contain md:aspect-auto md:bg-transparent { stage }" src="{ image_url(item.asset, 1280) }" srcset="{ image_srcset(item.asset, [480, 768, 1280, 1600]) }" sizes="(min-width: 82.5rem) 82.5rem, 100vw" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading={ i == 0 ? 'eager' : 'lazy' } width={ item.asset.width } height={ item.asset.height } /></a>
+              {:else}
+                <img class="aspect-3/2 w-full bg-scheme-surface object-contain md:aspect-auto md:bg-transparent { stage }" src="{ image_url(item.asset, 1280) }" srcset="{ image_srcset(item.asset, [480, 768, 1280, 1600]) }" sizes="(min-width: 82.5rem) 82.5rem, 100vw" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading={ i == 0 ? 'eager' : 'lazy' } width={ item.asset.width } height={ item.asset.height } />
+              {/if}
+              {#if settings.show_captions && item.caption}<figcaption class="font-mono text-caption text-scheme-muted md:min-h-8 md:pr-panel" data-caption data-tarot-lightbox-fade>{ item.caption }</figcaption>{/if}
+            </figure>
+          </tarot-slide>
+        {/for}
+      </tarot-track>
+    </tarot-viewport>
+    {#if settings.show_counter || settings.show_arrows}
+      <div class="mt-step-sm flex items-center justify-end gap-step-sm px-gutter md:absolute md:right-0 md:bottom-0 md:mt-0 md:px-0">
+        {#if settings.show_counter}<Counter index={ 1 } total={ items.length } carousel_id={ id } />{/if}
+        {#if settings.show_arrows}
+          <button class="hidden size-8 items-center justify-center border border-scheme-rule hover:border-scheme-foreground md:flex" type="button" data-action-tarot-previous aria-label="{ t('previous') }"><span class="sites-icon size-6">{#svg 'icons/angle-left.svg'}</span></button>
+          <button class="hidden size-8 items-center justify-center border border-scheme-rule hover:border-scheme-foreground md:flex" type="button" data-action-tarot-next aria-label="{ t('next') }"><span class="sites-icon size-6">{#svg 'icons/angle-right.svg'}</span></button>
+        {/if}
+      </div>
+    {/if}
+  </tarot-carousel>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Photo carousel",
+  "description": "One photograph at a time, with captions, a counter and lightbox.",
+  "settings": [
+    {
+      "type": "gallery",
+      "id": "gallery",
+      "label": "Gallery",
+      "info": "Reads items in order: asset (url, width, height, alt), caption, alt and video. Leave empty to use page.entry.fields.photos where the page binds a series."
+    },
+    {
+      "type": "select",
+      "id": "height",
+      "label": "Height",
+      "default": "standard",
+      "options": [
+        {
+          "value": "tall",
+          "label": "Tall"
+        },
+        {
+          "value": "standard",
+          "label": "Standard"
+        },
+        {
+          "value": "short",
+          "label": "Short"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Loop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_captions",
+      "label": "Show captions",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_counter",
+      "label": "Show counter",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "lightbox",
+      "label": "Lightbox",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "height": "standard",
+        "loop": true,
+        "show_captions": true,
+        "show_counter": true,
+        "show_arrows": true,
+        "lightbox": true,
+        "color_scheme": "surface"
+      }
+    },
+    {
+      "name": "Gallery",
+      "settings": {
+        "height": "tall",
+        "loop": true,
+        "show_captions": true,
+        "show_counter": true,
+        "show_arrows": true,
+        "lightbox": true,
+        "color_scheme": "surface",
+        "gallery": "live"
+      }
+    }
+  ]
+}
+</schema>

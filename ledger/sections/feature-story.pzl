@@ -1,0 +1,143 @@
+{#let
+  sorted = settings.collection.entries | sort('fields.date') | reverse
+  pool = settings.topic ? (sorted | where('fields.topic', settings.topic)) : sorted
+  post = settings.post ?? (pool | first)
+  href = settings.base_path + '/' + post.handle
+  image = settings.show_image ? post.fields.image : null
+  credit = post.fields.image_credit
+  short_credit = credit && contains(credit, 'Photo:') ? 'Photo:' + (credit | split('Photo:') | last) : credit
+  right = settings.image_position == 'right'
+}
+<!-- One story given room: a 16:9 picture (44rem at desktop) beside a 30rem
+     text column with the headline in Heading 2, the dek and the byline.
+     "Image right" puts the text first, on a phone too. -->
+{#if post}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-step-sm">
+    {#if settings.heading}
+      <div class="border-t-3 border-scheme-rule-strong pt-step-xs">
+        <h2 class="font-heading text-h4 font-semibold text-scheme-heading uppercase">{ settings.heading }<span class="text-scheme-links" aria-hidden="true"> ›</span></h2>
+      </div>
+    {/if}
+    <article class="grid items-center gap-gap-lg { image ? (right ? 'md:grid-cols-2 lg:grid-cols-feature-reverse' : 'md:grid-cols-2 lg:grid-cols-feature') : 'max-w-reading' }">
+      {#if image}
+        <a class="relative block aspect-video overflow-hidden bg-scheme-surface { right ? 'md:order-last' : '' }" href="{ href }" tabindex="-1" aria-hidden="true">
+          <img class="absolute inset-0 size-full object-cover"
+            src="{ image_url(image, 1280) }"
+            srcset="{ image_url(image, 480) } 480w, { image_url(image, 768) } 768w, { image_url(image, 1024) } 1024w, { image_url(image, 1280) } 1280w"
+            sizes="(min-width: 64rem) 44rem, (min-width: 48rem) 50vw, 100vw"
+            alt="{ post.fields.image_alt }" loading="lazy" width="{ image.width }" height="{ image.height }" />
+          {#if short_credit}<span class="absolute right-0 bottom-0 bg-scheme-background px-step-xs py-step-2xs font-mono text-meta text-scheme-meta">{ short_credit }</span>{/if}
+        </a>
+      {/if}
+      <div class="grid content-center gap-step-xs { right ? 'order-first md:order-none' : '' }">
+        <h3 class="font-heading text-h2 font-bold text-pretty text-scheme-heading"><a class="decoration-2 underline-offset-4 hover:underline" href="{ href }" aria-label={ settings.read_label ? settings.read_label + ': ' + post.title : null }>{ post.title }</a></h3>
+        {#if post.fields.standfirst}<p class="text-body text-pretty text-scheme-muted">{ post.fields.standfirst }</p>{/if}
+        <Byline entry={ post } author={ true } by={ true } read={ false } />
+      </div>
+    </article>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Feature story",
+  "description": "One selected story, with the image on the left or right.",
+  "settings": [
+    {
+      "type": "entry",
+      "id": "post",
+      "label": "Story",
+      "info": "Leave empty to select the newest story in the chosen topic."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Content type",
+      "info": "Uses posts fields topic, date, author, reading_minutes, standfirst, image, image_alt and body; image_credit, updated and key_facts are optional. Dates are calendar dates, never relative times."
+    },
+    {
+      "type": "url",
+      "id": "base_path",
+      "label": "Index path",
+      "default": "/news"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Travel"
+    },
+    {
+      "type": "text",
+      "id": "topic",
+      "label": "Topic",
+      "info": "Exact fields.topic match for automatic selection.",
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "label": "Show the picture",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "read_label",
+      "label": "Read link label",
+      "default": "Read the story"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Left",
+      "settings": {
+        "base_path": "/news",
+        "heading": "Travel",
+        "topic": "",
+        "image_position": "left",
+        "show_image": true,
+        "read_label": "Read the story",
+        "color_scheme": "paper",
+        "collection": "posts"
+      }
+    },
+    {
+      "name": "Image Right",
+      "settings": {
+        "base_path": "/news",
+        "heading": "Travel",
+        "topic": "",
+        "image_position": "right",
+        "show_image": true,
+        "read_label": "Read the story",
+        "color_scheme": "paper",
+        "collection": "posts"
+      }
+    }
+  ]
+}
+</schema>

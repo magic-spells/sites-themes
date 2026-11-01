@@ -1,0 +1,151 @@
+<!-- A list under a Meta heading: year, entry and place, one hairline per
+     row. The place folds under the entry below 48rem. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <h2 class="border-b border-scheme-rule pb-step-xs font-mono text-meta tracking-meta text-scheme-meta uppercase">{ settings.heading }</h2>
+    <ul>
+      {#for block in blocks}
+        <li class="grid grid-cols-cv-row items-baseline gap-x-step-md border-b border-scheme-rule py-step-sm" data-block={ block.editor_id }>
+          <span class="font-mono text-counter tabular-nums text-scheme-meta">{ block.settings.year }</span>
+          <span class="flex flex-col gap-step-2xs md:flex-row md:items-baseline md:justify-between md:gap-step-md">
+            <span class="text-body text-scheme-foreground">{ block.settings.text }</span>
+            {#if block.settings.place}<span class="text-body-sm text-scheme-muted md:text-right">{ block.settings.place }</span>{/if}
+          </span>
+        </li>
+      {/for}
+    </ul>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Cv list",
+  "description": "Exhibitions, publications or awards in dated rows.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Exhibitions"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "year",
+          "label": "Year",
+          "default": ""
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Entry",
+          "default": ""
+        },
+        {
+          "type": "text",
+          "id": "place",
+          "label": "Place",
+          "default": ""
+        }
+      ]
+    }
+  ],
+  "max_blocks": 24,
+  "presets": [
+    {
+      "name": "Exhibitions",
+      "settings": {
+        "heading": "Exhibitions",
+        "color_scheme": "surface"
+      },
+      "blocks": [
+        {
+          "type": "row",
+          "settings": {
+            "year": "2025",
+            "text": "Salt Roads",
+            "place": "Galleri Format, Stockholm"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "year": "2023",
+            "text": "Hollow Season",
+            "place": "Röda Sten Konsthall, Gothenburg"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "year": "2022",
+            "text": "Harbour Light",
+            "place": "Galleri Box, Gothenburg"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Publications",
+      "settings": {
+        "heading": "Publications",
+        "color_scheme": "surface"
+      },
+      "blocks": [
+        {
+          "type": "row",
+          "settings": {
+            "year": "2025",
+            "text": "Salt Roads — artist’s book",
+            "place": "Independent edition"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "year": "2024",
+            "text": "Night Ferry",
+            "place": "Nordic Photography Review"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Awards",
+      "settings": {
+        "heading": "Awards",
+        "color_scheme": "surface"
+      },
+      "blocks": [
+        {
+          "type": "row",
+          "settings": {
+            "year": "2024",
+            "text": "Swedish Arts Grants Committee — working grant",
+            "place": ""
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "year": "2021",
+            "text": "Västra Götaland cultural scholarship",
+            "place": ""
+          }
+        }
+      ]
+    }
+  ]
+}
+</schema>

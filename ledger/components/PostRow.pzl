@@ -1,0 +1,25 @@
+<!-- component: PostRow -->
+<!-- The story grid's list view: the kicker, headline, dek and byline, with a
+     3:2 thumbnail at the right. The dek drops below 48rem. With `image` on, a
+     story without a picture keeps an empty well so the rows line up. -->
+<li class="border-b border-scheme-rule { site.settings.reveal_on_scroll ? 'reveal reveal-fade-up' : '' }" data-reveal-group={ site.settings.reveal_on_scroll ? 'rows-' + section.id + ':50' : false }>
+  <a class="group flex items-start gap-step-md py-step-md" href="{ href }">
+    <div class="grid min-w-0 flex-1 gap-step-xs">
+      {#if entry.fields.topic}<p class="font-body text-kicker font-semibold text-scheme-links uppercase">{ entry.fields.topic }</p>{/if}
+      <h3 class="font-heading text-h4 font-semibold text-pretty text-scheme-heading decoration-1 underline-offset-4 group-hover:underline">{ entry.title }</h3>
+      {#if entry.fields.standfirst}<p class="hidden max-w-reading text-body text-pretty text-scheme-muted md:block">{ entry.fields.standfirst }</p>{/if}
+      <Byline entry={ entry } author={ true } by={ false } read={ true } />
+    </div>
+    {#if image}
+      {#if entry.fields.image}
+        <img class="aspect-3/2 w-row-thumb-sm shrink-0 bg-scheme-surface object-cover md:w-row-thumb"
+          src="{ image_url(entry.fields.image, 320) }"
+          srcset="{ image_url(entry.fields.image, 160) } 160w, { image_url(entry.fields.image, 320) } 320w, { image_url(entry.fields.image, 480) } 480w"
+          sizes="(min-width: 48rem) 10rem, 6rem"
+          alt="{ entry.fields.image_alt }" loading="lazy" width="{ entry.fields.image.width }" height="{ entry.fields.image.height }" />
+      {:else}
+        <span class="aspect-3/2 w-row-thumb-sm shrink-0 bg-scheme-surface md:w-row-thumb" aria-hidden="true"></span>
+      {/if}
+    {/if}
+  </a>
+</li>

@@ -1,0 +1,106 @@
+{
+  "name": "Darkroom",
+  "version": "0.1.0",
+  "default_template": "page",
+  "not_found_template": "404",
+  "maintenance_template": "maintenance",
+  "groups": {
+    "header-group": {
+      "label": "Header",
+      "accepts": [
+        "header"
+      ]
+    },
+    "footer-group": {
+      "label": "Footer",
+      "accepts": [
+        "footer"
+      ]
+    },
+    "panel-group": {
+      "label": "Panels",
+      "accepts": [
+        "mobile-menu",
+        "cookie-notice"
+      ]
+    }
+  },
+  "query": [
+    "subject"
+  ],
+  "settings": [
+    {
+      "name": "Brand",
+      "settings": [
+        {
+          "type": "text",
+          "id": "wordmark",
+          "label": "Wordmark",
+          "default": "Mara Lindqvist"
+        },
+        {
+          "type": "image",
+          "id": "favicon",
+          "label": "Favicon"
+        },
+        {
+          "type": "text",
+          "id": "copyright",
+          "label": "Copyright",
+          "default": "All photographs © 2026 Mara Lindqvist"
+        }
+      ]
+    },
+    {
+      "name": "Photographer",
+      "settings": [
+        {
+          "type": "text",
+          "id": "photographer_name",
+          "label": "Photographer name",
+          "default": "Mara Lindqvist"
+        },
+        {
+          "type": "image",
+          "id": "photographer_portrait",
+          "label": "Photographer portrait"
+        },
+        {
+          "type": "textarea",
+          "id": "photographer_bio",
+          "label": "Photographer bio",
+          "default": "Documentary landscape photographer based in Gothenburg. Personal series and commissioned work."
+        },
+        {
+          "type": "text",
+          "id": "representation",
+          "label": "Representation",
+          "default": "Galleri Format, Stockholm"
+        },
+        {
+          "type": "url",
+          "id": "instagram",
+          "label": "Instagram",
+          "default": "https://www.instagram.com/maralindqvist/"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "address",
+          "label": "Address",
+          "default": "Klippan 1\n414 51 Gothenburg\nSweden"
+        },
+        {
+          "type": "text",
+          "id": "contact_email",
+          "label": "Contact email",
+          "default": "studio@maralindqvist.se"
+        }
+      ]
+    }
+  ]
+}

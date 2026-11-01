@@ -1,0 +1,187 @@
+<!-- The enquiry form on a raised panel that overlaps a 3:2 studio
+     photograph: beside it and 48 above it on desktop, flush right over its
+     foot on tablet, under it on a phone. The Subject is a <select-dropdown>
+     preselected from ?subject= (a service tile's link). Below, the studio's
+     email, address and representation in hairline columns. -->
+{#let
+  subjects = settings.subjects | split('\n') | compact
+  wanted = (request.query.subject ?? '') | downcase
+  photo = settings.photo
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column">
+    <div class="flex flex-col lg:flex-row lg:items-start">
+      {#if photo}<img class="aspect-3/2 w-full bg-scheme-surface object-cover lg:mt-step-xl lg:w-3/5 lg:shrink-0" src="{ image_url(photo, 1280) }" srcset="{ image_srcset(photo, [768, 1280, 1600]) }" sizes="(min-width: 64rem) 50rem, 100vw" alt="{ photo.alt }" loading="lazy" width={ photo.width } height={ photo.height } />{/if}
+      <div class="relative grid gap-step-md border border-scheme-rule bg-scheme-surface p-step-xl md:w-panel md:self-end { photo ? 'md:-mt-overlap lg:mt-0 lg:-ml-overlap lg:self-start' : '' }">
+        {#if settings.show_heading && settings.heading}
+          <div class="grid gap-step-xs">
+            <h2 class="font-heading text-h3 font-medium text-scheme-heading">{ settings.heading }</h2>
+            {#if settings.text}<p class="text-body-sm text-scheme-muted">{ settings.text }</p>{/if}
+          </div>
+        {/if}
+        <Form handle={ settings.form } class="grid gap-step-md" id="contact-form">
+          {#if form.sent}
+            <p class="text-body-lg text-scheme-foreground" role="status">{ form.success_message || t('form_success') }</p>
+          {:else}
+            {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
+            {#for field in form.fields}
+              {#if field.type == 'select'}
+                {#let
+                  options = field.options.length ? field.options : subjects
+                  current = (field.value || wanted) | downcase
+                }
+                <div>
+                  <label class="sr-only" id="label-contact-{ field.id }">{ field.label }</label>
+                  <select-dropdown class="text-body" aria-labelledby="label-contact-{ field.id }">
+                    <select-trigger class="sites-input flex items-center justify-between gap-step-sm">
+                      <span class="select-label-text">{ field.label }</span>
+                      <span class="sites-icon size-6 text-scheme-muted" aria-hidden="true">{#svg 'icons/angle-down.svg'}</span>
+                    </select-trigger>
+                    <input type="hidden" name={ field.id } />
+                    <select-panel>
+                      {#for option in options}<select-option value={ option } selected={ (option | downcase) == current }>{ option }</select-option>{/for}
+                    </select-panel>
+                  </select-dropdown>
+                  {#if field.error}<p class="mt-step-2xs font-mono text-caption text-scheme-error">{ t('form_field_' + field.error) }</p>{/if}
+                </div>
+              {:else if field.type == 'checkbox'}
+                <div>
+                  <label class="flex items-center gap-step-sm pt-step-xs text-body-sm text-scheme-muted">
+                    <input class="size-5 shrink-0 accent-scheme-links" name={ field.id } type="checkbox" value="on" checked={ field.value == 'on' } required={ field.required } />
+                    <span>{ settings.consent_text || field.label }</span>
+                  </label>
+                  {#if field.error}<p class="mt-step-2xs font-mono text-caption text-scheme-error">{ t('form_field_' + field.error) }</p>{/if}
+                </div>
+              {:else}
+                <Field name={ field.id } label={ field.label } type={ field.type } required={ field.required } maxlength={ field.max_length } value={ field.value } error={ field.error } prefix="contact" rows={ 5 } />
+              {/if}
+            {/for}
+            <div class="grid justify-items-start gap-step-sm">
+              <button class="sites-button min-w-button" type="submit">{ form.submit_label || t('form_submit') }</button>
+              {#if settings.note}<p class="font-mono text-caption text-scheme-muted">{ settings.note }</p>{/if}
+              <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+            </div>
+          {/if}
+        </Form>
+      </div>
+    </div>
+
+    {#if settings.direct}
+      <div class="grid gap-step-lg pt-step-2xl">
+        {#if settings.direct_heading}<h2 class="font-heading text-h3 font-medium text-scheme-heading">{ settings.direct_heading }</h2>{/if}
+        <dl class="grid gap-gap-lg md:grid-cols-3">
+          {#if site.settings.contact_email}
+            <div class="grid content-start gap-step-2xs border-t border-scheme-rule pt-step-md">
+              <dt class="font-mono text-meta tracking-meta text-scheme-meta uppercase">{ t('label_email') }</dt>
+              <dd><a class="text-body text-scheme-links hover:text-scheme-foreground" href="mailto:{ site.settings.contact_email }">{ site.settings.contact_email }</a></dd>
+            </div>
+          {/if}
+          {#if site.settings.address}
+            <div class="grid content-start gap-step-2xs border-t border-scheme-rule pt-step-md">
+              <dt class="font-mono text-meta tracking-meta text-scheme-meta uppercase">{ t('label_studio') }</dt>
+              <dd class="text-body text-scheme-foreground">{ site.settings.address | newline_to_br }</dd>
+            </div>
+          {/if}
+          {#if site.settings.representation}
+            <div class="grid content-start gap-step-2xs border-t border-scheme-rule pt-step-md">
+              <dt class="font-mono text-meta tracking-meta text-scheme-meta uppercase">{ t('label_representation') }</dt>
+              <dd class="text-body text-scheme-foreground">{ site.settings.representation }</dd>
+            </div>
+          {/if}
+        </dl>
+      </div>
+    {/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Contact",
+  "description": "A site form overlapping a studio photograph, followed by direct contact details.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Write to Mara"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "For prints, commissions, press or a question about the work. Tell me what you have in mind and when you need it."
+    },
+    {
+      "type": "image",
+      "id": "photo",
+      "label": "Photo"
+    },
+    {
+      "type": "form",
+      "id": "form",
+      "label": "Form",
+      "default": "contact"
+    },
+    {
+      "type": "textarea",
+      "id": "subjects",
+      "label": "Subjects",
+      "default": "Prints\nCommission\nPress\nOther",
+      "info": "One subject per line. Keep these in step with the workspace contact form; request.query.subject preselects a matching option."
+    },
+    {
+      "type": "text",
+      "id": "consent_text",
+      "label": "Consent text",
+      "default": "I agree to the use of these details to reply to my enquiry."
+    },
+    {
+      "type": "checkbox",
+      "id": "direct",
+      "label": "Direct",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "direct_heading",
+      "label": "Direct heading",
+      "default": "Prefer to write directly?"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note",
+      "default": "Your details are used only to answer this enquiry."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "heading": "Write to Mara",
+        "show_heading": true,
+        "text": "For prints, commissions, press or a question about the work. Tell me what you have in mind and when you need it.",
+        "form": "contact",
+        "subjects": "Prints\nCommission\nPress\nOther",
+        "consent_text": "I agree to the use of these details to reply to my enquiry.",
+        "direct": true,
+        "direct_heading": "Prefer to write directly?",
+        "note": "Your details are used only to answer this enquiry.",
+        "color_scheme": "surface"
+      }
+    }
+  ]
+}
+</schema>

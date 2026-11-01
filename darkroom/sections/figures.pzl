@@ -1,0 +1,96 @@
+<!-- Up to four figures under a hairline: a large number in the heading face
+     and its label in Caption. Four across from 64rem, two by two below. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-gap-lg">
+    {#if settings.eyebrow}<h2 class="font-mono text-meta tracking-meta text-scheme-meta uppercase">{ settings.eyebrow }</h2>{/if}
+    <dl class="grid grid-cols-2 gap-x-step-2xl border-t border-scheme-rule lg:grid-cols-4">
+      {#for block in blocks}
+        <div class="flex flex-col-reverse justify-end gap-step-xs pt-step-lg" data-block={ block.editor_id }>
+          <dt class="font-mono text-caption text-scheme-meta">{ block.settings.label }</dt>
+          <dd class="font-heading text-display font-semibold tabular-nums text-scheme-heading">{ block.settings.value }</dd>
+        </div>
+      {/for}
+    </dl>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Figures",
+  "description": "Numbers and brief labels about the photographic practice.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "In figures"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "figure",
+      "name": "Figure",
+      "settings": [
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": ""
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": ""
+        }
+      ]
+    }
+  ],
+  "max_blocks": 24,
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "eyebrow": "In figures",
+        "color_scheme": "surface"
+      },
+      "blocks": [
+        {
+          "type": "figure",
+          "settings": {
+            "value": "12",
+            "label": "Years photographing"
+          }
+        },
+        {
+          "type": "figure",
+          "settings": {
+            "value": "6",
+            "label": "Personal series"
+          }
+        },
+        {
+          "type": "figure",
+          "settings": {
+            "value": "18",
+            "label": "Countries worked in"
+          }
+        },
+        {
+          "type": "figure",
+          "settings": {
+            "value": "10",
+            "label": "Prints in each edition"
+          }
+        }
+      ]
+    }
+  ]
+}
+</schema>

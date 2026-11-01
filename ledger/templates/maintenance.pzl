@@ -1,0 +1,15 @@
+<!-- template: Maintenance -->
+<!-- layout: default -->
+<!-- The password page's column, with the pause notice. data-bare hides the
+     groups (styles/theme.css). -->
+<section class="grid flex-1 place-items-center bg-scheme-background px-gutter py-section text-scheme-foreground" data-bare>
+  <div class="grid w-full max-w-narrow justify-items-center gap-step-md text-center">
+    <p class="font-heading text-display font-bold text-scheme-heading uppercase">{ site.name }</p>
+    <h1 class="font-heading text-h3 font-semibold text-scheme-heading">{ t('maintenance_title') }</h1>
+    <p class="text-body-lg text-pretty text-scheme-muted">{ t('maintenance_body') }</p>
+    {#if site.settings.contact_email}
+      <Button href="mailto:{ site.settings.contact_email }" tone="outline" wide={ true }>{ t('get_in_touch') }</Button>
+      <p class="font-mono text-meta text-scheme-meta">{ site.settings.contact_email }</p>
+    {/if}
+  </div>
+</section>

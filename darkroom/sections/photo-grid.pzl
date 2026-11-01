@@ -1,0 +1,171 @@
+<!-- A grid of a gallery's photographs at one ratio (or their own), with
+     captions below, over them on hover, or none. Columns step down at each
+     breakpoint and no tile is ever hidden. With the lightbox on, a tile opens
+     it with a fade (see the companion carousel below). With no gallery chosen
+     it shows the series of the page it is on. -->
+{#let
+  gallery = settings.gallery.items.length ? settings.gallery : page.entry.fields.photos
+  pool = gallery.items | slice(settings.offset ?? 0)
+  items = settings.limit ? (pool | slice(0, settings.limit)) : pool
+  id = 'lightbox-' + section.id
+  cols = settings.columns == '4' ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4' : settings.columns == '2' ? 'md:grid-cols-2' : 'grid-cols-2 lg:grid-cols-3'
+  gap = settings.gap == 'tight' ? 'gap-step-2xs' : settings.gap == 'loose' ? 'gap-gap-lg' : 'gap-gap-sm'
+  sizes = settings.columns == '2' ? '(min-width: 48rem) 50vw, 100vw' : '(min-width: 64rem) 33vw, 50vw'
+}
+{#if items.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <ul class="mx-auto grid max-w-column { cols } { settings.captions == 'below' ? 'gap-y-step-lg' : '' } { gap }" aria-label="{ gallery.title || t('gallery_label') }">
+    {#for item in items, i}
+      <li><PhotoTile item={ item } ratio={ settings.ratio } sizes={ sizes } captions={ settings.captions } lightbox_id={ settings.lightbox ? id : null } index={ i } /></li>
+    {/for}
+  </ul>
+  {#if settings.lightbox}
+    <LightboxCompanion items={ items } id={ id }><script type="application/json" data-tarot-options>{ { lightbox: true, draggable: false, navigation: { showButtons: false, showPagination: false } } | json }</script></LightboxCompanion>
+  {/if}
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Photo grid",
+  "description": "A gallery grid with a companion carousel for the lightbox.",
+  "settings": [
+    {
+      "type": "gallery",
+      "id": "gallery",
+      "label": "Gallery",
+      "info": "Reads items in order: asset (url, width, height, alt), caption, alt and video. Leave empty to use page.entry.fields.photos where the page binds a series."
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Columns",
+      "default": "3",
+      "options": [
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "gap",
+      "label": "Gap",
+      "default": "normal",
+      "options": [
+        {
+          "value": "tight",
+          "label": "Tight"
+        },
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": "loose",
+          "label": "Loose"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "ratio",
+      "label": "Ratio",
+      "default": "3:2",
+      "options": [
+        {
+          "value": "3:2",
+          "label": "3:2"
+        },
+        {
+          "value": "4:5",
+          "label": "4:5"
+        },
+        {
+          "value": "1:1",
+          "label": "1:1"
+        },
+        {
+          "value": "natural",
+          "label": "Natural"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "captions",
+      "label": "Captions",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "below",
+          "label": "Below"
+        },
+        {
+          "value": "hover",
+          "label": "Hover"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "lightbox",
+      "label": "Lightbox",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Limit",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "info": "Zero shows all photographs after the offset."
+    },
+    {
+      "type": "range",
+      "id": "offset",
+      "label": "Offset",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "columns": "3",
+        "gap": "normal",
+        "ratio": "3:2",
+        "captions": "none",
+        "lightbox": true,
+        "limit": 0,
+        "offset": 0,
+        "color_scheme": "surface"
+      }
+    }
+  ]
+}
+</schema>

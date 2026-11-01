@@ -1,0 +1,24 @@
+<!-- template: NotFound -->
+<!-- layout: default -->
+<!-- The page header's column with the 404, then the three newest series as
+     cards, so a wrong path still leads to the work. -->
+{#let series = content.series.entries | sort('fields.year') | reverse | slice(0, 3)}
+<section class="bg-scheme-background px-gutter pt-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <div class="grid max-w-reading gap-step-sm">
+      <p class="font-mono text-meta tracking-meta text-scheme-meta uppercase">404</p>
+      <h1 class="font-heading text-h1 font-medium text-balance text-scheme-heading">{ t('not_found_title') }</h1>
+      <p class="text-body-lg text-pretty text-scheme-muted">{ t('not_found_body') }</p>
+    </div>
+  </div>
+</section>
+{#if series.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-gap-lg">
+    <ul class="grid gap-x-gap-lg gap-y-step-xl md:grid-cols-2 lg:grid-cols-3">
+      {#for entry in series}<SeriesCard entry={ entry } href="/work/{ entry.handle }" ratio="4:5" show_counts={ true } sizes="(min-width: 64rem) 33vw, (min-width: 48rem) 50vw, 100vw" />{/for}
+    </ul>
+    <p><a class="border-b border-scheme-links pb-step-2xs font-mono text-meta tracking-meta uppercase hover:text-scheme-links" href="/work">{ t('all_work') }</a></p>
+  </div>
+</section>
+{/if}

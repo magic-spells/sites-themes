@@ -1,0 +1,17 @@
+{
+  "sections": [
+    {
+      "id": "sg_footer",
+      "type": "footer",
+      "preset": "Default",
+      "settings": {
+        "copyright": "",
+        "show_colophon": true,
+        "color_scheme": "surface",
+        "menu_primary": "main",
+        "menu_secondary": "social"
+      },
+      "blocks": []
+    }
+  ]
+}

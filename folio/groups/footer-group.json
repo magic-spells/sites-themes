@@ -1,0 +1,41 @@
+{
+  "sections": [
+    {
+      "id": "sg_footer",
+      "type": "footer",
+      "preset": "Default",
+      "settings": {
+        "copyright": "© 2026 The Slow Mile",
+        "color_scheme": "cream",
+        "menu_primary": "journal",
+        "menu_secondary": "elsewhere"
+      },
+      "blocks": [
+        {
+          "id": "sg_footer_b_1",
+          "type": "social",
+          "settings": {
+            "label": "RSS",
+            "url": "https://theslowmile.example/feed.xml"
+          }
+        },
+        {
+          "id": "sg_footer_b_2",
+          "type": "social",
+          "settings": {
+            "label": "Instagram",
+            "url": "https://www.instagram.com/"
+          }
+        },
+        {
+          "id": "sg_footer_b_3",
+          "type": "social",
+          "settings": {
+            "label": "Email",
+            "url": "mailto:nell@theslowmile.com"
+          }
+        }
+      ]
+    }
+  ]
+}

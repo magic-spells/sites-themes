@@ -1,0 +1,149 @@
+<!-- The wordmark and the main menu. The menu item that points at the Work
+     path opens a <dropdown-panel> of every series from 48rem; below that a
+     Menu button opens the mobile menu's sheet. The Overlay style lies over a
+     page that opens with a hero slideshow (theme.css), solid elsewhere.
+     While any dropdown is open one shared dim lies over the page under the
+     header (theme.ts); a click on it closes the panel. The nav has no gap:
+     each link's padding is its hit area, so the pointer passes from one
+     trigger straight to the next and one panel hands over to the other. -->
+{#let
+  series = settings.collection.entries | sort('fields.year') | reverse
+  wordmark = settings.logo_text || site.settings.wordmark || site.name
+}
+<div class="pointer-events-none fixed inset-0 z-20 bg-scrim/40 opacity-0 transition-opacity duration-panel data-open:pointer-events-auto data-open:opacity-100" data-page-dim aria-hidden="true"></div>
+<header class="relative z-30 bg-scheme-background px-gutter py-step-md text-scheme-foreground overlaid:bg-transparent overlaid:text-on-photo" data-header-style={ settings.style } data-sticky={ settings.sticky }>
+  <div class="mx-auto flex max-w-column items-center justify-between gap-step-md">
+    <a class="font-heading text-h3 font-medium" href="/">{ wordmark }</a>
+
+    {#if settings.menu.items.length}
+      <nav class="hidden md:block" aria-label="{ t('main_navigation') }">
+        <ul class="-me-space-sm flex items-center text-body-sm">
+          {#for item in settings.menu.items}
+            {#if item.href == settings.work_path && series.length}
+              <li>
+                <dropdown-component trigger="both" close-delay="150">
+                  <dropdown-trigger class="flex items-center gap-step-2xs px-space-sm">{ settings.work_label || item.label }<span class="sites-icon size-4" data-dropdown-arrow aria-hidden="true">{#svg 'icons/angle-down.svg'}</span></dropdown-trigger>
+                  <dropdown-panel class="border-y border-scheme-rule bg-scheme-background px-gutter py-step-lg text-scheme-foreground" wide effect="fade">
+                    <div class="mx-auto flex max-w-column items-end gap-step-md">
+                      <ul class="flex flex-wrap gap-step-md">
+                        {#for entry in series}
+                          <li>
+                            <a class="group grid w-40 gap-step-xs" href="{ settings.work_path }/{ entry.handle }">
+                              <span class="block overflow-hidden bg-scheme-surface"><img class="aspect-3/2 w-full object-cover transition-transform duration-hover ease-out-soft group-hover:scale-hover group-hover:duration-settle group-hover:ease-overshoot" data-zoom src="{ image_url(entry.fields.cover, 320) }" alt="" loading="lazy" width={ entry.fields.cover.width } height={ entry.fields.cover.height } /></span>
+                              <span class="text-body-sm text-scheme-foreground decoration-1 underline-offset-4 group-hover:underline">{ entry.title }</span>
+                              <span class="font-mono text-meta tracking-meta text-scheme-meta">{ entry.fields.year }</span>
+                            </a>
+                          </li>
+                        {/for}
+                      </ul>
+                      <a class="ml-step-md font-mono text-meta tracking-meta whitespace-nowrap uppercase hover:text-scheme-links" href="{ settings.work_path }">{ t('all_work') }</a>
+                    </div>
+                  </dropdown-panel>
+                </dropdown-component>
+              </li>
+            {:else}
+              <li><a class="block px-space-sm { item.active ? '' : 'text-scheme-muted overlaid:text-on-photo' } decoration-1 underline-offset-4 hover:text-scheme-foreground hover:underline" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>
+            {/if}
+          {/for}
+        </ul>
+      </nav>
+      <button class="-my-step-xs py-step-xs font-mono text-meta tracking-meta uppercase md:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu">{ t('menu_label') }<span class="sr-only">: { t('open_menu') }</span></button>
+    {/if}
+  </div>
+</header>
+
+<schema>
+{
+  "name": "Header",
+  "description": "The wordmark, main menu and a desktop panel of series.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo text",
+      "default": "",
+      "info": "Leave empty to use the Brand wordmark or site name."
+    },
+    {
+      "type": "menu",
+      "id": "menu",
+      "label": "Menu"
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "default": "solid",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "overlay",
+          "label": "Overlay"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky",
+      "label": "Sticky",
+      "default": true,
+      "info": "Sticks to the top while scrolling. The Overlay style over an opening hero slideshow lies on the photograph and scrolls away with it."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Create the workspace content type series with year, location, statement (richtext), cover (image), cover_alt, photos (gallery handle) and edition_note. Reads title, handle and those fields; orders year newest first."
+    },
+    {
+      "type": "text",
+      "id": "work_label",
+      "label": "Work label",
+      "default": "Work"
+    },
+    {
+      "type": "url",
+      "id": "work_path",
+      "label": "Work path",
+      "default": "/work"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Solid",
+      "settings": {
+        "logo_text": "",
+        "style": "solid",
+        "sticky": true,
+        "work_label": "Work",
+        "work_path": "/work",
+        "color_scheme": "surface",
+        "menu": "main",
+        "collection": "series"
+      }
+    },
+    {
+      "name": "Overlay",
+      "settings": {
+        "logo_text": "",
+        "style": "overlay",
+        "sticky": true,
+        "work_label": "Work",
+        "work_path": "/work",
+        "color_scheme": "surface",
+        "menu": "main",
+        "collection": "series"
+      }
+    }
+  ]
+}
+</schema>

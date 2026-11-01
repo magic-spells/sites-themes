@@ -1,0 +1,30 @@
+{
+  "sections": [
+    {
+      "id": "sg_mobile_menu",
+      "type": "mobile-menu",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper",
+        "menu": "main",
+        "menu_secondary": "social"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_notice",
+      "type": "cookie-notice",
+      "preset": "Default",
+      "settings": {
+        "body": "<p>This site uses your browser’s local storage to remember that you have seen this note, and nothing else.</p>",
+        "accept_label": "Accept",
+        "decline_label": "Decline",
+        "link_label": "",
+        "link_href": "/privacy",
+        "key": "ledger-notice-2026-10",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    }
+  ]
+}

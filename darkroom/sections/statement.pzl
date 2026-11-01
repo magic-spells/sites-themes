@@ -1,0 +1,46 @@
+<!-- One large sentence in the body face, its emphasised words in the
+     heading italic (theme.css). The eyebrow sits in a narrow column at the
+     left from 64rem, above the sentence below that. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-gap-lg lg:grid-cols-statement">
+    {#if settings.eyebrow}<p class="font-mono text-meta tracking-meta text-scheme-meta uppercase">{ settings.eyebrow }</p>{:else}<span class="hidden lg:block"></span>{/if}
+    <div class="statement text-h3 leading-statement text-balance text-scheme-heading md:text-statement">{ settings.body }</div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Statement",
+  "description": "A sentence with Spectral italic emphasis inside rich text.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The practice"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>I return to places until the familiar becomes <em>specific</em>: the mark on the wall, the edge of the field, the light that stays for <em>a minute</em>.</p>"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "eyebrow": "The practice",
+        "body": "<p>I return to places until the familiar becomes <em>specific</em>: the mark on the wall, the edge of the field, the light that stays for <em>a minute</em>.</p>",
+        "color_scheme": "surface"
+      }
+    }
+  ]
+}
+</schema>

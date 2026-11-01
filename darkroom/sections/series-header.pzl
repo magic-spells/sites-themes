@@ -1,0 +1,85 @@
+<!-- The series a pattern page is bound to: its cover at 16:9, the title,
+     place, year and photograph count, and the statement in the reading
+     column. -->
+{#let
+  entry = page.entry
+  center = settings.align == 'center'
+}
+{#if entry}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-step-xl">
+    {#if settings.show_cover && entry.fields.cover}
+      <img class="aspect-video w-full bg-scheme-surface object-cover" src="{ image_url(entry.fields.cover, 1600) }" srcset="{ image_srcset(entry.fields.cover, [768, 1280, 1600, 2560]) }" sizes="(min-width: 82.5rem) 82.5rem, 100vw" alt="{ entry.fields.cover_alt }" fetchpriority="high" width={ entry.fields.cover.width } height={ entry.fields.cover.height } />
+    {/if}
+    <div class="grid max-w-reading gap-step-md { center ? 'mx-auto justify-items-center text-center' : '' }">
+      <h1 class="font-heading text-h1 font-medium text-balance text-scheme-heading">{ entry.title }</h1>
+      {#if settings.show_meta}<p class="font-mono text-meta tracking-meta text-scheme-muted uppercase">{ entry.fields.location }<span aria-hidden="true"> · </span>{ entry.fields.year }<span aria-hidden="true"> · </span>{ t('photograph_count', { count: size(entry.fields.photos.items) }) }</p>{/if}
+      {#if settings.show_statement && entry.fields.statement}<div class="sites-prose text-body-lg text-scheme-foreground">{ entry.fields.statement }</div>{/if}
+    </div>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Series header",
+  "description": "The current series title, metadata, statement and cover.",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_cover",
+      "label": "Show cover",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_meta",
+      "label": "Show meta",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_statement",
+      "label": "Show statement",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "align",
+      "label": "Align",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "show_cover": true,
+        "show_meta": true,
+        "show_statement": true,
+        "align": "left",
+        "color_scheme": "surface"
+      }
+    }
+  ],
+  "templates": [
+    "series"
+  ]
+}
+</schema>

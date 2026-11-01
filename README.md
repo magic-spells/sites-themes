@@ -7,6 +7,7 @@ complete theme: the same files a site's draft theme starts from.
 |---|---|
 | [`company/`](company/) | A finished small-business site: hero, features, gallery, testimonials, FAQ, contact and a journal, on three color schemes. |
 | [`minimal/`](minimal/) | A clean single-column site with a header, footer, hero and rich text: the conventions with nothing to undo. |
+| [`darkroom/`](darkroom/) | A photographer's portfolio on a near-black ground: series of photographs, carousels, grids and a lightbox, services, prints and packages, and a contact form. |
 
 Each theme's own README explains its files, sections, styling and scripts.
 

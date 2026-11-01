@@ -1,0 +1,163 @@
+{
+  "label": "Page — Packages",
+  "description": "Session, day and project rates with booking questions.",
+  "sections": [
+    {
+      "id": "s_page_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "chip": "",
+        "heading": "Packages",
+        "standfirst": "Sessions, days and editorial rates.",
+        "align": "left",
+        "color_scheme": "surface-alt"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_photo_pair",
+      "type": "photo-pair",
+      "preset": "Default",
+      "settings": {
+        "index_a": 0,
+        "index_b": 1,
+        "caption_a": "",
+        "caption_b": "",
+        "ratio": "4:5",
+        "color_scheme": "surface-alt",
+        "image_a": "as_4x5_2",
+        "image_b": "as_4x5_3"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_packages",
+      "type": "packages",
+      "preset": "Default",
+      "settings": {
+        "eyebrow": "Working together",
+        "heading": "Three ways to book",
+        "standfirst": "Sessions, days and editorial rates.",
+        "footnote": "<p>All rates exclude travel and applicable tax. Usage is agreed in writing. <a href=\"/contact\">Write</a> for a proposal.</p>",
+        "enquire_label": "Enquire",
+        "enquire_href": "/contact?subject=Commission",
+        "layout": "rows",
+        "color_scheme": "surface-alt"
+      },
+      "blocks": [
+        {
+          "id": "s_packages_b_1",
+          "type": "package",
+          "settings": {
+            "name": "Session",
+            "for": "A portrait, a room or a short editorial assignment.",
+            "inclusions": "Planning call\nUp to three hours photographing\nEdited image selection",
+            "price": "€ 1,200",
+            "from_label": "From",
+            "note": "Usage and travel agreed separately.",
+            "featured": false,
+            "photo": "as_3x2_1",
+            "category": "On site"
+          }
+        },
+        {
+          "id": "s_packages_b_2",
+          "type": "package",
+          "settings": {
+            "name": "Day",
+            "for": "Time on location, with room for the weather.",
+            "inclusions": "Planning and location research\nOne day photographing\nEdited image selection and delivery gallery",
+            "price": "€ 2,400",
+            "from_label": "From",
+            "note": "Usage and travel agreed separately.",
+            "featured": true,
+            "photo": "as_3x2_2",
+            "category": "On site"
+          }
+        },
+        {
+          "id": "s_packages_b_3",
+          "type": "package",
+          "settings": {
+            "name": "Project",
+            "for": "A body of work, from the first conversation to the final sequence.",
+            "inclusions": "Research and a written proposal\nAgreed days photographing\nEditing, sequencing and production advice",
+            "price": "By conversation",
+            "from_label": "",
+            "note": "A proposal follows our first conversation.",
+            "featured": false,
+            "photo": "as_4x5_2",
+            "category": "Studio"
+          }
+        },
+        {
+          "id": "s_packages_b_4",
+          "type": "package",
+          "settings": {
+            "name": "Workshop",
+            "for": "A day in the darkroom for up to six.",
+            "inclusions": "One day in the studio\nPaper and printing materials\nIndividual print review",
+            "price": "€ 480",
+            "from_label": "From",
+            "note": "Per person. Dates by arrangement.",
+            "featured": false,
+            "photo": "as_1x1_2",
+            "category": "Studio"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_photo_single",
+      "type": "photo-single",
+      "preset": "Default",
+      "settings": {
+        "index": 0,
+        "caption": "",
+        "number": false,
+        "width": "wide",
+        "ratio": "16:9",
+        "color_scheme": "surface-alt",
+        "image": "as_16x9_1"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Packages",
+      "settings": {
+        "heading": "FAQs",
+        "note": "Write if your question is not here.",
+        "color_scheme": "surface-alt"
+      },
+      "blocks": [
+        {
+          "id": "s_faq_b_1",
+          "type": "item",
+          "settings": {
+            "question": "How far ahead should I book?",
+            "answer": "<p>Four to six weeks usually leaves enough time to plan. Write with your dates if the job is sooner.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b_2",
+          "type": "item",
+          "settings": {
+            "question": "What is included in the rate?",
+            "answer": "<p>Planning, the agreed time photographing, editing and a private delivery gallery. Usage, travel and print costs are listed separately in the proposal.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b_3",
+          "type": "item",
+          "settings": {
+            "question": "Can you travel for a commission?",
+            "answer": "<p>Yes. I work from Gothenburg and travel by arrangement. Travel days and expenses are agreed before the booking.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}

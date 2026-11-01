@@ -1,0 +1,82 @@
+<!-- A non-modal region, not a dialog: the page stays usable behind it, as
+     the design draws it, and the sticky header keeps hiding on scroll. It
+     renders hidden; theme.ts shows it once per key, both buttons hide it and
+     the choice is remembered. -->
+<section class="fixed inset-x-0 bottom-0 z-50 w-full border-t border-scheme-rule bg-scheme-background text-scheme-foreground md:inset-x-auto md:right-gutter md:bottom-gutter md:max-w-narrow md:border" id="cookie-notice" data-notice="{ settings.key }" role="region" aria-label="{ t('cookie_notice_label') }" hidden>
+  <div class="grid gap-step-md p-step-lg">
+    <div class="sites-prose text-body text-pretty">{ settings.body }</div>
+    {#if settings.link_label}
+      <p><a class="font-mono text-meta font-medium tracking-meta text-scheme-links uppercase underline decoration-1 underline-offset-4" href="{ settings.link_href }">{ settings.link_label }</a></p>
+    {/if}
+    <div class="flex flex-wrap gap-step-sm">
+      <button class="sites-button min-w-button" type="button" data-notice-close="accept">{ settings.accept_label }</button>
+      {#if settings.decline_label}<button class="sites-button sites-button-outline min-w-button" type="button" data-notice-close="decline">{ settings.decline_label }</button>{/if}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Notice",
+  "description": "A dismissible privacy notice with accept and decline actions.",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>This site uses your browser’s local storage to remember that you have seen this note, and nothing else.</p>"
+    },
+    {
+      "type": "text",
+      "id": "accept_label",
+      "label": "Accept button",
+      "default": "Accept"
+    },
+    {
+      "type": "text",
+      "id": "decline_label",
+      "label": "Decline button",
+      "default": "Decline"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": ""
+    },
+    {
+      "type": "url",
+      "id": "link_href",
+      "label": "Link",
+      "default": "/privacy"
+    },
+    {
+      "type": "text",
+      "id": "key",
+      "label": "Remember key",
+      "default": "folio-notice-2026-10",
+      "info": "Change this to show the notice again after either button dismisses it."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "body": "<p>This site uses your browser’s local storage to remember that you have seen this note, and nothing else.</p>",
+        "accept_label": "Accept",
+        "decline_label": "Decline",
+        "link_label": "",
+        "link_href": "/privacy",
+        "key": "folio-notice-2026-10",
+        "color_scheme": "paper"
+      }
+    }
+  ]
+}
+</schema>

@@ -1,0 +1,932 @@
+{
+  "site": {
+    "name": "The Slow Mile",
+    "url": "https://theslowmile.example",
+    "locale": "en",
+    "settings": {
+      "tagline": "Essays on walking, weather and small towns, from a valley with one café and two buses a day.",
+      "writer_name": "Nell Harker",
+      "writer_bio": "Walks slowly, writes about towns, weather and the paths between them. Lives in a valley with one café and two buses a day.",
+      "writer_portrait": "as_writer",
+      "writer_links": "social",
+      "contact_email": "nell@theslowmile.com",
+      "address": "The Old Forge, Low Lane, Upper Ashdale",
+      "hours": "Replies on Tuesdays and Fridays, after the four o'clock rain"
+    }
+  },
+  "menus": {
+    "main": {
+      "handle": "main",
+      "title": "Main menu",
+      "items": [
+        {
+          "id": "main_0",
+          "label": "Essays",
+          "target": {
+            "kind": "page",
+            "page_id": "pg_journal"
+          },
+          "children": []
+        },
+        {
+          "id": "main_1",
+          "label": "Walks",
+          "target": {
+            "kind": "url",
+            "url": "/journal/the-path-above-the-town-after-rain"
+          },
+          "children": []
+        },
+        {
+          "id": "main_2",
+          "label": "About",
+          "target": {
+            "kind": "page",
+            "page_id": "pg_about"
+          },
+          "children": []
+        },
+        {
+          "id": "main_3",
+          "label": "Letter",
+          "target": {
+            "kind": "url",
+            "url": "/#section-s_newsletter"
+          },
+          "children": []
+        }
+      ]
+    },
+    "journal": {
+      "handle": "journal",
+      "title": "Journal",
+      "items": [
+        {
+          "id": "journal_0",
+          "label": "Essays",
+          "target": {
+            "kind": "page",
+            "page_id": "pg_journal"
+          },
+          "children": []
+        },
+        {
+          "id": "journal_1",
+          "label": "Walks",
+          "target": {
+            "kind": "url",
+            "url": "/journal/the-path-above-the-town-after-rain"
+          },
+          "children": []
+        },
+        {
+          "id": "journal_2",
+          "label": "Topics",
+          "target": {
+            "kind": "page",
+            "page_id": "pg_journal"
+          },
+          "children": []
+        }
+      ]
+    },
+    "elsewhere": {
+      "handle": "elsewhere",
+      "title": "Elsewhere",
+      "items": [
+        {
+          "id": "elsewhere_about",
+          "label": "About",
+          "target": {
+            "kind": "page",
+            "page_id": "pg_about"
+          },
+          "children": []
+        },
+        {
+          "id": "elsewhere_letter",
+          "label": "Letter",
+          "target": {
+            "kind": "url",
+            "url": "/#section-s_newsletter"
+          },
+          "children": []
+        },
+        {
+          "id": "elsewhere_contact",
+          "label": "Contact",
+          "target": {
+            "kind": "page",
+            "page_id": "pg_contact"
+          },
+          "children": []
+        }
+      ]
+    },
+    "legal": {
+      "handle": "legal",
+      "title": "Small print",
+      "items": [
+        {
+          "id": "legal_0",
+          "label": "Privacy",
+          "target": {
+            "kind": "page",
+            "page_id": "pg_privacy"
+          },
+          "children": []
+        }
+      ]
+    },
+    "social": {
+      "handle": "social",
+      "title": "Social links",
+      "items": [
+        {
+          "id": "social_0",
+          "label": "RSS",
+          "target": {
+            "kind": "url",
+            "url": "https://theslowmile.example/feed.xml"
+          },
+          "children": []
+        },
+        {
+          "id": "social_1",
+          "label": "Instagram",
+          "target": {
+            "kind": "url",
+            "url": "https://www.instagram.com/"
+          },
+          "children": []
+        },
+        {
+          "id": "social_2",
+          "label": "Email",
+          "target": {
+            "kind": "url",
+            "url": "mailto:nell@theslowmile.com"
+          },
+          "children": []
+        }
+      ]
+    }
+  },
+  "galleries": {},
+  "assets": {
+    "as_path": {
+      "id": "as_path",
+      "status": "ready",
+      "file_name": "path.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 411,
+      "url": "/assets/photos/path.svg",
+      "width": 800,
+      "height": 1000,
+      "alt": "A path climbing the valley above the town (placeholder)",
+      "created_at": "2026-10-14T09:00:00Z"
+    },
+    "as_writer": {
+      "id": "as_writer",
+      "status": "ready",
+      "file_name": "writer.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 362,
+      "url": "/assets/photos/writer.svg",
+      "width": 800,
+      "height": 1000,
+      "alt": "Portrait placeholder for Nell Harker (placeholder)",
+      "created_at": "2026-10-14T09:00:00Z"
+    },
+    "as_cafe": {
+      "id": "as_cafe",
+      "status": "ready",
+      "file_name": "cafe.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 417,
+      "url": "/assets/photos/cafe.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "The table by the window in the town’s only café (placeholder)",
+      "created_at": "2026-10-14T09:00:00Z"
+    },
+    "as_valley": {
+      "id": "as_valley",
+      "status": "ready",
+      "file_name": "valley.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 409,
+      "url": "/assets/photos/valley.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "The valley and the paths between its towns (placeholder)",
+      "created_at": "2026-10-14T09:00:00Z"
+    },
+    "as_ridge": {
+      "id": "as_ridge",
+      "status": "ready",
+      "file_name": "ridge.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 392,
+      "url": "/assets/photos/ridge.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "The ridge after rain (placeholder)",
+      "created_at": "2026-10-14T09:00:00Z"
+    },
+    "as_weather": {
+      "id": "as_weather",
+      "status": "ready",
+      "file_name": "weather.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 404,
+      "url": "/assets/photos/weather.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "Clouds gathering over the valley (placeholder)",
+      "created_at": "2026-10-14T09:00:00Z"
+    }
+  },
+  "forms": {
+    "contact": {
+      "name": "Contact",
+      "fields": [
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Name",
+          "required": true,
+          "max_length": 120
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        },
+        {
+          "id": "message",
+          "type": "textarea",
+          "label": "Message",
+          "required": true,
+          "max_length": 4000
+        }
+      ],
+      "success_message": "Thanks — your note is with Nell.",
+      "submit_label": "Send"
+    },
+    "newsletter": {
+      "name": "Newsletter",
+      "fields": [
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        }
+      ],
+      "success_message": "Thanks for subscribing. The next letter will find you here.",
+      "submit_label": "Subscribe"
+    }
+  },
+  "content": {
+    "posts": {
+      "name": "Journal",
+      "fields": [
+        {
+          "id": "topic",
+          "type": "text",
+          "label": "Topic"
+        },
+        {
+          "id": "date",
+          "type": "date",
+          "label": "Date"
+        },
+        {
+          "id": "author",
+          "type": "text",
+          "label": "Author"
+        },
+        {
+          "id": "reading_minutes",
+          "type": "number",
+          "label": "Reading minutes"
+        },
+        {
+          "id": "standfirst",
+          "type": "textarea",
+          "label": "Standfirst"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "body",
+          "type": "richtext",
+          "label": "Body"
+        },
+        {
+          "id": "image_caption",
+          "type": "text",
+          "label": "Image caption"
+        }
+      ],
+      "entries": [
+        {
+          "id": "en_the_path_above_the_town_after_rain",
+          "handle": "the-path-above-the-town-after-rain",
+          "title": "The path above the town, after rain",
+          "fields": {
+            "topic": "Walking",
+            "date": "2026-10-14T09:00:00Z",
+            "author": "Nell Harker",
+            "reading_minutes": 9,
+            "standfirst": "A closed sign, a trench worn by eleven years of people ignoring it, and what the map leaves out between the two.",
+            "image": "as_path",
+            "image_alt": "A path climbing the valley above the town (placeholder)",
+            "body": "<p>The sign at the stile says the path is closed, and it has said so for eleven years. Nobody has taken it down because nobody is quite sure whose job that is.</p><p>In the meantime the path has been walked into a trench a foot deep by people who read the sign and went anyway. I count myself among them, and I have never met anyone up there who did not.</p><p>The map shows the path as a dotted line that stops at the stile. Past that it shows nothing at all: not the trench, not the view over the roofs, not the bench someone carried up and left. What the map leaves out is most of the walk.</p>",
+            "image_caption": "The stile, and the sign nobody has taken down."
+          }
+        },
+        {
+          "id": "en_breakfast_in_a_town_with_one_cafe",
+          "handle": "breakfast-in-a-town-with-one-cafe",
+          "title": "Breakfast in a town with one café",
+          "fields": {
+            "topic": "Towns",
+            "date": "2026-10-02T09:00:00Z",
+            "author": "Nell Harker",
+            "reading_minutes": 6,
+            "standfirst": "On being the only stranger in a room that has known itself for forty years.",
+            "image": "as_cafe",
+            "image_alt": "The table by the window in the town’s only café (placeholder)",
+            "body": "<p>The café opens before the first bus arrives. By the time I reach it, the same three people are at the table by the window, finishing a conversation that appears to have begun last week.</p><p>I order breakfast and sit where I am pointed. The question is never whether I want tea, only whether I have come over the fields.</p>",
+            "image_caption": "The table by the window, before the first bus."
+          }
+        },
+        {
+          "id": "en_weather_you_can_set_a_watch_by",
+          "handle": "weather-you-can-set-a-watch-by",
+          "title": "Weather you can set a watch by",
+          "fields": {
+            "topic": "Weather",
+            "date": "2026-09-19T09:00:00Z",
+            "author": "Nell Harker",
+            "reading_minutes": 4,
+            "standfirst": "The valley’s four o’clock rain, and the people who plan around it.",
+            "image": "",
+            "image_alt": "",
+            "body": "<p>At four the washing comes in, the café window closes and somebody in the square looks up. There are days when the rain forgets, but nobody changes their plans on its account.</p><p>Weather here is less a forecast than an arrangement between neighbours.</p>"
+          }
+        },
+        {
+          "id": "en_a_bus_timetable_as_literature",
+          "handle": "a-bus-timetable-as-literature",
+          "title": "A bus timetable as literature",
+          "fields": {
+            "topic": "Towns",
+            "date": "2026-09-04T09:00:00Z",
+            "author": "Nell Harker",
+            "reading_minutes": 7,
+            "standfirst": "Two services a day, each with its own regulars, and a driver who reads.",
+            "image": "",
+            "image_alt": "",
+            "body": "<p>The timetable gives the impression that each journey is the same. It does not mention the driver who saves a seat for the woman with the shopping trolley, or the extra minute at the crossroads.</p><p>There are two services a day. The space between them is enough for a long walk and a short book.</p>"
+          }
+        },
+        {
+          "id": "en_fog_and_the_etiquette_of_it",
+          "handle": "fog-and-the-etiquette-of-it",
+          "title": "Fog, and the etiquette of it",
+          "fields": {
+            "topic": "Weather",
+            "date": "2026-08-21T09:00:00Z",
+            "author": "Nell Harker",
+            "reading_minutes": 5,
+            "standfirst": "You say hello to everyone, because you cannot tell who it is.",
+            "image": "",
+            "image_alt": "",
+            "body": "<p>In fog you greet a shape before it becomes a person. By the time the voice comes back, you are already passing, and neither of you needs to decide whether you know the other.</p><p>The path sounds different when there is nothing much to see.</p>"
+          }
+        },
+        {
+          "id": "en_the_ferry_that_waits_for_the_bus",
+          "handle": "the-ferry-that-waits-for-the-bus",
+          "title": "The ferry that waits for the bus",
+          "fields": {
+            "topic": "Towns",
+            "date": "2026-09-18T09:00:00Z",
+            "author": "Nell Harker",
+            "reading_minutes": 5,
+            "standfirst": "A timetable written for one man, and the rest of us riding along.",
+            "image": "",
+            "image_alt": "",
+            "body": "<p>The ferry has a timetable of its own, but the ferryman watches the road. If the bus is late he leaves the rope where it is and finishes his tea.</p><p>We wait with him, learning that a connection is sometimes a person rather than a printed time.</p>"
+          }
+        },
+        {
+          "id": "en_notes_on_a_borrowed_map",
+          "handle": "notes-on-a-borrowed-map",
+          "title": "Notes on a borrowed map",
+          "fields": {
+            "topic": "Walking",
+            "date": "2026-09-04T09:00:00Z",
+            "author": "Nell Harker",
+            "reading_minutes": 7,
+            "standfirst": "The pencil marks of whoever walked it first.",
+            "image": "",
+            "image_alt": "",
+            "body": "<p>The borrowed map is older than several of the gates. Somebody has drawn a short line across one field and put a question mark beside a barn.</p><p>I follow the pencil where it leaves the printed path. It takes me to a dry place to sit.</p>"
+          }
+        },
+        {
+          "id": "en_hedges_in_august",
+          "handle": "hedges-in-august",
+          "title": "Hedges in August",
+          "fields": {
+            "topic": "Seasons",
+            "date": "2026-08-21T09:00:00Z",
+            "author": "Nell Harker",
+            "reading_minutes": 4,
+            "standfirst": "Blackberries, dust and the long tail of summer.",
+            "image": "",
+            "image_alt": "",
+            "body": "<p>The blackberries ripen first on the sunny side of the lane. A week later the far side catches up, and the walk home becomes longer in both directions.</p><p>Dust gathers on the lower leaves until the next rain washes the summer from them.</p>"
+          }
+        },
+        {
+          "id": "en_a_bench_with_a_name_on_it",
+          "handle": "a-bench-with-a-name-on-it",
+          "title": "A bench with a name on it",
+          "fields": {
+            "topic": "Towns",
+            "date": "2026-08-07T09:00:00Z",
+            "author": "Nell Harker",
+            "reading_minutes": 3,
+            "standfirst": "Who Margaret was, as far as the village remembers.",
+            "image": "",
+            "image_alt": "",
+            "body": "<p>The plaque gives a first name and two dates. The people who stop at the bench supply everything else: the garden, the dog, the way she always carried a spare bag.</p><p>By the time I stand up, Margaret has become someone I almost remember.</p>"
+          }
+        },
+        {
+          "id": "en_walking_the_old_drove_road",
+          "handle": "walking-the-old-drove-road",
+          "title": "Walking the old drove road",
+          "fields": {
+            "topic": "Walking",
+            "date": "2026-07-24T09:00:00Z",
+            "author": "Nell Harker",
+            "reading_minutes": 11,
+            "standfirst": "Twelve miles of green lane the cattle once kept open.",
+            "image": "",
+            "image_alt": "",
+            "body": "<p>The drove road keeps its width even where the traffic has gone. Grass closes over the middle, leaving two tracks that lead between the hedges.</p><h2>Over the ridge</h2><p>It is twelve miles to the next town. There is no need to hurry, and no useful way to take a shortcut.</p>"
+          }
+        },
+        {
+          "id": "en_what_the_rain_gauge_said",
+          "handle": "what-the-rain-gauge-said",
+          "title": "What the rain gauge said",
+          "fields": {
+            "topic": "Weather",
+            "date": "2026-07-10T09:00:00Z",
+            "author": "Nell Harker",
+            "reading_minutes": 6,
+            "standfirst": "A wet month, measured in a jam jar on the wall.",
+            "image": "",
+            "image_alt": "",
+            "body": "<p>The rain gauge is a jam jar fixed to the wall by the back door. A pencil mark records the morning level; the notebook beside it records whether I was surprised.</p><p>This month the measurements have been more consistent than my memory of the weather.</p>"
+          }
+        },
+        {
+          "id": "en_two_pubs_one_landlord",
+          "handle": "two-pubs-one-landlord",
+          "title": "Two pubs, one landlord",
+          "fields": {
+            "topic": "Towns",
+            "date": "2026-06-26T09:00:00Z",
+            "author": "Nell Harker",
+            "reading_minutes": 8,
+            "standfirst": "He crosses the square at nine and changes his apron.",
+            "image": "",
+            "image_alt": "",
+            "body": "<p>At nine he locks one door and walks across the square to open the other. His apron changes, but the conversation follows him.</p><p>The two pubs have different windows onto the same town, and that seems reason enough to keep them both.</p>"
+          }
+        },
+        {
+          "id": "en_the_longest_evening",
+          "handle": "the-longest-evening",
+          "title": "The longest evening",
+          "fields": {
+            "topic": "Seasons",
+            "date": "2026-06-21T09:00:00Z",
+            "author": "Nell Harker",
+            "reading_minutes": 5,
+            "standfirst": "Light on the ridge until almost eleven.",
+            "image": "",
+            "image_alt": "",
+            "body": "<p>We stay on the ridge after the path below has become a dark line. There is still light in the western sky and nobody is ready to call it night.</p><p>Almost eleven, somebody says. We begin the slow walk home.</p>"
+          }
+        }
+      ]
+    }
+  },
+  "pages": {
+    "/": {
+      "id": "pg_home",
+      "template": "home",
+      "title": "Home",
+      "seo": {
+        "description": "Essays on walking, weather and small towns",
+        "image": "as_path"
+      }
+    },
+    "/journal": {
+      "id": "pg_journal",
+      "template": "blog-list",
+      "title": "Journal",
+      "seo": {
+        "description": "Thirteen essays on walking, weather, towns and seasons, newest first."
+      }
+    },
+    "/journal/the-path-above-the-town-after-rain": {
+      "id": "pg_the_path_above_the_town_after_rain",
+      "template": "post",
+      "title": "The path above the town, after rain",
+      "params": {
+        "handle": "the-path-above-the-town-after-rain"
+      },
+      "entry": {
+        "id": "en_the_path_above_the_town_after_rain",
+        "handle": "the-path-above-the-town-after-rain",
+        "title": "The path above the town, after rain",
+        "fields": {
+          "topic": "Walking",
+          "date": "2026-10-14T09:00:00Z",
+          "author": "Nell Harker",
+          "reading_minutes": 9,
+          "standfirst": "A closed sign, a trench worn by eleven years of people ignoring it, and what the map leaves out between the two.",
+          "image": "as_path",
+          "image_alt": "A path climbing the valley above the town (placeholder)",
+          "body": "<p>The sign at the stile says the path is closed, and it has said so for eleven years. Nobody has taken it down because nobody is quite sure whose job that is.</p><p>In the meantime the path has been walked into a trench a foot deep by people who read the sign and went anyway. I count myself among them, and I have never met anyone up there who did not.</p><p>The map shows the path as a dotted line that stops at the stile. Past that it shows nothing at all: not the trench, not the view over the roofs, not the bench someone carried up and left. What the map leaves out is most of the walk.</p>",
+          "image_caption": "The stile, and the sign nobody has taken down."
+        }
+      },
+      "seo": {
+        "description": "A closed sign, a trench worn by eleven years of people ignoring it, and what the map leaves out between the two.",
+        "image": "as_path"
+      }
+    },
+    "/journal/breakfast-in-a-town-with-one-cafe": {
+      "id": "pg_breakfast_in_a_town_with_one_cafe",
+      "template": "post",
+      "title": "Breakfast in a town with one café",
+      "params": {
+        "handle": "breakfast-in-a-town-with-one-cafe"
+      },
+      "entry": {
+        "id": "en_breakfast_in_a_town_with_one_cafe",
+        "handle": "breakfast-in-a-town-with-one-cafe",
+        "title": "Breakfast in a town with one café",
+        "fields": {
+          "topic": "Towns",
+          "date": "2026-10-02T09:00:00Z",
+          "author": "Nell Harker",
+          "reading_minutes": 6,
+          "standfirst": "On being the only stranger in a room that has known itself for forty years.",
+          "image": "as_cafe",
+          "image_alt": "The table by the window in the town’s only café (placeholder)",
+          "body": "<p>The café opens before the first bus arrives. By the time I reach it, the same three people are at the table by the window, finishing a conversation that appears to have begun last week.</p><p>I order breakfast and sit where I am pointed. The question is never whether I want tea, only whether I have come over the fields.</p>",
+          "image_caption": "The table by the window, before the first bus."
+        }
+      },
+      "seo": {
+        "description": "On being the only stranger in a room that has known itself for forty years.",
+        "image": "as_cafe"
+      }
+    },
+    "/journal/weather-you-can-set-a-watch-by": {
+      "id": "pg_weather_you_can_set_a_watch_by",
+      "template": "post",
+      "title": "Weather you can set a watch by",
+      "params": {
+        "handle": "weather-you-can-set-a-watch-by"
+      },
+      "entry": {
+        "id": "en_weather_you_can_set_a_watch_by",
+        "handle": "weather-you-can-set-a-watch-by",
+        "title": "Weather you can set a watch by",
+        "fields": {
+          "topic": "Weather",
+          "date": "2026-09-19T09:00:00Z",
+          "author": "Nell Harker",
+          "reading_minutes": 4,
+          "standfirst": "The valley’s four o’clock rain, and the people who plan around it.",
+          "image": "",
+          "image_alt": "",
+          "body": "<p>At four the washing comes in, the café window closes and somebody in the square looks up. There are days when the rain forgets, but nobody changes their plans on its account.</p><p>Weather here is less a forecast than an arrangement between neighbours.</p>"
+        }
+      },
+      "seo": {
+        "description": "The valley’s four o’clock rain, and the people who plan around it."
+      }
+    },
+    "/journal/a-bus-timetable-as-literature": {
+      "id": "pg_a_bus_timetable_as_literature",
+      "template": "post",
+      "title": "A bus timetable as literature",
+      "params": {
+        "handle": "a-bus-timetable-as-literature"
+      },
+      "entry": {
+        "id": "en_a_bus_timetable_as_literature",
+        "handle": "a-bus-timetable-as-literature",
+        "title": "A bus timetable as literature",
+        "fields": {
+          "topic": "Towns",
+          "date": "2026-09-04T09:00:00Z",
+          "author": "Nell Harker",
+          "reading_minutes": 7,
+          "standfirst": "Two services a day, each with its own regulars, and a driver who reads.",
+          "image": "",
+          "image_alt": "",
+          "body": "<p>The timetable gives the impression that each journey is the same. It does not mention the driver who saves a seat for the woman with the shopping trolley, or the extra minute at the crossroads.</p><p>There are two services a day. The space between them is enough for a long walk and a short book.</p>"
+        }
+      },
+      "seo": {
+        "description": "Two services a day, each with its own regulars, and a driver who reads."
+      }
+    },
+    "/journal/fog-and-the-etiquette-of-it": {
+      "id": "pg_fog_and_the_etiquette_of_it",
+      "template": "post",
+      "title": "Fog, and the etiquette of it",
+      "params": {
+        "handle": "fog-and-the-etiquette-of-it"
+      },
+      "entry": {
+        "id": "en_fog_and_the_etiquette_of_it",
+        "handle": "fog-and-the-etiquette-of-it",
+        "title": "Fog, and the etiquette of it",
+        "fields": {
+          "topic": "Weather",
+          "date": "2026-08-21T09:00:00Z",
+          "author": "Nell Harker",
+          "reading_minutes": 5,
+          "standfirst": "You say hello to everyone, because you cannot tell who it is.",
+          "image": "",
+          "image_alt": "",
+          "body": "<p>In fog you greet a shape before it becomes a person. By the time the voice comes back, you are already passing, and neither of you needs to decide whether you know the other.</p><p>The path sounds different when there is nothing much to see.</p>"
+        }
+      },
+      "seo": {
+        "description": "You say hello to everyone, because you cannot tell who it is."
+      }
+    },
+    "/journal/the-ferry-that-waits-for-the-bus": {
+      "id": "pg_the_ferry_that_waits_for_the_bus",
+      "template": "post",
+      "title": "The ferry that waits for the bus",
+      "params": {
+        "handle": "the-ferry-that-waits-for-the-bus"
+      },
+      "entry": {
+        "id": "en_the_ferry_that_waits_for_the_bus",
+        "handle": "the-ferry-that-waits-for-the-bus",
+        "title": "The ferry that waits for the bus",
+        "fields": {
+          "topic": "Towns",
+          "date": "2026-09-18T09:00:00Z",
+          "author": "Nell Harker",
+          "reading_minutes": 5,
+          "standfirst": "A timetable written for one man, and the rest of us riding along.",
+          "image": "",
+          "image_alt": "",
+          "body": "<p>The ferry has a timetable of its own, but the ferryman watches the road. If the bus is late he leaves the rope where it is and finishes his tea.</p><p>We wait with him, learning that a connection is sometimes a person rather than a printed time.</p>"
+        }
+      },
+      "seo": {
+        "description": "A timetable written for one man, and the rest of us riding along."
+      }
+    },
+    "/journal/notes-on-a-borrowed-map": {
+      "id": "pg_notes_on_a_borrowed_map",
+      "template": "post",
+      "title": "Notes on a borrowed map",
+      "params": {
+        "handle": "notes-on-a-borrowed-map"
+      },
+      "entry": {
+        "id": "en_notes_on_a_borrowed_map",
+        "handle": "notes-on-a-borrowed-map",
+        "title": "Notes on a borrowed map",
+        "fields": {
+          "topic": "Walking",
+          "date": "2026-09-04T09:00:00Z",
+          "author": "Nell Harker",
+          "reading_minutes": 7,
+          "standfirst": "The pencil marks of whoever walked it first.",
+          "image": "",
+          "image_alt": "",
+          "body": "<p>The borrowed map is older than several of the gates. Somebody has drawn a short line across one field and put a question mark beside a barn.</p><p>I follow the pencil where it leaves the printed path. It takes me to a dry place to sit.</p>"
+        }
+      },
+      "seo": {
+        "description": "The pencil marks of whoever walked it first."
+      }
+    },
+    "/journal/hedges-in-august": {
+      "id": "pg_hedges_in_august",
+      "template": "post",
+      "title": "Hedges in August",
+      "params": {
+        "handle": "hedges-in-august"
+      },
+      "entry": {
+        "id": "en_hedges_in_august",
+        "handle": "hedges-in-august",
+        "title": "Hedges in August",
+        "fields": {
+          "topic": "Seasons",
+          "date": "2026-08-21T09:00:00Z",
+          "author": "Nell Harker",
+          "reading_minutes": 4,
+          "standfirst": "Blackberries, dust and the long tail of summer.",
+          "image": "",
+          "image_alt": "",
+          "body": "<p>The blackberries ripen first on the sunny side of the lane. A week later the far side catches up, and the walk home becomes longer in both directions.</p><p>Dust gathers on the lower leaves until the next rain washes the summer from them.</p>"
+        }
+      },
+      "seo": {
+        "description": "Blackberries, dust and the long tail of summer."
+      }
+    },
+    "/journal/a-bench-with-a-name-on-it": {
+      "id": "pg_a_bench_with_a_name_on_it",
+      "template": "post",
+      "title": "A bench with a name on it",
+      "params": {
+        "handle": "a-bench-with-a-name-on-it"
+      },
+      "entry": {
+        "id": "en_a_bench_with_a_name_on_it",
+        "handle": "a-bench-with-a-name-on-it",
+        "title": "A bench with a name on it",
+        "fields": {
+          "topic": "Towns",
+          "date": "2026-08-07T09:00:00Z",
+          "author": "Nell Harker",
+          "reading_minutes": 3,
+          "standfirst": "Who Margaret was, as far as the village remembers.",
+          "image": "",
+          "image_alt": "",
+          "body": "<p>The plaque gives a first name and two dates. The people who stop at the bench supply everything else: the garden, the dog, the way she always carried a spare bag.</p><p>By the time I stand up, Margaret has become someone I almost remember.</p>"
+        }
+      },
+      "seo": {
+        "description": "Who Margaret was, as far as the village remembers."
+      }
+    },
+    "/journal/walking-the-old-drove-road": {
+      "id": "pg_walking_the_old_drove_road",
+      "template": "post",
+      "title": "Walking the old drove road",
+      "params": {
+        "handle": "walking-the-old-drove-road"
+      },
+      "entry": {
+        "id": "en_walking_the_old_drove_road",
+        "handle": "walking-the-old-drove-road",
+        "title": "Walking the old drove road",
+        "fields": {
+          "topic": "Walking",
+          "date": "2026-07-24T09:00:00Z",
+          "author": "Nell Harker",
+          "reading_minutes": 11,
+          "standfirst": "Twelve miles of green lane the cattle once kept open.",
+          "image": "",
+          "image_alt": "",
+          "body": "<p>The drove road keeps its width even where the traffic has gone. Grass closes over the middle, leaving two tracks that lead between the hedges.</p><h2>Over the ridge</h2><p>It is twelve miles to the next town. There is no need to hurry, and no useful way to take a shortcut.</p>"
+        }
+      },
+      "seo": {
+        "description": "Twelve miles of green lane the cattle once kept open."
+      }
+    },
+    "/journal/what-the-rain-gauge-said": {
+      "id": "pg_what_the_rain_gauge_said",
+      "template": "post",
+      "title": "What the rain gauge said",
+      "params": {
+        "handle": "what-the-rain-gauge-said"
+      },
+      "entry": {
+        "id": "en_what_the_rain_gauge_said",
+        "handle": "what-the-rain-gauge-said",
+        "title": "What the rain gauge said",
+        "fields": {
+          "topic": "Weather",
+          "date": "2026-07-10T09:00:00Z",
+          "author": "Nell Harker",
+          "reading_minutes": 6,
+          "standfirst": "A wet month, measured in a jam jar on the wall.",
+          "image": "",
+          "image_alt": "",
+          "body": "<p>The rain gauge is a jam jar fixed to the wall by the back door. A pencil mark records the morning level; the notebook beside it records whether I was surprised.</p><p>This month the measurements have been more consistent than my memory of the weather.</p>"
+        }
+      },
+      "seo": {
+        "description": "A wet month, measured in a jam jar on the wall."
+      }
+    },
+    "/journal/two-pubs-one-landlord": {
+      "id": "pg_two_pubs_one_landlord",
+      "template": "post",
+      "title": "Two pubs, one landlord",
+      "params": {
+        "handle": "two-pubs-one-landlord"
+      },
+      "entry": {
+        "id": "en_two_pubs_one_landlord",
+        "handle": "two-pubs-one-landlord",
+        "title": "Two pubs, one landlord",
+        "fields": {
+          "topic": "Towns",
+          "date": "2026-06-26T09:00:00Z",
+          "author": "Nell Harker",
+          "reading_minutes": 8,
+          "standfirst": "He crosses the square at nine and changes his apron.",
+          "image": "",
+          "image_alt": "",
+          "body": "<p>At nine he locks one door and walks across the square to open the other. His apron changes, but the conversation follows him.</p><p>The two pubs have different windows onto the same town, and that seems reason enough to keep them both.</p>"
+        }
+      },
+      "seo": {
+        "description": "He crosses the square at nine and changes his apron."
+      }
+    },
+    "/journal/the-longest-evening": {
+      "id": "pg_the_longest_evening",
+      "template": "post",
+      "title": "The longest evening",
+      "params": {
+        "handle": "the-longest-evening"
+      },
+      "entry": {
+        "id": "en_the_longest_evening",
+        "handle": "the-longest-evening",
+        "title": "The longest evening",
+        "fields": {
+          "topic": "Seasons",
+          "date": "2026-06-21T09:00:00Z",
+          "author": "Nell Harker",
+          "reading_minutes": 5,
+          "standfirst": "Light on the ridge until almost eleven.",
+          "image": "",
+          "image_alt": "",
+          "body": "<p>We stay on the ridge after the path below has become a dark line. There is still light in the western sky and nobody is ready to call it night.</p><p>Almost eleven, somebody says. We begin the slow walk home.</p>"
+        }
+      },
+      "seo": {
+        "description": "Light on the ridge until almost eleven."
+      }
+    },
+    "/about": {
+      "id": "pg_about",
+      "template": "page.about",
+      "title": "About",
+      "seo": {
+        "description": "Nell Harker walks slowly and writes about towns, weather and the paths between them.",
+        "image": "as_writer"
+      }
+    },
+    "/contact": {
+      "id": "pg_contact",
+      "template": "page.contact",
+      "title": "Contact",
+      "seo": {
+        "description": "Letters, corrections and routes worth walking are all welcome. Every one gets read, slowly."
+      }
+    },
+    "/privacy": {
+      "id": "pg_privacy",
+      "template": "page",
+      "title": "Privacy",
+      "content": "<p><strong>This is a placeholder. Replace it with your own privacy notice before publishing.</strong></p><p>Describe what the contact and newsletter forms collect, how you use it, how long you keep it and how someone can request its deletion. The notice remembers its dismissal in the visitor’s browser using local storage. Mention any external fonts, feeds, links or services you choose to add.</p>",
+      "seo": {
+        "description": "How The Slow Mile handles information and remembers notice preferences."
+      }
+    }
+  }
+}

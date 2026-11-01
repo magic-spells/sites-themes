@@ -1,0 +1,10 @@
+<!-- component: PostDate -->
+<!-- props: value year -->
+<!-- An entry date as the design writes it, "14 Oct 2026", or "14 Oct" without
+     the year. The date filter gives the calendar day; the month names come
+     from the locale's months_short.1 to months_short.12. -->
+{#let
+  iso = date(value, 'iso')
+  parts = iso | split('-')
+}
+{#if value}<time datetime="{ iso }">{ parts[2] } { t('months_short.' + parseInt(parts[1], 10)) }{#if year} { parts[0] }{/if}</time>{/if}

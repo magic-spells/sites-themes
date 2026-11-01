@@ -1,0 +1,110 @@
+{
+  "name": "Folio",
+  "version": "0.1.0",
+  "default_template": "page",
+  "not_found_template": "404",
+  "maintenance_template": "maintenance",
+  "groups": {
+    "header-group": {
+      "label": "Header",
+      "accepts": [
+        "announcement-bar",
+        "header"
+      ]
+    },
+    "footer-group": {
+      "label": "Footer",
+      "accepts": [
+        "footer"
+      ]
+    },
+    "panel-group": {
+      "label": "Dialogs",
+      "accepts": [
+        "mobile-menu",
+        "cookie-notice"
+      ]
+    }
+  },
+  "settings": [
+    {
+      "name": "Brand",
+      "settings": [
+        {
+          "type": "image",
+          "id": "favicon",
+          "label": "Favicon",
+          "info": "The small icon in the browser tab. A square image works best."
+        },
+        {
+          "type": "text",
+          "id": "tagline",
+          "label": "Tagline",
+          "default": "Essays on walking, weather and small towns, from a valley with one café and two buses a day."
+        }
+      ]
+    },
+    {
+      "name": "Journal",
+      "settings": [
+        {
+          "type": "text",
+          "id": "posts_path",
+          "label": "Journal path",
+          "default": "/journal",
+          "info": "Where the posts live. The not-found page links its recent posts to this path plus each handle."
+        }
+      ]
+    },
+    {
+      "name": "Writer",
+      "settings": [
+        {
+          "type": "text",
+          "id": "writer_name",
+          "label": "Name",
+          "default": "Nell Harker"
+        },
+        {
+          "type": "textarea",
+          "id": "writer_bio",
+          "label": "Biography",
+          "default": "Walks slowly, writes about towns, weather and the paths between them. Lives in a valley with one café and two buses a day."
+        },
+        {
+          "type": "image",
+          "id": "writer_portrait",
+          "label": "Portrait"
+        },
+        {
+          "type": "menu",
+          "id": "writer_links",
+          "label": "Links menu"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "settings": [
+        {
+          "type": "text",
+          "id": "contact_email",
+          "label": "Contact email",
+          "default": "nell@theslowmile.com"
+        },
+        {
+          "type": "textarea",
+          "id": "address",
+          "label": "Postal address",
+          "default": "The Old Forge, Low Lane, Upper Ashdale"
+        },
+        {
+          "type": "text",
+          "id": "hours",
+          "label": "Reply hours",
+          "default": "Replies on Tuesdays and Fridays, after the four o'clock rain"
+        }
+      ]
+    }
+  ]
+}

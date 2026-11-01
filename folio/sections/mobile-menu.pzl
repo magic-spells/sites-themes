@@ -1,0 +1,78 @@
+<!-- The mobile menu is a @magic-spells <dialog-panel>, a left drawer over a
+     scrim. It closes on the scrim, on Escape and on its × button, and hands
+     focus back to the header's Menu button. -->
+<dialog-panel id="mobile-menu" position="left">
+  <dialog-backdrop class="bg-scheme-surface/90"></dialog-backdrop>
+  <dialog class="h-dvh w-full max-w-drawer overflow-y-auto bg-scheme-background text-scheme-foreground shadow-none" aria-label="{ t('menu_label') }">
+    <div class="grid gap-step-xl px-gutter pt-step-md pb-step-xl">
+      <div class="flex items-center justify-between gap-step-md">
+        <a class="font-heading text-h3 font-medium text-scheme-heading" href="/">{ site.name }</a>
+        <button class="sites-icon -m-step-xs size-10 p-step-xs text-scheme-heading hover:text-scheme-links" type="button" data-action-hide-dialog>{#svg 'icons/close.svg'}<span class="sr-only">{ t('close_menu') }</span></button>
+      </div>
+
+      {#if settings.menu.items.length}
+        <nav aria-label="{ t('main_navigation') }">
+          <ul class="grid gap-step-sm">
+            {#for item in settings.menu.items}
+              <li>
+                <a class="text-scheme-heading font-heading text-h3 font-medium hover:text-scheme-links" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active ? 'page' : null }>{ item.label }</a>
+                {#if item.children.length}
+                  <ul class="mt-step-xs grid gap-step-xs pl-step-md">
+                    {#for child in item.children}
+                      <li><a class="text-body-lg text-scheme-muted hover:text-scheme-links" href="{ child.href }" target={ child.open_in_new ? '_blank' : null } rel={ child.open_in_new ? 'noopener' : null }>{ child.label }</a></li>
+                    {/for}
+                  </ul>
+                {/if}
+              </li>
+            {/for}
+          </ul>
+        </nav>
+      {/if}
+
+      {#if settings.menu_secondary.items.length}
+        <nav class="border-t border-scheme-rule pt-step-lg" aria-label="{ settings.menu_secondary.title }">
+          <ul class="grid gap-step-sm">
+            {#for item in settings.menu_secondary.items}
+              <li><a class="font-mono text-meta font-medium tracking-meta text-scheme-meta uppercase hover:text-scheme-links" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null }>{ item.label }</a></li>
+            {/for}
+          </ul>
+        </nav>
+      {/if}
+    </div>
+  </dialog>
+</dialog-panel>
+
+<schema>
+{
+  "name": "Mobile menu",
+  "description": "A drawer with the main menu and secondary links.",
+  "settings": [
+    {
+      "type": "menu",
+      "id": "menu",
+      "label": "Menu"
+    },
+    {
+      "type": "menu",
+      "id": "menu_secondary",
+      "label": "Secondary menu"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "color_scheme": "paper",
+        "menu": "main",
+        "menu_secondary": "social"
+      }
+    }
+  ]
+}
+</schema>

@@ -1,0 +1,2 @@
+<!-- component: Chip -->
+<span class="sites-chip"><Children/></span>

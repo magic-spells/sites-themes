@@ -1,0 +1,53 @@
+{
+  "label": "Journal",
+  "description": "The journal index with up to twelve entries and the letter signup.",
+  "sections": [
+    {
+      "id": "s_page_header",
+      "type": "page-header",
+      "preset": "Centered",
+      "settings": {
+        "chip": "Journal",
+        "heading": "Everything in the journal",
+        "standfirst": "Essays on walking, weather and small towns, newest first. Thirteen of them so far, and a few more on the way.",
+        "align": "center",
+        "color_scheme": "cream"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_journal_index",
+      "type": "post-list",
+      "preset": "Index",
+      "settings": {
+        "heading": "All posts",
+        "base_path": "/journal",
+        "layout": "list",
+        "columns": "3",
+        "limit": 12,
+        "topic": "",
+        "exclude_current": false,
+        "show_count": true,
+        "view_all_label": "",
+        "view_all_href": "",
+        "color_scheme": "paper",
+        "collection": "posts"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Default",
+      "settings": {
+        "heading": "A letter when there is something to say",
+        "text": "Usually once a month. Never more than twice.",
+        "placeholder": "you@example.com",
+        "note": "One click to leave. Your address goes nowhere else.",
+        "form": "newsletter",
+        "color_scheme": "ink"
+      },
+      "blocks": []
+    }
+  ]
+}

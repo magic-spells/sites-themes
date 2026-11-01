@@ -1,0 +1,18 @@
+<!-- component: PostCard -->
+<!-- props: entry href -->
+<!-- A grid card: a 3:2 picture when the entry has one, the dateline, the
+     title and the standfirst. -->
+<li>
+  <a class="group grid gap-step-sm" href="{ href }">
+    {#if entry.fields.image}
+      <img class="aspect-3/2 w-full bg-scheme-surface object-cover"
+        src="{ image_url(entry.fields.image, 768) }"
+        srcset="{ image_url(entry.fields.image, 480) } 480w, { image_url(entry.fields.image, 768) } 768w, { image_url(entry.fields.image, 1024) } 1024w"
+        sizes="(min-width: 64rem) 23rem, (min-width: 48rem) 50vw, 100vw"
+        alt="{ entry.fields.image_alt }" loading="lazy" width="{ entry.fields.image.width }" height="{ entry.fields.image.height }" />
+    {/if}
+    <Dateline entry={ entry } read={ false } />
+    <h3 class="font-heading text-h4 font-medium text-scheme-heading decoration-1 underline-offset-4 group-hover:underline">{ entry.title }</h3>
+    {#if entry.fields.standfirst}<p class="text-body text-pretty text-scheme-muted">{ entry.fields.standfirst }</p>{/if}
+  </a>
+</li>

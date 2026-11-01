@@ -1,0 +1,17 @@
+{
+  "sections": [
+    {
+      "id": "sg_header",
+      "type": "header",
+      "preset": "Default",
+      "settings": {
+        "logo_text": "",
+        "sticky": true,
+        "bordered": true,
+        "color_scheme": "paper",
+        "menu": "main"
+      },
+      "blocks": []
+    }
+  ]
+}

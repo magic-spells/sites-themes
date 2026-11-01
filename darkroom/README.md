@@ -11,12 +11,13 @@ and a contact form instead of placeholder text. The photographs are twelve SVG s
 across every gallery; replace them before publishing.
 
 ```
-theme.json          template roles, 3 section groups, Brand, Photographer and Contact settings, query ["subject"]
-design.json         every design token, 3 color schemes (Darkroom, Gallery, Matte), 3 suggested palettes
+settings/theme.json template roles, 3 section groups, Brand, Photographer and Contact settings, query ["subject"]
+settings/design.json every design token, 3 color schemes (Darkroom, Gallery, Matte), 3 suggested palettes
 layouts/default.pzl the <html> document: SEO, Open Graph, the series view pre-paint script, skip link, five slots
-templates/          home, work, series, page (+ about, prints, contact, packages, gallery-masonry,
-                    gallery-grid, gallery-carousel) as JSON; 404.pzl, password.pzl, maintenance.pzl
-groups/             header-group.json, footer-group.json, panel-group.json
+data/templates/     home, work, series, page (+ about, prints, contact, packages, gallery-masonry,
+                    gallery-grid, gallery-carousel) as JSON
+data/groups/        header-group.json, footer-group.json, panel-group.json
+templates/          404.pzl, password.pzl, maintenance.pzl
 sections/           26, each with a full <schema>
 components/         Button, Field, Chip, Counter, LightboxCompanion, PhotoTile, SeriesCard, SeriesRow,
                     ServiceTile

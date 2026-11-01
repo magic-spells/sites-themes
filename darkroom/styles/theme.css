@@ -61,7 +61,7 @@
 
 	/* Darkroom reads four roles the engine's scheme has no slot for: a muted
 	   text, a meta grey for datelines, a rule and a second surface. They ride
-	   on the chip and icon slots, which design.json fills with those values. */
+	   on the chip and icon slots, which settings/design.json fills with those values. */
 	--color-scheme-muted: var(--sites-scheme-chip-foreground);
 	--color-scheme-meta: var(--sites-scheme-icons);
 	--color-scheme-rule: var(--sites-scheme-chip-border);

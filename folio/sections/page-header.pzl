@@ -1,0 +1,74 @@
+<div>Page header</div>
+
+<schema>
+{
+  "name": "Page header",
+  "description": "The page title and standfirst, with an optional label.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "chip",
+      "label": "Label",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "",
+      "info": "Leave empty to use the page title."
+    },
+    {
+      "type": "text",
+      "id": "standfirst",
+      "label": "Standfirst",
+      "default": "",
+      "info": "Leave empty to use the page search description."
+    },
+    {
+      "type": "select",
+      "id": "align",
+      "label": "Alignment",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Centered"
+        }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "cream"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "chip": "",
+        "heading": "",
+        "standfirst": "",
+        "align": "left",
+        "color_scheme": "cream"
+      }
+    },
+    {
+      "name": "Centered",
+      "settings": {
+        "chip": "",
+        "heading": "",
+        "standfirst": "",
+        "align": "center",
+        "color_scheme": "cream"
+      }
+    }
+  ]
+}
+</schema>

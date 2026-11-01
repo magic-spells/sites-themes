@@ -1,0 +1,177 @@
+<div>Post list</div>
+
+<schema>
+{
+  "name": "Post list",
+  "description": "Journal entries as rows or cards, with an optional count and view-all link.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Recent"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Content type",
+      "info": "Uses posts fields topic, date, author, reading_minutes, standfirst, image, image_alt and body; image_caption is optional."
+    },
+    {
+      "type": "url",
+      "id": "base_path",
+      "label": "Index path",
+      "default": "/journal",
+      "info": "Each entry links to this path plus its handle."
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "list",
+      "options": [
+        {
+          "value": "list",
+          "label": "List"
+        },
+        {
+          "value": "grid",
+          "label": "Grid"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Columns",
+      "default": "3",
+      "options": [
+        {
+          "value": "2",
+          "label": "Two"
+        },
+        {
+          "value": "3",
+          "label": "Three"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Posts shown",
+      "default": 4,
+      "min": 1,
+      "max": 12,
+      "step": 1
+    },
+    {
+      "type": "text",
+      "id": "topic",
+      "label": "Topic",
+      "default": "",
+      "info": "Leave empty for every topic; otherwise match the entry topic exactly."
+    },
+    {
+      "type": "checkbox",
+      "id": "exclude_current",
+      "label": "Exclude the current post",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_count",
+      "label": "Show the post count",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "view_all_label",
+      "label": "View-all label",
+      "default": "Everything in the journal"
+    },
+    {
+      "type": "url",
+      "id": "view_all_href",
+      "label": "View-all link",
+      "default": "/journal"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Recent",
+      "settings": {
+        "heading": "Recent",
+        "base_path": "/journal",
+        "layout": "list",
+        "columns": "3",
+        "limit": 4,
+        "topic": "",
+        "exclude_current": false,
+        "show_count": true,
+        "view_all_label": "Everything in the journal",
+        "view_all_href": "/journal",
+        "color_scheme": "paper",
+        "collection": "posts"
+      }
+    },
+    {
+      "name": "Index",
+      "settings": {
+        "heading": "All posts",
+        "base_path": "/journal",
+        "layout": "list",
+        "columns": "3",
+        "limit": 12,
+        "topic": "",
+        "exclude_current": false,
+        "show_count": true,
+        "view_all_label": "",
+        "view_all_href": "",
+        "color_scheme": "paper",
+        "collection": "posts"
+      }
+    },
+    {
+      "name": "More to read",
+      "settings": {
+        "heading": "More to read",
+        "base_path": "/journal",
+        "layout": "list",
+        "columns": "3",
+        "limit": 3,
+        "topic": "",
+        "exclude_current": true,
+        "show_count": false,
+        "view_all_label": "",
+        "view_all_href": "",
+        "color_scheme": "paper",
+        "collection": "posts"
+      }
+    },
+    {
+      "name": "Grid",
+      "settings": {
+        "heading": "Recent",
+        "base_path": "/journal",
+        "layout": "grid",
+        "columns": "3",
+        "limit": 3,
+        "topic": "",
+        "exclude_current": false,
+        "show_count": true,
+        "view_all_label": "Everything in the journal",
+        "view_all_href": "/journal",
+        "color_scheme": "paper",
+        "collection": "posts"
+      }
+    }
+  ]
+}
+</schema>

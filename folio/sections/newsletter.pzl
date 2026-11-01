@@ -1,0 +1,59 @@
+<div>Newsletter</div>
+
+<schema>
+{
+  "name": "Newsletter",
+  "description": "A letter signup with a site-owned form and a short privacy note.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "A letter when there is something to say"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Usually once a month. Never more than twice."
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Field placeholder",
+      "default": "you@example.com"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note",
+      "default": "One click to leave. Your address goes nowhere else."
+    },
+    {
+      "type": "form",
+      "id": "form",
+      "label": "Form",
+      "default": "newsletter"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "ink"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "heading": "A letter when there is something to say",
+        "text": "Usually once a month. Never more than twice.",
+        "placeholder": "you@example.com",
+        "note": "One click to leave. Your address goes nowhere else.",
+        "form": "newsletter",
+        "color_scheme": "ink"
+      }
+    }
+  ]
+}
+</schema>

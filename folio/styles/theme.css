@@ -1,0 +1,6 @@
+/* D1 build entry. D2 supplies the Folio token maps and styles. */
+@import "tailwindcss";
+@source "../layouts/**/*.pzl";
+@source "../templates/**/*.pzl";
+@source "../sections/**/*.pzl";
+@source "../components/**/*.pzl";

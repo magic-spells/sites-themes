@@ -1,0 +1,66 @@
+<div>Author card</div>
+
+<schema>
+{
+  "name": "Author card",
+  "description": "A writer portrait, biography and links, using site settings when empty.",
+  "settings": [
+    {
+      "type": "image",
+      "id": "portrait",
+      "label": "Portrait",
+      "info": "Leave empty to use the Writer portrait."
+    },
+    {
+      "type": "text",
+      "id": "name",
+      "label": "Name",
+      "default": "",
+      "info": "Leave empty to use the Writer name."
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "The writer"
+    },
+    {
+      "type": "textarea",
+      "id": "bio",
+      "label": "Biography",
+      "default": "",
+      "info": "Leave empty to use the Writer biography."
+    },
+    {
+      "type": "menu",
+      "id": "links",
+      "label": "Links menu",
+      "info": "Leave empty to use the Writer links menu."
+    },
+    {
+      "type": "checkbox",
+      "id": "use_post_author",
+      "label": "Use the current post author",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "tint"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "name": "",
+        "label": "The writer",
+        "bio": "",
+        "use_post_author": false,
+        "color_scheme": "tint"
+      }
+    }
+  ]
+}
+</schema>

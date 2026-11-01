@@ -1,0 +1,74 @@
+{
+  "label": "Page — About",
+  "description": "The writer, the valley and the walks.",
+  "sections": [
+    {
+      "id": "s_page_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "chip": "About",
+        "heading": "A valley, two buses, one café",
+        "standfirst": "Nell Harker walks slowly and writes about towns, weather and the paths between them.",
+        "align": "left",
+        "color_scheme": "cream"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_about",
+      "type": "image-with-text",
+      "preset": "Default",
+      "settings": {
+        "ratio": "portrait",
+        "layout": "image_first",
+        "eyebrow": "About",
+        "heading": "A valley with one café and two buses a day",
+        "body": "<p>I write about towns, weather and the paths between them, mostly on foot and mostly slowly.</p><p>The journal started as notes for myself. It became letters when people started asking where the closed path went.</p>",
+        "link_label": "More about the walks",
+        "link": "/journal",
+        "color_scheme": "paper",
+        "image": "as_writer"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_walks",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {
+        "heading": "Why the walks are slow",
+        "body": "<p>I started walking the valley paths the year the bus timetable halved. There was no plan in it, only a need to get to the shop and back, and the shop was four miles away by the road and three by the fields.</p><p>The fields are slower, and that is the point. A road tells you where to look; a field path lets you choose, and most days I choose the hedge, the sky over the ridge and whoever is coming the other way.</p><h3>What to bring</h3><ul><li>Boots that have been rained on before</li><li>A map, even though it leaves things out</li><li>Something to eat at the stile, out of the wind</li></ul><p>Letters are welcome, and I answer every one. The address is on the <a href=\"/contact\">contact page</a>, along with the hours I keep.</p>",
+        "width": "narrow",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_quote",
+      "type": "pull-quote",
+      "preset": "Default",
+      "settings": {
+        "quote": "Nobody has taken it down because nobody is quite sure whose job that is.",
+        "attribution": "Nell Harker, The path above the town",
+        "color_scheme": "tint"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Default",
+      "settings": {
+        "heading": "A letter when there is something to say",
+        "text": "Usually once a month. Never more than twice.",
+        "placeholder": "you@example.com",
+        "note": "One click to leave. Your address goes nowhere else.",
+        "form": "newsletter",
+        "color_scheme": "ink"
+      },
+      "blocks": []
+    }
+  ],
+  "selectable": false
+}

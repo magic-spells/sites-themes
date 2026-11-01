@@ -1,0 +1,36 @@
+<div>Mobile menu</div>
+
+<schema>
+{
+  "name": "Mobile menu",
+  "description": "A drawer with the main menu and secondary links.",
+  "settings": [
+    {
+      "type": "menu",
+      "id": "menu",
+      "label": "Menu"
+    },
+    {
+      "type": "menu",
+      "id": "menu_secondary",
+      "label": "Secondary menu"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "color_scheme": "paper",
+        "menu": "main",
+        "menu_secondary": "social"
+      }
+    }
+  ]
+}
+</schema>

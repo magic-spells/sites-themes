@@ -1,0 +1,58 @@
+<div>Header</div>
+
+<schema>
+{
+  "name": "Header",
+  "description": "The site wordmark and main menu, with a mobile menu toggle.",
+  "settings": [
+    {
+      "type": "image",
+      "id": "logo",
+      "label": "Logo",
+      "info": "Leave empty to use logo text or the site name."
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo text",
+      "default": "",
+      "info": "Leave empty to use the site name."
+    },
+    {
+      "type": "menu",
+      "id": "menu",
+      "label": "Menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky",
+      "label": "Stick to the top of the page",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bordered",
+      "label": "Show a bottom border",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "logo_text": "",
+        "sticky": true,
+        "bordered": true,
+        "color_scheme": "paper",
+        "menu": "main"
+      }
+    }
+  ]
+}
+</schema>

@@ -1,0 +1,66 @@
+<div>Featured post</div>
+
+<schema>
+{
+  "name": "Featured post",
+  "description": "One featured essay, with an optional image and italic title ending.",
+  "settings": [
+    {
+      "type": "entry",
+      "id": "post",
+      "label": "Post",
+      "info": "Leave empty to use the newest entry by date."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Content type",
+      "info": "Uses posts fields topic, date, author, reading_minutes, standfirst, image, image_alt and body; image_caption is optional."
+    },
+    {
+      "type": "url",
+      "id": "base_path",
+      "label": "Index path",
+      "default": "/journal"
+    },
+    {
+      "type": "text",
+      "id": "italic_tail",
+      "label": "Italic title ending",
+      "default": "after rain",
+      "info": "The matching end of the title is set in italic."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "label": "Show the picture",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "read_label",
+      "label": "Read link label",
+      "default": "Read the essay"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "base_path": "/journal",
+        "italic_tail": "after rain",
+        "show_image": true,
+        "read_label": "Read the essay",
+        "color_scheme": "paper",
+        "collection": "posts"
+      }
+    }
+  ]
+}
+</schema>

@@ -1,0 +1,38 @@
+<div>Pull quote</div>
+
+<schema>
+{
+  "name": "Pull quote",
+  "description": "A quotation with a hanging opening mark and optional attribution.",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "quote",
+      "label": "Quote",
+      "default": "Nobody has taken it down because nobody is quite sure whose job that is."
+    },
+    {
+      "type": "text",
+      "id": "attribution",
+      "label": "Attribution",
+      "default": "Nell Harker, The path above the town"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "tint"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "quote": "Nobody has taken it down because nobody is quite sure whose job that is.",
+        "attribution": "Nell Harker, The path above the town",
+        "color_scheme": "tint"
+      }
+    }
+  ]
+}
+</schema>

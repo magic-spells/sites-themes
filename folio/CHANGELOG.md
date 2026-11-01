@@ -1,0 +1,1 @@
+0.1.0 introduces the Folio schema layer: sixteen section schemas, nine templates, three groups, four color schemes, three suggested palettes, thirteen journal fixtures and licensed Newsreader assets. The section bodies and build scaffold are placeholders for the markup pass.

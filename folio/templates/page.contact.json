@@ -1,0 +1,35 @@
+{
+  "label": "Page — Contact",
+  "description": "Write to Nell or find the postal address and reply hours.",
+  "sections": [
+    {
+      "id": "s_page_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "chip": "Contact",
+        "heading": "Write to Nell",
+        "standfirst": "Letters, corrections and routes worth walking are all welcome. Every one gets read, slowly.",
+        "align": "left",
+        "color_scheme": "cream"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_contact",
+      "type": "contact",
+      "preset": "Default",
+      "settings": {
+        "heading": "Write to Nell",
+        "show_heading": false,
+        "text": "Letters about paths, towns and weather are always welcome. I read every one and answer most, slowly.",
+        "show_details": true,
+        "form": "contact",
+        "note": "",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    }
+  ],
+  "selectable": false
+}

@@ -1,0 +1,102 @@
+<div>Image with text</div>
+
+<schema>
+{
+  "name": "Image with text",
+  "description": "An image beside a heading and writing; the image comes first on mobile.",
+  "settings": [
+    {
+      "type": "image",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "ratio",
+      "label": "Image shape",
+      "default": "portrait",
+      "options": [
+        {
+          "value": "portrait",
+          "label": "Portrait (4:5)"
+        },
+        {
+          "value": "landscape",
+          "label": "Landscape (3:2)"
+        },
+        {
+          "value": "square",
+          "label": "Square (1:1)"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "image_first",
+      "options": [
+        {
+          "value": "image_first",
+          "label": "Image first"
+        },
+        {
+          "value": "text_first",
+          "label": "Text first"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "About"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "A valley with one café and two buses a day"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>I write about towns, weather and the paths between them, mostly on foot and mostly slowly.</p><p>The journal started as notes for myself. It became letters when people started asking where the closed path went.</p>"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": "More about the walks"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link",
+      "default": "/journal"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "ratio": "portrait",
+        "layout": "image_first",
+        "eyebrow": "About",
+        "heading": "A valley with one café and two buses a day",
+        "body": "<p>I write about towns, weather and the paths between them, mostly on foot and mostly slowly.</p><p>The journal started as notes for myself. It became letters when people started asking where the closed path went.</p>",
+        "link_label": "More about the walks",
+        "link": "/journal",
+        "color_scheme": "paper"
+      }
+    }
+  ]
+}
+</schema>

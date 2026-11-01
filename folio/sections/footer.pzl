@@ -1,0 +1,87 @@
+<div>Footer</div>
+
+<schema>
+{
+  "name": "Footer",
+  "description": "The site name, tagline, two menus and social links.",
+  "settings": [
+    {
+      "type": "menu",
+      "id": "menu_primary",
+      "label": "Main footer menu"
+    },
+    {
+      "type": "menu",
+      "id": "menu_secondary",
+      "label": "Second footer menu"
+    },
+    {
+      "type": "text",
+      "id": "copyright",
+      "label": "Copyright line",
+      "default": "© 2026 The Slow Mile"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "cream"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "social",
+      "name": "Social link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "RSS"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL",
+          "default": ""
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "copyright": "© 2026 The Slow Mile",
+        "color_scheme": "cream",
+        "menu_primary": "journal",
+        "menu_secondary": "elsewhere"
+      },
+      "blocks": [
+        {
+          "type": "social",
+          "settings": {
+            "label": "RSS",
+            "url": "https://theslowmile.example/feed.xml"
+          }
+        },
+        {
+          "type": "social",
+          "settings": {
+            "label": "Instagram",
+            "url": "https://www.instagram.com/"
+          }
+        },
+        {
+          "type": "social",
+          "settings": {
+            "label": "Email",
+            "url": "mailto:nell@theslowmile.com"
+          }
+        }
+      ]
+    }
+  ]
+}
+</schema>

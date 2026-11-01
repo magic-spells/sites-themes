@@ -1,0 +1,62 @@
+<div>Post</div>
+
+<schema>
+{
+  "name": "Post",
+  "description": "One journal entry, its metadata, image, byline and writing.",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_meta",
+      "label": "Show the topic, date and reading time",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "label": "Show the picture",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_byline",
+      "label": "Show the byline",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "drop_cap",
+      "label": "Show a drop cap",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_end_rule",
+      "label": "Show the end rule",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "templates": [
+    "post"
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "show_meta": true,
+        "show_image": true,
+        "show_byline": true,
+        "drop_cap": true,
+        "show_end_rule": true,
+        "color_scheme": "paper"
+      }
+    }
+  ]
+}
+</schema>

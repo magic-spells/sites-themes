@@ -3,7 +3,7 @@
   text_first = settings.layout == 'text_first'
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto flex max-w-column flex-col gap-x-step-2xl gap-y-step-xl md:flex-row md:items-center">
+  <div class="mx-auto flex max-w-column flex-col gap-x-step-2xl gap-y-step-xl md:flex-row md:items-center { site.settings.reveal_on_scroll ? 'reveal reveal-fade-up' : '' }">
     <!-- The picture comes first on a phone whichever side it takes from
          48rem up. -->
     <div class="shrink-0 md:w-1/2 lg:w-well { text_first ? 'md:order-last' : '' }">

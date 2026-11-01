@@ -1,5 +1,5 @@
 <!-- layout: default -->
-<html lang="{ site.locale }" class="bg-scheme-background">
+<html lang="{ site.locale }" class="bg-scheme-background { site.settings.reveal_on_scroll ? 'reveal-off' : '' }">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,6 +20,10 @@
     {#if site.settings.favicon}<link rel="icon" type="image/png" href="{ image_url(site.settings.favicon, 160, { height: 160, format: 'png' }) }" />
     {:else}<link rel="icon" type="image/svg+xml" href="{ asset_url('favicon.svg') }" />{/if}
     <script>{#raw}try{var v=localStorage.getItem('sites:post-list-view');if(v==='list'||v==='grid')document.documentElement.setAttribute('data-post-list-view',v)}catch(e){}{/raw}</script>
+    {#if site.settings.reveal_on_scroll}
+    <!-- Reveals are off until a script says otherwise: <html> is served with reveal-off, which shows every card with JavaScript disabled (a <style> in <noscript> is not allowed in theme files). This script lifts it before the body paints, and puts it back if the theme script has not armed the reveals 1.5 s after load. -->
+    <script>{#raw}(function(){var r=document.documentElement;r.classList.remove('reveal-off');addEventListener('load',function(){setTimeout(function(){if(!r.classList.contains('reveal-armed'))r.classList.add('reveal-off')},1500)})})(){/raw}</script>
+    {/if}
     <Slot name="head-content"/>
   </head>
   <body class="flex min-h-screen flex-col bg-scheme-background font-body text-body text-scheme-foreground antialiased">
@@ -28,5 +32,9 @@
     <main id="content" class="flex flex-1 flex-col"><Slot/></main>
     <Slot name="footer-group"/>
     <Slot name="panel-group"/>
+    {#if site.settings.reveal_on_scroll}
+    <!-- Whatever is already on screen when the page first paints shows as it is, without fading in late: this runs before that paint, the theme script after it. -->
+    <script>{#raw}(function(){var h=innerHeight;document.querySelectorAll('.reveal').forEach(function(e){var r=e.getBoundingClientRect();if(r.height&&h>r.top)e.classList.add('is-revealed','reveal-done')})})(){/raw}</script>
+    {/if}
   </body>
 </html>

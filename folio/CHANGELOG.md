@@ -16,6 +16,10 @@
 - The journal and home pages open on the featured essay, then the posts after it as a grid of
   two cards per row (Recent and Index presets: `layout: "grid"`, `columns: "2"`). Grid rows sit
   a full step apart (`step-xl`) so each card reads on its own.
+- Scroll reveals (`reveal_on_scroll` in Brand, on by default): post cards and rows fade up with
+  a 50 ms stagger, as do the author card, newsletter, contact, image with text and pull quote.
+  Built on `@magic-spells/reveal` 0.1.1 (vendored, Tailwind entry). Anything on screen at
+  first paint shows at once; reduced motion, no JavaScript or a failed script show everything.
 - Mobile menu and sticky header built on `@magic-spells/dialog-panel` 2.0.3 and
   `@magic-spells/sticky-header` 0.2.0.
 - Newsreader roman and italic self-hosted under the OFL; IBM Plex Mono for labels.

@@ -5,6 +5,7 @@
     "locale": "en",
     "settings": {
       "tagline": "Essays on walking, weather and small towns, from a valley with one café and two buses a day.",
+      "reveal_on_scroll": true,
       "writer_name": "Nell Harker",
       "writer_bio": "Walks slowly, writes about towns, weather and the paths between them. Lives in a valley with one café and two buses a day.",
       "writer_portrait": "as_writer",

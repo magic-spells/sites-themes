@@ -3,7 +3,7 @@
 // components; this file registers them and adds the three small behaviours
 // they do not cover: opening a panel from a button elsewhere on the page, the
 // once-per-visitor notice, the dismissible announcement bar, and the post
-// list's list/grid switch.
+// list's list/grid switch. Scroll reveals come from @magic-spells/reveal.
 //
 // State lives on data- attributes, never on classes: Tailwind generates only
 // what it reads in .pzl and styles/ files, so the stylesheet reacts to
@@ -11,6 +11,7 @@
 
 import './vendor/dialog-panel.js';
 import './vendor/sticky-header.js';
+import Reveal from './vendor/reveal.js';
 
 const DISMISSED_PREFIX = 'sites:dismissed:';
 
@@ -120,3 +121,12 @@ document.addEventListener('click', (event) => {
 		/* remembered for this page only */
 	}
 });
+
+// Scroll reveals. The sections write `reveal reveal-fade-up` only while the
+// Reveal cards on scroll setting is on, so with it off there is nothing to arm
+// and the library never starts. Offset 0 puts the trigger line on the bottom
+// edge of the viewport: whatever is on screen at load reveals at once, the
+// rest as it arrives, once each. Reduced motion is handled by the library's
+// own media query; the layout's <noscript> rule and load watchdog cover a
+// script that never runs.
+if (document.querySelector('.reveal')) Reveal.init({ offset: 0, duration: 400, once: true });

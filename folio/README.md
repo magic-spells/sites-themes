@@ -17,9 +17,9 @@ groups/             header-group.json, footer-group.json, panel-group.json
 sections/           16, each with a full <schema>
 components/         Button, Field, Chip, Dateline, PostDate, PostRow, PostCard
 styles/theme.css    the Tailwind entry: @theme maps --sites-* tokens and Folio's role sizes
-scripts/theme.ts    the browser JavaScript: mobile menu, sticky header, notice, announcement
-scripts/vendor/     @magic-spells/dialog-panel 2.0.3 and sticky-header 0.2.0, copied from dist
-styles/vendor/      the same two components' stylesheets, copied from dist
+scripts/theme.ts    the browser JavaScript: mobile menu, sticky header, notice, announcement, reveals
+scripts/vendor/     @magic-spells/dialog-panel 2.0.3, sticky-header 0.2.0 and reveal 0.1.1, copied from dist
+styles/vendor/      the same three packages' stylesheets (reveal's Tailwind entry), copied from dist
 assets/             Newsreader (OFL, see OFL-Newsreader.txt), icons and placeholder artwork
 locales/en.json     the strings the `t` function reads
 sites.fixtures.json The Slow Mile: pages, menus, forms and 13 posts
@@ -33,6 +33,17 @@ cards; by topic, with an offset to skip the newest, and an optional list/grid sw
 remembers the reader's choice), post article, author card, topics, pull quote, newsletter, contact, page header,
 rich text and image with text.
 
+## Scroll reveals
+
+The Brand setting **Reveal cards on scroll** (`reveal_on_scroll`, on by default) fades post
+cards and rows up as they come into view, a 50 ms stagger across each grid or list, along with
+the author card, the newsletter and contact columns, image with text and the pull quote. The
+header, announcement bar, page header, featured post, post body, footer, mobile menu and
+cookie notice never move. It uses `@magic-spells/reveal`: 400 ms, once per element, and
+whatever is on screen at first paint shows straight away. Reduced motion, JavaScript switched
+off, or a script that fails to load all leave everything visible. Turned off, no reveal markup
+is rendered and the library never starts.
+
 ## The posts content type
 
 `topic`, `date`, `author`, `reading_minutes`, `standfirst`, `image`, `image_alt` and `body`,
@@ -41,11 +52,11 @@ with an optional `image_caption`. Dates always go through the `date` filter.
 ## Running it
 
 ```sh
-npm install       # vite, @tailwindcss/vite and the two web components
+npm install       # vite, @tailwindcss/vite, the two web components and reveal
 sites dev .       # serves the fixtures
 sites check .     # compiles the theme and type-checks scripts/
 ```
 
-The two web components are vendored into `scripts/vendor/` and `styles/vendor/` because the
+The two web components and reveal are vendored into `scripts/vendor/` and `styles/vendor/` because the
 theme build resolves only the builder's own packages. To update one, bump the exact version in
 `package.json`, `npm install`, and copy its `dist` files over the vendored ones.

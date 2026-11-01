@@ -2,7 +2,7 @@
 <!-- props: entry href columns -->
 <!-- A grid card: a 3:2 picture when the entry has one, the dateline, the
      title and the standfirst. -->
-<li>
+<li class="{ site.settings.reveal_on_scroll ? 'reveal reveal-fade-up' : '' }" data-reveal-group={ site.settings.reveal_on_scroll ? 'cards-' + section.id + ':50' : false }>
   <a class="group grid gap-step-sm" href="{ href }">
     {#if entry.fields.image}
       <img class="aspect-3/2 w-full bg-scheme-surface object-cover"

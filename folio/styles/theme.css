@@ -6,6 +6,12 @@
 @import "./vendor/dialog-panel.css" layer(components);
 @import "./vendor/sticky-header.css" layer(components);
 
+/* @magic-spells/reveal's Tailwind entry: every rule is a @utility, so only
+   the marker and the one effect the theme writes (reveal reveal-fade-up) are
+   generated. Its resting state applies before the script runs; the layout's
+   <noscript> rule and load watchdog make sure nothing stays hidden. */
+@import "./vendor/reveal.css";
+
 /* Every class the theme types lives in a .pzl file, so those are what Tailwind
    scans. Naming the sources explicitly keeps the build the same wherever it
    runs. */

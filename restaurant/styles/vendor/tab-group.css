@@ -1,0 +1,23 @@
+tab-group {
+  display: block;
+}
+
+tab-list {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+tab-button {
+  display: block;
+  cursor: pointer;
+  user-select: none;
+}
+
+tab-panel[hidden] {
+  display: none;
+}
+
+tab-button[aria-disabled='true'] {
+  cursor: default;
+}

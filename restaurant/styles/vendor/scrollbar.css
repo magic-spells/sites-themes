@@ -1,0 +1,164 @@
+/* ===================================================================
+   SCROLLBAR PLUGIN STYLES
+   =================================================================== */
+
+/* CSS Custom Properties for theming */
+:root {
+	--tarot-scrollbar-height: 0.5rem;
+	--tarot-scrollbar-bg: rgba(0, 0, 0, 0.1);
+	--tarot-scrollbar-thumb-bg: rgba(0, 0, 0, 0.3);
+	--tarot-scrollbar-thumb-hover-bg: rgba(0, 0, 0, 0.5);
+	--tarot-scrollbar-thumb-active-bg: rgba(0, 0, 0, 0.7);
+	--tarot-scrollbar-border-radius: 0.25rem;
+	--tarot-scrollbar-transition: all 0.2s ease;
+	--tarot-scrollbar-margin: 0.75rem;
+}
+
+/* Base scrollbar container */
+.tarot-scrollbar {
+	position: relative;
+	width: 100%;
+	margin: var(--tarot-scrollbar-margin) 0;
+	opacity: 1;
+	transition: var(--tarot-scrollbar-transition);
+}
+
+/* Scrollbar track (the background rail) */
+.tarot-scrollbar-track {
+	position: relative;
+	width: 100%;
+	height: var(--tarot-scrollbar-height);
+	background: var(--tarot-scrollbar-bg);
+	border-radius: var(--tarot-scrollbar-border-radius);
+	cursor: pointer;
+	touch-action: pan-y;
+	overflow: hidden;
+}
+
+/* Increase touch target on mobile */
+@media (pointer: coarse) {
+	.tarot-scrollbar-track {
+		height: max(var(--tarot-scrollbar-height), 2.75rem);
+		padding: calc((2.75rem - var(--tarot-scrollbar-height)) / 2) 0;
+	}
+
+	.tarot-scrollbar-track::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		height: var(--tarot-scrollbar-height);
+		background: var(--tarot-scrollbar-bg);
+		border-radius: var(--tarot-scrollbar-border-radius);
+		transform: translateY(-50%);
+	}
+}
+
+/* Shared pill shape for the thumb and its portal-loop ghost */
+.tarot-scrollbar-thumb,
+.tarot-scrollbar-ghost {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	background: var(--tarot-scrollbar-thumb-bg);
+	border-radius: var(--tarot-scrollbar-border-radius);
+}
+
+/* Scrollbar thumb (proportional pill) */
+.tarot-scrollbar-thumb {
+	left: 0;
+	cursor: grab;
+	touch-action: none;
+	transition: background 0.2s ease;
+	z-index: 2;
+}
+
+/* Ghost thumb (portal loop effect) — always in DOM, clipped by overflow: hidden */
+.tarot-scrollbar-ghost {
+	left: -200%;
+	pointer-events: none;
+	z-index: 1;
+}
+
+/* Active ghost — visible and interactive during loop overflow */
+.tarot-scrollbar-ghost--active {
+	pointer-events: auto;
+	cursor: grab;
+	touch-action: none;
+}
+
+.tarot-scrollbar-ghost--active:hover {
+	background: var(--tarot-scrollbar-thumb-hover-bg);
+}
+
+.tarot-scrollbar--dragging .tarot-scrollbar-ghost--active {
+	cursor: grabbing;
+}
+
+.tarot-scrollbar--dragging .tarot-scrollbar-ghost {
+	background: var(--tarot-scrollbar-thumb-active-bg);
+}
+
+/* Focus styles for keyboard navigation */
+.tarot-scrollbar-thumb:focus {
+	outline: 0.125rem solid currentColor;
+	outline-offset: 0.125rem;
+	background: var(--tarot-scrollbar-thumb-hover-bg);
+}
+
+/* Hover state */
+.tarot-scrollbar-thumb:hover {
+	background: var(--tarot-scrollbar-thumb-hover-bg);
+}
+
+/* Active/dragging state */
+.tarot-scrollbar-thumb:active,
+.tarot-scrollbar--dragging .tarot-scrollbar-thumb {
+	cursor: grabbing;
+	background: var(--tarot-scrollbar-thumb-active-bg);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--tarot-scrollbar-bg: rgba(255, 255, 255, 0.1);
+		--tarot-scrollbar-thumb-bg: rgba(255, 255, 255, 0.3);
+		--tarot-scrollbar-thumb-hover-bg: rgba(255, 255, 255, 0.5);
+		--tarot-scrollbar-thumb-active-bg: rgba(255, 255, 255, 0.7);
+	}
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+	.tarot-scrollbar,
+	.tarot-scrollbar-thumb {
+		transition: none;
+	}
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+	:root {
+		--tarot-scrollbar-bg: #000000;
+		--tarot-scrollbar-thumb-bg: #ffffff;
+		--tarot-scrollbar-thumb-hover-bg: #cccccc;
+		--tarot-scrollbar-thumb-active-bg: #999999;
+	}
+}
+
+@media (prefers-contrast: high) and (prefers-color-scheme: dark) {
+	:root {
+		--tarot-scrollbar-bg: #ffffff;
+		--tarot-scrollbar-thumb-bg: #000000;
+		--tarot-scrollbar-thumb-hover-bg: #333333;
+		--tarot-scrollbar-thumb-active-bg: #666666;
+	}
+}
+
+/* Print styles (hide scrollbar in print) */
+@media print {
+	.tarot-scrollbar {
+		display: none !important;
+	}
+}

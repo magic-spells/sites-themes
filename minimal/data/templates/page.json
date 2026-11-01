@@ -8,8 +8,7 @@
       "preset": "Default",
       "settings": {
         "body": "",
-        "width": "narrow",
-        "color_scheme": "default"
+        "width": "narrow"
       },
       "blocks": []
     }

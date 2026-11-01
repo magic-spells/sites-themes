@@ -22,8 +22,8 @@
       "info": "The surface this section is rendered on. Schemes are declared in settings/design.json under schemes." }
   ],
   "presets": [
-    { "name": "Default", "settings": { "body": "", "width": "narrow", "color_scheme": "default" } },
-    { "name": "Wide", "settings": { "body": "", "width": "wide", "color_scheme": "default" } }
+    { "name": "Default", "settings": { "body": "", "width": "narrow" } },
+    { "name": "Wide", "settings": { "body": "", "width": "wide" } }
   ]
 }
 </schema>

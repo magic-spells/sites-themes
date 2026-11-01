@@ -22,7 +22,7 @@
       "info": "The surface this section is rendered on. Schemes are declared in settings/design.json under schemes." }
   ],
   "presets": [
-    { "name": "Default", "settings": { "menu": "main", "color_scheme": "default" } }
+    { "name": "Default", "settings": { "menu": "main" } }
   ]
 }
 </schema>

@@ -37,7 +37,7 @@
   "max_blocks": 2,
   "presets": [
     { "name": "Default",
-      "settings": { "heading": "A new site", "body": "Say what this page is for, in one sentence.", "color_scheme": "default" },
+      "settings": { "heading": "A new site", "body": "Say what this page is for, in one sentence." },
       "blocks": [{ "type": "link", "settings": { "label": "Read on", "href": "/about", "tone": "primary" } }] }
   ]
 }

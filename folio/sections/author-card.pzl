@@ -1,4 +1,29 @@
-<div>Author card</div>
+{#let
+  post_author = settings.use_post_author ? page.entry.fields.author : null
+  name = settings.name || post_author || site.settings.writer_name
+  bio = settings.bio || site.settings.writer_bio
+  portrait = settings.portrait ?? site.settings.writer_portrait
+  links = settings.links.items.length ? settings.links : site.settings.writer_links
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto flex max-w-reading flex-wrap items-center gap-step-lg">
+    {#if portrait}
+      <img class="size-18 shrink-0 rounded-full bg-scheme-surface object-cover" src="{ image_url(portrait, 160, { height: 160 }) }" srcset="{ image_url(portrait, 160, { height: 160 }) } 1x, { image_url(portrait, 320, { height: 320 }) } 2x" alt="{ portrait.alt }" width="72" height="72" loading="lazy" />
+    {/if}
+    <div class="grid min-w-80 flex-1 gap-step-xs">
+      {#if settings.label}<p class="font-mono text-meta font-medium tracking-meta text-scheme-meta uppercase">{ settings.label }</p>{/if}
+      <h2 class="font-heading text-h3 font-medium text-scheme-heading">{ name }</h2>
+      {#if bio}<p class="text-body text-pretty">{ bio }</p>{/if}
+      {#if links.items.length}
+        <ul class="flex flex-wrap font-mono text-meta font-medium tracking-meta text-scheme-links uppercase" aria-label="{ t('social_links') }">
+          {#for item in links.items, i}
+            <li>{#if i > 0}<span class="whitespace-pre" aria-hidden="true"> · </span>{/if}<a class="decoration-1 underline-offset-4 hover:underline" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null }>{ item.label }</a></li>
+          {/for}
+        </ul>
+      {/if}
+    </div>
+  </div>
+</section>
 
 <schema>
 {

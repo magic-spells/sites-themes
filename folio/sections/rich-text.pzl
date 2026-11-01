@@ -1,4 +1,9 @@
-<div>Rich text</div>
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid { settings.width == 'wide' ? 'max-w-column' : 'max-w-reading' } gap-step-md">
+    {#if settings.heading}<h2 class="font-heading text-h2 font-medium text-scheme-heading">{ settings.heading }</h2>{/if}
+    <div class="sites-prose">{ settings.body || page.content }</div>
+  </div>
+</section>
 
 <schema>
 {

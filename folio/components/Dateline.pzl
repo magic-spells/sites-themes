@@ -1,0 +1,7 @@
+<!-- component: Dateline -->
+<!-- props: entry read -->
+<!-- Topic · date · reading time, in mono caps; the topic takes the link
+     colour. `read` writes "9 min read" rather than "9 min". -->
+<p class="font-mono text-meta font-medium tracking-meta text-scheme-meta uppercase">
+  {#if entry.fields.topic}<span class="text-scheme-links">{ entry.fields.topic }</span><span aria-hidden="true"> · </span>{/if}<PostDate value={ entry.fields.date } year={ true } />{#if entry.fields.reading_minutes}<span aria-hidden="true"> · </span>{ t(read ? 'reading_time' : 'reading_time_short', { minutes: entry.fields.reading_minutes }) }{/if}
+</p>

@@ -1,4 +1,26 @@
-<div>Image with text</div>
+{#let
+  ratio = settings.ratio == 'landscape' ? 'aspect-3/2' : (settings.ratio == 'square' ? 'aspect-square' : 'aspect-4/5')
+  text_first = settings.layout == 'text_first'
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto flex max-w-column flex-col gap-x-step-2xl gap-y-step-xl md:flex-row md:items-center">
+    <!-- The picture comes first on a phone whichever side it takes from
+         48rem up. -->
+    <div class="shrink-0 md:w-1/2 lg:w-well { text_first ? 'md:order-last' : '' }">
+      {#if settings.image}
+        { image_tag(settings.image, { class: 'w-full bg-scheme-surface object-cover ' + ratio, sizes: '(min-width: 64rem) 30rem, (min-width: 48rem) 50vw, 100vw', alt: settings.image.alt ?? '' }) }
+      {:else}
+        <div class="w-full bg-scheme-surface { ratio }"></div>
+      {/if}
+    </div>
+    <div class="grid flex-1 content-center gap-step-md">
+      {#if settings.eyebrow}<p class="font-mono text-meta font-medium tracking-meta text-scheme-links uppercase">{ settings.eyebrow }</p>{/if}
+      {#if settings.heading}<h2 class="font-heading text-h2 font-medium text-scheme-heading">{ settings.heading }</h2>{/if}
+      {#if settings.body}<div class="sites-prose text-pretty">{ settings.body }</div>{/if}
+      {#if settings.link_label}<p><a class="font-mono text-meta font-medium tracking-meta text-scheme-links uppercase underline decoration-1 underline-offset-4 hover:text-scheme-heading" href="{ settings.link }">{ settings.link_label }</a></p>{/if}
+    </div>
+  </div>
+</section>
 
 <schema>
 {

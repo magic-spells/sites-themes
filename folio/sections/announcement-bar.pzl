@@ -1,4 +1,13 @@
-<div>Announcement bar</div>
+<aside class="bg-scheme-background px-gutter py-step-sm text-scheme-foreground" data-dismiss-key="{ settings.key }" aria-label="{ settings.text }">
+  <div class="mx-auto flex max-w-column items-center gap-step-md md:px-step-lg">
+    <span class="size-5 shrink-0" aria-hidden="true"></span>
+    <p class="flex-1 text-center font-mono text-meta font-medium tracking-note text-pretty">
+      { settings.text }
+      {#if settings.link_label}<a class="ml-step-2xs text-scheme-links underline decoration-1 underline-offset-4 hover:text-scheme-heading" href="{ settings.link }">{ settings.link_label }</a>{/if}
+    </p>
+    <button class="sites-icon size-7 text-scheme-meta hover:text-scheme-heading" type="button" data-dismiss>{#svg 'icons/close.svg'}<span class="sr-only">{ t('dismiss_announcement') }</span></button>
+  </div>
+</aside>
 
 <schema>
 {

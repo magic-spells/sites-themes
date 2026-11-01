@@ -1,4 +1,33 @@
-<div>Newsletter</div>
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-center gap-x-step-2xl gap-y-step-lg md:grid-cols-2">
+    <div class="grid gap-step-md">
+      <h2 class="font-heading text-h2 font-medium text-scheme-heading">{ settings.heading }</h2>
+      {#if settings.text}<p class="text-body text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+    </div>
+    <div class="grid gap-step-sm">
+      <Form handle={ settings.form } class="grid gap-step-sm">
+        {#if form.sent}
+          <p class="text-body-lg text-scheme-heading" role="status">{ form.success_message }</p>
+        {:else}
+          <div class="flex flex-wrap gap-step-xs">
+            {#for field in form.fields}
+              <Field name={ field.id } label={ field.label } type={ field.type } autocomplete={ null } rows={ 4 }
+                maxlength={ field.max_length } required={ field.required }
+                options={ field.options } value={ field.value } error={ field.error }
+                placeholder={ settings.placeholder || field.label } prefix={ section.id } wrapper_class="grow basis-70" />
+            {/for}
+            <button class="sites-button grow basis-48 lg:min-h-13.5" type="submit">{ form.submit_label }</button>
+          </div>
+          {#if form.error}
+            <p class="font-mono text-meta tracking-caption text-error-fg" role="alert">{ t(form.error == 'expired' ? 'form_field_expired' : 'form_error') }</p>
+          {/if}
+          <noscript><p class="font-mono text-meta tracking-caption text-scheme-meta">{ t('form_requires_javascript') }</p></noscript>
+        {/if}
+      </Form>
+      {#if settings.note}<p class="font-mono text-meta tracking-caption text-pretty text-scheme-meta">{ settings.note }</p>{/if}
+    </div>
+  </div>
+</section>
 
 <schema>
 {

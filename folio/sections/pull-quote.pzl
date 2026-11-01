@@ -1,4 +1,13 @@
-<div>Pull quote</div>
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <figure class="mx-auto flex max-w-reading gap-step-xs">
+    <!-- The opening mark hangs in its own column, so the quote's lines align. -->
+    <span class="font-heading text-h1 leading-none font-light text-scheme-links italic" aria-hidden="true">“</span>
+    <div class="grid gap-step-md">
+      <blockquote class="font-heading text-h1 leading-none font-light text-scheme-heading italic"><p>{ settings.quote }</p></blockquote>
+      {#if settings.attribution}<figcaption class="font-mono text-meta font-medium tracking-meta text-scheme-meta uppercase">{ settings.attribution }</figcaption>{/if}
+    </div>
+  </figure>
+</section>
 
 <schema>
 {

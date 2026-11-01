@@ -1,4 +1,20 @@
-<div>Topics</div>
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-reading gap-step-md">
+    {#if settings.heading}<h2 class="font-mono text-meta font-medium tracking-meta text-scheme-meta uppercase">{ settings.heading }</h2>{/if}
+    {#if blocks.length}
+      <ul class="border-t border-scheme-rule">
+        {#for block in blocks}
+          <li class="border-b border-scheme-rule" data-block={ block.editor_id }>
+            <a class="group flex items-center justify-between gap-step-md py-step-md" href="{ block.settings.url }">
+              <span class="font-heading text-h4 font-medium text-scheme-heading decoration-1 underline-offset-4 group-hover:underline">{ block.settings.name }</span>
+              <span class="font-mono text-meta font-medium tracking-meta whitespace-nowrap text-scheme-meta uppercase">{ block.settings.count }</span>
+            </a>
+          </li>
+        {/for}
+      </ul>
+    {/if}
+  </div>
+</section>
 
 <schema>
 {

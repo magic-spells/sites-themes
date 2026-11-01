@@ -1,4 +1,42 @@
-<div>Featured post</div>
+{#let
+  newest = settings.collection.entries | sort('fields.date') | reverse | first
+  post = settings.post ?? newest
+  title = post.title ?? ''
+  tail = settings.italic_tail ?? ''
+  has_tail = size(tail) > 0 && size(title) > size(tail) && (title | slice(0 - size(tail))) == tail
+  head = has_tail ? (title | slice(0, size(title) - size(tail))) : title
+  href = settings.base_path + '/' + post.handle
+  image = settings.show_image ? post.fields.image : null
+}
+{#if post}
+<section class="bg-scheme-background px-gutter pt-section pb-step-2xl text-scheme-foreground">
+  <div class="mx-auto flex max-w-column flex-col gap-step-lg md:flex-row md:items-end md:gap-step-xl">
+    <div class="grid flex-1 gap-step-md">
+      <Dateline entry={ post } read={ true } />
+      <!-- The title is one heading; its last words, when they match the
+           "Italic title ending" setting, are set in Newsreader light italic. -->
+      {#if section.index == 0}
+        <h1 class="font-heading text-h1 font-normal text-scheme-heading"><a class="decoration-1 underline-offset-8 hover:underline" href="{ href }">{ head }{#if has_tail}<span class="font-light italic">{ tail }</span>{/if}</a></h1>
+      {:else}
+        <h2 class="font-heading text-h1 font-normal text-scheme-heading"><a class="decoration-1 underline-offset-8 hover:underline" href="{ href }">{ head }{#if has_tail}<span class="font-light italic">{ tail }</span>{/if}</a></h2>
+      {/if}
+      {#if post.fields.standfirst}<p class="max-w-md text-body-lg text-pretty text-scheme-muted">{ post.fields.standfirst }</p>{/if}
+      {#if settings.read_label}
+        <a class="justify-self-start border-b border-scheme-links pb-step-2xs font-mono text-meta font-medium tracking-meta text-scheme-links uppercase hover:border-scheme-heading hover:text-scheme-heading" href="{ href }">{ settings.read_label }<span class="sr-only">: { title }</span></a>
+      {/if}
+    </div>
+    {#if image}
+      <a class="order-first md:order-none md:flex-1 lg:w-md lg:flex-none" href="{ href }" tabindex="-1" aria-hidden="true">
+        <img class="aspect-4/3 w-full bg-scheme-surface object-cover md:aspect-4/5"
+          src="{ image_url(image, 1024) }"
+          srcset="{ image_url(image, 480) } 480w, { image_url(image, 768) } 768w, { image_url(image, 1024) } 1024w, { image_url(image, 1280) } 1280w"
+          sizes="(min-width: 64rem) 28rem, (min-width: 48rem) 50vw, 100vw"
+          alt="{ post.fields.image_alt }" loading="eager" fetchpriority="high" width="{ image.width }" height="{ image.height }" />
+      </a>
+    {/if}
+  </div>
+</section>
+{/if}
 
 <schema>
 {

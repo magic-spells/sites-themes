@@ -1,4 +1,18 @@
-<div>Notice</div>
+<!-- A native non-modal dialog: the page stays usable behind it, as the
+     design draws it. theme.ts shows it once per key; both buttons close it
+     and the choice is remembered. -->
+<dialog class="fixed inset-x-0 top-auto bottom-0 z-50 m-0 w-full max-w-none border-t border-scheme-rule bg-scheme-background text-scheme-foreground md:inset-x-auto md:right-gutter md:bottom-gutter md:max-w-narrow md:border" id="cookie-notice" data-notice="{ settings.key }" aria-label="{ t('cookie_notice_label') }">
+  <div class="grid gap-step-md p-step-lg">
+    <div class="sites-prose text-body text-pretty">{ settings.body }</div>
+    {#if settings.link_label}
+      <p><a class="font-mono text-meta font-medium tracking-meta text-scheme-links uppercase underline decoration-1 underline-offset-4" href="{ settings.link_href }">{ settings.link_label }</a></p>
+    {/if}
+    <div class="flex flex-wrap gap-step-sm">
+      <button class="sites-button min-w-35" type="button" data-notice-close="accept">{ settings.accept_label }</button>
+      {#if settings.decline_label}<button class="sites-button sites-button-outline min-w-35" type="button" data-notice-close="decline">{ settings.decline_label }</button>{/if}
+    </div>
+  </div>
+</dialog>
 
 <schema>
 {

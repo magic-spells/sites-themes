@@ -1,4 +1,55 @@
-<div>Contact form</div>
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-start gap-x-step-2xl gap-y-step-xl md:grid-cols-2">
+    <div class="grid gap-step-md">
+      {#if settings.show_heading}<h2 class="font-heading text-h2 font-medium text-scheme-heading">{ settings.heading }</h2>{/if}
+      {#if settings.text}<p class="text-body text-pretty">{ settings.text }</p>{/if}
+      {#if settings.show_details}
+        <dl class="grid gap-step-sm pt-step-xs">
+          {#if site.settings.contact_email}
+            <div class="grid gap-step-2xs">
+              <dt class="font-mono text-meta font-medium tracking-meta text-scheme-meta uppercase">{ t('label_email') }</dt>
+              <dd class="text-body"><a class="decoration-1 underline-offset-4 hover:text-scheme-links hover:underline" href="mailto:{ site.settings.contact_email }">{ site.settings.contact_email }</a></dd>
+            </div>
+          {/if}
+          {#if site.settings.address}
+            <div class="grid gap-step-2xs">
+              <dt class="font-mono text-meta font-medium tracking-meta text-scheme-meta uppercase">{ t('label_post') }</dt>
+              <dd class="text-body whitespace-pre-line">{ site.settings.address }</dd>
+            </div>
+          {/if}
+          {#if site.settings.hours}
+            <div class="grid gap-step-2xs">
+              <dt class="font-mono text-meta font-medium tracking-meta text-scheme-meta uppercase">{ t('label_hours') }</dt>
+              <dd class="text-body">{ site.settings.hours }</dd>
+            </div>
+          {/if}
+        </dl>
+      {/if}
+    </div>
+
+    <!-- The site owns the fields; this theme chooses their markup. -->
+    <Form handle={ settings.form } class="grid gap-step-sm" aria-label="{ settings.heading }">
+      {#if form.sent}
+        <p class="text-body-lg text-scheme-heading" role="status">{ form.success_message }</p>
+      {:else}
+        {#for field in form.fields}
+          <Field name={ field.id } label={ field.label } type={ field.type } autocomplete={ null }
+            rows={ 3 } maxlength={ field.max_length } required={ field.required }
+            options={ field.options } value={ field.value } error={ field.error }
+            placeholder={ field.label } prefix={ section.id } wrapper_class="" />
+        {/for}
+        {#if form.error}
+          <p class="font-mono text-meta tracking-caption text-error-fg" role="alert">{ t(form.error == 'expired' ? 'form_field_expired' : 'form_error') }</p>
+        {/if}
+        <div class="grid justify-items-start gap-step-xs">
+          <button class="sites-button min-w-35" type="submit">{ form.submit_label }</button>
+          <noscript><p class="font-mono text-meta tracking-caption text-scheme-meta">{ t('form_requires_javascript') }</p></noscript>
+          {#if settings.note}<p class="font-mono text-meta tracking-caption text-scheme-meta">{ settings.note }</p>{/if}
+        </div>
+      {/if}
+    </Form>
+  </div>
+</section>
 
 <schema>
 {

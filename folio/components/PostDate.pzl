@@ -1,0 +1,11 @@
+<!-- component: PostDate -->
+<!-- props: value year -->
+<!-- An entry date as the design writes it, "14 Oct 2026", or "14 Oct" without
+     the year. The date filter gives the calendar day; the month names are
+     this theme's English. -->
+{#let
+  iso = date(value, 'iso')
+  parts = iso | split('-')
+  months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+}
+{#if value}<time datetime="{ iso }">{ parts[2] } { months[parseInt(parts[1], 10) - 1] }{#if year} { parts[0] }{/if}</time>{/if}

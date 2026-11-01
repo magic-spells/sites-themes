@@ -26,6 +26,7 @@
         "layout": "list",
         "columns": "3",
         "limit": 4,
+        "offset": 1,
         "topic": "",
         "exclude_current": false,
         "show_count": true,

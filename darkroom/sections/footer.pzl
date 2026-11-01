@@ -1,0 +1,52 @@
+<!-- section: footer; D1 placeholder -->
+<section>footer</section>
+
+<schema>
+{
+  "name": "Footer",
+  "description": "The photographer’s colophon, main menu and social links.",
+  "settings": [
+    {
+      "type": "menu",
+      "id": "menu_primary",
+      "label": "Menu primary"
+    },
+    {
+      "type": "menu",
+      "id": "menu_secondary",
+      "label": "Menu secondary"
+    },
+    {
+      "type": "text",
+      "id": "copyright",
+      "label": "Copyright",
+      "default": "",
+      "info": "Leave empty to use the Brand copyright."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_colophon",
+      "label": "Show colophon",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "copyright": "",
+        "show_colophon": true,
+        "color_scheme": "surface",
+        "menu_primary": "main",
+        "menu_secondary": "social"
+      }
+    }
+  ]
+}
+</schema>

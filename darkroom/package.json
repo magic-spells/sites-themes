@@ -1,0 +1,17 @@
+{
+  "name": "sites-starter-darkroom",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@tailwindcss/vite": "4.3.3",
+    "tailwindcss": "4.3.3",
+    "typescript": "7.0.2",
+    "vite": "8.3.0"
+  },
+  "dependencies": {
+    "@magic-spells/bottom-sheet": "2.0.2",
+    "@magic-spells/dropdown-panel": "2.1.1",
+    "@magic-spells/select-dropdown": "0.3.0",
+    "@magic-spells/collapsible-content": "1.2.0"
+  }
+}

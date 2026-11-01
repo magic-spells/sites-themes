@@ -1,0 +1,3 @@
+<!-- component: PhotoTile -->
+<!-- props: photo ratio caption number lightbox index carousel_id -->
+<span>PhotoTile</span>

@@ -1,0 +1,57 @@
+<!-- section: rich-text; D1 placeholder -->
+<section>rich-text</section>
+
+<schema>
+{
+  "name": "Rich text",
+  "description": "Writing in a reading or wide column; an empty body uses page.content.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": ""
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "",
+      "info": "Leave empty to use page.content."
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "default": "reading",
+      "options": [
+        {
+          "value": "reading",
+          "label": "Reading"
+        },
+        {
+          "value": "wide",
+          "label": "Wide"
+        }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "heading": "",
+        "body": "",
+        "width": "reading",
+        "color_scheme": "surface"
+      }
+    }
+  ]
+}
+</schema>

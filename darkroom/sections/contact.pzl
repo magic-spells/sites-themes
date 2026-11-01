@@ -1,0 +1,94 @@
+<!-- section: contact; D1 placeholder -->
+<section>contact</section>
+
+<schema>
+{
+  "name": "Contact",
+  "description": "A site form overlapping a studio photograph, followed by direct contact details.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Write to Mara"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "For prints, commissions, press or a question about the work. Tell me what you have in mind and when you need it."
+    },
+    {
+      "type": "image",
+      "id": "photo",
+      "label": "Photo"
+    },
+    {
+      "type": "form",
+      "id": "form",
+      "label": "Form",
+      "default": "contact"
+    },
+    {
+      "type": "textarea",
+      "id": "subjects",
+      "label": "Subjects",
+      "default": "Prints\nCommission\nPress\nOther",
+      "info": "One subject per line. Keep these in step with the workspace contact form; request.query.subject preselects a matching option."
+    },
+    {
+      "type": "text",
+      "id": "consent_text",
+      "label": "Consent text",
+      "default": "I agree to the use of these details to reply to my enquiry."
+    },
+    {
+      "type": "checkbox",
+      "id": "direct",
+      "label": "Direct",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "direct_heading",
+      "label": "Direct heading",
+      "default": "Prefer to write directly?"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note",
+      "default": "Your details are used only to answer this enquiry."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "heading": "Write to Mara",
+        "show_heading": true,
+        "text": "For prints, commissions, press or a question about the work. Tell me what you have in mind and when you need it.",
+        "form": "contact",
+        "subjects": "Prints\nCommission\nPress\nOther",
+        "consent_text": "I agree to the use of these details to reply to my enquiry.",
+        "direct": true,
+        "direct_heading": "Prefer to write directly?",
+        "note": "Your details are used only to answer this enquiry.",
+        "color_scheme": "surface"
+      }
+    }
+  ]
+}
+</schema>

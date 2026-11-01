@@ -1,0 +1,37 @@
+<!-- section: mobile-menu; D1 placeholder -->
+<section>mobile-menu</section>
+
+<schema>
+{
+  "name": "Mobile menu",
+  "description": "A bottom sheet containing the main and social menus.",
+  "settings": [
+    {
+      "type": "menu",
+      "id": "menu",
+      "label": "Menu"
+    },
+    {
+      "type": "menu",
+      "id": "menu_secondary",
+      "label": "Menu secondary"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "color_scheme": "surface",
+        "menu": "main",
+        "menu_secondary": "social"
+      }
+    }
+  ]
+}
+</schema>

@@ -1,0 +1,30 @@
+{
+  "sections": [
+    {
+      "id": "sg_mobile_menu",
+      "type": "mobile-menu",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "surface",
+        "menu": "main",
+        "menu_secondary": "social"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_notice",
+      "type": "cookie-notice",
+      "preset": "Default",
+      "settings": {
+        "body": "<p>This site remembers your choice about this notice in your browser. No tracking cookies are used.</p>",
+        "accept_label": "Accept",
+        "decline_label": "Decline",
+        "link_label": "Privacy",
+        "link_href": "/privacy",
+        "key": "darkroom-notice-2026-10",
+        "color_scheme": "surface"
+      },
+      "blocks": []
+    }
+  ]
+}

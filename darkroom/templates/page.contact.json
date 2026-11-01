@@ -1,0 +1,104 @@
+{
+  "label": "Page — Contact",
+  "description": "Services and the studio contact form.",
+  "sections": [
+    {
+      "id": "s_page_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "chip": "",
+        "heading": "Contact",
+        "standfirst": "Prints, commissions, press and other enquiries.",
+        "align": "left",
+        "color_scheme": "surface"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_services",
+      "type": "services",
+      "preset": "Default",
+      "settings": {
+        "eyebrow": "",
+        "heading": "",
+        "standfirst": "",
+        "show_arrows": true,
+        "enquire_label": "Enquire",
+        "contact_path": "/contact",
+        "color_scheme": "surface"
+      },
+      "blocks": [
+        {
+          "id": "s_services_b_1",
+          "type": "service",
+          "settings": {
+            "name": "Editorial",
+            "description": "Photographs for stories that need time on the ground.",
+            "photo": "as_3x2_1",
+            "subject": "Commission"
+          }
+        },
+        {
+          "id": "s_services_b_2",
+          "type": "service",
+          "settings": {
+            "name": "Portraits",
+            "description": "People in the rooms and places they know.",
+            "photo": "as_4x5_1",
+            "subject": "Commission"
+          }
+        },
+        {
+          "id": "s_services_b_3",
+          "type": "service",
+          "settings": {
+            "name": "Architecture and interiors",
+            "description": "Buildings in the light they were designed for; a day on site and a second for the weather.",
+            "photo": "as_3x2_3",
+            "subject": "Commission"
+          }
+        },
+        {
+          "id": "s_services_b_4",
+          "type": "service",
+          "settings": {
+            "name": "Books and exhibitions",
+            "description": "Sequencing, prints and work made for the page or the wall.",
+            "photo": "as_1x1_1",
+            "subject": "Press"
+          }
+        },
+        {
+          "id": "s_services_b_5",
+          "type": "service",
+          "settings": {
+            "name": "Workshops and talks",
+            "description": "Small groups, practical questions and time to make photographs.",
+            "photo": "as_3x2_5",
+            "subject": "Other"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_contact",
+      "type": "contact",
+      "preset": "Default",
+      "settings": {
+        "heading": "Write to Mara",
+        "show_heading": true,
+        "text": "For prints, commissions, press or a question about the work. Tell me what you have in mind and when you need it.",
+        "form": "contact",
+        "subjects": "Prints\nCommission\nPress\nOther",
+        "consent_text": "I agree to the use of these details to reply to my enquiry.",
+        "direct": true,
+        "direct_heading": "Prefer to write directly?",
+        "note": "Your details are used only to answer this enquiry.",
+        "color_scheme": "surface",
+        "photo": "as_3x2_3"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+<!-- section: photo-strip; D1 placeholder -->
+<section>photo-strip</section>
+
+<schema>
+{
+  "name": "Photo strip",
+  "description": "A full-width draggable strip of natural-ratio photographs.",
+  "settings": [
+    {
+      "type": "gallery",
+      "id": "gallery",
+      "label": "Gallery",
+      "info": "Reads items in order: asset (url, width, height, alt), caption, alt and video. Leave empty to use page.entry.fields.photos where the page binds a series."
+    },
+    {
+      "type": "select",
+      "id": "stagger",
+      "label": "Stagger",
+      "default": "alternate",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "alternate",
+          "label": "Alternate"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_counter",
+      "label": "Show counter",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "lightbox",
+      "label": "Lightbox",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "stagger": "alternate",
+        "show_counter": false,
+        "lightbox": true,
+        "color_scheme": "surface"
+      }
+    }
+  ]
+}
+</schema>

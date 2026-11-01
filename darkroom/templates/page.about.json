@@ -1,0 +1,259 @@
+{
+  "label": "Page — About",
+  "description": "The photographer, the practice and selected work history.",
+  "sections": [
+    {
+      "id": "s_image_with_text",
+      "type": "image-with-text",
+      "preset": "Default",
+      "settings": {
+        "ratio": "portrait",
+        "layout": "image_first",
+        "eyebrow": "About",
+        "heading": "Mara Lindqvist",
+        "body": "<p>I photograph landscapes and the traces of people who work in them. I live in Gothenburg and work across the Nordic countries and further afield.</p>",
+        "link_label": "About the practice",
+        "link": "/about",
+        "color_scheme": "surface-alt",
+        "image": "as_4x5_1"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_statement",
+      "type": "statement",
+      "preset": "Default",
+      "settings": {
+        "eyebrow": "The practice",
+        "body": "<p>I return to places until the familiar becomes <em>specific</em>: the mark on the wall, the edge of the field, the light that stays for <em>a minute</em>.</p>",
+        "color_scheme": "surface-alt"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_figures",
+      "type": "figures",
+      "preset": "Default",
+      "settings": {
+        "eyebrow": "In figures",
+        "color_scheme": "surface-alt"
+      },
+      "blocks": [
+        {
+          "id": "s_figures_b_1",
+          "type": "figure",
+          "settings": {
+            "value": "12",
+            "label": "Years photographing"
+          }
+        },
+        {
+          "id": "s_figures_b_2",
+          "type": "figure",
+          "settings": {
+            "value": "6",
+            "label": "Personal series"
+          }
+        },
+        {
+          "id": "s_figures_b_3",
+          "type": "figure",
+          "settings": {
+            "value": "18",
+            "label": "Countries worked in"
+          }
+        },
+        {
+          "id": "s_figures_b_4",
+          "type": "figure",
+          "settings": {
+            "value": "10",
+            "label": "Prints in each edition"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_photo_single",
+      "type": "photo-single",
+      "preset": "Default",
+      "settings": {
+        "index": 0,
+        "caption": "The harbour on the walk to the studio.",
+        "number": false,
+        "width": "wide",
+        "ratio": "16:9",
+        "color_scheme": "surface-alt",
+        "image": "as_16x9_1"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_rich_text",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {
+        "heading": "Working from Gothenburg",
+        "body": "<p>I began photographing the harbour before I had a studio there. Walking the same route made small changes visible: a window covered, a boat moved, the water reaching another step.</p><p>The personal work grows that way. Commissions begin with a conversation about the place, the people who use it and what the photographs need to do.</p>",
+        "width": "reading",
+        "color_scheme": "surface-alt"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_photo_pair",
+      "type": "photo-pair",
+      "preset": "Default",
+      "settings": {
+        "index_a": 0,
+        "index_b": 1,
+        "caption_a": "A room borrowed for an afternoon.",
+        "caption_b": "The edge of the forest, Dalarna.",
+        "ratio": "4:5",
+        "color_scheme": "surface-alt",
+        "image_a": "as_4x5_2",
+        "image_b": "as_4x5_3"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cv_exhibitions",
+      "type": "cv-list",
+      "preset": "Exhibitions",
+      "settings": {
+        "heading": "Exhibitions",
+        "color_scheme": "surface-alt"
+      },
+      "blocks": [
+        {
+          "id": "s_cv_exhibitions_b_1",
+          "type": "row",
+          "settings": {
+            "year": "2025",
+            "text": "Salt Roads",
+            "place": "Galleri Format, Stockholm"
+          }
+        },
+        {
+          "id": "s_cv_exhibitions_b_2",
+          "type": "row",
+          "settings": {
+            "year": "2023",
+            "text": "Hollow Season",
+            "place": "Röda Sten Konsthall, Gothenburg"
+          }
+        },
+        {
+          "id": "s_cv_exhibitions_b_3",
+          "type": "row",
+          "settings": {
+            "year": "2022",
+            "text": "Harbour Light",
+            "place": "Galleri Box, Gothenburg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_cv_publications",
+      "type": "cv-list",
+      "preset": "Publications",
+      "settings": {
+        "heading": "Publications",
+        "color_scheme": "surface-alt"
+      },
+      "blocks": [
+        {
+          "id": "s_cv_publications_b_1",
+          "type": "row",
+          "settings": {
+            "year": "2025",
+            "text": "Salt Roads — artist’s book",
+            "place": "Independent edition"
+          }
+        },
+        {
+          "id": "s_cv_publications_b_2",
+          "type": "row",
+          "settings": {
+            "year": "2024",
+            "text": "Night Ferry",
+            "place": "Nordic Photography Review"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_cv_awards",
+      "type": "cv-list",
+      "preset": "Awards",
+      "settings": {
+        "heading": "Awards",
+        "color_scheme": "surface-alt"
+      },
+      "blocks": [
+        {
+          "id": "s_cv_awards_b_1",
+          "type": "row",
+          "settings": {
+            "year": "2024",
+            "text": "Swedish Arts Grants Committee — working grant",
+            "place": ""
+          }
+        },
+        {
+          "id": "s_cv_awards_b_2",
+          "type": "row",
+          "settings": {
+            "year": "2021",
+            "text": "Västra Götaland cultural scholarship",
+            "place": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_testimonials",
+      "type": "testimonials",
+      "preset": "Default",
+      "settings": {
+        "heading": "In their words",
+        "show_counter": true,
+        "show_arrows": true,
+        "color_scheme": "surface-alt"
+      },
+      "blocks": [
+        {
+          "id": "s_testimonials_b_1",
+          "type": "voice",
+          "settings": {
+            "quote": "Mara waited for the light without asking the building to become something else. The photographs have the same patience.",
+            "name": "Elin Berg",
+            "role": "Architect, Gothenburg",
+            "photo": "as_4x5_1"
+          }
+        },
+        {
+          "id": "s_testimonials_b_2",
+          "type": "voice",
+          "settings": {
+            "quote": "The sequence made sense of a place we had been looking at for years.",
+            "name": "Jonas Hall",
+            "role": "Editor",
+            "photo": "as_3x2_3"
+          }
+        },
+        {
+          "id": "s_testimonials_b_3",
+          "type": "voice",
+          "settings": {
+            "quote": "A small print that changes with the room through the day.",
+            "name": "Anna Ek",
+            "role": "Print collector",
+            "photo": "as_4x5_2"
+          }
+        }
+      ]
+    }
+  ]
+}

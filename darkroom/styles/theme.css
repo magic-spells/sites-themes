@@ -1,0 +1,319 @@
+@import "tailwindcss";
+@import "./vendor/bottom-sheet.css" layer(components);
+@import "./vendor/collapsible-content.css" layer(components);
+@import "./vendor/dropdown-panel.css" layer(components);
+@import "./vendor/dropdown-panel.effects.css" layer(components);
+@import "./vendor/lightbox.css" layer(components);
+@import "./vendor/scrollbar.css" layer(components);
+@import "./vendor/select-dropdown.css" layer(components);
+@import "./vendor/tarot.css" layer(components);
+
+@source "../layouts/**/*.pzl";
+@source "../templates/**/*.pzl";
+@source "../sections/**/*.pzl";
+@source "../components/**/*.pzl";
+
+@theme {
+	--color-brand-primary: var(--sites-color-brand-primary);
+	--color-brand-secondary: var(--sites-color-brand-secondary);
+	--color-brand-accent: var(--sites-color-brand-accent);
+
+	--color-grey-extra-light: var(--sites-color-grey-extra-light);
+	--color-grey-light: var(--sites-color-grey-light);
+	--color-grey-medium: var(--sites-color-grey-medium);
+	--color-grey-dark: var(--sites-color-grey-dark);
+	--color-grey-extra-dark: var(--sites-color-grey-extra-dark);
+
+	--color-info-bg: var(--sites-color-info-bg);
+	--color-info-fg: var(--sites-color-info-fg);
+	--color-success-bg: var(--sites-color-success-bg);
+	--color-success-fg: var(--sites-color-success-fg);
+	--color-warning-bg: var(--sites-color-warning-bg);
+	--color-warning-fg: var(--sites-color-warning-fg);
+	--color-error-bg: var(--sites-color-error-bg);
+	--color-error-fg: var(--sites-color-error-fg);
+}
+
+/* The scheme properties change per element, so they are mapped with `@theme
+   inline`: the generated utility reads --sites-scheme-* on the element it
+   lands on, and a section classed sites-scheme-band recolors everything in it. */
+@theme inline {
+	--color-scheme-background: var(--sites-scheme-background);
+	--color-scheme-foreground: var(--sites-scheme-foreground);
+	--color-scheme-heading: var(--sites-scheme-heading);
+	--color-scheme-links: var(--sites-scheme-links);
+	--color-scheme-icons: var(--sites-scheme-icons);
+	--color-scheme-input-background: var(--sites-scheme-input-background);
+	--color-scheme-input-foreground: var(--sites-scheme-input-foreground);
+	--color-scheme-input-border: var(--sites-scheme-input-border);
+	--color-scheme-chip-background: var(--sites-scheme-chip-background);
+	--color-scheme-chip-foreground: var(--sites-scheme-chip-foreground);
+	--color-scheme-chip-border: var(--sites-scheme-chip-border);
+	--color-scheme-button-background: var(--sites-scheme-button-background);
+	--color-scheme-button-foreground: var(--sites-scheme-button-foreground);
+	--color-scheme-button-hover-background: var(--sites-scheme-button-hover-background);
+	--color-scheme-button-hover-foreground: var(--sites-scheme-button-hover-foreground);
+	--color-scheme-secondary-button-background: var(--sites-scheme-secondary-button-background);
+	--color-scheme-secondary-button-foreground: var(--sites-scheme-secondary-button-foreground);
+	--color-scheme-secondary-button-hover-background: var(--sites-scheme-secondary-button-hover-background);
+	--color-scheme-secondary-button-hover-foreground: var(--sites-scheme-secondary-button-hover-foreground);
+
+	/* Darkroom reads four roles the engine's scheme has no slot for: a muted
+	   text, a meta grey for datelines, a rule and a second surface. They ride
+	   on the chip and icon slots, which design.json fills with those values. */
+	--color-scheme-muted: var(--sites-scheme-chip-foreground);
+	--color-scheme-meta: var(--sites-scheme-icons);
+	--color-scheme-rule: var(--sites-scheme-chip-border);
+	--color-scheme-surface: var(--sites-scheme-chip-background);
+
+	/* Error copy follows the scheme link, whose contrast is checked with
+	   every palette. */
+	--color-scheme-error: var(--sites-scheme-links);
+}
+
+@theme {
+	--font-heading: var(--sites-font-heading-family), Georgia, "Times New Roman", serif;
+	--font-body: var(--sites-font-body-family), Arial, sans-serif;
+	--font-mono: var(--sites-font-mono-family), SFMono-Regular, Menlo, monospace;
+
+	--text-xs: var(--sites-type-scale-xs);
+	--text-xs--line-height: var(--sites-type-leading-normal);
+	--text-sm: var(--sites-type-scale-sm);
+	--text-sm--line-height: var(--sites-type-leading-normal);
+	--text-base: var(--sites-type-scale-base);
+	--text-base--line-height: var(--sites-type-leading-normal);
+	--text-lg: var(--sites-type-scale-lg);
+	--text-lg--line-height: var(--sites-type-leading-relaxed);
+	--text-xl: var(--sites-type-scale-xl);
+	--text-xl--line-height: var(--sites-type-leading-relaxed);
+	--text-2xl: var(--sites-type-scale-2xl);
+	--text-2xl--line-height: var(--sites-type-leading-tight);
+	--text-3xl: var(--sites-type-scale-3xl);
+	--text-3xl--line-height: var(--sites-type-leading-tight);
+	--text-4xl: var(--sites-type-scale-4xl);
+	--text-4xl--line-height: var(--sites-type-leading-tight);
+	--text-5xl: var(--sites-type-scale-5xl);
+	--text-5xl--line-height: var(--sites-type-leading-tight);
+
+	--leading-tight: var(--sites-type-leading-tight);
+	--leading-normal: var(--sites-type-leading-normal);
+	--leading-relaxed: var(--sites-type-leading-relaxed);
+
+	--spacing-space-xs: var(--sites-spacing-xs);
+	--spacing-space-sm: var(--sites-spacing-sm);
+	--spacing-space-md: var(--sites-spacing-md);
+	--spacing-space-lg: var(--sites-spacing-lg);
+	--spacing-space-xl: var(--sites-spacing-xl);
+	--spacing-space-2xl: var(--sites-spacing-2xl);
+
+	--radius-none: var(--sites-radius-none);
+	--radius-sm: var(--sites-radius-sm);
+	--radius-md: var(--sites-radius-md);
+	--radius-lg: var(--sites-radius-lg);
+	--radius-full: var(--sites-radius-full);
+	--radius-button: var(--sites-button-radius);
+	--radius-input: var(--sites-input-radius);
+
+	--shadow-sm: var(--sites-shadow-sm);
+	--shadow-md: var(--sites-shadow-md);
+	--shadow-lg: var(--sites-shadow-lg);
+
+	/* Responsive role tokens read the site’s current scale. */
+	--text-display: var(--darkroom-text-display);
+	--text-display--line-height: 0.96;
+	--text-h1: var(--darkroom-text-h1);
+	--text-h1--line-height: 1;
+	--text-h2: var(--darkroom-text-h2);
+	--text-h2--line-height: 1;
+	--text-h3: var(--darkroom-text-h3);
+	--text-h3--line-height: 1;
+	--text-h4: var(--darkroom-text-h4);
+	--text-h4--line-height: 1.3;
+	--text-body: var(--darkroom-text-body);
+	--text-body--line-height: 1.5;
+	--text-body-lg: var(--darkroom-text-body-lg);
+	--text-body-lg--line-height: 1.5;
+	--text-body-sm: var(--darkroom-text-body-sm);
+	--text-body-sm--line-height: 1.5;
+	--text-body-xs: var(--darkroom-text-body-xs);
+	--text-body-xs--line-height: 1.5;
+	--text-overline: var(--darkroom-text-overline);
+	--text-overline--line-height: 1.5;
+	--text-meta: var(--darkroom-text-meta);
+	--text-meta--line-height: 1.5;
+	--text-control: 1rem;
+	--text-control--line-height: 1;
+	--text-chip: 0.875rem;
+	--text-chip--line-height: 1.5;
+	--leading-standfirst: 1.5;
+	--leading-prose: 1.5;
+	--tracking-meta: 0.08em;
+	--tracking-caption: 0;
+	--tracking-note: 0.02em;
+	--spacing-section: var(--darkroom-section);
+	--spacing-gutter: var(--darkroom-gutter);
+	--spacing-step-2xs: var(--darkroom-step-2xs);
+	--spacing-step-xs: var(--darkroom-step-xs);
+	--spacing-step-sm: var(--darkroom-step-sm);
+	--spacing-step-md: var(--darkroom-step-md);
+	--spacing-step-lg: var(--darkroom-step-lg);
+	--spacing-step-xl: var(--darkroom-step-xl);
+	--spacing-step-2xl: var(--darkroom-step-2xl);
+	--spacing-step-3xl: var(--darkroom-step-3xl);
+	--spacing-gap-sm: var(--darkroom-gap-sm);
+	--spacing-gap-md: var(--darkroom-gap-md);
+	--spacing-gap-lg: var(--darkroom-gap-lg);
+	--spacing-stage: var(--darkroom-stage);
+	--spacing-strip: var(--darkroom-strip);
+	--spacing-overlap: var(--darkroom-overlap);
+	--container-column: 82.5rem;
+	--container-reading: 40rem;
+	--container-text: 30rem;
+	--container-mat: 37.5rem;
+	--container-panel: 35rem;
+	--spacing-control: 3.375rem;
+	--spacing-textarea: 9rem;
+}
+
+:root {
+	--darkroom-text-display: calc(var(--sites-type-scale-5xl) * 56 / 112);
+	--darkroom-text-h1: calc(var(--sites-type-scale-4xl) * 40 / 72);
+	--darkroom-text-h2: calc(var(--sites-type-scale-3xl) * 30 / 48);
+	--darkroom-text-h3: calc(var(--sites-type-scale-2xl) * 24 / 32);
+	--darkroom-text-h4: calc(var(--sites-type-scale-xl) * 20 / 24);
+	--darkroom-text-body: calc(var(--sites-type-scale-base) * 15 / 16);
+	--darkroom-text-body-lg: calc(var(--sites-type-scale-lg) * 17 / 19);
+	--darkroom-text-body-sm: calc(var(--sites-type-scale-sm) * 13 / 14);
+	--darkroom-text-body-xs: calc(var(--sites-type-scale-xs) * 12 / 12);
+	--darkroom-text-overline: calc(var(--sites-type-scale-xs) * 11 / 12);
+	--darkroom-text-meta: calc(var(--sites-type-scale-xs) * 11 / 12);
+	--darkroom-section: calc(var(--sites-spacing-2xl) * 24 / 64);
+	--darkroom-gutter: calc(var(--sites-spacing-md) * 16 / 24);
+	--darkroom-step-2xs: calc(var(--sites-spacing-xs) * 8 / 12);
+	--darkroom-step-xs: calc(var(--sites-spacing-xs) * 12 / 12);
+	--darkroom-step-sm: calc(var(--sites-spacing-sm) * 16 / 16);
+	--darkroom-step-md: calc(var(--sites-spacing-md) * 24 / 24);
+	--darkroom-step-lg: calc(var(--sites-spacing-lg) * 32 / 32);
+	--darkroom-step-xl: calc(var(--sites-spacing-xl) * 48 / 48);
+	--darkroom-step-2xl: calc(var(--sites-spacing-2xl) * 64 / 64);
+	--darkroom-step-3xl: calc(var(--sites-spacing-2xl) * 96 / 64);
+	--darkroom-gap-sm: calc(var(--sites-spacing-xs) * 8 / 12);
+	--darkroom-gap-md: calc(var(--sites-spacing-sm) * 12 / 16);
+	--darkroom-gap-lg: calc(var(--sites-spacing-md) * 12 / 24);
+	--darkroom-stage: calc(var(--sites-spacing-2xl) * 300 / 64);
+	--darkroom-strip: calc(var(--sites-spacing-2xl) * 360 / 64);
+	--darkroom-overlap: calc(var(--sites-spacing-2xl) * 0 / 64);
+}
+@media (min-width: 48rem) {
+:root {
+	--darkroom-text-display: calc(var(--sites-type-scale-5xl) * 80 / 112);
+	--darkroom-text-h1: calc(var(--sites-type-scale-4xl) * 56 / 72);
+	--darkroom-text-h2: calc(var(--sites-type-scale-3xl) * 36 / 48);
+	--darkroom-text-h3: calc(var(--sites-type-scale-2xl) * 28 / 32);
+	--darkroom-text-h4: calc(var(--sites-type-scale-xl) * 22 / 24);
+	--darkroom-text-body: calc(var(--sites-type-scale-base) * 16 / 16);
+	--darkroom-text-body-lg: calc(var(--sites-type-scale-lg) * 18 / 19);
+	--darkroom-text-body-sm: calc(var(--sites-type-scale-sm) * 13 / 14);
+	--darkroom-text-body-xs: calc(var(--sites-type-scale-xs) * 12 / 12);
+	--darkroom-text-overline: calc(var(--sites-type-scale-xs) * 11 / 12);
+	--darkroom-text-meta: calc(var(--sites-type-scale-xs) * 11 / 12);
+	--darkroom-section: calc(var(--sites-spacing-2xl) * 32 / 64);
+	--darkroom-gutter: calc(var(--sites-spacing-md) * 24 / 24);
+	--darkroom-step-2xs: calc(var(--sites-spacing-xs) * 8 / 12);
+	--darkroom-step-xs: calc(var(--sites-spacing-xs) * 12 / 12);
+	--darkroom-step-sm: calc(var(--sites-spacing-sm) * 16 / 16);
+	--darkroom-step-md: calc(var(--sites-spacing-md) * 24 / 24);
+	--darkroom-step-lg: calc(var(--sites-spacing-lg) * 32 / 32);
+	--darkroom-step-xl: calc(var(--sites-spacing-xl) * 48 / 48);
+	--darkroom-step-2xl: calc(var(--sites-spacing-2xl) * 64 / 64);
+	--darkroom-step-3xl: calc(var(--sites-spacing-2xl) * 96 / 64);
+	--darkroom-gap-sm: calc(var(--sites-spacing-xs) * 12 / 12);
+	--darkroom-gap-md: calc(var(--sites-spacing-sm) * 16 / 16);
+	--darkroom-gap-lg: calc(var(--sites-spacing-md) * 16 / 24);
+	--darkroom-stage: calc(var(--sites-spacing-2xl) * 480 / 64);
+	--darkroom-strip: calc(var(--sites-spacing-2xl) * 440 / 64);
+	--darkroom-overlap: calc(var(--sites-spacing-2xl) * 80 / 64);
+}
+}
+@media (min-width: 64rem) {
+:root {
+	--darkroom-text-display: calc(var(--sites-type-scale-5xl) * 112 / 112);
+	--darkroom-text-h1: calc(var(--sites-type-scale-4xl) * 72 / 72);
+	--darkroom-text-h2: calc(var(--sites-type-scale-3xl) * 48 / 48);
+	--darkroom-text-h3: calc(var(--sites-type-scale-2xl) * 32 / 32);
+	--darkroom-text-h4: calc(var(--sites-type-scale-xl) * 24 / 24);
+	--darkroom-text-body: calc(var(--sites-type-scale-base) * 16 / 16);
+	--darkroom-text-body-lg: calc(var(--sites-type-scale-lg) * 19 / 19);
+	--darkroom-text-body-sm: calc(var(--sites-type-scale-sm) * 14 / 14);
+	--darkroom-text-body-xs: calc(var(--sites-type-scale-xs) * 12 / 12);
+	--darkroom-text-overline: calc(var(--sites-type-scale-xs) * 12 / 12);
+	--darkroom-text-meta: calc(var(--sites-type-scale-xs) * 12 / 12);
+	--darkroom-section: calc(var(--sites-spacing-2xl) * 40 / 64);
+	--darkroom-gutter: calc(var(--sites-spacing-md) * 40 / 24);
+	--darkroom-step-2xs: calc(var(--sites-spacing-xs) * 8 / 12);
+	--darkroom-step-xs: calc(var(--sites-spacing-xs) * 12 / 12);
+	--darkroom-step-sm: calc(var(--sites-spacing-sm) * 16 / 16);
+	--darkroom-step-md: calc(var(--sites-spacing-md) * 24 / 24);
+	--darkroom-step-lg: calc(var(--sites-spacing-lg) * 32 / 32);
+	--darkroom-step-xl: calc(var(--sites-spacing-xl) * 48 / 48);
+	--darkroom-step-2xl: calc(var(--sites-spacing-2xl) * 64 / 64);
+	--darkroom-step-3xl: calc(var(--sites-spacing-2xl) * 96 / 64);
+	--darkroom-gap-sm: calc(var(--sites-spacing-xs) * 12 / 12);
+	--darkroom-gap-md: calc(var(--sites-spacing-sm) * 16 / 16);
+	--darkroom-gap-lg: calc(var(--sites-spacing-md) * 24 / 24);
+	--darkroom-stage: calc(var(--sites-spacing-2xl) * 640 / 64);
+	--darkroom-strip: calc(var(--sites-spacing-2xl) * 560 / 64);
+	--darkroom-overlap: calc(var(--sites-spacing-2xl) * 160 / 64);
+}
+}
+
+@font-face {
+	font-family: "Spectral";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url("/_sites/theme/fonts/spectral-latin-500-normal.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Spectral";
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url("/_sites/theme/fonts/spectral-latin-600-normal.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Spectral";
+	font-style: normal;
+	font-weight: 800;
+	font-display: swap;
+	src: url("/_sites/theme/fonts/spectral-latin-800-normal.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Spectral";
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url("/_sites/theme/fonts/spectral-latin-400-italic.woff2") format("woff2");
+}
+
+:root {
+ --darkroom-scrim: rgb(0 0 0 / 0.6);
+ --tarot-lightbox-backdrop: rgb(0 0 0 / 0.92);
+ --tarot-lightbox-chrome-color: #E8E6E1;
+ --tarot-lightbox-chrome-size: 2.75rem;
+ --tarot-lightbox-chrome-inset: 1rem;
+ --tarot-lightbox-image-height: calc(100dvh - 6.5rem);
+}
+.tarot-lightbox [data-caption] {
+ font-family: var(--sites-font-mono-family), monospace;
+ font-size: var(--darkroom-text-body-xs);
+ color: #A8A49C;
+ text-align: center;
+ margin-bottom: 1.125rem;
+}
+.statement em { font-family: var(--sites-font-heading-family), Georgia, serif; font-style: italic; font-weight: 400; }
+[data-dismissed] { display: none; }
+body:has([data-bare]) [data-group] { display: none; }
+@media (prefers-reduced-motion: reduce) {
+ *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}

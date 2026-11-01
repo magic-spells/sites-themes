@@ -1,0 +1,103 @@
+{
+  "label": "Series",
+  "description": "A series statement, gallery and photographs with adjacent series links.",
+  "sections": [
+    {
+      "id": "s_series_header",
+      "type": "series-header",
+      "preset": "Default",
+      "settings": {
+        "show_cover": true,
+        "show_meta": true,
+        "show_statement": true,
+        "align": "left",
+        "color_scheme": "surface"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_photo_carousel",
+      "type": "photo-carousel",
+      "preset": "Default",
+      "settings": {
+        "height": "standard",
+        "loop": true,
+        "show_captions": true,
+        "show_counter": true,
+        "show_arrows": true,
+        "lightbox": true,
+        "color_scheme": "surface"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_photo_strip",
+      "type": "photo-strip",
+      "preset": "Default",
+      "settings": {
+        "stagger": "alternate",
+        "show_counter": false,
+        "lightbox": true,
+        "color_scheme": "surface"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_photo_grid",
+      "type": "photo-grid",
+      "preset": "Default",
+      "settings": {
+        "columns": "3",
+        "gap": "tight",
+        "ratio": "3:2",
+        "captions": "none",
+        "lightbox": true,
+        "limit": 0,
+        "offset": 0,
+        "color_scheme": "surface"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_photo_single",
+      "type": "photo-single",
+      "preset": "Default",
+      "settings": {
+        "index": 7,
+        "caption": "",
+        "number": false,
+        "width": "wide",
+        "ratio": "16:9",
+        "color_scheme": "surface"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_photo_pair",
+      "type": "photo-pair",
+      "preset": "Default",
+      "settings": {
+        "index_a": 3,
+        "index_b": 9,
+        "caption_a": "",
+        "caption_b": "",
+        "ratio": "4:5",
+        "color_scheme": "surface"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_series_nav",
+      "type": "series-nav",
+      "preset": "Default",
+      "settings": {
+        "base_path": "/work",
+        "all_label": "All work",
+        "all_href": "/work",
+        "color_scheme": "surface",
+        "collection": "series"
+      },
+      "blocks": []
+    }
+  ]
+}

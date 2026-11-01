@@ -1,0 +1,108 @@
+<!-- section: testimonials; D1 placeholder -->
+<section>testimonials
+  {#for block in blocks}<span data-block={ block.editor_id }>voice</span>{/for}</section>
+
+<schema>
+{
+  "name": "Testimonials",
+  "description": "Voices paired with photographs, shown one at a time.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "In their words"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_counter",
+      "label": "Show counter",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show arrows",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "voice",
+      "name": "Voice",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": ""
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": ""
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Role",
+          "default": ""
+        },
+        {
+          "type": "image",
+          "id": "photo",
+          "label": "Photo"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 24,
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "heading": "In their words",
+        "show_counter": true,
+        "show_arrows": true,
+        "color_scheme": "surface"
+      },
+      "blocks": [
+        {
+          "type": "voice",
+          "settings": {
+            "quote": "Mara waited for the light without asking the building to become something else. The photographs have the same patience.",
+            "name": "Elin Berg",
+            "role": "Architect, Gothenburg",
+            "photo": "as_4x5_1"
+          }
+        },
+        {
+          "type": "voice",
+          "settings": {
+            "quote": "The sequence made sense of a place we had been looking at for years.",
+            "name": "Jonas Hall",
+            "role": "Editor",
+            "photo": "as_3x2_3"
+          }
+        },
+        {
+          "type": "voice",
+          "settings": {
+            "quote": "A small print that changes with the room through the day.",
+            "name": "Anna Ek",
+            "role": "Print collector",
+            "photo": "as_4x5_2"
+          }
+        }
+      ]
+    }
+  ]
+}
+</schema>

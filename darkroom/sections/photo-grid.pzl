@@ -1,0 +1,147 @@
+<!-- section: photo-grid; D1 placeholder -->
+<section>photo-grid</section>
+
+<schema>
+{
+  "name": "Photo grid",
+  "description": "A gallery grid with a companion carousel for the lightbox.",
+  "settings": [
+    {
+      "type": "gallery",
+      "id": "gallery",
+      "label": "Gallery",
+      "info": "Reads items in order: asset (url, width, height, alt), caption, alt and video. Leave empty to use page.entry.fields.photos where the page binds a series."
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Columns",
+      "default": "3",
+      "options": [
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "gap",
+      "label": "Gap",
+      "default": "normal",
+      "options": [
+        {
+          "value": "tight",
+          "label": "Tight"
+        },
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": "loose",
+          "label": "Loose"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "ratio",
+      "label": "Ratio",
+      "default": "3:2",
+      "options": [
+        {
+          "value": "3:2",
+          "label": "3:2"
+        },
+        {
+          "value": "4:5",
+          "label": "4:5"
+        },
+        {
+          "value": "1:1",
+          "label": "1:1"
+        },
+        {
+          "value": "natural",
+          "label": "Natural"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "captions",
+      "label": "Captions",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "below",
+          "label": "Below"
+        },
+        {
+          "value": "hover",
+          "label": "Hover"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "lightbox",
+      "label": "Lightbox",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Limit",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "info": "Zero shows all photographs after the offset."
+    },
+    {
+      "type": "range",
+      "id": "offset",
+      "label": "Offset",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "columns": "3",
+        "gap": "normal",
+        "ratio": "3:2",
+        "captions": "none",
+        "lightbox": true,
+        "limit": 0,
+        "offset": 0,
+        "color_scheme": "surface"
+      }
+    }
+  ]
+}
+</schema>

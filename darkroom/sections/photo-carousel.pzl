@@ -1,0 +1,100 @@
+<!-- section: photo-carousel; D1 placeholder -->
+<section>photo-carousel</section>
+
+<schema>
+{
+  "name": "Photo carousel",
+  "description": "One photograph at a time, with captions, a counter and lightbox.",
+  "settings": [
+    {
+      "type": "gallery",
+      "id": "gallery",
+      "label": "Gallery",
+      "info": "Reads items in order: asset (url, width, height, alt), caption, alt and video. Leave empty to use page.entry.fields.photos where the page binds a series."
+    },
+    {
+      "type": "select",
+      "id": "height",
+      "label": "Height",
+      "default": "standard",
+      "options": [
+        {
+          "value": "tall",
+          "label": "Tall"
+        },
+        {
+          "value": "standard",
+          "label": "Standard"
+        },
+        {
+          "value": "short",
+          "label": "Short"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Loop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_captions",
+      "label": "Show captions",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_counter",
+      "label": "Show counter",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "lightbox",
+      "label": "Lightbox",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "height": "standard",
+        "loop": true,
+        "show_captions": true,
+        "show_counter": true,
+        "show_arrows": true,
+        "lightbox": true,
+        "color_scheme": "surface"
+      }
+    },
+    {
+      "name": "Gallery",
+      "settings": {
+        "height": "tall",
+        "loop": true,
+        "show_captions": true,
+        "show_counter": true,
+        "show_arrows": true,
+        "lightbox": true,
+        "color_scheme": "surface",
+        "gallery": "live"
+      }
+    }
+  ]
+}
+</schema>

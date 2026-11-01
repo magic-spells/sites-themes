@@ -1,0 +1,39 @@
+{
+  "label": "Work",
+  "description": "Six series in a thumbnail list or grid.",
+  "sections": [
+    {
+      "id": "s_page_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "chip": "",
+        "heading": "Work",
+        "standfirst": "Six series, 2020 to 2025",
+        "align": "left",
+        "color_scheme": "surface"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_series_index",
+      "type": "series-index",
+      "preset": "Index",
+      "settings": {
+        "heading": "",
+        "base_path": "/work",
+        "layout": "list",
+        "columns": "3",
+        "ratio": "4:5",
+        "limit": 12,
+        "show_counts": true,
+        "show_toggle": true,
+        "view_all_label": "",
+        "view_all_href": "",
+        "color_scheme": "surface",
+        "collection": "series"
+      },
+      "blocks": []
+    }
+  ]
+}

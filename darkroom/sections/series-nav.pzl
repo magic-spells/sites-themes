@@ -1,0 +1,56 @@
+<!-- section: series-nav; D1 placeholder -->
+<section>series-nav</section>
+
+<schema>
+{
+  "name": "Series nav",
+  "description": "Previous and next series from the same year-sorted collection.",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Create the workspace content type series with year, location, statement (richtext), cover (image), cover_alt, photos (gallery handle) and edition_note. Reads title, handle and those fields; orders year newest first."
+    },
+    {
+      "type": "url",
+      "id": "base_path",
+      "label": "Base path",
+      "default": "/work"
+    },
+    {
+      "type": "text",
+      "id": "all_label",
+      "label": "All label",
+      "default": "All work"
+    },
+    {
+      "type": "url",
+      "id": "all_href",
+      "label": "All href",
+      "default": "/work"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "base_path": "/work",
+        "all_label": "All work",
+        "all_href": "/work",
+        "color_scheme": "surface",
+        "collection": "series"
+      }
+    }
+  ],
+  "templates": [
+    "series"
+  ]
+}
+</schema>

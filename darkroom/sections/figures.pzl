@@ -1,0 +1,84 @@
+<!-- section: figures; D1 placeholder -->
+<section>figures
+  {#for block in blocks}<span data-block={ block.editor_id }>figure</span>{/for}</section>
+
+<schema>
+{
+  "name": "Figures",
+  "description": "Numbers and brief labels about the photographic practice.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "In figures"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "figure",
+      "name": "Figure",
+      "settings": [
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": ""
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": ""
+        }
+      ]
+    }
+  ],
+  "max_blocks": 24,
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "eyebrow": "In figures",
+        "color_scheme": "surface"
+      },
+      "blocks": [
+        {
+          "type": "figure",
+          "settings": {
+            "value": "12",
+            "label": "Years photographing"
+          }
+        },
+        {
+          "type": "figure",
+          "settings": {
+            "value": "6",
+            "label": "Personal series"
+          }
+        },
+        {
+          "type": "figure",
+          "settings": {
+            "value": "18",
+            "label": "Countries worked in"
+          }
+        },
+        {
+          "type": "figure",
+          "settings": {
+            "value": "10",
+            "label": "Prints in each edition"
+          }
+        }
+      ]
+    }
+  ]
+}
+</schema>

@@ -1,0 +1,66 @@
+<!-- section: series-header; D1 placeholder -->
+<section>series-header</section>
+
+<schema>
+{
+  "name": "Series header",
+  "description": "The current series title, metadata, statement and cover.",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_cover",
+      "label": "Show cover",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_meta",
+      "label": "Show meta",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_statement",
+      "label": "Show statement",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "align",
+      "label": "Align",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "show_cover": true,
+        "show_meta": true,
+        "show_statement": true,
+        "align": "left",
+        "color_scheme": "surface"
+      }
+    }
+  ],
+  "templates": [
+    "series"
+  ]
+}
+</schema>

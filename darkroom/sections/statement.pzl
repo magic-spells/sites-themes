@@ -1,0 +1,39 @@
+<!-- section: statement; D1 placeholder -->
+<section>statement</section>
+
+<schema>
+{
+  "name": "Statement",
+  "description": "A sentence with Spectral italic emphasis inside rich text.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The practice"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>I return to places until the familiar becomes <em>specific</em>: the mark on the wall, the edge of the field, the light that stays for <em>a minute</em>.</p>"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "eyebrow": "The practice",
+        "body": "<p>I return to places until the familiar becomes <em>specific</em>: the mark on the wall, the edge of the field, the light that stays for <em>a minute</em>.</p>",
+        "color_scheme": "surface"
+      }
+    }
+  ]
+}
+</schema>

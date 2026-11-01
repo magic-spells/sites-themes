@@ -1,0 +1,3 @@
+<!-- component: ServiceTile -->
+<!-- props: name description photo subject href enquire_label -->
+<span>ServiceTile</span>

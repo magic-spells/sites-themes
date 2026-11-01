@@ -1,0 +1,90 @@
+<!-- section: photo-pair; D1 placeholder -->
+<section>photo-pair</section>
+
+<schema>
+{
+  "name": "Photo pair",
+  "description": "Two photographs; empty images fall back to the current series by index.",
+  "settings": [
+    {
+      "type": "image",
+      "id": "image_a",
+      "label": "Image a"
+    },
+    {
+      "type": "image",
+      "id": "image_b",
+      "label": "Image b"
+    },
+    {
+      "type": "number",
+      "id": "index_a",
+      "label": "Index a",
+      "default": 0,
+      "min": 0
+    },
+    {
+      "type": "number",
+      "id": "index_b",
+      "label": "Index b",
+      "default": 1,
+      "min": 0
+    },
+    {
+      "type": "text",
+      "id": "caption_a",
+      "label": "Caption a",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "caption_b",
+      "label": "Caption b",
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "ratio",
+      "label": "Ratio",
+      "default": "4:5",
+      "options": [
+        {
+          "value": "4:5",
+          "label": "4:5"
+        },
+        {
+          "value": "3:2",
+          "label": "3:2"
+        },
+        {
+          "value": "1:1",
+          "label": "1:1"
+        },
+        {
+          "value": "natural",
+          "label": "Natural"
+        }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "index_a": 0,
+        "index_b": 1,
+        "caption_a": "",
+        "caption_b": "",
+        "ratio": "4:5",
+        "color_scheme": "surface"
+      }
+    }
+  ]
+}
+</schema>

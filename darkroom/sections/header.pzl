@@ -1,0 +1,97 @@
+<!-- section: header; D1 placeholder -->
+<section>header</section>
+
+<schema>
+{
+  "name": "Header",
+  "description": "The wordmark, main menu and a desktop panel of series.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo text",
+      "default": "",
+      "info": "Leave empty to use the Brand wordmark or site name."
+    },
+    {
+      "type": "menu",
+      "id": "menu",
+      "label": "Menu"
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "default": "solid",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "overlay",
+          "label": "Overlay"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky",
+      "label": "Sticky",
+      "default": true
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Create the workspace content type series with year, location, statement (richtext), cover (image), cover_alt, photos (gallery handle) and edition_note. Reads title, handle and those fields; orders year newest first."
+    },
+    {
+      "type": "text",
+      "id": "work_label",
+      "label": "Work label",
+      "default": "Work"
+    },
+    {
+      "type": "url",
+      "id": "work_path",
+      "label": "Work path",
+      "default": "/work"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Solid",
+      "settings": {
+        "logo_text": "",
+        "style": "solid",
+        "sticky": true,
+        "work_label": "Work",
+        "work_path": "/work",
+        "color_scheme": "surface",
+        "menu": "main",
+        "collection": "series"
+      }
+    },
+    {
+      "name": "Overlay",
+      "settings": {
+        "logo_text": "",
+        "style": "overlay",
+        "sticky": true,
+        "work_label": "Work",
+        "work_path": "/work",
+        "color_scheme": "surface",
+        "menu": "main",
+        "collection": "series"
+      }
+    }
+  ]
+}
+</schema>

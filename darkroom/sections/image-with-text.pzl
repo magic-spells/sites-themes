@@ -1,0 +1,104 @@
+<!-- section: image-with-text; D1 placeholder -->
+<section>image-with-text</section>
+
+<schema>
+{
+  "name": "Image with text",
+  "description": "A portrait and writing; the photograph comes first on mobile.",
+  "settings": [
+    {
+      "type": "image",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "ratio",
+      "label": "Ratio",
+      "default": "portrait",
+      "options": [
+        {
+          "value": "portrait",
+          "label": "Portrait"
+        },
+        {
+          "value": "landscape",
+          "label": "Landscape"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "image_first",
+      "options": [
+        {
+          "value": "image_first",
+          "label": "Image first"
+        },
+        {
+          "value": "text_first",
+          "label": "Text first"
+        }
+      ],
+      "info": "Image first places the image left; text first places it right on desktop."
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "About"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Mara Lindqvist"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>I photograph landscapes and the traces of people who work in them. I live in Gothenburg and work across the Nordic countries and further afield.</p>"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": "About the practice"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link",
+      "default": "/about"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "ratio": "portrait",
+        "layout": "image_first",
+        "eyebrow": "About",
+        "heading": "Mara Lindqvist",
+        "body": "<p>I photograph landscapes and the traces of people who work in them. I live in Gothenburg and work across the Nordic countries and further afield.</p>",
+        "link_label": "About the practice",
+        "link": "/about",
+        "color_scheme": "surface"
+      }
+    }
+  ]
+}
+</schema>

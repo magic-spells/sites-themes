@@ -1,0 +1,158 @@
+{
+  "label": "Home",
+  "description": "Featured series and an introduction to the practice.",
+  "sections": [
+    {
+      "id": "s_hero_slideshow",
+      "type": "hero-slideshow",
+      "preset": "Default",
+      "settings": {
+        "height": "full",
+        "effect": "fade",
+        "autoplay": true,
+        "interval": 6,
+        "loop": true,
+        "show_caption": true,
+        "show_counter": true,
+        "show_dots": true,
+        "show_arrows": "hover",
+        "color_scheme": "surface",
+        "gallery": "home-hero"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_series_index",
+      "type": "series-index",
+      "preset": "Grid",
+      "settings": {
+        "heading": "Featured series",
+        "base_path": "/work",
+        "layout": "grid",
+        "columns": "3",
+        "ratio": "4:5",
+        "limit": 3,
+        "show_counts": true,
+        "show_toggle": false,
+        "view_all_label": "All work",
+        "view_all_href": "/work",
+        "color_scheme": "surface",
+        "collection": "series"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_image_with_text",
+      "type": "image-with-text",
+      "preset": "Default",
+      "settings": {
+        "ratio": "portrait",
+        "layout": "text_first",
+        "eyebrow": "About",
+        "heading": "Mara Lindqvist",
+        "body": "<p>I photograph landscapes and the traces of people who work in them. I live in Gothenburg and work across the Nordic countries and further afield.</p>",
+        "link_label": "About the practice",
+        "link": "/about",
+        "color_scheme": "surface",
+        "image": "as_4x5_1"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_photo_strip",
+      "type": "photo-strip",
+      "preset": "Default",
+      "settings": {
+        "stagger": "alternate",
+        "show_counter": false,
+        "lightbox": true,
+        "color_scheme": "surface",
+        "gallery": "salt-roads"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_services",
+      "type": "services",
+      "preset": "Default",
+      "settings": {
+        "eyebrow": "Services",
+        "heading": "What I take on",
+        "standfirst": "",
+        "show_arrows": true,
+        "enquire_label": "Enquire",
+        "contact_path": "/contact",
+        "color_scheme": "surface"
+      },
+      "blocks": [
+        {
+          "id": "s_services_b_1",
+          "type": "service",
+          "settings": {
+            "name": "Editorial",
+            "description": "Photographs for stories that need time on the ground.",
+            "photo": "as_3x2_1",
+            "subject": "Commission"
+          }
+        },
+        {
+          "id": "s_services_b_2",
+          "type": "service",
+          "settings": {
+            "name": "Portraits",
+            "description": "People in the rooms and places they know.",
+            "photo": "as_4x5_1",
+            "subject": "Commission"
+          }
+        },
+        {
+          "id": "s_services_b_3",
+          "type": "service",
+          "settings": {
+            "name": "Architecture and interiors",
+            "description": "Buildings in the light they were designed for; a day on site and a second for the weather.",
+            "photo": "as_3x2_3",
+            "subject": "Commission"
+          }
+        },
+        {
+          "id": "s_services_b_4",
+          "type": "service",
+          "settings": {
+            "name": "Books and exhibitions",
+            "description": "Sequencing, prints and work made for the page or the wall.",
+            "photo": "as_1x1_1",
+            "subject": "Press"
+          }
+        },
+        {
+          "id": "s_services_b_5",
+          "type": "service",
+          "settings": {
+            "name": "Workshops and talks",
+            "description": "Small groups, practical questions and time to make photographs.",
+            "photo": "as_3x2_5",
+            "subject": "Other"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_prints_band",
+      "type": "prints-band",
+      "preset": "Default",
+      "settings": {
+        "heading": "Prints and editions",
+        "text": "Selected photographs are available as signed prints. Each is made in the studio, checked in daylight and numbered by hand.",
+        "button_label": "Enquire about a print",
+        "button_href": "/contact?subject=Prints",
+        "edition_note": "Editions of ten. Signed and numbered.",
+        "frame": "none",
+        "layout": "image_first",
+        "color_scheme": "band",
+        "image": "as_3x2_1"
+      },
+      "blocks": []
+    }
+  ]
+}

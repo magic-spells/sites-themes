@@ -1,0 +1,1 @@
+Version 0.1.0 introduces Darkroom’s D1 schema layer: design tokens and palettes, twenty-six section contracts, page stacks, local fixtures, Spectral fonts, placeholder assets and bundled component registration. Section and page markup remain placeholders for the next implementation pass.

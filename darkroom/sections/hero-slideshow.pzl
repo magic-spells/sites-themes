@@ -1,0 +1,138 @@
+<!-- section: hero-slideshow; D1 placeholder -->
+<section>hero-slideshow</section>
+
+<schema>
+{
+  "name": "Hero slideshow",
+  "description": "A full-screen gallery with fade or sliding photographs.",
+  "settings": [
+    {
+      "type": "gallery",
+      "id": "gallery",
+      "label": "Gallery",
+      "info": "Reads items in order: asset (url, width, height, alt), caption, alt and video. Leave empty to use page.entry.fields.photos where the page binds a series."
+    },
+    {
+      "type": "select",
+      "id": "height",
+      "label": "Height",
+      "default": "full",
+      "options": [
+        {
+          "value": "full",
+          "label": "Full"
+        },
+        {
+          "value": "tall",
+          "label": "Tall"
+        },
+        {
+          "value": "wide",
+          "label": "Wide"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "effect",
+      "label": "Effect",
+      "default": "fade",
+      "options": [
+        {
+          "value": "fade",
+          "label": "Fade"
+        },
+        {
+          "value": "carousel",
+          "label": "Carousel"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "interval",
+      "label": "Interval",
+      "default": 6,
+      "min": 2,
+      "max": 20,
+      "step": 1,
+      "unit": "s",
+      "info": "Seconds between slides; autoplay is disabled for reduced motion."
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Loop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_caption",
+      "label": "Show caption",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_counter",
+      "label": "Show counter",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show dots",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "show_arrows",
+      "label": "Show arrows",
+      "default": "hover",
+      "options": [
+        {
+          "value": "never",
+          "label": "Never"
+        },
+        {
+          "value": "hover",
+          "label": "Hover"
+        },
+        {
+          "value": "always",
+          "label": "Always"
+        }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "surface"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "height": "full",
+        "effect": "fade",
+        "autoplay": true,
+        "interval": 6,
+        "loop": true,
+        "show_caption": true,
+        "show_counter": true,
+        "show_dots": true,
+        "show_arrows": "hover",
+        "color_scheme": "surface",
+        "gallery": "home-hero"
+      }
+    }
+  ]
+}
+</schema>

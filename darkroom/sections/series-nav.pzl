@@ -76,7 +76,6 @@
         "base_path": "/work",
         "all_label": "All work",
         "all_href": "/work",
-        "color_scheme": "surface",
         "collection": "series"
       }
     }

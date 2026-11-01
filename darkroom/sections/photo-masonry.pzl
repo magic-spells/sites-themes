@@ -109,8 +109,7 @@
         "columns": "3",
         "gap": "normal",
         "captions": "none",
-        "lightbox": true,
-        "color_scheme": "surface"
+        "lightbox": true
       }
     }
   ]

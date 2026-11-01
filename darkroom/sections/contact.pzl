@@ -179,8 +179,7 @@
         "consent_text": "I agree to the use of these details to reply to my enquiry.",
         "direct": true,
         "direct_heading": "Prefer to write directly?",
-        "note": "Your details are used only to answer this enquiry.",
-        "color_scheme": "surface"
+        "note": "Your details are used only to answer this enquiry."
       }
     }
   ]

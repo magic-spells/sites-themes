@@ -202,8 +202,7 @@
         "footnote": "<p>All rates exclude travel and applicable tax. Usage is agreed in writing. <a href=\"/contact\">Write</a> for a proposal.</p>",
         "enquire_label": "Enquire",
         "enquire_href": "/contact?subject=Commission",
-        "layout": "rows",
-        "color_scheme": "surface"
+        "layout": "rows"
       },
       "blocks": [
         {

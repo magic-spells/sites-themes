@@ -134,8 +134,7 @@
         "standfirst": "",
         "show_arrows": true,
         "enquire_label": "Enquire",
-        "contact_path": "/contact",
-        "color_scheme": "surface"
+        "contact_path": "/contact"
       },
       "blocks": [
         {

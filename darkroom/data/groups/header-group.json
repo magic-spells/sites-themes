@@ -10,7 +10,6 @@
         "sticky": true,
         "work_label": "Work",
         "work_path": "/work",
-        "color_scheme": "surface",
         "menu": "main",
         "collection": "series"
       },

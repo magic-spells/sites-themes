@@ -75,8 +75,7 @@
       "name": "Prints",
       "settings": {
         "heading": "FAQs",
-        "note": "Write if your question is not here.",
-        "color_scheme": "surface"
+        "note": "Write if your question is not here."
       },
       "blocks": [
         {
@@ -120,8 +119,7 @@
       "name": "Packages",
       "settings": {
         "heading": "FAQs",
-        "note": "Write if your question is not here.",
-        "color_scheme": "surface"
+        "note": "Write if your question is not here."
       },
       "blocks": [
         {

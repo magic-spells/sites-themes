@@ -133,8 +133,7 @@
       "settings": {
         "heading": "In their words",
         "show_counter": true,
-        "show_arrows": true,
-        "color_scheme": "surface"
+        "show_arrows": true
       },
       "blocks": [
         {

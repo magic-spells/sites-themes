@@ -112,8 +112,7 @@
         "caption": "",
         "number": false,
         "width": "wide",
-        "ratio": "16:9",
-        "color_scheme": "surface"
+        "ratio": "16:9"
       }
     }
   ]

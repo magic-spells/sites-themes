@@ -92,7 +92,6 @@
     {
       "name": "Default",
       "settings": {
-        "color_scheme": "surface",
         "menu": "main",
         "menu_secondary": "social",
         "collection": "series",

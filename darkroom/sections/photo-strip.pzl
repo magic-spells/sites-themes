@@ -88,8 +88,7 @@
       "settings": {
         "stagger": "alternate",
         "show_counter": false,
-        "lightbox": true,
-        "color_scheme": "surface"
+        "lightbox": true
       }
     }
   ]

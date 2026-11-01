@@ -121,8 +121,7 @@
         "show_captions": true,
         "show_counter": true,
         "show_arrows": true,
-        "lightbox": true,
-        "color_scheme": "surface"
+        "lightbox": true
       }
     },
     {
@@ -134,7 +133,6 @@
         "show_counter": true,
         "show_arrows": true,
         "lightbox": true,
-        "color_scheme": "surface",
         "gallery": "live"
       }
     }

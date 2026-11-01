@@ -70,8 +70,7 @@
         "decline_label": "Decline",
         "link_label": "Privacy",
         "link_href": "/privacy",
-        "key": "darkroom-notice-2026-10",
-        "color_scheme": "surface"
+        "key": "darkroom-notice-2026-10"
       }
     }
   ]

@@ -58,8 +58,7 @@
     {
       "name": "Default",
       "settings": {
-        "eyebrow": "In figures",
-        "color_scheme": "surface"
+        "eyebrow": "In figures"
       },
       "blocks": [
         {

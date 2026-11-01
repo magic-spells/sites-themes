@@ -68,8 +68,7 @@
         "chip": "",
         "heading": "",
         "standfirst": "",
-        "align": "left",
-        "color_scheme": "surface"
+        "align": "left"
       }
     },
     {
@@ -78,8 +77,7 @@
         "chip": "",
         "heading": "",
         "standfirst": "",
-        "align": "center",
-        "color_scheme": "surface"
+        "align": "center"
       }
     }
   ]

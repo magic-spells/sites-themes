@@ -13,8 +13,7 @@
         "drop_cap": false,
         "show_end_rule": true,
         "show_updated": true,
-        "show_image_credit": true,
-        "color_scheme": "paper"
+        "show_image_credit": true
       },
       "blocks": []
     },
@@ -36,8 +35,7 @@
         "name": "",
         "label": "Science correspondent",
         "bio": "",
-        "use_post_author": true,
-        "color_scheme": "paper"
+        "use_post_author": true
       },
       "blocks": []
     },
@@ -59,7 +57,6 @@
         "show_count": false,
         "view_all_label": "",
         "view_all_href": "",
-        "color_scheme": "paper",
         "collection": "posts"
       },
       "blocks": []

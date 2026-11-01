@@ -140,7 +140,6 @@
         "show_rail": true,
         "rail_limit": 4,
         "show_rail_rule": true,
-        "color_scheme": "paper",
         "collection": "posts"
       }
     }

@@ -122,7 +122,6 @@
         "image_position": "left",
         "show_image": true,
         "read_label": "Read the story",
-        "color_scheme": "paper",
         "collection": "posts"
       }
     },
@@ -135,7 +134,6 @@
         "image_position": "right",
         "show_image": true,
         "read_label": "Read the story",
-        "color_scheme": "paper",
         "collection": "posts"
       }
     }

@@ -10,8 +10,7 @@
         "chip": "Index",
         "heading": "All stories",
         "standfirst": "Every story from the valley, newest first: politics, business, science, culture, weather and opinion, as they happen.",
-        "align": "left",
-        "color_scheme": "paper"
+        "align": "left"
       },
       "blocks": []
     },
@@ -33,7 +32,6 @@
         "show_count": true,
         "view_all_label": "",
         "view_all_href": "",
-        "color_scheme": "paper",
         "collection": "posts"
       },
       "blocks": []

@@ -117,8 +117,7 @@
         "heading": "A newsroom above the mill",
         "body": "<p>Eleven reporters, two photographers and one editor work from the second floor of the old mill, a short walk from the bridge.</p><p>We publish every day and print a weekend edition that still sells out at the station kiosk.</p>",
         "link_label": "About the Ledger",
-        "link": "/about",
-        "color_scheme": "paper"
+        "link": "/about"
       }
     }
   ]

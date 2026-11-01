@@ -191,7 +191,6 @@
         "show_count": true,
         "view_all_label": "All stories",
         "view_all_href": "/news",
-        "color_scheme": "paper",
         "collection": "posts"
       }
     },
@@ -211,7 +210,6 @@
         "show_count": true,
         "view_all_label": "All stories",
         "view_all_href": "/news",
-        "color_scheme": "paper",
         "collection": "posts"
       }
     },
@@ -231,7 +229,6 @@
         "show_count": false,
         "view_all_label": "",
         "view_all_href": "",
-        "color_scheme": "paper",
         "collection": "posts"
       }
     }

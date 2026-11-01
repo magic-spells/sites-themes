@@ -6,7 +6,6 @@
       "preset": "Default",
       "settings": {
         "copyright": "© 2026 The Daily Ledger",
-        "color_scheme": "paper",
         "menu_primary": "topics",
         "menu_secondary": "about"
       },

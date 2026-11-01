@@ -115,8 +115,7 @@
         "text": "Seen something the valley should know about? Write to the newsroom. We read everything, and we protect our sources.",
         "show_details": true,
         "form": "contact",
-        "note": "",
-        "color_scheme": "paper"
+        "note": ""
       }
     }
   ]

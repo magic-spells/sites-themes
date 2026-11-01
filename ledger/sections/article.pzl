@@ -118,8 +118,7 @@
         "drop_cap": false,
         "show_end_rule": true,
         "show_updated": true,
-        "show_image_credit": true,
-        "color_scheme": "paper"
+        "show_image_credit": true
       }
     }
   ]

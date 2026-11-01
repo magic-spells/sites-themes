@@ -96,8 +96,7 @@
         "name": "",
         "label": "Science correspondent",
         "bio": "",
-        "use_post_author": false,
-        "color_scheme": "paper"
+        "use_post_author": false
       }
     }
   ]

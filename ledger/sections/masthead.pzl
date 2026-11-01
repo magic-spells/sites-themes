@@ -112,7 +112,6 @@
         "show_subscribe": true,
         "subscribe_label": "Subscribe",
         "subscribe_href": "/#section-s_newsletter",
-        "color_scheme": "paper",
         "menu": "main"
       }
     }

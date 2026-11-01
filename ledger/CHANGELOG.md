@@ -10,6 +10,8 @@
 - A section whose color scheme defaulted to the first scheme now has no default and follows the
   site's base scheme; sections that default to another scheme keep it: the announcement bar,
   editor's picks and newsletter keep `ink`, and key facts and the latest list `slate`.
+- The starter templates, section groups and presets no longer store the first scheme, so a new
+  site's sections follow its base scheme too.
 
 ## 0.1.0
 

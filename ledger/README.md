@@ -4,7 +4,7 @@ The News reference theme for Magic Spells Sites: The Daily Ledger, an invented l
 
 ## Sections
 
-Masthead (sticky, with a scrolling topic strip), announcement bar, mobile menu, cookie notice and footer in the groups; lead story with a rail of the newest stories, editors' picks carousel, topic block, story grid, latest list, feature story, article, key facts, author card, page header, rich text, image with text, newsletter and contact. The 404, password and maintenance templates carry their own markup.
+Masthead (sticky, with a scrolling topic strip), announcement bar, mobile menu, cookie notice and footer in the groups; lead story with a rail of the newest stories, editor's picks carousel, topic block, story grid, latest list, feature story, article, key facts, author card, page header, rich text, image with text, newsletter and contact. The 404, password and maintenance templates carry their own markup.
 
 The `posts` contract keeps `topic`, `date`, `author`, `reading_minutes`, `standfirst`, `image`, `image_alt` and `body`; `image_credit`, `updated` and `key_facts` (one fact per line, `Label: value`) are optional. Dates are calendar dates only: no time of day, no "ago".
 
@@ -12,13 +12,17 @@ The story grid and topic block can offer a list/grid switch; the reader's choice
 
 ## Fixtures
 
-Twenty-one stories across six topics by Priya Nand, Tom Reilly and a few named contributors, including five short briefs without images. There are no topic archives yet, so topic menus link to `/news#<topic>`.
+Twenty-one stories across six topics by Priya Nand, Tom Reilly and a few named contributors, including five short briefs without images. Every topic menu item links to `/news` (see Known limits).
 
 ## Carousel
 
-Editors' picks use Tarot 0.1.0, vendored in `scripts/vendor/tarot.esm.js` and `styles/vendor/tarot.css` with `TAROT-LICENSE` alongside, until the npm release. `scripts/theme.ts` fits `slidesPerView` so every card is 18rem wide and the next one peeks on a phone. Below 48rem the track runs to the right edge of the screen while the rule row stays inside the gutter; arrows show from 48rem up.
+Editor's picks use Tarot 0.1.0, vendored in `scripts/vendor/tarot.esm.js` and `styles/vendor/tarot.css` with `TAROT-LICENSE` alongside, until the npm release. `scripts/theme.ts` fits `slidesPerView` so every card is 18rem wide and the next one peeks on a phone. Below 48rem the track runs to the right edge of the screen while the rule row stays inside the gutter; the arrows beside the heading show at every width.
 
 TypeScript 7 rejects one line of the bundle (`_.constructor.#getPluginKey`, which runs fine), so `tsconfig.json` excludes the bundle and `scripts/vendor/tarot.esm.d.ts` declares its types.
+
+## Known limits
+
+- No topic archives. The engine cannot yet filter the index by topic, so every topic in the masthead strip, the mobile menu and the footer links to `/news`, and only the first matching item is marked as the current page. Point the items at per-topic pages once the engine has them.
 
 ## Run it
 

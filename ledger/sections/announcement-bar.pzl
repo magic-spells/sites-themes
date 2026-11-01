@@ -1,13 +1,16 @@
 <!-- A one-line notice: a red kicker, the message and an optional link,
-     centred, with a × that hides it for good (theme.ts remembers the key). -->
+     centred, with a × that hides it for good (theme.ts remembers the key).
+     The link shows from 48rem up; on a phone the line stays one line, as in
+     the design. The × is a full icon button, and an empty twin on the left
+     keeps the message centred. -->
 <aside class="bg-scheme-background px-gutter py-step-sm text-scheme-foreground" data-dismiss-key="{ settings.key }" aria-label="{ t('announcement_label') }">
   <div class="mx-auto flex max-w-column items-center gap-step-sm">
-    <span class="size-5 shrink-0" aria-hidden="true"></span>
+    <span class="-m-step-xs size-icon-button shrink-0" aria-hidden="true"></span>
     <p class="flex-1 text-center text-body-sm text-pretty">
       <span class="mr-step-xs font-body text-kicker font-semibold text-scheme-links uppercase">{ t('announcement_kicker') }</span>{ settings.text }
-      {#if settings.link_label}<a class="ml-step-xs font-semibold text-scheme-heading underline decoration-1 underline-offset-4 hover:text-scheme-links" href="{ settings.link }">{ settings.link_label }</a>{/if}
+      {#if settings.link_label}<a class="ml-step-xs hidden font-semibold text-scheme-heading underline decoration-1 underline-offset-4 hover:text-scheme-links md:inline" href="{ settings.link }">{ settings.link_label }</a>{/if}
     </p>
-    <button class="sites-icon size-5 shrink-0 text-scheme-heading hover:text-scheme-links" type="button" data-dismiss>{#svg 'icons/close.svg'}<span class="sr-only">{ t('dismiss_announcement') }</span></button>
+    <button class="-m-step-xs grid size-icon-button shrink-0 place-items-center text-scheme-heading hover:text-scheme-links" type="button" data-dismiss><span class="sites-icon size-icon">{#svg 'icons/close.svg'}</span><span class="sr-only">{ t('dismiss_announcement') }</span></button>
   </div>
 </aside>
 

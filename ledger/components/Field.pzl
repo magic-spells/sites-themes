@@ -14,7 +14,7 @@
       {#for option in options}<option value={ option } selected={ value == option }>{ option }</option>{/for}
     </select>
   {:else if type == 'checkbox'}
-    <input class="size-5 accent-scheme-links" id="field-{ prefix }-{ name }" name={ name } type="checkbox" value="on" checked={ value == 'on' } required={ required } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null } />
+    <input class="size-checkbox accent-scheme-links" id="field-{ prefix }-{ name }" name={ name } type="checkbox" value="on" checked={ value == 'on' } required={ required } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null } />
   {:else}
     <!-- A declared form field carries no autocomplete token, so the two that
          browsers actually fill in are recognized by name here. -->

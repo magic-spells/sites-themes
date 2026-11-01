@@ -157,7 +157,7 @@
           "label": "Politics",
           "target": {
             "kind": "url",
-            "url": "/news#politics"
+            "url": "/news"
           },
           "children": []
         },
@@ -166,7 +166,7 @@
           "label": "Business",
           "target": {
             "kind": "url",
-            "url": "/news#business"
+            "url": "/news"
           },
           "children": []
         },
@@ -175,7 +175,7 @@
           "label": "Science",
           "target": {
             "kind": "url",
-            "url": "/news#science"
+            "url": "/news"
           },
           "children": []
         },
@@ -184,7 +184,7 @@
           "label": "Culture",
           "target": {
             "kind": "url",
-            "url": "/news#culture"
+            "url": "/news"
           },
           "children": []
         },
@@ -193,7 +193,7 @@
           "label": "Weather",
           "target": {
             "kind": "url",
-            "url": "/news#weather"
+            "url": "/news"
           },
           "children": []
         },
@@ -202,7 +202,7 @@
           "label": "Opinion",
           "target": {
             "kind": "url",
-            "url": "/news#opinion"
+            "url": "/news"
           },
           "children": []
         }
@@ -217,7 +217,7 @@
           "label": "Politics",
           "target": {
             "kind": "url",
-            "url": "/news#politics"
+            "url": "/news"
           },
           "children": []
         },
@@ -226,7 +226,7 @@
           "label": "Business",
           "target": {
             "kind": "url",
-            "url": "/news#business"
+            "url": "/news"
           },
           "children": []
         },
@@ -235,7 +235,7 @@
           "label": "Science",
           "target": {
             "kind": "url",
-            "url": "/news#science"
+            "url": "/news"
           },
           "children": []
         },
@@ -244,7 +244,7 @@
           "label": "Culture",
           "target": {
             "kind": "url",
-            "url": "/news#culture"
+            "url": "/news"
           },
           "children": []
         },
@@ -253,7 +253,7 @@
           "label": "Weather",
           "target": {
             "kind": "url",
-            "url": "/news#weather"
+            "url": "/news"
           },
           "children": []
         },
@@ -262,7 +262,7 @@
           "label": "Opinion",
           "target": {
             "kind": "url",
-            "url": "/news#opinion"
+            "url": "/news"
           },
           "children": []
         }
@@ -1542,7 +1542,7 @@
       "id": "pg_privacy",
       "template": "page",
       "title": "Privacy",
-      "content": "<p>The Daily Ledger keeps what you send through the contact and newsletter forms only to answer you or to send the morning letter. We never sell or share your address.</p><p>Your browser remembers two things on this device: that you have closed the privacy notice, and whether you prefer the story list as a grid or a list. Neither leaves your device.</p><p>Write to tips@example.com with any question about your information.</p>",
+      "content": "<p>The Daily Ledger keeps what you send through the contact and newsletter forms only to answer you or to send the morning letter. We never sell or share your address.</p><p>Your browser remembers three things on this device: that you have closed the privacy notice, that you have dismissed the announcement bar, and whether you prefer the story list as a grid or a list. None of them leaves your device.</p><p>Write to tips@example.com with any question about your information.</p>",
       "seo": {
         "description": "How the Ledger handles messages and reader settings."
       }

@@ -14,7 +14,7 @@
             <h2 class="font-body text-kicker font-semibold text-scheme-muted uppercase">{ menu.title }</h2>
             <ul class="grid gap-step-sm">
               {#for item in menu.items}
-                <li><a class="text-body text-scheme-heading decoration-1 underline-offset-4 hover:text-scheme-links hover:underline" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active && !contains(item.href, '#') ? 'page' : null }>{ item.label }</a></li>
+                <li><a class="text-body text-scheme-heading decoration-1 underline-offset-4 hover:text-scheme-links hover:underline" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active && !contains(item.href, '#') && (menu.items | find('active', true)).label == item.label ? 'page' : null }>{ item.label }</a></li>
               {/for}
             </ul>
           </nav>

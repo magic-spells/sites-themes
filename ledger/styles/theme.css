@@ -107,7 +107,9 @@
 
 	/* Inputs/error from the design file: the palette's error red on Paper
 	   (6.3:1) and Slate (5.7:1), a light red on Ink (8.1:1), where the
-	   palette red falls to 2.6:1. The value is set per scheme class below. */
+	   palette red falls to 2.6:1. The value is set per scheme class below.
+	   Ink's #ff8a80 is the one colour outside design.json: the engine's
+	   scheme has no error slot to carry it. */
 	--color-scheme-error: var(--ledger-scheme-error);
 }
 
@@ -243,8 +245,10 @@
 	--container-footer-menu: 10rem;
 
 	/* Fixed sizes: an input's height, a textarea's minimum, the header logo,
-	   the rail thumbnail, the byline avatar, the writer portrait, a picks card
-	   and the square arrow and view buttons with their icon. */
+	   the rail thumbnail, the byline avatar, the writer portrait, a picks card,
+	   the square arrow, view and close buttons with their icon, a form
+	   checkbox and the width at which the author card's text wraps under the
+	   portrait. */
 	--spacing-control: 3.375rem;
 	--spacing-textarea: 6rem;
 	--spacing-logo: 2.5rem;
@@ -256,6 +260,8 @@
 	--spacing-row-thumb-sm: 6rem;
 	--spacing-icon-button: 2.5rem;
 	--spacing-icon: 1.25rem;
+	--spacing-checkbox: 1.25rem;
+	--spacing-author-text: 20rem;
 }
 
 /* Desktop takes each scale step itself; mobile and tablet take the design
@@ -698,11 +704,19 @@ sticky-header::before {
 /* @magic-spells/tarot: the picks carousel. Its stylesheet hides every slide
    until the script has measured the track; until then (and with JavaScript
    off) the slides show as a plain row, so the first paint is the same
-   carousel at rest. The arrows Tarot binds in the section head take the
-   disabled attribute at either end. */
+   carousel at rest: the row starts at the gutter (and keeps it on the right
+   from 48rem) with the same gap as the section's Tarot options, so nothing
+   moves when the script arms. The arrows Tarot binds in the section head
+   take the disabled attribute at either end. */
 tarot-carousel:not(:defined) tarot-track {
 	display: flex;
 	gap: var(--ledger-gap-md);
+	padding-inline-start: var(--spacing-gutter);
+}
+@media (min-width: 48rem) {
+	tarot-carousel:not(:defined) tarot-track {
+		padding-inline-end: var(--spacing-gutter);
+	}
 }
 tarot-carousel:not(:defined) tarot-slide {
 	flex: none;

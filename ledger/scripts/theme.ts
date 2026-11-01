@@ -137,7 +137,8 @@ if (document.querySelector('.reveal')) Reveal.init({ offset: 0, duration: 400, o
 // design's cards are a fixed 18rem with the next one peeking, so the count is
 // worked out from the track's inner width (its padding and gap come from the
 // section's options, which change with the gutters at 48rem and 64rem) and
-// set again whenever the window changes size. The arrows in the section head
+// set again whenever the window changes size. The count is not rounded, so a
+// card is exactly 18rem and sits where the pre-script row put it. The arrows in the section head
 // are bound by Tarot itself through its navigation selectors.
 interface Picks extends HTMLElement {
 	readonly viewport: HTMLElement | null;
@@ -154,8 +155,8 @@ function fitPicks(picks: Picks): void {
 	const { paddingLeft, paddingRight, gap, slidesPerView } = picks.options;
 	const space = remToPx(gap);
 	const inner = width - remToPx(paddingLeft) - remToPx(paddingRight);
-	const perView = Math.max(1, Math.round(((inner + space) / (remToPx(picks.dataset.card) + space)) * 100) / 100);
-	if (Math.abs(perView - (slidesPerView ?? 0)) > 0.01) picks.updateOptions({ slidesPerView: perView });
+	const perView = Math.max(1, (inner + space) / (remToPx(picks.dataset.card) + space));
+	if (Math.abs(perView - (slidesPerView ?? 0)) > 0.001) picks.updateOptions({ slidesPerView: perView });
 }
 
 for (const picks of document.querySelectorAll<Picks>('tarot-carousel[data-card]')) {

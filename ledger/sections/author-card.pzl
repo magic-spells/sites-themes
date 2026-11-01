@@ -6,13 +6,15 @@
   portrait = settings.portrait ?? (is_writer ? site.settings.writer_portrait : null)
   links = settings.links.items.length ? settings.links : (is_writer ? site.settings.writer_links : null)
   role = is_writer ? settings.label : ''
+  has_links = links.items.length > 0
 }
 <!-- The writer under a 3px rule: portrait, name, role, biography and links.
      Empty settings fall back to the Newsroom site settings. Following the
      story's author, the role, biography and links show only for the person
      those settings describe, so another reporter's story never borrows them;
-     a reporter without a portrait gets their initial. -->
-{#if name}
+     a reporter without a portrait gets their initial. Another reporter with
+     no biography or links gets no card at all, rather than a bare name. -->
+{#if name && (is_writer || bio || has_links)}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto flex max-w-reading flex-wrap items-start gap-step-md border-t-3 border-scheme-rule-strong pt-step-md">
     {#if portrait}
@@ -20,11 +22,11 @@
     {:else}
       <span class="grid size-portrait shrink-0 place-items-center rounded-full bg-scheme-surface font-heading text-h3 font-bold text-scheme-heading" aria-hidden="true">{ name | slice(0, 1) }</span>
     {/if}
-    <div class="grid min-w-0 flex-1 basis-80 gap-step-xs">
+    <div class="grid min-w-0 flex-1 basis-author-text gap-step-xs">
       <h2 class="font-heading text-h4 font-semibold text-scheme-heading">{ name }</h2>
       {#if role}<p class="font-mono text-meta text-scheme-meta">{ role }</p>{/if}
       {#if bio}<p class="text-body text-pretty text-scheme-muted">{ bio }</p>{/if}
-      {#if links.items.length}
+      {#if has_links}
         <ul class="flex flex-wrap font-body text-kicker font-semibold text-scheme-links uppercase" aria-label="{ t('social_links') }">
           {#for item in links.items, i}
             <li>{#if i > 0}<span class="whitespace-pre" aria-hidden="true"> · </span>{/if}<a class="decoration-1 underline-offset-4 hover:underline" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null }>{ item.label }</a></li>

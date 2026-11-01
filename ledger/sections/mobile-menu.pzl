@@ -8,7 +8,7 @@
     <div class="grid gap-step-xl px-gutter py-step-lg">
       <div class="flex items-center justify-between gap-step-md">
         <a class="font-heading text-h3 font-bold text-scheme-heading uppercase" href="/">{ site.name }</a>
-        <button class="sites-icon -m-step-xs size-10 p-step-xs text-scheme-heading hover:text-scheme-links" type="button" data-action-hide-dialog>{#svg 'icons/close.svg'}<span class="sr-only">{ t('close_menu') }</span></button>
+        <button class="-m-step-xs grid size-icon-button place-items-center text-scheme-heading hover:text-scheme-links" type="button" data-action-hide-dialog><span class="sites-icon size-icon">{#svg 'icons/close.svg'}</span><span class="sr-only">{ t('close_menu') }</span></button>
       </div>
 
       {#if settings.menu.items.length}
@@ -16,7 +16,7 @@
           <ul class="grid gap-step-sm">
             {#for item in settings.menu.items, i}
               <li>
-                <a class="font-heading text-h3 font-semibold hover:text-scheme-links { i == 0 ? 'text-scheme-links' : 'text-scheme-heading' }" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active && !contains(item.href, '#') ? 'page' : null }>{ item.label }</a>
+                <a class="font-heading text-h3 font-semibold hover:text-scheme-links { i == 0 ? 'text-scheme-links' : 'text-scheme-heading' }" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active && !contains(item.href, '#') && (settings.menu.items | find('active', true)).label == item.label ? 'page' : null }>{ item.label }</a>
                 {#if item.children.length}
                   <ul class="mt-step-xs grid gap-step-xs pl-step-md">
                     {#for child in item.children}

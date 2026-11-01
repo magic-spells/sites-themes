@@ -23,7 +23,9 @@
      and the head sit in the gutters, and the track's padding is the gutter on
      the left and, below 48rem, nothing on the right, so the cards run to the
      edge of the screen. From 48rem the track sits in the column with both
-     gutters, and the arrows in the head drive it. Tarot's paddings above
+     gutters. The arrows in the head drive it at every width (the design shows
+     them at 375 too); a disabled arrow dims its icon and keeps the meta-colour
+     border, 3:1 or more on every scheme. Tarot's paddings above
      mirror the gutter tokens (1, 1.5 and 3rem). Cards here never reveal on
      scroll: the carousel moves them. -->
 {#if picks.length}
@@ -33,9 +35,9 @@
     <div class="flex items-center justify-between gap-step-md px-gutter pt-step-xs">
       <h2 class="font-heading text-h4 font-semibold text-scheme-heading uppercase" id="picks-heading-{ section.id }">{ settings.heading }<span class="text-scheme-links" aria-hidden="true"> ›</span></h2>
       {#if arrows}
-        <div class="hidden gap-step-xs md:flex">
-          <button class="sites-icon grid size-icon-button place-items-center rounded-button border border-scheme-rule text-scheme-heading hover:border-scheme-heading disabled:cursor-default disabled:opacity-50 disabled:hover:border-scheme-rule" type="button" id="{ previous_id }"><span class="size-icon">{#svg 'icons/arrow-left.svg'}</span><span class="sr-only">{ t('previous_pick') }</span></button>
-          <button class="sites-icon grid size-icon-button place-items-center rounded-button border border-scheme-rule text-scheme-heading hover:border-scheme-heading disabled:cursor-default disabled:opacity-50 disabled:hover:border-scheme-rule" type="button" id="{ next_id }"><span class="size-icon">{#svg 'icons/arrow-right.svg'}</span><span class="sr-only">{ t('next_pick') }</span></button>
+        <div class="flex gap-step-xs">
+          <button class="group sites-icon grid size-icon-button place-items-center rounded-button border border-scheme-meta text-scheme-heading hover:border-scheme-heading disabled:cursor-default disabled:hover:border-scheme-meta" type="button" id="{ previous_id }"><span class="size-icon group-disabled:opacity-40">{#svg 'icons/arrow-left.svg'}</span><span class="sr-only">{ t('previous_pick') }</span></button>
+          <button class="group sites-icon grid size-icon-button place-items-center rounded-button border border-scheme-meta text-scheme-heading hover:border-scheme-heading disabled:cursor-default disabled:hover:border-scheme-meta" type="button" id="{ next_id }"><span class="size-icon group-disabled:opacity-40">{#svg 'icons/arrow-right.svg'}</span><span class="sr-only">{ t('next_pick') }</span></button>
         </div>
       {/if}
     </div>
@@ -76,7 +78,7 @@
       "type": "checkbox",
       "id": "show_arrows",
       "label": "Show navigation arrows",
-      "info": "Arrows appear from tablet up; mobile uses swipe with the right edge bleeding to the viewport.",
+      "info": "Arrows show at every width beside the heading; on mobile the right edge also bleeds to the viewport so the next card peeks.",
       "default": true
     },
     {

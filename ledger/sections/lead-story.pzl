@@ -12,7 +12,8 @@
      takes the newest stories that have one, after the lead. At desktop the
      lead takes 46rem and the rail 28rem; at tablet they split the column; on
      a phone the rail follows the lead, without its rule. The first section
-     on a page carries the page's h1. Nothing here reveals on scroll: it is
+     on a page carries the page's h1, and a hidden h2 heads the rail so the
+     outline does not skip to its h3 rows. Nothing here reveals on scroll: it is
      the first screen. -->
 {#if lead}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
@@ -43,7 +44,8 @@
     {#if rail.length}
       <div class="flex gap-step-md">
         {#if settings.show_rail_rule}<span class="hidden w-px shrink-0 bg-scheme-rule md:block" aria-hidden="true"></span>{/if}
-        <ul class="min-w-0 flex-1" aria-label="{ t('more_stories') }">
+        <h2 class="sr-only" id="rail-heading-{ section.id }">{ t('more_stories') }</h2>
+        <ul class="min-w-0 flex-1" aria-labelledby="rail-heading-{ section.id }">
           {#for entry in rail}
             <li class="border-b border-scheme-rule last:border-b-0">
               <a class="group flex items-start gap-step-sm py-step-sm" href="{ settings.base_path }/{ entry.handle }">

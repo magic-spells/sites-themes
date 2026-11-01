@@ -23,13 +23,15 @@
 
       {#if settings.menu.items.length}
         <!-- The first item is the strip's lead link and takes the link colour.
-             Topic items may point at an anchor on the index, so only an exact
-             page match is marked as the current page. Below 48rem the strip
-             runs to the screen edges and scrolls. -->
+             Until the engine has topic archives every topic links to the
+             index, so only the first item matching the page is marked
+             current. Each link carries its own padding, a full-height tap
+             target. Below 48rem the strip runs to the screen edges and
+             scrolls. -->
         <nav class="{ settings.bordered ? 'border-b border-scheme-rule' : '' }" aria-label="{ t('main_navigation') }">
-          <ul class="-mx-gutter flex scroll-px-gutter gap-step-lg overflow-x-auto px-gutter py-step-sm scrollbar-none md:mx-0 md:px-0">
+          <ul class="-mx-gutter flex scroll-px-gutter gap-step-lg overflow-x-auto px-gutter scrollbar-none md:mx-0 md:px-0">
             {#for item in settings.menu.items, i}
-              <li class="shrink-0"><a class="font-body text-kicker font-semibold whitespace-nowrap uppercase decoration-1 underline-offset-4 hover:underline { i == 0 ? 'text-scheme-links' : 'text-scheme-muted hover:text-scheme-heading' }" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active && !contains(item.href, '#') ? 'page' : null }>{ item.label }</a></li>
+              <li class="shrink-0"><a class="block py-step-sm font-body text-kicker font-semibold whitespace-nowrap uppercase decoration-1 underline-offset-4 hover:underline { i == 0 ? 'text-scheme-links' : 'text-scheme-muted hover:text-scheme-heading' }" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active && !contains(item.href, '#') && (settings.menu.items | find('active', true)).label == item.label ? 'page' : null }>{ item.label }</a></li>
             {/for}
           </ul>
         </nav>

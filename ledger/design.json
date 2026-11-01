@@ -135,7 +135,7 @@
       "chip_background": "$grey-light",
       "chip_foreground": "$brand-secondary",
       "chip_border": "#E3E6EB",
-      "icons": "$grey-medium",
+      "icons": "#666D7B",
       "links": "$brand-accent",
       "button_background": "$brand-primary",
       "button_foreground": "$grey-extra-light",

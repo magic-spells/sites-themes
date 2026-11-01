@@ -11,9 +11,11 @@
 }
 <!-- The index body: cards four, two or one across, then the count ("12 of
      21 stories") and an optional view-all link under a hairline. With the
-     reader's switch on, both views render and the chosen one shows. -->
+     reader's switch on, both views render and the chosen one shows. Without
+     a heading, a hidden h2 keeps the outline from skipping to the cards' h3. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-view={ toggle ? view : false }>
   <div class="mx-auto grid max-w-column gap-step-lg">
+    {#unless settings.heading}<h2 class="sr-only">{ t('more_stories') }</h2>{/unless}
     {#if settings.heading || toggle}
       <div class="flex items-center justify-between gap-step-sm { settings.heading ? 'border-t-3 border-scheme-rule-strong pt-step-xs' : '' }">
         {#if settings.heading}<h2 class="font-heading text-h4 font-semibold text-scheme-heading uppercase">{ settings.heading }</h2>{/if}

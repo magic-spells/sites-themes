@@ -6275,4 +6275,3 @@ if (typeof customElements !== "undefined" && !customElements.get("tarot-carousel
 //#endregion
 export { Tarot, Tarot as default, TarotEffect };
 
-//# sourceMappingURL=tarot.esm.js.map

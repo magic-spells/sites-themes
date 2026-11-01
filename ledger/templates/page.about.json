@@ -9,7 +9,7 @@
       "settings": {
         "chip": "About",
         "heading": "News for the valley since 1962",
-        "standfirst": "Eleven reporters above the mill, a paper every day, and corrections printed where you can find them.",
+        "standfirst": "Eleven reporters above the mill, a paper every weekday, and corrections printed where you can find them.",
         "align": "left",
         "color_scheme": "paper"
       },
@@ -24,7 +24,7 @@
         "layout": "image_first",
         "eyebrow": "Since 1962",
         "heading": "A newsroom above the mill",
-        "body": "<p>Eleven reporters, two photographers and one editor work from the second floor of the old mill, a short walk from the bridge.</p><p>We publish every day and print a weekend edition that still sells out at the station kiosk.</p>",
+        "body": "<p>Eleven reporters, two photographers and one editor work from the second floor of the old mill, a short walk from the bridge.</p><p>We publish every weekday and print a weekend edition that still sells out at the station kiosk.</p>",
         "link_label": "About the Ledger",
         "link": "/about",
         "color_scheme": "paper",

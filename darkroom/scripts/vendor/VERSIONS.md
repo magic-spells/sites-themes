@@ -1,7 +1,7 @@
 # Vendored builds
 
-Copied in because the Sites builder links only its own `node_modules` in production. Swap each
-for its npm import once the engine links a theme's install.
+Copied in, by Cory's rule for every Magic Spells component a theme uses: "we copy in the esm file". None of
+them is an npm dependency of the theme; the build resolves only these relative imports.
 
 | File | Package | Version | Source |
 |---|---|---|---|

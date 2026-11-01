@@ -36,6 +36,8 @@
 {
   "name": "Series nav",
   "description": "Previous and next series from the same year-sorted collection.",
+  "kind": "Collections",
+  "icon": "arrow-left-right",
   "settings": [
     {
       "type": "collection",
@@ -64,8 +66,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "presets": [

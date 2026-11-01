@@ -18,6 +18,8 @@
 {
   "name": "Figures",
   "description": "Numbers and brief labels about the photographic practice.",
+  "kind": "Content",
+  "icon": "hash",
   "settings": [
     {
       "type": "text",
@@ -28,8 +30,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "blocks": [

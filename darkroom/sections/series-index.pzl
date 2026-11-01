@@ -50,6 +50,8 @@
 {
   "name": "Series index",
   "description": "Series as a grid or thumbnail rows, ordered by year.",
+  "kind": "Collections",
+  "icon": "layout-list",
   "settings": [
     {
       "type": "text",
@@ -154,8 +156,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "presets": [

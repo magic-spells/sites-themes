@@ -25,6 +25,8 @@
 {
   "name": "Photo masonry",
   "description": "Natural-ratio photographs arranged in columns with a lightbox.",
+  "kind": "Content",
+  "icon": "layout-dashboard",
   "settings": [
     {
       "type": "gallery",
@@ -97,8 +99,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "presets": [

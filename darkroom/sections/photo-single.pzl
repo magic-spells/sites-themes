@@ -22,6 +22,8 @@
 {
   "name": "Photo single",
   "description": "One photograph, or a photograph selected by index from the current series.",
+  "kind": "Content",
+  "icon": "image",
   "settings": [
     {
       "type": "image",
@@ -99,8 +101,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "presets": [

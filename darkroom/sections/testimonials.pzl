@@ -68,6 +68,8 @@
 {
   "name": "Testimonials",
   "description": "Voices paired with photographs, shown one at a time.",
+  "kind": "Content",
+  "icon": "message-square-quote",
   "settings": [
     {
       "type": "text",
@@ -90,8 +92,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "blocks": [

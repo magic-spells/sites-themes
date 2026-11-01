@@ -48,6 +48,8 @@
 {
   "name": "Services",
   "description": "A draggable strip of photographic services linking to Contact by subject.",
+  "kind": "Content",
+  "icon": "briefcase",
   "settings": [
     {
       "type": "text",
@@ -88,8 +90,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "blocks": [

@@ -27,6 +27,8 @@
 {
   "name": "Photo pair",
   "description": "Two photographs; empty images fall back to the current series by index.",
+  "kind": "Content",
+  "icon": "images",
   "settings": [
     {
       "type": "image",
@@ -91,8 +93,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "presets": [

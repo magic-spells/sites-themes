@@ -12,6 +12,8 @@
 {
   "name": "Statement",
   "description": "A sentence with Spectral italic emphasis inside rich text.",
+  "kind": "Content",
+  "icon": "quote",
   "settings": [
     {
       "type": "text",
@@ -28,8 +30,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "presets": [

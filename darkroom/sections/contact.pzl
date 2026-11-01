@@ -98,6 +98,8 @@
 {
   "name": "Contact",
   "description": "A site form overlapping a studio photograph, followed by direct contact details.",
+  "kind": "Contact",
+  "icon": "mail",
   "settings": [
     {
       "type": "text",
@@ -162,8 +164,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "presets": [

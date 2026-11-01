@@ -28,6 +28,8 @@
 {
   "name": "Faq",
   "description": "Questions and answers in collapsible rows.",
+  "kind": "Content",
+  "icon": "list",
   "settings": [
     {
       "type": "text",
@@ -44,8 +46,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "blocks": [

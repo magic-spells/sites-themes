@@ -21,6 +21,8 @@
 {
   "name": "Cv list",
   "description": "Exhibitions, publications or awards in dated rows.",
+  "kind": "Content",
+  "icon": "award",
   "settings": [
     {
       "type": "text",
@@ -31,8 +33,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "blocks": [

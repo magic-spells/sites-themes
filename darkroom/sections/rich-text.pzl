@@ -16,6 +16,8 @@
 {
   "name": "Rich text",
   "description": "Writing in a reading or wide column; an empty body uses page.content.",
+  "kind": "Content",
+  "icon": "align-left",
   "settings": [
     {
       "type": "text",
@@ -49,8 +51,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "presets": [

@@ -39,6 +39,8 @@
 {
   "name": "Photo strip",
   "description": "A full-width draggable strip of natural-ratio photographs.",
+  "kind": "Content",
+  "icon": "gallery-thumbnails",
   "settings": [
     {
       "type": "gallery",
@@ -77,8 +79,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "presets": [

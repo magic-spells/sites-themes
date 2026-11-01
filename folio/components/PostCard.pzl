@@ -8,7 +8,7 @@
       <img class="aspect-3/2 w-full bg-scheme-surface object-cover"
         src="{ image_url(entry.fields.image, 768) }"
         srcset="{ image_url(entry.fields.image, 480) } 480w, { image_url(entry.fields.image, 768) } 768w, { image_url(entry.fields.image, 1024) } 1024w"
-        sizes="{ columns == '2' ? '(min-width: 48rem) 50vw, 100vw' : '(min-width: 64rem) 23rem, (min-width: 48rem) 50vw, 100vw' }"
+        sizes="{ columns == '2' ? '(min-width: 75rem) 37.5rem, (min-width: 48rem) 50vw, 100vw' : '(min-width: 64rem) 23rem, (min-width: 48rem) 50vw, 100vw' }"
         alt="{ entry.fields.image_alt }" loading="lazy" width="{ entry.fields.image.width }" height="{ entry.fields.image.height }" />
     {/if}
     <Dateline entry={ entry } read={ false } />

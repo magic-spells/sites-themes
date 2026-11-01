@@ -9,7 +9,8 @@
   Recent list so it does not repeat the featured essay.
 - Post list rows carry a 3:2 thumbnail (`show_images`, on by default; an entry without a
   picture keeps an empty well so the rows line up). `show_toggle` adds a list/grid switch
-  for readers: the editor's layout shows first, and the reader's choice is remembered.
+  for readers: the editor's layout shows first, and the reader's choice is remembered and
+  applied before the page paints. The switch stays hidden without JavaScript.
   The journal index turns both on; More to read turns the thumbnails off.
 - Every fixture post has a picture now, four of them with captions.
 - The journal and home pages open on the featured essay, then the posts after it as a grid of

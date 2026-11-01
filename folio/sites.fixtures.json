@@ -430,7 +430,7 @@
             "author": "Nell Harker",
             "reading_minutes": 5,
             "standfirst": "A timetable written for one man, and the rest of us riding along.",
-            "image": "as_path",
+            "image": "as_ridge",
             "image_alt": "The ferryman waiting at the slipway (placeholder)",
             "body": "<p>The ferry has a timetable of its own, but the ferryman watches the road. If the bus is late he leaves the rope where it is and finishes his tea.</p><p>We wait with him, learning that a connection is sometimes a person rather than a printed time.</p>"
           }
@@ -506,7 +506,7 @@
             "author": "Nell Harker",
             "reading_minutes": 6,
             "standfirst": "A wet month, measured in a jam jar on the wall.",
-            "image": "as_path",
+            "image": "as_weather",
             "image_alt": "The rain gauge on the garden wall under a grey sky (placeholder)",
             "body": "<p>The rain gauge is a jam jar fixed to the wall by the back door. A pencil mark records the morning level; the notebook beside it records whether I was surprised.</p><p>This month the measurements have been more consistent than my memory of the weather.</p>"
           }
@@ -714,7 +714,7 @@
           "author": "Nell Harker",
           "reading_minutes": 5,
           "standfirst": "A timetable written for one man, and the rest of us riding along.",
-          "image": "as_path",
+          "image": "as_ridge",
           "image_alt": "The ferryman waiting at the slipway (placeholder)",
           "body": "<p>The ferry has a timetable of its own, but the ferryman watches the road. If the bus is late he leaves the rope where it is and finishes his tea.</p><p>We wait with him, learning that a connection is sometimes a person rather than a printed time.</p>"
         }
@@ -845,7 +845,7 @@
           "author": "Nell Harker",
           "reading_minutes": 6,
           "standfirst": "A wet month, measured in a jam jar on the wall.",
-          "image": "as_path",
+          "image": "as_weather",
           "image_alt": "The rain gauge on the garden wall under a grey sky (placeholder)",
           "body": "<p>The rain gauge is a jam jar fixed to the wall by the back door. A pencil mark records the morning level; the notebook beside it records whether I was surprised.</p><p>This month the measurements have been more consistent than my memory of the weather.</p>"
         }

@@ -14,10 +14,27 @@
 @source "../sections/**/*.pzl";
 @source "../components/**/*.pzl";
 
-/* The post list's two views. A list with the reader's switch carries
-   data-view on its section; each variant hides the view that is not chosen. */
-@custom-variant view-list (&:where([data-view="list"] *));
-@custom-variant view-grid (&:where([data-view="grid"] *));
+/* The post list's two views. A list with the reader's switch carries the
+   editor's view as data-view on its section. A reader's saved choice is set on
+   <html> as data-post-list-view by the layout's pre-paint script, before the
+   body paints, and wins over it. Each variant hides the view that is not
+   chosen. */
+@custom-variant view-list {
+	&:where([data-view="list"] *):not(:where([data-post-list-view="grid"] *)) {
+		@slot;
+	}
+	&:where([data-post-list-view="list"] [data-view] *) {
+		@slot;
+	}
+}
+@custom-variant view-grid {
+	&:where([data-view="grid"] *):not(:where([data-post-list-view="list"] *)) {
+		@slot;
+	}
+	&:where([data-post-list-view="grid"] [data-view] *) {
+		@slot;
+	}
+}
 
 /* Sites writes the site's design tokens into <head> as --sites-* custom
    properties. Mapping them into Tailwind's token names is the styling
@@ -215,6 +232,9 @@
 	/* The 3:2 thumbnail in a post row, and its mobile size. */
 	--spacing-thumb: 7.5rem;
 	--spacing-thumb-sm: 4.5rem;
+	/* The post list's view switch: a square icon button and its icon. */
+	--spacing-icon-button: 2.5rem;
+	--spacing-icon: 1.25rem;
 }
 
 /* Desktop takes each scale step itself; mobile and tablet take the design

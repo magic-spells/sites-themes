@@ -88,32 +88,32 @@ for (const bar of document.querySelectorAll<HTMLElement>('[data-dismiss-key]')) 
 
 // A post list with the switch renders both views and shows the one its
 // data-view names. The reader's last choice is remembered for every list that
-// offers the switch; without JavaScript the editor's layout shows.
+// offers the switch: the layout's inline pre-paint script copies it onto
+// <html> as data-post-list-view before the body paints, and the view variants
+// in theme.css key off that. Without JavaScript the editor's layout shows and
+// the switch stays hidden.
 const VIEW_KEY = 'sites:post-list-view';
 
-function showView(list: Element, view: string): void {
-	list.setAttribute('data-view', view);
-	for (const button of list.querySelectorAll('[data-view-set]')) {
-		button.setAttribute('aria-pressed', String(button.getAttribute('data-view-set') === view));
+function showView(view: string): void {
+	document.documentElement.setAttribute('data-post-list-view', view);
+	for (const list of document.querySelectorAll('[data-view]')) {
+		if (!list.querySelector('[data-view-set]')) continue;
+		list.setAttribute('data-view', view);
+		for (const button of list.querySelectorAll('[data-view-set]')) {
+			button.setAttribute('aria-pressed', String(button.getAttribute('data-view-set') === view));
+		}
 	}
 }
 
-let savedView: string | null = null;
-try {
-	savedView = localStorage.getItem(VIEW_KEY);
-} catch {
-	/* no storage: the editor's layout stays */
-}
-for (const list of document.querySelectorAll('[data-view]')) {
-	if ((savedView === 'list' || savedView === 'grid') && list.querySelector('[data-view-set]')) showView(list, savedView);
-}
+const savedView = document.documentElement.getAttribute('data-post-list-view');
+if (savedView === 'list' || savedView === 'grid') showView(savedView);
+for (const group of document.querySelectorAll<HTMLElement>('[data-view-switch]')) group.hidden = false;
 
 document.addEventListener('click', (event) => {
 	const button = (event.target as Element | null)?.closest?.('[data-view-set]');
-	const list = button?.closest('[data-view]');
 	const view = button?.getAttribute('data-view-set');
-	if (!list || !view) return;
-	showView(list, view);
+	if (!button?.closest('[data-view]') || (view !== 'list' && view !== 'grid')) return;
+	showView(view);
 	try {
 		localStorage.setItem(VIEW_KEY, view);
 	} catch {

@@ -59,7 +59,7 @@
   "max_blocks": 6,
   "presets": [
     { "name": "Default",
-      "settings": { "heading": "What people say", "columns": "3", "padding": "normal", "color_scheme": "default" },
+      "settings": { "heading": "What people say", "columns": "3", "padding": "normal" },
       "blocks": [
         { "type": "quote", "settings": { "quote": "I came in for a birthday card and left an hour later with three books and a recommendation I am still thinking about.", "name": "Imogen R.", "role": "Old Town", "rating": 5 } },
         { "type": "quote", "settings": { "quote": "They found a print I had been after for two years, framed it, and would not let me pay for the rush.", "name": "Daniel O.", "role": "Ferry Road", "rating": 5 } },

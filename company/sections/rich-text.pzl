@@ -37,8 +37,8 @@
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "body": "<p>Write something here.</p>", "width": "narrow", "align": "left", "padding": "normal", "color_scheme": "default" } },
-    { "name": "Wide", "settings": { "body": "<p>Write something here.</p>", "width": "wide", "align": "left", "padding": "normal", "color_scheme": "default" } },
+    { "name": "Default", "settings": { "body": "<p>Write something here.</p>", "width": "narrow", "align": "left", "padding": "normal" } },
+    { "name": "Wide", "settings": { "body": "<p>Write something here.</p>", "width": "wide", "align": "left", "padding": "normal" } },
     { "name": "Statement", "settings": { "body": "<p>Write something here.</p>", "width": "narrow", "align": "center", "padding": "normal", "color_scheme": "inverse" } }
   ]
 }

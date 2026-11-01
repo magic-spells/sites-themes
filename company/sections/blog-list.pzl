@@ -67,10 +67,10 @@
   "presets": [
     { "name": "Default",
       "settings": { "heading": "From the journal", "collection": "posts", "base_path": "/journal", "limit": 6,
-        "view_all_label": "Everything in the journal", "columns": "3", "padding": "normal", "color_scheme": "default" } },
+        "view_all_label": "Everything in the journal", "columns": "3", "padding": "normal" } },
     { "name": "Index",
       "settings": { "heading": "", "collection": "posts", "base_path": "/journal", "limit": 12,
-        "view_all_label": "", "columns": "3", "padding": "normal", "color_scheme": "default" } }
+        "view_all_label": "", "columns": "3", "padding": "normal" } }
   ]
 }
 </schema>

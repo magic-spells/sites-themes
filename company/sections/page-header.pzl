@@ -28,8 +28,8 @@
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "chip": "", "heading": "", "standfirst": "", "align": "left", "color_scheme": "default" } },
-    { "name": "Centered", "settings": { "chip": "", "heading": "", "standfirst": "", "align": "center", "color_scheme": "default" } }
+    { "name": "Default", "settings": { "chip": "", "heading": "", "standfirst": "", "align": "left" } },
+    { "name": "Centered", "settings": { "chip": "", "heading": "", "standfirst": "", "align": "center" } }
   ]
 }
 </schema>

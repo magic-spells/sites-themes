@@ -68,7 +68,7 @@
   "max_blocks": 8,
   "presets": [
     { "name": "Default",
-      "settings": { "heading": "What you will find", "text": "A small shop, chosen by hand. Everything on the shelves is here because someone here read it.", "columns": "3", "padding": "normal", "color_scheme": "default" },
+      "settings": { "heading": "What you will find", "text": "A small shop, chosen by hand. Everything on the shelves is here because someone here read it.", "columns": "3", "padding": "normal" },
       "blocks": [
         { "type": "feature", "settings": { "icon": "book", "title": "Chosen by hand", "text": "Around four thousand titles, and no algorithm anywhere near them." } },
         { "type": "feature", "settings": { "icon": "sparkle", "title": "Prints and editions", "text": "A changing wall of local printmakers, framed while you wait." } },

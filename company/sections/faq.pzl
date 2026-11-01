@@ -42,7 +42,7 @@
   "max_blocks": 12,
   "presets": [
     { "name": "Default",
-      "settings": { "heading": "Questions we are asked", "padding": "normal", "color_scheme": "default" },
+      "settings": { "heading": "Questions we are asked", "padding": "normal" },
       "blocks": [
         { "type": "item", "settings": { "question": "Do you take orders for books you do not have?", "answer": "<p>Yes, and most arrive within three days. Leave a note at the counter or send an email and we will hold it for a fortnight.</p>" } },
         { "type": "item", "settings": { "question": "Do you buy second-hand books?", "answer": "<p>We look at anything on a Tuesday morning. Bring a box, not a car load, and we will go through it with you.</p>" } },

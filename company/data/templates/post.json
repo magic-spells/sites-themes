@@ -8,8 +8,7 @@
       "preset": "Default",
       "settings": {
         "show_meta": true,
-        "show_image": true,
-        "color_scheme": "default"
+        "show_image": true
       },
       "blocks": []
     },

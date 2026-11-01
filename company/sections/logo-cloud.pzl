@@ -46,7 +46,7 @@
   "max_blocks": 8,
   "presets": [
     { "name": "Default",
-      "settings": { "heading": "Stocked and supported by", "color_scheme": "default" },
+      "settings": { "heading": "Stocked and supported by" },
       "blocks": [
         { "type": "logo", "settings": { "name": "Quill & Co" } },
         { "type": "logo", "settings": { "name": "Northbank" } },

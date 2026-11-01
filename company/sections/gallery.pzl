@@ -60,8 +60,8 @@
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "heading": "Inside the shop", "columns": "3", "ratio": "square", "padding": "normal", "color_scheme": "default" } },
-    { "name": "Wide tiles", "settings": { "heading": "Inside the shop", "columns": "2", "ratio": "landscape", "padding": "normal", "color_scheme": "default" } }
+    { "name": "Default", "settings": { "heading": "Inside the shop", "columns": "3", "ratio": "square", "padding": "normal" } },
+    { "name": "Wide tiles", "settings": { "heading": "Inside the shop", "columns": "2", "ratio": "landscape", "padding": "normal" } }
   ]
 }
 </schema>

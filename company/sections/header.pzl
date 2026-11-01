@@ -59,7 +59,7 @@
   ],
   "presets": [
     { "name": "Default",
-      "settings": { "menu": "main", "cta_label": "Visit us", "cta_href": "/contact", "sticky": true, "bordered": true, "color_scheme": "default" } }
+      "settings": { "menu": "main", "cta_label": "Visit us", "cta_href": "/contact", "sticky": true, "bordered": true } }
   ]
 }
 </schema>

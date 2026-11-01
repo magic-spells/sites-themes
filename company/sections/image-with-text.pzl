@@ -50,11 +50,11 @@
     { "name": "Default",
       "settings": { "eyebrow": "Our room", "heading": "Eighteen years on the same street",
         "body": "<p>Say what the business is, in the voice a person would use standing in the doorway.</p>",
-        "link_label": "About the shop", "link": "/about", "layout": "image_first", "ratio": "landscape", "padding": "normal", "color_scheme": "default" } },
+        "link_label": "About the shop", "link": "/about", "layout": "image_first", "ratio": "landscape", "padding": "normal" } },
     { "name": "Text first",
       "settings": { "eyebrow": "Our room", "heading": "Eighteen years on the same street",
         "body": "<p>Say what the business is, in the voice a person would use standing in the doorway.</p>",
-        "link_label": "About the shop", "link": "/about", "layout": "text_first", "ratio": "portrait", "padding": "normal", "color_scheme": "default" } }
+        "link_label": "About the shop", "link": "/about", "layout": "text_first", "ratio": "portrait", "padding": "normal" } }
   ]
 }
 </schema>

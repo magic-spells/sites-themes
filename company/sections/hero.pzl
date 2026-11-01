@@ -84,7 +84,7 @@
     { "name": "Plain",
       "settings": { "eyebrow": "", "heading": "A shop for books worth keeping",
         "text": "Two rooms of new and second-hand books, a wall of prints, and somewhere to sit while you decide.",
-        "overlay": "none", "height": "short", "align": "center", "color_scheme": "default" },
+        "overlay": "none", "height": "short", "align": "center" },
       "blocks": [{ "type": "link", "settings": { "label": "Plan a visit", "href": "/contact", "tone": "primary" } }] }
   ]
 }

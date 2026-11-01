@@ -16,7 +16,6 @@
       "type": "header",
       "settings": {
         "bordered": true,
-        "color_scheme": "default",
         "cta_href": "/contact",
         "cta_label": "Visit us",
         "menu": "main",

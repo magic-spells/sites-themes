@@ -10,8 +10,7 @@
         "chip": "Journal",
         "heading": "",
         "standfirst": "",
-        "align": "center",
-        "color_scheme": "default"
+        "align": "center"
       },
       "blocks": []
     },
@@ -25,8 +24,7 @@
         "limit": 12,
         "view_all_label": "",
         "columns": "3",
-        "padding": "compact",
-        "color_scheme": "default"
+        "padding": "compact"
       },
       "blocks": []
     },

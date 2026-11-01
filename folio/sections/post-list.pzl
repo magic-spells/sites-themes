@@ -5,20 +5,35 @@
   skip = settings.offset ?? 0
   posts = pool | slice(skip, settings.limit)
   show_view_all = settings.view_all_label && settings.view_all_href
+  view = settings.layout == 'grid' ? 'grid' : 'list'
+  toggle = settings.show_toggle
 }
-<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+<section class="group/view bg-scheme-background px-gutter py-section text-scheme-foreground" data-view={ toggle ? view : false }>
   <div class="mx-auto grid max-w-column gap-step-md">
-    {#if settings.heading}<h2 class="font-mono text-meta font-medium tracking-meta text-scheme-meta uppercase">{ settings.heading }</h2>{/if}
+    {#if settings.heading || toggle}
+      <div class="flex items-center justify-between gap-step-sm">
+        {#if settings.heading}<h2 class="font-mono text-meta font-medium tracking-meta text-scheme-meta uppercase">{ settings.heading }</h2>{/if}
+        {#if toggle}
+          <div class="ms-auto flex gap-step-xs" role="group" aria-label="{ t('view_label') }">
+            <button class="sites-button sites-button-outline size-10 min-h-0 p-0 aria-pressed:bg-scheme-heading aria-pressed:text-scheme-background" type="button" data-view-set="list" aria-pressed="{ view == 'list' ? 'true' : 'false' }"><span class="sites-icon size-5">{#svg 'icons/list.svg'}</span><span class="sr-only">{ t('view_list') }</span></button>
+            <button class="sites-button sites-button-outline size-10 min-h-0 p-0 aria-pressed:bg-scheme-heading aria-pressed:text-scheme-background" type="button" data-view-set="grid" aria-pressed="{ view == 'grid' ? 'true' : 'false' }"><span class="sites-icon size-5">{#svg 'icons/grid.svg'}</span><span class="sr-only">{ t('view_grid') }</span></button>
+          </div>
+        {/if}
+      </div>
+    {/if}
     {#if posts.length == 0}
       <p class="border-t border-scheme-rule pt-step-md text-body text-scheme-muted">{ t('posts_empty') }</p>
-    {:else if settings.layout == 'grid'}
-      <ul class="grid gap-x-space-xs gap-y-step-lg md:grid-cols-2 md:gap-x-space-sm { settings.columns == '2' ? '' : 'lg:grid-cols-3' }">
-        {#for entry in posts}<PostCard entry={ entry } href="{ settings.base_path }/{ entry.handle }" />{/for}
-      </ul>
     {:else}
-      <ul class="border-t border-scheme-rule">
-        {#for entry in posts}<PostRow entry={ entry } href="{ settings.base_path }/{ entry.handle }" />{/for}
-      </ul>
+      {#if toggle || view == 'grid'}
+        <ul class="grid md:grid-cols-2 { settings.columns == '2' ? 'gap-space-sm md:gap-space-md' : 'gap-x-space-xs gap-y-step-lg md:gap-x-space-sm lg:grid-cols-3' } group-data-[view=list]/view:hidden" data-grid>
+          {#for entry in posts}<PostCard entry={ entry } href="{ settings.base_path }/{ entry.handle }" columns={ settings.columns } />{/for}
+        </ul>
+      {/if}
+      {#if toggle || view == 'list'}
+        <ul class="border-t border-scheme-rule group-data-[view=grid]/view:hidden" data-list>
+          {#for entry in posts}<PostRow entry={ entry } href="{ settings.base_path }/{ entry.handle }" image={ settings.show_images } />{/for}
+        </ul>
+      {/if}
     {/if}
     {#if (settings.show_count && posts.length) || show_view_all}
       <div class="flex flex-wrap items-center justify-between gap-step-sm">
@@ -68,6 +83,20 @@
           "label": "Grid"
         }
       ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_images",
+      "label": "Show images",
+      "default": true,
+      "info": "A small picture beside each row in the list layout."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_toggle",
+      "label": "Let readers switch between list and grid",
+      "default": false,
+      "info": "The layout above is the view a reader sees first."
     },
     {
       "type": "select",
@@ -148,6 +177,8 @@
         "heading": "Recent",
         "base_path": "/journal",
         "layout": "list",
+        "show_images": true,
+        "show_toggle": false,
         "columns": "3",
         "limit": 4,
         "topic": "",
@@ -165,6 +196,8 @@
         "heading": "All posts",
         "base_path": "/journal",
         "layout": "list",
+        "show_images": true,
+        "show_toggle": true,
         "columns": "3",
         "limit": 12,
         "topic": "",
@@ -182,6 +215,8 @@
         "heading": "More to read",
         "base_path": "/journal",
         "layout": "list",
+        "show_images": false,
+        "show_toggle": false,
         "columns": "3",
         "limit": 3,
         "topic": "",
@@ -199,6 +234,8 @@
         "heading": "Recent",
         "base_path": "/journal",
         "layout": "grid",
+        "show_images": true,
+        "show_toggle": false,
         "columns": "3",
         "limit": 3,
         "topic": "",

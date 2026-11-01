@@ -24,6 +24,8 @@
         "heading": "Recent",
         "base_path": "/journal",
         "layout": "list",
+        "show_images": true,
+        "show_toggle": false,
         "columns": "3",
         "limit": 4,
         "offset": 1,

@@ -207,6 +207,9 @@
 	--spacing-textarea: 9rem;
 	--spacing-logo: 2.25rem;
 	--spacing-portrait: 4.5rem;
+	/* The 3:2 thumbnail in a post row, and its mobile size. */
+	--spacing-thumb: 7.5rem;
+	--spacing-thumb-sm: 4.5rem;
 }
 
 /* Desktop takes each scale step itself; mobile and tablet take the design
@@ -281,10 +284,11 @@
 	}
 }
 
-/* The post-row grid: a date column, the title and standfirst, and the topic
-   and reading time at the right. */
+/* The post-row grid: a date column, the title and standfirst (with the
+   thumbnail), and the topic and reading time at the right. The last column
+   holds at least 9rem so every row's thumbnail lands on the same line. */
 @utility grid-cols-post-row {
-	grid-template-columns: 8.125rem minmax(0, 1fr) auto;
+	grid-template-columns: 8.125rem minmax(0, 1fr) minmax(9rem, auto);
 }
 
 /* Newsreader is self-hosted because the engine's Google request carries no

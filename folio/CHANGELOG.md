@@ -7,6 +7,11 @@
 - The Slow Mile fixtures: thirteen essays, an about page, a contact page and a privacy page.
 - Post list with an `offset` setting (skip the newest 0 to 3), used by the home page's
   Recent list so it does not repeat the featured essay.
+- Post list rows carry a 3:2 thumbnail (`show_images`, on by default; an entry without a
+  picture keeps an empty well so the rows line up). `show_toggle` adds a list/grid switch
+  for readers: the editor's layout shows first, and the reader's choice is remembered.
+  The journal index turns both on; More to read turns the thumbnails off.
+- Every fixture post has a picture now, four of them with captions.
 - Mobile menu and sticky header built on `@magic-spells/dialog-panel` 2.0.3 and
   `@magic-spells/sticky-header` 0.2.0.
 - Newsreader roman and italic self-hosted under the OFL; IBM Plex Mono for labels.

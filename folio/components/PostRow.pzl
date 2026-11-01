@@ -1,16 +1,32 @@
 <!-- component: PostRow -->
-<!-- props: entry href -->
-<!-- One row of a post list: the date column, the title and standfirst, and
-     the topic and reading time at the right. Below 48rem it folds to a short
-     dateline over the title and drops the standfirst, as the design does. -->
+<!-- props: entry href image -->
+<!-- One row of a post list: the date column, the title and standfirst with a
+     3:2 thumbnail beside them, and the topic and reading time at the right.
+     Below 48rem it folds to a short dateline over the title, drops the
+     standfirst and keeps a smaller thumbnail at the right, as the design does.
+     With `image` on, an entry without a picture keeps an empty well so the
+     rows still line up. -->
 <li class="border-b border-scheme-rule">
   <a class="group grid gap-step-2xs py-step-md md:grid-cols-post-row md:items-baseline md:gap-x-step-lg" href="{ href }">
     <p class="hidden font-mono text-meta font-medium tracking-meta text-scheme-meta uppercase md:block"><PostDate value={ entry.fields.date } year={ true } /></p>
-    <div class="grid gap-step-2xs">
-      <p class="font-mono text-meta font-medium tracking-meta text-scheme-meta uppercase md:hidden"><PostDate value={ entry.fields.date } year={ false } />{#if entry.fields.topic}<span aria-hidden="true"> · </span>{ entry.fields.topic }{/if}{#if entry.fields.reading_minutes}<span aria-hidden="true"> · </span>{ t('reading_time_short', { minutes: entry.fields.reading_minutes }) }{/if}</p>
-      <h3 class="font-heading text-h4 font-medium text-scheme-heading decoration-1 underline-offset-4 group-hover:underline">{ entry.title }</h3>
-      {#if entry.fields.standfirst}<p class="hidden text-body text-pretty text-scheme-muted md:block">{ entry.fields.standfirst }</p>{/if}
+    <div class="flex items-start gap-step-sm">
+      <div class="grid min-w-0 flex-1 gap-step-2xs">
+        <p class="font-mono text-meta font-medium tracking-meta text-scheme-meta uppercase md:hidden"><PostDate value={ entry.fields.date } year={ false } />{#if entry.fields.topic}<span aria-hidden="true"> · </span>{ entry.fields.topic }{/if}{#if entry.fields.reading_minutes}<span aria-hidden="true"> · </span>{ t('reading_time_short', { minutes: entry.fields.reading_minutes }) }{/if}</p>
+        <h3 class="font-heading text-h4 font-medium text-scheme-heading decoration-1 underline-offset-4 group-hover:underline">{ entry.title }</h3>
+        {#if entry.fields.standfirst}<p class="hidden text-body text-pretty text-scheme-muted md:block">{ entry.fields.standfirst }</p>{/if}
+      </div>
+      {#if image}
+        {#if entry.fields.image}
+          <img class="aspect-3/2 w-thumb-sm shrink-0 bg-scheme-surface object-cover md:w-thumb"
+            src="{ image_url(entry.fields.image, 240) }"
+            srcset="{ image_url(entry.fields.image, 160) } 160w, { image_url(entry.fields.image, 240) } 240w, { image_url(entry.fields.image, 480) } 480w"
+            sizes="(min-width: 48rem) 7.5rem, 4.5rem"
+            alt="{ entry.fields.image_alt }" loading="lazy" width="{ entry.fields.image.width }" height="{ entry.fields.image.height }" />
+        {:else}
+          <span class="aspect-3/2 w-thumb-sm shrink-0 bg-scheme-surface md:w-thumb" aria-hidden="true"></span>
+        {/if}
+      {/if}
     </div>
-    <p class="hidden font-mono text-meta font-medium tracking-meta whitespace-nowrap text-scheme-meta uppercase md:block">{ entry.fields.topic }{#if entry.fields.topic && entry.fields.reading_minutes}<span aria-hidden="true"> · </span>{/if}{#if entry.fields.reading_minutes}{ t('reading_time_short', { minutes: entry.fields.reading_minutes }) }{/if}</p>
+    <p class="hidden text-right font-mono text-meta font-medium tracking-meta whitespace-nowrap text-scheme-meta uppercase md:block">{ entry.fields.topic }{#if entry.fields.topic && entry.fields.reading_minutes}<span aria-hidden="true"> · </span>{/if}{#if entry.fields.reading_minutes}{ t('reading_time_short', { minutes: entry.fields.reading_minutes }) }{/if}</p>
   </a>
 </li>

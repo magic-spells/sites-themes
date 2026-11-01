@@ -37,6 +37,8 @@
         "heading": "More to read",
         "base_path": "/journal",
         "layout": "list",
+        "show_images": false,
+        "show_toggle": false,
         "columns": "3",
         "limit": 3,
         "topic": "",

@@ -28,8 +28,9 @@ sites.fixtures.json The Slow Mile: pages, menus, forms and 13 posts
 ## Sections
 
 Header, announcement bar, mobile menu, cookie notice and footer sit in the groups. The page
-sections are featured post, post list (list or grid, by topic, with an offset to skip the
-newest), post article, author card, topics, pull quote, newsletter, contact, page header,
+sections are featured post, post list (rows with a 3:2 thumbnail, or a grid of two or three
+cards; by topic, with an offset to skip the newest, and an optional list/grid switch that
+remembers the reader's choice), post article, author card, topics, pull quote, newsletter, contact, page header,
 rich text and image with text.
 
 ## The posts content type

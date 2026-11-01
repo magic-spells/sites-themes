@@ -2,7 +2,8 @@
 // <dialog-panel> and the header a <sticky-header>, both Magic Spells web
 // components; this file registers them and adds the three small behaviours
 // they do not cover: opening a panel from a button elsewhere on the page, the
-// once-per-visitor notice, and the dismissible announcement bar.
+// once-per-visitor notice, the dismissible announcement bar, and the post
+// list's list/grid switch.
 //
 // State lives on data- attributes, never on classes: Tailwind generates only
 // what it reads in .pzl and styles/ files, so the stylesheet reacts to
@@ -84,3 +85,38 @@ for (const bar of document.querySelectorAll<HTMLElement>('[data-dismiss-key]')) 
 		if (key) remember(key);
 	});
 }
+
+// A post list with the switch renders both views and shows the one its
+// data-view names. The reader's last choice is remembered for every list that
+// offers the switch; without JavaScript the editor's layout shows.
+const VIEW_KEY = 'sites:post-list-view';
+
+function showView(list: Element, view: string): void {
+	list.setAttribute('data-view', view);
+	for (const button of list.querySelectorAll('[data-view-set]')) {
+		button.setAttribute('aria-pressed', String(button.getAttribute('data-view-set') === view));
+	}
+}
+
+let savedView: string | null = null;
+try {
+	savedView = localStorage.getItem(VIEW_KEY);
+} catch {
+	/* no storage: the editor's layout stays */
+}
+for (const list of document.querySelectorAll('[data-view]')) {
+	if ((savedView === 'list' || savedView === 'grid') && list.querySelector('[data-view-set]')) showView(list, savedView);
+}
+
+document.addEventListener('click', (event) => {
+	const button = (event.target as Element | null)?.closest?.('[data-view-set]');
+	const list = button?.closest('[data-view]');
+	const view = button?.getAttribute('data-view-set');
+	if (!list || !view) return;
+	showView(list, view);
+	try {
+		localStorage.setItem(VIEW_KEY, view);
+	} catch {
+		/* remembered for this page only */
+	}
+});

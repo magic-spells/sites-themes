@@ -158,39 +158,6 @@
       }
     },
     {
-      "name": "Gallery-first",
-      "colors": {
-        "brand": {
-          "primary": "#161614",
-          "secondary": "#6B6964",
-          "accent": "#966020"
-        },
-        "grey": {
-          "extra_light": "#050505",
-          "light": "#2B2A27",
-          "medium": "#78756E",
-          "dark": "#E1DFD9",
-          "extra_dark": "#F6F5F2"
-        },
-        "info": {
-          "bg": "#2B2A27",
-          "fg": "#A8A49C"
-        },
-        "success": {
-          "bg": "#24301F",
-          "fg": "#B5C5A8"
-        },
-        "warning": {
-          "bg": "#302619",
-          "fg": "#D9A05B"
-        },
-        "error": {
-          "bg": "#321E1B",
-          "fg": "#E7A095"
-        }
-      }
-    },
-    {
       "name": "Sepia",
       "colors": {
         "brand": {

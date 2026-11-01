@@ -19,6 +19,8 @@
 {
   "name": "Notice",
   "description": "A dismissible privacy notice with accept and decline actions.",
+  "kind": "Panels",
+  "icon": "cookie",
   "settings": [
     {
       "type": "richtext",
@@ -60,8 +62,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [

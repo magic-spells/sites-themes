@@ -12,6 +12,8 @@
 {
   "name": "Page header",
   "description": "The page title and standfirst, with an optional label.",
+  "kind": "Hero",
+  "icon": "heading-1",
   "settings": [
     {
       "type": "text",

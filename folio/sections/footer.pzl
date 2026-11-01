@@ -38,6 +38,8 @@
 {
   "name": "Footer",
   "description": "The site name, tagline, two menus and social links.",
+  "kind": "Footer",
+  "icon": "panel-bottom",
   "settings": [
     {
       "type": "menu",

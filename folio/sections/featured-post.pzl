@@ -42,6 +42,8 @@
 {
   "name": "Featured post",
   "description": "One featured essay, with an optional image and italic title ending.",
+  "kind": "Collections",
+  "icon": "star",
   "settings": [
     {
       "type": "entry",
@@ -83,8 +85,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [

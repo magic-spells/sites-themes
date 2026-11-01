@@ -26,6 +26,8 @@
 {
   "name": "Image with text",
   "description": "An image beside a heading and writing; the image comes first on mobile.",
+  "kind": "Content",
+  "icon": "columns-2",
   "settings": [
     {
       "type": "image",
@@ -101,8 +103,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [

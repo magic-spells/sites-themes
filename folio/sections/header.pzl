@@ -32,6 +32,8 @@
 {
   "name": "Header",
   "description": "The site wordmark and main menu, with a mobile menu toggle.",
+  "kind": "Header",
+  "icon": "panel-top",
   "settings": [
     {
       "type": "image",
@@ -67,8 +69,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [

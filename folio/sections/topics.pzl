@@ -20,6 +20,8 @@
 {
   "name": "Topics",
   "description": "A manually arranged list of topics with links and count labels.",
+  "kind": "Content",
+  "icon": "tags",
   "settings": [
     {
       "type": "text",
@@ -30,8 +32,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "blocks": [

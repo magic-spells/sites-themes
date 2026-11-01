@@ -13,6 +13,8 @@
 {
   "name": "Pull quote",
   "description": "A quotation with a hanging opening mark and optional attribution.",
+  "kind": "Content",
+  "icon": "quote",
   "settings": [
     {
       "type": "textarea",

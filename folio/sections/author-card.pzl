@@ -29,6 +29,8 @@
 {
   "name": "Author card",
   "description": "A writer portrait, biography and links, using site settings when empty.",
+  "kind": "Content",
+  "icon": "user",
   "settings": [
     {
       "type": "image",

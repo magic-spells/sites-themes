@@ -13,6 +13,8 @@
 {
   "name": "Announcement bar",
   "description": "A short notice and optional link, remembered when dismissed.",
+  "kind": "Header",
+  "icon": "megaphone",
   "settings": [
     {
       "type": "text",

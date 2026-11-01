@@ -1,0 +1,1551 @@
+{
+  "site": {
+    "name": "The Daily Ledger",
+    "url": "https://dailyledger.example",
+    "locale": "en",
+    "settings": {
+      "tagline": "News for the valley since 1962. Independent, local, and read every morning.",
+      "reveal_on_scroll": true,
+      "posts_path": "/news",
+      "writer_name": "Priya Nand",
+      "writer_bio": "Priya has covered the valley’s weather, water and wildlife for The Daily Ledger since 2019. Before that she kept the rain gauge at the mill bridge herself.",
+      "contact_email": "tips@example.com",
+      "address": "Second floor, The Old Mill, Mill Bridge",
+      "hours": "Monday to Friday, 9 to 5",
+      "writer_portrait": "as_priya",
+      "writer_links": "writer"
+    }
+  },
+  "assets": {
+    "as_bakery": {
+      "id": "as_bakery",
+      "status": "ready",
+      "file_name": "bakery.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 363,
+      "url": "/assets/photos/bakery.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Loaves cooling on wooden racks in a bakery before dawn",
+      "created_at": "2026-10-31"
+    },
+    "as_cafe": {
+      "id": "as_cafe",
+      "status": "ready",
+      "file_name": "cafe.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 373,
+      "url": "/assets/photos/cafe.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "The café on the high street, its windows steamed up",
+      "created_at": "2026-10-31"
+    },
+    "as_coast": {
+      "id": "as_coast",
+      "status": "ready",
+      "file_name": "coast.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 378,
+      "url": "/assets/photos/coast.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "The white lighthouse on the point, waves breaking below it",
+      "created_at": "2026-10-31"
+    },
+    "as_newsroom": {
+      "id": "as_newsroom",
+      "status": "ready",
+      "file_name": "newsroom.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 368,
+      "url": "/assets/photos/newsroom.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Reporters at their desks in the newsroom above the mill",
+      "created_at": "2026-10-31"
+    },
+    "as_priya": {
+      "id": "as_priya",
+      "status": "ready",
+      "file_name": "priya.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 337,
+      "url": "/assets/photos/priya.svg",
+      "width": 800,
+      "height": 1000,
+      "alt": "Priya Nand",
+      "created_at": "2026-10-31"
+    },
+    "as_railway": {
+      "id": "as_railway",
+      "status": "ready",
+      "file_name": "railway.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 366,
+      "url": "/assets/photos/railway.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "An overgrown railway cutting with a stone bridge in the distance",
+      "created_at": "2026-10-31"
+    },
+    "as_rain": {
+      "id": "as_rain",
+      "status": "ready",
+      "file_name": "rain.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 375,
+      "url": "/assets/photos/rain.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "A rain gauge on the rail of the mill bridge, the river high below it",
+      "created_at": "2026-10-31"
+    },
+    "as_screen": {
+      "id": "as_screen",
+      "status": "ready",
+      "file_name": "screen.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 366,
+      "url": "/assets/photos/screen.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "The lit marquee of the old Regal cinema at night",
+      "created_at": "2026-10-31"
+    },
+    "as_tom": {
+      "id": "as_tom",
+      "status": "ready",
+      "file_name": "tom.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 337,
+      "url": "/assets/photos/tom.svg",
+      "width": 800,
+      "height": 1000,
+      "alt": "Tom Reilly",
+      "created_at": "2026-10-31"
+    },
+    "as_town": {
+      "id": "as_town",
+      "status": "ready",
+      "file_name": "town.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 364,
+      "url": "/assets/photos/town.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "The town from the ridge, roofs and the church spire in the mist",
+      "created_at": "2026-10-31"
+    }
+  },
+  "menus": {
+    "main": {
+      "handle": "main",
+      "title": "Latest and topics",
+      "items": [
+        {
+          "id": "main_0",
+          "label": "Latest",
+          "target": {
+            "kind": "url",
+            "url": "/news"
+          },
+          "children": []
+        },
+        {
+          "id": "main_1",
+          "label": "Politics",
+          "target": {
+            "kind": "url",
+            "url": "/news"
+          },
+          "children": []
+        },
+        {
+          "id": "main_2",
+          "label": "Business",
+          "target": {
+            "kind": "url",
+            "url": "/news"
+          },
+          "children": []
+        },
+        {
+          "id": "main_3",
+          "label": "Science",
+          "target": {
+            "kind": "url",
+            "url": "/news"
+          },
+          "children": []
+        },
+        {
+          "id": "main_4",
+          "label": "Culture",
+          "target": {
+            "kind": "url",
+            "url": "/news"
+          },
+          "children": []
+        },
+        {
+          "id": "main_5",
+          "label": "Weather",
+          "target": {
+            "kind": "url",
+            "url": "/news"
+          },
+          "children": []
+        },
+        {
+          "id": "main_6",
+          "label": "Opinion",
+          "target": {
+            "kind": "url",
+            "url": "/news"
+          },
+          "children": []
+        }
+      ]
+    },
+    "topics": {
+      "handle": "topics",
+      "title": "Topics",
+      "items": [
+        {
+          "id": "topics_0",
+          "label": "Politics",
+          "target": {
+            "kind": "url",
+            "url": "/news"
+          },
+          "children": []
+        },
+        {
+          "id": "topics_1",
+          "label": "Business",
+          "target": {
+            "kind": "url",
+            "url": "/news"
+          },
+          "children": []
+        },
+        {
+          "id": "topics_2",
+          "label": "Science",
+          "target": {
+            "kind": "url",
+            "url": "/news"
+          },
+          "children": []
+        },
+        {
+          "id": "topics_3",
+          "label": "Culture",
+          "target": {
+            "kind": "url",
+            "url": "/news"
+          },
+          "children": []
+        },
+        {
+          "id": "topics_4",
+          "label": "Weather",
+          "target": {
+            "kind": "url",
+            "url": "/news"
+          },
+          "children": []
+        },
+        {
+          "id": "topics_5",
+          "label": "Opinion",
+          "target": {
+            "kind": "url",
+            "url": "/news"
+          },
+          "children": []
+        }
+      ]
+    },
+    "about": {
+      "handle": "about",
+      "title": "About",
+      "items": [
+        {
+          "id": "about_0",
+          "label": "About the Ledger",
+          "target": {
+            "kind": "url",
+            "url": "/about"
+          },
+          "children": []
+        },
+        {
+          "id": "about_1",
+          "label": "Contact",
+          "target": {
+            "kind": "url",
+            "url": "/contact"
+          },
+          "children": []
+        },
+        {
+          "id": "about_2",
+          "label": "Advertise",
+          "target": {
+            "kind": "url",
+            "url": "/contact"
+          },
+          "children": []
+        },
+        {
+          "id": "about_3",
+          "label": "Corrections",
+          "target": {
+            "kind": "url",
+            "url": "/about#section-s_reporting"
+          },
+          "children": []
+        },
+        {
+          "id": "about_4",
+          "label": "Privacy",
+          "target": {
+            "kind": "url",
+            "url": "/privacy"
+          },
+          "children": []
+        }
+      ]
+    },
+    "legal": {
+      "handle": "legal",
+      "title": "Legal",
+      "items": [
+        {
+          "id": "legal_0",
+          "label": "Privacy",
+          "target": {
+            "kind": "url",
+            "url": "/privacy"
+          },
+          "children": []
+        },
+        {
+          "id": "legal_1",
+          "label": "Corrections",
+          "target": {
+            "kind": "url",
+            "url": "/about#section-s_reporting"
+          },
+          "children": []
+        }
+      ]
+    },
+    "social": {
+      "handle": "social",
+      "title": "Elsewhere",
+      "items": [
+        {
+          "id": "social_0",
+          "label": "RSS",
+          "target": {
+            "kind": "url",
+            "url": "https://dailyledger.example/feed.xml"
+          },
+          "children": []
+        },
+        {
+          "id": "social_1",
+          "label": "Instagram",
+          "target": {
+            "kind": "url",
+            "url": "https://www.instagram.com/"
+          },
+          "children": []
+        },
+        {
+          "id": "social_2",
+          "label": "Email",
+          "target": {
+            "kind": "url",
+            "url": "mailto:tips@example.com"
+          },
+          "children": []
+        }
+      ]
+    },
+    "writer": {
+      "handle": "writer",
+      "title": "Writer links",
+      "items": [
+        {
+          "id": "writer_0",
+          "label": "Email",
+          "target": {
+            "kind": "url",
+            "url": "mailto:priya@example.com"
+          },
+          "children": []
+        },
+        {
+          "id": "writer_1",
+          "label": "More by Priya",
+          "target": {
+            "kind": "url",
+            "url": "/news"
+          },
+          "children": []
+        }
+      ]
+    }
+  },
+  "galleries": {},
+  "forms": {
+    "contact": {
+      "name": "Contact",
+      "fields": [
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Name",
+          "required": true,
+          "max_length": 120
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        },
+        {
+          "id": "message",
+          "type": "textarea",
+          "label": "Message",
+          "required": true,
+          "max_length": 4000
+        }
+      ],
+      "success_message": "Thanks — your note is with the newsroom.",
+      "submit_label": "Send"
+    },
+    "newsletter": {
+      "name": "Newsletter",
+      "fields": [
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        }
+      ],
+      "success_message": "Thanks for subscribing. The next letter will find you here.",
+      "submit_label": "Sign up"
+    }
+  },
+  "content": {
+    "posts": {
+      "name": "Stories",
+      "fields": [
+        {
+          "id": "topic",
+          "type": "text",
+          "label": "Topic"
+        },
+        {
+          "id": "date",
+          "type": "date",
+          "label": "Date"
+        },
+        {
+          "id": "author",
+          "type": "text",
+          "label": "Author"
+        },
+        {
+          "id": "reading_minutes",
+          "type": "number",
+          "label": "Reading minutes"
+        },
+        {
+          "id": "standfirst",
+          "type": "textarea",
+          "label": "Standfirst"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "body",
+          "type": "richtext",
+          "label": "Body"
+        },
+        {
+          "id": "image_credit",
+          "type": "text",
+          "label": "Image credit"
+        },
+        {
+          "id": "updated",
+          "type": "date",
+          "label": "Updated date"
+        },
+        {
+          "id": "key_facts",
+          "type": "textarea",
+          "label": "Key facts (one per line)"
+        }
+      ],
+      "entries": [
+        {
+          "id": "en_why_are_so_many_thai_restaurants_hidden_in_london_pubs",
+          "handle": "why-are-so-many-thai-restaurants-hidden-in-london-pubs",
+          "title": "Why are so many Thai restaurants hidden in London pubs?",
+          "fields": {
+            "topic": "Culture",
+            "date": "2026-10-28",
+            "author": "Mei Lin",
+            "reading_minutes": 8,
+            "standfirst": "Behind the bar of a hundred old pubs, a small kitchen turns out some of the city’s best green curry. How a licensing quirk of the 1980s built a tradition.",
+            "image": "as_cafe",
+            "image_alt": "A pub kitchen hatch with a handwritten Thai menu above it",
+            "body": "<p>Walk into an old pub in London and there is a good chance the kitchen at the back is Thai. There are more than a hundred of them, and most began the same way.</p><p>In the 1980s, landlords who had lost their food trade could let their kitchens to a cook without a second licence. Thai families, many newly arrived, took them on, and the arrangement stuck.</p><p>Our travel writer spent a week eating her way round twelve of them. The best green curry, she reports, was served under a dartboard.</p>",
+            "image_credit": "Photo: Mei Lin",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_a_walk_along_the_old_railway_line_before_it_becomes_a_road",
+          "handle": "a-walk-along-the-old-railway-line-before-it-becomes-a-road",
+          "title": "A walk along the old railway line before it becomes a road",
+          "fields": {
+            "topic": "Culture",
+            "date": "2026-10-29",
+            "author": "Tom Reilly",
+            "reading_minutes": 7,
+            "standfirst": "Nine miles of cuttings, bridges and one surprised heron.",
+            "image": "as_railway",
+            "image_alt": "An overgrown railway cutting with a stone bridge in the distance",
+            "body": "<p>The branch line closed in 1965. Next spring the county starts building a relief road along it, so we walked the whole nine miles while we still can.</p><p>There are four stone bridges, a tunnel the bats have claimed, and a cutting so deep it keeps its frost until noon. The platform at Low End is still there under the brambles.</p><p>The county says a footpath will run beside the new road. It will not, we suspect, have the heron.</p>",
+            "image_credit": "Photo: Mei Lin",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_the_allotment_waiting_list_is_now_eleven_years_long",
+          "handle": "the-allotment-waiting-list-is-now-eleven-years-long",
+          "title": "The allotment waiting list is now eleven years long",
+          "fields": {
+            "topic": "Politics",
+            "date": "2026-10-29",
+            "author": "Priya Nand",
+            "reading_minutes": 5,
+            "standfirst": "Why plots stay empty while the list grows, and what the council plans.",
+            "image": "as_town",
+            "image_alt": "Allotment plots with sheds and bean poles under a grey sky",
+            "body": "<p>There are 214 names on the waiting list for the town’s 96 allotment plots. At the current rate of turnover, the last name on it will get a plot in 2037.</p><p>Yet on a walk around the site this week we counted eleven plots that had not been worked this year. The council says tenants have until the spring inspection to bring them back into use, and it plans to halve the size of new plots so more people get one.</p>",
+            "image_credit": "Photo: Sam Okafor",
+            "updated": "",
+            "key_facts": "Plots: 96\nNames on the list: 214\nPlots unworked this year: 11"
+          }
+        },
+        {
+          "id": "en_what_a_year_of_tracking_every_bus_in_the_valley_taught_us",
+          "handle": "what-a-year-of-tracking-every-bus-in-the-valley-taught-us",
+          "title": "What a year of tracking every bus in the valley taught us",
+          "fields": {
+            "topic": "Science",
+            "date": "2026-10-29",
+            "author": "Tom Reilly",
+            "reading_minutes": 9,
+            "standfirst": "The 7:40 is late on 62 per cent of days. The 7:55 almost never is.",
+            "image": "as_town",
+            "image_alt": "A bus pulling away from a stop on the high street",
+            "body": "<p>For a year we logged the arrival of every bus at the four stops on the high street: 21,000 arrivals in all, recorded by readers, a newsagent and one very patient retired teacher.</p><p>The 7:40 to the station is late on 62 per cent of days, by four minutes on average. The 7:55, which leaves the depot rather than coming over the ridge, is late on fewer than one day in twenty.</p><p>The bus company says it will move the 7:40’s start point from next spring. Until then, our advice is the 7:55.</p>",
+            "image_credit": "Photo: Priya Nand",
+            "updated": "",
+            "key_facts": "Arrivals logged: 21,000\nThe 7:40 late: 62 per cent of days\nThe 7:55 late: 4 per cent of days"
+          }
+        },
+        {
+          "id": "en_inside_the_bakery_that_has_opened_at_4am_every_day_since_1958",
+          "handle": "inside-the-bakery-that-has-opened-at-4am-every-day-since-1958",
+          "title": "Inside the bakery that has opened at 4am every day since 1958",
+          "fields": {
+            "topic": "Business",
+            "date": "2026-10-29",
+            "author": "Priya Nand",
+            "reading_minutes": 7,
+            "standfirst": "Two ovens, one family and a queue that starts before the first bus.",
+            "image": "as_bakery",
+            "image_alt": "Loaves cooling on wooden racks in a bakery before dawn",
+            "body": "<p>The lights at Hollins Bakery come on at a quarter to four. By the time the first bus passes at six, there are three hundred loaves on the racks and a queue at the door.</p><p>The bakery has opened at four every day since Albert Hollins took over the lease in 1958, Christmas Day included. His granddaughter Jo runs it now, on the same two ovens he installed.</p><p>Asked why they have never moved the opening time, Jo Hollins said the night shift at the mill finishes at four. “They were our first customers. They still are.”</p>",
+            "image_credit": "Photo: Ana Ruiz",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_the_last_lighthouse_keeper_on_the_east_coast_hands_over_the_keys",
+          "handle": "the-last-lighthouse-keeper-on-the-east-coast-hands-over-the-keys",
+          "title": "The last lighthouse keeper on the east coast hands over the keys",
+          "fields": {
+            "topic": "Culture",
+            "date": "2026-10-29",
+            "author": "Tom Reilly",
+            "reading_minutes": 8,
+            "standfirst": "Forty-one years, three storms that made the news and one that did not.",
+            "image": "as_coast",
+            "image_alt": "The white lighthouse on the point, waves breaking below it",
+            "body": "<p>Ellen Marsh climbed the 114 steps of the point lighthouse for the last time on Tuesday morning. The light has been automatic since 1998, but someone still had to keep it, and for forty-one years that was her.</p><p>She remembers three storms that made the national news, and one in 1987 that did not, when the lamp failed at two in the morning and she turned it by hand until dawn.</p><p>The keys go to the trust that now owns the tower. Marsh is moving to a bungalow inland. “I want to sleep through a gale,” she said.</p>",
+            "image_credit": "Photo: Tom Reilly",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_12_of_the_best_films_to_watch_in_november",
+          "handle": "12-of-the-best-films-to-watch-in-november",
+          "title": "12 of the best films to watch in November",
+          "fields": {
+            "topic": "Culture",
+            "date": "2026-10-29",
+            "author": "Sam Okafor",
+            "reading_minutes": 6,
+            "standfirst": "From the festival winner opening at the old Regal to two reissues worth the drive, the films to see before the year turns.",
+            "image": "as_screen",
+            "image_alt": "Rows of red seats in the old Regal cinema",
+            "body": "<p>The Regal opens this year’s festival winner on the 14th, a quiet film about a lock keeper that won the audience prize as well as the jury’s.</p><p>Two restorations are worth the drive to the city: a 1950s thriller with a new score, and a documentary about the last steam trains, shot partly on our own branch line.</p>",
+            "image_credit": "Photo: Sam Okafor",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_12_of_the_best_tv_shows_to_watch_this_november",
+          "handle": "12-of-the-best-tv-shows-to-watch-this-november",
+          "title": "12 of the best TV shows to watch this November",
+          "fields": {
+            "topic": "Culture",
+            "date": "2026-10-29",
+            "author": "Ana Ruiz",
+            "reading_minutes": 6,
+            "standfirst": "A heist in the fog, a slow-burn courtroom drama and the comedy everyone at the office is quoting. Our critics pick the month.",
+            "image": "as_screen",
+            "image_alt": "The lit marquee of the old Regal cinema at night",
+            "body": "<p>November is the month the schedules fill up. Our critics have watched the first episodes so you do not have to, and picked the twelve worth your evenings.</p><p>At the top of the list is a six-part heist set on a fog-bound island, followed by a courtroom drama that takes three episodes to get going and is worth every minute of them.</p>",
+            "image_credit": "Photo: Ana Ruiz",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_what_the_forecast_got_wrong_this_week",
+          "handle": "what-the-forecast-got-wrong-this-week",
+          "title": "What the forecast got wrong this week",
+          "fields": {
+            "topic": "Weather",
+            "date": "2026-10-30",
+            "author": "Tom Reilly",
+            "reading_minutes": 4,
+            "standfirst": "Tuesday was meant to be dry. The valley got eleven millimetres. Why the national models keep missing the rain that arrives at four.",
+            "image": "as_town",
+            "image_alt": "Storm clouds gathering over the ridge in the afternoon",
+            "body": "<p>The national forecast for Tuesday promised a dry day with sunny spells. The gauge at the mill bridge collected eleven millimetres, most of it between four and half past.</p><p>Forecasters say the national models work on a grid too coarse to see a valley this narrow. Our own record suggests a simpler rule: if the morning is warm and still, take a coat at four.</p>",
+            "image_credit": "Photo: Ana Ruiz",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_river_levels_and_what_the_gauge_at_the_bridge_means",
+          "handle": "river-levels-and-what-the-gauge-at-the-bridge-means",
+          "title": "River levels, and what the gauge at the bridge means",
+          "fields": {
+            "topic": "Weather",
+            "date": "2026-10-30",
+            "author": "Priya Nand",
+            "reading_minutes": 5,
+            "standfirst": "The painted scale on the mill bridge pier is read by half the valley. Here is what each mark means, and when to move the car.",
+            "image": "as_rain",
+            "image_alt": "The painted depth scale on a stone bridge pier",
+            "body": "<p>The white scale painted on the mill bridge pier is the most-read measuring instrument in the valley. It runs from 0 to 3 metres, and the river sits between 0.6 and 0.9 for most of the year.</p><p>At 1.5 metres the meadow path floods. At 2 metres the council closes the riverside car park, and at 2.4 the water reaches the cellars on Mill Lane. The highest mark, from 1968, is cut into the stone at 2.9.</p>",
+            "image_credit": "Photo: Priya Nand",
+            "updated": "",
+            "key_facts": "Normal level: 0.6 to 0.9 metres\nMeadow path floods: 1.5 metres\nCar park closes: 2 metres\nRecord, 1968: 2.9 metres"
+          }
+        },
+        {
+          "id": "en_fog_season_begins_two_weeks_early",
+          "handle": "fog-season-begins-two-weeks-early",
+          "title": "Fog season begins two weeks early",
+          "fields": {
+            "topic": "Weather",
+            "date": "2026-10-30",
+            "author": "Tom Reilly",
+            "reading_minutes": 3,
+            "standfirst": "Three foggy mornings this week, the earliest run since records began at the school weather station. Expect more until the wind turns.",
+            "image": "as_town",
+            "image_alt": "Fog filling the valley below the town at first light",
+            "body": "<p>The valley woke to fog on Monday, Tuesday and Thursday this week, the earliest run of fog mornings since the school weather station began keeping records in 1998.</p><p>Clear nights and still air let the cold sink to the valley floor. Forecasters expect more of the same until the wind turns westerly early next week. Drivers on the ridge road are asked to use dipped headlights until ten.</p>",
+            "image_credit": "Photo: Tom Reilly",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_we_should_take_the_sign_down_ourselves",
+          "handle": "we-should-take-the-sign-down-ourselves",
+          "title": "We should take the sign down ourselves",
+          "fields": {
+            "topic": "Opinion",
+            "date": "2026-10-30",
+            "author": "The editors",
+            "reading_minutes": 3,
+            "standfirst": "The rusted sign above the town has been “awaiting removal” for four years. A Saturday morning and a few spanners would do it.",
+            "image": "as_town",
+            "image_alt": "A leaning, rusted sign on the ridge road above the town",
+            "body": "<p>The welcome sign on the ridge road has leaned a little further every winter since 2022. It has been on the council’s list for removal for four years, behind a dispute over who owns the verge it stands on.</p><p>We think the town should stop waiting. A dozen volunteers, a van and a Saturday morning would do it, and the parish council has offered to store the sign until someone decides what to do with it.</p>",
+            "image_credit": "Photo: Sam Okafor",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_bus_drivers_first_novel_sells_out_at_the_station_kiosk",
+          "handle": "bus-drivers-first-novel-sells-out-at-the-station-kiosk",
+          "title": "Bus driver’s first novel sells out at the station kiosk",
+          "fields": {
+            "topic": "Business",
+            "date": "2026-10-30",
+            "author": "Tom Reilly",
+            "reading_minutes": 3,
+            "standfirst": "Dennis Hale wrote it between shifts on the 14. The kiosk ordered forty copies and sold the last one before lunch on Wednesday.",
+            "image": "as_town",
+            "image_alt": "The bus station at the top of the high street",
+            "body": "<p>Dennis Hale has driven the number 14 for nineteen years. He wrote most of his first novel in the layover at the top of the valley, in a notebook on the steering wheel.</p><p>The station kiosk took forty copies on Monday and had none left by Wednesday lunchtime. Another sixty arrive on Saturday. “People ask me to sign them at the bus stop,” Hale said. “I tell them I have a timetable to keep.”</p>",
+            "image_credit": "Photo: Tom Reilly",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_council_votes_tonight_on_the_closed_path_above_the_town",
+          "handle": "council-votes-tonight-on-the-closed-path-above-the-town",
+          "title": "Council votes tonight on the closed path above the town",
+          "fields": {
+            "topic": "Politics",
+            "date": "2026-10-30",
+            "author": "Priya Nand",
+            "reading_minutes": 5,
+            "standfirst": "The ridge path has been fenced off since a landslip in March. Councillors choose tonight between a £180,000 repair and a permanent diversion.",
+            "image": "as_town",
+            "image_alt": "The town from the ridge, roofs and the church spire in the mist",
+            "body": "<p>The footpath along the ridge above the town has been closed since a landslip in March took out forty metres of it. Tonight the council decides whether to rebuild it or route walkers through the woods below for good.</p><p>Engineers put the repair at £180,000. The diversion would cost a tenth of that, but adds a mile and loses the view over the valley that most people walk the path for.</p><p>More than 900 people have signed a petition to reopen it. The meeting starts at seven in the town hall and is open to the public.</p>",
+            "image_credit": "Photo: Tom Reilly",
+            "updated": "",
+            "key_facts": "Length of path lost: 40 metres\nCost to repair: £180,000\nPetition signatures: 912"
+          }
+        },
+        {
+          "id": "en_valley_rain_arrives_at_four_study_confirms",
+          "handle": "valley-rain-arrives-at-four-study-confirms",
+          "title": "Valley rain arrives at four, study confirms",
+          "fields": {
+            "topic": "Science",
+            "date": "2026-10-30",
+            "author": "Priya Nand",
+            "reading_minutes": 4,
+            "standfirst": "A six-year study finds the afternoon showers are as regular as residents have always claimed, and more so in October.",
+            "image": "as_rain",
+            "image_alt": "A rain gauge on the rail of the mill bridge, the river high below it",
+            "body": "<p>The showers begin, on average, at 4:07 in the afternoon and last twenty-two minutes. The study, which logged every rainfall in the valley since 2020, found the pattern held on most days from May to October.</p><p>It held on 71 per cent of days between May and October, and on almost every day in the first two weeks of October, when the warm valley floor meets the first cold air off the ridge.</p><p>Residents at the mill bridge say they have planned their walks around it for years. The authors now want to know why October is the most punctual month of all, and they will keep the gauge running through next spring.</p>",
+            "image_credit": "The gauge at the mill bridge, Thursday afternoon. Photo: Tom Reilly",
+            "updated": "2026-10-31",
+            "key_facts": "Days with afternoon rain, May to October: 71 per cent\nAverage shower: 22 minutes\nMedian start: 4:07 in the afternoon"
+          }
+        },
+        {
+          "id": "en_the_one_cafe_raises_prices_for_the_first_time_in_nine_years",
+          "handle": "the-one-cafe-raises-prices-for-the-first-time-in-nine-years",
+          "title": "The one café raises prices for the first time in nine years",
+          "fields": {
+            "topic": "Business",
+            "date": "2026-10-31",
+            "author": "Tom Reilly",
+            "reading_minutes": 4,
+            "standfirst": "A pot of tea goes from £1.80 to £2.20 on Monday. The owners say flour, milk and the electricity bill left them no choice.",
+            "image": "as_cafe",
+            "image_alt": "The café on the high street, its windows steamed up",
+            "body": "<p>The Bridge Café, the only café in the valley, is raising its prices on Monday for the first time since 2017. A pot of tea goes from £1.80 to £2.20, and a bacon roll from £3 to £3.60.</p><p>“We held out as long as we could,” said Ruth Aske, who has run it with her brother since their mother retired. Flour has doubled in price in two years, and the electricity bill for the ovens is now their largest cost after wages.</p><p>Regulars at the window table on Thursday took the news calmly. Most said they would keep coming. One said he would bring his own biscuits.</p>",
+            "image_credit": "Photo: Tom Reilly",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_library_extends_its_sunday_hours_through_the_winter",
+          "handle": "library-extends-its-sunday-hours-through-the-winter",
+          "title": "Library extends its Sunday hours through the winter",
+          "fields": {
+            "topic": "Politics",
+            "date": "2026-10-31",
+            "author": "Tom Reilly",
+            "reading_minutes": 1,
+            "standfirst": "From November the library opens from ten until four on Sundays, two hours longer, paid for by the council’s warm-spaces fund.",
+            "image_alt": "",
+            "body": "<p>The library on Church Street will open from ten until four on Sundays from 2 November until the end of March, two hours longer than now.</p><p>The extra hours come from the council’s warm-spaces fund. The reading room keeps its heating on all day, and the urn in the corner will be filled.</p>",
+            "image_credit": "",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_reservoir_at_82_per_cent_after_a_wet_october",
+          "handle": "reservoir-at-82-per-cent-after-a-wet-october",
+          "title": "Reservoir at 82 per cent after a wet October",
+          "fields": {
+            "topic": "Science",
+            "date": "2026-10-31",
+            "author": "Priya Nand",
+            "reading_minutes": 2,
+            "standfirst": "The highest October level in six years, up from 64 per cent at the start of the month. The hosepipe ban is formally lifted.",
+            "image_alt": "",
+            "body": "<p>The valley reservoir stood at 82 per cent this morning, its highest October reading since 2020 and up from 64 per cent on the first of the month.</p><p>The water company has formally lifted the hosepipe ban it imposed in July. It says levels would need to fall below 55 per cent before it considered another.</p>",
+            "image_credit": "",
+            "updated": "",
+            "key_facts": "Level this morning: 82 per cent\nOn 1 October: 64 per cent\nHosepipe ban threshold: 55 per cent"
+          }
+        },
+        {
+          "id": "en_market_stalls_return_to_the_square_on_saturday",
+          "handle": "market-stalls-return-to-the-square-on-saturday",
+          "title": "Market stalls return to the square on Saturday",
+          "fields": {
+            "topic": "Business",
+            "date": "2026-10-31",
+            "author": "Tom Reilly",
+            "reading_minutes": 2,
+            "standfirst": "Twenty-two traders have signed up for the first market since the square was resurfaced, from the cheese van to a new coffee cart.",
+            "image_alt": "",
+            "body": "<p>The Saturday market returns to the square this weekend for the first time since resurfacing began in August. Twenty-two traders have booked pitches, four of them new.</p><p>Stalls open at eight and close at two. Parking on the square itself stays suspended until the new lines are painted, so the council asks shoppers to use the station car park.</p>",
+            "image_credit": "",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_school_board_sets_the_new_term_dates",
+          "handle": "school-board-sets-the-new-term-dates",
+          "title": "School board sets the new term dates",
+          "fields": {
+            "topic": "Politics",
+            "date": "2026-10-31",
+            "author": "Priya Nand",
+            "reading_minutes": 2,
+            "standfirst": "The spring term starts on 5 January, a day later than last year, and half term moves to the third week of February.",
+            "image_alt": "",
+            "body": "<p>The valley school board has fixed next year’s term dates. The spring term starts on Tuesday 5 January, a day later than last year, so staff can use the Monday for training.</p><p>Half term moves to the week of 15 February to line up with the two neighbouring districts, which the board says will help families with children at more than one school.</p>",
+            "image_credit": "",
+            "updated": "",
+            "key_facts": ""
+          }
+        },
+        {
+          "id": "en_road_closed_at_the_mill_bridge_after_a_lorry_sheds_its_load",
+          "handle": "road-closed-at-the-mill-bridge-after-a-lorry-sheds-its-load",
+          "title": "Road closed at the mill bridge after a lorry sheds its load",
+          "fields": {
+            "topic": "Politics",
+            "date": "2026-10-31",
+            "author": "Tom Reilly",
+            "reading_minutes": 1,
+            "standfirst": "Mill Bridge Road is shut in both directions while the council clears forty tonnes of gravel. Buses are running via Station Lane.",
+            "image_alt": "",
+            "body": "<p>Mill Bridge Road is closed in both directions after a lorry shed its load of gravel on the approach to the bridge shortly after nine this morning. No one was hurt.</p><p>Council crews expect to reopen one lane by mid-afternoon. The 14 and 22 buses are running via Station Lane until then, and the footbridge stays open.</p>",
+            "image_credit": "",
+            "updated": "",
+            "key_facts": ""
+          }
+        }
+      ]
+    }
+  },
+  "pages": {
+    "/": {
+      "id": "pg_home",
+      "template": "home",
+      "title": "Home",
+      "seo": {
+        "description": "News for the valley since 1962. Independent, local, and read every morning.",
+        "image": "as_rain"
+      }
+    },
+    "/news": {
+      "id": "pg_news",
+      "template": "news-list",
+      "title": "All stories",
+      "seo": {
+        "description": "Every story from the valley, newest first."
+      }
+    },
+    "/news/the-one-cafe-raises-prices-for-the-first-time-in-nine-years": {
+      "id": "pg_the_one_cafe_raises_prices_for_the_first_time_in_nine_years",
+      "template": "post",
+      "title": "The one café raises prices for the first time in nine years",
+      "params": {
+        "handle": "the-one-cafe-raises-prices-for-the-first-time-in-nine-years"
+      },
+      "entry": {
+        "id": "en_the_one_cafe_raises_prices_for_the_first_time_in_nine_years",
+        "handle": "the-one-cafe-raises-prices-for-the-first-time-in-nine-years",
+        "title": "The one café raises prices for the first time in nine years",
+        "fields": {
+          "topic": "Business",
+          "date": "2026-10-31",
+          "author": "Tom Reilly",
+          "reading_minutes": 4,
+          "standfirst": "A pot of tea goes from £1.80 to £2.20 on Monday. The owners say flour, milk and the electricity bill left them no choice.",
+          "image": "as_cafe",
+          "image_alt": "The café on the high street, its windows steamed up",
+          "body": "<p>The Bridge Café, the only café in the valley, is raising its prices on Monday for the first time since 2017. A pot of tea goes from £1.80 to £2.20, and a bacon roll from £3 to £3.60.</p><p>“We held out as long as we could,” said Ruth Aske, who has run it with her brother since their mother retired. Flour has doubled in price in two years, and the electricity bill for the ovens is now their largest cost after wages.</p><p>Regulars at the window table on Thursday took the news calmly. Most said they would keep coming. One said he would bring his own biscuits.</p>",
+          "image_credit": "Photo: Tom Reilly",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "A pot of tea goes from £1.80 to £2.20 on Monday. The owners say flour, milk and the electricity bill left them no choice.",
+        "image": "as_cafe"
+      }
+    },
+    "/news/library-extends-its-sunday-hours-through-the-winter": {
+      "id": "pg_library_extends_its_sunday_hours_through_the_winter",
+      "template": "post",
+      "title": "Library extends its Sunday hours through the winter",
+      "params": {
+        "handle": "library-extends-its-sunday-hours-through-the-winter"
+      },
+      "entry": {
+        "id": "en_library_extends_its_sunday_hours_through_the_winter",
+        "handle": "library-extends-its-sunday-hours-through-the-winter",
+        "title": "Library extends its Sunday hours through the winter",
+        "fields": {
+          "topic": "Politics",
+          "date": "2026-10-31",
+          "author": "Tom Reilly",
+          "reading_minutes": 1,
+          "standfirst": "From November the library opens from ten until four on Sundays, two hours longer, paid for by the council’s warm-spaces fund.",
+          "image_alt": "",
+          "body": "<p>The library on Church Street will open from ten until four on Sundays from 2 November until the end of March, two hours longer than now.</p><p>The extra hours come from the council’s warm-spaces fund. The reading room keeps its heating on all day, and the urn in the corner will be filled.</p>",
+          "image_credit": "",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "From November the library opens from ten until four on Sundays, two hours longer, paid for by the council’s warm-spaces fund."
+      }
+    },
+    "/news/reservoir-at-82-per-cent-after-a-wet-october": {
+      "id": "pg_reservoir_at_82_per_cent_after_a_wet_october",
+      "template": "post",
+      "title": "Reservoir at 82 per cent after a wet October",
+      "params": {
+        "handle": "reservoir-at-82-per-cent-after-a-wet-october"
+      },
+      "entry": {
+        "id": "en_reservoir_at_82_per_cent_after_a_wet_october",
+        "handle": "reservoir-at-82-per-cent-after-a-wet-october",
+        "title": "Reservoir at 82 per cent after a wet October",
+        "fields": {
+          "topic": "Science",
+          "date": "2026-10-31",
+          "author": "Priya Nand",
+          "reading_minutes": 2,
+          "standfirst": "The highest October level in six years, up from 64 per cent at the start of the month. The hosepipe ban is formally lifted.",
+          "image_alt": "",
+          "body": "<p>The valley reservoir stood at 82 per cent this morning, its highest October reading since 2020 and up from 64 per cent on the first of the month.</p><p>The water company has formally lifted the hosepipe ban it imposed in July. It says levels would need to fall below 55 per cent before it considered another.</p>",
+          "image_credit": "",
+          "updated": "",
+          "key_facts": "Level this morning: 82 per cent\nOn 1 October: 64 per cent\nHosepipe ban threshold: 55 per cent"
+        }
+      },
+      "seo": {
+        "description": "The highest October level in six years, up from 64 per cent at the start of the month. The hosepipe ban is formally lifted."
+      }
+    },
+    "/news/market-stalls-return-to-the-square-on-saturday": {
+      "id": "pg_market_stalls_return_to_the_square_on_saturday",
+      "template": "post",
+      "title": "Market stalls return to the square on Saturday",
+      "params": {
+        "handle": "market-stalls-return-to-the-square-on-saturday"
+      },
+      "entry": {
+        "id": "en_market_stalls_return_to_the_square_on_saturday",
+        "handle": "market-stalls-return-to-the-square-on-saturday",
+        "title": "Market stalls return to the square on Saturday",
+        "fields": {
+          "topic": "Business",
+          "date": "2026-10-31",
+          "author": "Tom Reilly",
+          "reading_minutes": 2,
+          "standfirst": "Twenty-two traders have signed up for the first market since the square was resurfaced, from the cheese van to a new coffee cart.",
+          "image_alt": "",
+          "body": "<p>The Saturday market returns to the square this weekend for the first time since resurfacing began in August. Twenty-two traders have booked pitches, four of them new.</p><p>Stalls open at eight and close at two. Parking on the square itself stays suspended until the new lines are painted, so the council asks shoppers to use the station car park.</p>",
+          "image_credit": "",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "Twenty-two traders have signed up for the first market since the square was resurfaced, from the cheese van to a new coffee cart."
+      }
+    },
+    "/news/school-board-sets-the-new-term-dates": {
+      "id": "pg_school_board_sets_the_new_term_dates",
+      "template": "post",
+      "title": "School board sets the new term dates",
+      "params": {
+        "handle": "school-board-sets-the-new-term-dates"
+      },
+      "entry": {
+        "id": "en_school_board_sets_the_new_term_dates",
+        "handle": "school-board-sets-the-new-term-dates",
+        "title": "School board sets the new term dates",
+        "fields": {
+          "topic": "Politics",
+          "date": "2026-10-31",
+          "author": "Priya Nand",
+          "reading_minutes": 2,
+          "standfirst": "The spring term starts on 5 January, a day later than last year, and half term moves to the third week of February.",
+          "image_alt": "",
+          "body": "<p>The valley school board has fixed next year’s term dates. The spring term starts on Tuesday 5 January, a day later than last year, so staff can use the Monday for training.</p><p>Half term moves to the week of 15 February to line up with the two neighbouring districts, which the board says will help families with children at more than one school.</p>",
+          "image_credit": "",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "The spring term starts on 5 January, a day later than last year, and half term moves to the third week of February."
+      }
+    },
+    "/news/road-closed-at-the-mill-bridge-after-a-lorry-sheds-its-load": {
+      "id": "pg_road_closed_at_the_mill_bridge_after_a_lorry_sheds_its_load",
+      "template": "post",
+      "title": "Road closed at the mill bridge after a lorry sheds its load",
+      "params": {
+        "handle": "road-closed-at-the-mill-bridge-after-a-lorry-sheds-its-load"
+      },
+      "entry": {
+        "id": "en_road_closed_at_the_mill_bridge_after_a_lorry_sheds_its_load",
+        "handle": "road-closed-at-the-mill-bridge-after-a-lorry-sheds-its-load",
+        "title": "Road closed at the mill bridge after a lorry sheds its load",
+        "fields": {
+          "topic": "Politics",
+          "date": "2026-10-31",
+          "author": "Tom Reilly",
+          "reading_minutes": 1,
+          "standfirst": "Mill Bridge Road is shut in both directions while the council clears forty tonnes of gravel. Buses are running via Station Lane.",
+          "image_alt": "",
+          "body": "<p>Mill Bridge Road is closed in both directions after a lorry shed its load of gravel on the approach to the bridge shortly after nine this morning. No one was hurt.</p><p>Council crews expect to reopen one lane by mid-afternoon. The 14 and 22 buses are running via Station Lane until then, and the footbridge stays open.</p>",
+          "image_credit": "",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "Mill Bridge Road is shut in both directions while the council clears forty tonnes of gravel. Buses are running via Station Lane."
+      }
+    },
+    "/news/what-the-forecast-got-wrong-this-week": {
+      "id": "pg_what_the_forecast_got_wrong_this_week",
+      "template": "post",
+      "title": "What the forecast got wrong this week",
+      "params": {
+        "handle": "what-the-forecast-got-wrong-this-week"
+      },
+      "entry": {
+        "id": "en_what_the_forecast_got_wrong_this_week",
+        "handle": "what-the-forecast-got-wrong-this-week",
+        "title": "What the forecast got wrong this week",
+        "fields": {
+          "topic": "Weather",
+          "date": "2026-10-30",
+          "author": "Tom Reilly",
+          "reading_minutes": 4,
+          "standfirst": "Tuesday was meant to be dry. The valley got eleven millimetres. Why the national models keep missing the rain that arrives at four.",
+          "image": "as_town",
+          "image_alt": "Storm clouds gathering over the ridge in the afternoon",
+          "body": "<p>The national forecast for Tuesday promised a dry day with sunny spells. The gauge at the mill bridge collected eleven millimetres, most of it between four and half past.</p><p>Forecasters say the national models work on a grid too coarse to see a valley this narrow. Our own record suggests a simpler rule: if the morning is warm and still, take a coat at four.</p>",
+          "image_credit": "Photo: Ana Ruiz",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "Tuesday was meant to be dry. The valley got eleven millimetres. Why the national models keep missing the rain that arrives at four.",
+        "image": "as_town"
+      }
+    },
+    "/news/river-levels-and-what-the-gauge-at-the-bridge-means": {
+      "id": "pg_river_levels_and_what_the_gauge_at_the_bridge_means",
+      "template": "post",
+      "title": "River levels, and what the gauge at the bridge means",
+      "params": {
+        "handle": "river-levels-and-what-the-gauge-at-the-bridge-means"
+      },
+      "entry": {
+        "id": "en_river_levels_and_what_the_gauge_at_the_bridge_means",
+        "handle": "river-levels-and-what-the-gauge-at-the-bridge-means",
+        "title": "River levels, and what the gauge at the bridge means",
+        "fields": {
+          "topic": "Weather",
+          "date": "2026-10-30",
+          "author": "Priya Nand",
+          "reading_minutes": 5,
+          "standfirst": "The painted scale on the mill bridge pier is read by half the valley. Here is what each mark means, and when to move the car.",
+          "image": "as_rain",
+          "image_alt": "The painted depth scale on a stone bridge pier",
+          "body": "<p>The white scale painted on the mill bridge pier is the most-read measuring instrument in the valley. It runs from 0 to 3 metres, and the river sits between 0.6 and 0.9 for most of the year.</p><p>At 1.5 metres the meadow path floods. At 2 metres the council closes the riverside car park, and at 2.4 the water reaches the cellars on Mill Lane. The highest mark, from 1968, is cut into the stone at 2.9.</p>",
+          "image_credit": "Photo: Priya Nand",
+          "updated": "",
+          "key_facts": "Normal level: 0.6 to 0.9 metres\nMeadow path floods: 1.5 metres\nCar park closes: 2 metres\nRecord, 1968: 2.9 metres"
+        }
+      },
+      "seo": {
+        "description": "The painted scale on the mill bridge pier is read by half the valley. Here is what each mark means, and when to move the car.",
+        "image": "as_rain"
+      }
+    },
+    "/news/fog-season-begins-two-weeks-early": {
+      "id": "pg_fog_season_begins_two_weeks_early",
+      "template": "post",
+      "title": "Fog season begins two weeks early",
+      "params": {
+        "handle": "fog-season-begins-two-weeks-early"
+      },
+      "entry": {
+        "id": "en_fog_season_begins_two_weeks_early",
+        "handle": "fog-season-begins-two-weeks-early",
+        "title": "Fog season begins two weeks early",
+        "fields": {
+          "topic": "Weather",
+          "date": "2026-10-30",
+          "author": "Tom Reilly",
+          "reading_minutes": 3,
+          "standfirst": "Three foggy mornings this week, the earliest run since records began at the school weather station. Expect more until the wind turns.",
+          "image": "as_town",
+          "image_alt": "Fog filling the valley below the town at first light",
+          "body": "<p>The valley woke to fog on Monday, Tuesday and Thursday this week, the earliest run of fog mornings since the school weather station began keeping records in 1998.</p><p>Clear nights and still air let the cold sink to the valley floor. Forecasters expect more of the same until the wind turns westerly early next week. Drivers on the ridge road are asked to use dipped headlights until ten.</p>",
+          "image_credit": "Photo: Tom Reilly",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "Three foggy mornings this week, the earliest run since records began at the school weather station. Expect more until the wind turns.",
+        "image": "as_town"
+      }
+    },
+    "/news/we-should-take-the-sign-down-ourselves": {
+      "id": "pg_we_should_take_the_sign_down_ourselves",
+      "template": "post",
+      "title": "We should take the sign down ourselves",
+      "params": {
+        "handle": "we-should-take-the-sign-down-ourselves"
+      },
+      "entry": {
+        "id": "en_we_should_take_the_sign_down_ourselves",
+        "handle": "we-should-take-the-sign-down-ourselves",
+        "title": "We should take the sign down ourselves",
+        "fields": {
+          "topic": "Opinion",
+          "date": "2026-10-30",
+          "author": "The editors",
+          "reading_minutes": 3,
+          "standfirst": "The rusted sign above the town has been “awaiting removal” for four years. A Saturday morning and a few spanners would do it.",
+          "image": "as_town",
+          "image_alt": "A leaning, rusted sign on the ridge road above the town",
+          "body": "<p>The welcome sign on the ridge road has leaned a little further every winter since 2022. It has been on the council’s list for removal for four years, behind a dispute over who owns the verge it stands on.</p><p>We think the town should stop waiting. A dozen volunteers, a van and a Saturday morning would do it, and the parish council has offered to store the sign until someone decides what to do with it.</p>",
+          "image_credit": "Photo: Sam Okafor",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "The rusted sign above the town has been “awaiting removal” for four years. A Saturday morning and a few spanners would do it.",
+        "image": "as_town"
+      }
+    },
+    "/news/bus-drivers-first-novel-sells-out-at-the-station-kiosk": {
+      "id": "pg_bus_drivers_first_novel_sells_out_at_the_station_kiosk",
+      "template": "post",
+      "title": "Bus driver’s first novel sells out at the station kiosk",
+      "params": {
+        "handle": "bus-drivers-first-novel-sells-out-at-the-station-kiosk"
+      },
+      "entry": {
+        "id": "en_bus_drivers_first_novel_sells_out_at_the_station_kiosk",
+        "handle": "bus-drivers-first-novel-sells-out-at-the-station-kiosk",
+        "title": "Bus driver’s first novel sells out at the station kiosk",
+        "fields": {
+          "topic": "Business",
+          "date": "2026-10-30",
+          "author": "Tom Reilly",
+          "reading_minutes": 3,
+          "standfirst": "Dennis Hale wrote it between shifts on the 14. The kiosk ordered forty copies and sold the last one before lunch on Wednesday.",
+          "image": "as_town",
+          "image_alt": "The bus station at the top of the high street",
+          "body": "<p>Dennis Hale has driven the number 14 for nineteen years. He wrote most of his first novel in the layover at the top of the valley, in a notebook on the steering wheel.</p><p>The station kiosk took forty copies on Monday and had none left by Wednesday lunchtime. Another sixty arrive on Saturday. “People ask me to sign them at the bus stop,” Hale said. “I tell them I have a timetable to keep.”</p>",
+          "image_credit": "Photo: Tom Reilly",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "Dennis Hale wrote it between shifts on the 14. The kiosk ordered forty copies and sold the last one before lunch on Wednesday.",
+        "image": "as_town"
+      }
+    },
+    "/news/council-votes-tonight-on-the-closed-path-above-the-town": {
+      "id": "pg_council_votes_tonight_on_the_closed_path_above_the_town",
+      "template": "post",
+      "title": "Council votes tonight on the closed path above the town",
+      "params": {
+        "handle": "council-votes-tonight-on-the-closed-path-above-the-town"
+      },
+      "entry": {
+        "id": "en_council_votes_tonight_on_the_closed_path_above_the_town",
+        "handle": "council-votes-tonight-on-the-closed-path-above-the-town",
+        "title": "Council votes tonight on the closed path above the town",
+        "fields": {
+          "topic": "Politics",
+          "date": "2026-10-30",
+          "author": "Priya Nand",
+          "reading_minutes": 5,
+          "standfirst": "The ridge path has been fenced off since a landslip in March. Councillors choose tonight between a £180,000 repair and a permanent diversion.",
+          "image": "as_town",
+          "image_alt": "The town from the ridge, roofs and the church spire in the mist",
+          "body": "<p>The footpath along the ridge above the town has been closed since a landslip in March took out forty metres of it. Tonight the council decides whether to rebuild it or route walkers through the woods below for good.</p><p>Engineers put the repair at £180,000. The diversion would cost a tenth of that, but adds a mile and loses the view over the valley that most people walk the path for.</p><p>More than 900 people have signed a petition to reopen it. The meeting starts at seven in the town hall and is open to the public.</p>",
+          "image_credit": "Photo: Tom Reilly",
+          "updated": "",
+          "key_facts": "Length of path lost: 40 metres\nCost to repair: £180,000\nPetition signatures: 912"
+        }
+      },
+      "seo": {
+        "description": "The ridge path has been fenced off since a landslip in March. Councillors choose tonight between a £180,000 repair and a permanent diversion.",
+        "image": "as_town"
+      }
+    },
+    "/news/valley-rain-arrives-at-four-study-confirms": {
+      "id": "pg_valley_rain_arrives_at_four_study_confirms",
+      "template": "post",
+      "title": "Valley rain arrives at four, study confirms",
+      "params": {
+        "handle": "valley-rain-arrives-at-four-study-confirms"
+      },
+      "entry": {
+        "id": "en_valley_rain_arrives_at_four_study_confirms",
+        "handle": "valley-rain-arrives-at-four-study-confirms",
+        "title": "Valley rain arrives at four, study confirms",
+        "fields": {
+          "topic": "Science",
+          "date": "2026-10-30",
+          "author": "Priya Nand",
+          "reading_minutes": 4,
+          "standfirst": "A six-year study finds the afternoon showers are as regular as residents have always claimed, and more so in October.",
+          "image": "as_rain",
+          "image_alt": "A rain gauge on the rail of the mill bridge, the river high below it",
+          "body": "<p>The showers begin, on average, at 4:07 in the afternoon and last twenty-two minutes. The study, which logged every rainfall in the valley since 2020, found the pattern held on most days from May to October.</p><p>It held on 71 per cent of days between May and October, and on almost every day in the first two weeks of October, when the warm valley floor meets the first cold air off the ridge.</p><p>Residents at the mill bridge say they have planned their walks around it for years. The authors now want to know why October is the most punctual month of all, and they will keep the gauge running through next spring.</p>",
+          "image_credit": "The gauge at the mill bridge, Thursday afternoon. Photo: Tom Reilly",
+          "updated": "2026-10-31",
+          "key_facts": "Days with afternoon rain, May to October: 71 per cent\nAverage shower: 22 minutes\nMedian start: 4:07 in the afternoon"
+        }
+      },
+      "seo": {
+        "description": "A six-year study finds the afternoon showers are as regular as residents have always claimed, and more so in October.",
+        "image": "as_rain"
+      }
+    },
+    "/news/a-walk-along-the-old-railway-line-before-it-becomes-a-road": {
+      "id": "pg_a_walk_along_the_old_railway_line_before_it_becomes_a_road",
+      "template": "post",
+      "title": "A walk along the old railway line before it becomes a road",
+      "params": {
+        "handle": "a-walk-along-the-old-railway-line-before-it-becomes-a-road"
+      },
+      "entry": {
+        "id": "en_a_walk_along_the_old_railway_line_before_it_becomes_a_road",
+        "handle": "a-walk-along-the-old-railway-line-before-it-becomes-a-road",
+        "title": "A walk along the old railway line before it becomes a road",
+        "fields": {
+          "topic": "Culture",
+          "date": "2026-10-29",
+          "author": "Tom Reilly",
+          "reading_minutes": 7,
+          "standfirst": "Nine miles of cuttings, bridges and one surprised heron.",
+          "image": "as_railway",
+          "image_alt": "An overgrown railway cutting with a stone bridge in the distance",
+          "body": "<p>The branch line closed in 1965. Next spring the county starts building a relief road along it, so we walked the whole nine miles while we still can.</p><p>There are four stone bridges, a tunnel the bats have claimed, and a cutting so deep it keeps its frost until noon. The platform at Low End is still there under the brambles.</p><p>The county says a footpath will run beside the new road. It will not, we suspect, have the heron.</p>",
+          "image_credit": "Photo: Mei Lin",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "Nine miles of cuttings, bridges and one surprised heron.",
+        "image": "as_railway"
+      }
+    },
+    "/news/the-allotment-waiting-list-is-now-eleven-years-long": {
+      "id": "pg_the_allotment_waiting_list_is_now_eleven_years_long",
+      "template": "post",
+      "title": "The allotment waiting list is now eleven years long",
+      "params": {
+        "handle": "the-allotment-waiting-list-is-now-eleven-years-long"
+      },
+      "entry": {
+        "id": "en_the_allotment_waiting_list_is_now_eleven_years_long",
+        "handle": "the-allotment-waiting-list-is-now-eleven-years-long",
+        "title": "The allotment waiting list is now eleven years long",
+        "fields": {
+          "topic": "Politics",
+          "date": "2026-10-29",
+          "author": "Priya Nand",
+          "reading_minutes": 5,
+          "standfirst": "Why plots stay empty while the list grows, and what the council plans.",
+          "image": "as_town",
+          "image_alt": "Allotment plots with sheds and bean poles under a grey sky",
+          "body": "<p>There are 214 names on the waiting list for the town’s 96 allotment plots. At the current rate of turnover, the last name on it will get a plot in 2037.</p><p>Yet on a walk around the site this week we counted eleven plots that had not been worked this year. The council says tenants have until the spring inspection to bring them back into use, and it plans to halve the size of new plots so more people get one.</p>",
+          "image_credit": "Photo: Sam Okafor",
+          "updated": "",
+          "key_facts": "Plots: 96\nNames on the list: 214\nPlots unworked this year: 11"
+        }
+      },
+      "seo": {
+        "description": "Why plots stay empty while the list grows, and what the council plans.",
+        "image": "as_town"
+      }
+    },
+    "/news/what-a-year-of-tracking-every-bus-in-the-valley-taught-us": {
+      "id": "pg_what_a_year_of_tracking_every_bus_in_the_valley_taught_us",
+      "template": "post",
+      "title": "What a year of tracking every bus in the valley taught us",
+      "params": {
+        "handle": "what-a-year-of-tracking-every-bus-in-the-valley-taught-us"
+      },
+      "entry": {
+        "id": "en_what_a_year_of_tracking_every_bus_in_the_valley_taught_us",
+        "handle": "what-a-year-of-tracking-every-bus-in-the-valley-taught-us",
+        "title": "What a year of tracking every bus in the valley taught us",
+        "fields": {
+          "topic": "Science",
+          "date": "2026-10-29",
+          "author": "Tom Reilly",
+          "reading_minutes": 9,
+          "standfirst": "The 7:40 is late on 62 per cent of days. The 7:55 almost never is.",
+          "image": "as_town",
+          "image_alt": "A bus pulling away from a stop on the high street",
+          "body": "<p>For a year we logged the arrival of every bus at the four stops on the high street: 21,000 arrivals in all, recorded by readers, a newsagent and one very patient retired teacher.</p><p>The 7:40 to the station is late on 62 per cent of days, by four minutes on average. The 7:55, which leaves the depot rather than coming over the ridge, is late on fewer than one day in twenty.</p><p>The bus company says it will move the 7:40’s start point from next spring. Until then, our advice is the 7:55.</p>",
+          "image_credit": "Photo: Priya Nand",
+          "updated": "",
+          "key_facts": "Arrivals logged: 21,000\nThe 7:40 late: 62 per cent of days\nThe 7:55 late: 4 per cent of days"
+        }
+      },
+      "seo": {
+        "description": "The 7:40 is late on 62 per cent of days. The 7:55 almost never is.",
+        "image": "as_town"
+      }
+    },
+    "/news/inside-the-bakery-that-has-opened-at-4am-every-day-since-1958": {
+      "id": "pg_inside_the_bakery_that_has_opened_at_4am_every_day_since_1958",
+      "template": "post",
+      "title": "Inside the bakery that has opened at 4am every day since 1958",
+      "params": {
+        "handle": "inside-the-bakery-that-has-opened-at-4am-every-day-since-1958"
+      },
+      "entry": {
+        "id": "en_inside_the_bakery_that_has_opened_at_4am_every_day_since_1958",
+        "handle": "inside-the-bakery-that-has-opened-at-4am-every-day-since-1958",
+        "title": "Inside the bakery that has opened at 4am every day since 1958",
+        "fields": {
+          "topic": "Business",
+          "date": "2026-10-29",
+          "author": "Priya Nand",
+          "reading_minutes": 7,
+          "standfirst": "Two ovens, one family and a queue that starts before the first bus.",
+          "image": "as_bakery",
+          "image_alt": "Loaves cooling on wooden racks in a bakery before dawn",
+          "body": "<p>The lights at Hollins Bakery come on at a quarter to four. By the time the first bus passes at six, there are three hundred loaves on the racks and a queue at the door.</p><p>The bakery has opened at four every day since Albert Hollins took over the lease in 1958, Christmas Day included. His granddaughter Jo runs it now, on the same two ovens he installed.</p><p>Asked why they have never moved the opening time, Jo Hollins said the night shift at the mill finishes at four. “They were our first customers. They still are.”</p>",
+          "image_credit": "Photo: Ana Ruiz",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "Two ovens, one family and a queue that starts before the first bus.",
+        "image": "as_bakery"
+      }
+    },
+    "/news/the-last-lighthouse-keeper-on-the-east-coast-hands-over-the-keys": {
+      "id": "pg_the_last_lighthouse_keeper_on_the_east_coast_hands_over_the_keys",
+      "template": "post",
+      "title": "The last lighthouse keeper on the east coast hands over the keys",
+      "params": {
+        "handle": "the-last-lighthouse-keeper-on-the-east-coast-hands-over-the-keys"
+      },
+      "entry": {
+        "id": "en_the_last_lighthouse_keeper_on_the_east_coast_hands_over_the_keys",
+        "handle": "the-last-lighthouse-keeper-on-the-east-coast-hands-over-the-keys",
+        "title": "The last lighthouse keeper on the east coast hands over the keys",
+        "fields": {
+          "topic": "Culture",
+          "date": "2026-10-29",
+          "author": "Tom Reilly",
+          "reading_minutes": 8,
+          "standfirst": "Forty-one years, three storms that made the news and one that did not.",
+          "image": "as_coast",
+          "image_alt": "The white lighthouse on the point, waves breaking below it",
+          "body": "<p>Ellen Marsh climbed the 114 steps of the point lighthouse for the last time on Tuesday morning. The light has been automatic since 1998, but someone still had to keep it, and for forty-one years that was her.</p><p>She remembers three storms that made the national news, and one in 1987 that did not, when the lamp failed at two in the morning and she turned it by hand until dawn.</p><p>The keys go to the trust that now owns the tower. Marsh is moving to a bungalow inland. “I want to sleep through a gale,” she said.</p>",
+          "image_credit": "Photo: Tom Reilly",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "Forty-one years, three storms that made the news and one that did not.",
+        "image": "as_coast"
+      }
+    },
+    "/news/12-of-the-best-films-to-watch-in-november": {
+      "id": "pg_12_of_the_best_films_to_watch_in_november",
+      "template": "post",
+      "title": "12 of the best films to watch in November",
+      "params": {
+        "handle": "12-of-the-best-films-to-watch-in-november"
+      },
+      "entry": {
+        "id": "en_12_of_the_best_films_to_watch_in_november",
+        "handle": "12-of-the-best-films-to-watch-in-november",
+        "title": "12 of the best films to watch in November",
+        "fields": {
+          "topic": "Culture",
+          "date": "2026-10-29",
+          "author": "Sam Okafor",
+          "reading_minutes": 6,
+          "standfirst": "From the festival winner opening at the old Regal to two reissues worth the drive, the films to see before the year turns.",
+          "image": "as_screen",
+          "image_alt": "Rows of red seats in the old Regal cinema",
+          "body": "<p>The Regal opens this year’s festival winner on the 14th, a quiet film about a lock keeper that won the audience prize as well as the jury’s.</p><p>Two restorations are worth the drive to the city: a 1950s thriller with a new score, and a documentary about the last steam trains, shot partly on our own branch line.</p>",
+          "image_credit": "Photo: Sam Okafor",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "From the festival winner opening at the old Regal to two reissues worth the drive, the films to see before the year turns.",
+        "image": "as_screen"
+      }
+    },
+    "/news/12-of-the-best-tv-shows-to-watch-this-november": {
+      "id": "pg_12_of_the_best_tv_shows_to_watch_this_november",
+      "template": "post",
+      "title": "12 of the best TV shows to watch this November",
+      "params": {
+        "handle": "12-of-the-best-tv-shows-to-watch-this-november"
+      },
+      "entry": {
+        "id": "en_12_of_the_best_tv_shows_to_watch_this_november",
+        "handle": "12-of-the-best-tv-shows-to-watch-this-november",
+        "title": "12 of the best TV shows to watch this November",
+        "fields": {
+          "topic": "Culture",
+          "date": "2026-10-29",
+          "author": "Ana Ruiz",
+          "reading_minutes": 6,
+          "standfirst": "A heist in the fog, a slow-burn courtroom drama and the comedy everyone at the office is quoting. Our critics pick the month.",
+          "image": "as_screen",
+          "image_alt": "The lit marquee of the old Regal cinema at night",
+          "body": "<p>November is the month the schedules fill up. Our critics have watched the first episodes so you do not have to, and picked the twelve worth your evenings.</p><p>At the top of the list is a six-part heist set on a fog-bound island, followed by a courtroom drama that takes three episodes to get going and is worth every minute of them.</p>",
+          "image_credit": "Photo: Ana Ruiz",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "A heist in the fog, a slow-burn courtroom drama and the comedy everyone at the office is quoting. Our critics pick the month.",
+        "image": "as_screen"
+      }
+    },
+    "/news/why-are-so-many-thai-restaurants-hidden-in-london-pubs": {
+      "id": "pg_why_are_so_many_thai_restaurants_hidden_in_london_pubs",
+      "template": "post",
+      "title": "Why are so many Thai restaurants hidden in London pubs?",
+      "params": {
+        "handle": "why-are-so-many-thai-restaurants-hidden-in-london-pubs"
+      },
+      "entry": {
+        "id": "en_why_are_so_many_thai_restaurants_hidden_in_london_pubs",
+        "handle": "why-are-so-many-thai-restaurants-hidden-in-london-pubs",
+        "title": "Why are so many Thai restaurants hidden in London pubs?",
+        "fields": {
+          "topic": "Culture",
+          "date": "2026-10-28",
+          "author": "Mei Lin",
+          "reading_minutes": 8,
+          "standfirst": "Behind the bar of a hundred old pubs, a small kitchen turns out some of the city’s best green curry. How a licensing quirk of the 1980s built a tradition.",
+          "image": "as_cafe",
+          "image_alt": "A pub kitchen hatch with a handwritten Thai menu above it",
+          "body": "<p>Walk into an old pub in London and there is a good chance the kitchen at the back is Thai. There are more than a hundred of them, and most began the same way.</p><p>In the 1980s, landlords who had lost their food trade could let their kitchens to a cook without a second licence. Thai families, many newly arrived, took them on, and the arrangement stuck.</p><p>Our travel writer spent a week eating her way round twelve of them. The best green curry, she reports, was served under a dartboard.</p>",
+          "image_credit": "Photo: Mei Lin",
+          "updated": "",
+          "key_facts": ""
+        }
+      },
+      "seo": {
+        "description": "Behind the bar of a hundred old pubs, a small kitchen turns out some of the city’s best green curry. How a licensing quirk of the 1980s built a tradition.",
+        "image": "as_cafe"
+      }
+    },
+    "/about": {
+      "id": "pg_about",
+      "template": "page.about",
+      "title": "About the Ledger",
+      "seo": {
+        "description": "News for the valley since 1962.",
+        "image": "as_newsroom"
+      }
+    },
+    "/contact": {
+      "id": "pg_contact",
+      "template": "page.contact",
+      "title": "Send us a story",
+      "seo": {
+        "description": "Tips, corrections and letters to the newsroom."
+      }
+    },
+    "/privacy": {
+      "id": "pg_privacy",
+      "template": "page",
+      "title": "Privacy",
+      "content": "<p>The Daily Ledger keeps what you send through the contact and newsletter forms only to answer you or to send the morning letter. We never sell or share your address.</p><p>Your browser remembers three things on this device: that you have closed the privacy notice, that you have dismissed the announcement bar, and whether you prefer the story list as a grid or a list. None of them leaves your device.</p><p>Write to tips@example.com with any question about your information.</p>",
+      "seo": {
+        "description": "How the Ledger handles messages and reader settings."
+      }
+    }
+  }
+}

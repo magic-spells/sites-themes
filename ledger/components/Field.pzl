@@ -1,0 +1,24 @@
+<!-- component: Field -->
+<!-- Ledger draws its fields the way the design does, with the label as the
+     placeholder, so the visible label is kept for screen readers only.
+     The filled prop puts the field on the scheme's second surface with a hairline
+     border, as the contact form draws it. -->
+{#let fill = filled ? 'bg-scheme-surface border-scheme-rule' : ''}
+<div class={ wrapper_class }>
+  <label class="sr-only" for="field-{ prefix }-{ name }">{ label }</label>
+  {#if type == 'textarea'}
+    <textarea class="sites-input min-h-textarea resize-y { fill }" id="field-{ prefix }-{ name }" name={ name } rows={ rows ?? 4 } maxlength={ maxlength } required={ required } placeholder={ placeholder ?? label } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null }>{ value }</textarea>
+  {:else if type == 'select'}
+    <select class="sites-input { fill }" id="field-{ prefix }-{ name }" name={ name } required={ required } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null }>
+      <option value="">{ label }</option>
+      {#for option in options}<option value={ option } selected={ value == option }>{ option }</option>{/for}
+    </select>
+  {:else if type == 'checkbox'}
+    <input class="size-checkbox accent-scheme-links" id="field-{ prefix }-{ name }" name={ name } type="checkbox" value="on" checked={ value == 'on' } required={ required } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null } />
+  {:else}
+    <!-- A declared form field carries no autocomplete token, so the two that
+         browsers actually fill in are recognized by name here. -->
+    <input class="sites-input { fill }" id="field-{ prefix }-{ name }" name={ name } type={ type ?? 'text' } autocomplete={ autocomplete ?? (type == 'email' ? 'email' : (name == 'name' ? 'name' : 'off')) } maxlength={ maxlength } required={ required } value={ value } placeholder={ placeholder ?? label } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null } />
+  {/if}
+  {#if error}<p class="mt-step-2xs font-mono text-meta text-scheme-error" id="error-{ prefix }-{ name }">{ t('form_field_' + error) }</p>{/if}
+</div>

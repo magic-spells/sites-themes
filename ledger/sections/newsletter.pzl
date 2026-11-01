@@ -1,0 +1,92 @@
+<!-- The morning letter: a kicker, the heading in capitals and a line of text
+     on the left; the email field and the red Sign up button on the right,
+     with the privacy note under them. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-center gap-gap-lg md:grid-cols-2">
+    <div class="grid gap-step-sm">
+      <p class="font-body text-kicker font-semibold text-scheme-links uppercase">{ t('newsletter_kicker') }</p>
+      <h2 class="font-heading text-h2 font-bold text-pretty text-scheme-heading uppercase">{ settings.heading }</h2>
+      {#if settings.text}<p class="text-body-sm text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+    </div>
+    <div class="grid gap-step-sm">
+      <Form handle={ settings.form } class="grid gap-step-sm">
+        {#if form.sent}
+          <p class="text-body-lg font-semibold text-scheme-heading" role="status">{ form.success_message }</p>
+        {:else}
+          <div class="flex flex-wrap items-center gap-step-sm">
+            {#for field in form.fields}
+              <Field name={ field.id } label={ field.label } type={ field.type } autocomplete={ null } rows={ 4 }
+                maxlength={ field.max_length } required={ field.required }
+                options={ field.options } value={ field.value } error={ field.error }
+                placeholder={ settings.placeholder || field.label } prefix={ section.id } wrapper_class="min-w-0 grow basis-60" filled={ false } />
+            {/for}
+            <button class="sites-button sites-button-secondary w-full md:w-auto md:min-w-50" type="submit">{ form.submit_label }</button>
+          </div>
+          {#if form.error}
+            <p class="font-mono text-meta text-scheme-error" role="alert">{ t(form.error == 'expired' ? 'form_field_expired' : 'form_error') }</p>
+          {/if}
+          <noscript><p class="font-mono text-meta text-scheme-meta">{ t('form_requires_javascript') }</p></noscript>
+        {/if}
+      </Form>
+      {#if settings.note}<p class="font-mono text-meta text-pretty text-scheme-meta">{ settings.note }</p>{/if}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Newsletter",
+  "description": "A letter signup with a site-owned form and a short privacy note.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Six stories by seven"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "The morning's six stories in your inbox by seven, every weekday. Free."
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Field placeholder",
+      "default": "you@example.com"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note",
+      "default": "Unsubscribe in one click. We never share your address."
+    },
+    {
+      "type": "form",
+      "id": "form",
+      "label": "Form",
+      "default": "newsletter"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "ink"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "heading": "Six stories by seven",
+        "text": "The morning's six stories in your inbox by seven, every weekday. Free.",
+        "placeholder": "you@example.com",
+        "note": "Unsubscribe in one click. We never share your address.",
+        "form": "newsletter",
+        "color_scheme": "ink"
+      }
+    }
+  ]
+}
+</schema>

@@ -1,0 +1,74 @@
+<!-- A heading and writing in the reading column (or the page column, when
+     wide). With no writing of its own it shows the page's content. -->
+{#if settings.heading || settings.body || page.content}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid { settings.width == 'wide' ? 'max-w-column' : 'max-w-reading' } gap-step-md">
+    {#if settings.heading}<h2 class="font-heading text-h2 font-bold text-pretty text-scheme-heading">{ settings.heading }</h2>{/if}
+    <div class="sites-prose">{ settings.body || page.content }</div>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Rich text",
+  "description": "A heading and writing, falling back to the page content when empty.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": ""
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "",
+      "info": "Leave empty to use the page’s own writing."
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "default": "narrow",
+      "options": [
+        {
+          "value": "narrow",
+          "label": "Narrow"
+        },
+        {
+          "value": "wide",
+          "label": "Wide"
+        }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "heading": "",
+        "body": "",
+        "width": "narrow",
+        "color_scheme": "paper"
+      }
+    },
+    {
+      "name": "Wide",
+      "settings": {
+        "heading": "",
+        "body": "",
+        "width": "wide",
+        "color_scheme": "paper"
+      }
+    }
+  ]
+}
+</schema>

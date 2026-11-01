@@ -1,0 +1,120 @@
+<!-- The masthead is a @magic-spells <sticky-header>: with "Stick to the top"
+     on it follows the scroll and settles shown or hidden; off, it is
+     disabled and sits in the page like any other band. Wordmark left,
+     Subscribe right (Menu below 48rem), the 3px rule, then the topic strip,
+     which scrolls sideways on a phone. No date: pages are cached, and a date
+     there would go stale. -->
+<sticky-header class="block bg-scheme-background text-scheme-foreground" settle-overshoot="0" disabled={ !settings.sticky }>
+  <header class="px-gutter">
+    <div class="mx-auto max-w-column">
+      <div class="flex items-center justify-between gap-step-md border-b-3 border-scheme-rule-strong py-step-md">
+        <a class="flex min-w-0 items-center" href="/">
+          {#if settings.logo}
+            <img class="h-logo w-auto" src="{ image_url(settings.logo, 640) }" alt="{ settings.logo.alt || site.name }" width="{ settings.logo.width }" height="{ settings.logo.height }" />
+          {:else}
+            <span class="font-heading text-h1 font-bold text-scheme-heading uppercase">{ settings.logo_text || site.name }</span>
+          {/if}
+        </a>
+        <div class="flex shrink-0 items-center gap-step-md">
+          {#if settings.show_subscribe && settings.subscribe_label}<a class="sites-button hidden md:inline-flex" href="{ settings.subscribe_href }">{ settings.subscribe_label }</a>{/if}
+          <button class="-my-step-xs py-step-xs font-body text-kicker font-semibold text-scheme-heading uppercase hover:text-scheme-links md:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu">{ t('menu_label') }<span class="sr-only">: { t('open_menu') }</span></button>
+        </div>
+      </div>
+
+      {#if settings.menu.items.length}
+        <!-- The first item is the strip's lead link and takes the link colour.
+             Until the engine has topic archives every topic links to the
+             index, so only the first item matching the page is marked
+             current. Each link carries its own padding, a full-height tap
+             target. Below 48rem the strip runs to the screen edges and
+             scrolls. -->
+        <nav class="{ settings.bordered ? 'border-b border-scheme-rule' : '' }" aria-label="{ t('main_navigation') }">
+          <ul class="-mx-gutter flex scroll-px-gutter gap-step-lg overflow-x-auto px-gutter scrollbar-none md:mx-0 md:px-0">
+            {#for item in settings.menu.items, i}
+              <li class="shrink-0"><a class="block py-step-sm font-body text-kicker font-semibold whitespace-nowrap uppercase decoration-1 underline-offset-4 hover:underline { i == 0 ? 'text-scheme-links' : 'text-scheme-muted hover:text-scheme-heading' }" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active && !contains(item.href, '#') && (settings.menu.items | find('active', true)).label == item.label ? 'page' : null }>{ item.label }</a></li>
+            {/for}
+          </ul>
+        </nav>
+      {/if}
+    </div>
+  </header>
+</sticky-header>
+
+<schema>
+{
+  "name": "Masthead",
+  "description": "Wordmark left, Subscribe right and Menu on mobile, a strong rule and scrolling topic strip. No date.",
+  "settings": [
+    {
+      "type": "image",
+      "id": "logo",
+      "label": "Logo",
+      "info": "Leave empty to use logo text or the site name."
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo text",
+      "default": "",
+      "info": "Leave empty to use the site name."
+    },
+    {
+      "type": "menu",
+      "id": "menu",
+      "label": "Topic strip menu",
+      "info": "Scrollable topic navigation beneath the wordmark."
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky",
+      "label": "Stick to the top of the page",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bordered",
+      "label": "Show a bottom border",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_subscribe",
+      "label": "Show Subscribe",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "subscribe_label",
+      "label": "Subscribe label",
+      "default": "Subscribe"
+    },
+    {
+      "type": "url",
+      "id": "subscribe_href",
+      "label": "Subscribe link",
+      "default": "/#section-s_newsletter"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "logo_text": "",
+        "sticky": true,
+        "bordered": true,
+        "show_subscribe": true,
+        "subscribe_label": "Subscribe",
+        "subscribe_href": "/#section-s_newsletter",
+        "color_scheme": "paper",
+        "menu": "main"
+      }
+    }
+  ]
+}
+</schema>

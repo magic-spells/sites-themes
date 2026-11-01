@@ -1,0 +1,8 @@
+<!-- component: ViewSwitch -->
+<!-- The reader's list / grid switch: two square outline buttons, the chosen
+     one filled. It renders hidden and theme.ts shows it, so without
+     JavaScript the editor's layout stands alone. -->
+<div class="flex gap-gap-sm" role="group" hidden data-view-switch aria-label="{ t('view_label') }">
+  <button class="sites-button sites-button-outline size-icon-button min-h-0 p-0 aria-pressed:bg-scheme-heading aria-pressed:text-scheme-background" type="button" data-view-set="list" aria-pressed="{ view == 'list' ? 'true' : 'false' }"><span class="sites-icon size-icon">{#svg 'icons/list.svg'}</span><span class="sr-only">{ t('view_list') }</span></button>
+  <button class="sites-button sites-button-outline size-icon-button min-h-0 p-0 aria-pressed:bg-scheme-heading aria-pressed:text-scheme-background" type="button" data-view-set="grid" aria-pressed="{ view == 'grid' ? 'true' : 'false' }"><span class="sites-icon size-icon">{#svg 'icons/grid.svg'}</span><span class="sr-only">{ t('view_grid') }</span></button>
+</div>

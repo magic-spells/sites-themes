@@ -1,0 +1,140 @@
+{#let
+  picks = blocks | where('settings.entry')
+  previous_id = 'picks-previous-' + section.id
+  next_id = 'picks-next-' + section.id
+  arrows = settings.show_arrows && picks.length > 1
+  options = {
+    effect: 'carousel',
+    loop: false,
+    slidesPerView: 1,
+    gap: '0.75rem',
+    paddingLeft: '1rem',
+    paddingRight: '0rem',
+    navigation: { showButtons: arrows, previousButtonSelector: '#' + previous_id, nextButtonSelector: '#' + next_id, showPagination: false },
+    breakpoints: {
+      '768': { gap: '1rem', paddingLeft: '1.5rem', paddingRight: '1.5rem' },
+      '1024': { gap: '1rem', paddingLeft: '3rem', paddingRight: '3rem' }
+    }
+  }
+}
+<!-- The editor's picks: a @magic-spells <tarot-carousel>, one slide per pick,
+     each an 18rem story card (theme.ts works out how many fit, so the next
+     one always peeks). The section has no side padding of its own: the rule
+     and the head sit in the gutters, and the track's padding is the gutter on
+     the left and, below 48rem, nothing on the right, so the cards run to the
+     edge of the screen. From 48rem the track sits in the column with both
+     gutters. The arrows in the head drive it at every width (the design shows
+     them at 375 too); a disabled arrow dims its icon and keeps the meta-colour
+     border, 3:1 or more on every scheme. Tarot's paddings above
+     mirror the gutter tokens (1, 1.5 and 3rem). Cards here never reveal on
+     scroll: the carousel moves them. -->
+{#if picks.length}
+<section class="bg-scheme-background py-section text-scheme-foreground" aria-labelledby="picks-heading-{ section.id }">
+  <div class="mx-auto grid max-w-carousel grid-cols-1 gap-step-sm">
+    <div class="px-gutter" aria-hidden="true"><div class="border-t-3 border-scheme-rule-strong"></div></div>
+    <div class="flex items-center justify-between gap-step-md px-gutter pt-step-xs">
+      <h2 class="font-heading text-h4 font-semibold text-scheme-heading uppercase" id="picks-heading-{ section.id }">{ settings.heading }<span class="text-scheme-links" aria-hidden="true"> ›</span></h2>
+      {#if arrows}
+        <div class="flex gap-step-xs">
+          <button class="group sites-icon grid size-icon-button place-items-center rounded-button border border-scheme-meta text-scheme-heading hover:border-scheme-heading disabled:cursor-default disabled:hover:border-scheme-meta" type="button" id="{ previous_id }"><span class="size-icon group-disabled:opacity-40">{#svg 'icons/arrow-left.svg'}</span><span class="sr-only">{ t('previous_pick') }</span></button>
+          <button class="group sites-icon grid size-icon-button place-items-center rounded-button border border-scheme-meta text-scheme-heading hover:border-scheme-heading disabled:cursor-default disabled:hover:border-scheme-meta" type="button" id="{ next_id }"><span class="size-icon group-disabled:opacity-40">{#svg 'icons/arrow-right.svg'}</span><span class="sr-only">{ t('next_pick') }</span></button>
+        </div>
+      {/if}
+    </div>
+    <tarot-carousel class="block min-w-0" data-card="18rem" aria-label="{ settings.heading }">
+      <script type="application/json" data-tarot-options>{ options | json }</script>
+      <tarot-viewport>
+        <tarot-track>
+          {#for block in picks}
+            <tarot-slide data-block={ block.editor_id }>
+              <StoryCard entry={ block.settings.entry } href="{ settings.base_path }/{ block.settings.entry.handle }" heading="h5" wide={ true } kicker={ false } dek={ true } byline={ false } topic={ true } sizes="18rem" reveal={ false } />
+            </tarot-slide>
+          {/for}
+        </tarot-track>
+      </tarot-viewport>
+    </tarot-carousel>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Editor's picks",
+  "description": "Selected stories in a Tarot carousel. On mobile retain the left gutter, remove the right gutter and let the next card peek.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Editor's picks"
+    },
+    {
+      "type": "url",
+      "id": "base_path",
+      "label": "Index path",
+      "default": "/news"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show navigation arrows",
+      "info": "Arrows show at every width beside the heading; on mobile the right edge also bleeds to the viewport so the next card peeks.",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "ink"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pick",
+      "name": "Pick",
+      "settings": [
+        {
+          "type": "entry",
+          "id": "entry",
+          "label": "Story",
+          "info": "Uses posts fields topic, date, author, reading_minutes, standfirst, image, image_alt and body; image_credit, updated and key_facts are optional. Dates are calendar dates, never relative times."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "heading": "Editor's picks",
+        "base_path": "/news",
+        "show_arrows": true,
+        "color_scheme": "ink"
+      },
+      "blocks": [
+        {
+          "type": "pick",
+          "settings": {}
+        },
+        {
+          "type": "pick",
+          "settings": {}
+        },
+        {
+          "type": "pick",
+          "settings": {}
+        },
+        {
+          "type": "pick",
+          "settings": {}
+        },
+        {
+          "type": "pick",
+          "settings": {}
+        }
+      ]
+    }
+  ]
+}
+</schema>

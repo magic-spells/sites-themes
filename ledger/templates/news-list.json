@@ -1,0 +1,56 @@
+{
+  "label": "News",
+  "description": "All stories, up to twelve at a time, and the morning letter.",
+  "sections": [
+    {
+      "id": "s_page_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "chip": "Index",
+        "heading": "All stories",
+        "standfirst": "Every story from the valley, newest first: politics, business, science, culture, weather and opinion, as they happen.",
+        "align": "left",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_index",
+      "type": "story-grid",
+      "preset": "Index",
+      "settings": {
+        "heading": "",
+        "base_path": "/news",
+        "layout": "grid",
+        "show_images": true,
+        "show_toggle": true,
+        "columns": "4",
+        "limit": 12,
+        "offset": 0,
+        "topic": "",
+        "exclude_current": false,
+        "show_count": true,
+        "view_all_label": "",
+        "view_all_href": "",
+        "color_scheme": "paper",
+        "collection": "posts"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Default",
+      "settings": {
+        "heading": "Six stories by seven",
+        "text": "The morning's six stories in your inbox by seven, every weekday. Free.",
+        "placeholder": "you@example.com",
+        "note": "Unsubscribe in one click. We never share your address.",
+        "form": "newsletter",
+        "color_scheme": "ink"
+      },
+      "blocks": []
+    }
+  ]
+}

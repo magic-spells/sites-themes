@@ -1,0 +1,20 @@
+{
+  "sections": [
+    {
+      "id": "sg_header",
+      "type": "masthead",
+      "preset": "Default",
+      "settings": {
+        "logo_text": "",
+        "sticky": true,
+        "bordered": true,
+        "show_subscribe": true,
+        "subscribe_label": "Subscribe",
+        "subscribe_href": "/#section-s_newsletter",
+        "color_scheme": "paper",
+        "menu": "main"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "label": "Home",
+  "description": "The lead, selected stories, weather, features, latest headlines and morning letter.",
+  "sections": [
+    {
+      "id": "s_lead",
+      "type": "lead-story",
+      "preset": "Default",
+      "settings": {
+        "base_path": "/news",
+        "show_image": true,
+        "read_label": "Read the story",
+        "show_rail": true,
+        "rail_limit": 4,
+        "show_rail_rule": true,
+        "color_scheme": "paper",
+        "collection": "posts",
+        "post": "en_valley_rain_arrives_at_four_study_confirms"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_picks",
+      "type": "editors-picks",
+      "preset": "Default",
+      "settings": {
+        "heading": "Editor's picks",
+        "base_path": "/news",
+        "show_arrows": true,
+        "color_scheme": "ink"
+      },
+      "blocks": [
+        {
+          "id": "b_pick_1",
+          "type": "pick",
+          "settings": {
+            "entry": "en_the_last_lighthouse_keeper_on_the_east_coast_hands_over_the_keys"
+          }
+        },
+        {
+          "id": "b_pick_2",
+          "type": "pick",
+          "settings": {
+            "entry": "en_inside_the_bakery_that_has_opened_at_4am_every_day_since_1958"
+          }
+        },
+        {
+          "id": "b_pick_3",
+          "type": "pick",
+          "settings": {
+            "entry": "en_what_a_year_of_tracking_every_bus_in_the_valley_taught_us"
+          }
+        },
+        {
+          "id": "b_pick_4",
+          "type": "pick",
+          "settings": {
+            "entry": "en_the_allotment_waiting_list_is_now_eleven_years_long"
+          }
+        },
+        {
+          "id": "b_pick_5",
+          "type": "pick",
+          "settings": {
+            "entry": "en_a_walk_along_the_old_railway_line_before_it_becomes_a_road"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_weather",
+      "type": "topic-block",
+      "preset": "Columns 3",
+      "settings": {
+        "heading": "Weather",
+        "base_path": "/news",
+        "layout": "grid",
+        "show_images": true,
+        "show_toggle": false,
+        "columns": "3",
+        "limit": 3,
+        "offset": 0,
+        "topic": "Weather",
+        "exclude_current": false,
+        "show_count": true,
+        "view_all_label": "All stories",
+        "view_all_href": "/news",
+        "color_scheme": "paper",
+        "collection": "posts"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_feature",
+      "type": "feature-story",
+      "preset": "Image Left",
+      "settings": {
+        "base_path": "/news",
+        "heading": "Travel",
+        "topic": "",
+        "image_position": "left",
+        "show_image": true,
+        "read_label": "Read the story",
+        "color_scheme": "paper",
+        "collection": "posts",
+        "post": "en_why_are_so_many_thai_restaurants_hidden_in_london_pubs"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_watch",
+      "type": "topic-block",
+      "preset": "Columns 2",
+      "settings": {
+        "heading": "Watch list",
+        "base_path": "/news",
+        "layout": "grid",
+        "show_images": true,
+        "show_toggle": false,
+        "columns": "2",
+        "limit": 2,
+        "offset": 0,
+        "topic": "Culture",
+        "exclude_current": false,
+        "show_count": true,
+        "view_all_label": "All stories",
+        "view_all_href": "/news",
+        "color_scheme": "paper",
+        "collection": "posts"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_latest",
+      "type": "latest-list",
+      "preset": "Default",
+      "settings": {
+        "heading": "Latest",
+        "base_path": "/news",
+        "layout": "list",
+        "show_images": false,
+        "show_toggle": false,
+        "columns": "2",
+        "limit": 5,
+        "offset": 0,
+        "topic": "",
+        "exclude_current": false,
+        "show_count": false,
+        "view_all_label": "",
+        "view_all_href": "",
+        "color_scheme": "slate",
+        "collection": "posts"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Default",
+      "settings": {
+        "heading": "Six stories by seven",
+        "text": "The morning's six stories in your inbox by seven, every weekday. Free.",
+        "placeholder": "you@example.com",
+        "note": "Unsubscribe in one click. We never share your address.",
+        "form": "newsletter",
+        "color_scheme": "ink"
+      },
+      "blocks": []
+    }
+  ]
+}

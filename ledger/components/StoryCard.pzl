@@ -1,0 +1,34 @@
+<!-- component: StoryCard -->
+<!-- The design's _Story Card: a photo well with the credit in its bottom-right
+     corner, the topic kicker, the headline, and then the dek, the byline or
+     the topic as the section asks. The whole card is one link. The well is
+     3:2, or 16:9 (`wide`) in the picks and the two-up block. A story without
+     a picture has no well: it reads as a text brief, its dek (shown even where
+     the section turns deks off) under a hairline rule, and `h-full` keeps it level with its row. The credit
+     sits on a tab of the scheme's background, so it reads over any photo;
+     on a card it is shortened to its "Photo: …" part. `heading` is the
+     headline's size: h5 in the picks, h4 in the grids, h3 two-up. -->
+{#let
+  image = entry.fields.image
+  credit = entry.fields.image_credit
+  short_credit = credit && contains(credit, 'Photo:') ? 'Photo:' + (credit | split('Photo:') | last) : credit
+}
+<article class="h-full { reveal && site.settings.reveal_on_scroll ? 'reveal reveal-fade-up' : '' }" data-reveal-group={ reveal && site.settings.reveal_on_scroll ? 'cards-' + section.id + ':50' : false }>
+  <a class="group grid content-start gap-step-xs" href="{ href }">
+    {#if image}
+    <div class="relative overflow-hidden bg-scheme-surface { wide ? 'aspect-video' : 'aspect-3/2' }">
+      <img class="absolute inset-0 size-full object-cover"
+        src="{ image_url(image, 768) }"
+        srcset="{ image_url(image, 320) } 320w, { image_url(image, 480) } 480w, { image_url(image, 768) } 768w, { image_url(image, 1024) } 1024w, { image_url(image, 1280) } 1280w"
+        sizes="{ sizes }"
+        alt="{ entry.fields.image_alt }" loading="lazy" width="{ image.width }" height="{ image.height }" />
+      {#if short_credit}<p class="absolute right-0 bottom-0 bg-scheme-background px-step-xs py-step-2xs font-mono text-meta text-scheme-meta">{ short_credit }</p>{/if}
+    </div>
+    {/if}
+    {#if kicker && entry.fields.topic}<p class="font-body text-kicker font-semibold text-scheme-links uppercase">{ entry.fields.topic }</p>{/if}
+    <h3 class="font-heading text-scheme-heading text-pretty decoration-1 underline-offset-4 group-hover:underline { heading == 'h3' ? 'text-h3 font-semibold' : heading == 'h5' ? 'text-h5 font-semibold' : 'text-h4 font-semibold' }">{ entry.title }</h3>
+    {#if (dek || !image) && entry.fields.standfirst}<p class="{ heading == 'h5' ? 'text-body-sm' : 'text-body' } text-pretty text-scheme-muted { image ? '' : 'border-t border-scheme-rule pt-step-sm' }">{ entry.fields.standfirst }</p>{/if}
+    {#if byline}<Byline entry={ entry } author={ true } by={ false } read={ false } />{/if}
+    {#if topic && entry.fields.topic}<p class="font-mono text-meta text-scheme-meta">{ entry.fields.topic }</p>{/if}
+  </a>
+</article>

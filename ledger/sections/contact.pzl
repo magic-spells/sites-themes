@@ -61,6 +61,8 @@
 {
   "name": "Contact form",
   "description": "A contact form with optional heading and site contact details.",
+  "kind": "Contact",
+  "icon": "mail",
   "settings": [
     {
       "type": "text",
@@ -101,8 +103,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [

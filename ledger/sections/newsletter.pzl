@@ -37,6 +37,8 @@
 {
   "name": "Newsletter",
   "description": "A letter signup with a site-owned form and a short privacy note.",
+  "kind": "Contact",
+  "icon": "send",
   "settings": [
     {
       "type": "text",

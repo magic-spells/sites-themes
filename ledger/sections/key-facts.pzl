@@ -33,6 +33,8 @@
 {
   "name": "Key facts",
   "description": "One fact per non-empty line of the current story key_facts field. Hidden when empty; slate on the aside, with an unfilled outer wrapper.",
+  "kind": "Content",
+  "icon": "list-checks",
   "settings": [
     {
       "type": "text",

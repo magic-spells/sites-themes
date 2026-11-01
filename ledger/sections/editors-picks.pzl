@@ -61,6 +61,8 @@
 {
   "name": "Editor's picks",
   "description": "Selected stories in a Tarot carousel. On mobile retain the left gutter, remove the right gutter and let the next card peek.",
+  "kind": "Collections",
+  "icon": "gallery-horizontal-end",
   "settings": [
     {
       "type": "text",

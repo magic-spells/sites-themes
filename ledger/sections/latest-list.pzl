@@ -42,6 +42,8 @@
 {
   "name": "Latest list",
   "description": "Latest headlines with calendar dates only; never time of day, relative times or a live clock.",
+  "kind": "Collections",
+  "icon": "clock",
   "settings": [
     {
       "type": "text",

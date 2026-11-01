@@ -1,0 +1,17 @@
+{
+  "themes": [
+    {
+      "name": "company",
+      "label": "Company",
+      "description": "A finished small-business site: hero, features, gallery, testimonials, FAQ, contact and a journal, on three color schemes you can recolor in a click.",
+      "category": "content",
+      "vertical": "Small business",
+      "license": "MIT",
+      "publisher": "Magic Spells",
+      "version": "0.1.0",
+      "zip": "https://github.com/magic-spells/sites-themes/releases/download/company/v0.1.0/company-v0.1.0.zip",
+      "sha256": null,
+      "screenshots": []
+    }
+  ]
+}

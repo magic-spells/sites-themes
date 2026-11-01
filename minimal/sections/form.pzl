@@ -33,12 +33,14 @@
 <schema>
 {
   "name": "Form",
+  "kind": "Contact",
+  "icon": "mail",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Contact us" },
     { "type": "textarea", "id": "text", "label": "Text", "default": "" },
     { "type": "form", "id": "form", "label": "Form", "default": "contact",
       "info": "Pick a site form. Create forms and manage their fields in the Forms panel." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default",
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme",
       "info": "The surface this section is rendered on. Schemes are declared in settings/design.json under schemes." }
   ],
   "presets": [

@@ -15,10 +15,12 @@
 <schema>
 {
   "name": "Hero",
+  "kind": "Hero",
+  "icon": "image",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "A new site" },
     { "type": "textarea", "id": "body", "label": "Body", "default": "Say what this page is for, in one sentence." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default",
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme",
       "info": "The surface this section is rendered on. Schemes are declared in settings/design.json under schemes." }
   ],
   "blocks": [

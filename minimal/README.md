@@ -61,7 +61,7 @@ in the `header-group` and `footer-group` section groups (`data/groups/`), which
 are site-level stacks rendered by the layout's named slots on every page —
 including the not-found page.
 
-The `panel-group` (labelled Panels) is declared and slotted but ships empty, so
+The `panel-group` (labelled Panel) is declared and slotted but ships empty, so
 a drawer or pop-up section added later appears without touching the layout.
 
 ## Forms

@@ -14,9 +14,11 @@
 <schema>
 {
   "name": "Header",
+  "kind": "Header",
+  "icon": "panel-top",
   "settings": [
     { "type": "menu", "id": "menu", "label": "Menu" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default",
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme",
       "info": "The surface this section is rendered on. Schemes are declared in settings/design.json under schemes." }
   ],
   "presets": [

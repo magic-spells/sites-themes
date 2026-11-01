@@ -21,6 +21,8 @@
 <schema>
 {
   "name": "Footer",
+  "kind": "Footer",
+  "icon": "panel-bottom",
   "settings": [
     { "type": "menu", "id": "menu", "label": "Menu" },
     { "type": "text", "id": "copyright", "label": "Copyright", "default": "All rights reserved." },

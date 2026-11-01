@@ -8,9 +8,9 @@
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto flex max-w-reading flex-wrap items-center gap-step-lg">
     {#if portrait}
-      <img class="size-18 shrink-0 rounded-full bg-scheme-surface object-cover" src="{ image_url(portrait, 160, { height: 160 }) }" srcset="{ image_url(portrait, 160, { height: 160 }) } 1x, { image_url(portrait, 320, { height: 320 }) } 2x" alt="{ portrait.alt }" width="72" height="72" loading="lazy" />
+      <img class="size-portrait shrink-0 rounded-full bg-scheme-surface object-cover" src="{ image_url(portrait, 160, { height: 160 }) }" srcset="{ image_url(portrait, 160, { height: 160 }) } 1x, { image_url(portrait, 320, { height: 320 }) } 2x" alt="{ portrait.alt }" width="72" height="72" loading="lazy" />
     {/if}
-    <div class="grid min-w-80 flex-1 gap-step-xs">
+    <div class="grid min-w-bio flex-1 gap-step-xs">
       {#if settings.label}<p class="font-mono text-meta font-medium tracking-meta text-scheme-meta uppercase">{ settings.label }</p>{/if}
       <h2 class="font-heading text-h3 font-medium text-scheme-heading">{ name }</h2>
       {#if bio}<p class="text-body text-pretty">{ bio }</p>{/if}

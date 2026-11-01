@@ -39,10 +39,10 @@
             placeholder={ field.label } prefix={ section.id } wrapper_class="" />
         {/for}
         {#if form.error}
-          <p class="font-mono text-meta tracking-caption text-error-fg" role="alert">{ t(form.error == 'expired' ? 'form_field_expired' : 'form_error') }</p>
+          <p class="font-mono text-meta tracking-caption text-scheme-error" role="alert">{ t(form.error == 'expired' ? 'form_field_expired' : 'form_error') }</p>
         {/if}
         <div class="grid justify-items-start gap-step-xs">
-          <button class="sites-button min-w-35" type="submit">{ form.submit_label }</button>
+          <button class="sites-button min-w-button" type="submit">{ form.submit_label }</button>
           <noscript><p class="font-mono text-meta tracking-caption text-scheme-meta">{ t('form_requires_javascript') }</p></noscript>
           {#if settings.note}<p class="font-mono text-meta tracking-caption text-scheme-meta">{ settings.note }</p>{/if}
         </div>

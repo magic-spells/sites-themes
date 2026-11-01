@@ -56,19 +56,17 @@ document.addEventListener('click', (event) => {
 	);
 });
 
-// The notice shows itself without a backdrop, once per visitor and key. Both
-// of its buttons close it, and either choice is remembered.
-for (const dialog of document.querySelectorAll<HTMLDialogElement>('dialog[data-notice]')) {
-	const key = dialog.getAttribute('data-notice') || dialog.id;
+// The notice is a plain region that renders hidden. It shows once per
+// visitor and key, without taking focus or scroll from the page; both of its
+// buttons hide it, and either choice is remembered.
+for (const notice of document.querySelectorAll<HTMLElement>('[data-notice]')) {
+	const key = notice.getAttribute('data-notice') || notice.id;
 	if (dismissed(key)) continue;
-	dialog.show();
-	// show() focuses the first button; a notice that appears on load must not
-	// take focus or scroll from the page the visitor came to read.
-	if (dialog.contains(document.activeElement)) (document.activeElement as HTMLElement).blur();
-	for (const button of dialog.querySelectorAll('[data-notice-close]')) {
+	notice.hidden = false;
+	for (const button of notice.querySelectorAll('[data-notice-close]')) {
 		button.addEventListener('click', () => {
 			remember(key);
-			dialog.close(button.getAttribute('data-notice-close') ?? '');
+			notice.hidden = true;
 		});
 	}
 }

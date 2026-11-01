@@ -45,6 +45,18 @@
       ]
     },
     {
+      "name": "Journal",
+      "settings": [
+        {
+          "type": "text",
+          "id": "posts_path",
+          "label": "Journal path",
+          "default": "/journal",
+          "info": "Where the posts live. The not-found page links its recent posts to this path plus each handle."
+        }
+      ]
+    },
+    {
       "name": "Writer",
       "settings": [
         {

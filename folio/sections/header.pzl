@@ -8,7 +8,7 @@
     <div class="mx-auto flex max-w-column items-center justify-between gap-step-md">
       <a class="flex items-center" href="/">
         {#if settings.logo}
-          <img class="h-9 w-auto" src="{ image_url(settings.logo, 320) }" alt="{ settings.logo.alt || site.name }" width="{ settings.logo.width }" height="{ settings.logo.height }" />
+          <img class="h-logo w-auto" src="{ image_url(settings.logo, 320) }" alt="{ settings.logo.alt || site.name }" width="{ settings.logo.width }" height="{ settings.logo.height }" />
         {:else}
           <span class="font-heading text-h3 font-medium text-scheme-heading">{ settings.logo_text || site.name }</span>
         {/if}
@@ -49,7 +49,8 @@
     {
       "type": "menu",
       "id": "menu",
-      "label": "Menu"
+      "label": "Menu",
+      "info": "The last item is set in the link colour, as the menu's call to action."
     },
     {
       "type": "checkbox",

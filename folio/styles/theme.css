@@ -70,6 +70,24 @@
 	--color-scheme-meta: var(--sites-scheme-icons);
 	--color-scheme-rule: var(--sites-scheme-chip-border);
 	--color-scheme-surface: var(--sites-scheme-chip-background);
+
+	/* Errors take the palette's error red on the light schemes and a lighter
+	   red on Ink, where that red falls to 2.6:1. The value is set per scheme
+	   class below. */
+	--color-scheme-error: var(--folio-scheme-error);
+}
+
+/* The error colour per scheme. Paper 5.70:1, Cream 5.12:1, Tint 4.88:1 with
+   the palette red; Ink 5.92:1 with #E5786E. */
+:root,
+.sites-scheme-paper,
+.sites-scheme-cream,
+.sites-scheme-tint {
+	--folio-scheme-error: var(--sites-color-error-fg);
+}
+
+.sites-scheme-ink {
+	--folio-scheme-error: #e5786e;
 }
 
 @theme {
@@ -162,13 +180,33 @@
 	--spacing-step-xl: var(--folio-step-xl);
 	--spacing-step-2xl: var(--folio-step-2xl);
 
-	/* Measures: the page column, the reading column, a narrow card, the image
-	   well beside text, and the mobile drawer. */
+	/* Measures: the page column, the reading column, a display heading or
+	   quote inside the reading column (the design's line breaks), a narrow
+	   card, the image well beside text, and the mobile drawer. */
 	--container-column: 70rem;
 	--container-reading: 45rem;
+	--container-heading: 41.25rem;
 	--container-narrow: 25rem;
 	--container-well: 30rem;
 	--container-drawer: 23.4375rem;
+
+	/* Flex measures: the footer's brand column and its menu columns, the
+	   writer's bio beside the portrait, a notice or form button, and the
+	   newsletter's email field and subscribe button. */
+	--container-footer-brand: 18rem;
+	--container-footer-menu: 10.5rem;
+	--container-bio: 20rem;
+	--container-button: 8.75rem;
+	--container-field: 17.5rem;
+	--container-subscribe: 12rem;
+
+	/* Fixed sizes: an input's height (the newsletter button matches it at
+	   desktop), a textarea's minimum, the header logo and the writer
+	   portrait. */
+	--spacing-control: 3.375rem;
+	--spacing-textarea: 9rem;
+	--spacing-logo: 2.25rem;
+	--spacing-portrait: 4.5rem;
 }
 
 /* Desktop takes each scale step itself; mobile and tablet take the design
@@ -307,6 +345,9 @@ html {
 /* The component classes the sections share, built only from tokens. They
    read the scheme properties, so a button inside the ink band inverts. */
 @layer components {
+	/* The `- 1.5px` in the button and input padding takes the 1.5px border
+	   out of the box, so the outer size stays on the rem grid. It is an
+	   accepted px value, like the border itself. */
 	.sites-button {
 		display: inline-flex;
 		align-items: center;
@@ -360,7 +401,7 @@ html {
 	.sites-input {
 		display: block;
 		width: 100%;
-		min-height: 3.375rem;
+		min-height: var(--spacing-control);
 		padding: calc(var(--sites-spacing-sm) - 1.5px) var(--sites-spacing-sm);
 		border: 1.5px solid var(--sites-scheme-input-border);
 		border-radius: var(--sites-input-radius);
@@ -453,15 +494,34 @@ html {
 		padding-inline-start: 1.25em;
 	}
 
+	/* Bullets hang at the column edge, as the design sets them: the dot sits
+	   flush left in the list's indent and the item text starts past it. A
+	   ::marker cannot be placed, so the dot is drawn and the marker made
+	   clear; list-style stays on so the list keeps its list semantics. */
 	.sites-prose ul {
 		list-style: disc;
+	}
+
+	.sites-prose ul > li::marker {
+		color: transparent;
+	}
+
+	.sites-prose ul > li {
+		position: relative;
+	}
+
+	.sites-prose ul > li::before {
+		position: absolute;
+		inset-inline-start: -1.25em;
+		color: var(--sites-scheme-links);
+		content: "\2022";
 	}
 
 	.sites-prose ol {
 		list-style: decimal;
 	}
 
-	.sites-prose li::marker {
+	.sites-prose ol > li::marker {
 		color: var(--sites-scheme-links);
 	}
 
@@ -529,8 +589,8 @@ body:has([data-bare]) [data-group] {
 	display: contents;
 }
 
-/* The notice is a native non-modal dialog; reset the user-agent box so
-   utilities place it. */
+/* The mobile menu's <dialog> inside <dialog-panel>: reset the user-agent
+   box so utilities place it. */
 @layer base {
 	dialog {
 		border: 0;
@@ -540,7 +600,7 @@ body:has([data-bare]) [data-group] {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-	dialog[data-notice][open] {
+	[data-notice]:not([hidden]) {
 		animation: folio-notice-in 220ms ease-out both;
 	}
 }

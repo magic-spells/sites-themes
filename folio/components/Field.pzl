@@ -5,7 +5,7 @@
 <div class={ wrapper_class }>
   <label class="sr-only" for="field-{ prefix }-{ name }">{ label }</label>
   {#if type == 'textarea'}
-    <textarea class="sites-input min-h-36 resize-y" id="field-{ prefix }-{ name }" name={ name } rows={ rows ?? 4 } maxlength={ maxlength } required={ required } placeholder={ placeholder ?? label } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null }>{ value }</textarea>
+    <textarea class="sites-input min-h-textarea resize-y" id="field-{ prefix }-{ name }" name={ name } rows={ rows ?? 4 } maxlength={ maxlength } required={ required } placeholder={ placeholder ?? label } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null }>{ value }</textarea>
   {:else if type == 'select'}
     <select class="sites-input" id="field-{ prefix }-{ name }" name={ name } required={ required } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null }>
       <option value="">{ label }</option>
@@ -18,5 +18,5 @@
          browsers actually fill in are recognized by name here. -->
     <input class="sites-input" id="field-{ prefix }-{ name }" name={ name } type={ type ?? 'text' } autocomplete={ autocomplete ?? (type == 'email' ? 'email' : (name == 'name' ? 'name' : 'off')) } maxlength={ maxlength } required={ required } value={ value } placeholder={ placeholder ?? label } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null } />
   {/if}
-  {#if error}<p class="mt-step-2xs font-mono text-meta tracking-caption text-error-fg" id="error-{ prefix }-{ name }">{ t('form_field_' + error) }</p>{/if}
+  {#if error}<p class="mt-step-2xs font-mono text-meta tracking-caption text-scheme-error" id="error-{ prefix }-{ name }">{ t('form_field_' + error) }</p>{/if}
 </div>

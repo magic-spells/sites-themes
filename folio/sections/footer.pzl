@@ -1,14 +1,14 @@
 <footer class="border-t border-scheme-rule bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column gap-step-xl">
     <div class="flex flex-wrap justify-between gap-x-step-lg gap-y-step-xl">
-      <div class="grid max-w-narrow flex-1 basis-72 content-start gap-step-sm">
+      <div class="grid max-w-narrow flex-1 basis-footer-brand content-start gap-step-sm">
         <a class="font-heading text-h3 font-medium text-scheme-heading" href="/">{ site.name }</a>
         {#if site.settings.tagline}<p class="text-body text-pretty text-scheme-muted">{ site.settings.tagline }</p>{/if}
       </div>
       <div class="grid w-full grid-cols-2 gap-step-lg md:flex md:w-auto">
         {#for menu in [settings.menu_primary, settings.menu_secondary]}
           {#if menu.items.length}
-            <nav class="grid content-start gap-step-xs md:min-w-42" aria-label="{ menu.title }">
+            <nav class="grid content-start gap-step-xs md:min-w-footer-menu" aria-label="{ menu.title }">
               <h2 class="font-mono text-meta font-medium tracking-meta text-scheme-meta uppercase">{ menu.title }</h2>
               <ul class="grid gap-step-xs">
                 {#for item in menu.items}
@@ -26,7 +26,7 @@
       {#if blocks.length}
         <ul class="flex flex-wrap justify-end text-right" aria-label="{ t('social_links') }">
           {#for block in blocks, i}
-            <li data-block={ block.editor_id }>{#if i > 0}<span class="whitespace-pre" aria-hidden="true"> · </span>{/if}<a class="hover:text-scheme-links" href="{ block.settings.url }" rel="noopener">{ block.settings.label }</a></li>
+            <li data-block={ block.editor_id }>{#if i > 0}<span class="whitespace-pre" aria-hidden="true"> · </span>{/if}<a class="hover:text-scheme-links" href="{ block.settings.url }">{ block.settings.label }</a></li>
           {/for}
         </ul>
       {/if}

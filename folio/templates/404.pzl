@@ -16,11 +16,11 @@
   <div class="mx-auto grid max-w-column gap-step-md">
     <h2 class="font-mono text-meta font-medium tracking-meta text-scheme-meta uppercase">{ t('recent_posts') }</h2>
     <ul class="border-t border-scheme-rule">
-      {#for entry in posts}<PostRow entry={ entry } href="/journal/{ entry.handle }" />{/for}
+      {#for entry in posts}<PostRow entry={ entry } href="{ site.settings.posts_path }/{ entry.handle }" />{/for}
     </ul>
     <div class="flex flex-wrap items-center justify-between gap-step-sm">
       <p class="font-mono text-meta tracking-caption text-scheme-meta">{ t('post_count', { shown: posts.length, total: sorted.length }) }</p>
-      <a class="border-b border-scheme-links pb-step-2xs font-mono text-meta font-medium tracking-meta text-scheme-links uppercase hover:border-scheme-heading hover:text-scheme-heading" href="/journal">{ t('view_all_posts') }</a>
+      <a class="border-b border-scheme-links pb-step-2xs font-mono text-meta font-medium tracking-meta text-scheme-links uppercase hover:border-scheme-heading hover:text-scheme-heading" href="{ site.settings.posts_path }">{ t('view_all_posts') }</a>
     </div>
   </div>
 </section>

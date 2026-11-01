@@ -8,7 +8,7 @@ The fixtures are an invented walking journal, **The Slow Mile**, so `sites dev` 
 essays, an about page and a contact form instead of placeholder text.
 
 ```
-theme.json          template roles, 3 section groups, Brand, Writer and Contact settings
+theme.json          template roles, 3 section groups, Brand, Journal, Writer and Contact settings
 design.json         every design token, 4 color schemes and 3 suggested palettes
 layouts/default.pzl the <html> document: SEO, Open Graph (article dates on posts), skip link, five slots
 templates/          home.json, blog-list.json, post.json, page.json (+ page.about, page.contact),
@@ -17,8 +17,9 @@ groups/             header-group.json, footer-group.json, panel-group.json
 sections/           16, each with a full <schema>
 components/         Button, Field, Chip, Dateline, PostDate, PostRow, PostCard
 styles/theme.css    the Tailwind entry: @theme maps --sites-* tokens and Folio's role sizes
-scripts/theme.ts    the browser JavaScript: mobile menu, sticky header, cookie notice, announcement
+scripts/theme.ts    the browser JavaScript: mobile menu, sticky header, notice, announcement
 scripts/vendor/     @magic-spells/dialog-panel 2.0.3 and sticky-header 0.2.0, copied from dist
+styles/vendor/      the same two components' stylesheets, copied from dist
 assets/             Newsreader (OFL, see OFL-Newsreader.txt), icons and placeholder artwork
 locales/en.json     the strings the `t` function reads
 sites.fixtures.json The Slow Mile: pages, menus, forms and 13 posts

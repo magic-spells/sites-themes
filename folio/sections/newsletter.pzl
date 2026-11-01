@@ -14,12 +14,12 @@
               <Field name={ field.id } label={ field.label } type={ field.type } autocomplete={ null } rows={ 4 }
                 maxlength={ field.max_length } required={ field.required }
                 options={ field.options } value={ field.value } error={ field.error }
-                placeholder={ settings.placeholder || field.label } prefix={ section.id } wrapper_class="grow basis-70" />
+                placeholder={ settings.placeholder || field.label } prefix={ section.id } wrapper_class="grow basis-field" />
             {/for}
-            <button class="sites-button grow basis-48 lg:min-h-13.5" type="submit">{ form.submit_label }</button>
+            <button class="sites-button grow basis-subscribe lg:min-h-control" type="submit">{ form.submit_label }</button>
           </div>
           {#if form.error}
-            <p class="font-mono text-meta tracking-caption text-error-fg" role="alert">{ t(form.error == 'expired' ? 'form_field_expired' : 'form_error') }</p>
+            <p class="font-mono text-meta tracking-caption text-scheme-error" role="alert">{ t(form.error == 'expired' ? 'form_field_expired' : 'form_error') }</p>
           {/if}
           <noscript><p class="font-mono text-meta tracking-caption text-scheme-meta">{ t('form_requires_javascript') }</p></noscript>
         {/if}

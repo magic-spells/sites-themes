@@ -1,0 +1,56 @@
+{
+  "themes": [
+    {
+      "name": "company",
+      "label": "Company",
+      "description": "A finished small-business site: hero, features, gallery, testimonials, FAQ, contact and a journal, on three color schemes you can recolor in a click.",
+      "category": "content",
+      "vertical": "Small business",
+      "license": "MIT",
+      "publisher": "Magic Spells",
+      "version": "0.1.0",
+      "zip": "https://github.com/magic-spells/sites-themes/releases/download/company/v0.1.0/company-v0.1.0.zip",
+      "sha256": null,
+      "screenshots": []
+    },
+    {
+      "name": "folio",
+      "label": "Folio",
+      "description": "A journal for one writer: posts in a list or a grid, an about page, a contact page and a privacy page.",
+      "category": "content",
+      "vertical": "Journal",
+      "license": "MIT",
+      "publisher": "Magic Spells",
+      "version": "0.1.0",
+      "zip": "https://github.com/magic-spells/sites-themes/releases/download/folio/v0.1.0/folio-v0.1.0.zip",
+      "sha256": null,
+      "screenshots": []
+    },
+    {
+      "name": "ledger",
+      "label": "Ledger",
+      "description": "A news site: lead story, latest list, story grids, topic blocks, and articles with key facts and author cards.",
+      "category": "content",
+      "vertical": "News",
+      "license": "MIT",
+      "publisher": "Magic Spells",
+      "version": "0.1.0",
+      "zip": "https://github.com/magic-spells/sites-themes/releases/download/ledger/v0.1.0/ledger-v0.1.0.zip",
+      "sha256": null,
+      "screenshots": []
+    },
+    {
+      "name": "darkroom",
+      "label": "Darkroom",
+      "description": "A photographer's portfolio on a near-black ground: series of photographs, carousels, grids and a lightbox, services, prints and packages, and a contact form.",
+      "category": "content",
+      "vertical": "Photography",
+      "license": "MIT",
+      "publisher": "Magic Spells",
+      "version": "0.1.0",
+      "zip": "https://github.com/magic-spells/sites-themes/releases/download/darkroom/v0.1.0/darkroom-v0.1.0.zip",
+      "sha256": null,
+      "screenshots": []
+    }
+  ]
+}

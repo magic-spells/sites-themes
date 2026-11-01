@@ -7,6 +7,8 @@ complete theme: the same files a site's draft theme starts from.
 |---|---|
 | [`company/`](company/) | A finished small-business site: hero, features, gallery, testimonials, FAQ, contact and a journal, on three color schemes. |
 | [`minimal/`](minimal/) | A clean single-column site with a header, footer, hero and rich text: the conventions with nothing to undo. |
+| [`folio/`](folio/) | A journal for one writer: posts in a list or a grid, an about page, a contact page and a privacy page. |
+| [`ledger/`](ledger/) | A news site: lead story, latest list, story grids, topic blocks, and articles with key facts and author cards. |
 | [`darkroom/`](darkroom/) | A photographer's portfolio on a near-black ground: series of photographs, carousels, grids and a lightbox, services, prints and packages, and a contact form. |
 
 Each theme's own README explains its files, sections, styling and scripts.
@@ -51,16 +53,18 @@ document disagree, the document wins.
 
 ## Versions
 
-The repo has one version: its tag. A tag `v0.1.0` publishes a GitHub release with
-`sites-themes-v0.1.0.zip` (the whole tree, without `.git` and `.github`) and
-`sites-themes-v0.1.0.sha256`. Sites pins one release by version and SHA-256, downloads that
-zip when it builds, and embeds `company/` and `minimal/` as its starter themes. A change here
-reaches new sites only when Sites moves its pin.
+The repo has no version; each theme has its own, in its `theme.json` and its `CHANGELOG.md`.
+A release is one theme, tagged `<name>/v<version>`: `company/v0.1.0` publishes a GitHub
+release of that name with `company-v0.1.0.zip` (the folder's files, `theme.json` at the zip
+root) and `company-v0.1.0.sha256`. Several themes can be tagged on the same commit; push the tags
+at most three at a time, since GitHub runs no workflow for a push of more than three. Git cannot
+hold a plain tag `company` beside `company/v…`, so a bare theme name is never a tag.
 
-Each theme also keeps its own `version` in `theme.json` and its own `CHANGELOG.md`, for the
-people who copy it. Those move when the theme changes; they are not a second release scheme.
+[`catalog.json`](catalog.json) is what the Sites theme store reads: one entry per theme it
+sells, each naming a released version and that release's zip. `minimal` is not in it; it is
+the engine's scaffold. `scripts/check-catalog.sh` checks the catalog against the theme folders.
 
-A published zip never changes. A mistake is fixed with a new tag.
+A published zip never changes. A mistake is fixed with a new version.
 
 ## Not yet
 

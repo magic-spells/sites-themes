@@ -430,7 +430,7 @@
             "author": "Nell Harker",
             "reading_minutes": 5,
             "standfirst": "A timetable written for one man, and the rest of us riding along.",
-            "image": "as_writer",
+            "image": "as_path",
             "image_alt": "The ferryman waiting at the slipway (placeholder)",
             "body": "<p>The ferry has a timetable of its own, but the ferryman watches the road. If the bus is late he leaves the rope where it is and finishes his tea.</p><p>We wait with him, learning that a connection is sometimes a person rather than a printed time.</p>"
           }
@@ -445,7 +445,7 @@
             "author": "Nell Harker",
             "reading_minutes": 7,
             "standfirst": "The pencil marks of whoever walked it first.",
-            "image": "as_path",
+            "image": "as_cafe",
             "image_alt": "The footpath the borrowed map marks in pencil (placeholder)",
             "body": "<p>The borrowed map is older than several of the gates. Somebody has drawn a short line across one field and put a question mark beside a barn.</p><p>I follow the pencil where it leaves the printed path. It takes me to a dry place to sit.</p>"
           }
@@ -460,7 +460,7 @@
             "author": "Nell Harker",
             "reading_minutes": 4,
             "standfirst": "Blackberries, dust and the long tail of summer.",
-            "image": "as_cafe",
+            "image": "as_valley",
             "image_alt": "Blackberry hedges along the lane in late summer (placeholder)",
             "body": "<p>The blackberries ripen first on the sunny side of the lane. A week later the far side catches up, and the walk home becomes longer in both directions.</p><p>Dust gathers on the lower leaves until the next rain washes the summer from them.</p>"
           }
@@ -475,7 +475,7 @@
             "author": "Nell Harker",
             "reading_minutes": 3,
             "standfirst": "Who Margaret was, as far as the village remembers.",
-            "image": "as_valley",
+            "image": "as_ridge",
             "image_alt": "The bench with a name on it, looking over the valley (placeholder)",
             "body": "<p>The plaque gives a first name and two dates. The people who stop at the bench supply everything else: the garden, the dog, the way she always carried a spare bag.</p><p>By the time I stand up, Margaret has become someone I almost remember.</p>",
             "image_caption": "Margaret’s bench, and her view."
@@ -491,7 +491,7 @@
             "author": "Nell Harker",
             "reading_minutes": 11,
             "standfirst": "Twelve miles of green lane the cattle once kept open.",
-            "image": "as_ridge",
+            "image": "as_weather",
             "image_alt": "The old drove road running along the ridge (placeholder)",
             "body": "<p>The drove road keeps its width even where the traffic has gone. Grass closes over the middle, leaving two tracks that lead between the hedges.</p><h2>Over the ridge</h2><p>It is twelve miles to the next town. There is no need to hurry, and no useful way to take a shortcut.</p>"
           }
@@ -506,7 +506,7 @@
             "author": "Nell Harker",
             "reading_minutes": 6,
             "standfirst": "A wet month, measured in a jam jar on the wall.",
-            "image": "as_weather",
+            "image": "as_path",
             "image_alt": "The rain gauge on the garden wall under a grey sky (placeholder)",
             "body": "<p>The rain gauge is a jam jar fixed to the wall by the back door. A pencil mark records the morning level; the notebook beside it records whether I was surprised.</p><p>This month the measurements have been more consistent than my memory of the weather.</p>"
           }
@@ -521,7 +521,7 @@
             "author": "Nell Harker",
             "reading_minutes": 8,
             "standfirst": "He crosses the square at nine and changes his apron.",
-            "image": "as_writer",
+            "image": "as_cafe",
             "image_alt": "The landlord in the doorway between his two pubs (placeholder)",
             "body": "<p>At nine he locks one door and walks across the square to open the other. His apron changes, but the conversation follows him.</p><p>The two pubs have different windows onto the same town, and that seems reason enough to keep them both.</p>"
           }
@@ -536,7 +536,7 @@
             "author": "Nell Harker",
             "reading_minutes": 5,
             "standfirst": "Light on the ridge until almost eleven.",
-            "image": "as_path",
+            "image": "as_valley",
             "image_alt": "Late light on the path up to the ridge (placeholder)",
             "body": "<p>We stay on the ridge after the path below has become a dark line. There is still light in the western sky and nobody is ready to call it night.</p><p>Almost eleven, somebody says. We begin the slow walk home.</p>"
           }
@@ -714,7 +714,7 @@
           "author": "Nell Harker",
           "reading_minutes": 5,
           "standfirst": "A timetable written for one man, and the rest of us riding along.",
-          "image": "as_writer",
+          "image": "as_path",
           "image_alt": "The ferryman waiting at the slipway (placeholder)",
           "body": "<p>The ferry has a timetable of its own, but the ferryman watches the road. If the bus is late he leaves the rope where it is and finishes his tea.</p><p>We wait with him, learning that a connection is sometimes a person rather than a printed time.</p>"
         }
@@ -740,7 +740,7 @@
           "author": "Nell Harker",
           "reading_minutes": 7,
           "standfirst": "The pencil marks of whoever walked it first.",
-          "image": "as_path",
+          "image": "as_cafe",
           "image_alt": "The footpath the borrowed map marks in pencil (placeholder)",
           "body": "<p>The borrowed map is older than several of the gates. Somebody has drawn a short line across one field and put a question mark beside a barn.</p><p>I follow the pencil where it leaves the printed path. It takes me to a dry place to sit.</p>"
         }
@@ -766,7 +766,7 @@
           "author": "Nell Harker",
           "reading_minutes": 4,
           "standfirst": "Blackberries, dust and the long tail of summer.",
-          "image": "as_cafe",
+          "image": "as_valley",
           "image_alt": "Blackberry hedges along the lane in late summer (placeholder)",
           "body": "<p>The blackberries ripen first on the sunny side of the lane. A week later the far side catches up, and the walk home becomes longer in both directions.</p><p>Dust gathers on the lower leaves until the next rain washes the summer from them.</p>"
         }
@@ -792,7 +792,7 @@
           "author": "Nell Harker",
           "reading_minutes": 3,
           "standfirst": "Who Margaret was, as far as the village remembers.",
-          "image": "as_valley",
+          "image": "as_ridge",
           "image_alt": "The bench with a name on it, looking over the valley (placeholder)",
           "body": "<p>The plaque gives a first name and two dates. The people who stop at the bench supply everything else: the garden, the dog, the way she always carried a spare bag.</p><p>By the time I stand up, Margaret has become someone I almost remember.</p>",
           "image_caption": "Margaret’s bench, and her view."
@@ -819,7 +819,7 @@
           "author": "Nell Harker",
           "reading_minutes": 11,
           "standfirst": "Twelve miles of green lane the cattle once kept open.",
-          "image": "as_ridge",
+          "image": "as_weather",
           "image_alt": "The old drove road running along the ridge (placeholder)",
           "body": "<p>The drove road keeps its width even where the traffic has gone. Grass closes over the middle, leaving two tracks that lead between the hedges.</p><h2>Over the ridge</h2><p>It is twelve miles to the next town. There is no need to hurry, and no useful way to take a shortcut.</p>"
         }
@@ -845,7 +845,7 @@
           "author": "Nell Harker",
           "reading_minutes": 6,
           "standfirst": "A wet month, measured in a jam jar on the wall.",
-          "image": "as_weather",
+          "image": "as_path",
           "image_alt": "The rain gauge on the garden wall under a grey sky (placeholder)",
           "body": "<p>The rain gauge is a jam jar fixed to the wall by the back door. A pencil mark records the morning level; the notebook beside it records whether I was surprised.</p><p>This month the measurements have been more consistent than my memory of the weather.</p>"
         }
@@ -871,7 +871,7 @@
           "author": "Nell Harker",
           "reading_minutes": 8,
           "standfirst": "He crosses the square at nine and changes his apron.",
-          "image": "as_writer",
+          "image": "as_cafe",
           "image_alt": "The landlord in the doorway between his two pubs (placeholder)",
           "body": "<p>At nine he locks one door and walks across the square to open the other. His apron changes, but the conversation follows him.</p><p>The two pubs have different windows onto the same town, and that seems reason enough to keep them both.</p>"
         }
@@ -897,7 +897,7 @@
           "author": "Nell Harker",
           "reading_minutes": 5,
           "standfirst": "Light on the ridge until almost eleven.",
-          "image": "as_path",
+          "image": "as_valley",
           "image_alt": "Late light on the path up to the ridge (placeholder)",
           "body": "<p>We stay on the ridge after the path below has become a dark line. There is still light in the western sky and nobody is ready to call it night.</p><p>Almost eleven, somebody says. We begin the slow walk home.</p>"
         }

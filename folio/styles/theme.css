@@ -14,6 +14,11 @@
 @source "../sections/**/*.pzl";
 @source "../components/**/*.pzl";
 
+/* The post list's two views. A list with the reader's switch carries
+   data-view on its section; each variant hides the view that is not chosen. */
+@custom-variant view-list (&:where([data-view="list"] *));
+@custom-variant view-grid (&:where([data-view="grid"] *));
+
 /* Sites writes the site's design tokens into <head> as --sites-* custom
    properties. Mapping them into Tailwind's token names is the styling
    contract: every utility resolves through a variable at runtime, so changing

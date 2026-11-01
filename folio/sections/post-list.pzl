@@ -8,7 +8,7 @@
   view = settings.layout == 'grid' ? 'grid' : 'list'
   toggle = settings.show_toggle
 }
-<section class="group/view bg-scheme-background px-gutter py-section text-scheme-foreground" data-view={ toggle ? view : false }>
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-view={ toggle ? view : false }>
   <div class="mx-auto grid max-w-column gap-step-md">
     {#if settings.heading || toggle}
       <div class="flex items-center justify-between gap-step-sm">
@@ -25,12 +25,12 @@
       <p class="border-t border-scheme-rule pt-step-md text-body text-scheme-muted">{ t('posts_empty') }</p>
     {:else}
       {#if toggle || view == 'grid'}
-        <ul class="grid md:grid-cols-2 { settings.columns == '2' ? 'gap-space-sm md:gap-space-md' : 'gap-x-space-xs gap-y-step-lg md:gap-x-space-sm lg:grid-cols-3' } group-data-[view=list]/view:hidden" data-grid>
+        <ul class="grid md:grid-cols-2 { settings.columns == '2' ? 'gap-space-sm md:gap-space-md' : 'gap-x-space-xs gap-y-step-lg md:gap-x-space-sm lg:grid-cols-3' } view-list:hidden" data-grid>
           {#for entry in posts}<PostCard entry={ entry } href="{ settings.base_path }/{ entry.handle }" columns={ settings.columns } />{/for}
         </ul>
       {/if}
       {#if toggle || view == 'list'}
-        <ul class="border-t border-scheme-rule group-data-[view=grid]/view:hidden" data-list>
+        <ul class="border-t border-scheme-rule view-grid:hidden" data-list>
           {#for entry in posts}<PostRow entry={ entry } href="{ settings.base_path }/{ entry.handle }" image={ settings.show_images } />{/for}
         </ul>
       {/if}

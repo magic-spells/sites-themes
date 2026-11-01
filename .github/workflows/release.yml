@@ -64,9 +64,10 @@ jobs:
           # git archive takes exactly the committed tree, so nothing a local
           # install or build left behind can reach the zip. HEAD:<name> is the
           # folder's own tree, so theme.json lands at the zip root. A tree has
-          # no date of its own: --mtime pins the commit's, so the same commit
-          # always gives the same bytes and the same hash.
-          git archive --format=zip --mtime="$(git log -1 --format=%cI HEAD)" \
+          # no date of its own: --mtime pins the commit's, and zip entry times
+          # are local time, so TZ=UTC too; then the same commit always gives
+          # the same bytes and the same hash, here or on a laptop.
+          TZ=UTC git archive --format=zip --mtime="$(git log -1 --format=%cI HEAD)" \
             -o "$RUNNER_TEMP/$file.zip" "HEAD:$NAME"
           (cd "$RUNNER_TEMP" && sha256sum "$file.zip" | cut -d ' ' -f 1 > "$file.sha256")
           # The release notes are this version's section of the theme's changelog.

@@ -53,7 +53,8 @@ document disagree, the document wins.
 The repo has no version; each theme has its own, in its `theme.json` and its `CHANGELOG.md`.
 A release is one theme, tagged `<name>/v<version>`: `company/v0.1.0` publishes a GitHub
 release of that name with `company-v0.1.0.zip` (the folder's files, `theme.json` at the zip
-root) and `company-v0.1.0.sha256`. Several themes can be tagged on the same commit. Git cannot
+root) and `company-v0.1.0.sha256`. Several themes can be tagged on the same commit; push the tags
+at most three at a time, since GitHub runs no workflow for a push of more than three. Git cannot
 hold a plain tag `company` beside `company/v…`, so a bare theme name is never a tag.
 
 [`catalog.json`](catalog.json) is what the Sites theme store reads: one entry per theme it

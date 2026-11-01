@@ -20,9 +20,12 @@ if ! jq -e '.themes | type == "array"' "$catalog" >/dev/null 2>&1; then
 fi
 
 dupes=$(jq -r '[.themes[].name] | group_by(.) | map(select(length > 1) | .[0]) | .[]' "$catalog")
-for d in $dupes; do
-  problem "$catalog" "theme $d is listed more than once"
-done
+if [ -n "$dupes" ]; then
+  printf '%s\n' "$dupes" | while IFS= read -r d; do
+    echo "$catalog: theme $d is listed more than once" >&2
+  done
+  fail=1
+fi
 
 count=$(jq '.themes | length' "$catalog")
 i=0

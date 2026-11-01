@@ -1,0 +1,7 @@
+<!-- component: DietaryLegend -->
+<!-- The six dietary codes and what each means, under a menu. -->
+<dl class="flex flex-wrap gap-x-step-lg gap-y-step-sm">
+  {#for code in ['V', 'VG', 'GF', 'DF', 'N', 'HOT']}
+    <div class="flex items-center gap-step-xs"><dt class="rounded-sm bg-scheme-surface-2 px-step-xs py-step-2xs font-mono text-code font-medium tracking-code text-scheme-foreground">{ code }</dt><dd class="font-mono text-code font-medium tracking-code text-scheme-meta uppercase">{ t('dietary.' + code) }</dd></div>
+  {/for}
+</dl>

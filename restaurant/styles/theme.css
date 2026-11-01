@@ -341,14 +341,300 @@ html.reveal-off .reveal:not(.is-revealed) {
 	filter: none;
 }
 
-/* D2 maps the remaining lightbox properties to its chrome. */
+@theme {
+	--color-on-photo: #F1F1EF;
+	--color-backdrop: rgb(31 33 36 / 0.92);
+	--container-circle: 10rem;
+	--container-panel: 35rem;
+	--container-docket: 40rem;
+	--container-menu: 47.5rem;
+	--spacing-chevron: 1rem;
+	--spacing-dot: 0.625rem;
+}
+
+/* The header's Overlay style lies over a page that opens with a Cover hero
+   and is solid everywhere else; the variant reaches the header and all in
+   it only on such a page. */
+@custom-variant overlaid {
+	&:where(body:has(main > [data-section="hero"]:first-of-type [data-layout="cover"]) [data-header-style="overlay"]),
+	&:where(body:has(main > [data-section="hero"]:first-of-type [data-layout="cover"]) [data-header-style="overlay"] *) {
+		@slot;
+	}
+}
+
+/* The slide a carousel shows: tarot marks it aria-current. Before tarot
+   upgrades the first slide stands in for it. */
+@custom-variant slide-current {
+	&:where(tarot-slide[aria-current="true"] *),
+	&:where(tarot-carousel:not(:defined) tarot-slide:first-child *) {
+		@slot;
+	}
+}
+
+/* A docket row, a rail link or a chip theme.ts marks as the current one. */
+@custom-variant current {
+	&[aria-current="true"],
+	&:where([aria-current="true"] *) {
+		@slot;
+	}
+}
+
+/* A strip of chips that scrolls sideways on a phone shows no scrollbar. */
+[data-strip] {
+	scrollbar-width: none;
+}
+
+/* The browser surfaces no utility reaches. */
 :root {
 	font-size: var(--sites-type-base);
-	--tarot-lightbox-backdrop: rgb(31 33 36 / 0.92);
-	--tarot-lightbox-chrome-color: #F1F1EF;
+}
+
+::selection {
+	background: var(--sites-color-brand-accent);
+	color: #FFFFFF;
+}
+
+:focus-visible {
+	outline: 2px solid var(--sites-scheme-links);
+	outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+@layer base {
+	dialog {
+		border: 0;
+		padding: 0;
+		color: inherit;
+	}
+
+	/* A heading a menu link lands on clears the pinned header. */
+	[id] {
+		scroll-margin-top: calc(var(--header-group-height, 0rem) + 4.5rem);
+	}
+}
+
+/* Rich text from the editor carries no classes, so its rhythm is set here. */
+@layer components {
+	.sites-prose {
+		font-size: var(--restaurant-text-body);
+		line-height: 1.5;
+	}
+
+	.sites-prose > * + * {
+		margin-top: var(--restaurant-step-sm);
+	}
+
+	.sites-prose :is(h2, h3, h4) {
+		font-family: var(--sites-font-heading-family), Arial, sans-serif;
+		font-weight: 700;
+		line-height: 1.1;
+		color: var(--sites-scheme-heading);
+	}
+
+	.sites-prose h2 {
+		font-size: var(--restaurant-text-h3);
+	}
+
+	.sites-prose :is(h3, h4) {
+		font-size: var(--restaurant-text-h4);
+	}
+
+	.sites-prose a {
+		color: var(--sites-scheme-links);
+		text-decoration-line: underline;
+		text-underline-offset: 0.2em;
+	}
+
+	.sites-prose :is(ul, ol) {
+		display: grid;
+		gap: var(--restaurant-step-xs);
+		padding-inline-start: 1.25em;
+	}
+
+	.sites-prose ul {
+		list-style: disc;
+	}
+
+	.sites-prose ol {
+		list-style: decimal;
+	}
+}
+
+.sites-icon > svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/* @magic-spells/sticky-header pins the element it is, so it needs the page
+   as its scroll container: display: contents takes the renderer's wrapper
+   out of the way. Switched off (or overlaid) it sits in the page. */
+[data-section="header"]:has(sticky-header) {
+	display: contents;
+}
+
+@layer components {
+	sticky-header[disabled] {
+		position: static;
+		transform: none;
+	}
+
+	sticky-header::before {
+		content: none;
+	}
+}
+
+/* The carousels. Tarot's stylesheet is neutral; these map its properties
+   onto the scheme the carousel sits in. */
+tarot-carousel {
+	--color-pagination-dot: color-mix(in srgb, var(--sites-scheme-foreground) 35%, transparent);
+	--color-pagination-dot-active: var(--sites-scheme-links);
+}
+
+.tarot-dots-list {
+	gap: var(--restaurant-step-xs);
+	margin: 0;
+}
+
+.tarot-dots-button {
+	width: 0.5rem;
+	height: 0.5rem;
+}
+
+/* Before tarot upgrades, or with no JavaScript, its stylesheet hides every
+   slide. A one-up carousel shows its first slide; a card track lays its
+   slides out as a row that scrolls, at about the width tarot will give them. */
+tarot-carousel:not(:defined) tarot-slide:first-child {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+tarot-carousel[data-track]:not(:defined) tarot-track {
+	display: flex;
+	gap: var(--restaurant-gap-lg);
+	overflow-x: auto;
+	padding-inline-start: var(--restaurant-gutter);
+}
+
+tarot-carousel[data-track]:not(:defined) tarot-slide {
+	flex: none;
+	width: var(--track-slide, 76%);
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+[data-track="cards"] { --track-slide: 76%; }
+[data-track="circles"] { --track-slide: 40%; }
+[data-track="promos"] { --track-slide: 86%; }
+[data-track="photos"] { --track-slide: 76%; }
+
+@media (min-width: 48rem) {
+	tarot-carousel[data-track]:not(:defined) tarot-track {
+		padding-inline-start: 0;
+	}
+	[data-track="cards"] { --track-slide: 38%; }
+	[data-track="circles"] { --track-slide: 24%; }
+	[data-track="promos"] { --track-slide: 60%; }
+	[data-track="photos"] { --track-slide: 38%; }
+}
+
+@media (min-width: 64rem) {
+	[data-track="cards"] { --track-slide: 24%; }
+	[data-track="circles"] { --track-slide: 15%; }
+	[data-track="promos"] { --track-slide: 44%; }
+	[data-track="photos"] { --track-slide: 27%; }
+}
+
+/* A photograph's dots and counter sit on the picture: light, the current
+   one solid. */
+[data-on-photo] tarot-carousel,
+tarot-carousel[data-on-photo] {
+	--color-pagination-dot: color-mix(in srgb, var(--color-on-photo) 45%, transparent);
+	--color-pagination-dot-active: var(--color-on-photo);
+}
+
+/* The lightbox is the tarot plugin's overlay, drawn as the lightbox board:
+   the Charcoal backdrop, round surface-2 buttons 1rem in, the counter in
+   the Price mono, the caption in Code. */
+:root {
+	--tarot-lightbox-backdrop: var(--color-backdrop);
+	--tarot-lightbox-chrome-color: var(--color-on-photo);
 	--tarot-lightbox-chrome-size: 2.75rem;
 	--tarot-lightbox-chrome-inset: 1rem;
-	--tarot-lightbox-image-height: calc(100dvh - 6.5rem);
+	--tarot-lightbox-image-height: calc(100dvh - 8rem);
+}
+
+.tarot-lightbox__counter {
+	font-family: var(--sites-font-mono-family), monospace;
+	font-size: var(--restaurant-text-body);
+	font-weight: 500;
+}
+
+.tarot-lightbox__close,
+.tarot-lightbox .tarot-button {
+	background: #1E2023;
+}
+
+.tarot-lightbox__close:hover,
+.tarot-lightbox .tarot-button:hover {
+	background: #2B2E32;
+}
+
+.tarot-lightbox [data-caption] {
+	display: block;
+	margin-top: 1rem;
+	color: #B6B9BE;
+	font-family: var(--sites-font-mono-family), monospace;
+	font-size: var(--restaurant-text-body-xs);
+	font-weight: 500;
+	letter-spacing: 0.06em;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+@media (max-width: 47.99rem) {
+	.tarot-lightbox .tarot-button {
+		display: none;
+	}
+}
+
+/* The sheets: the mobile menu and the booking form rise from the bottom on
+   the scheme's surface over the scheme text at half strength with a small
+   blur. From 48rem the booking sheet is a 35rem column. */
+dialog-panel:has(bottom-sheet) {
+	--bs-panel-background: var(--sites-scheme-input-background);
+	--bs-panel-border-radius: var(--sites-radius-lg);
+	--bs-panel-box-shadow: none;
+	--bs-handle-color: var(--sites-scheme-chip-border);
+	--bs-handle-width: 2.25rem;
+	--bs-handle-height: 0.25rem;
+	--bs-content-padding: var(--restaurant-step-lg);
+	--bs-content-padding-block: 0 var(--restaurant-step-lg);
+	--bs-overlay-background: color-mix(in srgb, var(--sites-scheme-foreground) 50%, transparent);
+	--bs-overlay-blur: 0.25rem;
+}
+
+/* The select lists, drawn on the scheme. */
+select-dropdown {
+	--select-shadow: none;
+	--select-shadow-soft: none;
+	--select-color-text: var(--sites-scheme-input-foreground);
+	--select-color-background: var(--sites-scheme-input-background);
+	--select-color-border: var(--sites-scheme-input-border);
+	--select-color-border-hover: var(--sites-scheme-input-foreground);
+	--select-color-border-dark: var(--sites-scheme-input-foreground);
+	--select-color-primary: var(--sites-scheme-links);
+	--select-color-hover: var(--sites-scheme-chip-background);
+	--select-color-focus: var(--sites-scheme-chip-background);
+	--select-color-selected: var(--sites-scheme-chip-background);
+	display: block;
 }
 
 @media (prefers-reduced-motion: reduce) {

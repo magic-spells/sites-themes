@@ -1,4 +1,44 @@
-<section>Footer</section>
+<!-- The colophon on Charcoal: the wordmark, the address and phone, the
+     service strip in Code; the main and social menus at the right edge; the
+     copyright and the legal menu on the bottom line. -->
+{#let
+  wordmark = site.settings.wordmark || site.name
+  address = site.settings.address | replace('\n', ', ')
+}
+<footer class="border-t border-scheme-rule bg-scheme-background px-gutter py-step-xl text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-step-xl">
+    <div class="flex flex-wrap justify-between gap-step-xl">
+      <div class="grid content-start gap-step-xs">
+        <a class="font-heading text-h4 font-extrabold" href="/">{ wordmark }</a>
+        {#if settings.show_address && (address || site.settings.phone)}
+          <p class="text-body-sm text-scheme-muted">{ address }{#if address && site.settings.phone} · {/if}{#if site.settings.phone}<a class="hover:text-scheme-foreground" href="tel:{ site.settings.phone | replace(' ', '') }">{ site.settings.phone }</a>{/if}</p>
+        {/if}
+        {#if settings.show_service_strip && site.settings.service_strip}<p class="font-mono text-code font-medium tracking-code text-scheme-meta uppercase">{ site.settings.service_strip }</p>{/if}
+      </div>
+      {#if settings.menu_primary.items.length || settings.social.items.length}
+        <div class="flex gap-gap-lg">
+          {#for menu in [settings.menu_primary, settings.social]}
+            {#if menu.items.length}
+              <nav aria-label="{ menu.title }">
+                <ul class="grid gap-step-xs text-body-sm">
+                  {#for item in menu.items}<li><a class="text-scheme-muted hover:text-scheme-foreground" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null }>{ item.label }</a></li>{/for}
+                </ul>
+              </nav>
+            {/if}
+          {/for}
+        </div>
+      {/if}
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-step-md font-mono text-code font-medium tracking-code text-scheme-meta uppercase">
+      <p>{ settings.copyright }</p>
+      {#if settings.menu_secondary.items.length}
+        <ul class="flex flex-wrap gap-step-md" aria-label="{ settings.menu_secondary.title }">
+          {#for item in settings.menu_secondary.items}<li><a class="hover:text-scheme-foreground" href="{ item.href }">{ item.label }</a></li>{/for}
+        </ul>
+      {/if}
+    </div>
+  </div>
+</footer>
 
 <schema>
 {

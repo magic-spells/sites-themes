@@ -1,4 +1,17 @@
-<section>Cookie notice</section>
+<!-- A non-modal region, not a dialog: the page stays usable behind it. It
+     renders hidden; theme.ts shows it once per key, both buttons hide it and
+     the choice is remembered. Full width on a phone, a 25rem card at the
+     bottom right from 48rem. -->
+<section class="fixed inset-x-0 bottom-0 z-40 border-t border-scheme-rule bg-scheme-surface text-scheme-foreground md:inset-x-auto md:right-gutter md:bottom-gutter md:w-drawer md:rounded-lg md:border" id="cookie-notice" data-notice="{ settings.key }" role="region" aria-label="{ t('cookie_notice') }" hidden>
+  <div class="grid gap-step-md p-step-lg">
+    <div class="sites-prose text-body-sm">{ settings.body }</div>
+    {#if settings.link_label}<p><a class="font-mono text-code font-medium tracking-code text-scheme-links uppercase underline decoration-1 underline-offset-4" href="{ settings.link_href }">{ settings.link_label }</a></p>{/if}
+    <div class="flex flex-wrap gap-step-xs">
+      <button class="inline-flex min-h-control-small items-center rounded-button border border-scheme-button-background bg-scheme-button-background px-step-md text-control-small font-semibold text-scheme-button-foreground hover:bg-scheme-button-hover-background" type="button" data-notice-close="accept">{ settings.accept_label }</button>
+      {#if settings.decline_label}<button class="inline-flex min-h-control-small items-center rounded-button border border-scheme-button-background px-step-md text-control-small font-semibold text-scheme-links hover:bg-scheme-surface-2" type="button" data-notice-close="decline">{ settings.decline_label }</button>{/if}
+    </div>
+  </div>
+</section>
 
 <schema>
 {

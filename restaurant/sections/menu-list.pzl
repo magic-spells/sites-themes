@@ -1,4 +1,31 @@
-<section>Menu list</section>
+<!-- The text menu: every dish grouped by category in the reading column,
+     centred under the page header. Each group is the target of its
+     category's links and has its tint swatch; each dish is a menu line
+     (name and codes, a dotted leader or plain space, the price, the
+     ingredients). The dietary legend closes the section. -->
+{#let
+  all = settings.collection.entries | sort('fields.order')
+  categories = settings.categories.entries | sort('fields.order')
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-menu gap-step-2xl">
+    {#for category in categories}
+      {#let items = all | where('fields.category.id', category.id)}
+      {#if items.length}
+        <div class="grid gap-step-xs" id={ category.handle } data-tint={ category.fields.tint }>
+          <h2 class="flex items-center gap-step-sm font-heading text-h3 font-bold text-scheme-heading"><span class="size-step-sm shrink-0 rounded-sm bg-tint" aria-hidden="true"></span>{ category.title }</h2>
+          {#if settings.show_category_description && category.fields.description}<p class="text-body-sm text-scheme-muted">{ category.fields.description }</p>{/if}
+          <ul class="grid">
+            {#for entry in items}<MenuLine entry={ entry } href="{ settings.base_path }/{ entry.handle }" prices={ settings.prices } show_ingredients={ settings.show_ingredients } show_dietary={ settings.show_dietary } />{/for}
+          </ul>
+        </div>
+      {/if}
+    {/for}
+    {#if settings.show_legend}
+      <DietaryLegend />
+    {/if}
+  </div>
+</section>
 
 <schema>
 {

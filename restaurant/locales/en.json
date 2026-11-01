@@ -41,5 +41,15 @@
   "months_short.9": "Sep",
   "months_short.10": "Oct",
   "months_short.11": "Nov",
-  "months_short.12": "Dec"
+  "months_short.12": "Dec",
+  "book": "Book",
+  "main_navigation": "Main",
+  "announcement": "Announcement",
+  "dismiss": "Dismiss",
+  "cookie_notice": "Cookie notice",
+  "menu_categories": "Menu categories",
+  "filter_by_category": "Filter by category",
+  "open_photo": "Open photo {index}",
+  "photos_of": "Photos of {name}",
+  "ingredients": "Ingredients"
 }

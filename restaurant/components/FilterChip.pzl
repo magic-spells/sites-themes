@@ -1,0 +1,6 @@
+<!-- component: FilterChip -->
+<!-- props: label filter tint pressed editor_id -->
+<!-- A dish-tabs chip: theme.ts shows only the slides carrying its filter
+     class. The pressed chip fills with its category's tint; All fills with
+     the text colour. -->
+<button class="shrink-0 rounded-full border border-scheme-rule bg-scheme-surface-2 px-step-sm py-step-xs text-chip font-medium whitespace-nowrap text-scheme-foreground transition-colors duration-panel hover:border-scheme-foreground { tint ? 'aria-pressed:border-tint aria-pressed:bg-tint aria-pressed:text-tint-ink' : 'aria-pressed:border-scheme-foreground aria-pressed:bg-scheme-foreground aria-pressed:text-scheme-background' }" type="button" data-filter="{ filter }" data-tint={ tint } aria-pressed="{ pressed ? 'true' : 'false' }" data-block={ editor_id }>{ label }</button>

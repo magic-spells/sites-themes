@@ -1,4 +1,33 @@
-<section>Related dishes</section>
+<!-- On a dish page: more from the dish's category, the current dish left
+     out, as the same card track as dish-carousel. "{category}" in the
+     heading and the See all label is the category's name. -->
+{#let
+  dish = page.entry
+  category = dish.fields.category
+  items = settings.collection.entries | where('fields.category.id', category.id) | reject('handle', dish.handle) | sort('fields.order') | slice(0, settings.limit)
+  dots = settings.show_dots
+  id = 'related-' + section.id
+  options = { slidesPerView: 1.3, gap: '1rem', paddingLeft: '1rem', paddingRight: 0, navigation: { showButtons: false, showPagination: dots }, breakpoints: { '768': { slidesPerView: 2.5, gap: '1.5rem', paddingLeft: 0, paddingRight: 0, navigation: { showButtons: true, showPagination: dots } }, '1024': { slidesPerView: 4, gap: '1.5rem', paddingLeft: 0, paddingRight: 0, navigation: { showButtons: true, showPagination: dots } } } }
+}
+{#if items.length}
+<section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter" aria-labelledby="{ id }-title">
+  <tarot-carousel class="mx-auto block max-w-column" id={ id } data-track="cards">
+    <script type="application/json" data-tarot-options>{ options | json }</script>
+    <div class="mb-step-xl flex items-end justify-between gap-step-lg px-gutter md:px-0">
+      <h2 class="font-heading text-h2 font-bold text-scheme-heading" id="{ id }-title">{ settings.heading | replace('{category}', category.title) }</h2>
+      <div class="flex shrink-0 items-center gap-step-md">
+        {#if settings.see_all_label}<a class="font-mono text-code font-medium tracking-code whitespace-nowrap text-scheme-links uppercase hover:underline" href="{ settings.menu_path }#{ category.handle }">{ settings.see_all_label | replace('{category}', category.title) }</a>{/if}
+        <Arrows />
+      </div>
+    </div>
+    <tarot-viewport>
+      <tarot-track>
+        {#for entry in items}<tarot-slide><DishCard entry={ entry } href="{ settings.base_path }/{ entry.handle }" photo_style={ settings.photo_style } /></tarot-slide>{/for}
+      </tarot-track>
+    </tarot-viewport>
+  </tarot-carousel>
+</section>
+{/if}
 
 <schema>
 {

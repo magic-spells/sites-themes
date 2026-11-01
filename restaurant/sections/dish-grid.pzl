@@ -1,4 +1,49 @@
-<section>Dish grid</section>
+<!-- The menu: every dish, grouped by category in the categories' order.
+     Above the groups a rail of the categories on their tints; from 48rem it
+     pins under the header and marks the category being read (theme.ts). Each group is the target of its category's
+     links (/menu#mains): its heading with the tint swatch and the dish
+     count, the description, then the cards 3 / 2 / 1 across (4 / 3 / 2 with
+     four columns). The dietary legend closes the section. -->
+{#let
+  all = settings.collection.entries | sort('fields.order')
+  categories = settings.categories.entries | sort('fields.order')
+  grid = settings.columns == '4' ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4' : 'md:grid-cols-2 lg:grid-cols-3'
+}
+<section class="bg-scheme-background px-gutter pb-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-step-2xl">
+    {#if settings.show_rail && categories.length}
+      <sticky-content class="-mx-gutter min-w-0 bg-scheme-background px-gutter py-step-sm max-md:static">
+        <nav aria-label="{ t('menu_categories') }" data-rail>
+          <ul class="flex flex-wrap gap-step-xs">
+            {#for category in categories}
+              <li data-tint={ category.fields.tint }><a class="block rounded-full border border-tint bg-tint px-step-sm py-step-xs font-mono text-code font-medium tracking-code text-tint-ink uppercase transition-colors duration-panel hover:border-scheme-foreground current:border-scheme-foreground" href="#{ category.handle }">{ category.title }</a></li>
+            {/for}
+          </ul>
+        </nav>
+      </sticky-content>
+    {/if}
+    {#for category in categories}
+      {#let items = all | where('fields.category.id', category.id)}
+      {#if items.length}
+        <div class="grid gap-step-lg" id={ category.handle } data-tint={ category.fields.tint }>
+          <div class="grid gap-step-xs">
+            <div class="flex items-baseline justify-between gap-step-md">
+              <h2 class="flex items-center gap-step-sm font-heading text-h1 font-bold text-scheme-heading"><span class="size-step-sm shrink-0 rounded-sm bg-tint" aria-hidden="true"></span>{ category.title }</h2>
+              <p class="shrink-0 font-mono text-code font-medium tracking-code text-scheme-meta uppercase">{ t('dish_count', { count: items.length }) }</p>
+            </div>
+            {#if settings.show_category_description && category.fields.description}<p class="text-body text-scheme-muted">{ category.fields.description }</p>{/if}
+          </div>
+          <ul class="grid gap-gap-lg { grid }">
+            {#for entry in items}<li><DishCard entry={ entry } href="{ settings.base_path }/{ entry.handle }" photo_style={ settings.photo_style } info_style={ settings.info_style } hide_ingredients={ !settings.show_ingredients } hide_dietary={ !settings.show_dietary } reveal={ site.settings.reveal } /></li>{/for}
+          </ul>
+        </div>
+      {/if}
+    {/for}
+    {#if settings.show_legend}
+      <DietaryLegend />
+    {/if}
+  </div>
+</section>
 
 <schema>
 {

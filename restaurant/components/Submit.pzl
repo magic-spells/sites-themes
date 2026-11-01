@@ -1,0 +1,4 @@
+<!-- component: Submit -->
+<!-- props: wide -->
+<!-- A form's submit button: the primary pill. -->
+<button class="inline-flex min-h-control items-center justify-center rounded-button border border-scheme-button-background bg-scheme-button-background px-button-x font-body text-control font-semibold text-scheme-button-foreground transition-colors duration-panel hover:border-scheme-button-hover-background hover:bg-scheme-button-hover-background hover:text-scheme-button-hover-foreground { wide ? 'w-full' : '' }" type="submit"><Children/></button>

@@ -1,3 +1,12 @@
 <!-- component: Button -->
-<!-- props: href tone wide -->
-<a class="inline-flex min-h-control items-center justify-center rounded-button px-button-x py-button-y font-body text-control font-semibold transition-colors duration-hover ease-out-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-scheme-links { tone == 'secondary' ? 'bg-scheme-secondary-button-background text-scheme-secondary-button-foreground hover:bg-scheme-secondary-button-hover-background hover:text-scheme-secondary-button-hover-foreground' : tone == 'outline' ? 'border border-scheme-foreground bg-transparent text-scheme-foreground hover:bg-scheme-foreground hover:text-scheme-background' : 'bg-scheme-button-background text-scheme-button-foreground hover:bg-scheme-button-hover-background hover:text-scheme-button-hover-foreground' } { wide ? 'w-full' : '' }" href="{ href }"><Children/></a>
+<!-- props: href tone size wide booking -->
+<!-- The pill button as a link. tone: primary (the scheme's button), outline
+     (the secondary button: a hairline in the text colour, no fill). size
+     "small" is the 36 high button. With booking set it is a Book a table:
+     it links to the booking URL when one is set and otherwise to the
+     reservations page, which theme.ts turns into opening the booking sheet. -->
+{#let
+  url = booking ? (site.settings.booking_url || site.settings.reservations_path || '/reservations') : href
+  sheet = booking && !site.settings.booking_url ? 'booking' : null
+}
+<a class="inline-flex items-center justify-center gap-step-xs rounded-button border font-body font-semibold whitespace-nowrap transition-colors duration-panel ease-out-soft { size == 'small' ? 'min-h-control-small px-step-md text-control-small' : 'min-h-control px-button-x text-control' } { tone == 'outline' ? 'border-scheme-secondary-button-foreground bg-scheme-secondary-button-background text-scheme-secondary-button-foreground hover:border-scheme-secondary-button-hover-background hover:bg-scheme-secondary-button-hover-background hover:text-scheme-secondary-button-hover-foreground' : 'border-scheme-button-background bg-scheme-button-background text-scheme-button-foreground hover:border-scheme-button-hover-background hover:bg-scheme-button-hover-background hover:text-scheme-button-hover-foreground' } { wide ? 'w-full' : '' }" href="{ url }" data-panel-open={ sheet } aria-haspopup={ sheet ? 'dialog' : null }><Children/></a>

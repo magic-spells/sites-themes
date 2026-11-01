@@ -1,4 +1,14 @@
-<section>Announcement bar</section>
+<!-- One line on the tomato band: the message, a link from 48rem, and a ×
+     that hides the bar for good for this key (theme.ts). -->
+<aside class="bg-scheme-background px-gutter py-step-sm text-scheme-foreground" data-dismiss-key="{ settings.key }" aria-label="{ t('announcement') }">
+  <div class="mx-auto flex max-w-column items-center gap-step-md">
+    <p class="flex-1 text-body-sm text-pretty">
+      { settings.text }
+      {#if settings.link_label && settings.link}<a class="ml-step-2xs hidden font-semibold underline decoration-1 underline-offset-4 md:inline" href="{ settings.link }">{ settings.link_label }</a>{/if}
+    </p>
+    {#if settings.show_close}<button class="-m-step-xs flex size-icon-button shrink-0 items-center justify-center" type="button" data-dismiss><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/close.svg'}</span><span class="sr-only">{ t('dismiss') }</span></button>{/if}
+  </div>
+</aside>
 
 <schema>
 {

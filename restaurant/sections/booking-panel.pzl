@@ -1,4 +1,35 @@
-<section>Booking panel</section>
+<!-- The booking sheet behind every Book a table: the reservation form in a
+     <bottom-sheet>, full width on a phone and a 35rem column from 48rem. It
+     drags down to dismiss and hands focus back to the button that opened it.
+     With a booking URL set every Book a table links out and this sheet never
+     opens. -->
+{#let note = settings.note || site.settings.booking_note}
+<dialog-panel>
+  <dialog class="text-scheme-foreground md:mx-auto md:max-w-panel" aria-labelledby="booking-title">
+    <bottom-sheet id="booking">
+      <bottom-sheet-header class="flex items-start justify-between gap-step-md pt-step-md">
+        <h2 class="font-heading text-h3 font-bold text-scheme-heading" id="booking-title">{ settings.heading || t('book_a_table') }</h2>
+        <button class="-m-step-xs flex size-icon-button shrink-0 items-center justify-center text-scheme-muted hover:text-scheme-foreground" type="button" data-action-hide-dialog><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/close.svg'}</span><span class="sr-only">{ t('close') }</span></button>
+      </bottom-sheet-header>
+      <bottom-sheet-content>
+        <div class="grid gap-step-md">
+          {#if settings.text}<p class="text-body-sm text-scheme-muted">{ settings.text }</p>{/if}
+          <Form handle={ settings.form || site.settings.booking_form } class="grid gap-step-sm" id="booking-form">
+            {#if form.sent}
+              <p class="text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
+            {:else}
+              {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
+              <BookingFields fields={ form.fields } prefix="booking" />
+              <Submit wide={ true }>{ form.submit_label || t('book_a_table') }</Submit>
+              {#if note}<p class="font-mono text-code font-medium tracking-code text-scheme-meta uppercase">{ note }</p>{/if}
+              <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+            {/if}
+          </Form>
+        </div>
+      </bottom-sheet-content>
+    </bottom-sheet>
+  </dialog>
+</dialog-panel>
 
 <schema>
 {

@@ -580,27 +580,6 @@
       "name": "Reservation",
       "fields": [
         {
-          "id": "name",
-          "type": "text",
-          "label": "Name",
-          "required": true,
-          "max_length": 120
-        },
-        {
-          "id": "email",
-          "type": "email",
-          "label": "Email",
-          "required": true,
-          "max_length": 250
-        },
-        {
-          "id": "phone",
-          "type": "text",
-          "label": "Phone",
-          "required": true,
-          "max_length": 40
-        },
-        {
           "id": "date",
           "type": "text",
           "label": "Date",
@@ -642,6 +621,27 @@
             "8",
             "9 or more"
           ]
+        },
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Name",
+          "required": true,
+          "max_length": 120
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        },
+        {
+          "id": "phone",
+          "type": "text",
+          "label": "Phone",
+          "required": true,
+          "max_length": 40
         },
         {
           "id": "notes",

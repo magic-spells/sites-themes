@@ -1,15 +1,10 @@
 <!-- component: Field -->
-<!-- props: name label type autocomplete required rows maxlength options value error placeholder prefix wrapper_class -->
+<!-- props: name label type autocomplete required rows maxlength value error placeholder prefix wrapper_class -->
 <!-- Labels remain available to screen readers while placeholders carry the visible label. -->
 <div class={ wrapper_class }>
   <label class="sr-only" for="field-{ prefix }-{ name }">{ label }</label>
   {#if type == 'textarea'}
     <textarea class="block min-h-control w-full rounded-input border border-scheme-input-border bg-scheme-input-background px-step-sm py-step-xs font-body text-body text-scheme-input-foreground placeholder:text-scheme-muted focus:outline-2 focus:outline-offset-2 focus:outline-scheme-links min-h-textarea resize-y" id="field-{ prefix }-{ name }" name={ name } rows={ rows ?? 4 } maxlength={ maxlength } required={ required } placeholder={ placeholder ?? label } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null }>{ value }</textarea>
-  {:else if type == 'select'}
-    <select class="block min-h-control w-full rounded-input border border-scheme-input-border bg-scheme-input-background px-step-sm py-step-xs font-body text-body text-scheme-input-foreground placeholder:text-scheme-muted focus:outline-2 focus:outline-offset-2 focus:outline-scheme-links" id="field-{ prefix }-{ name }" name={ name } required={ required } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null }>
-      <option value="">{ label }</option>
-      {#for option in options}<option value={ option } selected={ value == option }>{ option }</option>{/for}
-    </select>
   {:else if type == 'checkbox'}
     <input class="size-5 accent-scheme-links" id="field-{ prefix }-{ name }" name={ name } type="checkbox" value="on" checked={ value == 'on' } required={ required } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null } />
   {:else}

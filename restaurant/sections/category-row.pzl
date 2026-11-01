@@ -1,4 +1,55 @@
-<section>Category row</section>
+<!-- The menu's categories, each linking to its group on the menu page.
+     Cards: a grid of white cards (photo, name, dish count), 3 / 2 / 1 across
+     or 4 / 6 from 64rem. Circles: a carousel of round photos on their tint
+     rings, 6 / 4 / 2.5 across, with arrows from 48rem and the track cut at
+     the right edge on a phone. -->
+{#let
+  categories = settings.categories.entries | sort('fields.order')
+  items = settings.collection.entries
+  circles = settings.style == 'circles'
+  id = 'categories-' + section.id
+  grid = settings.columns == '6' ? 'md:grid-cols-3 lg:grid-cols-6' : settings.columns == '4' ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-2 lg:grid-cols-3'
+  options = { slidesPerView: 2.5, gap: '1rem', paddingLeft: '1rem', paddingRight: 0, navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { slidesPerView: 4, gap: '1.5rem', paddingLeft: 0, paddingRight: 0, navigation: { showButtons: true, showPagination: false } }, '1024': { slidesPerView: 6, gap: '1.5rem', paddingLeft: 0, paddingRight: 0, navigation: { showButtons: true, showPagination: false } } } }
+}
+{#if categories.length}
+{#if circles}
+<section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter" aria-label="{ settings.heading }">
+  <tarot-carousel class="mx-auto block max-w-column" id={ id } data-track="circles">
+    <script type="application/json" data-tarot-options>{ options | json }</script>
+    <div class="mb-step-xl flex items-end justify-between gap-step-lg px-gutter md:px-0">
+      {#if settings.show_heading}
+        <div class="grid gap-step-xs">
+          {#if settings.heading}<h2 class="font-heading text-h2 font-bold text-scheme-heading">{ settings.heading }</h2>{/if}
+          {#if settings.text}<p class="text-body text-scheme-muted">{ settings.text }</p>{/if}
+        </div>
+      {/if}
+      <Arrows tone="ml-auto" />
+    </div>
+    <tarot-viewport>
+      <tarot-track>
+        {#for category in categories}<tarot-slide><CategoryCard entry={ category } href="{ settings.menu_path }#{ category.handle }" style="circles" /></tarot-slide>{/for}
+      </tarot-track>
+    </tarot-viewport>
+  </tarot-carousel>
+</section>
+{:else}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-step-xl">
+    {#if settings.show_heading && (settings.heading || settings.text)}
+      <div class="grid gap-step-xs">
+        {#if settings.heading}<h2 class="font-heading text-h2 font-bold text-scheme-heading">{ settings.heading }</h2>{/if}
+        {#if settings.text}<p class="text-body text-scheme-muted">{ settings.text }</p>{/if}
+      </div>
+    {/if}
+    <ul class="grid gap-gap-lg { grid }">
+      {#for category in categories}
+        <li><CategoryCard entry={ category } href="{ settings.menu_path }#{ category.handle }" style="cards" show_counts={ settings.show_counts } count={ size(items | where('fields.category.id', category.id)) } /></li>
+      {/for}
+    </ul>
+  </div>
+</section>
+{/if}
+{/if}
 
 <schema>
 {

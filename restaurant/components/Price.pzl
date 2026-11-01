@@ -1,3 +1,7 @@
 <!-- component: Price -->
-<!-- props: value -->
-<span>Price</span>
+<!-- props: value tone -->
+<!-- A price in the Price mono with tabular figures: whole amounts without
+     decimals ($12), anything else with two ($12.50). tone carries the
+     colour, which the caller decides. -->
+{#let symbol = site.settings.currency_symbol || '$'}
+<span class="font-mono text-price font-medium whitespace-nowrap tabular-nums { tone }">{ value % 1 == 0 ? value | currency(symbol, 0) : value | currency(symbol, 2) }</span>

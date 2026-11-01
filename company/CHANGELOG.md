@@ -12,7 +12,8 @@
   CTA band keep `accent`; the hero, newsletter, footer and cookie notice keep `inverse`.
 - The page background is the base scheme's (`bg-scheme-background`), not white.
 - The starter templates, section groups and presets no longer store the first scheme, so a new
-  site's sections follow its base scheme too.
+  site's sections follow its base scheme too. A preset that picks the first scheme to override
+  its section's own default (the announcement bar's Quiet, the hero's Plain) keeps its value.
 
 ## 0.1.0
 

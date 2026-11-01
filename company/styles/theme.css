@@ -14,7 +14,7 @@
    styling contract: every utility below resolves through a variable at runtime,
    so changing a token in the admin restyles the site without recompiling the
    theme. Nothing in this theme uses a raw value — if a value is missing here,
-   add it to the design block in theme.json first. */
+   add it to settings/design.json first. */
 @theme {
 	/* The palette: three brand colors, five greys, four utility bg/fg pairs. */
 	--color-brand-primary: var(--sites-color-brand-primary);

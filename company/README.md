@@ -9,13 +9,13 @@ The fixtures are an invented independent bookshop, **Marlow & Finch**, so `sites
 site rather than a grid of lorem ipsum.
 
 ```
-theme.json          template roles, 3 section groups, 6 settings in Brand information and Contact
-design.json         every design token, 3 color schemes and 3 suggested palettes
+settings/theme.json template roles, 3 section groups, 6 settings in Brand information and Contact
+settings/design.json every design token, 3 color schemes and 3 suggested palettes
 layouts/default.pzl the <html> document: SEO and Open Graph from page.seo, the favicon, the skip link,
                     and the five layout slots
-templates/          home.json, page.json (+ page.about/contact/privacy),
-                    blog-list.json, post.json, password.pzl, 404.pzl, maintenance.pzl
-groups/             header-group.json, footer-group.json, panel-group.json
+data/templates/     home.json, page.json (+ page.about/contact/privacy), blog-list.json, post.json
+data/groups/        header-group.json, footer-group.json, panel-group.json
+templates/          password.pzl, 404.pzl, maintenance.pzl
 sections/           17, every one with a full <schema>: settings, blocks and presets
 components/         Button, Field, Chip
 styles/theme.css    the Tailwind entry: @theme maps --sites-* into Tailwind's token names
@@ -64,7 +64,7 @@ utility, so it resolves against the element. Three schemes ship: `default` (pape
 Three rules follow, and this theme keeps all three:
 
 - **No arbitrary values.** `p-[13px]` and `bg-[#070c16]` bypass the vocabulary. If a value is
-  missing, add it to `design.json` first.
+  missing, add it to `settings/design.json` first.
 - **Custom classes are for what utilities cannot express.** One `@utility` (`sites-container`,
   the page gutter) and an `@layer components` layer holding `.sites-button` with its
   `-secondary` and `-quiet` modifiers, `.sites-input`, `.sites-label`, `.sites-chip` and

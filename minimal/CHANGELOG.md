@@ -10,7 +10,8 @@
 - A section whose color scheme defaulted to the first scheme now has no default and follows the
   site's base scheme; sections that default to another scheme keep it: the footer keeps
   `inverse`.
-- The page background is the base scheme's (`bg-scheme-background`), not white.
+- The page background and text are the base scheme's (`bg-scheme-background`,
+  `text-scheme-foreground`), not white and grey.
 - The starter templates, section groups and presets no longer store the first scheme, so a new
   site's sections follow its base scheme too.
 

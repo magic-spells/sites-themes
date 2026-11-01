@@ -1,0 +1,3 @@
+<!-- component: MenuLine -->
+<!-- props: entry href prices show_ingredients show_dietary -->
+<span>Menuline</span>

@@ -1,0 +1,64 @@
+<section>Rich text</section>
+
+<schema>
+{
+  "name": "Rich text",
+  "description": "Long-form text in a reading or wide column.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": ""
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "default": "reading",
+      "options": [
+        {
+          "value": "reading",
+          "label": "Reading"
+        },
+        {
+          "value": "wide",
+          "label": "Wide"
+        }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "heading": "",
+        "body": "",
+        "width": "reading",
+        "color_scheme": "paper"
+      }
+    },
+    {
+      "name": "Wide",
+      "settings": {
+        "heading": "",
+        "body": "",
+        "width": "wide",
+        "color_scheme": "paper"
+      }
+    }
+  ]
+}
+</schema>

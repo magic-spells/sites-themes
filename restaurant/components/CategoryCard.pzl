@@ -1,0 +1,3 @@
+<!-- component: CategoryCard -->
+<!-- props: entry href style show_counts count -->
+<span>Categorycard</span>

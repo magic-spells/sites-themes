@@ -1,0 +1,67 @@
+<section>Cookie notice</section>
+
+<schema>
+{
+  "name": "Cookie notice",
+  "description": "A dismissible privacy notice with accept and decline actions.",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>This site uses your browser’s local storage to remember that you have seen this note, and nothing else.</p>"
+    },
+    {
+      "type": "text",
+      "id": "accept_label",
+      "label": "Accept button",
+      "default": "Accept"
+    },
+    {
+      "type": "text",
+      "id": "decline_label",
+      "label": "Decline button",
+      "default": "Decline"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": ""
+    },
+    {
+      "type": "url",
+      "id": "link_href",
+      "label": "Link",
+      "default": "/privacy"
+    },
+    {
+      "type": "text",
+      "id": "key",
+      "label": "Remember key",
+      "default": "restaurant-notice-2026-11",
+      "info": "Change this to show the notice again after either button dismisses it."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "body": "<p>This site uses your browser’s local storage to remember that you have seen this note, and nothing else.</p>",
+        "accept_label": "Accept",
+        "decline_label": "Decline",
+        "link_label": "",
+        "link_href": "/privacy",
+        "key": "restaurant-notice-2026-11",
+        "color_scheme": "paper"
+      }
+    }
+  ]
+}
+</schema>

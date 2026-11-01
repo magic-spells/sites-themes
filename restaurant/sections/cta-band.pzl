@@ -1,0 +1,38 @@
+<section>Cta band</section>
+
+<schema>
+{
+  "name": "Cta band",
+  "description": "A simple invitation to book a table.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "A table by the water, tonight."
+    },
+    {
+      "type": "text",
+      "id": "book_label",
+      "label": "Book label",
+      "default": "Book a table"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "tomato"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "text": "A table by the water, tonight.",
+        "book_label": "Book a table",
+        "color_scheme": "tomato"
+      }
+    }
+  ]
+}
+</schema>

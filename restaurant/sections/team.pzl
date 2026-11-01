@@ -1,0 +1,107 @@
+<section>Team</section>
+
+<schema>
+{
+  "name": "Team",
+  "description": "The people behind the food.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The kitchen"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "well_shape",
+      "label": "Well shape",
+      "default": "rounded",
+      "options": [
+        {
+          "value": "rounded",
+          "label": "Rounded"
+        },
+        {
+          "value": "arch",
+          "label": "Arch"
+        }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "heading": "The kitchen",
+        "show_heading": true,
+        "well_shape": "rounded",
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "type": "chef",
+          "settings": {
+            "portrait": "as_4x5_1",
+            "name": "Ines Marchetti",
+            "role": "Head chef",
+            "bio": "Ines cooks with the season and whatever the boats bring in."
+          }
+        },
+        {
+          "type": "chef",
+          "settings": {
+            "portrait": "as_4x5_2",
+            "name": "Tobi Adeyemi",
+            "role": "Pastry chef",
+            "bio": "Tobi is first in each morning, filling the room with the smell of bread."
+          }
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "chef",
+      "name": "Chef",
+      "settings": [
+        {
+          "type": "image",
+          "id": "portrait",
+          "label": "Portrait"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": ""
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Role",
+          "default": ""
+        },
+        {
+          "type": "textarea",
+          "id": "bio",
+          "label": "Bio",
+          "default": ""
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6
+}
+</schema>

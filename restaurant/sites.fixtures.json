@@ -1,0 +1,2819 @@
+{
+  "site": {
+    "name": "Halfmoon Canteen",
+    "url": "https://halfmooncanteen.example",
+    "locale": "en",
+    "settings": {
+      "wordmark": "Halfmoon Canteen",
+      "favicon": "as_favicon",
+      "tagline": "An all-day canteen by the harbour.",
+      "currency_symbol": "$",
+      "reveal": true,
+      "heading_case": "sentence",
+      "address": "14 Quay Street\nBellport",
+      "phone": "+1 (555) 014-0982",
+      "email": "hello@halfmooncanteen.example",
+      "map_url": "https://maps.google.com/?q=14+Quay+Street+Bellport",
+      "hours": "Monday | Closed\nTuesday | 8am – 10pm\nWednesday | 8am – 10pm\nThursday | 8am – 10pm\nFriday | 8am – 11pm\nSaturday | 8am – 11pm\nSunday | 9am – 9pm",
+      "service_strip": "Breakfast 8–11 · Lunch 12–3 · Dinner 5–10",
+      "booking_form": "reservation",
+      "booking_note": "We hold the table for 15 minutes.",
+      "booking_url": "",
+      "reservations_path": "/reservations"
+    }
+  },
+  "menus": {
+    "main": {
+      "handle": "main",
+      "title": "Main menu",
+      "items": [
+        {
+          "id": "main_0",
+          "label": "Menu",
+          "target": {
+            "kind": "url",
+            "url": "/menu"
+          },
+          "children": []
+        },
+        {
+          "id": "main_1",
+          "label": "About",
+          "target": {
+            "kind": "url",
+            "url": "/about"
+          },
+          "children": []
+        },
+        {
+          "id": "main_2",
+          "label": "Events",
+          "target": {
+            "kind": "url",
+            "url": "/events"
+          },
+          "children": []
+        },
+        {
+          "id": "main_3",
+          "label": "Contact",
+          "target": {
+            "kind": "url",
+            "url": "/contact"
+          },
+          "children": []
+        }
+      ]
+    },
+    "categories": {
+      "handle": "categories",
+      "title": "Menu categories",
+      "items": [
+        {
+          "id": "categories_0",
+          "label": "Breakfast",
+          "target": {
+            "kind": "url",
+            "url": "/menu#breakfast"
+          },
+          "children": []
+        },
+        {
+          "id": "categories_1",
+          "label": "Small plates",
+          "target": {
+            "kind": "url",
+            "url": "/menu#small-plates"
+          },
+          "children": []
+        },
+        {
+          "id": "categories_2",
+          "label": "Mains",
+          "target": {
+            "kind": "url",
+            "url": "/menu#mains"
+          },
+          "children": []
+        },
+        {
+          "id": "categories_3",
+          "label": "Sandwiches & bowls",
+          "target": {
+            "kind": "url",
+            "url": "/menu#sandwiches-bowls"
+          },
+          "children": []
+        },
+        {
+          "id": "categories_4",
+          "label": "Desserts",
+          "target": {
+            "kind": "url",
+            "url": "/menu#desserts"
+          },
+          "children": []
+        },
+        {
+          "id": "categories_5",
+          "label": "Drinks",
+          "target": {
+            "kind": "url",
+            "url": "/menu#drinks"
+          },
+          "children": []
+        }
+      ]
+    },
+    "legal": {
+      "handle": "legal",
+      "title": "Legal",
+      "items": [
+        {
+          "id": "legal_0",
+          "label": "Privacy",
+          "target": {
+            "kind": "url",
+            "url": "/privacy"
+          },
+          "children": []
+        }
+      ]
+    },
+    "social": {
+      "handle": "social",
+      "title": "Social links",
+      "items": [
+        {
+          "id": "social_0",
+          "label": "Instagram",
+          "target": {
+            "kind": "url",
+            "url": "https://www.instagram.com/halfmooncanteen/"
+          },
+          "children": []
+        },
+        {
+          "id": "social_1",
+          "label": "Email",
+          "target": {
+            "kind": "url",
+            "url": "mailto:hello@halfmooncanteen.example"
+          },
+          "children": []
+        }
+      ]
+    }
+  },
+  "galleries": {
+    "home-hero": {
+      "handle": "home-hero",
+      "title": "Halfmoon Canteen",
+      "items": [
+        {
+          "asset_id": "as_16x9_1",
+          "caption": "The room before service",
+          "alt": "The room before service placeholder"
+        },
+        {
+          "asset_id": "as_16x9_2",
+          "caption": "Lunch by the window",
+          "alt": "Lunch by the window placeholder"
+        },
+        {
+          "asset_id": "as_16x9_3",
+          "caption": "The kitchen at work",
+          "alt": "The kitchen at work placeholder"
+        },
+        {
+          "asset_id": "as_16x9_4",
+          "caption": "A table for friends",
+          "alt": "A table for friends placeholder"
+        }
+      ]
+    },
+    "the-room": {
+      "handle": "the-room",
+      "title": "The room",
+      "items": [
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "The front room",
+          "alt": "The front room placeholder"
+        },
+        {
+          "asset_id": "as_4x5_1",
+          "caption": "Light by the window",
+          "alt": "Light by the window placeholder"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "The long table",
+          "alt": "The long table placeholder"
+        },
+        {
+          "asset_id": "as_2x3_1",
+          "caption": "The doorway",
+          "alt": "The doorway placeholder"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "The kitchen pass",
+          "alt": "The kitchen pass placeholder"
+        },
+        {
+          "asset_id": "as_1x1_1",
+          "caption": "Bread on the table",
+          "alt": "Bread on the table placeholder"
+        },
+        {
+          "asset_id": "as_4x5_2",
+          "caption": "The back room",
+          "alt": "The back room placeholder"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "A place at the counter",
+          "alt": "A place at the counter placeholder"
+        }
+      ]
+    },
+    "brown-butter-pancakes": {
+      "handle": "brown-butter-pancakes",
+      "title": "Brown butter pancakes",
+      "items": [
+        {
+          "asset_id": "as_4x3_saffron",
+          "caption": "Brown butter pancakes",
+          "alt": "Brown butter pancakes placeholder"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Ingredients on the pass",
+          "alt": "Ingredients on the pass placeholder"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "In the kitchen",
+          "alt": "In the kitchen placeholder"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Ready for the table",
+          "alt": "Ready for the table placeholder"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "At Halfmoon Canteen",
+          "alt": "At Halfmoon Canteen placeholder"
+        }
+      ]
+    },
+    "harbour-fish-stew": {
+      "handle": "harbour-fish-stew",
+      "title": "Harbour fish stew",
+      "items": [
+        {
+          "asset_id": "as_4x3_tomato",
+          "caption": "Harbour fish stew",
+          "alt": "Harbour fish stew placeholder"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Ingredients on the pass",
+          "alt": "Ingredients on the pass placeholder"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "In the kitchen",
+          "alt": "In the kitchen placeholder"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Ready for the table",
+          "alt": "Ready for the table placeholder"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "At Halfmoon Canteen",
+          "alt": "At Halfmoon Canteen placeholder"
+        }
+      ]
+    },
+    "grain-bowl": {
+      "handle": "grain-bowl",
+      "title": "Grain bowl",
+      "items": [
+        {
+          "asset_id": "as_4x3_clay",
+          "caption": "Grain bowl",
+          "alt": "Grain bowl placeholder"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Ingredients on the pass",
+          "alt": "Ingredients on the pass placeholder"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "In the kitchen",
+          "alt": "In the kitchen placeholder"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Ready for the table",
+          "alt": "Ready for the table placeholder"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "At Halfmoon Canteen",
+          "alt": "At Halfmoon Canteen placeholder"
+        }
+      ]
+    }
+  },
+  "assets": {
+    "as_4x3_saffron": {
+      "id": "as_4x3_saffron",
+      "status": "ready",
+      "file_name": "4x3-saffron.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 453,
+      "url": "/_sites/theme/photos/4x3-saffron.svg",
+      "width": 1200,
+      "height": 900,
+      "alt": "4x3 saffron placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x3_leaf": {
+      "id": "as_4x3_leaf",
+      "status": "ready",
+      "file_name": "4x3-leaf.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 450,
+      "url": "/_sites/theme/photos/4x3-leaf.svg",
+      "width": 1200,
+      "height": 900,
+      "alt": "4x3 leaf placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x3_tomato": {
+      "id": "as_4x3_tomato",
+      "status": "ready",
+      "file_name": "4x3-tomato.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 452,
+      "url": "/_sites/theme/photos/4x3-tomato.svg",
+      "width": 1200,
+      "height": 900,
+      "alt": "4x3 tomato placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x3_clay": {
+      "id": "as_4x3_clay",
+      "status": "ready",
+      "file_name": "4x3-clay.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 450,
+      "url": "/_sites/theme/photos/4x3-clay.svg",
+      "width": 1200,
+      "height": 900,
+      "alt": "4x3 clay placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x3_plum": {
+      "id": "as_4x3_plum",
+      "status": "ready",
+      "file_name": "4x3-plum.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 450,
+      "url": "/_sites/theme/photos/4x3-plum.svg",
+      "width": 1200,
+      "height": 900,
+      "alt": "4x3 plum placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x3_sea": {
+      "id": "as_4x3_sea",
+      "status": "ready",
+      "file_name": "4x3-sea.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 449,
+      "url": "/_sites/theme/photos/4x3-sea.svg",
+      "width": 1200,
+      "height": 900,
+      "alt": "4x3 sea placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x5_1": {
+      "id": "as_4x5_1",
+      "status": "ready",
+      "file_name": "4x5-1.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 449,
+      "url": "/_sites/theme/photos/4x5-1.svg",
+      "width": 960,
+      "height": 1200,
+      "alt": "4x5 1 placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x5_2": {
+      "id": "as_4x5_2",
+      "status": "ready",
+      "file_name": "4x5-2.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 449,
+      "url": "/_sites/theme/photos/4x5-2.svg",
+      "width": 960,
+      "height": 1200,
+      "alt": "4x5 2 placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_3x2_1": {
+      "id": "as_3x2_1",
+      "status": "ready",
+      "file_name": "3x2-1.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 444,
+      "url": "/_sites/theme/photos/3x2-1.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "3x2 1 placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_3x2_2": {
+      "id": "as_3x2_2",
+      "status": "ready",
+      "file_name": "3x2-2.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 444,
+      "url": "/_sites/theme/photos/3x2-2.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "3x2 2 placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_3x2_3": {
+      "id": "as_3x2_3",
+      "status": "ready",
+      "file_name": "3x2-3.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 444,
+      "url": "/_sites/theme/photos/3x2-3.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "3x2 3 placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_3x2_4": {
+      "id": "as_3x2_4",
+      "status": "ready",
+      "file_name": "3x2-4.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 444,
+      "url": "/_sites/theme/photos/3x2-4.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "3x2 4 placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_1x1_1": {
+      "id": "as_1x1_1",
+      "status": "ready",
+      "file_name": "1x1-1.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 444,
+      "url": "/_sites/theme/photos/1x1-1.svg",
+      "width": 1000,
+      "height": 1000,
+      "alt": "1x1 1 placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_2x3_1": {
+      "id": "as_2x3_1",
+      "status": "ready",
+      "file_name": "2x3-1.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 444,
+      "url": "/_sites/theme/photos/2x3-1.svg",
+      "width": 800,
+      "height": 1200,
+      "alt": "2x3 1 placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_16x9_1": {
+      "id": "as_16x9_1",
+      "status": "ready",
+      "file_name": "16x9-1.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 449,
+      "url": "/_sites/theme/photos/16x9-1.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "16x9 1 placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_16x9_2": {
+      "id": "as_16x9_2",
+      "status": "ready",
+      "file_name": "16x9-2.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 449,
+      "url": "/_sites/theme/photos/16x9-2.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "16x9 2 placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_16x9_3": {
+      "id": "as_16x9_3",
+      "status": "ready",
+      "file_name": "16x9-3.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 449,
+      "url": "/_sites/theme/photos/16x9-3.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "16x9 3 placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_16x9_4": {
+      "id": "as_16x9_4",
+      "status": "ready",
+      "file_name": "16x9-4.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 449,
+      "url": "/_sites/theme/photos/16x9-4.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "16x9 4 placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_cutout": {
+      "id": "as_cutout",
+      "status": "ready",
+      "file_name": "cutout.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 405,
+      "url": "/_sites/theme/photos/cutout.svg",
+      "width": 1200,
+      "height": 900,
+      "alt": "cutout placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_favicon": {
+      "id": "as_favicon",
+      "status": "ready",
+      "file_name": "favicon.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 201,
+      "url": "/_sites/theme/favicon.svg",
+      "width": 32,
+      "height": 32,
+      "alt": "Halfmoon Canteen",
+      "created_at": "2026-11-01T09:00:00Z"
+    }
+  },
+  "forms": {
+    "reservation": {
+      "handle": "reservation",
+      "name": "Reservation",
+      "fields": [
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Name",
+          "required": true,
+          "max_length": 120
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        },
+        {
+          "id": "phone",
+          "type": "text",
+          "label": "Phone",
+          "required": true,
+          "max_length": 40
+        },
+        {
+          "id": "date",
+          "type": "text",
+          "label": "Date",
+          "required": true,
+          "max_length": 40
+        },
+        {
+          "id": "time",
+          "type": "select",
+          "label": "Time",
+          "required": true,
+          "options": [
+            "8am",
+            "9am",
+            "10am",
+            "12pm",
+            "1pm",
+            "2pm",
+            "5pm",
+            "6pm",
+            "7pm",
+            "8pm",
+            "9pm"
+          ]
+        },
+        {
+          "id": "party",
+          "type": "select",
+          "label": "Party size",
+          "required": true,
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9 or more"
+          ]
+        },
+        {
+          "id": "notes",
+          "type": "textarea",
+          "label": "Notes (allergies, occasions)",
+          "required": false,
+          "max_length": 2000
+        }
+      ],
+      "success_message": "Thanks. We will email to confirm your table.",
+      "submit_label": "Book a table"
+    },
+    "contact": {
+      "handle": "contact",
+      "name": "Contact",
+      "fields": [
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Name",
+          "required": true,
+          "max_length": 120
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        },
+        {
+          "id": "subject",
+          "type": "select",
+          "label": "Subject",
+          "required": true,
+          "options": [
+            "Booking",
+            "Private dining",
+            "Press",
+            "Other"
+          ]
+        },
+        {
+          "id": "message",
+          "type": "textarea",
+          "label": "Message",
+          "required": true,
+          "max_length": 4000
+        }
+      ],
+      "success_message": "Thanks. Your note is with the Halfmoon team.",
+      "submit_label": "Send message"
+    },
+    "newsletter": {
+      "handle": "newsletter",
+      "name": "Newsletter",
+      "fields": [
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        }
+      ],
+      "success_message": "Thanks. The next note from the kitchen will find you here.",
+      "submit_label": "Subscribe"
+    }
+  },
+  "content": {
+    "menu_categories": {
+      "name": "Menu categories",
+      "fields": [
+        {
+          "id": "description",
+          "type": "text",
+          "label": "Description"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "tint",
+          "type": "text",
+          "label": "Tint"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "cat_breakfast",
+          "handle": "breakfast",
+          "title": "Breakfast",
+          "fields": {
+            "description": "Eggs, warm bread and a good reason to take your time.",
+            "image": "as_4x3_saffron",
+            "image_alt": "Breakfast placeholder",
+            "tint": "saffron",
+            "order": 1
+          }
+        },
+        {
+          "id": "cat_small_plates",
+          "handle": "small-plates",
+          "title": "Small plates",
+          "fields": {
+            "description": "Vegetables, a little seafood and something for the middle of the table.",
+            "image": "as_4x3_leaf",
+            "image_alt": "Small plates placeholder",
+            "tint": "leaf",
+            "order": 2
+          }
+        },
+        {
+          "id": "cat_mains",
+          "handle": "mains",
+          "title": "Mains",
+          "fields": {
+            "description": "Fish from the harbour and the slow work of the kitchen.",
+            "image": "as_4x3_tomato",
+            "image_alt": "Mains placeholder",
+            "tint": "tomato",
+            "order": 3
+          }
+        },
+        {
+          "id": "cat_sandwiches_bowls",
+          "handle": "sandwiches-bowls",
+          "title": "Sandwiches & bowls",
+          "fields": {
+            "description": "A proper lunch, whether you have ten minutes or an hour.",
+            "image": "as_4x3_clay",
+            "image_alt": "Sandwiches & bowls placeholder",
+            "tint": "clay",
+            "order": 4
+          }
+        },
+        {
+          "id": "cat_desserts",
+          "handle": "desserts",
+          "title": "Desserts",
+          "fields": {
+            "description": "Fruit, cream and something still warm from the oven.",
+            "image": "as_4x3_plum",
+            "image_alt": "Desserts placeholder",
+            "tint": "plum",
+            "order": 5
+          }
+        },
+        {
+          "id": "cat_drinks",
+          "handle": "drinks",
+          "title": "Drinks",
+          "fields": {
+            "description": "Coffee, house sodas and a few things to linger over.",
+            "image": "as_4x3_sea",
+            "image_alt": "Drinks placeholder",
+            "tint": "sea",
+            "order": 6
+          }
+        }
+      ]
+    },
+    "menu_items": {
+      "name": "Menu items",
+      "fields": [
+        {
+          "id": "description",
+          "type": "textarea",
+          "label": "Description"
+        },
+        {
+          "id": "ingredients",
+          "type": "text",
+          "label": "Ingredients"
+        },
+        {
+          "id": "price",
+          "type": "number",
+          "label": "Price"
+        },
+        {
+          "id": "category",
+          "type": "entry",
+          "label": "Category",
+          "content_type": "menu_categories"
+        },
+        {
+          "id": "dietary",
+          "type": "text",
+          "label": "Dietary codes"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "featured",
+          "type": "checkbox",
+          "label": "Featured"
+        },
+        {
+          "id": "tag",
+          "type": "text",
+          "label": "Tag"
+        },
+        {
+          "id": "photos",
+          "type": "gallery",
+          "label": "Photos"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "dish_brown_butter_pancakes",
+          "handle": "brown-butter-pancakes",
+          "title": "Brown butter pancakes",
+          "fields": {
+            "description": "A short stack, crisp at the edges, with warm maple syrup.",
+            "ingredients": "buttermilk, brown butter, maple, sea salt",
+            "price": 14,
+            "category": "cat_breakfast",
+            "dietary": "V",
+            "image": "as_4x3_saffron",
+            "image_alt": "Brown butter pancakes placeholder",
+            "featured": true,
+            "tag": "House favourite",
+            "photos": "brown-butter-pancakes",
+            "order": 1
+          }
+        },
+        {
+          "id": "dish_green_shakshuka",
+          "handle": "green-shakshuka",
+          "title": "Green shakshuka",
+          "fields": {
+            "description": "Two eggs nestled into greens, finished with feta and toasted dukkah.",
+            "ingredients": "eggs, chard, feta, dukkah",
+            "price": 13,
+            "category": "cat_breakfast",
+            "dietary": "V, GF, N",
+            "image": "as_4x3_saffron",
+            "image_alt": "Green shakshuka placeholder",
+            "featured": true,
+            "tag": "",
+            "photos": "",
+            "order": 2
+          }
+        },
+        {
+          "id": "dish_crab_on_toast",
+          "handle": "crab-on-toast",
+          "title": "Crab on toast",
+          "fields": {
+            "description": "Picked harbour crab on thick toast with a squeeze of lemon.",
+            "ingredients": "crab, sourdough, lemon, chives",
+            "price": 18,
+            "category": "cat_breakfast",
+            "dietary": "DF",
+            "image": "as_4x3_saffron",
+            "image_alt": "Crab on toast placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 3
+          }
+        },
+        {
+          "id": "dish_soft_eggs_and_mushrooms",
+          "handle": "soft-eggs-and-mushrooms",
+          "title": "Soft eggs and mushrooms",
+          "fields": {
+            "description": "Soft eggs and mushrooms from the pan, with toast for the juices.",
+            "ingredients": "eggs, chestnut mushrooms, sourdough, thyme",
+            "price": 12,
+            "category": "cat_breakfast",
+            "dietary": "V",
+            "image": "as_4x3_saffron",
+            "image_alt": "Soft eggs and mushrooms placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 4
+          }
+        },
+        {
+          "id": "dish_porridge_and_pears",
+          "handle": "porridge-and-pears",
+          "title": "Porridge and pears",
+          "fields": {
+            "description": "Slow oats with pears poached until tender.",
+            "ingredients": "oats, oat milk, pear, cinnamon",
+            "price": 9,
+            "category": "cat_breakfast",
+            "dietary": "VG, DF",
+            "image": "as_4x3_saffron",
+            "image_alt": "Porridge and pears placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 5
+          }
+        },
+        {
+          "id": "dish_breakfast_beans",
+          "handle": "breakfast-beans",
+          "title": "Breakfast beans",
+          "fields": {
+            "description": "White beans in a rich tomato sauce, toast on the side.",
+            "ingredients": "white beans, tomato, sourdough, parsley",
+            "price": 11,
+            "category": "cat_breakfast",
+            "dietary": "VG, DF",
+            "image": "as_4x3_saffron",
+            "image_alt": "Breakfast beans placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 6
+          }
+        },
+        {
+          "id": "dish_charred_leeks",
+          "handle": "charred-leeks",
+          "title": "Charred leeks",
+          "fields": {
+            "description": "Sweet leeks from the grill, romesco and a little sharp vinegar.",
+            "ingredients": "romesco, hazelnut, sherry vinegar",
+            "price": 12,
+            "category": "cat_small_plates",
+            "dietary": "VG, GF, N",
+            "image": "as_4x3_leaf",
+            "image_alt": "Charred leeks placeholder",
+            "featured": true,
+            "tag": "Seasonal",
+            "photos": "",
+            "order": 1
+          }
+        },
+        {
+          "id": "dish_crispy_potatoes",
+          "handle": "crispy-potatoes",
+          "title": "Crispy potatoes",
+          "fields": {
+            "description": "Twice-cooked potatoes with smoked paprika and house plant aioli.",
+            "ingredients": "smoked paprika, aioli",
+            "price": 9,
+            "category": "cat_small_plates",
+            "dietary": "VG, GF, DF",
+            "image": "as_4x3_leaf",
+            "image_alt": "Crispy potatoes placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 2
+          }
+        },
+        {
+          "id": "dish_burrata",
+          "handle": "burrata",
+          "title": "Burrata",
+          "fields": {
+            "description": "Creamy burrata with bright citrus and toasted pistachio.",
+            "ingredients": "blood orange, pistachio, mint",
+            "price": 15,
+            "category": "cat_small_plates",
+            "dietary": "V, GF, N",
+            "image": "as_4x3_leaf",
+            "image_alt": "Burrata placeholder",
+            "featured": true,
+            "tag": "",
+            "photos": "",
+            "order": 3
+          }
+        },
+        {
+          "id": "dish_grilled_sardines",
+          "handle": "grilled-sardines",
+          "title": "Grilled sardines",
+          "fields": {
+            "description": "Sardines cooked quickly over the grill, lemon at the table.",
+            "ingredients": "sardines, lemon, parsley, olive oil",
+            "price": 13,
+            "category": "cat_small_plates",
+            "dietary": "GF, DF",
+            "image": "as_4x3_leaf",
+            "image_alt": "Grilled sardines placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 4
+          }
+        },
+        {
+          "id": "dish_roast_carrots",
+          "handle": "roast-carrots",
+          "title": "Roast carrots",
+          "fields": {
+            "description": "Sweet roast carrots with tahini and toasted cumin.",
+            "ingredients": "carrots, tahini, cumin, parsley",
+            "price": 10,
+            "category": "cat_small_plates",
+            "dietary": "VG, GF, DF",
+            "image": "as_4x3_leaf",
+            "image_alt": "Roast carrots placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 5
+          }
+        },
+        {
+          "id": "dish_white_bean_dip",
+          "handle": "white-bean-dip",
+          "title": "White bean dip",
+          "fields": {
+            "description": "Warm white beans whipped with garlic, rosemary and olive oil.",
+            "ingredients": "white beans, garlic, rosemary, flatbread",
+            "price": 8,
+            "category": "cat_small_plates",
+            "dietary": "VG, DF",
+            "image": "as_4x3_leaf",
+            "image_alt": "White bean dip placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 6
+          }
+        },
+        {
+          "id": "dish_harbour_fish_stew",
+          "handle": "harbour-fish-stew",
+          "title": "Harbour fish stew",
+          "fields": {
+            "description": "The harbour in a bowl: fish, mussels and a saffron broth.",
+            "ingredients": "mussels, hake, fennel, saffron broth, aioli",
+            "price": 29,
+            "category": "cat_mains",
+            "dietary": "GF",
+            "image": "as_4x3_tomato",
+            "image_alt": "Harbour fish stew placeholder",
+            "featured": true,
+            "tag": "Chef's pick",
+            "photos": "harbour-fish-stew",
+            "order": 1
+          }
+        },
+        {
+          "id": "dish_lamb_shoulder",
+          "handle": "lamb-shoulder",
+          "title": "Lamb shoulder",
+          "fields": {
+            "description": "Slow lamb, warm chickpeas and enough harissa to notice.",
+            "ingredients": "harissa, chickpeas, yoghurt",
+            "price": 32,
+            "category": "cat_mains",
+            "dietary": "GF, HOT",
+            "image": "as_4x3_tomato",
+            "image_alt": "Lamb shoulder placeholder",
+            "featured": true,
+            "tag": "",
+            "photos": "",
+            "order": 2
+          }
+        },
+        {
+          "id": "dish_wild_mushroom_tagliatelle",
+          "handle": "wild-mushroom-tagliatelle",
+          "title": "Wild mushroom tagliatelle",
+          "fields": {
+            "description": "Fresh ribbons of pasta with mushrooms, thyme and parmesan.",
+            "ingredients": "chestnut mushrooms, thyme, parmesan",
+            "price": 24,
+            "category": "cat_mains",
+            "dietary": "V",
+            "image": "as_4x3_tomato",
+            "image_alt": "Wild mushroom tagliatelle placeholder",
+            "featured": true,
+            "tag": "",
+            "photos": "",
+            "order": 3
+          }
+        },
+        {
+          "id": "dish_roast_chicken",
+          "handle": "roast-chicken",
+          "title": "Roast chicken",
+          "fields": {
+            "description": "A golden half chicken over beans and greens.",
+            "ingredients": "chicken, butter beans, cavolo nero, lemon",
+            "price": 26,
+            "category": "cat_mains",
+            "dietary": "GF",
+            "image": "as_4x3_tomato",
+            "image_alt": "Roast chicken placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 4
+          }
+        },
+        {
+          "id": "dish_market_fish",
+          "handle": "market-fish",
+          "title": "Market fish",
+          "fields": {
+            "description": "The catch from the quay, cooked simply with brown butter.",
+            "ingredients": "market fish, new potatoes, capers, brown butter",
+            "price": 28,
+            "category": "cat_mains",
+            "dietary": "GF",
+            "image": "as_4x3_tomato",
+            "image_alt": "Market fish placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 5
+          }
+        },
+        {
+          "id": "dish_aubergine_and_lentils",
+          "handle": "aubergine-and-lentils",
+          "title": "Aubergine and lentils",
+          "fields": {
+            "description": "Roast aubergine over warm lentils, with tomato and tahini.",
+            "ingredients": "aubergine, green lentils, tomato, tahini",
+            "price": 22,
+            "category": "cat_mains",
+            "dietary": "VG, GF, DF",
+            "image": "as_4x3_tomato",
+            "image_alt": "Aubergine and lentils placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 6
+          }
+        },
+        {
+          "id": "dish_beef_and_onions",
+          "handle": "beef-and-onions",
+          "title": "Beef and onions",
+          "fields": {
+            "description": "Beef braised until tender, with sweet onions and potato.",
+            "ingredients": "beef, onions, potato, red wine",
+            "price": 30,
+            "category": "cat_mains",
+            "dietary": "GF, DF",
+            "image": "as_4x3_tomato",
+            "image_alt": "Beef and onions placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 7
+          }
+        },
+        {
+          "id": "dish_squash_risotto",
+          "handle": "squash-risotto",
+          "title": "Squash risotto",
+          "fields": {
+            "description": "Slow rice, sweet squash and crisp sage leaves.",
+            "ingredients": "squash, arborio rice, sage, parmesan",
+            "price": 23,
+            "category": "cat_mains",
+            "dietary": "V, GF",
+            "image": "as_4x3_tomato",
+            "image_alt": "Squash risotto placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 8
+          }
+        },
+        {
+          "id": "dish_porchetta_roll",
+          "handle": "porchetta-roll",
+          "title": "Porchetta roll",
+          "fields": {
+            "description": "Warm pork, sharp fennel and a generous spoon of salsa verde.",
+            "ingredients": "slow pork, salsa verde, pickled fennel, ciabatta",
+            "price": 16,
+            "category": "cat_sandwiches_bowls",
+            "dietary": "N",
+            "image": "as_4x3_clay",
+            "image_alt": "Porchetta roll placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 1
+          }
+        },
+        {
+          "id": "dish_grain_bowl",
+          "handle": "grain-bowl",
+          "title": "Grain bowl",
+          "fields": {
+            "description": "Warm grains, roast squash and the good pickles from the kitchen.",
+            "ingredients": "farro, roast squash, tahini, pickles",
+            "price": 15,
+            "category": "cat_sandwiches_bowls",
+            "dietary": "VG, DF",
+            "image": "as_4x3_clay",
+            "image_alt": "Grain bowl placeholder",
+            "featured": true,
+            "tag": "New",
+            "photos": "grain-bowl",
+            "order": 2
+          }
+        },
+        {
+          "id": "dish_fish_sandwich",
+          "handle": "fish-sandwich",
+          "title": "Fish sandwich",
+          "fields": {
+            "description": "Crisp hake in ciabatta, with cabbage, lemon and olive oil.",
+            "ingredients": "hake, cabbage, lemon, olive oil, ciabatta",
+            "price": 17,
+            "category": "cat_sandwiches_bowls",
+            "dietary": "DF",
+            "image": "as_4x3_clay",
+            "image_alt": "Fish sandwich placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 3
+          }
+        },
+        {
+          "id": "dish_roast_squash_sandwich",
+          "handle": "roast-squash-sandwich",
+          "title": "Roast squash sandwich",
+          "fields": {
+            "description": "Sweet squash, hummus and peppery leaves on sourdough.",
+            "ingredients": "squash, hummus, rocket, sourdough",
+            "price": 14,
+            "category": "cat_sandwiches_bowls",
+            "dietary": "VG, DF",
+            "image": "as_4x3_clay",
+            "image_alt": "Roast squash sandwich placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 4
+          }
+        },
+        {
+          "id": "dish_chicken_rice_bowl",
+          "handle": "chicken-rice-bowl",
+          "title": "Chicken rice bowl",
+          "fields": {
+            "description": "Warm chicken and rice with cool cucumber and ginger dressing.",
+            "ingredients": "chicken, brown rice, cucumber, ginger",
+            "price": 16,
+            "category": "cat_sandwiches_bowls",
+            "dietary": "GF, DF",
+            "image": "as_4x3_clay",
+            "image_alt": "Chicken rice bowl placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 5
+          }
+        },
+        {
+          "id": "dish_tomato_and_cheese_toastie",
+          "handle": "tomato-and-cheese-toastie",
+          "title": "Tomato and cheese toastie",
+          "fields": {
+            "description": "A crisp toastie with cheddar, ripe tomato and mustard.",
+            "ingredients": "cheddar, tomato, sourdough, mustard",
+            "price": 13,
+            "category": "cat_sandwiches_bowls",
+            "dietary": "V",
+            "image": "as_4x3_clay",
+            "image_alt": "Tomato and cheese toastie placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 6
+          }
+        },
+        {
+          "id": "dish_blackberry_rice_pudding",
+          "handle": "blackberry-rice-pudding",
+          "title": "Blackberry rice pudding",
+          "fields": {
+            "description": "Creamy rice with bay leaf and a spoon of blackberry compote.",
+            "ingredients": "arborio, blackberry, bay leaf, cream",
+            "price": 9,
+            "category": "cat_desserts",
+            "dietary": "V, GF",
+            "image": "as_4x3_plum",
+            "image_alt": "Blackberry rice pudding placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 1
+          }
+        },
+        {
+          "id": "dish_olive_oil_cake",
+          "handle": "olive-oil-cake",
+          "title": "Olive oil cake",
+          "fields": {
+            "description": "A soft slice of olive oil cake, with citrus and crème fraîche.",
+            "ingredients": "citrus, crème fraîche",
+            "price": 8,
+            "category": "cat_desserts",
+            "dietary": "V",
+            "image": "as_4x3_plum",
+            "image_alt": "Olive oil cake placeholder",
+            "featured": false,
+            "tag": "House favourite",
+            "photos": "",
+            "order": 2
+          }
+        },
+        {
+          "id": "dish_chocolate_pot",
+          "handle": "chocolate-pot",
+          "title": "Chocolate pot",
+          "fields": {
+            "description": "Dark chocolate, a little cream and a few flakes of sea salt.",
+            "ingredients": "dark chocolate, cream, sea salt",
+            "price": 9,
+            "category": "cat_desserts",
+            "dietary": "V, GF",
+            "image": "as_4x3_plum",
+            "image_alt": "Chocolate pot placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 3
+          }
+        },
+        {
+          "id": "dish_poached_quince",
+          "handle": "poached-quince",
+          "title": "Poached quince",
+          "fields": {
+            "description": "Quince poached slowly with vanilla, served with oat cream.",
+            "ingredients": "quince, vanilla, oat cream",
+            "price": 8,
+            "category": "cat_desserts",
+            "dietary": "VG, GF, DF",
+            "image": "as_4x3_plum",
+            "image_alt": "Poached quince placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 4
+          }
+        },
+        {
+          "id": "dish_sea_buckthorn_soda",
+          "handle": "sea-buckthorn-soda",
+          "title": "Sea buckthorn soda",
+          "fields": {
+            "description": "Sharp sea buckthorn, ginger and a squeeze of lime.",
+            "ingredients": "sea buckthorn, ginger, soda, lime",
+            "price": 7,
+            "category": "cat_drinks",
+            "dietary": "VG, GF, DF",
+            "image": "as_4x3_sea",
+            "image_alt": "Sea buckthorn soda placeholder",
+            "featured": false,
+            "tag": "Seasonal",
+            "photos": "",
+            "order": 1
+          }
+        },
+        {
+          "id": "dish_espresso_tonic",
+          "handle": "espresso-tonic",
+          "title": "Espresso tonic",
+          "fields": {
+            "description": "A short espresso over tonic and ice, with orange peel.",
+            "ingredients": "espresso, tonic, orange",
+            "price": 6,
+            "category": "cat_drinks",
+            "dietary": "VG, GF, DF",
+            "image": "as_4x3_sea",
+            "image_alt": "Espresso tonic placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 2
+          }
+        },
+        {
+          "id": "dish_flat_white",
+          "handle": "flat-white",
+          "title": "Flat white",
+          "fields": {
+            "description": "A double espresso with smooth steamed milk.",
+            "ingredients": "espresso, milk",
+            "price": 5,
+            "category": "cat_drinks",
+            "dietary": "V, GF",
+            "image": "as_4x3_sea",
+            "image_alt": "Flat white placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 3
+          }
+        },
+        {
+          "id": "dish_filter_coffee",
+          "handle": "filter-coffee",
+          "title": "Filter coffee",
+          "fields": {
+            "description": "A changing coffee, brewed fresh through the morning.",
+            "ingredients": "coffee, water",
+            "price": 4,
+            "category": "cat_drinks",
+            "dietary": "VG, GF, DF",
+            "image": "as_4x3_sea",
+            "image_alt": "Filter coffee placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 4
+          }
+        },
+        {
+          "id": "dish_mint_tea",
+          "handle": "mint-tea",
+          "title": "Mint tea",
+          "fields": {
+            "description": "Fresh mint leaves, hot water and a quiet few minutes.",
+            "ingredients": "mint, water",
+            "price": 4,
+            "category": "cat_drinks",
+            "dietary": "VG, GF, DF",
+            "image": "as_4x3_sea",
+            "image_alt": "Mint tea placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 5
+          }
+        },
+        {
+          "id": "dish_apple_shrub",
+          "handle": "apple-shrub",
+          "title": "Apple shrub",
+          "fields": {
+            "description": "A house apple shrub, long with soda and rosemary.",
+            "ingredients": "apple, cider vinegar, soda, rosemary",
+            "price": 6,
+            "category": "cat_drinks",
+            "dietary": "VG, GF, DF",
+            "image": "as_4x3_sea",
+            "image_alt": "Apple shrub placeholder",
+            "featured": false,
+            "tag": "",
+            "photos": "",
+            "order": 6
+          }
+        }
+      ]
+    },
+    "events": {
+      "name": "Events",
+      "fields": [
+        {
+          "id": "date",
+          "type": "date",
+          "label": "Date"
+        },
+        {
+          "id": "time",
+          "type": "text",
+          "label": "Time"
+        },
+        {
+          "id": "description",
+          "type": "richtext",
+          "label": "Description"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Link"
+        }
+      ],
+      "entries": [
+        {
+          "id": "event_supper_club",
+          "handle": "supper-club",
+          "title": "Supper club",
+          "fields": {
+            "date": "2026-11-14",
+            "time": "7pm",
+            "description": "<p>A long table, five plates and a few good bottles. Join Ines for a Saturday supper from the harbour.</p>",
+            "image": "as_3x2_1",
+            "image_alt": "Supper club placeholder",
+            "link": "/reservations"
+          }
+        },
+        {
+          "id": "event_oyster_night",
+          "handle": "oyster-night",
+          "title": "Oyster night",
+          "fields": {
+            "date": "2026-11-27",
+            "time": "6–9pm",
+            "description": "<p>Oysters from the coast, cold glasses and warm bread. Come by on Friday evening.</p>",
+            "image": "as_3x2_2",
+            "image_alt": "Oyster night placeholder",
+            "link": "/reservations"
+          }
+        },
+        {
+          "id": "event_natural_wine_tasting",
+          "handle": "natural-wine-tasting",
+          "title": "Natural wine tasting",
+          "fields": {
+            "date": "2026-12-05",
+            "time": "5pm",
+            "description": "<p>Meet the growers behind a few of our favourite bottles, with small plates from the kitchen.</p>",
+            "image": "as_3x2_3",
+            "image_alt": "Natural wine tasting placeholder",
+            "link": "/reservations"
+          }
+        },
+        {
+          "id": "event_sunday_roast",
+          "handle": "sunday-roast",
+          "title": "Sunday roast",
+          "fields": {
+            "date": "2026-12-13",
+            "time": "12–4pm",
+            "description": "<p>A slow Sunday lunch with roast chicken, potatoes and the whole table together.</p>",
+            "image": "as_3x2_4",
+            "image_alt": "Sunday roast placeholder",
+            "link": "/reservations"
+          }
+        }
+      ]
+    }
+  },
+  "pages": {
+    "/": {
+      "id": "pg_home",
+      "template": "home",
+      "title": "Halfmoon Canteen",
+      "seo": {
+        "description": "An all-day canteen by the harbour in Bellport."
+      }
+    },
+    "/cover": {
+      "id": "pg_cover",
+      "template": "home.cover",
+      "title": "Halfmoon Canteen",
+      "seo": {
+        "description": "Good food, warm bread and a place at the table."
+      }
+    },
+    "/menu": {
+      "id": "pg_menu",
+      "template": "page.menu",
+      "title": "Menu",
+      "seo": {
+        "description": "Breakfast, small plates, mains and something sweet."
+      }
+    },
+    "/menu/list": {
+      "id": "pg_menu_list",
+      "template": "page.menu-list",
+      "title": "Menu",
+      "seo": {
+        "description": "The Halfmoon menu, from breakfast to dinner."
+      }
+    },
+    "/about": {
+      "id": "pg_about",
+      "template": "page.about",
+      "title": "About",
+      "seo": {
+        "description": "Meet the people behind Halfmoon Canteen."
+      }
+    },
+    "/events": {
+      "id": "pg_events",
+      "template": "page.events",
+      "title": "What’s on",
+      "seo": {
+        "description": "Supper clubs, oyster nights and long Sunday lunches."
+      }
+    },
+    "/gallery": {
+      "id": "pg_gallery",
+      "template": "page.gallery",
+      "title": "The room",
+      "seo": {
+        "description": "A look around Halfmoon Canteen."
+      }
+    },
+    "/reservations": {
+      "id": "pg_reservations",
+      "template": "page.reservations",
+      "title": "Book a table",
+      "seo": {
+        "description": "Find a place at the table at Halfmoon Canteen."
+      }
+    },
+    "/contact": {
+      "id": "pg_contact",
+      "template": "page.contact",
+      "title": "Contact",
+      "seo": {
+        "description": "Write to us, call or find us on Quay Street."
+      }
+    },
+    "/privacy": {
+      "id": "pg_privacy",
+      "template": "page",
+      "title": "Privacy",
+      "seo": {
+        "description": "How Halfmoon Canteen handles your information."
+      },
+      "content": "<p><strong>This is a placeholder. Replace it with your privacy notice before publishing.</strong></p><p>Describe what the reservation, contact and newsletter forms collect, how you use it, how long you keep it and how someone can request its deletion. The privacy notice remembers a preference in the visitor’s browser. Mention any external fonts, maps, links or services used on your site.</p>"
+    },
+    "/dishes/brown-butter-pancakes": {
+      "id": "pg_brown_butter_pancakes",
+      "template": "dish",
+      "title": "Brown butter pancakes",
+      "params": {
+        "dish": "brown-butter-pancakes"
+      },
+      "entry": {
+        "id": "dish_brown_butter_pancakes",
+        "handle": "brown-butter-pancakes",
+        "title": "Brown butter pancakes",
+        "fields": {
+          "description": "A short stack, crisp at the edges, with warm maple syrup.",
+          "ingredients": "buttermilk, brown butter, maple, sea salt",
+          "price": 14,
+          "category": "cat_breakfast",
+          "dietary": "V",
+          "image": "as_4x3_saffron",
+          "image_alt": "Brown butter pancakes placeholder",
+          "featured": true,
+          "tag": "House favourite",
+          "photos": "brown-butter-pancakes",
+          "order": 1
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "A short stack, crisp at the edges, with warm maple syrup.",
+        "image": "as_4x3_saffron"
+      }
+    },
+    "/dishes/green-shakshuka": {
+      "id": "pg_green_shakshuka",
+      "template": "dish",
+      "title": "Green shakshuka",
+      "params": {
+        "dish": "green-shakshuka"
+      },
+      "entry": {
+        "id": "dish_green_shakshuka",
+        "handle": "green-shakshuka",
+        "title": "Green shakshuka",
+        "fields": {
+          "description": "Two eggs nestled into greens, finished with feta and toasted dukkah.",
+          "ingredients": "eggs, chard, feta, dukkah",
+          "price": 13,
+          "category": "cat_breakfast",
+          "dietary": "V, GF, N",
+          "image": "as_4x3_saffron",
+          "image_alt": "Green shakshuka placeholder",
+          "featured": true,
+          "tag": "",
+          "photos": "",
+          "order": 2
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Two eggs nestled into greens, finished with feta and toasted dukkah.",
+        "image": "as_4x3_saffron"
+      }
+    },
+    "/dishes/crab-on-toast": {
+      "id": "pg_crab_on_toast",
+      "template": "dish",
+      "title": "Crab on toast",
+      "params": {
+        "dish": "crab-on-toast"
+      },
+      "entry": {
+        "id": "dish_crab_on_toast",
+        "handle": "crab-on-toast",
+        "title": "Crab on toast",
+        "fields": {
+          "description": "Picked harbour crab on thick toast with a squeeze of lemon.",
+          "ingredients": "crab, sourdough, lemon, chives",
+          "price": 18,
+          "category": "cat_breakfast",
+          "dietary": "DF",
+          "image": "as_4x3_saffron",
+          "image_alt": "Crab on toast placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 3
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Picked harbour crab on thick toast with a squeeze of lemon.",
+        "image": "as_4x3_saffron"
+      }
+    },
+    "/dishes/soft-eggs-and-mushrooms": {
+      "id": "pg_soft_eggs_and_mushrooms",
+      "template": "dish",
+      "title": "Soft eggs and mushrooms",
+      "params": {
+        "dish": "soft-eggs-and-mushrooms"
+      },
+      "entry": {
+        "id": "dish_soft_eggs_and_mushrooms",
+        "handle": "soft-eggs-and-mushrooms",
+        "title": "Soft eggs and mushrooms",
+        "fields": {
+          "description": "Soft eggs and mushrooms from the pan, with toast for the juices.",
+          "ingredients": "eggs, chestnut mushrooms, sourdough, thyme",
+          "price": 12,
+          "category": "cat_breakfast",
+          "dietary": "V",
+          "image": "as_4x3_saffron",
+          "image_alt": "Soft eggs and mushrooms placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 4
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Soft eggs and mushrooms from the pan, with toast for the juices.",
+        "image": "as_4x3_saffron"
+      }
+    },
+    "/dishes/porridge-and-pears": {
+      "id": "pg_porridge_and_pears",
+      "template": "dish",
+      "title": "Porridge and pears",
+      "params": {
+        "dish": "porridge-and-pears"
+      },
+      "entry": {
+        "id": "dish_porridge_and_pears",
+        "handle": "porridge-and-pears",
+        "title": "Porridge and pears",
+        "fields": {
+          "description": "Slow oats with pears poached until tender.",
+          "ingredients": "oats, oat milk, pear, cinnamon",
+          "price": 9,
+          "category": "cat_breakfast",
+          "dietary": "VG, DF",
+          "image": "as_4x3_saffron",
+          "image_alt": "Porridge and pears placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 5
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Slow oats with pears poached until tender.",
+        "image": "as_4x3_saffron"
+      }
+    },
+    "/dishes/breakfast-beans": {
+      "id": "pg_breakfast_beans",
+      "template": "dish",
+      "title": "Breakfast beans",
+      "params": {
+        "dish": "breakfast-beans"
+      },
+      "entry": {
+        "id": "dish_breakfast_beans",
+        "handle": "breakfast-beans",
+        "title": "Breakfast beans",
+        "fields": {
+          "description": "White beans in a rich tomato sauce, toast on the side.",
+          "ingredients": "white beans, tomato, sourdough, parsley",
+          "price": 11,
+          "category": "cat_breakfast",
+          "dietary": "VG, DF",
+          "image": "as_4x3_saffron",
+          "image_alt": "Breakfast beans placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 6
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "White beans in a rich tomato sauce, toast on the side.",
+        "image": "as_4x3_saffron"
+      }
+    },
+    "/dishes/charred-leeks": {
+      "id": "pg_charred_leeks",
+      "template": "dish",
+      "title": "Charred leeks",
+      "params": {
+        "dish": "charred-leeks"
+      },
+      "entry": {
+        "id": "dish_charred_leeks",
+        "handle": "charred-leeks",
+        "title": "Charred leeks",
+        "fields": {
+          "description": "Sweet leeks from the grill, romesco and a little sharp vinegar.",
+          "ingredients": "romesco, hazelnut, sherry vinegar",
+          "price": 12,
+          "category": "cat_small_plates",
+          "dietary": "VG, GF, N",
+          "image": "as_4x3_leaf",
+          "image_alt": "Charred leeks placeholder",
+          "featured": true,
+          "tag": "Seasonal",
+          "photos": "",
+          "order": 1
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Sweet leeks from the grill, romesco and a little sharp vinegar.",
+        "image": "as_4x3_leaf"
+      }
+    },
+    "/dishes/crispy-potatoes": {
+      "id": "pg_crispy_potatoes",
+      "template": "dish",
+      "title": "Crispy potatoes",
+      "params": {
+        "dish": "crispy-potatoes"
+      },
+      "entry": {
+        "id": "dish_crispy_potatoes",
+        "handle": "crispy-potatoes",
+        "title": "Crispy potatoes",
+        "fields": {
+          "description": "Twice-cooked potatoes with smoked paprika and house plant aioli.",
+          "ingredients": "smoked paprika, aioli",
+          "price": 9,
+          "category": "cat_small_plates",
+          "dietary": "VG, GF, DF",
+          "image": "as_4x3_leaf",
+          "image_alt": "Crispy potatoes placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 2
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Twice-cooked potatoes with smoked paprika and house plant aioli.",
+        "image": "as_4x3_leaf"
+      }
+    },
+    "/dishes/burrata": {
+      "id": "pg_burrata",
+      "template": "dish",
+      "title": "Burrata",
+      "params": {
+        "dish": "burrata"
+      },
+      "entry": {
+        "id": "dish_burrata",
+        "handle": "burrata",
+        "title": "Burrata",
+        "fields": {
+          "description": "Creamy burrata with bright citrus and toasted pistachio.",
+          "ingredients": "blood orange, pistachio, mint",
+          "price": 15,
+          "category": "cat_small_plates",
+          "dietary": "V, GF, N",
+          "image": "as_4x3_leaf",
+          "image_alt": "Burrata placeholder",
+          "featured": true,
+          "tag": "",
+          "photos": "",
+          "order": 3
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Creamy burrata with bright citrus and toasted pistachio.",
+        "image": "as_4x3_leaf"
+      }
+    },
+    "/dishes/grilled-sardines": {
+      "id": "pg_grilled_sardines",
+      "template": "dish",
+      "title": "Grilled sardines",
+      "params": {
+        "dish": "grilled-sardines"
+      },
+      "entry": {
+        "id": "dish_grilled_sardines",
+        "handle": "grilled-sardines",
+        "title": "Grilled sardines",
+        "fields": {
+          "description": "Sardines cooked quickly over the grill, lemon at the table.",
+          "ingredients": "sardines, lemon, parsley, olive oil",
+          "price": 13,
+          "category": "cat_small_plates",
+          "dietary": "GF, DF",
+          "image": "as_4x3_leaf",
+          "image_alt": "Grilled sardines placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 4
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Sardines cooked quickly over the grill, lemon at the table.",
+        "image": "as_4x3_leaf"
+      }
+    },
+    "/dishes/roast-carrots": {
+      "id": "pg_roast_carrots",
+      "template": "dish",
+      "title": "Roast carrots",
+      "params": {
+        "dish": "roast-carrots"
+      },
+      "entry": {
+        "id": "dish_roast_carrots",
+        "handle": "roast-carrots",
+        "title": "Roast carrots",
+        "fields": {
+          "description": "Sweet roast carrots with tahini and toasted cumin.",
+          "ingredients": "carrots, tahini, cumin, parsley",
+          "price": 10,
+          "category": "cat_small_plates",
+          "dietary": "VG, GF, DF",
+          "image": "as_4x3_leaf",
+          "image_alt": "Roast carrots placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 5
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Sweet roast carrots with tahini and toasted cumin.",
+        "image": "as_4x3_leaf"
+      }
+    },
+    "/dishes/white-bean-dip": {
+      "id": "pg_white_bean_dip",
+      "template": "dish",
+      "title": "White bean dip",
+      "params": {
+        "dish": "white-bean-dip"
+      },
+      "entry": {
+        "id": "dish_white_bean_dip",
+        "handle": "white-bean-dip",
+        "title": "White bean dip",
+        "fields": {
+          "description": "Warm white beans whipped with garlic, rosemary and olive oil.",
+          "ingredients": "white beans, garlic, rosemary, flatbread",
+          "price": 8,
+          "category": "cat_small_plates",
+          "dietary": "VG, DF",
+          "image": "as_4x3_leaf",
+          "image_alt": "White bean dip placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 6
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Warm white beans whipped with garlic, rosemary and olive oil.",
+        "image": "as_4x3_leaf"
+      }
+    },
+    "/dishes/harbour-fish-stew": {
+      "id": "pg_harbour_fish_stew",
+      "template": "dish",
+      "title": "Harbour fish stew",
+      "params": {
+        "dish": "harbour-fish-stew"
+      },
+      "entry": {
+        "id": "dish_harbour_fish_stew",
+        "handle": "harbour-fish-stew",
+        "title": "Harbour fish stew",
+        "fields": {
+          "description": "The harbour in a bowl: fish, mussels and a saffron broth.",
+          "ingredients": "mussels, hake, fennel, saffron broth, aioli",
+          "price": 29,
+          "category": "cat_mains",
+          "dietary": "GF",
+          "image": "as_4x3_tomato",
+          "image_alt": "Harbour fish stew placeholder",
+          "featured": true,
+          "tag": "Chef's pick",
+          "photos": "harbour-fish-stew",
+          "order": 1
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "The harbour in a bowl: fish, mussels and a saffron broth.",
+        "image": "as_4x3_tomato"
+      }
+    },
+    "/dishes/lamb-shoulder": {
+      "id": "pg_lamb_shoulder",
+      "template": "dish",
+      "title": "Lamb shoulder",
+      "params": {
+        "dish": "lamb-shoulder"
+      },
+      "entry": {
+        "id": "dish_lamb_shoulder",
+        "handle": "lamb-shoulder",
+        "title": "Lamb shoulder",
+        "fields": {
+          "description": "Slow lamb, warm chickpeas and enough harissa to notice.",
+          "ingredients": "harissa, chickpeas, yoghurt",
+          "price": 32,
+          "category": "cat_mains",
+          "dietary": "GF, HOT",
+          "image": "as_4x3_tomato",
+          "image_alt": "Lamb shoulder placeholder",
+          "featured": true,
+          "tag": "",
+          "photos": "",
+          "order": 2
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Slow lamb, warm chickpeas and enough harissa to notice.",
+        "image": "as_4x3_tomato"
+      }
+    },
+    "/dishes/wild-mushroom-tagliatelle": {
+      "id": "pg_wild_mushroom_tagliatelle",
+      "template": "dish",
+      "title": "Wild mushroom tagliatelle",
+      "params": {
+        "dish": "wild-mushroom-tagliatelle"
+      },
+      "entry": {
+        "id": "dish_wild_mushroom_tagliatelle",
+        "handle": "wild-mushroom-tagliatelle",
+        "title": "Wild mushroom tagliatelle",
+        "fields": {
+          "description": "Fresh ribbons of pasta with mushrooms, thyme and parmesan.",
+          "ingredients": "chestnut mushrooms, thyme, parmesan",
+          "price": 24,
+          "category": "cat_mains",
+          "dietary": "V",
+          "image": "as_4x3_tomato",
+          "image_alt": "Wild mushroom tagliatelle placeholder",
+          "featured": true,
+          "tag": "",
+          "photos": "",
+          "order": 3
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Fresh ribbons of pasta with mushrooms, thyme and parmesan.",
+        "image": "as_4x3_tomato"
+      }
+    },
+    "/dishes/roast-chicken": {
+      "id": "pg_roast_chicken",
+      "template": "dish",
+      "title": "Roast chicken",
+      "params": {
+        "dish": "roast-chicken"
+      },
+      "entry": {
+        "id": "dish_roast_chicken",
+        "handle": "roast-chicken",
+        "title": "Roast chicken",
+        "fields": {
+          "description": "A golden half chicken over beans and greens.",
+          "ingredients": "chicken, butter beans, cavolo nero, lemon",
+          "price": 26,
+          "category": "cat_mains",
+          "dietary": "GF",
+          "image": "as_4x3_tomato",
+          "image_alt": "Roast chicken placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 4
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "A golden half chicken over beans and greens.",
+        "image": "as_4x3_tomato"
+      }
+    },
+    "/dishes/market-fish": {
+      "id": "pg_market_fish",
+      "template": "dish",
+      "title": "Market fish",
+      "params": {
+        "dish": "market-fish"
+      },
+      "entry": {
+        "id": "dish_market_fish",
+        "handle": "market-fish",
+        "title": "Market fish",
+        "fields": {
+          "description": "The catch from the quay, cooked simply with brown butter.",
+          "ingredients": "market fish, new potatoes, capers, brown butter",
+          "price": 28,
+          "category": "cat_mains",
+          "dietary": "GF",
+          "image": "as_4x3_tomato",
+          "image_alt": "Market fish placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 5
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "The catch from the quay, cooked simply with brown butter.",
+        "image": "as_4x3_tomato"
+      }
+    },
+    "/dishes/aubergine-and-lentils": {
+      "id": "pg_aubergine_and_lentils",
+      "template": "dish",
+      "title": "Aubergine and lentils",
+      "params": {
+        "dish": "aubergine-and-lentils"
+      },
+      "entry": {
+        "id": "dish_aubergine_and_lentils",
+        "handle": "aubergine-and-lentils",
+        "title": "Aubergine and lentils",
+        "fields": {
+          "description": "Roast aubergine over warm lentils, with tomato and tahini.",
+          "ingredients": "aubergine, green lentils, tomato, tahini",
+          "price": 22,
+          "category": "cat_mains",
+          "dietary": "VG, GF, DF",
+          "image": "as_4x3_tomato",
+          "image_alt": "Aubergine and lentils placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 6
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Roast aubergine over warm lentils, with tomato and tahini.",
+        "image": "as_4x3_tomato"
+      }
+    },
+    "/dishes/beef-and-onions": {
+      "id": "pg_beef_and_onions",
+      "template": "dish",
+      "title": "Beef and onions",
+      "params": {
+        "dish": "beef-and-onions"
+      },
+      "entry": {
+        "id": "dish_beef_and_onions",
+        "handle": "beef-and-onions",
+        "title": "Beef and onions",
+        "fields": {
+          "description": "Beef braised until tender, with sweet onions and potato.",
+          "ingredients": "beef, onions, potato, red wine",
+          "price": 30,
+          "category": "cat_mains",
+          "dietary": "GF, DF",
+          "image": "as_4x3_tomato",
+          "image_alt": "Beef and onions placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 7
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Beef braised until tender, with sweet onions and potato.",
+        "image": "as_4x3_tomato"
+      }
+    },
+    "/dishes/squash-risotto": {
+      "id": "pg_squash_risotto",
+      "template": "dish",
+      "title": "Squash risotto",
+      "params": {
+        "dish": "squash-risotto"
+      },
+      "entry": {
+        "id": "dish_squash_risotto",
+        "handle": "squash-risotto",
+        "title": "Squash risotto",
+        "fields": {
+          "description": "Slow rice, sweet squash and crisp sage leaves.",
+          "ingredients": "squash, arborio rice, sage, parmesan",
+          "price": 23,
+          "category": "cat_mains",
+          "dietary": "V, GF",
+          "image": "as_4x3_tomato",
+          "image_alt": "Squash risotto placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 8
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Slow rice, sweet squash and crisp sage leaves.",
+        "image": "as_4x3_tomato"
+      }
+    },
+    "/dishes/porchetta-roll": {
+      "id": "pg_porchetta_roll",
+      "template": "dish",
+      "title": "Porchetta roll",
+      "params": {
+        "dish": "porchetta-roll"
+      },
+      "entry": {
+        "id": "dish_porchetta_roll",
+        "handle": "porchetta-roll",
+        "title": "Porchetta roll",
+        "fields": {
+          "description": "Warm pork, sharp fennel and a generous spoon of salsa verde.",
+          "ingredients": "slow pork, salsa verde, pickled fennel, ciabatta",
+          "price": 16,
+          "category": "cat_sandwiches_bowls",
+          "dietary": "N",
+          "image": "as_4x3_clay",
+          "image_alt": "Porchetta roll placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 1
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Warm pork, sharp fennel and a generous spoon of salsa verde.",
+        "image": "as_4x3_clay"
+      }
+    },
+    "/dishes/grain-bowl": {
+      "id": "pg_grain_bowl",
+      "template": "dish",
+      "title": "Grain bowl",
+      "params": {
+        "dish": "grain-bowl"
+      },
+      "entry": {
+        "id": "dish_grain_bowl",
+        "handle": "grain-bowl",
+        "title": "Grain bowl",
+        "fields": {
+          "description": "Warm grains, roast squash and the good pickles from the kitchen.",
+          "ingredients": "farro, roast squash, tahini, pickles",
+          "price": 15,
+          "category": "cat_sandwiches_bowls",
+          "dietary": "VG, DF",
+          "image": "as_4x3_clay",
+          "image_alt": "Grain bowl placeholder",
+          "featured": true,
+          "tag": "New",
+          "photos": "grain-bowl",
+          "order": 2
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Warm grains, roast squash and the good pickles from the kitchen.",
+        "image": "as_4x3_clay"
+      }
+    },
+    "/dishes/fish-sandwich": {
+      "id": "pg_fish_sandwich",
+      "template": "dish",
+      "title": "Fish sandwich",
+      "params": {
+        "dish": "fish-sandwich"
+      },
+      "entry": {
+        "id": "dish_fish_sandwich",
+        "handle": "fish-sandwich",
+        "title": "Fish sandwich",
+        "fields": {
+          "description": "Crisp hake in ciabatta, with cabbage, lemon and olive oil.",
+          "ingredients": "hake, cabbage, lemon, olive oil, ciabatta",
+          "price": 17,
+          "category": "cat_sandwiches_bowls",
+          "dietary": "DF",
+          "image": "as_4x3_clay",
+          "image_alt": "Fish sandwich placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 3
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Crisp hake in ciabatta, with cabbage, lemon and olive oil.",
+        "image": "as_4x3_clay"
+      }
+    },
+    "/dishes/roast-squash-sandwich": {
+      "id": "pg_roast_squash_sandwich",
+      "template": "dish",
+      "title": "Roast squash sandwich",
+      "params": {
+        "dish": "roast-squash-sandwich"
+      },
+      "entry": {
+        "id": "dish_roast_squash_sandwich",
+        "handle": "roast-squash-sandwich",
+        "title": "Roast squash sandwich",
+        "fields": {
+          "description": "Sweet squash, hummus and peppery leaves on sourdough.",
+          "ingredients": "squash, hummus, rocket, sourdough",
+          "price": 14,
+          "category": "cat_sandwiches_bowls",
+          "dietary": "VG, DF",
+          "image": "as_4x3_clay",
+          "image_alt": "Roast squash sandwich placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 4
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Sweet squash, hummus and peppery leaves on sourdough.",
+        "image": "as_4x3_clay"
+      }
+    },
+    "/dishes/chicken-rice-bowl": {
+      "id": "pg_chicken_rice_bowl",
+      "template": "dish",
+      "title": "Chicken rice bowl",
+      "params": {
+        "dish": "chicken-rice-bowl"
+      },
+      "entry": {
+        "id": "dish_chicken_rice_bowl",
+        "handle": "chicken-rice-bowl",
+        "title": "Chicken rice bowl",
+        "fields": {
+          "description": "Warm chicken and rice with cool cucumber and ginger dressing.",
+          "ingredients": "chicken, brown rice, cucumber, ginger",
+          "price": 16,
+          "category": "cat_sandwiches_bowls",
+          "dietary": "GF, DF",
+          "image": "as_4x3_clay",
+          "image_alt": "Chicken rice bowl placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 5
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Warm chicken and rice with cool cucumber and ginger dressing.",
+        "image": "as_4x3_clay"
+      }
+    },
+    "/dishes/tomato-and-cheese-toastie": {
+      "id": "pg_tomato_and_cheese_toastie",
+      "template": "dish",
+      "title": "Tomato and cheese toastie",
+      "params": {
+        "dish": "tomato-and-cheese-toastie"
+      },
+      "entry": {
+        "id": "dish_tomato_and_cheese_toastie",
+        "handle": "tomato-and-cheese-toastie",
+        "title": "Tomato and cheese toastie",
+        "fields": {
+          "description": "A crisp toastie with cheddar, ripe tomato and mustard.",
+          "ingredients": "cheddar, tomato, sourdough, mustard",
+          "price": 13,
+          "category": "cat_sandwiches_bowls",
+          "dietary": "V",
+          "image": "as_4x3_clay",
+          "image_alt": "Tomato and cheese toastie placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 6
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "A crisp toastie with cheddar, ripe tomato and mustard.",
+        "image": "as_4x3_clay"
+      }
+    },
+    "/dishes/blackberry-rice-pudding": {
+      "id": "pg_blackberry_rice_pudding",
+      "template": "dish",
+      "title": "Blackberry rice pudding",
+      "params": {
+        "dish": "blackberry-rice-pudding"
+      },
+      "entry": {
+        "id": "dish_blackberry_rice_pudding",
+        "handle": "blackberry-rice-pudding",
+        "title": "Blackberry rice pudding",
+        "fields": {
+          "description": "Creamy rice with bay leaf and a spoon of blackberry compote.",
+          "ingredients": "arborio, blackberry, bay leaf, cream",
+          "price": 9,
+          "category": "cat_desserts",
+          "dietary": "V, GF",
+          "image": "as_4x3_plum",
+          "image_alt": "Blackberry rice pudding placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 1
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Creamy rice with bay leaf and a spoon of blackberry compote.",
+        "image": "as_4x3_plum"
+      }
+    },
+    "/dishes/olive-oil-cake": {
+      "id": "pg_olive_oil_cake",
+      "template": "dish",
+      "title": "Olive oil cake",
+      "params": {
+        "dish": "olive-oil-cake"
+      },
+      "entry": {
+        "id": "dish_olive_oil_cake",
+        "handle": "olive-oil-cake",
+        "title": "Olive oil cake",
+        "fields": {
+          "description": "A soft slice of olive oil cake, with citrus and crème fraîche.",
+          "ingredients": "citrus, crème fraîche",
+          "price": 8,
+          "category": "cat_desserts",
+          "dietary": "V",
+          "image": "as_4x3_plum",
+          "image_alt": "Olive oil cake placeholder",
+          "featured": false,
+          "tag": "House favourite",
+          "photos": "",
+          "order": 2
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "A soft slice of olive oil cake, with citrus and crème fraîche.",
+        "image": "as_4x3_plum"
+      }
+    },
+    "/dishes/chocolate-pot": {
+      "id": "pg_chocolate_pot",
+      "template": "dish",
+      "title": "Chocolate pot",
+      "params": {
+        "dish": "chocolate-pot"
+      },
+      "entry": {
+        "id": "dish_chocolate_pot",
+        "handle": "chocolate-pot",
+        "title": "Chocolate pot",
+        "fields": {
+          "description": "Dark chocolate, a little cream and a few flakes of sea salt.",
+          "ingredients": "dark chocolate, cream, sea salt",
+          "price": 9,
+          "category": "cat_desserts",
+          "dietary": "V, GF",
+          "image": "as_4x3_plum",
+          "image_alt": "Chocolate pot placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 3
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Dark chocolate, a little cream and a few flakes of sea salt.",
+        "image": "as_4x3_plum"
+      }
+    },
+    "/dishes/poached-quince": {
+      "id": "pg_poached_quince",
+      "template": "dish",
+      "title": "Poached quince",
+      "params": {
+        "dish": "poached-quince"
+      },
+      "entry": {
+        "id": "dish_poached_quince",
+        "handle": "poached-quince",
+        "title": "Poached quince",
+        "fields": {
+          "description": "Quince poached slowly with vanilla, served with oat cream.",
+          "ingredients": "quince, vanilla, oat cream",
+          "price": 8,
+          "category": "cat_desserts",
+          "dietary": "VG, GF, DF",
+          "image": "as_4x3_plum",
+          "image_alt": "Poached quince placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 4
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Quince poached slowly with vanilla, served with oat cream.",
+        "image": "as_4x3_plum"
+      }
+    },
+    "/dishes/sea-buckthorn-soda": {
+      "id": "pg_sea_buckthorn_soda",
+      "template": "dish",
+      "title": "Sea buckthorn soda",
+      "params": {
+        "dish": "sea-buckthorn-soda"
+      },
+      "entry": {
+        "id": "dish_sea_buckthorn_soda",
+        "handle": "sea-buckthorn-soda",
+        "title": "Sea buckthorn soda",
+        "fields": {
+          "description": "Sharp sea buckthorn, ginger and a squeeze of lime.",
+          "ingredients": "sea buckthorn, ginger, soda, lime",
+          "price": 7,
+          "category": "cat_drinks",
+          "dietary": "VG, GF, DF",
+          "image": "as_4x3_sea",
+          "image_alt": "Sea buckthorn soda placeholder",
+          "featured": false,
+          "tag": "Seasonal",
+          "photos": "",
+          "order": 1
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Sharp sea buckthorn, ginger and a squeeze of lime.",
+        "image": "as_4x3_sea"
+      }
+    },
+    "/dishes/espresso-tonic": {
+      "id": "pg_espresso_tonic",
+      "template": "dish",
+      "title": "Espresso tonic",
+      "params": {
+        "dish": "espresso-tonic"
+      },
+      "entry": {
+        "id": "dish_espresso_tonic",
+        "handle": "espresso-tonic",
+        "title": "Espresso tonic",
+        "fields": {
+          "description": "A short espresso over tonic and ice, with orange peel.",
+          "ingredients": "espresso, tonic, orange",
+          "price": 6,
+          "category": "cat_drinks",
+          "dietary": "VG, GF, DF",
+          "image": "as_4x3_sea",
+          "image_alt": "Espresso tonic placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 2
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "A short espresso over tonic and ice, with orange peel.",
+        "image": "as_4x3_sea"
+      }
+    },
+    "/dishes/flat-white": {
+      "id": "pg_flat_white",
+      "template": "dish",
+      "title": "Flat white",
+      "params": {
+        "dish": "flat-white"
+      },
+      "entry": {
+        "id": "dish_flat_white",
+        "handle": "flat-white",
+        "title": "Flat white",
+        "fields": {
+          "description": "A double espresso with smooth steamed milk.",
+          "ingredients": "espresso, milk",
+          "price": 5,
+          "category": "cat_drinks",
+          "dietary": "V, GF",
+          "image": "as_4x3_sea",
+          "image_alt": "Flat white placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 3
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "A double espresso with smooth steamed milk.",
+        "image": "as_4x3_sea"
+      }
+    },
+    "/dishes/filter-coffee": {
+      "id": "pg_filter_coffee",
+      "template": "dish",
+      "title": "Filter coffee",
+      "params": {
+        "dish": "filter-coffee"
+      },
+      "entry": {
+        "id": "dish_filter_coffee",
+        "handle": "filter-coffee",
+        "title": "Filter coffee",
+        "fields": {
+          "description": "A changing coffee, brewed fresh through the morning.",
+          "ingredients": "coffee, water",
+          "price": 4,
+          "category": "cat_drinks",
+          "dietary": "VG, GF, DF",
+          "image": "as_4x3_sea",
+          "image_alt": "Filter coffee placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 4
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "A changing coffee, brewed fresh through the morning.",
+        "image": "as_4x3_sea"
+      }
+    },
+    "/dishes/mint-tea": {
+      "id": "pg_mint_tea",
+      "template": "dish",
+      "title": "Mint tea",
+      "params": {
+        "dish": "mint-tea"
+      },
+      "entry": {
+        "id": "dish_mint_tea",
+        "handle": "mint-tea",
+        "title": "Mint tea",
+        "fields": {
+          "description": "Fresh mint leaves, hot water and a quiet few minutes.",
+          "ingredients": "mint, water",
+          "price": 4,
+          "category": "cat_drinks",
+          "dietary": "VG, GF, DF",
+          "image": "as_4x3_sea",
+          "image_alt": "Mint tea placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 5
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "Fresh mint leaves, hot water and a quiet few minutes.",
+        "image": "as_4x3_sea"
+      }
+    },
+    "/dishes/apple-shrub": {
+      "id": "pg_apple_shrub",
+      "template": "dish",
+      "title": "Apple shrub",
+      "params": {
+        "dish": "apple-shrub"
+      },
+      "entry": {
+        "id": "dish_apple_shrub",
+        "handle": "apple-shrub",
+        "title": "Apple shrub",
+        "fields": {
+          "description": "A house apple shrub, long with soda and rosemary.",
+          "ingredients": "apple, cider vinegar, soda, rosemary",
+          "price": 6,
+          "category": "cat_drinks",
+          "dietary": "VG, GF, DF",
+          "image": "as_4x3_sea",
+          "image_alt": "Apple shrub placeholder",
+          "featured": false,
+          "tag": "",
+          "photos": "",
+          "order": 6
+        }
+      },
+      "content_type": "menu_items",
+      "seo": {
+        "description": "A house apple shrub, long with soda and rosemary.",
+        "image": "as_4x3_sea"
+      }
+    }
+  }
+}

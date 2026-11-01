@@ -1,0 +1,72 @@
+<section>Contact</section>
+
+<schema>
+{
+  "name": "Contact",
+  "description": "The contact form beside place details and a photograph.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Write to us"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "A question, a celebration, a table for a few more?"
+    },
+    {
+      "type": "form",
+      "id": "form",
+      "label": "Form",
+      "default": "contact"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_details",
+      "label": "Show details",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_address",
+      "label": "Show address",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_service_strip",
+      "label": "Show service strip",
+      "default": true
+    },
+    {
+      "type": "image",
+      "id": "photo",
+      "label": "Photo"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "heading": "Write to us",
+        "text": "A question, a celebration, a table for a few more?",
+        "form": "contact",
+        "show_details": true,
+        "show_address": false,
+        "show_service_strip": true,
+        "color_scheme": "paper",
+        "photo": "as_3x2_1"
+      }
+    }
+  ]
+}
+</schema>

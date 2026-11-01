@@ -1,0 +1,59 @@
+<section>Newsletter</section>
+
+<schema>
+{
+  "name": "Newsletter",
+  "description": "A short invitation to the restaurant’s newsletter.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "First to hear about oyster nights and supper clubs."
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "A note from the kitchen when there is something to share."
+    },
+    {
+      "type": "form",
+      "id": "form",
+      "label": "Form",
+      "default": "newsletter"
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Placeholder",
+      "default": "Your email"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note",
+      "default": "One email a month. Unsubscribe any time."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "navy"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "heading": "First to hear about oyster nights and supper clubs.",
+        "text": "A note from the kitchen when there is something to share.",
+        "form": "newsletter",
+        "placeholder": "Your email",
+        "note": "One email a month. Unsubscribe any time.",
+        "color_scheme": "navy"
+      }
+    }
+  ]
+}
+</schema>

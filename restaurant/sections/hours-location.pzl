@@ -1,0 +1,51 @@
+<section>Hours location</section>
+
+<schema>
+{
+  "name": "Hours location",
+  "description": "Weekly hours and the address, with an optional map photograph.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Hours & location"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_map",
+      "label": "Show map",
+      "default": true
+    },
+    {
+      "type": "image",
+      "id": "map_image",
+      "label": "Map image"
+    },
+    {
+      "type": "text",
+      "id": "directions_label",
+      "label": "Directions label",
+      "default": "Open in Maps"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "heading": "Hours & location",
+        "show_map": true,
+        "directions_label": "Open in Maps",
+        "color_scheme": "paper",
+        "map_image": "as_3x2_1"
+      }
+    }
+  ]
+}
+</schema>

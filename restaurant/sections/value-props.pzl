@@ -1,0 +1,208 @@
+<section>Value props</section>
+
+<schema>
+{
+  "name": "Value props",
+  "description": "Three or four notes about the kitchen, room and welcome.",
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "default": "cards",
+      "options": [
+        {
+          "value": "cards",
+          "label": "Cards"
+        },
+        {
+          "value": "boxes",
+          "label": "Boxes"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why Halfmoon"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Columns",
+      "default": "3",
+      "options": [
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "wine"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cards",
+      "settings": {
+        "style": "cards",
+        "heading": "Why Halfmoon",
+        "show_heading": false,
+        "columns": "3",
+        "color_scheme": "wine"
+      },
+      "blocks": [
+        {
+          "type": "prop",
+          "settings": {
+            "heading": "Book a table",
+            "subline": "Tables for 2 to 10",
+            "text": "A long lunch, a quick supper, a seat by the window.",
+            "link_label": "Book a table",
+            "link": "/reservations",
+            "booking": true
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "heading": "See the menu",
+            "subline": "Breakfast to dinner",
+            "text": "Seasonal plates, familiar favourites and something from the boats.",
+            "link_label": "View menu",
+            "link": "/menu",
+            "booking": false
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "heading": "Find us",
+            "subline": "14 Quay Street",
+            "text": "Two doors from the ferry, a short walk from the harbour.",
+            "link_label": "Directions",
+            "link": "https://maps.google.com/?q=14+Quay+Street+Bellport",
+            "booking": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "Boxes",
+      "settings": {
+        "style": "boxes",
+        "heading": "Why Halfmoon",
+        "show_heading": false,
+        "columns": "4",
+        "color_scheme": "navy"
+      },
+      "blocks": [
+        {
+          "type": "prop",
+          "settings": {
+            "heading": "Sourcing",
+            "subline": "",
+            "text": "Close to home, with the season in mind.",
+            "link_label": "",
+            "link": "",
+            "booking": false
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "heading": "Kitchen",
+            "subline": "",
+            "text": "Good ingredients, handled with care.",
+            "link_label": "",
+            "link": "",
+            "booking": false
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "heading": "Room",
+            "subline": "",
+            "text": "A warm welcome and space to settle in.",
+            "link_label": "",
+            "link": "",
+            "booking": false
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "heading": "Bread",
+            "subline": "",
+            "text": "Baked here each morning.",
+            "link_label": "",
+            "link": "",
+            "booking": false
+          }
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "prop",
+      "name": "Prop",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": ""
+        },
+        {
+          "type": "text",
+          "id": "subline",
+          "label": "Subline",
+          "default": ""
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": ""
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link label",
+          "default": ""
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link",
+          "default": ""
+        },
+        {
+          "type": "checkbox",
+          "id": "booking",
+          "label": "Booking",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4
+}
+</schema>

@@ -1,0 +1,52 @@
+<section>Booking panel</section>
+
+<schema>
+{
+  "name": "Booking panel",
+  "description": "A reservation sheet using the workspace form.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Book a table"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Tables for 2 to 10. For larger parties call us."
+    },
+    {
+      "type": "form",
+      "id": "form",
+      "label": "Form",
+      "default": "reservation"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note",
+      "default": "We hold the table for 15 minutes."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "heading": "Book a table",
+        "text": "Tables for 2 to 10. For larger parties call us.",
+        "form": "reservation",
+        "note": "We hold the table for 15 minutes.",
+        "color_scheme": "paper"
+      }
+    }
+  ]
+}
+</schema>

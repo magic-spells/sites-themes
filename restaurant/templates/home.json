@@ -1,0 +1,389 @@
+{
+  "label": "Home",
+  "description": "Home page sections.",
+  "sections": [
+    {
+      "id": "s_hero",
+      "type": "hero",
+      "preset": "Split",
+      "settings": {
+        "layout": "split",
+        "heading": "Breakfast until three, dinner until late.",
+        "text": "An all-day canteen by the harbour. Good food, a warm room, a table for you.",
+        "show_eyebrow": false,
+        "eyebrow": "Halfmoon Canteen · Bellport",
+        "show_service_strip": false,
+        "book_label": "Book a table",
+        "menu_label": "View menu",
+        "menu_path": "/menu",
+        "photo_style": "photo",
+        "tint": "saffron",
+        "well_shape": "rounded",
+        "slideshow": false,
+        "height": "full",
+        "autoplay": true,
+        "interval": 5,
+        "color_scheme": "paper",
+        "image": "as_4x5_1"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_category_row",
+      "type": "category-row",
+      "preset": "Circles",
+      "settings": {
+        "style": "circles",
+        "heading": "Find your favourite",
+        "text": "From the first coffee to the last plate.",
+        "show_heading": true,
+        "menu_path": "/menu",
+        "columns": "6",
+        "show_counts": true,
+        "color_scheme": "paper",
+        "categories": "menu_categories",
+        "collection": "menu_items"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_dish_tabs",
+      "type": "dish-tabs",
+      "preset": "Default",
+      "settings": {
+        "heading": "Popular right now",
+        "source": "all",
+        "limit_per_category": 6,
+        "photo_style": "photo",
+        "info_style": "plain",
+        "emphasis": "none",
+        "all_label": "All",
+        "full_menu_label": "Full menu",
+        "menu_path": "/menu",
+        "base_path": "/dishes",
+        "color_scheme": "paper",
+        "collection": "menu_items",
+        "categories": "menu_categories"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_story",
+      "type": "story",
+      "preset": "Right",
+      "settings": {
+        "ratio": "3:2",
+        "layout": "image_right",
+        "well_shape": "rounded",
+        "eyebrow": "Since 2019",
+        "heading": "A canteen by the harbour",
+        "body": "<p>Halfmoon began with a simple idea: a good meal, a warm room and a place to come back to.</p><p>We cook with the season and the boats, bake each morning and keep a seat for our neighbours.</p>",
+        "link_label": "About us",
+        "link": "/about",
+        "color_scheme": "paper",
+        "image": "as_3x2_1"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_specials",
+      "type": "specials",
+      "preset": "Default",
+      "settings": {
+        "heading": "Chef's specials",
+        "text": "Three plates that change with the boats. Ask about the catch.",
+        "show_intro": false,
+        "intro": "A few favourites from the kitchen.",
+        "book_label": "Book a table",
+        "base_path": "/dishes",
+        "limit": 4,
+        "show_counter": true,
+        "color_scheme": "charcoal",
+        "collection": "menu_items"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_dish_carousel",
+      "type": "dish-carousel",
+      "preset": "Chef's favourites",
+      "settings": {
+        "heading": "Chef's favourites",
+        "text": "The plates we come back to.",
+        "featured_only": true,
+        "base_path": "/dishes",
+        "menu_path": "/menu",
+        "limit": 6,
+        "featured_first": true,
+        "emphasis": "centre",
+        "photo_style": "photo",
+        "info_style": "plain",
+        "show_dots": false,
+        "see_all_label": "See all",
+        "color_scheme": "paper",
+        "collection": "menu_items"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_promo_carousel",
+      "type": "promo-carousel",
+      "preset": "Default",
+      "settings": {
+        "heading": "This month",
+        "show_heading": true,
+        "loop": true,
+        "show_dots": true,
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "id": "b_1",
+          "type": "promo",
+          "settings": {
+            "kicker": "Tuesday to Friday",
+            "heading": "Set lunch, two courses",
+            "text": "A midday pause, with something good on the plate.",
+            "roundel": "$24",
+            "tint": "saffron",
+            "link_label": "Book a table",
+            "link": "/reservations",
+            "image": "as_3x2_1",
+            "photo_style": "photo"
+          }
+        },
+        {
+          "id": "b_2",
+          "type": "promo",
+          "settings": {
+            "kicker": "By the harbour",
+            "heading": "Oyster night",
+            "text": "Freshly shucked, with a glass of something cold.",
+            "roundel": "Fri",
+            "tint": "navy",
+            "link_label": "See events",
+            "link": "/events",
+            "image": "as_3x2_2",
+            "photo_style": "photo"
+          }
+        },
+        {
+          "id": "b_3",
+          "type": "promo",
+          "settings": {
+            "kicker": "A room of your own",
+            "heading": "Private dining",
+            "text": "Good company, a long table and a menu to share.",
+            "roundel": "",
+            "tint": "wine",
+            "link_label": "Talk to us",
+            "link": "/contact",
+            "image": "as_3x2_3",
+            "photo_style": "photo"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_photo_links",
+      "type": "photo-links",
+      "preset": "Default",
+      "settings": {
+        "heading": "Where to next",
+        "show_heading": false,
+        "color_scheme": "charcoal"
+      },
+      "blocks": [
+        {
+          "id": "b_1",
+          "type": "door",
+          "settings": {
+            "image": "as_4x3_leaf",
+            "label": "Menu",
+            "link": "/menu",
+            "booking": false
+          }
+        },
+        {
+          "id": "b_2",
+          "type": "door",
+          "settings": {
+            "image": "as_4x3_sea",
+            "label": "What's on",
+            "link": "/events",
+            "booking": false
+          }
+        },
+        {
+          "id": "b_3",
+          "type": "door",
+          "settings": {
+            "image": "as_4x3_saffron",
+            "label": "Book a table",
+            "link": "/reservations",
+            "booking": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_events_list",
+      "type": "events-list",
+      "preset": "Cards",
+      "settings": {
+        "heading": "What's on",
+        "show_heading": true,
+        "layout": "cards",
+        "limit": 3,
+        "view_all_label": "All events",
+        "view_all_href": "/events",
+        "color_scheme": "paper",
+        "collection": "events"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_value_props",
+      "type": "value-props",
+      "preset": "Cards",
+      "settings": {
+        "style": "cards",
+        "heading": "Why Halfmoon",
+        "show_heading": false,
+        "columns": "3",
+        "color_scheme": "wine"
+      },
+      "blocks": [
+        {
+          "id": "b_1",
+          "type": "prop",
+          "settings": {
+            "heading": "Book a table",
+            "subline": "Tables for 2 to 10",
+            "text": "A long lunch, a quick supper, a seat by the window.",
+            "link_label": "Book a table",
+            "link": "/reservations",
+            "booking": true
+          }
+        },
+        {
+          "id": "b_2",
+          "type": "prop",
+          "settings": {
+            "heading": "See the menu",
+            "subline": "Breakfast to dinner",
+            "text": "Seasonal plates, familiar favourites and something from the boats.",
+            "link_label": "View menu",
+            "link": "/menu",
+            "booking": false
+          }
+        },
+        {
+          "id": "b_3",
+          "type": "prop",
+          "settings": {
+            "heading": "Find us",
+            "subline": "14 Quay Street",
+            "text": "Two doors from the ferry, a short walk from the harbour.",
+            "link_label": "Directions",
+            "link": "https://maps.google.com/?q=14+Quay+Street+Bellport",
+            "booking": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_gallery_strip",
+      "type": "gallery-strip",
+      "preset": "None",
+      "settings": {
+        "heading": "Around Halfmoon",
+        "show_heading": false,
+        "stagger": "none",
+        "lightbox": true,
+        "color_scheme": "paper",
+        "gallery": "the-room"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_testimonials",
+      "type": "testimonials",
+      "preset": "Carousel",
+      "settings": {
+        "layout": "carousel",
+        "heading": "At the table",
+        "show_heading": false,
+        "show_rating": true,
+        "autoplay": false,
+        "color_scheme": "navy"
+      },
+      "blocks": [
+        {
+          "id": "b_1",
+          "type": "review",
+          "settings": {
+            "quote": "The fish stew alone is worth missing the ferry.",
+            "name": "Mara Ellis",
+            "source": "Bellport Gazette",
+            "rating": 5
+          }
+        },
+        {
+          "id": "b_2",
+          "type": "review",
+          "settings": {
+            "quote": "A generous room and a kitchen that knows when to keep things simple.",
+            "name": "The Harbour Guide",
+            "source": "Local guide",
+            "rating": 5
+          }
+        },
+        {
+          "id": "b_3",
+          "type": "review",
+          "settings": {
+            "quote": "Our favourite table in town. Book early, and ask for the bread twice.",
+            "name": "Elliot P.",
+            "source": "Guest",
+            "rating": 5
+          }
+        },
+        {
+          "id": "b_4",
+          "type": "review",
+          "settings": {
+            "quote": "Long lunches have a way of becoming dinner here.",
+            "name": "Sana R.",
+            "source": "Guest",
+            "rating": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_hours_location",
+      "type": "hours-location",
+      "preset": "Default",
+      "settings": {
+        "heading": "Hours & location",
+        "show_map": true,
+        "directions_label": "Open in Maps",
+        "color_scheme": "paper",
+        "map_image": "as_3x2_1"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta_band",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "text": "A table by the water, tonight.",
+        "book_label": "Book a table",
+        "color_scheme": "tomato"
+      },
+      "blocks": []
+    }
+  ]
+}

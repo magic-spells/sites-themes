@@ -1,0 +1,59 @@
+<section>Announcement bar</section>
+
+<schema>
+{
+  "name": "Announcement bar",
+  "description": "A dismissible announcement with an optional link.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Closed Monday 23 November for a private event. Book the weekend early."
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": "Book a table"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link",
+      "default": "/reservations"
+    },
+    {
+      "type": "text",
+      "id": "key",
+      "label": "Key",
+      "default": "restaurant-announcement-2026-11"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_close",
+      "label": "Show close",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "tomato"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "text": "Closed Monday 23 November for a private event. Book the weekend early.",
+        "link_label": "Book a table",
+        "link": "/reservations",
+        "key": "restaurant-announcement-2026-11",
+        "show_close": true,
+        "color_scheme": "tomato"
+      }
+    }
+  ]
+}
+</schema>

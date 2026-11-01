@@ -1,0 +1,63 @@
+<section>Footer</section>
+
+<schema>
+{
+  "name": "Footer",
+  "description": "The place details and navigation in a quiet colophon.",
+  "settings": [
+    {
+      "type": "menu",
+      "id": "menu_primary",
+      "label": "Menu primary"
+    },
+    {
+      "type": "menu",
+      "id": "menu_secondary",
+      "label": "Menu secondary"
+    },
+    {
+      "type": "menu",
+      "id": "social",
+      "label": "Social"
+    },
+    {
+      "type": "text",
+      "id": "copyright",
+      "label": "Copyright",
+      "default": "© 2026 Halfmoon Canteen"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_service_strip",
+      "label": "Show service strip",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_address",
+      "label": "Show address",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "charcoal"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "copyright": "© 2026 Halfmoon Canteen",
+        "show_service_strip": true,
+        "show_address": true,
+        "color_scheme": "charcoal",
+        "menu_primary": "main",
+        "menu_secondary": "legal",
+        "social": "social"
+      }
+    }
+  ]
+}
+</schema>

@@ -1,0 +1,58 @@
+<section>Mobile menu</section>
+
+<schema>
+{
+  "name": "Mobile menu",
+  "description": "A mobile navigation sheet with category links.",
+  "settings": [
+    {
+      "type": "menu",
+      "id": "menu",
+      "label": "Menu"
+    },
+    {
+      "type": "collection",
+      "id": "categories",
+      "label": "Categories",
+      "info": "Reads menu_categories entries: title, handle, description, image, image_alt and tint."
+    },
+    {
+      "type": "url",
+      "id": "menu_path",
+      "label": "Menu path",
+      "default": "/menu"
+    },
+    {
+      "type": "text",
+      "id": "book_label",
+      "label": "Book label",
+      "default": "Book a table"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_phone",
+      "label": "Show phone",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "menu_path": "/menu",
+        "book_label": "Book a table",
+        "show_phone": true,
+        "color_scheme": "paper",
+        "menu": "main",
+        "categories": "menu_categories"
+      }
+    }
+  ]
+}
+</schema>

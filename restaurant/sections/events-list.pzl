@@ -1,0 +1,99 @@
+<section>Events list</section>
+
+<schema>
+{
+  "name": "Events list",
+  "description": "Events as photographic cards or compact rows.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What's on"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading",
+      "default": true
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Reads events entries: title, handle, date, time, description, image, image_alt and link."
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "cards",
+      "options": [
+        {
+          "value": "cards",
+          "label": "Cards"
+        },
+        {
+          "value": "rows",
+          "label": "Rows"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Limit",
+      "default": 3,
+      "min": 1,
+      "max": 12,
+      "step": 1
+    },
+    {
+      "type": "text",
+      "id": "view_all_label",
+      "label": "View all label",
+      "default": "All events"
+    },
+    {
+      "type": "url",
+      "id": "view_all_href",
+      "label": "View all href",
+      "default": "/events"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cards",
+      "settings": {
+        "heading": "What's on",
+        "show_heading": true,
+        "layout": "cards",
+        "limit": 3,
+        "view_all_label": "All events",
+        "view_all_href": "/events",
+        "color_scheme": "paper",
+        "collection": "events"
+      }
+    },
+    {
+      "name": "Rows",
+      "settings": {
+        "heading": "What's on",
+        "show_heading": true,
+        "layout": "rows",
+        "limit": 12,
+        "view_all_label": "All events",
+        "view_all_href": "/events",
+        "color_scheme": "paper",
+        "collection": "events"
+      }
+    }
+  ]
+}
+</schema>

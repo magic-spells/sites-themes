@@ -1,0 +1,241 @@
+<section>Hero</section>
+
+<schema>
+{
+  "name": "Hero",
+  "description": "A split introduction or a full-height photographic cover.",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "split",
+      "options": [
+        {
+          "value": "split",
+          "label": "Split"
+        },
+        {
+          "value": "cover",
+          "label": "Cover"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Breakfast until three, dinner until late."
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "An all-day canteen by the harbour. Good food, a warm room, a table for you."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_eyebrow",
+      "label": "Show eyebrow",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Halfmoon Canteen · Bellport"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_service_strip",
+      "label": "Show service strip",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "book_label",
+      "label": "Book label",
+      "default": "Book a table"
+    },
+    {
+      "type": "text",
+      "id": "menu_label",
+      "label": "Menu label",
+      "default": "View menu"
+    },
+    {
+      "type": "url",
+      "id": "menu_path",
+      "label": "Menu path",
+      "default": "/menu"
+    },
+    {
+      "type": "image",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "photo_style",
+      "label": "Photo style",
+      "default": "photo",
+      "options": [
+        {
+          "value": "photo",
+          "label": "Photo"
+        },
+        {
+          "value": "cutout",
+          "label": "Cutout"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "tint",
+      "label": "Tint",
+      "default": "tomato",
+      "options": [
+        {
+          "value": "tomato",
+          "label": "Tomato"
+        },
+        {
+          "value": "saffron",
+          "label": "Saffron"
+        },
+        {
+          "value": "leaf",
+          "label": "Leaf"
+        },
+        {
+          "value": "sea",
+          "label": "Sea"
+        },
+        {
+          "value": "plum",
+          "label": "Plum"
+        },
+        {
+          "value": "clay",
+          "label": "Clay"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "well_shape",
+      "label": "Well shape",
+      "default": "rounded",
+      "options": [
+        {
+          "value": "rounded",
+          "label": "Rounded"
+        },
+        {
+          "value": "arch",
+          "label": "Arch"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "slideshow",
+      "label": "Slideshow",
+      "default": false
+    },
+    {
+      "type": "gallery",
+      "id": "gallery",
+      "label": "Gallery",
+      "info": "Reads gallery items: asset, alt and caption."
+    },
+    {
+      "type": "select",
+      "id": "height",
+      "label": "Height",
+      "default": "full",
+      "options": [
+        {
+          "value": "full",
+          "label": "Full"
+        },
+        {
+          "value": "tall",
+          "label": "Tall"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "interval",
+      "label": "Interval",
+      "default": 5,
+      "min": 3,
+      "max": 10,
+      "step": 1
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Split",
+      "settings": {
+        "layout": "split",
+        "heading": "Breakfast until three, dinner until late.",
+        "text": "An all-day canteen by the harbour. Good food, a warm room, a table for you.",
+        "show_eyebrow": false,
+        "eyebrow": "Halfmoon Canteen · Bellport",
+        "show_service_strip": false,
+        "book_label": "Book a table",
+        "menu_label": "View menu",
+        "menu_path": "/menu",
+        "photo_style": "photo",
+        "tint": "saffron",
+        "well_shape": "rounded",
+        "slideshow": false,
+        "height": "full",
+        "autoplay": true,
+        "interval": 5,
+        "color_scheme": "paper",
+        "image": "as_4x5_1"
+      }
+    },
+    {
+      "name": "Cover",
+      "settings": {
+        "layout": "cover",
+        "heading": "Breakfast until three, dinner until late.",
+        "text": "An all-day canteen by the harbour. Good food, a warm room, a table for you.",
+        "show_eyebrow": false,
+        "eyebrow": "Halfmoon Canteen · Bellport",
+        "show_service_strip": false,
+        "book_label": "Book a table",
+        "menu_label": "View menu",
+        "menu_path": "/menu",
+        "photo_style": "photo",
+        "tint": "tomato",
+        "well_shape": "rounded",
+        "slideshow": true,
+        "height": "full",
+        "autoplay": true,
+        "interval": 5,
+        "color_scheme": "charcoal",
+        "gallery": "home-hero",
+        "image": "as_16x9_1"
+      }
+    }
+  ]
+}
+</schema>

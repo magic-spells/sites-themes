@@ -1,0 +1,139 @@
+<section>Faq</section>
+
+<schema>
+{
+  "name": "Faq",
+  "description": "Answers to questions about visiting the restaurant.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Good to know"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note",
+      "default": "A few things before you visit."
+    },
+    {
+      "type": "checkbox",
+      "id": "first_open",
+      "label": "First open",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Allergens",
+      "settings": {
+        "heading": "Allergens & dietary needs",
+        "note": "A few things before you visit.",
+        "first_open": true,
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "question": "Can you help with allergies?",
+            "answer": "<p>Please speak to our team about allergies. Tell us when you book and again at the table.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Private dining",
+      "settings": {
+        "heading": "A table for a few more",
+        "note": "A few things before you visit.",
+        "first_open": true,
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "question": "Do you take private dining bookings?",
+            "answer": "<p>Yes. Write to us with a date and the number of people, and we will make a plan together.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "name": "General",
+      "settings": {
+        "heading": "Good to know",
+        "note": "A few things before you visit.",
+        "first_open": true,
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "question": "Do you take private dining bookings?",
+            "answer": "<p>Yes. Write to us with a date and the number of people, and we will make a plan together.</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Can you help with allergies?",
+            "answer": "<p>Please speak to our team about allergies. Tell us when you book and again at the table.</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Is there parking nearby?",
+            "answer": "<p>The harbour car park is a short walk along Quay Street.</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Can we bring a dog?",
+            "answer": "<p>Well-behaved dogs are welcome on the terrace.</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Do you have gift cards?",
+            "answer": "<p>Ask the team when you visit, or write to us.</p>"
+          }
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": ""
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": ""
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12
+}
+</schema>

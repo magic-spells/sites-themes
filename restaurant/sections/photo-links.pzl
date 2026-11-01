@@ -1,0 +1,99 @@
+<section>Photo links</section>
+
+<schema>
+{
+  "name": "Photo links",
+  "description": "Photographs with links to the menu, events and reservations.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Where to next"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "heading": "Where to next",
+        "show_heading": false,
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "type": "door",
+          "settings": {
+            "image": "as_4x3_leaf",
+            "label": "Menu",
+            "link": "/menu",
+            "booking": false
+          }
+        },
+        {
+          "type": "door",
+          "settings": {
+            "image": "as_4x3_sea",
+            "label": "What's on",
+            "link": "/events",
+            "booking": false
+          }
+        },
+        {
+          "type": "door",
+          "settings": {
+            "image": "as_4x3_saffron",
+            "label": "Book a table",
+            "link": "/reservations",
+            "booking": true
+          }
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "door",
+      "name": "Door",
+      "settings": [
+        {
+          "type": "image",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": ""
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link",
+          "default": ""
+        },
+        {
+          "type": "checkbox",
+          "id": "booking",
+          "label": "Booking",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4
+}
+</schema>

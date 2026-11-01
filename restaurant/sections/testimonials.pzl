@@ -1,0 +1,192 @@
+<section>Testimonials</section>
+
+<schema>
+{
+  "name": "Testimonials",
+  "description": "Guest and press notes as a carousel or a grid.",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "carousel",
+      "options": [
+        {
+          "value": "carousel",
+          "label": "Carousel"
+        },
+        {
+          "value": "grid",
+          "label": "Grid"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "At the table"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "Show rating",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "navy"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Carousel",
+      "settings": {
+        "layout": "carousel",
+        "heading": "At the table",
+        "show_heading": false,
+        "show_rating": true,
+        "autoplay": false,
+        "color_scheme": "navy"
+      },
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "quote": "The fish stew alone is worth missing the ferry.",
+            "name": "Mara Ellis",
+            "source": "Bellport Gazette",
+            "rating": 5
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "quote": "A generous room and a kitchen that knows when to keep things simple.",
+            "name": "The Harbour Guide",
+            "source": "Local guide",
+            "rating": 5
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "quote": "Our favourite table in town. Book early, and ask for the bread twice.",
+            "name": "Elliot P.",
+            "source": "Guest",
+            "rating": 5
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "quote": "Long lunches have a way of becoming dinner here.",
+            "name": "Sana R.",
+            "source": "Guest",
+            "rating": 5
+          }
+        }
+      ]
+    },
+    {
+      "name": "Grid",
+      "settings": {
+        "layout": "grid",
+        "heading": "At the table",
+        "show_heading": false,
+        "show_rating": true,
+        "autoplay": false,
+        "color_scheme": "navy"
+      },
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "quote": "The fish stew alone is worth missing the ferry.",
+            "name": "Mara Ellis",
+            "source": "Bellport Gazette",
+            "rating": 5
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "quote": "A generous room and a kitchen that knows when to keep things simple.",
+            "name": "The Harbour Guide",
+            "source": "Local guide",
+            "rating": 5
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "quote": "Our favourite table in town. Book early, and ask for the bread twice.",
+            "name": "Elliot P.",
+            "source": "Guest",
+            "rating": 5
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "quote": "Long lunches have a way of becoming dinner here.",
+            "name": "Sana R.",
+            "source": "Guest",
+            "rating": 5
+          }
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": ""
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": ""
+        },
+        {
+          "type": "text",
+          "id": "source",
+          "label": "Source",
+          "default": ""
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Rating",
+          "default": 5,
+          "min": 1,
+          "max": 5,
+          "step": 1
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12
+}
+</schema>

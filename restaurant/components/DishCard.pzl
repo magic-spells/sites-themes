@@ -1,0 +1,3 @@
+<!-- component: DishCard -->
+<!-- props: entry href photo_style info_style emphasis -->
+<span>Dishcard</span>

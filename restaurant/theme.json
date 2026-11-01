@@ -1,0 +1,156 @@
+{
+  "name": "Restaurant",
+  "version": "0.1.0",
+  "default_template": "page",
+  "not_found_template": "404",
+  "maintenance_template": "maintenance",
+  "groups": {
+    "header-group": {
+      "label": "Header",
+      "accepts": [
+        "announcement-bar",
+        "header"
+      ]
+    },
+    "footer-group": {
+      "label": "Footer",
+      "accepts": [
+        "footer"
+      ]
+    },
+    "panel-group": {
+      "label": "Panels",
+      "accepts": [
+        "mobile-menu",
+        "booking-panel",
+        "cookie-notice"
+      ]
+    }
+  },
+  "settings": [
+    {
+      "name": "Brand",
+      "settings": [
+        {
+          "type": "text",
+          "id": "wordmark",
+          "label": "Wordmark",
+          "default": "Halfmoon Canteen"
+        },
+        {
+          "type": "image",
+          "id": "favicon",
+          "label": "Favicon"
+        },
+        {
+          "type": "text",
+          "id": "tagline",
+          "label": "Tagline",
+          "default": "An all-day canteen by the harbour."
+        },
+        {
+          "type": "text",
+          "id": "currency_symbol",
+          "label": "Currency symbol",
+          "default": "$"
+        },
+        {
+          "type": "checkbox",
+          "id": "reveal",
+          "label": "Reveal",
+          "default": true,
+          "info": "Dish and event cards fade up as they enter view."
+        },
+        {
+          "type": "select",
+          "id": "heading_case",
+          "label": "Heading case",
+          "default": "sentence",
+          "options": [
+            {
+              "value": "sentence",
+              "label": "Sentence"
+            },
+            {
+              "value": "upper",
+              "label": "Uppercase"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Place",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "address",
+          "label": "Address",
+          "default": "14 Quay Street\nBellport"
+        },
+        {
+          "type": "text",
+          "id": "phone",
+          "label": "Phone",
+          "default": "+1 (555) 014-0982"
+        },
+        {
+          "type": "text",
+          "id": "email",
+          "label": "Email",
+          "default": "hello@halfmooncanteen.example"
+        },
+        {
+          "type": "url",
+          "id": "map_url",
+          "label": "Map url",
+          "default": "https://maps.google.com/?q=14+Quay+Street+Bellport"
+        },
+        {
+          "type": "textarea",
+          "id": "hours",
+          "label": "Hours",
+          "info": "One line per row: Mon–Fri | 8am – 10pm",
+          "default": "Monday | Closed\nTuesday | 8am – 10pm\nWednesday | 8am – 10pm\nThursday | 8am – 10pm\nFriday | 8am – 11pm\nSaturday | 8am – 11pm\nSunday | 9am – 9pm"
+        },
+        {
+          "type": "text",
+          "id": "service_strip",
+          "label": "Service strip",
+          "default": "Breakfast 8–11 · Lunch 12–3 · Dinner 5–10"
+        }
+      ]
+    },
+    {
+      "name": "Booking",
+      "settings": [
+        {
+          "type": "form",
+          "id": "booking_form",
+          "label": "Booking form",
+          "default": "reservation"
+        },
+        {
+          "type": "textarea",
+          "id": "booking_note",
+          "label": "Booking note",
+          "default": "We hold the table for 15 minutes."
+        },
+        {
+          "type": "url",
+          "id": "booking_url",
+          "label": "Booking url",
+          "default": "",
+          "info": "When set, every Book a table link opens this URL."
+        },
+        {
+          "type": "url",
+          "id": "reservations_path",
+          "label": "Reservations path",
+          "default": "/reservations",
+          "info": "The Book a table destination when JavaScript is unavailable."
+        }
+      ]
+    }
+  ]
+}

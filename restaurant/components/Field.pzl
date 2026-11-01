@@ -1,0 +1,21 @@
+<!-- component: Field -->
+<!-- props: name label type autocomplete required rows maxlength options value error placeholder prefix wrapper_class -->
+<!-- Labels remain available to screen readers while placeholders carry the visible label. -->
+<div class={ wrapper_class }>
+  <label class="sr-only" for="field-{ prefix }-{ name }">{ label }</label>
+  {#if type == 'textarea'}
+    <textarea class="block min-h-control w-full rounded-input border border-scheme-input-border bg-scheme-input-background px-step-sm py-step-xs font-body text-body text-scheme-input-foreground placeholder:text-scheme-muted focus:outline-2 focus:outline-offset-2 focus:outline-scheme-links min-h-textarea resize-y" id="field-{ prefix }-{ name }" name={ name } rows={ rows ?? 4 } maxlength={ maxlength } required={ required } placeholder={ placeholder ?? label } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null }>{ value }</textarea>
+  {:else if type == 'select'}
+    <select class="block min-h-control w-full rounded-input border border-scheme-input-border bg-scheme-input-background px-step-sm py-step-xs font-body text-body text-scheme-input-foreground placeholder:text-scheme-muted focus:outline-2 focus:outline-offset-2 focus:outline-scheme-links" id="field-{ prefix }-{ name }" name={ name } required={ required } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null }>
+      <option value="">{ label }</option>
+      {#for option in options}<option value={ option } selected={ value == option }>{ option }</option>{/for}
+    </select>
+  {:else if type == 'checkbox'}
+    <input class="size-5 accent-scheme-links" id="field-{ prefix }-{ name }" name={ name } type="checkbox" value="on" checked={ value == 'on' } required={ required } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null } />
+  {:else}
+    <!-- A declared form field carries no autocomplete token, so the two that
+         browsers actually fill in are recognized by name here. -->
+    <input class="block min-h-control w-full rounded-input border border-scheme-input-border bg-scheme-input-background px-step-sm py-step-xs font-body text-body text-scheme-input-foreground placeholder:text-scheme-muted focus:outline-2 focus:outline-offset-2 focus:outline-scheme-links" id="field-{ prefix }-{ name }" name={ name } type={ type ?? 'text' } autocomplete={ autocomplete ?? (type == 'email' ? 'email' : (name == 'name' ? 'name' : 'off')) } maxlength={ maxlength } required={ required } value={ value } placeholder={ placeholder ?? label } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null } />
+  {/if}
+  {#if error}<p class="mt-step-2xs font-mono text-meta tracking-caption text-scheme-error" id="error-{ prefix }-{ name }">{ t('form_field_' + error) }</p>{/if}
+</div>

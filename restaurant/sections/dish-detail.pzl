@@ -1,0 +1,93 @@
+<section>Dish detail</section>
+
+<schema>
+{
+  "name": "Dish detail",
+  "description": "The current dish’s photographs, ingredients and dietary information.",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_photos",
+      "label": "Show photos",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_ingredients",
+      "label": "Show ingredients",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dietary",
+      "label": "Show dietary",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "book_label",
+      "label": "Book label",
+      "default": "Book a table"
+    },
+    {
+      "type": "text",
+      "id": "back_label",
+      "label": "Back label",
+      "default": "Back to menu"
+    },
+    {
+      "type": "url",
+      "id": "menu_path",
+      "label": "Menu path",
+      "default": "/menu"
+    },
+    {
+      "type": "select",
+      "id": "well_shape",
+      "label": "Well shape",
+      "default": "rounded",
+      "options": [
+        {
+          "value": "rounded",
+          "label": "Rounded"
+        },
+        {
+          "value": "arch",
+          "label": "Arch"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tag",
+      "label": "Show tag",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "show_photos": true,
+        "show_ingredients": true,
+        "show_dietary": true,
+        "book_label": "Book a table",
+        "back_label": "Back to menu",
+        "menu_path": "/menu",
+        "well_shape": "rounded",
+        "show_tag": true,
+        "color_scheme": "paper"
+      }
+    }
+  ],
+  "templates": [
+    "dish"
+  ]
+}
+</schema>

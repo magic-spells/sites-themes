@@ -1,0 +1,126 @@
+<section>Category row</section>
+
+<schema>
+{
+  "name": "Category row",
+  "description": "Menu categories as photographic cards or circles.",
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "default": "cards",
+      "options": [
+        {
+          "value": "cards",
+          "label": "Cards"
+        },
+        {
+          "value": "circles",
+          "label": "Circles"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Find your favourite"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "From the first coffee to the last plate."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading",
+      "default": true
+    },
+    {
+      "type": "collection",
+      "id": "categories",
+      "label": "Categories",
+      "info": "Reads menu_categories entries: title, handle, description, image, image_alt and tint."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Reads menu_items entries: title, handle, description, ingredients, price, category, dietary, image, image_alt, featured, tag and photos."
+    },
+    {
+      "type": "url",
+      "id": "menu_path",
+      "label": "Menu path",
+      "default": "/menu"
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Columns",
+      "default": "6",
+      "options": [
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        },
+        {
+          "value": "6",
+          "label": "6"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_counts",
+      "label": "Show counts",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cards",
+      "settings": {
+        "style": "cards",
+        "heading": "Find your favourite",
+        "text": "From the first coffee to the last plate.",
+        "show_heading": true,
+        "menu_path": "/menu",
+        "columns": "6",
+        "show_counts": true,
+        "color_scheme": "paper",
+        "categories": "menu_categories",
+        "collection": "menu_items"
+      }
+    },
+    {
+      "name": "Circles",
+      "settings": {
+        "style": "circles",
+        "heading": "Find your favourite",
+        "text": "From the first coffee to the last plate.",
+        "show_heading": true,
+        "menu_path": "/menu",
+        "columns": "6",
+        "show_counts": true,
+        "color_scheme": "paper",
+        "categories": "menu_categories",
+        "collection": "menu_items"
+      }
+    }
+  ]
+}
+</schema>

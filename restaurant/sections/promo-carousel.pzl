@@ -1,0 +1,202 @@
+<section>Promo carousel</section>
+
+<schema>
+{
+  "name": "Promo carousel",
+  "description": "Photographic promotions with a coloured roundel and a plain body.",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "This month"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Loop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show dots",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "paper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "settings": {
+        "heading": "This month",
+        "show_heading": true,
+        "loop": true,
+        "show_dots": true,
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "type": "promo",
+          "settings": {
+            "kicker": "Tuesday to Friday",
+            "heading": "Set lunch, two courses",
+            "text": "A midday pause, with something good on the plate.",
+            "roundel": "$24",
+            "tint": "saffron",
+            "link_label": "Book a table",
+            "link": "/reservations",
+            "image": "as_3x2_1",
+            "photo_style": "photo"
+          }
+        },
+        {
+          "type": "promo",
+          "settings": {
+            "kicker": "By the harbour",
+            "heading": "Oyster night",
+            "text": "Freshly shucked, with a glass of something cold.",
+            "roundel": "Fri",
+            "tint": "navy",
+            "link_label": "See events",
+            "link": "/events",
+            "image": "as_3x2_2",
+            "photo_style": "photo"
+          }
+        },
+        {
+          "type": "promo",
+          "settings": {
+            "kicker": "A room of your own",
+            "heading": "Private dining",
+            "text": "Good company, a long table and a menu to share.",
+            "roundel": "",
+            "tint": "wine",
+            "link_label": "Talk to us",
+            "link": "/contact",
+            "image": "as_3x2_3",
+            "photo_style": "photo"
+          }
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "promo",
+      "name": "Promo",
+      "settings": [
+        {
+          "type": "text",
+          "id": "kicker",
+          "label": "Kicker",
+          "default": ""
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": ""
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": ""
+        },
+        {
+          "type": "text",
+          "id": "roundel",
+          "label": "Roundel",
+          "default": ""
+        },
+        {
+          "type": "select",
+          "id": "tint",
+          "label": "Tint",
+          "default": "tomato",
+          "options": [
+            {
+              "value": "tomato",
+              "label": "Tomato"
+            },
+            {
+              "value": "saffron",
+              "label": "Saffron"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "sea",
+              "label": "Sea"
+            },
+            {
+              "value": "plum",
+              "label": "Plum"
+            },
+            {
+              "value": "clay",
+              "label": "Clay"
+            },
+            {
+              "value": "wine",
+              "label": "Wine"
+            },
+            {
+              "value": "navy",
+              "label": "Navy"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link label",
+          "default": ""
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link",
+          "default": ""
+        },
+        {
+          "type": "image",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "select",
+          "id": "photo_style",
+          "label": "Photo style",
+          "default": "photo",
+          "options": [
+            {
+              "value": "photo",
+              "label": "Photo"
+            },
+            {
+              "value": "cutout",
+              "label": "Cutout"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12
+}
+</schema>

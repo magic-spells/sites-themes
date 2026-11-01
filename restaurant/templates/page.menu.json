@@ -1,0 +1,74 @@
+{
+  "label": "Menu",
+  "description": "Menu page sections.",
+  "sections": [
+    {
+      "id": "s_page_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "eyebrow": "The menu",
+        "heading": "Menu",
+        "standfirst": "Breakfast 8–11 · Lunch 12–3 · Dinner 5–10",
+        "align": "left",
+        "show_eyebrow": true,
+        "show_standfirst": true,
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_dish_grid",
+      "type": "dish-grid",
+      "preset": "Default",
+      "settings": {
+        "columns": "3",
+        "show_rail": true,
+        "show_ingredients": true,
+        "show_dietary": true,
+        "photo_style": "photo",
+        "info_style": "plain",
+        "show_legend": true,
+        "base_path": "/dishes",
+        "show_category_description": true,
+        "show_dietary_filter": false,
+        "color_scheme": "paper",
+        "collection": "menu_items",
+        "categories": "menu_categories"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Allergens",
+      "settings": {
+        "heading": "Allergens & dietary needs",
+        "note": "A few things before you visit.",
+        "first_open": true,
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "id": "b_1",
+          "type": "item",
+          "settings": {
+            "question": "Can you help with allergies?",
+            "answer": "<p>Please speak to our team about allergies. Tell us when you book and again at the table.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_cta_band",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "text": "A table by the water, tonight.",
+        "book_label": "Book a table",
+        "color_scheme": "tomato"
+      },
+      "blocks": []
+    }
+  ]
+}

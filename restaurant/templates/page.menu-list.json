@@ -1,0 +1,49 @@
+{
+  "label": "Menu · List",
+  "description": "Menu · List page sections.",
+  "sections": [
+    {
+      "id": "s_page_header",
+      "type": "page-header",
+      "preset": "Centered",
+      "settings": {
+        "eyebrow": "The menu",
+        "heading": "Menu",
+        "standfirst": "Breakfast 8–11 · Lunch 12–3 · Dinner 5–10",
+        "align": "center",
+        "show_eyebrow": true,
+        "show_standfirst": true,
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_menu_list",
+      "type": "menu-list",
+      "preset": "Dotted",
+      "settings": {
+        "prices": "dotted",
+        "show_ingredients": true,
+        "show_dietary": true,
+        "show_legend": true,
+        "base_path": "/dishes",
+        "show_category_description": true,
+        "color_scheme": "paper",
+        "collection": "menu_items",
+        "categories": "menu_categories"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta_band",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "text": "A table by the water, tonight.",
+        "book_label": "Book a table",
+        "color_scheme": "tomato"
+      },
+      "blocks": []
+    }
+  ]
+}

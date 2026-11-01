@@ -20,20 +20,7 @@
     {/for}
   </ul>
   {#if settings.lightbox}
-    <!-- The lightbox opens from a carousel slide, so the same photographs sit in a visually hidden companion carousel; each tile asks theme.ts to open it at its index. -->
-    <tarot-carousel class="sr-only" id={ id } aria-hidden="true">
-      <script type="application/json" data-tarot-options>{ { lightbox: true, draggable: false, navigation: { showButtons: false, showPagination: false } } | json }</script>
-      <tarot-viewport>
-        <tarot-track>
-          {#for item in items}
-            <tarot-slide>
-              <img src="{ image_url(item.asset, 480) }" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } />
-              {#if item.caption}<p data-caption data-tarot-lightbox-fade>{ item.caption }</p>{/if}
-            </tarot-slide>
-          {/for}
-        </tarot-track>
-      </tarot-viewport>
-    </tarot-carousel>
+    <LightboxCompanion items={ items } id={ id }><script type="application/json" data-tarot-options>{ { lightbox: true, draggable: false, navigation: { showButtons: false, showPagination: false } } | json }</script></LightboxCompanion>
   {/if}
 </section>
 {/if}

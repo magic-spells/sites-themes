@@ -1,24 +1,28 @@
 <!-- A strip of photographs at their own ratios, centred in a tall stage,
-     that breaks the column: it starts at the gutter and runs past the right
-     edge at every width, 3.5 across on desktop, 2.5 on tablet, 1.3 on a phone.
+     3.5 across on desktop and 2.5 on tablet, clipped at the column's edges;
+     on a phone 1.3 across, from the gutter off the right edge of the screen.
      Alternate drops every second photograph a step. Dragged or keyed, no
      arrows; a 1px bar tracks it below 48rem. -->
 {#let
   gallery = settings.gallery.items.length ? settings.gallery : page.entry.fields.photos
   items = gallery.items
   id = 'strip-' + section.id
-  options = { slidesPerView: 1.3, gap: '0.5rem', paddingLeft: '1rem', slidesPerMove: 1, lightbox: settings.lightbox, visibilityBoundsElement: 'carousel', navigation: { showButtons: false, showPagination: false }, scrollbar: { show: true, selector: '#' + id + '-bar' }, breakpoints: { '768': { slidesPerView: 2.5, gap: '0.75rem', paddingLeft: '1.5rem', scrollbar: { show: false } }, '1024': { slidesPerView: 3.5, gap: '0.75rem', paddingLeft: '2.5rem', scrollbar: { show: false } } } }
+  options = { slidesPerView: 1.3, gap: '0.5rem', paddingLeft: '1rem', slidesPerMove: 1, lightbox: settings.lightbox, visibilityBoundsElement: 'carousel', navigation: { showButtons: false, showPagination: false }, scrollbar: { show: true, selector: '#' + id + '-bar' }, breakpoints: { '768': { slidesPerView: 2.5, gap: '0.75rem', paddingLeft: 0, scrollbar: { show: false } }, '1024': { slidesPerView: 3.5, gap: '0.75rem', paddingLeft: 0, scrollbar: { show: false } } } }
 }
 {#if items.length}
-<section class="overflow-hidden bg-scheme-background py-section text-scheme-foreground" aria-roledescription="carousel" aria-label="{ gallery.title || t('gallery_label') }">
-  <tarot-carousel id={ id }>
+<section class="overflow-hidden bg-scheme-background py-section text-scheme-foreground md:px-gutter" aria-roledescription="carousel" aria-label="{ gallery.title || t('gallery_label') }">
+  <tarot-carousel class="mx-auto block max-w-column" id={ id }>
     <script type="application/json" data-tarot-options>{ options | json }</script>
     <tarot-viewport>
       <tarot-track>
         {#for item in items, i}
           <tarot-slide>
             <figure class="flex min-h-strip items-center { settings.stagger == 'alternate' && i % 2 == 1 ? 'md:pt-step-xl' : '' }">
-              <img class="w-full bg-scheme-surface" src="{ image_url(item.asset, 768) }" srcset="{ image_srcset(item.asset, [480, 768, 1280]) }" sizes="(min-width: 64rem) 28vw, (min-width: 48rem) 40vw, 77vw" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } />
+              {#if settings.lightbox}
+                <a class="block w-full cursor-zoom-in" href="{ image_url(item.asset, 2560) }" data-tarot-lightbox aria-label="{ t('open_lightbox', { index: i + 1 }) }"><img class="w-full bg-scheme-surface" src="{ image_url(item.asset, 768) }" srcset="{ image_srcset(item.asset, [480, 768, 1280]) }" sizes="(min-width: 64rem) 28vw, (min-width: 48rem) 40vw, 77vw" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } /></a>
+              {:else}
+                <img class="w-full bg-scheme-surface" src="{ image_url(item.asset, 768) }" srcset="{ image_srcset(item.asset, [480, 768, 1280]) }" sizes="(min-width: 64rem) 28vw, (min-width: 48rem) 40vw, 77vw" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } />
+              {/if}
               {#if item.caption}<figcaption class="sr-only" data-caption data-tarot-lightbox-fade>{ item.caption }</figcaption>{/if}
             </figure>
           </tarot-slide>
@@ -27,7 +31,7 @@
     </tarot-viewport>
   </tarot-carousel>
   <div class="mt-step-md px-gutter md:hidden" id="{ id }-bar"></div>
-  {#if settings.show_counter}<div class="mt-step-md px-gutter"><Counter index={ 1 } total={ items.length } carousel_id={ id } /></div>{/if}
+  {#if settings.show_counter}<div class="mx-auto mt-step-md max-w-column px-gutter md:px-0"><Counter index={ 1 } total={ items.length } carousel_id={ id } /></div>{/if}
 </section>
 {/if}
 

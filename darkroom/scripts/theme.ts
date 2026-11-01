@@ -28,7 +28,12 @@ interface Panel extends HTMLElement {
 interface Carousel extends HTMLElement {
 	whenReady(): Promise<void>;
 	on(event: string, listener: () => void): void;
+	updateOptions(options: object): void;
 	index: number;
+}
+
+interface Dropdown extends HTMLElement {
+	hide(): void;
 }
 
 /** localStorage is unavailable in some privacy modes; nothing here is worth
@@ -132,22 +137,45 @@ customElements.whenDefined('tarot-carousel').then(() => {
 // Grid and masonry tiles open the lightbox of a visually hidden companion
 // carousel holding the same photographs. The plugin opens from a slide click
 // and has no public open(index) yet, so the tile clicks the companion's slide;
-// the hidden slide gives the plugin nothing to fly from, so it fades in.
+// the hidden slide gives the plugin nothing to fly from, so it fades in. When
+// the lightbox closes, focus goes back to the tile it was opened from, not to
+// the hidden companion.
+const tileFor = new Map<Element, HTMLElement>();
 document.addEventListener('click', (event) => {
-	const tile = (event.target as Element | null)?.closest?.('[data-lightbox-open]');
+	const tile = (event.target as Element | null)?.closest?.<HTMLElement>('[data-lightbox-open]');
 	if (!tile) return;
-	const carousel = document.getElementById(tile.getAttribute('data-lightbox-open') ?? '');
+	const carousel = document.getElementById(tile.getAttribute('data-lightbox-open') ?? '') as Carousel | null;
 	const index = tile.getAttribute('data-index');
 	const slide = carousel?.querySelector<HTMLElement>(`tarot-slide[index="${index}"]`);
-	(slide?.querySelector('img') ?? slide)?.click();
+	if (!carousel || !slide) return;
+	if (!tileFor.has(carousel)) carousel.on('lightbox:closed', () => tileFor.get(carousel)?.focus());
+	tileFor.set(carousel, tile);
+	(slide.querySelector('img') ?? slide).click();
 });
 
-// Arrows that live inside a slide (the testimonials' controls, which fade
-// with their slide) step the carousel around them.
+// The hero's pause button stops and restarts its autoplay. The carousel has
+// no play or pause call, so the button sets the autoplay interval: zero
+// stops it, the section's interval starts it again.
 document.addEventListener('click', (event) => {
-	const button = (event.target as Element | null)?.closest?.('[data-carousel-step]');
-	const carousel = button?.closest('tarot-carousel') as (HTMLElement & { next(): void; previous(): void }) | null;
+	const button = (event.target as Element | null)?.closest?.<HTMLElement>('[data-autoplay-toggle]');
+	const carousel = document.getElementById(button?.getAttribute('data-autoplay-toggle') ?? '') as Carousel | null;
 	if (!button || !carousel) return;
-	if (button.getAttribute('data-carousel-step') === 'next') carousel.next();
-	else carousel.previous();
+	const paused = !button.hasAttribute('data-paused');
+	button.toggleAttribute('data-paused', paused);
+	carousel.updateOptions({ autoplay: { interval: paused ? 0 : Number(button.getAttribute('data-interval')) } });
 });
+
+// One dim lies over the page under the header while any dropdown is open.
+// It keys off "any panel open", not one panel, so when the pointer passes
+// from one trigger to the next the first panel's hide and the second's show
+// land in the same turn and the dim stays up through the hand-over. A click
+// on the dim closes whatever is open.
+const dim = document.querySelector<HTMLElement>('[data-page-dim]');
+if (dim) {
+	const sync = () => dim.toggleAttribute('data-open', !!document.querySelector('dropdown-component[visible]'));
+	document.addEventListener('dropdown-panel:show', sync);
+	document.addEventListener('dropdown-panel:hide', () => queueMicrotask(sync));
+	dim.addEventListener('click', () => {
+		for (const open of document.querySelectorAll<Dropdown>('dropdown-component[visible]')) open.hide();
+	});
+}

@@ -10,9 +10,9 @@
       {#for menu in [settings.menu_primary, settings.menu_secondary]}
         {#if menu.items.length}
           <nav aria-label="{ menu.title }">
-            <ul class="flex flex-wrap gap-x-step-md gap-y-step-xs text-body-sm">
+            <ul class="-mx-space-xs flex flex-wrap gap-y-step-xs text-body-sm">
               {#for item in menu.items}
-                <li><a class="text-scheme-muted decoration-1 underline-offset-4 hover:text-scheme-foreground hover:underline" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>
+                <li><a class="block px-space-xs text-scheme-muted decoration-1 underline-offset-4 hover:text-scheme-foreground hover:underline" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>
               {/for}
             </ul>
           </nav>

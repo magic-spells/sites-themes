@@ -16,6 +16,6 @@
   {#if item.caption && captions == 'below'}
     <figcaption class="font-mono text-caption text-scheme-muted">{ item.caption }</figcaption>
   {:else if item.caption && captions == 'hover'}
-    <figcaption class="pointer-events-none absolute inset-x-0 bottom-0 bg-linear-to-t from-scrim p-step-sm font-mono text-caption text-on-photo opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100" data-reveal>{ item.caption }</figcaption>
+    <figcaption class="pointer-events-none absolute inset-x-0 bottom-0 bg-linear-to-t from-scrim p-step-sm font-mono text-caption text-on-photo opacity-0 transition-opacity duration-hover ease-out-soft group-hover:opacity-100 group-focus-within:opacity-100" data-reveal>{ item.caption }</figcaption>
   {/if}
 </figure>

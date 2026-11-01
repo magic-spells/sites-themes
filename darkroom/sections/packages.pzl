@@ -16,9 +16,9 @@
     {#if tiles}
       <ul class="grid gap-gap-lg md:grid-cols-2">
         {#for block in blocks}
-          <li class="grid content-start gap-step-xs" data-block={ block.editor_id }>
-            <div class="relative">
-              {#if block.settings.photo}<img class="aspect-4/5 w-full bg-scheme-surface object-cover" src="{ image_url(block.settings.photo, 1280) }" srcset="{ image_srcset(block.settings.photo, [480, 768, 1280]) }" sizes="(min-width: 48rem) 50vw, 100vw" alt="" loading="lazy" width={ block.settings.photo.width } height={ block.settings.photo.height } />{:else}<div class="aspect-4/5 bg-scheme-surface"></div>{/if}
+          <li class="group grid content-start gap-step-xs" data-block={ block.editor_id }>
+            <div class="relative overflow-hidden">
+              {#if block.settings.photo}<img class="aspect-4/5 w-full bg-scheme-surface object-cover transition-transform duration-hover ease-out-soft group-hover:scale-hover group-hover:duration-settle group-hover:ease-overshoot" data-zoom src="{ image_url(block.settings.photo, 1280) }" srcset="{ image_srcset(block.settings.photo, [480, 768, 1280]) }" sizes="(min-width: 48rem) 50vw, 100vw" alt="" loading="lazy" width={ block.settings.photo.width } height={ block.settings.photo.height } />{:else}<div class="aspect-4/5 bg-scheme-surface"></div>{/if}
               {#if block.settings.price}<p class="absolute bottom-0 left-0 bg-scheme-background px-step-sm py-step-xs font-mono text-counter text-scheme-foreground">{ (block.settings.from_label || t('from_label')) | downcase } { block.settings.price }</p>{/if}
             </div>
             <p class="flex items-center gap-step-sm pt-step-sm">
@@ -34,22 +34,22 @@
     {:else}
       <ul class="border-t border-scheme-rule">
         {#for block in blocks}
-          <li class="grid gap-gap-lg border-b border-scheme-rule py-step-lg md:grid-cols-2 lg:grid-cols-package-row" data-block={ block.editor_id }>
-            {#if block.settings.photo}<img class="hidden aspect-3/2 w-40 bg-scheme-surface object-cover lg:block" src="{ image_url(block.settings.photo, 320) }" alt="" loading="lazy" width={ block.settings.photo.width } height={ block.settings.photo.height } />{:else}<span class="hidden lg:block"></span>{/if}
+          <li class="grid gap-gap-lg border-b border-scheme-rule py-step-lg md:grid-cols-package-row-md lg:grid-cols-package-row" data-block={ block.editor_id }>
+            {#if block.settings.photo}<img class="hidden aspect-3/2 w-40 bg-scheme-surface object-cover md:row-span-2 md:block md:self-center lg:row-span-1 lg:self-auto" src="{ image_url(block.settings.photo, 320) }" alt="" loading="lazy" width={ block.settings.photo.width } height={ block.settings.photo.height } />{:else}<span class="hidden md:row-span-2 md:block lg:row-span-1"></span>{/if}
             <div class="grid content-start gap-step-xs">
               {#if block.settings.featured}<p class="flex items-center gap-step-xs font-mono text-meta tracking-meta text-scheme-links uppercase"><span class="size-1.5 rounded-full bg-scheme-links" aria-hidden="true"></span>{ t('most_booked') }</p>{/if}
               <h3 class="font-heading text-h3 font-medium text-scheme-heading">{ block.settings.name }</h3>
               {#if block.settings.for}<p class="text-body-sm text-scheme-muted">{ block.settings.for }</p>{/if}
             </div>
             {#if block.settings.inclusions}
-              <ul class="grid content-start gap-step-2xs text-body-sm text-scheme-foreground">
+              <ul class="grid content-start gap-step-2xs text-body-sm text-scheme-foreground md:col-start-2 lg:col-start-auto">
                 {#for line in block.settings.inclusions | split('\n') | compact}<li>{ line }</li>{/for}
               </ul>
-            {:else}<span></span>{/if}
-            <div class="grid content-start justify-items-start gap-step-sm md:col-span-2 lg:col-span-1 lg:justify-items-end lg:text-right">
-              <div class="grid gap-step-2xs lg:justify-items-end">
+            {:else}<span class="hidden md:col-start-2 md:block lg:col-start-auto"></span>{/if}
+            <div class="grid content-start justify-items-start gap-step-sm md:col-start-3 md:row-span-2 md:row-start-1 md:justify-items-end md:text-right lg:col-start-auto lg:row-span-1 lg:row-start-auto">
+              <div class="grid gap-step-2xs md:justify-items-end">
                 {#if block.settings.price}
-                  <p class="font-mono text-counter text-scheme-meta">{ (block.settings.from_label || t('from_label')) | downcase }</p>
+                  <p class="font-mono text-meta tracking-meta text-scheme-meta uppercase">{ block.settings.from_label || t('from_label') }</p>
                   <p class="font-heading text-h2 font-medium text-scheme-heading">{ block.settings.price }</p>
                 {/if}
                 {#if block.settings.note}<p class="font-mono text-caption text-scheme-muted">{ block.settings.note }</p>{/if}

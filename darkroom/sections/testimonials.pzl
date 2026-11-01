@@ -1,55 +1,66 @@
-<!-- Voices one at a time: from 48rem the quote, name and role at the left
-     and a 4:5 photograph at the right, fading between them, each with its
-     counter and arrows under the quote. Below 48rem the photograph comes
-     first, the next voice peeks at the right edge, and dots and a counter sit
-     under the strip. -->
+<!-- Voices one at a time. From 48rem two synced carousels sit side by
+     side: the quote, name and role at the left slide in (their text fading
+     in as it lands) and lead; the 4:5 photograph at the right fades to
+     follow (tarot syncWith). One controls row under the quotes, outside both
+     tracks, steps the quote carousel: counter left, arrows right. Below
+     48rem only the quote carousel shows, each slide with its photograph
+     above the quote, the next voice peeking at the right edge, and dots and
+     the counter under the strip. -->
 {#let
   id = 'voices-' + section.id
-  total = (blocks.length < 10 ? '0' : '') + blocks.length
-  options = { effect: 'carousel', loop: true, gap: '1rem', paddingLeft: '1rem', paddingRight: '2.5rem', navigation: { showButtons: false, showPagination: true }, breakpoints: { '768': { effect: 'fade', gap: 0, paddingLeft: 0, paddingRight: 0, navigation: { showButtons: false, showPagination: false } } } }
+  photos_id = id + '-photos'
+  options = { effect: 'carousel', loop: true, gap: '1rem', paddingLeft: '1rem', paddingRight: '2.5rem', syncWith: '#' + photos_id, navigation: { showButtons: false, showPagination: true }, breakpoints: { '768': { gap: 0, paddingLeft: 0, paddingRight: 0, navigation: { showButtons: settings.show_arrows, showPagination: false } } } }
+  photo_options = { effect: 'fade', loop: true, draggable: false, navigation: { showButtons: false, showPagination: false } }
 }
 {#if blocks.length}
 <section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter" aria-roledescription="carousel" aria-label="{ settings.heading || t('carousel_label') }">
   {#if settings.heading}<h2 class="sr-only">{ settings.heading }</h2>{/if}
-  <tarot-carousel class="mx-auto block max-w-column" id={ id }>
-    <script type="application/json" data-tarot-options>{ options | json }</script>
-    <tarot-viewport>
-      <tarot-track>
-        {#for block in blocks, i}
-          <tarot-slide class="bg-scheme-background" data-block={ block.editor_id }>
-            <figure class="flex flex-col gap-step-lg md:flex-row-reverse md:items-center md:justify-between md:gap-step-3xl">
-              {#if block.settings.photo}<img class="aspect-4/5 w-full bg-scheme-surface object-cover md:w-1/2 lg:max-w-image" src="{ image_url(block.settings.photo, 1280) }" srcset="{ image_srcset(block.settings.photo, [480, 768, 1280]) }" sizes="(min-width: 48rem) 40vw, 85vw" alt="" loading="lazy" width={ block.settings.photo.width } height={ block.settings.photo.height } />{/if}
-              <div class="grid max-w-text content-start gap-step-xl md:flex-1">
-                {#if settings.heading}<p class="hidden font-mono text-meta tracking-meta text-scheme-meta uppercase md:block" aria-hidden="true">{ settings.heading }</p>{/if}
-                <div class="grid gap-step-lg">
+  <div class="mx-auto flex max-w-column items-center justify-between gap-step-3xl">
+    <div class="grid min-w-0 flex-1 content-start gap-step-xl md:max-w-text">
+      {#if settings.heading}<p class="hidden font-mono text-meta tracking-meta text-scheme-meta uppercase md:block" aria-hidden="true">{ settings.heading }</p>{/if}
+      <tarot-carousel class="block min-w-0" id={ id }>
+        <script type="application/json" data-tarot-options>{ options | json }</script>
+        <tarot-viewport>
+          <tarot-track>
+            {#for block in blocks}
+              <tarot-slide data-block={ block.editor_id }>
+                <figure class="grid gap-step-lg md:opacity-0 md:transition-opacity md:duration-hover md:ease-out-soft md:slide-current:opacity-100" data-fade>
+                  {#if block.settings.photo}<img class="aspect-4/5 w-full bg-scheme-surface object-cover md:hidden" src="{ image_url(block.settings.photo, 768) }" srcset="{ image_srcset(block.settings.photo, [480, 768]) }" sizes="85vw" alt="" loading="lazy" width={ block.settings.photo.width } height={ block.settings.photo.height } />{/if}
                   <blockquote class="font-heading text-quote text-balance text-scheme-heading italic">{ block.settings.quote }</blockquote>
                   <figcaption class="grid gap-step-2xs">
                     <span class="text-body text-scheme-foreground">{ block.settings.name }</span>
                     {#if block.settings.role}<span class="font-mono text-caption text-scheme-meta">{ block.settings.role }</span>{/if}
                   </figcaption>
-                </div>
-                {#if settings.show_counter || settings.show_arrows}
-                  <div class="hidden items-center justify-between md:flex">
-                    {#if settings.show_counter}<p class="font-mono text-counter tabular-nums text-scheme-meta">{ i + 1 < 10 ? '0' : '' }{ i + 1 } / { total }</p>{:else}<span></span>{/if}
-                    {#if settings.show_arrows && blocks.length > 1}
-                      <div class="flex gap-step-xs">
-                        <button class="flex size-8 items-center justify-center border border-scheme-rule hover:border-scheme-foreground" type="button" data-carousel-step="previous" aria-label="{ t('previous') }"><span class="sites-icon size-6">{#svg 'icons/angle-left.svg'}</span></button>
-                        <button class="flex size-8 items-center justify-center border border-scheme-rule hover:border-scheme-foreground" type="button" data-carousel-step="next" aria-label="{ t('next') }"><span class="sites-icon size-6">{#svg 'icons/angle-right.svg'}</span></button>
-                      </div>
-                    {/if}
-                  </div>
-                {/if}
-              </div>
-            </figure>
-          </tarot-slide>
-        {/for}
-      </tarot-track>
-    </tarot-viewport>
-    <div class="mt-step-md flex items-center justify-between px-gutter md:hidden">
-      <div data-tarot-pagination></div>
-      {#if settings.show_counter}<Counter index={ 1 } total={ blocks.length } carousel_id={ id } />{/if}
+                </figure>
+              </tarot-slide>
+            {/for}
+          </tarot-track>
+        </tarot-viewport>
+        <div class="mt-step-md flex items-center justify-between px-gutter md:mt-step-xl md:px-0">
+          <div class="md:hidden" data-tarot-pagination></div>
+          {#if settings.show_counter}<Counter index={ 1 } total={ blocks.length } carousel_id={ id } />{:else}<span></span>{/if}
+          {#if settings.show_arrows && blocks.length > 1}
+            <div class="hidden gap-step-xs md:flex">
+              <button class="flex size-8 items-center justify-center border border-scheme-rule hover:border-scheme-foreground" type="button" data-action-tarot-previous aria-label="{ t('previous') }"><span class="sites-icon size-6">{#svg 'icons/angle-left.svg'}</span></button>
+              <button class="flex size-8 items-center justify-center border border-scheme-rule hover:border-scheme-foreground" type="button" data-action-tarot-next aria-label="{ t('next') }"><span class="sites-icon size-6">{#svg 'icons/angle-right.svg'}</span></button>
+            </div>
+          {/if}
+        </div>
+      </tarot-carousel>
     </div>
-  </tarot-carousel>
+    <tarot-carousel class="me-0 hidden w-1/2 md:block lg:max-w-image" id={ photos_id } aria-hidden="true">
+      <script type="application/json" data-tarot-options>{ photo_options | json }</script>
+      <tarot-viewport>
+        <tarot-track>
+          {#for block in blocks}
+            <tarot-slide>
+              {#if block.settings.photo}<img class="aspect-4/5 w-full bg-scheme-surface object-cover" src="{ image_url(block.settings.photo, 1280) }" srcset="{ image_srcset(block.settings.photo, [768, 1280]) }" sizes="(min-width: 64rem) 32.5rem, 50vw" alt="" loading="lazy" width={ block.settings.photo.width } height={ block.settings.photo.height } />{:else}<div class="aspect-4/5 bg-scheme-surface"></div>{/if}
+            </tarot-slide>
+          {/for}
+        </tarot-track>
+      </tarot-viewport>
+    </tarot-carousel>
+  </div>
 </section>
 {/if}
 

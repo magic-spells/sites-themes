@@ -2,7 +2,9 @@
      slides) between photographs, with each slide's series, a counter and
      dots. A caption that starts with a series title ("Salt Roads · ...")
      takes that series' place, year and link. Arrows show on hover, always or
-     never from 48rem; below that the slideshow is swiped. -->
+     never from 48rem; below that the slideshow is swiped. An autoplaying
+     slideshow has a pause button beside its counter. Opening a page, it
+     carries the page's <h1> for screen readers; the slides keep <h2>s. -->
 {#let
   items = settings.gallery.items
   id = 'hero-' + section.id
@@ -12,6 +14,7 @@
 }
 {#if items.length}
 <section class="relative bg-scheme-surface text-on-photo { height }" aria-roledescription="carousel" aria-label="{ settings.gallery.title || t('carousel_label') }">
+  {#if section.index == 0}<h1 class="sr-only">{ page.title }</h1>{/if}
   <tarot-carousel class="group/hero h-full" id={ id }>
     <script type="application/json" data-tarot-options>{ options | json }</script>
     <tarot-viewport class="h-full">
@@ -30,7 +33,7 @@
                   {#if entry}
                     <p class="font-mono text-meta tracking-meta text-on-photo/70 uppercase">{ entry.fields.location }, { entry.fields.year }</p>
                     <h2 class="font-heading text-h2 font-medium">{ entry.title }</h2>
-                    <a class="border-b border-scheme-links pb-step-2xs font-mono text-meta tracking-meta uppercase hover:text-scheme-links" href="/work/{ entry.handle }">{ t('view_series') }</a>
+                    <a class="border-b border-scheme-links pb-step-2xs font-mono text-meta tracking-meta uppercase hover:text-scheme-links" href="{ settings.base_path }/{ entry.handle }">{ t('view_series') }</a>
                   {:else}
                     <h2 class="font-heading text-h2 font-medium">{ item.caption }</h2>
                   {/if}
@@ -42,8 +45,9 @@
       </tarot-track>
     </tarot-viewport>
 
-    {#if settings.show_counter || settings.show_dots}
+    {#if settings.show_counter || settings.show_dots || settings.autoplay}
       <div class="pointer-events-none absolute right-gutter bottom-step-xl z-10 flex items-center gap-step-md">
+        {#if settings.autoplay && items.length > 1}<button class="group/pause pointer-events-auto -m-step-2xs flex size-8 items-center justify-center text-on-photo hover:text-scheme-links motion-reduce:hidden" type="button" data-autoplay-toggle={ id } data-interval={ settings.interval * 1000 }><span class="sites-icon size-5 group-data-paused/pause:hidden">{#svg 'icons/pause.svg'}<span class="sr-only">{ t('pause_slideshow') }</span></span><span class="sites-icon hidden size-5 group-data-paused/pause:block">{#svg 'icons/play.svg'}<span class="sr-only">{ t('play_slideshow') }</span></span></button>{/if}
         {#if settings.show_counter}<Counter index={ 1 } total={ items.length } carousel_id={ id } tone="photo" />{/if}
         {#if settings.show_dots}<div class="pointer-events-auto hidden md:block" data-tarot-pagination></div>{/if}
       </div>
@@ -66,7 +70,7 @@
       "type": "gallery",
       "id": "gallery",
       "label": "Gallery",
-      "info": "Reads items in order: asset (url, width, height, alt), caption, alt and video. Leave empty to use page.entry.fields.photos where the page binds a series."
+      "info": "Reads items in order: asset (url, width, height, alt), caption, alt and video."
     },
     {
       "type": "select",
@@ -166,6 +170,13 @@
       ]
     },
     {
+      "type": "url",
+      "id": "base_path",
+      "label": "Base path",
+      "default": "/work",
+      "info": "Where the series pages live; a caption that starts with a series title links to base path/handle."
+    },
+    {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme",
@@ -186,7 +197,8 @@
         "show_dots": true,
         "show_arrows": "hover",
         "color_scheme": "surface",
-        "gallery": "home-hero"
+        "gallery": "home-hero",
+        "base_path": "/work"
       }
     }
   ]

@@ -19,7 +19,11 @@
         {#for item in items, i}
           <tarot-slide>
             <figure class="grid gap-step-sm">
-              <img class="aspect-3/2 w-full bg-scheme-surface object-contain md:aspect-auto md:bg-transparent { stage }" src="{ image_url(item.asset, 1280) }" srcset="{ image_srcset(item.asset, [480, 768, 1280, 1600]) }" sizes="(min-width: 82.5rem) 82.5rem, 100vw" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading={ i == 0 ? 'eager' : 'lazy' } width={ item.asset.width } height={ item.asset.height } />
+              {#if settings.lightbox}
+                <a class="block cursor-zoom-in" href="{ image_url(item.asset, 2560) }" data-tarot-lightbox aria-label="{ t('open_lightbox', { index: i + 1 }) }"><img class="aspect-3/2 w-full bg-scheme-surface object-contain md:aspect-auto md:bg-transparent { stage }" src="{ image_url(item.asset, 1280) }" srcset="{ image_srcset(item.asset, [480, 768, 1280, 1600]) }" sizes="(min-width: 82.5rem) 82.5rem, 100vw" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading={ i == 0 ? 'eager' : 'lazy' } width={ item.asset.width } height={ item.asset.height } /></a>
+              {:else}
+                <img class="aspect-3/2 w-full bg-scheme-surface object-contain md:aspect-auto md:bg-transparent { stage }" src="{ image_url(item.asset, 1280) }" srcset="{ image_srcset(item.asset, [480, 768, 1280, 1600]) }" sizes="(min-width: 82.5rem) 82.5rem, 100vw" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading={ i == 0 ? 'eager' : 'lazy' } width={ item.asset.width } height={ item.asset.height } />
+              {/if}
               {#if settings.show_captions && item.caption}<figcaption class="font-mono text-caption text-scheme-muted md:min-h-8 md:pr-panel" data-caption data-tarot-lightbox-fade>{ item.caption }</figcaption>{/if}
             </figure>
           </tarot-slide>

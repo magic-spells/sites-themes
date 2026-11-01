@@ -184,6 +184,7 @@
 	--grid-template-columns-statement: 12.5rem 1fr;
 	--grid-template-columns-cv-row: 4rem 1fr;
 	--grid-template-columns-package-row: 10rem 1fr 1fr 18rem;
+	--grid-template-columns-package-row-md: 10rem 1fr auto;
 	--spacing-control: 3.375rem;
 	--spacing-textarea: 9rem;
 	--spacing-hero-tall: 80dvh;
@@ -205,6 +206,19 @@
 	   the scrim under it stays dark: both are constants, not scheme roles. */
 	--color-on-photo: #f6f5f2;
 	--color-scrim: rgb(0 0 0 / 0.6);
+
+	/* The photo hover, one voice on every tile: the photograph grows to the
+	   hover scale on a curve that passes it by about 2% (1.06) before it
+	   settles; the scrim and the text fade on a plain ease-out, and the way
+	   back is that ease-out with no overshoot. The panel duration is the Work
+	   dropdown's own fade, which the page dim under it follows. */
+	--scale-hover: 104%;
+	--transition-duration-settle: 700ms;
+	--transition-duration-hover: 400ms;
+	--transition-duration-panel: 200ms;
+	--ease-overshoot: cubic-bezier(0.34, 2.6, 0.64, 1);
+	--ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+	--leading-statement: 1.1;
 }
 
 /* The role sizes per breakpoint, from the Figma Font Sizes and Spacing
@@ -334,6 +348,15 @@
 @custom-variant overlaid {
 	&:where(body:has(main > div:first-of-type[data-section="hero-slideshow"]) [data-header-style="overlay"]),
 	&:where(body:has(main > div:first-of-type[data-section="hero-slideshow"]) [data-header-style="overlay"] *) {
+		@slot;
+	}
+}
+
+/* The slide a carousel shows: tarot marks it aria-current. Before tarot
+   upgrades the first slide stands in for it. */
+@custom-variant slide-current {
+	&:where(tarot-slide[aria-current="true"] *),
+	&:where(tarot-carousel:not(:defined) tarot-slide:first-child *) {
 		@slot;
 	}
 }
@@ -588,8 +611,9 @@ body:has(main > div:first-of-type[data-section="hero-slideshow"]) [data-section=
 
 /* The carousels. Tarot's own stylesheet is neutral; these map its custom
    properties onto the scheme the carousel sits in. The mobile strip bar is a
-   1px line, track the rule and thumb the text. */
-tarot-carousel {
+   1px line, track the rule and thumb the text; the bar renders outside the
+   carousel, so the properties sit on the section around both. */
+[data-section] {
 	--tarot-scrollbar-height: 1px;
 	--tarot-scrollbar-bg: var(--sites-scheme-chip-border);
 	--tarot-scrollbar-thumb-bg: var(--sites-scheme-foreground);
@@ -597,8 +621,18 @@ tarot-carousel {
 	--tarot-scrollbar-thumb-active-bg: var(--sites-scheme-foreground);
 	--tarot-scrollbar-border-radius: 0;
 	--tarot-scrollbar-margin: var(--darkroom-step-md);
+}
+
+tarot-carousel {
 	--color-pagination-dot: var(--sites-scheme-chip-foreground);
 	--color-pagination-dot-active: var(--sites-scheme-foreground);
+}
+
+/* Before tarot upgrades (or with no JavaScript) its stylesheet hides every
+   slide; the first one shows so each carousel still has a picture. */
+tarot-carousel:not(:defined) tarot-slide:first-child {
+	opacity: 1;
+	visibility: visible;
 }
 
 /* The hero's dots sit on a photograph: light, the current one in the link
@@ -703,5 +737,15 @@ body:has([data-bare]) [data-group] {
 		animation-iteration-count: 1 !important;
 		transition-duration: 0.001ms !important;
 		scroll-behavior: auto !important;
+	}
+
+	/* A photo hover keeps its fades and drops the scale. */
+	[data-zoom] {
+		scale: none !important;
+	}
+
+	[data-reveal],
+	[data-fade] {
+		transition-duration: var(--transition-duration-hover) !important;
 	}
 }

@@ -4,7 +4,7 @@
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column gap-gap-lg lg:grid-cols-statement">
     {#if settings.eyebrow}<p class="font-mono text-meta tracking-meta text-scheme-meta uppercase">{ settings.eyebrow }</p>{:else}<span class="hidden lg:block"></span>{/if}
-    <div class="statement text-h3 text-balance text-scheme-heading md:text-statement">{ settings.body }</div>
+    <div class="statement text-h3 leading-statement text-balance text-scheme-heading md:text-statement">{ settings.body }</div>
   </div>
 </section>
 

@@ -10,7 +10,7 @@
       "light": "#ECEAE5",
       "medium": "#78756E",
       "dark": "#2B2A27",
-      "extra_dark": "#131312"
+      "extra_dark": "#050505"
     },
     "info": {
       "bg": "#ECEAE5",
@@ -114,7 +114,7 @@
     "padding_y": "1rem",
     "weight": "500",
     "primary_bg": "#E8E6E1",
-    "primary_text": "#131312",
+    "primary_text": "#161614",
     "secondary_bg": "transparent",
     "secondary_text": "#E8E6E1"
   },
@@ -137,7 +137,7 @@
           "light": "#ECEAE5",
           "medium": "#78756E",
           "dark": "#2B2A27",
-          "extra_dark": "#131312"
+          "extra_dark": "#050505"
         },
         "info": {
           "bg": "#ECEAE5",
@@ -166,7 +166,7 @@
           "accent": "#966020"
         },
         "grey": {
-          "extra_light": "#131312",
+          "extra_light": "#050505",
           "light": "#2B2A27",
           "medium": "#78756E",
           "dark": "#E1DFD9",
@@ -240,9 +240,9 @@
       "icons": "$brand-secondary",
       "links": "$brand-accent",
       "button_background": "$brand-primary",
-      "button_foreground": "$grey-extra-dark",
+      "button_foreground": "#161614",
       "button_hover_background": "$brand-secondary",
-      "button_hover_foreground": "$grey-extra-dark",
+      "button_hover_foreground": "#161614",
       "secondary_button_background": "transparent",
       "secondary_button_foreground": "$brand-primary",
       "secondary_button_hover_background": "#1C1C1A",
@@ -252,24 +252,24 @@
       "handle": "surface-alt",
       "name": "Gallery",
       "background": "$grey-extra-light",
-      "foreground": "$grey-extra-dark",
-      "heading": "$grey-extra-dark",
+      "foreground": "#161614",
+      "heading": "#161614",
       "input_background": "transparent",
-      "input_foreground": "$grey-extra-dark",
+      "input_foreground": "#161614",
       "input_border": "#E1DFD9",
       "chip_background": "$grey-light",
       "chip_foreground": "$info-fg",
       "chip_border": "#E1DFD9",
       "icons": "$info-fg",
       "links": "$warning-fg",
-      "button_background": "$grey-extra-dark",
+      "button_background": "#161614",
       "button_foreground": "$grey-extra-light",
       "button_hover_background": "$info-fg",
       "button_hover_foreground": "$grey-extra-light",
       "secondary_button_background": "transparent",
-      "secondary_button_foreground": "$grey-extra-dark",
+      "secondary_button_foreground": "#161614",
       "secondary_button_hover_background": "$grey-light",
-      "secondary_button_hover_foreground": "$grey-extra-dark"
+      "secondary_button_hover_foreground": "#161614"
     },
     {
       "handle": "band",
@@ -286,7 +286,7 @@
       "icons": "#8E8B84",
       "links": "#D9A05B",
       "button_background": "#E8E6E1",
-      "button_foreground": "#131312",
+      "button_foreground": "#161614",
       "button_hover_background": "#A8A49C",
       "button_hover_foreground": "#1C1C1A",
       "secondary_button_background": "transparent",

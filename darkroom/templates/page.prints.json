@@ -89,6 +89,7 @@
       "type": "prints-band",
       "preset": "Default",
       "settings": {
+        "eyebrow": "Prints",
         "heading": "Prints and editions",
         "text": "Selected photographs are available as signed prints. Each is made in the studio, checked in daylight and numbered by hand.",
         "button_label": "Enquire about a print",

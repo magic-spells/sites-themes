@@ -2,9 +2,9 @@
      <dialog-panel>: it rises from the bottom over a dark backdrop, drags down
      to dismiss, closes on the backdrop and on Escape, and hands focus back to
      the header's Menu button. Menu items are set in the heading face; the
-     item that leads to Work lists the series under it, from the workspace's
-     series type. -->
-{#let series = content.series.entries | sort('fields.year') | reverse}
+     item that leads to the Work path lists the series of its collection
+     under it, newest first. -->
+{#let series = settings.collection.entries | sort('fields.year') | reverse}
 <dialog-panel>
   <dialog class="text-scheme-foreground" aria-label="{ t('menu_label') }">
     <bottom-sheet id="mobile-menu">
@@ -25,10 +25,10 @@
                           <li><a class="text-body text-scheme-muted hover:text-scheme-foreground" href="{ child.href }" target={ child.open_in_new ? '_blank' : null } rel={ child.open_in_new ? 'noopener' : null }>{ child.label }</a></li>
                         {/for}
                       </ul>
-                    {:else if item.href == '/work' && series.length}
+                    {:else if item.href == settings.work_path && series.length}
                       <ul class="grid gap-step-xs">
                         {#for entry in series}
-                          <li><a class="text-body text-scheme-muted hover:text-scheme-foreground" href="/work/{ entry.handle }">{ entry.title }</a></li>
+                          <li><a class="text-body text-scheme-muted hover:text-scheme-foreground" href="{ settings.work_path }/{ entry.handle }">{ entry.title }</a></li>
                         {/for}
                       </ul>
                     {/if}
@@ -68,6 +68,19 @@
       "label": "Menu secondary"
     },
     {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "The series listed under the Work item. Create the workspace content type series (see the header); orders year newest first."
+    },
+    {
+      "type": "url",
+      "id": "work_path",
+      "label": "Work path",
+      "default": "/work",
+      "info": "The menu item with this link lists the series under it."
+    },
+    {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme",
@@ -80,7 +93,9 @@
       "settings": {
         "color_scheme": "surface",
         "menu": "main",
-        "menu_secondary": "social"
+        "menu_secondary": "social",
+        "collection": "series",
+        "work_path": "/work"
       }
     }
   ]

@@ -7,7 +7,9 @@
       "settings": {
         "color_scheme": "surface",
         "menu": "main",
-        "menu_secondary": "social"
+        "menu_secondary": "social",
+        "collection": "series",
+        "work_path": "/work"
       },
       "blocks": []
     },

@@ -83,8 +83,7 @@
         "show_image": true,
         "show_byline": true,
         "drop_cap": true,
-        "show_end_rule": true,
-        "color_scheme": "paper"
+        "show_end_rule": true
       }
     }
   ]

@@ -27,7 +27,6 @@
         "body": "<p>I write about towns, weather and the paths between them, mostly on foot and mostly slowly.</p><p>The journal started as notes for myself. It became letters when people started asking where the closed path went.</p>",
         "link_label": "More about the walks",
         "link": "/journal",
-        "color_scheme": "paper",
         "image": "as_writer"
       },
       "blocks": []
@@ -39,8 +38,7 @@
       "settings": {
         "heading": "Why the walks are slow",
         "body": "<p>I started walking the valley paths the year the bus timetable halved. There was no plan in it, only a need to get to the shop and back, and the shop was four miles away by the road and three by the fields.</p><p>The fields are slower, and that is the point. A road tells you where to look; a field path lets you choose, and most days I choose the hedge, the sky over the ridge and whoever is coming the other way.</p><h3>What to bring</h3><ul><li>Boots that have been rained on before</li><li>A map, even though it leaves things out</li><li>Something to eat at the stile, out of the wind</li></ul><p>Letters are welcome, and I answer every one. The address is on the <a href=\"/contact\">contact page</a>, along with the hours I keep.</p>",
-        "width": "narrow",
-        "color_scheme": "paper"
+        "width": "narrow"
       },
       "blocks": []
     },

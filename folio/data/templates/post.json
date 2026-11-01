@@ -11,8 +11,7 @@
         "show_image": true,
         "show_byline": true,
         "drop_cap": true,
-        "show_end_rule": true,
-        "color_scheme": "paper"
+        "show_end_rule": true
       },
       "blocks": []
     },
@@ -46,7 +45,6 @@
         "show_count": false,
         "view_all_label": "",
         "view_all_href": "",
-        "color_scheme": "paper",
         "collection": "posts"
       },
       "blocks": []

@@ -187,7 +187,6 @@
         "show_count": true,
         "view_all_label": "Everything in the journal",
         "view_all_href": "/journal",
-        "color_scheme": "paper",
         "collection": "posts"
       }
     },
@@ -206,7 +205,6 @@
         "show_count": true,
         "view_all_label": "",
         "view_all_href": "",
-        "color_scheme": "paper",
         "collection": "posts"
       }
     },
@@ -225,7 +223,6 @@
         "show_count": false,
         "view_all_label": "",
         "view_all_href": "",
-        "color_scheme": "paper",
         "collection": "posts"
       }
     },
@@ -244,7 +241,6 @@
         "show_count": true,
         "view_all_label": "Everything in the journal",
         "view_all_href": "/journal",
-        "color_scheme": "paper",
         "collection": "posts"
       }
     }

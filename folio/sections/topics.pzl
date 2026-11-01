@@ -66,8 +66,7 @@
     {
       "name": "Default",
       "settings": {
-        "heading": "Topics",
-        "color_scheme": "paper"
+        "heading": "Topics"
       },
       "blocks": [
         {

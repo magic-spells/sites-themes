@@ -69,7 +69,6 @@
     {
       "name": "Default",
       "settings": {
-        "color_scheme": "paper",
         "menu": "main",
         "menu_secondary": "social"
       }

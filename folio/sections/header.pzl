@@ -79,7 +79,6 @@
         "logo_text": "",
         "sticky": true,
         "bordered": true,
-        "color_scheme": "paper",
         "menu": "main"
       }
     }

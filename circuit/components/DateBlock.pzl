@@ -16,6 +16,6 @@
   weekday = ['sat', 'sun', 'mon', 'tue', 'wed', 'thu', 'fri'][h]
 }
 <time class="inline-grid justify-items-start gap-step-2xs bg-ink px-step-sm pt-step-xs pb-step-sm text-on-photo" datetime="{ iso }">
-  <span class="font-heading font-black tabular-nums stretch-display { size == 'large' ? 'text-display' : 'text-h2' } leading-none">{ d }</span>
-  <span class="font-mono text-spec font-medium text-brand-accent uppercase">{ t('months_short.' + m0) } · { t('day.' + weekday) }</span>
+  <span class="font-heading font-black tabular-nums stretch-display { size == 'large' ? 'text-display' : 'text-h2' } leading-none">{ d < 10 ? '0' + d : d }</span>
+  <span class="font-mono text-spec font-medium text-on-photo uppercase">{ t('months_short.' + m0) } · { t('day.' + weekday) }</span>
 </time>

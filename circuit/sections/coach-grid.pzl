@@ -13,7 +13,7 @@
 {#if shown.length}
 <section class="bg-scheme-background py-section text-scheme-foreground { settings.mobile == 'row' ? 'md:px-gutter' : 'px-gutter' }">
   <div class="mx-auto max-w-column">
-    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.view_all_label } link_href={ settings.view_all_href } inset={ settings.mobile == 'row' } />
+    <SectionHead kicker={ settings.kicker } heading={ settings.heading } text={ settings.text } link_label={ settings.view_all_label } link_href={ settings.view_all_href } inset={ settings.mobile == 'row' } />
     {#if settings.mobile == 'row'}
       <tarot-carousel class="block md:hidden" id={ id } data-track="cards">
         <script type="application/json" data-tarot-options>{ options | json }</script>
@@ -36,6 +36,7 @@
   "kind": "Collections",
   "icon": "layout-template",
   "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "", "info": "A short mono line above the heading." },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Coaches" },
     { "type": "text", "id": "text", "label": "Text", "default": "" },
     { "type": "collection", "id": "coaches", "label": "Coaches", "info": "Reads coaches: title, handle, role, specialties, image, image_alt, featured and order." },

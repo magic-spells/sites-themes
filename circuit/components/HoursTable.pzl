@@ -12,7 +12,7 @@
         times = row | split(' ') | last
         days = row | replace(times, '') | strip
       }
-      {#if row}<tr class="border-b border-scheme-rule"><th class="py-step-xs pr-step-md text-left font-normal text-scheme-muted" scope="row">{ days }</th><td class="py-step-xs text-right font-medium">{ times }</td></tr>{/if}
+      {#if row}<tr class="border-b border-scheme-rule"><th class="py-step-xs pr-step-md text-left font-normal text-scheme-muted uppercase" scope="row">{ days }</th><td class="py-step-xs text-right font-medium">{ times }</td></tr>{/if}
     {/for}
   </tbody>
 </table>

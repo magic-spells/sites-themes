@@ -1,68 +1,68 @@
-<!-- The colophon on black: the wordmark set across the full width (outlined
-     or solid), then the first location's address and hours in mono, the
-     menus at the right edge, the group chat and social links, and the legal
-     line under a hairline. The section above it is never black. -->
+<!-- The colophon on black: the wordmark set across the full width on one
+     line at every width (outlined or solid), then the locations in mono on
+     the left (the first with its address and hours, the rest on one line
+     each), the menus as plain columns on the right (the main and second
+     menus, the group chat and social links, the legal menu), and the
+     copyright line. The section above it is never black. -->
 {#let
   wordmark = site.settings.wordmark || site.name
-  location = settings.locations.entries | sort('fields.order') | first
-  phone = location.fields.phone || site.settings.phone
-  email = location.fields.email || site.settings.email
+  places = settings.locations.entries | sort('fields.order') | slice(0, 4)
+  first_place = places | first
+  social = settings.social.items
+  link = 'inline-flex min-h-tag items-center hover:text-scheme-foreground hover:underline'
 }
 <footer class="bg-scheme-background px-gutter pt-step-2xl pb-step-xl text-scheme-foreground">
-  <div class="mx-auto max-w-column">
+  <div class="mx-auto grid max-w-column gap-step-xl">
     {#if settings.show_wordmark}
-      <p class="@container overflow-hidden border-b border-scheme-rule pb-step-xl" aria-hidden="true"><span class="block font-heading text-colophon font-black whitespace-nowrap uppercase stretch-display { settings.wordmark_style == 'outline' ? 'outline-stroke' : 'text-scheme-heading' }">{ wordmark }</span></p>
+      <p class="@container overflow-hidden" aria-hidden="true"><span class="block font-heading text-colophon font-black whitespace-nowrap uppercase stretch-display { settings.wordmark_style == 'outline' ? 'outline-stroke' : 'text-scheme-heading' }">{ wordmark }</span></p>
     {/if}
-    <div class="grid gap-step-xl py-step-xl md:grid-cols-2 lg:grid-cols-footer lg:gap-step-2xl">
-      {#if location}
-        <div class="grid content-start gap-step-sm">
-          <h2 class="font-mono text-overline font-medium text-scheme-meta uppercase">{ location.title }</h2>
-          <address class="text-body not-italic">{ location.fields.address | newline_to_br }</address>
-          {#if phone}<a class="font-mono text-body-sm hover:text-scheme-links" href="tel:{ phone | replace(' ', '') }">{ phone }</a>{/if}
-          {#if email}<a class="font-mono text-body-sm break-all hover:text-scheme-links" href="mailto:{ email }">{ email }</a>{/if}
+    <div class="flex flex-wrap justify-between gap-x-step-2xl gap-y-step-xl">
+      {#if places.length}
+        <div class="grid content-start gap-step-sm font-mono text-body-sm leading-tight">
+          {#for place in places}
+            {#let lines = place.fields.address | split('\n')}
+            <address class="grid gap-step-sm not-italic">
+              <span>{ place.title } · { lines | first }{#if place.id == first_place.id && lines.length > 1}<br>{ lines | slice(1, 1) | first }{/if}</span>
+              {#if place.id == first_place.id && settings.show_hours && place.fields.hours}<span>{ place.fields.hours | newline_to_br }</span>{/if}
+            </address>
+          {/for}
         </div>
-        {#if settings.show_hours && location.fields.hours}
-          <div class="grid content-start gap-step-sm">
-            <h2 class="font-mono text-overline font-medium text-scheme-meta uppercase">{ t('opening_hours') }</h2>
-            <HoursTable hours={ location.fields.hours } />
-          </div>
-        {/if}
       {/if}
-      <div class="grid content-start gap-step-sm">
-        {#if settings.show_chat && site.settings.chat_url}<Button href={ site.settings.chat_url } tone="accent" size="small" external={ true }>{ site.settings.chat_label || t('group_chat') }</Button>{/if}
-        {#if site.settings.club_url}<a class="font-mono text-spec font-medium text-scheme-links uppercase hover:underline" href="{ site.settings.club_url }">{ site.settings.club_label }</a>{/if}
-        {#if settings.social.items.length}
-          <ul class="flex flex-wrap gap-x-step-md gap-y-step-2xs font-mono text-spec font-medium uppercase">
-            {#for item in settings.social.items}<li><a class="inline-flex min-h-icon-button items-center hover:text-scheme-links" href="{ item.href }" target="_blank" rel="noopener">{ item.label }</a></li>{/for}
-          </ul>
-        {/if}
-      </div>
-      {#for menu in [settings.menu_primary, settings.menu_secondary]}
-        {#if menu.items.length}
-          <nav class="grid content-start gap-step-sm" aria-label="{ menu.title }">
-            <h2 class="font-mono text-overline font-medium text-scheme-meta uppercase">{ menu.title }</h2>
-            <ul class="grid gap-step-2xs">
-              {#for item in menu.items}<li><a class="inline-flex min-h-icon-button items-center text-body font-semibold uppercase hover:text-scheme-links" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>{/for}
+      <div class="grid grid-cols-2 gap-x-step-xl gap-y-step-lg text-body-sm text-scheme-muted sm:flex sm:flex-wrap">
+        {#for menu in [settings.menu_primary, settings.menu_secondary]}
+          {#if menu.items.length}
+            <nav aria-label="{ menu.title }">
+              <ul class="grid content-start gap-step-2xs">
+                {#for item in menu.items}<li><a class="{ link }" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>{/for}
+              </ul>
+            </nav>
+          {/if}
+        {/for}
+        {#if social.length || (settings.show_chat && site.settings.chat_url)}
+          <nav aria-label="{ settings.social.title || t('social') }">
+            <ul class="grid content-start gap-step-2xs">
+              {#if settings.show_chat && site.settings.chat_url}<li><a class="{ link }" href="{ site.settings.chat_url }" target="_blank" rel="noopener">{ site.settings.chat_label || t('group_chat') }</a></li>{/if}
+              {#for item in social}<li><a class="{ link }" href="{ item.href }" target="_blank" rel="noopener">{ item.label }</a></li>{/for}
             </ul>
           </nav>
         {/if}
-      {/for}
+        {#if settings.menu_legal.items.length}
+          <nav aria-label="{ settings.menu_legal.title }">
+            <ul class="grid content-start gap-step-2xs">
+              {#for item in settings.menu_legal.items}<li><a class="{ link }" href="{ item.href }">{ item.label }</a></li>{/for}
+            </ul>
+          </nav>
+        {/if}
+      </div>
     </div>
-    <div class="flex flex-wrap items-center justify-between gap-x-step-lg gap-y-step-sm border-t border-scheme-rule pt-step-lg font-mono text-spec text-scheme-muted uppercase">
-      <p>{ settings.copyright || site.name }</p>
-      {#if settings.menu_legal.items.length}
-        <ul class="flex flex-wrap gap-x-step-lg">
-          {#for item in settings.menu_legal.items}<li><a class="hover:text-scheme-foreground" href="{ item.href }">{ item.label }</a></li>{/for}
-        </ul>
-      {/if}
-    </div>
+    <p class="font-mono text-spec text-scheme-muted uppercase">{ settings.copyright || site.name }</p>
   </div>
 </footer>
 
 <schema>
 {
   "name": "Footer",
-  "description": "A colophon: the wordmark across the width, the first location's address and hours, the menus and the social links.",
+  "description": "A colophon: the wordmark across the width, the locations and hours in mono, the menus and the social links as plain columns.",
   "kind": "Footer",
   "icon": "panel-bottom",
   "settings": [
@@ -71,13 +71,13 @@
       { "value": "outline", "label": "Outlined" },
       { "value": "solid", "label": "Solid" }
     ] },
-    { "type": "collection", "id": "locations", "label": "Locations", "info": "Reads the first location by order: title, address, hours, phone and email. The Contact settings stand in for a missing phone or email." },
+    { "type": "collection", "id": "locations", "label": "Locations", "info": "Reads up to four locations by order: title, address and hours. The first shows two address lines and its hours, the rest one line." },
     { "type": "checkbox", "id": "show_hours", "label": "Show hours", "default": true },
     { "type": "menu", "id": "menu_primary", "label": "First menu" },
     { "type": "menu", "id": "menu_secondary", "label": "Second menu" },
     { "type": "menu", "id": "menu_legal", "label": "Legal menu" },
     { "type": "menu", "id": "social", "label": "Social links" },
-    { "type": "checkbox", "id": "show_chat", "label": "Show the group chat button", "default": true, "info": "Uses the Floor group chat URL and label." },
+    { "type": "checkbox", "id": "show_chat", "label": "Show the group chat link", "default": false, "info": "Heads the social column with the Floor group chat URL and label. Leave off when the social menu already links the chat." },
     { "type": "text", "id": "copyright", "label": "Copyright line", "default": "© 2026 Common Ground" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "black" }
   ],

@@ -10,7 +10,7 @@
 {#if shown.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
-    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.view_all_label ? (more ? t('n_of_m', { n: shown.length, m: others.length }) + ' · ' + settings.view_all_label : settings.view_all_label) : '' } link_href={ settings.view_all_href } />
+    <SectionHead kicker={ settings.kicker } heading={ settings.heading } text={ settings.text } link_label={ settings.view_all_label ? (more ? t('n_of_m', { n: shown.length, m: others.length }) + ' · ' + settings.view_all_label : settings.view_all_label) : '' } link_href={ settings.view_all_href } />
     <ul class="grid gap-x-gap-lg gap-y-step-xl md:grid-cols-2 lg:grid-cols-3">
       {#for entry in shown}<li><AlbumTile entry={ entry } href="{ settings.base_path }/{ entry.handle }" reveal={ site.settings.reveal } /></li>{/for}
     </ul>
@@ -25,6 +25,7 @@
   "kind": "Collections",
   "icon": "images",
   "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "", "info": "A short mono line above the heading." },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Galleries" },
     { "type": "text", "id": "text", "label": "Text", "default": "" },
     { "type": "collection", "id": "albums", "label": "Albums", "info": "Reads albums: title, handle, date, cover, cover_alt, photos (for the count) and event." },

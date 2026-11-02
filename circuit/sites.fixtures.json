@@ -1550,6 +1550,48 @@
             "order": 12,
             "price": 10
           }
+        },
+        {
+          "id": "class_long_run",
+          "handle": "long-run",
+          "title": "Long run",
+          "fields": {
+            "summary": "Ten to sixteen kilometres on the river loop in pace groups, with a back marker on every one.",
+            "description": "<p>Ten to sixteen kilometres on the river loop in pace groups, with a back marker on every one.</p><p>Every run starts with a walk-through of the route and ends back at the river gate. A back marker runs at the end of every group, so nobody runs alone.</p><p>Free for everyone, members or not. Come ten minutes early and say hello.</p>",
+            "level": "all",
+            "intensity": "moderate",
+            "duration_minutes": 90,
+            "format": "outdoor",
+            "coach": "coach_jo_haddad",
+            "image": "as_3x2_4",
+            "image_alt": "Long run at Common Ground",
+            "what_to_bring": "Running shoes\nWater\nA layer for after",
+            "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+            "featured": false,
+            "tag": "Free",
+            "order": 13
+          }
+        },
+        {
+          "id": "class_social_5k",
+          "handle": "social-5k",
+          "title": "Social 5K",
+          "fields": {
+            "summary": "An easy five kilometres out and back on the towpath at talking pace, coffee after.",
+            "description": "<p>An easy five kilometres out and back on the towpath at talking pace, coffee after.</p><p>Every run starts with a walk-through of the route and ends back at the river gate. A back marker runs at the end of every group, so nobody runs alone.</p><p>Free for everyone, members or not. Come ten minutes early and say hello.</p>",
+            "level": "all",
+            "intensity": "low",
+            "duration_minutes": 45,
+            "format": "outdoor",
+            "coach": "coach_jo_haddad",
+            "image": "as_3x2_5",
+            "image_alt": "Social 5K at Common Ground",
+            "what_to_bring": "Running shoes\nSomething warm for the coffee",
+            "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+            "featured": false,
+            "tag": "Free",
+            "order": 14
+          }
         }
       ]
     },
@@ -2236,12 +2278,12 @@
         {
           "id": "sess_050",
           "handle": "sat-0800-riverside",
-          "title": "Run Club Intervals Sat 08:00",
+          "title": "Long run Sat 08:00",
           "fields": {
-            "class": "class_run_club_intervals",
+            "class": "class_long_run",
             "day": "sat",
             "start": "08:00",
-            "end": "08:50",
+            "end": "09:30",
             "location": "loc_riverside",
             "note": "All paces. Meet at the bandstand"
           }
@@ -2401,6 +2443,19 @@
             "end": "13:30",
             "location": "loc_north",
             "note": ""
+          }
+        },
+        {
+          "id": "sess_063",
+          "handle": "sun-0900-riverside",
+          "title": "Social 5K Sun 09:00",
+          "fields": {
+            "class": "class_social_5k",
+            "day": "sun",
+            "start": "09:00",
+            "end": "09:45",
+            "location": "loc_riverside",
+            "note": "Meet by the river gate"
           }
         }
       ]
@@ -3633,6 +3688,74 @@
       "seo": {
         "description": "The floor is yours. Bring a programme, a coach is on hand.",
         "image": "as_3x2_6"
+      }
+    },
+    "/classes/long-run": {
+      "id": "pg_class_long_run",
+      "template": "class",
+      "title": "Long run",
+      "params": {
+        "class": "long-run"
+      },
+      "entry": {
+        "id": "class_long_run",
+        "handle": "long-run",
+        "title": "Long run",
+        "fields": {
+          "summary": "Ten to sixteen kilometres on the river loop in pace groups, with a back marker on every one.",
+          "description": "<p>Ten to sixteen kilometres on the river loop in pace groups, with a back marker on every one.</p><p>Every run starts with a walk-through of the route and ends back at the river gate. A back marker runs at the end of every group, so nobody runs alone.</p><p>Free for everyone, members or not. Come ten minutes early and say hello.</p>",
+          "level": "all",
+          "intensity": "moderate",
+          "duration_minutes": 90,
+          "format": "outdoor",
+          "coach": "coach_jo_haddad",
+          "image": "as_3x2_4",
+          "image_alt": "Long run at Common Ground",
+          "what_to_bring": "Running shoes\nWater\nA layer for after",
+          "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+          "featured": false,
+          "tag": "Free",
+          "order": 13
+        }
+      },
+      "content_type": "classes",
+      "seo": {
+        "description": "Repeats on the river path in pace groups. Warm-up, six efforts, a jog home.",
+        "image": "as_3x2_2"
+      }
+    },
+    "/classes/social-5k": {
+      "id": "pg_class_social_5k",
+      "template": "class",
+      "title": "Social 5K",
+      "params": {
+        "class": "social-5k"
+      },
+      "entry": {
+        "id": "class_social_5k",
+        "handle": "social-5k",
+        "title": "Social 5K",
+        "fields": {
+          "summary": "An easy five kilometres out and back on the towpath at talking pace, coffee after.",
+          "description": "<p>An easy five kilometres out and back on the towpath at talking pace, coffee after.</p><p>Every run starts with a walk-through of the route and ends back at the river gate. A back marker runs at the end of every group, so nobody runs alone.</p><p>Free for everyone, members or not. Come ten minutes early and say hello.</p>",
+          "level": "all",
+          "intensity": "low",
+          "duration_minutes": 45,
+          "format": "outdoor",
+          "coach": "coach_jo_haddad",
+          "image": "as_3x2_5",
+          "image_alt": "Social 5K at Common Ground",
+          "what_to_bring": "Running shoes\nSomething warm for the coffee",
+          "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+          "featured": false,
+          "tag": "Free",
+          "order": 14
+        }
+      },
+      "content_type": "classes",
+      "seo": {
+        "description": "Repeats on the river path in pace groups. Warm-up, six efforts, a jog home.",
+        "image": "as_3x2_2"
       }
     },
     "/coaches/dana-okafor": {

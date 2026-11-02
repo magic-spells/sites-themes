@@ -3,7 +3,7 @@
      surface cards on the band, each with a heading, a line and a button. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-texture={ settings.texture }>
   <div class="mx-auto max-w-column">
-    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <SectionHead kicker={ settings.kicker } heading={ settings.heading } text={ settings.text } />
     <ul class="grid md:grid-cols-2 { settings.columns == '4' ? 'lg:grid-cols-4' : 'lg:grid-cols-3' } { settings.style == 'boxes' ? 'border-t border-scheme-rule' : 'gap-gap-lg' }">
       {#for block in blocks, i}
         {#let b = block.settings}
@@ -33,6 +33,7 @@
   "kind": "Content",
   "icon": "list",
   "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "", "info": "A short mono line above the heading." },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Why Common Ground" },
     { "type": "text", "id": "text", "label": "Text", "default": "" },
     { "type": "select", "id": "style", "label": "Style", "default": "boxes", "options": [

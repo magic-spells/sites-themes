@@ -9,7 +9,9 @@
       "settings": {
         "image": "as_16x9_1",
         "layout": "cover",
-        "color_scheme": "black"
+        "color_scheme": "black",
+        "kicker": "Common Ground · Marlow Bridge",
+        "text": "Strength, conditioning and a free run club. First class on us."
       },
       "blocks": []
     },
@@ -28,7 +30,10 @@
       "preset": "Default",
       "settings": {
         "classes": "classes",
-        "color_scheme": "white"
+        "color_scheme": "white",
+        "kicker": "Classes",
+        "heading": "What’s on the floor",
+        "text": ""
       },
       "blocks": []
     },
@@ -102,7 +107,10 @@
       "settings": {
         "sessions": "sessions",
         "classes": "classes",
-        "color_scheme": "concrete"
+        "color_scheme": "concrete",
+        "kicker": "Timetable",
+        "heading": "The week",
+        "text": ""
       },
       "blocks": []
     },
@@ -112,7 +120,10 @@
       "preset": "Default",
       "settings": {
         "coaches": "coaches",
-        "color_scheme": "white"
+        "color_scheme": "white",
+        "kicker": "Coaches",
+        "heading": "The people on the floor",
+        "limit": 4
       },
       "blocks": []
     },
@@ -124,7 +135,10 @@
         "plans": "plans",
         "source": "listed",
         "layout": "cards",
-        "color_scheme": "black"
+        "color_scheme": "black",
+        "kicker": "Memberships",
+        "heading": "Pick your pace",
+        "text": "Monthly, no contract. Cancel whenever."
       },
       "blocks": [
         {
@@ -209,7 +223,9 @@
         "events": "events",
         "layout": "cards",
         "limit": 3,
-        "color_scheme": "white"
+        "color_scheme": "white",
+        "kicker": "Events",
+        "heading": "Next meet-ups"
       },
       "blocks": []
     },
@@ -219,7 +235,9 @@
       "preset": "Default",
       "settings": {
         "locations": "locations",
-        "color_scheme": "concrete"
+        "color_scheme": "concrete",
+        "kicker": "Find us",
+        "heading": "Two doors, one club"
       },
       "blocks": []
     },

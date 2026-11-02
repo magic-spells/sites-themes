@@ -1,6 +1,7 @@
-<!-- What members say. Carousel: a tarot one-up, the quote in Archivo 600 at
-     h3, the name and a mono line ("Member since 2023"), an optional square
-     portrait, arrows and a counter. Grid: three across. -->
+<!-- What members say. Carousel: a tarot one-up, an optional square
+     portrait on the left, the quote in Archivo 600 at h3, the name and a
+     mono line ("Member since 2023") under it, the arrows at the right.
+     Grid: three across, an orphan never wider than its column. -->
 {#let
   id = 'quotes-' + section.id
   options = { slidesPerView: 1, gap: '1.5rem', loop: true, navigation: { showButtons: true, showPagination: false } }
@@ -9,7 +10,7 @@
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     {#if settings.layout == 'grid'}
-      <SectionHead heading={ settings.heading } />
+      <SectionHead kicker={ settings.kicker } heading={ settings.heading } />
       <ul class="grid gap-gap-lg md:grid-cols-2 lg:grid-cols-3">
         {#for block in blocks}
           {#let b = block.settings}
@@ -20,21 +21,24 @@
         {/for}
       </ul>
     {:else}
-      <tarot-carousel class="block max-w-wide" id={ id }>
+      <tarot-carousel class="block" id={ id }>
         <script type="application/json" data-tarot-options>{ options | json }</script>
-        {#if settings.heading}<h2 class="mb-step-lg font-mono text-overline font-medium text-scheme-meta uppercase">{ settings.heading }</h2>{/if}
+        {#if settings.kicker || settings.heading}<h2 class="mb-step-lg font-mono text-overline font-medium text-scheme-meta uppercase">{ settings.kicker || settings.heading }</h2>{/if}
         <tarot-viewport><tarot-track>
           {#for block in blocks}
             {#let b = block.settings}
             <tarot-slide data-block={ block.editor_id }>
-              <figure class="grid gap-step-lg">
-                <blockquote class="font-body text-h3 font-semibold text-balance">“{ b.quote }”</blockquote>
-                <figcaption class="flex items-center gap-step-sm">{#if b.image}<span class="block w-portrait shrink-0"><Photo asset={ b.image } alt="" ratio="aspect-square" width={ 320 } sizes="4rem" /></span>{/if}<span class="grid gap-step-2xs"><span class="text-body font-bold uppercase">{ b.name }</span>{#if b.line}<span class="font-mono text-spec text-scheme-meta uppercase">{ b.line }</span>{/if}</span></figcaption>
+              <figure class="grid max-w-wide items-start gap-step-md md:gap-x-step-lg { b.image ? 'grid-cols-meta' : '' }">
+                {#if b.image}<span class="block w-portrait md:w-thumb"><Photo asset={ b.image } alt="" ratio="aspect-square" width={ 320 } sizes="6rem" /></span>{/if}
+                <div class="grid gap-step-md">
+                  <blockquote class="font-body text-h3 font-semibold text-balance">“{ b.quote }”</blockquote>
+                  <figcaption class="grid gap-step-xs"><span class="font-heading text-body-lg font-extrabold uppercase stretch-heading">{ b.name }</span>{#if b.line}<span class="font-mono text-spec text-scheme-meta uppercase">{ b.line }</span>{/if}</figcaption>
+                </div>
               </figure>
             </tarot-slide>
           {/for}
         </tarot-track></tarot-viewport>
-        {#if blocks.length > 1}<div class="mt-step-lg flex justify-end border-t border-scheme-rule pt-step-md"><Arrows /></div>{/if}
+        {#if blocks.length > 1}<div class="mt-step-lg flex justify-end"><Arrows /></div>{/if}
       </tarot-carousel>
     {/if}
   </div>
@@ -48,6 +52,7 @@
   "kind": "Content",
   "icon": "align-left",
   "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "", "info": "A short mono line above the heading." },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Members" },
     { "type": "select", "id": "layout", "label": "Layout", "default": "carousel", "options": [
       { "value": "carousel", "label": "One at a time" },

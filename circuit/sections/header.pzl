@@ -2,8 +2,9 @@
      item that points at the classes page opens a <dropdown-panel> of the
      classes, each with a 3:2 thumbnail and its spec line. Below 64rem: the
      wordmark, the action (from 48rem) and a menu button for the mobile menu's sheet.
-     Over-hero: transparent at the top of a page that opens with a Cover hero
-     and solid once the page scrolls (styles/theme.css, the overlaid variant).
+     Over-hero: transparent over a top scrim (so the menu reads on a light
+     photo) at the top of a page that opens with a Cover hero, and solid once
+     the page scrolls (styles/theme.css, the overlaid variant).
      While a panel is open one dim lies under the header (theme.ts). -->
 {#let
   wordmark = settings.logo_text || site.settings.wordmark || site.name
@@ -12,7 +13,8 @@
 }
 <div class="pointer-events-none fixed inset-0 z-20 bg-backdrop opacity-0 transition-opacity duration-panel data-open:pointer-events-auto data-open:opacity-100" data-page-dim aria-hidden="true"></div>
 <sticky-header class="block" settle-overshoot="0" disabled={ !settings.sticky } data-header-style={ settings.style }>
-  <header class="border-b border-scheme-rule bg-scheme-background px-gutter text-scheme-foreground transition-colors duration-panel overlaid:border-transparent overlaid:bg-transparent overlaid:text-on-photo">
+  <header class="relative isolate border-b border-scheme-rule bg-scheme-background px-gutter text-scheme-foreground transition-colors duration-panel overlaid:border-transparent overlaid:bg-transparent overlaid:text-on-photo">
+    <span class="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden h-scrim bg-linear-to-b from-scrim to-transparent overlaid:block" aria-hidden="true"></span>
     <div class="mx-auto flex min-h-header max-w-column items-center justify-between gap-step-md">
       <a class="font-heading text-wordmark font-black whitespace-nowrap uppercase stretch-display" href="/">{ wordmark }</a>
       <div class="flex items-center gap-step-lg">
@@ -48,7 +50,7 @@
         {/if}
         <div class="flex items-center gap-step-xs">
           {#if settings.show_action && action}<span class="hidden md:block"><Button action={ true } tone="accent" size="small">{ action }</Button></span>{/if}
-          <button class="flex size-control-small items-center justify-center border border-scheme-rule lg:hidden overlaid:border-on-photo" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu"><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/menu.svg'}</span><span class="sr-only">{ t('menu') }</span></button>
+          <button class="-mr-step-xs flex size-control-small items-center justify-center lg:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu"><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/menu.svg'}</span><span class="sr-only">{ t('menu') }</span></button>
         </div>
       </div>
     </div>

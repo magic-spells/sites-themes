@@ -13,7 +13,7 @@
         "menu_secondary": "explore",
         "menu_legal": "legal",
         "social": "social",
-        "show_chat": true,
+        "show_chat": false,
         "copyright": "© 2026 Common Ground",
         "color_scheme": "black"
       },

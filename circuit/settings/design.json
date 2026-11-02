@@ -2,7 +2,7 @@
   "colors": {
     "brand": {
       "primary": "#0B0B0B",
-      "secondary": "#525252",
+      "secondary": "#B0350A",
       "accent": "#FF7038"
     },
     "grey": {
@@ -131,7 +131,7 @@
       "colors": {
         "brand": {
           "primary": "#0B0B0B",
-          "secondary": "#525252",
+          "secondary": "#B0350A",
           "accent": "#FF7038"
         },
         "grey": {
@@ -164,7 +164,7 @@
       "colors": {
         "brand": {
           "primary": "#0B0B0B",
-          "secondary": "#525252",
+          "secondary": "#4D5C00",
           "accent": "#D7FF3C"
         },
         "grey": {
@@ -207,7 +207,7 @@
       "chip_foreground": "$grey-dark",
       "chip_border": "#E4E4E4",
       "icons": "#616161",
-      "links": "#C2410C",
+      "links": "$brand-secondary",
       "button_background": "$brand-primary",
       "button_foreground": "#FFFFFF",
       "button_hover_background": "$brand-accent",
@@ -230,7 +230,7 @@
       "chip_foreground": "#B5B5B5",
       "chip_border": "#262626",
       "icons": "#A6A6A6",
-      "links": "#FF7A4D",
+      "links": "$brand-accent",
       "button_background": "$brand-accent",
       "button_foreground": "$brand-primary",
       "button_hover_background": "#FFFFFF",
@@ -253,7 +253,7 @@
       "chip_foreground": "#BDBDBD",
       "chip_border": "#333333",
       "icons": "#ADADAD",
-      "links": "#FF7A4D",
+      "links": "$brand-accent",
       "button_background": "#F5F5F5",
       "button_foreground": "$brand-primary",
       "button_hover_background": "$brand-accent",
@@ -276,7 +276,7 @@
       "chip_foreground": "#4F4F4F",
       "chip_border": "#D3D3D3",
       "icons": "#5E5E5E",
-      "links": "#B0350A",
+      "links": "$brand-secondary",
       "button_background": "$brand-primary",
       "button_foreground": "#FFFFFF",
       "button_hover_background": "$brand-accent",
@@ -294,11 +294,11 @@
       "heading": "$brand-primary",
       "input_background": "#FFFFFF",
       "input_foreground": "$brand-primary",
-      "input_border": "#7A2A0E",
-      "chip_background": "#FF8552",
-      "chip_foreground": "#3A1206",
-      "chip_border": "#E0561C",
-      "icons": "#3A1206",
+      "input_border": "$brand-primary",
+      "chip_background": "rgba(255, 255, 255, 0.15)",
+      "chip_foreground": "rgba(11, 11, 11, 0.8)",
+      "chip_border": "rgba(11, 11, 11, 0.15)",
+      "icons": "rgba(11, 11, 11, 0.8)",
       "links": "$brand-primary",
       "button_background": "$brand-primary",
       "button_foreground": "#FFFFFF",

@@ -76,6 +76,7 @@
 	--color-scheme-texture: color-mix(in srgb, var(--sites-scheme-foreground) 8%, transparent);
 	--color-accent: var(--circuit-accent);
 	--color-on-accent: var(--circuit-on-accent);
+	--color-tick: var(--circuit-tick);
 	--background-image-halftone: radial-gradient(circle, var(--sites-scheme-foreground) 0.0625rem, transparent 0.0875rem);
 	--background-image-grain: url("/_sites/theme/grain.svg");
 }
@@ -85,6 +86,17 @@
 :root {
 	--circuit-accent: var(--sites-color-brand-accent);
 	--circuit-on-accent: var(--sites-color-brand-primary);
+}
+/* An intensity tick fills in the scheme's text colour, which reads on every
+   surface; on the dark schemes, where the accent clears 3:1 on the card,
+   in the accent. Declared on each scheme wrapper so it resolves there. */
+:root,
+[class*="sites-scheme-"] {
+	--circuit-tick: var(--sites-scheme-foreground);
+}
+.sites-scheme-black,
+.sites-scheme-graphite {
+	--circuit-tick: var(--sites-color-brand-accent);
 }
 .sites-scheme-flare {
 	--circuit-accent: var(--sites-scheme-foreground);

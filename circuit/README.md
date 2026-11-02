@@ -111,5 +111,8 @@ SITES_BUILDER_DIR=<engine>/tools/builder sites check ./circuit
   their photographs as a carousel (`LightboxCompanion`).
 - The Flare scheme keeps black text on the accent, so a recoloured accent needs enough contrast
   with black; the suggested palettes (Flare, Volt) both do.
+- Links, errors and focus rings on the light schemes use the palette's secondary colour, a
+  darker shade of the accent that reads at 4.5:1 on white and concrete; on the dark schemes
+  they use the accent itself. A recoloured accent wants a matching secondary.
 
 Licensed under MIT; the font and vendored components keep their own included licences.

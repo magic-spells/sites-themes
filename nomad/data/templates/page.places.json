@@ -1,0 +1,52 @@
+{
+  "label": "Places",
+  "description": "The map of everywhere and every place from A to Z.",
+  "layout": "default",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "Places",
+        "standfirst": "Every place I have stayed long enough to write about, on the map and from A to Z.",
+        "count": "places",
+        "align": "left"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_route",
+      "type": "route-map",
+      "preset": "Compact",
+      "settings": {
+        "heading": "Where I've been",
+        "show_count": true,
+        "places": "places",
+        "show_route": "stops",
+        "fit": "world",
+        "show_list": false,
+        "list_limit": 6,
+        "country_filter": false,
+        "link_label": "",
+        "link": "",
+        "anchor": true,
+        "map_style": "drawn",
+        "color_scheme": "night"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_index",
+      "type": "places-index",
+      "preset": "Destinations",
+      "settings": {
+        "group_by": "country",
+        "show_counts": true,
+        "show_photo": true,
+        "country_filter": true
+      },
+      "blocks": []
+    }
+  ]
+}

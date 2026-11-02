@@ -1,0 +1,33 @@
+{
+  "label": "Contact",
+  "description": "Write to Ilse: the form and the email address.",
+  "layout": "default",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "Write to Ilse",
+        "standfirst": "Collaborations, press, or a question about a place. I read everything.",
+        "count": "none",
+        "align": "left"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_contact",
+      "type": "contact",
+      "preset": "Default",
+      "settings": {
+        "heading": "Write to Ilse",
+        "show_heading": false,
+        "text": "",
+        "show_details": true,
+        "form": "contact",
+        "note": ""
+      },
+      "blocks": []
+    }
+  ]
+}

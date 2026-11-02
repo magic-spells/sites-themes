@@ -1,0 +1,30 @@
+{
+  "sections": [
+    {
+      "id": "sg_mobile_menu",
+      "type": "mobile-menu",
+      "preset": "Default",
+      "settings": {
+        "menu": "main",
+        "menu_secondary": "legal",
+        "menu_social": "social",
+        "show_now": true
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_cookie_notice",
+      "type": "cookie-notice",
+      "preset": "Default",
+      "settings": {
+        "body": "<p>One cookie remembers that you closed the announcement. Nothing tracks you.</p>",
+        "accept_label": "OK",
+        "decline_label": "",
+        "link_label": "Read the privacy note",
+        "link_href": "/privacy",
+        "key": "nomad-notice-2026-11"
+      },
+      "blocks": []
+    }
+  ]
+}

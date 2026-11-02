@@ -1,0 +1,32 @@
+{
+  "label": "What I use",
+  "description": "The services that keep the work going: insurance, bank card, eSIM and the rest.",
+  "layout": "default",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "What I use",
+        "standfirst": "The services behind the bag. No brand names, no affiliate links: what each one does and why I kept it.",
+        "count": "none",
+        "align": "left"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_services",
+      "type": "gear-list",
+      "preset": "What I use",
+      "settings": {
+        "heading": "",
+        "show": "services",
+        "show_totals": false,
+        "show_links": true,
+        "open_first": false
+      },
+      "blocks": []
+    }
+  ]
+}

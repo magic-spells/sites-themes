@@ -1,0 +1,80 @@
+{
+  "label": "Trip",
+  "description": "A trip: its cover and dates, every stop as a ticket, its map and its posts.",
+  "layout": "default",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "trip-header",
+      "preset": "Default",
+      "settings": {
+        "show_route_inset": true
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_route_spine",
+      "type": "itinerary",
+      "preset": "Full route",
+      "settings": {
+        "layout": "spine",
+        "heading": "",
+        "show_posts": true,
+        "show_notes": true
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_map",
+      "type": "route-map",
+      "preset": "This trip",
+      "settings": {
+        "heading": "",
+        "show_count": true,
+        "places": "places",
+        "show_route": "stops",
+        "fit": "trip",
+        "show_list": true,
+        "list_limit": 12,
+        "country_filter": false,
+        "link_label": "",
+        "link": "",
+        "anchor": false,
+        "map_style": "drawn",
+        "color_scheme": "night"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_posts",
+      "type": "post-list",
+      "preset": "This trip",
+      "settings": {
+        "heading": "Posts from {trip}",
+        "collection": "posts",
+        "scope": "current_trip",
+        "layout": "grid",
+        "featured_first": false,
+        "columns": "3",
+        "limit": 6,
+        "view_all_label": ""
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Postcards",
+      "settings": {
+        "heading": "Postcards from the road",
+        "text": "One email when I move, with what the last place cost. About once a month.",
+        "placeholder": "Your email",
+        "proof": "",
+        "note": "No tracking pixels. Unsubscribe in one click.",
+        "form": "newsletter",
+        "color_scheme": "dusk"
+      },
+      "blocks": []
+    }
+  ]
+}

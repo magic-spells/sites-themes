@@ -1,0 +1,298 @@
+{
+  "colors": {
+    "brand": {
+      "primary": "#1D2B2A",
+      "secondary": "#4B5A57",
+      "accent": "#9E4426"
+    },
+    "grey": {
+      "extra_light": "#F8F4EC",
+      "light": "#F0E8D9",
+      "medium": "#887E6F",
+      "dark": "#4E473D",
+      "extra_dark": "#201D18"
+    },
+    "info": {
+      "bg": "#E3E8E4",
+      "fg": "#2F5560"
+    },
+    "success": {
+      "bg": "#E4E9D8",
+      "fg": "#3E5A2E"
+    },
+    "warning": {
+      "bg": "#F4E4C4",
+      "fg": "#7A5412"
+    },
+    "error": {
+      "bg": "#F5DDD3",
+      "fg": "#A3321F"
+    }
+  },
+  "fonts": {
+    "heading": {
+      "family": "Besley",
+      "weights": [
+        500,
+        600,
+        800
+      ],
+      "source": "google"
+    },
+    "body": {
+      "family": "Schibsted Grotesk",
+      "weights": [
+        400,
+        500,
+        600
+      ],
+      "source": "google"
+    },
+    "mono": {
+      "family": "DM Mono",
+      "weights": [
+        400,
+        500
+      ],
+      "source": "google"
+    }
+  },
+  "type": {
+    "base": "1rem",
+    "scale": {
+      "xs": "0.75rem",
+      "sm": "0.8125rem",
+      "base": "1.125rem",
+      "lg": "1.3125rem",
+      "xl": "1.375rem",
+      "2xl": "1.875rem",
+      "3xl": "2.75rem",
+      "4xl": "4rem",
+      "5xl": "5rem"
+    },
+    "leading": {
+      "tight": "1.05",
+      "normal": "1.5",
+      "relaxed": "1.65"
+    }
+  },
+  "spacing": {
+    "xs": "0.5rem",
+    "sm": "1rem",
+    "md": "1.5rem",
+    "lg": "2rem",
+    "xl": "3rem",
+    "2xl": "4.5rem"
+  },
+  "radius": {
+    "none": "0",
+    "sm": "0.25rem",
+    "md": "0.5rem",
+    "lg": "1rem",
+    "full": "9999rem"
+  },
+  "shadow": {
+    "sm": "0 1px 2px rgb(29 43 42 / 0.16), 0 6px 16px rgb(29 43 42 / 0.14)",
+    "md": "none",
+    "lg": "none"
+  },
+  "border": {
+    "width": "1px",
+    "color": "#DDD2BE"
+  },
+  "input": {
+    "background": "#F8F4EC",
+    "border": "#887E6F",
+    "radius": "0.5rem",
+    "text": "#1D2B2A",
+    "placeholder": "#4B5A57",
+    "focus_ring": "#9E4426"
+  },
+  "button": {
+    "radius": "0.5rem",
+    "padding_x": "1.25rem",
+    "padding_y": "0.75rem",
+    "weight": "600",
+    "primary_bg": "#1D2B2A",
+    "primary_text": "#F8F4EC",
+    "secondary_bg": "transparent",
+    "secondary_text": "#1D2B2A"
+  },
+  "link": {
+    "color": "#9E4426",
+    "hover_color": "#1D2B2A",
+    "underline": "hover"
+  },
+  "suggested_palettes": [
+    {
+      "name": "Sand",
+      "colors": {
+        "brand": {
+          "primary": "#1D2B2A",
+          "secondary": "#4B5A57",
+          "accent": "#9E4426"
+        },
+        "grey": {
+          "extra_light": "#F8F4EC",
+          "light": "#F0E8D9",
+          "medium": "#887E6F",
+          "dark": "#4E473D",
+          "extra_dark": "#201D18"
+        },
+        "info": {
+          "bg": "#E3E8E4",
+          "fg": "#2F5560"
+        },
+        "success": {
+          "bg": "#E4E9D8",
+          "fg": "#3E5A2E"
+        },
+        "warning": {
+          "bg": "#F4E4C4",
+          "fg": "#7A5412"
+        },
+        "error": {
+          "bg": "#F5DDD3",
+          "fg": "#A3321F"
+        }
+      }
+    },
+    {
+      "name": "Dusk",
+      "colors": {
+        "brand": {
+          "primary": "#2B1913",
+          "secondary": "#6A3B2B",
+          "accent": "#8A3A21"
+        },
+        "grey": {
+          "extra_light": "#FBF1E8",
+          "light": "#F3E0D0",
+          "medium": "#A07B69",
+          "dark": "#5C3B2E",
+          "extra_dark": "#2B1913"
+        },
+        "info": {
+          "bg": "#E3E8E4",
+          "fg": "#2F5560"
+        },
+        "success": {
+          "bg": "#E4E9D8",
+          "fg": "#3E5A2E"
+        },
+        "warning": {
+          "bg": "#F4E4C4",
+          "fg": "#7A5412"
+        },
+        "error": {
+          "bg": "#F5DDD3",
+          "fg": "#A3321F"
+        }
+      }
+    },
+    {
+      "name": "Night Train",
+      "colors": {
+        "brand": {
+          "primary": "#E6E1D6",
+          "secondary": "#A9B0B8",
+          "accent": "#F2A65A"
+        },
+        "grey": {
+          "extra_light": "#F3F1EC",
+          "light": "#DFDDD6",
+          "medium": "#6E7783",
+          "dark": "#26303B",
+          "extra_dark": "#131A23"
+        },
+        "info": {
+          "bg": "#E3E8E4",
+          "fg": "#2F5560"
+        },
+        "success": {
+          "bg": "#E4E9D8",
+          "fg": "#3E5A2E"
+        },
+        "warning": {
+          "bg": "#F4E4C4",
+          "fg": "#7A5412"
+        },
+        "error": {
+          "bg": "#F5DDD3",
+          "fg": "#A3321F"
+        }
+      }
+    }
+  ],
+  "schemes": [
+    {
+      "handle": "sand",
+      "name": "Sand",
+      "background": "$grey-light",
+      "foreground": "$brand-primary",
+      "heading": "$brand-primary",
+      "input_background": "$grey-extra-light",
+      "input_foreground": "$brand-primary",
+      "input_border": "$grey-medium",
+      "chip_background": "#E6DCC8",
+      "chip_foreground": "$brand-secondary",
+      "chip_border": "#DDD2BE",
+      "icons": "#675E52",
+      "links": "$brand-accent",
+      "button_background": "$brand-primary",
+      "button_foreground": "$grey-extra-light",
+      "button_hover_background": "$brand-accent",
+      "button_hover_foreground": "$grey-extra-light",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "$brand-primary",
+      "secondary_button_hover_background": "$brand-primary",
+      "secondary_button_hover_foreground": "$grey-light"
+    },
+    {
+      "handle": "dusk",
+      "name": "Dusk",
+      "background": "#8A3A21",
+      "foreground": "#FBF1E8",
+      "heading": "#FBF1E8",
+      "input_background": "#7A321C",
+      "input_foreground": "#FBF1E8",
+      "input_border": "#EFCAB4",
+      "chip_background": "#7A321C",
+      "chip_foreground": "#F7E2D3",
+      "chip_border": "#9C4B30",
+      "icons": "#EFCAB4",
+      "links": "#FFD49A",
+      "button_background": "#FBF1E8",
+      "button_foreground": "#8A3A21",
+      "button_hover_background": "#FFD49A",
+      "button_hover_foreground": "#2B1913",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#FBF1E8",
+      "secondary_button_hover_background": "#FBF1E8",
+      "secondary_button_hover_foreground": "#8A3A21"
+    },
+    {
+      "handle": "night",
+      "name": "Night Train",
+      "background": "#131A23",
+      "foreground": "#E6E1D6",
+      "heading": "#E6E1D6",
+      "input_background": "#1E2731",
+      "input_foreground": "#E6E1D6",
+      "input_border": "#6E7783",
+      "chip_background": "#1E2731",
+      "chip_foreground": "#B7BEC6",
+      "chip_border": "#2C3743",
+      "icons": "#848E99",
+      "links": "#F2A65A",
+      "button_background": "#F2A65A",
+      "button_foreground": "#131A23",
+      "button_hover_background": "#E6E1D6",
+      "button_hover_foreground": "#131A23",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#E6E1D6",
+      "secondary_button_hover_background": "#E6E1D6",
+      "secondary_button_hover_foreground": "#131A23"
+    }
+  ]
+}

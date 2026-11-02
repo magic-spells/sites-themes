@@ -1,0 +1,134 @@
+{
+  "label": "About",
+  "description": "About as a passport page, the countries as stamps, how the work goes and the questions people ask.",
+  "layout": "default",
+  "sections": [
+    {
+      "id": "s_passport",
+      "type": "passport",
+      "preset": "Passport",
+      "settings": {
+        "portrait": "as_4x5_sand",
+        "name": "",
+        "bio": ""
+      },
+      "blocks": [
+        {
+          "id": "b_stamp_1",
+          "type": "stamp",
+          "settings": {
+            "label": "Home base",
+            "value": "None, for now",
+            "shape": "ring",
+            "tilt": "auto"
+          }
+        },
+        {
+          "id": "b_stamp_2",
+          "type": "stamp",
+          "settings": {
+            "label": "Works",
+            "value": "Product design",
+            "shape": "ring",
+            "tilt": "auto"
+          }
+        },
+        {
+          "id": "b_stamp_3",
+          "type": "stamp",
+          "settings": {
+            "label": "Since",
+            "value": "Apr 3, 2023",
+            "shape": "box",
+            "tilt": "auto"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_stamps",
+      "type": "stamp-wall",
+      "preset": "Default",
+      "settings": {
+        "heading": "Where I've stamped in",
+        "show_counts": true,
+        "show_first_arrival": true,
+        "distance": true
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_work",
+      "type": "image-with-text",
+      "preset": "Default",
+      "settings": {
+        "image": "as_3x2_clay",
+        "ratio": "landscape",
+        "layout": "text_first",
+        "eyebrow": "",
+        "heading": "How I work from the road",
+        "link_label": "What I carry",
+        "link": "/gear"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "About",
+      "settings": {
+        "heading": "Questions people ask",
+        "first_open": true
+      },
+      "blocks": [
+        {
+          "id": "b_faq_1",
+          "type": "question",
+          "settings": {
+            "question": "How do you pick where to go next?",
+            "answer": "<p>Three things, in this order: how long the visa lets me stay, whether people I trust say the internet holds, and the season. I want to arrive at the start of the good months, not the end.</p><p>After that it is usually a bus or a train I want to take.</p>"
+          }
+        },
+        {
+          "id": "b_faq_2",
+          "type": "question",
+          "settings": {
+            "question": "Do you work full time?",
+            "answer": "<p>Yes. I design software for a company in Europe, so my day starts with calls and the afternoon is mine to walk around. Time zones decide more of the route than scenery does.</p>"
+          }
+        },
+        {
+          "id": "b_faq_3",
+          "type": "question",
+          "settings": {
+            "question": "How do visas work for you?",
+            "answer": "<p>Mostly on tourist entries, staying well inside the allowed days, and a few digital nomad visas where they exist. I check the rules again before every move, from the government's own pages.</p>"
+          }
+        },
+        {
+          "id": "b_faq_4",
+          "type": "question",
+          "settings": {
+            "question": "What do you do about insurance?",
+            "answer": "<p>A travel medical policy that covers working abroad, paid monthly, plus a separate policy for the laptop. Both are on the What I use page.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Postcards",
+      "settings": {
+        "heading": "Postcards from the road",
+        "text": "One email when I move, with what the last place cost. About once a month.",
+        "placeholder": "Your email",
+        "proof": "",
+        "note": "No tracking pixels. Unsubscribe in one click.",
+        "form": "newsletter",
+        "color_scheme": "dusk"
+      },
+      "blocks": []
+    }
+  ]
+}

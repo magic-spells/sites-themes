@@ -1,13 +1,15 @@
 <!-- Memberships and packages. Cards: three across, top-aligned and equal
      height (a row you swipe on a phone), the featured plan inverted. Table: plans across the
-     top and every feature line down the side, a check where a plan has it,
-     for a workspace with many tiers. -->
+     top (the listed ones, or every plan) and their feature lines down the
+     side, a check where a plan has it, and a button under each plan. -->
 {#let
   all = settings.plans.entries | sort('fields.order')
   shown = settings.source == 'listed' ? blocks : (all | slice(0, 12))
   dark = settings.color_scheme == 'black' || settings.color_scheme == 'graphite'
   invert = dark ? 'sites-scheme-white' : 'sites-scheme-black'
-  features = all | map('fields.features') | join('\n') | split('\n') | uniq
+  listed_plans = blocks | map('settings.plan') | compact
+  cols = settings.source == 'listed' && listed_plans.length ? listed_plans : (all | slice(0, 12))
+  features = cols | map('fields.features') | join('\n') | split('\n') | uniq
 }
 {#if shown.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
@@ -15,22 +17,28 @@
     <SectionHead kicker={ settings.kicker } heading={ settings.heading } text={ settings.text } />
     {#if settings.layout == 'table'}
       <div class="relative -mx-gutter overflow-x-auto px-gutter md:mx-0 md:px-0">
-        <table class="w-full min-w-wide border-collapse text-left">
+        <table class="w-full min-w-wide table-fixed border-collapse text-left">
           <caption class="sr-only">{ settings.heading }</caption>
           <thead>
-            <tr class="border-b-2 border-scheme-foreground align-bottom">
-              <td></td>
-              {#for plan in all}<th class="px-step-sm py-step-sm" scope="col"><span class="block font-heading text-body leading-tight font-extrabold uppercase stretch-heading">{ plan.title }</span><span class="font-mono text-body-sm">{ plan.fields.period == 'free' || plan.fields.price == 0 ? t('free') : plan.fields.price | currency(site.settings.currency_symbol, 0) }{#if plan.fields.period != 'free' && plan.fields.price != 0} / { t('period.' + plan.fields.period) }{/if}</span></th>{/for}
+            <tr class="border-b border-scheme-rule align-bottom">
+              <td class="w-1/4"></td>
+              {#for plan in cols}<th class="px-step-sm pb-step-md" scope="col"><span class="block font-heading text-h4 leading-tight font-extrabold uppercase stretch-heading">{ plan.title }</span><span class="font-mono text-spec font-medium text-scheme-muted uppercase">{ plan.fields.period == 'free' || plan.fields.price == 0 ? t('free') : plan.fields.price | currency(site.settings.currency_symbol, 0) }{#if plan.fields.period != 'free' && plan.fields.price != 0} / { t('period.' + plan.fields.period) }{/if}</span></th>{/for}
             </tr>
           </thead>
-          <tbody class="font-mono text-body-sm">
+          <tbody class="text-body-sm">
             {#for line in features}{#if line | strip}
               <tr class="border-b border-scheme-rule">
-                <th class="py-step-xs pr-step-md font-normal" scope="row">{ line | strip }</th>
-                {#for plan in all}<td class="px-step-sm py-step-xs">{#if contains(plan.fields.features | split('\n'), line)}<span class="sites-icon block size-icon-small text-scheme-heading" aria-hidden="true">{#svg 'icons/check.svg'}</span><span class="sr-only">{ t('included') }</span>{:else}<span class="text-scheme-meta" aria-hidden="true">–</span><span class="sr-only">{ t('not_included') }</span>{/if}</td>{/for}
+                <th class="py-step-md pr-step-md font-normal" scope="row">{ line | strip }</th>
+                {#for plan in cols}<td class="px-step-sm py-step-md">{#if contains(plan.fields.features | split('\n'), line)}<span class="sites-icon block size-icon-small text-accent" aria-hidden="true">{#svg 'icons/check.svg'}</span><span class="sr-only">{ t('included') }</span>{:else}<span class="text-scheme-meta" aria-hidden="true">–</span><span class="sr-only">{ t('not_included') }</span>{/if}</td>{/for}
               </tr>
             {/if}{/for}
           </tbody>
+          <tfoot>
+            <tr>
+              <td></td>
+              {#for plan in cols}<td class="px-step-sm pt-step-md">{#if plan.fields.link}<Button href={ plan.fields.link } size="small" tone={ plan.fields.featured ? null : 'outline' } external={ true }>{ t('choose_plan') }</Button>{:else}<Button action={ true } size="small" tone={ plan.fields.featured ? null : 'outline' }>{ t('join') }</Button>{/if}</td>{/for}
+            </tr>
+          </tfoot>
         </table>
       </div>
     {:else}
@@ -64,7 +72,7 @@
     { "type": "select", "id": "source", "label": "Plans shown", "default": "all", "options": [
       { "value": "all", "label": "All" },
       { "value": "listed", "label": "Listed below" }
-    ], "info": "The table always compares every plan." },
+    ], "info": "The table compares the listed plans, or every plan." },
     { "type": "select", "id": "columns", "label": "Columns", "default": "3", "options": [
       { "value": "2", "label": "2" },
       { "value": "3", "label": "3" },

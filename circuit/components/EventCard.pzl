@@ -9,14 +9,14 @@
 }
 {#if layout == 'rows'}
 <article class="grid grid-cols-meta items-start gap-step-md border-b border-scheme-rule py-step-md md:grid-cols-row { reveal ? 'reveal reveal-fade-up' : '' }">
-  <DateBlock value={ f.date } />
+  <DateBlock value={ f.date } tone="outline" />
   <div class="grid gap-step-xs">
     <h3 class="font-heading text-h4 font-extrabold text-scheme-heading uppercase stretch-heading"><a class="hover:underline" href="{ href }">{ entry.title }</a></h3>
     <p class="font-mono text-spec text-scheme-meta uppercase">{ f.time }{#if place} · { place }{/if}</p>
-    {#if f.route}<p class="font-mono text-body-xs text-scheme-muted">{ f.route }</p>{/if}
+    {#if f.route}<p class="text-body-sm text-scheme-muted">{ f.route }</p>{/if}
     <p class="flex flex-wrap gap-x-step-lg font-mono text-spec font-medium uppercase"><a class="inline-flex items-center gap-step-2xs hover:underline" href="{ href }">{ t('details') }<span aria-hidden="true">→</span></a>{#if f.album && album_path}<a class="inline-flex items-center gap-step-2xs hover:underline" href="{ album_path }/{ f.album.handle }">{ t('photos') }<span aria-hidden="true">→</span></a>{/if}</p>
   </div>
-  <a class="hidden w-thumb md:block" href="{ href }" tabindex="-1" aria-hidden="true"><Photo asset={ f.image } alt="" ratio="aspect-3/2" width={ 320 } sizes="6rem" /></a>
+  <a class="hidden w-thumb-lg md:block" href="{ href }" tabindex="-1" aria-hidden="true"><Photo asset={ f.image } alt="" ratio="aspect-3/2" width={ 480 } sizes="10rem" /></a>
 </article>
 {:else}
 <article class="grid h-full grid-rows-card border border-scheme-rule bg-scheme-surface text-scheme-foreground { reveal ? 'reveal reveal-fade-up' : '' }">

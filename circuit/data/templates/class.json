@@ -20,7 +20,8 @@
         "classes": "classes",
         "heading": "More classes",
         "text": "",
-        "color_scheme": "concrete"
+        "color_scheme": "white",
+        "kicker": "Classes"
       },
       "blocks": []
     },

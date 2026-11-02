@@ -218,6 +218,7 @@
 	--spacing-dot: 0.5rem;
 	--spacing-header: 4.5rem;
 	--spacing-thumb: 6rem;
+	--spacing-thumb-lg: 10rem;
 	--spacing-portrait: 4rem;
 	--spacing-hero-sm: 38.75rem;
 	--spacing-hero-md: 40rem;
@@ -243,6 +244,7 @@
 	--grid-template-columns-check: 1rem 1fr;
 	--grid-template-columns-footer: 1.3fr 1fr 1fr auto auto;
 	--grid-template-columns-feature: 2fr 3fr;
+	--grid-template-columns-when: 3rem auto 1fr auto;
 
 	--scale-hover: 103%;
 	--transition-duration-fast: 150ms;
@@ -415,17 +417,18 @@ html.reveal-off .reveal:not(.is-revealed) {
 	filter: none;
 }
 
-/* The header lies over a page that opens with a Cover hero: transparent
+/* The header lies over a page that opens with a Cover hero or a class's
+   photo (data-over-hero): transparent
    at the top of the page, its own scheme once the page scrolls
    (sticky-header writes data-state on <body>). The hero slides up under it. */
 @custom-variant overlaid {
-	&:where(body:not([data-state="scrolling"]):has(main > [data-section="hero"]:first-child [data-layout="cover"]) [data-header-style="over-hero"]),
-	&:where(body:not([data-state="scrolling"]):has(main > [data-section="hero"]:first-child [data-layout="cover"]) [data-header-style="over-hero"] *) {
+	&:where(body:not([data-state="scrolling"]):has(main > [data-section]:first-child [data-over-hero]) [data-header-style="over-hero"]),
+	&:where(body:not([data-state="scrolling"]):has(main > [data-section]:first-child [data-over-hero]) [data-header-style="over-hero"] *) {
 		@slot;
 	}
 }
 
-body:has([data-header-style="over-hero"]) main > [data-section="hero"]:first-child:has([data-layout="cover"]) {
+body:has([data-header-style="over-hero"]) main > [data-section]:first-child:has([data-over-hero]) {
 	margin-top: calc(var(--header-height, 4.5rem) * -1);
 }
 

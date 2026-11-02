@@ -29,7 +29,7 @@
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-timetable data-class="">
   <div class="mx-auto max-w-column">
-    <SectionHead kicker={ settings.kicker } heading={ settings.heading } text={ settings.text } link_label={ settings.view_all_label } link_href={ settings.view_all_href } id="{ id }-title">
+    <SectionHead kicker={ settings.kicker } heading={ settings.heading } text={ settings.text } link_label={ settings.view_all_label } link_href={ settings.view_all_href } id="{ id }-title" extra={ settings.show_filter && chip_count > 1 }>
       {#if settings.show_filter && chip_count > 1}
         <div class="-mx-gutter flex gap-step-2xs overflow-x-auto px-gutter md:mx-0 md:flex-wrap md:px-0" role="group" aria-label="{ t('filter_by_class') }" data-strip>
           <button class="{ chip }" type="button" data-class-filter="" aria-pressed="true">{ t('all') }</button>

@@ -3,7 +3,7 @@
      (uppercase, the display face at width 112) and a line under it on the
      left; the view-all link and anything the section passes in (carousel
      arrows, filter chips) on the right, on the heading's baseline. -->
-{#if heading || link_label || kicker}
+{#if heading || link_label || kicker || extra}
 <div class="mb-step-xl flex flex-wrap items-end justify-between gap-x-step-lg gap-y-step-sm { inset ? 'px-gutter md:px-0' : '' }">
   <div class="grid max-w-wide gap-step-xs">
     {#if kicker}<p class="font-mono text-overline font-medium text-scheme-meta uppercase">{ kicker }</p>{/if}

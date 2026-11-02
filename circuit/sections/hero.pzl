@@ -39,7 +39,7 @@
   <span class="pointer-events-none absolute -inset-y-step-3xl left-1/2 -z-10 hidden w-step-2xs translate-x-step-xs rotate-12 bg-accent md:block" aria-hidden="true"></span>
 </section>
 {:else}
-<section class="relative isolate flex min-h-hero-sm overflow-hidden bg-scheme-background pt-header text-on-photo md:min-h-hero-md { settings.height == 'full' ? 'lg:min-h-hero-full' : 'lg:min-h-hero-lg' }" data-layout="cover" data-texture={ settings.texture }>
+<section class="relative isolate flex min-h-hero-sm overflow-hidden bg-scheme-background pt-header text-on-photo md:min-h-hero-md { settings.height == 'full' ? 'lg:min-h-hero-full' : 'lg:min-h-hero-lg' }" data-layout="cover" data-over-hero data-texture={ settings.texture }>
   {#if slides.length}
     <tarot-carousel class="absolute inset-0 -z-30 block" id={ id } data-on-photo>
       <script type="application/json" data-tarot-options>{ options | json }</script>

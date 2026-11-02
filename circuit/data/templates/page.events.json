@@ -7,9 +7,9 @@
       "type": "page-header",
       "preset": "Left",
       "settings": {
-        "heading": "Events",
-        "standfirst": "Runs, open days and the occasional deadlift party. Everyone welcome.",
-        "kicker": "Meet-ups",
+        "heading": "Next meet-ups",
+        "standfirst": "Socials, open days and races at North and Riverside.",
+        "kicker": "Events",
         "color_scheme": "concrete"
       },
       "blocks": []
@@ -33,7 +33,9 @@
       "type": "community-links",
       "preset": "Default",
       "settings": {
-        "color_scheme": "flare"
+        "color_scheme": "flare",
+        "kicker": "The club",
+        "heading": "Come run with us"
       },
       "blocks": [
         {

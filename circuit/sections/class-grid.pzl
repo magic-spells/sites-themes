@@ -1,6 +1,7 @@
 <!-- The signature grid: class cards three, two and one across. The source
      is every class, the featured ones, or the classes listed as blocks; on
-     a coach's page, "classes" limits it to that coach's classes. Capped at
+     a coach's page, "coach" limits it to that coach's classes, heads it
+     with their first name and ends on a booking button. Capped at
      the limit (12 at most) with "N of M" and the view-all link when there
      are more. -->
 {#let
@@ -10,7 +11,8 @@
   listed = settings.source == 'listed'
   shown = listed ? blocks : (pool | slice(0, Math.min(settings.limit, 12)))
   total = listed ? blocks.length : pool.length
-  heading = settings.source == 'coach' && page.entry ? t('classes_with', { name: page.entry.title }) : settings.heading
+  first_name = coach_id ? page.entry.title | split(' ') | first : ''
+  heading = coach_id ? t('classes_with', { name: first_name }) : settings.heading
   more = !listed && total > shown.length
 }
 {#if shown.length}
@@ -24,6 +26,7 @@
         {#for entry in shown}<li><ClassCard entry={ entry } href="{ settings.base_path }/{ entry.handle }" show_specs={ settings.show_specs } show_coach={ settings.show_coach } treatment={ settings.treatment } reveal={ site.settings.reveal } /></li>{/for}
       {/if}
     </ul>
+    {#if coach_id && site.settings.action_label}<div class="mt-step-xl"><Button action={ true }>{ t('book_with', { name: first_name }) }</Button></div>{/if}
   </div>
 </section>
 {/if}

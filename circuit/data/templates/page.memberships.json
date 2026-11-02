@@ -7,9 +7,9 @@
       "type": "page-header",
       "preset": "Left",
       "settings": {
-        "heading": "Memberships",
-        "standfirst": "Month to month, no joining fee. Your first class is free on every plan.",
-        "kicker": "Plans",
+        "heading": "Pick your pace",
+        "standfirst": "Monthly, a class pack or drop in. No joining fee, cancel any month.",
+        "kicker": "Memberships",
         "color_scheme": "concrete"
       },
       "blocks": []
@@ -31,7 +31,7 @@
           "id": "s_cards_b1",
           "type": "plan",
           "settings": {
-            "plan": "plan_drop_in"
+            "plan": "plan_open_gym"
           }
         },
         {
@@ -55,13 +55,37 @@
       "type": "plans",
       "preset": "Table",
       "settings": {
-        "heading": "Compare every plan",
-        "text": "",
+        "heading": "Compare plans",
+        "text": "Monthly, no contract. Cancel whenever.",
         "layout": "table",
         "plans": "plans",
-        "color_scheme": "concrete"
+        "color_scheme": "concrete",
+        "kicker": "Memberships",
+        "source": "listed"
       },
-      "blocks": []
+      "blocks": [
+        {
+          "id": "s_table_b1",
+          "type": "plan",
+          "settings": {
+            "plan": "plan_open_gym"
+          }
+        },
+        {
+          "id": "s_table_b2",
+          "type": "plan",
+          "settings": {
+            "plan": "plan_unlimited"
+          }
+        },
+        {
+          "id": "s_table_b3",
+          "type": "plan",
+          "settings": {
+            "plan": "plan_small_group"
+          }
+        }
+      ]
     },
     {
       "id": "s_faq",

@@ -7,9 +7,9 @@
       "type": "page-header",
       "preset": "Left",
       "settings": {
-        "heading": "Timetable",
-        "standfirst": "06:00–22:00 · 2 locations · 75 classes a week",
-        "kicker": "This week",
+        "heading": "The week",
+        "standfirst": "06:00–22:00 · North and Riverside · drop in or book",
+        "kicker": "Timetable",
         "color_scheme": "concrete"
       },
       "blocks": []
@@ -36,7 +36,9 @@
       "settings": {
         "locations": "locations",
         "show_hours": true,
-        "color_scheme": "concrete"
+        "color_scheme": "concrete",
+        "kicker": "Find us",
+        "heading": "Two doors, one club"
       },
       "blocks": []
     },

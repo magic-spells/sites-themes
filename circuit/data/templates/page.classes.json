@@ -7,9 +7,9 @@
       "type": "page-header",
       "preset": "Left",
       "settings": {
-        "heading": "Classes",
-        "standfirst": "Twelve classes, coached on every session. Start anywhere: the coach scales it to you.",
-        "kicker": "What’s on the floor",
+        "heading": "What’s on the floor",
+        "standfirst": "Twelve classes, two rooms, every level. Pick one and come in.",
+        "kicker": "Classes",
         "color_scheme": "concrete"
       },
       "blocks": []
@@ -24,7 +24,8 @@
         "classes": "classes",
         "columns": "3",
         "limit": 12,
-        "color_scheme": "white"
+        "color_scheme": "white",
+        "view_all_label": ""
       },
       "blocks": []
     },

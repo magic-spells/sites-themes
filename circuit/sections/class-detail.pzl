@@ -1,9 +1,12 @@
 <!-- A class's page: a full-bleed 21:9 photo (or a one-up of its photos with
-     the lightbox), then a black band with the name in h1 and the spec strip
-     full width (duration, intensity, level, format, drop-in price), the
-     description in the reading column, "What to bring" and "Who it's for"
-     as rows that open, the coach as a row, and "When": this class's
-     sessions by day (an in-memory where), each with its location. -->
+     the lightbox, swiped) that the over-hero header lies on, then a black band with
+     the kicker (Class · with the coach), the name in h1 and the action
+     beside it, and the spec strip in a hairline frame (duration, intensity,
+     level, format, drop-in price). Below, the summary as a lede (unless the
+     description already opens with it) and the description with "When" under them: this class's sessions by day (an
+     in-memory where), each with its location and coach. Beside them the
+     coach as a row, then "What to bring" and "Who it's for" as rows that
+     open. -->
 {#let
   klass = page.entry
   f = klass.fields
@@ -12,11 +15,12 @@
   when = settings.sessions.entries | where('fields.class.id', klass.id) | sort('fields.start')
   days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
   id = 'class-photos-' + section.id
-  options = { lightbox: true, loop: true, navigation: { showButtons: true, showPagination: false } }
+  options = { lightbox: true, loop: true, navigation: { showButtons: false, showPagination: false } }
   action = settings.action_label || site.settings.action_label
+  cell = 'grid content-start gap-step-2xs border-scheme-rule p-step-sm'
 }
 {#if klass}
-<section class="bg-scheme-background text-scheme-foreground">
+<section class="bg-scheme-background text-scheme-foreground" data-over-hero>
   {#if photos.length > 1}
     <tarot-carousel class="block" id={ id } data-on-photo>
       <script type="application/json" data-tarot-options>{ options | json }</script>
@@ -27,38 +31,67 @@
   {:else}
     <Photo asset={ f.image } alt={ f.image_alt } ratio="aspect-video md:aspect-21/9" eager={ true } sizes="100vw" width={ 2000 } />
   {/if}
-  <div class="sites-scheme-black bg-scheme-background px-gutter pt-step-xl text-scheme-foreground">
-    <div class="mx-auto grid max-w-column gap-step-md">
-      {#if settings.back_label}<a class="justify-self-start font-mono text-spec font-medium text-scheme-links uppercase hover:underline" href="{ settings.back_href }">← { settings.back_label }</a>{/if}
-      <div class="flex flex-wrap items-end justify-between gap-step-md">
+  <div class="sites-scheme-black bg-scheme-background px-gutter py-step-xl text-scheme-foreground">
+    <div class="mx-auto grid max-w-column gap-step-lg">
+      <div class="flex flex-wrap items-end justify-between gap-step-md lg:flex-nowrap">
         <div class="grid gap-step-xs">
-          {#if f.tag}<span class="inline-flex min-h-tag items-center justify-self-start rounded-chip bg-accent px-step-xs font-mono text-spec font-medium text-on-accent uppercase">{ f.tag }</span>{/if}
+          {#if settings.back_label}<a class="justify-self-start font-mono text-spec font-medium text-scheme-links uppercase hover:underline" href="{ settings.back_href }">← { settings.back_label }</a>{/if}
+          <p class="flex flex-wrap items-center gap-step-xs font-mono text-overline font-medium text-scheme-meta uppercase">{#if f.tag}<span class="inline-flex min-h-tag items-center rounded-chip bg-accent px-step-xs text-on-accent">{ f.tag }</span>{/if}<span>{ t('class_kicker') }{#if coach} · { t('with_coach', { name: coach.title }) }{/if}</span></p>
           <h1 class="font-heading text-h1 font-black text-balance text-scheme-heading uppercase stretch-display">{ klass.title }</h1>
-          {#if f.summary}<p class="max-w-reading text-body-lg text-scheme-muted">{ f.summary }</p>{/if}
         </div>
-        {#if action}<Button action={ true }>{ action }</Button>{/if}
+        {#if action}<span class="shrink-0"><Button action={ true }>{ action }</Button></span>{/if}
       </div>
-      <dl class="mt-step-md grid grid-cols-2 border-t border-scheme-rule font-mono text-spec uppercase md:grid-cols-5">
-        <div class="grid gap-step-2xs border-b border-scheme-rule py-step-sm pr-step-sm md:border-b-0"><dt class="text-scheme-meta">{ t('duration') }</dt><dd class="text-body-sm font-medium">{ t('minutes_short', { n: f.duration_minutes }) }</dd></div>
-        <div class="grid gap-step-2xs border-b border-l border-scheme-rule px-step-sm py-step-sm md:border-b-0"><dt class="text-scheme-meta">{ t('intensity') }</dt><dd class="text-body-sm font-medium"><Ticks intensity={ f.intensity } /> { t('intensity.' + f.intensity) }</dd></div>
-        <div class="grid gap-step-2xs border-b border-scheme-rule py-step-sm pr-step-sm md:border-b-0 md:border-l md:px-step-sm"><dt class="text-scheme-meta">{ t('level') }</dt><dd class="text-body-sm font-medium">{ t('level.' + f.level) }</dd></div>
-        <div class="grid gap-step-2xs border-b border-l border-scheme-rule px-step-sm py-step-sm md:border-b-0"><dt class="text-scheme-meta">{ t('format') }</dt><dd class="text-body-sm font-medium">{ t('format.' + f.format) }</dd></div>
-        <div class="grid gap-step-2xs py-step-sm pr-step-sm md:border-l md:border-scheme-rule md:px-step-sm"><dt class="text-scheme-meta">{ t('drop_in') }</dt><dd class="text-body-sm font-medium">{ f.price ? f.price | currency(site.settings.currency_symbol, 0) : t('free') }</dd></div>
+      <dl class="grid grid-cols-2 border border-scheme-rule uppercase md:grid-cols-5">
+        <div class="{ cell } border-b md:border-b-0"><dt class="font-mono text-spec text-scheme-meta">{ t('duration') }</dt><dd class="text-body-sm font-bold">{ t('minutes_short', { n: f.duration_minutes }) }</dd></div>
+        <div class="{ cell } border-b border-l md:border-b-0"><dt class="font-mono text-spec text-scheme-meta">{ t('intensity') }</dt><dd class="flex items-center gap-step-xs text-body-sm font-bold"><Ticks intensity={ f.intensity } />{ t('intensity.' + f.intensity) }</dd></div>
+        <div class="{ cell } border-b md:border-b-0 md:border-l"><dt class="font-mono text-spec text-scheme-meta">{ t('level') }</dt><dd class="text-body-sm font-bold">{ t('level.' + f.level) }</dd></div>
+        <div class="{ cell } border-b border-l md:border-b-0"><dt class="font-mono text-spec text-scheme-meta">{ t('format') }</dt><dd class="text-body-sm font-bold">{ t('format.' + f.format) }</dd></div>
+        <div class="{ cell } md:border-l"><dt class="font-mono text-spec text-scheme-meta">{ t('drop_in') }</dt><dd class="text-body-sm font-bold">{ f.price ? f.price | currency(site.settings.currency_symbol, 0) : t('free') }</dd></div>
       </dl>
     </div>
   </div>
   <div class="px-gutter py-section">
-    <div class="mx-auto grid max-w-column gap-step-2xl lg:grid-cols-3">
-      <div class="grid content-start gap-step-lg lg:col-span-2">
-        <div class="sites-prose max-w-reading">{ f.description }</div>
-        <ul class="max-w-reading border-t border-scheme-rule">
-          {#for row in [{ q: t('what_to_bring'), a: f.what_to_bring, list: true }, { q: t('who_for'), a: f.who_for, list: false }]}
+    <div class="mx-auto grid max-w-column gap-step-2xl lg:grid-cols-2 lg:gap-step-3xl">
+      <div class="grid max-w-reading content-start gap-step-xl">
+        <div class="grid gap-step-md">
+          {#if f.summary && !contains(f.description, f.summary)}<p class="text-body-lg text-pretty text-scheme-muted">{ f.summary }</p>{/if}
+          <div class="sites-prose">{ f.description }</div>
+        </div>
+        <div class="grid gap-step-md" aria-labelledby="{ id }-when" role="region">
+          <h2 class="font-heading text-h3 font-black text-scheme-heading uppercase stretch-heading" id="{ id }-when">{ settings.when_heading }</h2>
+          {#if when.length}
+            <ul class="border-t border-scheme-rule font-mono text-time">
+              {#for d in days}{#for s in when | where('fields.day', d)}
+                <li class="grid grid-cols-when items-baseline gap-x-step-md border-b border-scheme-rule py-step-sm">
+                  <span class="text-spec text-scheme-meta uppercase"><abbr class="no-underline" title="{ t('day_long.' + d) }">{ t('day.' + d) }</abbr></span>
+                  <span class="font-medium">{ s.fields.start }–{ s.fields.end }</span>
+                  <span class="uppercase">{ s.fields.location.title }</span>
+                  <span class="text-right text-spec text-scheme-muted uppercase">{#if s.fields.coach || coach}{ (s.fields.coach || coach).title | split(' ') | first }{/if}</span>
+                </li>
+              {/for}{/for}
+            </ul>
+          {:else}<p class="font-mono text-spec text-scheme-muted uppercase">{ t('no_sessions') }</p>{/if}
+          <div class="flex flex-wrap items-center gap-x-step-lg gap-y-step-sm">
+            {#if action}<Button action={ true }>{ action }</Button>{/if}
+            {#if settings.timetable_href}<a class="inline-flex items-center gap-step-2xs font-mono text-spec font-medium uppercase hover:underline" href="{ settings.timetable_href }">{ t('full_timetable') }<span aria-hidden="true">→</span></a>{/if}
+          </div>
+        </div>
+      </div>
+      <div class="grid max-w-text content-start gap-step-lg">
+        {#if coach}
+          <a class="group grid grid-cols-meta items-center gap-step-md" href="{ settings.coach_path }/{ coach.handle }">
+            <span class="block w-portrait"><Photo asset={ coach.fields.image } alt="" ratio="aspect-square" width={ 320 } sizes="4rem" /></span>
+            <span class="grid gap-step-2xs"><span class="font-heading text-h4 font-extrabold uppercase stretch-heading group-hover:underline">{ coach.title }</span><span class="font-mono text-spec text-scheme-meta uppercase">{ coach.fields.role }</span><span class="font-mono text-spec font-medium text-scheme-links uppercase">{ t('profile') } →</span></span>
+          </a>
+        {/if}
+        <ul class="border-t border-scheme-rule">
+          {#for row in [{ q: t('what_to_bring'), a: f.what_to_bring, list: true }, { q: t('who_for'), a: f.who_for, list: false }], i}
             {#if row.a}
               <li class="border-b border-scheme-rule">
                 <collapsible-component>
-                  <h2><button class="group flex w-full items-center justify-between gap-step-md py-step-md text-left font-heading text-h4 font-extrabold text-scheme-heading uppercase stretch-heading" type="button">{ row.q }<span class="sites-icon size-icon shrink-0 group-aria-expanded:hidden" aria-hidden="true">{#svg 'icons/plus.svg'}</span><span class="sites-icon hidden size-icon shrink-0 group-aria-expanded:block" aria-hidden="true">{#svg 'icons/minus.svg'}</span></button></h2>
-                  <collapsible-content>
-                    {#if row.list}<ul class="grid gap-step-2xs pb-step-md font-mono text-body-sm">{#for line in row.a | split('\n')}{#if line | strip}<li class="grid grid-cols-check gap-step-xs"><span class="sites-icon mt-0.5 size-icon-small text-scheme-heading" aria-hidden="true">{#svg 'icons/check.svg'}</span>{ line | strip }</li>{/if}{/for}</ul>
+                  <h2><button class="group flex w-full items-center justify-between gap-step-md py-step-md text-left font-heading text-h4 font-extrabold text-scheme-heading uppercase stretch-heading" type="button">{ row.q }<span class="sites-icon size-icon shrink-0 transition-transform duration-fast group-aria-expanded:rotate-180" aria-hidden="true">{#svg 'icons/angle-down.svg'}</span></button></h2>
+                  <collapsible-content open={ i == 0 }>
+                    {#if row.list}<ul class="grid gap-step-2xs pb-step-md text-body-sm">{#for line in row.a | split('\n')}{#if line | strip}<li>– { line | strip }</li>{/if}{/for}</ul>
                     {:else}<p class="pb-step-md text-body text-scheme-muted">{ row.a }</p>{/if}
                   </collapsible-content>
                 </collapsible-component>
@@ -66,30 +99,7 @@
             {/if}
           {/for}
         </ul>
-        {#if coach}
-          <a class="group grid max-w-reading grid-cols-meta items-center gap-step-md border border-scheme-rule p-step-sm" href="{ settings.coach_path }/{ coach.handle }">
-            <span class="block w-portrait"><Photo asset={ coach.fields.image } alt="" ratio="aspect-square" width={ 320 } sizes="4rem" /></span>
-            <span class="grid gap-step-2xs"><span class="font-mono text-spec text-scheme-meta uppercase">{ t('your_coach') }</span><span class="font-heading text-h4 font-extrabold uppercase stretch-heading group-hover:underline">{ coach.title }</span><span class="font-mono text-spec text-scheme-muted uppercase">{ coach.fields.role }</span></span>
-          </a>
-        {/if}
       </div>
-      <aside class="grid content-start gap-step-md" aria-labelledby="{ id }-when">
-        <h2 class="font-heading text-h3 font-black text-scheme-heading uppercase stretch-heading" id="{ id }-when">{ settings.when_heading }</h2>
-        {#if when.length}
-          <dl class="border-t border-scheme-rule">
-            {#for d in days}
-              {#let today = when | where('fields.day', d)}
-              {#if today.length}
-                <div class="grid grid-cols-meta gap-step-md border-b border-scheme-rule py-step-sm">
-                  <dt class="w-step-2xl font-mono text-spec font-medium uppercase">{ t('day.' + d) }</dt>
-                  <dd class="grid gap-step-2xs">{#for s in today}<span class="flex flex-wrap justify-between gap-x-step-sm font-mono text-time"><span class="font-medium">{ s.fields.start }–{ s.fields.end }</span><span class="text-spec text-scheme-meta uppercase">{ s.fields.location.title }</span></span>{/for}</dd>
-                </div>
-              {/if}
-            {/for}
-          </dl>
-        {:else}<p class="font-mono text-spec text-scheme-muted uppercase">{ t('no_sessions') }</p>{/if}
-        {#if settings.timetable_href}<a class="font-mono text-spec font-medium text-scheme-links uppercase hover:underline" href="{ settings.timetable_href }">{ t('full_timetable') }</a>{/if}
-      </aside>
     </div>
   </div>
 </section>
@@ -104,10 +114,10 @@
   "templates": ["class"],
   "settings": [
     { "type": "checkbox", "id": "show_photos", "label": "Show the class photos", "default": true, "info": "With two or more photos in the class's gallery, the top is a one-up you swipe, with a lightbox." },
-    { "type": "text", "id": "back_label", "label": "Back link label", "default": "All classes" },
+    { "type": "text", "id": "back_label", "label": "Back link label", "default": "", "info": "Optional: a link back above the kicker." },
     { "type": "url", "id": "back_href", "label": "Back link", "default": "/classes" },
     { "type": "text", "id": "action_label", "label": "Action label", "default": "" },
-    { "type": "collection", "id": "sessions", "label": "Sessions", "info": "Reads sessions: class, day, start, end and location, for When." },
+    { "type": "collection", "id": "sessions", "label": "Sessions", "info": "Reads sessions: class, day, start, end, location and coach, for When." },
     { "type": "text", "id": "when_heading", "label": "When heading", "default": "When" },
     { "type": "url", "id": "timetable_href", "label": "Timetable link", "default": "/timetable" },
     { "type": "url", "id": "coach_path", "label": "Coach page path", "default": "/coaches" },

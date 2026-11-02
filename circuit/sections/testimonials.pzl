@@ -14,9 +14,9 @@
       <ul class="grid gap-gap-lg md:grid-cols-2 lg:grid-cols-3">
         {#for block in blocks}
           {#let b = block.settings}
-          <li class="flex flex-col gap-step-md border-t-2 border-scheme-foreground pt-step-md" data-block={ block.editor_id }>
+          <li class="flex flex-col gap-step-md border border-scheme-rule bg-scheme-surface-2 p-step-lg" data-block={ block.editor_id }>
             <blockquote class="flex-1 text-body-lg font-medium text-pretty">“{ b.quote }”</blockquote>
-            <p class="flex items-center gap-step-sm">{#if b.image}<span class="block w-portrait shrink-0"><Photo asset={ b.image } alt="" ratio="aspect-square" width={ 320 } sizes="4rem" /></span>{/if}<span class="grid gap-step-2xs"><span class="text-body-sm font-bold uppercase">{ b.name }</span>{#if b.line}<span class="font-mono text-spec text-scheme-meta uppercase">{ b.line }</span>{/if}</span></p>
+            <p class="flex items-center gap-step-sm">{#if b.image}<span class="block w-portrait shrink-0"><Photo asset={ b.image } alt="" ratio="aspect-square" width={ 320 } sizes="4rem" /></span>{/if}<span class="grid gap-step-xs"><span class="font-heading text-body-lg font-extrabold uppercase stretch-heading">{ b.name }</span>{#if b.line}<span class="font-mono text-spec text-scheme-meta uppercase">{ b.line }</span>{/if}</span></p>
           </li>
         {/for}
       </ul>

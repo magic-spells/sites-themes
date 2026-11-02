@@ -1,0 +1,743 @@
+@import "tailwindcss";
+@import "./vendor/bottom-sheet.css" layer(components);
+@import "./vendor/collapsible-content.css" layer(components);
+@import "./vendor/dialog-panel.css" layer(components);
+@import "./vendor/dropdown-panel.css" layer(components);
+@import "./vendor/dropdown-panel.effects.css" layer(components);
+@import "./vendor/lightbox.css" layer(components);
+@import "./vendor/reveal.css";
+@import "./vendor/scrollbar.css" layer(components);
+@import "./vendor/select-dropdown.css" layer(components);
+@import "./vendor/sticky-header.css" layer(components);
+@import "./vendor/tab-group.css" layer(components);
+@import "./vendor/tarot.css" layer(components);
+
+@source "../layouts/**/*.pzl";
+@source "../templates/**/*.pzl";
+@source "../sections/**/*.pzl";
+@source "../components/**/*.pzl";
+
+/* The palette: site-wide values from settings/design.json. */
+@theme {
+	--color-brand-primary: var(--sites-color-brand-primary);
+	--color-brand-secondary: var(--sites-color-brand-secondary);
+	--color-brand-accent: var(--sites-color-brand-accent);
+	--color-grey-extra-light: var(--sites-color-grey-extra-light);
+	--color-grey-light: var(--sites-color-grey-light);
+	--color-grey-medium: var(--sites-color-grey-medium);
+	--color-grey-dark: var(--sites-color-grey-dark);
+	--color-grey-extra-dark: var(--sites-color-grey-extra-dark);
+	--color-info-bg: var(--sites-color-info-bg);
+	--color-info-fg: var(--sites-color-info-fg);
+	--color-success-bg: var(--sites-color-success-bg);
+	--color-success-fg: var(--sites-color-success-fg);
+	--color-warning-bg: var(--sites-color-warning-bg);
+	--color-warning-fg: var(--sites-color-warning-fg);
+	--color-error-bg: var(--sites-color-error-bg);
+	--color-error-fg: var(--sites-color-error-fg);
+	/* Constants that do not follow the scheme: type and scrims over a photo. */
+	--color-on-photo: #F5F5F5;
+	--color-scrim: rgb(0 0 0 / 0.55);
+	--color-backdrop: rgb(11 11 11 / 0.5);
+	--color-ink: #0B0B0B;
+}
+
+/* The scheme the section sits on. The engine has no muted, meta, border,
+   surface, surface-2 or accent slot, so they ride on the chip, icon and
+   input slots (settings/design.json says which); ghost and texture are the
+   text colour at 18% and 8%. */
+@theme inline {
+	--color-scheme-background: var(--sites-scheme-background);
+	--color-scheme-foreground: var(--sites-scheme-foreground);
+	--color-scheme-heading: var(--sites-scheme-heading);
+	--color-scheme-input-background: var(--sites-scheme-input-background);
+	--color-scheme-input-foreground: var(--sites-scheme-input-foreground);
+	--color-scheme-input-border: var(--sites-scheme-input-border);
+	--color-scheme-chip-background: var(--sites-scheme-chip-background);
+	--color-scheme-chip-foreground: var(--sites-scheme-chip-foreground);
+	--color-scheme-chip-border: var(--sites-scheme-chip-border);
+	--color-scheme-icons: var(--sites-scheme-icons);
+	--color-scheme-links: var(--sites-scheme-links);
+	--color-scheme-button-background: var(--sites-scheme-button-background);
+	--color-scheme-button-foreground: var(--sites-scheme-button-foreground);
+	--color-scheme-button-hover-background: var(--sites-scheme-button-hover-background);
+	--color-scheme-button-hover-foreground: var(--sites-scheme-button-hover-foreground);
+	--color-scheme-secondary-button-background: var(--sites-scheme-secondary-button-background);
+	--color-scheme-secondary-button-foreground: var(--sites-scheme-secondary-button-foreground);
+	--color-scheme-secondary-button-hover-background: var(--sites-scheme-secondary-button-hover-background);
+	--color-scheme-secondary-button-hover-foreground: var(--sites-scheme-secondary-button-hover-foreground);
+	--color-scheme-muted: var(--sites-scheme-chip-foreground);
+	--color-scheme-meta: var(--sites-scheme-icons);
+	--color-scheme-rule: var(--sites-scheme-chip-border);
+	--color-scheme-surface: var(--sites-scheme-input-background);
+	--color-scheme-surface-2: var(--sites-scheme-chip-background);
+	--color-scheme-error: var(--sites-scheme-links);
+	--color-scheme-ghost: color-mix(in srgb, var(--sites-scheme-foreground) 18%, transparent);
+	--color-scheme-texture: color-mix(in srgb, var(--sites-scheme-foreground) 8%, transparent);
+	--color-accent: var(--circuit-accent);
+	--color-on-accent: var(--circuit-on-accent);
+	--background-image-halftone: radial-gradient(circle, var(--sites-scheme-foreground) 0.0625rem, transparent 0.0875rem);
+	--background-image-grain: url("/_sites/theme/grain.svg");
+}
+
+/* The flare as a fill (tag pills, intensity ticks, the slash, a numeral's
+   unit). On the Flare scheme itself the accent turns black. */
+:root {
+	--circuit-accent: var(--sites-color-brand-accent);
+	--circuit-on-accent: var(--sites-color-brand-primary);
+}
+.sites-scheme-flare {
+	--circuit-accent: var(--sites-scheme-foreground);
+	--circuit-on-accent: var(--sites-scheme-background);
+}
+
+@theme {
+	--font-heading: var(--sites-font-heading-family), "Arial Black", Arial, sans-serif;
+	--font-body: var(--sites-font-body-family), Arial, sans-serif;
+	--font-mono: var(--sites-font-mono-family), SFMono-Regular, Menlo, monospace;
+	--text-xs: var(--sites-type-scale-xs);
+	--text-sm: var(--sites-type-scale-sm);
+	--text-base: var(--sites-type-scale-base);
+	--text-lg: var(--sites-type-scale-lg);
+	--text-xl: var(--sites-type-scale-xl);
+	--text-2xl: var(--sites-type-scale-2xl);
+	--text-3xl: var(--sites-type-scale-3xl);
+	--text-4xl: var(--sites-type-scale-4xl);
+	--text-5xl: var(--sites-type-scale-5xl);
+	--leading-tight: var(--sites-type-leading-tight);
+	--leading-normal: var(--sites-type-leading-normal);
+	--leading-relaxed: var(--sites-type-leading-relaxed);
+	--spacing-space-xs: var(--sites-spacing-xs);
+	--spacing-space-sm: var(--sites-spacing-sm);
+	--spacing-space-md: var(--sites-spacing-md);
+	--spacing-space-lg: var(--sites-spacing-lg);
+	--spacing-space-xl: var(--sites-spacing-xl);
+	--spacing-space-2xl: var(--sites-spacing-2xl);
+	--radius-none: var(--sites-radius-none);
+	--radius-sm: var(--sites-radius-sm);
+	--radius-md: var(--sites-radius-md);
+	--radius-lg: var(--sites-radius-lg);
+	--radius-full: var(--sites-radius-full);
+	--radius-button: var(--sites-button-radius);
+	--radius-input: var(--sites-input-radius);
+	--radius-chip: var(--sites-radius-sm);
+	--shadow-sm: var(--sites-shadow-sm);
+	--shadow-md: var(--sites-shadow-md);
+	--shadow-lg: var(--sites-shadow-lg);
+
+	/* The type roles, each sized per breakpoint in :root below. */
+	--text-display: var(--circuit-text-display);
+	--text-display--line-height: 0.9;
+	--text-display--letter-spacing: -0.02em;
+	--text-h1: var(--circuit-text-h1);
+	--text-h1--line-height: 0.95;
+	--text-h1--letter-spacing: -0.01em;
+	--text-h2: var(--circuit-text-h2);
+	--text-h2--line-height: 0.95;
+	--text-h2--letter-spacing: -0.01em;
+	--text-h3: var(--circuit-text-h3);
+	--text-h3--line-height: 1.1;
+	--text-h4: var(--circuit-text-h4);
+	--text-h4--line-height: 1.1;
+	--text-overline: var(--circuit-text-overline);
+	--text-overline--line-height: 1.2;
+	--text-overline--letter-spacing: 0.08em;
+	--text-body: var(--circuit-text-body);
+	--text-body--line-height: 1.5;
+	--text-body-lg: var(--circuit-text-body-lg);
+	--text-body-lg--line-height: 1.45;
+	--text-body-sm: var(--circuit-text-body-sm);
+	--text-body-sm--line-height: 1.45;
+	--text-body-xs: var(--circuit-text-body-xs);
+	--text-body-xs--line-height: 1.4;
+	--text-spec: var(--circuit-text-body-xs);
+	--text-spec--line-height: 1.3;
+	--text-spec--letter-spacing: 0.06em;
+	--text-time: var(--circuit-text-body-sm);
+	--text-time--line-height: 1.3;
+	--text-ticker: var(--circuit-text-body);
+	--text-ticker--line-height: 1;
+	--text-ticker--letter-spacing: 0.1em;
+	--text-button: var(--circuit-text-button);
+	--text-button--line-height: 1;
+	--text-button--letter-spacing: 0.06em;
+	--text-button-small: 0.75rem;
+	--text-button-small--line-height: 1;
+	--text-button-small--letter-spacing: 0.06em;
+	--text-nav: 0.9375rem;
+	--text-nav--line-height: 1;
+	--text-nav--letter-spacing: 0.04em;
+	--text-label: 0.8125rem;
+	--text-label--line-height: 1.3;
+	--text-chip: 0.75rem;
+	--text-chip--line-height: 1;
+	--text-chip--letter-spacing: 0.06em;
+	--text-badge: 0.6875rem;
+	--text-badge--line-height: 1;
+	--text-badge--letter-spacing: 0.06em;
+	--text-wordmark: 1.25rem;
+	--text-wordmark--line-height: 1;
+	--text-colophon: 8.4cqi;
+	--text-colophon--line-height: 0.82;
+	--text-colophon--letter-spacing: -0.02em;
+	--text-ghost: 20vw;
+	--text-ghost--line-height: 0.8;
+	--leading-prose: 1.6;
+
+	--spacing-section: var(--circuit-section);
+	--spacing-section-slash: calc(var(--circuit-section) + var(--circuit-rise));
+	--spacing-rise: var(--circuit-rise);
+	--spacing-gutter: var(--circuit-gutter);
+	--spacing-step-2xs: var(--circuit-step-2xs);
+	--spacing-step-xs: var(--circuit-step-xs);
+	--spacing-step-sm: var(--circuit-step-sm);
+	--spacing-step-md: var(--circuit-step-md);
+	--spacing-step-lg: var(--circuit-step-lg);
+	--spacing-step-xl: var(--circuit-step-xl);
+	--spacing-step-2xl: var(--circuit-step-2xl);
+	--spacing-step-3xl: var(--circuit-step-3xl);
+	--spacing-gap-sm: var(--circuit-gap-sm);
+	--spacing-gap-md: var(--circuit-gap-md);
+	--spacing-gap-lg: var(--circuit-gap-lg);
+	--spacing-button-x: var(--sites-button-padding-x);
+	--spacing-button-y: var(--sites-button-padding-y);
+	--spacing-control: 3rem;
+	--spacing-control-small: 2.5rem;
+	--spacing-chip: 2.25rem;
+	--spacing-tag: 1.5rem;
+	--spacing-cell: 3rem;
+	--spacing-textarea: 6rem;
+	--spacing-icon: 1.25rem;
+	--spacing-icon-small: 1rem;
+	--spacing-icon-button: 2.75rem;
+	--spacing-checkbox: 1.25rem;
+	--spacing-tick-w: 0.25rem;
+	--spacing-tick-h: 0.875rem;
+	--spacing-dot: 0.5rem;
+	--spacing-header: 4.5rem;
+	--spacing-thumb: 6rem;
+	--spacing-portrait: 4rem;
+	--spacing-hero-tall: 80svh;
+	--spacing-hero-full: 100svh;
+	--spacing-hero-min: 32rem;
+	--container-column: 82.5rem;
+	--container-reading: 40rem;
+	--container-text: 30rem;
+	--container-wide: 52rem;
+	--container-panel: 35rem;
+	--container-drawer: 23.4375rem;
+	--container-headline: 14ch;
+	--container-lede: 38ch;
+	--grid-template-columns-bento: 16fr 15fr 15fr;
+	--grid-template-rows-card: auto 1fr auto;
+	--grid-template-columns-row: auto 1fr auto;
+	--grid-template-columns-hours: 1fr auto;
+	--grid-template-columns-meta: auto 1fr;
+	--grid-template-columns-check: 1rem 1fr;
+	--grid-template-columns-footer: 1fr 1fr 1fr auto auto;
+
+	--scale-hover: 103%;
+	--transition-duration-fast: 150ms;
+	--transition-duration-panel: 200ms;
+	--transition-duration-hover: 400ms;
+	--ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+	--reveal-distance: 1.5rem;
+	--reveal-perspective: 75rem;
+	--reveal-blur: 0;
+}
+
+/* Sizes per breakpoint: each role reads a design token and scales it by the
+   Figma ratio for that width (mobile, from 48rem tablet, from 64rem desktop),
+   so a workspace that changes the scale moves every breakpoint with it. */
+:root {
+	--circuit-text-display: calc(var(--sites-type-scale-5xl) * 56 / 128);
+	--circuit-text-h1: calc(var(--sites-type-scale-4xl) * 40 / 72);
+	--circuit-text-h2: calc(var(--sites-type-scale-3xl) * 32 / 48);
+	--circuit-text-h3: calc(var(--sites-type-scale-2xl) * 24 / 32);
+	--circuit-text-h4: calc(var(--sites-type-scale-xl) * 20 / 24);
+	--circuit-text-overline: calc(var(--sites-type-scale-xs) * 11 / 12);
+	--circuit-text-body: calc(var(--sites-type-scale-base) * 16 / 17);
+	--circuit-text-body-lg: calc(var(--sites-type-scale-lg) * 18 / 20);
+	--circuit-text-body-sm: calc(var(--sites-type-scale-sm) * 14 / 15);
+	--circuit-text-body-xs: var(--sites-type-scale-xs);
+	--circuit-text-button: 0.8125rem;
+	--circuit-section: calc(var(--sites-spacing-xl) * 32 / 48);
+	--circuit-rise: 2.5rem;
+	--circuit-gutter: calc(var(--sites-spacing-md) * 16 / 24);
+	--circuit-step-2xs: calc(var(--sites-spacing-xs) * 4 / 8);
+	--circuit-step-xs: var(--sites-spacing-xs);
+	--circuit-step-sm: calc(var(--sites-spacing-sm) * 12 / 16);
+	--circuit-step-md: calc(var(--sites-spacing-md) * 16 / 24);
+	--circuit-step-lg: calc(var(--sites-spacing-lg) * 24 / 32);
+	--circuit-step-xl: calc(var(--sites-spacing-xl) * 32 / 48);
+	--circuit-step-2xl: calc(var(--sites-spacing-2xl) * 48 / 72);
+	--circuit-step-3xl: calc(var(--sites-spacing-2xl) * 64 / 72);
+	--circuit-gap-sm: var(--sites-spacing-xs);
+	--circuit-gap-md: calc(var(--sites-spacing-sm) * 12 / 16);
+	--circuit-gap-lg: var(--sites-spacing-sm);
+}
+
+@media (min-width: 48rem) {
+	:root {
+		--circuit-text-display: calc(var(--sites-type-scale-5xl) * 88 / 128);
+		--circuit-text-h1: calc(var(--sites-type-scale-4xl) * 56 / 72);
+		--circuit-text-h2: calc(var(--sites-type-scale-3xl) * 40 / 48);
+		--circuit-text-h3: calc(var(--sites-type-scale-2xl) * 28 / 32);
+		--circuit-text-h4: calc(var(--sites-type-scale-xl) * 22 / 24);
+		--circuit-text-overline: var(--sites-type-scale-xs);
+		--circuit-text-body: var(--sites-type-scale-base);
+		--circuit-text-body-lg: calc(var(--sites-type-scale-lg) * 19 / 20);
+		--circuit-text-body-sm: calc(var(--sites-type-scale-sm) * 14 / 15);
+		--circuit-section: var(--sites-spacing-xl);
+		--circuit-rise: 3.5rem;
+		--circuit-gutter: var(--sites-spacing-md);
+		--circuit-step-2xs: calc(var(--sites-spacing-xs) * 6 / 8);
+		--circuit-step-sm: calc(var(--sites-spacing-sm) * 14 / 16);
+		--circuit-step-md: calc(var(--sites-spacing-md) * 20 / 24);
+		--circuit-step-lg: calc(var(--sites-spacing-lg) * 28 / 32);
+		--circuit-step-xl: calc(var(--sites-spacing-xl) * 40 / 48);
+		--circuit-step-2xl: calc(var(--sites-spacing-2xl) * 60 / 72);
+		--circuit-step-3xl: calc(var(--sites-spacing-2xl) * 80 / 72);
+		--circuit-gap-sm: calc(var(--sites-spacing-xs) * 12 / 8);
+		--circuit-gap-md: var(--sites-spacing-sm);
+		--circuit-gap-lg: var(--sites-spacing-md);
+	}
+}
+
+@media (min-width: 64rem) {
+	:root {
+		--circuit-text-display: var(--sites-type-scale-5xl);
+		--circuit-text-h1: var(--sites-type-scale-4xl);
+		--circuit-text-h2: var(--sites-type-scale-3xl);
+		--circuit-text-h3: var(--sites-type-scale-2xl);
+		--circuit-text-h4: var(--sites-type-scale-xl);
+		--circuit-text-body-lg: var(--sites-type-scale-lg);
+		--circuit-text-body-sm: var(--sites-type-scale-sm);
+		--circuit-text-button: 0.875rem;
+		--circuit-section: calc(var(--sites-spacing-xl) * 64 / 48);
+		--circuit-rise: 4.5rem;
+		--circuit-gutter: calc(var(--sites-spacing-md) * 40 / 24);
+		--circuit-step-2xs: var(--sites-spacing-xs);
+		--circuit-step-sm: var(--sites-spacing-sm);
+		--circuit-step-md: var(--sites-spacing-md);
+		--circuit-step-lg: var(--sites-spacing-lg);
+		--circuit-step-xl: var(--sites-spacing-xl);
+		--circuit-step-2xl: var(--sites-spacing-2xl);
+		--circuit-step-3xl: calc(var(--sites-spacing-2xl) * 96 / 72);
+	}
+}
+
+/* Archivo's width axis: the engine's @font-face carries no font-stretch
+   range, so the axis is set directly. Display 118, headings 112, the rest
+   at 100. A workspace that picks a font without the axis loses nothing. */
+@utility stretch-display {
+	font-variation-settings: "wdth" 118;
+}
+@utility stretch-heading {
+	font-variation-settings: "wdth" 112;
+}
+@utility stretch-normal {
+	font-variation-settings: "wdth" 100;
+}
+
+/* Ghost type: an outlined word, no fill, the scheme text at 18%. */
+@utility ghost-stroke {
+	color: transparent;
+	-webkit-text-stroke: 1px var(--color-scheme-ghost);
+}
+@utility outline-stroke {
+	color: transparent;
+	-webkit-text-stroke: 1px currentColor;
+}
+
+/* The slash: one 12° angle everywhere. edge-slash cuts the top of a band:
+   flat, then one ramp climbing to the right, flat again. The band rises by
+   its run over the band above, so the cut shows that band, not a gap. */
+@utility edge-slash {
+	position: relative;
+	z-index: 1;
+	margin-top: calc(var(--circuit-rise) * -1);
+	clip-path: polygon(0 var(--circuit-rise), calc(82% - var(--circuit-rise) * 4.705) var(--circuit-rise), 82% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* The hero's last word, underlined by a flare slash at the same angle. */
+@utility slashed {
+	position: relative;
+	display: inline-block;
+	isolation: isolate;
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		left: -0.06em;
+		right: -0.16em;
+		bottom: 0.04em;
+		height: 0.16em;
+		background: var(--circuit-accent);
+		transform: rotate(-12deg);
+		transform-origin: left center;
+	}
+}
+
+/* Textures on a band: the halftone dot grid (a 0.375rem pitch, the scheme text at
+   8%) or the grain tile, both under the content. */
+[data-texture="halftone"],
+[data-texture="grain"] {
+	position: relative;
+	isolation: isolate;
+}
+[data-texture="halftone"]::before,
+[data-texture="grain"]::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+}
+[data-texture="halftone"]::before {
+	background-image: var(--background-image-halftone);
+	background-size: 0.375rem 0.375rem;
+	opacity: 0.08;
+}
+[data-texture="grain"]::before {
+	background-image: var(--background-image-grain);
+	background-size: 11.25rem 11.25rem;
+	opacity: 0.06;
+}
+
+[data-dismissed] { display: none; }
+body:has([data-bare]) [data-group] { display: none; }
+
+html.reveal-off .reveal:not(.is-revealed) {
+	opacity: 1;
+	transform: none;
+	filter: none;
+}
+
+/* The header lies over a page that opens with a Cover hero: transparent
+   at the top of the page, its own scheme once the page scrolls
+   (sticky-header writes data-state on <body>). The hero slides up under it. */
+@custom-variant overlaid {
+	&:where(body:not([data-state="scrolling"]):has(main > [data-section="hero"]:first-child [data-layout="cover"]) [data-header-style="over-hero"]),
+	&:where(body:not([data-state="scrolling"]):has(main > [data-section="hero"]:first-child [data-layout="cover"]) [data-header-style="over-hero"] *) {
+		@slot;
+	}
+}
+
+body:has([data-header-style="over-hero"]) main > [data-section="hero"]:first-child:has([data-layout="cover"]) {
+	margin-top: calc(var(--header-height, 4.5rem) * -1);
+}
+
+/* The slide a carousel shows: tarot marks it aria-current. */
+@custom-variant slide-current {
+	&:where(tarot-slide[aria-current="true"] *),
+	&:where(tarot-carousel:not(:defined) tarot-slide:first-child *) {
+		@slot;
+	}
+}
+
+/* A chip or tab theme.ts (or tab-group) marks as the current one. */
+@custom-variant current {
+	&[aria-current="true"],
+	&[aria-current="page"],
+	&[aria-pressed="true"],
+	&[aria-selected="true"] {
+		@slot;
+	}
+}
+
+[data-strip] {
+	scrollbar-width: none;
+}
+
+:root {
+	font-size: var(--sites-type-base);
+	scrollbar-color: var(--sites-scheme-icons) transparent;
+}
+
+::selection {
+	background: var(--sites-color-brand-accent);
+	color: var(--sites-color-brand-primary);
+}
+
+:focus-visible {
+	outline: 2px solid var(--sites-scheme-links);
+	outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+@layer base {
+	dialog {
+		border: 0;
+		padding: 0;
+		color: inherit;
+	}
+
+	[id] {
+		scroll-margin-top: calc(var(--header-group-height, 0rem) + 4.5rem);
+	}
+
+	/* Every number the whiteboard would carry lines up in columns. */
+	.font-mono {
+		font-variant-numeric: tabular-nums;
+	}
+}
+
+/* Rich text from the editor carries no classes, so its rhythm is set here. */
+@layer components {
+	.sites-prose {
+		font-size: var(--circuit-text-body);
+		line-height: 1.6;
+	}
+
+	.sites-prose > * + * {
+		margin-top: var(--circuit-step-sm);
+	}
+
+	.sites-prose :is(h2, h3, h4) {
+		font-family: var(--sites-font-heading-family), Arial, sans-serif;
+		font-weight: 800;
+		line-height: 1.1;
+		text-transform: uppercase;
+		color: var(--sites-scheme-heading);
+		font-variation-settings: "wdth" 112;
+	}
+
+	.sites-prose h2 {
+		font-size: var(--circuit-text-h3);
+	}
+
+	.sites-prose :is(h3, h4) {
+		font-size: var(--circuit-text-h4);
+	}
+
+	.sites-prose a {
+		color: var(--sites-scheme-links);
+		text-decoration-line: underline;
+		text-underline-offset: 0.2em;
+	}
+
+	.sites-prose :is(ul, ol) {
+		display: grid;
+		gap: var(--circuit-step-xs);
+		padding-inline-start: 1.25em;
+	}
+
+	.sites-prose ul {
+		list-style: square;
+	}
+
+	.sites-prose ol {
+		list-style: decimal;
+	}
+}
+
+.sites-icon > svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/* sticky-header pins the element it is, so the renderer's wrapper steps
+   out of the way. */
+[data-section="header"]:has(sticky-header) {
+	display: contents;
+}
+
+@layer components {
+	sticky-header[disabled] {
+		position: static;
+		transform: none;
+	}
+
+	sticky-header::before {
+		content: none;
+	}
+}
+
+/* The ticker: a CSS marquee of two identical lists (tarot 0.1.0 has no
+   autoscroll yet), paused on hover, still under reduced motion. */
+@keyframes ticker {
+	to {
+		transform: translateX(-50%);
+	}
+}
+[data-ticker-track] {
+	animation: ticker var(--ticker-duration, 42s) linear infinite;
+}
+[data-speed="slow"] { --ticker-duration: 64s; }
+[data-speed="fast"] { --ticker-duration: 24s; }
+[data-direction="right"] [data-ticker-track] {
+	animation-direction: reverse;
+}
+@media (hover: hover) {
+	[data-ticker]:hover [data-ticker-track] {
+		animation-play-state: paused;
+	}
+}
+
+/* The carousels, mapped onto the scheme they sit in. */
+tarot-carousel {
+	--color-pagination-dot: color-mix(in srgb, var(--sites-scheme-foreground) 35%, transparent);
+	--color-pagination-dot-active: var(--circuit-accent);
+}
+
+.tarot-dots-list {
+	gap: 0;
+	margin: 0 auto;
+}
+
+tarot-carousel > .tarot-dots-list {
+	margin-top: var(--circuit-step-lg);
+}
+
+.tarot-dots-button {
+	width: 1.5rem;
+	height: 1.5rem;
+	padding: 0.5rem;
+	background-clip: content-box;
+	border-radius: 0;
+}
+
+dropdown-component:not(:defined) dropdown-panel {
+	display: none;
+}
+
+/* Before tarot upgrades, or with no JavaScript: a one-up carousel shows its
+   first slide, a card track lays its slides out as a row that scrolls. */
+tarot-carousel:not(:defined) tarot-slide:first-child {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+tarot-carousel[data-track]:not(:defined) tarot-track {
+	display: flex;
+	gap: var(--circuit-gap-lg);
+	overflow-x: auto;
+	padding-inline-start: var(--circuit-gutter);
+}
+
+tarot-carousel[data-track]:not(:defined) tarot-slide {
+	flex: none;
+	width: var(--track-slide, 80%);
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+[data-track="cards"] { --track-slide: 80%; }
+[data-track="photos"] { --track-slide: 76%; }
+
+@media (min-width: 48rem) {
+	tarot-carousel[data-track]:not(:defined) tarot-track {
+		padding-inline-start: 0;
+	}
+	[data-track="cards"] { --track-slide: 44%; }
+	[data-track="photos"] { --track-slide: 38%; }
+}
+
+@media (min-width: 64rem) {
+	[data-track="cards"] { --track-slide: 30%; }
+	[data-track="photos"] { --track-slide: 27%; }
+}
+
+[data-on-photo] tarot-carousel,
+tarot-carousel[data-on-photo] {
+	--color-pagination-dot: color-mix(in srgb, var(--color-on-photo) 45%, transparent);
+	--color-pagination-dot-active: var(--color-on-photo);
+}
+
+/* The lightbox: black backdrop, white chrome, the counter in mono with the
+   current number in flare, square buttons. */
+:root {
+	--tarot-lightbox-backdrop: rgb(10 10 10 / 0.96);
+	--tarot-lightbox-chrome-color: #F5F5F5;
+	--tarot-lightbox-chrome-size: 2.75rem;
+	--tarot-lightbox-chrome-inset: 1rem;
+	--tarot-lightbox-image-height: calc(100dvh - 8rem);
+}
+
+.tarot-lightbox__counter {
+	font-family: var(--sites-font-mono-family), monospace;
+	font-size: var(--circuit-text-body-sm);
+	font-weight: 500;
+	color: var(--sites-color-brand-accent);
+}
+
+.tarot-lightbox__close,
+.tarot-lightbox .tarot-button {
+	background: #1C1C1C;
+	border-radius: 0;
+}
+
+.tarot-lightbox__close:hover,
+.tarot-lightbox .tarot-button:hover {
+	background: #333333;
+}
+
+.tarot-lightbox [data-caption] {
+	display: block;
+	margin-top: 1rem;
+	color: #BDBDBD;
+	font-family: var(--sites-font-mono-family), monospace;
+	font-size: var(--circuit-text-body-xs);
+	font-weight: 500;
+	letter-spacing: 0.06em;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+@media (max-width: 47.99rem) {
+	.tarot-lightbox .tarot-button {
+		display: none;
+	}
+}
+
+/* The sheets: the mobile menu and the trial form rise from the bottom,
+   square, on the scheme's surface over a 50% black backdrop. */
+dialog-panel:has(bottom-sheet) {
+	--bs-panel-background: var(--sites-scheme-background);
+	--bs-panel-border-radius: 0;
+	--bs-panel-box-shadow: none;
+	--bs-handle-color: var(--sites-scheme-chip-border);
+	--bs-handle-width: 2.25rem;
+	--bs-handle-height: 0.25rem;
+	--bs-content-padding: var(--circuit-step-lg);
+	--bs-content-padding-block: 0 var(--circuit-step-lg);
+	--bs-overlay-background: rgb(11 11 11 / 0.5);
+	--bs-overlay-blur: 0.25rem;
+}
+
+select-dropdown {
+	--select-shadow: none;
+	--select-shadow-soft: none;
+	--select-color-text: var(--sites-scheme-input-foreground);
+	--select-color-background: var(--sites-scheme-input-background);
+	--select-color-border: var(--sites-scheme-input-border);
+	--select-color-border-hover: var(--sites-scheme-input-foreground);
+	--select-color-border-dark: var(--sites-scheme-input-foreground);
+	--select-color-primary: var(--sites-scheme-links);
+	--select-color-hover: var(--sites-scheme-chip-background);
+	--select-color-focus: var(--sites-scheme-chip-background);
+	--select-color-selected: var(--sites-scheme-chip-background);
+	display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
+	[data-ticker-track] { animation: none !important; }
+	[data-zoom] { scale: none !important; }
+	[data-hero-video] { display: none; }
+	.reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+}

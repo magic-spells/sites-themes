@@ -71,7 +71,7 @@ type and label; the theme does not create workspace content types.
 
 | Handle | Entry title | Fields |
 | --- | --- | --- |
-| `classes` | Class name | `summary`, `description`, `level`, `intensity`, `duration_minutes`, `format`, `coach` (entry to `coaches`), `image`, `image_alt`, `photos` gallery, `what_to_bring`, `who_for`, `price`, `featured`, `tag`, `order` |
+| `classes` | Class name | `short_name` (the timetable filter chip; the title when empty), `summary`, `description`, `level`, `intensity`, `duration_minutes`, `format`, `coach` (entry to `coaches`), `image`, `image_alt`, `photos` gallery, `what_to_bring`, `who_for`, `price`, `featured`, `tag`, `order` |
 | `sessions` | Label | `class` (entry to `classes`), `day` (`mon`…`sun`), `start`, `end` (text, `06:30`), `coach` (entry), `location` (entry to `locations`), `note` |
 | `coaches` | Name | `role`, `bio`, `specialties`, `credentials`, `image`, `image_alt`, `image_wide`, `image_wide_alt`, `link`, `featured`, `order` |
 | `locations` | Name | `address`, `hours` (one line per day, the times last), `phone`, `email`, `map_url`, `map_image`, `map_image_alt`, `image`, `image_alt`, `description`, `note`, `order` |
@@ -104,7 +104,7 @@ SITES_BUILDER_DIR=<engine>/tools/builder sites check ./circuit
 
 ## Known limits
 
-- Tarot has no autoscroll, so the ticker is a CSS marquee (paused on hover and under reduced
+- Tarot has no autoscroll, so the ticker is a CSS marquee (paused on hover, by its pause button and under reduced
   motion).
 - `date()` has no weekday, so the date block works it out from the ISO date.
 - The lightbox has no public `open(index)`, so album grids render a visually hidden copy of

@@ -1,4 +1,4 @@
-<!-- One post (Folio's id and settings). The head in the 40rem reading column: the topic chip, the title, the standfirst, then the place tag, the date stamp and "BY ILSE VARGA · 6 MIN READ". The cover (16:9, or the post's video as a muted loop or a player) breaks out to the full column; under it on a hairline the place with its coordinates and a 6rem drawn locator that opens the full map in a <dialog-panel>, then the image caption. The prose at 40rem with a drop cap and an end rule in stamp ink. -->
+<!-- One post (Folio's id and settings). The head in the 40rem reading column: the topic chip, the title, the standfirst, then the place tag, the date stamp and "BY ILSE VARGA · 6 MIN READ". The cover (16:9, or the post's video as a muted loop or a player) breaks out to the full column; under it on a hairline the place with its coordinates and a 6rem drawn locator that opens the full map in a <dialog-panel>, then the image caption. The prose at 40rem (a drop cap only when the setting asks; Figma draws none) and an end rule in stamp ink. -->
 {#let
   entry = page.entry
   f = entry.fields
@@ -27,11 +27,11 @@
     {#if settings.show_image && (image || film)}
       <figure class="grid gap-space-sm">
         <div class="relative aspect-video overflow-hidden rounded-sm bg-scheme-surface-2">
-          {#if image}<img class="size-full object-cover" src="{ image_url(image, 1600) }" srcset="{ image_srcset(image, [640, 1024, 1280, 1600, 2000, 2560]) }" sizes="(min-width: 82.5rem) 82.5rem, 100vw" alt="{ f.image_alt }" loading="eager" fetchpriority="high" width={ image.width } height={ image.height } />{/if}
+          {#if image}<img class="size-full object-cover" src="{ image_url(image, 1600) }" srcset="{ image_srcset(image, [640, 1024, 1280, 1600, 2000, 2560]) }" sizes="(min-width: 85rem) 85rem, 100vw" alt="{ f.image_alt }" loading="eager" fetchpriority="high" width={ image.width } height={ image.height } />{/if}
           {#if film && settings.cover_video == 'player'}
-            <video class="absolute inset-0 size-full object-cover" controls playsinline preload="none" poster={ image ? image_url(image, 1600) : null }><source src="{ film.url }" type="{ film.mime }" /></video>
+            <video class="absolute inset-0 size-full object-cover" controls playsinline preload="none" poster={ image ? image_url(image, 1600) : null }><source src="{ film.url }" type="{ film.mime }" /><a href="{ film.url }">{ t('open_video') }</a></video>
           {:else if film}
-            <video class="absolute inset-0 size-full object-cover" muted loop playsinline preload="none" poster={ image ? image_url(image, 1600) : null } data-loop aria-hidden="true"><source src="{ film.url }" type="{ film.mime }" /></video>
+            <video class="absolute inset-0 size-full object-cover" muted loop playsinline preload="none" poster={ image ? image_url(image, 1600) : null } data-loop aria-hidden="true"><source src="{ film.url }" type="{ film.mime }" /><a href="{ film.url }">{ t('open_video') }</a></video>
             <button class="absolute top-space-sm right-space-sm inline-flex items-center gap-space-xs rounded-full bg-scrim px-space-sm py-1.5 font-mono text-meta font-medium text-on-photo uppercase" type="button" data-loop-toggle data-play-label="{ t('play_loop') }" aria-pressed="false"><span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/pause.svg'}</span><span data-loop-label>{ t('pause_loop') }</span></button>
           {/if}
         </div>
@@ -44,8 +44,8 @@
                   {#if place.fields.latitude != null}<span class="font-mono text-coord text-scheme-meta"><Coord lat={ place.fields.latitude } lon={ place.fields.longitude } /></span>{/if}
                 </div>
                 {#if settings.show_locator && place.fields.latitude != null}
-                  <button class="group flex shrink-0 items-center gap-space-sm text-body-sm text-scheme-links" type="button" data-panel-open={ map_id } aria-haspopup="dialog" aria-controls={ map_id }>
-                    <span class="hidden group-hover:underline sm:inline">{ t('open_map') }</span>
+                  <button class="group flex shrink-0 items-center gap-space-sm text-body-sm text-scheme-links" type="button" data-panel-open={ map_id } aria-haspopup="dialog" aria-controls={ map_id } aria-label="{ t('open_map') }: { place.title }">
+                    <span class="hidden group-hover:underline sm:inline" aria-hidden="true">{ t('open_map') }</span>
                     <span class="block size-locator overflow-hidden rounded-sm border border-scheme-rule bg-scheme-surface-2"><WorldMap places={ [place] } stops={ [] } now={ place.handle } fit="point" ratio="square" route={ false } base={ places_path } still={ true } /></span>
                   </button>
                 {/if}
@@ -93,14 +93,14 @@
     { "type": "checkbox", "id": "show_meta", "label": "Show the topic, place, date and reading time", "default": true },
     { "type": "checkbox", "id": "show_image", "label": "Show the cover", "default": true },
     { "type": "checkbox", "id": "show_byline", "label": "Show the byline", "default": true },
-    { "type": "checkbox", "id": "drop_cap", "label": "Show a drop cap", "default": true },
+    { "type": "checkbox", "id": "drop_cap", "label": "Show a drop cap", "default": false },
     { "type": "checkbox", "id": "show_end_rule", "label": "Show the end rule", "default": true },
     { "type": "checkbox", "id": "show_locator", "label": "Show the locator map", "default": true, "info": "A small drawn map of the post's place; it opens the trip's route full size." },
     { "type": "select", "id": "cover_video", "label": "A post's video plays as", "default": "loop", "options": [ { "value": "loop", "label": "A muted loop" }, { "value": "player", "label": "A player with sound" } ], "info": "Reads the post's optional video field; the image is its poster. Files over 15 MB are skipped for the image." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "show_meta": true, "show_image": true, "show_byline": true, "drop_cap": true, "show_end_rule": true, "show_locator": true, "cover_video": "loop" } }
+    { "name": "Default", "settings": { "show_meta": true, "show_image": true, "show_byline": true, "drop_cap": false, "show_end_rule": true, "show_locator": true, "cover_video": "loop" } }
   ]
 }
 </schema>

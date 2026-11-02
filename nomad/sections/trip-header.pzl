@@ -1,13 +1,13 @@
 <!-- TODO sync with Figma (batch B) -->
 <!-- The trip page's head: the cover full-bleed at 21:9, then in the column the trip's name, its dates as a stamp pair joined by a dashed leg (the open end reads UNDER WAY), the counts and the standfirst; beside it a Night Train route inset at 4:3 framed on the trip's stops. -->
+<!-- current place: see components/CurrentPlace.pzl -->
 {#let
   trip = page.entry
   f = trip.fields
   places_path = site.settings.places_path || '/places'
   stops = content.stops.entries | where('fields.trip.handle', trip.handle) | sort('fields.arrive')
   countries = stops | map('fields.place.fields.country') | uniq
-  newest = content.posts.entries | sort('fields.date') | last
-  current = (site.settings.current_place ? (content.places.entries | find('handle', site.settings.current_place)) : null) ?? newest.fields.place
+  current = (site.settings.current_place ? (content.places.entries | find('handle', site.settings.current_place)) : null) ?? (content.posts.entries | sort('fields.date') | last).fields.place
   next_stop = stops | where('fields.next') | first
 }
 {#if trip}

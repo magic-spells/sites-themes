@@ -1,15 +1,16 @@
 <!-- TODO sync with Figma (batch B) -->
-<!-- What a month cost: one box, a ticket strip for its head (the month as a box stamp, the place, the currency code), then the rows on surface-2 on hairlines: the category, its note in muted (never meta on surface-2), the amount in mono at the right; the total from sum on a heavier rule. A place shows its latest month; a post shows the costs that point at it. Renders nothing when there are no rows. -->
+<!-- What a month cost: one box, a ticket strip for its head (the month as a box stamp, the place, the currency code), then the rows on surface-2 on hairlines, from 48rem one line of three columns as in Figma (the category, its note in muted, never meta on surface-2, the amount in mono at the right), the note stacked under its category on a phone; at most 12 rows; the total from sum on a heavier rule. A place shows its latest month; a post shows the costs that point at it. Renders nothing when there are no rows. -->
 {#let
   entry = page.entry
   all = content.costs.entries
   scoped = settings.scope == 'post' ? (all | where('fields.post.handle', entry.handle)) : (all | where('fields.place.handle', entry.handle))
   month = (scoped | sort('fields.month') | last).fields.month
-  rows = scoped | where('fields.month', month)
-  first_row = rows | first
+  month_rows = scoped | where('fields.month', month)
+  rows = month_rows | slice(0, 12)
+  first_row = month_rows | first
   place = first_row.fields.place
   currency = first_row.fields.currency
-  total = sum(rows, 'fields.amount')
+  total = sum(month_rows, 'fields.amount')
 }
 {#if entry && rows.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground" aria-labelledby="{ section.id }-title">
@@ -23,22 +24,24 @@
       </div>
       <table class="w-full bg-scheme-surface-2 text-left">
         <caption class="sr-only">{ settings.heading } · { date(month) | slice(0, 3) } { date(month, 'iso') | slice(0, 4) }</caption>
-        <thead class="sr-only"><tr><th scope="col">{ t('cost_category') }</th><th scope="col">{ t('cost_amount') }</th></tr></thead>
+        <thead class="sr-only"><tr><th scope="col">{ t('cost_category') }</th>{#if settings.show_notes}<th class="hidden md:table-cell" scope="col">{ t('cost_note') }</th>{/if}<th scope="col">{ t('cost_amount') }</th></tr></thead>
         <tbody>
           {#for row in rows}
             <tr class="border-b border-scheme-rule">
-              <th class="px-space-lg py-space-sm align-top font-normal" scope="row">
+              <th class="py-space-sm ps-space-lg pe-space-md text-left align-top font-normal md:align-baseline md:whitespace-nowrap" scope="row">
                 <span class="block text-body text-scheme-foreground">{ t('cost.' + row.fields.category) }</span>
-                {#if settings.show_notes && row.fields.note}<span class="block text-body-sm text-scheme-muted">{ row.fields.note }</span>{/if}
+                {#if settings.show_notes && row.fields.note}<span class="block text-body-sm text-scheme-muted md:hidden">{ row.fields.note }</span>{/if}
               </th>
-              <td class="px-space-lg py-space-sm text-right align-top font-mono text-body text-scheme-foreground tabular-nums">{ row.fields.amount | number_with_delimiter }</td>
+              {#if settings.show_notes}<td class="hidden w-full py-space-sm pe-space-md align-baseline text-body-sm text-scheme-muted md:table-cell">{ row.fields.note }</td>{/if}
+              <td class="py-space-sm ps-space-md pe-space-lg text-right align-top font-mono text-body whitespace-nowrap text-scheme-foreground tabular-nums md:align-baseline">{ row.fields.amount | number_with_delimiter }</td>
             </tr>
           {/for}
         </tbody>
         <tfoot>
           <tr class="border-t-2 border-scheme-foreground">
-            <th class="px-space-lg py-space-md font-heading text-h5 font-medium" scope="row">{ t('total') }</th>
-            <td class="px-space-lg py-space-md text-right font-mono text-body font-medium tabular-nums">{ total | number_with_delimiter } { currency }</td>
+            <th class="py-space-md ps-space-lg pe-space-md text-left font-heading text-h5 font-medium" scope="row">{ t('total') }</th>
+            {#if settings.show_notes}<td class="hidden md:table-cell"></td>{/if}
+            <td class="py-space-md ps-space-md pe-space-lg text-right whitespace-nowrap font-mono text-body font-medium tabular-nums">{ total | number_with_delimiter } { currency }</td>
           </tr>
         </tfoot>
       </table>

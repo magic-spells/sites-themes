@@ -1,9 +1,8 @@
 <!-- Galleries, in four layouts. Carousel: the photographs at their own ratios on one height, a strip that bleeds off the right edge at every width (tarot has no variable-width slides, so it is a scroll-snap strip and theme.ts drives the arrows). Grid: 3:2 tiles, 3 / 2 / 1 across. Columns: natural ratios in CSS columns. One-up: a tarot carousel of 3:2 frames with a caption and a "04 / 12" counter, the next frame peeking on a phone. Every layout opens the tarot lightbox (strip, grid and columns through a hidden companion carousel). Video items loop muted with a LOOP badge, started by theme.ts in view and never under reduced motion. The heading row and its rule stay inside the gutters. -->
 {#let
   gallery = settings.source == 'entry' ? page.entry.fields.photos : settings.gallery
-  items = gallery.items ?? []
-  photos = items | reject('video')
-  loops = items | where('video')
+  items = (gallery.items ?? []) | slice(0, 12)
+  cover = (items | reject('video') | first).asset
   id = 'gallery-' + section.id
   lb = 'lightbox-' + section.id
   layout = settings.layout
@@ -18,14 +17,8 @@
   {#if layout == 'one-up'}
     <div class="md:px-gutter"><tarot-carousel class="mx-auto block max-w-panel" id={ id } data-track="frames">
       <script type="application/json" data-tarot-options>{ oneup | json }</script>
-      <div class="mb-space-md flex items-end justify-between gap-space-md border-b border-scheme-rule px-gutter pb-space-sm md:px-0">
-        <div class="flex flex-wrap items-baseline gap-x-space-sm gap-y-1">
-          {#if heading}<h2 class="font-heading text-h2 font-semibold text-scheme-heading" id="{ id }-title">{ heading }</h2>{/if}
-        </div>
-        <div class="flex items-center gap-space-md">
-          <p class="font-mono text-coord text-scheme-meta tabular-nums" data-counter-for={ id }><span data-counter-index>01</span> / { items.length < 10 ? '0' : '' }{ items.length }</p>
-          <Arrows />
-        </div>
+      <div class="mb-space-md px-gutter md:px-0">
+        <SectionHead heading={ heading } id="{ id }-title" link_label={ settings.link_label } link={ settings.link } rule={ true }><div slot="actions" class="flex shrink-0 items-center gap-space-md"><p class="font-mono text-coord text-scheme-meta tabular-nums" data-counter-for={ id }><span data-counter-index>01</span> / { items.length < 10 ? '0' : '' }{ items.length }</p><Arrows /></div></SectionHead>
       </div>
       <tarot-viewport>
         <tarot-track>
@@ -33,7 +26,7 @@
             <tarot-slide>
               <figure class="grid gap-space-xs">
                 {#if item.video}
-                  <div class="relative aspect-3/2 overflow-hidden rounded-sm bg-scheme-surface-2"><video class="size-full object-cover" muted loop playsinline preload="metadata" data-loop width={ item.asset.width } height={ item.asset.height }><source src="{ item.asset.url }" type="{ item.asset.mime }" /></video><span class="absolute top-space-sm left-space-sm rounded-sm bg-scrim px-1.5 py-0.5 font-mono text-meta font-medium text-on-photo uppercase">{ t('loop') }</span></div>
+                  <div class="relative aspect-3/2 overflow-hidden rounded-sm bg-scheme-surface-2"><GalleryMedia item={ item } fit="cover" poster={ cover } /></div>
                 {:else}
                   <a class="block aspect-3/2 cursor-zoom-in overflow-hidden rounded-sm bg-scheme-surface-2" href="{ image_url(item.asset, 2560) }" data-tarot-lightbox aria-label="{ t('open_photo', { index: i + 1 }) }"><img class="size-full object-cover" src="{ image_url(item.asset, 1280) }" srcset="{ image_srcset(item.asset, [640, 1024, 1280, 1600, 2000]) }" sizes="(min-width: 60rem) 60rem, 90vw" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading={ i == 0 ? 'eager' : 'lazy' } width={ item.asset.width } height={ item.asset.height } /></a>
                 {/if}
@@ -45,28 +38,16 @@
       </tarot-viewport>
     </tarot-carousel></div>
   {:else}
-    <div class="px-gutter"><div class="mx-auto mb-space-md flex max-w-column items-end justify-between gap-space-md border-b border-scheme-rule pb-space-sm">
-      <div class="flex flex-wrap items-baseline gap-x-space-sm gap-y-1">
-        {#if heading}<h2 class="font-heading text-h2 font-semibold text-scheme-heading" id="{ id }-title">{ heading }</h2>{/if}
-        <p class="font-mono text-meta font-medium text-scheme-meta uppercase">{ photos.length | pluralize(t('photo_one'), t('photo_many')) }{#if loops.length} · { loops.length | pluralize(t('loop_one'), t('loop_many')) }{/if}</p>
-      </div>
-      <div class="flex items-center gap-space-md">
-        {#if layout == 'carousel'}<Arrows target={ id } />{/if}
-        {#if settings.link_label && settings.link}<a class="inline-flex items-center gap-1 text-body-sm whitespace-nowrap text-scheme-links hover:underline" href={ settings.link }>{ settings.link_label }<span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/arrow-right.svg'}</span></a>{/if}
-      </div>
+    <div class="px-gutter"><div class="mx-auto mb-space-md max-w-column">
+      <SectionHead heading={ heading } id="{ id }-title" link_label={ settings.link_label } link={ settings.link } rule={ true }>{#if layout == 'carousel'}<Arrows slot="actions" target={ id } />{/if}</SectionHead>
     </div></div>
     {#if layout == 'carousel'}
       <ul class="flex snap-x snap-mandatory scroll-pl-gutter gap-space-sm overflow-x-auto pr-gutter pl-gutter md:scroll-pl-edge md:gap-space-md md:pl-edge" id={ id } data-strip>
         {#for item in items, i}
-          <li class="shrink-0 snap-start { site.settings.reveal_on_scroll ? 'reveal reveal-fade-up' : '' }">
+          <li class="shrink-0 snap-start">
             <figure class="grid gap-space-xs">
               <button class="group relative block overflow-hidden rounded-sm bg-scheme-surface-2 { slide_h }" type="button" data-lightbox-open={ lb } data-index="{ i }" aria-label="{ t('open_photo', { index: i + 1 }) }">
-                {#if item.video}
-                  <video class="h-full w-auto max-w-none" muted loop playsinline preload="metadata" data-loop width={ item.asset.width } height={ item.asset.height }><source src="{ item.asset.url }" type="{ item.asset.mime }" /></video>
-                  <span class="absolute top-space-sm left-space-sm rounded-sm bg-scrim px-1.5 py-0.5 font-mono text-meta font-medium text-on-photo uppercase">{ t('loop') }</span>
-                {:else}
-                  <img class="h-full w-auto max-w-none transition-transform duration-hover ease-out-soft group-hover:scale-hover" data-zoom src="{ image_url(item.asset, 1024) }" srcset="{ image_srcset(item.asset, [480, 640, 1024, 1280]) }" sizes="(min-width: 48rem) 40vw, 80vw" alt="{ item.alt }" loading={ i < 3 ? 'eager' : 'lazy' } width={ item.asset.width } height={ item.asset.height } />
-                {/if}
+                <GalleryMedia item={ item } fit="strip" sizes="(min-width: 48rem) 40vw, 80vw" eager={ i < 3 } poster={ cover } zoom={ true } />
               </button>
               {#if settings.show_captions && item.caption}<figcaption class="{ caption_class } max-w-0 min-w-full">{ item.caption }</figcaption>{/if}
             </figure>
@@ -79,12 +60,7 @@
           <li class="{ site.settings.reveal_on_scroll ? 'reveal reveal-fade-up' : '' }">
             <figure class="grid gap-space-xs">
               <button class="group relative block aspect-3/2 w-full overflow-hidden rounded-sm bg-scheme-surface-2" type="button" data-lightbox-open={ lb } data-index="{ i }" aria-label="{ t('open_photo', { index: i + 1 }) }">
-                {#if item.video}
-                  <video class="size-full object-cover" muted loop playsinline preload="metadata" data-loop><source src="{ item.asset.url }" type="{ item.asset.mime }" /></video>
-                  <span class="absolute top-space-sm left-space-sm rounded-sm bg-scrim px-1.5 py-0.5 font-mono text-meta font-medium text-on-photo uppercase">{ t('loop') }</span>
-                {:else}
-                  <img class="size-full object-cover transition-transform duration-hover ease-out-soft group-hover:scale-hover" data-zoom src="{ image_url(item.asset, 1024) }" srcset="{ image_srcset(item.asset, [480, 640, 1024, 1280]) }" sizes="(min-width: 64rem) 26rem, (min-width: 48rem) 45vw, 100vw" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } />
-                {/if}
+                <GalleryMedia item={ item } fit="cover" sizes="(min-width: 64rem) 26rem, (min-width: 48rem) 45vw, 100vw" poster={ cover } zoom={ true } />
               </button>
               {#if settings.show_captions && item.caption}<figcaption class={ caption_class }>{ item.caption }</figcaption>{/if}
             </figure>
@@ -97,12 +73,7 @@
           <li class="mb-space-md break-inside-avoid { site.settings.reveal_on_scroll ? 'reveal reveal-fade-up' : '' }">
             <figure class="grid gap-space-xs">
               <button class="group relative block w-full overflow-hidden rounded-sm bg-scheme-surface-2" type="button" data-lightbox-open={ lb } data-index="{ i }" aria-label="{ t('open_photo', { index: i + 1 }) }">
-                {#if item.video}
-                  <video class="block h-auto w-full" muted loop playsinline preload="metadata" data-loop width={ item.asset.width } height={ item.asset.height }><source src="{ item.asset.url }" type="{ item.asset.mime }" /></video>
-                  <span class="absolute top-space-sm left-space-sm rounded-sm bg-scrim px-1.5 py-0.5 font-mono text-meta font-medium text-on-photo uppercase">{ t('loop') }</span>
-                {:else}
-                  <img class="block h-auto w-full transition-transform duration-hover ease-out-soft group-hover:scale-hover" data-zoom src="{ image_url(item.asset, 1024) }" srcset="{ image_srcset(item.asset, [480, 640, 1024, 1280]) }" sizes="(min-width: 64rem) 26rem, (min-width: 48rem) 45vw, 100vw" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } />
-                {/if}
+                <GalleryMedia item={ item } fit="natural" sizes="(min-width: 64rem) 26rem, (min-width: 48rem) 45vw, 100vw" poster={ cover } zoom={ true } />
               </button>
               {#if settings.show_captions && item.caption}<figcaption class={ caption_class }>{ item.caption }</figcaption>{/if}
             </figure>
@@ -110,7 +81,7 @@
         {/for}
       </ul></div>
     {/if}
-    <LightboxCompanion id={ lb } items={ items }><script type="application/json" data-tarot-options>{ companion | json }</script></LightboxCompanion>
+    <LightboxCompanion id={ lb } items={ items } poster={ cover }><script type="application/json" data-tarot-options>{ companion | json }</script></LightboxCompanion>
   {/if}
 </section>
 {/if}

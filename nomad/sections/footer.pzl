@@ -1,9 +1,9 @@
 <!-- TODO sync with Figma (batch D) -->
 <!-- The colophon on Night Train, never a form: the wordmark and tagline at the left; in the middle the route so far, a dashed line through the last six stops with their pins (the current one lit, the next hollow on a dotted leg), names under the pins; three stacked menus at the right edge. The bottom line: the copyright text and "Now in" (no time). On a phone the route shows its last three stops. -->
+<!-- current place: see components/CurrentPlace.pzl -->
 {#let
   places_path = site.settings.places_path || '/places'
-  newest = content.posts.entries | sort('fields.date') | last
-  current = (site.settings.current_place ? (content.places.entries | find('handle', site.settings.current_place)) : null) ?? newest.fields.place
+  current = (site.settings.current_place ? (content.places.entries | find('handle', site.settings.current_place)) : null) ?? (content.posts.entries | sort('fields.date') | last).fields.place
   legs = content.stops.entries | sort('fields.arrive') | slice(-6)
   footer_menus = [settings.menu_primary, settings.menu_secondary, settings.menu_social]
 }

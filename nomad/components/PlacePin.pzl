@@ -1,0 +1,4 @@
+<!-- component: PlacePin -->
+<!-- props: tone -->
+<!-- The mark before a place name: a small drawn map pin (assets/icons/place-pin.svg, one 1.5 stroke in currentColor), 0.875rem, centred on the line. Stamp ink on a scheme; tone "tag" for tag paper, where only tag stamp may print. A plain dot is kept only where it means now or next (the route map's list and legend). -->
+<span class="sites-icon size-place-pin shrink-0 { tone == 'tag' ? 'text-tag-stamp' : 'text-scheme-stamp' }" aria-hidden="true">{#svg 'icons/place-pin.svg'}</span>

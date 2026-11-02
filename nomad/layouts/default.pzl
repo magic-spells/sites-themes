@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{ page.seo.title || page.title } — { site.name }</title>
+    <title>{ (page.seo.title || page.title) && (page.seo.title || page.title) != site.name ? (page.seo.title || page.title) + ' — ' + site.name : site.name }</title>
     {#if page.seo.description}<meta name="description" content="{ page.seo.description }" />{/if}
     {#if page.seo.noindex}<meta name="robots" content="noindex, nofollow" />{/if}
     <link rel="canonical" href="{ url(page.path) }" />

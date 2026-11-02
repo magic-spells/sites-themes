@@ -1,21 +1,19 @@
 <!-- component: Tag -->
 <!-- props: place arrived since mini href -->
-<!-- The luggage tag: tag paper with an eyelet, the label in stamp ink, the
-     place and its coordinates in tag ink, then the arrival date stamp and
+<!-- The luggage tag: tag paper, the label in stamp ink after the map pin,
+     the place and its coordinates in tag ink, then the arrival date stamp and
      "On the road since". mini is the 200 wide "Now in" tag of the header,
      the mobile menu and the author card. Text on tag paper is always tag ink
      or tag stamp, never the scheme's colours. -->
 {#if place}
   {#if mini}
     <div class="relative grid w-tag-mini gap-1 rounded-md bg-tag px-space-sm pt-space-sm pb-space-sm text-tag-ink shadow-sm tilt-stamp">
-      <span class="size-eyelet rounded-full border-2 border-tag-ink" aria-hidden="true"></span>
-      <p class="font-mono text-meta font-medium text-tag-stamp uppercase">{ t('now_in') }</p>
+      <p class="flex items-center gap-1.5 font-mono text-meta font-medium text-tag-stamp uppercase"><PlacePin tone="tag" />{ t('now_in') }</p>
       {#if href}<a class="font-heading text-h5 font-medium hover:underline" href={ href }>{ place.title }{#if place.fields.country}, { place.fields.country }{/if}</a>{:else}<p class="font-heading text-h5 font-medium">{ place.title }{#if place.fields.country}, { place.fields.country }{/if}</p>{/if}
     </div>
   {:else}
     <div class="relative grid w-tag gap-space-xs rounded-md bg-tag px-space-md pt-space-sm pb-5 text-tag-ink shadow-sm tilt-stamp">
-      <span class="size-eyelet rounded-full border-2 border-tag-ink" aria-hidden="true"></span>
-      <p class="font-mono text-meta font-medium text-tag-stamp uppercase">{ t('currently_in') }</p>
+      <p class="flex items-center gap-1.5 font-mono text-meta font-medium text-tag-stamp uppercase"><PlacePin tone="tag" />{ t('currently_in') }</p>
       <div class="grid gap-0.5">
         {#if href}<a class="font-heading text-h4 font-medium hover:underline" href={ href }>{ place.title }{#if place.fields.country}, { place.fields.country }{/if}</a>{:else}<p class="font-heading text-h4 font-medium">{ place.title }{#if place.fields.country}, { place.fields.country }{/if}</p>{/if}
         <p class="font-mono text-coord"><Coord lat={ place.fields.latitude } lon={ place.fields.longitude } /></p>

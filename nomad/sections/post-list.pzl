@@ -1,9 +1,10 @@
 <!-- Posts as cards or rows (Folio's id and settings, plus scope, a featured first card and a topic filter). Grid: the first card featured across the column at 16:9, then two per row at 4:3, each with its date stamp crossing the picture's edge and its place tag above the title. List: rows on hairlines. With the switch on, both views render and a reader's choice is remembered (theme.ts). No pagination: a cap of 12, "12 of 14 posts" and a view-all link. The topic filter is a GET form, so it works without JavaScript; theme.ts sends it on change. -->
+<!-- current place: see components/CurrentPlace.pzl -->
 {#let
   posts_path = settings.base_path || site.settings.posts_path || '/journal'
   places_path = site.settings.places_path || '/places'
-  newest_all = content.posts.entries | sort('fields.date') | last
-  here = template.type == 'place' ? page.entry : (template.type == 'post' ? page.entry.fields.place : ((site.settings.current_place ? (content.places.entries | find('handle', site.settings.current_place)) : null) ?? newest_all.fields.place))
+  current = (site.settings.current_place ? (content.places.entries | find('handle', site.settings.current_place)) : null) ?? (content.posts.entries | sort('fields.date') | last).fields.place
+  here = template.type == 'place' ? page.entry : (template.type == 'post' ? page.entry.fields.place : current)
   this_trip = template.type == 'trip' ? page.entry : (template.type == 'post' ? page.entry.fields.trip : null)
   sorted = (settings.collection.entries ?? content.posts.entries) | sort('fields.date') | reverse
   scoped = settings.scope == 'current_place' ? (here ? (sorted | where('fields.place.handle', here.handle)) : []) : (settings.scope == 'current_trip' ? (this_trip ? (sorted | where('fields.trip.handle', this_trip.handle)) : []) : sorted)
@@ -24,10 +25,7 @@
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-view={ toggle ? view : false } aria-labelledby={ heading ? section.id + '-title' : null }>
   <div class="mx-auto grid max-w-column gap-space-lg">
     {#if heading || show_view_all}
-      <div class="flex flex-wrap items-end justify-between gap-space-sm">
-        {#if heading}<h2 class="font-heading text-h2 font-semibold text-scheme-heading" id="{ section.id }-title">{ heading }</h2>{:else}<span></span>{/if}
-        {#if show_view_all && pool.length > posts.length || show_view_all && settings.always_link}<a class="inline-flex items-center gap-1 text-body-sm text-scheme-links hover:underline" href="{ settings.view_all_href || posts_path }">{ settings.view_all_label | replace('{count}', `${pool.length}`) }<span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/arrow-right.svg'}</span></a>{/if}
-      </div>
+      <SectionHead heading={ heading } id="{ section.id }-title" link_label={ (show_view_all && pool.length > posts.length || show_view_all && settings.always_link) ? (settings.view_all_label | replace('{count}', `${pool.length}`)) : null } link={ settings.view_all_href || posts_path } />
     {/if}
     {#if toolbar}
       <div class="flex flex-wrap items-center gap-x-space-md gap-y-space-sm border-b border-scheme-rule pb-space-sm">

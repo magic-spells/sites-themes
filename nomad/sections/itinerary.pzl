@@ -1,14 +1,14 @@
-<!-- The route as tickets. Spine (a trip page): the trip's name, its dates and counts, then one ticket per stop in arrival order down a dashed route in the left gutter, each with its pin beside the stub (the current one lit, the next hollow on a dotted leg, with a NEXT badge); numbered because the order is real. Ribbon (Where next, home): a tarot carousel of tickets that runs off the right edge at every width: now, next, then the earlier stops. The server cannot tell upcoming from past, so "next" is the stop's own checkbox. -->
+<!-- The route as tickets. Spine (a trip page): the trip's name, its dates and counts, then one ticket per stop in arrival order (at most 12), 1rem apart, down a dashed route in the left gutter drawn by each stop's own pin column (nothing but <li> inside the <ol>), each with its pin beside the stub (the current one lit, the next hollow on a dotted leg, with a NEXT badge); numbered because the order is real. Ribbon (Where next, home): a tarot carousel of tickets that runs off the right edge at every width: now, next, then the earlier stops. The server cannot tell upcoming from past, so "next" is the stop's own checkbox. -->
+<!-- current place: see components/CurrentPlace.pzl -->
 {#let
   posts_path = site.settings.posts_path || '/journal'
   places_path = site.settings.places_path || '/places'
   trips_path = site.settings.trips_path || '/trips'
-  newest = content.posts.entries | sort('fields.date') | last
-  current = (site.settings.current_place ? (content.places.entries | find('handle', site.settings.current_place)) : null) ?? newest.fields.place
+  current = (site.settings.current_place ? (content.places.entries | find('handle', site.settings.current_place)) : null) ?? (content.posts.entries | sort('fields.date') | last).fields.place
   all_stops = content.stops.entries | sort('fields.arrive')
   now_stop = current ? (all_stops | where('fields.place.handle', current.handle) | reject('fields.next') | last) : null
   trip = settings.trip ?? (template.type == 'trip' ? page.entry : (now_stop ? now_stop.fields.trip : null))
-  stops = trip ? (all_stops | where('fields.trip.handle', trip.handle)) : all_stops
+  stops = (trip ? (all_stops | where('fields.trip.handle', trip.handle)) : all_stops) | slice(0, 12)
   countries = stops | map('fields.place.fields.country') | uniq
   next_stops = all_stops | where('fields.next')
   earlier = all_stops | reject('fields.next') | reverse | reject('fields.place.handle', current ? current.handle : '') | slice(0, 10)
@@ -24,15 +24,8 @@
     <tarot-carousel class="block" id={ id } data-track="tickets">
       <script type="application/json" data-tarot-options>{ options | json }</script>
       <div class="px-gutter">
-        <div class="mx-auto mb-space-md flex max-w-column items-end justify-between gap-space-md border-b border-scheme-rule pb-space-sm">
-          <div class="flex flex-wrap items-baseline gap-x-space-sm gap-y-1">
-            <h2 class="font-heading text-h2 font-semibold text-scheme-heading" id="{ id }-title">{ heading || t('where_next') }</h2>
-            {#if trip}<p class="font-mono text-meta font-medium text-scheme-meta uppercase">{ trip.title }{#unless trip.fields.end_date} · { t('under_way') }{/unless}</p>{/if}
-          </div>
-          <div class="flex items-center gap-space-md">
-            <Arrows />
-            {#if trip}<a class="text-body-sm whitespace-nowrap text-scheme-links hover:underline" href="{ trips_path }/{ trip.handle }">{ t('full_route') }</a>{/if}
-          </div>
+        <div class="mx-auto mb-space-md max-w-column">
+          <SectionHead heading={ heading || t('where_next') } id="{ id }-title" link_label={ trip ? t('full_route') : null } link={ trip ? trips_path + '/' + trip.handle : null } rule={ true }><Arrows slot="actions" /></SectionHead>
         </div>
       </div>
       <div class="pl-gutter md:pl-edge">
@@ -52,15 +45,17 @@
           <h2 class="font-heading text-h2 font-semibold text-scheme-heading" id="{ id }-title">{ heading || (trip ? t('stop_by_stop', { trip: trip.title }) : t('the_route')) }</h2>
           {#if trip}<p class="font-mono text-meta font-medium text-scheme-meta uppercase">{ date(trip.fields.start_date) } – { trip.fields.end_date ? date(trip.fields.end_date) : t('under_way') } · { stops.length | pluralize(t('stop_one'), t('stop_many')) } · { countries.length | pluralize(t('country_one'), t('country_many')) }</p>{/if}
         </div>
-        <ol class="relative grid min-w-0 max-w-ticket grid-cols-1 gap-space-md pl-space-lg md:pl-space-xl">
-          <span class="absolute top-space-xl bottom-space-xl left-3.5 w-0 border-r-2 border-dashed border-scheme-route" aria-hidden="true"></span>
+        <ol class="grid min-w-0 max-w-ticket grid-cols-1 pl-space-lg md:pl-space-xl">
           {#for stop in stops, i}
             {#let
               is_now = now_stop && stop.id == now_stop.id
               is_next = stop.fields.next
+              next_leg = i + 1 < stops.length && stops[i + 1].fields.next
+              up = i > 0 ? (is_next ? 'before:border-dotted' : 'before:border-dashed') : 'before:hidden'
+              down = i + 1 < stops.length ? (next_leg ? 'after:border-dotted' : 'after:border-dashed') : 'after:hidden'
             }
-            <li class="relative { reveal ? 'reveal reveal-fade-up' : '' }">
-              <span class="absolute top-1/2 -left-space-lg flex w-7 md:-left-space-xl -translate-y-1/2 justify-center"><Pin type={ is_now ? 'now' : (is_next ? 'next' : 'place') } /></span>
+            <li class="relative py-space-xs { reveal ? 'reveal reveal-fade-up' : '' }">
+              <span class="absolute inset-y-0 -left-space-lg flex w-7 items-center justify-center before:absolute before:top-0 before:bottom-1/2 before:left-1/2 before:-translate-x-1/2 before:border-l-2 before:border-scheme-route after:absolute after:top-1/2 after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:border-l-2 after:border-scheme-route md:-left-space-xl { up } { down }" aria-hidden="true"><span class="relative z-10 flex"><Pin type={ is_now ? 'now' : (is_next ? 'next' : 'place') } /></span></span>
               <Ticket stop={ stop } label={ t('stop_n', { n: i + 1 }) } badge={ is_next ? t('next') : null } show_posts={ settings.show_posts } show_notes={ settings.show_notes } posts_path={ posts_path } places_path={ places_path } />
             </li>
           {/for}

@@ -1,0 +1,16 @@
+<!-- component: CurrentPlace -->
+<!-- props: as -->
+<!-- Where you are now, printed. The one rule for the current place: the place whose handle the Current place theme setting holds, otherwise the place of the newest post. A component cannot hand a value back to its caller and the language has no shared snippets, so the sections that compute with the place (hero, itinerary, route-map, footer, places-index, trip-header, post-list) carry the same let line, word for word, marked "current place: see components/CurrentPlace.pzl"; a change to the rule is made here and in those seven. as: "line" the header's pin and "Now in Oaxaca, Mexico" link; "text" the same words as plain mono text (contact); "tag" the mini Now in tag (mobile menu, author card). -->
+{#let
+  current = (site.settings.current_place ? (content.places.entries | find('handle', site.settings.current_place)) : null) ?? (content.posts.entries | sort('fields.date') | last).fields.place
+  href = (site.settings.places_path || '/places') + '/' + (current ? current.handle : '')
+}
+{#if current}
+  {#if as == 'tag'}
+    <Tag place={ current } mini={ true } href={ href } />
+  {:else if as == 'line'}
+    <a class="flex items-center gap-1.5 font-mono text-meta font-medium text-scheme-meta uppercase hover:text-scheme-foreground" href={ href }><PlacePin />{ t('now_in') } { current.title }{#if current.fields.country}, { current.fields.country }{/if}</a>
+  {:else}
+    <span>{ t('now_in') } { current.title }{#if current.fields.country}, { current.fields.country }{/if}</span>
+  {/if}
+{/if}

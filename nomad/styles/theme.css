@@ -44,9 +44,19 @@
 	--color-tag-ink: var(--sites-color-brand-primary);
 	--color-tag-stamp: var(--sites-color-brand-accent);
 	--color-plane: var(--sites-color-brand-accent);
-	/* The hero and cover scrim (foundations Base/scrim, #131A23 at 70%) and
-	   the light type that sits on a photograph under it. */
-	--color-scrim: rgb(19 26 35 / 0.7);
+	/* The deep ink the scrim and the lightbox are cut from: the brand
+	   primary taken most of the way to black, so a palette change carries
+	   them (foundations Base/scrim, about #131A23). The scrim is it at 70%
+	   with the light type that sits on a photograph under it. */
+	--color-deep: color-mix(in oklab, var(--sites-color-brand-primary) 62%, black);
+	--color-scrim: color-mix(in srgb, var(--color-deep) 70%, transparent);
+	/* The lightbox on deep ink: the backdrop at 92%, the round chrome a
+	   step lighter, its hover a step more, the caption in light paper. */
+	--color-lightbox-backdrop: color-mix(in srgb, var(--color-deep) 92%, transparent);
+	--color-lightbox-chrome: color-mix(in oklab, var(--color-deep), var(--sites-color-grey-extra-light) 8%);
+	--color-lightbox-chrome-hover: color-mix(in oklab, var(--color-deep), var(--sites-color-grey-extra-light) 16%);
+	--color-lightbox-caption: color-mix(in oklab, var(--sites-color-grey-extra-light) 76%, var(--color-deep));
+	--color-lightbox-ink: color-mix(in srgb, var(--sites-color-grey-extra-light) 92%, transparent);
 	--color-on-photo: var(--sites-color-grey-extra-light);
 }
 
@@ -155,7 +165,6 @@
 	--spacing-section: var(--nomad-section);
 	--spacing-gutter: var(--nomad-gutter);
 	--spacing-button-x: var(--sites-button-padding-x);
-	--spacing-button-y: var(--sites-button-padding-y);
 
 	--radius-none: var(--sites-radius-none);
 	--radius-sm: var(--sites-radius-sm);
@@ -170,13 +179,14 @@
 
 	/* Columns and the fixed sizes of objects: a stamp, a pin, a tag and a
 	   carousel ticket are things with their own size. */
-	--container-column: 82.5rem;
+	--container-column: 85rem;
 	--container-reading: 40rem;
 	--container-side: 30rem;
 	--container-list: 25rem;
 	--container-drawer: 25rem;
 	--container-tag: 18rem;
 	--container-tag-mini: 12.5rem;
+	--container-notice: 22rem;
 	--container-ticket: 55rem;
 	--container-table: 50rem;
 	--container-panel: 60rem;
@@ -187,10 +197,10 @@
 	--spacing-icon-sm: 1rem;
 	--spacing-icon-button: 2.75rem;
 	--spacing-dot: 0.5rem;
+	--spacing-place-pin: 0.875rem;
 	--spacing-pin: 0.625rem;
 	--spacing-pin-now: 0.75rem;
 	--spacing-pulse: 1.75rem;
-	--spacing-eyelet: 0.75rem;
 	--spacing-thumb-sm: 3.5rem;
 	--spacing-thumb: 4rem;
 	--spacing-thumb-lg: 5rem;
@@ -207,15 +217,16 @@
 	--spacing-slide: 15rem;
 	--spacing-slide-lg: 20rem;
 	--spacing-slide-tall: 24rem;
-	--spacing-ribbon: 22.5rem;
 	--spacing-ribbon-sm: 18rem;
 	--spacing-textarea: 10rem;
 	--spacing-rule: 3rem;
 	--aspect-map: 960 / 373;
 	/* The left edge of the column at any width, for sections whose media
 	   bleeds off the right edge while their text keeps the column's line. */
-	--spacing-edge: max(var(--nomad-gutter), calc((100vw - 82.5rem) / 2));
+	--spacing-edge: max(var(--nomad-gutter), calc((100vw - var(--container-column)) / 2));
 	--spacing-map-pan: 60rem;
+	/* The bottom safe area (the home indicator) a fixed strip keeps clear of. */
+	--spacing-safe: env(safe-area-inset-bottom, 0rem);
 
 	/* Decoration steps (foundations Decor collection): the tilt of a date
 	   stamp and the hero tag, the two tilts a stamp wall alternates with, and
@@ -582,8 +593,8 @@ tarot-carousel[data-track="tickets"]:not(:defined) tarot-slide {
    lightbox board): the backdrop at 92%, round chrome 1rem in, the counter
    and caption in mono. */
 :root {
-	--tarot-lightbox-backdrop: rgb(19 26 35 / 0.92);
-	--tarot-lightbox-chrome-color: rgb(230 225 214 / 0.92);
+	--tarot-lightbox-backdrop: var(--color-lightbox-backdrop);
+	--tarot-lightbox-chrome-color: var(--color-lightbox-ink);
 	--tarot-lightbox-chrome-size: 2.75rem;
 	--tarot-lightbox-chrome-inset: 1rem;
 	--tarot-lightbox-image-height: calc(100dvh - 8rem);
@@ -597,18 +608,18 @@ tarot-carousel[data-track="tickets"]:not(:defined) tarot-slide {
 
 .tarot-lightbox__close,
 .tarot-lightbox .tarot-button {
-	background: #1E2731;
+	background: var(--color-lightbox-chrome);
 }
 
 .tarot-lightbox__close:hover,
 .tarot-lightbox .tarot-button:hover {
-	background: #2C3743;
+	background: var(--color-lightbox-chrome-hover);
 }
 
 .tarot-lightbox [data-caption] {
 	display: block;
 	margin-top: 1rem;
-	color: #B7BEC6;
+	color: var(--color-lightbox-caption);
 	font-family: var(--sites-font-mono-family), monospace;
 	font-size: var(--nomad-text-coord);
 	text-align: center;

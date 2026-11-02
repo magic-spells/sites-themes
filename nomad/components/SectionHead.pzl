@@ -1,0 +1,10 @@
+<!-- component: SectionHead -->
+<!-- props: heading id link_label link rule -->
+<!-- A section's head row: the h2 at the left with its view-all link under it, left-aligned (no count line: counts stay only where they are the content, the stamp wall and the by-the-numbers block); carousel controls in the "actions" slot stay at the right on the heading's row. rule draws the hairline under the row (a carousel's head). -->
+<div class="flex items-end justify-between gap-space-md { rule ? 'border-b border-scheme-rule pb-space-sm' : '' }">
+  <div class="grid min-w-0 gap-1">
+    {#if heading}<h2 class="font-heading text-h2 font-semibold text-scheme-heading" id={ id }>{ heading }</h2>{/if}
+    {#if link_label && link}<a class="inline-flex w-fit items-center gap-1 text-body-sm text-scheme-links hover:underline" href={ link }>{ link_label }<span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/arrow-right.svg'}</span></a>{/if}
+  </div>
+  <Slot name="actions"/>
+</div>

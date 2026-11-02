@@ -1,4 +1,5 @@
 <!-- The signature: where I've been. On Night Train, the place list at the column's left edge and the drawn map bleeding off the right edge, one pin per place, the route dashed through the stops in arrival order (the leg to the next stop dotted), the current pin lit with one slow pulse. A row and its pin light each other on hover (theme.ts); a pin links to its place. The country filter (a <dropdown-panel>) hides rows and pins by data-country; without JavaScript the list and links all work. Below 48rem the list stacks above the map, which shows at a fixed scale framed on the current and next stops. -->
+<!-- current place: see components/CurrentPlace.pzl -->
 {#let
   places_path = site.settings.places_path || '/places'
   places = settings.places.entries ?? content.places.entries
@@ -7,14 +8,16 @@
   stops = trip ? (all_stops | where('fields.trip.handle', trip.handle)) : all_stops
   posts = content.posts.entries
   route_points = settings.show_route == 'posts' ? (posts | sort('fields.date')) : stops
-  newest = posts | sort('fields.date') | last
-  current = (site.settings.current_place ? (places | find('handle', site.settings.current_place)) : null) ?? newest.fields.place
+  current = (site.settings.current_place ? (content.places.entries | find('handle', site.settings.current_place)) : null) ?? (content.posts.entries | sort('fields.date') | last).fields.place
   next_stop = stops | where('fields.next') | first
   trip_handles = trip ? (stops | map('fields.place.handle') | uniq) : null
   row_handles = stops | reject('fields.next') | reverse | map('fields.place.handle') | uniq
   rows = row_handles.length ? row_handles : (places | sort('title') | map('handle'))
   shown = rows | slice(0, settings.list_limit)
   countries = places | map('fields.country') | uniq | sort
+  visited = all_stops | reject('fields.next')
+  visited_places = visited.length ? size(visited | map('fields.place.handle') | compact | uniq) : places.length
+  visited_countries = visited.length ? size(visited | map('fields.place.fields.country') | compact | uniq) : countries.length
   since = site.settings.on_road_since
   fit = trip && settings.fit == 'trip' ? 'trip' : 'world'
 }
@@ -24,7 +27,7 @@
       <div class="grid w-full max-w-list min-w-0 flex-1 basis-80 gap-space-md pr-gutter md:pr-0">
         <div class="grid gap-space-xs">
           <h2 class="font-heading text-h2 font-semibold text-scheme-heading" id="{ section.id }-title">{ trip ? (settings.heading || trip.title) : settings.heading }</h2>
-          {#if settings.show_count}<p class="text-body text-scheme-muted">{#if trip}{ t('trip_count', { stops: stops.length, countries: size(stops | map('fields.place.fields.country') | uniq) }) }{:else}{ t('places_count', { places: places.length, countries: countries.length }) }{#if since} { t('since_date', { date: date(since) }) }{/if}{/if}</p>{/if}
+          {#if settings.show_count}<p class="text-body text-scheme-muted">{#if trip}{ t('trip_count', { stops: stops.length, countries: size(stops | map('fields.place.fields.country') | uniq) }) }{:else}{ t('places_count', { places: visited_places, countries: visited_countries }) }{#if since} { t('since_date', { date: date(since) }) }{/if}{/if}</p>{/if}
         </div>
         {#if settings.country_filter && countries.length > 1}
           <dropdown-component class="w-fit" close-delay="150">
@@ -43,7 +46,7 @@
               p = places | find('handle', h)
               stay = stops | where('fields.place.handle', h) | reject('fields.next') | last
             }
-            {#if p}<PlaceRow place={ p } href="{ places_path }/{ p.handle }" count={ size(posts | where('fields.place.handle', h)) } arrived={ stay ? stay.fields.arrive : null } now={ current && current.handle == h } next={ false } />{/if}
+            {#if p}<PlaceRow place={ p } href="{ places_path }/{ p.handle }" count={ size(posts | where('fields.place.handle', h)) } arrived={ stay ? stay.fields.arrive : null } now={ current && current.handle == h } />{/if}
           {/for}
         </ul>
         {#if settings.link_label}<a class="inline-flex w-fit items-center gap-1 text-body-sm text-scheme-links hover:underline" href={ settings.link || places_path }>{ settings.link_label | replace('{count}', `${places.length}`) }<span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/arrow-right.svg'}</span></a>{/if}
@@ -67,8 +70,8 @@
   "kind": "Collections",
   "icon": "map",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Where I've been", "info": "On a trip, empty uses the trip's name." },
-    { "type": "checkbox", "id": "show_count", "label": "Show the count line", "default": true, "info": "Computed: places, countries and On the road since. Nothing is invented." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Where I’ve been", "info": "On a trip, empty uses the trip's name." },
+    { "type": "checkbox", "id": "show_count", "label": "Show the count line", "default": true, "info": "Computed: the places and countries you have been to (the stops, leaving out the next one) and On the road since. Nothing is invented." },
     { "type": "collection", "id": "places", "label": "Places", "info": "Reads places entries: title, handle, country, latitude, longitude, image. Empty uses every place." },
     { "type": "select", "id": "show_route", "label": "Route line", "default": "stops", "options": [ { "value": "none", "label": "None" }, { "value": "stops", "label": "Through the stops, by arrival" }, { "value": "posts", "label": "Through the posts, by date" } ], "info": "Stops come from the stops content type (trip, place, arrive, nights, next)." },
     { "type": "entry", "id": "trip", "label": "Trip", "info": "A trips entry. Empty shows every stop; on a trip page it uses that trip." },
@@ -83,9 +86,9 @@
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "night" }
   ],
   "presets": [
-    { "name": "Everywhere", "settings": { "heading": "Where I've been", "show_count": true, "places": "places", "show_route": "stops", "fit": "world", "show_list": true, "list_limit": 6, "country_filter": true, "link_label": "All {count} places", "link": "", "anchor": false, "map_style": "drawn", "color_scheme": "night" } },
+    { "name": "Everywhere", "settings": { "heading": "Where I’ve been", "show_count": true, "places": "places", "show_route": "stops", "fit": "world", "show_list": true, "list_limit": 6, "country_filter": true, "link_label": "All {count} places", "link": "", "anchor": false, "map_style": "drawn", "color_scheme": "night" } },
     { "name": "This trip", "settings": { "heading": "", "show_count": true, "places": "places", "show_route": "stops", "fit": "trip", "show_list": true, "list_limit": 12, "country_filter": false, "link_label": "", "link": "", "anchor": false, "map_style": "drawn", "color_scheme": "night" } },
-    { "name": "Compact", "settings": { "heading": "Where I've been", "show_count": true, "places": "places", "show_route": "stops", "fit": "world", "show_list": false, "list_limit": 6, "country_filter": false, "link_label": "", "link": "", "anchor": false, "map_style": "drawn", "color_scheme": "night" } }
+    { "name": "Compact", "settings": { "heading": "Where I’ve been", "show_count": true, "places": "places", "show_route": "stops", "fit": "world", "show_list": false, "list_limit": 6, "country_filter": false, "link_label": "", "link": "", "anchor": false, "map_style": "drawn", "color_scheme": "night" } }
   ]
 }
 </schema>

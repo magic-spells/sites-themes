@@ -1,5 +1,5 @@
 <!-- TODO sync with Figma (batch C) -->
-<!-- The countries as a stamp wall, carrying the counters: the heading line reads "11 countries · 12 places · 14 posts, since Apr 3, 2023", every number computed. Then one ring per country in first-arrival order (from the stops), in stamp ink at one of three tilts by position: the country, its first place and the first arrival date. The next country's ring is dashed only and reads NEXT. A distance shows only when the Traveller setting holds one. -->
+<!-- The countries as a stamp wall, carrying the counters: the heading line reads "10 countries · 11 places · 14 posts, since Apr 3, 2023", every number computed: places and countries count where you have been (the stops, leaving out the next one). Then one ring per country in first-arrival order (from the stops), in stamp ink at one of three tilts by position: the country, its first place and the first arrival date. The next country's ring is dashed only and reads NEXT. A distance shows only when the Traveller setting holds one. -->
 {#let
   places = content.places.entries
   stops = content.stops.entries | sort('fields.arrive')
@@ -7,12 +7,15 @@
   posts = content.posts.entries
   since = site.settings.on_road_since
   wall = stops | map('fields.place.fields.country') | compact | uniq
+  visited = stops | reject('fields.next')
+  n_places = visited.length ? size(visited | map('fields.place.handle') | compact | uniq) : places.length
+  n_countries = visited.length ? size(visited | map('fields.place.fields.country') | compact | uniq) : countries.length
   tilts = ['tilt-stamp', 'tilt-left', 'tilt-right']
   km = site.settings.distance_km
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground" aria-labelledby="{ section.id }-title">
   <div class="mx-auto grid max-w-column gap-space-xl">
-    <h2 class="max-w-copy font-heading text-h2 font-semibold text-balance text-scheme-heading" id="{ section.id }-title">{#if settings.show_counts}<span class="text-scheme-stamp">{ countries.length }</span> { countries.length == 1 ? t('country_word_one') : t('country_word_many') } · <span class="text-scheme-stamp">{ places.length }</span> { places.length == 1 ? t('place_word_one') : t('place_word_many') } · <span class="text-scheme-stamp">{ posts.length }</span> { posts.length == 1 ? t('post_word_one') : t('post_word_many') }{#if settings.distance && km} · <span class="text-scheme-stamp">{ km | number_with_delimiter }</span> { t('km') }{/if}{#if since}, { t('since_date', { date: date(since) }) }{/if}{:else}{ settings.heading }{/if}</h2>
+    <h2 class="max-w-copy font-heading text-h2 font-semibold text-balance text-scheme-heading" id="{ section.id }-title">{#if settings.show_counts}<span class="text-scheme-stamp">{ n_countries }</span> { n_countries == 1 ? t('country_word_one') : t('country_word_many') } · <span class="text-scheme-stamp">{ n_places }</span> { n_places == 1 ? t('place_word_one') : t('place_word_many') } · <span class="text-scheme-stamp">{ posts.length }</span> { posts.length == 1 ? t('post_word_one') : t('post_word_many') }{#if settings.distance && km} · <span class="text-scheme-stamp">{ km | number_with_delimiter }</span> { t('km') }{/if}{#if since}, { t('since_date', { date: date(since) }) }{/if}{:else}{ settings.heading }{/if}</h2>
     {#if wall.length}
       <ul class="flex flex-wrap justify-center gap-x-space-md gap-y-space-lg">
         {#for country in wall, i}

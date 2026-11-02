@@ -1,5 +1,5 @@
 <!-- TODO sync with Figma (batch C) -->
-<!-- What I carry, or what I use: gear in collapsible groups (<collapsible-component>) on hairlines, each header with the group, its item count and weight in mono; rows with a square shot on surface-2, the name, a one-line verdict in muted, the grams at the right and a link. The kit's total from sum on a heavier rule. Services have no grams. Without JavaScript every group shows. -->
+<!-- What I carry, or what I use: gear in collapsible groups (<collapsible-component>) on hairlines, each header with the group, its item count and weight in mono; at most 12 rows a group, each with a square shot on surface-2, the name, a one-line verdict in muted, the grams at the right and a link. The kit's total from sum on a heavier rule. Services have no grams. Without JavaScript every group shows. -->
 {#let
   all = content.gear.entries | sort('fields.order')
   kit_groups = ['carry', 'work', 'tech']
@@ -14,6 +14,7 @@
       {#for group in groups, gi}
         {#let
           items = all | where('fields.group', group)
+          rows = items | slice(0, 12)
           grams = sum(items, 'fields.weight_grams')
         }
         {#if items.length}
@@ -26,7 +27,7 @@
               </button></h3>
               <collapsible-content open={ settings.open_first ? gi == 0 : true }>
                 <ul class="grid pb-space-md">
-                  {#for item in items}
+                  {#for item in rows}
                     {#let g = item.fields}
                     <li class="flex items-center gap-space-md border-t border-scheme-rule py-space-sm">
                       <span class="block size-thumb shrink-0 overflow-hidden rounded-sm bg-scheme-surface-2">{#if g.image}<img class="size-full object-cover" src="{ image_url(g.image, 160, { height: 160 }) }" alt="{ g.image_alt }" loading="lazy" width="160" height="160" />{/if}</span>

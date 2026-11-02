@@ -96,17 +96,47 @@ document.addEventListener('click', (event) => {
 
 // The notice is a plain region that renders hidden. It shows once per
 // visitor and key, without taking focus or scroll from the page; its buttons
-// hide it, and the choice is remembered.
+// hide it, and the choice is remembered. A page that opens on a cover (the
+// hero, a place's cover: [data-notice-avoid]) keeps it back until that cover
+// has scrolled clear of the strip the notice would take, so the first
+// screen's heading, buttons and luggage tag are never under it.
+function noticeHeight(notice: HTMLElement): number {
+	notice.style.visibility = 'hidden';
+	notice.hidden = false;
+	const height = notice.offsetHeight;
+	notice.hidden = true;
+	notice.style.visibility = '';
+	return height;
+}
+
 for (const notice of document.querySelectorAll<HTMLElement>('[data-notice]')) {
 	const key = notice.getAttribute('data-notice') || notice.id;
 	if (dismissed(key)) continue;
-	notice.hidden = false;
 	for (const button of notice.querySelectorAll('[data-notice-close]')) {
 		button.addEventListener('click', () => {
 			remember(key);
 			notice.hidden = true;
 		});
 	}
+	const cover = document.querySelector<HTMLElement>('[data-notice-avoid]');
+	if (!cover) {
+		notice.hidden = false;
+		continue;
+	}
+	let height = noticeHeight(notice);
+	const check = () => {
+		if (cover.getBoundingClientRect().bottom > window.innerHeight - height) return;
+		window.removeEventListener('scroll', check);
+		window.removeEventListener('resize', onResize);
+		notice.hidden = false;
+	};
+	const onResize = () => {
+		height = noticeHeight(notice);
+		check();
+	};
+	window.addEventListener('scroll', check, { passive: true });
+	window.addEventListener('resize', onResize);
+	check();
 }
 
 // An announcement with a key hides for good once its × is pressed. Changing

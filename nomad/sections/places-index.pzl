@@ -1,5 +1,6 @@
 <!-- TODO sync with Figma (batch B) -->
 <!-- Destinations A–Z: every place as a big Besley row, grouped by country under mono heads with counts, each row with its 64 square picture (a list of visual work shows the work) and its post count and last visit at the right. From 48rem a sticky 4:5 photograph beside the list shows the row under the pointer (theme.ts). The country filter hides rows by data-country. -->
+<!-- current place: see components/CurrentPlace.pzl -->
 {#let
   places_path = site.settings.places_path || '/places'
   places = content.places.entries | sort('title')
@@ -7,8 +8,7 @@
   stops = content.stops.entries
   countries = places | map('fields.country') | compact | uniq | sort
   grouped = settings.group_by == 'country'
-  newest = posts | sort('fields.date') | last
-  current = (site.settings.current_place ? (places | find('handle', site.settings.current_place)) : null) ?? newest.fields.place
+  current = (site.settings.current_place ? (content.places.entries | find('handle', site.settings.current_place)) : null) ?? (content.posts.entries | sort('fields.date') | last).fields.place
   first_photo = (current ?? (places | first)).fields.image
   groups = grouped ? countries : ['']
 }

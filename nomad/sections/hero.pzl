@@ -1,35 +1,36 @@
-<!-- "Currently in", the first view. The current place's photograph (or a muted loop) full-bleed under the Night scrim, stopping 3rem short of the bottom so the last band is Night Train and the luggage tag crosses from the photo into the map band below. The place name at display size bottom-left with one line and two actions; the tag at the right, tilted -3°, its bottom on the section's edge. The loop starts from theme.ts only, never under reduced motion, and pauses off-screen; the poster stands otherwise, and a video over 15 MB is skipped for the image. Nothing here moves on load. -->
+<!-- "Currently in", the first view. The current place's photograph (or a muted loop) full-bleed under the Night scrim, stopping 3rem short of the bottom so the last band is Night Train and the luggage tag crosses from the photo into the map band below. The place name at display size bottom-left with one line and two actions; the tag at the right, tilted -3°, its bottom on the section's edge. The loop starts from theme.ts only, never under reduced motion, and pauses off-screen; the poster stands otherwise, and a video over 15 MB is skipped for the image. Nothing here moves on load. The loop's pause control sits top-right from 48rem and, below it, as a round button at the photo's bottom-right edge, clear of the heading. -->
+<!-- current place: see components/CurrentPlace.pzl -->
 {#let
   places_path = site.settings.places_path || '/places'
-  newest = content.posts.entries | sort('fields.date') | last
-  current = settings.place ?? ((site.settings.current_place ? (content.places.entries | find('handle', site.settings.current_place)) : null) ?? newest.fields.place)
-  image = settings.image ?? current.fields.image
+  current = (site.settings.current_place ? (content.places.entries | find('handle', site.settings.current_place)) : null) ?? (content.posts.entries | sort('fields.date') | last).fields.place
+  place = settings.place ?? current
+  image = settings.image ?? place.fields.image
   loop = settings.video && settings.video.byte_size <= 15728640 ? settings.video : null
-  stay = current ? (content.stops.entries | where('fields.place.handle', current.handle) | reject('fields.next') | sort('fields.arrive') | last) : null
-  heading = settings.heading || current.title
-  primary_label = settings.primary_label || t('read_from', { place: current.title })
-  primary_link = settings.primary_link || places_path + '/' + current.handle
+  stay = place ? (content.stops.entries | where('fields.place.handle', place.handle) | reject('fields.next') | sort('fields.arrive') | last) : null
+  heading = settings.heading || place.title
+  primary_label = settings.primary_label || t('read_from', { place: place.title })
+  primary_link = settings.primary_link || places_path + '/' + place.handle
   tall = settings.height == 'tall'
 }
-<section class="relative isolate flex min-h-hero flex-col justify-end overflow-hidden bg-scheme-background px-gutter pt-section text-scheme-foreground { tall ? 'md:min-h-hero-tall' : '' }" aria-label="{ heading }">
+<section data-notice-avoid class="relative isolate flex min-h-hero flex-col justify-end overflow-hidden bg-scheme-background px-gutter pt-section text-scheme-foreground { tall ? 'md:min-h-hero-tall' : '' }" aria-label="{ heading }">
   <div class="absolute inset-x-0 top-0 bottom-band -z-10 bg-scheme-surface-2">
-    {#if image}<img class="size-full object-cover" src="{ image_url(image, 1600) }" srcset="{ image_srcset(image, [768, 1024, 1280, 1600, 2000, 2560]) }" sizes="100vw" alt="{ settings.image ? settings.image.alt : current.fields.image_alt }" loading="eager" fetchpriority="high" width={ image.width } height={ image.height } />{/if}
-    {#if loop}<video class="absolute inset-0 size-full object-cover" muted loop playsinline preload="none" poster={ image ? image_url(image, 1600) : null } data-loop aria-hidden="true"><source src="{ loop.url }" type="{ loop.mime }" /></video>{/if}
+    {#if image}<img class="size-full object-cover" src="{ image_url(image, 1600) }" srcset="{ image_srcset(image, [768, 1024, 1280, 1600, 2000, 2560]) }" sizes="100vw" alt="{ settings.image ? settings.image.alt : place.fields.image_alt }" loading="eager" fetchpriority="high" width={ image.width } height={ image.height } />{/if}
+    {#if loop}<video class="absolute inset-0 size-full object-cover" muted loop playsinline preload="none" poster={ image ? image_url(image, 1600) : null } data-loop aria-hidden="true"><source src="{ loop.url }" type="{ loop.mime }" /><a href="{ loop.url }">{ t('open_video') }</a></video>{/if}
     <div class="absolute inset-0 bg-linear-to-t from-scrim via-scrim/40 via-30% to-transparent to-55%" aria-hidden="true"></div>
   </div>
-  {#if loop}<button class="absolute top-section right-gutter z-10 inline-flex items-center gap-space-xs rounded-full bg-scrim px-space-sm py-1.5 font-mono text-meta font-medium text-on-photo uppercase" type="button" data-loop-toggle data-play-label="{ t('play_loop') }" aria-pressed="false"><span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/pause.svg'}</span><span data-loop-label>{ t('pause_loop') }</span></button>{/if}
+  {#if loop}<button class="absolute right-gutter bottom-band z-10 mb-space-sm inline-flex size-icon-button items-center justify-center gap-space-xs rounded-full bg-scrim font-mono text-meta font-medium text-on-photo uppercase md:top-section md:bottom-auto md:mb-0 md:size-auto md:px-space-sm md:py-1.5" type="button" data-loop-toggle data-play-label="{ t('play_loop') }" aria-pressed="false"><span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/pause.svg'}</span><span class="sr-only md:not-sr-only" data-loop-label>{ t('pause_loop') }</span></button>{/if}
   <div class="mx-auto flex w-full max-w-column flex-wrap items-end justify-between gap-x-space-xl gap-y-space-lg">
     <div class="grid max-w-copy min-w-0 flex-1 basis-80 gap-space-md pb-space-lg md:pb-24">
       <h1 class="font-heading text-display font-semibold text-balance text-on-photo">{ heading }</h1>
       {#if settings.text}<p class="max-w-copy text-body-lg text-pretty text-on-photo">{ settings.text }</p>{/if}
       <div class="flex flex-wrap gap-space-sm">
-        {#if current}<Button href={ primary_link }>{ primary_label }</Button>{/if}
+        {#if place}<Button href={ primary_link }>{ primary_label }</Button>{/if}
         {#if settings.secondary_label}<Button href={ settings.secondary_link || '#route' } tone="photo">{ settings.secondary_label }</Button>{/if}
       </div>
     </div>
-    {#if settings.show_tag && current}
+    {#if settings.show_tag && place}
       <div class="pb-space-md md:pb-space-sm">
-        <Tag place={ current } arrived={ stay ? stay.fields.arrive : null } since={ site.settings.on_road_since } href="{ places_path }/{ current.handle }" />
+        <Tag place={ place } arrived={ stay ? stay.fields.arrive : null } since={ site.settings.on_road_since } href="{ places_path }/{ place.handle }" />
       </div>
     {/if}
   </div>

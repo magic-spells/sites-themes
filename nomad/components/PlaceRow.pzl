@@ -1,8 +1,8 @@
 <!-- component: PlaceRow -->
-<!-- props: place href count arrived now next -->
+<!-- props: place href count arrived now -->
 <!-- A place as a row on a hairline: a 56 square picture, a route dot (the
      current place's in stamp ink), the name over the country and arrival,
-     and the post count at the right in mono. -->
+     and the post count at the right in mono. The dot's colour alone says now; no NOW prefix, so the row stays one line. -->
 {#let f = place.fields}
 <li class="border-b border-scheme-rule" data-country={ f.country } data-place-row={ place.handle }>
   <a class="group flex items-center gap-space-sm py-space-xs" href={ href }>
@@ -12,6 +12,6 @@
       <span class="font-heading text-h5 font-medium text-scheme-heading decoration-1 underline-offset-4 group-hover:underline">{ place.title }</span>
       <span class="text-body-sm text-scheme-muted">{ f.country }{#if arrived} · {#if now}{ t('since_date', { date: date(arrived) }) }{:else}{ date(arrived) }{/if}{/if}</span>
     </span>
-    <span class="shrink-0 font-mono text-meta font-medium text-scheme-meta uppercase">{#if now}{ t('now') } · {:else if next}{ t('next') } · {/if}{ count | pluralize(t('post_one'), t('post_many')) }</span>
+    <span class="shrink-0 font-mono text-meta font-medium text-scheme-meta uppercase">{ count | pluralize(t('post_one'), t('post_many')) }</span>
   </a>
 </li>

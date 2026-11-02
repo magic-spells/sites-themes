@@ -2,8 +2,6 @@
 {#let
   wordmark = settings.logo_text || site.settings.wordmark || site.name
   places_path = site.settings.places_path || '/places'
-  newest = content.posts.entries | sort('fields.date') | last
-  current = (site.settings.current_place ? (content.places.entries | find('handle', site.settings.current_place)) : null) ?? newest.fields.place
   recent = content.stops.entries | reject('fields.next') | sort('fields.arrive') | reverse | map('fields.place.handle') | uniq | slice(0, 6)
 }
 <sticky-header class="block" settle-overshoot="0" disabled={ !settings.sticky }>
@@ -11,9 +9,7 @@
     <div class="mx-auto flex max-w-column items-center justify-between gap-space-md">
       <div class="grid gap-0.5 md:flex md:items-center md:gap-space-md">
         <a class="font-heading text-h4 font-extrabold whitespace-nowrap text-scheme-heading" href="/">{#if settings.logo}<img class="h-control w-auto" src="{ image_url(settings.logo, 320) }" alt="{ wordmark }" width={ settings.logo.width } height={ settings.logo.height } />{:else}{ wordmark }{/if}</a>
-        {#if settings.show_now && current}
-          <a class="flex items-center gap-1.5 font-mono text-meta font-medium text-scheme-meta uppercase hover:text-scheme-foreground" href="{ places_path }/{ current.handle }"><span class="flex size-icon-sm items-center justify-center"><span class="size-dot rounded-full bg-scheme-stamp" aria-hidden="true"></span></span>{ t('now_in') } { current.title }{#if current.fields.country}, { current.fields.country }{/if}</a>
-        {/if}
+        {#if settings.show_now}<CurrentPlace as="line" />{/if}
       </div>
       {#if settings.menu.items.length}
         <nav class="hidden md:block" aria-label="{ t('main_navigation') }">

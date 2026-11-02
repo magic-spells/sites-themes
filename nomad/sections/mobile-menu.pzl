@@ -1,9 +1,4 @@
 <!-- The mobile menu: a @magic-spells <dialog-panel>, a left drawer over the page dimmed by the text colour at 50% with a small blur. It closes on the scrim, Escape and its × and hands focus back to the header's Menu button. The main menu in Besley, the "Now in" mini tag, then the secondary menu and the socials. -->
-{#let
-  places_path = site.settings.places_path || '/places'
-  newest = content.posts.entries | sort('fields.date') | last
-  current = (site.settings.current_place ? (content.places.entries | find('handle', site.settings.current_place)) : null) ?? newest.fields.place
-}
 <dialog-panel id="mobile-menu" position="left">
   <dialog-backdrop class="bg-scheme-backdrop backdrop-blur-sm"></dialog-backdrop>
   <dialog class="h-dvh w-full max-w-drawer overflow-y-auto bg-scheme-background text-scheme-foreground shadow-none" aria-label="{ t('menu') }">
@@ -21,7 +16,7 @@
           </ul>
         </nav>
       {/if}
-      {#if settings.show_now && current}<div class="py-space-xs"><Tag place={ current } mini={ true } href="{ places_path }/{ current.handle }" /></div>{/if}
+      {#if settings.show_now}<div class="py-space-xs"><CurrentPlace as="tag" /></div>{/if}
       {#if settings.menu_secondary.items.length || settings.menu_social.items.length}
         <div class="grid gap-space-md border-t border-scheme-rule pt-space-md">
           {#if settings.menu_secondary.items.length}

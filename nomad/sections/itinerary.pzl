@@ -55,7 +55,7 @@
               down = i + 1 < stops.length ? (next_leg ? 'after:border-dotted' : 'after:border-dashed') : 'after:hidden'
             }
             <li class="relative py-space-xs { reveal ? 'reveal reveal-fade-up' : '' }">
-              <span class="absolute inset-y-0 -left-space-lg flex w-7 items-center justify-center before:absolute before:top-0 before:bottom-1/2 before:left-1/2 before:-translate-x-1/2 before:border-l-2 before:border-scheme-route after:absolute after:top-1/2 after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:border-l-2 after:border-scheme-route md:-left-space-xl { up } { down }" aria-hidden="true"><span class="relative z-10 flex"><Pin type={ is_now ? 'now' : (is_next ? 'next' : 'place') } /></span></span>
+              <span class="absolute inset-y-0 -left-space-lg flex w-7 items-center justify-center before:absolute before:top-0 before:bottom-1/2 before:left-1/2 before:-translate-x-1/2 before:border-r-2 before:border-scheme-route after:absolute after:top-1/2 after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:border-r-2 after:border-scheme-route md:-left-space-xl { up } { down }" aria-hidden="true"><span class="relative z-10 flex"><Pin type={ is_now ? 'now' : (is_next ? 'next' : 'place') } /></span></span>
               <Ticket stop={ stop } label={ t('stop_n', { n: i + 1 }) } badge={ is_next ? t('next') : null } show_posts={ settings.show_posts } show_notes={ settings.show_notes } posts_path={ posts_path } places_path={ places_path } />
             </li>
           {/for}

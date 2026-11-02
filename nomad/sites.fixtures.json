@@ -1030,11 +1030,6 @@
           "label": "Author"
         },
         {
-          "id": "reading_minutes",
-          "type": "number",
-          "label": "Reading minutes"
-        },
-        {
           "id": "standfirst",
           "type": "textarea",
           "label": "Standfirst"
@@ -1053,11 +1048,6 @@
           "id": "body",
           "type": "richtext",
           "label": "Body"
-        },
-        {
-          "id": "image_caption",
-          "type": "text",
-          "label": "Image caption"
         },
         {
           "id": "place",
@@ -1091,7 +1081,6 @@
             "topic": "Money",
             "date": "2026-10-26",
             "author": "Ilse Varga",
-            "reading_minutes": 6,
             "standfirst": "Rent, a desk, food, buses and a phone plan: the whole of October in Jalatlaco, to the peso.",
             "image": "as_3x2_clay",
             "image_alt": "What a month in Oaxaca cost, peso by peso (placeholder)",
@@ -1099,8 +1088,7 @@
             "place": "place_oaxaca",
             "trip": "trip_the_americas",
             "video": "",
-            "photos": "oaxaca-weeks",
-            "image_caption": "The receipts, sorted by category on the kitchen table."
+            "photos": "oaxaca-weeks"
           }
         },
         {
@@ -1111,7 +1099,6 @@
             "topic": "Food",
             "date": "2026-10-12",
             "author": "Ilse Varga",
-            "reading_minutes": 7,
             "standfirst": "The comal starts at six. By seven the whole flat smells of corn, and I have stopped setting an alarm.",
             "image": "as_3x2_sea",
             "image_alt": "Three weeks above a tortillería (placeholder)",
@@ -1130,7 +1117,6 @@
             "topic": "Work on the road",
             "date": "2026-09-28",
             "author": "Ilse Varga",
-            "reading_minutes": 8,
             "standfirst": "Four day passes, four sets of chairs, four answers to whether the Wi-Fi holds at three in the afternoon.",
             "image": "as_3x2_dusk",
             "image_alt": "Coworking in Roma Norte: four spaces, one I kept (placeholder)",
@@ -1138,8 +1124,7 @@
             "place": "place_mexico_city",
             "trip": "trip_the_americas",
             "video": "",
-            "photos": "",
-            "image_caption": "The desk I kept, by the window on the second floor."
+            "photos": ""
           }
         },
         {
@@ -1150,7 +1135,6 @@
             "topic": "Slow travel",
             "date": "2026-09-06",
             "author": "Ilse Varga",
-            "reading_minutes": 6,
             "standfirst": "Work from six to noon, sleep through the heat, walk until midnight. It is the only way the month made sense.",
             "image": "as_3x2_sand",
             "image_alt": "Venice in August, with a laptop (placeholder)",
@@ -1169,7 +1153,6 @@
             "topic": "Overland",
             "date": "2026-08-27",
             "author": "Ilse Varga",
-            "reading_minutes": 9,
             "standfirst": "A four-berth couchette, a bag of apricots and the Alps going past in the dark.",
             "image": "as_3x2_night",
             "image_alt": "Eleven hours on the sleeper south (placeholder)",
@@ -1177,8 +1160,7 @@
             "place": "place_vienna",
             "trip": "trip_overland_to_the_adriatic",
             "video": "",
-            "photos": "adriatic-sleeper",
-            "image_caption": "The corridor at five, somewhere after the border."
+            "photos": "adriatic-sleeper"
           }
         },
         {
@@ -1189,7 +1171,6 @@
             "topic": "Food",
             "date": "2026-07-18",
             "author": "Ilse Varga",
-            "reading_minutes": 5,
             "standfirst": "Eleven milk bars, one bowl of soup in each, and a clear winner on Grodzka Street.",
             "image": "as_3x2_clay",
             "image_alt": "Kraków's milk bars, ranked by soup (placeholder)",
@@ -1208,7 +1189,6 @@
             "topic": "Overland",
             "date": "2026-07-05",
             "author": "Ilse Varga",
-            "reading_minutes": 7,
             "standfirst": "Trains take longer. I counted how much longer, what it cost, and what I got for the days.",
             "image": "as_3x2_sea",
             "image_alt": "Why I stopped flying inside Europe (placeholder)",
@@ -1227,7 +1207,6 @@
             "topic": "Gear",
             "date": "2026-06-28",
             "author": "Ilse Varga",
-            "reading_minutes": 10,
             "standfirst": "One 40-litre bag, weighed item by item, with what earned its place and what went home in a box.",
             "image": "as_3x2_dusk",
             "image_alt": "Everything I carry, after three years (placeholder)",
@@ -1235,8 +1214,7 @@
             "place": "place_barcelona",
             "trip": "trip_the_atlantic_edge",
             "video": "",
-            "photos": "",
-            "image_caption": "The whole kit on the floor of the flat in Gràcia."
+            "photos": ""
           }
         },
         {
@@ -1247,7 +1225,6 @@
             "topic": "Work on the road",
             "date": "2026-06-14",
             "author": "Ilse Varga",
-            "reading_minutes": 6,
             "standfirst": "Same table, same coffee, same two plugs. How a café quietly turned into the best desk of the spring.",
             "image": "as_3x2_sand",
             "image_alt": "Thirty mornings in Gràcia, and the café that became an office (placeholder)",
@@ -1266,7 +1243,6 @@
             "topic": "Slow travel",
             "date": "2026-05-02",
             "author": "Ilse Varga",
-            "reading_minutes": 5,
             "standfirst": "When the connection drops to a trickle, you find out which parts of the job were ever urgent.",
             "image": "as_3x2_night",
             "image_alt": "Wind, sardines and a week of slow Wi-Fi (placeholder)",
@@ -1285,7 +1261,6 @@
             "topic": "Work on the road",
             "date": "2026-03-20",
             "author": "Ilse Varga",
-            "reading_minutes": 7,
             "standfirst": "Six weeks of tethering from Graça, mapped street by street, with the three corners where calls never dropped.",
             "image": "as_3x2_clay",
             "image_alt": "Lisbon on a hotspot: where the signal holds (placeholder)",
@@ -1293,8 +1268,7 @@
             "place": "place_lisbon",
             "trip": "trip_the_atlantic_edge",
             "video": "",
-            "photos": "",
-            "image_caption": "The miradouro where the signal is best and the bench is free."
+            "photos": ""
           }
         },
         {
@@ -1305,7 +1279,6 @@
             "topic": "City guide",
             "date": "2026-02-10",
             "author": "Ilse Varga",
-            "reading_minutes": 8,
             "standfirst": "From late February the air turns. What the smoke is, when it comes and what I would do differently.",
             "image": "as_3x2_sea",
             "image_alt": "Chiang Mai in burning season: should you go? (placeholder)",
@@ -1324,7 +1297,6 @@
             "topic": "City guide",
             "date": "2025-12-15",
             "author": "Ilse Varga",
-            "reading_minutes": 6,
             "standfirst": "Five weeks without walking more than a block: how the apps work, what a ride costs, and how to hold on.",
             "image": "as_3x2_dusk",
             "image_alt": "Hà Nội by motorbike taxi (placeholder)",
@@ -1343,7 +1315,6 @@
             "topic": "City guide",
             "date": "2025-11-20",
             "author": "Ilse Varga",
-            "reading_minutes": 9,
             "standfirst": "A year's visa on arrival, a flat with a balcony, and the hills that make every walk a climb.",
             "image": "as_3x2_sand",
             "image_alt": "Tbilisi for a month: the visa, the flat, the hills (placeholder)",
@@ -1351,8 +1322,7 @@
             "place": "place_tbilisi",
             "trip": "trip_winter_in_asia",
             "video": "",
-            "photos": "",
-            "image_caption": "The view from the balcony on Betlemi Street."
+            "photos": ""
           }
         }
       ]
@@ -2484,7 +2454,6 @@
           "topic": "Money",
           "date": "2026-10-26",
           "author": "Ilse Varga",
-          "reading_minutes": 6,
           "standfirst": "Rent, a desk, food, buses and a phone plan: the whole of October in Jalatlaco, to the peso.",
           "image": "as_3x2_clay",
           "image_alt": "What a month in Oaxaca cost, peso by peso (placeholder)",
@@ -2492,8 +2461,7 @@
           "place": "place_oaxaca",
           "trip": "trip_the_americas",
           "video": "",
-          "photos": "oaxaca-weeks",
-          "image_caption": "The receipts, sorted by category on the kitchen table."
+          "photos": "oaxaca-weeks"
         }
       },
       "content_type": "posts",
@@ -2517,7 +2485,6 @@
           "topic": "Food",
           "date": "2026-10-12",
           "author": "Ilse Varga",
-          "reading_minutes": 7,
           "standfirst": "The comal starts at six. By seven the whole flat smells of corn, and I have stopped setting an alarm.",
           "image": "as_3x2_sea",
           "image_alt": "Three weeks above a tortillería (placeholder)",
@@ -2549,7 +2516,6 @@
           "topic": "Work on the road",
           "date": "2026-09-28",
           "author": "Ilse Varga",
-          "reading_minutes": 8,
           "standfirst": "Four day passes, four sets of chairs, four answers to whether the Wi-Fi holds at three in the afternoon.",
           "image": "as_3x2_dusk",
           "image_alt": "Coworking in Roma Norte: four spaces, one I kept (placeholder)",
@@ -2557,8 +2523,7 @@
           "place": "place_mexico_city",
           "trip": "trip_the_americas",
           "video": "",
-          "photos": "",
-          "image_caption": "The desk I kept, by the window on the second floor."
+          "photos": ""
         }
       },
       "content_type": "posts",
@@ -2582,7 +2547,6 @@
           "topic": "Slow travel",
           "date": "2026-09-06",
           "author": "Ilse Varga",
-          "reading_minutes": 6,
           "standfirst": "Work from six to noon, sleep through the heat, walk until midnight. It is the only way the month made sense.",
           "image": "as_3x2_sand",
           "image_alt": "Venice in August, with a laptop (placeholder)",
@@ -2614,7 +2578,6 @@
           "topic": "Overland",
           "date": "2026-08-27",
           "author": "Ilse Varga",
-          "reading_minutes": 9,
           "standfirst": "A four-berth couchette, a bag of apricots and the Alps going past in the dark.",
           "image": "as_3x2_night",
           "image_alt": "Eleven hours on the sleeper south (placeholder)",
@@ -2622,8 +2585,7 @@
           "place": "place_vienna",
           "trip": "trip_overland_to_the_adriatic",
           "video": "",
-          "photos": "adriatic-sleeper",
-          "image_caption": "The corridor at five, somewhere after the border."
+          "photos": "adriatic-sleeper"
         }
       },
       "content_type": "posts",
@@ -2647,7 +2609,6 @@
           "topic": "Food",
           "date": "2026-07-18",
           "author": "Ilse Varga",
-          "reading_minutes": 5,
           "standfirst": "Eleven milk bars, one bowl of soup in each, and a clear winner on Grodzka Street.",
           "image": "as_3x2_clay",
           "image_alt": "Kraków's milk bars, ranked by soup (placeholder)",
@@ -2679,7 +2640,6 @@
           "topic": "Overland",
           "date": "2026-07-05",
           "author": "Ilse Varga",
-          "reading_minutes": 7,
           "standfirst": "Trains take longer. I counted how much longer, what it cost, and what I got for the days.",
           "image": "as_3x2_sea",
           "image_alt": "Why I stopped flying inside Europe (placeholder)",
@@ -2711,7 +2671,6 @@
           "topic": "Gear",
           "date": "2026-06-28",
           "author": "Ilse Varga",
-          "reading_minutes": 10,
           "standfirst": "One 40-litre bag, weighed item by item, with what earned its place and what went home in a box.",
           "image": "as_3x2_dusk",
           "image_alt": "Everything I carry, after three years (placeholder)",
@@ -2719,8 +2678,7 @@
           "place": "place_barcelona",
           "trip": "trip_the_atlantic_edge",
           "video": "",
-          "photos": "",
-          "image_caption": "The whole kit on the floor of the flat in Gràcia."
+          "photos": ""
         }
       },
       "content_type": "posts",
@@ -2744,7 +2702,6 @@
           "topic": "Work on the road",
           "date": "2026-06-14",
           "author": "Ilse Varga",
-          "reading_minutes": 6,
           "standfirst": "Same table, same coffee, same two plugs. How a café quietly turned into the best desk of the spring.",
           "image": "as_3x2_sand",
           "image_alt": "Thirty mornings in Gràcia, and the café that became an office (placeholder)",
@@ -2776,7 +2733,6 @@
           "topic": "Slow travel",
           "date": "2026-05-02",
           "author": "Ilse Varga",
-          "reading_minutes": 5,
           "standfirst": "When the connection drops to a trickle, you find out which parts of the job were ever urgent.",
           "image": "as_3x2_night",
           "image_alt": "Wind, sardines and a week of slow Wi-Fi (placeholder)",
@@ -2808,7 +2764,6 @@
           "topic": "Work on the road",
           "date": "2026-03-20",
           "author": "Ilse Varga",
-          "reading_minutes": 7,
           "standfirst": "Six weeks of tethering from Graça, mapped street by street, with the three corners where calls never dropped.",
           "image": "as_3x2_clay",
           "image_alt": "Lisbon on a hotspot: where the signal holds (placeholder)",
@@ -2816,8 +2771,7 @@
           "place": "place_lisbon",
           "trip": "trip_the_atlantic_edge",
           "video": "",
-          "photos": "",
-          "image_caption": "The miradouro where the signal is best and the bench is free."
+          "photos": ""
         }
       },
       "content_type": "posts",
@@ -2841,7 +2795,6 @@
           "topic": "City guide",
           "date": "2026-02-10",
           "author": "Ilse Varga",
-          "reading_minutes": 8,
           "standfirst": "From late February the air turns. What the smoke is, when it comes and what I would do differently.",
           "image": "as_3x2_sea",
           "image_alt": "Chiang Mai in burning season: should you go? (placeholder)",
@@ -2873,7 +2826,6 @@
           "topic": "City guide",
           "date": "2025-12-15",
           "author": "Ilse Varga",
-          "reading_minutes": 6,
           "standfirst": "Five weeks without walking more than a block: how the apps work, what a ride costs, and how to hold on.",
           "image": "as_3x2_dusk",
           "image_alt": "Hà Nội by motorbike taxi (placeholder)",
@@ -2905,7 +2857,6 @@
           "topic": "City guide",
           "date": "2025-11-20",
           "author": "Ilse Varga",
-          "reading_minutes": 9,
           "standfirst": "A year's visa on arrival, a flat with a balcony, and the hills that make every walk a climb.",
           "image": "as_3x2_sand",
           "image_alt": "Tbilisi for a month: the visa, the flat, the hills (placeholder)",
@@ -2913,8 +2864,7 @@
           "place": "place_tbilisi",
           "trip": "trip_winter_in_asia",
           "video": "",
-          "photos": "",
-          "image_caption": "The view from the balcony on Betlemi Street."
+          "photos": ""
         }
       },
       "content_type": "posts",

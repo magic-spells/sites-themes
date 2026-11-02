@@ -37,8 +37,8 @@ sites.fixtures.json Ilse Varga: pages, menus, galleries, forms, places, trips, s
 
 ## Content
 
-- **posts** (`/journal/:handle`): Folio's fields (topic, date, author, reading_minutes, standfirst,
-  image, image_alt, body, image_caption), plus an optional place, trip, video and photos gallery.
+- **posts** (`/journal/:handle`): Folio's fields (topic, date, author, standfirst,
+  image, image_alt, body), plus an optional place, trip, video and photos gallery.
 - **places** (`/places/:place`): country, latitude and longitude (decimal, north and east
   positive), image, standfirst, body, timezone, photos.
 - **trips** (`/trips/:trip`): start_date, end_date (empty while under way), image, standfirst, body.

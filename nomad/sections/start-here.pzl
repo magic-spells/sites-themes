@@ -23,7 +23,7 @@
 
                   <span class="font-heading text-h3 font-medium text-scheme-heading decoration-1 underline-offset-4 group-hover:text-scheme-links group-hover:underline">{ p.title }</span>
                   {#if block.settings.note}<span class="text-body-sm text-scheme-muted">{ block.settings.note }</span>{/if}
-                  <span class="font-mono text-meta font-medium text-scheme-meta uppercase">{#if p.fields.topic}{ p.fields.topic } · {/if}{ t('minutes_read', { count: p.fields.reading_minutes }) }</span>
+                  {#if p.fields.topic}<span class="font-mono text-meta font-medium text-scheme-meta uppercase">{ p.fields.topic }</span>{/if}
                 </span>
               </a>
             </li>
@@ -53,7 +53,7 @@
   ],
   "blocks": [
     { "type": "post", "name": "Post", "settings": [
-      { "type": "entry", "id": "post", "label": "Post", "info": "A posts entry: title, topic, reading_minutes, image." },
+      { "type": "entry", "id": "post", "label": "Post", "info": "A posts entry: title, topic, image." },
       { "type": "text", "id": "note", "label": "Note", "default": "" }
     ] }
   ],

@@ -1,4 +1,4 @@
-<!-- One post (Folio's id and settings). The head in the 40rem reading column: the topic chip, the title, the standfirst, then the place tag, the date stamp and "BY ILSE VARGA · 6 MIN READ". The cover (16:9, or the post's video as a muted loop or a player) breaks out to the full column; under it on a hairline the place with its coordinates and a 6rem drawn locator that opens the full map in a <dialog-panel>, then the image caption. The prose at 40rem (a drop cap only when the setting asks; Figma draws none) and an end rule in stamp ink. -->
+<!-- One post (Folio's id and settings). The head in the 40rem reading column: the topic chip, the title, the standfirst, then the place tag, the date stamp and "BY ILSE VARGA" (no reading time, Cory). The cover (16:9, or the post's video as a muted loop or a player) breaks out to the full column; under it on a hairline the place with its coordinates and a 6rem drawn locator that opens the full map in a <dialog-panel>, and no cover caption (Cory; captions stay in galleries and the lightbox). The prose at 40rem (a drop cap only when the setting asks; Figma draws none) and an end rule in stamp ink. -->
 {#let
   entry = page.entry
   f = entry.fields
@@ -19,7 +19,7 @@
         <div class="flex flex-wrap items-center gap-x-space-md gap-y-space-sm pt-space-xs">
           {#if place}<PlaceTag place={ place } href="{ places_path }/{ place.handle }" />{/if}
           {#if f.date}<DateStamp value={ f.date } />{/if}
-          <p class="font-mono text-meta font-medium text-scheme-meta uppercase">{#if settings.show_byline && f.author}{ t('by_line', { name: f.author }) }{/if}{#if settings.show_byline && f.author && f.reading_minutes} · {/if}{#if f.reading_minutes}{ t('minutes_read', { count: f.reading_minutes }) }{/if}</p>
+          {#if settings.show_byline && f.author}<p class="font-mono text-meta font-medium text-scheme-meta uppercase">{ t('by_line', { name: f.author }) }</p>{/if}
         </div>
       {/if}
     </header>
@@ -35,8 +35,8 @@
             <button class="absolute top-space-sm right-space-sm inline-flex items-center gap-space-xs rounded-full bg-scrim px-space-sm py-chip font-mono text-meta font-medium text-on-photo uppercase" type="button" data-loop-toggle data-play-label="{ t('play_loop') }" aria-pressed="false"><span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/pause.svg'}</span><span data-loop-label>{ t('pause_loop') }</span></button>
           {/if}
         </div>
-        {#if place || f.image_caption}
-          <figcaption class="grid gap-space-xs">
+        {#if place}
+          <figcaption>
             {#if place}
               <div class="flex items-center justify-between gap-space-md border-t border-scheme-rule pt-space-sm">
                 <div class="flex flex-wrap items-center gap-x-space-sm gap-y-tiny">
@@ -51,7 +51,6 @@
                 {/if}
               </div>
             {/if}
-            {#if f.image_caption}<p class="text-body-sm text-scheme-muted">{ f.image_caption }</p>{/if}
           </figcaption>
         {/if}
       </figure>
@@ -90,7 +89,7 @@
   "icon": "file-text",
   "templates": ["post"],
   "settings": [
-    { "type": "checkbox", "id": "show_meta", "label": "Show the topic, place, date and reading time", "default": true },
+    { "type": "checkbox", "id": "show_meta", "label": "Show the topic, place, date and byline", "default": true },
     { "type": "checkbox", "id": "show_image", "label": "Show the cover", "default": true },
     { "type": "checkbox", "id": "show_byline", "label": "Show the byline", "default": true },
     { "type": "checkbox", "id": "drop_cap", "label": "Show a drop cap", "default": false },

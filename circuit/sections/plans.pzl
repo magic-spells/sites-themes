@@ -44,9 +44,9 @@
     {:else}
       <ul class="-mx-gutter flex snap-x snap-mandatory gap-gap-lg overflow-x-auto px-gutter pb-step-xs md:mx-0 md:grid md:items-stretch md:overflow-visible md:px-0 md:pb-0 { settings.columns == '2' ? 'md:grid-cols-2' : (settings.columns == '4' ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3') }" data-strip>
         {#if settings.source == 'listed'}
-          {#for block in blocks}{#if block.settings.plan}<li class="w-4/5 shrink-0 snap-start md:w-auto" data-block={ block.editor_id }><PlanCard entry={ block.settings.plan } featured={ block.settings.highlight == 'on' || (block.settings.highlight != 'off' && block.settings.plan.fields.featured) } invert={ invert } show_note={ settings.show_note } action_label={ settings.action_label } /></li>{/if}{/for}
+          {#for block in blocks}{#if block.settings.plan}<li class="w-4/5 shrink-0 snap-start md:w-auto" data-block={ block.editor_id }><PlanCard entry={ block.settings.plan } featured={ block.settings.highlight == 'on' || (block.settings.highlight != 'off' && block.settings.plan.fields.featured) } invert={ invert } dark={ dark } show_note={ settings.show_note } action_label={ settings.action_label } /></li>{/if}{/for}
         {:else}
-          {#for plan in shown}<li class="w-4/5 shrink-0 snap-start md:w-auto"><PlanCard entry={ plan } featured={ plan.fields.featured } invert={ invert } show_note={ settings.show_note } action_label={ settings.action_label } /></li>{/for}
+          {#for plan in shown}<li class="w-4/5 shrink-0 snap-start md:w-auto"><PlanCard entry={ plan } featured={ plan.fields.featured } invert={ invert } dark={ dark } show_note={ settings.show_note } action_label={ settings.action_label } /></li>{/for}
         {/if}
       </ul>
     {/if}

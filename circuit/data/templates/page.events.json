@@ -44,7 +44,7 @@
           "settings": {
             "label": "WhatsApp",
             "text": "Route changes, lifts and who is in this week.",
-            "link_label": "Join the chat",
+            "link_label": "Open",
             "link": "https://chat.whatsapp.com/"
           }
         },
@@ -54,7 +54,7 @@
           "settings": {
             "label": "Strava",
             "text": "Every run logged, every segment argued over.",
-            "link_label": "Follow the club",
+            "link_label": "Open",
             "link": "https://www.strava.com/"
           }
         },
@@ -64,7 +64,7 @@
           "settings": {
             "label": "Instagram",
             "text": "Photos from the finish line and the café after.",
-            "link_label": "See the photos",
+            "link_label": "Open",
             "link": "https://www.instagram.com/"
           }
         }

@@ -3,11 +3,13 @@
      the period in mono, the summary, a hairline, the features as a check
      list, the plan's note in mono, and a full-width square button (the
      plan's own checkout link, or the primary action) whose label never
-     wraps. Cards in a row are top-aligned and equal height; the featured
+     wraps: filled on the featured plan, outlined on the others (in the
+     accent on a dark section, the text colour on a light one). Cards in a row are top-aligned and equal height; the featured
      plan carries the opposite scheme class, so every colour inside follows. -->
 {#let
   f = entry.fields
   free = f.period == 'free' || f.price == 0
+  tone = featured ? null : (dark ? 'accent-outline' : 'outline')
 }
 <article class="flex h-full flex-col gap-step-md p-step-lg { featured ? 'bg-scheme-background text-scheme-foreground ' + invert : 'border border-scheme-rule bg-scheme-surface-2 text-scheme-foreground' }">
   <h3 class="font-mono text-overline font-medium text-scheme-heading uppercase">{ entry.title }</h3>
@@ -21,7 +23,7 @@
   </ul>
   {#if show_note && f.note}<p class="font-mono text-spec font-medium text-scheme-muted uppercase">{ f.note }</p>{/if}
   <div>
-    {#if f.link}<Button href={ f.link } wide={ true } external={ true }>{ t('choose_plan') }</Button>
-    {:else}<Button action={ true } wide={ true }>{ action_label || site.settings.action_label }</Button>{/if}
+    {#if f.link}<Button href={ f.link } tone={ tone } wide={ true } external={ true }>{ t('choose_plan') }</Button>
+    {:else}<Button action={ true } tone={ tone } wide={ true }>{ action_label || site.settings.action_label }</Button>{/if}
   </div>
 </article>

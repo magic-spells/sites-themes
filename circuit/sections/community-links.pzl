@@ -1,16 +1,17 @@
-<!-- The club's doors: two to four cards on flare or black, each a heading
-     ("Join the group chat", "Strava club", "Instagram"), a line and a
-     square button. -->
+<!-- The club's doors: two to four filled cards (the second surface, a
+     hairline) on flare or black, each a heading ("Join the group chat",
+     "Strava club", "Instagram"), a line and a small outlined button with an
+     arrow (black on flare, the accent on black). -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead kicker={ settings.kicker } heading={ settings.heading } text={ settings.text } />
     <ul class="grid gap-gap-lg md:grid-cols-2 { blocks.length > 3 ? 'lg:grid-cols-4' : 'lg:grid-cols-3' }">
       {#for block in blocks}
         {#let b = block.settings}
-        <li class="flex flex-col gap-step-sm border border-scheme-foreground p-step-lg" data-block={ block.editor_id }>
-          <h3 class="font-heading text-h3 font-black uppercase stretch-heading">{ b.label }</h3>
-          {#if b.text}<p class="flex-1 text-body">{ b.text }</p>{/if}
-          {#if b.link && b.link_label}<div class="pt-step-xs"><Button href={ b.link } external={ true }>{ b.link_label }</Button></div>{/if}
+        <li class="flex flex-col gap-step-sm border border-scheme-rule bg-scheme-surface-2 p-step-lg" data-block={ block.editor_id }>
+          <h3 class="font-heading text-h4 font-extrabold text-scheme-heading uppercase stretch-heading">{ b.label }</h3>
+          {#if b.text}<p class="flex-1 text-body text-pretty text-scheme-muted">{ b.text }</p>{/if}
+          {#if b.link && b.link_label}<div class="pt-step-xs"><Button href={ b.link } tone="accent-outline" size="small" external={ true }>{ b.link_label }<span aria-hidden="true">→</span></Button></div>{/if}
         </li>
       {/for}
     </ul>
@@ -33,7 +34,7 @@
     { "type": "door", "name": "Link", "settings": [
       { "type": "text", "id": "label", "label": "Heading", "default": "Join the group chat" },
       { "type": "textarea", "id": "text", "label": "Text", "default": "Route changes, lifts to races and who is bringing cake." },
-      { "type": "text", "id": "link_label", "label": "Button label", "default": "Open the chat" },
+      { "type": "text", "id": "link_label", "label": "Button label", "default": "Open" },
       { "type": "url", "id": "link", "label": "Link", "default": "https://chat.whatsapp.com/" }
     ] }
   ],

@@ -3,17 +3,20 @@
      sections. The engine's field types are text, textarea, email, checkbox
      and select, so the id picks the input: "phone" is a telephone field.
      Selects are <select-dropdown>s; a select with one option (a gym with one
-     location) is sent as a hidden field instead of asked. -->
-<div class="grid gap-step-sm md:grid-cols-2">
+     location) is sent as a hidden field instead of asked. One column, each
+     field a box with its label inside. -->
+<div class="grid gap-step-sm">
   {#for field in fields}
     {#if field.type == 'select' && field.options.length == 1}
       <input type="hidden" name={ field.id } value={ field.options[0] } />
     {:else if field.type == 'select'}
-      <div class="{ compact ? 'md:col-span-2' : '' }">
-        <span class="mb-step-2xs block text-label font-semibold text-scheme-foreground" id="label-{ prefix }-{ field.id }">{ field.label }{#if field.required}<span class="text-scheme-meta" aria-hidden="true"> *</span>{/if}</span>
+      <div>
         <select-dropdown class="text-body" aria-labelledby="label-{ prefix }-{ field.id }">
-          <select-trigger class="flex min-h-control items-center justify-between gap-step-sm rounded-input border border-scheme-input-border bg-scheme-input-background px-step-sm text-scheme-input-foreground">
-            <span class="select-label-text">{ field.value || t('choose') }</span>
+          <select-trigger class="flex min-h-control items-center justify-between gap-step-sm rounded-input border bg-scheme-input-background px-step-sm py-step-xs text-scheme-input-foreground { field.error ? 'border-scheme-error' : 'border-scheme-input-border' }" aria-describedby={ field.error ? 'error-' + prefix + '-' + field.id : null }>
+            <span class="grid text-left">
+              <span class="text-label" id="label-{ prefix }-{ field.id }">{ field.label }{#if field.required}<span aria-hidden="true"> *</span>{/if}</span>
+              <span class="select-label-text">{ field.value || t('choose') }</span>
+            </span>
             <span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/angle-down.svg'}</span>
           </select-trigger>
           <input type="hidden" name={ field.id } value={ field.value } />
@@ -21,12 +24,12 @@
             {#for option in field.options}<select-option value={ option } selected={ field.value == option }>{ option }</select-option>{/for}
           </select-panel>
         </select-dropdown>
-        {#if field.error}<p class="mt-step-2xs font-mono text-spec text-scheme-error uppercase">{ t('form_field_' + field.error) }</p>{/if}
+        {#if field.error}<p class="mt-step-2xs font-mono text-spec text-scheme-error uppercase" id="error-{ prefix }-{ field.id }">{ t('form_field_' + field.error) }</p>{/if}
       </div>
     {:else if field.type == 'checkbox'}
-      <label class="flex items-start gap-step-xs text-body-sm md:col-span-2"><input class="mt-step-2xs size-checkbox accent-accent" type="checkbox" name={ field.id } value="on" checked={ field.value == 'on' } required={ field.required } />{ field.label }</label>
+      <label class="flex items-start gap-step-xs text-body-sm"><input class="mt-step-2xs size-checkbox accent-accent" type="checkbox" name={ field.id } value="on" checked={ field.value == 'on' } required={ field.required } />{ field.label }</label>
     {:else}
-      <Field wrapper_class="{ field.type == 'textarea' || compact ? 'md:col-span-2' : '' }" name={ field.id } label={ field.label } type={ field.id == 'phone' ? 'tel' : field.type } required={ field.required } maxlength={ field.max_length } value={ field.value } error={ field.error } prefix={ prefix } rows={ 3 } />
+      <Field name={ field.id } label={ field.label } type={ field.id == 'phone' ? 'tel' : field.type } required={ field.required } maxlength={ field.max_length } value={ field.value } error={ field.error } prefix={ prefix } rows={ 3 } />
     {/if}
   {/for}
 </div>

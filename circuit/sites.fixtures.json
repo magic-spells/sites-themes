@@ -4401,6 +4401,14 @@
         "description": "The studio for yoga and mobility, and the start of the run club.",
         "image": "as_3x2_4"
       }
+    },
+    "/password": {
+      "id": "pg_password",
+      "template": "password",
+      "title": "Password",
+      "seo": {
+        "noindex": true
+      }
     }
   }
 }

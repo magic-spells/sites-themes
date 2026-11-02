@@ -7,9 +7,9 @@
       "type": "page-header",
       "preset": "Left",
       "settings": {
-        "heading": "Start free trial",
-        "standfirst": "One class on us. Pick a class and a location and a coach will call within a day.",
-        "kicker": "Free trial",
+        "heading": "First class is free",
+        "standfirst": "One class on us. Bring trainers and water.",
+        "kicker": "Start here",
         "color_scheme": "concrete"
       },
       "blocks": []
@@ -21,7 +21,9 @@
       "settings": {
         "heading": "",
         "image": "as_4x5_3",
-        "color_scheme": "white"
+        "color_scheme": "white",
+        "kicker": "",
+        "text": "Tell us a little and we'll book you in. No card needed, no contract after."
       },
       "blocks": []
     },

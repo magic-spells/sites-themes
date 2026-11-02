@@ -7,9 +7,9 @@
       "type": "page-header",
       "preset": "Left",
       "settings": {
-        "heading": "Contact",
-        "standfirst": "Membership, coaching, events or a lost water bottle.",
-        "kicker": "Get in touch",
+        "heading": "Say hello",
+        "standfirst": "Questions about classes, memberships or the run club. We answer within a day.",
+        "kicker": "Contact",
         "color_scheme": "concrete"
       },
       "blocks": []
@@ -31,7 +31,9 @@
       "preset": "Default",
       "settings": {
         "locations": "locations",
-        "color_scheme": "concrete"
+        "color_scheme": "concrete",
+        "kicker": "Find us",
+        "heading": "Two doors, one club"
       },
       "blocks": []
     }

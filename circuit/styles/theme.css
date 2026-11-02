@@ -464,6 +464,19 @@ body:has([data-header-style="over-hero"]) main > [data-section]:first-child:has(
 [data-strip] {
 	scrollbar-width: none;
 }
+/* The class chips show only when there are two to choose between: All and
+   at least two classes (a listed handle with no session draws no chip). */
+[data-strip]:not(:has(> :nth-child(3))) {
+	display: none;
+}
+/* A timetable day's dash (or "No sessions"): shown when no session row is
+   left, on a day with none or one the class filter has emptied. */
+[data-empty] {
+	display: none;
+}
+ul:not(:has(> li:not([hidden], [data-empty]))) > [data-empty] {
+	display: block;
+}
 
 :root {
 	font-size: var(--sites-type-base);

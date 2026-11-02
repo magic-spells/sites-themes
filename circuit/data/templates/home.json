@@ -106,7 +106,6 @@
       "preset": "Week",
       "settings": {
         "sessions": "sessions",
-        "classes": "classes",
         "color_scheme": "concrete",
         "kicker": "Timetable",
         "heading": "The week",

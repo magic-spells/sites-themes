@@ -129,8 +129,9 @@ if (dim) {
 }
 
 // The timetable's class filter: a chip writes its class on the timetable
-// and hides every session of another class, in the week table and in the
-// day tabs alike. All shows them all again.
+// and hides the row of every session of another class, in the week table
+// and in the day tabs alike, so a day left empty shows its dash (theme.css).
+// All shows them all again.
 document.addEventListener('click', (event) => {
 	const chip = closest(event, '[data-class-filter]');
 	const table = chip?.closest<HTMLElement>('[data-timetable]');
@@ -139,7 +140,7 @@ document.addEventListener('click', (event) => {
 	table.setAttribute('data-class', wanted);
 	for (const other of table.querySelectorAll('[data-class-filter]')) other.setAttribute('aria-pressed', String(other === chip));
 	for (const session of table.querySelectorAll<HTMLElement>('[data-session]')) {
-		session.hidden = wanted !== '' && session.getAttribute('data-class') !== wanted;
+		rowOf(session).hidden = wanted !== '' && session.getAttribute('data-class') !== wanted;
 	}
 	openBusyDay(table);
 });
@@ -150,13 +151,17 @@ function openBusyDay(table: HTMLElement) {
 	const group = table.querySelector('tab-group');
 	if (!group) return;
 	const panels = [...group.querySelectorAll('tab-panel')];
-	const busy = (panel: Element) => [...panel.querySelectorAll<HTMLElement>('[data-session]')].some((session) => !session.hidden);
+	const busy = (panel: Element) => [...panel.querySelectorAll<HTMLElement>('[data-session]')].some((session) => !rowOf(session).hidden);
 	const current = panels.findIndex((panel) => !panel.hasAttribute('hidden'));
 	if (current >= 0 && busy(panels[current])) return;
 	const first = panels.findIndex(busy);
 	if (first >= 0) group.setAttribute('active', String(first));
 }
 for (const table of document.querySelectorAll<HTMLElement>('[data-timetable]')) openBusyDay(table);
+
+function rowOf(session: HTMLElement) {
+	return session.closest<HTMLElement>('li') ?? session;
+}
 
 // Grid tiles open the lightbox of a visually hidden companion carousel
 // holding the same photographs (the plugin opens from a slide and has no

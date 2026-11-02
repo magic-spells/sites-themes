@@ -1204,6 +1204,11 @@
       "name": "Classes",
       "fields": [
         {
+          "id": "short_name",
+          "type": "text",
+          "label": "Short name (the timetable's filter chip)"
+        },
+        {
           "id": "summary",
           "type": "text",
           "label": "Summary"
@@ -1291,6 +1296,7 @@
           "handle": "strength-foundations",
           "title": "Strength Foundations",
           "fields": {
+            "short_name": "Strength",
             "summary": "Barbell basics, coached. Squat, press and deadlift with a plan that adds weight week by week.",
             "description": "<p>Barbell basics, coached. Squat, press and deadlift with a plan that adds weight week by week.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
             "level": "all",
@@ -1336,6 +1342,7 @@
           "handle": "olympic-lifting",
           "title": "Olympic Lifting",
           "fields": {
+            "short_name": "Oly lifting",
             "summary": "The snatch and the clean and jerk, broken into pieces and built back up.",
             "description": "<p>The snatch and the clean and jerk, broken into pieces and built back up.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
             "level": "advanced",
@@ -1425,6 +1432,7 @@
           "handle": "yoga-flow",
           "title": "Yoga Flow",
           "fields": {
+            "short_name": "Yoga",
             "summary": "A steady flow for strength and breath, at the Riverside studio.",
             "description": "<p>A steady flow for strength and breath, at the Riverside studio.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
             "level": "all",
@@ -1447,6 +1455,7 @@
           "handle": "run-club-intervals",
           "title": "Run Club Intervals",
           "fields": {
+            "short_name": "Run club",
             "summary": "Repeats on the river path in pace groups. Warm-up, six efforts, a jog home.",
             "description": "<p>Repeats on the river path in pace groups. Warm-up, six efforts, a jog home.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
             "level": "all",
@@ -1468,6 +1477,7 @@
           "handle": "beginners-strength",
           "title": "Beginners' Strength",
           "fields": {
+            "short_name": "Beginners",
             "summary": "Six weeks, four people, one coach. Learn to lift before you join the classes.",
             "description": "<p>Six weeks, four people, one coach. Learn to lift before you join the classes.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
             "level": "beginner",
@@ -1490,6 +1500,7 @@
           "handle": "small-group-coaching",
           "title": "Small-group Coaching",
           "fields": {
+            "short_name": "Small group",
             "summary": "Your own programme, coached in a group of four. Strength, fitness or both.",
             "description": "<p>Your own programme, coached in a group of four. Strength, fitness or both.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
             "level": "intermediate",
@@ -1577,6 +1588,7 @@
           "handle": "social-5k",
           "title": "Social 5K",
           "fields": {
+            "short_name": "Social",
             "summary": "An easy five kilometres out and back on the towpath at talking pace, coffee after.",
             "description": "<p>An easy five kilometres out and back on the towpath at talking pace, coffee after.</p><p>Every run starts with a walk-through of the route and ends back at the river gate. A back marker runs at the end of every group, so nobody runs alone.</p><p>Free for everyone, members or not. Come ten minutes early and say hello.</p>",
             "level": "all",

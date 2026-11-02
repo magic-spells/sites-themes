@@ -190,6 +190,21 @@ document.addEventListener('click', (event) => {
 	});
 });
 
+// The ticker's and the hero video's pause buttons (WCAG 2.2.2): the ticker
+// pauses its marquee (theme.css reads data-paused), the video stops.
+document.addEventListener('click', (event) => {
+	const button = closest(event, '[data-ticker-toggle], [data-video-toggle]');
+	if (!button) return;
+	const paused = button.getAttribute('aria-pressed') !== 'true';
+	button.setAttribute('aria-pressed', String(paused));
+	button.closest('[data-ticker]')?.toggleAttribute('data-paused', paused);
+	const video = button.closest('section')?.querySelector<HTMLVideoElement>('[data-hero-video]');
+	if (video && button.hasAttribute('data-video-toggle')) {
+		if (paused) video.pause();
+		else void video.play();
+	}
+});
+
 // Scroll reveals on class, coach, event and album cards only. The cards
 // write `reveal reveal-fade-up` only while the Brand setting is on.
 if (document.querySelector('.reveal')) Reveal.init({ offset: 0, duration: 400, once: true });

@@ -1,6 +1,6 @@
 <!-- The opener. Cover: a full-bleed photo (or a muted looping video with the
      photo as its poster, the poster alone under reduced motion, or a tarot
-     fade slideshow) under a black scrim, the headline in the display face
+     fade slideshow; the slideshow and the video each get a pause button) under a black scrim, the headline in the display face
      with a flare slash in flow under its last line, a line, the primary
      action and a flare-outlined secondary (the hero ends on the buttons), the
      ghost word low behind. Minimum heights 38.75 / 40 / 51.25rem (phone, tablet,
@@ -66,7 +66,8 @@
       {#if settings.show_action && action}<Button action={ true } tone="accent">{ action }</Button>{/if}
       {#if settings.secondary_label && settings.secondary_link}<Button href={ settings.secondary_link } tone="accent-outline">{ settings.secondary_label }</Button>{/if}
     </div>
-    {#if slides.length > 1}<button class="flex size-control-small items-center justify-center self-end justify-self-end border border-on-photo/40 hover:bg-on-photo hover:text-ink" type="button" data-autoplay-toggle={ id } data-interval={ settings.interval * 1000 } aria-pressed="false"><span class="sites-icon size-icon-small" aria-hidden="true">{#svg 'icons/pause.svg'}</span><span class="sr-only">{ t('pause_slideshow') }</span></button>{/if}
+    {#if slides.length > 1}<button class="flex size-control-small items-center justify-center self-end justify-self-end border border-on-photo/40 hover:bg-on-photo hover:text-ink current:bg-on-photo current:text-ink" type="button" data-autoplay-toggle={ id } data-interval={ settings.interval * 1000 } aria-pressed="false"><span class="sites-icon size-icon-small" aria-hidden="true">{#svg 'icons/pause.svg'}</span><span class="sr-only">{ t('pause_slideshow') }</span></button>
+    {:else if settings.video && settings.image}<button class="flex size-control-small items-center justify-center self-end justify-self-end border border-on-photo/40 hover:bg-on-photo hover:text-ink current:bg-on-photo current:text-ink motion-reduce:hidden" type="button" data-video-toggle aria-pressed="false"><span class="sites-icon size-icon-small" aria-hidden="true">{#svg 'icons/pause.svg'}</span><span class="sr-only">{ t('pause_video') }</span></button>{/if}
   </div>
 </section>
 {/if}

@@ -608,7 +608,8 @@ ul:not(:has(> li:not([hidden], [data-empty]))) > [data-empty] {
 }
 
 /* The ticker: a CSS marquee of two identical lists (tarot 0.1.0 has no
-   autoscroll yet), paused on hover, still under reduced motion. */
+   autoscroll yet), paused on hover or by its pause button, still under
+   reduced motion. */
 @keyframes ticker {
 	to {
 		transform: translateX(-50%);
@@ -621,6 +622,9 @@ ul:not(:has(> li:not([hidden], [data-empty]))) > [data-empty] {
 [data-speed="fast"] { --ticker-duration: 24s; }
 [data-direction="right"] [data-ticker-track] {
 	animation-direction: reverse;
+}
+[data-ticker][data-paused] [data-ticker-track] {
+	animation-play-state: paused;
 }
 @media (hover: hover) {
 	[data-ticker]:hover [data-ticker-track] {

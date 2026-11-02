@@ -1,13 +1,14 @@
 <!-- The marquee: mono uppercase phrases with ››› between, on flare or black,
      two copies of the list scrolling as one (the second hidden from screen
-     readers). Paused on hover, a still row under reduced motion. Phrases
+     readers). Paused on hover or by the pause button at the right end (which
+     reduced motion, a still row, does not need). Phrases
      come from the blocks, or from the Floor ticker lines when there are
      none. Slash cuts the band's top edge at 12°. -->
 {#let
   lines = blocks.length ? blocks : (site.settings.ticker_lines | split('\n'))
   slash = settings.edge == 'slash' && section.index > 0
 }
-<section class="overflow-hidden border-y border-scheme-rule bg-scheme-background text-scheme-foreground { slash ? 'edge-slash pt-rise' : '' }" aria-label="{ settings.label || t('highlights') }" data-ticker data-speed={ settings.speed } data-direction={ settings.direction }>
+<section class="relative overflow-hidden border-y border-scheme-rule bg-scheme-background text-scheme-foreground { slash ? 'edge-slash pt-rise' : '' }" aria-label="{ settings.label || t('highlights') }" data-ticker data-speed={ settings.speed } data-direction={ settings.direction }>
   <div class="flex w-max" data-ticker-track>
     {#for copy in [1, 2]}
       <ul class="flex shrink-0 items-center" aria-hidden={ copy == 2 ? 'true' : null }>
@@ -17,6 +18,9 @@
         {/for}
       </ul>
     {/for}
+  </div>
+  <div class="absolute inset-y-0 right-0 flex items-center bg-scheme-background pr-gutter pl-step-xs motion-reduce:hidden">
+    <button class="flex size-control-small items-center justify-center border border-scheme-foreground hover:bg-scheme-foreground hover:text-scheme-background current:bg-scheme-foreground current:text-scheme-background" type="button" data-ticker-toggle aria-pressed="false"><span class="sites-icon size-icon-small" aria-hidden="true">{#svg 'icons/pause.svg'}</span><span class="sr-only">{ t('pause_ticker') }</span></button>
   </div>
 </section>
 

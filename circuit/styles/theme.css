@@ -712,11 +712,13 @@ tarot-carousel[data-on-photo] {
 }
 
 /* The sheets: the mobile menu and the trial form rise from the bottom,
-   square, on the scheme's surface over a 50% black backdrop. */
+   square, on the scheme's surface over a 50% black backdrop, with a
+   hairline along the top edge so a Black sheet stays visible over a Black
+   page. */
 dialog-panel:has(bottom-sheet) {
 	--bs-panel-background: var(--sites-scheme-background);
 	--bs-panel-border-radius: 0;
-	--bs-panel-box-shadow: none;
+	--bs-panel-box-shadow: 0 -1px 0 var(--sites-scheme-chip-border);
 	--bs-handle-color: var(--sites-scheme-chip-border);
 	--bs-handle-width: 2.25rem;
 	--bs-handle-height: 0.25rem;

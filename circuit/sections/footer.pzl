@@ -18,7 +18,7 @@
     {/if}
     <div class="flex flex-wrap justify-between gap-x-step-2xl gap-y-step-xl">
       {#if places.length}
-        <div class="grid content-start gap-step-sm font-mono text-body-sm leading-tight">
+        <div class="grid content-start gap-step-sm font-mono text-body-sm leading-normal">
           {#for place in places}
             {#let lines = place.fields.address | split('\n')}
             <address class="grid gap-step-sm not-italic">

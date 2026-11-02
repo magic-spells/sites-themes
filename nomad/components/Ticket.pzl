@@ -11,9 +11,9 @@
     {#if f.arrive}<DateStamp value={ f.arrive } />{/if}
     {#if f.nights}<p class="font-mono text-meta font-medium uppercase">{ f.nights | pluralize(t('night_one'), t('night_many')) }</p>{/if}
   </div>
-  <div class="grid min-w-0 flex-1 content-start gap-1 p-space-md">
+  <div class="grid min-w-0 flex-1 content-start gap-1 p-space-sm md:p-space-md">
     {#if badge}<span class="absolute top-space-sm right-space-sm rounded-full bg-tag-ink px-space-xs py-0.5 font-mono text-meta font-medium text-tag uppercase">{ badge }</span>{/if}
-    {#if p}<h3 class="pr-space-xl font-heading text-h3 font-medium"><a class="hover:underline decoration-1 underline-offset-4" href="{ places_path }/{ p.handle }">{ p.title }</a></h3>
+    {#if p}<h3 class="font-heading text-h3 font-medium break-words { badge ? 'pr-space-xl' : '' }"><a class="hover:underline decoration-1 underline-offset-4" href="{ places_path }/{ p.handle }">{ p.title }</a></h3>
     <p class="text-body-sm">{ p.fields.country }</p>{/if}
     {#if show_notes && f.note}<p class="text-body-sm">{ f.note }</p>{/if}
     {#if show_posts && f.post}<a class="mt-space-xs text-body-sm text-tag-stamp hover:underline" href="{ posts_path }/{ f.post.handle }">{ t('read_post', { title: f.post.title }) }</a>{/if}

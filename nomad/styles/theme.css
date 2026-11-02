@@ -196,7 +196,7 @@
 	--spacing-thumb-lg: 5rem;
 	--spacing-portrait: 6rem;
 	--spacing-locator: 6rem;
-	--spacing-stub: 7rem;
+	--spacing-stub: var(--nomad-stub);
 	--spacing-postmark: 8rem;
 	--spacing-ring: 8.5rem;
 	--spacing-play: 4.5rem;
@@ -255,6 +255,7 @@
 	--nomad-section: calc(var(--sites-spacing-lg) * 32 / 32);
 	--nomad-gutter: calc(var(--sites-spacing-sm) * 16 / 16);
 	--nomad-space-2xl: calc(var(--sites-spacing-2xl) * 48 / 72);
+	--nomad-stub: 6.25rem;
 }
 
 @media (min-width: 48rem) {
@@ -276,6 +277,7 @@
 		--nomad-section: calc(var(--sites-spacing-lg) * 40 / 32);
 		--nomad-gutter: calc(var(--sites-spacing-sm) * 24 / 16);
 		--nomad-space-2xl: calc(var(--sites-spacing-2xl) * 60 / 72);
+		--nomad-stub: 7rem;
 	}
 }
 
@@ -345,14 +347,14 @@
 @utility ticket-notch {
 	--notch: 0.5rem;
 	mask:
-		radial-gradient(circle at var(--spacing-stub) 0, transparent var(--notch), #000 calc(var(--notch) + 0.5px)) top / 100% 51% no-repeat,
-		radial-gradient(circle at var(--spacing-stub) 100%, transparent var(--notch), #000 calc(var(--notch) + 0.5px)) bottom / 100% 51% no-repeat;
+		radial-gradient(circle at var(--spacing-stub) 0, transparent var(--notch), black calc(var(--notch) + 0.5px)) top / 100% 51% no-repeat,
+		radial-gradient(circle at var(--spacing-stub) 100%, transparent var(--notch), black calc(var(--notch) + 0.5px)) bottom / 100% 51% no-repeat;
 }
 @utility ticket-notch-ends {
 	--notch: 0.5rem;
 	mask:
-		radial-gradient(circle at 0 50%, transparent var(--notch), #000 calc(var(--notch) + 0.5px)) left / 51% 100% no-repeat,
-		radial-gradient(circle at 100% 50%, transparent var(--notch), #000 calc(var(--notch) + 0.5px)) right / 51% 100% no-repeat;
+		radial-gradient(circle at 0 50%, transparent var(--notch), black calc(var(--notch) + 0.5px)) left / 51% 100% no-repeat,
+		radial-gradient(circle at 100% 50%, transparent var(--notch), black calc(var(--notch) + 0.5px)) right / 51% 100% no-repeat;
 }
 
 /* The post list's two views (Folio's switch). A reader's saved choice is

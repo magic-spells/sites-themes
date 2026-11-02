@@ -36,7 +36,7 @@
 }
 <div class="{ pan ? 'relative aspect-4/3 overflow-hidden md:aspect-auto' : '' }" style={ pan ? '--cx: ' + ((focus_lon + 180) * 60 / 360) + 'rem; --cy: ' + ((80 - focus_lat) * 23.3125 / 140) + 'rem' : null }>
 <div class="relative overflow-hidden { ratio == '4/3' ? 'aspect-4/3' : (ratio == 'square' ? 'aspect-square' : 'aspect-map') } { pan ? 'max-md:map-pan' : '' }" data-map>
-  <svg class="absolute inset-0 size-full" viewBox="{ vx } { vy } { vw } { vh }" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+  <svg class="absolute inset-0 size-full fill-scheme-surface" viewBox="{ vx } { vy } { vw } { vh }" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
     {#svg 'map/world.svg'}
     {#if dash}
       {#for stop in stops, i}

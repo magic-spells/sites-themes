@@ -29,7 +29,7 @@
               {#if b.shape == 'box'}
                 <span class="inline-grid justify-items-start gap-micro rounded-sm border-2 border-scheme-stamp px-space-sm py-space-xs text-scheme-stamp"><span class="font-mono text-meta font-medium uppercase">{ b.label }</span><span class="font-heading text-h4 font-medium">{ b.value }</span></span>
               {:else}
-                <span class="relative flex size-ring items-center justify-center rounded-full border-2 border-scheme-stamp p-ring-pad text-center text-scheme-stamp"><span class="absolute inset-space-xs rounded-full border border-dashed border-scheme-stamp" aria-hidden="true"></span><span class="relative grid gap-micro"><span class="font-mono text-meta font-medium uppercase">{ b.label }</span><span class="font-heading text-h5 leading-tight font-medium">{ b.value }</span></span></span>
+                <span class="relative flex size-ring items-center justify-center rounded-full border-2 border-scheme-stamp p-stamp-pad text-center text-scheme-stamp"><span class="absolute inset-space-xs rounded-full border border-dashed border-scheme-stamp" aria-hidden="true"></span><span class="relative grid gap-micro"><span class="font-mono text-meta font-medium uppercase">{ b.label }</span><span class="font-heading text-h5 leading-tight font-medium">{ b.value }</span></span></span>
               {/if}
             </li>
           {/for}

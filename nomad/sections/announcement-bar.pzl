@@ -3,7 +3,7 @@
   <div class="mx-auto flex max-w-column items-start gap-space-md md:items-center">
     <p class="flex-1 text-body-sm text-pretty md:text-center">
       { settings.text }
-      {#if settings.link_label && settings.link}<a class="ml-1 font-semibold whitespace-nowrap text-scheme-links underline decoration-1 underline-offset-4 hover:no-underline" href="{ settings.link }">{ settings.link_label }</a>{/if}
+      {#if settings.link_label && settings.link}<a class="ml-tiny font-semibold whitespace-nowrap text-scheme-links underline decoration-1 underline-offset-4 hover:no-underline" href="{ settings.link }">{ settings.link_label }</a>{/if}
     </p>
     {#if settings.show_close}<button class="-m-space-xs flex size-icon-button shrink-0 items-center justify-center" type="button" data-dismiss><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/close.svg'}</span><span class="sr-only">{ t('dismiss') }</span></button>{/if}
   </div>

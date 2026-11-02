@@ -1,9 +1,8 @@
-<!-- TODO sync with Figma (batch C) -->
-<!-- Questions people ask: the heading at the left, the questions at the right on hairlines, each a <collapsible-component> row with a plus that turns to a minus; the first open. Without JavaScript every answer shows. Stacked on a phone. -->
+<!-- Questions people ask (Figma): the heading at the left, the questions in a 40rem column at the right edge on hairlines, each a <collapsible-component> row with a plus that turns to a minus; the first open. Without JavaScript every answer shows. Stacked on a phone. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground" aria-labelledby="{ section.id }-title">
   <div class="mx-auto flex max-w-column flex-wrap justify-between gap-space-xl">
     <h2 class="max-w-list font-heading text-h2 font-semibold text-scheme-heading" id="{ section.id }-title">{ settings.heading }</h2>
-    <ul class="w-full max-w-copy border-t border-scheme-rule md:flex-1">
+    <ul class="w-full max-w-reading border-t border-scheme-rule md:flex-1">
       {#for block in blocks, i}
         {#let b = block.settings}
         <li class="border-b border-scheme-rule" data-block={ block.editor_id }>

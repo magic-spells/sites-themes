@@ -12,4 +12,7 @@
   postmark and contour motifs.
 - Ilse Varga fixtures: 12 places, 4 trips, 12 stops, 14 posts, 15 costs, 17 gear rows, 6
   galleries and the contact and newsletter forms.
+- Matches the final design: counts are visited only (the next stop is never counted), the route
+  map draws no route line unless asked (the trip header keeps its trip's line) and centres on its
+  list from 48rem, every form field has a visible label, and dates print as "Oct 7, 2026".
 - Vendored Magic Spells components and build wiring.

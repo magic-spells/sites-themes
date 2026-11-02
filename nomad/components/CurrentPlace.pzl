@@ -9,7 +9,7 @@
   {#if as == 'tag'}
     <Tag place={ current } mini={ true } href={ href } />
   {:else if as == 'line'}
-    <a class="flex items-center gap-1.5 font-mono text-meta font-medium text-scheme-meta uppercase hover:text-scheme-foreground" href={ href }><PlacePin />{ t('now_in') } { current.title }{#if current.fields.country}, { current.fields.country }{/if}</a>
+    <a class="flex items-center gap-chip font-mono text-meta font-medium text-scheme-meta uppercase hover:text-scheme-foreground" href={ href }><PlacePin />{ t('now_in') } { current.title }{#if current.fields.country}, { current.fields.country }{/if}</a>
   {:else}
     <span>{ t('now_in') } { current.title }{#if current.fields.country}, { current.fields.country }{/if}</span>
   {/if}

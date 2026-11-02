@@ -1,4 +1,4 @@
-<!-- What a month here cost (Figma): one box at 50rem, at the column's left edge (centred on a post, by setting), a ticket strip for its head (the month as a box stamp, the place, the currency code), then the rows on surface-2 on hairlines, from 48rem one line of three columns as in Figma (the category, its note in muted, never meta on surface-2, the amount in mono at the right), the note stacked under its category on a phone; at most 12 rows; the total from sum on a heavier rule. A place shows its latest month; a post shows the costs that point at it. Renders nothing when there are no rows. -->
+<!-- What a month here cost (Figma): one box at 50rem, at the column's left edge (centred on a post, by setting), a ticket strip for its head (the month as a box stamp, the place, the currency code), then the rows on surface-2 on hairlines, from 48rem one line of three columns as in Figma (the category, its note in muted, never meta on surface-2, the amount in mono at the right), on a phone the amount on the category's line and the note across the box under it; at most 12 rows; the total from sum on a heavier rule. A place shows its latest month; a post shows the costs that point at it. Renders nothing when there are no rows. -->
 {#let
   entry = page.entry
   all = content.costs.entries
@@ -27,20 +27,21 @@
         <tbody>
           {#for row in rows}
             <tr class="border-b border-scheme-rule">
-              <th class="w-full py-space-sm ps-space-lg pe-space-md text-left align-top font-normal md:w-auto md:align-baseline md:whitespace-nowrap" scope="row">
-                <span class="block text-body text-scheme-foreground">{ t('cost.' + row.fields.category) }</span>
+              <th class="py-space-sm ps-space-lg pe-space-lg text-left align-top font-normal md:pe-space-md md:align-baseline md:whitespace-nowrap" scope="row">
+                <span class="flex items-baseline justify-between gap-space-md text-body text-scheme-foreground"><span>{ t('cost.' + row.fields.category) }</span><span class="font-mono whitespace-nowrap tabular-nums md:hidden">{ row.fields.amount | number_with_delimiter }</span></span>
                 {#if settings.show_notes && row.fields.note}<span class="block text-body-sm text-scheme-muted md:hidden">{ row.fields.note }</span>{/if}
               </th>
               {#if settings.show_notes}<td class="hidden w-full py-space-sm pe-space-md align-baseline text-body-sm text-scheme-muted md:table-cell">{ row.fields.note }</td>{/if}
-              <td class="py-space-sm ps-space-md pe-space-lg text-right align-top font-mono text-body whitespace-nowrap text-scheme-foreground tabular-nums md:align-baseline">{ row.fields.amount | number_with_delimiter }</td>
+              <td class="hidden py-space-sm ps-space-md pe-space-lg text-right align-baseline font-mono text-body whitespace-nowrap text-scheme-foreground tabular-nums md:table-cell">{ row.fields.amount | number_with_delimiter }</td>
             </tr>
           {/for}
         </tbody>
         <tfoot>
           <tr class="border-t-2 border-scheme-foreground">
-            <th class="py-space-md ps-space-lg pe-space-md text-left font-heading text-h5 font-medium" scope="row">{ t('total') }</th>
+            <th class="py-space-md ps-space-lg pe-space-lg text-left font-heading text-h5 font-medium md:pe-space-md" scope="row"><span class="flex items-baseline justify-between gap-space-md"><span>{ t('total') }</span><span class="font-mono text-body font-medium whitespace-nowrap tabular-nums md:hidden">{ total | number_with_delimiter } { currency }</span></span></th>
             {#if settings.show_notes}<td class="hidden md:table-cell"></td>{/if}
-            <td class="py-space-md ps-space-md pe-space-lg text-right whitespace-nowrap font-mono text-body font-medium tabular-nums">{ total | number_with_delimiter } { currency }</td>
+            <td class="hidden py-space-md ps-space-md pe-space-lg text-right whitespace-nowrap font-mono text-body font-medium tabular-nums md:table-cell">
+{ total | number_with_delimiter } { currency }</td>
           </tr>
         </tfoot>
       </table>

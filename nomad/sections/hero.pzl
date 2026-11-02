@@ -20,7 +20,7 @@
   </div>
   {#if loop}<button class="absolute top-space-md right-gutter z-10 inline-flex size-icon-button items-center justify-center gap-space-xs rounded-full bg-scrim font-mono text-meta font-medium text-on-photo uppercase md:top-section md:size-auto md:px-space-sm md:py-chip" type="button" data-loop-toggle data-play-label="{ t('play_loop') }" aria-pressed="false"><span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/pause.svg'}</span><span class="sr-only md:not-sr-only" data-loop-label>{ t('pause_loop') }</span></button>{/if}
   <div class="mx-auto flex w-full max-w-column flex-wrap items-end justify-between gap-x-space-xl gap-y-space-lg">
-    <div class="grid max-w-copy min-w-0 flex-1 basis-80 gap-space-md pb-space-lg md:pb-hero-copy">
+    <div class="grid max-w-copy min-w-0 flex-1 basis-col gap-space-md pb-space-lg md:pb-hero-copy">
       <h1 class="font-heading text-display font-semibold text-balance text-on-photo">{ heading }</h1>
       {#if settings.text}<p class="max-w-copy text-body-lg text-pretty text-on-photo">{ settings.text }</p>{/if}
       <div class="flex flex-wrap gap-space-sm">

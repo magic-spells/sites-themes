@@ -12,7 +12,7 @@
 <article class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column gap-space-xl">
     <header class="mx-auto grid w-full max-w-reading gap-space-md">
-      {#if settings.show_meta && f.topic}<a class="w-fit rounded-full border border-scheme-rule bg-scheme-surface-2 px-space-sm py-1 text-body-sm font-medium hover:border-scheme-foreground" href="{ site.settings.posts_path || '/journal' }?topic={ encodeURIComponent(f.topic) }">{ f.topic }</a>{/if}
+      {#if settings.show_meta && f.topic}<a class="w-fit rounded-full border border-scheme-rule bg-scheme-surface-2 px-space-sm py-tiny text-body-sm font-medium hover:border-scheme-foreground" href="{ site.settings.posts_path || '/journal' }?topic={ encodeURIComponent(f.topic) }">{ f.topic }</a>{/if}
       <h1 class="font-heading text-h1 font-semibold text-balance text-scheme-heading">{ entry.title ?? page.title }</h1>
       {#if f.standfirst}<p class="text-body-lg text-pretty text-scheme-muted">{ f.standfirst }</p>{/if}
       {#if settings.show_meta}
@@ -32,14 +32,14 @@
             <video class="absolute inset-0 size-full object-cover" controls playsinline preload="none" poster={ image ? image_url(image, 1600) : null }><source src="{ film.url }" type="{ film.mime }" /><a href="{ film.url }">{ t('open_video') }</a></video>
           {:else if film}
             <video class="absolute inset-0 size-full object-cover" muted loop playsinline preload="none" poster={ image ? image_url(image, 1600) : null } data-loop aria-hidden="true"><source src="{ film.url }" type="{ film.mime }" /><a href="{ film.url }">{ t('open_video') }</a></video>
-            <button class="absolute top-space-sm right-space-sm inline-flex items-center gap-space-xs rounded-full bg-scrim px-space-sm py-1.5 font-mono text-meta font-medium text-on-photo uppercase" type="button" data-loop-toggle data-play-label="{ t('play_loop') }" aria-pressed="false"><span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/pause.svg'}</span><span data-loop-label>{ t('pause_loop') }</span></button>
+            <button class="absolute top-space-sm right-space-sm inline-flex items-center gap-space-xs rounded-full bg-scrim px-space-sm py-chip font-mono text-meta font-medium text-on-photo uppercase" type="button" data-loop-toggle data-play-label="{ t('play_loop') }" aria-pressed="false"><span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/pause.svg'}</span><span data-loop-label>{ t('pause_loop') }</span></button>
           {/if}
         </div>
         {#if place || f.image_caption}
           <figcaption class="grid gap-space-xs">
             {#if place}
               <div class="flex items-center justify-between gap-space-md border-t border-scheme-rule pt-space-sm">
-                <div class="flex flex-wrap items-center gap-x-space-sm gap-y-1">
+                <div class="flex flex-wrap items-center gap-x-space-sm gap-y-tiny">
                   <PlaceTag place={ place } href="{ places_path }/{ place.handle }" />
                   {#if place.fields.latitude != null}<span class="font-mono text-coord text-scheme-meta"><Coord lat={ place.fields.latitude } lon={ place.fields.longitude } /></span>{/if}
                 </div>
@@ -59,7 +59,7 @@
 
     <div class="mx-auto grid w-full max-w-reading gap-space-xl">
       <div class="sites-prose { settings.drop_cap ? 'nomad-drop-cap' : '' }">{ f.body }</div>
-      {#if settings.show_end_rule}<hr class="mx-auto h-0.5 w-rule border-0 bg-scheme-stamp" />{/if}
+      {#if settings.show_end_rule}<hr class="mx-auto h-micro w-rule border-0 bg-scheme-stamp" />{/if}
     </div>
   </div>
 
@@ -69,7 +69,7 @@
       <dialog class="m-auto h-dvh w-full max-w-panel bg-scheme-background text-scheme-foreground md:h-auto md:rounded-lg" aria-label="{ place.title }">
         <div class="grid gap-space-md p-space-lg">
           <div class="flex items-start justify-between gap-space-md">
-            <div class="grid gap-1">
+            <div class="grid gap-tiny">
               <h2 class="font-heading text-h3 font-semibold text-scheme-heading">{ place.title }{#if place.fields.country}, { place.fields.country }{/if}</h2>
               <p class="font-mono text-coord text-scheme-meta"><Coord lat={ place.fields.latitude } lon={ place.fields.longitude } /></p>
             </div>

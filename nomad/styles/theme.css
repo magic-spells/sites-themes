@@ -196,8 +196,14 @@
 	--container-table: 50rem;
 	--container-panel: 60rem;
 	--container-inset: 35rem;
+	/* Flex bases: a text column and a map wrap under each other below them. */
+	--container-col: 20rem;
+	--container-map: 24rem;
+	/* A dropdown list of countries. */
+	--container-menu: 12rem;
 	--container-pass: 22.5rem;
 	--container-copy: 47.5rem;
+	--container-figure: 37.5rem;
 	--spacing-control: 3rem;
 	--spacing-control-small: 2.5rem;
 	--spacing-icon: 1.25rem;
@@ -218,8 +224,11 @@
 	--spacing-locator: 6rem;
 	--spacing-stub: var(--nomad-stub);
 	--spacing-postmark: 8rem;
+	/* The postmark's wavy cancel lines. */
+	--spacing-cancel-w: 4rem;
+	--spacing-cancel-h: 2.5rem;
 	--spacing-ring: 8.5rem;
-	--spacing-ring-pad: 0.625rem;
+	--spacing-stamp-pad: 0.625rem;
 	--spacing-play: 4.5rem;
 	--spacing-plane: 1.5rem;
 	--spacing-band: 3rem;
@@ -229,6 +238,8 @@
 	--spacing-hero-copy: 6rem;
 	/* The room a stamp hanging below a cover needs on a phone. */
 	--spacing-overhang: 5rem;
+	/* How far below the sticky header a sticky picture rests. */
+	--spacing-sticky: 6rem;
 	--spacing-slide: 15rem;
 	--spacing-slide-lg: 20rem;
 	--spacing-slide-tall: 24rem;

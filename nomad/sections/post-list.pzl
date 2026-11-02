@@ -30,7 +30,7 @@
       <SectionHead heading={ heading } id="{ section.id }-title" link_label={ (show_view_all && pool.length > posts.length || show_view_all && settings.always_link) ? (settings.view_all_label | replace('{count}', `${link_count}`)) : null } link={ settings.view_all_href || posts_path } />
     {/if}
     {#if toolbar}
-      <div class="flex flex-wrap items-center gap-x-space-md gap-y-space-sm">
+      <div class="flex flex-wrap items-center gap-x-space-sm gap-y-space-sm">
         {#if settings.show_topic_filter && topics.length > 1}
           <form class="flex items-center gap-space-xs" method="get" action="{ page.path }" data-topic-filter>
             <label class="sr-only" for="{ section.id }-topic">{ t('topic') }</label>
@@ -49,8 +49,8 @@
         {#if toggle}
           <div class="flex gap-space-xs" role="group" hidden data-view-switch
  aria-label="{ t('view_label') }">
-            <button class="inline-flex min-h-control-small items-center gap-1.5 rounded-full border border-scheme-rule bg-scheme-surface-2 px-space-sm text-body-sm aria-pressed:border-scheme-foreground aria-pressed:bg-scheme-foreground aria-pressed:text-scheme-background" type="button" data-view-set="grid" aria-pressed="{ view == 'grid' ? 'true' : 'false' }"><span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/grid.svg'}</span>{ t('view_grid') }</button>
-            <button class="inline-flex min-h-control-small items-center gap-1.5 rounded-full border border-scheme-rule bg-scheme-surface-2 px-space-sm text-body-sm aria-pressed:border-scheme-foreground aria-pressed:bg-scheme-foreground aria-pressed:text-scheme-background" type="button" data-view-set="list" aria-pressed="{ view == 'list' ? 'true' : 'false' }"><span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/list.svg'}</span>{ t('view_list') }</button>
+            <button class="inline-flex min-h-control-small items-center rounded-full border border-scheme-rule bg-scheme-surface-2 px-space-sm text-body-sm aria-pressed:border-scheme-foreground aria-pressed:bg-scheme-foreground aria-pressed:text-scheme-background" type="button" data-view-set="grid" aria-pressed="{ view == 'grid' ? 'true' : 'false' }">{ t('view_grid') }</button>
+            <button class="inline-flex min-h-control-small items-center rounded-full border border-scheme-rule bg-scheme-surface-2 px-space-sm text-body-sm aria-pressed:border-scheme-foreground aria-pressed:bg-scheme-foreground aria-pressed:text-scheme-background" type="button" data-view-set="list" aria-pressed="{ view == 'list' ? 'true' : 'false' }">{ t('view_list') }</button>
           </div>
         {/if}
       </div>

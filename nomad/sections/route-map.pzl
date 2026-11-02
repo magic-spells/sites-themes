@@ -25,7 +25,7 @@
 }
 <section class="bg-scheme-background py-section pl-gutter text-scheme-foreground md:pl-edge" id={ section.index == 0 || settings.anchor ? 'route' : null } aria-labelledby="{ section.id }-title" data-country-scope>
   <div class="flex flex-wrap items-start gap-x-space-xl gap-y-space-lg">
-      <div class="grid w-full max-w-list min-w-0 flex-1 basis-80 content-start gap-space-md pr-gutter md:pr-0">
+      <div class="grid w-full max-w-list min-w-0 flex-1 basis-col content-start gap-space-md pr-gutter md:pr-0">
         <div class="grid gap-space-sm">
           <h2 class="font-heading text-h2 font-semibold text-balance text-scheme-heading" id="{ section.id }-title">{ trip ? (settings.heading || trip.title) : settings.heading }</h2>
           {#if settings.show_count}<p class="text-body text-scheme-muted">{#if trip}{ t('trip_count', { stops: stops.length, countries: size(stops | map('fields.place.fields.country') | uniq) }) }{:else if by_stops}{ t('stops_count', { stops: visited.length, trips: visited_trips }) }{#if since} { t('since_date', { date: date(since) }) }{/if}{:else}{ t('places_count', { places: visited_places, countries: visited_countries }) }{#if since} { t('since_date', { date: date(since) }) }{/if}{/if}</p>{/if}
@@ -33,10 +33,10 @@
         {#if settings.show_list && settings.country_filter && countries.length > 1}
           <dropdown-component class="w-fit" close-delay="150">
             <dropdown-trigger class="inline-flex min-h-control-small cursor-pointer items-center gap-space-xs rounded-button border border-scheme-rule px-space-sm text-body-sm"><span data-country-label>{ t('all_countries') }</span><span class="sites-icon size-icon-sm rotate-90" aria-hidden="true">{#svg 'icons/angle-right.svg'}</span></dropdown-trigger>
-            <dropdown-panel class="z-30 mt-1 rounded-sm border border-scheme-rule bg-scheme-background p-space-xs" effect="fade">
-              <ul class="grid min-w-48 text-body-sm">
-                <li><button class="w-full rounded-sm px-space-sm py-1.5 text-left hover:bg-scheme-surface-2 current:font-semibold" type="button" data-country-set="" aria-current="true">{ t('all_countries') }</button></li>
-                {#for country in countries}<li><button class="w-full rounded-sm px-space-sm py-1.5 text-left hover:bg-scheme-surface-2 current:font-semibold" type="button" data-country-set={ country }>{ country }</button></li>{/for}
+            <dropdown-panel class="z-30 mt-tiny rounded-sm border border-scheme-rule bg-scheme-background p-space-xs" effect="fade">
+              <ul class="grid min-w-menu text-body-sm">
+                <li><button class="w-full rounded-sm px-space-sm py-chip text-left hover:bg-scheme-surface-2 current:font-semibold" type="button" data-country-set="" aria-current="true">{ t('all_countries') }</button></li>
+                {#for country in countries}<li><button class="w-full rounded-sm px-space-sm py-chip text-left hover:bg-scheme-surface-2 current:font-semibold" type="button" data-country-set={ country }>{ country }</button></li>{/for}
               </ul>
             </dropdown-panel>
           </dropdown-component>
@@ -51,15 +51,15 @@
             {#if p}<PlaceRow place={ p } href="{ places_path }/{ p.handle }" count={ size(posts | where('fields.place.handle', h)) } arrived={ stay ? stay.fields.arrive : null } now={ current && current.handle == h } />{/if}
           {/for}
         </ul>
-        {#if settings.link_label}<a class="inline-flex w-fit items-center gap-1 text-body-sm text-scheme-links hover:underline" href={ settings.link || places_path }>{ settings.link_label | replace('{count}', `${visited_places}`) }<span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/arrow-right.svg'}</span></a>{/if}
+        {#if settings.link_label}<a class="inline-flex w-fit items-center gap-tiny text-body-sm text-scheme-links hover:underline" href={ settings.link || places_path }>{ settings.link_label | replace('{count}', `${visited_places}`) }<span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/arrow-right.svg'}</span></a>{/if}
         {/if}
       </div>
-    <figure class="grid min-w-0 flex-2 basis-96 gap-space-sm md:self-center">
+    <figure class="grid min-w-0 flex-2 basis-map gap-space-sm md:self-center">
       <WorldMap places={ places } stops={ route_points } now={ current ? current.handle : null } next={ next_stop ? next_stop.fields.place.handle : null } fit={ fit } route={ settings.show_route == 'none' ? false : settings.show_route } labels={ true } base={ places_path } caption={ next_stop ? date(next_stop.fields.arrive) : null } pins={ trip_handles } pan={ fit == 'world' } />
-      <figcaption class="flex flex-wrap gap-x-space-md gap-y-1 pr-gutter font-mono text-meta font-medium text-scheme-meta uppercase">
-        <span class="inline-flex items-center gap-1.5"><span class="size-dot rounded-full bg-scheme-stamp" aria-hidden="true"></span>{ t('now') }</span>
-        {#if next_stop}<span class="inline-flex items-center gap-1.5"><span class="size-dot rounded-full border border-scheme-foreground" aria-hidden="true"></span>{ t('next') }</span>{/if}
-        {#if settings.show_route != 'none'}<span class="inline-flex items-center gap-1.5"><span class="w-4 border-t-2 border-dashed border-scheme-route" aria-hidden="true"></span>{ settings.show_route == 'posts' ? t('route_by_post') : t('route_by_arrival') }</span>{/if}
+      <figcaption class="flex flex-wrap gap-x-space-md gap-y-tiny pr-gutter font-mono text-meta font-medium text-scheme-meta uppercase">
+        <span class="inline-flex items-center gap-chip"><span class="size-dot rounded-full bg-scheme-stamp" aria-hidden="true"></span>{ t('now') }</span>
+        {#if next_stop}<span class="inline-flex items-center gap-chip"><span class="size-dot rounded-full border border-scheme-foreground" aria-hidden="true"></span>{ t('next') }</span>{/if}
+        {#if settings.show_route != 'none'}<span class="inline-flex items-center gap-chip"><span class="w-icon-sm border-t-2 border-dashed border-scheme-route" aria-hidden="true"></span>{ settings.show_route == 'posts' ? t('route_by_post') : t('route_by_arrival') }</span>{/if}
       </figcaption>
     </figure>
   </div>

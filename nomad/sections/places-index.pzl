@@ -19,10 +19,10 @@
           {#if settings.country_filter && countries.length > 1}
             <dropdown-component class="w-fit" close-delay="150">
               <dropdown-trigger class="inline-flex min-h-control-small cursor-pointer items-center gap-space-xs rounded-button border border-scheme-rule px-space-sm text-body-sm"><span data-country-label>{ t('all_countries') }</span><span class="sites-icon size-icon-sm rotate-90" aria-hidden="true">{#svg 'icons/angle-right.svg'}</span></dropdown-trigger>
-              <dropdown-panel class="z-30 mt-1 rounded-sm border border-scheme-rule bg-scheme-background p-space-xs" effect="fade">
-                <ul class="grid min-w-48 text-body-sm">
-                  <li><button class="w-full rounded-sm px-space-sm py-1.5 text-left hover:bg-scheme-surface-2 current:font-semibold" type="button" data-country-set="" aria-current="true">{ t('all_countries') }</button></li>
-                  {#for country in countries}<li><button class="flex w-full justify-between gap-space-md rounded-sm px-space-sm py-1.5 text-left hover:bg-scheme-surface-2 current:font-semibold" type="button" data-country-set={ country }>{ country }<span class="font-mono text-meta text-scheme-meta">{ size(places | where('fields.country', country)) }</span></button></li>{/for}
+              <dropdown-panel class="z-30 mt-tiny rounded-sm border border-scheme-rule bg-scheme-background p-space-xs" effect="fade">
+                <ul class="grid min-w-menu text-body-sm">
+                  <li><button class="w-full rounded-sm px-space-sm py-chip text-left hover:bg-scheme-surface-2 current:font-semibold" type="button" data-country-set="" aria-current="true">{ t('all_countries') }</button></li>
+                  {#for country in countries}<li><button class="flex w-full justify-between gap-space-md rounded-sm px-space-sm py-chip text-left hover:bg-scheme-surface-2 current:font-semibold" type="button" data-country-set={ country }>{ country }<span class="font-mono text-meta text-scheme-meta">{ size(places | where('fields.country', country)) }</span></button></li>{/for}
                 </ul>
               </dropdown-panel>
             </dropdown-component>
@@ -53,7 +53,7 @@
       {/for}
     </div>
     {#if settings.show_photo}
-      <div class="sticky top-24 hidden w-full max-w-side flex-1 md:block">
+      <div class="sticky top-sticky hidden w-full max-w-side flex-1 md:block">
         <div class="aspect-4/5 overflow-hidden rounded-sm bg-scheme-surface-2">{#if first_photo}<img class="size-full object-cover" src="{ image_url(first_photo, 1024, { height: 1280 }) }" alt="" loading="lazy" width="1024" height="1280" data-hover-photo />{/if}</div>
       </div>
     {/if}

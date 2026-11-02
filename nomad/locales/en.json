@@ -139,6 +139,6 @@
   "placeholder_name": "Your name",
   "placeholder_email": "you@example.com",
   "placeholder_message": "A few lines is plenty",
-  "maintenance_title": "Between stops.",
-  "maintenance_body": "The journal is being repacked. Back shortly."
+  "maintenance_eyebrow": "Closed for a moment",
+  "maintenance_title": "Between stops. Back shortly."
 }

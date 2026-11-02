@@ -1,12 +1,11 @@
-<!-- TODO sync with Figma (batch C) -->
-<!-- A picture on the offset plane (a terracotta block 1.5rem down and outward, crossing the column edge) beside a 30rem column of text with the 2xl gap between them. Image first puts the picture on the left; text first puts the text on the left edge and the picture on the right edge. The picture comes first on a phone. -->
+<!-- A picture (up to 37.5rem, Figma) on the offset plane (a terracotta block 1.5rem down and outward, crossing the column edge) beside a 30rem column of text with the 2xl gap between them. Image first puts the picture on the left; text first puts the text on the left edge and the picture on the right edge. The picture comes first on a phone. -->
 {#let
   well = settings.ratio == 'portrait' ? 'aspect-4/5' : (settings.ratio == 'square' ? 'aspect-square' : 'aspect-3/2')
   text_first = settings.layout == 'text_first'
 }
 <section class="overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground { site.settings.reveal_on_scroll ? 'reveal reveal-fade-up' : '' }" aria-labelledby="{ section.id }-title">
   <div class="mx-auto flex max-w-column flex-col gap-space-2xl md:flex-row md:items-center md:justify-between { text_first ? 'md:flex-row-reverse' : '' }">
-    <div class="relative w-full md:max-w-copy md:flex-1">
+    <div class="relative w-full md:max-w-figure md:flex-1">
       <span class="absolute inset-0 translate-y-plane rounded-sm bg-plane { text_first ? 'translate-x-plane' : '-translate-x-plane' }" aria-hidden="true"></span>
       <div class="relative overflow-hidden rounded-sm bg-scheme-surface-2 { well }">{#if settings.image}<img class="size-full object-cover" src="{ image_url(settings.image, 1280) }" srcset="{ image_srcset(settings.image, [640, 1024, 1280, 1600]) }" sizes="(min-width: 48rem) 45vw, 100vw" alt="{ settings.image.alt }" loading="lazy" width={ settings.image.width } height={ settings.image.height } />{/if}</div>
     </div>

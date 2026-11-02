@@ -25,7 +25,7 @@
             stop = arrival ?? upcoming
           }
           <li class="{ tilts[i % 3] } { site.settings.reveal_on_scroll ? 'reveal reveal-fade-up' : '' }">
-            <span class="relative flex size-ring items-center justify-center rounded-full p-ring-pad text-center text-scheme-stamp { upcoming ? 'border-2 border-dashed border-scheme-stamp' : 'border-2 border-scheme-stamp' }">
+            <span class="relative flex size-ring items-center justify-center rounded-full p-stamp-pad text-center text-scheme-stamp { upcoming ? 'border-2 border-dashed border-scheme-stamp' : 'border-2 border-scheme-stamp' }">
               {#unless upcoming}<span class="absolute inset-space-xs rounded-full border border-dashed border-scheme-stamp" aria-hidden="true"></span>{/unless}
               <span class="relative grid gap-micro">
                 <span class="font-mono text-meta font-medium uppercase">{ country }</span>

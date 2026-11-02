@@ -5,8 +5,8 @@
      the place page when it has an href. -->
 {#if place}
   {#if href}
-    <a class="relative z-10 inline-flex w-fit items-center gap-1.5 text-body-sm font-semibold hover:underline decoration-1 underline-offset-4 text-scheme-foreground" href={ href }><PlacePin />{ place.title }{#if place.fields.country}, { place.fields.country }{/if}</a>
+    <a class="relative z-10 inline-flex w-fit items-center gap-chip text-body-sm font-semibold hover:underline decoration-1 underline-offset-4 text-scheme-foreground" href={ href }><PlacePin />{ place.title }{#if place.fields.country}, { place.fields.country }{/if}</a>
   {:else}
-    <span class="inline-flex w-fit items-center gap-1.5 text-body-sm font-semibold text-scheme-foreground"><PlacePin />{ place.title }{#if place.fields.country}, { place.fields.country }{/if}</span>
+    <span class="inline-flex w-fit items-center gap-chip text-body-sm font-semibold text-scheme-foreground"><PlacePin />{ place.title }{#if place.fields.country}, { place.fields.country }{/if}</span>
   {/if}
 {/if}

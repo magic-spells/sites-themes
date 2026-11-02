@@ -7,21 +7,21 @@
      or tag stamp, never the scheme's colours. -->
 {#if place}
   {#if mini}
-    <div class="relative grid w-tag-mini gap-1 rounded-md bg-tag px-space-sm pt-space-sm pb-space-sm text-tag-ink shadow-sm tilt-stamp">
-      <p class="flex items-center gap-1.5 font-mono text-meta font-medium text-tag-stamp uppercase"><PlacePin tone="tag" />{ t('now_in') }</p>
+    <div class="relative grid w-tag-mini gap-tiny rounded-md bg-tag px-space-sm pt-space-sm pb-space-sm text-tag-ink shadow-sm tilt-stamp">
+      <p class="flex items-center gap-chip font-mono text-meta font-medium text-tag-stamp uppercase"><PlacePin tone="tag" />{ t('now_in') }</p>
       {#if href}<a class="font-heading text-h5 font-medium hover:underline" href={ href }>{ place.title }{#if place.fields.country}, { place.fields.country }{/if}</a>{:else}<p class="font-heading text-h5 font-medium">{ place.title }{#if place.fields.country}, { place.fields.country }{/if}</p>{/if}
     </div>
   {:else}
-    <div class="relative grid w-tag gap-space-xs rounded-md bg-tag px-space-md pt-space-sm pb-5 text-tag-ink shadow-sm tilt-stamp">
-      <p class="flex items-center gap-1.5 font-mono text-meta font-medium text-tag-stamp uppercase"><PlacePin tone="tag" />{ t('currently_in') }</p>
-      <div class="grid gap-0.5">
+    <div class="relative grid w-tag gap-space-xs rounded-md bg-tag px-space-md pt-space-sm pb-space-md text-tag-ink shadow-sm tilt-stamp">
+      <p class="flex items-center gap-chip font-mono text-meta font-medium text-tag-stamp uppercase"><PlacePin tone="tag" />{ t('currently_in') }</p>
+      <div class="grid gap-micro">
         {#if href}<a class="font-heading text-h4 font-medium hover:underline" href={ href }>{ place.title }{#if place.fields.country}, { place.fields.country }{/if}</a>{:else}<p class="font-heading text-h4 font-medium">{ place.title }{#if place.fields.country}, { place.fields.country }{/if}</p>{/if}
         <p class="font-mono text-coord"><Coord lat={ place.fields.latitude } lon={ place.fields.longitude } /></p>
       </div>
       {#if arrived || since}
         <div class="flex items-center gap-space-sm border-t border-tag-ink/20 pt-space-sm">
           {#if arrived}<DateStamp value={ arrived } still={ true } />{/if}
-          <div class="grid gap-0.5">
+          <div class="grid gap-micro">
             {#if arrived}<p class="font-mono text-meta font-medium text-tag-stamp uppercase">{ t('arrived') }</p>{/if}
             {#if since}<p class="text-body-sm">{ t('on_road_since', { date: date(since) }) }</p>{/if}
           </div>

@@ -8,7 +8,7 @@
   <a class="group flex items-center gap-space-sm py-space-xs" href={ href }>
     <span class="block size-thumb-sm shrink-0 overflow-hidden rounded-sm bg-scheme-surface-2">{#if f.image}<img class="size-full object-cover" src="{ image_url(f.image, 160, { height: 160 }) }" alt="" loading="lazy" width="160" height="160" />{/if}</span>
     <span class="size-dot shrink-0 rounded-full { now ? 'bg-scheme-stamp' : 'bg-scheme-route' }" aria-hidden="true"></span>
-    <span class="grid flex-1 gap-0.5">
+    <span class="grid flex-1 gap-micro">
       <span class="font-heading text-h5 font-medium text-scheme-heading decoration-1 underline-offset-4 group-hover:underline">{ place.title }</span>
       <span class="text-body-sm text-scheme-muted">{ f.country }{#if arrived} · {#if now}{ t('since_date', { date: date(arrived) }) }{:else}{ date(arrived) }{/if}{/if}</span>
     </span>

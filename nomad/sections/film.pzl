@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma (batch C) -->
 <!-- One large video, full-bleed with no padding (4:5 on a phone, 21:9 from 48rem, or 16:9 wide). Loop: muted, started by theme.ts in view and never under reduced motion, with a pause control and "Watch with sound", which unmutes it in place. Player: the poster with a round play button that starts the film with its controls. The caption row under it: the title, the place tag and the date. A video over 15 MB is skipped for the poster image. -->
 {#let
   film = settings.video && settings.video.byte_size <= 15728640 ? settings.video : null
@@ -14,19 +13,19 @@
     {:else if film}
       <video class="absolute inset-0 size-full object-cover" muted loop playsinline preload="none" poster={ settings.image ? image_url(settings.image, 1600) : null } data-loop><source src="{ film.url }" type="{ film.mime }" /></video>
       <div class="absolute right-gutter bottom-space-md flex flex-wrap justify-end gap-space-xs">
-        <button class="inline-flex items-center gap-space-xs rounded-full bg-scrim px-space-sm py-1.5 font-mono text-meta font-medium text-on-photo uppercase" type="button" data-loop-toggle data-play-label="{ t('play_loop') }" aria-pressed="false"><span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/pause.svg'}</span><span data-loop-label>{ t('pause') }</span></button>
-        <button class="inline-flex items-center gap-space-xs rounded-full bg-scrim px-space-sm py-1.5 text-body-sm font-semibold text-on-photo" type="button" data-loop-sound>{ t('watch_with_sound') }</button>
+        <button class="inline-flex items-center gap-space-xs rounded-full bg-scrim px-space-sm py-chip font-mono text-meta font-medium text-on-photo uppercase" type="button" data-loop-toggle data-play-label="{ t('play_loop') }" aria-pressed="false"><span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/pause.svg'}</span><span data-loop-label>{ t('pause') }</span></button>
+        <button class="inline-flex items-center gap-space-xs rounded-full bg-scrim px-space-sm py-chip text-body-sm font-semibold text-on-photo" type="button" data-loop-sound>{ t('watch_with_sound') }</button>
       </div>
     {/if}
   </div>
   {#if settings.heading || settings.place || settings.caption}
     <div class="px-gutter pt-space-md pb-section">
       <div class="mx-auto flex max-w-column flex-wrap items-baseline justify-between gap-x-space-lg gap-y-space-xs">
-        <div class="grid gap-1">
+        <div class="grid gap-tiny">
           {#if settings.heading}<h2 class="font-heading text-h3 font-semibold text-scheme-heading">{ settings.heading }</h2>{/if}
           {#if settings.caption}<p class="text-body-sm text-scheme-muted">{ settings.caption }</p>{/if}
         </div>
-        <p class="flex flex-wrap items-center gap-x-space-sm gap-y-1">
+        <p class="flex flex-wrap items-center gap-x-space-sm gap-y-tiny">
           {#if settings.place}<PlaceTag place={ settings.place } href="{ places_path }/{ settings.place.handle }" />{/if}
           {#if settings.date}<time class="font-mono text-meta font-medium text-scheme-meta uppercase" datetime={ date(settings.date, 'iso') }>{ date(settings.date) }</time>{/if}
         </p>

@@ -17,7 +17,7 @@
   </div>
   <div class="px-gutter pt-space-xl">
     <div class="mx-auto flex max-w-column flex-wrap items-start justify-between gap-space-2xl">
-      <div class="grid max-w-side flex-1 basis-80 gap-space-md">
+      <div class="grid max-w-side flex-1 basis-col gap-space-md">
         <h1 class="font-heading text-h1 font-semibold text-balance text-scheme-heading">{ trip.title }</h1>
         <div class="flex items-center gap-space-sm">
           {#if f.start_date}<DateStamp value={ f.start_date } />{/if}

@@ -14,7 +14,7 @@
     {#if img}
       <a class="relative block" href={ href } tabindex="-1" aria-hidden="true">
         <span class="block overflow-hidden rounded-sm bg-scheme-surface-2 { featured ? 'aspect-4/3 md:aspect-video' : 'aspect-4/3' }"><img class="size-full object-cover transition-transform duration-hover ease-out-soft group-hover:scale-hover" data-zoom src="{ image_url(img, featured ? 1600 : 1024) }" srcset="{ image_srcset(img, featured ? [640, 1024, 1280, 1600, 2000] : [480, 640, 1024, 1280]) }" sizes="{ featured ? '(min-width: 85rem) 85rem, 100vw' : '(min-width: 48rem) 40rem, 100vw' }" alt="{ f.image_alt }" loading="lazy" width={ img.width } height={ img.height } /></span>
-        {#if f.date}<span class="absolute bottom-0 left-space-sm translate-y-3">
+        {#if f.date}<span class="absolute bottom-0 left-space-sm translate-y-space-sm">
           <DateStamp value={ f.date } /></span>{/if}
       </a>
     {/if}

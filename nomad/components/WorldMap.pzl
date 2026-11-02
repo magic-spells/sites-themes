@@ -61,10 +61,10 @@
       {#if still}
       <span class="pin-at z-10 flex items-center justify-center" style="--x: { px }%; --y: { py }%"><Pin type={ is_now ? 'now' : (is_next ? 'next' : 'place') } /></span>
       {:else}
-      <a class="pin-at z-10 flex items-center justify-center p-1.5 { is_now ? 'z-20' : '' }" style="--x: { px }%; --y: { py }%" href="{ base }/{ place.handle }" data-country={ place.fields.country } data-place-pin={ place.handle } aria-label="{ place.title }, { place.fields.country }">
+      <a class="pin-at z-10 flex items-center justify-center p-chip { is_now ? 'z-20' : '' }" style="--x: { px }%; --y: { py }%" href="{ base }/{ place.handle }" data-country={ place.fields.country } data-place-pin={ place.handle } aria-label="{ place.title }, { place.fields.country }">
         <Pin type={ is_now ? 'now' : (is_next ? 'next' : 'place') } />
-        {#if labels && is_now}<span class="pointer-events-none absolute top-1/2 left-full ml-1 -translate-y-1/2 font-mono text-meta font-medium whitespace-nowrap text-scheme-foreground uppercase">{ t('now') } · { place.title }</span>{/if}
-        {#if labels && is_next}<span class="pointer-events-none absolute top-1/2 right-full mr-1 -translate-y-1/2 text-right font-mono text-meta font-medium whitespace-nowrap text-scheme-foreground uppercase">{ t('next') } · { place.title }{#if caption}<br />{ caption }{/if}</span>{/if}
+        {#if labels && is_now}<span class="pointer-events-none absolute top-1/2 left-full ml-tiny -translate-y-1/2 font-mono text-meta font-medium whitespace-nowrap text-scheme-foreground uppercase">{ t('now') } · { place.title }</span>{/if}
+        {#if labels && is_next}<span class="pointer-events-none absolute top-1/2 right-full mr-tiny -translate-y-1/2 text-right font-mono text-meta font-medium whitespace-nowrap text-scheme-foreground uppercase">{ t('next') } · { place.title }{#if caption}<br />{ caption }{/if}</span>{/if}
       </a>
       {/if}
     {/if}

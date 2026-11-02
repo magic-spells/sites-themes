@@ -12,9 +12,9 @@
         {#if settings.label}<p class="font-mono text-meta font-medium text-scheme-muted uppercase">{ settings.label }</p>{/if}
         <h2 class="font-heading text-h4 font-medium text-scheme-heading">{ name }</h2>
         {#if bio}<p class="max-w-copy text-body-sm text-pretty text-scheme-muted">{ bio }</p>{/if}
-        {#if settings.link_label && settings.link}<a class="inline-flex w-fit items-center gap-1 text-body-sm text-scheme-links hover:underline" href={ settings.link }>{ settings.link_label }<span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/arrow-right.svg'}</span></a>{/if}
+        {#if settings.link_label && settings.link}<a class="inline-flex w-fit items-center gap-tiny text-body-sm text-scheme-links hover:underline" href={ settings.link }>{ settings.link_label }<span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/arrow-right.svg'}</span></a>{/if}
         {#if settings.links.items.length}
-          <ul class="flex flex-wrap gap-x-space-sm gap-y-1 text-body-sm">
+          <ul class="flex flex-wrap gap-x-space-sm gap-y-tiny text-body-sm">
             {#for item in settings.links.items}<li><a class="text-scheme-muted underline decoration-1 underline-offset-4 hover:text-scheme-foreground" href="{ item.href }">{ item.label }</a></li>{/for}
           </ul>
         {/if}

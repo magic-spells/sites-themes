@@ -1,0 +1,38 @@
+{
+  "label": "Class",
+  "description": "A class's page: the photo, the specs, when it runs and who coaches it.",
+  "sections": [
+    {
+      "id": "s_detail",
+      "type": "class-detail",
+      "preset": "Default",
+      "settings": {
+        "sessions": "sessions",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_more",
+      "type": "class-carousel",
+      "preset": "More classes",
+      "settings": {
+        "classes": "classes",
+        "heading": "More classes",
+        "text": "",
+        "color_scheme": "white",
+        "kicker": "Classes"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Flare",
+      "settings": {
+        "color_scheme": "flare"
+      },
+      "blocks": []
+    }
+  ]
+}

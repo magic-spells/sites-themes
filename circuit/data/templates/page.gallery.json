@@ -1,0 +1,41 @@
+{
+  "label": "Gallery",
+  "description": "Every album, then a strip from the floor.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "heading": "From the floor and the river",
+        "standfirst": "Classes, races and Saturday mornings by the river.",
+        "kicker": "Gallery",
+        "color_scheme": "concrete"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_albums",
+      "type": "album-grid",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "albums": "albums",
+        "view_all_label": "",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_strip",
+      "type": "photo-strip",
+      "preset": "Default",
+      "settings": {
+        "gallery": "floor-strip",
+        "color_scheme": "white",
+        "heading": "On the floor"
+      },
+      "blocks": []
+    }
+  ]
+}

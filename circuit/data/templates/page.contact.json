@@ -1,0 +1,41 @@
+{
+  "label": "Contact",
+  "description": "The contact form and details, then the locations.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "heading": "Say hello",
+        "standfirst": "Questions about classes, memberships or the run club. We answer within a day.",
+        "kicker": "Contact",
+        "color_scheme": "concrete"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_contact",
+      "type": "contact",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "locations": "locations",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_locations",
+      "type": "locations",
+      "preset": "Default",
+      "settings": {
+        "locations": "locations",
+        "color_scheme": "concrete",
+        "kicker": "Find us",
+        "heading": "Two doors, one club"
+      },
+      "blocks": []
+    }
+  ]
+}

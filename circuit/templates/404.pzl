@@ -1,0 +1,19 @@
+<!-- template: 404 -->
+<!-- layout: default -->
+<!-- The page header on concrete with the 404, then up to three featured
+     classes as cards, so a wrong path still leads to a class. -->
+{#let classes = content.classes.entries | where('fields.featured', true) | sort('fields.order') | slice(0, 3)}
+<section class="sites-scheme-concrete bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column justify-items-start gap-step-sm">
+    <p class="font-mono text-overline font-medium text-scheme-meta uppercase">404</p>
+    <h1 class="max-w-wide font-heading text-h1 font-black text-balance text-scheme-heading uppercase stretch-display">{ t('not_found_title') }</h1>
+    <p class="max-w-reading text-body-lg text-pretty text-scheme-muted">{ t('not_found_body') }</p>
+  </div>
+</section>
+{#if classes.length}
+<section class="sites-scheme-white bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <ul class="mx-auto grid max-w-column gap-gap-lg md:grid-cols-2 lg:grid-cols-3">
+    {#for entry in classes}<li><ClassCard entry={ entry } href="/classes/{ entry.handle }" show_specs={ true } show_coach={ true } /></li>{/for}
+  </ul>
+</section>
+{/if}

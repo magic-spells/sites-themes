@@ -1,0 +1,32 @@
+<!-- One line on flare or black: the message in mono caps, a link from 48rem,
+     and a × that hides the bar for good for this key (theme.ts). -->
+<aside class="bg-scheme-background px-gutter py-step-xs text-scheme-foreground" data-dismiss-key="{ settings.key }" aria-label="{ t('announcement') }">
+  <div class="mx-auto flex max-w-column items-center gap-step-md">
+    <p class="flex-1 text-center font-mono text-spec font-medium text-pretty uppercase">
+      { settings.text }
+      {#if settings.link_label && settings.link}<a class="ml-step-xs hidden underline decoration-1 underline-offset-4 md:inline" href="{ settings.link }">{ settings.link_label }</a>{/if}
+    </p>
+    {#if settings.show_close}<button class="-my-step-xs -mr-step-xs flex size-icon-button shrink-0 items-center justify-center" type="button" data-dismiss><span class="sites-icon size-icon-small" aria-hidden="true">{#svg 'icons/close.svg'}</span><span class="sr-only">{ t('dismiss') }</span></button>{/if}
+  </div>
+</aside>
+
+<schema>
+{
+  "name": "Announcement bar",
+  "description": "One dismissable line above the header: holiday hours, a new class.",
+  "kind": "Header",
+  "icon": "megaphone",
+  "settings": [
+    { "type": "text", "id": "text", "label": "Text", "default": "Christmas hours: both locations close at 14:00 on 24 December." },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "See the timetable" },
+    { "type": "url", "id": "link", "label": "Link", "default": "/timetable" },
+    { "type": "checkbox", "id": "show_close", "label": "Show close button", "default": true },
+    { "type": "text", "id": "key", "label": "Dismiss key", "default": "announcement-2026-12", "info": "Change it to show the bar again to visitors who closed it." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "flare" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "flare" } },
+    { "name": "Black", "settings": { "color_scheme": "black" } }
+  ]
+}
+</schema>

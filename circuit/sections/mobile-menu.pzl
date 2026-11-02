@@ -1,0 +1,62 @@
+<!-- The mobile menu: a <bottom-sheet> in its <dialog-panel>. It rises over
+     the backdrop, drags down to dismiss, closes on the backdrop, Escape and
+     its close button, and hands focus back to the header's menu button. The
+     menu in Archivo 800 uppercase; under the classes item, the classes with
+     their spec lines; then the primary action and the phone. -->
+{#let
+  classes = settings.classes.entries | sort('fields.order') | slice(0, 12)
+  action = site.settings.action_label
+}
+<dialog-panel>
+  <dialog class="text-scheme-foreground" aria-label="{ t('menu') }">
+    <bottom-sheet id="mobile-menu" max-display-width="1023">
+      <bottom-sheet-header class="flex justify-end pt-step-sm">
+        <button class="-m-step-xs flex size-icon-button items-center justify-center text-scheme-muted hover:text-scheme-foreground" type="button" data-action-hide-dialog><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/close.svg'}</span><span class="sr-only">{ t('close') }</span></button>
+      </bottom-sheet-header>
+      <bottom-sheet-content>
+        <div class="grid gap-step-lg">
+          {#if settings.menu.items.length}
+            <nav aria-label="{ t('main_navigation') }">
+              <ul class="grid border-t border-scheme-rule">
+                {#for item in settings.menu.items}
+                  <li class="grid gap-step-sm border-b border-scheme-rule py-step-sm">
+                    <a class="font-heading text-h3 font-extrabold text-scheme-heading uppercase stretch-heading hover:text-scheme-links current:text-scheme-links" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active ? 'page' : null }>{ item.label }</a>
+                    {#if settings.show_classes && item.href == settings.classes_path && classes.length}
+                      <ul class="grid gap-step-xs pb-step-xs">
+                        {#for entry in classes}
+                          <li><a class="flex items-baseline justify-between gap-step-sm" href="{ settings.base_path }/{ entry.handle }"><span class="text-body-sm font-bold uppercase">{ entry.title }</span><span class="font-mono text-spec whitespace-nowrap text-scheme-meta uppercase">{ t('minutes_short', { n: entry.fields.duration_minutes }) } · { t('level_short.' + entry.fields.level) }</span></a></li>
+                        {/for}
+                      </ul>
+                    {/if}
+                  </li>
+                {/for}
+              </ul>
+            </nav>
+          {/if}
+          {#if action}<Button action={ true } wide={ true }>{ action }</Button>{/if}
+          {#if site.settings.phone}<a class="font-mono text-spec font-medium text-scheme-muted uppercase hover:text-scheme-foreground" href="tel:{ site.settings.phone | replace(' ', '') }">{ site.settings.phone }</a>{/if}
+        </div>
+      </bottom-sheet-content>
+    </bottom-sheet>
+  </dialog>
+</dialog-panel>
+
+<schema>
+{
+  "name": "Mobile menu",
+  "description": "The menu as a bottom sheet below 64rem, with the classes under Classes and the primary action.",
+  "kind": "Panels",
+  "icon": "panel-bottom",
+  "settings": [
+    { "type": "menu", "id": "menu", "label": "Menu" },
+    { "type": "checkbox", "id": "show_classes", "label": "List the classes", "default": true, "info": "Under the menu item that links to the classes page." },
+    { "type": "collection", "id": "classes", "label": "Classes", "info": "Reads classes: title, handle, duration_minutes, level and order. Shows the first 12." },
+    { "type": "url", "id": "classes_path", "label": "Classes page", "default": "/classes" },
+    { "type": "url", "id": "base_path", "label": "Class page path", "default": "/classes" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "menu": "main", "classes": "classes", "color_scheme": "white" } }
+  ]
+}
+</schema>

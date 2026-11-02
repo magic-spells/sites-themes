@@ -1,0 +1,37 @@
+<!-- A page's head on concrete: a kicker, the heading in h1 uppercase, a
+     standfirst; left or centred; the top edge can be cut at 12°. -->
+{#let slash = settings.edge == 'slash' && section.index > 0}
+<section class="bg-scheme-background px-gutter pb-section text-scheme-foreground { slash ? 'edge-slash pt-section-slash' : 'pt-section' }">
+  <div class="mx-auto grid max-w-column gap-step-sm { settings.align == 'center' ? 'justify-items-center text-center' : '' }">
+    {#if settings.kicker}<p class="font-mono text-overline font-medium text-scheme-meta uppercase">{ settings.kicker }</p>{/if}
+    <h1 class="max-w-wide font-heading text-h1 font-black text-balance text-scheme-heading uppercase stretch-display">{ settings.heading || page.title }</h1>
+    {#if settings.standfirst}<p class="max-w-reading text-body-lg text-pretty text-scheme-muted">{ settings.standfirst }</p>{/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Page header",
+  "description": "A kicker, the page heading and a standfirst.",
+  "kind": "Content",
+  "icon": "file-text",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "", "info": "Leave empty to use the page title." },
+    { "type": "textarea", "id": "standfirst", "label": "Standfirst", "default": "" },
+    { "type": "select", "id": "align", "label": "Alignment", "default": "left", "options": [
+      { "value": "left", "label": "Left" },
+      { "value": "center", "label": "Centred" }
+    ] },
+    { "type": "select", "id": "edge", "label": "Top edge", "default": "flat", "options": [
+      { "value": "flat", "label": "Flat" },
+      { "value": "slash", "label": "Slash" }
+    ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "concrete" }
+  ],
+  "presets": [
+    { "name": "Left", "settings": { "align": "left" } },
+    { "name": "Centred", "settings": { "align": "center" } }
+  ]
+}
+</schema>

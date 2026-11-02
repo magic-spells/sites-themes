@@ -1,0 +1,54 @@
+{
+  "label": "Timetable",
+  "description": "The week's sessions by day, then the locations and their hours.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "heading": "The week",
+        "standfirst": "06:00–22:00 · North and Riverside · drop in or book",
+        "kicker": "Timetable",
+        "color_scheme": "concrete"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_timetable",
+      "type": "timetable",
+      "preset": "Week",
+      "settings": {
+        "heading": "",
+        "text": "",
+        "sessions": "sessions",
+        "show_filter": true,
+        "view_all_label": "",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_locations",
+      "type": "locations",
+      "preset": "Default",
+      "settings": {
+        "locations": "locations",
+        "show_hours": true,
+        "color_scheme": "concrete",
+        "kicker": "Find us",
+        "heading": "Two doors, one club"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Flare",
+      "settings": {
+        "color_scheme": "flare"
+      },
+      "blocks": []
+    }
+  ]
+}

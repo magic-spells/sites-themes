@@ -1,0 +1,29 @@
+<!-- component: PlanCard -->
+<!-- A plan: the name in the mono kicker, the price in the Numeral face with
+     the period in mono, the summary, a hairline, the features as a check
+     list, the plan's note in mono, and a full-width square button (the
+     plan's own checkout link, or the primary action) whose label never
+     wraps: filled on the featured plan, outlined on the others (in the
+     accent on a dark section, the text colour on a light one). Cards in a row are top-aligned and equal height; the featured
+     plan carries the opposite scheme class, so every colour inside follows. -->
+{#let
+  f = entry.fields
+  free = f.period == 'free' || f.price == 0
+  tone = featured ? null : (dark ? 'accent-outline' : 'outline')
+}
+<article class="flex h-full flex-col gap-step-md p-step-lg { featured ? 'bg-scheme-background text-scheme-foreground ' + invert : 'border border-scheme-rule bg-scheme-surface-2 text-scheme-foreground' }">
+  <h3 class="font-mono text-overline font-medium text-scheme-heading uppercase">{ entry.title }</h3>
+  <p class="flex flex-wrap items-baseline gap-x-step-xs">
+    <span class="font-heading text-h1 font-black tabular-nums stretch-display">{ free ? t('free') : (f.price % 1 == 0 ? f.price | currency(site.settings.currency_symbol, 0) : f.price | currency(site.settings.currency_symbol)) }</span>
+    {#if !free && f.period}<span class="font-mono text-spec font-medium text-scheme-muted uppercase">/ { t('period.' + f.period) }</span>{/if}
+  </p>
+  {#if f.summary}<p class="text-body-sm text-pretty text-scheme-muted">{ f.summary }</p>{/if}
+  <ul class="grid flex-1 content-start gap-step-xs border-t border-scheme-rule pt-step-md text-body-sm">
+    {#for line in f.features | split('\n')}{#if line | strip}<li class="grid grid-cols-check items-start gap-step-xs"><span class="sites-icon mt-0.5 size-icon-small text-accent" aria-hidden="true">{#svg 'icons/check.svg'}</span><span>{ line | strip }</span></li>{/if}{/for}
+  </ul>
+  {#if show_note && f.note}<p class="font-mono text-spec font-medium text-scheme-muted uppercase">{ f.note }</p>{/if}
+  <div>
+    {#if f.link}<Button href={ f.link } tone={ tone } wide={ true } external={ true }>{ t('choose_plan') }</Button>
+    {:else}<Button action={ true } tone={ tone } wide={ true }>{ action_label || site.settings.action_label }</Button>{/if}
+  </div>
+</article>

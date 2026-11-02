@@ -1,0 +1,83 @@
+<!-- A location's page: a full-bleed 21:9 photo, the name, then the address,
+     the hours and the contact details in three columns, the static map, and
+     "Classes here": this location's sessions grouped by day. -->
+{#let
+  loc = page.entry
+  f = loc.fields
+  here = settings.sessions.entries | where('fields.location.id', loc.id)
+  days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+  action = settings.action_label || site.settings.action_label
+}
+{#if loc}
+<section class="bg-scheme-background pb-section text-scheme-foreground">
+  <Photo asset={ f.image } alt={ f.image_alt } ratio="aspect-video md:aspect-21/9" eager={ true } sizes="100vw" width={ 2000 } />
+  <div class="mx-auto grid max-w-column gap-step-xl px-gutter pt-step-xl">
+    <div class="grid gap-step-sm">
+      {#if settings.back_label}<a class="justify-self-start font-mono text-spec font-medium text-scheme-links uppercase hover:underline" href="{ settings.back_href }">← { settings.back_label }</a>{/if}
+      <h1 class="font-heading text-h1 font-black text-scheme-heading uppercase stretch-heading">{ loc.title }</h1>
+      {#if f.description}<p class="max-w-reading text-body-lg text-scheme-muted">{ f.description }</p>{/if}
+    </div>
+    <div class="grid gap-step-xl border-t border-scheme-rule pt-step-lg md:grid-cols-3">
+      <div class="grid content-start gap-step-xs">
+        <h2 class="font-mono text-overline font-medium text-scheme-meta uppercase">{ t('address') }</h2>
+        <address class="text-body not-italic">{ f.address | newline_to_br }</address>
+        {#if f.note}<p class="flex items-center gap-step-xs font-mono text-spec text-scheme-muted uppercase"><span class="size-dot shrink-0 bg-accent" aria-hidden="true"></span>{ f.note }</p>{/if}
+      </div>
+      <div class="grid content-start gap-step-xs">
+        <h2 class="font-mono text-overline font-medium text-scheme-meta uppercase">{ t('opening_hours') }</h2>
+        <HoursTable hours={ f.hours } />
+      </div>
+      <div class="grid content-start justify-items-start gap-step-xs">
+        <h2 class="font-mono text-overline font-medium text-scheme-meta uppercase">{ t('contact') }</h2>
+        {#if f.phone}<a class="font-mono text-body-sm hover:text-scheme-links" href="tel:{ f.phone | replace(' ', '') }">{ f.phone }</a>{/if}
+        {#if f.email}<a class="font-mono text-body-sm break-all hover:text-scheme-links" href="mailto:{ f.email }">{ f.email }</a>{/if}
+        <div class="flex flex-wrap gap-step-xs pt-step-xs">
+          {#if f.map_url}<Button href={ f.map_url } size="small" external={ true }>{ t('directions') }</Button>{/if}
+          {#if action}<Button action={ true } size="small" tone="outline">{ action }</Button>{/if}
+        </div>
+      </div>
+    </div>
+    {#if settings.show_map && f.map_image}<a class="block" href="{ f.map_url }"><Photo asset={ f.map_image } alt={ f.map_image_alt } ratio="aspect-video md:aspect-21/9" sizes="(min-width: 82.5rem) 82.5rem, 100vw" /></a>{/if}
+    {#if settings.show_sessions && here.length}
+      <div class="grid gap-step-md">
+        <h2 class="font-heading text-h2 font-black text-scheme-heading uppercase stretch-heading">{ settings.sessions_heading }</h2>
+        <dl class="grid gap-x-gap-lg md:grid-cols-2 lg:grid-cols-4">
+          {#for d in days}
+            {#let on_day = here | where('fields.day', d) | sort('fields.start')}
+            {#if on_day.length}
+              <div class="border-t border-scheme-rule py-step-sm">
+                <dt class="mb-step-xs font-mono text-overline font-medium text-scheme-meta uppercase">{ t('day_long.' + d) }</dt>
+                {#for s in on_day}<dd class="flex items-baseline justify-between gap-step-sm py-step-2xs"><a class="text-body-sm font-bold uppercase hover:underline" href="{ settings.class_path }/{ s.fields.class.handle }">{ s.fields.class.title }</a><span class="font-mono text-time whitespace-nowrap">{ s.fields.start }</span></dd>{/for}
+              </div>
+            {/if}
+          {/for}
+        </dl>
+      </div>
+    {/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Location detail",
+  "description": "A location's page: photo, address, hours, contact, map and the sessions held there.",
+  "kind": "Contact",
+  "icon": "mail",
+  "templates": ["location"],
+  "settings": [
+    { "type": "text", "id": "back_label", "label": "Back link label", "default": "All locations" },
+    { "type": "url", "id": "back_href", "label": "Back link", "default": "/locations" },
+    { "type": "checkbox", "id": "show_map", "label": "Show the map", "default": true },
+    { "type": "checkbox", "id": "show_sessions", "label": "Show the classes here", "default": true },
+    { "type": "text", "id": "sessions_heading", "label": "Classes heading", "default": "Classes here" },
+    { "type": "collection", "id": "sessions", "label": "Sessions", "info": "Reads sessions: class, day, start and location." },
+    { "type": "url", "id": "class_path", "label": "Class page path", "default": "/classes" },
+    { "type": "text", "id": "action_label", "label": "Action label", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "sessions": "sessions" } }
+  ]
+}
+</schema>

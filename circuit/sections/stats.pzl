@@ -1,0 +1,61 @@
+<!-- Three or four big numbers on black: the numeral in the display face
+     with its unit or "+" in flare, a mono label above each (the label is
+     the term, the number its value), hairlines between. Halftone and the
+     ghost word optional. -->
+{#let ghost = settings.ghost_word || site.settings.ghost_word}
+<section class="relative isolate overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground" data-texture={ settings.texture }>
+  {#if settings.show_ghost && ghost}<span class="pointer-events-none absolute right-0 bottom-0 -z-10 translate-y-1/4 font-heading text-ghost font-black whitespace-nowrap uppercase select-none ghost-stroke stretch-display" aria-hidden="true">{ ghost }</span>{/if}
+  <div class="mx-auto max-w-column">
+    {#if settings.heading}<h2 class="mb-step-xl font-heading text-h2 font-black text-scheme-heading uppercase stretch-heading">{ settings.heading }</h2>{:else}<h2 class="sr-only">{ t('in_numbers', { name: site.name }) }</h2>{/if}
+    <dl class="grid grid-cols-2 { settings.columns == '3' ? 'lg:grid-cols-3' : 'lg:grid-cols-4' }">
+      {#for block in blocks, i}
+        {#let b = block.settings}
+        <div class="flex flex-col gap-step-sm border-t border-scheme-rule py-step-lg pr-step-md lg:border-t-0 lg:py-step-md { i > 0 ? 'lg:border-l lg:pl-step-lg' : '' }" data-block={ block.editor_id }>
+          <dt class="order-2 font-mono text-spec font-medium text-scheme-muted uppercase">{ b.label }</dt>
+          <dd class="order-1 font-heading text-h1 leading-none font-black tabular-nums stretch-display">{#if b.prefix}<span class="mr-step-2xs align-baseline font-mono text-body font-medium text-accent uppercase">{ b.prefix }</span>{/if}{ b.number }{#if b.unit}<span class="ml-0.5 align-top text-h2 text-accent">{ b.unit }</span>{/if}</dd>
+        </div>
+      {/for}
+    </dl>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Stats",
+  "description": "Three or four big numbers with a unit in flare and a label.",
+  "kind": "Content",
+  "icon": "list",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "", "info": "Optional; screen readers get one either way." },
+    { "type": "select", "id": "columns", "label": "Columns", "default": "4", "options": [
+      { "value": "3", "label": "3" },
+      { "value": "4", "label": "4" }
+    ] },
+    { "type": "select", "id": "texture", "label": "Texture", "default": "halftone", "options": [
+      { "value": "none", "label": "None" },
+      { "value": "halftone", "label": "Halftone" },
+      { "value": "grain", "label": "Grain" }
+    ] },
+    { "type": "checkbox", "id": "show_ghost", "label": "Show the ghost word", "default": false },
+    { "type": "text", "id": "ghost_word", "label": "Ghost word", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "black" }
+  ],
+  "blocks": [
+    { "type": "stat", "name": "Stat", "settings": [
+      { "type": "text", "id": "prefix", "label": "Before the number", "default": "", "info": "A small mono word, like Est." },
+      { "type": "text", "id": "number", "label": "Number", "default": "75" },
+      { "type": "text", "id": "unit", "label": "Unit", "default": "+", "info": "Set in flare: +, km, kg." },
+      { "type": "text", "id": "label", "label": "Label", "default": "Classes a week" }
+    ] }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "black", "texture": "halftone" }, "blocks": [
+      { "type": "stat", "settings": { "number": "75", "unit": "+", "label": "Classes a week" } },
+      { "type": "stat", "settings": { "number": "6", "unit": "", "label": "Coaches" } },
+      { "type": "stat", "settings": { "number": "2", "unit": "", "label": "Locations, North and Riverside" } },
+      { "type": "stat", "settings": { "prefix": "Est.", "number": "2014", "unit": "", "label": "On Foundry Lane since" } }
+    ] }
+  ]
+}
+</schema>

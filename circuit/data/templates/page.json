@@ -1,0 +1,27 @@
+{
+  "label": "Page",
+  "description": "A page header and the page's own text.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "heading": "",
+        "standfirst": "",
+        "kicker": "",
+        "color_scheme": "concrete"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_body",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": []
+    }
+  ]
+}

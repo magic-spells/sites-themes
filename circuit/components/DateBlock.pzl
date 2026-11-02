@@ -1,0 +1,22 @@
+<!-- component: DateBlock -->
+<!-- The date as a block: the day number in the display face, the month and
+     weekday in mono. The engine's date() has no weekday, so it is worked out
+     here from the ISO day (Zeller's rule): no clock involved. size "large"
+     is the event page's; tone "outline" is a hairline box in the scheme's
+     colours (the event rows), otherwise black over a photo. -->
+{#let
+  iso = date(value, 'iso')
+  y0 = parseInt(iso | slice(0, 4))
+  m0 = parseInt(iso | slice(5, 2))
+  d = parseInt(iso | slice(8, 2))
+  m = m0 < 3 ? m0 + 12 : m0
+  y = m0 < 3 ? y0 - 1 : y0
+  k = y % 100
+  j = (y - k) / 100
+  h = (d + ((13 * (m + 1)) / 5 | floor) + k + (k / 4 | floor) + (j / 4 | floor) + 5 * j) % 7
+  weekday = ['sat', 'sun', 'mon', 'tue', 'wed', 'thu', 'fri'][h]
+}
+<time class="inline-grid justify-items-start gap-step-2xs px-step-sm pt-step-xs pb-step-sm { tone == 'outline' ? 'border border-scheme-rule bg-scheme-background text-scheme-heading' : 'bg-ink text-on-photo' }" datetime="{ iso }">
+  <span class="font-heading font-black tabular-nums stretch-display { size == 'large' ? 'text-h1' : 'text-h2' } leading-none">{ d < 10 ? '0' + d : d }</span>
+  <span class="font-mono text-spec font-medium uppercase { tone == 'outline' ? 'text-scheme-meta' : 'text-on-photo' }">{ t('months_short.' + m0) } · { t('day.' + weekday) }</span>
+</time>

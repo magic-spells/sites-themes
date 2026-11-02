@@ -1,0 +1,87 @@
+<!-- The wordmark left; the main menu and the primary action right. The menu
+     item that points at the classes page opens a <dropdown-panel> of the
+     classes, each with a 3:2 thumbnail and its spec line. Below 64rem: the
+     wordmark, the action (from 48rem) and a menu button for the mobile menu's sheet.
+     Over-hero: transparent over a top scrim (so the menu reads on a light
+     photo) at the top of a page that opens with a Cover hero, and solid once
+     the page scrolls (styles/theme.css, the overlaid variant).
+     While a panel is open one dim lies under the header (theme.ts). -->
+{#let
+  wordmark = settings.logo_text || site.settings.wordmark || site.name
+  classes = settings.classes.entries | sort('fields.order') | slice(0, 12)
+  action = settings.action_label || site.settings.action_label
+}
+<div class="pointer-events-none fixed inset-0 z-20 bg-backdrop opacity-0 transition-opacity duration-panel data-open:pointer-events-auto data-open:opacity-100" data-page-dim aria-hidden="true"></div>
+<sticky-header class="block" settle-overshoot="0" disabled={ !settings.sticky } data-header-style={ settings.style }>
+  <header class="relative isolate border-b border-scheme-rule bg-scheme-background px-gutter text-scheme-foreground transition-colors duration-panel overlaid:border-transparent overlaid:bg-transparent overlaid:text-on-photo">
+    <span class="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden h-scrim bg-linear-to-b from-scrim to-transparent overlaid:block" aria-hidden="true"></span>
+    <div class="mx-auto flex min-h-header max-w-column items-center justify-between gap-step-md">
+      <a class="font-heading text-wordmark font-black whitespace-nowrap uppercase stretch-display" href="/">{ wordmark }</a>
+      <div class="flex items-center gap-step-lg">
+        {#if settings.menu.items.length}
+          <nav class="hidden lg:block" aria-label="{ t('main_navigation') }">
+            <ul class="flex items-center font-semibold text-nav uppercase">
+              {#for item in settings.menu.items}
+                {#if settings.show_dropdown && item.href == settings.classes_path && classes.length}
+                  <li>
+                    <dropdown-component trigger="both" close-delay="150">
+                      <dropdown-trigger class="flex min-h-header cursor-pointer items-center gap-step-2xs px-step-sm">{ item.label }<span class="sites-icon size-icon-small" aria-hidden="true">{#svg 'icons/angle-down.svg'}</span></dropdown-trigger>
+                      <dropdown-panel class="border-y border-scheme-rule bg-scheme-background px-gutter py-step-lg text-scheme-foreground" wide effect="fade">
+                        <div class="mx-auto grid max-w-column gap-step-lg">
+                          <ul class="grid grid-cols-4 gap-x-step-lg gap-y-step-md">
+                            {#for entry in classes}
+                              <li><a class="group grid grid-cols-meta items-center gap-step-sm" href="{ settings.base_path }/{ entry.handle }">
+                                <span class="block w-thumb"><Photo asset={ entry.fields.image } alt="" ratio="aspect-3/2" width={ 320 } sizes="6rem" zoom={ true } /></span>
+                                <span class="grid gap-step-2xs"><span class="text-body-sm leading-tight font-bold uppercase group-hover:underline">{ entry.title }</span><span class="font-mono text-spec text-scheme-meta uppercase">{ t('minutes_short', { n: entry.fields.duration_minutes }) } · { t('level_short.' + entry.fields.level) }</span></span>
+                              </a></li>
+                            {/for}
+                          </ul>
+                          <a class="justify-self-start font-mono text-spec font-medium text-scheme-links uppercase hover:underline" href="{ settings.classes_path }">{ t('all_classes') }</a>
+                        </div>
+                      </dropdown-panel>
+                    </dropdown-component>
+                  </li>
+                {:else}
+                  <li><a class="flex min-h-header items-center border-b-2 border-transparent px-step-sm hover:border-accent current:border-accent" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>
+                {/if}
+              {/for}
+            </ul>
+          </nav>
+        {/if}
+        <div class="flex items-center gap-step-xs">
+          {#if settings.show_action && action}<span class="hidden md:block"><Button action={ true } tone="header" size="small">{ action }</Button></span>{/if}
+          <button class="-mr-step-xs flex size-control-small items-center justify-center lg:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu"><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/menu.svg'}</span><span class="sr-only">{ t('menu') }</span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+</sticky-header>
+
+<schema>
+{
+  "name": "Header",
+  "description": "The wordmark, the main menu with the Classes panel, and the primary action.",
+  "kind": "Header",
+  "icon": "panel-top",
+  "settings": [
+    { "type": "text", "id": "logo_text", "label": "Wordmark text", "default": "", "info": "Leave empty to use the Brand wordmark." },
+    { "type": "menu", "id": "menu", "label": "Menu" },
+    { "type": "select", "id": "style", "label": "Style", "default": "solid", "options": [
+      { "value": "solid", "label": "Solid" },
+      { "value": "over-hero", "label": "Over the hero" }
+    ], "info": "Over the hero: transparent on a page that opens with a Cover hero, solid once the page scrolls. Solid everywhere else." },
+    { "type": "checkbox", "id": "sticky", "label": "Sticky", "default": true },
+    { "type": "checkbox", "id": "show_dropdown", "label": "Classes panel", "default": true, "info": "The menu item that links to the classes page opens a panel of the classes." },
+    { "type": "collection", "id": "classes", "label": "Classes", "info": "Reads classes: title, handle, image, duration_minutes, level and order. Shows the first 12." },
+    { "type": "url", "id": "classes_path", "label": "Classes page", "default": "/classes" },
+    { "type": "url", "id": "base_path", "label": "Class page path", "default": "/classes", "info": "Each class links to this path plus its handle." },
+    { "type": "checkbox", "id": "show_action", "label": "Show primary action", "default": true },
+    { "type": "text", "id": "action_label", "label": "Action label", "default": "", "info": "Leave empty to use the Floor setting." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "black" }
+  ],
+  "presets": [
+    { "name": "Solid", "settings": { "style": "solid", "menu": "main", "classes": "classes", "color_scheme": "white" } },
+    { "name": "Over the hero", "settings": { "style": "over-hero", "menu": "main", "classes": "classes", "color_scheme": "white" } }
+  ]
+}
+</schema>

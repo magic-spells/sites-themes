@@ -1,0 +1,67 @@
+<!-- The contact form (with its subject as a drop-down), then the details
+     column: every location (its name, address and meeting note on one line,
+     and its hours), the phone and email (the first location's, or the
+     Contact settings), and a mono reply note. -->
+{#let
+  shown = settings.locations.entries | sort('fields.order') | slice(0, 4)
+  location = shown | first
+  phone = location.fields.phone || site.settings.phone
+  email = location.fields.email || site.settings.email
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-start gap-step-xl md:grid-cols-2 lg:gap-step-3xl">
+    <div class="grid content-start gap-step-md">
+      {#if settings.heading}<h2 class="font-heading text-h2 font-black text-scheme-heading uppercase stretch-heading">{ settings.heading }</h2>{/if}
+      <Form handle={ settings.form } class="grid gap-step-md" id="contact-form">
+        {#if form.sent}
+          <p class="text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
+        {:else}
+          {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
+          <FormFields fields={ form.fields } prefix="contact" />
+          <Submit wide={ true }>{ form.submit_label || t('send') }</Submit>
+          <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+        {/if}
+      </Form>
+    </div>
+    {#if settings.show_details}
+      <div class="grid content-start gap-step-lg">
+        {#if settings.kicker}<p class="font-mono text-overline font-medium text-scheme-meta uppercase">{ settings.kicker }</p>{/if}
+        {#for entry in shown}
+          <div class="grid gap-step-xs">
+            <h3 class="font-heading text-h4 font-extrabold text-scheme-heading uppercase stretch-heading">{ entry.title }</h3>
+            {#if entry.fields.address}<p class="text-body-sm text-scheme-muted">{ entry.fields.address | split('\n') | join(', ') }{#if entry.fields.note}. { entry.fields.note }{/if}</p>{/if}
+            <HoursTable hours={ entry.fields.hours } />
+          </div>
+        {/for}
+        {#if phone || email}
+          <p class="grid justify-items-start font-mono text-body-sm">
+            {#if phone}<a class="text-scheme-links underline hover:no-underline" href="tel:{ phone | replace(' ', '') }">{ phone }</a>{/if}
+            {#if email}<a class="break-all text-scheme-links underline hover:no-underline" href="mailto:{ email }">{ email }</a>{/if}
+          </p>
+        {/if}
+        {#if settings.text}<p class="font-mono text-spec font-medium text-scheme-meta uppercase">{ settings.text }</p>{/if}
+      </div>
+    {/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Contact",
+  "description": "The contact form beside the address, phone and email.",
+  "kind": "Contact",
+  "icon": "mail",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "", "info": "Optional; above the form." },
+    { "type": "text", "id": "kicker", "label": "Details kicker", "default": "Find us" },
+    { "type": "text", "id": "text", "label": "Reply note", "default": "We reply within one working day." },
+    { "type": "form", "id": "form", "label": "Form", "default": "contact", "info": "Reads name, email, subject (a drop-down) and message." },
+    { "type": "checkbox", "id": "show_details", "label": "Show contact details", "default": true },
+    { "type": "collection", "id": "locations", "label": "Locations", "info": "Reads up to four locations by order: title, address, note and hours; the first one's phone and email, with the Contact settings standing in when missing." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "locations": "locations" } }
+  ]
+}
+</schema>

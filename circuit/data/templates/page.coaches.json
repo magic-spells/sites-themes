@@ -1,0 +1,79 @@
+{
+  "label": "Coaches",
+  "description": "Every coach, then what members say.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "heading": "The people on the floor",
+        "standfirst": "Six coaches across two locations. Every one of them teaches every week.",
+        "kicker": "Coaches",
+        "color_scheme": "concrete"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_grid",
+      "type": "coach-grid",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "coaches": "coaches",
+        "columns": "4",
+        "view_all_label": "",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_quotes",
+      "type": "testimonials",
+      "preset": "Carousel",
+      "settings": {
+        "layout": "grid",
+        "color_scheme": "black",
+        "heading": ""
+      },
+      "blocks": [
+        {
+          "id": "s_quotes_b1",
+          "type": "quote",
+          "settings": {
+            "quote": "Sam has the patience of a saint and the programming of a sadist.",
+            "name": "Jess P.",
+            "line": "Conditioning"
+          }
+        },
+        {
+          "id": "s_quotes_b2",
+          "type": "quote",
+          "settings": {
+            "quote": "Priya's mobility class is the reason my back stopped hurting.",
+            "name": "Dev R.",
+            "line": "Mobility"
+          }
+        },
+        {
+          "id": "s_quotes_b3",
+          "type": "quote",
+          "settings": {
+            "quote": "The 6 a.m. crew is the best part of my week.",
+            "name": "Lena Marsh",
+            "line": "Member since 2022"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Flare",
+      "settings": {
+        "color_scheme": "flare"
+      },
+      "blocks": []
+    }
+  ]
+}

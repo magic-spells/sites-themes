@@ -1,0 +1,20 @@
+<!-- component: SessionChip -->
+<!-- One session in the timetable: the time in mono, the class name in
+     Archivo 700, the coach and the location in the Spec mono (short: the
+     coach's first name and the location's initial, read against the key
+     under the week). A filled block on the scheme's second surface, no
+     frame; it links to the class and carries the class handle for the
+     class filter. -->
+{#let
+  f = slot_entry.fields
+  klass = f.class
+  coach = f.coach || klass.fields.coach
+  who = coach ? (short ? coach.title | split(' ') | first : coach.title) : ''
+  at = f.location ? (short ? f.location.title | slice(0, 1) : f.location.title) : ''
+}
+<a class="grid gap-step-2xs border border-transparent bg-scheme-surface-2 p-step-sm text-scheme-foreground transition-colors duration-fast hover:border-scheme-foreground" href="{ base_path }/{ klass.handle }" data-session data-class={ klass.handle }>
+  <span class="font-mono text-time font-medium">{ f.start }{#if f.end}–{ f.end }{/if}</span>
+  <span class="text-body-sm leading-tight font-bold text-scheme-heading uppercase">{ klass.title }</span>
+  {#if (show_coach && who) || (show_location && at)}<span class="font-mono text-spec text-scheme-muted uppercase">{#if show_coach && who}{ who }{/if}{#if show_coach && who && show_location && at} · {/if}{#if show_location && at}{ at }{/if}</span>{/if}
+  {#if f.note}<span class="text-body-xs text-scheme-muted">{ f.note }</span>{/if}
+</a>

@@ -1,0 +1,28 @@
+{
+  "label": "Album",
+  "description": "An album's photos, then more albums.",
+  "sections": [
+    {
+      "id": "s_photos",
+      "type": "album-photos",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_more",
+      "type": "album-grid",
+      "preset": "Default",
+      "settings": {
+        "heading": "More galleries",
+        "albums": "albums",
+        "limit": 3,
+        "color_scheme": "concrete",
+        "kicker": "Gallery"
+      },
+      "blocks": []
+    }
+  ]
+}

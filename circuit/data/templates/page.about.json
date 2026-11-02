@@ -1,0 +1,182 @@
+{
+  "label": "About",
+  "description": "The story, the numbers, the head coach and what the gym believes.",
+  "sections": [
+    {
+      "id": "s_story",
+      "type": "story",
+      "preset": "Picture right",
+      "settings": {
+        "image": "as_3x2_2",
+        "image_side": "right",
+        "body": "<p>In 2014 twelve runners met in the car park behind Foundry Lane every Saturday at eight. No kit, no fees, just a loop of the river and coffee after.</p><p>The first barbell arrived a year later, in a lock-up beside the bike shop. Since then it has grown to two rooms, six coaches and seventy-five classes a week, and the Saturday run still leaves from the river gate.</p>",
+        "color_scheme": "white",
+        "kicker": "Our story",
+        "heading": "A gym that started as a run club"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_stats",
+      "type": "stats",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "black",
+        "texture": "halftone"
+      },
+      "blocks": [
+        {
+          "id": "s_stats_b1",
+          "type": "stat",
+          "settings": {
+            "prefix": "",
+            "number": "75",
+            "unit": "+",
+            "label": "Classes a week"
+          }
+        },
+        {
+          "id": "s_stats_b2",
+          "type": "stat",
+          "settings": {
+            "prefix": "",
+            "number": "6",
+            "unit": "",
+            "label": "Coaches"
+          }
+        },
+        {
+          "id": "s_stats_b3",
+          "type": "stat",
+          "settings": {
+            "prefix": "",
+            "number": "2",
+            "unit": "",
+            "label": "Locations"
+          }
+        },
+        {
+          "id": "s_stats_b4",
+          "type": "stat",
+          "settings": {
+            "prefix": "",
+            "number": "2014",
+            "unit": "",
+            "label": "Est."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_coach",
+      "type": "coach-feature",
+      "preset": "Default",
+      "settings": {
+        "coach": "coach_dana_okafor",
+        "kicker": "Head coach",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_values",
+      "type": "value-props",
+      "preset": "Boxes",
+      "settings": {
+        "heading": "The difference is the coaching",
+        "style": "boxes",
+        "columns": "3",
+        "color_scheme": "graphite",
+        "kicker": "Why here"
+      },
+      "blocks": [
+        {
+          "id": "s_values_b1",
+          "type": "prop",
+          "settings": {
+            "index": "01",
+            "heading": "Coached, not watched",
+            "text": "Every session has a coach on the floor, watching your form and adjusting the plan.",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        {
+          "id": "s_values_b2",
+          "type": "prop",
+          "settings": {
+            "index": "02",
+            "heading": "One workout, three levels",
+            "text": "Beginners and veterans train side by side, each on a version of the session that fits.",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        {
+          "id": "s_values_b3",
+          "type": "prop",
+          "settings": {
+            "index": "03",
+            "heading": "A crew that notices",
+            "text": "Miss a Tuesday and someone asks after you on Thursday. That is the point.",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_pairs",
+      "type": "photo-wall",
+      "preset": "Pairs",
+      "settings": {
+        "gallery": "about-pairs",
+        "layout": "pairs",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_quotes",
+      "type": "testimonials",
+      "preset": "Grid",
+      "settings": {
+        "layout": "grid",
+        "color_scheme": "concrete",
+        "heading": ""
+      },
+      "blocks": [
+        {
+          "id": "s_quotes_b1",
+          "type": "quote",
+          "settings": {
+            "quote": "I came for one class in 2019. I still have not missed a Saturday.",
+            "name": "Hannah K.",
+            "line": "Member since 2019",
+            "image": ""
+          }
+        },
+        {
+          "id": "s_quotes_b2",
+          "type": "quote",
+          "settings": {
+            "quote": "The coaches know your name by the second session, and your squat by the third.",
+            "name": "Tom A.",
+            "line": "Strength Foundations",
+            "image": ""
+          }
+        },
+        {
+          "id": "s_quotes_b3",
+          "type": "quote",
+          "settings": {
+            "quote": "The only gym where the regulars clap for the new people.",
+            "name": "Mei L.",
+            "line": "Run club",
+            "image": ""
+          }
+        }
+      ]
+    }
+  ]
+}

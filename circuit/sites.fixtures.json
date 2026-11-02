@@ -1,0 +1,4426 @@
+{
+  "site": {
+    "name": "Common Ground",
+    "url": "https://commonground.example",
+    "locale": "en",
+    "settings": {
+      "wordmark": "Common Ground",
+      "favicon": "as_favicon",
+      "tagline": "Strength, conditioning and a free run club in Marlow Bridge.",
+      "currency_symbol": "£",
+      "reveal": true,
+      "ghost_word": "Stronger",
+      "ticker_lines": "First class free\nNo contracts\nOpen 06:00–22:00\nRun club Saturdays 08:00\nAll paces welcome\nTwo locations",
+      "action_label": "Start free trial",
+      "trial_form": "trial",
+      "trial_note": "No card needed. We will call to book your first class.",
+      "booking_url": "",
+      "trial_path": "/trial",
+      "chat_url": "https://chat.whatsapp.com/",
+      "chat_label": "Join the group chat",
+      "club_url": "https://www.strava.com/",
+      "club_label": "Strava club",
+      "phone": "01632 960 214",
+      "email": "hello@commonground.example"
+    }
+  },
+  "menus": {
+    "main": {
+      "handle": "main",
+      "title": "Main menu",
+      "items": [
+        {
+          "id": "m1",
+          "label": "Classes",
+          "target": {
+            "kind": "url",
+            "url": "/classes"
+          },
+          "children": []
+        },
+        {
+          "id": "m2",
+          "label": "Timetable",
+          "target": {
+            "kind": "url",
+            "url": "/timetable"
+          },
+          "children": []
+        },
+        {
+          "id": "m3",
+          "label": "Coaches",
+          "target": {
+            "kind": "url",
+            "url": "/coaches"
+          },
+          "children": []
+        },
+        {
+          "id": "m4",
+          "label": "Memberships",
+          "target": {
+            "kind": "url",
+            "url": "/memberships"
+          },
+          "children": []
+        },
+        {
+          "id": "m5",
+          "label": "Events",
+          "target": {
+            "kind": "url",
+            "url": "/events"
+          },
+          "children": []
+        },
+        {
+          "id": "m6",
+          "label": "Contact",
+          "target": {
+            "kind": "url",
+            "url": "/contact"
+          },
+          "children": []
+        }
+      ]
+    },
+    "explore": {
+      "handle": "explore",
+      "title": "Explore",
+      "items": [
+        {
+          "id": "e1",
+          "label": "Find us",
+          "target": {
+            "kind": "url",
+            "url": "/locations"
+          },
+          "children": []
+        },
+        {
+          "id": "e2",
+          "label": "Gallery",
+          "target": {
+            "kind": "url",
+            "url": "/gallery"
+          },
+          "children": []
+        },
+        {
+          "id": "e3",
+          "label": "About",
+          "target": {
+            "kind": "url",
+            "url": "/about"
+          },
+          "children": []
+        },
+        {
+          "id": "e4",
+          "label": "Free trial",
+          "target": {
+            "kind": "url",
+            "url": "/trial"
+          },
+          "children": []
+        }
+      ]
+    },
+    "legal": {
+      "handle": "legal",
+      "title": "Legal",
+      "items": [
+        {
+          "id": "l1",
+          "label": "Privacy",
+          "target": {
+            "kind": "url",
+            "url": "/privacy"
+          },
+          "children": []
+        },
+        {
+          "id": "l2",
+          "label": "Terms",
+          "target": {
+            "kind": "url",
+            "url": "/terms"
+          },
+          "children": []
+        }
+      ]
+    },
+    "social": {
+      "handle": "social",
+      "title": "Social",
+      "items": [
+        {
+          "id": "s1",
+          "label": "Instagram",
+          "target": {
+            "kind": "url",
+            "url": "https://instagram.com/"
+          },
+          "children": []
+        },
+        {
+          "id": "s2",
+          "label": "Strava",
+          "target": {
+            "kind": "url",
+            "url": "https://www.strava.com/"
+          },
+          "children": []
+        },
+        {
+          "id": "s3",
+          "label": "WhatsApp",
+          "target": {
+            "kind": "url",
+            "url": "https://chat.whatsapp.com/"
+          },
+          "children": []
+        }
+      ]
+    }
+  },
+  "galleries": {
+    "hero-slides": {
+      "handle": "hero-slides",
+      "title": "Hero slides",
+      "items": [
+        {
+          "asset_id": "as_16x9_1",
+          "caption": "Deadlifts on the North floor",
+          "alt": "Deadlifts on the North floor"
+        },
+        {
+          "asset_id": "as_16x9_2",
+          "caption": "Sled pushes, Friday conditioning",
+          "alt": "Sled pushes, Friday conditioning"
+        },
+        {
+          "asset_id": "as_16x9_3",
+          "caption": "Run club at the river gate",
+          "alt": "Run club at the river gate"
+        }
+      ]
+    },
+    "home-wall": {
+      "handle": "home-wall",
+      "title": "On the floor",
+      "items": [
+        {
+          "asset_id": "as_4x5_1",
+          "caption": "Dana coaching the 06:30 strength class",
+          "alt": "Dana coaching the 06:30 strength class"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Rowers, conditioning",
+          "alt": "Rowers, conditioning"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Kettlebell swings",
+          "alt": "Kettlebell swings"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Pads in the boxing class",
+          "alt": "Pads in the boxing class"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "Saturday long run",
+          "alt": "Saturday long run"
+        }
+      ]
+    },
+    "club-wall": {
+      "handle": "club-wall",
+      "title": "Last Saturday",
+      "items": [
+        {
+          "asset_id": "as_4x5_2",
+          "caption": "Start line",
+          "alt": "The 5:45 pace group at the bandstand"
+        },
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "River gate",
+          "alt": "Start line at the river gate"
+        },
+        {
+          "asset_id": "as_3x2_6",
+          "caption": "Pace groups",
+          "alt": "Coffee after"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Km 8",
+          "alt": "Strides on the towpath"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Coffee after",
+          "alt": "Group photo"
+        }
+      ]
+    },
+    "about-pairs": {
+      "handle": "about-pairs",
+      "title": "Inside",
+      "items": [
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "The North floor at 06:00",
+          "alt": "The North floor at 06:00"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "The Riverside studio",
+          "alt": "The Riverside studio"
+        }
+      ]
+    },
+    "floor-strip": {
+      "handle": "floor-strip",
+      "title": "Around the gym",
+      "items": [
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Platforms",
+          "alt": "Platforms"
+        },
+        {
+          "asset_id": "as_4x5_3",
+          "caption": "Chalk",
+          "alt": "Chalk"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Rowers",
+          "alt": "Rowers"
+        },
+        {
+          "asset_id": "as_2x3_1",
+          "caption": "Rope climb",
+          "alt": "Rope climb"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Sleds",
+          "alt": "Sleds"
+        },
+        {
+          "asset_id": "as_4x5_4",
+          "caption": "Rings",
+          "alt": "Rings"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "River path",
+          "alt": "River path"
+        },
+        {
+          "asset_id": "as_2x3_2",
+          "caption": "Bar check",
+          "alt": "Bar check"
+        }
+      ]
+    },
+    "strength-foundations": {
+      "handle": "strength-foundations",
+      "title": "Strength Foundations",
+      "items": [
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Squat day",
+          "alt": "Squat day"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Coaching the press",
+          "alt": "Coaching the press"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Deadlift set-up",
+          "alt": "Deadlift set-up"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "Loading plates",
+          "alt": "Loading plates"
+        }
+      ]
+    },
+    "boxing": {
+      "handle": "boxing",
+      "title": "Boxing",
+      "items": [
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "Pads",
+          "alt": "Pads"
+        },
+        {
+          "asset_id": "as_3x2_6",
+          "caption": "Footwork drill",
+          "alt": "Footwork drill"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Bag rounds",
+          "alt": "Bag rounds"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Partner work",
+          "alt": "Partner work"
+        }
+      ]
+    },
+    "saturday-long-run-october": {
+      "handle": "saturday-long-run-october",
+      "title": "Saturday long run, October",
+      "items": [
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Saturday long run, October, photo 1",
+          "alt": "Saturday long run, October, photo 1"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Saturday long run, October, photo 2",
+          "alt": "Saturday long run, October, photo 2"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Saturday long run, October, photo 3",
+          "alt": "Saturday long run, October, photo 3"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "Saturday long run, October, photo 4",
+          "alt": "Saturday long run, October, photo 4"
+        },
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "Saturday long run, October, photo 5",
+          "alt": "Saturday long run, October, photo 5"
+        },
+        {
+          "asset_id": "as_3x2_6",
+          "caption": "Saturday long run, October, photo 6",
+          "alt": "Saturday long run, October, photo 6"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Saturday long run, October, photo 7",
+          "alt": "Saturday long run, October, photo 7"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Saturday long run, October, photo 8",
+          "alt": "Saturday long run, October, photo 8"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Saturday long run, October, photo 9",
+          "alt": "Saturday long run, October, photo 9"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "Saturday long run, October, photo 10",
+          "alt": "Saturday long run, October, photo 10"
+        }
+      ]
+    },
+    "sunday-social-5k-october": {
+      "handle": "sunday-social-5k-october",
+      "title": "Sunday social 5k, October",
+      "items": [
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Sunday social 5k, October, photo 1",
+          "alt": "Sunday social 5k, October, photo 1"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Sunday social 5k, October, photo 2",
+          "alt": "Sunday social 5k, October, photo 2"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "Sunday social 5k, October, photo 3",
+          "alt": "Sunday social 5k, October, photo 3"
+        },
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "Sunday social 5k, October, photo 4",
+          "alt": "Sunday social 5k, October, photo 4"
+        },
+        {
+          "asset_id": "as_3x2_6",
+          "caption": "Sunday social 5k, October, photo 5",
+          "alt": "Sunday social 5k, October, photo 5"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Sunday social 5k, October, photo 6",
+          "alt": "Sunday social 5k, October, photo 6"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Sunday social 5k, October, photo 7",
+          "alt": "Sunday social 5k, October, photo 7"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Sunday social 5k, October, photo 8",
+          "alt": "Sunday social 5k, October, photo 8"
+        }
+      ]
+    },
+    "deadlift-day-2025": {
+      "handle": "deadlift-day-2025",
+      "title": "Deadlift day 2025",
+      "items": [
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Deadlift day 2025, photo 1",
+          "alt": "Deadlift day 2025, photo 1"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "Deadlift day 2025, photo 2",
+          "alt": "Deadlift day 2025, photo 2"
+        },
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "Deadlift day 2025, photo 3",
+          "alt": "Deadlift day 2025, photo 3"
+        },
+        {
+          "asset_id": "as_3x2_6",
+          "caption": "Deadlift day 2025, photo 4",
+          "alt": "Deadlift day 2025, photo 4"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Deadlift day 2025, photo 5",
+          "alt": "Deadlift day 2025, photo 5"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Deadlift day 2025, photo 6",
+          "alt": "Deadlift day 2025, photo 6"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Deadlift day 2025, photo 7",
+          "alt": "Deadlift day 2025, photo 7"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "Deadlift day 2025, photo 8",
+          "alt": "Deadlift day 2025, photo 8"
+        },
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "Deadlift day 2025, photo 9",
+          "alt": "Deadlift day 2025, photo 9"
+        },
+        {
+          "asset_id": "as_3x2_6",
+          "caption": "Deadlift day 2025, photo 10",
+          "alt": "Deadlift day 2025, photo 10"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Deadlift day 2025, photo 11",
+          "alt": "Deadlift day 2025, photo 11"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Deadlift day 2025, photo 12",
+          "alt": "Deadlift day 2025, photo 12"
+        }
+      ]
+    },
+    "open-day-september": {
+      "handle": "open-day-september",
+      "title": "Open day, September",
+      "items": [
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "Open day, September, photo 1",
+          "alt": "Open day, September, photo 1"
+        },
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "Open day, September, photo 2",
+          "alt": "Open day, September, photo 2"
+        },
+        {
+          "asset_id": "as_3x2_6",
+          "caption": "Open day, September, photo 3",
+          "alt": "Open day, September, photo 3"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Open day, September, photo 4",
+          "alt": "Open day, September, photo 4"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Open day, September, photo 5",
+          "alt": "Open day, September, photo 5"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Open day, September, photo 6",
+          "alt": "Open day, September, photo 6"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "Open day, September, photo 7",
+          "alt": "Open day, September, photo 7"
+        },
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "Open day, September, photo 8",
+          "alt": "Open day, September, photo 8"
+        },
+        {
+          "asset_id": "as_3x2_6",
+          "caption": "Open day, September, photo 9",
+          "alt": "Open day, September, photo 9"
+        }
+      ]
+    },
+    "charity-row-2026": {
+      "handle": "charity-row-2026",
+      "title": "Charity row 2026",
+      "items": [
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "Charity row 2026, photo 1",
+          "alt": "Charity row 2026, photo 1"
+        },
+        {
+          "asset_id": "as_3x2_6",
+          "caption": "Charity row 2026, photo 2",
+          "alt": "Charity row 2026, photo 2"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Charity row 2026, photo 3",
+          "alt": "Charity row 2026, photo 3"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Charity row 2026, photo 4",
+          "alt": "Charity row 2026, photo 4"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Charity row 2026, photo 5",
+          "alt": "Charity row 2026, photo 5"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "Charity row 2026, photo 6",
+          "alt": "Charity row 2026, photo 6"
+        },
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "Charity row 2026, photo 7",
+          "alt": "Charity row 2026, photo 7"
+        },
+        {
+          "asset_id": "as_3x2_6",
+          "caption": "Charity row 2026, photo 8",
+          "alt": "Charity row 2026, photo 8"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Charity row 2026, photo 9",
+          "alt": "Charity row 2026, photo 9"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Charity row 2026, photo 10",
+          "alt": "Charity row 2026, photo 10"
+        }
+      ]
+    },
+    "trail-sunday-september": {
+      "handle": "trail-sunday-september",
+      "title": "Trail Sunday, September",
+      "items": [
+        {
+          "asset_id": "as_3x2_6",
+          "caption": "Trail Sunday, September, photo 1",
+          "alt": "Trail Sunday, September, photo 1"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Trail Sunday, September, photo 2",
+          "alt": "Trail Sunday, September, photo 2"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Trail Sunday, September, photo 3",
+          "alt": "Trail Sunday, September, photo 3"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Trail Sunday, September, photo 4",
+          "alt": "Trail Sunday, September, photo 4"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "Trail Sunday, September, photo 5",
+          "alt": "Trail Sunday, September, photo 5"
+        },
+        {
+          "asset_id": "as_3x2_5",
+          "caption": "Trail Sunday, September, photo 6",
+          "alt": "Trail Sunday, September, photo 6"
+        },
+        {
+          "asset_id": "as_3x2_6",
+          "caption": "Trail Sunday, September, photo 7",
+          "alt": "Trail Sunday, September, photo 7"
+        },
+        {
+          "asset_id": "as_3x2_1",
+          "caption": "Trail Sunday, September, photo 8",
+          "alt": "Trail Sunday, September, photo 8"
+        },
+        {
+          "asset_id": "as_3x2_2",
+          "caption": "Trail Sunday, September, photo 9",
+          "alt": "Trail Sunday, September, photo 9"
+        },
+        {
+          "asset_id": "as_3x2_3",
+          "caption": "Trail Sunday, September, photo 10",
+          "alt": "Trail Sunday, September, photo 10"
+        },
+        {
+          "asset_id": "as_3x2_4",
+          "caption": "Trail Sunday, September, photo 11",
+          "alt": "Trail Sunday, September, photo 11"
+        }
+      ]
+    }
+  },
+  "assets": {
+    "as_3x2_1": {
+      "id": "as_3x2_1",
+      "status": "ready",
+      "file_name": "3x2-1.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/3x2-1.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "3:2 placeholder 1",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_3x2_2": {
+      "id": "as_3x2_2",
+      "status": "ready",
+      "file_name": "3x2-2.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/3x2-2.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "3:2 placeholder 2",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_3x2_3": {
+      "id": "as_3x2_3",
+      "status": "ready",
+      "file_name": "3x2-3.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/3x2-3.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "3:2 placeholder 3",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_3x2_4": {
+      "id": "as_3x2_4",
+      "status": "ready",
+      "file_name": "3x2-4.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/3x2-4.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "3:2 placeholder 4",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_3x2_5": {
+      "id": "as_3x2_5",
+      "status": "ready",
+      "file_name": "3x2-5.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/3x2-5.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "3:2 placeholder 5",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_3x2_6": {
+      "id": "as_3x2_6",
+      "status": "ready",
+      "file_name": "3x2-6.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/3x2-6.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "3:2 placeholder 6",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x5_1": {
+      "id": "as_4x5_1",
+      "status": "ready",
+      "file_name": "4x5-1.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/4x5-1.svg",
+      "width": 960,
+      "height": 1200,
+      "alt": "4:5 placeholder 1",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x5_2": {
+      "id": "as_4x5_2",
+      "status": "ready",
+      "file_name": "4x5-2.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/4x5-2.svg",
+      "width": 960,
+      "height": 1200,
+      "alt": "4:5 placeholder 2",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x5_3": {
+      "id": "as_4x5_3",
+      "status": "ready",
+      "file_name": "4x5-3.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/4x5-3.svg",
+      "width": 960,
+      "height": 1200,
+      "alt": "4:5 placeholder 3",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x5_4": {
+      "id": "as_4x5_4",
+      "status": "ready",
+      "file_name": "4x5-4.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/4x5-4.svg",
+      "width": 960,
+      "height": 1200,
+      "alt": "4:5 placeholder 4",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x5_5": {
+      "id": "as_4x5_5",
+      "status": "ready",
+      "file_name": "4x5-5.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/4x5-5.svg",
+      "width": 960,
+      "height": 1200,
+      "alt": "4:5 placeholder 5",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x5_6": {
+      "id": "as_4x5_6",
+      "status": "ready",
+      "file_name": "4x5-6.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/4x5-6.svg",
+      "width": 960,
+      "height": 1200,
+      "alt": "4:5 placeholder 6",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_16x9_1": {
+      "id": "as_16x9_1",
+      "status": "ready",
+      "file_name": "16x9-1.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/16x9-1.svg",
+      "width": 1920,
+      "height": 1080,
+      "alt": "16:9 placeholder 1",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_16x9_2": {
+      "id": "as_16x9_2",
+      "status": "ready",
+      "file_name": "16x9-2.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/16x9-2.svg",
+      "width": 1920,
+      "height": 1080,
+      "alt": "16:9 placeholder 2",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_16x9_3": {
+      "id": "as_16x9_3",
+      "status": "ready",
+      "file_name": "16x9-3.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/16x9-3.svg",
+      "width": 1920,
+      "height": 1080,
+      "alt": "16:9 placeholder 3",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_21x9_1": {
+      "id": "as_21x9_1",
+      "status": "ready",
+      "file_name": "21x9-1.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/21x9-1.svg",
+      "width": 2100,
+      "height": 900,
+      "alt": "21:9 placeholder 1",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_21x9_2": {
+      "id": "as_21x9_2",
+      "status": "ready",
+      "file_name": "21x9-2.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/21x9-2.svg",
+      "width": 2100,
+      "height": 900,
+      "alt": "21:9 placeholder 2",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_1x1_1": {
+      "id": "as_1x1_1",
+      "status": "ready",
+      "file_name": "1x1-1.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/1x1-1.svg",
+      "width": 800,
+      "height": 800,
+      "alt": "1:1 placeholder 1",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_1x1_2": {
+      "id": "as_1x1_2",
+      "status": "ready",
+      "file_name": "1x1-2.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/1x1-2.svg",
+      "width": 800,
+      "height": 800,
+      "alt": "1:1 placeholder 2",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x3_1": {
+      "id": "as_4x3_1",
+      "status": "ready",
+      "file_name": "4x3-1.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/4x3-1.svg",
+      "width": 1200,
+      "height": 900,
+      "alt": "4:3 placeholder 1",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x3_2": {
+      "id": "as_4x3_2",
+      "status": "ready",
+      "file_name": "4x3-2.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/4x3-2.svg",
+      "width": 1200,
+      "height": 900,
+      "alt": "4:3 placeholder 2",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x3_3": {
+      "id": "as_4x3_3",
+      "status": "ready",
+      "file_name": "4x3-3.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/4x3-3.svg",
+      "width": 1200,
+      "height": 900,
+      "alt": "4:3 placeholder 3",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x3_4": {
+      "id": "as_4x3_4",
+      "status": "ready",
+      "file_name": "4x3-4.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/4x3-4.svg",
+      "width": 1200,
+      "height": 900,
+      "alt": "4:3 placeholder 4",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_2x3_1": {
+      "id": "as_2x3_1",
+      "status": "ready",
+      "file_name": "2x3-1.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/2x3-1.svg",
+      "width": 800,
+      "height": 1200,
+      "alt": "2:3 placeholder 1",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_2x3_2": {
+      "id": "as_2x3_2",
+      "status": "ready",
+      "file_name": "2x3-2.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/2x3-2.svg",
+      "width": 800,
+      "height": 1200,
+      "alt": "2:3 placeholder 2",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_map_1": {
+      "id": "as_map_1",
+      "status": "ready",
+      "file_name": "map-1.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/map-1.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Map of Foundry Lane",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_map_2": {
+      "id": "as_map_2",
+      "status": "ready",
+      "file_name": "map-2.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/map-2.svg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Map of the river gate",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_favicon": {
+      "id": "as_favicon",
+      "status": "ready",
+      "file_name": "favicon.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 300,
+      "url": "/_sites/theme/favicon.svg",
+      "width": 64,
+      "height": 64,
+      "alt": "Common Ground",
+      "created_at": "2026-11-01T09:00:00Z"
+    }
+  },
+  "forms": {
+    "trial": {
+      "handle": "trial",
+      "name": "Free trial",
+      "fields": [
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Name",
+          "required": true,
+          "max_length": 120
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        },
+        {
+          "id": "phone",
+          "type": "text",
+          "label": "Phone",
+          "required": false,
+          "max_length": 40
+        },
+        {
+          "id": "goal",
+          "type": "select",
+          "label": "Your goal",
+          "required": true,
+          "options": [
+            "Get stronger",
+            "Lose weight",
+            "Train for an event",
+            "Move better",
+            "Just try it"
+          ]
+        },
+        {
+          "id": "class",
+          "type": "select",
+          "label": "Preferred class",
+          "required": false,
+          "options": [
+            "Strength Foundations",
+            "Conditioning",
+            "Olympic Lifting",
+            "Kettlebell",
+            "Boxing",
+            "Mobility",
+            "Yoga Flow",
+            "Run Club Intervals",
+            "Beginners' Strength",
+            "Small-group Coaching",
+            "Race Prep",
+            "Open Gym"
+          ]
+        },
+        {
+          "id": "location",
+          "type": "select",
+          "label": "Location",
+          "required": false,
+          "options": [
+            "North",
+            "Riverside"
+          ]
+        },
+        {
+          "id": "notes",
+          "type": "textarea",
+          "label": "Anything we should know",
+          "required": false,
+          "max_length": 2000
+        }
+      ],
+      "success_message": "Thanks. A coach will call within a day to book your first class.",
+      "submit_label": "Start free trial",
+      "redirect_path": ""
+    },
+    "contact": {
+      "handle": "contact",
+      "name": "Contact",
+      "fields": [
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Name",
+          "required": true,
+          "max_length": 120
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        },
+        {
+          "id": "subject",
+          "type": "select",
+          "label": "Subject",
+          "required": true,
+          "options": [
+            "Membership",
+            "Personal training",
+            "Events",
+            "Press",
+            "Other"
+          ]
+        },
+        {
+          "id": "message",
+          "type": "textarea",
+          "label": "Message",
+          "required": true,
+          "max_length": 4000
+        }
+      ],
+      "success_message": "Thanks. We will reply within two working days.",
+      "submit_label": "Send",
+      "redirect_path": ""
+    },
+    "newsletter": {
+      "handle": "newsletter",
+      "name": "Newsletter",
+      "fields": [
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        }
+      ],
+      "success_message": "You are on the list.",
+      "submit_label": "Sign up",
+      "redirect_path": ""
+    }
+  },
+  "content": {
+    "classes": {
+      "name": "Classes",
+      "fields": [
+        {
+          "id": "short_name",
+          "type": "text",
+          "label": "Short name (the timetable's filter chip)"
+        },
+        {
+          "id": "summary",
+          "type": "text",
+          "label": "Summary"
+        },
+        {
+          "id": "description",
+          "type": "richtext",
+          "label": "Description"
+        },
+        {
+          "id": "level",
+          "type": "text",
+          "label": "Level (all, beginner, intermediate, advanced)"
+        },
+        {
+          "id": "intensity",
+          "type": "text",
+          "label": "Intensity (low, moderate, high)"
+        },
+        {
+          "id": "duration_minutes",
+          "type": "number",
+          "label": "Duration (minutes)"
+        },
+        {
+          "id": "format",
+          "type": "text",
+          "label": "Format (group, small-group, one-to-one, outdoor)"
+        },
+        {
+          "id": "coach",
+          "type": "entry",
+          "label": "Coach",
+          "content_type": "coaches"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "photos",
+          "type": "gallery",
+          "label": "Photos"
+        },
+        {
+          "id": "what_to_bring",
+          "type": "textarea",
+          "label": "What to bring (one per line)"
+        },
+        {
+          "id": "who_for",
+          "type": "textarea",
+          "label": "Who it is for"
+        },
+        {
+          "id": "price",
+          "type": "number",
+          "label": "Drop-in price"
+        },
+        {
+          "id": "featured",
+          "type": "checkbox",
+          "label": "Featured"
+        },
+        {
+          "id": "tag",
+          "type": "text",
+          "label": "Tag"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "class_strength_foundations",
+          "handle": "strength-foundations",
+          "title": "Strength Foundations",
+          "fields": {
+            "short_name": "Strength",
+            "summary": "Barbell basics, coached. Squat, press and deadlift with a plan that adds weight week by week.",
+            "description": "<p>Barbell basics, coached. Squat, press and deadlift with a plan that adds weight week by week.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+            "level": "all",
+            "intensity": "moderate",
+            "duration_minutes": 60,
+            "format": "group",
+            "coach": "coach_dana_okafor",
+            "image": "as_3x2_1",
+            "image_alt": "Strength Foundations class at Common Ground",
+            "what_to_bring": "Trainers with a flat sole\nA water bottle\nA towel",
+            "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+            "featured": true,
+            "tag": "Beginners welcome",
+            "order": 1,
+            "price": 15,
+            "photos": "strength-foundations"
+          }
+        },
+        {
+          "id": "class_conditioning",
+          "handle": "conditioning",
+          "title": "Conditioning",
+          "fields": {
+            "summary": "Intervals on the rower, bike and sled. Short, hard and scaled to you.",
+            "description": "<p>Intervals on the rower, bike and sled. Short, hard and scaled to you.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+            "level": "intermediate",
+            "intensity": "high",
+            "duration_minutes": 45,
+            "format": "group",
+            "coach": "coach_sam_reyes",
+            "image": "as_3x2_2",
+            "image_alt": "Conditioning class at Common Ground",
+            "what_to_bring": "Trainers with a flat sole\nA water bottle\nA towel",
+            "who_for": "You know the basic lifts and want to push on. Not sure? Ask the coach.",
+            "featured": true,
+            "tag": "",
+            "order": 2,
+            "price": 15
+          }
+        },
+        {
+          "id": "class_olympic_lifting",
+          "handle": "olympic-lifting",
+          "title": "Olympic Lifting",
+          "fields": {
+            "short_name": "Oly lifting",
+            "summary": "The snatch and the clean and jerk, broken into pieces and built back up.",
+            "description": "<p>The snatch and the clean and jerk, broken into pieces and built back up.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+            "level": "advanced",
+            "intensity": "moderate",
+            "duration_minutes": 75,
+            "format": "small-group",
+            "coach": "coach_kit_lindqvist",
+            "image": "as_3x2_3",
+            "image_alt": "Olympic Lifting class at Common Ground",
+            "what_to_bring": "Trainers with a flat sole\nA water bottle\nA towel",
+            "who_for": "You know the basic lifts and want to push on. Not sure? Ask the coach.",
+            "featured": true,
+            "tag": "",
+            "order": 3,
+            "price": 18
+          }
+        },
+        {
+          "id": "class_kettlebell",
+          "handle": "kettlebell",
+          "title": "Kettlebell",
+          "fields": {
+            "summary": "Swings, cleans, presses and carries. Forty-five minutes, one bell, no mirrors.",
+            "description": "<p>Swings, cleans, presses and carries. Forty-five minutes, one bell, no mirrors.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+            "level": "all",
+            "intensity": "high",
+            "duration_minutes": 45,
+            "format": "group",
+            "coach": "coach_marcus_bell",
+            "image": "as_3x2_4",
+            "image_alt": "Kettlebell class at Common Ground",
+            "what_to_bring": "Trainers with a flat sole\nA water bottle\nA towel",
+            "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+            "featured": false,
+            "tag": "",
+            "order": 4,
+            "price": 15
+          }
+        },
+        {
+          "id": "class_boxing",
+          "handle": "boxing",
+          "title": "Boxing",
+          "fields": {
+            "summary": "Footwork, pads and bag rounds. No sparring, plenty of sweat.",
+            "description": "<p>Footwork, pads and bag rounds. No sparring, plenty of sweat.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+            "level": "all",
+            "intensity": "high",
+            "duration_minutes": 60,
+            "format": "group",
+            "coach": "coach_marcus_bell",
+            "image": "as_3x2_5",
+            "image_alt": "Boxing class at Common Ground",
+            "what_to_bring": "Trainers with a flat sole\nA water bottle\nA towel",
+            "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+            "featured": true,
+            "tag": "",
+            "order": 5,
+            "price": 15,
+            "photos": "boxing"
+          }
+        },
+        {
+          "id": "class_mobility",
+          "handle": "mobility",
+          "title": "Mobility",
+          "fields": {
+            "summary": "Hips, shoulders and spine, slowly. The class that makes the others feel better.",
+            "description": "<p>Hips, shoulders and spine, slowly. The class that makes the others feel better.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+            "level": "all",
+            "intensity": "low",
+            "duration_minutes": 45,
+            "format": "group",
+            "coach": "coach_priya_nair",
+            "image": "as_3x2_6",
+            "image_alt": "Mobility class at Common Ground",
+            "what_to_bring": "Trainers with a flat sole\nA water bottle\nA towel",
+            "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+            "featured": false,
+            "tag": "",
+            "order": 6,
+            "price": 12
+          }
+        },
+        {
+          "id": "class_yoga_flow",
+          "handle": "yoga-flow",
+          "title": "Yoga Flow",
+          "fields": {
+            "short_name": "Yoga",
+            "summary": "A steady flow for strength and breath, at the Riverside studio.",
+            "description": "<p>A steady flow for strength and breath, at the Riverside studio.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+            "level": "all",
+            "intensity": "low",
+            "duration_minutes": 60,
+            "format": "group",
+            "coach": "coach_priya_nair",
+            "image": "as_3x2_1",
+            "image_alt": "Yoga Flow class at Common Ground",
+            "what_to_bring": "Trainers with a flat sole\nA water bottle\nA towel",
+            "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+            "featured": true,
+            "tag": "",
+            "order": 7,
+            "price": 12
+          }
+        },
+        {
+          "id": "class_run_club_intervals",
+          "handle": "run-club-intervals",
+          "title": "Run Club Intervals",
+          "fields": {
+            "short_name": "Run club",
+            "summary": "Repeats on the river path in pace groups. Warm-up, six efforts, a jog home.",
+            "description": "<p>Repeats on the river path in pace groups. Warm-up, six efforts, a jog home.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+            "level": "all",
+            "intensity": "moderate",
+            "duration_minutes": 50,
+            "format": "outdoor",
+            "coach": "coach_jo_haddad",
+            "image": "as_3x2_2",
+            "image_alt": "Run Club Intervals class at Common Ground",
+            "what_to_bring": "Running shoes\nA layer for the warm-up\nWater",
+            "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+            "featured": true,
+            "tag": "Free",
+            "order": 8
+          }
+        },
+        {
+          "id": "class_beginners_strength",
+          "handle": "beginners-strength",
+          "title": "Beginners' Strength",
+          "fields": {
+            "short_name": "Beginners",
+            "summary": "Six weeks, four people, one coach. Learn to lift before you join the classes.",
+            "description": "<p>Six weeks, four people, one coach. Learn to lift before you join the classes.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+            "level": "beginner",
+            "intensity": "low",
+            "duration_minutes": 60,
+            "format": "small-group",
+            "coach": "coach_dana_okafor",
+            "image": "as_3x2_3",
+            "image_alt": "Beginners' Strength class at Common Ground",
+            "what_to_bring": "Trainers with a flat sole\nA water bottle\nA towel",
+            "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+            "featured": false,
+            "tag": "",
+            "order": 9,
+            "price": 20
+          }
+        },
+        {
+          "id": "class_small_group_coaching",
+          "handle": "small-group-coaching",
+          "title": "Small-group Coaching",
+          "fields": {
+            "short_name": "Small group",
+            "summary": "Your own programme, coached in a group of four. Strength, fitness or both.",
+            "description": "<p>Your own programme, coached in a group of four. Strength, fitness or both.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+            "level": "intermediate",
+            "intensity": "moderate",
+            "duration_minutes": 60,
+            "format": "small-group",
+            "coach": "coach_dana_okafor",
+            "image": "as_3x2_4",
+            "image_alt": "Small-group Coaching class at Common Ground",
+            "what_to_bring": "Trainers with a flat sole\nA water bottle\nA towel",
+            "who_for": "You know the basic lifts and want to push on. Not sure? Ask the coach.",
+            "featured": false,
+            "tag": "",
+            "order": 10,
+            "price": 25
+          }
+        },
+        {
+          "id": "class_race_prep",
+          "handle": "race-prep",
+          "title": "Race Prep",
+          "fields": {
+            "summary": "Strength and speed work for your next 10k, half or marathon.",
+            "description": "<p>Strength and speed work for your next 10k, half or marathon.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+            "level": "intermediate",
+            "intensity": "high",
+            "duration_minutes": 60,
+            "format": "outdoor",
+            "coach": "coach_jo_haddad",
+            "image": "as_3x2_5",
+            "image_alt": "Race Prep class at Common Ground",
+            "what_to_bring": "Running shoes\nA layer for the warm-up\nWater",
+            "who_for": "You know the basic lifts and want to push on. Not sure? Ask the coach.",
+            "featured": false,
+            "tag": "New",
+            "order": 11,
+            "price": 12
+          }
+        },
+        {
+          "id": "class_open_gym",
+          "handle": "open-gym",
+          "title": "Open Gym",
+          "fields": {
+            "summary": "The floor is yours. Bring a programme, a coach is on hand.",
+            "description": "<p>The floor is yours. Bring a programme, a coach is on hand.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+            "level": "all",
+            "intensity": "low",
+            "duration_minutes": 90,
+            "format": "group",
+            "coach": "coach_sam_reyes",
+            "image": "as_3x2_6",
+            "image_alt": "Open Gym class at Common Ground",
+            "what_to_bring": "Trainers with a flat sole\nA water bottle\nA towel",
+            "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+            "featured": false,
+            "tag": "",
+            "order": 12,
+            "price": 10
+          }
+        },
+        {
+          "id": "class_long_run",
+          "handle": "long-run",
+          "title": "Long run",
+          "fields": {
+            "summary": "Ten to sixteen kilometres on the river loop in pace groups, with a back marker on every one.",
+            "description": "<p>Ten to sixteen kilometres on the river loop in pace groups, with a back marker on every one.</p><p>Every run starts with a walk-through of the route and ends back at the river gate. A back marker runs at the end of every group, so nobody runs alone.</p><p>Free for everyone, members or not. Come ten minutes early and say hello.</p>",
+            "level": "all",
+            "intensity": "moderate",
+            "duration_minutes": 90,
+            "format": "outdoor",
+            "coach": "coach_jo_haddad",
+            "image": "as_3x2_4",
+            "image_alt": "Long run at Common Ground",
+            "what_to_bring": "Running shoes\nWater\nA layer for after",
+            "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+            "featured": false,
+            "tag": "Free",
+            "order": 13
+          }
+        },
+        {
+          "id": "class_social_5k",
+          "handle": "social-5k",
+          "title": "Social 5K",
+          "fields": {
+            "short_name": "Social",
+            "summary": "An easy five kilometres out and back on the towpath at talking pace, coffee after.",
+            "description": "<p>An easy five kilometres out and back on the towpath at talking pace, coffee after.</p><p>Every run starts with a walk-through of the route and ends back at the river gate. A back marker runs at the end of every group, so nobody runs alone.</p><p>Free for everyone, members or not. Come ten minutes early and say hello.</p>",
+            "level": "all",
+            "intensity": "low",
+            "duration_minutes": 45,
+            "format": "outdoor",
+            "coach": "coach_jo_haddad",
+            "image": "as_3x2_5",
+            "image_alt": "Social 5K at Common Ground",
+            "what_to_bring": "Running shoes\nSomething warm for the coffee",
+            "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+            "featured": false,
+            "tag": "Free",
+            "order": 14
+          }
+        }
+      ]
+    },
+    "sessions": {
+      "name": "Sessions",
+      "fields": [
+        {
+          "id": "class",
+          "type": "entry",
+          "label": "Class",
+          "content_type": "classes"
+        },
+        {
+          "id": "day",
+          "type": "text",
+          "label": "Day (mon, tue, wed, thu, fri, sat, sun)"
+        },
+        {
+          "id": "start",
+          "type": "text",
+          "label": "Start (06:30)"
+        },
+        {
+          "id": "end",
+          "type": "text",
+          "label": "End (07:30)"
+        },
+        {
+          "id": "coach",
+          "type": "entry",
+          "label": "Coach (overrides the class coach)",
+          "content_type": "coaches"
+        },
+        {
+          "id": "location",
+          "type": "entry",
+          "label": "Location",
+          "content_type": "locations"
+        },
+        {
+          "id": "note",
+          "type": "text",
+          "label": "Note"
+        }
+      ],
+      "entries": [
+        {
+          "id": "sess_001",
+          "handle": "mon-0630-north",
+          "title": "Strength Foundations Mon 06:30",
+          "fields": {
+            "class": "class_strength_foundations",
+            "day": "mon",
+            "start": "06:30",
+            "end": "07:30",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_002",
+          "handle": "mon-0730-north",
+          "title": "Conditioning Mon 07:30",
+          "fields": {
+            "class": "class_conditioning",
+            "day": "mon",
+            "start": "07:30",
+            "end": "08:15",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_003",
+          "handle": "mon-1215-north",
+          "title": "Kettlebell Mon 12:15",
+          "fields": {
+            "class": "class_kettlebell",
+            "day": "mon",
+            "start": "12:15",
+            "end": "13:00",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_004",
+          "handle": "mon-1730-north",
+          "title": "Boxing Mon 17:30",
+          "fields": {
+            "class": "class_boxing",
+            "day": "mon",
+            "start": "17:30",
+            "end": "18:30",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_005",
+          "handle": "mon-1845-north",
+          "title": "Olympic Lifting Mon 18:45",
+          "fields": {
+            "class": "class_olympic_lifting",
+            "day": "mon",
+            "start": "18:45",
+            "end": "20:00",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_006",
+          "handle": "mon-2000-north",
+          "title": "Kettlebell Mon 20:00",
+          "fields": {
+            "class": "class_kettlebell",
+            "day": "mon",
+            "start": "20:00",
+            "end": "20:45",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_007",
+          "handle": "mon-0700-riverside",
+          "title": "Yoga Flow Mon 07:00",
+          "fields": {
+            "class": "class_yoga_flow",
+            "day": "mon",
+            "start": "07:00",
+            "end": "08:00",
+            "location": "loc_riverside",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_008",
+          "handle": "mon-0930-riverside",
+          "title": "Mobility Mon 09:30",
+          "fields": {
+            "class": "class_mobility",
+            "day": "mon",
+            "start": "09:30",
+            "end": "10:15",
+            "location": "loc_riverside",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_009",
+          "handle": "mon-1800-riverside",
+          "title": "Mobility Mon 18:00",
+          "fields": {
+            "class": "class_mobility",
+            "day": "mon",
+            "start": "18:00",
+            "end": "18:45",
+            "location": "loc_riverside",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_010",
+          "handle": "mon-1915-riverside",
+          "title": "Yoga Flow Mon 19:15",
+          "fields": {
+            "class": "class_yoga_flow",
+            "day": "mon",
+            "start": "19:15",
+            "end": "20:15",
+            "location": "loc_riverside",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_011",
+          "handle": "tue-0630-north",
+          "title": "Conditioning Tue 06:30",
+          "fields": {
+            "class": "class_conditioning",
+            "day": "tue",
+            "start": "06:30",
+            "end": "07:15",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_012",
+          "handle": "tue-0730-north",
+          "title": "Open Gym Tue 07:30",
+          "fields": {
+            "class": "class_open_gym",
+            "day": "tue",
+            "start": "07:30",
+            "end": "09:00",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_013",
+          "handle": "tue-1215-north",
+          "title": "Strength Foundations Tue 12:15",
+          "fields": {
+            "class": "class_strength_foundations",
+            "day": "tue",
+            "start": "12:15",
+            "end": "13:15",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_014",
+          "handle": "tue-1730-north",
+          "title": "Small-group Coaching Tue 17:30",
+          "fields": {
+            "class": "class_small_group_coaching",
+            "day": "tue",
+            "start": "17:30",
+            "end": "18:30",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_015",
+          "handle": "tue-1845-north",
+          "title": "Boxing Tue 18:45",
+          "fields": {
+            "class": "class_boxing",
+            "day": "tue",
+            "start": "18:45",
+            "end": "19:45",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_016",
+          "handle": "tue-2000-north",
+          "title": "Conditioning Tue 20:00",
+          "fields": {
+            "class": "class_conditioning",
+            "day": "tue",
+            "start": "20:00",
+            "end": "20:45",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_017",
+          "handle": "tue-0700-riverside",
+          "title": "Mobility Tue 07:00",
+          "fields": {
+            "class": "class_mobility",
+            "day": "tue",
+            "start": "07:00",
+            "end": "07:45",
+            "location": "loc_riverside",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_018",
+          "handle": "tue-0930-riverside",
+          "title": "Yoga Flow Tue 09:30",
+          "fields": {
+            "class": "class_yoga_flow",
+            "day": "tue",
+            "start": "09:30",
+            "end": "10:30",
+            "location": "loc_riverside",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_019",
+          "handle": "tue-1800-riverside",
+          "title": "Race Prep Tue 18:00",
+          "fields": {
+            "class": "class_race_prep",
+            "day": "tue",
+            "start": "18:00",
+            "end": "19:00",
+            "location": "loc_riverside",
+            "note": "Meet at the river gate"
+          }
+        },
+        {
+          "id": "sess_020",
+          "handle": "tue-1915-riverside",
+          "title": "Yoga Flow Tue 19:15",
+          "fields": {
+            "class": "class_yoga_flow",
+            "day": "tue",
+            "start": "19:15",
+            "end": "20:15",
+            "location": "loc_riverside",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_021",
+          "handle": "wed-0630-north",
+          "title": "Strength Foundations Wed 06:30",
+          "fields": {
+            "class": "class_strength_foundations",
+            "day": "wed",
+            "start": "06:30",
+            "end": "07:30",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_022",
+          "handle": "wed-0730-north",
+          "title": "Kettlebell Wed 07:30",
+          "fields": {
+            "class": "class_kettlebell",
+            "day": "wed",
+            "start": "07:30",
+            "end": "08:15",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_023",
+          "handle": "wed-1215-north",
+          "title": "Conditioning Wed 12:15",
+          "fields": {
+            "class": "class_conditioning",
+            "day": "wed",
+            "start": "12:15",
+            "end": "13:00",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_024",
+          "handle": "wed-1730-north",
+          "title": "Beginners' Strength Wed 17:30",
+          "fields": {
+            "class": "class_beginners_strength",
+            "day": "wed",
+            "start": "17:30",
+            "end": "18:30",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_025",
+          "handle": "wed-1845-north",
+          "title": "Olympic Lifting Wed 18:45",
+          "fields": {
+            "class": "class_olympic_lifting",
+            "day": "wed",
+            "start": "18:45",
+            "end": "20:00",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_026",
+          "handle": "wed-2000-north",
+          "title": "Boxing Wed 20:00",
+          "fields": {
+            "class": "class_boxing",
+            "day": "wed",
+            "start": "20:00",
+            "end": "21:00",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_027",
+          "handle": "wed-0700-riverside",
+          "title": "Yoga Flow Wed 07:00",
+          "fields": {
+            "class": "class_yoga_flow",
+            "day": "wed",
+            "start": "07:00",
+            "end": "08:00",
+            "location": "loc_riverside",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_028",
+          "handle": "wed-0930-riverside",
+          "title": "Mobility Wed 09:30",
+          "fields": {
+            "class": "class_mobility",
+            "day": "wed",
+            "start": "09:30",
+            "end": "10:15",
+            "location": "loc_riverside",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_029",
+          "handle": "wed-1830-riverside",
+          "title": "Run Club Intervals Wed 18:30",
+          "fields": {
+            "class": "class_run_club_intervals",
+            "day": "wed",
+            "start": "18:30",
+            "end": "19:20",
+            "location": "loc_riverside",
+            "note": "Meet at the river gate"
+          }
+        },
+        {
+          "id": "sess_030",
+          "handle": "wed-1930-riverside",
+          "title": "Mobility Wed 19:30",
+          "fields": {
+            "class": "class_mobility",
+            "day": "wed",
+            "start": "19:30",
+            "end": "20:15",
+            "location": "loc_riverside",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_031",
+          "handle": "thu-0630-north",
+          "title": "Conditioning Thu 06:30",
+          "fields": {
+            "class": "class_conditioning",
+            "day": "thu",
+            "start": "06:30",
+            "end": "07:15",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_032",
+          "handle": "thu-0730-north",
+          "title": "Open Gym Thu 07:30",
+          "fields": {
+            "class": "class_open_gym",
+            "day": "thu",
+            "start": "07:30",
+            "end": "09:00",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_033",
+          "handle": "thu-1215-north",
+          "title": "Boxing Thu 12:15",
+          "fields": {
+            "class": "class_boxing",
+            "day": "thu",
+            "start": "12:15",
+            "end": "13:15",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_034",
+          "handle": "thu-1730-north",
+          "title": "Small-group Coaching Thu 17:30",
+          "fields": {
+            "class": "class_small_group_coaching",
+            "day": "thu",
+            "start": "17:30",
+            "end": "18:30",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_035",
+          "handle": "thu-1845-north",
+          "title": "Strength Foundations Thu 18:45",
+          "fields": {
+            "class": "class_strength_foundations",
+            "day": "thu",
+            "start": "18:45",
+            "end": "19:45",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_036",
+          "handle": "thu-2000-north",
+          "title": "Kettlebell Thu 20:00",
+          "fields": {
+            "class": "class_kettlebell",
+            "day": "thu",
+            "start": "20:00",
+            "end": "20:45",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_037",
+          "handle": "thu-0700-riverside",
+          "title": "Mobility Thu 07:00",
+          "fields": {
+            "class": "class_mobility",
+            "day": "thu",
+            "start": "07:00",
+            "end": "07:45",
+            "location": "loc_riverside",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_038",
+          "handle": "thu-0930-riverside",
+          "title": "Yoga Flow Thu 09:30",
+          "fields": {
+            "class": "class_yoga_flow",
+            "day": "thu",
+            "start": "09:30",
+            "end": "10:30",
+            "location": "loc_riverside",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_039",
+          "handle": "thu-1800-riverside",
+          "title": "Race Prep Thu 18:00",
+          "fields": {
+            "class": "class_race_prep",
+            "day": "thu",
+            "start": "18:00",
+            "end": "19:00",
+            "location": "loc_riverside",
+            "note": "Meet at the river gate"
+          }
+        },
+        {
+          "id": "sess_040",
+          "handle": "thu-1915-riverside",
+          "title": "Yoga Flow Thu 19:15",
+          "fields": {
+            "class": "class_yoga_flow",
+            "day": "thu",
+            "start": "19:15",
+            "end": "20:15",
+            "location": "loc_riverside",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_041",
+          "handle": "fri-0630-north",
+          "title": "Strength Foundations Fri 06:30",
+          "fields": {
+            "class": "class_strength_foundations",
+            "day": "fri",
+            "start": "06:30",
+            "end": "07:30",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_042",
+          "handle": "fri-0730-north",
+          "title": "Conditioning Fri 07:30",
+          "fields": {
+            "class": "class_conditioning",
+            "day": "fri",
+            "start": "07:30",
+            "end": "08:15",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_043",
+          "handle": "fri-1215-north",
+          "title": "Kettlebell Fri 12:15",
+          "fields": {
+            "class": "class_kettlebell",
+            "day": "fri",
+            "start": "12:15",
+            "end": "13:00",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_044",
+          "handle": "fri-1730-north",
+          "title": "Open Gym Fri 17:30",
+          "fields": {
+            "class": "class_open_gym",
+            "day": "fri",
+            "start": "17:30",
+            "end": "19:00",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_045",
+          "handle": "fri-1845-north",
+          "title": "Boxing Fri 18:45",
+          "fields": {
+            "class": "class_boxing",
+            "day": "fri",
+            "start": "18:45",
+            "end": "19:45",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_046",
+          "handle": "fri-0700-riverside",
+          "title": "Yoga Flow Fri 07:00",
+          "fields": {
+            "class": "class_yoga_flow",
+            "day": "fri",
+            "start": "07:00",
+            "end": "08:00",
+            "location": "loc_riverside",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_047",
+          "handle": "fri-0930-riverside",
+          "title": "Mobility Fri 09:30",
+          "fields": {
+            "class": "class_mobility",
+            "day": "fri",
+            "start": "09:30",
+            "end": "10:15",
+            "location": "loc_riverside",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_048",
+          "handle": "fri-1800-riverside",
+          "title": "Mobility Fri 18:00",
+          "fields": {
+            "class": "class_mobility",
+            "day": "fri",
+            "start": "18:00",
+            "end": "18:45",
+            "location": "loc_riverside",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_049",
+          "handle": "fri-1915-riverside",
+          "title": "Yoga Flow Fri 19:15",
+          "fields": {
+            "class": "class_yoga_flow",
+            "day": "fri",
+            "start": "19:15",
+            "end": "20:15",
+            "location": "loc_riverside",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_050",
+          "handle": "sat-0800-riverside",
+          "title": "Long run Sat 08:00",
+          "fields": {
+            "class": "class_long_run",
+            "day": "sat",
+            "start": "08:00",
+            "end": "09:30",
+            "location": "loc_riverside",
+            "note": "All paces. Meet at the bandstand"
+          }
+        },
+        {
+          "id": "sess_051",
+          "handle": "sat-0900-north",
+          "title": "Strength Foundations Sat 09:00",
+          "fields": {
+            "class": "class_strength_foundations",
+            "day": "sat",
+            "start": "09:00",
+            "end": "10:00",
+            "location": "loc_north",
+            "note": "Beginners welcome",
+            "coach": "coach_kit_lindqvist"
+          }
+        },
+        {
+          "id": "sess_052",
+          "handle": "sat-0930-riverside",
+          "title": "Yoga Flow Sat 09:30",
+          "fields": {
+            "class": "class_yoga_flow",
+            "day": "sat",
+            "start": "09:30",
+            "end": "10:30",
+            "location": "loc_riverside",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_053",
+          "handle": "sat-1030-north",
+          "title": "Conditioning Sat 10:30",
+          "fields": {
+            "class": "class_conditioning",
+            "day": "sat",
+            "start": "10:30",
+            "end": "11:15",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_054",
+          "handle": "sat-1130-north",
+          "title": "Open Gym Sat 11:30",
+          "fields": {
+            "class": "class_open_gym",
+            "day": "sat",
+            "start": "11:30",
+            "end": "13:00",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_055",
+          "handle": "sat-1045-riverside",
+          "title": "Mobility Sat 10:45",
+          "fields": {
+            "class": "class_mobility",
+            "day": "sat",
+            "start": "10:45",
+            "end": "11:30",
+            "location": "loc_riverside",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_056",
+          "handle": "sat-1130-riverside",
+          "title": "Race Prep Sat 11:30",
+          "fields": {
+            "class": "class_race_prep",
+            "day": "sat",
+            "start": "11:30",
+            "end": "12:30",
+            "location": "loc_riverside",
+            "note": "Meet at the river gate"
+          }
+        },
+        {
+          "id": "sess_057",
+          "handle": "sat-1230-north",
+          "title": "Boxing Sat 12:30",
+          "fields": {
+            "class": "class_boxing",
+            "day": "sat",
+            "start": "12:30",
+            "end": "13:30",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_058",
+          "handle": "sun-0900-riverside",
+          "title": "Mobility Sun 09:00",
+          "fields": {
+            "class": "class_mobility",
+            "day": "sun",
+            "start": "09:00",
+            "end": "09:45",
+            "location": "loc_riverside",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_059",
+          "handle": "sun-1000-north",
+          "title": "Kettlebell Sun 10:00",
+          "fields": {
+            "class": "class_kettlebell",
+            "day": "sun",
+            "start": "10:00",
+            "end": "10:45",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_060",
+          "handle": "sun-1030-riverside",
+          "title": "Yoga Flow Sun 10:30",
+          "fields": {
+            "class": "class_yoga_flow",
+            "day": "sun",
+            "start": "10:30",
+            "end": "11:30",
+            "location": "loc_riverside",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_061",
+          "handle": "sun-1130-north",
+          "title": "Open Gym Sun 11:30",
+          "fields": {
+            "class": "class_open_gym",
+            "day": "sun",
+            "start": "11:30",
+            "end": "13:00",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_062",
+          "handle": "sun-1230-north",
+          "title": "Strength Foundations Sun 12:30",
+          "fields": {
+            "class": "class_strength_foundations",
+            "day": "sun",
+            "start": "12:30",
+            "end": "13:30",
+            "location": "loc_north",
+            "note": ""
+          }
+        },
+        {
+          "id": "sess_063",
+          "handle": "sun-0900-riverside",
+          "title": "Social 5K Sun 09:00",
+          "fields": {
+            "class": "class_social_5k",
+            "day": "sun",
+            "start": "09:00",
+            "end": "09:45",
+            "location": "loc_riverside",
+            "note": "Meet by the river gate"
+          }
+        }
+      ]
+    },
+    "coaches": {
+      "name": "Coaches",
+      "fields": [
+        {
+          "id": "role",
+          "type": "text",
+          "label": "Role"
+        },
+        {
+          "id": "bio",
+          "type": "richtext",
+          "label": "Bio"
+        },
+        {
+          "id": "specialties",
+          "type": "text",
+          "label": "Specialties (comma-separated)"
+        },
+        {
+          "id": "credentials",
+          "type": "textarea",
+          "label": "Credentials (one per line)"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Portrait (4:5)"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Portrait alt text"
+        },
+        {
+          "id": "image_wide",
+          "type": "image",
+          "label": "Wide photo (3:2)"
+        },
+        {
+          "id": "image_wide_alt",
+          "type": "text",
+          "label": "Wide photo alt text"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "id": "featured",
+          "type": "checkbox",
+          "label": "Featured"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "coach_dana_okafor",
+          "handle": "dana-okafor",
+          "title": "Dana Okafor",
+          "fields": {
+            "role": "Head coach",
+            "bio": "<p>Dana opened Common Ground in 2014 with two racks and a borrowed rower. She writes every programme on the floor and still coaches the 06:30 strength class most mornings.</p><p>She works best with people who think the barbell is not for them. It usually is.</p>",
+            "specialties": "Barbell strength, Beginners, Programming",
+            "credentials": "BSc Sport and Exercise Science\nUKSCA accredited strength coach\nBritish Weightlifting Level 2",
+            "image": "as_4x5_1",
+            "image_alt": "Dana Okafor, head coach",
+            "image_wide": "as_3x2_1",
+            "image_wide_alt": "Dana Okafor coaching",
+            "link": "https://instagram.com/",
+            "featured": true,
+            "order": 1
+          }
+        },
+        {
+          "id": "coach_sam_reyes",
+          "handle": "sam-reyes",
+          "title": "Sam Reyes",
+          "fields": {
+            "role": "Conditioning coach",
+            "bio": "<p>Sam runs conditioning: rowers, bikes, sleds and the kind of intervals that are over before you can argue with them. Former county rower.</p>",
+            "specialties": "Conditioning, Rowing, Engines",
+            "credentials": "Level 3 Personal Trainer\nConcept2 indoor rowing instructor",
+            "image": "as_4x5_2",
+            "image_alt": "Sam Reyes, conditioning coach",
+            "image_wide": "as_3x2_2",
+            "image_wide_alt": "Sam Reyes coaching",
+            "link": "",
+            "featured": false,
+            "order": 2
+          }
+        },
+        {
+          "id": "coach_kit_lindqvist",
+          "handle": "kit-lindqvist",
+          "title": "Kit Lindqvist",
+          "fields": {
+            "role": "Weightlifting coach",
+            "bio": "<p>Kit coaches the snatch and the clean and jerk with a stopwatch, a video camera and a lot of patience. Small groups, plenty of reps, one cue at a time.</p>",
+            "specialties": "Olympic lifting, Mobility, Technique",
+            "credentials": "British Weightlifting Level 3\nFormer national championships lifter",
+            "image": "as_4x5_3",
+            "image_alt": "Kit Lindqvist, weightlifting coach",
+            "image_wide": "as_3x2_3",
+            "image_wide_alt": "Kit Lindqvist coaching",
+            "link": "",
+            "featured": false,
+            "order": 3
+          }
+        },
+        {
+          "id": "coach_priya_nair",
+          "handle": "priya-nair",
+          "title": "Priya Nair",
+          "fields": {
+            "role": "Mobility and yoga",
+            "bio": "<p>Priya teaches the classes people say they will get round to. Hips, shoulders, breath. Her Sunday mobility class at Riverside fills first.</p>",
+            "specialties": "Mobility, Yoga, Recovery",
+            "credentials": "500-hour registered yoga teacher\nFunctional Range Conditioning mobility specialist",
+            "image": "as_4x5_4",
+            "image_alt": "Priya Nair, mobility and yoga",
+            "image_wide": "as_3x2_4",
+            "image_wide_alt": "Priya Nair coaching",
+            "link": "",
+            "featured": false,
+            "order": 4
+          }
+        },
+        {
+          "id": "coach_marcus_bell",
+          "handle": "marcus-bell",
+          "title": "Marcus Bell",
+          "fields": {
+            "role": "Boxing and kettlebell",
+            "bio": "<p>Marcus boxed as an amateur for ten years and has coached for twelve. Pads, footwork and kettlebells, with music loud enough to hear the bell.</p>",
+            "specialties": "Boxing, Kettlebell, Conditioning",
+            "credentials": "England Boxing coach\nStrongFirst kettlebell instructor",
+            "image": "as_4x5_5",
+            "image_alt": "Marcus Bell, boxing and kettlebell",
+            "image_wide": "as_3x2_5",
+            "image_wide_alt": "Marcus Bell coaching",
+            "link": "",
+            "featured": false,
+            "order": 5
+          }
+        },
+        {
+          "id": "coach_jo_haddad",
+          "handle": "jo-haddad",
+          "title": "Jo Haddad",
+          "fields": {
+            "role": "Run leader",
+            "bio": "<p>Jo leads the free run club from the river gate every Saturday and the intervals on Wednesday nights. Every pace has a group and nobody runs home alone.</p>",
+            "specialties": "Running, Pace groups, Race prep",
+            "credentials": "England Athletics Leader in Running Fitness\nUK Coaching run coach",
+            "image": "as_4x5_6",
+            "image_alt": "Jo Haddad, run leader",
+            "image_wide": "as_3x2_6",
+            "image_wide_alt": "Jo Haddad coaching",
+            "link": "https://www.strava.com/",
+            "featured": false,
+            "order": 6
+          }
+        }
+      ]
+    },
+    "locations": {
+      "name": "Locations",
+      "fields": [
+        {
+          "id": "address",
+          "type": "textarea",
+          "label": "Address"
+        },
+        {
+          "id": "hours",
+          "type": "textarea",
+          "label": "Hours (one line per day or range: Mon–Fri 06:00–22:00)"
+        },
+        {
+          "id": "phone",
+          "type": "text",
+          "label": "Phone"
+        },
+        {
+          "id": "email",
+          "type": "text",
+          "label": "Email"
+        },
+        {
+          "id": "map_url",
+          "type": "url",
+          "label": "Map link"
+        },
+        {
+          "id": "map_image",
+          "type": "image",
+          "label": "Map image"
+        },
+        {
+          "id": "map_image_alt",
+          "type": "text",
+          "label": "Map image alt text"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "description",
+          "type": "text",
+          "label": "Description"
+        },
+        {
+          "id": "note",
+          "type": "text",
+          "label": "Note"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "loc_north",
+          "handle": "north",
+          "title": "North",
+          "fields": {
+            "address": "14 Foundry Lane\nMarlow Bridge\nMB2 4FL",
+            "hours": "Mon–Fri 06:00–22:00\nSat–Sun 08:00–18:00",
+            "phone": "01632 960 214",
+            "email": "north@commonground.example",
+            "map_url": "https://maps.example/?q=North+Marlow+Bridge",
+            "map_image": "as_map_1",
+            "map_image_alt": "Map of North",
+            "image": "as_3x2_3",
+            "image_alt": "The North location",
+            "description": "The gym: platforms, racks, rowers, a turf lane and the boxing corner.",
+            "note": "Parking at the rear, off Kiln Street",
+            "order": 1
+          }
+        },
+        {
+          "id": "loc_riverside",
+          "handle": "riverside",
+          "title": "Riverside",
+          "fields": {
+            "address": "The River Gate\nMill Walk\nMarlow Bridge\nMB1 2RQ",
+            "hours": "Mon–Fri 06:30–20:30\nSat 07:30–13:00\nSun 08:30–12:30",
+            "phone": "01632 960 388",
+            "email": "riverside@commonground.example",
+            "map_url": "https://maps.example/?q=Riverside+Marlow+Bridge",
+            "map_image": "as_map_2",
+            "map_image_alt": "Map of Riverside",
+            "image": "as_3x2_4",
+            "image_alt": "The Riverside location",
+            "description": "The studio for yoga and mobility, and the start of the run club.",
+            "note": "Meet by the river gate, under the clock",
+            "order": 2
+          }
+        }
+      ]
+    },
+    "plans": {
+      "name": "Plans",
+      "fields": [
+        {
+          "id": "price",
+          "type": "number",
+          "label": "Price"
+        },
+        {
+          "id": "period",
+          "type": "text",
+          "label": "Period (month, week, session, pack, once, free)"
+        },
+        {
+          "id": "summary",
+          "type": "text",
+          "label": "Summary"
+        },
+        {
+          "id": "features",
+          "type": "textarea",
+          "label": "Features (one per line)"
+        },
+        {
+          "id": "featured",
+          "type": "checkbox",
+          "label": "Featured"
+        },
+        {
+          "id": "note",
+          "type": "text",
+          "label": "Note"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Checkout link"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "plan_drop_in",
+          "handle": "drop-in",
+          "title": "Drop-in",
+          "fields": {
+            "price": 15,
+            "period": "session",
+            "summary": "One class, any class, no membership.",
+            "features": "Any class on the timetable\nOpen gym the same day\nTowel and locker",
+            "featured": false,
+            "note": "",
+            "link": "",
+            "order": 1
+          }
+        },
+        {
+          "id": "plan_open_gym",
+          "handle": "open-gym",
+          "title": "Open Gym",
+          "fields": {
+            "price": 45,
+            "period": "month",
+            "summary": "The floor when it suits you, a coach on hand.",
+            "features": "Open gym, every opening hour\nBoth locations\nLocker and towel\nFree run club",
+            "featured": false,
+            "note": "Cancel any time",
+            "link": "",
+            "order": 2
+          }
+        },
+        {
+          "id": "plan_unlimited",
+          "handle": "unlimited",
+          "title": "Unlimited",
+          "fields": {
+            "price": 89,
+            "period": "month",
+            "summary": "Every class, both locations, as often as you like.",
+            "features": "Every class on the timetable\nOpen gym, every opening hour\nBoth locations\nLocker and towel\nFree run club",
+            "featured": true,
+            "note": "No contract",
+            "link": "",
+            "order": 3
+          }
+        },
+        {
+          "id": "plan_small_group",
+          "handle": "small-group",
+          "title": "Small-group coaching",
+          "fields": {
+            "price": 160,
+            "period": "month",
+            "summary": "Your own programme, coached in a group of four.",
+            "features": "Every class on the timetable\nTwo coached sessions a week\nA written programme\nBoth locations\nA monthly check-in",
+            "featured": false,
+            "note": "Three-month start",
+            "link": "",
+            "order": 4
+          }
+        },
+        {
+          "id": "plan_one_to_one",
+          "handle": "one-to-one",
+          "title": "1:1 coaching",
+          "fields": {
+            "price": 330,
+            "period": "pack",
+            "summary": "Six sessions with a coach of your choice.",
+            "features": "Six one-hour sessions\nAssessment and programme\nMessages between sessions",
+            "featured": false,
+            "note": "Use within ten weeks",
+            "link": "",
+            "order": 5
+          }
+        },
+        {
+          "id": "plan_run_club",
+          "handle": "run-club",
+          "title": "Run Club",
+          "fields": {
+            "price": 0,
+            "period": "free",
+            "summary": "Saturday mornings from the river gate. Just turn up.",
+            "features": "Every Saturday, 08:00\nPace groups for everyone\nCoffee after",
+            "featured": false,
+            "note": "Always free",
+            "link": "",
+            "order": 6
+          }
+        }
+      ]
+    },
+    "events": {
+      "name": "Events",
+      "fields": [
+        {
+          "id": "date",
+          "type": "date",
+          "label": "Date"
+        },
+        {
+          "id": "time",
+          "type": "text",
+          "label": "Time"
+        },
+        {
+          "id": "location",
+          "type": "entry",
+          "label": "Location",
+          "content_type": "locations"
+        },
+        {
+          "id": "description",
+          "type": "richtext",
+          "label": "Description"
+        },
+        {
+          "id": "route",
+          "type": "text",
+          "label": "Route"
+        },
+        {
+          "id": "pace",
+          "type": "text",
+          "label": "Pace"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Sign-up link"
+        },
+        {
+          "id": "album",
+          "type": "entry",
+          "label": "Photos from last time",
+          "content_type": "albums"
+        }
+      ],
+      "entries": [
+        {
+          "id": "event_saturday_long_run",
+          "handle": "saturday-long-run",
+          "title": "Saturday long run",
+          "fields": {
+            "date": "2026-11-07",
+            "time": "08:00",
+            "location": "loc_riverside",
+            "description": "<p>Saturday long run at Common Ground. Members and non-members welcome; bring a friend.</p><p>Arrive ten minutes early to sign in. There is water and coffee after.</p>",
+            "route": "12 km riverside loop, flat",
+            "pace": "All paces, groups at 5:00 / 5:45 / 6:30 per km",
+            "image": "as_3x2_2",
+            "image_alt": "Saturday long run placeholder",
+            "link": "",
+            "album": "album_saturday_long_run_october"
+          }
+        },
+        {
+          "id": "event_sunday_social_5k",
+          "handle": "sunday-social-5k",
+          "title": "Sunday social 5k",
+          "fields": {
+            "date": "2026-11-15",
+            "time": "09:00",
+            "location": "loc_riverside",
+            "description": "<p>Sunday social 5k at Common Ground. Members and non-members welcome; bring a friend.</p><p>Arrive ten minutes early to sign in. There is water and coffee after.</p>",
+            "route": "5 km out and back on the towpath",
+            "pace": "Conversational. Nobody gets left",
+            "image": "as_3x2_3",
+            "image_alt": "Sunday social 5k placeholder",
+            "link": "",
+            "album": "album_sunday_social_5k_october"
+          }
+        },
+        {
+          "id": "event_deadlift_day",
+          "handle": "deadlift-day",
+          "title": "Deadlift day",
+          "fields": {
+            "date": "2026-12-05",
+            "time": "10:00",
+            "location": "loc_north",
+            "description": "<p>Deadlift day at Common Ground. Members and non-members welcome; bring a friend.</p><p>Arrive ten minutes early to sign in. There is water and coffee after.</p>",
+            "route": "",
+            "pace": "",
+            "image": "as_3x2_4",
+            "image_alt": "Deadlift day placeholder",
+            "link": "",
+            "album": "album_deadlift_day_2025"
+          }
+        },
+        {
+          "id": "event_winter_10k",
+          "handle": "winter-10k",
+          "title": "Winter 10k",
+          "fields": {
+            "date": "2026-12-13",
+            "time": "09:30",
+            "location": "loc_riverside",
+            "description": "<p>Winter 10k at Common Ground. Members and non-members welcome; bring a friend.</p><p>Arrive ten minutes early to sign in. There is water and coffee after.</p>",
+            "route": "10 km, two laps of the meadows",
+            "pace": "Pacers at 45, 50, 55 and 60 minutes",
+            "image": "as_3x2_5",
+            "image_alt": "Winter 10k placeholder",
+            "link": ""
+          }
+        },
+        {
+          "id": "event_open_day",
+          "handle": "open-day",
+          "title": "Open day",
+          "fields": {
+            "date": "2027-01-04",
+            "time": "10:00",
+            "location": "loc_north",
+            "description": "<p>Open day at Common Ground. Members and non-members welcome; bring a friend.</p><p>Arrive ten minutes early to sign in. There is water and coffee after.</p>",
+            "route": "",
+            "pace": "",
+            "image": "as_3x2_6",
+            "image_alt": "Open day placeholder",
+            "link": "",
+            "album": "album_open_day_september"
+          }
+        },
+        {
+          "id": "event_new_year_reset_week",
+          "handle": "new-year-reset-week",
+          "title": "New year reset week",
+          "fields": {
+            "date": "2027-01-10",
+            "time": "07:00",
+            "location": "loc_north",
+            "description": "<p>New year reset week at Common Ground. Members and non-members welcome; bring a friend.</p><p>Arrive ten minutes early to sign in. There is water and coffee after.</p>",
+            "route": "",
+            "pace": "",
+            "image": "as_3x2_1",
+            "image_alt": "New year reset week placeholder",
+            "link": ""
+          }
+        },
+        {
+          "id": "event_charity_row",
+          "handle": "charity-row",
+          "title": "Charity row",
+          "fields": {
+            "date": "2027-01-16",
+            "time": "09:00",
+            "location": "loc_north",
+            "description": "<p>Charity row at Common Ground. Members and non-members welcome; bring a friend.</p><p>Arrive ten minutes early to sign in. There is water and coffee after.</p>",
+            "route": "",
+            "pace": "",
+            "image": "as_3x2_2",
+            "image_alt": "Charity row placeholder",
+            "link": "",
+            "album": "album_charity_row_2026"
+          }
+        },
+        {
+          "id": "event_trail_sunday",
+          "handle": "trail-sunday",
+          "title": "Trail Sunday",
+          "fields": {
+            "date": "2027-01-24",
+            "time": "08:30",
+            "location": "loc_riverside",
+            "description": "<p>Trail Sunday at Common Ground. Members and non-members welcome; bring a friend.</p><p>Arrive ten minutes early to sign in. There is water and coffee after.</p>",
+            "route": "14 km on the ridge trail, 300 m of climbing",
+            "pace": "Steady. We regroup at every gate",
+            "image": "as_3x2_3",
+            "image_alt": "Trail Sunday placeholder",
+            "link": "",
+            "album": "album_trail_sunday_september"
+          }
+        }
+      ]
+    },
+    "albums": {
+      "name": "Albums",
+      "fields": [
+        {
+          "id": "date",
+          "type": "date",
+          "label": "Date"
+        },
+        {
+          "id": "event",
+          "type": "entry",
+          "label": "Event",
+          "content_type": "events"
+        },
+        {
+          "id": "cover",
+          "type": "image",
+          "label": "Cover"
+        },
+        {
+          "id": "cover_alt",
+          "type": "text",
+          "label": "Cover alt text"
+        },
+        {
+          "id": "photos",
+          "type": "gallery",
+          "label": "Photos"
+        },
+        {
+          "id": "description",
+          "type": "text",
+          "label": "Description"
+        }
+      ],
+      "entries": [
+        {
+          "id": "album_saturday_long_run_october",
+          "handle": "saturday-long-run-october",
+          "title": "Saturday long run, October",
+          "fields": {
+            "date": "2026-10-10",
+            "event": "event_saturday_long_run",
+            "cover": "as_4x3_1",
+            "cover_alt": "Saturday long run, October, cover",
+            "photos": "saturday-long-run-october",
+            "description": "Twenty-two runners, three pace groups and a headwind on the way back."
+          }
+        },
+        {
+          "id": "album_sunday_social_5k_october",
+          "handle": "sunday-social-5k-october",
+          "title": "Sunday social 5k, October",
+          "fields": {
+            "date": "2026-10-18",
+            "event": "event_sunday_social_5k",
+            "cover": "as_4x3_2",
+            "cover_alt": "Sunday social 5k, October, cover",
+            "photos": "sunday-social-5k-october",
+            "description": "A slow loop and a long coffee."
+          }
+        },
+        {
+          "id": "album_deadlift_day_2025",
+          "handle": "deadlift-day-2025",
+          "title": "Deadlift day 2025",
+          "fields": {
+            "date": "2025-12-06",
+            "event": "event_deadlift_day",
+            "cover": "as_4x3_3",
+            "cover_alt": "Deadlift day 2025, cover",
+            "photos": "deadlift-day-2025",
+            "description": "Forty lifters, one bar and a lot of chalk."
+          }
+        },
+        {
+          "id": "album_open_day_september",
+          "handle": "open-day-september",
+          "title": "Open day, September",
+          "fields": {
+            "date": "2026-09-26",
+            "event": "event_open_day",
+            "cover": "as_4x3_4",
+            "cover_alt": "Open day, September, cover",
+            "photos": "open-day-september",
+            "description": "Taster classes, coffee and a tour of both locations."
+          }
+        },
+        {
+          "id": "album_charity_row_2026",
+          "handle": "charity-row-2026",
+          "title": "Charity row 2026",
+          "fields": {
+            "date": "2026-01-24",
+            "event": "event_charity_row",
+            "cover": "as_4x3_1",
+            "cover_alt": "Charity row 2026, cover",
+            "photos": "charity-row-2026",
+            "description": "A marathon on the rowers for the river trust."
+          }
+        },
+        {
+          "id": "album_trail_sunday_september",
+          "handle": "trail-sunday-september",
+          "title": "Trail Sunday, September",
+          "fields": {
+            "date": "2026-09-13",
+            "event": "event_trail_sunday",
+            "cover": "as_4x3_2",
+            "cover_alt": "Trail Sunday, September, cover",
+            "photos": "trail-sunday-september",
+            "description": "Mud, hills and a picnic at the top."
+          }
+        }
+      ]
+    }
+  },
+  "pages": {
+    "/": {
+      "id": "pg_home",
+      "template": "home",
+      "title": "Common Ground",
+      "seo": {
+        "description": "Coached strength and conditioning in Marlow Bridge, and a free Saturday run club."
+      }
+    },
+    "/trainer": {
+      "id": "pg_trainer",
+      "template": "page.trainer",
+      "title": "Train with Dana",
+      "seo": {
+        "description": "One-to-one and small-group coaching with Dana Okafor."
+      }
+    },
+    "/club": {
+      "id": "pg_club",
+      "template": "page.club",
+      "title": "Run club",
+      "seo": {
+        "description": "A free run club from the river gate every Saturday. All paces welcome."
+      }
+    },
+    "/classes": {
+      "id": "pg_classes",
+      "template": "page.classes",
+      "title": "Classes"
+    },
+    "/timetable": {
+      "id": "pg_timetable",
+      "template": "page.timetable",
+      "title": "Timetable"
+    },
+    "/coaches": {
+      "id": "pg_coaches",
+      "template": "page.coaches",
+      "title": "Coaches"
+    },
+    "/memberships": {
+      "id": "pg_memberships",
+      "template": "page.memberships",
+      "title": "Memberships"
+    },
+    "/events": {
+      "id": "pg_events",
+      "template": "page.events",
+      "title": "Events"
+    },
+    "/gallery": {
+      "id": "pg_gallery",
+      "template": "page.gallery",
+      "title": "Gallery"
+    },
+    "/locations": {
+      "id": "pg_locations",
+      "template": "page.locations",
+      "title": "Find us"
+    },
+    "/about": {
+      "id": "pg_about",
+      "template": "page.about",
+      "title": "About"
+    },
+    "/trial": {
+      "id": "pg_trial",
+      "template": "page.trial",
+      "title": "Start free trial"
+    },
+    "/contact": {
+      "id": "pg_contact",
+      "template": "page.contact",
+      "title": "Contact"
+    },
+    "/privacy": {
+      "id": "pg_privacy",
+      "template": "page",
+      "title": "Privacy",
+      "content": "<p>Common Ground keeps the details you send through our forms to reply to you and to book your classes. We do not sell them or share them with anyone else.</p><h2>What we keep</h2><p>Your name, email, phone number and the notes you choose to add.</p><h2>How long</h2><p>Two years after your last visit, then we delete them. Ask us and we will delete them sooner.</p>"
+    },
+    "/terms": {
+      "id": "pg_terms",
+      "template": "page",
+      "title": "Terms",
+      "content": "<p>Memberships run month to month unless a plan says otherwise. Cancel any time with a month's notice.</p><h2>Classes</h2><p>Book or turn up; if a class is full the coach will find you a spot in the next one.</p>"
+    },
+    "/classes/strength-foundations": {
+      "id": "pg_class_strength_foundations",
+      "template": "class",
+      "title": "Strength Foundations",
+      "params": {
+        "class": "strength-foundations"
+      },
+      "entry": {
+        "id": "class_strength_foundations",
+        "handle": "strength-foundations",
+        "title": "Strength Foundations",
+        "fields": {
+          "summary": "Barbell basics, coached. Squat, press and deadlift with a plan that adds weight week by week.",
+          "description": "<p>Barbell basics, coached. Squat, press and deadlift with a plan that adds weight week by week.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+          "level": "all",
+          "intensity": "moderate",
+          "duration_minutes": 60,
+          "format": "group",
+          "coach": "coach_dana_okafor",
+          "image": "as_3x2_1",
+          "image_alt": "Strength Foundations class at Common Ground",
+          "what_to_bring": "Trainers with a flat sole\nA water bottle\nA towel",
+          "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+          "featured": true,
+          "tag": "Beginners welcome",
+          "order": 1,
+          "price": 15,
+          "photos": "strength-foundations"
+        }
+      },
+      "content_type": "classes",
+      "seo": {
+        "description": "Barbell basics, coached. Squat, press and deadlift with a plan that adds weight week by week.",
+        "image": "as_3x2_1"
+      }
+    },
+    "/classes/conditioning": {
+      "id": "pg_class_conditioning",
+      "template": "class",
+      "title": "Conditioning",
+      "params": {
+        "class": "conditioning"
+      },
+      "entry": {
+        "id": "class_conditioning",
+        "handle": "conditioning",
+        "title": "Conditioning",
+        "fields": {
+          "summary": "Intervals on the rower, bike and sled. Short, hard and scaled to you.",
+          "description": "<p>Intervals on the rower, bike and sled. Short, hard and scaled to you.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+          "level": "intermediate",
+          "intensity": "high",
+          "duration_minutes": 45,
+          "format": "group",
+          "coach": "coach_sam_reyes",
+          "image": "as_3x2_2",
+          "image_alt": "Conditioning class at Common Ground",
+          "what_to_bring": "Trainers with a flat sole\nA water bottle\nA towel",
+          "who_for": "You know the basic lifts and want to push on. Not sure? Ask the coach.",
+          "featured": true,
+          "tag": "",
+          "order": 2,
+          "price": 15
+        }
+      },
+      "content_type": "classes",
+      "seo": {
+        "description": "Intervals on the rower, bike and sled. Short, hard and scaled to you.",
+        "image": "as_3x2_2"
+      }
+    },
+    "/classes/olympic-lifting": {
+      "id": "pg_class_olympic_lifting",
+      "template": "class",
+      "title": "Olympic Lifting",
+      "params": {
+        "class": "olympic-lifting"
+      },
+      "entry": {
+        "id": "class_olympic_lifting",
+        "handle": "olympic-lifting",
+        "title": "Olympic Lifting",
+        "fields": {
+          "summary": "The snatch and the clean and jerk, broken into pieces and built back up.",
+          "description": "<p>The snatch and the clean and jerk, broken into pieces and built back up.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+          "level": "advanced",
+          "intensity": "moderate",
+          "duration_minutes": 75,
+          "format": "small-group",
+          "coach": "coach_kit_lindqvist",
+          "image": "as_3x2_3",
+          "image_alt": "Olympic Lifting class at Common Ground",
+          "what_to_bring": "Trainers with a flat sole\nA water bottle\nA towel",
+          "who_for": "You know the basic lifts and want to push on. Not sure? Ask the coach.",
+          "featured": true,
+          "tag": "",
+          "order": 3,
+          "price": 18
+        }
+      },
+      "content_type": "classes",
+      "seo": {
+        "description": "The snatch and the clean and jerk, broken into pieces and built back up.",
+        "image": "as_3x2_3"
+      }
+    },
+    "/classes/kettlebell": {
+      "id": "pg_class_kettlebell",
+      "template": "class",
+      "title": "Kettlebell",
+      "params": {
+        "class": "kettlebell"
+      },
+      "entry": {
+        "id": "class_kettlebell",
+        "handle": "kettlebell",
+        "title": "Kettlebell",
+        "fields": {
+          "summary": "Swings, cleans, presses and carries. Forty-five minutes, one bell, no mirrors.",
+          "description": "<p>Swings, cleans, presses and carries. Forty-five minutes, one bell, no mirrors.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+          "level": "all",
+          "intensity": "high",
+          "duration_minutes": 45,
+          "format": "group",
+          "coach": "coach_marcus_bell",
+          "image": "as_3x2_4",
+          "image_alt": "Kettlebell class at Common Ground",
+          "what_to_bring": "Trainers with a flat sole\nA water bottle\nA towel",
+          "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+          "featured": false,
+          "tag": "",
+          "order": 4,
+          "price": 15
+        }
+      },
+      "content_type": "classes",
+      "seo": {
+        "description": "Swings, cleans, presses and carries. Forty-five minutes, one bell, no mirrors.",
+        "image": "as_3x2_4"
+      }
+    },
+    "/classes/boxing": {
+      "id": "pg_class_boxing",
+      "template": "class",
+      "title": "Boxing",
+      "params": {
+        "class": "boxing"
+      },
+      "entry": {
+        "id": "class_boxing",
+        "handle": "boxing",
+        "title": "Boxing",
+        "fields": {
+          "summary": "Footwork, pads and bag rounds. No sparring, plenty of sweat.",
+          "description": "<p>Footwork, pads and bag rounds. No sparring, plenty of sweat.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+          "level": "all",
+          "intensity": "high",
+          "duration_minutes": 60,
+          "format": "group",
+          "coach": "coach_marcus_bell",
+          "image": "as_3x2_5",
+          "image_alt": "Boxing class at Common Ground",
+          "what_to_bring": "Trainers with a flat sole\nA water bottle\nA towel",
+          "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+          "featured": true,
+          "tag": "",
+          "order": 5,
+          "price": 15,
+          "photos": "boxing"
+        }
+      },
+      "content_type": "classes",
+      "seo": {
+        "description": "Footwork, pads and bag rounds. No sparring, plenty of sweat.",
+        "image": "as_3x2_5"
+      }
+    },
+    "/classes/mobility": {
+      "id": "pg_class_mobility",
+      "template": "class",
+      "title": "Mobility",
+      "params": {
+        "class": "mobility"
+      },
+      "entry": {
+        "id": "class_mobility",
+        "handle": "mobility",
+        "title": "Mobility",
+        "fields": {
+          "summary": "Hips, shoulders and spine, slowly. The class that makes the others feel better.",
+          "description": "<p>Hips, shoulders and spine, slowly. The class that makes the others feel better.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+          "level": "all",
+          "intensity": "low",
+          "duration_minutes": 45,
+          "format": "group",
+          "coach": "coach_priya_nair",
+          "image": "as_3x2_6",
+          "image_alt": "Mobility class at Common Ground",
+          "what_to_bring": "Trainers with a flat sole\nA water bottle\nA towel",
+          "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+          "featured": false,
+          "tag": "",
+          "order": 6,
+          "price": 12
+        }
+      },
+      "content_type": "classes",
+      "seo": {
+        "description": "Hips, shoulders and spine, slowly. The class that makes the others feel better.",
+        "image": "as_3x2_6"
+      }
+    },
+    "/classes/yoga-flow": {
+      "id": "pg_class_yoga_flow",
+      "template": "class",
+      "title": "Yoga Flow",
+      "params": {
+        "class": "yoga-flow"
+      },
+      "entry": {
+        "id": "class_yoga_flow",
+        "handle": "yoga-flow",
+        "title": "Yoga Flow",
+        "fields": {
+          "summary": "A steady flow for strength and breath, at the Riverside studio.",
+          "description": "<p>A steady flow for strength and breath, at the Riverside studio.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+          "level": "all",
+          "intensity": "low",
+          "duration_minutes": 60,
+          "format": "group",
+          "coach": "coach_priya_nair",
+          "image": "as_3x2_1",
+          "image_alt": "Yoga Flow class at Common Ground",
+          "what_to_bring": "Trainers with a flat sole\nA water bottle\nA towel",
+          "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+          "featured": true,
+          "tag": "",
+          "order": 7,
+          "price": 12
+        }
+      },
+      "content_type": "classes",
+      "seo": {
+        "description": "A steady flow for strength and breath, at the Riverside studio.",
+        "image": "as_3x2_1"
+      }
+    },
+    "/classes/run-club-intervals": {
+      "id": "pg_class_run_club_intervals",
+      "template": "class",
+      "title": "Run Club Intervals",
+      "params": {
+        "class": "run-club-intervals"
+      },
+      "entry": {
+        "id": "class_run_club_intervals",
+        "handle": "run-club-intervals",
+        "title": "Run Club Intervals",
+        "fields": {
+          "summary": "Repeats on the river path in pace groups. Warm-up, six efforts, a jog home.",
+          "description": "<p>Repeats on the river path in pace groups. Warm-up, six efforts, a jog home.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+          "level": "all",
+          "intensity": "moderate",
+          "duration_minutes": 50,
+          "format": "outdoor",
+          "coach": "coach_jo_haddad",
+          "image": "as_3x2_2",
+          "image_alt": "Run Club Intervals class at Common Ground",
+          "what_to_bring": "Running shoes\nA layer for the warm-up\nWater",
+          "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+          "featured": true,
+          "tag": "Free",
+          "order": 8
+        }
+      },
+      "content_type": "classes",
+      "seo": {
+        "description": "Repeats on the river path in pace groups. Warm-up, six efforts, a jog home.",
+        "image": "as_3x2_2"
+      }
+    },
+    "/classes/beginners-strength": {
+      "id": "pg_class_beginners_strength",
+      "template": "class",
+      "title": "Beginners' Strength",
+      "params": {
+        "class": "beginners-strength"
+      },
+      "entry": {
+        "id": "class_beginners_strength",
+        "handle": "beginners-strength",
+        "title": "Beginners' Strength",
+        "fields": {
+          "summary": "Six weeks, four people, one coach. Learn to lift before you join the classes.",
+          "description": "<p>Six weeks, four people, one coach. Learn to lift before you join the classes.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+          "level": "beginner",
+          "intensity": "low",
+          "duration_minutes": 60,
+          "format": "small-group",
+          "coach": "coach_dana_okafor",
+          "image": "as_3x2_3",
+          "image_alt": "Beginners' Strength class at Common Ground",
+          "what_to_bring": "Trainers with a flat sole\nA water bottle\nA towel",
+          "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+          "featured": false,
+          "tag": "",
+          "order": 9,
+          "price": 20
+        }
+      },
+      "content_type": "classes",
+      "seo": {
+        "description": "Six weeks, four people, one coach. Learn to lift before you join the classes.",
+        "image": "as_3x2_3"
+      }
+    },
+    "/classes/small-group-coaching": {
+      "id": "pg_class_small_group_coaching",
+      "template": "class",
+      "title": "Small-group Coaching",
+      "params": {
+        "class": "small-group-coaching"
+      },
+      "entry": {
+        "id": "class_small_group_coaching",
+        "handle": "small-group-coaching",
+        "title": "Small-group Coaching",
+        "fields": {
+          "summary": "Your own programme, coached in a group of four. Strength, fitness or both.",
+          "description": "<p>Your own programme, coached in a group of four. Strength, fitness or both.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+          "level": "intermediate",
+          "intensity": "moderate",
+          "duration_minutes": 60,
+          "format": "small-group",
+          "coach": "coach_dana_okafor",
+          "image": "as_3x2_4",
+          "image_alt": "Small-group Coaching class at Common Ground",
+          "what_to_bring": "Trainers with a flat sole\nA water bottle\nA towel",
+          "who_for": "You know the basic lifts and want to push on. Not sure? Ask the coach.",
+          "featured": false,
+          "tag": "",
+          "order": 10,
+          "price": 25
+        }
+      },
+      "content_type": "classes",
+      "seo": {
+        "description": "Your own programme, coached in a group of four. Strength, fitness or both.",
+        "image": "as_3x2_4"
+      }
+    },
+    "/classes/race-prep": {
+      "id": "pg_class_race_prep",
+      "template": "class",
+      "title": "Race Prep",
+      "params": {
+        "class": "race-prep"
+      },
+      "entry": {
+        "id": "class_race_prep",
+        "handle": "race-prep",
+        "title": "Race Prep",
+        "fields": {
+          "summary": "Strength and speed work for your next 10k, half or marathon.",
+          "description": "<p>Strength and speed work for your next 10k, half or marathon.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+          "level": "intermediate",
+          "intensity": "high",
+          "duration_minutes": 60,
+          "format": "outdoor",
+          "coach": "coach_jo_haddad",
+          "image": "as_3x2_5",
+          "image_alt": "Race Prep class at Common Ground",
+          "what_to_bring": "Running shoes\nA layer for the warm-up\nWater",
+          "who_for": "You know the basic lifts and want to push on. Not sure? Ask the coach.",
+          "featured": false,
+          "tag": "New",
+          "order": 11,
+          "price": 12
+        }
+      },
+      "content_type": "classes",
+      "seo": {
+        "description": "Strength and speed work for your next 10k, half or marathon.",
+        "image": "as_3x2_5"
+      }
+    },
+    "/classes/open-gym": {
+      "id": "pg_class_open_gym",
+      "template": "class",
+      "title": "Open Gym",
+      "params": {
+        "class": "open-gym"
+      },
+      "entry": {
+        "id": "class_open_gym",
+        "handle": "open-gym",
+        "title": "Open Gym",
+        "fields": {
+          "summary": "The floor is yours. Bring a programme, a coach is on hand.",
+          "description": "<p>The floor is yours. Bring a programme, a coach is on hand.</p><p>Every class starts with a coached warm-up and ends with a cool-down. The coach scales each part to you: lighter, shorter or slower is always an option, and so is more.</p><p>New? Come ten minutes early and say hello. We will show you round and set you up.</p>",
+          "level": "all",
+          "intensity": "low",
+          "duration_minutes": 90,
+          "format": "group",
+          "coach": "coach_sam_reyes",
+          "image": "as_3x2_6",
+          "image_alt": "Open Gym class at Common Ground",
+          "what_to_bring": "Trainers with a flat sole\nA water bottle\nA towel",
+          "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+          "featured": false,
+          "tag": "",
+          "order": 12,
+          "price": 10
+        }
+      },
+      "content_type": "classes",
+      "seo": {
+        "description": "The floor is yours. Bring a programme, a coach is on hand.",
+        "image": "as_3x2_6"
+      }
+    },
+    "/classes/long-run": {
+      "id": "pg_class_long_run",
+      "template": "class",
+      "title": "Long run",
+      "params": {
+        "class": "long-run"
+      },
+      "entry": {
+        "id": "class_long_run",
+        "handle": "long-run",
+        "title": "Long run",
+        "fields": {
+          "summary": "Ten to sixteen kilometres on the river loop in pace groups, with a back marker on every one.",
+          "description": "<p>Ten to sixteen kilometres on the river loop in pace groups, with a back marker on every one.</p><p>Every run starts with a walk-through of the route and ends back at the river gate. A back marker runs at the end of every group, so nobody runs alone.</p><p>Free for everyone, members or not. Come ten minutes early and say hello.</p>",
+          "level": "all",
+          "intensity": "moderate",
+          "duration_minutes": 90,
+          "format": "outdoor",
+          "coach": "coach_jo_haddad",
+          "image": "as_3x2_4",
+          "image_alt": "Long run at Common Ground",
+          "what_to_bring": "Running shoes\nWater\nA layer for after",
+          "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+          "featured": false,
+          "tag": "Free",
+          "order": 13
+        }
+      },
+      "content_type": "classes",
+      "seo": {
+        "description": "Repeats on the river path in pace groups. Warm-up, six efforts, a jog home.",
+        "image": "as_3x2_2"
+      }
+    },
+    "/classes/social-5k": {
+      "id": "pg_class_social_5k",
+      "template": "class",
+      "title": "Social 5K",
+      "params": {
+        "class": "social-5k"
+      },
+      "entry": {
+        "id": "class_social_5k",
+        "handle": "social-5k",
+        "title": "Social 5K",
+        "fields": {
+          "summary": "An easy five kilometres out and back on the towpath at talking pace, coffee after.",
+          "description": "<p>An easy five kilometres out and back on the towpath at talking pace, coffee after.</p><p>Every run starts with a walk-through of the route and ends back at the river gate. A back marker runs at the end of every group, so nobody runs alone.</p><p>Free for everyone, members or not. Come ten minutes early and say hello.</p>",
+          "level": "all",
+          "intensity": "low",
+          "duration_minutes": 45,
+          "format": "outdoor",
+          "coach": "coach_jo_haddad",
+          "image": "as_3x2_5",
+          "image_alt": "Social 5K at Common Ground",
+          "what_to_bring": "Running shoes\nSomething warm for the coffee",
+          "who_for": "Anyone who can walk in the door. No experience needed; the coach scales every part.",
+          "featured": false,
+          "tag": "Free",
+          "order": 14
+        }
+      },
+      "content_type": "classes",
+      "seo": {
+        "description": "Repeats on the river path in pace groups. Warm-up, six efforts, a jog home.",
+        "image": "as_3x2_2"
+      }
+    },
+    "/coaches/dana-okafor": {
+      "id": "pg_coach_dana_okafor",
+      "template": "coach",
+      "title": "Dana Okafor",
+      "params": {
+        "coach": "dana-okafor"
+      },
+      "entry": {
+        "id": "coach_dana_okafor",
+        "handle": "dana-okafor",
+        "title": "Dana Okafor",
+        "fields": {
+          "role": "Head coach",
+          "bio": "<p>Dana opened Common Ground in 2014 with two racks and a borrowed rower. She writes every programme on the floor and still coaches the 06:30 strength class most mornings.</p><p>She works best with people who think the barbell is not for them. It usually is.</p>",
+          "specialties": "Barbell strength, Beginners, Programming",
+          "credentials": "BSc Sport and Exercise Science\nUKSCA accredited strength coach\nBritish Weightlifting Level 2",
+          "image": "as_4x5_1",
+          "image_alt": "Dana Okafor, head coach",
+          "image_wide": "as_3x2_1",
+          "image_wide_alt": "Dana Okafor coaching",
+          "link": "https://instagram.com/",
+          "featured": true,
+          "order": 1
+        }
+      },
+      "content_type": "coaches",
+      "seo": {
+        "description": "Head coach",
+        "image": "as_4x5_1"
+      }
+    },
+    "/coaches/sam-reyes": {
+      "id": "pg_coach_sam_reyes",
+      "template": "coach",
+      "title": "Sam Reyes",
+      "params": {
+        "coach": "sam-reyes"
+      },
+      "entry": {
+        "id": "coach_sam_reyes",
+        "handle": "sam-reyes",
+        "title": "Sam Reyes",
+        "fields": {
+          "role": "Conditioning coach",
+          "bio": "<p>Sam runs conditioning: rowers, bikes, sleds and the kind of intervals that are over before you can argue with them. Former county rower.</p>",
+          "specialties": "Conditioning, Rowing, Engines",
+          "credentials": "Level 3 Personal Trainer\nConcept2 indoor rowing instructor",
+          "image": "as_4x5_2",
+          "image_alt": "Sam Reyes, conditioning coach",
+          "image_wide": "as_3x2_2",
+          "image_wide_alt": "Sam Reyes coaching",
+          "link": "",
+          "featured": false,
+          "order": 2
+        }
+      },
+      "content_type": "coaches",
+      "seo": {
+        "description": "Conditioning coach",
+        "image": "as_4x5_2"
+      }
+    },
+    "/coaches/kit-lindqvist": {
+      "id": "pg_coach_kit_lindqvist",
+      "template": "coach",
+      "title": "Kit Lindqvist",
+      "params": {
+        "coach": "kit-lindqvist"
+      },
+      "entry": {
+        "id": "coach_kit_lindqvist",
+        "handle": "kit-lindqvist",
+        "title": "Kit Lindqvist",
+        "fields": {
+          "role": "Weightlifting coach",
+          "bio": "<p>Kit coaches the snatch and the clean and jerk with a stopwatch, a video camera and a lot of patience. Small groups, plenty of reps, one cue at a time.</p>",
+          "specialties": "Olympic lifting, Mobility, Technique",
+          "credentials": "British Weightlifting Level 3\nFormer national championships lifter",
+          "image": "as_4x5_3",
+          "image_alt": "Kit Lindqvist, weightlifting coach",
+          "image_wide": "as_3x2_3",
+          "image_wide_alt": "Kit Lindqvist coaching",
+          "link": "",
+          "featured": false,
+          "order": 3
+        }
+      },
+      "content_type": "coaches",
+      "seo": {
+        "description": "Weightlifting coach",
+        "image": "as_4x5_3"
+      }
+    },
+    "/coaches/priya-nair": {
+      "id": "pg_coach_priya_nair",
+      "template": "coach",
+      "title": "Priya Nair",
+      "params": {
+        "coach": "priya-nair"
+      },
+      "entry": {
+        "id": "coach_priya_nair",
+        "handle": "priya-nair",
+        "title": "Priya Nair",
+        "fields": {
+          "role": "Mobility and yoga",
+          "bio": "<p>Priya teaches the classes people say they will get round to. Hips, shoulders, breath. Her Sunday mobility class at Riverside fills first.</p>",
+          "specialties": "Mobility, Yoga, Recovery",
+          "credentials": "500-hour registered yoga teacher\nFunctional Range Conditioning mobility specialist",
+          "image": "as_4x5_4",
+          "image_alt": "Priya Nair, mobility and yoga",
+          "image_wide": "as_3x2_4",
+          "image_wide_alt": "Priya Nair coaching",
+          "link": "",
+          "featured": false,
+          "order": 4
+        }
+      },
+      "content_type": "coaches",
+      "seo": {
+        "description": "Mobility and yoga",
+        "image": "as_4x5_4"
+      }
+    },
+    "/coaches/marcus-bell": {
+      "id": "pg_coach_marcus_bell",
+      "template": "coach",
+      "title": "Marcus Bell",
+      "params": {
+        "coach": "marcus-bell"
+      },
+      "entry": {
+        "id": "coach_marcus_bell",
+        "handle": "marcus-bell",
+        "title": "Marcus Bell",
+        "fields": {
+          "role": "Boxing and kettlebell",
+          "bio": "<p>Marcus boxed as an amateur for ten years and has coached for twelve. Pads, footwork and kettlebells, with music loud enough to hear the bell.</p>",
+          "specialties": "Boxing, Kettlebell, Conditioning",
+          "credentials": "England Boxing coach\nStrongFirst kettlebell instructor",
+          "image": "as_4x5_5",
+          "image_alt": "Marcus Bell, boxing and kettlebell",
+          "image_wide": "as_3x2_5",
+          "image_wide_alt": "Marcus Bell coaching",
+          "link": "",
+          "featured": false,
+          "order": 5
+        }
+      },
+      "content_type": "coaches",
+      "seo": {
+        "description": "Boxing and kettlebell",
+        "image": "as_4x5_5"
+      }
+    },
+    "/coaches/jo-haddad": {
+      "id": "pg_coach_jo_haddad",
+      "template": "coach",
+      "title": "Jo Haddad",
+      "params": {
+        "coach": "jo-haddad"
+      },
+      "entry": {
+        "id": "coach_jo_haddad",
+        "handle": "jo-haddad",
+        "title": "Jo Haddad",
+        "fields": {
+          "role": "Run leader",
+          "bio": "<p>Jo leads the free run club from the river gate every Saturday and the intervals on Wednesday nights. Every pace has a group and nobody runs home alone.</p>",
+          "specialties": "Running, Pace groups, Race prep",
+          "credentials": "England Athletics Leader in Running Fitness\nUK Coaching run coach",
+          "image": "as_4x5_6",
+          "image_alt": "Jo Haddad, run leader",
+          "image_wide": "as_3x2_6",
+          "image_wide_alt": "Jo Haddad coaching",
+          "link": "https://www.strava.com/",
+          "featured": false,
+          "order": 6
+        }
+      },
+      "content_type": "coaches",
+      "seo": {
+        "description": "Run leader",
+        "image": "as_4x5_6"
+      }
+    },
+    "/events/saturday-long-run": {
+      "id": "pg_event_saturday_long_run",
+      "template": "event",
+      "title": "Saturday long run",
+      "params": {
+        "event": "saturday-long-run"
+      },
+      "entry": {
+        "id": "event_saturday_long_run",
+        "handle": "saturday-long-run",
+        "title": "Saturday long run",
+        "fields": {
+          "date": "2026-11-07",
+          "time": "08:00",
+          "location": "loc_riverside",
+          "description": "<p>Saturday long run at Common Ground. Members and non-members welcome; bring a friend.</p><p>Arrive ten minutes early to sign in. There is water and coffee after.</p>",
+          "route": "12 km riverside loop, flat",
+          "pace": "All paces, groups at 5:00 / 5:45 / 6:30 per km",
+          "image": "as_3x2_2",
+          "image_alt": "Saturday long run placeholder",
+          "link": "",
+          "album": "album_saturday_long_run_october"
+        }
+      },
+      "content_type": "events",
+      "seo": {
+        "description": "Saturday long run",
+        "image": "as_3x2_2"
+      }
+    },
+    "/events/sunday-social-5k": {
+      "id": "pg_event_sunday_social_5k",
+      "template": "event",
+      "title": "Sunday social 5k",
+      "params": {
+        "event": "sunday-social-5k"
+      },
+      "entry": {
+        "id": "event_sunday_social_5k",
+        "handle": "sunday-social-5k",
+        "title": "Sunday social 5k",
+        "fields": {
+          "date": "2026-11-15",
+          "time": "09:00",
+          "location": "loc_riverside",
+          "description": "<p>Sunday social 5k at Common Ground. Members and non-members welcome; bring a friend.</p><p>Arrive ten minutes early to sign in. There is water and coffee after.</p>",
+          "route": "5 km out and back on the towpath",
+          "pace": "Conversational. Nobody gets left",
+          "image": "as_3x2_3",
+          "image_alt": "Sunday social 5k placeholder",
+          "link": "",
+          "album": "album_sunday_social_5k_october"
+        }
+      },
+      "content_type": "events",
+      "seo": {
+        "description": "Sunday social 5k",
+        "image": "as_3x2_3"
+      }
+    },
+    "/events/deadlift-day": {
+      "id": "pg_event_deadlift_day",
+      "template": "event",
+      "title": "Deadlift day",
+      "params": {
+        "event": "deadlift-day"
+      },
+      "entry": {
+        "id": "event_deadlift_day",
+        "handle": "deadlift-day",
+        "title": "Deadlift day",
+        "fields": {
+          "date": "2026-12-05",
+          "time": "10:00",
+          "location": "loc_north",
+          "description": "<p>Deadlift day at Common Ground. Members and non-members welcome; bring a friend.</p><p>Arrive ten minutes early to sign in. There is water and coffee after.</p>",
+          "route": "",
+          "pace": "",
+          "image": "as_3x2_4",
+          "image_alt": "Deadlift day placeholder",
+          "link": "",
+          "album": "album_deadlift_day_2025"
+        }
+      },
+      "content_type": "events",
+      "seo": {
+        "description": "Deadlift day",
+        "image": "as_3x2_4"
+      }
+    },
+    "/events/winter-10k": {
+      "id": "pg_event_winter_10k",
+      "template": "event",
+      "title": "Winter 10k",
+      "params": {
+        "event": "winter-10k"
+      },
+      "entry": {
+        "id": "event_winter_10k",
+        "handle": "winter-10k",
+        "title": "Winter 10k",
+        "fields": {
+          "date": "2026-12-13",
+          "time": "09:30",
+          "location": "loc_riverside",
+          "description": "<p>Winter 10k at Common Ground. Members and non-members welcome; bring a friend.</p><p>Arrive ten minutes early to sign in. There is water and coffee after.</p>",
+          "route": "10 km, two laps of the meadows",
+          "pace": "Pacers at 45, 50, 55 and 60 minutes",
+          "image": "as_3x2_5",
+          "image_alt": "Winter 10k placeholder",
+          "link": ""
+        }
+      },
+      "content_type": "events",
+      "seo": {
+        "description": "Winter 10k",
+        "image": "as_3x2_5"
+      }
+    },
+    "/events/open-day": {
+      "id": "pg_event_open_day",
+      "template": "event",
+      "title": "Open day",
+      "params": {
+        "event": "open-day"
+      },
+      "entry": {
+        "id": "event_open_day",
+        "handle": "open-day",
+        "title": "Open day",
+        "fields": {
+          "date": "2027-01-04",
+          "time": "10:00",
+          "location": "loc_north",
+          "description": "<p>Open day at Common Ground. Members and non-members welcome; bring a friend.</p><p>Arrive ten minutes early to sign in. There is water and coffee after.</p>",
+          "route": "",
+          "pace": "",
+          "image": "as_3x2_6",
+          "image_alt": "Open day placeholder",
+          "link": "",
+          "album": "album_open_day_september"
+        }
+      },
+      "content_type": "events",
+      "seo": {
+        "description": "Open day",
+        "image": "as_3x2_6"
+      }
+    },
+    "/events/new-year-reset-week": {
+      "id": "pg_event_new_year_reset_week",
+      "template": "event",
+      "title": "New year reset week",
+      "params": {
+        "event": "new-year-reset-week"
+      },
+      "entry": {
+        "id": "event_new_year_reset_week",
+        "handle": "new-year-reset-week",
+        "title": "New year reset week",
+        "fields": {
+          "date": "2027-01-10",
+          "time": "07:00",
+          "location": "loc_north",
+          "description": "<p>New year reset week at Common Ground. Members and non-members welcome; bring a friend.</p><p>Arrive ten minutes early to sign in. There is water and coffee after.</p>",
+          "route": "",
+          "pace": "",
+          "image": "as_3x2_1",
+          "image_alt": "New year reset week placeholder",
+          "link": ""
+        }
+      },
+      "content_type": "events",
+      "seo": {
+        "description": "New year reset week",
+        "image": "as_3x2_1"
+      }
+    },
+    "/events/charity-row": {
+      "id": "pg_event_charity_row",
+      "template": "event",
+      "title": "Charity row",
+      "params": {
+        "event": "charity-row"
+      },
+      "entry": {
+        "id": "event_charity_row",
+        "handle": "charity-row",
+        "title": "Charity row",
+        "fields": {
+          "date": "2027-01-16",
+          "time": "09:00",
+          "location": "loc_north",
+          "description": "<p>Charity row at Common Ground. Members and non-members welcome; bring a friend.</p><p>Arrive ten minutes early to sign in. There is water and coffee after.</p>",
+          "route": "",
+          "pace": "",
+          "image": "as_3x2_2",
+          "image_alt": "Charity row placeholder",
+          "link": "",
+          "album": "album_charity_row_2026"
+        }
+      },
+      "content_type": "events",
+      "seo": {
+        "description": "Charity row",
+        "image": "as_3x2_2"
+      }
+    },
+    "/events/trail-sunday": {
+      "id": "pg_event_trail_sunday",
+      "template": "event",
+      "title": "Trail Sunday",
+      "params": {
+        "event": "trail-sunday"
+      },
+      "entry": {
+        "id": "event_trail_sunday",
+        "handle": "trail-sunday",
+        "title": "Trail Sunday",
+        "fields": {
+          "date": "2027-01-24",
+          "time": "08:30",
+          "location": "loc_riverside",
+          "description": "<p>Trail Sunday at Common Ground. Members and non-members welcome; bring a friend.</p><p>Arrive ten minutes early to sign in. There is water and coffee after.</p>",
+          "route": "14 km on the ridge trail, 300 m of climbing",
+          "pace": "Steady. We regroup at every gate",
+          "image": "as_3x2_3",
+          "image_alt": "Trail Sunday placeholder",
+          "link": "",
+          "album": "album_trail_sunday_september"
+        }
+      },
+      "content_type": "events",
+      "seo": {
+        "description": "Trail Sunday",
+        "image": "as_3x2_3"
+      }
+    },
+    "/gallery/saturday-long-run-october": {
+      "id": "pg_album_saturday_long_run_october",
+      "template": "album",
+      "title": "Saturday long run, October",
+      "params": {
+        "album": "saturday-long-run-october"
+      },
+      "entry": {
+        "id": "album_saturday_long_run_october",
+        "handle": "saturday-long-run-october",
+        "title": "Saturday long run, October",
+        "fields": {
+          "date": "2026-10-10",
+          "event": "event_saturday_long_run",
+          "cover": "as_4x3_1",
+          "cover_alt": "Saturday long run, October, cover",
+          "photos": "saturday-long-run-october",
+          "description": "Twenty-two runners, three pace groups and a headwind on the way back."
+        }
+      },
+      "content_type": "albums",
+      "seo": {
+        "description": "Twenty-two runners, three pace groups and a headwind on the way back.",
+        "image": "as_4x3_1"
+      }
+    },
+    "/gallery/sunday-social-5k-october": {
+      "id": "pg_album_sunday_social_5k_october",
+      "template": "album",
+      "title": "Sunday social 5k, October",
+      "params": {
+        "album": "sunday-social-5k-october"
+      },
+      "entry": {
+        "id": "album_sunday_social_5k_october",
+        "handle": "sunday-social-5k-october",
+        "title": "Sunday social 5k, October",
+        "fields": {
+          "date": "2026-10-18",
+          "event": "event_sunday_social_5k",
+          "cover": "as_4x3_2",
+          "cover_alt": "Sunday social 5k, October, cover",
+          "photos": "sunday-social-5k-october",
+          "description": "A slow loop and a long coffee."
+        }
+      },
+      "content_type": "albums",
+      "seo": {
+        "description": "A slow loop and a long coffee.",
+        "image": "as_4x3_2"
+      }
+    },
+    "/gallery/deadlift-day-2025": {
+      "id": "pg_album_deadlift_day_2025",
+      "template": "album",
+      "title": "Deadlift day 2025",
+      "params": {
+        "album": "deadlift-day-2025"
+      },
+      "entry": {
+        "id": "album_deadlift_day_2025",
+        "handle": "deadlift-day-2025",
+        "title": "Deadlift day 2025",
+        "fields": {
+          "date": "2025-12-06",
+          "event": "event_deadlift_day",
+          "cover": "as_4x3_3",
+          "cover_alt": "Deadlift day 2025, cover",
+          "photos": "deadlift-day-2025",
+          "description": "Forty lifters, one bar and a lot of chalk."
+        }
+      },
+      "content_type": "albums",
+      "seo": {
+        "description": "Forty lifters, one bar and a lot of chalk.",
+        "image": "as_4x3_3"
+      }
+    },
+    "/gallery/open-day-september": {
+      "id": "pg_album_open_day_september",
+      "template": "album",
+      "title": "Open day, September",
+      "params": {
+        "album": "open-day-september"
+      },
+      "entry": {
+        "id": "album_open_day_september",
+        "handle": "open-day-september",
+        "title": "Open day, September",
+        "fields": {
+          "date": "2026-09-26",
+          "event": "event_open_day",
+          "cover": "as_4x3_4",
+          "cover_alt": "Open day, September, cover",
+          "photos": "open-day-september",
+          "description": "Taster classes, coffee and a tour of both locations."
+        }
+      },
+      "content_type": "albums",
+      "seo": {
+        "description": "Taster classes, coffee and a tour of both locations.",
+        "image": "as_4x3_4"
+      }
+    },
+    "/gallery/charity-row-2026": {
+      "id": "pg_album_charity_row_2026",
+      "template": "album",
+      "title": "Charity row 2026",
+      "params": {
+        "album": "charity-row-2026"
+      },
+      "entry": {
+        "id": "album_charity_row_2026",
+        "handle": "charity-row-2026",
+        "title": "Charity row 2026",
+        "fields": {
+          "date": "2026-01-24",
+          "event": "event_charity_row",
+          "cover": "as_4x3_1",
+          "cover_alt": "Charity row 2026, cover",
+          "photos": "charity-row-2026",
+          "description": "A marathon on the rowers for the river trust."
+        }
+      },
+      "content_type": "albums",
+      "seo": {
+        "description": "A marathon on the rowers for the river trust.",
+        "image": "as_4x3_1"
+      }
+    },
+    "/gallery/trail-sunday-september": {
+      "id": "pg_album_trail_sunday_september",
+      "template": "album",
+      "title": "Trail Sunday, September",
+      "params": {
+        "album": "trail-sunday-september"
+      },
+      "entry": {
+        "id": "album_trail_sunday_september",
+        "handle": "trail-sunday-september",
+        "title": "Trail Sunday, September",
+        "fields": {
+          "date": "2026-09-13",
+          "event": "event_trail_sunday",
+          "cover": "as_4x3_2",
+          "cover_alt": "Trail Sunday, September, cover",
+          "photos": "trail-sunday-september",
+          "description": "Mud, hills and a picnic at the top."
+        }
+      },
+      "content_type": "albums",
+      "seo": {
+        "description": "Mud, hills and a picnic at the top.",
+        "image": "as_4x3_2"
+      }
+    },
+    "/locations/north": {
+      "id": "pg_loc_north",
+      "template": "location",
+      "title": "North",
+      "params": {
+        "location": "north"
+      },
+      "entry": {
+        "id": "loc_north",
+        "handle": "north",
+        "title": "North",
+        "fields": {
+          "address": "14 Foundry Lane\nMarlow Bridge\nMB2 4FL",
+          "hours": "Mon–Fri 06:00–22:00\nSat–Sun 08:00–18:00",
+          "phone": "01632 960 214",
+          "email": "north@commonground.example",
+          "map_url": "https://maps.example/?q=North+Marlow+Bridge",
+          "map_image": "as_map_1",
+          "map_image_alt": "Map of North",
+          "image": "as_3x2_3",
+          "image_alt": "The North location",
+          "description": "The gym: platforms, racks, rowers, a turf lane and the boxing corner.",
+          "note": "Parking at the rear, off Kiln Street",
+          "order": 1
+        }
+      },
+      "content_type": "locations",
+      "seo": {
+        "description": "The gym: platforms, racks, rowers, a turf lane and the boxing corner.",
+        "image": "as_3x2_3"
+      }
+    },
+    "/locations/riverside": {
+      "id": "pg_loc_riverside",
+      "template": "location",
+      "title": "Riverside",
+      "params": {
+        "location": "riverside"
+      },
+      "entry": {
+        "id": "loc_riverside",
+        "handle": "riverside",
+        "title": "Riverside",
+        "fields": {
+          "address": "The River Gate\nMill Walk\nMarlow Bridge\nMB1 2RQ",
+          "hours": "Mon–Fri 06:30–20:30\nSat 07:30–13:00\nSun 08:30–12:30",
+          "phone": "01632 960 388",
+          "email": "riverside@commonground.example",
+          "map_url": "https://maps.example/?q=Riverside+Marlow+Bridge",
+          "map_image": "as_map_2",
+          "map_image_alt": "Map of Riverside",
+          "image": "as_3x2_4",
+          "image_alt": "The Riverside location",
+          "description": "The studio for yoga and mobility, and the start of the run club.",
+          "note": "Meet by the river gate, under the clock",
+          "order": 2
+        }
+      },
+      "content_type": "locations",
+      "seo": {
+        "description": "The studio for yoga and mobility, and the start of the run club.",
+        "image": "as_3x2_4"
+      }
+    },
+    "/password": {
+      "id": "pg_password",
+      "template": "password",
+      "title": "Password",
+      "seo": {
+        "noindex": true
+      }
+    }
+  }
+}

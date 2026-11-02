@@ -1,0 +1,35 @@
+{
+  "sections": [
+    {
+      "id": "sg_announcement_bar",
+      "type": "announcement-bar",
+      "preset": "Default",
+      "settings": {
+        "text": "Christmas hours: both locations close at 14:00 on 24 December.",
+        "link_label": "See the timetable",
+        "link": "/timetable",
+        "show_close": true,
+        "key": "announcement-2026-12",
+        "color_scheme": "flare"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_header",
+      "type": "header",
+      "preset": "Over the hero",
+      "settings": {
+        "style": "over-hero",
+        "sticky": true,
+        "show_dropdown": true,
+        "menu": "main",
+        "classes": "classes",
+        "classes_path": "/classes",
+        "base_path": "/classes",
+        "show_action": true,
+        "color_scheme": "white"
+      },
+      "blocks": []
+    }
+  ]
+}

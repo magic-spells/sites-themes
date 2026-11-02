@@ -1,0 +1,56 @@
+{
+  "name": "Circuit",
+  "version": "0.1.0",
+  "default_template": "page",
+  "not_found_template": "404",
+  "maintenance_template": "maintenance",
+  "groups": {
+    "header-group": {
+      "label": "Header",
+      "accepts": ["announcement-bar", "header"]
+    },
+    "footer-group": {
+      "label": "Footer",
+      "accepts": ["footer"]
+    },
+    "panel-group": {
+      "label": "Panels",
+      "accepts": ["mobile-menu", "trial-panel", "cookie-notice"]
+    }
+  },
+  "settings": [
+    {
+      "name": "Brand",
+      "settings": [
+        { "type": "text", "id": "wordmark", "label": "Wordmark", "default": "Common Ground", "info": "Set in the display face, uppercase, in the header, the footer and the password page." },
+        { "type": "image", "id": "favicon", "label": "Favicon" },
+        { "type": "text", "id": "tagline", "label": "Tagline", "default": "Strength, conditioning and a free run club in Marlow Bridge." },
+        { "type": "text", "id": "currency_symbol", "label": "Currency symbol", "default": "£" },
+        { "type": "checkbox", "id": "reveal", "label": "Reveal on scroll", "default": true, "info": "Class, coach, event and album cards fade up as they enter view. Never the first screen." },
+        { "type": "text", "id": "ghost_word", "label": "Ghost word", "default": "Stronger", "info": "The outlined word behind a hero, stats band or call to action when the section leaves its own empty." }
+      ]
+    },
+    {
+      "name": "Floor",
+      "settings": [
+        { "type": "textarea", "id": "ticker_lines", "label": "Ticker lines", "default": "First class free\nNo contracts\nOpen 06:00–22:00\nRun club Saturdays 08:00\nAll paces welcome\nTwo locations", "info": "One phrase per line. The ticker section reads these when it has no blocks." },
+        { "type": "text", "id": "action_label", "label": "Primary action label", "default": "Start free trial", "info": "The one thing to do next: Start free trial, Book a session, Join us. Every primary button opens the trial sheet." },
+        { "type": "form", "id": "trial_form", "label": "Trial form", "default": "trial" },
+        { "type": "textarea", "id": "trial_note", "label": "Note under the form", "default": "No card needed. We will call to book your first class." },
+        { "type": "url", "id": "booking_url", "label": "Booking URL", "default": "", "info": "When set, every primary button links to this page (a booking provider) instead of opening the trial sheet." },
+        { "type": "url", "id": "trial_path", "label": "Trial page", "default": "/trial", "info": "Where a primary button leads when JavaScript is off." },
+        { "type": "url", "id": "chat_url", "label": "Group chat URL", "default": "" },
+        { "type": "text", "id": "chat_label", "label": "Group chat label", "default": "Join the group chat" },
+        { "type": "url", "id": "club_url", "label": "Club URL", "default": "", "info": "A running club page or similar, linked in the footer." },
+        { "type": "text", "id": "club_label", "label": "Club label", "default": "Strava club" }
+      ]
+    },
+    {
+      "name": "Contact",
+      "settings": [
+        { "type": "text", "id": "phone", "label": "Phone", "default": "", "info": "Used when no location is set up." },
+        { "type": "text", "id": "email", "label": "Email", "default": "" }
+      ]
+    }
+  ]
+}

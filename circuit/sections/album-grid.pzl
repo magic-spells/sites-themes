@@ -1,0 +1,43 @@
+<!-- The galleries: album covers 4:3, three, two and one across, the title,
+     the date and photo count, the event when one is linked. Newest first.
+     On an album's page it leaves that album out. -->
+{#let
+  all = settings.albums.entries | sort('fields.date') | reverse
+  others = page.entry && settings.exclude_current ? (all | reject('id', page.entry.id)) : all
+  shown = others | slice(0, Math.min(settings.limit, 12))
+  more = others.length > shown.length
+}
+{#if shown.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead kicker={ settings.kicker } heading={ settings.heading } text={ settings.text } link_label={ settings.view_all_label ? (more ? t('n_of_m', { n: shown.length, m: others.length }) + ' · ' + settings.view_all_label : settings.view_all_label) : '' } link_href={ settings.view_all_href } />
+    <ul class="grid gap-x-gap-lg gap-y-step-xl md:grid-cols-2 lg:grid-cols-3">
+      {#for entry in shown}<li><AlbumTile entry={ entry } href="{ settings.base_path }/{ entry.handle }" reveal={ site.settings.reveal } /></li>{/for}
+    </ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Album grid",
+  "description": "Photo albums from meet-ups as cover tiles.",
+  "kind": "Collections",
+  "icon": "images",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "", "info": "A short mono line above the heading." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Galleries" },
+    { "type": "text", "id": "text", "label": "Text", "default": "" },
+    { "type": "collection", "id": "albums", "label": "Albums", "info": "Reads albums: title, handle, date, cover, cover_alt, photos (for the count) and event." },
+    { "type": "checkbox", "id": "exclude_current", "label": "Leave out the album on show", "default": true },
+    { "type": "range", "id": "limit", "label": "Limit", "min": 1, "max": 12, "step": 1, "default": 12 },
+    { "type": "url", "id": "base_path", "label": "Album page path", "default": "/gallery" },
+    { "type": "text", "id": "view_all_label", "label": "View-all label", "default": "" },
+    { "type": "url", "id": "view_all_href", "label": "View-all link", "default": "/gallery" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "albums": "albums" } }
+  ]
+}
+</schema>

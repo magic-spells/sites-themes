@@ -1,0 +1,67 @@
+{
+  "label": "Trial",
+  "description": "The trial form beside a photo, then questions.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "heading": "First class is free",
+        "standfirst": "One class on us. Bring trainers and water.",
+        "kicker": "Start here",
+        "color_scheme": "concrete"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_form",
+      "type": "trial-form",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "image": "as_4x5_3",
+        "color_scheme": "white",
+        "kicker": "",
+        "text": "Tell us a little and we'll book you in. No card needed, no contract after."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "heading": "Before you come in",
+        "color_scheme": "concrete",
+        "kicker": "Questions"
+      },
+      "blocks": [
+        {
+          "id": "s_faq_b1",
+          "type": "item",
+          "settings": {
+            "question": "Which class should I pick?",
+            "answer": "<p>Strength Foundations or Beginners Strength. If you are not sure, leave it blank and the coach will suggest one.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b2",
+          "type": "item",
+          "settings": {
+            "question": "What happens after I book?",
+            "answer": "<p>A coach calls within a day to fix a time and answer questions.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b3",
+          "type": "item",
+          "settings": {
+            "question": "Is the trial really free?",
+            "answer": "<p>Yes. One class, no card, no catch.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+<!-- component: SectionHead -->
+<!-- A section's heading row: an optional mono kicker, the heading in h2
+     (uppercase, the display face at width 112) and a line under it on the
+     left; the view-all link and anything the section passes in (carousel
+     arrows, filter chips) on the right, on the heading's baseline. With
+     nothing on the right the heading may run the full column. -->
+{#if heading || link_label || kicker || extra}
+<div class="mb-step-xl flex flex-wrap items-end justify-between gap-x-step-lg gap-y-step-sm { inset ? 'px-gutter md:px-0' : '' }">
+  <div class="grid gap-step-xs { (link_label && link_href) || extra ? 'max-w-wide' : '' }">
+    {#if kicker}<p class="font-mono text-overline font-medium text-scheme-meta uppercase">{ kicker }</p>{/if}
+    {#if heading}<h2 class="font-heading text-h2 font-black text-balance text-scheme-heading uppercase stretch-heading" id={ id }>{ heading }</h2>{/if}
+    {#if text}<p class="max-w-reading text-body text-pretty text-scheme-muted">{ text }</p>{/if}
+  </div>
+  <div class="flex max-w-full shrink-0 flex-wrap items-center gap-step-md">
+    {#if link_label && link_href}<a class="group inline-flex min-h-icon-button items-center gap-step-2xs font-mono text-spec font-medium whitespace-nowrap text-scheme-foreground uppercase" href="{ link_href }"><span class="underline-offset-4 group-hover:underline">{ link_label }</span><span aria-hidden="true">→</span></a>{/if}
+    <Children/>
+  </div>
+</div>
+{/if}

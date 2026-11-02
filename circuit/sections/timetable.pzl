@@ -1,0 +1,118 @@
+<!-- The week. From 64rem a real seven-column <table> (day headers in mono,
+     scope="col"), each cell a stack of session blocks and a dash on a day
+     with none; below it, day tabs (tab-group) over one day's list. The
+     sessions are grouped by day once, in the {#let} below, and both views
+     read those lists. "Only these classes" keeps the sessions of the listed
+     class handles (a check per session, no query; empty items between
+     commas are dropped). The class chips in the heading row are one per
+     class on this week, in class order (or in the listed order), labelled
+     with the class's short name, at most "Most chips" of them, on one line
+     that scrolls sideways when it runs out of room. theme.ts writes
+     data-class and hides the other sessions' rows; a day left empty shows
+     its dash. The strip shows only when it holds two class chips or more
+     (theme.css counts them). No day or hour is marked as current: there is
+     no clock. -->
+{#let
+  all = settings.sessions.entries
+  pool = settings.location ? (all | where('fields.location.id', settings.location.id)) : all
+  only = settings.class_filter | replace(' ', '') | split(',') | where('')
+  days = settings.days == '5' ? ['mon', 'tue', 'wed', 'thu', 'fri'] : ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+  mon = pool | where('fields.day', 'mon') | sort('fields.start')
+  tue = pool | where('fields.day', 'tue') | sort('fields.start')
+  wed = pool | where('fields.day', 'wed') | sort('fields.start')
+  thu = pool | where('fields.day', 'thu') | sort('fields.start')
+  fri = pool | where('fields.day', 'fri') | sort('fields.start')
+  sat = pool | where('fields.day', 'sat') | sort('fields.start')
+  sun = pool | where('fields.day', 'sun') | sort('fields.start')
+  by = { mon, tue, wed, thu, fri, sat, sun }
+  on_floor = pool | sort('fields.class.fields.order') | map('fields.class.handle') | uniq
+  chip_handles = (only.length ? only : on_floor) | slice(0, settings.chip_limit ?? 6)
+  places = pool | map('fields.location.title') | uniq | compact
+  legend = settings.show_legend && places.length > 1
+  id = 'timetable-' + section.id
+  chip = 'inline-flex min-h-chip shrink-0 items-center rounded-chip border border-scheme-rule bg-scheme-surface px-step-sm text-chip font-bold whitespace-nowrap uppercase hover:border-scheme-foreground current:border-scheme-foreground current:bg-scheme-foreground current:text-scheme-background'
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-timetable data-class="">
+  <div class="mx-auto max-w-column">
+    <SectionHead kicker={ settings.kicker } heading={ settings.heading } text={ settings.text } link_label={ settings.view_all_label } link_href={ settings.view_all_href } id="{ id }-title" extra={ settings.show_filter && chip_handles.length > 1 }>
+      {#if settings.show_filter && chip_handles.length > 1}
+        <div class="-mr-gutter flex min-w-0 gap-step-2xs overflow-x-auto pr-gutter lg:mr-0 lg:pr-0" role="group" aria-label="{ t('filter_by_class') }" data-strip>
+          <button class="{ chip }" type="button" data-class-filter="" aria-pressed="true">{ t('all') }</button>
+          {#for handle in chip_handles}{#if contains(on_floor, handle)}{#let klass = (pool | find('fields.class.handle', handle)).fields.class}<button class="{ chip }" type="button" data-class-filter={ handle } aria-pressed="false">{ klass.fields.short_name || klass.title }</button>{/if}{/for}
+        </div>
+      {/if}
+    </SectionHead>
+    <table class="hidden w-full table-fixed border-separate border-spacing-x-gap-sm lg:table" aria-labelledby={ settings.heading ? id + '-title' : null }>
+      <thead>
+        <tr>{#for d in days}<th class="border-b border-scheme-rule py-step-xs text-left font-mono text-spec font-medium text-scheme-muted uppercase" scope="col"><abbr class="no-underline" title="{ t('day_long.' + d) }">{ t('day.' + d) }</abbr></th>{/for}</tr>
+      </thead>
+      <tbody>
+        <tr>
+          {#for d in days}
+            <td class="pt-step-xs align-top">
+              <ul class="grid gap-gap-sm">
+                {#for slot in by[d]}{#if !only.length || contains(only, slot.fields.class.handle)}<li><SessionChip slot_entry={ slot } base_path={ settings.base_path } show_coach={ settings.show_coach } show_location={ settings.show_location } short={ legend } /></li>{/if}{/for}
+                <li class="bg-scheme-surface-2 px-step-sm py-step-2xs font-mono text-spec text-scheme-muted" data-empty><span aria-hidden="true">–</span><span class="sr-only">{ t('no_sessions') }</span></li>
+              </ul>
+            </td>
+          {/for}
+        </tr>
+      </tbody>
+    </table>
+    <tab-group class="lg:hidden">
+      <tab-list class="grid border-b border-scheme-rule { settings.days == '5' ? 'grid-cols-5' : 'grid-cols-7' }" aria-label="{ t('days') }">
+        {#for d in days}<tab-button class="-mb-px flex min-h-icon-button items-center justify-center border-b-2 border-transparent font-mono text-chip font-medium text-scheme-muted uppercase current:border-accent current:text-scheme-heading">{ t('day.' + d) }</tab-button>{/for}
+      </tab-list>
+      {#for d in days}
+        <tab-panel class="block pt-step-md">
+          <h3 class="sr-only">{ t('day_long.' + d) }</h3>
+          <ul class="grid gap-gap-sm md:grid-cols-2">
+            {#for slot in by[d]}{#if !only.length || contains(only, slot.fields.class.handle)}<li><SessionChip slot_entry={ slot } base_path={ settings.base_path } show_coach={ settings.show_coach } show_location={ settings.show_location } short={ legend } /></li>{/if}{/for}
+            <li class="font-mono text-spec text-scheme-muted uppercase" data-empty>{ t('no_sessions') }</li>
+          </ul>
+        </tab-panel>
+      {/for}
+    </tab-group>
+    {#if legend}
+      <ul class="mt-step-lg flex flex-wrap gap-x-step-xl gap-y-step-xs font-mono text-spec text-scheme-muted uppercase">
+        {#for place in places}
+          {#let where_at = (pool | find('fields.location.title', place)).fields.location.fields.address | split('\n') | first}
+          <li>{ place | slice(0, 1) } · { place }{#if where_at}, { where_at }{/if}</li>
+        {/for}
+      </ul>
+    {/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Timetable",
+  "description": "The week's sessions: a seven-column table on desktop, day tabs below, with a class filter.",
+  "kind": "Collections",
+  "icon": "list",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "", "info": "A short mono line above the heading." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "The week" },
+    { "type": "text", "id": "text", "label": "Text", "default": "" },
+    { "type": "collection", "id": "sessions", "label": "Sessions", "info": "Reads sessions: class, day (mon to sun), start, end, coach, location and note. Each session's class gives its name and handle." },
+    { "type": "text", "id": "class_filter", "label": "Only these classes", "default": "", "info": "Class handles, separated by commas (run-club-intervals, long-run). Leave empty for every class. The filter chips follow, in this order." },
+    { "type": "entry", "id": "location", "label": "Only this location", "info": "Leave empty for every location. Reads the location's id." },
+    { "type": "select", "id": "days", "label": "Days", "default": "7", "options": [
+      { "value": "7", "label": "Monday to Sunday" },
+      { "value": "5", "label": "Monday to Friday" }
+    ] },
+    { "type": "checkbox", "id": "show_coach", "label": "Show the coach", "default": true },
+    { "type": "checkbox", "id": "show_location", "label": "Show the location", "default": true },
+    { "type": "checkbox", "id": "show_filter", "label": "Show the class filter", "default": true, "info": "One chip per class on the week, labelled with the class's short name (or its title)." },
+    { "type": "range", "id": "chip_limit", "label": "Most chips", "min": 2, "max": 12, "step": 1, "default": 6, "info": "Classes past this number get no chip; All still shows them." },
+    { "type": "checkbox", "id": "show_legend", "label": "Show the locations", "default": true, "info": "A key under the week. With it on, each session shows the coach's first name and the location's initial." },
+    { "type": "url", "id": "base_path", "label": "Class page path", "default": "/classes" },
+    { "type": "text", "id": "view_all_label", "label": "View-all label", "default": "" },
+    { "type": "url", "id": "view_all_href", "label": "View-all link", "default": "/timetable" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "concrete" }
+  ],
+  "presets": [
+    { "name": "Week", "settings": { "sessions": "sessions", "color_scheme": "concrete" } }
+  ]
+}
+</schema>

@@ -1,0 +1,35 @@
+<!-- A non-modal notice: the page stays usable behind it. It renders hidden;
+     theme.ts shows it once per key, both buttons hide it and the choice is
+     remembered. Full width on a phone, a square card bottom right from
+     48rem. -->
+<section class="fixed inset-x-0 bottom-0 z-40 border-t border-scheme-rule bg-scheme-background text-scheme-foreground md:inset-x-auto md:right-gutter md:bottom-gutter md:w-drawer md:border" id="cookie-notice" data-notice="{ settings.key }" role="region" aria-label="{ t('cookie_notice') }" hidden>
+  <div class="grid gap-step-md p-step-lg">
+    <div class="sites-prose text-body-sm">{ settings.body }</div>
+    {#if settings.link_label}<p><a class="font-mono text-spec font-medium text-scheme-links uppercase underline decoration-1 underline-offset-4" href="{ settings.link_href }">{ settings.link_label }</a></p>{/if}
+    <div class="flex flex-wrap gap-step-xs">
+      <button class="inline-flex min-h-control-small items-center border border-scheme-button-background bg-scheme-button-background px-step-md text-button-small font-bold text-scheme-button-foreground uppercase hover:border-scheme-button-hover-background hover:bg-scheme-button-hover-background hover:text-scheme-button-hover-foreground" type="button" data-notice-close="accept">{ settings.accept_label }</button>
+      {#if settings.decline_label}<button class="inline-flex min-h-control-small items-center border border-scheme-foreground px-step-md text-button-small font-bold uppercase hover:bg-scheme-foreground hover:text-scheme-background" type="button" data-notice-close="decline">{ settings.decline_label }</button>{/if}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Cookie notice",
+  "description": "A short notice shown once per visitor, bottom right.",
+  "kind": "Panels",
+  "icon": "sticky-note",
+  "settings": [
+    { "type": "richtext", "id": "body", "label": "Text", "default": "<p>This site uses your browser’s local storage to remember that you have seen this note, and nothing else.</p>" },
+    { "type": "text", "id": "accept_label", "label": "Accept label", "default": "OK" },
+    { "type": "text", "id": "decline_label", "label": "Decline label", "default": "No thanks" },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "Privacy" },
+    { "type": "url", "id": "link_href", "label": "Link", "default": "/privacy" },
+    { "type": "text", "id": "key", "label": "Key", "default": "circuit-notice-2026-11", "info": "Change it to show the notice again." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" } }
+  ]
+}
+</schema>

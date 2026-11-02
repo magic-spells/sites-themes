@@ -1,0 +1,47 @@
+<!-- An album's page: the kicker (the date and the event it came from), the
+     title, the description, the photos three, two and two across, each
+     opening the lightbox, and a link back to every album. -->
+{#let
+  album = page.entry
+  f = album.fields
+  items = f.photos.items
+  id = 'album-' + section.id
+  lb = { lightbox: true, navigation: { showButtons: false, showPagination: false } }
+}
+{#if album}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-step-xl">
+    <div class="grid max-w-wide gap-step-sm">
+      <p class="font-mono text-overline font-medium text-scheme-meta uppercase">{ f.date | date('long') } · { t('photo_count', { count: items.length }) }{#if f.event} · <a class="text-scheme-heading hover:underline" href="{ settings.event_path }/{ f.event.handle }">{ t('from_event', { name: f.event.title }) } →</a>{/if}</p>
+      <h1 class="font-heading text-h1 font-black text-balance text-scheme-heading uppercase stretch-heading">{ album.title }</h1>
+      {#if f.description}<p class="max-w-reading text-body-lg text-pretty text-scheme-muted">{ f.description }</p>{/if}
+    </div>
+    {#if items.length}
+      <LightboxCompanion items={ items } id={ id }><script type="application/json" data-tarot-options>{ lb | json }</script></LightboxCompanion>
+      <ul class="grid grid-cols-2 gap-gap-sm lg:grid-cols-3">
+        {#for item in items, i}<li><button class="group block w-full cursor-zoom-in" type="button" data-lightbox-open={ id } data-index={ i } aria-label="{ t('open_photo', { index: i + 1 }) }"><Photo asset={ item.asset } alt={ item.alt } ratio="aspect-3/2" zoom={ true } sizes="(min-width: 64rem) 30vw, 50vw" /></button></li>{/for}
+      </ul>
+    {/if}
+    {#if settings.back_label}<a class="justify-self-start font-mono text-spec font-medium text-scheme-foreground uppercase hover:underline" href="{ settings.back_href }">{ settings.back_label } →</a>{/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Album photos",
+  "description": "An album's page: title, date, description and every photo with a lightbox.",
+  "kind": "Content",
+  "icon": "images",
+  "templates": ["album"],
+  "settings": [
+    { "type": "text", "id": "back_label", "label": "Link to every album", "default": "More galleries" },
+    { "type": "url", "id": "back_href", "label": "Back link", "default": "/gallery" },
+    { "type": "url", "id": "event_path", "label": "Event page path", "default": "/events" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

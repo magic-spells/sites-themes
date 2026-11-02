@@ -1,0 +1,236 @@
+{
+  "label": "Trainer",
+  "description": "A front page for a personal trainer: the portrait hero, the method and the packages.",
+  "sections": [
+    {
+      "id": "s_hero",
+      "type": "hero",
+      "preset": "Split",
+      "settings": {
+        "layout": "split",
+        "image": "as_4x5_1",
+        "kicker": "Common Ground · Marlow Bridge",
+        "heading": "Coaching that starts where you are",
+        "text": "Programmes written for you, coached in person. First session is an assessment.",
+        "action_label": "Book a session",
+        "secondary_label": "See the timetable",
+        "secondary_link": "/timetable",
+        "show_ghost": false,
+        "color_scheme": "black",
+        "slash_last": false
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_coach",
+      "type": "coach-feature",
+      "preset": "Default",
+      "settings": {
+        "coach": "coach_dana_okafor",
+        "overlap": true,
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_method",
+      "type": "value-props",
+      "preset": "Boxes",
+      "settings": {
+        "heading": "How it works",
+        "style": "boxes",
+        "columns": "3",
+        "color_scheme": "graphite",
+        "kicker": "The method"
+      },
+      "blocks": [
+        {
+          "id": "s_method_b1",
+          "type": "prop",
+          "settings": {
+            "index": "01",
+            "heading": "Assess",
+            "text": "An hour together: a movement screen, your history and what you want from training.",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        {
+          "id": "s_method_b2",
+          "type": "prop",
+          "settings": {
+            "index": "02",
+            "heading": "Programme",
+            "text": "A written plan for the next eight weeks, built around the time you actually have.",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        {
+          "id": "s_method_b3",
+          "type": "prop",
+          "settings": {
+            "index": "03",
+            "heading": "Coach",
+            "text": "Sessions on the floor, a check-in every week and a new block when the old one is done.",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_plans",
+      "type": "plans",
+      "preset": "Cards",
+      "settings": {
+        "heading": "Pick your pace",
+        "text": "Pay per block. Sessions keep for three months.",
+        "plans": "plans",
+        "source": "listed",
+        "columns": "3",
+        "color_scheme": "white",
+        "kicker": "Packages"
+      },
+      "blocks": [
+        {
+          "id": "s_plans_b2",
+          "type": "plan",
+          "settings": {
+            "plan": "plan_small_group",
+            "highlight": "off"
+          }
+        },
+        {
+          "id": "s_plans_b1",
+          "type": "plan",
+          "settings": {
+            "plan": "plan_one_to_one",
+            "highlight": "on"
+          }
+        },
+        {
+          "id": "s_plans_b3",
+          "type": "plan",
+          "settings": {
+            "plan": "plan_drop_in",
+            "highlight": "off"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_quotes",
+      "type": "testimonials",
+      "preset": "Carousel",
+      "settings": {
+        "layout": "carousel",
+        "color_scheme": "black"
+      },
+      "blocks": [
+        {
+          "id": "s_quotes_b1",
+          "type": "quote",
+          "settings": {
+            "quote": "Dana fixed a shoulder two physios could not. I deadlift twice my bodyweight.",
+            "name": "Rob S.",
+            "line": "One to one, two years"
+          }
+        },
+        {
+          "id": "s_quotes_b2",
+          "type": "quote",
+          "settings": {
+            "quote": "Eight weeks, three sessions a week, and my first pull-up at 51.",
+            "name": "Clare W.",
+            "line": "One to one"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_classes",
+      "type": "class-grid",
+      "preset": "All classes",
+      "settings": {
+        "heading": "Small-group sessions",
+        "text": "The same coaching, six to a group.",
+        "source": "listed",
+        "classes": "classes",
+        "columns": "3",
+        "color_scheme": "white",
+        "kicker": "Classes"
+      },
+      "blocks": [
+        {
+          "id": "s_classes_b1",
+          "type": "class",
+          "settings": {
+            "class": "class_small_group_coaching"
+          }
+        },
+        {
+          "id": "s_classes_b2",
+          "type": "class",
+          "settings": {
+            "class": "class_beginners_strength"
+          }
+        },
+        {
+          "id": "s_classes_b3",
+          "type": "class",
+          "settings": {
+            "class": "class_mobility"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "heading": "Before you come in",
+        "color_scheme": "concrete",
+        "kicker": "Questions"
+      },
+      "blocks": [
+        {
+          "id": "s_faq_b1",
+          "type": "item",
+          "settings": {
+            "question": "How does the first session work?",
+            "answer": "<p>An hour together: a movement screen, a talk about your goals and a short first workout.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b2",
+          "type": "item",
+          "settings": {
+            "question": "How often should I train?",
+            "answer": "<p>Two sessions a week with a coach and one on your own is where most people start.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b3",
+          "type": "item",
+          "settings": {
+            "question": "Do you write programmes for home?",
+            "answer": "<p>Yes. Every one-to-one plan includes a written programme for the days between sessions.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Flare",
+      "settings": {
+        "color_scheme": "flare",
+        "heading": "Your first session is free",
+        "action_label": "Book a session"
+      },
+      "blocks": []
+    }
+  ]
+}

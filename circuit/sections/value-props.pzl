@@ -1,0 +1,77 @@
+<!-- Why train here. Boxes: three or four cells on the band with a numeral
+     index (01 02 03), a heading and a line: a rule over each cell when they
+     stack, a rule between cells in a row, never a lone left edge. Cards: square
+     surface cards on the band, each with a heading, a line and a button. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-texture={ settings.texture }>
+  <div class="mx-auto max-w-column">
+    <SectionHead kicker={ settings.kicker } heading={ settings.heading } text={ settings.text } />
+    <ul class="grid md:grid-cols-2 { settings.columns == '4' ? 'lg:grid-cols-4' : 'lg:grid-cols-3' } { settings.style == 'boxes' ? '' : 'gap-gap-lg' }">
+      {#for block in blocks, i}
+        {#let b = block.settings}
+        {#if settings.style == 'cards'}
+          <li class="flex flex-col gap-step-sm bg-scheme-surface p-step-lg" data-block={ block.editor_id }>
+            <h3 class="font-heading text-h4 font-extrabold text-scheme-heading uppercase stretch-heading">{ b.heading }</h3>
+            {#if b.text}<p class="flex-1 text-body text-scheme-muted">{ b.text }</p>{/if}
+            {#if b.link_label}<div class="pt-step-xs">{#if b.link}<Button href={ b.link } size="small">{ b.link_label }</Button>{:else}<Button action={ true } size="small">{ b.link_label }</Button>{/if}</div>{/if}
+          </li>
+        {:else}
+          <li class="grid content-start gap-step-sm border-t border-scheme-rule py-step-lg md:pr-step-lg lg:border-t-0 lg:py-step-md { i > 0 ? 'lg:border-l lg:pl-step-lg' : '' }" data-block={ block.editor_id }>
+            <span class="font-heading text-h1 font-black text-accent tabular-nums stretch-display">{ b.index || (i < 9 ? '0' : '') + (i + 1) }</span>
+            <h3 class="font-heading text-h4 font-extrabold text-scheme-heading uppercase stretch-heading">{ b.heading }</h3>
+            {#if b.text}<p class="text-body text-scheme-muted">{ b.text }</p>{/if}
+            {#if b.link_label && b.link}<a class="font-mono text-spec font-medium text-scheme-links uppercase hover:underline" href="{ b.link }">{ b.link_label }</a>{/if}
+          </li>
+        {/if}
+      {/for}
+    </ul>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Value props",
+  "description": "Why train here: numbered boxes or cards with a button.",
+  "kind": "Content",
+  "icon": "list",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "", "info": "A short mono line above the heading." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Why Common Ground" },
+    { "type": "text", "id": "text", "label": "Text", "default": "" },
+    { "type": "select", "id": "style", "label": "Style", "default": "boxes", "options": [
+      { "value": "boxes", "label": "Boxes" },
+      { "value": "cards", "label": "Cards" }
+    ] },
+    { "type": "select", "id": "columns", "label": "Columns", "default": "3", "options": [
+      { "value": "3", "label": "3" },
+      { "value": "4", "label": "4" }
+    ] },
+    { "type": "select", "id": "texture", "label": "Texture", "default": "none", "options": [
+      { "value": "none", "label": "None" },
+      { "value": "halftone", "label": "Halftone" },
+      { "value": "grain", "label": "Grain" }
+    ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "graphite" }
+  ],
+  "blocks": [
+    { "type": "prop", "name": "Point", "settings": [
+      { "type": "text", "id": "index", "label": "Index", "default": "", "info": "Leave empty to number them 01, 02, 03." },
+      { "type": "text", "id": "heading", "label": "Heading", "default": "Coached, every class" },
+      { "type": "textarea", "id": "text", "label": "Text", "default": "A coach on the floor for every session, never a screen." },
+      { "type": "text", "id": "link_label", "label": "Button label", "default": "" },
+      { "type": "url", "id": "link", "label": "Button link", "info": "Leave empty and the button opens the trial form." }
+    ] }
+  ],
+  "presets": [
+    { "name": "Boxes", "settings": { "style": "boxes", "color_scheme": "graphite" }, "blocks": [
+      { "type": "prop", "settings": { "heading": "Assess", "text": "An hour together: how you move, what you want, what gets in the way." } },
+      { "type": "prop", "settings": { "heading": "Programme", "text": "A written plan for the next twelve weeks, built around your diary." } },
+      { "type": "prop", "settings": { "heading": "Coach", "text": "Every session coached, every week reviewed, every lift logged." } }
+    ] },
+    { "name": "Cards", "settings": { "style": "cards", "color_scheme": "black" }, "blocks": [
+      { "type": "prop", "settings": { "heading": "Coached, every class", "text": "A coach on the floor for every session.", "link_label": "See the classes", "link": "/classes" } },
+      { "type": "prop", "settings": { "heading": "No contracts", "text": "Month to month. Stop when you like.", "link_label": "Memberships", "link": "/memberships" } },
+      { "type": "prop", "settings": { "heading": "First class free", "text": "Try any class before you join.", "link_label": "Start free trial" } }
+    ] }
+  ]
+}
+</schema>

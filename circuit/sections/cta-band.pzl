@@ -1,0 +1,47 @@
+<!-- One display line and the primary action (beside it at the foot of the
+     line on a wide screen), on flare or black, the top edge cut at 12° and
+     an optional ghost word behind. With the slash on, the band rises by the
+     wedge's height over the section above, so the wedge shows that band.
+     Used above the footer, so it is never black when the footer is. -->
+{#let
+  ghost = settings.ghost_word || site.settings.ghost_word
+  action = settings.action_label || site.settings.action_label
+  slash = settings.slash && section.index > 0
+}
+<section class="relative isolate overflow-hidden bg-scheme-background px-gutter pb-section text-scheme-foreground { slash ? 'edge-slash pt-section-slash' : 'pt-section' }">
+  {#if settings.show_ghost && ghost}<span class="pointer-events-none absolute right-0 bottom-0 -z-10 translate-y-1/5 font-heading text-ghost font-black whitespace-nowrap uppercase select-none ghost-stroke stretch-display" aria-hidden="true">{ ghost }</span>{/if}
+  <div class="mx-auto flex max-w-column flex-wrap items-end justify-between gap-x-step-xl gap-y-step-lg lg:flex-nowrap">
+    <div class="grid max-w-hero gap-step-md">
+      <h2 class="font-heading text-display font-black text-balance text-scheme-heading uppercase stretch-display">{ settings.heading }</h2>
+      {#if settings.text}<p class="max-w-lede text-body-lg text-pretty">{ settings.text }</p>{/if}
+    </div>
+    <div class="flex shrink-0 flex-wrap gap-step-xs">
+      {#if action}<Button action={ true }>{ action }</Button>{/if}
+      {#if settings.secondary_label && settings.secondary_link}<Button href={ settings.secondary_link } tone="outline">{ settings.secondary_label }</Button>{/if}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Call to action",
+  "description": "One big line and the primary action, with a slashed top edge.",
+  "kind": "Content",
+  "icon": "megaphone",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "First class is free" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "" },
+    { "type": "text", "id": "action_label", "label": "Action label", "default": "", "info": "Leave empty to use the Floor setting." },
+    { "type": "text", "id": "secondary_label", "label": "Second button label", "default": "" },
+    { "type": "url", "id": "secondary_link", "label": "Second button link" },
+    { "type": "checkbox", "id": "slash", "label": "Slash the top edge", "default": true, "info": "Cuts the top edge at 12°; the band above shows through the wedge." },
+    { "type": "checkbox", "id": "show_ghost", "label": "Show the ghost word", "default": false },
+    { "type": "text", "id": "ghost_word", "label": "Ghost word", "default": "Free" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "flare" }
+  ],
+  "presets": [
+    { "name": "Flare", "settings": { "color_scheme": "flare" } },
+    { "name": "Black", "settings": { "color_scheme": "black" } }
+  ]
+}
+</schema>

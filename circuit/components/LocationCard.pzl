@@ -1,0 +1,20 @@
+<!-- component: LocationCard -->
+<!-- A location: a 3:2 photo (or the static map), the name in Archivo 800,
+     the address on one line, the hours table, the note in mono, then
+     Directions and Call. On the scheme's second surface, in a hairline. -->
+{#let f = entry.fields}
+<article class="grid h-full grid-rows-card border border-scheme-rule bg-scheme-surface-2 text-scheme-foreground">
+  <a class="group block" href="{ href }" tabindex="-1" aria-hidden="true"><Photo asset={ show_map && f.map_image ? f.map_image : f.image } alt="" ratio="aspect-3/2" zoom={ true } sizes="(min-width: 48rem) 45vw, 90vw" /></a>
+  <div class="flex flex-col gap-step-md p-step-lg">
+    <div class="grid gap-step-xs">
+      <h3 class="font-heading text-h4 font-extrabold text-scheme-heading uppercase stretch-heading"><a class="hover:underline" href="{ href }">{ entry.title }</a></h3>
+      {#if f.address}<p class="text-body text-scheme-muted">{ f.address | split('\n') | join(', ') }</p>{/if}
+    </div>
+    {#if show_hours}<HoursTable hours={ f.hours } />{/if}
+    {#if f.note}<p class="font-mono text-spec text-scheme-muted uppercase">{ f.note }</p>{/if}
+    <div class="mt-auto flex flex-wrap gap-step-xs">
+      {#if f.map_url}<Button href={ f.map_url } size="small" external={ true }>{ t('directions') }</Button>{/if}
+      {#if f.phone}<Button href="tel:{ f.phone | replace(' ', '') }" size="small" tone="outline">{ t('call') }</Button>{/if}
+    </div>
+  </div>
+</article>

@@ -1,0 +1,76 @@
+<!-- An event's page: the photo with the date block over its foot, the
+     kicker, the title and the description, a side panel with the date, the
+     start, the place (with its meeting-point note), the route and the pace
+     over the sign-up link (or the primary action), then "Photos from last
+     time": six photos of the linked album with the lightbox. -->
+{#let
+  ev = page.entry
+  f = ev.fields
+  album = f.album
+  photos = album ? (album.fields.photos.items | slice(0, 6)) : []
+  id = 'event-photos-' + section.id
+  lb = { lightbox: true, navigation: { showButtons: false, showPagination: false } }
+  action = settings.action_label || site.settings.action_label
+  where = f.location ? f.location.title : ''
+  note = f.location ? f.location.fields.note : ''
+}
+{#if ev}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-step-xl">
+    <div class="relative mb-step-lg">
+      <Photo asset={ f.image } alt={ f.image_alt } ratio="aspect-3/2" eager={ true } sizes="(min-width: 82.5rem) 82.5rem, 100vw" width={ 2000 } />
+      <span class="absolute -bottom-step-lg left-step-sm md:left-step-md"><DateBlock value={ f.date } size="large" tone="outline" /></span>
+    </div>
+    <div class="grid items-start gap-step-xl lg:grid-cols-aside">
+      <div class="grid gap-step-md">
+        {#if settings.back_label}<a class="justify-self-start font-mono text-spec font-medium text-scheme-links uppercase hover:underline" href="{ settings.back_href }">← { settings.back_label }</a>{/if}
+        <p class="font-mono text-spec font-medium text-scheme-meta uppercase">{ t('event') }{#if where} · { where }{/if}</p>
+        <h1 class="font-heading text-h1 font-black text-balance text-scheme-heading uppercase stretch-heading">{ ev.title }</h1>
+        <div class="sites-prose max-w-reading">{ f.description }</div>
+      </div>
+      <div class="grid gap-step-md border border-scheme-rule bg-scheme-surface-2 p-step-md">
+        <dl class="grid font-mono text-spec font-medium uppercase">
+          <div class="grid grid-cols-hours gap-step-sm border-b border-scheme-rule py-step-xs"><dt class="text-scheme-meta">{ t('event_date') }</dt><dd class="text-right text-scheme-heading">{ f.date | date('long') }</dd></div>
+          {#if f.time}<div class="grid grid-cols-hours gap-step-sm border-b border-scheme-rule py-step-xs"><dt class="text-scheme-meta">{ t('event_start') }</dt><dd class="text-right text-scheme-heading">{ f.time }</dd></div>{/if}
+          {#if where}<div class="grid gap-step-2xs border-b border-scheme-rule py-step-xs"><dt class="text-scheme-meta">{ t('event_where') }</dt><dd class="text-scheme-heading">{ where }{#if note} · { note }{/if}</dd></div>{/if}
+          {#if f.route}<div class="grid gap-step-2xs border-b border-scheme-rule py-step-xs"><dt class="text-scheme-meta">{ t('route') }</dt><dd class="text-scheme-heading">{ f.route }</dd></div>{/if}
+          {#if f.pace}<div class="grid gap-step-2xs border-b border-scheme-rule py-step-xs"><dt class="text-scheme-meta">{ t('pace') }</dt><dd class="text-scheme-heading">{ f.pace }</dd></div>{/if}
+        </dl>
+        {#if f.link}<Button href={ f.link } wide={ true } external={ true }>{ t('sign_up') }</Button>{:else if action}<Button action={ true } wide={ true }>{ action }</Button>{/if}
+      </div>
+    </div>
+    {#if settings.show_album && photos.length}
+      <div class="grid gap-step-md">
+        <h2 class="font-heading text-h3 font-black text-scheme-heading uppercase stretch-heading">{ settings.album_heading }</h2>
+        <LightboxCompanion items={ photos } id={ id }><script type="application/json" data-tarot-options>{ lb | json }</script></LightboxCompanion>
+        <ul class="grid grid-cols-2 gap-gap-sm lg:grid-cols-3">
+          {#for item in photos, i}<li><button class="group block w-full cursor-zoom-in" type="button" data-lightbox-open={ id } data-index={ i } aria-label="{ t('open_photo', { index: i + 1 }) }"><Photo asset={ item.asset } alt={ item.alt } ratio="aspect-3/2" zoom={ true } sizes="(min-width: 64rem) 30vw, 50vw" /></button></li>{/for}
+        </ul>
+        <a class="justify-self-start font-mono text-spec font-medium text-scheme-foreground uppercase hover:underline" href="{ settings.album_path }/{ album.handle }">{ t('all_photos') } →</a>
+      </div>
+    {/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Event detail",
+  "description": "An event's page: photo, date, place, description, route and pace, and the photos from last time.",
+  "kind": "Content",
+  "icon": "file-text",
+  "templates": ["event"],
+  "settings": [
+    { "type": "text", "id": "back_label", "label": "Back link label", "default": "" },
+    { "type": "url", "id": "back_href", "label": "Back link", "default": "/events" },
+    { "type": "text", "id": "action_label", "label": "Action label", "default": "Join us", "info": "When the event has no sign-up link." },
+    { "type": "checkbox", "id": "show_album", "label": "Show the photos from last time", "default": true },
+    { "type": "text", "id": "album_heading", "label": "Photos heading", "default": "Photos from last time" },
+    { "type": "url", "id": "album_path", "label": "Album page path", "default": "/gallery" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

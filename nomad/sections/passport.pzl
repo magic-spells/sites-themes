@@ -1,29 +1,35 @@
-<!-- TODO sync with Figma (batch C) -->
-<!-- About as a passport page: the 4:5 portrait on the offset plane (picture left, the plane 1.5rem down and outward), then the name, the biography and a loose cluster of fact stamps in stamp ink, rings for facts and a box for the one date, each at one of the three tilts. No stat row. -->
+<!-- About as a passport page (Figma): the 4:5 portrait on the offset plane (picture left, the plane 1.5rem down and outward), with the one stamp set "On the portrait" (the Since date box) crossing its right edge near the bottom; then the name, the biography and a loose cluster of fact stamps in stamp ink, a ring for a place (Home base) and a box for anything else, each at one of the three tilts. No stat row. -->
 {#let
   s = site.settings
   name = settings.name || s.writer_name
   bio = settings.bio || s.writer_bio
   tilts = ['tilt-stamp', 'tilt-left', 'tilt-right']
+  pinned = blocks | where('settings.placement', 'portrait') | first
+  cluster = blocks | reject('settings.placement', 'portrait')
 }
 <section class="overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground" aria-labelledby="{ section.id }-title">
   <div class="mx-auto flex max-w-column flex-wrap items-start gap-space-2xl md:flex-nowrap">
     <div class="relative w-full md:max-w-side md:flex-1">
       <span class="absolute inset-0 -translate-x-plane translate-y-plane rounded-sm bg-plane" aria-hidden="true"></span>
       <div class="relative aspect-3/2 overflow-hidden rounded-sm bg-scheme-surface-2 md:aspect-4/5">{#if settings.portrait}<img class="size-full object-cover" src="{ image_url(settings.portrait, 1024, { height: 1280 }) }" alt="{ settings.portrait.alt }" loading="eager" width="1024" height="1280" />{/if}</div>
+      {#if pinned}
+        <div class="absolute -right-space-xs bottom-space-xl tilt-right" data-block={ pinned.editor_id }>
+          <span class="inline-grid justify-items-start gap-micro rounded-sm border-2 border-tag-stamp bg-tag px-space-sm py-space-xs text-tag-stamp shadow-sm"><span class="font-mono text-meta font-medium uppercase">{ pinned.settings.label }</span><span class="font-heading text-h4 font-medium">{ pinned.settings.value }</span></span>
+        </div>
+      {/if}
     </div>
     <div class="grid max-w-side flex-1 content-start gap-space-md">
       <h1 class="font-heading text-h1 font-semibold text-scheme-heading" id="{ section.id }-title">{ name }</h1>
       {#if bio}<p class="text-body-lg text-pretty">{ bio | newline_to_br }</p>{/if}
-      {#if blocks.length}
-        <ul class="flex flex-wrap items-center gap-space-md pt-space-md">
-          {#for block in blocks, i}
+      {#if cluster.length}
+        <ul class="flex flex-wrap items-center gap-space-lg pt-space-md">
+          {#for block in cluster, i}
             {#let b = block.settings}
             <li class="{ b.tilt == 'none' ? '' : (b.tilt == 'left' ? 'tilt-left' : (b.tilt == 'right' ? 'tilt-right' : tilts[i % 3])) } { site.settings.reveal_on_scroll ? 'reveal reveal-fade-up' : '' }" data-block={ block.editor_id }>
               {#if b.shape == 'box'}
-                <span class="inline-grid justify-items-center gap-0.5 rounded-sm border-2 border-scheme-stamp px-space-sm py-space-xs text-center text-scheme-stamp"><span class="font-mono text-meta font-medium uppercase">{ b.label }</span><span class="font-heading text-h5 font-medium">{ b.value }</span></span>
+                <span class="inline-grid justify-items-start gap-micro rounded-sm border-2 border-scheme-stamp px-space-sm py-space-xs text-scheme-stamp"><span class="font-mono text-meta font-medium uppercase">{ b.label }</span><span class="font-heading text-h4 font-medium">{ b.value }</span></span>
               {:else}
-                <span class="relative flex size-ring items-center justify-center rounded-full border-2 border-scheme-stamp text-center text-scheme-stamp"><span class="absolute inset-2 rounded-full border border-dashed border-scheme-stamp" aria-hidden="true"></span><span class="relative grid max-w-24 gap-0.5"><span class="font-mono text-meta font-medium uppercase">{ b.label }</span><span class="font-heading text-h5 font-medium">{ b.value }</span></span></span>
+                <span class="relative flex size-ring items-center justify-center rounded-full border-2 border-scheme-stamp p-ring-pad text-center text-scheme-stamp"><span class="absolute inset-space-xs rounded-full border border-dashed border-scheme-stamp" aria-hidden="true"></span><span class="relative grid gap-micro"><span class="font-mono text-meta font-medium uppercase">{ b.label }</span><span class="font-heading text-h5 leading-tight font-medium">{ b.value }</span></span></span>
               {/if}
             </li>
           {/for}
@@ -49,7 +55,8 @@
     { "type": "stamp", "name": "Stamp", "settings": [
       { "type": "text", "id": "label", "label": "Label", "default": "Home base" },
       { "type": "text", "id": "value", "label": "Value", "default": "None, for now" },
-      { "type": "select", "id": "shape", "label": "Shape", "default": "ring", "options": [ { "value": "ring", "label": "Ring (a fact)" }, { "value": "box", "label": "Box (a date)" } ] },
+      { "type": "select", "id": "shape", "label": "Shape", "default": "ring", "options": [ { "value": "ring", "label": "Ring (a place)" }, { "value": "box", "label": "Box (a date or any other fact)" } ] },
+      { "type": "select", "id": "placement", "label": "Placement", "default": "cluster", "options": [ { "value": "cluster", "label": "With the other stamps" }, { "value": "portrait", "label": "On the portrait's edge" } ], "info": "One stamp at most crosses the portrait; it is drawn as a box." },
       { "type": "select", "id": "tilt", "label": "Tilt", "default": "auto", "options": [ { "value": "auto", "label": "By position" }, { "value": "left", "label": "Left" }, { "value": "right", "label": "Right" }, { "value": "none", "label": "Straight" } ] }
     ] }
   ],
@@ -57,9 +64,9 @@
   "presets": [
     { "name": "Passport", "settings": { "name": "", "bio": "" },
       "blocks": [
-        { "type": "stamp", "settings": { "label": "Home base", "value": "None, for now", "shape": "ring", "tilt": "auto" } },
-        { "type": "stamp", "settings": { "label": "Works", "value": "Product design", "shape": "ring", "tilt": "auto" } },
-        { "type": "stamp", "settings": { "label": "Since", "value": "Apr 3, 2023", "shape": "box", "tilt": "auto" } }
+        { "type": "stamp", "settings": { "label": "Home base", "value": "None, for now", "shape": "ring", "placement": "cluster", "tilt": "auto" } },
+        { "type": "stamp", "settings": { "label": "Works", "value": "Product design", "shape": "box", "placement": "cluster", "tilt": "auto" } },
+        { "type": "stamp", "settings": { "label": "Since", "value": "Apr 3, 2023", "shape": "box", "placement": "portrait", "tilt": "auto" } }
       ] }
   ]
 }

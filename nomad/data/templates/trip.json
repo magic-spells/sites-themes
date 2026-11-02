@@ -1,6 +1,6 @@
 {
   "label": "Trip",
-  "description": "A trip: its cover and dates, every stop as a ticket, its map and its posts.",
+  "description": "A trip: its cover, dates and route inset, every stop as a ticket, and its posts.",
   "layout": "default",
   "sections": [
     {
@@ -21,27 +21,6 @@
         "heading": "",
         "show_posts": true,
         "show_notes": true
-      },
-      "blocks": []
-    },
-    {
-      "id": "s_map",
-      "type": "route-map",
-      "preset": "This trip",
-      "settings": {
-        "heading": "",
-        "show_count": true,
-        "places": "places",
-        "show_route": "stops",
-        "fit": "trip",
-        "show_list": true,
-        "list_limit": 12,
-        "country_filter": false,
-        "link_label": "",
-        "link": "",
-        "anchor": false,
-        "map_style": "drawn",
-        "color_scheme": "night"
       },
       "blocks": []
     },

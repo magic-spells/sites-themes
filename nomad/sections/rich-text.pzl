@@ -1,14 +1,14 @@
-<!-- TODO sync with Figma (batch D) -->
-<!-- Prose at 40rem (or wider): an optional heading and the text from this section, the page's own body, or the entry's body (a place's or trip's notes). -->
+<!-- Prose at 40rem (or wider), at the column's left edge (Figma) or centred: an optional heading ({place} reads the page's place, as "Notes on Oaxaca") and the text from this section, the page's own body, or the entry's body (a place's or trip's notes). -->
 {#let
   body = settings.source == 'page' ? page.content : (settings.source == 'entry' ? page.entry.fields.body : settings.body)
+  heading = (settings.heading || '') | replace('{place}', template.type == 'place' && page.entry ? page.entry.title : '')
 }
-{#if body || settings.heading}
+{#if body || heading}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid gap-space-md { settings.width == 'wide' ? 'max-w-copy' : 'max-w-reading' }">
-    {#if settings.heading}<h2 class="font-heading text-h2 font-semibold text-scheme-heading">{ settings.heading }</h2>{/if}
+  <div class="mx-auto max-w-column"><div class="grid gap-space-sm { settings.width == 'wide' ? 'max-w-copy' : 'max-w-reading' } { settings.align == 'center' ? 'mx-auto' : '' }">
+    {#if heading}<h2 class="font-heading text-h2 font-semibold text-scheme-heading">{ heading }</h2>{/if}
     {#if body}<div class="sites-prose">{ body }</div>{/if}
-  </div>
+  </div></div>
 </section>
 {/if}
 
@@ -19,16 +19,18 @@
   "kind": "Content",
   "icon": "align-left",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "", "info": "On a place page {place} is replaced with the place's name." },
     { "type": "select", "id": "source", "label": "Text from", "default": "setting", "options": [ { "value": "setting", "label": "This section" }, { "value": "page", "label": "The page's body" }, { "value": "entry", "label": "The entry's body (a place or a trip)" } ] },
     { "type": "richtext", "id": "body", "label": "Text", "default": "<p>Write something here.</p>" },
     { "type": "select", "id": "width", "label": "Width", "default": "reading", "options": [ { "value": "reading", "label": "Reading (40rem)" }, { "value": "wide", "label": "Wide" } ] },
+    { "type": "select", "id": "align", "label": "Align", "default": "left", "options": [ { "value": "left", "label": "At the column's edge" }, { "value": "center", "label": "Centred" } ] },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "heading": "", "source": "setting", "width": "reading" } },
-    { "name": "Page body", "settings": { "heading": "", "source": "page", "width": "reading" } },
-    { "name": "Entry body", "settings": { "heading": "", "source": "entry", "width": "reading" } }
+    { "name": "Default", "settings": { "heading": "", "source": "setting", "width": "reading", "align": "left" } },
+    { "name": "Page body", "settings": { "heading": "", "source": "page", "width": "reading", "align": "left" } },
+    { "name": "Entry body", "settings": { "heading": "Notes on {place}", "source": "entry", "width": "reading", "align": "left" } }
+
   ]
 }
 </schema>

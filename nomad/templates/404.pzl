@@ -1,30 +1,28 @@
 <!-- template: 404 -->
 <!-- layout: default -->
-<!-- Off the map: the contour texture behind a postmark that reads Nowhere at 0° 0°, the line, three recent posts as rows and a way back to the places. -->
+<!-- Off the map (Figma): on the contour texture, a centred column with the heading and the line at the left and a postmark that reads Nowhere at 0° 0° at the right, then three real posts as rows (the newest three: no invented titles) and a button to every place you have been to. -->
 {#let
   posts = content.posts.entries | sort('fields.date') | reverse | slice(0, 3)
   posts_path = site.settings.posts_path || '/journal'
   places_path = site.settings.places_path || '/places'
+  visited = content.stops.entries | reject('fields.next')
+  n_places = visited.length ? size(visited | map('fields.place.handle') | compact | uniq) : size(content.places.entries)
 }
-<section class="relative isolate overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground">
+<section class="relative isolate overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground md:py-space-2xl">
   <span class="sites-fill texture-contour absolute inset-0 -z-10 text-scheme-foreground" aria-hidden="true">{#svg 'decor/contours.svg'}</span>
-  <div class="mx-auto grid max-w-column gap-space-xl md:grid-cols-2 md:items-center">
-    <div class="grid max-w-reading justify-items-start gap-space-sm">
-      <p class="font-mono text-meta font-medium text-scheme-muted uppercase">404</p>
-      <h1 class="font-heading text-h1 font-semibold text-balance text-scheme-heading">{ t('not_found_title') }</h1>
-      <p class="text-body-lg text-pretty text-scheme-muted">{ t('not_found_body') }</p>
-      <a class="font-semibold text-scheme-links underline decoration-1 underline-offset-4 hover:no-underline" href={ places_path }>{ t('not_found_link') }</a>
+  <div class="mx-auto grid max-w-ticket gap-space-xl">
+    <div class="flex flex-wrap items-center justify-between gap-space-lg">
+      <div class="grid max-w-reading justify-items-start gap-space-sm">
+        <h1 class="font-heading text-h1 font-semibold text-balance text-scheme-heading">{ t('not_found_title') }</h1>
+        <p class="text-body-lg text-pretty">{ t('not_found_body') }</p>
+      </div>
+      <div class="me-space-xl"><Postmark name={ t('nowhere') } country="" lat={ 0 } lon={ 0 } line="0° N, 0° E" /></div>
     </div>
-    <div class="flex justify-center py-space-lg md:justify-start"><Postmark name={ t('nowhere') } country="" lat={ 0 } lon={ 0 } line="0.0000° N, 0.0000° E" /></div>
+    {#if posts.length}
+      <ul aria-label="{ t('latest_posts') }">
+        {#for post in posts}<PostRow entry={ post } href="{ posts_path }/{ post.handle }" />{/for}
+      </ul>
+    {/if}
+    <div><Button href={ places_path } tone="secondary">{ t('all_places', { count: n_places }) }</Button></div>
   </div>
 </section>
-{#if posts.length}
-<section class="bg-scheme-background px-gutter pb-section text-scheme-foreground" aria-labelledby="not-found-latest">
-  <div class="mx-auto grid max-w-column gap-space-sm">
-    <h2 class="font-mono text-meta font-medium text-scheme-muted uppercase" id="not-found-latest">{ t('latest_posts') }</h2>
-    <ul class="border-t border-scheme-rule">
-      {#for post in posts}<PostRow entry={ post } href="{ posts_path }/{ post.handle }" />{/for}
-    </ul>
-  </div>
-</section>
-{/if}

@@ -16,29 +16,19 @@
       "blocks": []
     },
     {
-      "id": "s_notes",
-      "type": "rich-text",
-      "preset": "Entry body",
-      "settings": {
-        "heading": "",
-        "source": "entry",
-        "width": "reading"
-      },
-      "blocks": []
-    },
-    {
       "id": "s_posts",
       "type": "post-list",
       "preset": "From this place",
       "settings": {
-        "heading": "From {place}",
+        "heading": "Written in {place}",
         "collection": "posts",
         "scope": "current_place",
         "layout": "grid",
         "featured_first": false,
         "columns": "2",
         "limit": 6,
-        "view_all_label": ""
+        "view_all_label": "All {count} posts",
+        "always_link": true
       },
       "blocks": []
     },
@@ -52,8 +42,8 @@
         "layout": "carousel",
         "height": "medium",
         "show_captions": true,
-        "link_label": "",
-        "link": ""
+        "link_label": "All photos",
+        "link": "/photos"
       },
       "blocks": []
     },
@@ -64,7 +54,20 @@
       "settings": {
         "scope": "place",
         "heading": "What a month here cost",
-        "show_notes": true
+        "show_notes": true,
+        "align": "left"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_notes",
+      "type": "rich-text",
+      "preset": "Entry body",
+      "settings": {
+        "heading": "Notes on {place}",
+        "source": "entry",
+        "width": "reading",
+        "align": "left"
       },
       "blocks": []
     },

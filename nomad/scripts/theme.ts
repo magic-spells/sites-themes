@@ -1,5 +1,5 @@
 // The whole of Nomad's browser JavaScript. The one-up gallery carousel, the
-// lightbox, the drawers, the Places and country dropdowns, the select lists,
+// lightbox, the drawers, the Places and country dropdowns,
 // the faq rows, the sticky header and the scroll reveals are Magic Spells web
 // components, vendored under ./vendor (see vendor/VERSIONS.md); importing
 // them registers the elements. This file adds the small behaviours they do
@@ -14,7 +14,6 @@ import './vendor/dialog-panel.js';
 import './vendor/collapsible-content.js';
 import './vendor/dropdown-panel.js';
 import './vendor/lightbox.min.js';
-import './vendor/select-dropdown.js';
 import './vendor/sticky-header.js';
 import './vendor/tarot.esm.js';
 import Reveal from './vendor/reveal.js';

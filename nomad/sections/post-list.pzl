@@ -1,4 +1,4 @@
-<!-- Posts as cards or rows (Folio's id and settings, plus scope, a featured first card and a topic filter). Grid: the first card featured across the column at 16:9, then two per row at 4:3, each with its date stamp crossing the picture's edge and its place tag above the title. List: rows on hairlines. With the switch on, both views render and a reader's choice is remembered (theme.ts). No pagination: a cap of 12, "12 of 14 posts" and a view-all link. The topic filter is a GET form, so it works without JavaScript; theme.ts sends it on change. -->
+<!-- Posts as cards or rows (Folio's id and settings, plus scope, a featured first card and a topic filter). Grid: the first card featured across the column at 16:9, then two per row at 4:3, each with its date stamp crossing the picture's edge and its place tag above the title; with the featured card on, a list cut short by its cap drops one more so the rows come out even (12 becomes 11, "11 of 14 posts"). List: rows on hairlines. With the switch on, both views render and a reader's choice is remembered (theme.ts). No pagination: a cap of 12, "11 of 14 posts" (from 48rem) and a view-all link, whose count is everything at the link's end (the whole journal from a place or a trip). The topic filter is a GET form, so it works without JavaScript; theme.ts sends it on change. -->
 <!-- current place: see components/CurrentPlace.pzl -->
 {#let
   posts_path = settings.base_path || site.settings.posts_path || '/journal'
@@ -12,7 +12,9 @@
   topic = query_topic || settings.topic
   by_topic = topic ? (scoped | where('fields.topic', topic)) : scoped
   pool = settings.exclude_current && page.entry ? (by_topic | reject('handle', page.entry.handle)) : by_topic
-  posts = pool | slice(0, settings.limit)
+  even = settings.featured_first && settings.layout == 'grid' && pool.length > settings.limit && settings.limit > 2 && settings.limit % 2 == 0
+  posts = pool | slice(0, even ? settings.limit - 1 : settings.limit)
+  link_count = settings.scope == 'current_place' || settings.scope == 'current_trip' ? sorted.length : pool.length
   topics = scoped | map('fields.topic') | compact | uniq | sort
   view = settings.layout == 'grid' ? 'grid' : 'list'
   toggle = settings.show_toggle
@@ -25,25 +27,28 @@
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-view={ toggle ? view : false } aria-labelledby={ heading ? section.id + '-title' : null }>
   <div class="mx-auto grid max-w-column gap-space-lg">
     {#if heading || show_view_all}
-      <SectionHead heading={ heading } id="{ section.id }-title" link_label={ (show_view_all && pool.length > posts.length || show_view_all && settings.always_link) ? (settings.view_all_label | replace('{count}', `${pool.length}`)) : null } link={ settings.view_all_href || posts_path } />
+      <SectionHead heading={ heading } id="{ section.id }-title" link_label={ (show_view_all && pool.length > posts.length || show_view_all && settings.always_link) ? (settings.view_all_label | replace('{count}', `${link_count}`)) : null } link={ settings.view_all_href || posts_path } />
     {/if}
     {#if toolbar}
-      <div class="flex flex-wrap items-center gap-x-space-md gap-y-space-sm border-b border-scheme-rule pb-space-sm">
+      <div class="flex flex-wrap items-center gap-x-space-md gap-y-space-sm">
         {#if settings.show_topic_filter && topics.length > 1}
           <form class="flex items-center gap-space-xs" method="get" action="{ page.path }" data-topic-filter>
             <label class="sr-only" for="{ section.id }-topic">{ t('topic') }</label>
-            <select-dropdown class="min-w-48">
-              <select class="block min-h-control-small w-full rounded-input border border-scheme-input-border bg-scheme-input-background px-space-sm text-body-sm text-scheme-input-foreground" id="{ section.id }-topic" name="topic">
+            <div class="relative">
+              <select class="block min-h-control-small w-full cursor-pointer appearance-none rounded-input border border-scheme-input-border bg-scheme-input-background ps-space-sm pe-control text-body-sm text-scheme-input-foreground" id="{ section.id }-topic" name="topic">
                 <option value="">{ t('all_topics') }</option>
                 {#for name in topics}<option value={ name } selected={ topic == name }>{ name }</option>{/for}
               </select>
-            </select-dropdown>
+              <span class="sites-icon pointer-events-none absolute inset-y-0 right-space-xs my-auto size-icon-sm rotate-90 text-scheme-input-foreground" aria-hidden="true">{#svg 'icons/angle-right.svg'}</span>
+            </div>
+
             <noscript><button class="min-h-control-small rounded-button border border-scheme-foreground px-space-sm text-body-sm font-semibold" type="submit">{ t('show') }</button></noscript>
           </form>
         {/if}
-        {#if settings.show_count && posts.length}<p class="font-mono text-meta font-medium text-scheme-meta uppercase">{ t('post_count', { shown: posts.length, total: pool.length }) }</p>{/if}
+        {#if settings.show_count && posts.length}<p class="hidden font-mono text-meta font-medium text-scheme-meta uppercase md:block">{ t('post_count', { shown: posts.length, total: pool.length }) }</p>{/if}
         {#if toggle}
-          <div class="ms-auto flex gap-space-xs" role="group" hidden data-view-switch aria-label="{ t('view_label') }">
+          <div class="flex gap-space-xs" role="group" hidden data-view-switch
+ aria-label="{ t('view_label') }">
             <button class="inline-flex min-h-control-small items-center gap-1.5 rounded-full border border-scheme-rule bg-scheme-surface-2 px-space-sm text-body-sm aria-pressed:border-scheme-foreground aria-pressed:bg-scheme-foreground aria-pressed:text-scheme-background" type="button" data-view-set="grid" aria-pressed="{ view == 'grid' ? 'true' : 'false' }"><span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/grid.svg'}</span>{ t('view_grid') }</button>
             <button class="inline-flex min-h-control-small items-center gap-1.5 rounded-full border border-scheme-rule bg-scheme-surface-2 px-space-sm text-body-sm aria-pressed:border-scheme-foreground aria-pressed:bg-scheme-foreground aria-pressed:text-scheme-background" type="button" data-view-set="list" aria-pressed="{ view == 'list' ? 'true' : 'false' }"><span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/list.svg'}</span>{ t('view_list') }</button>
           </div>

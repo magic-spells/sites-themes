@@ -1,4 +1,4 @@
-<!-- The route as tickets. Spine (a trip page): the trip's name, its dates and counts, then one ticket per stop in arrival order (at most 12), 1rem apart, down a dashed route in the left gutter drawn by each stop's own pin column (nothing but <li> inside the <ol>), each with its pin beside the stub (the current one lit, the next hollow on a dotted leg, with a NEXT badge); numbered because the order is real. Ribbon (Where next, home): a tarot carousel of tickets that runs off the right edge at every width: now, next, then the earlier stops. The server cannot tell upcoming from past, so "next" is the stop's own checkbox. -->
+<!-- The route as tickets. Spine (a trip page): the trip's name (no count line: the trip header above holds the dates and counts), then one ticket per stop in arrival order (at most 12), 1rem apart, down a dashed route in the left gutter drawn by each stop's own pin column (nothing but <li> inside the <ol>), each with its pin beside the stub (the current one lit, the next hollow on a dotted leg, with a NEXT badge); numbered because the order is real. Ribbon (Where next, home; Figma): the current trip's stops in route order, EARLIER, NOW, then NEXT, as a strip of tickets 18.5rem wide on a phone (the next one peeks) and 26.25rem from 48rem, bleeding off the right edge at every width; no arrows and no rule, so it does not repeat the photo carousel below it. The server cannot tell upcoming from past, so "next" is the stop's own checkbox. -->
 <!-- current place: see components/CurrentPlace.pzl -->
 {#let
   posts_path = site.settings.posts_path || '/journal'
@@ -9,42 +9,32 @@
   now_stop = current ? (all_stops | where('fields.place.handle', current.handle) | reject('fields.next') | last) : null
   trip = settings.trip ?? (template.type == 'trip' ? page.entry : (now_stop ? now_stop.fields.trip : null))
   stops = (trip ? (all_stops | where('fields.trip.handle', trip.handle)) : all_stops) | slice(0, 12)
-  countries = stops | map('fields.place.fields.country') | uniq
-  next_stops = all_stops | where('fields.next')
-  earlier = all_stops | reject('fields.next') | reverse | reject('fields.place.handle', current ? current.handle : '') | slice(0, 10)
+  route = trip ? stops : (all_stops | slice(-6))
   heading = (settings.heading || '') | replace('{trip}', trip ? trip.title : '')
   ribbon = settings.layout == 'ribbon'
   id = 'itinerary-' + section.id
   reveal = site.settings.reveal_on_scroll
-  options = { slidesPerView: 1.2, gap: '1rem', paddingLeft: 0, paddingRight: 0, navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { slidesPerView: 2.2, gap: '1rem', paddingLeft: 0, paddingRight: 0, navigation: { showButtons: true, showPagination: false } }, '1024': { slidesPerView: 3.2, gap: '1rem', paddingLeft: 0, paddingRight: 0, navigation: { showButtons: true, showPagination: false } } } }
 }
 {#if stops.length}
 <section class="bg-scheme-background py-section text-scheme-foreground" aria-labelledby="{ id }-title">
   {#if ribbon}
-    <tarot-carousel class="block" id={ id } data-track="tickets">
-      <script type="application/json" data-tarot-options>{ options | json }</script>
-      <div class="px-gutter">
-        <div class="mx-auto mb-space-md max-w-column">
-          <SectionHead heading={ heading || t('where_next') } id="{ id }-title" link_label={ trip ? t('full_route') : null } link={ trip ? trips_path + '/' + trip.handle : null } rule={ true }><Arrows slot="actions" /></SectionHead>
-        </div>
+    <div class="px-gutter">
+      <div class="mx-auto mb-space-lg max-w-column">
+        <SectionHead heading={ heading || t('where_next') } id="{ id }-title" link_label={ trip ? t('full_route') : null } link={ trip ? trips_path + '/' + trip.handle : null } />
       </div>
-      <div class="pl-gutter md:pl-edge">
-        <tarot-viewport>
-          <tarot-track>
-            {#if now_stop}<tarot-slide><Ticket stop={ now_stop } label={ t('now') } show_posts={ settings.show_posts } show_notes={ settings.show_notes } posts_path={ posts_path } places_path={ places_path } /></tarot-slide>{/if}
-            {#for stop in next_stops}<tarot-slide><Ticket stop={ stop } label={ t('next') } show_posts={ settings.show_posts } show_notes={ settings.show_notes } posts_path={ posts_path } places_path={ places_path } /></tarot-slide>{/for}
-            {#for stop in earlier}<tarot-slide><Ticket stop={ stop } label={ t('earlier') } show_posts={ settings.show_posts } show_notes={ settings.show_notes } posts_path={ posts_path } places_path={ places_path } /></tarot-slide>{/for}
-          </tarot-track>
-        </tarot-viewport>
-      </div>
-    </tarot-carousel>
+    </div>
+    <ul class="flex snap-x snap-mandatory scroll-pl-gutter gap-space-sm overflow-x-auto pr-gutter pl-gutter md:scroll-pl-edge md:pl-edge" data-strip>
+      {#for stop in route}
+        {#let
+          is_now = now_stop && stop.id == now_stop.id
+        }
+        <li class="w-ribbon shrink-0 snap-start md:w-ribbon-lg"><Ticket stop={ stop } label={ is_now ? t('now') : (stop.fields.next ? t('next') : t('earlier')) } show_posts={ settings.show_posts } show_notes={ settings.show_notes } posts_path={ posts_path } places_path={ places_path } /></li>
+      {/for}
+    </ul>
   {:else}
     <div class="px-gutter">
       <div class="mx-auto grid max-w-column grid-cols-1 gap-space-lg">
-        <div class="grid gap-space-xs">
-          <h2 class="font-heading text-h2 font-semibold text-scheme-heading" id="{ id }-title">{ heading || (trip ? t('stop_by_stop', { trip: trip.title }) : t('the_route')) }</h2>
-          {#if trip}<p class="font-mono text-meta font-medium text-scheme-meta uppercase">{ date(trip.fields.start_date) } – { trip.fields.end_date ? date(trip.fields.end_date) : t('under_way') } · { stops.length | pluralize(t('stop_one'), t('stop_many')) } · { countries.length | pluralize(t('country_one'), t('country_many')) }</p>{/if}
-        </div>
+        <h2 class="font-heading text-h2 font-semibold text-scheme-heading" id="{ id }-title">{ heading || (trip ? t('stop_by_stop', { trip: trip.title }) : t('the_route')) }</h2>
         <ol class="grid min-w-0 max-w-ticket grid-cols-1 pl-space-lg md:pl-space-xl">
           {#for stop in stops, i}
             {#let
@@ -74,7 +64,7 @@
   "icon": "route",
   "settings": [
     { "type": "entry", "id": "trip", "label": "Trip", "info": "A trips entry. Empty: on a trip page that trip, elsewhere the trip of the current place. Stops come from the stops content type (trip, place, arrive, nights, post, note, next)." },
-    { "type": "select", "id": "layout", "label": "Layout", "default": "spine", "options": [ { "value": "spine", "label": "Spine (every stop of the trip)" }, { "value": "ribbon", "label": "Ribbon (now, next, then earlier)" } ] },
+    { "type": "select", "id": "layout", "label": "Layout", "default": "spine", "options": [ { "value": "spine", "label": "Spine (every stop of the trip)" }, { "value": "ribbon", "label": "Ribbon (the current trip in route order)" } ] },
     { "type": "text", "id": "heading", "label": "Heading", "default": "", "info": "Empty reads The Americas, stop by stop (spine) or Where next (ribbon). {trip} is replaced with the trip's name." },
     { "type": "checkbox", "id": "show_posts", "label": "Link each stop's post", "default": true },
     { "type": "checkbox", "id": "show_notes", "label": "Show each stop's note", "default": true },

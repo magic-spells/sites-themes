@@ -10,7 +10,7 @@
       "settings": {
         "heading": "What I use",
         "standfirst": "The services behind the bag. No brand names, no affiliate links: what each one does and why I kept it.",
-        "count": "none",
+        "count": "services",
         "align": "left"
       },
       "blocks": []

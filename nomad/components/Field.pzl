@@ -1,8 +1,10 @@
 <!-- component: Field -->
 <!-- props: name label type required maxlength value error placeholder prefix options visible_label -->
-<!-- One form field on the scheme's input colours. A select is a
-     @magic-spells <select-dropdown> over a native select, so it posts and
-     works without JavaScript. visible_label shows the label above the field;
+<!-- One form field on the scheme's input colours, the placeholder in the
+     scheme's muted text (at least 4.5:1). A select is the native select
+     drawn on the same colours with the angle as its arrow, so it posts and
+     works without JavaScript. visible_label shows the label above the field
+     (Figma: every field on Contact, the password and the newsletter);
      otherwise the placeholder carries it and the label is for screen
      readers. -->
 {#let
@@ -14,11 +16,13 @@
   {#if type == 'textarea'}
     <textarea class="{ control } min-h-textarea resize-y py-space-xs" id={ id } name={ name } rows="5" maxlength={ maxlength } required={ required } placeholder={ placeholder ?? label } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + id : null }>{ value }</textarea>
   {:else if type == 'select'}
-    <select-dropdown>
-      <select class="{ control } min-h-control" id={ id } name={ name } required={ required } aria-invalid={ error ? 'true' : 'false' }>
+    <div class="relative">
+      <select class="{ control } min-h-control cursor-pointer appearance-none pe-control" id={ id } name={ name } required={ required } aria-invalid={ error ? 'true' : 'false' }>
         {#for option in options}<option value={ option } selected={ value == option }>{ option }</option>{/for}
       </select>
-    </select-dropdown>
+      <span class="sites-icon pointer-events-none absolute inset-y-0 right-space-sm my-auto size-icon rotate-90 text-scheme-input-foreground" aria-hidden="true">{#svg 'icons/angle-right.svg'}</span>
+    </div>
+
   {:else}
     <input class="{ control } min-h-control" id={ id } name={ name } type={ type ?? 'text' } autocomplete={ type == 'email' ? 'email' : (name == 'name' ? 'name' : 'off') } maxlength={ maxlength } required={ required } value={ value } placeholder={ placeholder ?? label } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + id : null } />
   {/if}

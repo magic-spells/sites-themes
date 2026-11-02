@@ -9,7 +9,7 @@
       "preset": "Default",
       "settings": {
         "heading": "Write to Ilse",
-        "standfirst": "Collaborations, press, or a question about a place. I read everything.",
+        "standfirst": "Questions about a place, a cost or a piece of kit. I answer most within a week, from wherever the Wi-Fi holds.",
         "count": "none",
         "align": "left"
       },
@@ -25,7 +25,7 @@
         "text": "",
         "show_details": true,
         "form": "contact",
-        "note": ""
+        "note": "Your address is only used to reply. No mailing list."
       },
       "blocks": []
     }

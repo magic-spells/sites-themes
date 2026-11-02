@@ -1,9 +1,8 @@
-<!-- TODO sync with Figma (batch D) -->
-<!-- Postcards from the road, on Dusk with the contour texture at 8%: the heading and a line at the left, the email field and Subscribe at the right (stacked on a phone) with the note under it. The proof line is empty by default: no invented counts. A postmark sits at the band's right edge from 64rem. -->
+<!-- Postcards from the road, on Dusk with the contour texture at 8%: the heading and a line at the left (up to 40rem, so the heading holds one line at 1440), the email field under its visible label and Subscribe at the right (the field full width and Subscribe under it on a phone) with the note under them. The proof line is empty by default: no invented counts. A postmark sits at the band's right edge from 64rem. -->
 <section class="relative isolate overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground" id="newsletter" aria-labelledby="{ section.id }-title">
   <span class="sites-fill pointer-events-none absolute inset-0 -z-10 text-scheme-foreground texture-contour" aria-hidden="true">{#svg 'decor/contours.svg'}</span>
   <div class="mx-auto flex max-w-column flex-wrap items-center justify-between gap-space-xl">
-    <div class="grid max-w-side gap-space-xs">
+    <div class="grid max-w-reading gap-space-xs">
       <h2 class="font-heading text-h2 font-semibold text-scheme-heading" id="{ section.id }-title">{ settings.heading }</h2>
       {#if settings.text}<p class="text-body-lg text-scheme-muted">{ settings.text }</p>{/if}
       {#if settings.proof}<p class="font-mono text-meta font-medium text-scheme-meta uppercase">{ settings.proof }</p>{/if}
@@ -14,10 +13,11 @@
           <p class="text-body-lg" role="status">{ form.success_message || t('newsletter_success') }</p>
         {:else}
           {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
-          <div class="flex flex-col gap-space-xs sm:flex-row">
+          <div class="flex flex-col items-start gap-space-sm sm:flex-row sm:items-end sm:gap-space-xs">
             {#for field in form.fields}
-              <div class="flex-1"><Field name={ field.id } label={ field.label } type={ field.type } required={ field.required } maxlength={ field.max_length } value={ field.value } error={ field.error } placeholder={ settings.placeholder || field.label } prefix="nl-{ section.id }" options={ field.options } /></div>
+              <div class="w-full sm:flex-1"><Field name={ field.id } label={ field.label } type={ field.type } required={ field.required } maxlength={ field.max_length } value={ field.value } error={ field.error } placeholder={ settings.placeholder || field.label } prefix="nl-{ section.id }" options={ field.options } visible_label={ true } /></div>
             {/for}
+
             <Submit>{ form.submit_label || t('subscribe') }</Submit>
           </div>
           {#if settings.note}<p class="text-body-sm text-scheme-muted">{ settings.note }</p>{/if}

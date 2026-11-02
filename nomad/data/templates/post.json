@@ -38,8 +38,9 @@
       "preset": "Post",
       "settings": {
         "scope": "post",
-        "heading": "What the month cost",
-        "show_notes": true
+        "heading": "What a month here cost",
+        "show_notes": true,
+        "align": "center"
       },
       "blocks": []
     },
@@ -56,7 +57,7 @@
         "link": "#newsletter",
         "show_now": true,
         "portrait": "as_4x5_sand",
-        "links": "social"
+        "links": ""
       },
       "blocks": []
     },

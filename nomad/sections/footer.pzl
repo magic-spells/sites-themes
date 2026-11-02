@@ -1,5 +1,4 @@
-<!-- TODO sync with Figma (batch D) -->
-<!-- The colophon on Night Train, never a form: the wordmark and tagline at the left; in the middle the route so far, a dashed line through the last six stops with their pins (the current one lit, the next hollow on a dotted leg), names under the pins; three stacked menus at the right edge. The bottom line: the copyright text and "Now in" (no time). On a phone the route shows its last three stops. -->
+<!-- The colophon on Night Train, never a form (Figma): the wordmark and tagline at the left and three stacked menus at the right edge; under them, the route so far as a full-width row, a dashed line through the last six stops with their pins (the current one lit, the next hollow on a dotted leg) and, under each pin, the place and its date: the arrival, "Now · since" for the current stop, "Next ·" for the next. On a phone the route is a list of its last three stops. The bottom line: the copyright text and "Now in" (no time). -->
 <!-- current place: see components/CurrentPlace.pzl -->
 {#let
   places_path = site.settings.places_path || '/places'
@@ -10,39 +9,15 @@
 <footer class="border-t border-scheme-rule bg-scheme-background px-gutter py-space-xl text-scheme-foreground">
   <div class="mx-auto grid max-w-column gap-space-xl">
     <div class="flex flex-wrap items-start justify-between gap-space-xl">
-      <div class="grid max-w-list content-start gap-space-xs">
+      <div class="grid max-w-list content-start gap-space-sm">
         <a class="font-heading text-h4 font-extrabold text-scheme-heading" href="/">{ site.settings.wordmark || site.name }</a>
         {#if site.settings.tagline}<p class="text-body-sm text-scheme-muted">{ site.settings.tagline }</p>{/if}
       </div>
-      {#if settings.show_route && legs.length > 1}
-        <div class="w-full lg:w-auto lg:min-w-list lg:flex-1">
-          <p class="sr-only">{ t('route_so_far') }</p>
-          <ol class="flex">
-            {#for stop in legs, i}
-              {#let
-                p = stop.fields.place
-                is_now = current && p.handle == current.handle
-                is_next = stop.fields.next
-                early = legs.length - i > 3
-              }
-              {#if p}
-                <li class="relative flex-1 { early ? 'hidden md:block' : '' }">
-                  {#if i < legs.length - 1}<span class="absolute top-3.5 left-1/2 w-full border-t-2 border-scheme-route { legs[i + 1].fields.next ? 'border-dotted' : 'border-dashed' }" aria-hidden="true"></span>{/if}
-                  <a class="relative grid justify-items-center gap-space-xs text-center" href="{ places_path }/{ p.handle }">
-                    <span class="flex h-7 items-center"><Pin type={ is_now ? 'now' : (is_next ? 'next' : 'place') } /></span>
-                    <span class="font-mono text-meta font-medium uppercase { is_now || is_next ? 'text-scheme-foreground' : 'text-scheme-meta' }">{ p.title }{#if is_next}<span class="block">{ t('next') }</span>{/if}</span>
-                  </a>
-                </li>
-              {/if}
-            {/for}
-          </ol>
-        </div>
-      {/if}
-      <div class="flex flex-wrap gap-space-xl">
+      <div class="flex flex-wrap gap-x-space-xl gap-y-space-lg">
         {#for menu in footer_menus}
           {#if menu.items.length}
             <nav aria-label="{ menu.title }">
-              <ul class="grid gap-space-xs text-body-sm">
+              <ul class="grid gap-tiny text-body">
                 {#for item in menu.items}<li><a class="text-scheme-muted hover:text-scheme-foreground" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null }>{ item.label }</a></li>{/for}
               </ul>
             </nav>
@@ -50,6 +25,30 @@
         {/for}
       </div>
     </div>
+    {#if settings.show_route && legs.length > 1}
+      <div>
+        <p class="sr-only">{ t('route_so_far') }</p>
+        <ol class="grid gap-space-xs md:flex md:gap-0">
+          {#for stop in legs, i}
+            {#let
+              p = stop.fields.place
+              is_now = current && p && p.handle == current.handle && !stop.fields.next
+              is_next = stop.fields.next
+              early = legs.length - i > 3
+            }
+            {#if p}
+              <li class="relative md:flex-1 { early ? 'max-md:hidden' : '' }">
+                {#if i < legs.length - 1}<span class="absolute top-pin-mid right-0 left-pulse hidden border-t border-scheme-route md:block { legs[i + 1].fields.next ? 'border-dotted' : 'border-dashed' }" aria-hidden="true"></span>{/if}
+                <a class="group relative flex items-center gap-space-sm md:grid md:justify-items-start md:gap-space-xs" href="{ places_path }/{ p.handle }">
+                  <span class="flex size-pulse shrink-0 items-center justify-center"><Pin type={ is_now ? 'now' : (is_next ? 'next' : 'place') } /></span>
+                  <span class="font-mono text-meta font-medium uppercase { is_next ? 'text-scheme-foreground' : 'text-scheme-meta' }"><span class="group-hover:underline">{ p.title }</span><span class="md:hidden" aria-hidden="true"> · </span><span class="md:block">{#if is_now}{ t('now') } · { t('since_date', { date: date(stop.fields.arrive) }) }{:else if is_next}{ t('next') } · { date(stop.fields.arrive) }{:else}{ date(stop.fields.arrive) }{/if}</span></span>
+                </a>
+              </li>
+            {/if}
+          {/for}
+        </ol>
+      </div>
+    {/if}
     <div class="flex flex-wrap items-center justify-between gap-space-md border-t border-scheme-rule pt-space-md font-mono text-meta font-medium text-scheme-meta uppercase">
       <p>{ settings.copyright || site.settings.copyright }</p>
       {#if current}<p>{ t('now_in') } { current.title }{#if current.fields.country}, { current.fields.country }{/if}</p>{/if}
@@ -60,7 +59,7 @@
 <schema>
 {
   "name": "Footer",
-  "description": "A colophon: the wordmark, the route so far, the menus and the copyright.",
+  "description": "A colophon: the wordmark, the menus, the route so far with its dates, and the copyright.",
   "kind": "Footer",
   "icon": "panel-bottom",
   "settings": [

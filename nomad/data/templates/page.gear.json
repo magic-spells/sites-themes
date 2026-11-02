@@ -35,7 +35,7 @@
       "settings": {
         "image": "as_3x2_sea",
         "ratio": "landscape",
-        "layout": "image_first",
+        "layout": "text_first",
         "eyebrow": "",
         "heading": "How I pack",
         "body": "<p>Cubes by use, not by type: one for work, one for clothes, one for the things that charge. The laptop rides against my back, and the rain shell sits on top where I can reach it without unpacking.</p><p>If something has not come out of the bag in two stops, it goes home in a box.</p>",

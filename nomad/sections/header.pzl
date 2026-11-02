@@ -13,12 +13,12 @@
       </div>
       {#if settings.menu.items.length}
         <nav class="hidden md:block" aria-label="{ t('main_navigation') }">
-          <ul class="-me-space-xs flex items-center text-nav font-medium">
+          <ul class="-me-space-sm flex items-center text-nav font-medium">
             {#for item in settings.menu.items}
               {#if item.href == places_path && recent.length}
                 <li>
                   <dropdown-component trigger="both" close-delay="150">
-                    <dropdown-trigger class="flex cursor-pointer items-center gap-1 px-space-xs py-space-xs { item.active ? 'text-scheme-foreground' : '' }">{ item.label }<span class="sites-icon size-icon-sm rotate-90" aria-hidden="true">{#svg 'icons/angle-right.svg'}</span></dropdown-trigger>
+                    <dropdown-trigger class="flex cursor-pointer items-center gap-tiny px-space-sm py-space-xs { item.active ? 'text-scheme-foreground' : '' }">{ item.label }<span class="sites-icon size-icon rotate-90" aria-hidden="true">{#svg 'icons/angle-right.svg'}</span></dropdown-trigger>
                     <dropdown-panel class="right-gutter left-auto w-max max-w-panel border border-t-0 border-scheme-rule bg-scheme-background p-space-lg text-scheme-foreground md:right-edge md:rounded-b-sm" wide effect="fade">
                       <ul class="grid gap-x-space-lg gap-y-space-md md:grid-cols-3">
                         {#for h in recent}
@@ -41,7 +41,7 @@
                   </dropdown-component>
                 </li>
               {:else}
-                <li><a class="block px-space-xs py-space-xs decoration-1 underline-offset-4 hover:underline" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>
+                <li><a class="block px-space-sm py-space-xs decoration-1 underline-offset-4 hover:underline" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>
               {/if}
             {/for}
           </ul>

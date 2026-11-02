@@ -20,6 +20,7 @@
             "label": "Home base",
             "value": "None, for now",
             "shape": "ring",
+            "placement": "cluster",
             "tilt": "auto"
           }
         },
@@ -29,7 +30,8 @@
           "settings": {
             "label": "Works",
             "value": "Product design",
-            "shape": "ring",
+            "shape": "box",
+            "placement": "cluster",
             "tilt": "auto"
           }
         },
@@ -40,6 +42,7 @@
             "label": "Since",
             "value": "Apr 3, 2023",
             "shape": "box",
+            "placement": "portrait",
             "tilt": "auto"
           }
         }

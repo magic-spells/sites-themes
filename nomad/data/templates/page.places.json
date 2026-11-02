@@ -22,8 +22,9 @@
       "settings": {
         "heading": "Where I’ve been",
         "show_count": true,
+        "count_by": "places",
         "places": "places",
-        "show_route": "stops",
+        "show_route": "none",
         "fit": "world",
         "show_list": false,
         "list_limit": 6,

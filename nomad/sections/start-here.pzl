@@ -1,5 +1,4 @@
-<!-- TODO sync with Figma (batch C) -->
-<!-- Start here: three to five posts to read first, numbered because the order is real (Besley numerals in stamp ink), each with its note and meta on a hairline; beside them a 4:5 picture on the offset plane, crossing the column's right edge, which swaps to the hovered post's picture (theme.ts). Below 48rem the picture is 3:2 and follows the list. -->
+<!-- Start here (Figma): three to five posts to read first, in reading order but without numerals (Cory), each row the title, its note and meta at the column's edge on a hairline; beside them a 4:5 picture on the offset plane, crossing the column's right edge, which swaps to the hovered post's picture (theme.ts). Below 48rem the picture is 3:2 and follows the list. -->
 {#let
   posts_path = site.settings.posts_path || '/journal'
   lead = blocks | first
@@ -19,9 +18,9 @@
           {#let p = block.settings.post}
           {#if p}
             <li class="border-b border-scheme-rule { reveal ? 'reveal reveal-fade-up' : '' }" data-block={ block.editor_id }>
-              <a class="group flex gap-space-md py-space-md" href="{ posts_path }/{ p.handle }" data-photo-src={ p.fields.image ? image_url(p.fields.image, 1024, { height: 1280 }) : null }>
-                <span class="w-12 shrink-0 font-heading text-numeral font-extrabold text-scheme-stamp tabular-nums">{ i < 9 ? '0' : '' }{ i + 1 }</span>
-                <span class="grid gap-1">
+              <a class="group block py-space-md" href="{ posts_path }/{ p.handle }" data-photo-src={ p.fields.image ? image_url(p.fields.image, 1024, { height: 1280 }) : null }>
+                <span class="grid gap-tiny">
+
                   <span class="font-heading text-h3 font-medium text-scheme-heading decoration-1 underline-offset-4 group-hover:text-scheme-links group-hover:underline">{ p.title }</span>
                   {#if block.settings.note}<span class="text-body-sm text-scheme-muted">{ block.settings.note }</span>{/if}
                   <span class="font-mono text-meta font-medium text-scheme-meta uppercase">{#if p.fields.topic}{ p.fields.topic } · {/if}{ t('minutes_read', { count: p.fields.reading_minutes }) }</span>

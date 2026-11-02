@@ -1,4 +1,4 @@
-<!-- "Currently in", the first view. The current place's photograph (or a muted loop) full-bleed under the Night scrim, stopping 3rem short of the bottom so the last band is Night Train and the luggage tag crosses from the photo into the map band below. The place name at display size bottom-left with one line and two actions; the tag at the right, tilted -3°, its bottom on the section's edge. The loop starts from theme.ts only, never under reduced motion, and pauses off-screen; the poster stands otherwise, and a video over 15 MB is skipped for the image. Nothing here moves on load. The loop's pause control sits top-right from 48rem and, below it, as a round button at the photo's bottom-right edge, clear of the heading. -->
+<!-- "Currently in", the first view. The current place's photograph (or a muted loop) full-bleed under the Night scrim, stopping 3rem short of the bottom so the last band is Night Train and the luggage tag crosses from the photo into the map band below. The place name at display size bottom-left with one line and two actions; the tag at the right (under the actions on a phone), tilted -3°, its bottom on the section's edge, so it crosses the 3rem band into the map below (the route map's top padding clears it). The loop starts from theme.ts only, never under reduced motion, and pauses off-screen; the poster stands otherwise, and a video over 15 MB is skipped for the image. Nothing here moves on load. The loop's pause control sits at the photo's top-right at every width (a round icon button below 48rem), clear of the heading and the tag. -->
 <!-- current place: see components/CurrentPlace.pzl -->
 {#let
   places_path = site.settings.places_path || '/places'
@@ -18,9 +18,9 @@
     {#if loop}<video class="absolute inset-0 size-full object-cover" muted loop playsinline preload="none" poster={ image ? image_url(image, 1600) : null } data-loop aria-hidden="true"><source src="{ loop.url }" type="{ loop.mime }" /><a href="{ loop.url }">{ t('open_video') }</a></video>{/if}
     <div class="absolute inset-0 bg-linear-to-t from-scrim via-scrim/40 via-30% to-transparent to-55%" aria-hidden="true"></div>
   </div>
-  {#if loop}<button class="absolute right-gutter bottom-band z-10 mb-space-sm inline-flex size-icon-button items-center justify-center gap-space-xs rounded-full bg-scrim font-mono text-meta font-medium text-on-photo uppercase md:top-section md:bottom-auto md:mb-0 md:size-auto md:px-space-sm md:py-1.5" type="button" data-loop-toggle data-play-label="{ t('play_loop') }" aria-pressed="false"><span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/pause.svg'}</span><span class="sr-only md:not-sr-only" data-loop-label>{ t('pause_loop') }</span></button>{/if}
+  {#if loop}<button class="absolute top-space-md right-gutter z-10 inline-flex size-icon-button items-center justify-center gap-space-xs rounded-full bg-scrim font-mono text-meta font-medium text-on-photo uppercase md:top-section md:size-auto md:px-space-sm md:py-chip" type="button" data-loop-toggle data-play-label="{ t('play_loop') }" aria-pressed="false"><span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/pause.svg'}</span><span class="sr-only md:not-sr-only" data-loop-label>{ t('pause_loop') }</span></button>{/if}
   <div class="mx-auto flex w-full max-w-column flex-wrap items-end justify-between gap-x-space-xl gap-y-space-lg">
-    <div class="grid max-w-copy min-w-0 flex-1 basis-80 gap-space-md pb-space-lg md:pb-24">
+    <div class="grid max-w-copy min-w-0 flex-1 basis-80 gap-space-md pb-space-lg md:pb-hero-copy">
       <h1 class="font-heading text-display font-semibold text-balance text-on-photo">{ heading }</h1>
       {#if settings.text}<p class="max-w-copy text-body-lg text-pretty text-on-photo">{ settings.text }</p>{/if}
       <div class="flex flex-wrap gap-space-sm">
@@ -29,8 +29,9 @@
       </div>
     </div>
     {#if settings.show_tag && place}
-      <div class="pb-space-md md:pb-space-sm">
-        <Tag place={ place } arrived={ stay ? stay.fields.arrive : null } since={ site.settings.on_road_since } href="{ places_path }/{ place.handle }" />
+      <div>
+        <Tag
+ place={ place } arrived={ stay ? stay.fields.arrive : null } since={ site.settings.on_road_since } href="{ places_path }/{ place.handle }" />
       </div>
     {/if}
   </div>

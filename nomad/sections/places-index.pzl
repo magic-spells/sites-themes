@@ -1,5 +1,4 @@
-<!-- TODO sync with Figma (batch B) -->
-<!-- Destinations A–Z: every place as a big Besley row, grouped by country under mono heads with counts, each row with its 64 square picture (a list of visual work shows the work) and its post count and last visit at the right. From 48rem a sticky 4:5 photograph beside the list shows the row under the pointer (theme.ts). The country filter hides rows by data-country. -->
+<!-- Destinations A–Z (Figma): the country filter (no count beside it: the page header carries the visited count), then every place as a big Besley row, grouped by country under mono heads with counts, each row with its 64 square picture (a list of visual work shows the work) and its post count and last visit at the right. From 48rem a sticky 4:5 photograph beside the list shows the row under the pointer (theme.ts). The country filter hides rows by data-country. -->
 <!-- current place: see components/CurrentPlace.pzl -->
 {#let
   places_path = site.settings.places_path || '/places'
@@ -15,7 +14,7 @@
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground" aria-label="{ t('destinations') }" data-country-scope>
   <div class="mx-auto flex max-w-column items-start gap-space-2xl">
     <div class="grid min-w-0 flex-1 gap-space-lg">
-      {#if settings.country_filter || settings.show_counts}
+      {#if settings.country_filter && countries.length > 1}
         <div class="flex flex-wrap items-center gap-space-md">
           {#if settings.country_filter && countries.length > 1}
             <dropdown-component class="w-fit" close-delay="150">
@@ -28,7 +27,6 @@
               </dropdown-panel>
             </dropdown-component>
           {/if}
-          {#if settings.show_counts}<p class="font-mono text-meta font-medium text-scheme-meta uppercase">{ places.length | pluralize(t('place_one'), t('place_many')) } · { countries.length | pluralize(t('country_one'), t('country_many')) }</p>{/if}
         </div>
       {/if}
       {#for country in groups}

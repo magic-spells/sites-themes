@@ -22,7 +22,8 @@
       "settings": {
         "heading": "",
         "source": "page",
-        "width": "reading"
+        "width": "reading",
+        "align": "left"
       },
       "blocks": []
     }

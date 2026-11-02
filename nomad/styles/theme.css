@@ -5,7 +5,6 @@
 @import "./vendor/dropdown-panel.effects.css" layer(components);
 @import "./vendor/lightbox.css" layer(components);
 @import "./vendor/reveal.css";
-@import "./vendor/select-dropdown.css" layer(components);
 @import "./vendor/sticky-header.css" layer(components);
 @import "./vendor/tarot.css" layer(components);
 
@@ -165,6 +164,12 @@
 	--spacing-section: var(--nomad-section);
 	--spacing-gutter: var(--nomad-gutter);
 	--spacing-button-x: var(--sites-button-padding-x);
+	/* The small steps under space-xs: a hairline gap between stacked lines
+	   (micro), a meta line under its title (tiny), a chip's or a menu row's
+	   vertical padding (chip). */
+	--spacing-micro: 0.125rem;
+	--spacing-tiny: 0.25rem;
+	--spacing-chip: 0.375rem;
 
 	--radius-none: var(--sites-radius-none);
 	--radius-sm: var(--sites-radius-sm);
@@ -190,6 +195,8 @@
 	--container-ticket: 55rem;
 	--container-table: 50rem;
 	--container-panel: 60rem;
+	--container-inset: 35rem;
+	--container-pass: 22.5rem;
 	--container-copy: 47.5rem;
 	--spacing-control: 3rem;
 	--spacing-control-small: 2.5rem;
@@ -201,6 +208,9 @@
 	--spacing-pin: 0.625rem;
 	--spacing-pin-now: 0.75rem;
 	--spacing-pulse: 1.75rem;
+	/* Half the pulse box: where a line through a row of pins runs. */
+	--spacing-pin-mid: 0.875rem;
+	--spacing-eyelet: 0.875rem;
 	--spacing-thumb-sm: 3.5rem;
 	--spacing-thumb: 4rem;
 	--spacing-thumb-lg: 5rem;
@@ -209,15 +219,22 @@
 	--spacing-stub: var(--nomad-stub);
 	--spacing-postmark: 8rem;
 	--spacing-ring: 8.5rem;
+	--spacing-ring-pad: 0.625rem;
 	--spacing-play: 4.5rem;
 	--spacing-plane: 1.5rem;
 	--spacing-band: 3rem;
 	--spacing-hero: 37.5rem;
 	--spacing-hero-tall: 85svh;
+	/* The room under the hero copy from 48rem, where the tag stands. */
+	--spacing-hero-copy: 6rem;
+	/* The room a stamp hanging below a cover needs on a phone. */
+	--spacing-overhang: 5rem;
 	--spacing-slide: 15rem;
 	--spacing-slide-lg: 20rem;
 	--spacing-slide-tall: 24rem;
-	--spacing-ribbon-sm: 18rem;
+	/* A Where next ticket: 18.5rem on a phone, so the next one peeks, 26.25rem from 48rem. */
+	--spacing-ribbon: 18.5rem;
+	--spacing-ribbon-lg: 26.25rem;
 	--spacing-textarea: 10rem;
 	--spacing-rule: 3rem;
 	--aspect-map: 960 / 373;
@@ -585,10 +602,6 @@ tarot-carousel[data-track]:not(:defined) tarot-slide {
 	pointer-events: auto;
 }
 
-tarot-carousel[data-track="tickets"]:not(:defined) tarot-slide {
-	width: var(--spacing-ribbon-sm);
-}
-
 /* The lightbox is the tarot plugin's overlay on Night Train (foundations
    lightbox board): the backdrop at 92%, round chrome 1rem in, the counter
    and caption in mono. */
@@ -629,22 +642,6 @@ tarot-carousel[data-track="tickets"]:not(:defined) tarot-slide {
 	.tarot-lightbox .tarot-button {
 		display: none;
 	}
-}
-
-/* The select lists, drawn on the scheme. */
-select-dropdown {
-	--select-shadow: none;
-	--select-shadow-soft: none;
-	--select-color-text: var(--sites-scheme-input-foreground);
-	--select-color-background: var(--sites-scheme-input-background);
-	--select-color-border: var(--sites-scheme-input-border);
-	--select-color-border-hover: var(--sites-scheme-input-foreground);
-	--select-color-border-dark: var(--sites-scheme-input-foreground);
-	--select-color-primary: var(--sites-scheme-links);
-	--select-color-hover: var(--sites-scheme-chip-background);
-	--select-color-focus: var(--sites-scheme-chip-background);
-	--select-color-selected: var(--sites-scheme-chip-background);
-	display: block;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -36,15 +36,6 @@
       "items": [
         {
           "id": "main_0",
-          "label": "Journal",
-          "target": {
-            "kind": "url",
-            "url": "/journal"
-          },
-          "children": []
-        },
-        {
-          "id": "main_1",
           "label": "Places",
           "target": {
             "kind": "url",
@@ -53,20 +44,29 @@
           "children": []
         },
         {
-          "id": "main_2",
-          "label": "Trips",
+          "id": "main_1",
+          "label": "Journal",
           "target": {
             "kind": "url",
-            "url": "/trips"
+            "url": "/journal"
+          },
+          "children": []
+        },
+        {
+          "id": "main_2",
+          "label": "Photos",
+          "target": {
+            "kind": "url",
+            "url": "/photos"
           },
           "children": []
         },
         {
           "id": "main_3",
-          "label": "Photos",
+          "label": "Trips",
           "target": {
             "kind": "url",
-            "url": "/photos"
+            "url": "/trips"
           },
           "children": []
         },
@@ -129,19 +129,19 @@
       "items": [
         {
           "id": "social_0",
-          "label": "RSS",
+          "label": "Instagram",
           "target": {
             "kind": "url",
-            "url": "https://ilsevarga.example/feed.xml"
+            "url": "https://www.instagram.com/"
           },
           "children": []
         },
         {
           "id": "social_1",
-          "label": "Instagram",
+          "label": "YouTube",
           "target": {
             "kind": "url",
-            "url": "https://www.instagram.com/"
+            "url": "https://www.youtube.com/"
           },
           "children": []
         },
@@ -151,6 +151,15 @@
           "target": {
             "kind": "url",
             "url": "mailto:hello@ilsevarga.example"
+          },
+          "children": []
+        },
+        {
+          "id": "social_3",
+          "label": "RSS",
+          "target": {
+            "kind": "url",
+            "url": "https://ilsevarga.example/feed.xml"
           },
           "children": []
         }
@@ -299,7 +308,7 @@
       "items": [
         {
           "asset_id": "as_3x2_clay",
-          "caption": "The tortillería downstairs",
+          "caption": "The tortillería downstairs, at seven, before the first customers",
           "alt": "The tortillería downstairs (placeholder)"
         },
         {
@@ -992,7 +1001,7 @@
         {
           "id": "email",
           "type": "email",
-          "label": "Email",
+          "label": "Email address",
           "required": true,
           "max_length": 250
         }
@@ -1955,7 +1964,7 @@
             "category": "rent",
             "amount": 14500,
             "currency": "MXN",
-            "note": "A one-bedroom flat, booked for the month"
+            "note": "A one-bedroom in Jalatlaco, two months paid up front"
           }
         },
         {
@@ -1969,7 +1978,7 @@
             "category": "coworking",
             "amount": 2800,
             "currency": "MXN",
-            "note": "A monthly desk, not a day pass"
+            "note": "A desk at a shared studio off the zócalo"
           }
         },
         {
@@ -1983,7 +1992,7 @@
             "category": "food",
             "amount": 6200,
             "currency": "MXN",
-            "note": "Markets, a lunch out most days"
+            "note": "Market lunches most days, dinner out a couple of nights a week"
           }
         },
         {
@@ -1997,7 +2006,7 @@
             "category": "transport",
             "amount": 900,
             "currency": "MXN",
-            "note": "Buses, taxis and one long-distance trip"
+            "note": "Colectivos, and a taxi home when it rains"
           }
         },
         {
@@ -2011,7 +2020,7 @@
             "category": "phone",
             "amount": 350,
             "currency": "MXN",
-            "note": "A local SIM with data"
+            "note": "A local SIM with data, topped up monthly"
           }
         },
         {

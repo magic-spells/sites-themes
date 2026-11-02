@@ -141,7 +141,22 @@ document.addEventListener('click', (event) => {
 	for (const session of table.querySelectorAll<HTMLElement>('[data-session]')) {
 		session.hidden = wanted !== '' && session.getAttribute('data-class') !== wanted;
 	}
+	openBusyDay(table);
 });
+
+// The day tabs open on Monday, unless Monday has nothing to show (a run
+// club meets on Wednesday and Saturday): then on the first day that does.
+function openBusyDay(table: HTMLElement) {
+	const group = table.querySelector('tab-group');
+	if (!group) return;
+	const panels = [...group.querySelectorAll('tab-panel')];
+	const busy = (panel: Element) => [...panel.querySelectorAll<HTMLElement>('[data-session]')].some((session) => !session.hidden);
+	const current = panels.findIndex((panel) => !panel.hasAttribute('hidden'));
+	if (current >= 0 && busy(panels[current])) return;
+	const first = panels.findIndex(busy);
+	if (first >= 0) group.setAttribute('active', String(first));
+}
+for (const table of document.querySelectorAll<HTMLElement>('[data-timetable]')) openBusyDay(table);
 
 // Grid tiles open the lightbox of a visually hidden companion carousel
 // holding the same photographs (the plugin opens from a slide and has no

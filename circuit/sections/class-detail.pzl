@@ -37,7 +37,7 @@
         <div class="grid gap-step-xs">
           {#if settings.back_label}<a class="justify-self-start font-mono text-spec font-medium text-scheme-links uppercase hover:underline" href="{ settings.back_href }">← { settings.back_label }</a>{/if}
           <p class="flex flex-wrap items-center gap-step-xs font-mono text-overline font-medium text-scheme-meta uppercase">{#if f.tag}<span class="inline-flex min-h-tag items-center rounded-chip bg-accent px-step-xs text-on-accent">{ f.tag }</span>{/if}<span>{ t('class_kicker') }{#if coach} · { t('with_coach', { name: coach.title }) }{/if}</span></p>
-          <h1 class="font-heading text-h1 font-black text-balance text-scheme-heading uppercase stretch-display">{ klass.title }</h1>
+          <h1 class="font-heading text-h1 font-black text-balance text-scheme-heading uppercase stretch-normal md:stretch-display">{ klass.title }</h1>
         </div>
         {#if action}<span class="shrink-0"><Button action={ true }>{ action }</Button></span>{/if}
       </div>

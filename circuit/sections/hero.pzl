@@ -22,8 +22,8 @@
   <div class="mx-auto grid max-w-column items-center gap-step-2xl md:grid-cols-2">
     <div class="grid justify-items-start gap-step-md { settings.photo_side == 'left' ? 'md:order-2' : '' }">
       {#if settings.kicker}<p class="font-mono text-overline font-medium text-scheme-meta uppercase">{ settings.kicker }</p>{/if}
-      {#if tag == 'h1'}<h1 class="font-heading text-h1 font-black text-balance text-scheme-heading uppercase stretch-heading">{ settings.heading }</h1>
-      {:else}<h2 class="font-heading text-h1 font-black text-balance text-scheme-heading uppercase stretch-heading">{ settings.heading }</h2>{/if}
+      {#if tag == 'h1'}<h1 class="font-heading text-h2 font-black text-balance text-scheme-heading uppercase lg:text-h1 lg:stretch-heading">{ settings.heading }</h1>
+      {:else}<h2 class="font-heading text-h2 font-black text-balance text-scheme-heading uppercase lg:text-h1 lg:stretch-heading">{ settings.heading }</h2>{/if}
       {#if settings.slash_last}<span class="-mt-step-2xs block h-slash-h w-slash-w origin-left -rotate-12 bg-accent" aria-hidden="true"></span>{/if}
       {#if settings.text}<p class="max-w-lede text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
       <div class="flex flex-wrap gap-step-xs">
@@ -58,7 +58,7 @@
   {#if settings.show_ghost && ghost}<span class="pointer-events-none absolute bottom-0 left-gutter -z-10 translate-y-1/5 font-heading text-ghost font-black whitespace-nowrap uppercase select-none ghost-stroke stretch-display" aria-hidden="true">{ ghost }</span>{/if}
   <div class="mx-auto grid w-full max-w-column content-center justify-items-start gap-step-md px-gutter pt-step-2xl pb-step-xl md:pt-step-3xl">
     {#if settings.kicker}<p class="font-mono text-overline font-medium uppercase">{ settings.kicker }</p>{/if}
-    {#if tag == 'h1'}<h1 class="max-w-hero font-heading text-display font-black text-balance uppercase stretch-display">{ settings.heading }</h1>
+    {#if tag == 'h1'}<h1 class="max-w-hero font-heading text-display font-black text-balance uppercase stretch-heading md:stretch-display">{ settings.heading }</h1>
     {:else}<h2 class="max-w-hero font-heading text-display font-black text-balance uppercase stretch-display">{ settings.heading }</h2>{/if}
     {#if settings.slash_last}<span class="-mt-step-2xs block h-slash-h w-slash-w origin-left -rotate-12 bg-accent" aria-hidden="true"></span>{/if}
     {#if settings.text}<p class="mt-step-xs max-w-lede text-body-lg text-pretty text-on-photo/85">{ settings.text }</p>{/if}

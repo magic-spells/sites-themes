@@ -409,6 +409,16 @@ main > [data-section]:has(+ [data-section] > .edge-slash) > section {
 	padding-bottom: calc(var(--circuit-section) + var(--circuit-rise));
 }
 
+/* Two bands on the same scheme in a row read as one: the second drops its
+   top padding so the seam carries one section's space, not two. */
+main > .sites-scheme-white + .sites-scheme-white > section:not(.edge-slash, [data-rise]),
+main > .sites-scheme-black + .sites-scheme-black > section:not(.edge-slash, [data-rise]),
+main > .sites-scheme-graphite + .sites-scheme-graphite > section:not(.edge-slash, [data-rise]),
+main > .sites-scheme-concrete + .sites-scheme-concrete > section:not(.edge-slash, [data-rise]),
+main > .sites-scheme-flare + .sites-scheme-flare > section:not(.edge-slash, [data-rise]) {
+	padding-top: 0;
+}
+
 [data-dismissed] { display: none; }
 body:has([data-bare]) [data-group] { display: none; }
 

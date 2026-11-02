@@ -1,7 +1,7 @@
 <!-- component: HoursTable -->
 <!-- A location's hours: the textarea split into lines, each line's last
-     word the times and the rest the days, as a two-column mono table. Today
-     is never marked: there is no clock. -->
+     word the times and the rest the days, as a two-column mono table. No day
+     is marked as current: there is no clock. -->
 {#if hours}
 <table class="w-full font-mono text-body-sm tabular-nums">
   <caption class="sr-only">{ t('opening_hours') }</caption>

@@ -1,6 +1,6 @@
 <!-- Hours and locations: cards two across, each a 3:2 photo (or the static
      map), the name, the address, the hours as a two-column mono table, and
-     Directions and Call. Today is never marked. -->
+     Directions and Call. No day is marked as current. -->
 {#let shown = settings.locations.entries | sort('fields.order') | slice(0, Math.min(settings.limit, 12))}
 {#if shown.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">

@@ -5,7 +5,7 @@
      read those lists. "Only these classes" keeps the sessions of the listed
      class handles (a check per session, no query). Class chips in the
      heading row filter by class (theme.ts writes data-class and hides the
-     rest). No today, no now: there is no clock. -->
+     rest). No day or hour is marked as current: there is no clock. -->
 {#let
   all = settings.sessions.entries
   pool = settings.location ? (all | where('fields.location.id', settings.location.id)) : all

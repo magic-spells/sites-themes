@@ -43,11 +43,11 @@
         <h2 class="font-heading text-h2 font-black text-scheme-heading uppercase stretch-heading">{ settings.sessions_heading }</h2>
         <dl class="grid gap-x-gap-lg md:grid-cols-2 lg:grid-cols-4">
           {#for d in days}
-            {#let today = here | where('fields.day', d) | sort('fields.start')}
-            {#if today.length}
+            {#let on_day = here | where('fields.day', d) | sort('fields.start')}
+            {#if on_day.length}
               <div class="border-t border-scheme-rule py-step-sm">
                 <dt class="mb-step-xs font-mono text-overline font-medium text-scheme-meta uppercase">{ t('day_long.' + d) }</dt>
-                {#for s in today}<dd class="flex items-baseline justify-between gap-step-sm py-step-2xs"><a class="text-body-sm font-bold uppercase hover:underline" href="{ settings.class_path }/{ s.fields.class.handle }">{ s.fields.class.title }</a><span class="font-mono text-time whitespace-nowrap">{ s.fields.start }</span></dd>{/for}
+                {#for s in on_day}<dd class="flex items-baseline justify-between gap-step-sm py-step-2xs"><a class="text-body-sm font-bold uppercase hover:underline" href="{ settings.class_path }/{ s.fields.class.handle }">{ s.fields.class.title }</a><span class="font-mono text-time whitespace-nowrap">{ s.fields.start }</span></dd>{/for}
               </div>
             {/if}
           {/for}

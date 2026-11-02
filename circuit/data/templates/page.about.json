@@ -9,8 +9,10 @@
       "settings": {
         "image": "as_3x2_2",
         "image_side": "right",
-        "body": "<p>Common Ground started in 2014 with two racks, a borrowed rower and six people who trained before work. We moved to Foundry Lane in 2016 and opened Riverside in 2023.</p><p>Ten years on the idea is the same: good coaching, a room full of people who show up, and nobody left at the back.</p>",
-        "color_scheme": "white"
+        "body": "<p>In 2014 twelve runners met in the car park behind Foundry Lane every Saturday at eight. No kit, no fees, just a loop of the river and coffee after.</p><p>The first barbell arrived a year later, in a lock-up beside the bike shop. Now there are two rooms, six coaches and seventy-five classes a week, and the Saturday run still leaves from the river gate.</p>",
+        "color_scheme": "white",
+        "kicker": "Our story",
+        "heading": "A gym that started as a run club"
       },
       "blocks": []
     },
@@ -28,23 +30,13 @@
           "type": "stat",
           "settings": {
             "prefix": "",
-            "number": "1,200",
-            "unit": "",
-            "label": "Members"
-          }
-        },
-        {
-          "id": "s_stats_b2",
-          "type": "stat",
-          "settings": {
-            "prefix": "",
             "number": "75",
             "unit": "+",
             "label": "Classes a week"
           }
         },
         {
-          "id": "s_stats_b3",
+          "id": "s_stats_b2",
           "type": "stat",
           "settings": {
             "prefix": "",
@@ -54,13 +46,23 @@
           }
         },
         {
+          "id": "s_stats_b3",
+          "type": "stat",
+          "settings": {
+            "prefix": "",
+            "number": "2",
+            "unit": "",
+            "label": "Locations"
+          }
+        },
+        {
           "id": "s_stats_b4",
           "type": "stat",
           "settings": {
-            "prefix": "Est.",
+            "prefix": "",
             "number": "2014",
             "unit": "",
-            "label": "On Foundry Lane since"
+            "label": "Est."
           }
         }
       ]
@@ -71,7 +73,7 @@
       "preset": "Default",
       "settings": {
         "coach": "coach_dana_okafor",
-        "kicker": "Founder and head coach",
+        "kicker": "Head coach",
         "color_scheme": "white"
       },
       "blocks": []
@@ -81,10 +83,11 @@
       "type": "value-props",
       "preset": "Boxes",
       "settings": {
-        "heading": "What we believe",
+        "heading": "The difference is the coaching",
         "style": "boxes",
         "columns": "3",
-        "color_scheme": "graphite"
+        "color_scheme": "graphite",
+        "kicker": "Why here"
       },
       "blocks": [
         {
@@ -92,8 +95,8 @@
           "type": "prop",
           "settings": {
             "index": "01",
-            "heading": "Coached, always",
-            "text": "Every session has a coach on the floor. No exceptions, no apps.",
+            "heading": "Coached, not watched",
+            "text": "Every session has a coach on the floor, watching your form and adjusting the plan.",
             "link_label": "",
             "link": ""
           }
@@ -103,8 +106,8 @@
           "type": "prop",
           "settings": {
             "index": "02",
-            "heading": "Every level",
-            "text": "The same workout, scaled for the first-timer and the ten-year regular.",
+            "heading": "One workout, three levels",
+            "text": "Beginners and veterans train side by side, each on a version of the session that fits.",
             "link_label": "",
             "link": ""
           }
@@ -114,8 +117,8 @@
           "type": "prop",
           "settings": {
             "index": "03",
-            "heading": "Show up",
-            "text": "Consistency beats intensity. We will notice when you are not there.",
+            "heading": "A crew that notices",
+            "text": "Miss a Tuesday and someone asks after you on Thursday. That is the point.",
             "link_label": "",
             "link": ""
           }
@@ -139,7 +142,8 @@
       "preset": "Grid",
       "settings": {
         "layout": "grid",
-        "color_scheme": "concrete"
+        "color_scheme": "concrete",
+        "heading": ""
       },
       "blocks": [
         {

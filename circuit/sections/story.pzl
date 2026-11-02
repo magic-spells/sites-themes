@@ -1,14 +1,14 @@
 <!-- Image with text: a 3:2 photo and a 30rem text column with the big gap,
      the picture right or left: kicker, heading (the page's h1 when it opens
-     the page), body and a link. -->
+     the page), body and an outlined button. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column items-center gap-step-xl md:grid-cols-2 lg:gap-step-3xl">
     <div class="grid max-w-text content-start gap-step-md { settings.image_side == 'left' ? 'md:order-2' : '' }">
       {#if settings.kicker}<p class="font-mono text-overline font-medium text-scheme-meta uppercase">{ settings.kicker }</p>{/if}
-      {#if section.index == 0}<h1 class="font-heading text-h1 font-black text-balance text-scheme-heading uppercase stretch-heading">{ settings.heading }</h1>
+      {#if section.index == 0}<h1 class="font-heading text-h2 font-black text-balance text-scheme-heading uppercase stretch-heading">{ settings.heading }</h1>
       {:else}<h2 class="font-heading text-h2 font-black text-balance text-scheme-heading uppercase stretch-heading">{ settings.heading }</h2>{/if}
       <div class="sites-prose text-scheme-muted">{ settings.body }</div>
-      {#if settings.link_label && settings.link}<a class="font-mono text-spec font-medium text-scheme-links uppercase hover:underline" href="{ settings.link }">{ settings.link_label }</a>{/if}
+      {#if settings.link_label && settings.link}<span><Button href={ settings.link } tone="outline">{ settings.link_label }</Button></span>{/if}
     </div>
     <div class="{ settings.image_side == 'left' ? 'md:order-1' : '' }"><Photo asset={ settings.image } alt={ settings.image.alt } ratio="aspect-3/2" treatment={ settings.treatment } eager={ section.index == 0 } sizes="(min-width: 48rem) 45vw, 90vw" /></div>
   </div>

@@ -7,9 +7,9 @@
       "type": "page-header",
       "preset": "Left",
       "settings": {
-        "heading": "Gallery",
-        "standfirst": "Runs, lifts and open days, by the people who were there.",
-        "kicker": "Photos",
+        "heading": "From the floor and the river",
+        "standfirst": "Classes, races and Saturday mornings by the river.",
+        "kicker": "Gallery",
         "color_scheme": "concrete"
       },
       "blocks": []
@@ -32,7 +32,8 @@
       "preset": "Default",
       "settings": {
         "gallery": "floor-strip",
-        "color_scheme": "concrete"
+        "color_scheme": "white",
+        "heading": "On the floor"
       },
       "blocks": []
     }

@@ -16,7 +16,7 @@
   h = (d + ((13 * (m + 1)) / 5 | floor) + k + (k / 4 | floor) + (j / 4 | floor) + 5 * j) % 7
   weekday = ['sat', 'sun', 'mon', 'tue', 'wed', 'thu', 'fri'][h]
 }
-<time class="inline-grid justify-items-start gap-step-2xs px-step-sm pt-step-xs pb-step-sm { tone == 'outline' ? 'border border-scheme-rule text-scheme-heading' : 'bg-ink text-on-photo' }" datetime="{ iso }">
-  <span class="font-heading font-black tabular-nums stretch-display { size == 'large' ? 'text-display' : 'text-h2' } leading-none">{ d < 10 ? '0' + d : d }</span>
+<time class="inline-grid justify-items-start gap-step-2xs px-step-sm pt-step-xs pb-step-sm { tone == 'outline' ? 'border border-scheme-rule bg-scheme-background text-scheme-heading' : 'bg-ink text-on-photo' }" datetime="{ iso }">
+  <span class="font-heading font-black tabular-nums stretch-display { size == 'large' ? 'text-h1' : 'text-h2' } leading-none">{ d < 10 ? '0' + d : d }</span>
   <span class="font-mono text-spec font-medium uppercase { tone == 'outline' ? 'text-scheme-meta' : 'text-on-photo' }">{ t('months_short.' + m0) } · { t('day.' + weekday) }</span>
 </time>

@@ -19,7 +19,8 @@
         "heading": "More galleries",
         "albums": "albums",
         "limit": 3,
-        "color_scheme": "concrete"
+        "color_scheme": "concrete",
+        "kicker": "Gallery"
       },
       "blocks": []
     }

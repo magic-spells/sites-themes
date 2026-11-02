@@ -20,7 +20,8 @@
         "events": "events",
         "layout": "cards",
         "limit": 3,
-        "color_scheme": "concrete"
+        "color_scheme": "white",
+        "kicker": "Events"
       },
       "blocks": []
     }

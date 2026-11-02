@@ -1,9 +1,10 @@
 <!-- component: AlbumTile -->
 <!-- An album: the 4:3 cover, the title in Archivo 800, the date and photo
-     count in mono, the event's name when one is linked. -->
+     count in mono, then the event's name on its own line when one is linked. -->
 {#let f = entry.fields}
 <a class="group grid content-start gap-step-sm { reveal ? 'reveal reveal-fade-up' : '' }" href="{ href }">
   <Photo asset={ f.cover } alt={ f.cover_alt } ratio="aspect-4/3" zoom={ true } sizes="(min-width: 64rem) 30vw, (min-width: 48rem) 45vw, 90vw" />
   <span class="font-heading text-h4 font-extrabold text-scheme-heading uppercase stretch-heading">{ entry.title }</span>
-  <span class="font-mono text-spec text-scheme-meta uppercase">{ f.date | date('medium') } · { t('photo_count', { count: f.photos.items.length ?? 0 }) }{#if f.event} · { f.event.title }{/if}</span>
+  <span class="font-mono text-spec text-scheme-meta uppercase">{ f.date | date('medium') } · { t('photo_count', { count: f.photos.items.length ?? 0 }) }</span>
+  {#if f.event}<span class="-mt-step-xs font-mono text-spec font-medium text-scheme-heading uppercase">{ t('from_event', { name: f.event.title }) }</span>{/if}
 </a>

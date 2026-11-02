@@ -121,5 +121,11 @@
   "what_to_bring": "What to bring",
   "who_for": "Who it is for",
   "with_coach": "with {name}",
-  "your_coach": "Your coach"
+  "your_coach": "Your coach",
+  "event": "Event",
+  "event_date": "Date",
+  "event_start": "Start",
+  "event_where": "Where",
+  "all_photos": "All photos",
+  "from_event": "From: {name}"
 }

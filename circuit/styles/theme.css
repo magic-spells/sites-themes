@@ -244,6 +244,7 @@
 	--grid-template-columns-check: 1rem 1fr;
 	--grid-template-columns-footer: 1.3fr 1fr 1fr auto auto;
 	--grid-template-columns-feature: 2fr 3fr;
+	--grid-template-columns-aside: minmax(0, 1fr) 20rem;
 	--grid-template-columns-when: 3rem auto 1fr auto;
 
 	--scale-hover: 103%;

@@ -7,9 +7,9 @@
       "type": "page-header",
       "preset": "Left",
       "settings": {
-        "heading": "Find us",
-        "standfirst": "Two gyms, one membership. Both open seven days.",
-        "kicker": "Locations",
+        "heading": "Two doors, one club",
+        "standfirst": "North and Riverside. One membership opens both.",
+        "kicker": "Find us",
         "color_scheme": "concrete"
       },
       "blocks": []
@@ -22,7 +22,7 @@
         "heading": "",
         "locations": "locations",
         "show_hours": true,
-        "show_map": true,
+        "show_map": false,
         "color_scheme": "white"
       },
       "blocks": []

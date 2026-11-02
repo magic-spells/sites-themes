@@ -1,4 +1,4 @@
-<!-- Galleries, in four layouts. Carousel: the photographs at their own ratios on one height, a strip that bleeds off the right edge at every width (tarot has no variable-width slides, so it is a scroll-snap strip and theme.ts drives the arrows). Grid: 3:2 tiles, 3 / 2 / 1 across. Columns: natural ratios in CSS columns. One-up: a tarot carousel of 3:2 frames with a caption and a "04 / 12" counter, the next frame peeking on a phone. Every layout opens the tarot lightbox (strip, grid and columns through a hidden companion carousel). Video items loop muted with a LOOP badge, started by theme.ts in view and never under reduced motion. The heading row and its rule stay inside the gutters. -->
+<!-- Galleries, in four layouts. Carousel: a tarot carousel of equal-width slides (Cory: "the image carousels need to have the same width. they can all either be different heights or cropped to 1/1 or a different setting"): 1.2 across on a phone, 2.5 from 48rem, 3.2 from 64rem and 4 from 80rem, starting at the column edge and bleeding off the right; slide_ratio crops each well to 1:1, 4:3 or 3:2, or natural keeps each photograph's height, top-aligned. The head's arrows drive it. Grid: 3:2 tiles, 3 / 2 / 1 across. Columns: natural ratios in CSS columns. One-up: a tarot carousel of 3:2 frames with a caption and a "04 / 12" counter, the next frame peeking on a phone. Every layout opens the tarot lightbox (strip, grid and columns through a hidden companion carousel). Video items loop muted with a LOOP badge, started by theme.ts in view and never under reduced motion. The heading row and its rule stay inside the gutters. -->
 {#let
   gallery = settings.source == 'entry' ? page.entry.fields.photos : settings.gallery
   items = (gallery.items ?? []) | slice(0, 12)
@@ -7,7 +7,9 @@
   lb = 'lightbox-' + section.id
   layout = settings.layout
   heading = settings.heading || gallery.title
-  slide_h = settings.height == 'tall' ? 'h-slide md:h-slide-tall' : 'h-slide md:h-slide-lg'
+  ratio = settings.slide_ratio ?? 'square'
+  well = ratio == 'landscape' ? 'aspect-4/3' : (ratio == 'wide' ? 'aspect-3/2' : (ratio == 'natural' ? '' : 'aspect-square'))
+  strip = { lightbox: false, slidesPerView: 1.2, gap: '1rem', paddingLeft: 0, paddingRight: 0, navigation: { showButtons: true, showPagination: false }, breakpoints: { '768': { slidesPerView: 2.5, gap: '1.5rem' }, '1024': { slidesPerView: 3.2, gap: '1.5rem' }, '1280': { slidesPerView: 4, gap: '1.5rem' } } }
   companion = { lightbox: true, navigation: { showButtons: false, showPagination: false } }
   oneup = { lightbox: true, slidesPerView: 1.15, gap: '1rem', paddingLeft: '1rem', paddingRight: 0, navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { lightbox: true, slidesPerView: 1, gap: '1.5rem', paddingLeft: 0, paddingRight: 0, navigation: { showButtons: true, showPagination: false } } } }
   caption_class = 'font-mono text-coord text-scheme-meta'
@@ -37,24 +39,35 @@
         </tarot-track>
       </tarot-viewport>
     </tarot-carousel></div>
+  {:else if layout == 'carousel'}
+    <tarot-carousel class="block" id={ id } data-track="photos">
+      <script type="application/json" data-tarot-options>{ strip | json }</script>
+      <div class="px-gutter"><div class="mx-auto mb-space-md max-w-column">
+        <SectionHead heading={ heading } id="{ id }-title" link_label={ settings.link_label } link={ settings.link } rule={ true }><Arrows slot="actions" /></SectionHead>
+      </div></div>
+      <div class="ps-gutter md:ps-edge">
+        <tarot-viewport>
+          <tarot-track>
+            {#for item in items, i}
+              <tarot-slide>
+                <figure class="grid gap-space-xs">
+                  <button class="group relative block w-full overflow-hidden rounded-sm bg-scheme-surface-2 { well }" type="button" data-lightbox-open={ lb } data-index="{ i }" aria-label="{ t('open_photo', { index: i + 1 }) }">
+                    <GalleryMedia item={ item } fit={ ratio == 'natural' ? 'natural' : 'cover' } sizes="(min-width: 80rem) 25vw, (min-width: 48rem) 40vw, 80vw" eager={ i < 2 } poster={ cover } zoom={ true } />
+                  </button>
+                  {#if settings.show_captions && item.caption}<figcaption class={ caption_class }>{ item.caption }</figcaption>{/if}
+                </figure>
+              </tarot-slide>
+            {/for}
+          </tarot-track>
+        </tarot-viewport>
+      </div>
+    </tarot-carousel>
+    <LightboxCompanion id={ lb } items={ items } poster={ cover }><script type="application/json" data-tarot-options>{ companion | json }</script></LightboxCompanion>
   {:else}
     <div class="px-gutter"><div class="mx-auto mb-space-md max-w-column">
-      <SectionHead heading={ heading } id="{ id }-title" link_label={ settings.link_label } link={ settings.link } rule={ true }>{#if layout == 'carousel'}<Arrows slot="actions" target={ id } />{/if}</SectionHead>
+      <SectionHead heading={ heading } id="{ id }-title" link_label={ settings.link_label } link={ settings.link } rule={ true } />
     </div></div>
-    {#if layout == 'carousel'}
-      <ul class="flex snap-x snap-mandatory scroll-pl-gutter gap-space-sm overflow-x-auto pr-gutter pl-gutter md:scroll-pl-edge md:gap-space-md md:pl-edge" id={ id } data-strip>
-        {#for item in items, i}
-          <li class="shrink-0 snap-start">
-            <figure class="grid gap-space-xs">
-              <button class="group relative block overflow-hidden rounded-sm bg-scheme-surface-2 { slide_h }" type="button" data-lightbox-open={ lb } data-index="{ i }" aria-label="{ t('open_photo', { index: i + 1 }) }">
-                <GalleryMedia item={ item } fit="strip" sizes="(min-width: 48rem) 40vw, 80vw" eager={ i < 3 } poster={ cover } zoom={ true } />
-              </button>
-              {#if settings.show_captions && item.caption}<figcaption class="{ caption_class } max-w-0 min-w-full">{ item.caption }</figcaption>{/if}
-            </figure>
-          </li>
-        {/for}
-      </ul>
-    {:else if layout == 'grid'}
+    {#if layout == 'grid'}
       <div class="px-gutter"><ul class="mx-auto grid max-w-column gap-space-md md:grid-cols-2 lg:grid-cols-3">
         {#for item in items, i}
           <li class="{ site.settings.reveal_on_scroll ? 'reveal reveal-fade-up' : '' }">
@@ -96,17 +109,17 @@
     { "type": "select", "id": "source", "label": "Photographs from", "default": "setting", "options": [ { "value": "setting", "label": "The gallery chosen below" }, { "value": "entry", "label": "The page's own photos" } ], "info": "The page's own photos: the photos gallery field of the post or place the page shows." },
     { "type": "gallery", "id": "gallery", "label": "Gallery", "info": "Reads gallery items: asset, caption, alt and video." },
     { "type": "text", "id": "heading", "label": "Heading", "default": "From the road", "info": "Empty uses the gallery's title." },
-    { "type": "select", "id": "layout", "label": "Layout", "default": "carousel", "options": [ { "value": "carousel", "label": "Carousel (natural ratios)" }, { "value": "grid", "label": "Grid (3:2)" }, { "value": "columns", "label": "Columns" }, { "value": "one-up", "label": "One at a time" } ] },
-    { "type": "select", "id": "height", "label": "Carousel height", "default": "medium", "options": [ { "value": "medium", "label": "Medium" }, { "value": "tall", "label": "Tall" } ] },
+    { "type": "select", "id": "layout", "label": "Layout", "default": "carousel", "options": [ { "value": "carousel", "label": "Carousel" }, { "value": "grid", "label": "Grid (3:2)" }, { "value": "columns", "label": "Columns" }, { "value": "one-up", "label": "One at a time" } ] },
+    { "type": "select", "id": "slide_ratio", "label": "Carousel slides", "default": "square", "options": [ { "value": "square", "label": "Square (1:1)" }, { "value": "landscape", "label": "Landscape (4:3)" }, { "value": "wide", "label": "Wide (3:2)" }, { "value": "natural", "label": "Natural (each photograph at its own height)" } ], "info": "Every slide is the same width: 1.2 across on a phone, 2.5 from 48rem, 4 from 80rem. The fixed ratios crop to fill." },
     { "type": "checkbox", "id": "show_captions", "label": "Show captions", "default": true },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "All photos" },
     { "type": "url", "id": "link", "label": "Link", "default": "/photos" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "From the road", "settings": { "source": "setting", "gallery": "from-the-road", "heading": "From the road", "layout": "carousel", "height": "medium", "show_captions": true, "link_label": "All photos", "link": "/photos" } },
+    { "name": "From the road", "settings": { "source": "setting", "gallery": "from-the-road", "heading": "From the road", "layout": "carousel", "slide_ratio": "square", "show_captions": true, "link_label": "All photos", "link": "/photos" } },
     { "name": "Post photos", "settings": { "source": "entry", "heading": "Photos", "layout": "one-up", "show_captions": true, "link_label": "", "link": "" } },
-    { "name": "Place photos", "settings": { "source": "entry", "heading": "", "layout": "carousel", "height": "medium", "show_captions": true, "link_label": "", "link": "" } },
+    { "name": "Place photos", "settings": { "source": "entry", "heading": "", "layout": "carousel", "slide_ratio": "square", "show_captions": true, "link_label": "", "link": "" } },
     { "name": "Contact sheet", "settings": { "source": "setting", "gallery": "from-the-road", "heading": "", "layout": "columns", "show_captions": true, "link_label": "", "link": "" } }
   ]
 }

@@ -1,10 +1,10 @@
-// The whole of Nomad's browser JavaScript. The one-up gallery carousel, the
-// lightbox, the drawers, the Places and country dropdowns,
-// the faq rows, the sticky header and the scroll reveals are Magic Spells web
-// components, vendored under ./vendor (see vendor/VERSIONS.md); importing
-// them registers the elements. This file adds the small behaviours they do
-// not cover: the video loops, the photo strips' arrows, the country filter,
-// the hover photographs, the topic filter and the list/grid switch.
+// The whole of Nomad's browser JavaScript. The gallery carousels, the
+// lightbox, the drawers, the Places dropdown, the select lists (the country
+// filter and form selects), the announcement ticker, the faq rows, the sticky
+// header and the scroll reveals are Magic Spells web components, vendored
+// under ./vendor (see vendor/VERSIONS.md); importing them registers the
+// elements. This file adds the small behaviours they do not cover: the video
+// loops, the country filter, the hover photographs and the list/grid switch.
 //
 // State lives on data- and aria- attributes, never on classes: Tailwind
 // generates only what it reads in .pzl and styles/ files, so the stylesheet
@@ -14,6 +14,8 @@ import './vendor/dialog-panel.js';
 import './vendor/collapsible-content.js';
 import './vendor/dropdown-panel.js';
 import './vendor/lightbox.min.js';
+import './vendor/scrolling-content.js';
+import './vendor/select-dropdown.js';
 import './vendor/sticky-header.js';
 import './vendor/tarot.esm.js';
 import Reveal from './vendor/reveal.js';
@@ -32,10 +34,6 @@ interface Carousel extends HTMLElement {
 	on(event: string, listener: () => void): void;
 	goToSlide(index: number): void;
 	index: number;
-}
-
-interface Dropdown extends HTMLElement {
-	hide(): void;
 }
 
 /** localStorage is unavailable in some privacy modes; nothing here is worth
@@ -180,26 +178,6 @@ document.addEventListener('click', (event) => {
 	(slide.querySelector('img, video') ?? slide).dispatchEvent(new MouseEvent('click', { bubbles: true }));
 });
 
-// The photo strips are CSS scroll-snap rows (their slides keep each
-// photograph's own width, which tarot cannot). The arrows scroll the strip
-// they name by most of its visible width, and disable at either end.
-for (const strip of document.querySelectorAll<HTMLElement>('[data-strip]')) {
-	const prev = document.querySelector<HTMLButtonElement>(`[data-strip-prev="${strip.id}"]`);
-	const next = document.querySelector<HTMLButtonElement>(`[data-strip-next="${strip.id}"]`);
-	const sync = () => {
-		if (prev) prev.disabled = strip.scrollLeft <= 1;
-		if (next) next.disabled = strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 1;
-	};
-	const step = (direction: number) => {
-		strip.scrollBy({ left: direction * strip.clientWidth * 0.8, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
-	};
-	prev?.addEventListener('click', () => step(-1));
-	next?.addEventListener('click', () => step(1));
-	strip.addEventListener('scroll', sync, { passive: true });
-	window.addEventListener('resize', sync);
-	sync();
-}
-
 // Video loops: muted, started only in view and never under reduced motion,
 // paused again off-screen. The markup carries a poster, so with reduced
 // motion or no JavaScript the still shows. A loop the reader paused stays
@@ -281,23 +259,17 @@ document.addEventListener('click', (event) => {
 	video.focus();
 });
 
-// The country filter: a choice in a [data-country-scope] hides that scope's
-// rows, pins and country groups for every other country, names the choice on
-// the trigger and marks it current. The empty choice shows them all again.
-document.addEventListener('click', (event) => {
-	const choice = closest(event, '[data-country-set]');
-	const scope = choice?.closest<HTMLElement>('[data-country-scope]');
-	if (!choice || !scope) return;
-	const country = choice.getAttribute('data-country-set') ?? '';
+// The country filter: a <select-dropdown data-country-filter> in a
+// [data-country-scope]. A choice hides that scope's rows, pins and country
+// groups for every other country; the empty choice shows them all again.
+document.addEventListener('select-dropdown:change', (event) => {
+	const filter = (event.target as Element | null)?.closest?.('[data-country-filter]');
+	const scope = filter?.closest<HTMLElement>('[data-country-scope]');
+	if (!filter || !scope) return;
+	const country = (event as CustomEvent<{ value: string }>).detail?.value ?? '';
 	for (const item of scope.querySelectorAll<HTMLElement>('[data-country]')) {
 		item.hidden = country !== '' && item.getAttribute('data-country') !== country;
 	}
-	for (const other of scope.querySelectorAll('[data-country-set]')) {
-		other.setAttribute('aria-current', String(other === choice));
-	}
-	const label = scope.querySelector('[data-country-label]');
-	if (label) label.textContent = choice.firstChild?.textContent?.trim() || choice.textContent?.trim() || '';
-	(choice.closest('dropdown-component') as Dropdown | null)?.hide?.();
 });
 
 // A place row and its pin light each other while either is under the
@@ -326,13 +298,6 @@ for (const type of ['pointerover', 'focusin']) {
 		const photo = row ? scopeOf(row).querySelector<HTMLImageElement>('[data-hover-photo]') : null;
 		if (src && photo && photo.getAttribute('src') !== src) photo.src = src;
 	});
-}
-
-// The topic filter is a GET form with its own Show button; with JavaScript
-// a change submits it, and the button hides.
-for (const form of document.querySelectorAll<HTMLFormElement>('form[data-topic-filter]')) {
-	for (const button of form.querySelectorAll<HTMLElement>('button[type="submit"]')) button.hidden = true;
-	form.addEventListener('change', () => form.requestSubmit());
 }
 
 // A post list with the switch renders both views and shows the one its

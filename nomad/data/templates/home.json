@@ -59,7 +59,6 @@
         "show_toggle": false,
         "show_topic_filter": false,
         "limit": 5,
-        "show_count": false,
         "view_all_label": "All {count} posts",
         "always_link": true
       },
@@ -147,7 +146,7 @@
         "gallery": "from-the-road",
         "heading": "From the road",
         "layout": "carousel",
-        "height": "medium",
+        "slide_ratio": "square",
         "show_captions": true,
         "link_label": "All photos",
         "link": "/photos"
@@ -163,7 +162,6 @@
         "text": "One email when I move, with what the last place cost. About once a month.",
         "placeholder": "Your email",
         "proof": "",
-        "note": "No tracking pixels. Unsubscribe in one click.",
         "form": "newsletter",
         "color_scheme": "dusk"
       },

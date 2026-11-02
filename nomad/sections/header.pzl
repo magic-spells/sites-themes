@@ -1,4 +1,4 @@
-<!-- One line on Sand: the wordmark in Besley 800, the "Now in Oaxaca, Mexico" line with the current pin (no time, ever), and the main menu as plain text at the right edge. The menu item that points at the places path opens a <dropdown-panel> of six recent places, hung from the header (wide) and aligned to the column's right edge so it never runs off the page. Below 48rem: the wordmark with the Now line under it, and "Menu" opening the drawer. -->
+<!-- One line on Sand: the wordmark in Besley 800 at the left and the main menu (no "Now in" line: Cory, "lets remove the 'now in' from the header") as plain text at the right edge. The menu item that points at the places path opens a <dropdown-panel> of six recent places, hung from the header (wide) and aligned to the column's right edge so it never runs off the page. Below 48rem: the wordmark and the hamburger alone, a 44 tap target named "Menu" for screen readers (Cory: "it doesn't need the menu text, just the hamburger icon"), opening the drawer. -->
 {#let
   wordmark = settings.logo_text || site.settings.wordmark || site.name
   places_path = site.settings.places_path || '/places'
@@ -7,10 +7,7 @@
 <sticky-header class="block" settle-overshoot="0" disabled={ !settings.sticky }>
   <header class="relative border-b border-scheme-rule bg-scheme-background px-gutter py-space-sm text-scheme-foreground">
     <div class="mx-auto flex max-w-column items-center justify-between gap-space-md">
-      <div class="grid gap-micro md:flex md:items-center md:gap-space-md">
-        <a class="font-heading text-h4 font-extrabold whitespace-nowrap text-scheme-heading" href="/">{#if settings.logo}<img class="h-control w-auto" src="{ image_url(settings.logo, 320) }" alt="{ wordmark }" width={ settings.logo.width } height={ settings.logo.height } />{:else}{ wordmark }{/if}</a>
-        {#if settings.show_now}<CurrentPlace as="line" />{/if}
-      </div>
+      <a class="font-heading text-h4 font-extrabold whitespace-nowrap text-scheme-heading" href="/">{#if settings.logo}<img class="h-control w-auto" src="{ image_url(settings.logo, 320) }" alt="{ wordmark }" width={ settings.logo.width } height={ settings.logo.height } />{:else}{ wordmark }{/if}</a>
       {#if settings.menu.items.length}
         <nav class="hidden md:block" aria-label="{ t('main_navigation') }">
           <ul class="-me-space-sm flex items-center text-nav font-medium">
@@ -47,7 +44,7 @@
           </ul>
         </nav>
       {/if}
-      <button class="-m-space-xs flex min-h-icon-button items-center gap-space-xs px-space-xs text-nav font-medium md:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu">{ t('menu') }<span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/menu.svg'}</span></button>
+      <button class="-me-space-xs flex size-icon-button items-center justify-center md:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu" aria-label="{ t('menu') }"><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/menu.svg'}</span></button>
     </div>
   </header>
 </sticky-header>
@@ -55,19 +52,18 @@
 <schema>
 {
   "name": "Header",
-  "description": "The wordmark, where you are now, and the main menu with a panel of recent places.",
+  "description": "The wordmark and the main menu with a panel of recent places.",
   "kind": "Header",
   "icon": "panel-top",
   "settings": [
     { "type": "image", "id": "logo", "label": "Logo", "info": "Optional. Without one the wordmark is set in the heading face." },
     { "type": "text", "id": "logo_text", "label": "Wordmark text", "default": "", "info": "Empty uses the Brand wordmark." },
     { "type": "menu", "id": "menu", "label": "Menu", "info": "The item that links to the Places path opens a panel of six recent places." },
-    { "type": "checkbox", "id": "show_now", "label": "Show where you are now", "default": true, "info": "Reads the Current place theme setting. A place name only: never a time." },
     { "type": "checkbox", "id": "sticky", "label": "Sticky", "default": true },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "logo_text": "", "menu": "main", "show_now": true, "sticky": true } }
+    { "name": "Default", "settings": { "logo_text": "", "menu": "main", "sticky": true } }
   ]
 }
 </schema>

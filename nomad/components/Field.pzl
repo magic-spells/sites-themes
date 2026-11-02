@@ -1,9 +1,11 @@
 <!-- component: Field -->
 <!-- props: name label type required maxlength value error placeholder prefix options visible_label -->
 <!-- One form field on the scheme's input colours, the placeholder in the
-     scheme's muted text (at least 4.5:1). A select is the native select
-     drawn on the same colours with the angle as its arrow, so it posts and
-     works without JavaScript. visible_label shows the label above the field
+     scheme's muted text (at least 4.5:1). A select is the Magic Spells
+     <select-dropdown> (a trigger, a hidden input that posts, a panel of
+     options), drawn on the same colours with the angle as its arrow; it
+     starts on the value or the first option, so a required select always
+     posts one. visible_label shows the label above the field
      (Figma: every field on Contact, the password and the newsletter);
      otherwise the placeholder carries it and the label is for screen
      readers. -->
@@ -12,17 +14,21 @@
   control = 'block w-full rounded-input border border-scheme-input-border bg-scheme-input-background px-space-sm font-body text-body text-scheme-input-foreground placeholder:text-scheme-muted focus:outline-2 focus:outline-offset-2 focus:outline-scheme-links'
 }
 <div class="grid gap-space-xs">
-  <label class="{ visible_label ? 'text-body-sm font-medium' : 'sr-only' }" for={ id }>{ label }</label>
+  <label class="{ visible_label ? 'text-body-sm font-medium' : 'sr-only' }" id="label-{ id }" for={ type == 'select' ? null : id }>{ label }</label>
   {#if type == 'textarea'}
     <textarea class="{ control } min-h-textarea resize-y py-space-xs" id={ id } name={ name } rows="5" maxlength={ maxlength } required={ required } placeholder={ placeholder ?? label } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + id : null }>{ value }</textarea>
   {:else if type == 'select'}
-    <div class="relative">
-      <select class="{ control } min-h-control cursor-pointer appearance-none pe-control" id={ id } name={ name } required={ required } aria-invalid={ error ? 'true' : 'false' }>
-        {#for option in options}<option value={ option } selected={ value == option }>{ option }</option>{/for}
-      </select>
-      <span class="sites-icon pointer-events-none absolute inset-y-0 right-space-sm my-auto size-icon rotate-90 text-scheme-input-foreground" aria-hidden="true">{#svg 'icons/angle-right.svg'}</span>
-    </div>
-
+    {#let picked = value || (options | first)}
+    <select-dropdown class="text-body">
+      <select-trigger class="{ control } flex min-h-control cursor-pointer items-center justify-between gap-space-sm" id={ id } aria-labelledby="label-{ id } { id }" aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + id : null }>
+        <span class="select-label-text">{ picked }</span>
+        <span class="sites-icon size-icon rotate-90" aria-hidden="true">{#svg 'icons/angle-right.svg'}</span>
+      </select-trigger>
+      <input type="hidden" name={ name } value={ picked } />
+      <select-panel class="mt-tiny">
+        {#for option in options}<select-option value={ option } selected={ picked == option }>{ option }</select-option>{/for}
+      </select-panel>
+    </select-dropdown>
   {:else}
     <input class="{ control } min-h-control" id={ id } name={ name } type={ type ?? 'text' } autocomplete={ type == 'email' ? 'email' : (name == 'name' ? 'name' : 'off') } maxlength={ maxlength } required={ required } value={ value } placeholder={ placeholder ?? label } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + id : null } />
   {/if}

@@ -6,7 +6,6 @@
       "preset": "Next stop",
       "settings": {
         "text": "Next stop: the Carretera Austral, from Dec 8, 2026.",
-        "link_label": "See the route",
         "link": "/trips/the-americas",
         "show_close": true,
         "key": "nomad-next-stop-2026-12",
@@ -21,7 +20,6 @@
       "settings": {
         "logo_text": "",
         "menu": "main",
-        "show_now": true,
         "sticky": true
       },
       "blocks": []

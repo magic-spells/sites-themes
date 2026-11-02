@@ -5,6 +5,8 @@
 @import "./vendor/dropdown-panel.effects.css" layer(components);
 @import "./vendor/lightbox.css" layer(components);
 @import "./vendor/reveal.css";
+@import "./vendor/scrolling-content.css" layer(components);
+@import "./vendor/select-dropdown.css" layer(components);
 @import "./vendor/sticky-header.css" layer(components);
 @import "./vendor/tarot.css" layer(components);
 
@@ -232,6 +234,9 @@
 	--spacing-play: 4.5rem;
 	--spacing-plane: 1.5rem;
 	--spacing-band: 3rem;
+	/* What a 3° tilt pushes the 18rem tag's corners out by (about 6px
+	   sideways, 7px down), so the hero keeps it whole. */
+	--spacing-tilt-clear: 0.5rem;
 	--spacing-hero: 37.5rem;
 	--spacing-hero-tall: 85svh;
 	/* The room under the hero copy from 48rem, where the tag stands. */
@@ -240,9 +245,6 @@
 	--spacing-overhang: 5rem;
 	/* How far below the sticky header a sticky picture rests. */
 	--spacing-sticky: 6rem;
-	--spacing-slide: 15rem;
-	--spacing-slide-lg: 20rem;
-	--spacing-slide-tall: 24rem;
 	/* A Where next ticket: 18.5rem on a phone, so the next one peeks, 26.25rem from 48rem. */
 	--spacing-ribbon: 18.5rem;
 	--spacing-ribbon-lg: 26.25rem;
@@ -260,6 +262,9 @@
 	   stamp and the hero tag, the two tilts a stamp wall alternates with, and
 	   the strength of the contour texture. */
 	--tilt-stamp: -3deg;
+	/* The hero's luggage tag leans the other way (Cory: "should this maybe
+	   tilt the other direction?"). */
+	--tilt-tag: 3deg;
 	--tilt-left: -8deg;
 	--tilt-right: 6deg;
 	--texture-opacity: 8%;
@@ -346,6 +351,9 @@
 @utility tilt-stamp {
 	rotate: var(--tilt-stamp);
 }
+@utility tilt-tag {
+	rotate: var(--tilt-tag);
+}
 @utility tilt-left {
 	rotate: var(--tilt-left);
 }
@@ -411,6 +419,13 @@
 		@slot;
 	}
 	&:where([data-post-list-view="grid"] [data-view] *) {
+		@slot;
+	}
+}
+
+/* The tab that names the page's own address (the journal's topic tabs). */
+@custom-variant page-current {
+	&[aria-current="page"] {
 		@slot;
 	}
 }
@@ -582,6 +597,24 @@ dropdown-component:not(:defined) dropdown-panel {
 	display: none;
 }
 
+/* The select lists (the country filter, form selects), drawn on the scheme
+   they sit in: input colours, the hover and the choice on the chip colour,
+   no shadow. */
+select-dropdown {
+	--select-shadow: none;
+	--select-shadow-soft: none;
+	--select-color-text: var(--sites-scheme-input-foreground);
+	--select-color-background: var(--sites-scheme-input-background);
+	--select-color-border: var(--sites-scheme-input-border);
+	--select-color-border-hover: var(--sites-scheme-input-foreground);
+	--select-color-border-dark: var(--sites-scheme-input-foreground);
+	--select-color-primary: var(--sites-scheme-links);
+	--select-color-hover: var(--sites-scheme-chip-background);
+	--select-color-focus: var(--sites-scheme-chip-background);
+	--select-color-selected: var(--sites-scheme-chip-background);
+	display: block;
+}
+
 /* The carousels. Tarot's stylesheet is neutral; these map its properties
    onto the scheme the carousel sits in. */
 tarot-carousel {
@@ -611,6 +644,22 @@ tarot-carousel[data-track]:not(:defined) tarot-slide {
 	opacity: 1;
 	visibility: visible;
 	pointer-events: auto;
+}
+
+/* The photo carousel's slides are one width before tarot measures them,
+   matching its slidesPerView (1.2, 2.5, 4). */
+tarot-carousel[data-track="photos"]:not(:defined) tarot-slide {
+	width: 80%;
+}
+@media (width >= 48rem) {
+	tarot-carousel[data-track="photos"]:not(:defined) tarot-slide {
+		width: 38%;
+	}
+}
+@media (width >= 80rem) {
+	tarot-carousel[data-track="photos"]:not(:defined) tarot-slide {
+		width: 24%;
+	}
 }
 
 /* The lightbox is the tarot plugin's overlay on Night Train (foundations
@@ -664,6 +713,14 @@ tarot-carousel[data-track]:not(:defined) tarot-slide {
 	}
 	[data-zoom] { scale: none !important; }
 	.reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+	/* The announcement ticker stands still: one copy, no dot, cut with an
+	   ellipsis short of the ×. */
+	[data-ticker] scrolling-content { mask-image: none; padding-inline: var(--nomad-gutter) calc(var(--spacing-icon-button) + var(--nomad-gutter)); }
+	[data-ticker] scrolling-track { width: auto; transform: none !important; }
+	[data-ticker] scrolling-item[data-clone],
+	[data-ticker] [data-ticker-dot] { display: none; }
+	[data-ticker] scrolling-item { flex: 1 1 auto; min-width: 0; }
+	[data-ticker] scrolling-item > span { overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 }
 
 /* The photo strips scroll by swipe, trackpad and their arrows; the bar

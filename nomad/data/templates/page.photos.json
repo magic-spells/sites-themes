@@ -39,7 +39,7 @@
         "gallery": "oaxaca-streets",
         "heading": "",
         "layout": "carousel",
-        "height": "tall",
+        "slide_ratio": "square",
         "show_captions": true,
         "link_label": "Oaxaca",
         "link": "/places/oaxaca"

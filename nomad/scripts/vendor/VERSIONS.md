@@ -9,7 +9,9 @@ them is an npm dependency of the theme; the build resolves only these relative i
 | lightbox.min.js, ../styles/vendor/lightbox.css | @magic-spells/tarot-plugins | 0.1.0 (unpublished) | packages/tarot-plugins/dist (the UMD build carries morph-engine 0.4.2) |
 | dialog-panel.js, ../styles/vendor/dialog-panel.css | @magic-spells/dialog-panel | 2.0.3 | npm (the mobile menu and the post locator; copied from Folio's vendored copy) |
 | dropdown-panel.js, ../styles/vendor/dropdown-panel.css + .effects.css | @magic-spells/dropdown-panel | 2.1.1 | npm |
+| select-dropdown.js, ../styles/vendor/select-dropdown.css | @magic-spells/select-dropdown | 0.3.0 | npm |
 | collapsible-content.js, ../styles/vendor/collapsible-content.css | @magic-spells/collapsible-content | 1.2.0 | npm |
+| scrolling-content.js, ../styles/vendor/scrolling-content.css | @magic-spells/scrolling-content | 2.1.1 | npm (the announcement ticker) |
 | sticky-header.js, ../styles/vendor/sticky-header.css | @magic-spells/sticky-header | 0.2.0 | npm (copied from Folio's vendored copy) |
 | reveal.js, ../styles/vendor/reveal.css | @magic-spells/reveal | 0.1.1 | npm (copied from Folio's vendored copy) |
 

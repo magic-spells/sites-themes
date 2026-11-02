@@ -17,10 +17,10 @@
       "type": "cookie-notice",
       "preset": "Default",
       "settings": {
-        "body": "<p>One cookie remembers that you closed the announcement. Nothing tracks you.</p>",
+        "body": "<p>This site remembers that you closed the announcement, in your browser. Nothing tracks you.</p>",
         "accept_label": "OK",
         "decline_label": "",
-        "link_label": "Read the privacy note",
+        "link_label": "Privacy note",
         "link_href": "/privacy",
         "key": "nomad-notice-2026-11"
       },

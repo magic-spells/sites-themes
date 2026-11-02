@@ -28,7 +28,7 @@
       "type": "route-map",
       "preset": "Everywhere",
       "settings": {
-        "heading": "Where I've been",
+        "heading": "Where I’ve been",
         "show_count": true,
         "places": "places",
         "show_route": "stops",

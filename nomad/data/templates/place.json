@@ -16,6 +16,17 @@
       "blocks": []
     },
     {
+      "id": "s_notes",
+      "type": "rich-text",
+      "preset": "Entry body",
+      "settings": {
+        "heading": "",
+        "source": "entry",
+        "width": "reading"
+      },
+      "blocks": []
+    },
+    {
       "id": "s_posts",
       "type": "post-list",
       "preset": "From this place",
@@ -54,17 +65,6 @@
         "scope": "place",
         "heading": "What a month here cost",
         "show_notes": true
-      },
-      "blocks": []
-    },
-    {
-      "id": "s_notes",
-      "type": "rich-text",
-      "preset": "Entry body",
-      "settings": {
-        "heading": "",
-        "source": "entry",
-        "width": "reading"
       },
       "blocks": []
     },

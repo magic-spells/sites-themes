@@ -16,6 +16,7 @@
       "writer_bio": "I design software for a living and have done it from a different city every few weeks since April 2023. This is where I write down what each place cost, where the Wi-Fi held and what I would do differently.",
       "writer_portrait": "as_4x5_sand",
       "writer_links": "social",
+      "writer_short_bio": "A product designer who works from wherever the Wi-Fi holds. Notes, costs and routes since April 2023.",
       "current_place": "oaxaca",
       "on_road_since": "2023-04-03",
       "home_base": "None, for now",
@@ -1085,11 +1086,11 @@
             "standfirst": "Rent, a desk, food, buses and a phone plan: the whole of October in Jalatlaco, to the peso.",
             "image": "as_3x2_clay",
             "image_alt": "What a month in Oaxaca cost, peso by peso (placeholder)",
-            "body": "<p>Rent, a desk, food, buses and a phone plan: the whole of October in Jalatlaco, to the peso.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+            "body": "<p>I arrived in Oaxaca on Oct 7, 2026 with a plan to stay two months and a budget I had guessed at from a friend's notes. This is what October actually came to, from the flat to the SIM card, with the receipts sorted on the kitchen table.</p><p>The short version: 24,750 MXN for the month. Rent was more than half of it. Food was the line I got most wrong, in a good way: the market in Jalatlaco fed me well for less than I spent in Mexico City.</p><h2>Rent and the flat</h2><p>A one-bedroom in Jalatlaco cost 14,500 a month, two months paid up front. It has a desk by the window, a gas boiler that wants a match and a roof where the Wi-Fi still holds. I found it through the owner of the coworking space, not a listing site.</p><h2>Work, food and getting around</h2><p>The desk at the shared studio off the zócalo was 2,800 for the month, and worth it for the calls alone. Food came to 6,200: market lunches most days and dinner out a couple of nights a week. Colectivos and the odd taxi home in the rain added 900, and a local SIM with data another 350.</p><p>Next time I would book the flat for the full two months from the start and skip the first week's guesthouse. Everything else I would do the same way. If something here has changed when you go, write to me and I will update the post.</p>",
             "place": "place_oaxaca",
             "trip": "trip_the_americas",
             "video": "",
-            "photos": "",
+            "photos": "oaxaca-weeks",
             "image_caption": "The receipts, sorted by category on the kitchen table."
           }
         },
@@ -2478,11 +2479,11 @@
           "standfirst": "Rent, a desk, food, buses and a phone plan: the whole of October in Jalatlaco, to the peso.",
           "image": "as_3x2_clay",
           "image_alt": "What a month in Oaxaca cost, peso by peso (placeholder)",
-          "body": "<p>Rent, a desk, food, buses and a phone plan: the whole of October in Jalatlaco, to the peso.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+          "body": "<p>I arrived in Oaxaca on Oct 7, 2026 with a plan to stay two months and a budget I had guessed at from a friend's notes. This is what October actually came to, from the flat to the SIM card, with the receipts sorted on the kitchen table.</p><p>The short version: 24,750 MXN for the month. Rent was more than half of it. Food was the line I got most wrong, in a good way: the market in Jalatlaco fed me well for less than I spent in Mexico City.</p><h2>Rent and the flat</h2><p>A one-bedroom in Jalatlaco cost 14,500 a month, two months paid up front. It has a desk by the window, a gas boiler that wants a match and a roof where the Wi-Fi still holds. I found it through the owner of the coworking space, not a listing site.</p><h2>Work, food and getting around</h2><p>The desk at the shared studio off the zócalo was 2,800 for the month, and worth it for the calls alone. Food came to 6,200: market lunches most days and dinner out a couple of nights a week. Colectivos and the odd taxi home in the rain added 900, and a local SIM with data another 350.</p><p>Next time I would book the flat for the full two months from the start and skip the first week's guesthouse. Everything else I would do the same way. If something here has changed when you go, write to me and I will update the post.</p>",
           "place": "place_oaxaca",
           "trip": "trip_the_americas",
           "video": "",
-          "photos": "",
+          "photos": "oaxaca-weeks",
           "image_caption": "The receipts, sorted by category on the kitchen table."
         }
       },

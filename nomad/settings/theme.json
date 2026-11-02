@@ -110,6 +110,13 @@
           "default": "I design software for a living and have done it from a different city every few weeks since April 2023. This is where I write down what each place cost, where the Wi-Fi held and what I would do differently."
         },
         {
+          "type": "textarea",
+          "id": "writer_short_bio",
+          "label": "Short biography",
+          "default": "A product designer who works from wherever the Wi-Fi holds. Notes, costs and routes since April 2023.",
+          "info": "Two lines for the author card under each post. Write it whole: it is never cut."
+        },
+        {
           "type": "image",
           "id": "writer_portrait",
           "label": "Portrait"

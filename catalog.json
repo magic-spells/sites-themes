@@ -77,6 +77,19 @@
       "zip": "https://github.com/magic-spells/sites-themes/releases/download/nomad/v0.1.0/nomad-v0.1.0.zip",
       "sha256": null,
       "screenshots": []
+    },
+    {
+      "name": "circuit",
+      "label": "Circuit",
+      "description": "A gym, studio, trainer or run-club site: classes as cards with specs, a weekly timetable, coaches, memberships, locations with hours, meet-ups and galleries, and a free-trial sheet on every page.",
+      "category": "content",
+      "vertical": "Gym and fitness",
+      "license": "MIT",
+      "publisher": "Magic Spells",
+      "version": "0.1.0",
+      "zip": "https://github.com/magic-spells/sites-themes/releases/download/circuit/v0.1.0/circuit-v0.1.0.zip",
+      "sha256": null,
+      "screenshots": []
     }
   ]
 }

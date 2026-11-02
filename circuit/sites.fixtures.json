@@ -244,27 +244,27 @@
       "items": [
         {
           "asset_id": "as_4x5_2",
-          "caption": "The 5:45 pace group at the bandstand",
+          "caption": "Start line",
           "alt": "The 5:45 pace group at the bandstand"
         },
         {
           "asset_id": "as_3x2_5",
-          "caption": "Start line at the river gate",
+          "caption": "River gate",
           "alt": "Start line at the river gate"
         },
         {
           "asset_id": "as_3x2_6",
-          "caption": "Coffee after",
+          "caption": "Pace groups",
           "alt": "Coffee after"
         },
         {
           "asset_id": "as_3x2_1",
-          "caption": "Strides on the towpath",
+          "caption": "Km 8",
           "alt": "Strides on the towpath"
         },
         {
           "asset_id": "as_3x2_2",
-          "caption": "Group photo",
+          "caption": "Coffee after",
           "alt": "Group photo"
         }
       ]

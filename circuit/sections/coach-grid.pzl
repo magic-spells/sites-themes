@@ -1,11 +1,13 @@
 <!-- The coaches: 4:5 portraits (mono optional, a flare flood on hover
      optional), the name in Archivo 800 uppercase, the role in mono, the
-     specialties as chips; four, two and one across, or a tarot row that
+     specialties as chips (all, the featured ones, or the ones listed as
+     blocks); four, two and one across, or a tarot row that
      bleeds right on a phone. -->
 {#let
   all = settings.coaches.entries | sort('fields.order')
   pool = settings.source == 'featured' ? (all | where('fields.featured')) : all
-  shown = pool | slice(0, Math.min(settings.limit, 12))
+  listed = blocks | map('settings.coach') | compact
+  shown = settings.source == 'listed' ? (listed | slice(0, 12)) : (pool | slice(0, Math.min(settings.limit, 12)))
   id = 'coaches-' + section.id
   options = { slidesPerView: 1.3, gap: '1rem', paddingLeft: '1rem', paddingRight: 0, navigation: { showButtons: false, showPagination: false } }
   cols = settings.columns == '3' ? 'lg:grid-cols-3' : 'lg:grid-cols-4'
@@ -42,7 +44,8 @@
     { "type": "collection", "id": "coaches", "label": "Coaches", "info": "Reads coaches: title, handle, role, specialties, image, image_alt, featured and order." },
     { "type": "select", "id": "source", "label": "Coaches shown", "default": "all", "options": [
       { "value": "all", "label": "All" },
-      { "value": "featured", "label": "Featured" }
+      { "value": "featured", "label": "Featured" },
+      { "value": "listed", "label": "Listed below" }
     ] },
     { "type": "range", "id": "limit", "label": "Limit", "min": 1, "max": 12, "step": 1, "default": 8 },
     { "type": "select", "id": "columns", "label": "Columns", "default": "4", "options": [
@@ -67,6 +70,11 @@
     { "type": "text", "id": "view_all_label", "label": "View-all label", "default": "All coaches" },
     { "type": "url", "id": "view_all_href", "label": "View-all link", "default": "/coaches" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "blocks": [
+    { "type": "coach", "name": "Coach", "settings": [
+      { "type": "entry", "id": "coach", "label": "Coach", "info": "Shown when Coaches shown is Listed below. Reads the same fields as the collection." }
+    ] }
   ],
   "presets": [
     { "name": "Default", "settings": { "coaches": "coaches" } }

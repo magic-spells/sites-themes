@@ -9,48 +9,56 @@
       "settings": {
         "layout": "cover",
         "image": "as_16x9_2",
-        "kicker": "Common Ground Run Club",
+        "kicker": "Common Ground · Marlow Bridge",
         "heading": "All paces welcome",
-        "text": "Free runs every Saturday from North. 5k and 10k loops, a back marker on every one, coffee after.",
+        "text": "A free run club, three runs a week, coffee after.",
         "action_label": "Join us",
-        "secondary_label": "Next meet-ups",
-        "secondary_link": "/events",
+        "secondary_label": "See the timetable",
+        "secondary_link": "/timetable",
         "ghost_word": "Every pace",
-        "color_scheme": "black"
+        "color_scheme": "black",
+        "show_ghost": false
       },
       "blocks": []
     },
     {
       "id": "s_ticker",
       "type": "ticker",
-      "preset": "Black",
+      "preset": "Flare",
       "settings": {
-        "color_scheme": "black"
+        "color_scheme": "flare"
       },
       "blocks": [
         {
           "id": "s_ticker_b1",
           "type": "phrase",
           "settings": {
-            "text": "Saturday 08:00 · North"
+            "text": "Free"
           }
         },
         {
           "id": "s_ticker_b2",
           "type": "phrase",
           "settings": {
-            "text": "5k and 10k loops"
+            "text": "All paces"
           }
         },
         {
           "id": "s_ticker_b3",
           "type": "phrase",
           "settings": {
-            "text": "Nobody runs alone"
+            "text": "Saturdays 08:00"
           }
         },
         {
           "id": "s_ticker_b4",
+          "type": "phrase",
+          "settings": {
+            "text": "Wednesdays 18:30"
+          }
+        },
+        {
+          "id": "s_ticker_b5",
           "type": "phrase",
           "settings": {
             "text": "Coffee after"
@@ -67,7 +75,8 @@
         "events": "events",
         "layout": "cards",
         "limit": 3,
-        "color_scheme": "white"
+        "color_scheme": "white",
+        "kicker": "Events"
       },
       "blocks": []
     },
@@ -76,11 +85,13 @@
       "type": "timetable",
       "preset": "Week",
       "settings": {
-        "heading": "Weekly runs",
-        "text": "Every run and the meeting point, Monday to Sunday.",
+        "heading": "The weekly runs",
+        "text": "",
         "sessions": "sessions",
         "classes": "classes",
-        "color_scheme": "concrete"
+        "color_scheme": "concrete",
+        "kicker": "Timetable",
+        "class_filter": "run-club-intervals, long-run, social-5k"
       },
       "blocks": []
     },
@@ -89,10 +100,11 @@
       "type": "photo-wall",
       "preset": "Bento",
       "settings": {
-        "heading": "Last Saturday",
+        "heading": "",
         "gallery": "club-wall",
         "layout": "bento",
-        "color_scheme": "white"
+        "color_scheme": "white",
+        "kicker": "Last Saturday"
       },
       "blocks": []
     },
@@ -101,7 +113,9 @@
       "type": "community-links",
       "preset": "Default",
       "settings": {
-        "color_scheme": "flare"
+        "color_scheme": "flare",
+        "kicker": "The club",
+        "heading": "Come run with us"
       },
       "blocks": [
         {
@@ -143,20 +157,38 @@
       "settings": {
         "heading": "Run leaders",
         "coaches": "coaches",
-        "limit": 4,
-        "color_scheme": "white"
+        "color_scheme": "white",
+        "kicker": "Coaches",
+        "source": "listed",
+        "columns": "4"
       },
-      "blocks": []
+      "blocks": [
+        {
+          "id": "s_leaders_b1",
+          "type": "coach",
+          "settings": {
+            "coach": "coach_priya_nair"
+          }
+        },
+        {
+          "id": "s_leaders_b2",
+          "type": "coach",
+          "settings": {
+            "coach": "coach_jo_haddad"
+          }
+        }
+      ]
     },
     {
       "id": "s_albums",
       "type": "album-grid",
       "preset": "Default",
       "settings": {
-        "heading": "From the runs",
+        "heading": "From the floor and the river",
         "albums": "albums",
         "limit": 3,
-        "color_scheme": "concrete"
+        "color_scheme": "concrete",
+        "kicker": "Gallery"
       },
       "blocks": []
     },
@@ -174,24 +206,32 @@
           "id": "s_faq_b1",
           "type": "item",
           "settings": {
-            "question": "Do I need to be quick?",
-            "answer": "<p>No. Every run has a back marker and a regroup point; nobody is left behind.</p>"
+            "question": "Where does the run start?",
+            "answer": "<p>By the river gate at Riverside. We run a 5 km or a 12 km loop of the river and finish back at the gate.</p>"
           }
         },
         {
           "id": "s_faq_b2",
           "type": "item",
           "settings": {
-            "question": "Is it free?",
-            "answer": "<p>Yes. The Saturday run is free for everyone, member or not.</p>"
+            "question": "Are there pace groups?",
+            "answer": "<p>Three on Saturdays, at 5:00, 5:45 and 6:30 per km, each with a run leader and a back marker. Nobody runs alone.</p>"
           }
         },
         {
           "id": "s_faq_b3",
           "type": "item",
           "settings": {
-            "question": "Where do we meet?",
-            "answer": "<p>Saturdays at North, 08:00 by the front door. Sunday socials meet at Riverside.</p>"
+            "question": "What should I bring?",
+            "answer": "<p>Running shoes, a layer for the start and water if it is warm. There is a bag drop at the gate.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b4",
+          "type": "item",
+          "settings": {
+            "question": "Is it free?",
+            "answer": "<p>Yes. Every run is free for everyone, member or not. Coffee after is on you.</p>"
           }
         }
       ]

@@ -1,0 +1,66 @@
+{
+  "label": "Locations",
+  "description": "The locations with hours and maps, then questions.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "heading": "Find us",
+        "standfirst": "Two gyms, one membership. Both open seven days.",
+        "kicker": "Locations",
+        "color_scheme": "concrete"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_locations",
+      "type": "locations",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "locations": "locations",
+        "show_hours": true,
+        "show_map": true,
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "heading": "Questions",
+        "color_scheme": "concrete"
+      },
+      "blocks": [
+        {
+          "id": "s_faq_b1",
+          "type": "item",
+          "settings": {
+            "question": "Is there parking?",
+            "answer": "<p>North has twelve spaces behind the building. Riverside has bike racks and the station is two minutes away.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b2",
+          "type": "item",
+          "settings": {
+            "question": "Are there showers?",
+            "answer": "<p>Yes, at both locations, with towels on Unlimited.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b3",
+          "type": "item",
+          "settings": {
+            "question": "Is the building accessible?",
+            "answer": "<p>North is step-free throughout. Riverside has a lift to the main floor.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}

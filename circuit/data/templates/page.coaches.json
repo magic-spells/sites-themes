@@ -1,0 +1,71 @@
+{
+  "label": "Coaches",
+  "description": "Every coach, then what members say.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "heading": "Coaches",
+        "standfirst": "Six coaches, all qualified, all still training. Book any of them one to one.",
+        "kicker": "The team",
+        "color_scheme": "concrete"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_grid",
+      "type": "coach-grid",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "coaches": "coaches",
+        "columns": "4",
+        "view_all_label": "",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_quotes",
+      "type": "testimonials",
+      "preset": "Carousel",
+      "settings": {
+        "layout": "carousel",
+        "color_scheme": "black"
+      },
+      "blocks": [
+        {
+          "id": "s_quotes_b1",
+          "type": "quote",
+          "settings": {
+            "quote": "Sam has the patience of a saint and the programming of a sadist.",
+            "name": "Jess P.",
+            "line": "Conditioning",
+            "image": "as_1x1_1"
+          }
+        },
+        {
+          "id": "s_quotes_b2",
+          "type": "quote",
+          "settings": {
+            "quote": "Priya's mobility class is the reason my back stopped hurting.",
+            "name": "Dev R.",
+            "line": "Mobility",
+            "image": "as_1x1_2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Flare",
+      "settings": {
+        "color_scheme": "flare"
+      },
+      "blocks": []
+    }
+  ]
+}

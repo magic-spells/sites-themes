@@ -1,0 +1,40 @@
+{
+  "label": "Gallery",
+  "description": "Every album, then a strip from the floor.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "heading": "Gallery",
+        "standfirst": "Runs, lifts and open days, by the people who were there.",
+        "kicker": "Photos",
+        "color_scheme": "concrete"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_albums",
+      "type": "album-grid",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "albums": "albums",
+        "view_all_label": "",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_strip",
+      "type": "photo-strip",
+      "preset": "Default",
+      "settings": {
+        "gallery": "floor-strip",
+        "color_scheme": "concrete"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "sections": [
+    {
+      "id": "sg_footer",
+      "type": "footer",
+      "preset": "Default",
+      "settings": {
+        "show_wordmark": true,
+        "wordmark_style": "outline",
+        "locations": "locations",
+        "show_hours": true,
+        "menu_primary": "main",
+        "menu_secondary": "explore",
+        "menu_legal": "legal",
+        "social": "social",
+        "show_chat": true,
+        "copyright": "© 2026 Common Ground",
+        "color_scheme": "black"
+      },
+      "blocks": []
+    }
+  ]
+}

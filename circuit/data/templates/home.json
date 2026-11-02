@@ -1,0 +1,236 @@
+{
+  "label": "Gym",
+  "description": "The front page for a gym or studio: the cover hero, the classes, the week and the plans.",
+  "sections": [
+    {
+      "id": "s_hero",
+      "type": "hero",
+      "preset": "Cover",
+      "settings": {
+        "image": "as_16x9_1",
+        "layout": "cover",
+        "color_scheme": "black"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_ticker",
+      "type": "ticker",
+      "preset": "Flare",
+      "settings": {
+        "color_scheme": "flare"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_classes",
+      "type": "class-carousel",
+      "preset": "Default",
+      "settings": {
+        "classes": "classes",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_stats",
+      "type": "stats",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "black",
+        "texture": "halftone"
+      },
+      "blocks": [
+        {
+          "id": "s_stats_b1",
+          "type": "stat",
+          "settings": {
+            "prefix": "",
+            "number": "75",
+            "unit": "+",
+            "label": "Classes a week"
+          }
+        },
+        {
+          "id": "s_stats_b2",
+          "type": "stat",
+          "settings": {
+            "prefix": "",
+            "number": "6",
+            "unit": "",
+            "label": "Coaches"
+          }
+        },
+        {
+          "id": "s_stats_b3",
+          "type": "stat",
+          "settings": {
+            "prefix": "",
+            "number": "2",
+            "unit": "",
+            "label": "Locations, North and Riverside"
+          }
+        },
+        {
+          "id": "s_stats_b4",
+          "type": "stat",
+          "settings": {
+            "prefix": "Est.",
+            "number": "2014",
+            "unit": "",
+            "label": "On Foundry Lane since"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_wall",
+      "type": "photo-wall",
+      "preset": "Bento",
+      "settings": {
+        "gallery": "home-wall",
+        "layout": "bento",
+        "overlap": true,
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_timetable",
+      "type": "timetable",
+      "preset": "Week",
+      "settings": {
+        "sessions": "sessions",
+        "classes": "classes",
+        "color_scheme": "concrete"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_coaches",
+      "type": "coach-grid",
+      "preset": "Default",
+      "settings": {
+        "coaches": "coaches",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_plans",
+      "type": "plans",
+      "preset": "Cards",
+      "settings": {
+        "plans": "plans",
+        "source": "listed",
+        "layout": "cards",
+        "color_scheme": "black"
+      },
+      "blocks": [
+        {
+          "id": "s_plans_b1",
+          "type": "plan",
+          "settings": {
+            "plan": "plan_drop_in"
+          }
+        },
+        {
+          "id": "s_plans_b2",
+          "type": "plan",
+          "settings": {
+            "plan": "plan_unlimited"
+          }
+        },
+        {
+          "id": "s_plans_b3",
+          "type": "plan",
+          "settings": {
+            "plan": "plan_small_group"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_quotes",
+      "type": "testimonials",
+      "preset": "Carousel",
+      "settings": {
+        "layout": "carousel",
+        "color_scheme": "white"
+      },
+      "blocks": [
+        {
+          "id": "s_quotes_b1",
+          "type": "quote",
+          "settings": {
+            "quote": "I came for one class in 2019. I still have not missed a Saturday.",
+            "name": "Hannah K.",
+            "line": "Member since 2019",
+            "image": "as_1x1_1"
+          }
+        },
+        {
+          "id": "s_quotes_b2",
+          "type": "quote",
+          "settings": {
+            "quote": "The coaches know your name by the second session, and your squat by the third.",
+            "name": "Tom A.",
+            "line": "Strength Foundations",
+            "image": "as_1x1_2"
+          }
+        },
+        {
+          "id": "s_quotes_b3",
+          "type": "quote",
+          "settings": {
+            "quote": "I was scared of barbells. Now I lift twice a week and run on Saturdays.",
+            "name": "Ade O.",
+            "line": "Unlimited",
+            "image": ""
+          }
+        },
+        {
+          "id": "s_quotes_b4",
+          "type": "quote",
+          "settings": {
+            "quote": "The only gym where the regulars clap for the new people.",
+            "name": "Mei L.",
+            "line": "Run club",
+            "image": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_events",
+      "type": "events-list",
+      "preset": "Cards",
+      "settings": {
+        "events": "events",
+        "layout": "cards",
+        "limit": 3,
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_locations",
+      "type": "locations",
+      "preset": "Default",
+      "settings": {
+        "locations": "locations",
+        "color_scheme": "concrete"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Flare",
+      "settings": {
+        "color_scheme": "flare"
+      },
+      "blocks": []
+    }
+  ]
+}

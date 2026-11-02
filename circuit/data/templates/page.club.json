@@ -1,0 +1,200 @@
+{
+  "label": "Club",
+  "description": "A front page for a run or sports club: the meet-ups, the weekly runs and where the club talks.",
+  "sections": [
+    {
+      "id": "s_hero",
+      "type": "hero",
+      "preset": "Cover",
+      "settings": {
+        "layout": "cover",
+        "image": "as_16x9_2",
+        "kicker": "Common Ground Run Club",
+        "heading": "All paces welcome",
+        "text": "Free runs every Saturday from North. 5k and 10k loops, a back marker on every one, coffee after.",
+        "action_label": "Join us",
+        "secondary_label": "Next meet-ups",
+        "secondary_link": "/events",
+        "strip": "Saturdays 08:00 · Free · Every pace",
+        "ghost_word": "Every pace",
+        "color_scheme": "black"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_ticker",
+      "type": "ticker",
+      "preset": "Black",
+      "settings": {
+        "color_scheme": "black"
+      },
+      "blocks": [
+        {
+          "id": "s_ticker_b1",
+          "type": "phrase",
+          "settings": {
+            "text": "Saturday 08:00 · North"
+          }
+        },
+        {
+          "id": "s_ticker_b2",
+          "type": "phrase",
+          "settings": {
+            "text": "5k and 10k loops"
+          }
+        },
+        {
+          "id": "s_ticker_b3",
+          "type": "phrase",
+          "settings": {
+            "text": "Nobody runs alone"
+          }
+        },
+        {
+          "id": "s_ticker_b4",
+          "type": "phrase",
+          "settings": {
+            "text": "Coffee after"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_events",
+      "type": "events-list",
+      "preset": "Cards",
+      "settings": {
+        "heading": "Next meet-ups",
+        "events": "events",
+        "layout": "cards",
+        "limit": 3,
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_timetable",
+      "type": "timetable",
+      "preset": "Week",
+      "settings": {
+        "heading": "Weekly runs",
+        "text": "Every run and the meeting point, Monday to Sunday.",
+        "sessions": "sessions",
+        "classes": "classes",
+        "color_scheme": "concrete"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_wall",
+      "type": "photo-wall",
+      "preset": "Bento",
+      "settings": {
+        "heading": "Last Saturday",
+        "gallery": "club-wall",
+        "layout": "bento",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_links",
+      "type": "community-links",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "flare"
+      },
+      "blocks": [
+        {
+          "id": "s_links_b1",
+          "type": "door",
+          "settings": {
+            "label": "WhatsApp",
+            "text": "Route changes, lifts and who is in this week.",
+            "link_label": "Join the chat",
+            "link": "https://chat.whatsapp.com/"
+          }
+        },
+        {
+          "id": "s_links_b2",
+          "type": "door",
+          "settings": {
+            "label": "Strava",
+            "text": "Every run logged, every segment argued over.",
+            "link_label": "Follow the club",
+            "link": "https://www.strava.com/"
+          }
+        },
+        {
+          "id": "s_links_b3",
+          "type": "door",
+          "settings": {
+            "label": "Instagram",
+            "text": "Photos from the finish line and the café after.",
+            "link_label": "See the photos",
+            "link": "https://www.instagram.com/"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_leaders",
+      "type": "coach-grid",
+      "preset": "Default",
+      "settings": {
+        "heading": "Run leaders",
+        "coaches": "coaches",
+        "limit": 4,
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_albums",
+      "type": "album-grid",
+      "preset": "Default",
+      "settings": {
+        "heading": "From the runs",
+        "albums": "albums",
+        "limit": 3,
+        "color_scheme": "concrete"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "heading": "Questions",
+        "color_scheme": "white"
+      },
+      "blocks": [
+        {
+          "id": "s_faq_b1",
+          "type": "item",
+          "settings": {
+            "question": "Do I need to be quick?",
+            "answer": "<p>No. Every run has a back marker and a regroup point; nobody is left behind.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b2",
+          "type": "item",
+          "settings": {
+            "question": "Is it free?",
+            "answer": "<p>Yes. The Saturday run is free for everyone, member or not.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b3",
+          "type": "item",
+          "settings": {
+            "question": "Where do we meet?",
+            "answer": "<p>Saturdays at North, 08:00 by the front door. Sunday socials meet at Riverside.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}

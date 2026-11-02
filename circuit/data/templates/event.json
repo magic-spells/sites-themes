@@ -1,0 +1,28 @@
+{
+  "label": "Event",
+  "description": "An event's page: the date, the route and pace, last time's photos.",
+  "sections": [
+    {
+      "id": "s_detail",
+      "type": "event-detail",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_more",
+      "type": "events-list",
+      "preset": "Cards",
+      "settings": {
+        "heading": "More meet-ups",
+        "events": "events",
+        "layout": "cards",
+        "limit": 3,
+        "color_scheme": "concrete"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "label": "Coach",
+  "description": "A coach's page: the portrait, the bio, the classes they lead.",
+  "sections": [
+    {
+      "id": "s_detail",
+      "type": "coach-detail",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_classes",
+      "type": "class-grid",
+      "preset": "All classes",
+      "settings": {
+        "heading": "Classes with this coach",
+        "source": "coach",
+        "classes": "classes",
+        "columns": "3",
+        "view_all_label": "",
+        "color_scheme": "concrete"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Flare",
+      "settings": {
+        "color_scheme": "flare"
+      },
+      "blocks": []
+    }
+  ]
+}

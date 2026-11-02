@@ -1,0 +1,72 @@
+{
+  "label": "Events",
+  "description": "Every meet-up as rows, then where the club talks.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "heading": "Events",
+        "standfirst": "Runs, open days and the occasional deadlift party. Everyone welcome.",
+        "kicker": "Meet-ups",
+        "color_scheme": "concrete"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_rows",
+      "type": "events-list",
+      "preset": "Rows",
+      "settings": {
+        "heading": "",
+        "events": "events",
+        "layout": "rows",
+        "limit": 12,
+        "view_all_label": "",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_links",
+      "type": "community-links",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "flare"
+      },
+      "blocks": [
+        {
+          "id": "s_links_b1",
+          "type": "door",
+          "settings": {
+            "label": "WhatsApp",
+            "text": "Route changes, lifts and who is in this week.",
+            "link_label": "Join the chat",
+            "link": "https://chat.whatsapp.com/"
+          }
+        },
+        {
+          "id": "s_links_b2",
+          "type": "door",
+          "settings": {
+            "label": "Strava",
+            "text": "Every run logged, every segment argued over.",
+            "link_label": "Follow the club",
+            "link": "https://www.strava.com/"
+          }
+        },
+        {
+          "id": "s_links_b3",
+          "type": "door",
+          "settings": {
+            "label": "Instagram",
+            "text": "Photos from the finish line and the café after.",
+            "link_label": "See the photos",
+            "link": "https://www.instagram.com/"
+          }
+        }
+      ]
+    }
+  ]
+}

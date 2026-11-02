@@ -1,0 +1,25 @@
+{
+  "label": "Location",
+  "description": "A location's page: the address, hours, map and the classes there.",
+  "sections": [
+    {
+      "id": "s_detail",
+      "type": "location-detail",
+      "preset": "Default",
+      "settings": {
+        "sessions": "sessions",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Flare",
+      "settings": {
+        "color_scheme": "flare"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "sections": [
+    {
+      "id": "sg_mobile_menu",
+      "type": "mobile-menu",
+      "preset": "Default",
+      "settings": {
+        "menu": "main",
+        "show_classes": true,
+        "classes": "classes",
+        "classes_path": "/classes",
+        "base_path": "/classes",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_trial_panel",
+      "type": "trial-panel",
+      "preset": "Default",
+      "settings": {
+        "text": "Your first class is on us. Tell us a little and a coach will call to book it.",
+        "form": "trial",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_cookie_notice",
+      "type": "cookie-notice",
+      "preset": "Default",
+      "settings": {
+        "key": "circuit-notice-2026-11",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    }
+  ]
+}

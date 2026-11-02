@@ -1,0 +1,119 @@
+{
+  "label": "Memberships",
+  "description": "The plans as cards, the comparison table and questions.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "heading": "Memberships",
+        "standfirst": "Month to month, no joining fee. Your first class is free on every plan.",
+        "kicker": "Plans",
+        "color_scheme": "concrete"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cards",
+      "type": "plans",
+      "preset": "Cards",
+      "settings": {
+        "heading": "",
+        "text": "",
+        "plans": "plans",
+        "source": "listed",
+        "columns": "3",
+        "color_scheme": "white"
+      },
+      "blocks": [
+        {
+          "id": "s_cards_b1",
+          "type": "plan",
+          "settings": {
+            "plan": "plan_drop_in"
+          }
+        },
+        {
+          "id": "s_cards_b2",
+          "type": "plan",
+          "settings": {
+            "plan": "plan_unlimited"
+          }
+        },
+        {
+          "id": "s_cards_b3",
+          "type": "plan",
+          "settings": {
+            "plan": "plan_small_group"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_table",
+      "type": "plans",
+      "preset": "Table",
+      "settings": {
+        "heading": "Compare every plan",
+        "text": "",
+        "layout": "table",
+        "plans": "plans",
+        "color_scheme": "concrete"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "heading": "Questions",
+        "color_scheme": "white"
+      },
+      "blocks": [
+        {
+          "id": "s_faq_b1",
+          "type": "item",
+          "settings": {
+            "question": "Is there a joining fee?",
+            "answer": "<p>No. You pay the first month when you join and that is it.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b2",
+          "type": "item",
+          "settings": {
+            "question": "Can I freeze or cancel?",
+            "answer": "<p>Yes. Memberships are month to month: freeze for up to two months a year, or cancel with a month's notice.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b3",
+          "type": "item",
+          "settings": {
+            "question": "Does my plan work at both locations?",
+            "answer": "<p>Unlimited and Open gym work at North and Riverside. Packs and drop-ins too.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b4",
+          "type": "item",
+          "settings": {
+            "question": "Are there student or NHS rates?",
+            "answer": "<p>Yes, 15% off Unlimited with a valid card. Ask at the desk.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Flare",
+      "settings": {
+        "color_scheme": "flare"
+      },
+      "blocks": []
+    }
+  ]
+}

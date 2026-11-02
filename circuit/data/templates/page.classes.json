@@ -1,0 +1,84 @@
+{
+  "label": "Classes",
+  "description": "Every class as cards, then questions.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Left",
+      "settings": {
+        "heading": "Classes",
+        "standfirst": "Twelve classes, coached on every session. Start anywhere: the coach scales it to you.",
+        "kicker": "What’s on the floor",
+        "color_scheme": "concrete"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_grid",
+      "type": "class-grid",
+      "preset": "All classes",
+      "settings": {
+        "heading": "",
+        "source": "all",
+        "classes": "classes",
+        "columns": "3",
+        "limit": 12,
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "heading": "Questions",
+        "color_scheme": "concrete"
+      },
+      "blocks": [
+        {
+          "id": "s_faq_b1",
+          "type": "item",
+          "settings": {
+            "question": "Do I need to be fit already?",
+            "answer": "<p>No. Every class is scaled to you by the coach, and most people start with Strength Foundations.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b2",
+          "type": "item",
+          "settings": {
+            "question": "How do I book?",
+            "answer": "<p>Book on the timetable or at the desk. Classes cap at sixteen, small-group sessions at six.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b3",
+          "type": "item",
+          "settings": {
+            "question": "What should I bring?",
+            "answer": "<p>Trainers with a flat sole, a water bottle and a towel. We have chalk, belts and lockers.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b4",
+          "type": "item",
+          "settings": {
+            "question": "Can I try before I join?",
+            "answer": "<p>Yes. Your first class is free on every plan; tell us which one and a coach will meet you at the door.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Flare",
+      "settings": {
+        "color_scheme": "flare"
+      },
+      "blocks": []
+    }
+  ]
+}

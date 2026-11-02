@@ -1,0 +1,28 @@
+{
+  "sections": [
+    {
+      "id": "sg_announcement",
+      "type": "announcement-bar",
+      "preset": "Next stop",
+      "settings": {
+        "text": "Next stop: the Carretera Austral, from Dec 8, 2026.",
+        "link": "/trips/the-americas",
+        "show_close": true,
+        "key": "nomad-next-stop-2026-12",
+        "color_scheme": "night"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_header",
+      "type": "header",
+      "preset": "Default",
+      "settings": {
+        "logo_text": "",
+        "menu": "main",
+        "sticky": true
+      },
+      "blocks": []
+    }
+  ]
+}

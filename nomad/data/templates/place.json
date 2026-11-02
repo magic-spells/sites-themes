@@ -1,0 +1,89 @@
+{
+  "label": "Place",
+  "description": "A place: its cover and stamps, its posts, its photographs, what a month cost and its notes.",
+  "layout": "default",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "place-header",
+      "preset": "Default",
+      "settings": {
+        "show_facts": true,
+        "show_stamps": true,
+        "show_local_time": false,
+        "color_scheme": "night"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_posts",
+      "type": "post-list",
+      "preset": "From this place",
+      "settings": {
+        "heading": "Written in {place}",
+        "collection": "posts",
+        "scope": "current_place",
+        "layout": "grid",
+        "featured_first": false,
+        "columns": "2",
+        "limit": 6,
+        "view_all_label": "All {count} posts",
+        "always_link": true
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_photos",
+      "type": "gallery",
+      "preset": "Place photos",
+      "settings": {
+        "source": "entry",
+        "heading": "",
+        "layout": "carousel",
+        "slide_ratio": "square",
+        "show_captions": true,
+        "link_label": "All photos",
+        "link": "/photos"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_costs",
+      "type": "cost-table",
+      "preset": "Place",
+      "settings": {
+        "scope": "place",
+        "heading": "What a month here cost",
+        "show_notes": true,
+        "align": "left"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_notes",
+      "type": "rich-text",
+      "preset": "Entry body",
+      "settings": {
+        "heading": "Notes on {place}",
+        "source": "entry",
+        "width": "reading",
+        "align": "left"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Postcards",
+      "settings": {
+        "heading": "Postcards from the road",
+        "text": "One email when I move, with what the last place cost. About once a month.",
+        "placeholder": "Your email",
+        "proof": "",
+        "form": "newsletter",
+        "color_scheme": "dusk"
+      },
+      "blocks": []
+    }
+  ]
+}

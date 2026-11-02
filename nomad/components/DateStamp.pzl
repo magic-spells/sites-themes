@@ -1,0 +1,15 @@
+<!-- component: DateStamp -->
+<!-- props: value month still -->
+<!-- The box date stamp: a calendar day as a graphic, the day in the Besley
+     numeral over "OCT 2026" in mono, stamp ink on tag paper, tilted -3°.
+     The only place a date is split into day and month; prose and meta print
+     date(v), "Oct 7, 2026". month shows "OCT" over "2026" (the cost table's
+     month). A box is a date; a ring is a place. -->
+{#let
+  iso = date(value, 'iso')
+  mon = date(value) | slice(0, 3) | upcase
+}
+<span class="inline-flex shrink-0 flex-col items-center gap-micro rounded-sm border-2 border-tag-stamp bg-tag px-stamp-pad py-chip text-center text-tag-stamp { still ? '' : 'tilt-stamp' }">
+  <span class="font-heading text-numeral font-extrabold">{ month ? mon : iso | slice(8, 2) }</span>
+  <span class="font-mono text-meta font-medium uppercase"><time datetime={ iso }>{ month ? iso | slice(0, 4) : mon + ' ' + (iso | slice(0, 4)) }</time></span>
+</span>

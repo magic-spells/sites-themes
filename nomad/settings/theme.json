@@ -1,0 +1,226 @@
+{
+  "name": "Nomad",
+  "version": "0.1.0",
+  "default_template": "page",
+  "not_found_template": "404",
+  "maintenance_template": "maintenance",
+  "query": [
+    "topic"
+  ],
+  "groups": {
+    "header-group": {
+      "label": "Header",
+      "accepts": [
+        "announcement-bar",
+        "header"
+      ]
+    },
+    "footer-group": {
+      "label": "Footer",
+      "accepts": [
+        "footer"
+      ]
+    },
+    "panel-group": {
+      "label": "Panel",
+      "accepts": [
+        "mobile-menu",
+        "cookie-notice"
+      ]
+    }
+  },
+  "settings": [
+    {
+      "name": "Brand",
+      "settings": [
+        {
+          "type": "text",
+          "id": "wordmark",
+          "label": "Wordmark",
+          "default": "Ilse Varga",
+          "info": "Set in the heading face at its heaviest weight. Empty uses the workspace name."
+        },
+        {
+          "type": "image",
+          "id": "favicon",
+          "label": "Favicon",
+          "info": "The small icon in the browser tab. A square image works best."
+        },
+        {
+          "type": "text",
+          "id": "tagline",
+          "label": "Tagline",
+          "default": "A product designer who works from wherever the Wi-Fi holds. Notes, costs and routes since April 2023."
+        },
+        {
+          "type": "checkbox",
+          "id": "reveal_on_scroll",
+          "label": "Reveal cards on scroll",
+          "default": true,
+          "info": "Cards, tickets, stamps and rows fade up as they come into view. Readers who ask their device for less motion see everything at once."
+        },
+        {
+          "type": "text",
+          "id": "copyright",
+          "label": "Copyright",
+          "default": "© 2026 Ilse Varga",
+          "info": "Written as text: a page never reads the clock, so update the year yourself."
+        }
+      ]
+    },
+    {
+      "name": "Journal",
+      "settings": [
+        {
+          "type": "text",
+          "id": "posts_path",
+          "label": "Journal path",
+          "default": "/journal",
+          "info": "Where the posts live. Cards and rows link to this path plus each handle."
+        },
+        {
+          "type": "text",
+          "id": "places_path",
+          "label": "Places path",
+          "default": "/places",
+          "info": "Where the places live. Place tags, pins and rows link to this path plus each handle."
+        },
+        {
+          "type": "text",
+          "id": "trips_path",
+          "label": "Trips path",
+          "default": "/trips",
+          "info": "Where the trips live. Trip cards link to this path plus each handle."
+        }
+      ]
+    },
+    {
+      "name": "Traveller",
+      "settings": [
+        {
+          "type": "text",
+          "id": "writer_name",
+          "label": "Name",
+          "default": "Ilse Varga"
+        },
+        {
+          "type": "textarea",
+          "id": "writer_bio",
+          "label": "Biography",
+          "default": "I design software for a living and have done it from a different city every few weeks since April 2023. This is where I write down what each place cost, where the Wi-Fi held and what I would do differently."
+        },
+        {
+          "type": "textarea",
+          "id": "writer_short_bio",
+          "label": "Short biography",
+          "default": "A product designer who works from wherever the Wi-Fi holds. Notes, costs and routes since April 2023.",
+          "info": "Two lines for the author card under each post. Write it whole: it is never cut."
+        },
+        {
+          "type": "image",
+          "id": "writer_portrait",
+          "label": "Portrait"
+        },
+        {
+          "type": "menu",
+          "id": "writer_links",
+          "label": "Links menu"
+        },
+        {
+          "type": "text",
+          "id": "current_place",
+          "label": "Current place",
+          "default": "oaxaca",
+          "info": "The handle of a place (from Places). The header, hero and footer say you are here. Empty uses the place of the newest post."
+        },
+        {
+          "type": "date",
+          "id": "on_road_since",
+          "label": "On the road since",
+          "default": "2023-04-03",
+          "info": "Printed as a date, for example Apr 3, 2023. Never a day count."
+        },
+        {
+          "type": "text",
+          "id": "home_base",
+          "label": "Home base",
+          "default": "None, for now"
+        },
+        {
+          "type": "text",
+          "id": "work",
+          "label": "Work",
+          "default": "Product design"
+        },
+        {
+          "type": "number",
+          "id": "distance_km",
+          "label": "Distance travelled (km)",
+          "info": "Optional. When set, the stamp wall prints it. Leave it empty rather than guess."
+        }
+      ]
+    },
+    {
+      "name": "Map",
+      "settings": [
+        {
+          "type": "select",
+          "id": "map_style",
+          "label": "Map style",
+          "default": "drawn",
+          "options": [
+            {
+              "value": "drawn",
+              "label": "Drawn"
+            },
+            {
+              "value": "tiles",
+              "label": "Tiles (coming later)"
+            }
+          ],
+          "info": "The drawn map ships with the theme. A tiled map from an outside service is not connected yet, so Tiles draws the drawn map too."
+        },
+        {
+          "type": "text",
+          "id": "tile_style_url",
+          "label": "Tile style URL",
+          "default": "",
+          "info": "Reserved for a tiled map service. Not read yet."
+        },
+        {
+          "type": "select",
+          "id": "coordinate_format",
+          "label": "Coordinates",
+          "default": "decimal",
+          "options": [
+            {
+              "value": "decimal",
+              "label": "Decimal (17.0732° N)"
+            },
+            {
+              "value": "dms",
+              "label": "Degrees and minutes (17° 4′ N)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "settings": [
+        {
+          "type": "text",
+          "id": "contact_email",
+          "label": "Contact email",
+          "default": "hello@ilsevarga.example"
+        },
+        {
+          "type": "text",
+          "id": "reply_note",
+          "label": "Reply note",
+          "default": "I answer within a week, from wherever I am."
+        }
+      ]
+    }
+  ]
+}

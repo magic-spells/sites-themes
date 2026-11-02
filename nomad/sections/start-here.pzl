@@ -1,0 +1,71 @@
+<!-- Start here (Figma): three to five posts to read first, in reading order but without numerals (Cory), each row the title, its note and meta at the column's edge on a hairline; beside them a 4:5 picture on the offset plane, crossing the column's right edge, which swaps to the hovered post's picture (theme.ts). Below 48rem the picture is 3:2 and follows the list. -->
+{#let
+  posts_path = site.settings.posts_path || '/journal'
+  lead = blocks | first
+  start_image = settings.image ?? (lead ? lead.settings.post.fields.image : null)
+  reveal = site.settings.reveal_on_scroll
+}
+{#if blocks.length}
+<section class="overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground" aria-labelledby="{ section.id }-title" data-start-here>
+  <div class="mx-auto flex max-w-column flex-wrap items-start justify-between gap-space-2xl">
+    <div class="grid max-w-copy min-w-0 flex-1 basis-col gap-space-md">
+      <div class="grid gap-space-xs">
+        <h2 class="font-heading text-h2 font-semibold text-scheme-heading" id="{ section.id }-title">{ settings.heading }</h2>
+        {#if settings.text}<p class="text-body text-scheme-muted">{ settings.text }</p>{/if}
+      </div>
+      <ol class="border-t border-scheme-rule">
+        {#for block in blocks, i}
+          {#let p = block.settings.post}
+          {#if p}
+            <li class="border-b border-scheme-rule { reveal ? 'reveal reveal-fade-up' : '' }" data-block={ block.editor_id }>
+              <a class="group block py-space-md" href="{ posts_path }/{ p.handle }" data-photo-src={ p.fields.image ? image_url(p.fields.image, 1024, { height: 1280 }) : null }>
+                <span class="grid gap-tiny">
+
+                  <span class="font-heading text-h3 font-medium text-scheme-heading decoration-1 underline-offset-4 group-hover:text-scheme-links group-hover:underline">{ p.title }</span>
+                  {#if block.settings.note}<span class="text-body-sm text-scheme-muted">{ block.settings.note }</span>{/if}
+                  {#if p.fields.topic}<span class="font-mono text-meta font-medium text-scheme-meta uppercase">{ p.fields.topic }</span>{/if}
+                </span>
+              </a>
+            </li>
+          {/if}
+        {/for}
+      </ol>
+    </div>
+    <div class="relative w-full md:max-w-side md:flex-1">
+      <span class="absolute inset-0 translate-x-plane translate-y-plane rounded-sm bg-plane" aria-hidden="true"></span>
+      <div class="relative aspect-3/2 overflow-hidden rounded-sm bg-scheme-surface-2 md:aspect-4/5">{#if start_image}<img class="size-full object-cover" src="{ image_url(start_image, 1024, { height: 1280 }) }" alt="" loading="lazy" width="1024" height="1280" data-hover-photo />{/if}</div>
+    </div>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Start here",
+  "description": "Three to five posts to read first, numbered, beside a picture on the offset plane.",
+  "kind": "Content",
+  "icon": "list-ordered",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Start here" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Four posts that explain how this works, in the order I would read them." },
+    { "type": "image", "id": "image", "label": "Picture", "info": "Empty uses the first post's picture. It changes to each post's picture on hover." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "blocks": [
+    { "type": "post", "name": "Post", "settings": [
+      { "type": "entry", "id": "post", "label": "Post", "info": "A posts entry: title, topic, image." },
+      { "type": "text", "id": "note", "label": "Note", "default": "" }
+    ] }
+  ],
+  "max_blocks": 5,
+  "presets": [
+    { "name": "Four posts", "settings": { "heading": "Start here", "text": "Four posts that explain how this works, in the order I would read them." },
+      "blocks": [
+        { "type": "post", "settings": { "post": "post_everything_i_carry", "note": "What fits in one bag after three years, and what I stopped carrying." } },
+        { "type": "post", "settings": { "post": "post_oaxaca_month_cost", "note": "A whole month, peso by peso, so you can plan your own." } },
+        { "type": "post", "settings": { "post": "post_tbilisi_month", "note": "The visa, the flat and the hills: how a first month somewhere goes." } },
+        { "type": "post", "settings": { "post": "post_stopped_flying", "note": "Why I go overland now, and what it costs in days." } }
+      ] }
+  ]
+}
+</schema>

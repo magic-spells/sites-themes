@@ -1,0 +1,33 @@
+<!-- One line on Night Train, a ticker (Cory: "on mobile it shouldn't be like this. remove the 'see the route' from both. or this could be a marquee that scrolls using our magic spells scrolling text component"): the message repeats with a dot between copies on the Magic Spells <scrolling-content> (hover pauses it, a drag scrubs it), and the whole line is the link. The × sits over the track's right end on a fade so the text slides under it, and hides the bar for good for this key (theme.ts). The authored item lays out as one static row before the script, so nothing shifts on load. Under reduced motion the line stands still, one copy, cut with an ellipsis. -->
+<aside class="relative bg-scheme-background text-scheme-foreground" data-dismiss-key="{ settings.key }" aria-label="{ t('announcement') }" data-ticker>
+  <a class="block py-space-xs text-body-sm focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-scheme-links" href={ settings.link || null }>
+    <scrolling-content class="block" speed="40" fade>
+      <scrolling-track>
+        <scrolling-item>
+          <span class="whitespace-nowrap">{ settings.text }</span>
+          <span class="text-scheme-meta" aria-hidden="true" data-ticker-dot>·</span>
+        </scrolling-item>
+      </scrolling-track>
+    </scrolling-content>
+  </a>
+  {#if settings.show_close}<button class="absolute inset-y-0 right-0 flex items-center bg-linear-to-l from-scheme-background from-60% to-transparent ps-space-xl pe-gutter" type="button" data-dismiss><span class="flex size-icon-button items-center justify-center"><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/close.svg'}</span></span><span class="sr-only">{ t('dismiss') }</span></button>{/if}
+</aside>
+
+<schema>
+{
+  "name": "Announcement bar",
+  "description": "One dismissable line above the header that scrolls as a ticker: where you go next, or anything dated.",
+  "kind": "Header",
+  "icon": "megaphone",
+  "settings": [
+    { "type": "text", "id": "text", "label": "Text", "default": "Next stop: the Carretera Austral, from Dec 8, 2026." },
+    { "type": "url", "id": "link", "label": "Link", "default": "/trips/the-americas", "info": "The whole line links here." },
+    { "type": "checkbox", "id": "show_close", "label": "Show the close button", "default": true },
+    { "type": "text", "id": "key", "label": "Dismiss key", "default": "nomad-next-stop-2026-12", "info": "A reader who closes the bar does not see it again until you change this key." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "night" }
+  ],
+  "presets": [
+    { "name": "Next stop", "settings": { "text": "Next stop: the Carretera Austral, from Dec 8, 2026.", "link": "/trips/the-americas", "show_close": true, "key": "nomad-next-stop-2026-12", "color_scheme": "night" } }
+  ]
+}
+</schema>

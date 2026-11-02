@@ -1,0 +1,52 @@
+{
+  "label": "Trips",
+  "description": "The route through every stop, then every trip as a ticket.",
+  "layout": "default",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "Trips",
+        "standfirst": "The road in chapters: where each one started, every stop, and where it is going next.",
+        "count": "trips",
+        "align": "left"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_route",
+      "type": "route-map",
+      "preset": "Everywhere",
+      "settings": {
+        "heading": "Every stop, by arrival",
+        "show_count": true,
+        "count_by": "stops",
+        "places": "places",
+        "show_route": "none",
+        "fit": "world",
+        "show_list": true,
+        "list_limit": 6,
+        "country_filter": true,
+        "link_label": "All {count} places",
+        "link": "",
+        "anchor": true,
+        "map_style": "drawn",
+        "color_scheme": "night"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_trips",
+      "type": "trip-list",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "limit": 12,
+        "featured_first": true
+      },
+      "blocks": []
+    }
+  ]
+}

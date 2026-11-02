@@ -1,0 +1,58 @@
+{
+  "label": "Trip",
+  "description": "A trip: its cover, dates and route inset, every stop as a ticket, and its posts.",
+  "layout": "default",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "trip-header",
+      "preset": "Default",
+      "settings": {
+        "show_route_inset": true
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_route_spine",
+      "type": "itinerary",
+      "preset": "Full route",
+      "settings": {
+        "layout": "spine",
+        "heading": "",
+        "show_posts": true,
+        "show_notes": true
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_posts",
+      "type": "post-list",
+      "preset": "This trip",
+      "settings": {
+        "heading": "Posts from {trip}",
+        "collection": "posts",
+        "scope": "current_trip",
+        "layout": "grid",
+        "featured_first": false,
+        "columns": "3",
+        "limit": 6,
+        "view_all_label": ""
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Postcards",
+      "settings": {
+        "heading": "Postcards from the road",
+        "text": "One email when I move, with what the last place cost. About once a month.",
+        "placeholder": "Your email",
+        "proof": "",
+        "form": "newsletter",
+        "color_scheme": "dusk"
+      },
+      "blocks": []
+    }
+  ]
+}

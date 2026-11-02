@@ -1,0 +1,12 @@
+<!-- component: GalleryMedia -->
+<!-- props: item fit sizes eager poster zoom -->
+<!-- One gallery item's picture, the same in every layout. A video is a muted loop with a LOOP badge (theme.ts starts it in view, never under reduced motion), a poster and a link to the file for a browser that plays nothing; the engine gives a video no still of its own, so the poster is the gallery's first photograph. A photograph is an <img> that scales 1.03 on hover when zoom is on. fit: "cover" fills a fixed-ratio well, "natural" its own ratio at full width. -->
+{#let
+  media = fit == 'natural' ? 'block h-auto w-full' : 'size-full object-cover'
+}
+{#if item.video}
+  <video class={ media } muted loop playsinline preload="metadata" poster={ poster ? image_url(poster, 1280) : null } data-loop width={ item.asset.width } height={ item.asset.height }><source src="{ item.asset.url }" type="{ item.asset.mime }" /><a href="{ item.asset.url }">{ t('open_video') }</a></video>
+  <span class="absolute top-space-sm left-space-sm rounded-sm bg-scrim px-chip py-micro font-mono text-meta font-medium text-on-photo uppercase">{ t('loop') }</span>
+{:else}
+  <img class="{ media } { zoom ? 'transition-transform duration-hover ease-out-soft group-hover:scale-hover' : '' }" data-zoom={ zoom ? true : null } src="{ image_url(item.asset, 1024) }" srcset="{ image_srcset(item.asset, [480, 640, 1024, 1280]) }" sizes={ sizes } alt="{ item.alt }" loading={ eager ? 'eager' : 'lazy' } width={ item.asset.width } height={ item.asset.height } />
+{/if}

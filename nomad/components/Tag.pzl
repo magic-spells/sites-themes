@@ -1,0 +1,33 @@
+<!-- component: Tag -->
+<!-- props: place arrived since mini href -->
+<!-- The luggage tag: tag paper, the label in stamp ink after the map pin,
+     the place and its coordinates in tag ink, then the arrival date stamp and
+     "On the road since". mini is the 200 wide "Now in" tag of the mobile
+     menu and the author card, tilted like a date stamp; the full tag leans
+     the other way (3°). Text on tag paper is always tag ink
+     or tag stamp, never the scheme's colours. -->
+{#if place}
+  {#if mini}
+    <div class="relative grid w-tag-mini gap-tiny rounded-md bg-tag px-space-sm pt-space-sm pb-space-sm text-tag-ink shadow-sm tilt-stamp">
+      <p class="flex items-center gap-chip font-mono text-meta font-medium text-tag-stamp uppercase"><PlacePin tone="tag" />{ t('now_in') }</p>
+      {#if href}<a class="font-heading text-h5 font-medium hover:underline" href={ href }>{ place.title }{#if place.fields.country}, { place.fields.country }{/if}</a>{:else}<p class="font-heading text-h5 font-medium">{ place.title }{#if place.fields.country}, { place.fields.country }{/if}</p>{/if}
+    </div>
+  {:else}
+    <div class="relative grid w-tag gap-space-xs rounded-md bg-tag px-space-md pt-space-sm pb-space-md text-tag-ink shadow-sm tilt-tag">
+      <p class="flex items-center gap-chip font-mono text-meta font-medium text-tag-stamp uppercase"><PlacePin tone="tag" />{ t('currently_in') }</p>
+      <div class="grid gap-micro">
+        {#if href}<a class="font-heading text-h4 font-medium hover:underline" href={ href }>{ place.title }{#if place.fields.country}, { place.fields.country }{/if}</a>{:else}<p class="font-heading text-h4 font-medium">{ place.title }{#if place.fields.country}, { place.fields.country }{/if}</p>{/if}
+        <p class="font-mono text-coord"><Coord lat={ place.fields.latitude } lon={ place.fields.longitude } /></p>
+      </div>
+      {#if arrived || since}
+        <div class="flex items-center gap-space-sm border-t border-tag-ink/20 pt-space-sm">
+          {#if arrived}<DateStamp value={ arrived } still={ true } />{/if}
+          <div class="grid gap-micro">
+            {#if arrived}<p class="font-mono text-meta font-medium text-tag-stamp uppercase">{ t('arrived') }</p>{/if}
+            {#if since}<p class="text-body-sm">{ t('on_road_since', { date: date(since) }) }</p>{/if}
+          </div>
+        </div>
+      {/if}
+    </div>
+  {/if}
+{/if}

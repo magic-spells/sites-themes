@@ -1,0 +1,49 @@
+<!-- Questions people ask (Figma): the heading at the left, the questions in a 40rem column at the right edge on hairlines, each a <collapsible-component> row with a plus that turns to a minus; the first open. Without JavaScript every answer shows. Stacked on a phone. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" aria-labelledby="{ section.id }-title">
+  <div class="mx-auto flex max-w-column flex-wrap justify-between gap-space-xl">
+    <h2 class="max-w-list font-heading text-h2 font-semibold text-scheme-heading" id="{ section.id }-title">{ settings.heading }</h2>
+    <ul class="w-full max-w-reading border-t border-scheme-rule md:flex-1">
+      {#for block in blocks, i}
+        {#let b = block.settings}
+        <li class="border-b border-scheme-rule" data-block={ block.editor_id }>
+          <collapsible-component>
+            <h3><button class="group flex w-full items-center justify-between gap-space-md py-space-md text-left font-heading text-h5 font-medium text-scheme-heading" type="button">{ b.question }<span class="sites-icon size-icon shrink-0 group-aria-expanded:hidden" aria-hidden="true">{#svg 'icons/plus.svg'}</span><span class="sites-icon hidden size-icon shrink-0 group-aria-expanded:block" aria-hidden="true">{#svg 'icons/minus.svg'}</span></button></h3>
+            <collapsible-content open={ settings.first_open && i == 0 }>
+              <div class="sites-prose pb-space-md text-scheme-muted">{ b.answer }</div>
+            </collapsible-content>
+          </collapsible-component>
+        </li>
+      {/for}
+    </ul>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "FAQ",
+  "description": "Questions and answers that open and close.",
+  "kind": "Content",
+  "icon": "circle-help",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Questions people ask" },
+    { "type": "checkbox", "id": "first_open", "label": "Open the first question", "default": true },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "blocks": [
+    { "type": "question", "name": "Question", "settings": [
+      { "type": "text", "id": "question", "label": "Question", "default": "How do you pick where to go next?" },
+      { "type": "richtext", "id": "answer", "label": "Answer", "default": "<p>Three things: the visa, the Wi-Fi and the season.</p>" }
+    ] }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    { "name": "About", "settings": { "heading": "Questions people ask", "first_open": true },
+      "blocks": [
+        { "type": "question", "settings": { "question": "How do you pick where to go next?", "answer": "<p>Three things, in this order: how long the visa lets me stay, whether people I trust say the internet holds, and the season. I want to arrive at the start of the good months, not the end.</p><p>After that it is usually a bus or a train I want to take.</p>" } },
+        { "type": "question", "settings": { "question": "Do you work full time?", "answer": "<p>Yes. I design software for a company in Europe, so my day starts with calls and the afternoon is mine to walk around. Time zones decide more of the route than scenery does.</p>" } },
+        { "type": "question", "settings": { "question": "How do visas work for you?", "answer": "<p>Mostly on tourist entries, staying well inside the allowed days, and a few digital nomad visas where they exist. I check the rules again before every move, from the government's own pages.</p>" } },
+        { "type": "question", "settings": { "question": "What do you do about insurance?", "answer": "<p>A travel medical policy that covers working abroad, paid monthly, plus a separate policy for the laptop. Both are on the What I use page.</p>" } }
+      ] }
+  ]
+}
+</schema>

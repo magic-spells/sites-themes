@@ -1,0 +1,69 @@
+<!-- One line on Sand: the wordmark in Besley 800 at the left and the main menu (no "Now in" line: Cory, "lets remove the 'now in' from the header") as plain text at the right edge. The menu item that points at the places path opens a <dropdown-panel> of six recent places, hung from the header (wide) and aligned to the column's right edge so it never runs off the page. Below 48rem: the wordmark and the hamburger alone, a 44 tap target named "Menu" for screen readers (Cory: "it doesn't need the menu text, just the hamburger icon"), opening the drawer. -->
+{#let
+  wordmark = settings.logo_text || site.settings.wordmark || site.name
+  places_path = site.settings.places_path || '/places'
+  recent = content.stops.entries | reject('fields.next') | sort('fields.arrive') | reverse | map('fields.place.handle') | uniq | slice(0, 6)
+}
+<sticky-header class="block" settle-overshoot="0" disabled={ !settings.sticky }>
+  <header class="relative border-b border-scheme-rule bg-scheme-background px-gutter py-space-sm text-scheme-foreground">
+    <div class="mx-auto flex max-w-column items-center justify-between gap-space-md">
+      <a class="font-heading text-h4 font-extrabold whitespace-nowrap text-scheme-heading" href="/">{#if settings.logo}<img class="h-control w-auto" src="{ image_url(settings.logo, 320) }" alt="{ wordmark }" width={ settings.logo.width } height={ settings.logo.height } />{:else}{ wordmark }{/if}</a>
+      {#if settings.menu.items.length}
+        <nav class="hidden md:block" aria-label="{ t('main_navigation') }">
+          <ul class="-me-space-sm flex items-center text-nav font-medium">
+            {#for item in settings.menu.items}
+              {#if item.href == places_path && recent.length}
+                <li>
+                  <dropdown-component trigger="both" close-delay="150">
+                    <dropdown-trigger class="flex cursor-pointer items-center gap-tiny px-space-sm py-space-xs { item.active ? 'text-scheme-foreground' : '' }">{ item.label }<span class="sites-icon size-icon rotate-90" aria-hidden="true">{#svg 'icons/angle-right.svg'}</span></dropdown-trigger>
+                    <dropdown-panel class="right-gutter left-auto w-max max-w-panel border border-t-0 border-scheme-rule bg-scheme-background p-space-lg text-scheme-foreground md:right-edge md:rounded-b-sm" wide effect="fade">
+                      <ul class="grid gap-x-space-lg gap-y-space-md md:grid-cols-3">
+                        {#for h in recent}
+                          {#let p = content.places.entries | find('handle', h)}
+                          {#if p}
+                            <li>
+                              <a class="group flex items-center gap-space-sm" href="{ places_path }/{ p.handle }">
+                                <span class="block size-thumb shrink-0 overflow-hidden rounded-sm bg-scheme-surface-2">{#if p.fields.image}<img class="size-full object-cover" src="{ image_url(p.fields.image, 160, { height: 160 }) }" alt="" loading="lazy" width="160" height="160" />{/if}</span>
+                                <span class="grid gap-micro">
+                                  <span class="font-heading text-h5 font-medium decoration-1 underline-offset-4 group-hover:underline">{ p.title }</span>
+                                  <span class="font-mono text-meta font-medium text-scheme-meta uppercase">{ p.fields.country }</span>
+                                </span>
+                              </a>
+                            </li>
+                          {/if}
+                        {/for}
+                      </ul>
+                      <a class="mt-space-md inline-flex items-center gap-tiny text-body-sm text-scheme-links hover:underline" href="{ places_path }">{ t('all_places', { count: size(content.places.entries) }) }<span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/arrow-right.svg'}</span></a>
+                    </dropdown-panel>
+                  </dropdown-component>
+                </li>
+              {:else}
+                <li><a class="block px-space-sm py-space-xs decoration-1 underline-offset-4 hover:underline" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>
+              {/if}
+            {/for}
+          </ul>
+        </nav>
+      {/if}
+      <button class="-me-space-xs flex size-icon-button items-center justify-center md:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu" aria-label="{ t('menu') }"><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/menu.svg'}</span></button>
+    </div>
+  </header>
+</sticky-header>
+
+<schema>
+{
+  "name": "Header",
+  "description": "The wordmark and the main menu with a panel of recent places.",
+  "kind": "Header",
+  "icon": "panel-top",
+  "settings": [
+    { "type": "image", "id": "logo", "label": "Logo", "info": "Optional. Without one the wordmark is set in the heading face." },
+    { "type": "text", "id": "logo_text", "label": "Wordmark text", "default": "", "info": "Empty uses the Brand wordmark." },
+    { "type": "menu", "id": "menu", "label": "Menu", "info": "The item that links to the Places path opens a panel of six recent places." },
+    { "type": "checkbox", "id": "sticky", "label": "Sticky", "default": true },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "logo_text": "", "menu": "main", "sticky": true } }
+  ]
+}
+</schema>

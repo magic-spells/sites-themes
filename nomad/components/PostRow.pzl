@@ -1,0 +1,17 @@
+<!-- component: PostRow -->
+<!-- props: entry href reveal image -->
+<!-- A post as a row on a hairline (Figma): an 80 square picture, the place tag
+     over the title, the date under it in mono, and the topic at the right
+     from 48rem. -->
+{#let f = entry.fields}
+<li class="border-b border-scheme-rule { reveal ? 'reveal reveal-fade-up' : '' }">
+  <article class="group relative flex items-center gap-space-md py-space-sm">
+    {#if image !== false}<span class="block size-thumb-lg shrink-0 overflow-hidden rounded-sm bg-scheme-surface-2">{#if f.image}<img class="size-full object-cover transition-transform duration-hover ease-out-soft group-hover:scale-hover" data-zoom src="{ image_url(f.image, 160, { height: 160 }) }" alt="" loading="lazy" width="160" height="160" />{/if}</span>{/if}
+    <div class="grid min-w-0 flex-1 gap-tiny">
+      {#if f.place}<PlaceTag place={ f.place } />{/if}
+      <h3 class="font-heading text-h4 font-medium text-pretty text-scheme-heading"><a class="decoration-1 underline-offset-4 after:absolute after:inset-0 hover:underline" href={ href }>{ entry.title }</a></h3>
+      <p class="font-mono text-meta font-medium text-scheme-meta uppercase">{#if f.date}<time datetime={ date(f.date, 'iso') }>{ date(f.date) }</time>{/if}</p>
+    </div>
+    {#if f.topic}<p class="hidden shrink-0 font-mono text-meta font-medium text-scheme-meta uppercase md:block">{ f.topic }</p>{/if}
+  </article>
+</li>

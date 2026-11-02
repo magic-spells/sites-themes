@@ -1,0 +1,40 @@
+<!-- layout: default -->
+<html lang="{ site.locale }" class="bg-scheme-background { site.settings.reveal_on_scroll ? 'reveal-off' : '' }">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{ (page.seo.title || page.title) && (page.seo.title || page.title) != site.name ? (page.seo.title || page.title) + ' — ' + site.name : site.name }</title>
+    {#if page.seo.description}<meta name="description" content="{ page.seo.description }" />{/if}
+    {#if page.seo.noindex}<meta name="robots" content="noindex, nofollow" />{/if}
+    <link rel="canonical" href="{ url(page.path) }" />
+    <meta property="og:type" content="{ page.entry ? 'article' : 'website' }" />
+    <meta property="og:site_name" content="{ site.name }" />
+    <meta property="og:title" content="{ page.seo.title || page.title }" />
+    <meta property="og:url" content="{ url(page.path) }" />
+    {#if page.seo.description}<meta property="og:description" content="{ page.seo.description }" />{/if}
+    {#if page.seo.image}<meta property="og:image" content="{ url(image_url(page.seo.image, 1280)) }" />
+    <meta property="og:image:alt" content="{ page.seo.image.alt }" />
+    <meta name="twitter:card" content="summary_large_image" />
+    {:else}<meta name="twitter:card" content="summary" />{/if}
+    {#if site.settings.favicon}<link rel="icon" type="image/png" href="{ image_url(site.settings.favicon, 160, { height: 160, format: 'png' }) }" />
+    {:else}<link rel="icon" type="image/svg+xml" href="{ asset_url('favicon.svg') }" />{/if}
+    <!-- A reader's list-or-grid choice is copied onto <html> before the body paints, so a post list never flashes the other view. -->
+    <script>{#raw}try{var v=localStorage.getItem('sites:post-list-view');if(v==='list'||v==='grid')document.documentElement.setAttribute('data-post-list-view',v)}catch(e){}{/raw}</script>
+    {#if site.settings.reveal_on_scroll}
+    <!-- Reveals are off until a script says otherwise: <html> is served with reveal-off, which shows every card with JavaScript disabled. This lifts it before the body paints and puts it back if the theme script has not armed the reveals 1.5 s after load. -->
+    <script>{#raw}(function(){var r=document.documentElement;r.classList.remove('reveal-off');addEventListener('load',function(){setTimeout(function(){if(!r.classList.contains('reveal-armed'))r.classList.add('reveal-off')},1500)})})(){/raw}</script>
+    {/if}
+    <Slot name="head-content"/>
+  </head>
+  <body class="flex min-h-screen flex-col bg-scheme-background font-body text-body text-scheme-foreground antialiased">
+    <a class="sr-only focus:not-sr-only focus:fixed focus:top-space-sm focus:left-space-sm focus:z-50 focus:rounded-button focus:bg-scheme-button-background focus:px-space-md focus:py-space-sm focus:font-mono focus:text-meta focus:text-scheme-button-foreground" href="#content">{ t('skip_to_content') }</a>
+    <Slot name="header-group"/>
+    <main id="content" class="flex flex-1 flex-col"><Slot/></main>
+    <Slot name="footer-group"/>
+    <Slot name="panel-group"/>
+    {#if site.settings.reveal_on_scroll}
+    <!-- Whatever is already on screen when the page first paints shows as it is, without fading in late. -->
+    <script>{#raw}(function(){var h=innerHeight;document.querySelectorAll('.reveal').forEach(function(e){var r=e.getBoundingClientRect();if(r.height&&h>r.top)e.classList.add('is-revealed','reveal-done')})})(){/raw}</script>
+    {/if}
+  </body>
+</html>

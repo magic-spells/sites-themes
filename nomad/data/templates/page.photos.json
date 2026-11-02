@@ -1,0 +1,65 @@
+{
+  "label": "Photos",
+  "description": "Three galleries in three textures: ragged columns, a strip and an even grid.",
+  "layout": "default",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "Photos",
+        "standfirst": "Pictures from the road, a few of them moving.",
+        "count": "none",
+        "align": "left"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_sheet",
+      "type": "gallery",
+      "preset": "Contact sheet",
+      "settings": {
+        "source": "setting",
+        "gallery": "from-the-road",
+        "heading": "",
+        "layout": "columns",
+        "show_captions": true,
+        "link_label": "",
+        "link": ""
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_oaxaca",
+      "type": "gallery",
+      "preset": "From the road",
+      "settings": {
+        "source": "setting",
+        "gallery": "oaxaca-streets",
+        "heading": "",
+        "layout": "carousel",
+        "slide_ratio": "square",
+        "show_captions": true,
+        "link_label": "Oaxaca",
+        "link": "/places/oaxaca"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_lisbon",
+      "type": "gallery",
+      "preset": "From the road",
+      "settings": {
+        "source": "setting",
+        "gallery": "lisbon-roofs",
+        "heading": "",
+        "layout": "grid",
+        "show_captions": true,
+        "link_label": "Lisbon",
+        "link": "/places/lisbon"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+<!-- template: Maintenance -->
+<!-- layout: default -->
+<!-- Between stops (Figma): the password wall's luggage tag on Night Train, its hole at the top-left, CLOSED FOR A MOMENT in stamp ink, the wordmark and the line in Besley. data-bare hides the groups (styles/theme.css). -->
+<section class="sites-scheme-night relative isolate grid min-h-dvh flex-1 place-items-center bg-scheme-background px-gutter py-section" data-bare>
+  <div class="grid w-full max-w-pass gap-space-sm rounded-md bg-tag p-space-lg text-tag-ink shadow-sm">
+    <span class="size-eyelet rounded-full bg-scheme-background" aria-hidden="true"></span>
+    <p class="pt-space-xs font-mono text-meta font-medium text-tag-stamp uppercase">{ t('maintenance_eyebrow') }</p>
+    <p class="font-heading text-h4 font-extrabold">{ site.settings.wordmark || site.name }</p>
+    <h1 class="font-heading text-h4 font-medium text-pretty">{ t('maintenance_title') }</h1>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+<!-- component: Postmark -->
+<!-- props: name country lat lon line -->
+<!-- The postmark ring: a place, never a date. A 2px ring and a dashed inner
+     ring on tag paper, the place in mono, the country in Besley, the
+     latitude under it, and wavy cancel lines running off to the right. -->
+<span class="relative inline-flex size-postmark shrink-0 items-center justify-center rounded-full p-stamp-pad border-2 border-tag-stamp bg-tag text-tag-stamp tilt-right">
+  <span class="absolute inset-chip rounded-full border border-dashed border-tag-stamp" aria-hidden="true"></span>
+  <span class="relative grid max-w-full justify-items-center gap-micro text-center">
+    <span class="font-mono text-meta font-medium uppercase">{ name }</span>
+    {#if country}<span class="font-heading text-h5 font-medium">{ country }</span>{/if}
+    <span class="font-mono text-coord">{#if line}{ line }{:else}<Coord lat={ lat } lon={ lon } short={ true } />{/if}</span>
+  </span>
+  <span class="sites-fill absolute top-1/2 left-full -ml-space-xs h-cancel-h w-cancel-w -translate-y-1/2" aria-hidden="true">{#svg 'decor/cancel.svg'}</span>
+</span>

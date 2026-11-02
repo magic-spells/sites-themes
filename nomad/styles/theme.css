@@ -1,0 +1,733 @@
+@import "tailwindcss";
+@import "./vendor/collapsible-content.css" layer(components);
+@import "./vendor/dialog-panel.css" layer(components);
+@import "./vendor/dropdown-panel.css" layer(components);
+@import "./vendor/dropdown-panel.effects.css" layer(components);
+@import "./vendor/lightbox.css" layer(components);
+@import "./vendor/reveal.css";
+@import "./vendor/scrolling-content.css" layer(components);
+@import "./vendor/select-dropdown.css" layer(components);
+@import "./vendor/sticky-header.css" layer(components);
+@import "./vendor/tarot.css" layer(components);
+
+@source "../layouts/**/*.pzl";
+@source "../templates/**/*.pzl";
+@source "../sections/**/*.pzl";
+@source "../components/**/*.pzl";
+/* The drawn map and the decor SVGs carry utility classes too. */
+@source "../assets/**/*.svg";
+
+/* The palette: Sites writes the site's values into <head> as --sites-*;
+   every utility resolves through them, so a palette change recolours the
+   theme without a rebuild. */
+@theme {
+	--color-brand-primary: var(--sites-color-brand-primary);
+	--color-brand-secondary: var(--sites-color-brand-secondary);
+	--color-brand-accent: var(--sites-color-brand-accent);
+	--color-grey-extra-light: var(--sites-color-grey-extra-light);
+	--color-grey-light: var(--sites-color-grey-light);
+	--color-grey-medium: var(--sites-color-grey-medium);
+	--color-grey-dark: var(--sites-color-grey-dark);
+	--color-grey-extra-dark: var(--sites-color-grey-extra-dark);
+	--color-info-bg: var(--sites-color-info-bg);
+	--color-info-fg: var(--sites-color-info-fg);
+	--color-success-bg: var(--sites-color-success-bg);
+	--color-success-fg: var(--sites-color-success-fg);
+	--color-warning-bg: var(--sites-color-warning-bg);
+	--color-warning-fg: var(--sites-color-warning-fg);
+	--color-error-bg: var(--sites-color-error-bg);
+	--color-error-fg: var(--sites-color-error-fg);
+
+	/* Decoration reads the same on every scheme: the luggage tag and ticket
+	   paper, the ink printed on it, the date stamp on it, and the offset
+	   plane behind a picture (foundations Decor/*). */
+	--color-tag: var(--sites-color-grey-extra-light);
+	--color-tag-ink: var(--sites-color-brand-primary);
+	--color-tag-stamp: var(--sites-color-brand-accent);
+	--color-plane: var(--sites-color-brand-accent);
+	/* The deep ink the scrim and the lightbox are cut from: the brand
+	   primary taken most of the way to black, so a palette change carries
+	   them (foundations Base/scrim, about #131A23). The scrim is it at 70%
+	   with the light type that sits on a photograph under it. */
+	--color-deep: color-mix(in oklab, var(--sites-color-brand-primary) 62%, black);
+	--color-scrim: color-mix(in srgb, var(--color-deep) 70%, transparent);
+	/* The lightbox on deep ink: the backdrop at 92%, the round chrome a
+	   step lighter, its hover a step more, the caption in light paper. */
+	--color-lightbox-backdrop: color-mix(in srgb, var(--color-deep) 92%, transparent);
+	--color-lightbox-chrome: color-mix(in oklab, var(--color-deep), var(--sites-color-grey-extra-light) 8%);
+	--color-lightbox-chrome-hover: color-mix(in oklab, var(--color-deep), var(--sites-color-grey-extra-light) 16%);
+	--color-lightbox-caption: color-mix(in oklab, var(--sites-color-grey-extra-light) 76%, var(--color-deep));
+	--color-lightbox-ink: color-mix(in srgb, var(--sites-color-grey-extra-light) 92%, transparent);
+	--color-on-photo: var(--sites-color-grey-extra-light);
+}
+
+/* The scheme roles. inline is required: each utility re-resolves against
+   the sites-scheme-<handle> class of the section it sits in. The engine has
+   no muted, meta, rule, surface-2 or stamp slot, so they ride on chip and
+   icon slots (design plan, gap 20). */
+@theme inline {
+	--color-scheme-background: var(--sites-scheme-background);
+	--color-scheme-foreground: var(--sites-scheme-foreground);
+	--color-scheme-heading: var(--sites-scheme-heading);
+	--color-scheme-input-background: var(--sites-scheme-input-background);
+	--color-scheme-input-foreground: var(--sites-scheme-input-foreground);
+	--color-scheme-input-border: var(--sites-scheme-input-border);
+	--color-scheme-chip-background: var(--sites-scheme-chip-background);
+	--color-scheme-chip-foreground: var(--sites-scheme-chip-foreground);
+	--color-scheme-chip-border: var(--sites-scheme-chip-border);
+	--color-scheme-icons: var(--sites-scheme-icons);
+	--color-scheme-links: var(--sites-scheme-links);
+	--color-scheme-button-background: var(--sites-scheme-button-background);
+	--color-scheme-button-foreground: var(--sites-scheme-button-foreground);
+	--color-scheme-button-hover-background: var(--sites-scheme-button-hover-background);
+	--color-scheme-button-hover-foreground: var(--sites-scheme-button-hover-foreground);
+	--color-scheme-secondary-button-background: var(--sites-scheme-secondary-button-background);
+	--color-scheme-secondary-button-foreground: var(--sites-scheme-secondary-button-foreground);
+	--color-scheme-secondary-button-hover-background: var(--sites-scheme-secondary-button-hover-background);
+	--color-scheme-secondary-button-hover-foreground: var(--sites-scheme-secondary-button-hover-foreground);
+	--color-scheme-muted: var(--sites-scheme-chip-foreground);
+	--color-scheme-meta: var(--sites-scheme-icons);
+	--color-scheme-rule: var(--sites-scheme-chip-border);
+	--color-scheme-surface: var(--sites-scheme-input-background);
+	--color-scheme-surface-2: var(--sites-scheme-chip-background);
+	--color-scheme-stamp: var(--sites-scheme-links);
+	--color-scheme-route: var(--sites-scheme-icons);
+	--color-scheme-error: var(--sites-scheme-links);
+	--color-scheme-backdrop: color-mix(in srgb, var(--sites-scheme-foreground) 50%, transparent);
+	--color-scheme-pulse: color-mix(in srgb, var(--sites-scheme-links) 45%, transparent);
+}
+
+@theme {
+	--font-heading: var(--sites-font-heading-family), Georgia, serif;
+	--font-body: var(--sites-font-body-family), Arial, sans-serif;
+	--font-mono: var(--sites-font-mono-family), SFMono-Regular, Menlo, monospace;
+	--text-xs: var(--sites-type-scale-xs);
+	--text-xs--line-height: var(--sites-type-leading-normal);
+	--text-sm: var(--sites-type-scale-sm);
+	--text-sm--line-height: var(--sites-type-leading-normal);
+	--text-base: var(--sites-type-scale-base);
+	--text-base--line-height: var(--sites-type-leading-relaxed);
+	--text-lg: var(--sites-type-scale-lg);
+	--text-lg--line-height: var(--sites-type-leading-normal);
+	--text-xl: var(--sites-type-scale-xl);
+	--text-xl--line-height: var(--sites-type-leading-normal);
+	--text-2xl: var(--sites-type-scale-2xl);
+	--text-2xl--line-height: var(--sites-type-leading-tight);
+	--text-3xl: var(--sites-type-scale-3xl);
+	--text-3xl--line-height: var(--sites-type-leading-tight);
+	--text-4xl: var(--sites-type-scale-4xl);
+	--text-4xl--line-height: var(--sites-type-leading-tight);
+	--text-5xl: var(--sites-type-scale-5xl);
+	--text-5xl--line-height: var(--sites-type-leading-tight);
+	--leading-tight: var(--sites-type-leading-tight);
+	--leading-normal: var(--sites-type-leading-normal);
+	--leading-relaxed: var(--sites-type-leading-relaxed);
+
+	/* The role sizes: each steps down per breakpoint from the desktop scale
+	   step (the :root blocks below), so markup writes text-h1 once. */
+	--text-display: var(--nomad-text-display);
+	--text-display--line-height: 1.02;
+	--text-display--letter-spacing: -0.02em;
+	--text-h1: var(--nomad-text-h1);
+	--text-h1--line-height: 1.05;
+	--text-h1--letter-spacing: -0.01em;
+	--text-h2: var(--nomad-text-h2);
+	--text-h2--line-height: 1.1;
+	--text-h3: var(--nomad-text-h3);
+	--text-h3--line-height: 1.15;
+	--text-h4: var(--nomad-text-h4);
+	--text-h4--line-height: 1.25;
+	--text-h5: var(--nomad-text-h5);
+	--text-h5--line-height: 1.3;
+	--text-body: var(--nomad-text-body);
+	--text-body--line-height: 1.65;
+	--text-body-lg: var(--nomad-text-body-lg);
+	--text-body-lg--line-height: 1.5;
+	--text-body-sm: var(--nomad-text-body-sm);
+	--text-body-sm--line-height: 1.5;
+	--text-meta: var(--nomad-text-meta);
+	--text-meta--line-height: 1.5;
+	--text-meta--letter-spacing: 0.06em;
+	--text-coord: var(--nomad-text-coord);
+	--text-coord--line-height: 1.5;
+	--text-numeral: var(--nomad-text-numeral);
+	--text-numeral--line-height: 1;
+	--text-control: var(--nomad-text-control);
+	--text-control--line-height: 1.2;
+	--text-nav: var(--nomad-text-nav);
+	--text-nav--line-height: 1.3;
+
+	--spacing-space-xs: var(--sites-spacing-xs);
+	--spacing-space-sm: var(--sites-spacing-sm);
+	--spacing-space-md: var(--sites-spacing-md);
+	--spacing-space-lg: var(--sites-spacing-lg);
+	--spacing-space-xl: var(--sites-spacing-xl);
+	--spacing-space-2xl: var(--nomad-space-2xl);
+	--spacing-section: var(--nomad-section);
+	--spacing-gutter: var(--nomad-gutter);
+	--spacing-button-x: var(--sites-button-padding-x);
+	/* The small steps under space-xs: a hairline gap between stacked lines
+	   (micro), a meta line under its title (tiny), a chip's or a menu row's
+	   vertical padding (chip). */
+	--spacing-micro: 0.125rem;
+	--spacing-tiny: 0.25rem;
+	--spacing-chip: 0.375rem;
+
+	--radius-none: var(--sites-radius-none);
+	--radius-sm: var(--sites-radius-sm);
+	--radius-md: var(--sites-radius-md);
+	--radius-lg: var(--sites-radius-lg);
+	--radius-full: var(--sites-radius-full);
+	--radius-button: var(--sites-button-radius);
+	--radius-input: var(--sites-input-radius);
+	--shadow-sm: var(--sites-shadow-sm);
+	--shadow-md: var(--sites-shadow-md);
+	--shadow-lg: var(--sites-shadow-lg);
+
+	/* Columns and the fixed sizes of objects: a stamp, a pin, a tag and a
+	   carousel ticket are things with their own size. */
+	--container-column: 85rem;
+	--container-reading: 40rem;
+	--container-side: 30rem;
+	--container-list: 25rem;
+	--container-drawer: 25rem;
+	--container-tag: 18rem;
+	--container-tag-mini: 12.5rem;
+	--container-notice: 22rem;
+	--container-ticket: 55rem;
+	--container-table: 50rem;
+	--container-panel: 60rem;
+	--container-inset: 35rem;
+	/* Flex bases: a text column and a map wrap under each other below them. */
+	--container-col: 20rem;
+	--container-map: 24rem;
+	/* A dropdown list of countries. */
+	--container-menu: 12rem;
+	--container-pass: 22.5rem;
+	--container-copy: 47.5rem;
+	--container-figure: 37.5rem;
+	--spacing-control: 3rem;
+	--spacing-control-small: 2.5rem;
+	--spacing-icon: 1.25rem;
+	--spacing-icon-sm: 1rem;
+	--spacing-icon-button: 2.75rem;
+	--spacing-dot: 0.5rem;
+	--spacing-place-pin: 0.875rem;
+	--spacing-pin: 0.625rem;
+	--spacing-pin-now: 0.75rem;
+	--spacing-pulse: 1.75rem;
+	/* Half the pulse box: where a line through a row of pins runs. */
+	--spacing-pin-mid: 0.875rem;
+	--spacing-eyelet: 0.875rem;
+	--spacing-thumb-sm: 3.5rem;
+	--spacing-thumb: 4rem;
+	--spacing-thumb-lg: 5rem;
+	--spacing-portrait: 6rem;
+	--spacing-locator: 6rem;
+	--spacing-stub: var(--nomad-stub);
+	--spacing-postmark: 8rem;
+	/* The postmark's wavy cancel lines. */
+	--spacing-cancel-w: 4rem;
+	--spacing-cancel-h: 2.5rem;
+	--spacing-ring: 8.5rem;
+	--spacing-stamp-pad: 0.625rem;
+	--spacing-play: 4.5rem;
+	--spacing-plane: 1.5rem;
+	--spacing-band: 3rem;
+	/* What a 3° tilt pushes the 18rem tag's corners out by (about 6px
+	   sideways, 7px down), so the hero keeps it whole. */
+	--spacing-tilt-clear: 0.5rem;
+	--spacing-hero: 37.5rem;
+	--spacing-hero-tall: 85svh;
+	/* The room under the hero copy from 48rem, where the tag stands. */
+	--spacing-hero-copy: 6rem;
+	/* The room a stamp hanging below a cover needs on a phone. */
+	--spacing-overhang: 5rem;
+	/* How far below the sticky header a sticky picture rests. */
+	--spacing-sticky: 6rem;
+	/* A Where next ticket: 18.5rem on a phone, so the next one peeks, 26.25rem from 48rem. */
+	--spacing-ribbon: 18.5rem;
+	--spacing-ribbon-lg: 26.25rem;
+	--spacing-textarea: 10rem;
+	--spacing-rule: 3rem;
+	--aspect-map: 960 / 373;
+	/* The left edge of the column at any width, for sections whose media
+	   bleeds off the right edge while their text keeps the column's line. */
+	--spacing-edge: max(var(--nomad-gutter), calc((100vw - var(--container-column)) / 2));
+	--spacing-map-pan: 60rem;
+	/* The bottom safe area (the home indicator) a fixed strip keeps clear of. */
+	--spacing-safe: env(safe-area-inset-bottom, 0rem);
+
+	/* Decoration steps (foundations Decor collection): the tilt of a date
+	   stamp and the hero tag, the two tilts a stamp wall alternates with, and
+	   the strength of the contour texture. */
+	--tilt-stamp: -3deg;
+	/* The hero's luggage tag leans the other way (Cory: "should this maybe
+	   tilt the other direction?"). */
+	--tilt-tag: 3deg;
+	--tilt-left: -8deg;
+	--tilt-right: 6deg;
+	--texture-opacity: 8%;
+
+	--scale-hover: 103%;
+	--transition-duration-hover: 400ms;
+	--transition-duration-panel: 200ms;
+	--ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+	--animate-pulse-ring: pulse-ring 2.4s var(--ease-out-soft) infinite;
+
+	@keyframes pulse-ring {
+		0% { transform: scale(0.6); opacity: 1; }
+		80%, 100% { transform: scale(1.4); opacity: 0; }
+	}
+}
+
+:root {
+	--nomad-text-display: calc(var(--sites-type-scale-5xl) * 48 / 80);
+	--nomad-text-h1: calc(var(--sites-type-scale-4xl) * 40 / 64);
+	--nomad-text-h2: calc(var(--sites-type-scale-3xl) * 30 / 44);
+	--nomad-text-h3: calc(var(--sites-type-scale-2xl) * 24 / 30);
+	--nomad-text-h4: calc(var(--sites-type-scale-xl) * 19 / 22);
+	--nomad-text-h5: calc(var(--sites-type-scale-base) * 17 / 18);
+	--nomad-text-body: calc(var(--sites-type-scale-base) * 17 / 18);
+	--nomad-text-body-lg: calc(var(--sites-type-scale-lg) * 19 / 21);
+	--nomad-text-body-sm: calc(var(--sites-type-scale-base) * 14 / 18);
+	--nomad-text-meta: var(--sites-type-scale-xs);
+	--nomad-text-coord: var(--sites-type-scale-xs);
+	--nomad-text-numeral: calc(var(--sites-type-scale-3xl) * 32 / 44);
+	--nomad-text-control: calc(var(--sites-type-scale-base) * 15 / 18);
+	--nomad-text-nav: calc(var(--sites-type-scale-base) * 17 / 18);
+	--nomad-section: calc(var(--sites-spacing-lg) * 32 / 32);
+	--nomad-gutter: calc(var(--sites-spacing-sm) * 16 / 16);
+	--nomad-space-2xl: calc(var(--sites-spacing-2xl) * 48 / 72);
+	--nomad-stub: 6.25rem;
+}
+
+@media (min-width: 48rem) {
+	:root {
+		--nomad-text-display: calc(var(--sites-type-scale-5xl) * 64 / 80);
+		--nomad-text-h1: calc(var(--sites-type-scale-4xl) * 52 / 64);
+		--nomad-text-h2: calc(var(--sites-type-scale-3xl) * 36 / 44);
+		--nomad-text-h3: calc(var(--sites-type-scale-2xl) * 26 / 30);
+		--nomad-text-h4: calc(var(--sites-type-scale-xl) * 20 / 22);
+		--nomad-text-h5: var(--sites-type-scale-base);
+		--nomad-text-body: calc(var(--sites-type-scale-base) * 17 / 18);
+		--nomad-text-body-lg: calc(var(--sites-type-scale-lg) * 20 / 21);
+		--nomad-text-body-sm: calc(var(--sites-type-scale-base) * 14 / 18);
+		--nomad-text-meta: var(--sites-type-scale-xs);
+		--nomad-text-coord: var(--sites-type-scale-sm);
+		--nomad-text-numeral: calc(var(--sites-type-scale-3xl) * 40 / 44);
+		--nomad-text-control: calc(var(--sites-type-scale-base) * 15 / 18);
+		--nomad-text-nav: calc(var(--sites-type-scale-base) * 16 / 18);
+		--nomad-section: calc(var(--sites-spacing-lg) * 40 / 32);
+		--nomad-gutter: calc(var(--sites-spacing-sm) * 24 / 16);
+		--nomad-space-2xl: calc(var(--sites-spacing-2xl) * 60 / 72);
+		--nomad-stub: 7rem;
+	}
+}
+
+@media (min-width: 64rem) {
+	:root {
+		--nomad-text-display: var(--sites-type-scale-5xl);
+		--nomad-text-h1: var(--sites-type-scale-4xl);
+		--nomad-text-h2: var(--sites-type-scale-3xl);
+		--nomad-text-h3: var(--sites-type-scale-2xl);
+		--nomad-text-h4: var(--sites-type-scale-xl);
+		--nomad-text-h5: var(--sites-type-scale-base);
+		--nomad-text-body: var(--sites-type-scale-base);
+		--nomad-text-body-lg: var(--sites-type-scale-lg);
+		--nomad-text-body-sm: calc(var(--sites-type-scale-base) * 15 / 18);
+		--nomad-text-meta: var(--sites-type-scale-sm);
+		--nomad-text-coord: var(--sites-type-scale-sm);
+		--nomad-text-numeral: calc(var(--sites-type-scale-3xl) * 48 / 44);
+		--nomad-text-control: calc(var(--sites-type-scale-base) * 16 / 18);
+		--nomad-text-nav: calc(var(--sites-type-scale-base) * 16 / 18);
+		--nomad-section: calc(var(--sites-spacing-lg) * 48 / 32);
+		--nomad-gutter: calc(var(--sites-spacing-sm) * 40 / 16);
+		--nomad-space-2xl: var(--sites-spacing-2xl);
+	}
+}
+
+/* Decoration utilities: what a utility class cannot spell. */
+@utility tilt-stamp {
+	rotate: var(--tilt-stamp);
+}
+@utility tilt-tag {
+	rotate: var(--tilt-tag);
+}
+@utility tilt-left {
+	rotate: var(--tilt-left);
+}
+@utility tilt-right {
+	rotate: var(--tilt-right);
+}
+@utility texture-contour {
+	opacity: var(--texture-opacity);
+}
+
+/* A map pin sits at the point its place's coordinates give, fed by the
+   one sanctioned inline style: data-driven custom properties only. */
+@utility pin-at {
+	position: absolute;
+	left: var(--x);
+	top: var(--y);
+	translate: -50% -50%;
+}
+
+/* On a phone the drawn map is shown at a fixed 60rem scale, panned so the
+   current pin (--cx, --cy, from the template) sits in the frame. */
+@utility map-pan {
+	position: absolute;
+	width: var(--spacing-map-pan);
+	max-width: none;
+	left: calc(50% - var(--cx));
+	top: calc(50% - var(--cy));
+}
+
+/* The luggage tag: clipped top corners. */
+@utility tag-cut {
+	clip-path: polygon(1rem 0, calc(100% - 1rem) 0, 100% 1rem, 100% 100%, 0 100%, 0 1rem);
+}
+
+/* A ticket's two semicircle notches on its tear line, through which the
+   scheme behind it shows: on a stub ticket they sit at the stub's edge,
+   top and bottom; on a strip they sit at both ends. */
+@utility ticket-notch {
+	--notch: 0.5rem;
+	mask:
+		radial-gradient(circle at var(--spacing-stub) 0, transparent var(--notch), black calc(var(--notch) + 0.5px)) top / 100% 51% no-repeat,
+		radial-gradient(circle at var(--spacing-stub) 100%, transparent var(--notch), black calc(var(--notch) + 0.5px)) bottom / 100% 51% no-repeat;
+}
+@utility ticket-notch-ends {
+	--notch: 0.5rem;
+	mask:
+		radial-gradient(circle at 0 50%, transparent var(--notch), black calc(var(--notch) + 0.5px)) left / 51% 100% no-repeat,
+		radial-gradient(circle at 100% 50%, transparent var(--notch), black calc(var(--notch) + 0.5px)) right / 51% 100% no-repeat;
+}
+
+/* The post list's two views (Folio's switch). A reader's saved choice is
+   set on <html> before paint and wins over the editor's. */
+@custom-variant view-list {
+	&:where([data-view="list"] *):not(:where([data-post-list-view="grid"] *)) {
+		@slot;
+	}
+	&:where([data-post-list-view="list"] [data-view] *) {
+		@slot;
+	}
+}
+@custom-variant view-grid {
+	&:where([data-view="grid"] *):not(:where([data-post-list-view="list"] *)) {
+		@slot;
+	}
+	&:where([data-post-list-view="grid"] [data-view] *) {
+		@slot;
+	}
+}
+
+/* The tab that names the page's own address (the journal's topic tabs). */
+@custom-variant page-current {
+	&[aria-current="page"] {
+		@slot;
+	}
+}
+
+/* A row, pin or chip theme.ts marks as the current one. */
+@custom-variant current {
+	&[aria-current="true"],
+	&:where([aria-current="true"] *) {
+		@slot;
+	}
+}
+
+/* The browser surfaces no utility reaches. */
+:root {
+	font-size: var(--sites-type-base);
+}
+
+::selection {
+	background: var(--sites-color-brand-accent);
+	color: var(--sites-color-grey-extra-light);
+}
+
+:focus-visible {
+	outline: 2px solid var(--sites-scheme-links);
+	outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+@layer base {
+	dialog {
+		border: 0;
+		padding: 0;
+		color: inherit;
+	}
+
+	[id] {
+		scroll-margin-top: 5rem;
+	}
+
+	/* Every number in a column lines up. */
+	.font-mono {
+		font-variant-numeric: tabular-nums;
+	}
+}
+
+[data-dismissed] { display: none; }
+body:has([data-bare]) [data-group] { display: none; }
+[hidden] { display: none !important; }
+
+html.reveal-off .reveal:not(.is-revealed) {
+	opacity: 1;
+	transform: none;
+	filter: none;
+}
+
+/* Rich text from the editor carries no classes, so its rhythm is set here. */
+@layer components {
+	.sites-prose {
+		font-size: var(--nomad-text-body);
+		line-height: 1.65;
+	}
+
+	.sites-prose > * + * {
+		margin-top: var(--sites-spacing-sm);
+	}
+
+	.sites-prose :is(h2, h3, h4) {
+		margin-top: var(--sites-spacing-lg);
+		font-family: var(--sites-font-heading-family), Georgia, serif;
+		font-weight: 600;
+		line-height: 1.15;
+		color: var(--sites-scheme-heading);
+	}
+
+	.sites-prose h2 {
+		font-size: var(--nomad-text-h3);
+	}
+
+	.sites-prose :is(h3, h4) {
+		font-size: var(--nomad-text-h4);
+	}
+
+	.sites-prose a {
+		color: var(--sites-scheme-links);
+		text-decoration-line: underline;
+		text-underline-offset: 0.2em;
+	}
+
+	.sites-prose :is(ul, ol) {
+		display: grid;
+		gap: var(--sites-spacing-xs);
+		padding-inline-start: 1.25em;
+	}
+
+	.sites-prose ul {
+		list-style: disc;
+	}
+
+	.sites-prose ol {
+		list-style: decimal;
+	}
+
+	.sites-prose blockquote {
+		border-top: 1px solid var(--sites-scheme-chip-border);
+		border-bottom: 1px solid var(--sites-scheme-chip-border);
+		padding-block: var(--sites-spacing-sm);
+		font-family: var(--sites-font-heading-family), Georgia, serif;
+		font-size: var(--nomad-text-h4);
+	}
+
+	/* The post's drop cap: a Besley numeral-weight first letter in stamp ink. */
+	.nomad-drop-cap > p:first-child::first-letter {
+		float: left;
+		margin: 0.08em 0.1em 0 0;
+		font-family: var(--sites-font-heading-family), Georgia, serif;
+		font-size: 3.4em;
+		font-weight: 800;
+		line-height: 0.8;
+		color: var(--sites-scheme-links);
+	}
+}
+
+.sites-icon > svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/* An inlined SVG fills the box it is given (the drawn map, the decor). */
+.sites-fill > svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/* The current pin's one slow "you are here" ring. */
+@media (prefers-reduced-motion: reduce) {
+	.animate-pulse-ring {
+		animation: none;
+		opacity: 0.6;
+	}
+}
+
+/* @magic-spells/sticky-header pins the element it is, so the renderer's
+   wrapper steps out of the way. Switched off it sits in the page. */
+[data-section="header"]:has(sticky-header) {
+	display: contents;
+}
+
+@layer components {
+	sticky-header[disabled] {
+		position: static;
+		transform: none;
+	}
+
+	sticky-header::before {
+		content: none;
+	}
+}
+
+/* With no JavaScript the header's Places panel never opens, so its links
+   stay out of the tab order. */
+dropdown-component:not(:defined) dropdown-panel {
+	display: none;
+}
+
+/* The select lists (the country filter, form selects), drawn on the scheme
+   they sit in: input colours, the hover and the choice on the chip colour,
+   no shadow. */
+select-dropdown {
+	--select-shadow: none;
+	--select-shadow-soft: none;
+	--select-color-text: var(--sites-scheme-input-foreground);
+	--select-color-background: var(--sites-scheme-input-background);
+	--select-color-border: var(--sites-scheme-input-border);
+	--select-color-border-hover: var(--sites-scheme-input-foreground);
+	--select-color-border-dark: var(--sites-scheme-input-foreground);
+	--select-color-primary: var(--sites-scheme-links);
+	--select-color-hover: var(--sites-scheme-chip-background);
+	--select-color-focus: var(--sites-scheme-chip-background);
+	--select-color-selected: var(--sites-scheme-chip-background);
+	display: block;
+}
+
+/* The carousels. Tarot's stylesheet is neutral; these map its properties
+   onto the scheme the carousel sits in. */
+tarot-carousel {
+	--color-pagination-dot: color-mix(in srgb, var(--sites-scheme-foreground) 35%, transparent);
+	--color-pagination-dot-active: var(--sites-scheme-links);
+}
+
+/* Before tarot upgrades, or with no JavaScript, its stylesheet hides every
+   slide. A one-up carousel shows its first slide; a track lays its slides
+   out as a row that scrolls, bleeding off the right edge. */
+tarot-carousel:not(:defined) tarot-slide:first-child {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+tarot-carousel[data-track]:not(:defined) tarot-track {
+	display: flex;
+	gap: var(--sites-spacing-sm);
+	overflow-x: auto;
+	padding-inline-start: var(--nomad-gutter);
+}
+
+tarot-carousel[data-track]:not(:defined) tarot-slide {
+	flex: none;
+	width: auto;
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+/* The photo carousel's slides are one width before tarot measures them,
+   matching its slidesPerView (1.2, 2.5, 4). */
+tarot-carousel[data-track="photos"]:not(:defined) tarot-slide {
+	width: 80%;
+}
+@media (width >= 48rem) {
+	tarot-carousel[data-track="photos"]:not(:defined) tarot-slide {
+		width: 38%;
+	}
+}
+@media (width >= 80rem) {
+	tarot-carousel[data-track="photos"]:not(:defined) tarot-slide {
+		width: 24%;
+	}
+}
+
+/* The lightbox is the tarot plugin's overlay on Night Train (foundations
+   lightbox board): the backdrop at 92%, round chrome 1rem in, the counter
+   and caption in mono. */
+:root {
+	--tarot-lightbox-backdrop: var(--color-lightbox-backdrop);
+	--tarot-lightbox-chrome-color: var(--color-lightbox-ink);
+	--tarot-lightbox-chrome-size: 2.75rem;
+	--tarot-lightbox-chrome-inset: 1rem;
+	--tarot-lightbox-image-height: calc(100dvh - 8rem);
+}
+
+.tarot-lightbox__counter {
+	font-family: var(--sites-font-mono-family), monospace;
+	font-size: var(--nomad-text-coord);
+	font-variant-numeric: tabular-nums;
+}
+
+.tarot-lightbox__close,
+.tarot-lightbox .tarot-button {
+	background: var(--color-lightbox-chrome);
+}
+
+.tarot-lightbox__close:hover,
+.tarot-lightbox .tarot-button:hover {
+	background: var(--color-lightbox-chrome-hover);
+}
+
+.tarot-lightbox [data-caption] {
+	display: block;
+	margin-top: 1rem;
+	color: var(--color-lightbox-caption);
+	font-family: var(--sites-font-mono-family), monospace;
+	font-size: var(--nomad-text-coord);
+	text-align: center;
+}
+
+@media (max-width: 47.99rem) {
+	.tarot-lightbox .tarot-button {
+		display: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
+	[data-zoom] { scale: none !important; }
+	.reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+	/* The announcement ticker stands still: one copy, no dot, cut with an
+	   ellipsis short of the ×. */
+	[data-ticker] scrolling-content { mask-image: none; padding-inline: var(--nomad-gutter) calc(var(--spacing-icon-button) + var(--nomad-gutter)); }
+	[data-ticker] scrolling-track { width: auto; transform: none !important; }
+	[data-ticker] scrolling-item[data-clone],
+	[data-ticker] [data-ticker-dot] { display: none; }
+	[data-ticker] scrolling-item { flex: 1 1 auto; min-width: 0; }
+	[data-ticker] scrolling-item > span { overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+}
+
+/* The photo strips scroll by swipe, trackpad and their arrows; the bar
+   itself would sit under the photographs. */
+[data-strip] {
+	scrollbar-width: none;
+}
+[data-strip]::-webkit-scrollbar {
+	display: none;
+}

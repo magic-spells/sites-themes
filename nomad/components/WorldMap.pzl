@@ -1,0 +1,73 @@
+<!-- component: WorldMap -->
+<!-- props: places stops now next fit ratio route labels base caption pins pan still -->
+<!-- The drawn map: Natural Earth 1:110m land as an equirectangular crop from
+     80° N to 60° S (assets/map/world.svg, 960 × 373, 2.667 units a degree),
+     one pin per place, and the route as a dashed line through the stops in
+     arrival order, the leg to the next stop dotted. A place at (lat, lon)
+     sits at x = (lon + 180) × 960 / 360, y = (80 − lat) × 373 / 140. fit
+     "world" shows the whole crop; "trip" frames the stops; "point" frames the
+     one place in places. The frame keeps the box's ratio (map, 4:3 or 1:1),
+     so pins are placed in percent of the frame, at a fixed size whatever the
+     scale. Every pin is a link to its place. pins limits the pins to a list of
+     place handles. pan shows the map at a fixed 60rem scale on a phone, in a
+     4:3 frame centred between the current and the next place. still draws
+     the pins without links, for a map inside a button. -->
+{#let
+  r = ratio == '4/3' ? 4 / 3 : (ratio == 'square' ? 1 : 960 / 373)
+  pts = fit == 'trip' && stops.length ? (stops | map('fields.place') | compact) : places
+  bylon = pts | sort('fields.longitude')
+  bylat = pts | sort('fields.latitude')
+  x0 = ((bylon | first).fields.longitude + 180) * 960 / 360
+  x1 = ((bylon | last).fields.longitude + 180) * 960 / 360
+  y0 = (80 - (bylat | last).fields.latitude) * 373 / 140
+  y1 = (80 - (bylat | first).fields.latitude) * 373 / 140
+  bw = Math.max((x1 - x0) * 1.5, fit == 'point' ? 90 : 120)
+  bh = Math.max((y1 - y0) * 1.5, fit == 'point' ? 90 : 80)
+  framed = fit == 'trip' || fit == 'point'
+  vw = framed ? Math.max(bw, bh * r) : 960
+  vh = framed ? vw / r : 960 / r
+  vx = framed ? (x0 + x1) / 2 - vw / 2 : 0
+  vy = framed ? (y0 + y1) / 2 - vh / 2 : (373 - 960 / r) / 2
+  dash = route == 'stops' || route == true || route == 'posts'
+  now_place = now ? (places | find('handle', now)) : null
+  next_place = next ? (places | find('handle', next)) : null
+  focus_lon = now_place ? (next_place ? (now_place.fields.longitude + next_place.fields.longitude) / 2 : now_place.fields.longitude) : 0
+  focus_lat = now_place ? (next_place ? (now_place.fields.latitude + next_place.fields.latitude) / 2 : now_place.fields.latitude) : 20
+}
+<div class="{ pan ? 'relative aspect-4/3 overflow-hidden md:aspect-auto' : '' }" style={ pan ? '--cx: ' + ((focus_lon + 180) * 60 / 360) + 'rem; --cy: ' + ((80 - focus_lat) * 23.3125 / 140) + 'rem' : null }>
+<div class="relative overflow-hidden { ratio == '4/3' ? 'aspect-4/3' : (ratio == 'square' ? 'aspect-square' : 'aspect-map') } { pan ? 'max-md:map-pan' : '' }" data-map>
+  <svg class="absolute inset-0 size-full fill-scheme-surface" viewBox="{ vx } { vy } { vw } { vh }" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    {#svg 'map/world.svg'}
+    {#if dash}
+      {#for stop in stops, i}
+        {#if i > 0}
+          {#let
+            a = stops[i - 1].fields.place
+            b = stop.fields.place
+          }
+          {#if a && b}<line class="stroke-scheme-route" x1={ (a.fields.longitude + 180) * 960 / 360 } y1={ (80 - a.fields.latitude) * 373 / 140 } x2={ (b.fields.longitude + 180) * 960 / 360 } y2={ (80 - b.fields.latitude) * 373 / 140 } stroke-width="1.5" stroke-linecap="round" stroke-dasharray={ stop.fields.next ? '1.5 4' : '4 4' } vector-effect="non-scaling-stroke" fill="none" />{/if}
+        {/if}
+      {/for}
+    {/if}
+  </svg>
+  {#for place in places}
+    {#let
+      px = ((place.fields.longitude + 180) * 960 / 360 - vx) / vw * 100
+      py = ((80 - place.fields.latitude) * 373 / 140 - vy) / vh * 100
+      is_now = now && place.handle == now
+      is_next = next && place.handle == next
+    }
+    {#if px >= 0 && px <= 100 && py >= 0 && py <= 100 && (!pins || contains(pins, place.handle))}
+      {#if still}
+      <span class="pin-at z-10 flex items-center justify-center" style="--x: { px }%; --y: { py }%"><Pin type={ is_now ? 'now' : (is_next ? 'next' : 'place') } /></span>
+      {:else}
+      <a class="pin-at z-10 flex items-center justify-center p-chip { is_now ? 'z-20' : '' }" style="--x: { px }%; --y: { py }%" href="{ base }/{ place.handle }" data-country={ place.fields.country } data-place-pin={ place.handle } aria-label="{ place.title }, { place.fields.country }">
+        <Pin type={ is_now ? 'now' : (is_next ? 'next' : 'place') } />
+        {#if labels && is_now}<span class="pointer-events-none absolute top-1/2 left-full ml-tiny -translate-y-1/2 font-mono text-meta font-medium whitespace-nowrap text-scheme-foreground uppercase">{ t('now') } · { place.title }</span>{/if}
+        {#if labels && is_next}<span class="pointer-events-none absolute top-1/2 right-full mr-tiny -translate-y-1/2 text-right font-mono text-meta font-medium whitespace-nowrap text-scheme-foreground uppercase">{ t('next') } · { place.title }{#if caption}<br />{ caption }{/if}</span>{/if}
+      </a>
+      {/if}
+    {/if}
+  {/for}
+</div>
+</div>

@@ -1,0 +1,51 @@
+{
+  "label": "Journal",
+  "description": "Every post, newest first, with the topic filter and the grid or list switch.",
+  "layout": "default",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "Journal",
+        "standfirst": "Field notes, costs and city guides from every stop, newest first.",
+        "count": "posts",
+        "align": "left"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_posts",
+      "type": "post-list",
+      "preset": "Journal",
+      "settings": {
+        "heading": "",
+        "collection": "posts",
+        "scope": "all",
+        "layout": "grid",
+        "featured_first": true,
+        "columns": "2",
+        "show_toggle": true,
+        "show_topic_filter": true,
+        "limit": 12,
+        "view_all_label": ""
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Postcards",
+      "settings": {
+        "heading": "Postcards from the road",
+        "text": "One email when I move, with what the last place cost. About once a month.",
+        "placeholder": "Your email",
+        "proof": "",
+        "form": "newsletter",
+        "color_scheme": "dusk"
+      },
+      "blocks": []
+    }
+  ]
+}

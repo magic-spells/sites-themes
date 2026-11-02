@@ -1,0 +1,67 @@
+<!-- The place page's cover: the photograph full-bleed (21:9 from 48rem, 4:5 on a phone) under a short Night scrim, the name at display size bottom-left with its coordinates in mono at h4 size (Figma "Coord lg"). The date stamp and the country postmark cross the cover's bottom edge: at the right from 40rem, set in so the postmark's cancel lines end inside the page, and under the name at the left on a phone, clear of the facts. Under it, a fact strip on a hairline, all computed. The current place (the Current place setting, then the newest post's place) stamps its arrival and reads "Now, since Oct 7, 2026"; any other place stamps its newest post and shows its stays and last visit. -->
+<!-- current place: see components/CurrentPlace.pzl -->
+{#let
+  place = page.entry
+  f = place.fields
+  posts = content.posts.entries | where('fields.place.handle', place.handle) | sort('fields.date')
+  stays = content.stops.entries | where('fields.place.handle', place.handle) | reject('fields.next') | sort('fields.arrive')
+  latest = posts | last
+  current = (site.settings.current_place ? (content.places.entries | find('handle', site.settings.current_place)) : null) ?? (content.posts.entries | sort('fields.date') | last).fields.place
+  is_current = current && place && current.handle == place.handle
+  arrived = is_current && stays.length ? (stays | last).fields.arrive : null
+  stamp_date = arrived ?? (latest ? latest.fields.date : null)
+}
+{#if place}
+<header class="bg-scheme-background text-scheme-foreground">
+  <div class="relative" data-notice-avoid>
+    <div class="relative aspect-4/5 overflow-hidden bg-scheme-surface-2 md:aspect-21/9">
+      {#if f.image}<img class="size-full object-cover" src="{ image_url(f.image, 1600) }" srcset="{ image_srcset(f.image, [768, 1024, 1280, 1600, 2000, 2560]) }" sizes="100vw" alt="{ f.image_alt }" loading="eager" fetchpriority="high" width={ f.image.width } height={ f.image.height } />{/if}
+      <div class="absolute inset-0 bg-linear-to-t from-scrim to-transparent to-50%" aria-hidden="true"></div>
+      <div class="absolute inset-x-0 bottom-0 px-gutter pb-postmark sm:pb-space-lg md:pb-space-xl">
+        <div class="mx-auto grid max-w-column gap-space-xs">
+          <h1 class="font-heading text-display font-semibold text-balance text-on-photo">{ place.title }</h1>
+          {#if f.latitude != null}<p class="font-mono text-h4 text-on-photo"><Coord lat={ f.latitude } lon={ f.longitude } /></p>{/if}
+        </div>
+      </div>
+    </div>
+    {#if settings.show_stamps}
+      <div class="absolute bottom-0 left-gutter flex translate-y-1/2 items-center gap-space-xs sm:right-gutter sm:left-auto sm:me-space-2xl md:right-edge">
+        {#if stamp_date}<DateStamp value={ stamp_date } />{/if}
+        {#if f.country}<span class="inline-flex"><Postmark name={ place.title } country={ f.country } lat={ f.latitude } lon={ f.longitude } /></span>{/if}
+      </div>
+    {/if}
+  </div>
+  {#if settings.show_facts}
+    <div class="px-gutter pt-overhang pb-section sm:pt-space-xl md:pt-space-lg">
+      <p class="mx-auto flex max-w-column flex-wrap gap-x-space-xs gap-y-tiny border-t border-scheme-rule pt-space-md font-mono text-meta font-medium text-scheme-meta uppercase">
+        {#if f.country}<span>{ f.country }</span><span aria-hidden="true">·</span>{/if}
+        <span>{ posts.length | pluralize(t('post_one'), t('post_many')) }</span>
+        {#if arrived}<span aria-hidden="true">·</span><span>{ t('now_since', { date: date(arrived) }) }</span>{:else}
+        {#if stays.length}<span aria-hidden="true">·</span><span>{ stays.length | pluralize(t('stay_one'), t('stay_many')) }</span>{/if}
+        {#if latest}<span aria-hidden="true">·</span><span>{ t('last_visit', { date: date(latest.fields.date) }) }</span>{/if}
+        {/if}
+      </p>
+
+    </div>
+  {/if}
+</header>
+{/if}
+
+<schema>
+{
+  "name": "Place header",
+  "description": "A place's cover, name and coordinates, with its last-visit stamp and postmark and a strip of computed facts.",
+  "kind": "Hero",
+  "icon": "map-pin",
+  "templates": ["place"],
+  "settings": [
+    { "type": "checkbox", "id": "show_facts", "label": "Show the fact strip", "default": true, "info": "Country, posts, stays (from the stops) and the last visit (the newest post here)." },
+    { "type": "checkbox", "id": "show_stamps", "label": "Show the stamps", "default": true },
+    { "type": "checkbox", "id": "show_local_time", "label": "Show the local time", "default": false, "info": "Reserved: a page never reads the clock, so the local time is not drawn in this version." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "night" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "show_facts": true, "show_stamps": true, "show_local_time": false, "color_scheme": "night" } }
+  ]
+}
+</schema>

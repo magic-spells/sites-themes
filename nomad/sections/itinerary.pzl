@@ -1,0 +1,78 @@
+<!-- The route as tickets. Spine (a trip page): the trip's name (no count line: the trip header above holds the dates and counts), then one ticket per stop in arrival order (at most 12), 1rem apart, down a dashed route in the left gutter drawn by each stop's own pin column (nothing but <li> inside the <ol>), each with its pin beside the stub (the current one lit, the next hollow on a dotted leg, with a NEXT badge); numbered because the order is real. Ribbon (Where next, home; Figma): the current trip's stops in route order, EARLIER, NOW, then NEXT, as a strip of tickets 18.5rem wide on a phone (the next one peeks) and 26.25rem from 48rem, bleeding off the right edge at every width; no arrows and no rule, so it does not repeat the photo carousel below it. The server cannot tell upcoming from past, so "next" is the stop's own checkbox. -->
+<!-- current place: see components/CurrentPlace.pzl -->
+{#let
+  posts_path = site.settings.posts_path || '/journal'
+  places_path = site.settings.places_path || '/places'
+  trips_path = site.settings.trips_path || '/trips'
+  current = (site.settings.current_place ? (content.places.entries | find('handle', site.settings.current_place)) : null) ?? (content.posts.entries | sort('fields.date') | last).fields.place
+  all_stops = content.stops.entries | sort('fields.arrive')
+  now_stop = current ? (all_stops | where('fields.place.handle', current.handle) | reject('fields.next') | last) : null
+  trip = settings.trip ?? (template.type == 'trip' ? page.entry : (now_stop ? now_stop.fields.trip : null))
+  stops = (trip ? (all_stops | where('fields.trip.handle', trip.handle)) : all_stops) | slice(0, 12)
+  route = trip ? stops : (all_stops | slice(-6))
+  heading = (settings.heading || '') | replace('{trip}', trip ? trip.title : '')
+  ribbon = settings.layout == 'ribbon'
+  id = 'itinerary-' + section.id
+  reveal = site.settings.reveal_on_scroll
+}
+{#if stops.length}
+<section class="bg-scheme-background py-section text-scheme-foreground" aria-labelledby="{ id }-title">
+  {#if ribbon}
+    <div class="px-gutter">
+      <div class="mx-auto mb-space-lg max-w-column">
+        <SectionHead heading={ heading || t('where_next') } id="{ id }-title" link_label={ trip ? t('full_route') : null } link={ trip ? trips_path + '/' + trip.handle : null } />
+      </div>
+    </div>
+    <ul class="flex snap-x snap-mandatory scroll-pl-gutter gap-space-sm overflow-x-auto pr-gutter pl-gutter md:scroll-pl-edge md:pl-edge" data-strip>
+      {#for stop in route}
+        {#let
+          is_now = now_stop && stop.id == now_stop.id
+        }
+        <li class="w-ribbon shrink-0 snap-start md:w-ribbon-lg"><Ticket stop={ stop } label={ is_now ? t('now') : (stop.fields.next ? t('next') : t('earlier')) } show_posts={ settings.show_posts } show_notes={ settings.show_notes } posts_path={ posts_path } places_path={ places_path } /></li>
+      {/for}
+    </ul>
+  {:else}
+    <div class="px-gutter">
+      <div class="mx-auto grid max-w-column grid-cols-1 gap-space-lg">
+        <h2 class="font-heading text-h2 font-semibold text-scheme-heading" id="{ id }-title">{ heading || (trip ? t('stop_by_stop', { trip: trip.title }) : t('the_route')) }</h2>
+        <ol class="grid min-w-0 max-w-ticket grid-cols-1 pl-space-lg md:pl-space-xl">
+          {#for stop in stops, i}
+            {#let
+              is_now = now_stop && stop.id == now_stop.id
+              is_next = stop.fields.next
+              next_leg = i + 1 < stops.length && stops[i + 1].fields.next
+              up = i > 0 ? (is_next ? 'before:border-dotted' : 'before:border-dashed') : 'before:hidden'
+              down = i + 1 < stops.length ? (next_leg ? 'after:border-dotted' : 'after:border-dashed') : 'after:hidden'
+            }
+            <li class="relative py-space-xs { reveal ? 'reveal reveal-fade-up' : '' }">
+              <span class="absolute inset-y-0 -left-space-lg flex w-pulse items-center justify-center before:absolute before:top-0 before:bottom-1/2 before:left-1/2 before:-translate-x-1/2 before:border-r-2 before:border-scheme-route after:absolute after:top-1/2 after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:border-r-2 after:border-scheme-route md:-left-space-xl { up } { down }" aria-hidden="true"><span class="relative z-10 flex"><Pin type={ is_now ? 'now' : (is_next ? 'next' : 'place') } /></span></span>
+              <Ticket stop={ stop } label={ t('stop_n', { n: i + 1 }) } badge={ is_next ? t('next') : null } show_posts={ settings.show_posts } show_notes={ settings.show_notes } posts_path={ posts_path } places_path={ places_path } />
+            </li>
+          {/for}
+        </ol>
+      </div>
+    </div>
+  {/if}
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Itinerary",
+  "description": "The route as ticket stubs: a vertical spine for a trip, or a ribbon of where next.",
+  "kind": "Collections",
+  "icon": "route",
+  "settings": [
+    { "type": "entry", "id": "trip", "label": "Trip", "info": "A trips entry. Empty: on a trip page that trip, elsewhere the trip of the current place. Stops come from the stops content type (trip, place, arrive, nights, post, note, next)." },
+    { "type": "select", "id": "layout", "label": "Layout", "default": "spine", "options": [ { "value": "spine", "label": "Spine (every stop of the trip)" }, { "value": "ribbon", "label": "Ribbon (the current trip in route order)" } ] },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "", "info": "Empty reads The Americas, stop by stop (spine) or Where next (ribbon). {trip} is replaced with the trip's name." },
+    { "type": "checkbox", "id": "show_posts", "label": "Link each stop's post", "default": true },
+    { "type": "checkbox", "id": "show_notes", "label": "Show each stop's note", "default": true },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Full route", "settings": { "layout": "spine", "heading": "", "show_posts": true, "show_notes": true } },
+    { "name": "Where next", "settings": { "layout": "ribbon", "heading": "Where next", "show_posts": true, "show_notes": true } }
+  ]
+}
+</schema>

@@ -1,0 +1,50 @@
+<!-- A page's head: the heading, the standfirst in muted and an optional count line computed from the content (posts with their places and topics, places, trips, the kit's weight or the services), over a hairline at the column's width. Places and trips count only where you have been: the stops, leaving out the next one (with no stops, every place). Left or centred. -->
+{#let
+  centred = settings.align == 'center'
+  posts = content.posts.entries
+  places = content.places.entries
+  visited = content.stops.entries | reject('fields.next')
+  n_places = visited.length ? size(visited | map('fields.place.handle') | compact | uniq) : places.length
+  n_countries = visited.length ? size(visited | map('fields.place.fields.country') | compact | uniq) : size(places | map('fields.country') | compact | uniq)
+  n_trips = size(visited | map('fields.trip.handle') | compact | uniq)
+  n_topics = size(posts | map('fields.topic') | compact | uniq)
+  kit_grams = sum(content.gear.entries | reject('fields.group', 'services'), 'fields.weight_grams')
+}
+<header class="bg-scheme-background px-gutter pt-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-sm border-b border-scheme-rule pb-space-lg { centred ? 'justify-items-center text-center' : '' }">
+    <h1 class="font-heading text-h1 font-semibold text-balance text-scheme-heading">{ settings.heading || page.title }</h1>
+    {#if settings.standfirst}<p class="max-w-reading text-body-lg text-pretty text-scheme-muted">{ settings.standfirst }</p>{/if}
+    {#if settings.count != 'none'}
+      <p class="font-mono text-meta font-medium text-scheme-meta uppercase">
+        {#case settings.count}
+          {:when 'posts'}{ posts.length | pluralize(t('post_one'), t('post_many')) } { t('from_places', { count: size(posts | map('fields.place.handle') | compact | uniq) }) }{#if n_topics} · { n_topics | pluralize(t('topic_one'), t('topic_many')) }{/if}
+          {:when 'places'}{ n_places | pluralize(t('place_one'), t('place_many')) } · { n_countries | pluralize(t('country_one'), t('country_many')) }
+          {:when 'trips'}{ visited.length | pluralize(t('stop_one'), t('stop_many')) } · { n_trips | pluralize(t('trip_one'), t('trip_many')) }
+          {:when 'gear_total'}{ size(content.gear.entries | reject('fields.group', 'services')) | pluralize(t('item_one'), t('item_many')) } · { kit_grams | number_with_delimiter } { t('grams_unit') }
+          {:when 'services'}{ size(content.gear.entries | where('fields.group', 'services')) | pluralize(t('service_one'), t('service_many')) }
+        {/case}
+      </p>
+    {/if}
+  </div>
+</header>
+
+<schema>
+{
+  "name": "Page header",
+  "description": "A page's heading and standfirst, with an optional computed count.",
+  "kind": "Content",
+  "icon": "heading",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "", "info": "Empty uses the page's title." },
+    { "type": "textarea", "id": "standfirst", "label": "Standfirst", "default": "" },
+    { "type": "select", "id": "count", "label": "Count line", "default": "none", "options": [ { "value": "none", "label": "None" }, { "value": "posts", "label": "Posts" }, { "value": "places", "label": "Places and countries" }, { "value": "trips", "label": "Trips and stops" }, { "value": "gear_total", "label": "The kit's items and weight" }, { "value": "services", "label": "The services" } ]
+, "info": "Computed from the content; nothing is typed in." },
+    { "type": "select", "id": "align", "label": "Align", "default": "left", "options": [ { "value": "left", "label": "Left" }, { "value": "center", "label": "Centred" } ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "heading": "", "standfirst": "", "count": "none", "align": "left" } },
+    { "name": "Centred", "settings": { "heading": "", "standfirst": "", "count": "none", "align": "center" } }
+  ]
+}
+</schema>

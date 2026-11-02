@@ -1,0 +1,88 @@
+<!-- What I carry, or what I use (Figma: 60rem at the column's left edge). The kit: collapsible groups (<collapsible-component>) on hairlines, each header with the group, its item count and weight in mono and a chevron (down shut, up open); at most 12 rows a group, each with a square shot on surface-2, the name, a one-line verdict in muted, the grams at the right and a link. The kit's total from sum on a heavier rule. The services (show: services) are a plain list on hairlines with no group head, no chevron and no picture: the name, the verdict and "Their site"; the page header carries their count. Without JavaScript every group shows. -->
+{#let
+  all = content.gear.entries | sort('fields.order')
+  kit_groups = ['carry', 'work', 'tech']
+  services_only = settings.show == 'services'
+  groups = services_only ? ['services'] : (settings.show == 'all' ? ['carry', 'work', 'tech', 'services'] : kit_groups)
+  kit = all | reject('fields.group', 'services')
+  kit_total = sum(kit, 'fields.weight_grams')
+  services = (all | where('fields.group', 'services')) | slice(0, 12)
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" aria-label={ settings.heading ? null : t('gear') } aria-labelledby={ settings.heading ? section.id + '-title' : null }>
+  <div class="mx-auto max-w-column"><div class="grid max-w-panel gap-space-lg">
+    {#if settings.heading}<h2 class="font-heading text-h2 font-semibold text-scheme-heading" id="{ section.id }-title">{ settings.heading }</h2>{/if}
+    {#if services_only}
+      <ul class="border-t border-scheme-rule">
+        {#for item in services}
+          {#let g = item.fields}
+          <li class="grid gap-tiny border-b border-scheme-rule py-space-md">
+            <span class="text-body font-semibold">{ item.title }</span>
+            {#if g.verdict}<span class="text-body-sm text-scheme-muted">{ g.verdict }</span>{/if}
+            {#if settings.show_links && g.link}<a class="w-fit text-body-sm text-scheme-links hover:underline" href={ g.link } rel="noopener" target="_blank">{ t('their_site') }</a>{/if}
+          </li>
+        {/for}
+      </ul>
+    {:else}
+    <ul class="border-t border-scheme-rule">
+      {#for group in groups, gi}
+        {#let
+          items = all | where('fields.group', group)
+          rows = items | slice(0, 12)
+          grams = sum(items, 'fields.weight_grams')
+        }
+        {#if items.length}
+          <li class="border-b border-scheme-rule">
+            <collapsible-component>
+              <h3><button class="group flex w-full items-center justify-between gap-space-md py-space-md text-left" type="button">
+                <span class="font-heading text-h3 font-semibold text-scheme-heading">{ t('gear_group.' + group) }</span>
+                <span class="ms-auto font-mono text-meta font-medium text-scheme-meta uppercase">{ items.length | pluralize(t('item_one'), t('item_many')) }{#if settings.show_totals && grams} · { grams | number_with_delimiter } { t('grams_unit') }{/if}</span>
+                <span class="sites-icon size-icon shrink-0 rotate-90 transition-transform group-aria-expanded:-rotate-90" aria-hidden="true">{#svg 'icons/angle-right.svg'}</span>
+              </button></h3>
+              <collapsible-content open={ settings.open_first ? gi == 0 : true }>
+                <ul class="grid pb-space-md">
+                  {#for item in rows}
+                    {#let g = item.fields}
+                    <li class="flex items-center gap-space-md border-t border-scheme-rule py-space-sm">
+                      <span class="block size-thumb shrink-0 overflow-hidden rounded-sm bg-scheme-surface-2">{#if g.image}<img class="size-full object-cover" src="{ image_url(g.image, 160, { height: 160 }) }" alt="{ g.image_alt }" loading="lazy" width="160" height="160" />{/if}</span>
+                      <span class="grid min-w-0 flex-1 gap-micro">
+                        <span class="text-body font-semibold">{ item.title }</span>
+                        {#if g.verdict}<span class="text-body-sm text-scheme-muted">{ g.verdict }</span>{/if}
+                        {#if settings.show_links && g.link}<a class="w-fit text-body-sm text-scheme-links hover:underline" href={ g.link } rel="noopener" target="_blank">{ group == 'services' ? t('their_site') : t('details') }</a>{/if}
+                      </span>
+                      {#if g.weight_grams}<span class="shrink-0 font-mono text-body tabular-nums">{ g.weight_grams | number_with_delimiter } { t('grams_unit') }</span>{/if}
+                    </li>
+                  {/for}
+                </ul>
+              </collapsible-content>
+            </collapsible-component>
+          </li>
+        {/if}
+      {/for}
+    </ul>
+    {/if}
+    {#if settings.show_totals && settings.show != 'services' && kit_total}
+      <p class="flex items-baseline justify-between gap-space-md border-t-2 border-scheme-foreground pt-space-md"><span class="font-heading text-h4 font-medium">{ t('everything_i_carry') }</span><span class="font-mono text-body font-medium tabular-nums">{ kit_total | number_with_delimiter } { t('grams_unit') }</span></p>
+    {/if}
+  </div></div>
+</section>
+
+<schema>
+{
+  "name": "Gear list",
+  "description": "What I carry and what I use: gear in collapsible groups with weights and totals.",
+  "kind": "Collections",
+  "icon": "backpack",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "" },
+    { "type": "select", "id": "show", "label": "Show", "default": "kit", "options": [ { "value": "kit", "label": "The kit (carry, work, tech)" }, { "value": "services", "label": "Services (what I use)" }, { "value": "all", "label": "Everything" } ], "info": "Reads gear entries: title, group (carry, work, tech or services), weight_grams, verdict, image, image_alt, link and order." },
+    { "type": "checkbox", "id": "show_totals", "label": "Show the weights and the total", "default": true },
+    { "type": "checkbox", "id": "show_links", "label": "Show the links", "default": true },
+    { "type": "checkbox", "id": "open_first", "label": "Open only the first group", "default": true, "info": "Off opens every group." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "What I carry", "settings": { "heading": "", "show": "kit", "show_totals": true, "show_links": true, "open_first": true } },
+    { "name": "What I use", "settings": { "heading": "", "show": "services", "show_totals": false, "show_links": true, "open_first": false } }
+  ]
+}
+</schema>

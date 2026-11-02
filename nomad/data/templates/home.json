@@ -1,0 +1,171 @@
+{
+  "label": "Home",
+  "description": "Where I am now, where I've been, the latest posts and the road ahead.",
+  "layout": "default",
+  "sections": [
+    {
+      "id": "s_hero",
+      "type": "hero",
+      "preset": "Currently in",
+      "settings": {
+        "image": "as_16x9_dusk",
+        "video": "as_loop_dusk",
+        "heading": "",
+        "text": "Two months above a tortillería in Jalatlaco: mornings at a borrowed desk, weekends walking the Sierra Norte.",
+        "show_tag": true,
+        "show_local_time": false,
+        "primary_label": "",
+        "primary_link": "",
+        "secondary_label": "See the route",
+        "secondary_link": "#route",
+        "height": "tall",
+        "color_scheme": "night"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_route",
+      "type": "route-map",
+      "preset": "Everywhere",
+      "settings": {
+        "heading": "Where I’ve been",
+        "show_count": true,
+        "count_by": "places",
+        "places": "places",
+        "show_route": "none",
+        "fit": "world",
+        "show_list": true,
+        "list_limit": 6,
+        "country_filter": true,
+        "link_label": "All {count} places",
+        "link": "",
+        "anchor": true,
+        "map_style": "drawn",
+        "color_scheme": "night"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_latest",
+      "type": "post-list",
+      "preset": "Latest",
+      "settings": {
+        "heading": "Latest posts",
+        "collection": "posts",
+        "scope": "all",
+        "layout": "grid",
+        "featured_first": true,
+        "columns": "2",
+        "show_toggle": false,
+        "show_topic_filter": false,
+        "limit": 5,
+        "view_all_label": "All {count} posts",
+        "always_link": true
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_start",
+      "type": "start-here",
+      "preset": "Four posts",
+      "settings": {
+        "heading": "Start here",
+        "text": "Four posts that explain how this works, in the order I would read them.",
+        "image": "as_4x5_clay"
+      },
+      "blocks": [
+        {
+          "id": "b_start_1",
+          "type": "post",
+          "settings": {
+            "post": "post_everything_i_carry",
+            "note": "What fits in one bag after three years, and what I stopped carrying."
+          }
+        },
+        {
+          "id": "b_start_2",
+          "type": "post",
+          "settings": {
+            "post": "post_oaxaca_month_cost",
+            "note": "A whole month, peso by peso, so you can plan your own."
+          }
+        },
+        {
+          "id": "b_start_3",
+          "type": "post",
+          "settings": {
+            "post": "post_tbilisi_month",
+            "note": "The visa, the flat and the hills: how a first month somewhere goes."
+          }
+        },
+        {
+          "id": "b_start_4",
+          "type": "post",
+          "settings": {
+            "post": "post_stopped_flying",
+            "note": "Why I go overland now, and what it costs in days."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_film",
+      "type": "film",
+      "preset": "Loop",
+      "settings": {
+        "video": "as_loop_sea",
+        "image": "as_21x9_dusk",
+        "mode": "loop",
+        "ratio": "cinema",
+        "heading": "Three weeks above a tortillería",
+        "caption": "Morning on Calle Murguía, before the comal is hot.",
+        "place": "place_oaxaca",
+        "date": "2026-10-12",
+        "color_scheme": "night"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_where_next",
+      "type": "itinerary",
+      "preset": "Where next",
+      "settings": {
+        "layout": "ribbon",
+        "heading": "Where next",
+        "show_posts": true,
+        "show_notes": true
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_from_the_road",
+      "type": "gallery",
+      "preset": "From the road",
+      "settings": {
+        "source": "setting",
+        "gallery": "from-the-road",
+        "heading": "From the road",
+        "layout": "carousel",
+        "slide_ratio": "square",
+        "show_captions": true,
+        "link_label": "All photos",
+        "link": "/photos"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Postcards",
+      "settings": {
+        "heading": "Postcards from the road",
+        "text": "One email when I move, with what the last place cost. About once a month.",
+        "placeholder": "Your email",
+        "proof": "",
+        "form": "newsletter",
+        "color_scheme": "dusk"
+      },
+      "blocks": []
+    }
+  ]
+}

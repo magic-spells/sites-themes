@@ -1,0 +1,29 @@
+<!-- component: PostCard -->
+<!-- props: entry href place_href featured reveal -->
+<!-- The post card: no box and no lift. The picture in its well (4:3; the
+     featured card 16:9 across two columns), the date stamp on the well's
+     top-left corner like a postmark, crossing its top and left edges
+     (Cory), clear of the place tag and title, then the place tag, the title, two lines of
+     standfirst and the topic, "MONEY", in mono (no reading time: Cory, "do people really care about the '7 minute read' text? lets remove it"; the date leads that line for screen readers, since the stamp sits in the hidden picture link). The picture scales 1.03 in its well
+     on hover. -->
+{#let
+  f = entry.fields
+  img = f.image
+}
+<li class="{ featured ? 'md:col-span-full' : '' } { reveal ? 'reveal reveal-fade-up' : '' }">
+  <article class="group relative grid">
+    {#if img}
+      <a class="relative block" href={ href } tabindex="-1" aria-hidden="true">
+        <span class="block overflow-hidden rounded-sm bg-scheme-surface-2 { featured ? 'aspect-4/3 md:aspect-video' : 'aspect-4/3' }"><img class="size-full object-cover transition-transform duration-hover ease-out-soft group-hover:scale-hover" data-zoom src="{ image_url(img, featured ? 1600 : 1024) }" srcset="{ image_srcset(img, featured ? [640, 1024, 1280, 1600, 2000] : [480, 640, 1024, 1280]) }" sizes="{ featured ? '(min-width: 85rem) 85rem, 100vw' : '(min-width: 48rem) 40rem, 100vw' }" alt="{ f.image_alt }" loading="lazy" width={ img.width } height={ img.height } /></span>
+        {#if f.date}<span class="absolute -top-space-xs -left-space-xs">
+          <DateStamp value={ f.date } /></span>{/if}
+      </a>
+    {/if}
+    <div class="grid gap-space-xs { img ? 'pt-space-sm' : '' } { featured ? 'md:max-w-copy' : '' }">
+      {#if f.place}<PlaceTag place={ f.place } href="{ place_href }/{ f.place.handle }" />{/if}
+      <h3 class="font-heading text-balance text-scheme-heading { featured ? 'text-h2 font-semibold' : 'text-h3 font-medium' }"><a class="decoration-1 underline-offset-4 hover:underline" href={ href }>{ entry.title }</a></h3>
+      {#if f.standfirst}<p class="line-clamp-2 text-pretty text-scheme-muted { featured ? 'text-body' : 'text-body-sm' }">{ f.standfirst }</p>{/if}
+      <p class="font-mono text-meta font-medium text-scheme-meta uppercase">{#if f.date}<span class="sr-only"><time datetime={ date(f.date, 'iso') }>{ date(f.date) }</time>{#if f.topic} · {/if}</span>{/if}{#if f.topic}{ f.topic }{/if}</p>
+    </div>
+  </article>
+</li>

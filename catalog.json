@@ -64,6 +64,19 @@
       "zip": "https://github.com/magic-spells/sites-themes/releases/download/restaurant/v0.1.0/restaurant-v0.1.0.zip",
       "sha256": "f2d96f862cc7f54fba69985289f40c430ecb6a3f629970010cdcfe183fd0fc64",
       "screenshots": []
+    },
+    {
+      "name": "nomad",
+      "label": "Nomad",
+      "description": "A travel journal for one digital nomad: where you are now, a drawn map of every stop, posts pinned to places and dates, trips, costs, gear and galleries with video loops.",
+      "category": "content",
+      "vertical": "Travel journal",
+      "license": "MIT",
+      "publisher": "Magic Spells",
+      "version": "0.1.0",
+      "zip": "https://github.com/magic-spells/sites-themes/releases/download/nomad/v0.1.0/nomad-v0.1.0.zip",
+      "sha256": null,
+      "screenshots": []
     }
   ]
 }

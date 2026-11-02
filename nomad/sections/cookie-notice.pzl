@@ -1,0 +1,35 @@
+<!-- TODO sync with Figma (batch D) -->
+<!-- A non-modal region, not a dialog: the page stays usable behind it. It renders hidden; theme.ts shows it once per key, and on a page with a hero (or a place cover) only once that cover has scrolled clear of where the notice sits, so it never covers the first screen's heading, buttons or luggage tag. Both buttons hide it and the choice is remembered. On a phone a full-width strip on surface-2, one row of text and OK at most 6rem tall, kept above the safe area; from 48rem a narrow card at the bottom left. -->
+<section class="fixed inset-x-0 bottom-0 z-40 border-t border-scheme-rule bg-scheme-surface-2 pb-safe text-scheme-foreground md:inset-x-auto md:bottom-gutter md:left-gutter md:w-full md:max-w-notice md:rounded-lg md:border md:pb-0" id="cookie-notice" data-notice="{ settings.key }" role="region" aria-label="{ t('cookie_notice') }" hidden>
+  <div class="flex items-center gap-space-sm px-gutter py-space-sm md:flex-wrap md:items-end md:p-space-md">
+    <div class="min-w-0 flex-1 text-body-sm md:basis-full">
+      <div class="sites-prose inline text-body-sm text-scheme-muted *:inline">{ settings.body }</div>
+      {#if settings.link_label} <a class="text-scheme-links underline decoration-1 underline-offset-4" href="{ settings.link_href }">{ settings.link_label }</a>{/if}
+    </div>
+    <div class="flex shrink-0 items-center gap-space-xs">
+      <button class="inline-flex min-h-control-small items-center rounded-button border border-scheme-button-background bg-scheme-button-background px-space-sm text-body-sm font-semibold text-scheme-button-foreground hover:border-scheme-button-hover-background hover:bg-scheme-button-hover-background" type="button" data-notice-close="accept">{ settings.accept_label }</button>
+      {#if settings.decline_label}<button class="inline-flex min-h-control-small items-center rounded-button border border-scheme-foreground px-space-sm text-body-sm font-semibold hover:bg-scheme-foreground hover:text-scheme-background" type="button" data-notice-close="decline">{ settings.decline_label }</button>{/if}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Cookie notice",
+  "description": "A quiet note at the bottom of the page, shown once.",
+  "kind": "Panels",
+  "icon": "cookie",
+  "settings": [
+    { "type": "richtext", "id": "body", "label": "Text", "default": "<p>This site remembers what you close. Nothing tracks you.</p>" },
+    { "type": "text", "id": "accept_label", "label": "Accept label", "default": "OK" },
+    { "type": "text", "id": "decline_label", "label": "Decline label", "default": "" },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "Privacy note" },
+    { "type": "url", "id": "link_href", "label": "Link", "default": "/privacy" },
+    { "type": "text", "id": "key", "label": "Remember key", "default": "nomad-notice-2026-11", "info": "Change it to show the notice again to readers who closed it." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "body": "<p>This site remembers what you close. Nothing tracks you.</p>", "accept_label": "OK", "decline_label": "", "link_label": "Privacy note", "link_href": "/privacy", "key": "nomad-notice-2026-11" } }
+  ]
+}
+</schema>

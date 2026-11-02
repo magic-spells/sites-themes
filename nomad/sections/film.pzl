@@ -1,0 +1,59 @@
+<!-- One large video, full-bleed with no padding (4:5 on a phone, 21:9 from 48rem, or 16:9 wide). Loop: muted, started by theme.ts in view and never under reduced motion, with a pause control and "Watch with sound", which unmutes it in place. Player: the poster with a round play button that starts the film with its controls. The caption row under it: the title, the place tag and the date. A video over 15 MB is skipped for the poster image. -->
+{#let
+  film = settings.video && settings.video.byte_size <= 15728640 ? settings.video : null
+  places_path = site.settings.places_path || '/places'
+  ratio = settings.ratio == 'wide' ? 'aspect-4/5 md:aspect-video' : 'aspect-4/5 md:aspect-21/9'
+}
+<section class="bg-scheme-background text-scheme-foreground" aria-label="{ settings.heading || t('film') }">
+  <div class="relative overflow-hidden bg-scheme-surface-2 { ratio }">
+    {#if settings.image}<img class="size-full object-cover" src="{ image_url(settings.image, 1600) }" srcset="{ image_srcset(settings.image, [768, 1024, 1280, 1600, 2000, 2560]) }" sizes="100vw" alt="{ settings.image.alt }" loading="lazy" width={ settings.image.width } height={ settings.image.height } />{/if}
+    {#if film && settings.mode == 'player'}
+      <video class="absolute inset-0 size-full object-cover" playsinline preload="none" poster={ settings.image ? image_url(settings.image, 1600) : null } data-player hidden><source src="{ film.url }" type="{ film.mime }" /></video>
+      <button class="absolute inset-0 m-auto flex size-play items-center justify-center rounded-full bg-scheme-button-background text-scheme-button-foreground transition-colors hover:bg-scheme-button-hover-background" type="button" data-player-start><span class="sites-icon size-control-small" aria-hidden="true">{#svg 'icons/play.svg'}</span><span class="sr-only">{ t('play_film') }</span></button>
+    {:else if film}
+      <video class="absolute inset-0 size-full object-cover" muted loop playsinline preload="none" poster={ settings.image ? image_url(settings.image, 1600) : null } data-loop><source src="{ film.url }" type="{ film.mime }" /></video>
+      <div class="absolute right-gutter bottom-space-md flex flex-wrap justify-end gap-space-xs">
+        <button class="inline-flex items-center gap-space-xs rounded-full bg-scrim px-space-sm py-chip font-mono text-meta font-medium text-on-photo uppercase" type="button" data-loop-toggle data-play-label="{ t('play_loop') }" aria-pressed="false"><span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/pause.svg'}</span><span data-loop-label>{ t('pause') }</span></button>
+        <button class="inline-flex items-center gap-space-xs rounded-full bg-scrim px-space-sm py-chip text-body-sm font-semibold text-on-photo" type="button" data-loop-sound>{ t('watch_with_sound') }</button>
+      </div>
+    {/if}
+  </div>
+  {#if settings.heading || settings.place || settings.caption}
+    <div class="px-gutter pt-space-md pb-section">
+      <div class="mx-auto flex max-w-column flex-wrap items-baseline justify-between gap-x-space-lg gap-y-space-xs">
+        <div class="grid gap-tiny">
+          {#if settings.heading}<h2 class="font-heading text-h3 font-semibold text-scheme-heading">{ settings.heading }</h2>{/if}
+          {#if settings.caption}<p class="text-body-sm text-scheme-muted">{ settings.caption }</p>{/if}
+        </div>
+        <p class="flex flex-wrap items-center gap-x-space-sm gap-y-tiny">
+          {#if settings.place}<PlaceTag place={ settings.place } href="{ places_path }/{ settings.place.handle }" />{/if}
+          {#if settings.date}<time class="font-mono text-meta font-medium text-scheme-meta uppercase" datetime={ date(settings.date, 'iso') }>{ date(settings.date) }</time>{/if}
+        </p>
+      </div>
+    </div>
+  {/if}
+</section>
+
+<schema>
+{
+  "name": "Film",
+  "description": "One large video, edge to edge: a muted loop or a player, with its place and date.",
+  "kind": "Content",
+  "icon": "film",
+  "settings": [
+    { "type": "video", "id": "video", "label": "Video", "info": "MP4 (H.264). A loop: 10 to 20 seconds, under 8 MB. A player can be longer. Files over 15 MB are skipped for the poster image." },
+    { "type": "image", "id": "image", "label": "Poster image", "info": "Shown before the video plays, under reduced motion, and when there is no video." },
+    { "type": "select", "id": "mode", "label": "Plays as", "default": "loop", "options": [ { "value": "loop", "label": "A muted loop" }, { "value": "player", "label": "A player with sound" } ] },
+    { "type": "select", "id": "ratio", "label": "Shape", "default": "cinema", "options": [ { "value": "cinema", "label": "Cinema (21:9)" }, { "value": "wide", "label": "Wide (16:9)" } ] },
+    { "type": "text", "id": "heading", "label": "Title", "default": "Three weeks above a tortillería" },
+    { "type": "text", "id": "caption", "label": "Caption", "default": "" },
+    { "type": "entry", "id": "place", "label": "Place", "info": "A places entry: its tag shows under the film." },
+    { "type": "date", "id": "date", "label": "Date", "default": "2026-10-12" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "night" }
+  ],
+  "presets": [
+    { "name": "Loop", "settings": { "mode": "loop", "ratio": "cinema", "heading": "Three weeks above a tortillería", "caption": "", "date": "2026-10-12", "color_scheme": "night" } },
+    { "name": "Player", "settings": { "mode": "player", "ratio": "wide", "heading": "", "caption": "", "color_scheme": "night" } }
+  ]
+}
+</schema>

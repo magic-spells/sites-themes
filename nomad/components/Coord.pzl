@@ -1,0 +1,18 @@
+<!-- component: Coord -->
+<!-- props: lat lon short -->
+<!-- Coordinates as stored, with N/S and E/W (decimal), or degrees and
+     minutes when the Map setting asks for them. There is no pad-to-four-
+     decimals function, so the value prints as the workspace typed it. short
+     rounds the latitude to two places for a postmark. -->
+{#let
+  alat = lat | abs
+  alon = lon | abs
+  ns = lat < 0 ? t('south') : t('north')
+  ew = lon < 0 ? t('west') : t('east')
+  latd = alat | floor
+  lond = alon | floor
+  latm = (alat - latd) * 60 | floor
+  lonm = (alon - lond) * 60 | floor
+  dms = site.settings.coordinate_format == 'dms'
+}
+{#if lat != null && lat !== ''}<span class="tabular-nums">{#if short}{ alat | round(2) }° { ns }{:else if dms}{ latd }° { latm }′ { ns }, { lond }° { lonm }′ { ew }{:else}{ alat }° { ns }, { alon }° { ew }{/if}</span>{/if}

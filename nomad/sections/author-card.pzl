@@ -1,0 +1,49 @@
+<!-- The writer, after a post (Folio's id and settings, plus show_now). In the reading column, a box on surface-2: the round portrait on a paper ring so it reads against the box, the name, the short biography whole (never clamped) in muted (never meta on surface-2) and the subscribe link; the "Now in" mini tag crosses the box's top-right corner. On a phone the portrait sits above the text. -->
+{#let
+  s = site.settings
+  name = settings.use_post_author && page.entry.fields.author ? page.entry.fields.author : (settings.name || s.writer_name)
+  bio = settings.bio || s.writer_short_bio || s.writer_bio
+}
+<aside class="bg-scheme-background px-gutter py-section text-scheme-foreground { site.settings.reveal_on_scroll ? 'reveal reveal-fade-up' : '' }" aria-label="{ t('about_writer') }">
+  <div class="relative mx-auto max-w-reading pt-space-lg md:pt-0">
+    <div class="flex flex-col gap-space-md rounded-lg bg-scheme-surface-2 p-space-lg sm:flex-row sm:items-start">
+      <span class="block size-portrait shrink-0 overflow-hidden rounded-full border-2 border-scheme-surface bg-scheme-surface">{#if settings.portrait}<img class="size-full object-cover" src="{ image_url(settings.portrait, 320, { height: 320 }) }" alt="" loading="lazy" width="320" height="320" />{/if}</span>
+      <div class="grid gap-space-xs">
+        {#if settings.label}<p class="font-mono text-meta font-medium text-scheme-muted uppercase">{ settings.label }</p>{/if}
+        <h2 class="font-heading text-h4 font-medium text-scheme-heading">{ name }</h2>
+        {#if bio}<p class="max-w-copy text-body-sm text-pretty text-scheme-muted">{ bio }</p>{/if}
+        {#if settings.link_label && settings.link}<a class="inline-flex w-fit items-center gap-tiny text-body-sm text-scheme-links hover:underline" href={ settings.link }>{ settings.link_label }<span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/arrow-right.svg'}</span></a>{/if}
+        {#if settings.links.items.length}
+          <ul class="flex flex-wrap gap-x-space-sm gap-y-tiny text-body-sm">
+            {#for item in settings.links.items}<li><a class="text-scheme-muted underline decoration-1 underline-offset-4 hover:text-scheme-foreground" href="{ item.href }">{ item.label }</a></li>{/for}
+          </ul>
+        {/if}
+      </div>
+    </div>
+    {#if settings.show_now}<div class="absolute top-0 right-space-md md:-top-space-md md:-right-space-lg"><CurrentPlace as="tag" /></div>{/if}
+  </div>
+</aside>
+
+<schema>
+{
+  "name": "Author card",
+  "description": "The writer in a box after a post, with a Now in tag crossing its corner.",
+  "kind": "Content",
+  "icon": "user-round",
+  "settings": [
+    { "type": "image", "id": "portrait", "label": "Portrait", "info": "Shown round. A square photo works best." },
+    { "type": "text", "id": "name", "label": "Name", "default": "", "info": "Empty uses the Traveller name." },
+    { "type": "text", "id": "label", "label": "Label", "default": "" },
+    { "type": "textarea", "id": "bio", "label": "Biography", "default": "", "info": "Empty uses the Traveller short biography. Shown whole, never cut: keep it to two lines." },
+    { "type": "menu", "id": "links", "label": "Links" },
+    { "type": "checkbox", "id": "use_post_author", "label": "Use the post's author", "default": false, "info": "On a post, the name comes from the post's author field." },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "Postcards by email" },
+    { "type": "url", "id": "link", "label": "Link", "default": "#newsletter" },
+    { "type": "checkbox", "id": "show_now", "label": "Show the Now in tag", "default": true },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "name": "", "label": "", "bio": "", "use_post_author": false, "link_label": "Postcards by email", "link": "#newsletter", "show_now": true } }
+  ]
+}
+</schema>

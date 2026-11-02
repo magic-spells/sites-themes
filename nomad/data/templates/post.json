@@ -1,0 +1,95 @@
+{
+  "label": "Post",
+  "description": "One post with its photographs, its costs, the writer and more from the same place.",
+  "layout": "default",
+  "sections": [
+    {
+      "id": "s_article",
+      "type": "post-article",
+      "preset": "Default",
+      "settings": {
+        "show_meta": true,
+        "show_image": true,
+        "show_byline": true,
+        "drop_cap": false,
+        "show_end_rule": true,
+        "show_locator": true,
+        "cover_video": "loop"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_photos",
+      "type": "gallery",
+      "preset": "Post photos",
+      "settings": {
+        "source": "entry",
+        "heading": "Photos",
+        "layout": "one-up",
+        "show_captions": true,
+        "link_label": "",
+        "link": ""
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_costs",
+      "type": "cost-table",
+      "preset": "Post",
+      "settings": {
+        "scope": "post",
+        "heading": "What a month here cost",
+        "show_notes": true,
+        "align": "center"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_author",
+      "type": "author-card",
+      "preset": "Default",
+      "settings": {
+        "name": "",
+        "label": "",
+        "bio": "",
+        "use_post_author": false,
+        "link_label": "Postcards by email",
+        "link": "#newsletter",
+        "show_now": true,
+        "portrait": "as_4x5_sand",
+        "links": ""
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_more",
+      "type": "post-list",
+      "preset": "More from here",
+      "settings": {
+        "heading": "More from {place}",
+        "collection": "posts",
+        "scope": "current_place",
+        "layout": "list",
+        "featured_first": false,
+        "limit": 3,
+        "exclude_current": true,
+        "view_all_label": ""
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Postcards",
+      "settings": {
+        "heading": "Postcards from the road",
+        "text": "One email when I move, with what the last place cost. About once a month.",
+        "placeholder": "Your email",
+        "proof": "",
+        "form": "newsletter",
+        "color_scheme": "dusk"
+      },
+      "blocks": []
+    }
+  ]
+}

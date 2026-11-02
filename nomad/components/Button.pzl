@@ -1,0 +1,7 @@
+<!-- component: Button -->
+<!-- props: href tone -->
+<!-- A label-shaped button as a link (radius md, not a pill). tone: primary
+     (the scheme's button), secondary (a hairline in the text colour, filled
+     with it on hover), photo (light type and hairline over a photograph).
+     -->
+<a class="inline-flex items-center justify-center gap-space-xs rounded-button border font-body font-semibold whitespace-nowrap transition-colors duration-panel ease-out-soft min-h-control px-button-x text-control { tone == 'photo' ? 'border-on-photo bg-transparent text-on-photo hover:bg-on-photo hover:text-tag-ink' : tone == 'secondary' ? 'border-scheme-secondary-button-foreground bg-scheme-secondary-button-background text-scheme-secondary-button-foreground hover:border-scheme-secondary-button-hover-background hover:bg-scheme-secondary-button-hover-background hover:text-scheme-secondary-button-hover-foreground' : 'border-scheme-button-background bg-scheme-button-background text-scheme-button-foreground hover:border-scheme-button-hover-background hover:bg-scheme-button-hover-background hover:text-scheme-button-hover-foreground' }" href="{ href }"><Children/></a>

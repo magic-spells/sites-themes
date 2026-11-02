@@ -1,0 +1,21 @@
+<!-- component: Ticket -->
+<!-- props: stop label badge show_posts show_notes posts_path places_path -->
+<!-- A stop as a ticket stub on tag paper, the outer container (nothing nests in it): the stub holds a label (STOP 2, NOW, NEXT), the arrival date stamp and the nights; a dashed tear line with two notches the scheme shows through; then the place, its country, the note and "Read: <post>" in stamp ink. badge prints a NEXT pill at the top right. Text on tag paper is tag ink or tag stamp only. -->
+{#let
+  f = stop.fields
+  p = f.place
+}
+<article class="relative flex h-full overflow-hidden rounded-lg bg-tag text-tag-ink ticket-notch">
+  <div class="flex w-stub shrink-0 flex-col items-center justify-center gap-space-xs border-r border-dashed border-tag-ink/40 px-space-xs py-space-md text-center">
+    {#if label}<p class="font-mono text-meta font-medium uppercase">{ label }</p>{/if}
+    {#if f.arrive}<DateStamp value={ f.arrive } />{/if}
+    {#if f.nights}<p class="font-mono text-meta font-medium uppercase">{ f.nights | pluralize(t('night_one'), t('night_many')) }</p>{/if}
+  </div>
+  <div class="grid min-w-0 flex-1 content-start gap-tiny p-space-sm md:p-space-md">
+    {#if badge}<span class="absolute top-space-sm right-space-sm rounded-full bg-tag-ink px-space-xs py-micro font-mono text-meta font-medium text-tag uppercase">{ badge }</span>{/if}
+    {#if p}<h3 class="font-heading text-h3 font-medium break-words { badge ? 'pr-space-xl' : '' }"><a class="hover:underline decoration-1 underline-offset-4" href="{ places_path }/{ p.handle }">{ p.title }</a></h3>
+    <p class="flex items-center gap-tiny text-body-sm"><PlacePin tone="tag" />{ p.fields.country }</p>{/if}
+    {#if show_notes && f.note}<p class="text-body-sm">{ f.note }</p>{/if}
+    {#if show_posts && f.post}<a class="mt-space-xs text-body-sm text-tag-stamp hover:underline" href="{ posts_path }/{ f.post.handle }">{ t('read_post', { title: f.post.title }) }</a>{/if}
+  </div>
+</article>

@@ -2,11 +2,12 @@
      photo as its poster, the poster alone under reduced motion, or a tarot
      fade slideshow) under a black scrim, the headline in the display face
      with a flare slash in flow under its last line, a line, the primary
-     action and a flare-outlined secondary, an optional mono strip, the ghost
-     word low behind. Minimum heights 38.75 / 40 / 51.25rem (phone, tablet,
+     action and a flare-outlined secondary (the hero ends on the buttons), the
+     ghost word low behind. Minimum heights 38.75 / 40 / 51.25rem (phone, tablet,
      desktop), or the full screen from 64rem; content clears the over-hero
-     header at every width. Split: the
-     headline left, a 4:5 photo right with a flare block offset behind it.
+     header at every width. Split: the headline (h1 size) left, a 4:5 photo
+     right with a flare block offset behind it, one long flare line at 12°
+     between them from 48rem.
      The headline is the page's h1 when the hero opens the page. -->
 {#let
   tag = section.index == 0 ? 'h1' : 'h2'
@@ -17,26 +18,25 @@
   options = { effect: 'fade', loop: true, autoplay: { interval: settings.interval * 1000 }, navigation: { showButtons: false, showPagination: false } }
 }
 {#if settings.layout == 'split'}
-<section class="overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground" data-layout="split" data-texture={ settings.texture }>
+<section class="relative isolate overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground" data-layout="split" data-texture={ settings.texture }>
   <div class="mx-auto grid max-w-column items-center gap-step-2xl md:grid-cols-2">
     <div class="grid justify-items-start gap-step-md { settings.photo_side == 'left' ? 'md:order-2' : '' }">
       {#if settings.kicker}<p class="font-mono text-overline font-medium text-scheme-meta uppercase">{ settings.kicker }</p>{/if}
-      {#if tag == 'h1'}<h1 class="max-w-headline font-heading text-display font-black text-balance text-scheme-heading uppercase stretch-display">{ settings.heading }</h1>
-      {:else}<h2 class="max-w-headline font-heading text-display font-black text-balance text-scheme-heading uppercase stretch-display">{ settings.heading }</h2>{/if}
+      {#if tag == 'h1'}<h1 class="font-heading text-h1 font-black text-balance text-scheme-heading uppercase stretch-heading">{ settings.heading }</h1>
+      {:else}<h2 class="font-heading text-h1 font-black text-balance text-scheme-heading uppercase stretch-heading">{ settings.heading }</h2>{/if}
       {#if settings.slash_last}<span class="-mt-step-2xs block h-slash-h w-slash-w origin-left -rotate-12 bg-accent" aria-hidden="true"></span>{/if}
       {#if settings.text}<p class="max-w-lede text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
       <div class="flex flex-wrap gap-step-xs">
-        {#if settings.show_action && action}<Button action={ true }>{ action }</Button>{/if}
-        {#if settings.secondary_label && settings.secondary_link}<Button href={ settings.secondary_link } tone="outline">{ settings.secondary_label }</Button>{/if}
+        {#if settings.show_action && action}<Button action={ true } tone="accent">{ action }</Button>{/if}
+        {#if settings.secondary_label && settings.secondary_link}<Button href={ settings.secondary_link } tone="accent-outline">{ settings.secondary_label }</Button>{/if}
       </div>
-      {#if settings.show_strip && settings.strip}<p class="flex flex-wrap gap-x-step-md gap-y-step-2xs border-t border-scheme-rule pt-step-sm font-mono text-spec text-scheme-muted uppercase">{ settings.strip }</p>{/if}
     </div>
     <div class="relative isolate { settings.photo_side == 'left' ? 'md:order-1' : '' }">
       <span class="absolute inset-0 -z-10 translate-x-step-md translate-y-step-md bg-accent" aria-hidden="true"></span>
       <Photo asset={ settings.image } alt={ settings.image.alt } ratio="aspect-4/5" treatment={ settings.treatment } eager={ section.index == 0 } sizes="(min-width: 48rem) 45vw, 90vw" />
-      <span class="absolute top-1/2 -left-step-xl h-step-sm w-1/3 -rotate-12 bg-accent" aria-hidden="true"></span>
     </div>
   </div>
+  <span class="pointer-events-none absolute -inset-y-step-3xl left-1/2 -z-10 hidden w-step-2xs translate-x-step-xs rotate-12 bg-accent md:block" aria-hidden="true"></span>
 </section>
 {:else}
 <section class="relative isolate flex min-h-hero-sm overflow-hidden bg-scheme-background pt-header text-on-photo md:min-h-hero-md { settings.height == 'full' ? 'lg:min-h-hero-full' : 'lg:min-h-hero-lg' }" data-layout="cover" data-texture={ settings.texture }>
@@ -66,7 +66,6 @@
       {#if settings.show_action && action}<Button action={ true } tone="accent">{ action }</Button>{/if}
       {#if settings.secondary_label && settings.secondary_link}<Button href={ settings.secondary_link } tone="accent-outline">{ settings.secondary_label }</Button>{/if}
     </div>
-    {#if settings.show_strip && settings.strip}<p class="w-full pt-step-xs font-mono text-spec text-on-photo/85 uppercase">{ settings.strip }</p>{/if}
     {#if slides.length > 1}<button class="flex size-control-small items-center justify-center self-end justify-self-end border border-on-photo/40 hover:bg-on-photo hover:text-ink" type="button" data-autoplay-toggle={ id } data-interval={ settings.interval * 1000 } aria-pressed="false"><span class="sites-icon size-icon-small" aria-hidden="true">{#svg 'icons/pause.svg'}</span><span class="sr-only">{ t('pause_slideshow') }</span></button>{/if}
   </div>
 </section>
@@ -91,8 +90,6 @@
     { "type": "text", "id": "action_label", "label": "Action label", "default": "", "info": "Leave empty to use the Floor setting." },
     { "type": "text", "id": "secondary_label", "label": "Second button label", "default": "See the timetable" },
     { "type": "url", "id": "secondary_link", "label": "Second button link", "default": "/timetable" },
-    { "type": "checkbox", "id": "show_strip", "label": "Show the strip", "default": true },
-    { "type": "text", "id": "strip", "label": "Strip", "default": "06:00–22:00 · 2 locations · 75 classes a week" },
     { "type": "image", "id": "image", "label": "Image", "info": "Cover: landscape, at least 2000 wide. Split: portrait 4:5. Also the video's poster." },
     { "type": "video", "id": "video", "label": "Video", "info": "Cover only: plays muted on a loop over the image. Visitors who ask for reduced motion see the image." },
     { "type": "checkbox", "id": "slideshow", "label": "Slideshow", "default": false, "info": "Cover only: fades through the gallery instead of the image." },
@@ -122,7 +119,7 @@
   ],
   "presets": [
     { "name": "Cover", "settings": { "layout": "cover", "color_scheme": "black" } },
-    { "name": "Split", "settings": { "layout": "split", "show_ghost": false, "show_strip": false, "color_scheme": "black" } }
+    { "name": "Split", "settings": { "layout": "split", "show_ghost": false, "color_scheme": "black" } }
   ]
 }
 </schema>

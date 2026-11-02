@@ -1,10 +1,11 @@
 <!-- Why train here. Boxes: three or four cells on the band with a numeral
-     index (01 02 03), a heading and a line, hairlines between. Cards: square
+     index (01 02 03), a heading and a line: a rule over each cell when they
+     stack, a rule between cells in a row, never a lone left edge. Cards: square
      surface cards on the band, each with a heading, a line and a button. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-texture={ settings.texture }>
   <div class="mx-auto max-w-column">
     <SectionHead kicker={ settings.kicker } heading={ settings.heading } text={ settings.text } />
-    <ul class="grid md:grid-cols-2 { settings.columns == '4' ? 'lg:grid-cols-4' : 'lg:grid-cols-3' } { settings.style == 'boxes' ? 'border-t border-scheme-rule' : 'gap-gap-lg' }">
+    <ul class="grid md:grid-cols-2 { settings.columns == '4' ? 'lg:grid-cols-4' : 'lg:grid-cols-3' } { settings.style == 'boxes' ? '' : 'gap-gap-lg' }">
       {#for block in blocks, i}
         {#let b = block.settings}
         {#if settings.style == 'cards'}
@@ -14,7 +15,7 @@
             {#if b.link_label}<div class="pt-step-xs">{#if b.link}<Button href={ b.link } size="small">{ b.link_label }</Button>{:else}<Button action={ true } size="small">{ b.link_label }</Button>{/if}</div>{/if}
           </li>
         {:else}
-          <li class="grid content-start gap-step-sm border-b border-scheme-rule py-step-lg md:pr-step-lg { i > 0 ? 'lg:border-l lg:pl-step-lg' : '' }" data-block={ block.editor_id }>
+          <li class="grid content-start gap-step-sm border-t border-scheme-rule py-step-lg md:pr-step-lg lg:border-t-0 lg:py-step-md { i > 0 ? 'lg:border-l lg:pl-step-lg' : '' }" data-block={ block.editor_id }>
             <span class="font-heading text-h1 font-black text-accent tabular-nums stretch-display">{ b.index || (i < 9 ? '0' : '') + (i + 1) }</span>
             <h3 class="font-heading text-h4 font-extrabold text-scheme-heading uppercase stretch-heading">{ b.heading }</h3>
             {#if b.text}<p class="text-body text-scheme-muted">{ b.text }</p>{/if}

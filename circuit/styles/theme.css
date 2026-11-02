@@ -242,6 +242,7 @@
 	--grid-template-columns-meta: auto 1fr;
 	--grid-template-columns-check: 1rem 1fr;
 	--grid-template-columns-footer: 1.3fr 1fr 1fr auto auto;
+	--grid-template-columns-feature: 2fr 3fr;
 
 	--scale-hover: 103%;
 	--transition-duration-fast: 150ms;

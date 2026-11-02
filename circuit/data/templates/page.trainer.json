@@ -9,15 +9,15 @@
       "settings": {
         "layout": "split",
         "image": "as_4x5_1",
-        "kicker": "Personal training",
-        "heading": "Strong is a skill",
-        "text": "One-to-one coaching at North and Riverside with Dana Okafor and team. Assess, programme, coach, repeat.",
+        "kicker": "Common Ground · Marlow Bridge",
+        "heading": "Coaching that starts where you are",
+        "text": "Programmes written for you, coached in person. First session is an assessment.",
         "action_label": "Book a session",
-        "secondary_label": "See the packages",
-        "secondary_link": "/memberships",
+        "secondary_label": "See the timetable",
+        "secondary_link": "/timetable",
         "show_ghost": false,
-        "show_strip": false,
-        "color_scheme": "black"
+        "color_scheme": "black",
+        "slash_last": false
       },
       "blocks": []
     },
@@ -40,7 +40,8 @@
         "heading": "How it works",
         "style": "boxes",
         "columns": "3",
-        "color_scheme": "graphite"
+        "color_scheme": "graphite",
+        "kicker": "The method"
       },
       "blocks": [
         {
@@ -83,33 +84,37 @@
       "type": "plans",
       "preset": "Cards",
       "settings": {
-        "heading": "Packages",
+        "heading": "Pick your pace",
         "text": "Pay per block. Sessions keep for three months.",
         "plans": "plans",
         "source": "listed",
         "columns": "3",
-        "color_scheme": "white"
+        "color_scheme": "white",
+        "kicker": "Packages"
       },
       "blocks": [
-        {
-          "id": "s_plans_b1",
-          "type": "plan",
-          "settings": {
-            "plan": "plan_one_to_one"
-          }
-        },
         {
           "id": "s_plans_b2",
           "type": "plan",
           "settings": {
-            "plan": "plan_small_group"
+            "plan": "plan_small_group",
+            "highlight": "off"
+          }
+        },
+        {
+          "id": "s_plans_b1",
+          "type": "plan",
+          "settings": {
+            "plan": "plan_one_to_one",
+            "highlight": "on"
           }
         },
         {
           "id": "s_plans_b3",
           "type": "plan",
           "settings": {
-            "plan": "plan_drop_in"
+            "plan": "plan_drop_in",
+            "highlight": "off"
           }
         }
       ]
@@ -129,8 +134,7 @@
           "settings": {
             "quote": "Dana fixed a shoulder two physios could not. I deadlift twice my bodyweight now.",
             "name": "Rob S.",
-            "line": "One to one, two years",
-            "image": "as_1x1_1"
+            "line": "One to one, two years"
           }
         },
         {
@@ -139,8 +143,7 @@
           "settings": {
             "quote": "Eight weeks, three sessions a week, and my first pull-up at 51.",
             "name": "Clare W.",
-            "line": "One to one",
-            "image": "as_1x1_2"
+            "line": "One to one"
           }
         }
       ]
@@ -155,7 +158,8 @@
         "source": "listed",
         "classes": "classes",
         "columns": "3",
-        "color_scheme": "white"
+        "color_scheme": "white",
+        "kicker": "Classes"
       },
       "blocks": [
         {
@@ -169,14 +173,14 @@
           "id": "s_classes_b2",
           "type": "class",
           "settings": {
-            "class": "class_strength_foundations"
+            "class": "class_beginners_strength"
           }
         },
         {
           "id": "s_classes_b3",
           "type": "class",
           "settings": {
-            "class": "class_olympic_lifting"
+            "class": "class_mobility"
           }
         }
       ]
@@ -186,8 +190,9 @@
       "type": "faq",
       "preset": "Default",
       "settings": {
-        "heading": "Questions",
-        "color_scheme": "concrete"
+        "heading": "Before you come in",
+        "color_scheme": "concrete",
+        "kicker": "Questions"
       },
       "blocks": [
         {

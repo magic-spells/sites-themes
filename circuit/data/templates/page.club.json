@@ -15,7 +15,6 @@
         "action_label": "Join us",
         "secondary_label": "Next meet-ups",
         "secondary_link": "/events",
-        "strip": "Saturdays 08:00 · Free · Every pace",
         "ghost_word": "Every pace",
         "color_scheme": "black"
       },
@@ -166,8 +165,9 @@
       "type": "faq",
       "preset": "Default",
       "settings": {
-        "heading": "Questions",
-        "color_scheme": "white"
+        "heading": "Before you come in",
+        "color_scheme": "white",
+        "kicker": "Questions"
       },
       "blocks": [
         {

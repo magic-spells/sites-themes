@@ -32,8 +32,9 @@
       "type": "faq",
       "preset": "Default",
       "settings": {
-        "heading": "Questions",
-        "color_scheme": "concrete"
+        "heading": "Before you come in",
+        "color_scheme": "concrete",
+        "kicker": "Questions"
       },
       "blocks": [
         {

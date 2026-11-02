@@ -1,7 +1,8 @@
 <!-- One coach, large: a 4:5 portrait that can rise past the band's top edge,
      beside a 30rem text column with the big gap: kicker, name in h1 (h2 when
-     not first), role, bio, credentials as a mono list, specialties chips,
-     the primary action and the coach's own link. On a coach's page it shows
+     not first), the specialties as one mono line (the role without them),
+     bio, credentials as plain mono lines, the primary action and the
+     coach's own link. On a coach's page it shows
      that coach. -->
 {#let
   coach = page.entry && settings.use_page ? page.entry : settings.coach
@@ -10,21 +11,20 @@
   action = settings.action_label || site.settings.action_label
 }
 {#if coach}
-<section class="bg-scheme-background px-gutter text-scheme-foreground { settings.overlap && !first ? 'pb-section' : 'py-section' }">
-  <div class="mx-auto grid max-w-column items-start gap-step-xl md:grid-cols-2 lg:gap-step-3xl">
-    <div class="relative { settings.photo_side == 'right' ? 'md:order-2' : '' } { settings.overlap && !first ? '-mt-step-2xl md:-mt-step-3xl' : '' }">
+<section class="bg-scheme-background px-gutter text-scheme-foreground { settings.overlap && !first ? 'pb-section' : 'py-section' }" data-rise={ settings.overlap && !first ? true : null }>
+  <div class="mx-auto grid max-w-column items-start gap-step-xl md:grid-cols-2 lg:grid-cols-feature lg:gap-step-3xl">
+    <div class="relative { settings.photo_side == 'right' ? 'md:order-2' : '' } { settings.overlap && !first ? '-mt-rise' : '' }">
       <Photo asset={ f.image } alt={ f.image_alt } ratio="aspect-4/5" treatment={ settings.treatment } eager={ first } sizes="(min-width: 48rem) 45vw, 90vw" />
     </div>
     <div class="grid max-w-text content-start gap-step-md { settings.overlap && !first ? 'md:pt-section' : '' }">
       {#if settings.kicker}<p class="font-mono text-overline font-medium text-scheme-meta uppercase">{ settings.kicker }</p>{/if}
       {#if first}<h1 class="font-heading text-h1 font-black text-balance text-scheme-heading uppercase stretch-heading">{ coach.title }</h1>
       {:else}<h2 class="font-heading text-h1 font-black text-balance text-scheme-heading uppercase stretch-heading">{ coach.title }</h2>{/if}
-      {#if f.role}<p class="font-mono text-spec font-medium text-scheme-links uppercase">{ f.role }</p>{/if}
+      {#if f.specialties}<p class="font-mono text-spec font-medium text-scheme-meta uppercase">{ f.specialties | split(',') | join(' · ') }</p>{:else if f.role}<p class="font-mono text-spec font-medium text-scheme-meta uppercase">{ f.role }</p>{/if}
       {#if f.bio}<div class="sites-prose text-scheme-muted">{ f.bio }</div>{/if}
       {#if settings.show_credentials && f.credentials}
-        <ul class="grid gap-step-2xs border-t border-scheme-rule pt-step-sm font-mono text-body-xs uppercase">{#for line in f.credentials | split('\n')}{#if line | strip}<li class="grid grid-cols-check gap-step-xs"><span class="sites-icon mt-0.5 size-icon-small text-accent" aria-hidden="true">{#svg 'icons/check.svg'}</span>{ line | strip }</li>{/if}{/for}</ul>
+        <ul class="grid gap-step-2xs font-mono text-body-sm">{#for line in f.credentials | split('\n')}{#if line | strip}<li>{ line | strip }</li>{/if}{/for}</ul>
       {/if}
-      {#if f.specialties}<p class="flex flex-wrap gap-step-2xs">{#for s in f.specialties | split(',')}<span class="inline-flex min-h-tag items-center rounded-chip border border-scheme-rule bg-scheme-surface-2 px-step-xs font-mono text-spec text-scheme-muted uppercase">{ s | strip }</span>{/for}</p>{/if}
       <div class="flex flex-wrap gap-step-xs pt-step-xs">
         {#if action}<Button action={ true }>{ action }</Button>{/if}
         {#if f.link}<Button href={ f.link } tone="outline" external={ true }>{ settings.link_label || t('follow') }</Button>{/if}

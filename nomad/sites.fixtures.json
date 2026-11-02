@@ -1,0 +1,3418 @@
+{
+  "site": {
+    "name": "Ilse Varga",
+    "url": "https://ilsevarga.example",
+    "locale": "en",
+    "settings": {
+      "wordmark": "Ilse Varga",
+      "favicon": "as_favicon",
+      "tagline": "A product designer who works from wherever the Wi-Fi holds. Notes, costs and routes since April 2023.",
+      "reveal_on_scroll": true,
+      "copyright": "© 2026 Ilse Varga",
+      "posts_path": "/journal",
+      "places_path": "/places",
+      "trips_path": "/trips",
+      "writer_name": "Ilse Varga",
+      "writer_bio": "I design software for a living and have done it from a different city every few weeks since April 2023. This is where I write down what each place cost, where the Wi-Fi held and what I would do differently.",
+      "writer_portrait": "as_4x5_sand",
+      "writer_links": "social",
+      "current_place": "oaxaca",
+      "on_road_since": "2023-04-03",
+      "home_base": "None, for now",
+      "work": "Product design",
+      "distance_km": "",
+      "map_style": "drawn",
+      "tile_style_url": "",
+      "coordinate_format": "decimal",
+      "contact_email": "hello@ilsevarga.example",
+      "reply_note": "I answer within a week, from wherever I am."
+    }
+  },
+  "menus": {
+    "main": {
+      "handle": "main",
+      "title": "Main menu",
+      "items": [
+        {
+          "id": "main_0",
+          "label": "Journal",
+          "target": {
+            "kind": "url",
+            "url": "/journal"
+          },
+          "children": []
+        },
+        {
+          "id": "main_1",
+          "label": "Places",
+          "target": {
+            "kind": "url",
+            "url": "/places"
+          },
+          "children": []
+        },
+        {
+          "id": "main_2",
+          "label": "Trips",
+          "target": {
+            "kind": "url",
+            "url": "/trips"
+          },
+          "children": []
+        },
+        {
+          "id": "main_3",
+          "label": "Photos",
+          "target": {
+            "kind": "url",
+            "url": "/photos"
+          },
+          "children": []
+        },
+        {
+          "id": "main_4",
+          "label": "Gear",
+          "target": {
+            "kind": "url",
+            "url": "/gear"
+          },
+          "children": []
+        },
+        {
+          "id": "main_5",
+          "label": "About",
+          "target": {
+            "kind": "url",
+            "url": "/about"
+          },
+          "children": []
+        }
+      ]
+    },
+    "legal": {
+      "handle": "legal",
+      "title": "Footer",
+      "items": [
+        {
+          "id": "legal_0",
+          "label": "What I use",
+          "target": {
+            "kind": "url",
+            "url": "/uses"
+          },
+          "children": []
+        },
+        {
+          "id": "legal_1",
+          "label": "Contact",
+          "target": {
+            "kind": "url",
+            "url": "/contact"
+          },
+          "children": []
+        },
+        {
+          "id": "legal_2",
+          "label": "Privacy",
+          "target": {
+            "kind": "url",
+            "url": "/privacy"
+          },
+          "children": []
+        }
+      ]
+    },
+    "social": {
+      "handle": "social",
+      "title": "Social links",
+      "items": [
+        {
+          "id": "social_0",
+          "label": "RSS",
+          "target": {
+            "kind": "url",
+            "url": "https://ilsevarga.example/feed.xml"
+          },
+          "children": []
+        },
+        {
+          "id": "social_1",
+          "label": "Instagram",
+          "target": {
+            "kind": "url",
+            "url": "https://www.instagram.com/"
+          },
+          "children": []
+        },
+        {
+          "id": "social_2",
+          "label": "Email",
+          "target": {
+            "kind": "url",
+            "url": "mailto:hello@ilsevarga.example"
+          },
+          "children": []
+        }
+      ]
+    },
+    "topics": {
+      "handle": "topics",
+      "title": "Topics",
+      "items": [
+        {
+          "id": "topics_0",
+          "label": "Money",
+          "target": {
+            "kind": "url",
+            "url": "/journal?topic=Money"
+          },
+          "children": []
+        },
+        {
+          "id": "topics_1",
+          "label": "Food",
+          "target": {
+            "kind": "url",
+            "url": "/journal?topic=Food"
+          },
+          "children": []
+        },
+        {
+          "id": "topics_2",
+          "label": "Work on the road",
+          "target": {
+            "kind": "url",
+            "url": "/journal?topic=Work+on+the+road"
+          },
+          "children": []
+        },
+        {
+          "id": "topics_3",
+          "label": "Slow travel",
+          "target": {
+            "kind": "url",
+            "url": "/journal?topic=Slow+travel"
+          },
+          "children": []
+        },
+        {
+          "id": "topics_4",
+          "label": "Overland",
+          "target": {
+            "kind": "url",
+            "url": "/journal?topic=Overland"
+          },
+          "children": []
+        },
+        {
+          "id": "topics_5",
+          "label": "Gear",
+          "target": {
+            "kind": "url",
+            "url": "/journal?topic=Gear"
+          },
+          "children": []
+        },
+        {
+          "id": "topics_6",
+          "label": "City guide",
+          "target": {
+            "kind": "url",
+            "url": "/journal?topic=City+guide"
+          },
+          "children": []
+        }
+      ]
+    }
+  },
+  "galleries": {
+    "from-the-road": {
+      "handle": "from-the-road",
+      "title": "From the road",
+      "items": [
+        {
+          "asset_id": "as_4x5_clay",
+          "caption": "Jalatlaco at seven, before the comal is hot",
+          "alt": "Jalatlaco at seven, before the comal is hot (placeholder)"
+        },
+        {
+          "asset_id": "as_3x2_sea",
+          "caption": "The lagoon from the Fondamenta Nove",
+          "alt": "The lagoon from the Fondamenta Nove (placeholder)"
+        },
+        {
+          "asset_id": "as_loop_dusk",
+          "caption": "Calle Murguía at dusk",
+          "alt": "Calle Murguía at dusk"
+        },
+        {
+          "asset_id": "as_2x3_dusk",
+          "caption": "A stairway in Graça",
+          "alt": "A stairway in Graça (placeholder)"
+        },
+        {
+          "asset_id": "as_3x2_sand",
+          "caption": "The milk bar on Grodzka Street",
+          "alt": "The milk bar on Grodzka Street (placeholder)"
+        },
+        {
+          "asset_id": "as_1x1_night",
+          "caption": "The sleeper at Villach, 3 a.m.",
+          "alt": "The sleeper at Villach, 3 a.m. (placeholder)"
+        },
+        {
+          "asset_id": "as_16x9_clay",
+          "caption": "Sierra Norte from the bus",
+          "alt": "Sierra Norte from the bus (placeholder)"
+        },
+        {
+          "asset_id": "as_4x5_sea",
+          "caption": "Essaouira's harbour wall",
+          "alt": "Essaouira's harbour wall (placeholder)"
+        },
+        {
+          "asset_id": "as_loop_sea",
+          "caption": "The Atlantic at Essaouira",
+          "alt": "The Atlantic at Essaouira"
+        },
+        {
+          "asset_id": "as_3x2_dusk",
+          "caption": "Roofs over Gràcia",
+          "alt": "Roofs over Gràcia (placeholder)"
+        },
+        {
+          "asset_id": "as_4x3_sand",
+          "caption": "A market in Chiang Mai",
+          "alt": "A market in Chiang Mai (placeholder)"
+        },
+        {
+          "asset_id": "as_2x3_clay",
+          "caption": "Betlemi Street, Tbilisi",
+          "alt": "Betlemi Street, Tbilisi (placeholder)"
+        }
+      ]
+    },
+    "oaxaca-weeks": {
+      "handle": "oaxaca-weeks",
+      "title": "Three weeks in Oaxaca",
+      "items": [
+        {
+          "asset_id": "as_3x2_clay",
+          "caption": "The tortillería downstairs",
+          "alt": "The tortillería downstairs (placeholder)"
+        },
+        {
+          "asset_id": "as_loop_dusk",
+          "caption": "The street outside at dusk",
+          "alt": "The street outside at dusk"
+        },
+        {
+          "asset_id": "as_4x5_dusk",
+          "caption": "Mezcal at the corner shop",
+          "alt": "Mezcal at the corner shop (placeholder)"
+        },
+        {
+          "asset_id": "as_3x2_sand",
+          "caption": "Morning light on the courtyard",
+          "alt": "Morning light on the courtyard (placeholder)"
+        },
+        {
+          "asset_id": "as_1x1_clay",
+          "caption": "Tlayudas on the grill",
+          "alt": "Tlayudas on the grill (placeholder)"
+        },
+        {
+          "asset_id": "as_4x3_sea",
+          "caption": "The Sierra Norte, Sunday",
+          "alt": "The Sierra Norte, Sunday (placeholder)"
+        }
+      ]
+    },
+    "adriatic-sleeper": {
+      "handle": "adriatic-sleeper",
+      "title": "The sleeper south",
+      "items": [
+        {
+          "asset_id": "as_3x2_night",
+          "caption": "The couchette before lights out",
+          "alt": "The couchette before lights out (placeholder)"
+        },
+        {
+          "asset_id": "as_4x5_night",
+          "caption": "The corridor at five",
+          "alt": "The corridor at five (placeholder)"
+        },
+        {
+          "asset_id": "as_16x9_sea",
+          "caption": "The Alps at first light",
+          "alt": "The Alps at first light (placeholder)"
+        },
+        {
+          "asset_id": "as_3x2_sand",
+          "caption": "Breakfast at Villach",
+          "alt": "Breakfast at Villach (placeholder)"
+        },
+        {
+          "asset_id": "as_4x3_sea",
+          "caption": "Arriving at Santa Lucia",
+          "alt": "Arriving at Santa Lucia (placeholder)"
+        }
+      ]
+    },
+    "oaxaca-streets": {
+      "handle": "oaxaca-streets",
+      "title": "Oaxaca streets",
+      "items": [
+        {
+          "asset_id": "as_4x5_clay",
+          "caption": "Jalatlaco's painted walls",
+          "alt": "Jalatlaco's painted walls (placeholder)"
+        },
+        {
+          "asset_id": "as_3x2_dusk",
+          "caption": "The zócalo at dusk",
+          "alt": "The zócalo at dusk (placeholder)"
+        },
+        {
+          "asset_id": "as_2x3_sand",
+          "caption": "A doorway on García Vigil",
+          "alt": "A doorway on García Vigil (placeholder)"
+        },
+        {
+          "asset_id": "as_3x2_clay",
+          "caption": "Benito Juárez market",
+          "alt": "Benito Juárez market (placeholder)"
+        },
+        {
+          "asset_id": "as_1x1_sea",
+          "caption": "A courtyard in Xochimilco",
+          "alt": "A courtyard in Xochimilco (placeholder)"
+        },
+        {
+          "asset_id": "as_4x3_dusk",
+          "caption": "Santo Domingo at night",
+          "alt": "Santo Domingo at night (placeholder)"
+        },
+        {
+          "asset_id": "as_4x5_sand",
+          "caption": "The bus to the Sierra Norte",
+          "alt": "The bus to the Sierra Norte (placeholder)"
+        },
+        {
+          "asset_id": "as_3x2_sea",
+          "caption": "Rain on Calle Murguía",
+          "alt": "Rain on Calle Murguía (placeholder)"
+        }
+      ]
+    },
+    "lisbon-roofs": {
+      "handle": "lisbon-roofs",
+      "title": "Lisbon roofs",
+      "items": [
+        {
+          "asset_id": "as_3x2_dusk",
+          "caption": "Graça from the miradouro",
+          "alt": "Graça from the miradouro (placeholder)"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "Tiles on Rua dos Lagares",
+          "alt": "Tiles on Rua dos Lagares (placeholder)"
+        },
+        {
+          "asset_id": "as_3x2_sea",
+          "caption": "The river from Alfama",
+          "alt": "The river from Alfama (placeholder)"
+        },
+        {
+          "asset_id": "as_4x3_clay",
+          "caption": "Laundry over Mouraria",
+          "alt": "Laundry over Mouraria (placeholder)"
+        },
+        {
+          "asset_id": "as_3x2_sand",
+          "caption": "The 28 on the hill",
+          "alt": "The 28 on the hill (placeholder)"
+        },
+        {
+          "asset_id": "as_1x1_dusk",
+          "caption": "Sunset over São Vicente",
+          "alt": "Sunset over São Vicente (placeholder)"
+        }
+      ]
+    },
+    "chiang-mai-markets": {
+      "handle": "chiang-mai-markets",
+      "title": "Chiang Mai markets",
+      "items": [
+        {
+          "asset_id": "as_3x2_sand",
+          "caption": "Warorot market at noon",
+          "alt": "Warorot market at noon (placeholder)"
+        },
+        {
+          "asset_id": "as_4x5_clay",
+          "caption": "Khao soi at the Sunday market",
+          "alt": "Khao soi at the Sunday market (placeholder)"
+        },
+        {
+          "asset_id": "as_3x2_night",
+          "caption": "The night bazaar",
+          "alt": "The night bazaar (placeholder)"
+        },
+        {
+          "asset_id": "as_1x1_sea",
+          "caption": "Flowers at Ton Lamyai",
+          "alt": "Flowers at Ton Lamyai (placeholder)"
+        },
+        {
+          "asset_id": "as_4x3_dusk",
+          "caption": "The moat at dusk, before the smoke",
+          "alt": "The moat at dusk, before the smoke (placeholder)"
+        }
+      ]
+    }
+  },
+  "assets": {
+    "as_21x9_sand": {
+      "id": "as_21x9_sand",
+      "status": "ready",
+      "file_name": "21x9-sand.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/21x9-sand.svg",
+      "width": 2100,
+      "height": 900,
+      "alt": "21:9 sand placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_21x9_clay": {
+      "id": "as_21x9_clay",
+      "status": "ready",
+      "file_name": "21x9-clay.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/21x9-clay.svg",
+      "width": 2100,
+      "height": 900,
+      "alt": "21:9 clay placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_21x9_sea": {
+      "id": "as_21x9_sea",
+      "status": "ready",
+      "file_name": "21x9-sea.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/21x9-sea.svg",
+      "width": 2100,
+      "height": 900,
+      "alt": "21:9 sea placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_21x9_dusk": {
+      "id": "as_21x9_dusk",
+      "status": "ready",
+      "file_name": "21x9-dusk.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/21x9-dusk.svg",
+      "width": 2100,
+      "height": 900,
+      "alt": "21:9 dusk placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_21x9_night": {
+      "id": "as_21x9_night",
+      "status": "ready",
+      "file_name": "21x9-night.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/21x9-night.svg",
+      "width": 2100,
+      "height": 900,
+      "alt": "21:9 night placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_16x9_sand": {
+      "id": "as_16x9_sand",
+      "status": "ready",
+      "file_name": "16x9-sand.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/16x9-sand.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "16:9 sand placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_16x9_clay": {
+      "id": "as_16x9_clay",
+      "status": "ready",
+      "file_name": "16x9-clay.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/16x9-clay.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "16:9 clay placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_16x9_sea": {
+      "id": "as_16x9_sea",
+      "status": "ready",
+      "file_name": "16x9-sea.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/16x9-sea.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "16:9 sea placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_16x9_dusk": {
+      "id": "as_16x9_dusk",
+      "status": "ready",
+      "file_name": "16x9-dusk.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/16x9-dusk.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "16:9 dusk placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_16x9_night": {
+      "id": "as_16x9_night",
+      "status": "ready",
+      "file_name": "16x9-night.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/16x9-night.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "16:9 night placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_3x2_sand": {
+      "id": "as_3x2_sand",
+      "status": "ready",
+      "file_name": "3x2-sand.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/3x2-sand.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "3:2 sand placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_3x2_clay": {
+      "id": "as_3x2_clay",
+      "status": "ready",
+      "file_name": "3x2-clay.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/3x2-clay.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "3:2 clay placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_3x2_sea": {
+      "id": "as_3x2_sea",
+      "status": "ready",
+      "file_name": "3x2-sea.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/3x2-sea.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "3:2 sea placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_3x2_dusk": {
+      "id": "as_3x2_dusk",
+      "status": "ready",
+      "file_name": "3x2-dusk.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/3x2-dusk.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "3:2 dusk placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_3x2_night": {
+      "id": "as_3x2_night",
+      "status": "ready",
+      "file_name": "3x2-night.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/3x2-night.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "3:2 night placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x3_sand": {
+      "id": "as_4x3_sand",
+      "status": "ready",
+      "file_name": "4x3-sand.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/4x3-sand.svg",
+      "width": 1200,
+      "height": 900,
+      "alt": "4:3 sand placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x3_clay": {
+      "id": "as_4x3_clay",
+      "status": "ready",
+      "file_name": "4x3-clay.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/4x3-clay.svg",
+      "width": 1200,
+      "height": 900,
+      "alt": "4:3 clay placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x3_sea": {
+      "id": "as_4x3_sea",
+      "status": "ready",
+      "file_name": "4x3-sea.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/4x3-sea.svg",
+      "width": 1200,
+      "height": 900,
+      "alt": "4:3 sea placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x3_dusk": {
+      "id": "as_4x3_dusk",
+      "status": "ready",
+      "file_name": "4x3-dusk.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/4x3-dusk.svg",
+      "width": 1200,
+      "height": 900,
+      "alt": "4:3 dusk placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x3_night": {
+      "id": "as_4x3_night",
+      "status": "ready",
+      "file_name": "4x3-night.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/4x3-night.svg",
+      "width": 1200,
+      "height": 900,
+      "alt": "4:3 night placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x5_sand": {
+      "id": "as_4x5_sand",
+      "status": "ready",
+      "file_name": "4x5-sand.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/4x5-sand.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "4:5 sand placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x5_clay": {
+      "id": "as_4x5_clay",
+      "status": "ready",
+      "file_name": "4x5-clay.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/4x5-clay.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "4:5 clay placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x5_sea": {
+      "id": "as_4x5_sea",
+      "status": "ready",
+      "file_name": "4x5-sea.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/4x5-sea.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "4:5 sea placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x5_dusk": {
+      "id": "as_4x5_dusk",
+      "status": "ready",
+      "file_name": "4x5-dusk.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/4x5-dusk.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "4:5 dusk placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_4x5_night": {
+      "id": "as_4x5_night",
+      "status": "ready",
+      "file_name": "4x5-night.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/4x5-night.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "4:5 night placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_1x1_sand": {
+      "id": "as_1x1_sand",
+      "status": "ready",
+      "file_name": "1x1-sand.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/1x1-sand.svg",
+      "width": 1200,
+      "height": 1200,
+      "alt": "1:1 sand placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_1x1_clay": {
+      "id": "as_1x1_clay",
+      "status": "ready",
+      "file_name": "1x1-clay.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/1x1-clay.svg",
+      "width": 1200,
+      "height": 1200,
+      "alt": "1:1 clay placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_1x1_sea": {
+      "id": "as_1x1_sea",
+      "status": "ready",
+      "file_name": "1x1-sea.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/1x1-sea.svg",
+      "width": 1200,
+      "height": 1200,
+      "alt": "1:1 sea placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_1x1_dusk": {
+      "id": "as_1x1_dusk",
+      "status": "ready",
+      "file_name": "1x1-dusk.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/1x1-dusk.svg",
+      "width": 1200,
+      "height": 1200,
+      "alt": "1:1 dusk placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_1x1_night": {
+      "id": "as_1x1_night",
+      "status": "ready",
+      "file_name": "1x1-night.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/1x1-night.svg",
+      "width": 1200,
+      "height": 1200,
+      "alt": "1:1 night placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_2x3_sand": {
+      "id": "as_2x3_sand",
+      "status": "ready",
+      "file_name": "2x3-sand.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/2x3-sand.svg",
+      "width": 1000,
+      "height": 1500,
+      "alt": "2:3 sand placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_2x3_clay": {
+      "id": "as_2x3_clay",
+      "status": "ready",
+      "file_name": "2x3-clay.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/2x3-clay.svg",
+      "width": 1000,
+      "height": 1500,
+      "alt": "2:3 clay placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_2x3_sea": {
+      "id": "as_2x3_sea",
+      "status": "ready",
+      "file_name": "2x3-sea.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/2x3-sea.svg",
+      "width": 1000,
+      "height": 1500,
+      "alt": "2:3 sea placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_2x3_dusk": {
+      "id": "as_2x3_dusk",
+      "status": "ready",
+      "file_name": "2x3-dusk.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/2x3-dusk.svg",
+      "width": 1000,
+      "height": 1500,
+      "alt": "2:3 dusk placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_2x3_night": {
+      "id": "as_2x3_night",
+      "status": "ready",
+      "file_name": "2x3-night.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/2x3-night.svg",
+      "width": 1000,
+      "height": 1500,
+      "alt": "2:3 night placeholder",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_loop_dusk": {
+      "id": "as_loop_dusk",
+      "status": "ready",
+      "file_name": "loop-dusk.mp4",
+      "mime": "video/mp4",
+      "byte_size": 13312,
+      "url": "/_sites/theme/video/loop-dusk.mp4",
+      "width": 640,
+      "height": 360,
+      "alt": "A street at dusk, looping (placeholder)",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_loop_sea": {
+      "id": "as_loop_sea",
+      "status": "ready",
+      "file_name": "loop-sea.mp4",
+      "mime": "video/mp4",
+      "byte_size": 22528,
+      "url": "/_sites/theme/video/loop-sea.mp4",
+      "width": 640,
+      "height": 360,
+      "alt": "The sea under a low sun, looping (placeholder)",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_loop_big": {
+      "id": "as_loop_big",
+      "status": "ready",
+      "file_name": "loop-sea.mp4",
+      "mime": "video/mp4",
+      "byte_size": 16500000,
+      "url": "/_sites/theme/video/loop-sea.mp4",
+      "width": 640,
+      "height": 360,
+      "alt": "A long take of the canal, over 15 MB (placeholder)",
+      "created_at": "2026-11-01T09:00:00Z"
+    },
+    "as_favicon": {
+      "id": "as_favicon",
+      "status": "ready",
+      "file_name": "favicon.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 258,
+      "url": "/_sites/theme/favicon.svg",
+      "width": 64,
+      "height": 64,
+      "alt": "",
+      "created_at": "2026-11-01T09:00:00Z"
+    }
+  },
+  "forms": {
+    "contact": {
+      "handle": "contact",
+      "name": "Contact",
+      "fields": [
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Name",
+          "required": true,
+          "max_length": 120
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        },
+        {
+          "id": "subject",
+          "type": "select",
+          "label": "Subject",
+          "required": true,
+          "options": [
+            "Collaboration",
+            "Press",
+            "A question"
+          ]
+        },
+        {
+          "id": "message",
+          "type": "textarea",
+          "label": "Message",
+          "required": true,
+          "max_length": 4000
+        }
+      ],
+      "success_message": "Thank you. I read everything and reply within a week.",
+      "submit_label": "Send"
+    },
+    "newsletter": {
+      "handle": "newsletter",
+      "name": "Newsletter",
+      "fields": [
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        }
+      ],
+      "success_message": "You are on the list. The next postcard comes when I move.",
+      "submit_label": "Subscribe"
+    }
+  },
+  "content": {
+    "posts": {
+      "name": "Journal",
+      "fields": [
+        {
+          "id": "topic",
+          "type": "text",
+          "label": "Topic"
+        },
+        {
+          "id": "date",
+          "type": "date",
+          "label": "Date"
+        },
+        {
+          "id": "author",
+          "type": "text",
+          "label": "Author"
+        },
+        {
+          "id": "reading_minutes",
+          "type": "number",
+          "label": "Reading minutes"
+        },
+        {
+          "id": "standfirst",
+          "type": "textarea",
+          "label": "Standfirst"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "body",
+          "type": "richtext",
+          "label": "Body"
+        },
+        {
+          "id": "image_caption",
+          "type": "text",
+          "label": "Image caption"
+        },
+        {
+          "id": "place",
+          "type": "entry",
+          "label": "Place",
+          "content_type": "places"
+        },
+        {
+          "id": "trip",
+          "type": "entry",
+          "label": "Trip",
+          "content_type": "trips"
+        },
+        {
+          "id": "video",
+          "type": "video",
+          "label": "Video"
+        },
+        {
+          "id": "photos",
+          "type": "gallery",
+          "label": "Photos"
+        }
+      ],
+      "entries": [
+        {
+          "id": "post_oaxaca_month_cost",
+          "handle": "what-a-month-in-oaxaca-cost-peso-by-peso",
+          "title": "What a month in Oaxaca cost, peso by peso",
+          "fields": {
+            "topic": "Money",
+            "date": "2026-10-26",
+            "author": "Ilse Varga",
+            "reading_minutes": 6,
+            "standfirst": "Rent, a desk, food, buses and a phone plan: the whole of October in Jalatlaco, to the peso.",
+            "image": "as_3x2_clay",
+            "image_alt": "What a month in Oaxaca cost, peso by peso (placeholder)",
+            "body": "<p>Rent, a desk, food, buses and a phone plan: the whole of October in Jalatlaco, to the peso.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+            "place": "place_oaxaca",
+            "trip": "trip_the_americas",
+            "video": "",
+            "photos": "",
+            "image_caption": "The receipts, sorted by category on the kitchen table."
+          }
+        },
+        {
+          "id": "post_three_weeks_tortilleria",
+          "handle": "three-weeks-above-a-tortilleria",
+          "title": "Three weeks above a tortillería",
+          "fields": {
+            "topic": "Food",
+            "date": "2026-10-12",
+            "author": "Ilse Varga",
+            "reading_minutes": 7,
+            "standfirst": "The comal starts at six. By seven the whole flat smells of corn, and I have stopped setting an alarm.",
+            "image": "as_3x2_sea",
+            "image_alt": "Three weeks above a tortillería (placeholder)",
+            "body": "<p>The comal starts at six. By seven the whole flat smells of corn, and I have stopped setting an alarm.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+            "place": "place_oaxaca",
+            "trip": "trip_the_americas",
+            "video": "as_loop_dusk",
+            "photos": "oaxaca-weeks"
+          }
+        },
+        {
+          "id": "post_coworking_roma_norte",
+          "handle": "coworking-in-roma-norte-four-spaces-one-i-kept",
+          "title": "Coworking in Roma Norte: four spaces, one I kept",
+          "fields": {
+            "topic": "Work on the road",
+            "date": "2026-09-28",
+            "author": "Ilse Varga",
+            "reading_minutes": 8,
+            "standfirst": "Four day passes, four sets of chairs, four answers to whether the Wi-Fi holds at three in the afternoon.",
+            "image": "as_3x2_dusk",
+            "image_alt": "Coworking in Roma Norte: four spaces, one I kept (placeholder)",
+            "body": "<p>Four day passes, four sets of chairs, four answers to whether the Wi-Fi holds at three in the afternoon.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+            "place": "place_mexico_city",
+            "trip": "trip_the_americas",
+            "video": "",
+            "photos": "",
+            "image_caption": "The desk I kept, by the window on the second floor."
+          }
+        },
+        {
+          "id": "post_venice_august_laptop",
+          "handle": "venice-in-august-with-a-laptop",
+          "title": "Venice in August, with a laptop",
+          "fields": {
+            "topic": "Slow travel",
+            "date": "2026-09-06",
+            "author": "Ilse Varga",
+            "reading_minutes": 6,
+            "standfirst": "Work from six to noon, sleep through the heat, walk until midnight. It is the only way the month made sense.",
+            "image": "as_3x2_sand",
+            "image_alt": "Venice in August, with a laptop (placeholder)",
+            "body": "<p>Work from six to noon, sleep through the heat, walk until midnight. It is the only way the month made sense.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+            "place": "place_venice",
+            "trip": "trip_overland_to_the_adriatic",
+            "video": "as_loop_big",
+            "photos": ""
+          }
+        },
+        {
+          "id": "post_sleeper_south",
+          "handle": "eleven-hours-on-the-sleeper-south",
+          "title": "Eleven hours on the sleeper south",
+          "fields": {
+            "topic": "Overland",
+            "date": "2026-08-27",
+            "author": "Ilse Varga",
+            "reading_minutes": 9,
+            "standfirst": "A four-berth couchette, a bag of apricots and the Alps going past in the dark.",
+            "image": "as_3x2_night",
+            "image_alt": "Eleven hours on the sleeper south (placeholder)",
+            "body": "<p>A four-berth couchette, a bag of apricots and the Alps going past in the dark.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+            "place": "place_vienna",
+            "trip": "trip_overland_to_the_adriatic",
+            "video": "",
+            "photos": "adriatic-sleeper",
+            "image_caption": "The corridor at five, somewhere after the border."
+          }
+        },
+        {
+          "id": "post_krakow_milk_bars",
+          "handle": "krakow-s-milk-bars-ranked-by-soup",
+          "title": "Kraków's milk bars, ranked by soup",
+          "fields": {
+            "topic": "Food",
+            "date": "2026-07-18",
+            "author": "Ilse Varga",
+            "reading_minutes": 5,
+            "standfirst": "Eleven milk bars, one bowl of soup in each, and a clear winner on Grodzka Street.",
+            "image": "as_3x2_clay",
+            "image_alt": "Kraków's milk bars, ranked by soup (placeholder)",
+            "body": "<p>Eleven milk bars, one bowl of soup in each, and a clear winner on Grodzka Street.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+            "place": "place_krakow",
+            "trip": "trip_overland_to_the_adriatic",
+            "video": "",
+            "photos": ""
+          }
+        },
+        {
+          "id": "post_stopped_flying",
+          "handle": "why-i-stopped-flying-inside-europe",
+          "title": "Why I stopped flying inside Europe",
+          "fields": {
+            "topic": "Overland",
+            "date": "2026-07-05",
+            "author": "Ilse Varga",
+            "reading_minutes": 7,
+            "standfirst": "Trains take longer. I counted how much longer, what it cost, and what I got for the days.",
+            "image": "as_3x2_sea",
+            "image_alt": "Why I stopped flying inside Europe (placeholder)",
+            "body": "<p>Trains take longer. I counted how much longer, what it cost, and what I got for the days.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+            "place": "place_krakow",
+            "trip": "trip_overland_to_the_adriatic",
+            "video": "",
+            "photos": ""
+          }
+        },
+        {
+          "id": "post_everything_i_carry",
+          "handle": "everything-i-carry-after-three-years",
+          "title": "Everything I carry, after three years",
+          "fields": {
+            "topic": "Gear",
+            "date": "2026-06-28",
+            "author": "Ilse Varga",
+            "reading_minutes": 10,
+            "standfirst": "One 40-litre bag, weighed item by item, with what earned its place and what went home in a box.",
+            "image": "as_3x2_dusk",
+            "image_alt": "Everything I carry, after three years (placeholder)",
+            "body": "<p>One 40-litre bag, weighed item by item, with what earned its place and what went home in a box.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+            "place": "place_barcelona",
+            "trip": "trip_the_atlantic_edge",
+            "video": "",
+            "photos": "",
+            "image_caption": "The whole kit on the floor of the flat in Gràcia."
+          }
+        },
+        {
+          "id": "post_mornings_in_gracia",
+          "handle": "thirty-mornings-in-gracia-and-the-cafe-that-became-an-office",
+          "title": "Thirty mornings in Gràcia, and the café that became an office",
+          "fields": {
+            "topic": "Work on the road",
+            "date": "2026-06-14",
+            "author": "Ilse Varga",
+            "reading_minutes": 6,
+            "standfirst": "Same table, same coffee, same two plugs. How a café quietly turned into the best desk of the spring.",
+            "image": "as_3x2_sand",
+            "image_alt": "Thirty mornings in Gràcia, and the café that became an office (placeholder)",
+            "body": "<p>Same table, same coffee, same two plugs. How a café quietly turned into the best desk of the spring.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+            "place": "place_barcelona",
+            "trip": "trip_the_atlantic_edge",
+            "video": "",
+            "photos": ""
+          }
+        },
+        {
+          "id": "post_essaouira_slow_wifi",
+          "handle": "wind-sardines-and-a-week-of-slow-wi-fi",
+          "title": "Wind, sardines and a week of slow Wi-Fi",
+          "fields": {
+            "topic": "Slow travel",
+            "date": "2026-05-02",
+            "author": "Ilse Varga",
+            "reading_minutes": 5,
+            "standfirst": "When the connection drops to a trickle, you find out which parts of the job were ever urgent.",
+            "image": "as_3x2_night",
+            "image_alt": "Wind, sardines and a week of slow Wi-Fi (placeholder)",
+            "body": "<p>When the connection drops to a trickle, you find out which parts of the job were ever urgent.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+            "place": "place_essaouira",
+            "trip": "trip_the_atlantic_edge",
+            "video": "",
+            "photos": ""
+          }
+        },
+        {
+          "id": "post_lisbon_hotspot",
+          "handle": "lisbon-on-a-hotspot-where-the-signal-holds",
+          "title": "Lisbon on a hotspot: where the signal holds",
+          "fields": {
+            "topic": "Work on the road",
+            "date": "2026-03-20",
+            "author": "Ilse Varga",
+            "reading_minutes": 7,
+            "standfirst": "Six weeks of tethering from Graça, mapped street by street, with the three corners where calls never dropped.",
+            "image": "as_3x2_clay",
+            "image_alt": "Lisbon on a hotspot: where the signal holds (placeholder)",
+            "body": "<p>Six weeks of tethering from Graça, mapped street by street, with the three corners where calls never dropped.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+            "place": "place_lisbon",
+            "trip": "trip_the_atlantic_edge",
+            "video": "",
+            "photos": "",
+            "image_caption": "The miradouro where the signal is best and the bench is free."
+          }
+        },
+        {
+          "id": "post_chiang_mai_burning_season",
+          "handle": "chiang-mai-in-burning-season-should-you-go",
+          "title": "Chiang Mai in burning season: should you go?",
+          "fields": {
+            "topic": "City guide",
+            "date": "2026-02-10",
+            "author": "Ilse Varga",
+            "reading_minutes": 8,
+            "standfirst": "From late February the air turns. What the smoke is, when it comes and what I would do differently.",
+            "image": "as_3x2_sea",
+            "image_alt": "Chiang Mai in burning season: should you go? (placeholder)",
+            "body": "<p>From late February the air turns. What the smoke is, when it comes and what I would do differently.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+            "place": "place_chiang_mai",
+            "trip": "trip_winter_in_asia",
+            "video": "",
+            "photos": ""
+          }
+        },
+        {
+          "id": "post_ha_noi_motorbike_taxi",
+          "handle": "ha-noi-by-motorbike-taxi",
+          "title": "Hà Nội by motorbike taxi",
+          "fields": {
+            "topic": "City guide",
+            "date": "2025-12-15",
+            "author": "Ilse Varga",
+            "reading_minutes": 6,
+            "standfirst": "Five weeks without walking more than a block: how the apps work, what a ride costs, and how to hold on.",
+            "image": "as_3x2_dusk",
+            "image_alt": "Hà Nội by motorbike taxi (placeholder)",
+            "body": "<p>Five weeks without walking more than a block: how the apps work, what a ride costs, and how to hold on.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+            "place": "place_ha_noi",
+            "trip": "trip_winter_in_asia",
+            "video": "",
+            "photos": ""
+          }
+        },
+        {
+          "id": "post_tbilisi_month",
+          "handle": "tbilisi-for-a-month-the-visa-the-flat-the-hills",
+          "title": "Tbilisi for a month: the visa, the flat, the hills",
+          "fields": {
+            "topic": "City guide",
+            "date": "2025-11-20",
+            "author": "Ilse Varga",
+            "reading_minutes": 9,
+            "standfirst": "A year's visa on arrival, a flat with a balcony, and the hills that make every walk a climb.",
+            "image": "as_3x2_sand",
+            "image_alt": "Tbilisi for a month: the visa, the flat, the hills (placeholder)",
+            "body": "<p>A year's visa on arrival, a flat with a balcony, and the hills that make every walk a climb.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+            "place": "place_tbilisi",
+            "trip": "trip_winter_in_asia",
+            "video": "",
+            "photos": "",
+            "image_caption": "The view from the balcony on Betlemi Street."
+          }
+        }
+      ]
+    },
+    "places": {
+      "name": "Places",
+      "fields": [
+        {
+          "id": "country",
+          "type": "text",
+          "label": "Country"
+        },
+        {
+          "id": "latitude",
+          "type": "number",
+          "label": "Latitude"
+        },
+        {
+          "id": "longitude",
+          "type": "number",
+          "label": "Longitude"
+        },
+        {
+          "id": "timezone",
+          "type": "text",
+          "label": "Time zone"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "standfirst",
+          "type": "textarea",
+          "label": "Standfirst"
+        },
+        {
+          "id": "body",
+          "type": "richtext",
+          "label": "Body"
+        },
+        {
+          "id": "photos",
+          "type": "gallery",
+          "label": "Photos"
+        }
+      ],
+      "entries": [
+        {
+          "id": "place_tbilisi",
+          "handle": "tbilisi",
+          "title": "Tbilisi",
+          "fields": {
+            "country": "Georgia",
+            "latitude": 41.7151,
+            "longitude": 44.8271,
+            "timezone": "Asia/Tbilisi",
+            "image": "as_3x2_clay",
+            "image_alt": "Tbilisi (placeholder)",
+            "standfirst": "Sulphur baths, steep streets and a balcony over the Mtkvari. The first month of the winter run.",
+            "body": "<p>Sulphur baths, steep streets and a balcony over the Mtkvari. The first month of the winter run.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+            "photos": ""
+          }
+        },
+        {
+          "id": "place_ha_noi",
+          "handle": "ha-noi",
+          "title": "Hà Nội",
+          "fields": {
+            "country": "Vietnam",
+            "latitude": 21.0285,
+            "longitude": 105.8542,
+            "timezone": "Asia/Ho_Chi_Minh",
+            "image": "as_3x2_sea",
+            "image_alt": "Hà Nội (placeholder)",
+            "standfirst": "Five weeks in the Old Quarter, learning to cross the street and to work through the horns.",
+            "body": "<p>Five weeks in the Old Quarter, learning to cross the street and to work through the horns.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+            "photos": ""
+          }
+        },
+        {
+          "id": "place_chiang_mai",
+          "handle": "chiang-mai",
+          "title": "Chiang Mai",
+          "fields": {
+            "country": "Thailand",
+            "latitude": 18.7883,
+            "longitude": 98.9853,
+            "timezone": "Asia/Bangkok",
+            "image": "as_3x2_sand",
+            "image_alt": "Chiang Mai (placeholder)",
+            "standfirst": "Seven weeks inside the old moat: cheap desks, fast fibre and, by February, the smoke.",
+            "body": "<p>Seven weeks inside the old moat: cheap desks, fast fibre and, by February, the smoke.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+            "photos": "chiang-mai-markets"
+          }
+        },
+        {
+          "id": "place_lisbon",
+          "handle": "lisbon",
+          "title": "Lisbon",
+          "fields": {
+            "country": "Portugal",
+            "latitude": 38.7223,
+            "longitude": -9.1393,
+            "timezone": "Europe/Lisbon",
+            "image": "as_3x2_dusk",
+            "image_alt": "Lisbon (placeholder)",
+            "standfirst": "Six weeks on a hotspot in Graça, chasing the signal up and down the hills.",
+            "body": "<p>Six weeks on a hotspot in Graça, chasing the signal up and down the hills.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+            "photos": "lisbon-roofs"
+          }
+        },
+        {
+          "id": "place_essaouira",
+          "handle": "essaouira",
+          "title": "Essaouira",
+          "fields": {
+            "country": "Morocco",
+            "latitude": 31.5085,
+            "longitude": -9.7595,
+            "timezone": "Africa/Casablanca",
+            "image": "as_3x2_sea",
+            "image_alt": "Essaouira (placeholder)",
+            "standfirst": "Three weeks of wind, grilled sardines and the slowest Wi-Fi of the year.",
+            "body": "<p>Three weeks of wind, grilled sardines and the slowest Wi-Fi of the year.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+            "photos": ""
+          }
+        },
+        {
+          "id": "place_barcelona",
+          "handle": "barcelona",
+          "title": "Barcelona",
+          "fields": {
+            "country": "Spain",
+            "latitude": 41.4036,
+            "longitude": 2.1565,
+            "timezone": "Europe/Madrid",
+            "image": "as_3x2_clay",
+            "image_alt": "Barcelona (placeholder)",
+            "standfirst": "Eight weeks in Gràcia, most mornings at the same café table.",
+            "body": "<p>Eight weeks in Gràcia, most mornings at the same café table.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+            "photos": ""
+          }
+        },
+        {
+          "id": "place_krakow",
+          "handle": "krakow",
+          "title": "Kraków",
+          "fields": {
+            "country": "Poland",
+            "latitude": 50.0647,
+            "longitude": 19.945,
+            "timezone": "Europe/Warsaw",
+            "image": "as_3x2_night",
+            "image_alt": "Kraków (placeholder)",
+            "standfirst": "A month of milk bars and trams, and the decision to stop flying inside Europe.",
+            "body": "<p>A month of milk bars and trams, and the decision to stop flying inside Europe.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+            "photos": ""
+          }
+        },
+        {
+          "id": "place_vienna",
+          "handle": "vienna",
+          "title": "Vienna",
+          "fields": {
+            "country": "Austria",
+            "latitude": 48.2082,
+            "longitude": 16.3738,
+            "timezone": "Europe/Vienna",
+            "image": "as_3x2_sand",
+            "image_alt": "Vienna (placeholder)",
+            "standfirst": "Three weeks of coffee houses that let you stay all afternoon, then the sleeper south.",
+            "body": "<p>Three weeks of coffee houses that let you stay all afternoon, then the sleeper south.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+            "photos": ""
+          }
+        },
+        {
+          "id": "place_venice",
+          "handle": "venice",
+          "title": "Venice",
+          "fields": {
+            "country": "Italy",
+            "latitude": 45.4408,
+            "longitude": 12.3155,
+            "timezone": "Europe/Rome",
+            "image": "as_3x2_sea",
+            "image_alt": "Venice (placeholder)",
+            "standfirst": "Nineteen days in August in a flat in Cannaregio, working early and walking late.",
+            "body": "<p>Nineteen days in August in a flat in Cannaregio, working early and walking late.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+            "photos": ""
+          }
+        },
+        {
+          "id": "place_mexico_city",
+          "handle": "mexico-city",
+          "title": "Mexico City",
+          "fields": {
+            "country": "Mexico",
+            "latitude": 19.4326,
+            "longitude": -99.1332,
+            "timezone": "America/Mexico_City",
+            "image": "as_3x2_dusk",
+            "image_alt": "Mexico City (placeholder)",
+            "standfirst": "Three weeks in Roma Norte, trying out four coworking spaces and keeping one.",
+            "body": "<p>Three weeks in Roma Norte, trying out four coworking spaces and keeping one.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+            "photos": ""
+          }
+        },
+        {
+          "id": "place_oaxaca",
+          "handle": "oaxaca",
+          "title": "Oaxaca",
+          "fields": {
+            "country": "Mexico",
+            "latitude": 17.0732,
+            "longitude": -96.7266,
+            "timezone": "America/Mexico_City",
+            "image": "as_3x2_clay",
+            "image_alt": "Oaxaca (placeholder)",
+            "standfirst": "Two months above a tortillería in Jalatlaco, with weekends in the Sierra Norte.",
+            "body": "<p>Two months above a tortillería in Jalatlaco, with weekends in the Sierra Norte.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+            "photos": "oaxaca-streets"
+          }
+        },
+        {
+          "id": "place_coyhaique",
+          "handle": "coyhaique",
+          "title": "Coyhaique",
+          "fields": {
+            "country": "Chile",
+            "latitude": -45.5712,
+            "longitude": -72.0685,
+            "timezone": "America/Santiago",
+            "image": "as_3x2_night",
+            "image_alt": "Coyhaique (placeholder)",
+            "standfirst": "Next: two weeks at the top of the Carretera Austral, if the buses run.",
+            "body": "<p>Next: two weeks at the top of the Carretera Austral, if the buses run.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+            "photos": ""
+          }
+        }
+      ]
+    },
+    "trips": {
+      "name": "Trips",
+      "fields": [
+        {
+          "id": "start_date",
+          "type": "date",
+          "label": "Start date"
+        },
+        {
+          "id": "end_date",
+          "type": "date",
+          "label": "End date"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "standfirst",
+          "type": "textarea",
+          "label": "Standfirst"
+        },
+        {
+          "id": "body",
+          "type": "richtext",
+          "label": "Body"
+        }
+      ],
+      "entries": [
+        {
+          "id": "trip_winter_in_asia",
+          "handle": "winter-in-asia",
+          "title": "Winter in Asia",
+          "fields": {
+            "start_date": "2025-11-01",
+            "end_date": "2026-02-25",
+            "image": "as_16x9_sea",
+            "image_alt": "Winter in Asia (placeholder)",
+            "standfirst": "Three cities, four months, and the long way round to the warm side of the year.",
+            "body": "<p>Three cities, four months, and the long way round to the warm side of the year.</p><p>Each stop below has its dates, its nights and the post I wrote from there.</p>"
+          }
+        },
+        {
+          "id": "trip_the_atlantic_edge",
+          "handle": "the-atlantic-edge",
+          "title": "The Atlantic edge",
+          "fields": {
+            "start_date": "2026-03-01",
+            "end_date": "2026-06-30",
+            "image": "as_16x9_dusk",
+            "image_alt": "The Atlantic edge (placeholder)",
+            "standfirst": "Spring down the Atlantic coast and back up into Catalonia.",
+            "body": "<p>Spring down the Atlantic coast and back up into Catalonia.</p><p>Each stop below has its dates, its nights and the post I wrote from there.</p>"
+          }
+        },
+        {
+          "id": "trip_overland_to_the_adriatic",
+          "handle": "overland-to-the-adriatic",
+          "title": "Overland to the Adriatic",
+          "fields": {
+            "start_date": "2026-07-01",
+            "end_date": "2026-09-15",
+            "image": "as_16x9_sand",
+            "image_alt": "Overland to the Adriatic (placeholder)",
+            "standfirst": "No flights: trains and one long sleeper from Poland to the lagoon.",
+            "body": "<p>No flights: trains and one long sleeper from Poland to the lagoon.</p><p>Each stop below has its dates, its nights and the post I wrote from there.</p>"
+          }
+        },
+        {
+          "id": "trip_the_americas",
+          "handle": "the-americas",
+          "title": "The Americas",
+          "fields": {
+            "start_date": "2026-09-16",
+            "end_date": "",
+            "image": "as_16x9_clay",
+            "image_alt": "The Americas (placeholder)",
+            "standfirst": "Mexico for the autumn, then south to Patagonia for the summer.",
+            "body": "<p>Mexico for the autumn, then south to Patagonia for the summer.</p><p>Each stop below has its dates, its nights and the post I wrote from there.</p>"
+          }
+        }
+      ]
+    },
+    "stops": {
+      "name": "Stops",
+      "fields": [
+        {
+          "id": "trip",
+          "type": "entry",
+          "label": "Trip",
+          "content_type": "trips"
+        },
+        {
+          "id": "place",
+          "type": "entry",
+          "label": "Place",
+          "content_type": "places"
+        },
+        {
+          "id": "arrive",
+          "type": "date",
+          "label": "Arrive"
+        },
+        {
+          "id": "nights",
+          "type": "number",
+          "label": "Nights"
+        },
+        {
+          "id": "post",
+          "type": "entry",
+          "label": "Post",
+          "content_type": "posts"
+        },
+        {
+          "id": "note",
+          "type": "text",
+          "label": "Note"
+        },
+        {
+          "id": "next",
+          "type": "checkbox",
+          "label": "Next stop"
+        }
+      ],
+      "entries": [
+        {
+          "id": "stop_01",
+          "handle": "tbilisi-2025-11-01",
+          "title": "Tbilisi, 2025-11-01",
+          "fields": {
+            "trip": "trip_winter_in_asia",
+            "place": "place_tbilisi",
+            "arrive": "2025-11-01",
+            "nights": 28,
+            "post": "post_tbilisi_month",
+            "note": "A year's visa on arrival and a flat on Betlemi Street.",
+            "next": false
+          }
+        },
+        {
+          "id": "stop_02",
+          "handle": "ha-noi-2025-11-29",
+          "title": "Hà Nội, 2025-11-29",
+          "fields": {
+            "trip": "trip_winter_in_asia",
+            "place": "place_ha_noi",
+            "arrive": "2025-11-29",
+            "nights": 35,
+            "post": "post_ha_noi_motorbike_taxi",
+            "note": "The Old Quarter, a desk by a window over the horns.",
+            "next": false
+          }
+        },
+        {
+          "id": "stop_03",
+          "handle": "chiang-mai-2026-01-03",
+          "title": "Chiang Mai, 2026-01-03",
+          "fields": {
+            "trip": "trip_winter_in_asia",
+            "place": "place_chiang_mai",
+            "arrive": "2026-01-03",
+            "nights": 52,
+            "post": "post_chiang_mai_burning_season",
+            "note": "Inside the old moat until the smoke came.",
+            "next": false
+          }
+        },
+        {
+          "id": "stop_04",
+          "handle": "lisbon-2026-03-01",
+          "title": "Lisbon, 2026-03-01",
+          "fields": {
+            "trip": "trip_the_atlantic_edge",
+            "place": "place_lisbon",
+            "arrive": "2026-03-01",
+            "nights": 45,
+            "post": "post_lisbon_hotspot",
+            "note": "Graça, on a hotspot.",
+            "next": false
+          }
+        },
+        {
+          "id": "stop_05",
+          "handle": "essaouira-2026-04-15",
+          "title": "Essaouira, 2026-04-15",
+          "fields": {
+            "trip": "trip_the_atlantic_edge",
+            "place": "place_essaouira",
+            "arrive": "2026-04-15",
+            "nights": 21,
+            "post": "post_essaouira_slow_wifi",
+            "note": "The medina, the wind and one bar of signal.",
+            "next": false
+          }
+        },
+        {
+          "id": "stop_06",
+          "handle": "barcelona-2026-05-06",
+          "title": "Barcelona, 2026-05-06",
+          "fields": {
+            "trip": "trip_the_atlantic_edge",
+            "place": "place_barcelona",
+            "arrive": "2026-05-06",
+            "nights": 55,
+            "post": "post_mornings_in_gracia",
+            "note": "Gràcia, the same café most mornings.",
+            "next": false
+          }
+        },
+        {
+          "id": "stop_07",
+          "handle": "krakow-2026-07-01",
+          "title": "Kraków, 2026-07-01",
+          "fields": {
+            "trip": "trip_overland_to_the_adriatic",
+            "place": "place_krakow",
+            "arrive": "2026-07-01",
+            "nights": 34,
+            "post": "post_krakow_milk_bars",
+            "note": "Kazimierz, a tram ride from everything.",
+            "next": false
+          }
+        },
+        {
+          "id": "stop_08",
+          "handle": "vienna-2026-08-04",
+          "title": "Vienna, 2026-08-04",
+          "fields": {
+            "trip": "trip_overland_to_the_adriatic",
+            "place": "place_vienna",
+            "arrive": "2026-08-04",
+            "nights": 23,
+            "post": "post_sleeper_south",
+            "note": "The seventh district, then the sleeper south.",
+            "next": false
+          }
+        },
+        {
+          "id": "stop_09",
+          "handle": "venice-2026-08-27",
+          "title": "Venice, 2026-08-27",
+          "fields": {
+            "trip": "trip_overland_to_the_adriatic",
+            "place": "place_venice",
+            "arrive": "2026-08-27",
+            "nights": 19,
+            "post": "post_venice_august_laptop",
+            "note": "Cannaregio in August.",
+            "next": false
+          }
+        },
+        {
+          "id": "stop_10",
+          "handle": "mexico-city-2026-09-16",
+          "title": "Mexico City, 2026-09-16",
+          "fields": {
+            "trip": "trip_the_americas",
+            "place": "place_mexico_city",
+            "arrive": "2026-09-16",
+            "nights": 21,
+            "post": "post_coworking_roma_norte",
+            "note": "Roma Norte and four coworking spaces.",
+            "next": false
+          }
+        },
+        {
+          "id": "stop_11",
+          "handle": "oaxaca-2026-10-07",
+          "title": "Oaxaca, 2026-10-07",
+          "fields": {
+            "trip": "trip_the_americas",
+            "place": "place_oaxaca",
+            "arrive": "2026-10-07",
+            "nights": 60,
+            "post": "post_oaxaca_month_cost",
+            "note": "Jalatlaco, above a tortillería.",
+            "next": false
+          }
+        },
+        {
+          "id": "stop_12",
+          "handle": "coyhaique-2026-12-08",
+          "title": "Coyhaique, 2026-12-08",
+          "fields": {
+            "trip": "trip_the_americas",
+            "place": "place_coyhaique",
+            "arrive": "2026-12-08",
+            "nights": 14,
+            "post": "",
+            "note": "The top of the Carretera Austral, if the buses run.",
+            "next": true
+          }
+        }
+      ]
+    },
+    "costs": {
+      "name": "Costs",
+      "fields": [
+        {
+          "id": "place",
+          "type": "entry",
+          "label": "Place",
+          "content_type": "places"
+        },
+        {
+          "id": "post",
+          "type": "entry",
+          "label": "Post",
+          "content_type": "posts"
+        },
+        {
+          "id": "month",
+          "type": "date",
+          "label": "Month"
+        },
+        {
+          "id": "category",
+          "type": "select",
+          "label": "Category",
+          "options": [
+            "rent",
+            "coworking",
+            "food",
+            "transport",
+            "phone",
+            "other"
+          ]
+        },
+        {
+          "id": "amount",
+          "type": "number",
+          "label": "Amount"
+        },
+        {
+          "id": "currency",
+          "type": "text",
+          "label": "Currency"
+        },
+        {
+          "id": "note",
+          "type": "text",
+          "label": "Note"
+        }
+      ],
+      "entries": [
+        {
+          "id": "cost_oaxaca_rent",
+          "handle": "oaxaca-2026-10-rent",
+          "title": "Oaxaca 2026-10 rent",
+          "fields": {
+            "place": "place_oaxaca",
+            "post": "post_oaxaca_month_cost",
+            "month": "2026-10-01",
+            "category": "rent",
+            "amount": 14500,
+            "currency": "MXN",
+            "note": "A one-bedroom flat, booked for the month"
+          }
+        },
+        {
+          "id": "cost_oaxaca_coworking",
+          "handle": "oaxaca-2026-10-coworking",
+          "title": "Oaxaca 2026-10 coworking",
+          "fields": {
+            "place": "place_oaxaca",
+            "post": "post_oaxaca_month_cost",
+            "month": "2026-10-01",
+            "category": "coworking",
+            "amount": 2800,
+            "currency": "MXN",
+            "note": "A monthly desk, not a day pass"
+          }
+        },
+        {
+          "id": "cost_oaxaca_food",
+          "handle": "oaxaca-2026-10-food",
+          "title": "Oaxaca 2026-10 food",
+          "fields": {
+            "place": "place_oaxaca",
+            "post": "post_oaxaca_month_cost",
+            "month": "2026-10-01",
+            "category": "food",
+            "amount": 6200,
+            "currency": "MXN",
+            "note": "Markets, a lunch out most days"
+          }
+        },
+        {
+          "id": "cost_oaxaca_transport",
+          "handle": "oaxaca-2026-10-transport",
+          "title": "Oaxaca 2026-10 transport",
+          "fields": {
+            "place": "place_oaxaca",
+            "post": "post_oaxaca_month_cost",
+            "month": "2026-10-01",
+            "category": "transport",
+            "amount": 900,
+            "currency": "MXN",
+            "note": "Buses, taxis and one long-distance trip"
+          }
+        },
+        {
+          "id": "cost_oaxaca_phone",
+          "handle": "oaxaca-2026-10-phone",
+          "title": "Oaxaca 2026-10 phone",
+          "fields": {
+            "place": "place_oaxaca",
+            "post": "post_oaxaca_month_cost",
+            "month": "2026-10-01",
+            "category": "phone",
+            "amount": 350,
+            "currency": "MXN",
+            "note": "A local SIM with data"
+          }
+        },
+        {
+          "id": "cost_lisbon_rent",
+          "handle": "lisbon-2026-03-rent",
+          "title": "Lisbon 2026-03 rent",
+          "fields": {
+            "place": "place_lisbon",
+            "post": "",
+            "month": "2026-03-01",
+            "category": "rent",
+            "amount": 1450,
+            "currency": "EUR",
+            "note": "A one-bedroom flat, booked for the month"
+          }
+        },
+        {
+          "id": "cost_lisbon_coworking",
+          "handle": "lisbon-2026-03-coworking",
+          "title": "Lisbon 2026-03 coworking",
+          "fields": {
+            "place": "place_lisbon",
+            "post": "",
+            "month": "2026-03-01",
+            "category": "coworking",
+            "amount": 180,
+            "currency": "EUR",
+            "note": "A monthly desk, not a day pass"
+          }
+        },
+        {
+          "id": "cost_lisbon_food",
+          "handle": "lisbon-2026-03-food",
+          "title": "Lisbon 2026-03 food",
+          "fields": {
+            "place": "place_lisbon",
+            "post": "",
+            "month": "2026-03-01",
+            "category": "food",
+            "amount": 520,
+            "currency": "EUR",
+            "note": "Markets, a lunch out most days"
+          }
+        },
+        {
+          "id": "cost_lisbon_transport",
+          "handle": "lisbon-2026-03-transport",
+          "title": "Lisbon 2026-03 transport",
+          "fields": {
+            "place": "place_lisbon",
+            "post": "",
+            "month": "2026-03-01",
+            "category": "transport",
+            "amount": 40,
+            "currency": "EUR",
+            "note": "Buses, taxis and one long-distance trip"
+          }
+        },
+        {
+          "id": "cost_lisbon_phone",
+          "handle": "lisbon-2026-03-phone",
+          "title": "Lisbon 2026-03 phone",
+          "fields": {
+            "place": "place_lisbon",
+            "post": "",
+            "month": "2026-03-01",
+            "category": "phone",
+            "amount": 25,
+            "currency": "EUR",
+            "note": "A local SIM with data"
+          }
+        },
+        {
+          "id": "cost_chiang_mai_rent",
+          "handle": "chiang-mai-2026-01-rent",
+          "title": "Chiang Mai 2026-01 rent",
+          "fields": {
+            "place": "place_chiang_mai",
+            "post": "",
+            "month": "2026-01-01",
+            "category": "rent",
+            "amount": 14000,
+            "currency": "THB",
+            "note": "A one-bedroom flat, booked for the month"
+          }
+        },
+        {
+          "id": "cost_chiang_mai_coworking",
+          "handle": "chiang-mai-2026-01-coworking",
+          "title": "Chiang Mai 2026-01 coworking",
+          "fields": {
+            "place": "place_chiang_mai",
+            "post": "",
+            "month": "2026-01-01",
+            "category": "coworking",
+            "amount": 3500,
+            "currency": "THB",
+            "note": "A monthly desk, not a day pass"
+          }
+        },
+        {
+          "id": "cost_chiang_mai_food",
+          "handle": "chiang-mai-2026-01-food",
+          "title": "Chiang Mai 2026-01 food",
+          "fields": {
+            "place": "place_chiang_mai",
+            "post": "",
+            "month": "2026-01-01",
+            "category": "food",
+            "amount": 9000,
+            "currency": "THB",
+            "note": "Markets, a lunch out most days"
+          }
+        },
+        {
+          "id": "cost_chiang_mai_transport",
+          "handle": "chiang-mai-2026-01-transport",
+          "title": "Chiang Mai 2026-01 transport",
+          "fields": {
+            "place": "place_chiang_mai",
+            "post": "",
+            "month": "2026-01-01",
+            "category": "transport",
+            "amount": 2000,
+            "currency": "THB",
+            "note": "Buses, taxis and one long-distance trip"
+          }
+        },
+        {
+          "id": "cost_chiang_mai_phone",
+          "handle": "chiang-mai-2026-01-phone",
+          "title": "Chiang Mai 2026-01 phone",
+          "fields": {
+            "place": "place_chiang_mai",
+            "post": "",
+            "month": "2026-01-01",
+            "category": "phone",
+            "amount": 600,
+            "currency": "THB",
+            "note": "A local SIM with data"
+          }
+        }
+      ]
+    },
+    "gear": {
+      "name": "Gear",
+      "fields": [
+        {
+          "id": "group",
+          "type": "select",
+          "label": "Group",
+          "options": [
+            "carry",
+            "work",
+            "tech",
+            "services"
+          ]
+        },
+        {
+          "id": "weight_grams",
+          "type": "number",
+          "label": "Weight (g)"
+        },
+        {
+          "id": "verdict",
+          "type": "text",
+          "label": "Verdict"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "gear_40_litre_travel_pack",
+          "handle": "40-litre-travel-pack",
+          "title": "40-litre travel pack",
+          "fields": {
+            "group": "carry",
+            "weight_grams": 1350,
+            "verdict": "Opens like a suitcase, carries like a backpack. The one thing I would buy again first.",
+            "image": "as_1x1_sea",
+            "image_alt": "40-litre travel pack (placeholder)",
+            "link": "",
+            "order": 1
+          }
+        },
+        {
+          "id": "gear_packing_cubes_set_of_three",
+          "handle": "packing-cubes-set-of-three",
+          "title": "Packing cubes, set of three",
+          "fields": {
+            "group": "carry",
+            "weight_grams": 180,
+            "verdict": "One for work, one for clothes, one for things that charge.",
+            "image": "as_1x1_dusk",
+            "image_alt": "Packing cubes, set of three (placeholder)",
+            "link": "",
+            "order": 2
+          }
+        },
+        {
+          "id": "gear_merino_tees_three",
+          "handle": "merino-tees-three",
+          "title": "Merino tees, three",
+          "fields": {
+            "group": "carry",
+            "weight_grams": 450,
+            "verdict": "Wear one, wash one, one spare. They forgive a week in a hot flat.",
+            "image": "as_1x1_sand",
+            "image_alt": "Merino tees, three (placeholder)",
+            "link": "",
+            "order": 3
+          }
+        },
+        {
+          "id": "gear_rain_shell",
+          "handle": "rain-shell",
+          "title": "Rain shell",
+          "fields": {
+            "group": "carry",
+            "weight_grams": 310,
+            "verdict": "Packs to the size of a fist and has been used in every city.",
+            "image": "as_1x1_night",
+            "image_alt": "Rain shell (placeholder)",
+            "link": "",
+            "order": 4
+          }
+        },
+        {
+          "id": "gear_14_inch_laptop",
+          "handle": "14-inch-laptop",
+          "title": "14-inch laptop",
+          "fields": {
+            "group": "work",
+            "weight_grams": 1550,
+            "verdict": "Big enough to design on, small enough for a café table.",
+            "image": "as_1x1_clay",
+            "image_alt": "14-inch laptop (placeholder)",
+            "link": "",
+            "order": 5
+          }
+        },
+        {
+          "id": "gear_folding_laptop_stand",
+          "handle": "folding-laptop-stand",
+          "title": "Folding laptop stand",
+          "fields": {
+            "group": "work",
+            "weight_grams": 160,
+            "verdict": "Saves my neck. Folds flatter than a notebook.",
+            "image": "as_1x1_sea",
+            "image_alt": "Folding laptop stand (placeholder)",
+            "link": "",
+            "order": 6
+          }
+        },
+        {
+          "id": "gear_folding_keyboard",
+          "handle": "folding-keyboard",
+          "title": "Folding keyboard",
+          "fields": {
+            "group": "work",
+            "weight_grams": 190,
+            "verdict": "Goes with the stand. Typing on a raised laptop is miserable without it.",
+            "image": "as_1x1_dusk",
+            "image_alt": "Folding keyboard (placeholder)",
+            "link": "",
+            "order": 7
+          }
+        },
+        {
+          "id": "gear_noise_cancelling_headphones",
+          "handle": "noise-cancelling-headphones",
+          "title": "Noise-cancelling headphones",
+          "fields": {
+            "group": "work",
+            "weight_grams": 250,
+            "verdict": "The office door I carry. Worth their weight on every bus.",
+            "image": "as_1x1_sand",
+            "image_alt": "Noise-cancelling headphones (placeholder)",
+            "link": "",
+            "order": 8
+          }
+        },
+        {
+          "id": "gear_5g_travel_router",
+          "handle": "5g-travel-router",
+          "title": "5G travel router",
+          "fields": {
+            "group": "tech",
+            "weight_grams": 120,
+            "verdict": "One SIM, every device, and a network I trust in a flat I do not.",
+            "image": "as_1x1_night",
+            "image_alt": "5G travel router (placeholder)",
+            "link": "",
+            "order": 9
+          }
+        },
+        {
+          "id": "gear_65_w_charger",
+          "handle": "65-w-charger",
+          "title": "65 W charger",
+          "fields": {
+            "group": "tech",
+            "weight_grams": 110,
+            "verdict": "Charges the laptop, the phone and the router from one plug.",
+            "image": "as_1x1_clay",
+            "image_alt": "65 W charger (placeholder)",
+            "link": "",
+            "order": 10
+          }
+        },
+        {
+          "id": "gear_power_bank",
+          "handle": "power-bank",
+          "title": "Power bank",
+          "fields": {
+            "group": "tech",
+            "weight_grams": 340,
+            "verdict": "A full laptop charge for days when the power goes, which is more often than you think.",
+            "image": "as_1x1_sea",
+            "image_alt": "Power bank (placeholder)",
+            "link": "",
+            "order": 11
+          }
+        },
+        {
+          "id": "gear_universal_adapter",
+          "handle": "universal-adapter",
+          "title": "Universal adapter",
+          "fields": {
+            "group": "tech",
+            "weight_grams": 90,
+            "verdict": "Every socket I have met so far, with two USB ports on the back.",
+            "image": "as_1x1_dusk",
+            "image_alt": "Universal adapter (placeholder)",
+            "link": "",
+            "order": 12
+          }
+        },
+        {
+          "id": "gear_travel_medical_insurance",
+          "handle": "travel-medical-insurance",
+          "title": "Travel medical insurance",
+          "fields": {
+            "group": "services",
+            "weight_grams": "",
+            "verdict": "Covers working abroad, billed monthly, cancellable any time.",
+            "image": "as_1x1_sand",
+            "image_alt": "Travel medical insurance (placeholder)",
+            "link": "https://example.com/",
+            "order": 13
+          }
+        },
+        {
+          "id": "gear_multi_currency_bank_card",
+          "handle": "multi-currency-bank-card",
+          "title": "Multi-currency bank card",
+          "fields": {
+            "group": "services",
+            "weight_grams": "",
+            "verdict": "Holds four currencies and pays in the local one without a fee.",
+            "image": "as_1x1_night",
+            "image_alt": "Multi-currency bank card (placeholder)",
+            "link": "https://example.com/",
+            "order": 14
+          }
+        },
+        {
+          "id": "gear_esim_data_plan",
+          "handle": "esim-data-plan",
+          "title": "eSIM data plan",
+          "fields": {
+            "group": "services",
+            "weight_grams": "",
+            "verdict": "Data on landing, before I find a shop for a local SIM.",
+            "image": "as_1x1_clay",
+            "image_alt": "eSIM data plan (placeholder)",
+            "link": "https://example.com/",
+            "order": 15
+          }
+        },
+        {
+          "id": "gear_vpn",
+          "handle": "vpn",
+          "title": "VPN",
+          "fields": {
+            "group": "services",
+            "weight_grams": "",
+            "verdict": "For bank logins on café Wi-Fi, and nothing more exciting.",
+            "image": "as_1x1_sea",
+            "image_alt": "VPN (placeholder)",
+            "link": "https://example.com/",
+            "order": 16
+          }
+        },
+        {
+          "id": "gear_mail_scanning_address",
+          "handle": "mail-scanning-address",
+          "title": "Mail-scanning address",
+          "fields": {
+            "group": "services",
+            "weight_grams": "",
+            "verdict": "Letters at home are opened, scanned and emailed. Nothing gets lost.",
+            "image": "as_1x1_dusk",
+            "image_alt": "Mail-scanning address (placeholder)",
+            "link": "https://example.com/",
+            "order": 17
+          }
+        }
+      ]
+    }
+  },
+  "pages": {
+    "/": {
+      "id": "pg_home",
+      "template": "home",
+      "title": "Ilse Varga",
+      "seo": {
+        "description": "A product designer who works from wherever the Wi-Fi holds. Notes, costs and routes since April 2023."
+      }
+    },
+    "/journal": {
+      "id": "pg_journal",
+      "template": "blog-list",
+      "title": "Journal",
+      "seo": {
+        "description": "Field notes, costs and city guides from every stop."
+      }
+    },
+    "/journal/what-a-month-in-oaxaca-cost-peso-by-peso": {
+      "id": "pg_post_oaxaca_month_cost",
+      "template": "post",
+      "title": "What a month in Oaxaca cost, peso by peso",
+      "params": {
+        "handle": "what-a-month-in-oaxaca-cost-peso-by-peso"
+      },
+      "entry": {
+        "id": "post_oaxaca_month_cost",
+        "handle": "what-a-month-in-oaxaca-cost-peso-by-peso",
+        "title": "What a month in Oaxaca cost, peso by peso",
+        "fields": {
+          "topic": "Money",
+          "date": "2026-10-26",
+          "author": "Ilse Varga",
+          "reading_minutes": 6,
+          "standfirst": "Rent, a desk, food, buses and a phone plan: the whole of October in Jalatlaco, to the peso.",
+          "image": "as_3x2_clay",
+          "image_alt": "What a month in Oaxaca cost, peso by peso (placeholder)",
+          "body": "<p>Rent, a desk, food, buses and a phone plan: the whole of October in Jalatlaco, to the peso.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+          "place": "place_oaxaca",
+          "trip": "trip_the_americas",
+          "video": "",
+          "photos": "",
+          "image_caption": "The receipts, sorted by category on the kitchen table."
+        }
+      },
+      "content_type": "posts",
+      "seo": {
+        "description": "Rent, a desk, food, buses and a phone plan: the whole of October in Jalatlaco, to the peso.",
+        "image": "as_3x2_clay"
+      }
+    },
+    "/journal/three-weeks-above-a-tortilleria": {
+      "id": "pg_post_three_weeks_tortilleria",
+      "template": "post",
+      "title": "Three weeks above a tortillería",
+      "params": {
+        "handle": "three-weeks-above-a-tortilleria"
+      },
+      "entry": {
+        "id": "post_three_weeks_tortilleria",
+        "handle": "three-weeks-above-a-tortilleria",
+        "title": "Three weeks above a tortillería",
+        "fields": {
+          "topic": "Food",
+          "date": "2026-10-12",
+          "author": "Ilse Varga",
+          "reading_minutes": 7,
+          "standfirst": "The comal starts at six. By seven the whole flat smells of corn, and I have stopped setting an alarm.",
+          "image": "as_3x2_sea",
+          "image_alt": "Three weeks above a tortillería (placeholder)",
+          "body": "<p>The comal starts at six. By seven the whole flat smells of corn, and I have stopped setting an alarm.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+          "place": "place_oaxaca",
+          "trip": "trip_the_americas",
+          "video": "as_loop_dusk",
+          "photos": "oaxaca-weeks"
+        }
+      },
+      "content_type": "posts",
+      "seo": {
+        "description": "The comal starts at six. By seven the whole flat smells of corn, and I have stopped setting an alarm.",
+        "image": "as_3x2_sea"
+      }
+    },
+    "/journal/coworking-in-roma-norte-four-spaces-one-i-kept": {
+      "id": "pg_post_coworking_roma_norte",
+      "template": "post",
+      "title": "Coworking in Roma Norte: four spaces, one I kept",
+      "params": {
+        "handle": "coworking-in-roma-norte-four-spaces-one-i-kept"
+      },
+      "entry": {
+        "id": "post_coworking_roma_norte",
+        "handle": "coworking-in-roma-norte-four-spaces-one-i-kept",
+        "title": "Coworking in Roma Norte: four spaces, one I kept",
+        "fields": {
+          "topic": "Work on the road",
+          "date": "2026-09-28",
+          "author": "Ilse Varga",
+          "reading_minutes": 8,
+          "standfirst": "Four day passes, four sets of chairs, four answers to whether the Wi-Fi holds at three in the afternoon.",
+          "image": "as_3x2_dusk",
+          "image_alt": "Coworking in Roma Norte: four spaces, one I kept (placeholder)",
+          "body": "<p>Four day passes, four sets of chairs, four answers to whether the Wi-Fi holds at three in the afternoon.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+          "place": "place_mexico_city",
+          "trip": "trip_the_americas",
+          "video": "",
+          "photos": "",
+          "image_caption": "The desk I kept, by the window on the second floor."
+        }
+      },
+      "content_type": "posts",
+      "seo": {
+        "description": "Four day passes, four sets of chairs, four answers to whether the Wi-Fi holds at three in the afternoon.",
+        "image": "as_3x2_dusk"
+      }
+    },
+    "/journal/venice-in-august-with-a-laptop": {
+      "id": "pg_post_venice_august_laptop",
+      "template": "post",
+      "title": "Venice in August, with a laptop",
+      "params": {
+        "handle": "venice-in-august-with-a-laptop"
+      },
+      "entry": {
+        "id": "post_venice_august_laptop",
+        "handle": "venice-in-august-with-a-laptop",
+        "title": "Venice in August, with a laptop",
+        "fields": {
+          "topic": "Slow travel",
+          "date": "2026-09-06",
+          "author": "Ilse Varga",
+          "reading_minutes": 6,
+          "standfirst": "Work from six to noon, sleep through the heat, walk until midnight. It is the only way the month made sense.",
+          "image": "as_3x2_sand",
+          "image_alt": "Venice in August, with a laptop (placeholder)",
+          "body": "<p>Work from six to noon, sleep through the heat, walk until midnight. It is the only way the month made sense.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+          "place": "place_venice",
+          "trip": "trip_overland_to_the_adriatic",
+          "video": "as_loop_big",
+          "photos": ""
+        }
+      },
+      "content_type": "posts",
+      "seo": {
+        "description": "Work from six to noon, sleep through the heat, walk until midnight. It is the only way the month made sense.",
+        "image": "as_3x2_sand"
+      }
+    },
+    "/journal/eleven-hours-on-the-sleeper-south": {
+      "id": "pg_post_sleeper_south",
+      "template": "post",
+      "title": "Eleven hours on the sleeper south",
+      "params": {
+        "handle": "eleven-hours-on-the-sleeper-south"
+      },
+      "entry": {
+        "id": "post_sleeper_south",
+        "handle": "eleven-hours-on-the-sleeper-south",
+        "title": "Eleven hours on the sleeper south",
+        "fields": {
+          "topic": "Overland",
+          "date": "2026-08-27",
+          "author": "Ilse Varga",
+          "reading_minutes": 9,
+          "standfirst": "A four-berth couchette, a bag of apricots and the Alps going past in the dark.",
+          "image": "as_3x2_night",
+          "image_alt": "Eleven hours on the sleeper south (placeholder)",
+          "body": "<p>A four-berth couchette, a bag of apricots and the Alps going past in the dark.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+          "place": "place_vienna",
+          "trip": "trip_overland_to_the_adriatic",
+          "video": "",
+          "photos": "adriatic-sleeper",
+          "image_caption": "The corridor at five, somewhere after the border."
+        }
+      },
+      "content_type": "posts",
+      "seo": {
+        "description": "A four-berth couchette, a bag of apricots and the Alps going past in the dark.",
+        "image": "as_3x2_night"
+      }
+    },
+    "/journal/krakow-s-milk-bars-ranked-by-soup": {
+      "id": "pg_post_krakow_milk_bars",
+      "template": "post",
+      "title": "Kraków's milk bars, ranked by soup",
+      "params": {
+        "handle": "krakow-s-milk-bars-ranked-by-soup"
+      },
+      "entry": {
+        "id": "post_krakow_milk_bars",
+        "handle": "krakow-s-milk-bars-ranked-by-soup",
+        "title": "Kraków's milk bars, ranked by soup",
+        "fields": {
+          "topic": "Food",
+          "date": "2026-07-18",
+          "author": "Ilse Varga",
+          "reading_minutes": 5,
+          "standfirst": "Eleven milk bars, one bowl of soup in each, and a clear winner on Grodzka Street.",
+          "image": "as_3x2_clay",
+          "image_alt": "Kraków's milk bars, ranked by soup (placeholder)",
+          "body": "<p>Eleven milk bars, one bowl of soup in each, and a clear winner on Grodzka Street.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+          "place": "place_krakow",
+          "trip": "trip_overland_to_the_adriatic",
+          "video": "",
+          "photos": ""
+        }
+      },
+      "content_type": "posts",
+      "seo": {
+        "description": "Eleven milk bars, one bowl of soup in each, and a clear winner on Grodzka Street.",
+        "image": "as_3x2_clay"
+      }
+    },
+    "/journal/why-i-stopped-flying-inside-europe": {
+      "id": "pg_post_stopped_flying",
+      "template": "post",
+      "title": "Why I stopped flying inside Europe",
+      "params": {
+        "handle": "why-i-stopped-flying-inside-europe"
+      },
+      "entry": {
+        "id": "post_stopped_flying",
+        "handle": "why-i-stopped-flying-inside-europe",
+        "title": "Why I stopped flying inside Europe",
+        "fields": {
+          "topic": "Overland",
+          "date": "2026-07-05",
+          "author": "Ilse Varga",
+          "reading_minutes": 7,
+          "standfirst": "Trains take longer. I counted how much longer, what it cost, and what I got for the days.",
+          "image": "as_3x2_sea",
+          "image_alt": "Why I stopped flying inside Europe (placeholder)",
+          "body": "<p>Trains take longer. I counted how much longer, what it cost, and what I got for the days.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+          "place": "place_krakow",
+          "trip": "trip_overland_to_the_adriatic",
+          "video": "",
+          "photos": ""
+        }
+      },
+      "content_type": "posts",
+      "seo": {
+        "description": "Trains take longer. I counted how much longer, what it cost, and what I got for the days.",
+        "image": "as_3x2_sea"
+      }
+    },
+    "/journal/everything-i-carry-after-three-years": {
+      "id": "pg_post_everything_i_carry",
+      "template": "post",
+      "title": "Everything I carry, after three years",
+      "params": {
+        "handle": "everything-i-carry-after-three-years"
+      },
+      "entry": {
+        "id": "post_everything_i_carry",
+        "handle": "everything-i-carry-after-three-years",
+        "title": "Everything I carry, after three years",
+        "fields": {
+          "topic": "Gear",
+          "date": "2026-06-28",
+          "author": "Ilse Varga",
+          "reading_minutes": 10,
+          "standfirst": "One 40-litre bag, weighed item by item, with what earned its place and what went home in a box.",
+          "image": "as_3x2_dusk",
+          "image_alt": "Everything I carry, after three years (placeholder)",
+          "body": "<p>One 40-litre bag, weighed item by item, with what earned its place and what went home in a box.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+          "place": "place_barcelona",
+          "trip": "trip_the_atlantic_edge",
+          "video": "",
+          "photos": "",
+          "image_caption": "The whole kit on the floor of the flat in Gràcia."
+        }
+      },
+      "content_type": "posts",
+      "seo": {
+        "description": "One 40-litre bag, weighed item by item, with what earned its place and what went home in a box.",
+        "image": "as_3x2_dusk"
+      }
+    },
+    "/journal/thirty-mornings-in-gracia-and-the-cafe-that-became-an-office": {
+      "id": "pg_post_mornings_in_gracia",
+      "template": "post",
+      "title": "Thirty mornings in Gràcia, and the café that became an office",
+      "params": {
+        "handle": "thirty-mornings-in-gracia-and-the-cafe-that-became-an-office"
+      },
+      "entry": {
+        "id": "post_mornings_in_gracia",
+        "handle": "thirty-mornings-in-gracia-and-the-cafe-that-became-an-office",
+        "title": "Thirty mornings in Gràcia, and the café that became an office",
+        "fields": {
+          "topic": "Work on the road",
+          "date": "2026-06-14",
+          "author": "Ilse Varga",
+          "reading_minutes": 6,
+          "standfirst": "Same table, same coffee, same two plugs. How a café quietly turned into the best desk of the spring.",
+          "image": "as_3x2_sand",
+          "image_alt": "Thirty mornings in Gràcia, and the café that became an office (placeholder)",
+          "body": "<p>Same table, same coffee, same two plugs. How a café quietly turned into the best desk of the spring.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+          "place": "place_barcelona",
+          "trip": "trip_the_atlantic_edge",
+          "video": "",
+          "photos": ""
+        }
+      },
+      "content_type": "posts",
+      "seo": {
+        "description": "Same table, same coffee, same two plugs. How a café quietly turned into the best desk of the spring.",
+        "image": "as_3x2_sand"
+      }
+    },
+    "/journal/wind-sardines-and-a-week-of-slow-wi-fi": {
+      "id": "pg_post_essaouira_slow_wifi",
+      "template": "post",
+      "title": "Wind, sardines and a week of slow Wi-Fi",
+      "params": {
+        "handle": "wind-sardines-and-a-week-of-slow-wi-fi"
+      },
+      "entry": {
+        "id": "post_essaouira_slow_wifi",
+        "handle": "wind-sardines-and-a-week-of-slow-wi-fi",
+        "title": "Wind, sardines and a week of slow Wi-Fi",
+        "fields": {
+          "topic": "Slow travel",
+          "date": "2026-05-02",
+          "author": "Ilse Varga",
+          "reading_minutes": 5,
+          "standfirst": "When the connection drops to a trickle, you find out which parts of the job were ever urgent.",
+          "image": "as_3x2_night",
+          "image_alt": "Wind, sardines and a week of slow Wi-Fi (placeholder)",
+          "body": "<p>When the connection drops to a trickle, you find out which parts of the job were ever urgent.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+          "place": "place_essaouira",
+          "trip": "trip_the_atlantic_edge",
+          "video": "",
+          "photos": ""
+        }
+      },
+      "content_type": "posts",
+      "seo": {
+        "description": "When the connection drops to a trickle, you find out which parts of the job were ever urgent.",
+        "image": "as_3x2_night"
+      }
+    },
+    "/journal/lisbon-on-a-hotspot-where-the-signal-holds": {
+      "id": "pg_post_lisbon_hotspot",
+      "template": "post",
+      "title": "Lisbon on a hotspot: where the signal holds",
+      "params": {
+        "handle": "lisbon-on-a-hotspot-where-the-signal-holds"
+      },
+      "entry": {
+        "id": "post_lisbon_hotspot",
+        "handle": "lisbon-on-a-hotspot-where-the-signal-holds",
+        "title": "Lisbon on a hotspot: where the signal holds",
+        "fields": {
+          "topic": "Work on the road",
+          "date": "2026-03-20",
+          "author": "Ilse Varga",
+          "reading_minutes": 7,
+          "standfirst": "Six weeks of tethering from Graça, mapped street by street, with the three corners where calls never dropped.",
+          "image": "as_3x2_clay",
+          "image_alt": "Lisbon on a hotspot: where the signal holds (placeholder)",
+          "body": "<p>Six weeks of tethering from Graça, mapped street by street, with the three corners where calls never dropped.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+          "place": "place_lisbon",
+          "trip": "trip_the_atlantic_edge",
+          "video": "",
+          "photos": "",
+          "image_caption": "The miradouro where the signal is best and the bench is free."
+        }
+      },
+      "content_type": "posts",
+      "seo": {
+        "description": "Six weeks of tethering from Graça, mapped street by street, with the three corners where calls never dropped.",
+        "image": "as_3x2_clay"
+      }
+    },
+    "/journal/chiang-mai-in-burning-season-should-you-go": {
+      "id": "pg_post_chiang_mai_burning_season",
+      "template": "post",
+      "title": "Chiang Mai in burning season: should you go?",
+      "params": {
+        "handle": "chiang-mai-in-burning-season-should-you-go"
+      },
+      "entry": {
+        "id": "post_chiang_mai_burning_season",
+        "handle": "chiang-mai-in-burning-season-should-you-go",
+        "title": "Chiang Mai in burning season: should you go?",
+        "fields": {
+          "topic": "City guide",
+          "date": "2026-02-10",
+          "author": "Ilse Varga",
+          "reading_minutes": 8,
+          "standfirst": "From late February the air turns. What the smoke is, when it comes and what I would do differently.",
+          "image": "as_3x2_sea",
+          "image_alt": "Chiang Mai in burning season: should you go? (placeholder)",
+          "body": "<p>From late February the air turns. What the smoke is, when it comes and what I would do differently.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+          "place": "place_chiang_mai",
+          "trip": "trip_winter_in_asia",
+          "video": "",
+          "photos": ""
+        }
+      },
+      "content_type": "posts",
+      "seo": {
+        "description": "From late February the air turns. What the smoke is, when it comes and what I would do differently.",
+        "image": "as_3x2_sea"
+      }
+    },
+    "/journal/ha-noi-by-motorbike-taxi": {
+      "id": "pg_post_ha_noi_motorbike_taxi",
+      "template": "post",
+      "title": "Hà Nội by motorbike taxi",
+      "params": {
+        "handle": "ha-noi-by-motorbike-taxi"
+      },
+      "entry": {
+        "id": "post_ha_noi_motorbike_taxi",
+        "handle": "ha-noi-by-motorbike-taxi",
+        "title": "Hà Nội by motorbike taxi",
+        "fields": {
+          "topic": "City guide",
+          "date": "2025-12-15",
+          "author": "Ilse Varga",
+          "reading_minutes": 6,
+          "standfirst": "Five weeks without walking more than a block: how the apps work, what a ride costs, and how to hold on.",
+          "image": "as_3x2_dusk",
+          "image_alt": "Hà Nội by motorbike taxi (placeholder)",
+          "body": "<p>Five weeks without walking more than a block: how the apps work, what a ride costs, and how to hold on.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+          "place": "place_ha_noi",
+          "trip": "trip_winter_in_asia",
+          "video": "",
+          "photos": ""
+        }
+      },
+      "content_type": "posts",
+      "seo": {
+        "description": "Five weeks without walking more than a block: how the apps work, what a ride costs, and how to hold on.",
+        "image": "as_3x2_dusk"
+      }
+    },
+    "/journal/tbilisi-for-a-month-the-visa-the-flat-the-hills": {
+      "id": "pg_post_tbilisi_month",
+      "template": "post",
+      "title": "Tbilisi for a month: the visa, the flat, the hills",
+      "params": {
+        "handle": "tbilisi-for-a-month-the-visa-the-flat-the-hills"
+      },
+      "entry": {
+        "id": "post_tbilisi_month",
+        "handle": "tbilisi-for-a-month-the-visa-the-flat-the-hills",
+        "title": "Tbilisi for a month: the visa, the flat, the hills",
+        "fields": {
+          "topic": "City guide",
+          "date": "2025-11-20",
+          "author": "Ilse Varga",
+          "reading_minutes": 9,
+          "standfirst": "A year's visa on arrival, a flat with a balcony, and the hills that make every walk a climb.",
+          "image": "as_3x2_sand",
+          "image_alt": "Tbilisi for a month: the visa, the flat, the hills (placeholder)",
+          "body": "<p>A year's visa on arrival, a flat with a balcony, and the hills that make every walk a climb.</p><p>I wrote most of this from the same table I worked at all month, which is how most of these posts get written: a few lines each evening, and a weekend to put them in order.</p><p>If you are planning your own stay, the costs and the stops are on the place page. Write to me if something here has changed; I update the posts when it has.</p>",
+          "place": "place_tbilisi",
+          "trip": "trip_winter_in_asia",
+          "video": "",
+          "photos": "",
+          "image_caption": "The view from the balcony on Betlemi Street."
+        }
+      },
+      "content_type": "posts",
+      "seo": {
+        "description": "A year's visa on arrival, a flat with a balcony, and the hills that make every walk a climb.",
+        "image": "as_3x2_sand"
+      }
+    },
+    "/places": {
+      "id": "pg_places",
+      "template": "page.places",
+      "title": "Places",
+      "seo": {
+        "description": "Every place I have stayed long enough to write about."
+      }
+    },
+    "/places/tbilisi": {
+      "id": "pg_place_tbilisi",
+      "template": "place",
+      "title": "Tbilisi",
+      "params": {
+        "place": "tbilisi"
+      },
+      "entry": {
+        "id": "place_tbilisi",
+        "handle": "tbilisi",
+        "title": "Tbilisi",
+        "fields": {
+          "country": "Georgia",
+          "latitude": 41.7151,
+          "longitude": 44.8271,
+          "timezone": "Asia/Tbilisi",
+          "image": "as_3x2_clay",
+          "image_alt": "Tbilisi (placeholder)",
+          "standfirst": "Sulphur baths, steep streets and a balcony over the Mtkvari. The first month of the winter run.",
+          "body": "<p>Sulphur baths, steep streets and a balcony over the Mtkvari. The first month of the winter run.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+          "photos": ""
+        }
+      },
+      "content_type": "places",
+      "seo": {
+        "description": "Sulphur baths, steep streets and a balcony over the Mtkvari. The first month of the winter run."
+      }
+    },
+    "/places/ha-noi": {
+      "id": "pg_place_ha_noi",
+      "template": "place",
+      "title": "Hà Nội",
+      "params": {
+        "place": "ha-noi"
+      },
+      "entry": {
+        "id": "place_ha_noi",
+        "handle": "ha-noi",
+        "title": "Hà Nội",
+        "fields": {
+          "country": "Vietnam",
+          "latitude": 21.0285,
+          "longitude": 105.8542,
+          "timezone": "Asia/Ho_Chi_Minh",
+          "image": "as_3x2_sea",
+          "image_alt": "Hà Nội (placeholder)",
+          "standfirst": "Five weeks in the Old Quarter, learning to cross the street and to work through the horns.",
+          "body": "<p>Five weeks in the Old Quarter, learning to cross the street and to work through the horns.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+          "photos": ""
+        }
+      },
+      "content_type": "places",
+      "seo": {
+        "description": "Five weeks in the Old Quarter, learning to cross the street and to work through the horns."
+      }
+    },
+    "/places/chiang-mai": {
+      "id": "pg_place_chiang_mai",
+      "template": "place",
+      "title": "Chiang Mai",
+      "params": {
+        "place": "chiang-mai"
+      },
+      "entry": {
+        "id": "place_chiang_mai",
+        "handle": "chiang-mai",
+        "title": "Chiang Mai",
+        "fields": {
+          "country": "Thailand",
+          "latitude": 18.7883,
+          "longitude": 98.9853,
+          "timezone": "Asia/Bangkok",
+          "image": "as_3x2_sand",
+          "image_alt": "Chiang Mai (placeholder)",
+          "standfirst": "Seven weeks inside the old moat: cheap desks, fast fibre and, by February, the smoke.",
+          "body": "<p>Seven weeks inside the old moat: cheap desks, fast fibre and, by February, the smoke.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+          "photos": "chiang-mai-markets"
+        }
+      },
+      "content_type": "places",
+      "seo": {
+        "description": "Seven weeks inside the old moat: cheap desks, fast fibre and, by February, the smoke."
+      }
+    },
+    "/places/lisbon": {
+      "id": "pg_place_lisbon",
+      "template": "place",
+      "title": "Lisbon",
+      "params": {
+        "place": "lisbon"
+      },
+      "entry": {
+        "id": "place_lisbon",
+        "handle": "lisbon",
+        "title": "Lisbon",
+        "fields": {
+          "country": "Portugal",
+          "latitude": 38.7223,
+          "longitude": -9.1393,
+          "timezone": "Europe/Lisbon",
+          "image": "as_3x2_dusk",
+          "image_alt": "Lisbon (placeholder)",
+          "standfirst": "Six weeks on a hotspot in Graça, chasing the signal up and down the hills.",
+          "body": "<p>Six weeks on a hotspot in Graça, chasing the signal up and down the hills.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+          "photos": "lisbon-roofs"
+        }
+      },
+      "content_type": "places",
+      "seo": {
+        "description": "Six weeks on a hotspot in Graça, chasing the signal up and down the hills."
+      }
+    },
+    "/places/essaouira": {
+      "id": "pg_place_essaouira",
+      "template": "place",
+      "title": "Essaouira",
+      "params": {
+        "place": "essaouira"
+      },
+      "entry": {
+        "id": "place_essaouira",
+        "handle": "essaouira",
+        "title": "Essaouira",
+        "fields": {
+          "country": "Morocco",
+          "latitude": 31.5085,
+          "longitude": -9.7595,
+          "timezone": "Africa/Casablanca",
+          "image": "as_3x2_sea",
+          "image_alt": "Essaouira (placeholder)",
+          "standfirst": "Three weeks of wind, grilled sardines and the slowest Wi-Fi of the year.",
+          "body": "<p>Three weeks of wind, grilled sardines and the slowest Wi-Fi of the year.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+          "photos": ""
+        }
+      },
+      "content_type": "places",
+      "seo": {
+        "description": "Three weeks of wind, grilled sardines and the slowest Wi-Fi of the year."
+      }
+    },
+    "/places/barcelona": {
+      "id": "pg_place_barcelona",
+      "template": "place",
+      "title": "Barcelona",
+      "params": {
+        "place": "barcelona"
+      },
+      "entry": {
+        "id": "place_barcelona",
+        "handle": "barcelona",
+        "title": "Barcelona",
+        "fields": {
+          "country": "Spain",
+          "latitude": 41.4036,
+          "longitude": 2.1565,
+          "timezone": "Europe/Madrid",
+          "image": "as_3x2_clay",
+          "image_alt": "Barcelona (placeholder)",
+          "standfirst": "Eight weeks in Gràcia, most mornings at the same café table.",
+          "body": "<p>Eight weeks in Gràcia, most mornings at the same café table.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+          "photos": ""
+        }
+      },
+      "content_type": "places",
+      "seo": {
+        "description": "Eight weeks in Gràcia, most mornings at the same café table."
+      }
+    },
+    "/places/krakow": {
+      "id": "pg_place_krakow",
+      "template": "place",
+      "title": "Kraków",
+      "params": {
+        "place": "krakow"
+      },
+      "entry": {
+        "id": "place_krakow",
+        "handle": "krakow",
+        "title": "Kraków",
+        "fields": {
+          "country": "Poland",
+          "latitude": 50.0647,
+          "longitude": 19.945,
+          "timezone": "Europe/Warsaw",
+          "image": "as_3x2_night",
+          "image_alt": "Kraków (placeholder)",
+          "standfirst": "A month of milk bars and trams, and the decision to stop flying inside Europe.",
+          "body": "<p>A month of milk bars and trams, and the decision to stop flying inside Europe.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+          "photos": ""
+        }
+      },
+      "content_type": "places",
+      "seo": {
+        "description": "A month of milk bars and trams, and the decision to stop flying inside Europe."
+      }
+    },
+    "/places/vienna": {
+      "id": "pg_place_vienna",
+      "template": "place",
+      "title": "Vienna",
+      "params": {
+        "place": "vienna"
+      },
+      "entry": {
+        "id": "place_vienna",
+        "handle": "vienna",
+        "title": "Vienna",
+        "fields": {
+          "country": "Austria",
+          "latitude": 48.2082,
+          "longitude": 16.3738,
+          "timezone": "Europe/Vienna",
+          "image": "as_3x2_sand",
+          "image_alt": "Vienna (placeholder)",
+          "standfirst": "Three weeks of coffee houses that let you stay all afternoon, then the sleeper south.",
+          "body": "<p>Three weeks of coffee houses that let you stay all afternoon, then the sleeper south.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+          "photos": ""
+        }
+      },
+      "content_type": "places",
+      "seo": {
+        "description": "Three weeks of coffee houses that let you stay all afternoon, then the sleeper south."
+      }
+    },
+    "/places/venice": {
+      "id": "pg_place_venice",
+      "template": "place",
+      "title": "Venice",
+      "params": {
+        "place": "venice"
+      },
+      "entry": {
+        "id": "place_venice",
+        "handle": "venice",
+        "title": "Venice",
+        "fields": {
+          "country": "Italy",
+          "latitude": 45.4408,
+          "longitude": 12.3155,
+          "timezone": "Europe/Rome",
+          "image": "as_3x2_sea",
+          "image_alt": "Venice (placeholder)",
+          "standfirst": "Nineteen days in August in a flat in Cannaregio, working early and walking late.",
+          "body": "<p>Nineteen days in August in a flat in Cannaregio, working early and walking late.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+          "photos": ""
+        }
+      },
+      "content_type": "places",
+      "seo": {
+        "description": "Nineteen days in August in a flat in Cannaregio, working early and walking late."
+      }
+    },
+    "/places/mexico-city": {
+      "id": "pg_place_mexico_city",
+      "template": "place",
+      "title": "Mexico City",
+      "params": {
+        "place": "mexico-city"
+      },
+      "entry": {
+        "id": "place_mexico_city",
+        "handle": "mexico-city",
+        "title": "Mexico City",
+        "fields": {
+          "country": "Mexico",
+          "latitude": 19.4326,
+          "longitude": -99.1332,
+          "timezone": "America/Mexico_City",
+          "image": "as_3x2_dusk",
+          "image_alt": "Mexico City (placeholder)",
+          "standfirst": "Three weeks in Roma Norte, trying out four coworking spaces and keeping one.",
+          "body": "<p>Three weeks in Roma Norte, trying out four coworking spaces and keeping one.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+          "photos": ""
+        }
+      },
+      "content_type": "places",
+      "seo": {
+        "description": "Three weeks in Roma Norte, trying out four coworking spaces and keeping one."
+      }
+    },
+    "/places/oaxaca": {
+      "id": "pg_place_oaxaca",
+      "template": "place",
+      "title": "Oaxaca",
+      "params": {
+        "place": "oaxaca"
+      },
+      "entry": {
+        "id": "place_oaxaca",
+        "handle": "oaxaca",
+        "title": "Oaxaca",
+        "fields": {
+          "country": "Mexico",
+          "latitude": 17.0732,
+          "longitude": -96.7266,
+          "timezone": "America/Mexico_City",
+          "image": "as_3x2_clay",
+          "image_alt": "Oaxaca (placeholder)",
+          "standfirst": "Two months above a tortillería in Jalatlaco, with weekends in the Sierra Norte.",
+          "body": "<p>Two months above a tortillería in Jalatlaco, with weekends in the Sierra Norte.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+          "photos": "oaxaca-streets"
+        }
+      },
+      "content_type": "places",
+      "seo": {
+        "description": "Two months above a tortillería in Jalatlaco, with weekends in the Sierra Norte."
+      }
+    },
+    "/places/coyhaique": {
+      "id": "pg_place_coyhaique",
+      "template": "place",
+      "title": "Coyhaique",
+      "params": {
+        "place": "coyhaique"
+      },
+      "entry": {
+        "id": "place_coyhaique",
+        "handle": "coyhaique",
+        "title": "Coyhaique",
+        "fields": {
+          "country": "Chile",
+          "latitude": -45.5712,
+          "longitude": -72.0685,
+          "timezone": "America/Santiago",
+          "image": "as_3x2_night",
+          "image_alt": "Coyhaique (placeholder)",
+          "standfirst": "Next: two weeks at the top of the Carretera Austral, if the buses run.",
+          "body": "<p>Next: two weeks at the top of the Carretera Austral, if the buses run.</p><p>I keep a page like this for every place I stay longer than two weeks: what the flat was like, where I worked, and what I would tell a friend arriving next month.</p><p>Prices are what I paid, in the local currency, in the month I was there. They will have moved by the time you read this.</p>",
+          "photos": ""
+        }
+      },
+      "content_type": "places",
+      "seo": {
+        "description": "Next: two weeks at the top of the Carretera Austral, if the buses run."
+      }
+    },
+    "/trips": {
+      "id": "pg_trips",
+      "template": "page.trips",
+      "title": "Trips",
+      "seo": {
+        "description": "The road in chapters."
+      }
+    },
+    "/trips/winter-in-asia": {
+      "id": "pg_trip_winter_in_asia",
+      "template": "trip",
+      "title": "Winter in Asia",
+      "params": {
+        "trip": "winter-in-asia"
+      },
+      "entry": {
+        "id": "trip_winter_in_asia",
+        "handle": "winter-in-asia",
+        "title": "Winter in Asia",
+        "fields": {
+          "start_date": "2025-11-01",
+          "end_date": "2026-02-25",
+          "image": "as_16x9_sea",
+          "image_alt": "Winter in Asia (placeholder)",
+          "standfirst": "Three cities, four months, and the long way round to the warm side of the year.",
+          "body": "<p>Three cities, four months, and the long way round to the warm side of the year.</p><p>Each stop below has its dates, its nights and the post I wrote from there.</p>"
+        }
+      },
+      "content_type": "trips",
+      "seo": {
+        "description": "Three cities, four months, and the long way round to the warm side of the year."
+      }
+    },
+    "/trips/the-atlantic-edge": {
+      "id": "pg_trip_the_atlantic_edge",
+      "template": "trip",
+      "title": "The Atlantic edge",
+      "params": {
+        "trip": "the-atlantic-edge"
+      },
+      "entry": {
+        "id": "trip_the_atlantic_edge",
+        "handle": "the-atlantic-edge",
+        "title": "The Atlantic edge",
+        "fields": {
+          "start_date": "2026-03-01",
+          "end_date": "2026-06-30",
+          "image": "as_16x9_dusk",
+          "image_alt": "The Atlantic edge (placeholder)",
+          "standfirst": "Spring down the Atlantic coast and back up into Catalonia.",
+          "body": "<p>Spring down the Atlantic coast and back up into Catalonia.</p><p>Each stop below has its dates, its nights and the post I wrote from there.</p>"
+        }
+      },
+      "content_type": "trips",
+      "seo": {
+        "description": "Spring down the Atlantic coast and back up into Catalonia."
+      }
+    },
+    "/trips/overland-to-the-adriatic": {
+      "id": "pg_trip_overland_to_the_adriatic",
+      "template": "trip",
+      "title": "Overland to the Adriatic",
+      "params": {
+        "trip": "overland-to-the-adriatic"
+      },
+      "entry": {
+        "id": "trip_overland_to_the_adriatic",
+        "handle": "overland-to-the-adriatic",
+        "title": "Overland to the Adriatic",
+        "fields": {
+          "start_date": "2026-07-01",
+          "end_date": "2026-09-15",
+          "image": "as_16x9_sand",
+          "image_alt": "Overland to the Adriatic (placeholder)",
+          "standfirst": "No flights: trains and one long sleeper from Poland to the lagoon.",
+          "body": "<p>No flights: trains and one long sleeper from Poland to the lagoon.</p><p>Each stop below has its dates, its nights and the post I wrote from there.</p>"
+        }
+      },
+      "content_type": "trips",
+      "seo": {
+        "description": "No flights: trains and one long sleeper from Poland to the lagoon."
+      }
+    },
+    "/trips/the-americas": {
+      "id": "pg_trip_the_americas",
+      "template": "trip",
+      "title": "The Americas",
+      "params": {
+        "trip": "the-americas"
+      },
+      "entry": {
+        "id": "trip_the_americas",
+        "handle": "the-americas",
+        "title": "The Americas",
+        "fields": {
+          "start_date": "2026-09-16",
+          "end_date": "",
+          "image": "as_16x9_clay",
+          "image_alt": "The Americas (placeholder)",
+          "standfirst": "Mexico for the autumn, then south to Patagonia for the summer.",
+          "body": "<p>Mexico for the autumn, then south to Patagonia for the summer.</p><p>Each stop below has its dates, its nights and the post I wrote from there.</p>"
+        }
+      },
+      "content_type": "trips",
+      "seo": {
+        "description": "Mexico for the autumn, then south to Patagonia for the summer."
+      }
+    },
+    "/photos": {
+      "id": "pg_photos",
+      "template": "page.photos",
+      "title": "Photos",
+      "seo": {
+        "description": "Pictures from the road, a few of them moving."
+      }
+    },
+    "/gear": {
+      "id": "pg_gear",
+      "template": "page.gear",
+      "title": "What I carry",
+      "seo": {
+        "description": "Everything I travel and work with, weighed."
+      }
+    },
+    "/uses": {
+      "id": "pg_uses",
+      "template": "page.uses",
+      "title": "What I use",
+      "seo": {
+        "description": "The services behind the bag."
+      }
+    },
+    "/about": {
+      "id": "pg_about",
+      "template": "page.about",
+      "title": "About",
+      "seo": {
+        "description": "Ilse Varga, product designer, on the road since April 2023."
+      }
+    },
+    "/contact": {
+      "id": "pg_contact",
+      "template": "page.contact",
+      "title": "Contact",
+      "seo": {
+        "description": "Write to Ilse."
+      }
+    },
+    "/privacy": {
+      "id": "pg_privacy",
+      "template": "page",
+      "title": "Privacy",
+      "content": "<p>This site sets one item in your browser's storage when you close the announcement or the notice, so they stay closed. It has no analytics, no tracking pixels and no advertising.</p><p>If you write through the contact form or join the postcards list, your email address is kept only to reply or to send the postcards. Unsubscribe from any postcard in one click, or write and I will delete what I hold.</p><p>Questions about this note go to hello@ilsevarga.example.</p>",
+      "seo": {
+        "description": "What this site keeps about you, which is very little."
+      }
+    }
+  }
+}

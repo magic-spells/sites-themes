@@ -1,7 +1,7 @@
 <!-- The wordmark left; the main menu and the primary action right. The menu
      item that points at the classes page opens a <dropdown-panel> of the
      classes, each with a 3:2 thumbnail and its spec line. Below 64rem: the
-     wordmark, the action and a menu button for the mobile menu's sheet.
+     wordmark, the action (from 48rem) and a menu button for the mobile menu's sheet.
      Over-hero: transparent at the top of a page that opens with a Cover hero
      and solid once the page scrolls (styles/theme.css, the overlaid variant).
      While a panel is open one dim lies under the header (theme.ts). -->
@@ -47,7 +47,7 @@
           </nav>
         {/if}
         <div class="flex items-center gap-step-xs">
-          {#if settings.show_action && action}<Button action={ true } tone="accent" size="small">{ action }</Button>{/if}
+          {#if settings.show_action && action}<span class="hidden md:block"><Button action={ true } tone="accent" size="small">{ action }</Button></span>{/if}
           <button class="flex size-control-small items-center justify-center border border-scheme-rule lg:hidden overlaid:border-on-photo" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu"><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/menu.svg'}</span><span class="sr-only">{ t('menu') }</span></button>
         </div>
       </div>

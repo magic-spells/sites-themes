@@ -99,11 +99,11 @@
   "password_submit": "Enter",
   "pause_slideshow": "Pause the slideshow",
   "period.free": "free",
-  "period.month": "/ month",
+  "period.month": "month",
   "period.once": "once",
-  "period.pack": "/ pack",
-  "period.session": "/ session",
-  "period.week": "/ week",
+  "period.pack": "pack",
+  "period.session": "session",
+  "period.week": "week",
   "phone": "Phone",
   "photo_count": "{count} photos",
   "photos": "Photos",
@@ -115,6 +115,6 @@
   "subscribe": "Subscribe",
   "what_to_bring": "What to bring",
   "who_for": "Who it is for",
-  "with_coach": "with",
+  "with_coach": "with {name}",
   "your_coach": "Your coach"
 }

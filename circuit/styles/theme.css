@@ -234,7 +234,7 @@
 	--grid-template-columns-hours: 1fr auto;
 	--grid-template-columns-meta: auto 1fr;
 	--grid-template-columns-check: 1rem 1fr;
-	--grid-template-columns-footer: 1fr 1fr 1fr auto auto;
+	--grid-template-columns-footer: 1.3fr 1fr 1fr auto auto;
 
 	--scale-hover: 103%;
 	--transition-duration-fast: 150ms;
@@ -340,14 +340,17 @@
 	font-variation-settings: "wdth" 100;
 }
 
-/* Ghost type: an outlined word, no fill, the scheme text at 18%. */
+/* Ghost type: an outlined word, no fill, the scheme text at 18%. Both
+   strokes read the --sites-scheme-* variables, which a scheme class sets on
+   its band; the @theme aliases resolve at :root (the base scheme). */
 @utility ghost-stroke {
 	color: transparent;
-	-webkit-text-stroke: 1px var(--color-scheme-ghost);
+	-webkit-text-stroke: 1px color-mix(in srgb, var(--sites-scheme-foreground) 18%, transparent);
 }
+/* An outlined word in the scheme's heading colour (the footer colophon). */
 @utility outline-stroke {
 	color: transparent;
-	-webkit-text-stroke: 1px currentColor;
+	-webkit-text-stroke: 1px var(--sites-scheme-heading);
 }
 
 /* The slash: one 12° angle everywhere. edge-slash cuts the top of a band:
@@ -480,6 +483,13 @@ body:has([data-header-style="over-hero"]) main > [data-section="hero"]:first-chi
 
 	[id] {
 		scroll-margin-top: calc(var(--header-group-height, 0rem) + 4.5rem);
+	}
+
+	/* The wide uppercase headings can hold one word wider than a phone
+	   (MEMBERSHIPS at 2.5rem): let it hyphenate, or break, inside its column. */
+	:where(h1, h2) {
+		overflow-wrap: anywhere;
+		hyphens: auto;
 	}
 
 	/* Every number the whiteboard would carry lines up in columns. */

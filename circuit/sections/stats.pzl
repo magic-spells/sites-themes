@@ -12,7 +12,7 @@
         {#let b = block.settings}
         <div class="flex flex-col gap-step-sm border-t border-scheme-rule py-step-lg pr-step-md lg:border-t-0 lg:py-step-md { i > 0 ? 'lg:border-l lg:pl-step-lg' : '' }" data-block={ block.editor_id }>
           <dt class="order-2 font-mono text-spec font-medium text-scheme-muted uppercase">{ b.label }</dt>
-          <dd class="order-1 font-heading text-display leading-none font-black tabular-nums stretch-display">{#if b.prefix}<span class="mr-step-2xs align-baseline font-mono text-body font-medium text-accent uppercase">{ b.prefix }</span>{/if}{ b.number }{#if b.unit}<span class="ml-0.5 align-top text-h2 text-accent">{ b.unit }</span>{/if}</dd>
+          <dd class="order-1 font-heading text-h1 leading-none font-black tabular-nums stretch-display">{#if b.prefix}<span class="mr-step-2xs align-baseline font-mono text-body font-medium text-accent uppercase">{ b.prefix }</span>{/if}{ b.number }{#if b.unit}<span class="ml-0.5 align-top text-h2 text-accent">{ b.unit }</span>{/if}</dd>
         </div>
       {/for}
     </dl>

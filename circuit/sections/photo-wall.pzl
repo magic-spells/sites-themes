@@ -11,7 +11,7 @@
   rise = settings.overlap && section.index > 0
 }
 {#if items.length}
-<section class="bg-scheme-background text-scheme-foreground { settings.full_bleed ? '' : 'px-gutter' } { rise ? 'relative z-10 -mt-step-2xl pb-section md:-mt-step-3xl' : 'py-section' }">
+<section class="bg-scheme-background text-scheme-foreground { settings.full_bleed ? '' : 'px-gutter' } { rise ? 'relative z-10 -mt-step-lg pb-section md:-mt-step-xl' : 'py-section' }">
   <div class="mx-auto { settings.full_bleed ? '' : 'max-w-column' }">
     {#if settings.heading}<div class="{ settings.full_bleed ? 'px-gutter' : '' }"><SectionHead heading={ settings.heading } text={ settings.text } /></div>{/if}
     <LightboxCompanion items={ items } id={ id }><script type="application/json" data-tarot-options>{ lb | json }</script></LightboxCompanion>

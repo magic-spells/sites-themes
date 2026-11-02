@@ -14,7 +14,7 @@
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } />
     {#if settings.layout == 'table'}
-      <div class="-mx-gutter overflow-x-auto px-gutter md:mx-0 md:px-0">
+      <div class="relative -mx-gutter overflow-x-auto px-gutter md:mx-0 md:px-0">
         <table class="w-full min-w-wide border-collapse text-left">
           <caption class="sr-only">{ settings.heading }</caption>
           <thead>

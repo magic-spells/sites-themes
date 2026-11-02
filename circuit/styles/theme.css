@@ -89,6 +89,8 @@
 .sites-scheme-flare {
 	--circuit-accent: var(--sites-scheme-foreground);
 	--circuit-on-accent: var(--sites-scheme-background);
+	/* Body copy on the saturated band runs medium so it does not shimmer. */
+	font-weight: 500;
 }
 
 @theme {

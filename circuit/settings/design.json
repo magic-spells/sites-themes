@@ -3,7 +3,7 @@
     "brand": {
       "primary": "#0B0B0B",
       "secondary": "#525252",
-      "accent": "#FF5A1F"
+      "accent": "#FF7038"
     },
     "grey": {
       "extra_light": "#F3F3F3",
@@ -132,7 +132,7 @@
         "brand": {
           "primary": "#0B0B0B",
           "secondary": "#525252",
-          "accent": "#FF5A1F"
+          "accent": "#FF7038"
         },
         "grey": {
           "extra_light": "#F3F3F3",
@@ -295,9 +295,9 @@
       "input_background": "#FFFFFF",
       "input_foreground": "$brand-primary",
       "input_border": "#7A2A0E",
-      "chip_background": "#FF7140",
+      "chip_background": "#FF8552",
       "chip_foreground": "#3A1206",
-      "chip_border": "#D94A16",
+      "chip_border": "#E0561C",
       "icons": "#3A1206",
       "links": "$brand-primary",
       "button_background": "$brand-primary",

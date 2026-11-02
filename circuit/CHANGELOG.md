@@ -10,6 +10,7 @@
   templates; the 404, password and maintenance pages.
 - Five colour schemes (white, black, graphite, concrete, flare), the Flare and Volt palettes,
   the 12° slash edge, halftone and grain textures.
-- Common Ground fixtures: 12 classes, 62 sessions, six coaches, two locations, six plans,
-  eight events, six albums and three forms.
+- Common Ground fixtures: 14 classes, 63 sessions, six coaches, two locations, six plans,
+  eight events, six albums, three forms and 52 pages (a /password page among them, to preview
+  the wall).
 - Vendored Magic Spells components, the Archivo variable font and build wiring.

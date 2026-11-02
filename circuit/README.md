@@ -8,7 +8,7 @@ Archivo at a wide stretch carries the headings and the text, Martian Mono the ti
 labels; the accent is one flare orange, and bands can meet at a 12° slash.
 
 The fixtures are an invented gym, **Common Ground**, Foundry Lane, with a North and a Riverside
-location, so `sites dev` shows 12 classes, 62 sessions, six coaches, six plans, eight events,
+location, so `sites dev` shows 14 classes, 63 sessions, six coaches, six plans, eight events,
 six albums and three forms instead of placeholder text. The photographs are SVG placeholders;
 replace them before publishing.
 

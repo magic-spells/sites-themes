@@ -1,0 +1,68 @@
+<!-- TODO sync with Figma (batch B) -->
+<!-- What a month cost: one box, a ticket strip for its head (the month as a box stamp, the place, the currency code), then the rows on surface-2 on hairlines: the category, its note in muted (never meta on surface-2), the amount in mono at the right; the total from sum on a heavier rule. A place shows its latest month; a post shows the costs that point at it. Renders nothing when there are no rows. -->
+{#let
+  entry = page.entry
+  all = content.costs.entries
+  scoped = settings.scope == 'post' ? (all | where('fields.post.handle', entry.handle)) : (all | where('fields.place.handle', entry.handle))
+  month = (scoped | sort('fields.month') | last).fields.month
+  rows = scoped | where('fields.month', month)
+  first_row = rows | first
+  place = first_row.fields.place
+  currency = first_row.fields.currency
+  total = sum(rows, 'fields.amount')
+}
+{#if entry && rows.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" aria-labelledby="{ section.id }-title">
+  <div class="mx-auto grid max-w-table gap-space-md">
+    <h2 class="font-heading text-h2 font-semibold text-scheme-heading" id="{ section.id }-title">{ settings.heading }</h2>
+    <div class="overflow-hidden rounded-lg">
+      <div class="flex items-center gap-space-md bg-tag px-space-lg py-space-sm text-tag-ink ticket-notch-ends">
+        <DateStamp value={ month } month={ true } />
+        <p class="flex-1 font-heading text-h4 font-medium">{#if place}{ place.title }{#if place.fields.country}, { place.fields.country }{/if}{/if}</p>
+        <p class="font-mono text-meta font-medium uppercase">{ currency }</p>
+      </div>
+      <table class="w-full bg-scheme-surface-2 text-left">
+        <caption class="sr-only">{ settings.heading } · { date(month) | slice(0, 3) } { date(month, 'iso') | slice(0, 4) }</caption>
+        <thead class="sr-only"><tr><th scope="col">{ t('cost_category') }</th><th scope="col">{ t('cost_amount') }</th></tr></thead>
+        <tbody>
+          {#for row in rows}
+            <tr class="border-b border-scheme-rule">
+              <th class="px-space-lg py-space-sm align-top font-normal" scope="row">
+                <span class="block text-body text-scheme-foreground">{ t('cost.' + row.fields.category) }</span>
+                {#if settings.show_notes && row.fields.note}<span class="block text-body-sm text-scheme-muted">{ row.fields.note }</span>{/if}
+              </th>
+              <td class="px-space-lg py-space-sm text-right align-top font-mono text-body text-scheme-foreground tabular-nums">{ row.fields.amount | number_with_delimiter }</td>
+            </tr>
+          {/for}
+        </tbody>
+        <tfoot>
+          <tr class="border-t-2 border-scheme-foreground">
+            <th class="px-space-lg py-space-md font-heading text-h5 font-medium" scope="row">{ t('total') }</th>
+            <td class="px-space-lg py-space-md text-right font-mono text-body font-medium tabular-nums">{ total | number_with_delimiter } { currency }</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Cost table",
+  "description": "What a month cost: a ticket-headed table of rent, coworking, food and the rest, with its total.",
+  "kind": "Content",
+  "icon": "receipt",
+  "templates": ["place", "post"],
+  "settings": [
+    { "type": "select", "id": "scope", "label": "Costs of", "default": "place", "options": [ { "value": "place", "label": "This place (its latest month)" }, { "value": "post", "label": "This post" } ], "info": "Reads costs entries: place, post, month (the 1st), category, amount, currency, note. Hidden when there are none." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What a month here cost" },
+    { "type": "checkbox", "id": "show_notes", "label": "Show the notes", "default": true },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Place", "settings": { "scope": "place", "heading": "What a month here cost", "show_notes": true } },
+    { "name": "Post", "settings": { "scope": "post", "heading": "What the month cost", "show_notes": true } }
+  ]
+}
+</schema>

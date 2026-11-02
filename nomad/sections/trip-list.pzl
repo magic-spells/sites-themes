@@ -1,0 +1,51 @@
+<!-- TODO sync with Figma (batch B) -->
+<!-- Every trip, newest first: the first full width at 21:9, then two per row at 3:2 from 64rem (one per row below), each picture with a ticket strip under it on tag paper: the name, the dates and the counts, notched at both ends. -->
+{#let
+  trips_path = site.settings.trips_path || '/trips'
+  trips = content.trips.entries | sort('fields.start_date') | reverse | slice(0, settings.limit)
+  reveal = site.settings.reveal_on_scroll
+}
+{#if trips.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" aria-label={ settings.heading ? null : t('trips') } aria-labelledby={ settings.heading ? section.id + '-title' : null }>
+  <div class="mx-auto grid max-w-column gap-space-lg">
+    {#if settings.heading}<h2 class="font-heading text-h2 font-semibold text-scheme-heading" id="{ section.id }-title">{ settings.heading }</h2>{/if}
+    <ul class="grid gap-x-space-md gap-y-space-xl lg:grid-cols-2">
+      {#for trip in trips, i}
+        {#let
+          f = trip.fields
+          wide = settings.featured_first && i == 0
+          stops = content.stops.entries | where('fields.trip.handle', trip.handle)
+          countries = stops | map('fields.place.fields.country') | uniq
+        }
+        <li class="{ wide ? 'lg:col-span-2' : '' } { reveal ? 'reveal reveal-fade-up' : '' }">
+          <a class="group grid" href="{ trips_path }/{ trip.handle }">
+            <span class="block overflow-hidden rounded-t-sm bg-scheme-surface-2 { wide ? 'aspect-3/2 md:aspect-21/9' : 'aspect-3/2' }">{#if f.image}<img class="size-full object-cover transition-transform duration-hover ease-out-soft group-hover:scale-hover" data-zoom src="{ image_url(f.image, wide ? 1600 : 1024) }" srcset="{ image_srcset(f.image, [640, 1024, 1280, 1600, 2000]) }" sizes="{ wide ? '(min-width: 82.5rem) 82.5rem, 100vw' : '(min-width: 64rem) 40rem, 100vw' }" alt="{ f.image_alt }" loading="lazy" width={ f.image.width } height={ f.image.height } />{/if}</span>
+            <span class="flex flex-wrap items-center justify-between gap-x-space-md gap-y-1 rounded-b-sm bg-tag px-space-lg py-space-sm text-tag-ink ticket-notch-ends">
+              <span class="font-heading text-h4 font-medium decoration-1 underline-offset-4 group-hover:underline">{ trip.title }</span>
+              <span class="flex flex-wrap gap-x-space-sm font-mono text-meta font-medium uppercase"><span>{ date(f.start_date) } – { f.end_date ? date(f.end_date) : t('under_way') }</span><span>{ stops.length | pluralize(t('stop_one'), t('stop_many')) } · { countries.length | pluralize(t('country_one'), t('country_many')) }</span></span>
+            </span>
+          </a>
+        </li>
+      {/for}
+    </ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Trip list",
+  "description": "Every trip as a picture with a ticket strip: the first wide, then two per row.",
+  "kind": "Collections",
+  "icon": "ticket",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "" },
+    { "type": "range", "id": "limit", "label": "Trips shown", "min": 1, "max": 12, "step": 1, "default": 12, "info": "Reads trips entries: title, start_date, end_date (empty while under way), image, image_alt; counts come from the stops." },
+    { "type": "checkbox", "id": "featured_first", "label": "Show the newest trip wide", "default": true },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "heading": "", "limit": 12, "featured_first": true } }
+  ]
+}
+</schema>

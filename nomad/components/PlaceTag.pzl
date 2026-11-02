@@ -1,0 +1,12 @@
+<!-- component: PlaceTag -->
+<!-- props: place href -->
+<!-- The place tag: a stamp-ink dot, then "Oaxaca, Mexico" in Schibsted 600
+     at body-sm, in the text colour, never meta grey. A link to the place
+     page when it has an href. -->
+{#if place}
+  {#if href}
+    <a class="relative z-10 inline-flex w-fit items-center gap-1.5 text-body-sm font-semibold hover:underline decoration-1 underline-offset-4 text-scheme-foreground" href={ href }><span class="size-dot shrink-0 rounded-full bg-scheme-stamp" aria-hidden="true"></span>{ place.title }{#if place.fields.country}, { place.fields.country }{/if}</a>
+  {:else}
+    <span class="inline-flex w-fit items-center gap-1.5 text-body-sm font-semibold text-scheme-foreground"><span class="size-dot shrink-0 rounded-full bg-scheme-stamp" aria-hidden="true"></span>{ place.title }{#if place.fields.country}, { place.fields.country }{/if}</span>
+  {/if}
+{/if}

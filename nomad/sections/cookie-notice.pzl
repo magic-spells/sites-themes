@@ -1,0 +1,33 @@
+<!-- TODO sync with Figma (batch D) -->
+<!-- A non-modal region, not a dialog: the page stays usable behind it. It renders hidden; theme.ts shows it once per key, both buttons hide it and the choice is remembered. Full width on surface-2 on a phone, a 30rem card at the bottom left from 48rem. -->
+<section class="fixed inset-x-0 bottom-0 z-40 border-t border-scheme-rule bg-scheme-surface-2 text-scheme-foreground md:inset-x-auto md:bottom-gutter md:left-gutter md:w-full md:max-w-side md:rounded-lg md:border" id="cookie-notice" data-notice="{ settings.key }" role="region" aria-label="{ t('cookie_notice') }" hidden>
+  <div class="grid gap-space-md px-gutter py-space-md md:p-space-lg">
+    <div class="sites-prose text-body-sm text-scheme-muted">{ settings.body }</div>
+    <div class="flex flex-wrap items-center gap-space-xs">
+      <button class="inline-flex min-h-control-small items-center rounded-button border border-scheme-button-background bg-scheme-button-background px-space-sm text-body-sm font-semibold text-scheme-button-foreground hover:border-scheme-button-hover-background hover:bg-scheme-button-hover-background" type="button" data-notice-close="accept">{ settings.accept_label }</button>
+      {#if settings.decline_label}<button class="inline-flex min-h-control-small items-center rounded-button border border-scheme-foreground px-space-sm text-body-sm font-semibold hover:bg-scheme-foreground hover:text-scheme-background" type="button" data-notice-close="decline">{ settings.decline_label }</button>{/if}
+      {#if settings.link_label}<a class="ml-auto text-body-sm text-scheme-links underline decoration-1 underline-offset-4" href="{ settings.link_href }">{ settings.link_label }</a>{/if}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Cookie notice",
+  "description": "A quiet note at the bottom of the page, shown once.",
+  "kind": "Panels",
+  "icon": "cookie",
+  "settings": [
+    { "type": "richtext", "id": "body", "label": "Text", "default": "<p>One cookie remembers that you closed the announcement. Nothing tracks you.</p>" },
+    { "type": "text", "id": "accept_label", "label": "Accept label", "default": "OK" },
+    { "type": "text", "id": "decline_label", "label": "Decline label", "default": "" },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "Read the privacy note" },
+    { "type": "url", "id": "link_href", "label": "Link", "default": "/privacy" },
+    { "type": "text", "id": "key", "label": "Remember key", "default": "nomad-notice-2026-11", "info": "Change it to show the notice again to readers who closed it." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "body": "<p>One cookie remembers that you closed the announcement. Nothing tracks you.</p>", "accept_label": "OK", "decline_label": "", "link_label": "Read the privacy note", "link_href": "/privacy", "key": "nomad-notice-2026-11" } }
+  ]
+}
+</schema>

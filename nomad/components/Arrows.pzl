@@ -1,0 +1,10 @@
+<!-- component: Arrows -->
+<!-- props: target -->
+<!-- A carousel's previous and next buttons, 44 round with a hairline in the
+     text colour, shown from 48rem. Inside a <tarot-carousel> tarot finds them
+     by their data-action attributes; with a target they scroll that strip
+     instead (theme.ts). -->
+<div class="hidden shrink-0 gap-space-xs md:flex">
+  <button class="flex size-icon-button items-center justify-center rounded-full border border-scheme-foreground text-scheme-foreground transition-colors duration-panel hover:bg-scheme-foreground hover:text-scheme-background disabled:pointer-events-none disabled:opacity-40" type="button" data-action-tarot-previous={ target ? null : true } data-strip-prev={ target } aria-label="{ t('previous') }"><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/angle-left.svg'}</span></button>
+  <button class="flex size-icon-button items-center justify-center rounded-full border border-scheme-foreground text-scheme-foreground transition-colors duration-panel hover:bg-scheme-foreground hover:text-scheme-background disabled:pointer-events-none disabled:opacity-40" type="button" data-action-tarot-next={ target ? null : true } data-strip-next={ target } aria-label="{ t('next') }"><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/angle-right.svg'}</span></button>
+</div>

@@ -1,0 +1,55 @@
+<!-- TODO sync with Figma (batch B) -->
+<!-- The trip page's head: the cover full-bleed at 21:9, then in the column the trip's name, its dates as a stamp pair joined by a dashed leg (the open end reads UNDER WAY), the counts and the standfirst; beside it a Night Train route inset at 4:3 framed on the trip's stops. -->
+{#let
+  trip = page.entry
+  f = trip.fields
+  places_path = site.settings.places_path || '/places'
+  stops = content.stops.entries | where('fields.trip.handle', trip.handle) | sort('fields.arrive')
+  countries = stops | map('fields.place.fields.country') | uniq
+  newest = content.posts.entries | sort('fields.date') | last
+  current = (site.settings.current_place ? (content.places.entries | find('handle', site.settings.current_place)) : null) ?? newest.fields.place
+  next_stop = stops | where('fields.next') | first
+}
+{#if trip}
+<header class="bg-scheme-background pb-section text-scheme-foreground">
+  <div class="aspect-4/5 overflow-hidden bg-scheme-surface-2 md:aspect-21/9">
+    {#if f.image}<img class="size-full object-cover" src="{ image_url(f.image, 1600) }" srcset="{ image_srcset(f.image, [768, 1024, 1280, 1600, 2000, 2560]) }" sizes="100vw" alt="{ f.image_alt }" loading="eager" fetchpriority="high" width={ f.image.width } height={ f.image.height } />{/if}
+  </div>
+  <div class="px-gutter pt-space-xl">
+    <div class="mx-auto flex max-w-column flex-wrap items-start justify-between gap-space-2xl">
+      <div class="grid max-w-side flex-1 basis-80 gap-space-md">
+        <h1 class="font-heading text-h1 font-semibold text-balance text-scheme-heading">{ trip.title }</h1>
+        <div class="flex items-center gap-space-sm">
+          {#if f.start_date}<DateStamp value={ f.start_date } />{/if}
+          <span class="w-12 border-t-2 border-dashed border-scheme-route" aria-hidden="true"></span>
+          {#if f.end_date}<DateStamp value={ f.end_date } />{:else}<span class="rounded-sm border-2 border-tag-stamp bg-tag px-2.5 py-2 font-mono text-meta font-medium text-tag-stamp uppercase tilt-stamp">{ t('under_way') }</span>{/if}
+        </div>
+        <p class="font-mono text-meta font-medium text-scheme-meta uppercase">{ date(f.start_date) } – { f.end_date ? date(f.end_date) : t('under_way') } · { stops.length | pluralize(t('stop_one'), t('stop_many')) } · { countries.length | pluralize(t('country_one'), t('country_many')) }</p>
+        {#if f.standfirst}<p class="text-body-lg text-pretty text-scheme-muted">{ f.standfirst }</p>{/if}
+      </div>
+      {#if settings.show_route_inset && stops.length}
+        <div class="sites-scheme-night w-full max-w-side overflow-hidden rounded-lg bg-scheme-background md:flex-1">
+          <WorldMap places={ stops | map('fields.place') | compact } stops={ stops } now={ current ? current.handle : null } next={ next_stop ? next_stop.fields.place.handle : null } fit="trip" ratio="4/3" route="stops" labels={ false } base={ places_path } />
+        </div>
+      {/if}
+    </div>
+  </div>
+</header>
+{/if}
+
+<schema>
+{
+  "name": "Trip header",
+  "description": "A trip's cover, name, dates as a stamp pair, counts and a route inset.",
+  "kind": "Hero",
+  "icon": "route",
+  "templates": ["trip"],
+  "settings": [
+    { "type": "checkbox", "id": "show_route_inset", "label": "Show the route inset", "default": true, "info": "A small Night Train map framed on the trip's stops." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "show_route_inset": true } }
+  ]
+}
+</schema>

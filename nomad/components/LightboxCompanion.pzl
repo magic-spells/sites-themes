@@ -1,0 +1,20 @@
+<!-- component: LightboxCompanion -->
+<!-- props: items id -->
+<!-- The lightbox opens from a carousel slide, so a strip, grid or columns renders its photographs again in this visually hidden carousel; each tile asks theme.ts to open it at its index. A video item opens as a player with its controls. A component holds no <script>, so the section passes the carousel's options block in as its children. -->
+<tarot-carousel class="sr-only" id={ id } aria-hidden="true">
+  <Children/>
+  <tarot-viewport>
+    <tarot-track>
+      {#for item in items}
+        <tarot-slide>
+          {#if item.video}
+            <video src="{ item.asset.url }" controls playsinline preload="none" width={ item.asset.width } height={ item.asset.height }></video>
+          {:else}
+            <img src="{ image_url(item.asset, 480) }" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } />
+          {/if}
+          {#if item.caption}<p data-caption data-tarot-lightbox-fade>{ item.caption }</p>{/if}
+        </tarot-slide>
+      {/for}
+    </tarot-track>
+  </tarot-viewport>
+</tarot-carousel>

@@ -1,0 +1,78 @@
+<!-- TODO sync with Figma (batch D) -->
+<!-- The colophon on Night Train, never a form: the wordmark and tagline at the left; in the middle the route so far, a dashed line through the last six stops with their pins (the current one lit, the next hollow on a dotted leg), names under the pins; three stacked menus at the right edge. The bottom line: the copyright text and "Now in" (no time). On a phone the route shows its last three stops. -->
+{#let
+  places_path = site.settings.places_path || '/places'
+  newest = content.posts.entries | sort('fields.date') | last
+  current = (site.settings.current_place ? (content.places.entries | find('handle', site.settings.current_place)) : null) ?? newest.fields.place
+  legs = content.stops.entries | sort('fields.arrive') | slice(-6)
+  footer_menus = [settings.menu_primary, settings.menu_secondary, settings.menu_social]
+}
+<footer class="border-t border-scheme-rule bg-scheme-background px-gutter py-space-xl text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-xl">
+    <div class="flex flex-wrap items-start justify-between gap-space-xl">
+      <div class="grid max-w-list content-start gap-space-xs">
+        <a class="font-heading text-h4 font-extrabold text-scheme-heading" href="/">{ site.settings.wordmark || site.name }</a>
+        {#if site.settings.tagline}<p class="text-body-sm text-scheme-muted">{ site.settings.tagline }</p>{/if}
+      </div>
+      {#if settings.show_route && legs.length > 1}
+        <div class="w-full lg:w-auto lg:min-w-list lg:flex-1">
+          <p class="sr-only">{ t('route_so_far') }</p>
+          <ol class="flex">
+            {#for stop in legs, i}
+              {#let
+                p = stop.fields.place
+                is_now = current && p.handle == current.handle
+                is_next = stop.fields.next
+                early = legs.length - i > 3
+              }
+              {#if p}
+                <li class="relative flex-1 { early ? 'hidden md:block' : '' }">
+                  {#if i < legs.length - 1}<span class="absolute top-3.5 left-1/2 w-full border-t-2 border-scheme-route { legs[i + 1].fields.next ? 'border-dotted' : 'border-dashed' }" aria-hidden="true"></span>{/if}
+                  <a class="relative grid justify-items-center gap-space-xs text-center" href="{ places_path }/{ p.handle }">
+                    <span class="flex h-7 items-center"><Pin type={ is_now ? 'now' : (is_next ? 'next' : 'place') } /></span>
+                    <span class="font-mono text-meta font-medium uppercase { is_now || is_next ? 'text-scheme-foreground' : 'text-scheme-meta' }">{ p.title }{#if is_next}<span class="block">{ t('next') }</span>{/if}</span>
+                  </a>
+                </li>
+              {/if}
+            {/for}
+          </ol>
+        </div>
+      {/if}
+      <div class="flex flex-wrap gap-space-xl">
+        {#for menu in footer_menus}
+          {#if menu.items.length}
+            <nav aria-label="{ menu.title }">
+              <ul class="grid gap-space-xs text-body-sm">
+                {#for item in menu.items}<li><a class="text-scheme-muted hover:text-scheme-foreground" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null }>{ item.label }</a></li>{/for}
+              </ul>
+            </nav>
+          {/if}
+        {/for}
+      </div>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-space-md border-t border-scheme-rule pt-space-md font-mono text-meta font-medium text-scheme-meta uppercase">
+      <p>{ settings.copyright || site.settings.copyright }</p>
+      {#if current}<p>{ t('now_in') } { current.title }{#if current.fields.country}, { current.fields.country }{/if}</p>{/if}
+    </div>
+  </div>
+</footer>
+
+<schema>
+{
+  "name": "Footer",
+  "description": "A colophon: the wordmark, the route so far, the menus and the copyright.",
+  "kind": "Footer",
+  "icon": "panel-bottom",
+  "settings": [
+    { "type": "menu", "id": "menu_primary", "label": "First menu" },
+    { "type": "menu", "id": "menu_secondary", "label": "Second menu" },
+    { "type": "menu", "id": "menu_social", "label": "Social menu" },
+    { "type": "checkbox", "id": "show_route", "label": "Show the route so far", "default": true, "info": "The last six stops, from the stops content type, in arrival order." },
+    { "type": "text", "id": "copyright", "label": "Copyright", "default": "", "info": "Empty uses the Brand copyright." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "night" }
+  ],
+  "presets": [
+    { "name": "Colophon", "settings": { "menu_primary": "main", "menu_secondary": "legal", "menu_social": "social", "show_route": true, "copyright": "", "color_scheme": "night" } }
+  ]
+}
+</schema>

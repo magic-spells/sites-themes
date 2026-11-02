@@ -1,0 +1,50 @@
+<!-- TODO sync with Figma (batch D) -->
+<!-- Postcards from the road, on Dusk with the contour texture at 8%: the heading and a line at the left, the email field and Subscribe at the right (stacked on a phone) with the note under it. The proof line is empty by default: no invented counts. A postmark sits at the band's right edge from 64rem. -->
+<section class="relative isolate overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground" id="newsletter" aria-labelledby="{ section.id }-title">
+  <span class="sites-fill pointer-events-none absolute inset-0 -z-10 text-scheme-foreground texture-contour" aria-hidden="true">{#svg 'decor/contours.svg'}</span>
+  <div class="mx-auto flex max-w-column flex-wrap items-center justify-between gap-space-xl">
+    <div class="grid max-w-side gap-space-xs">
+      <h2 class="font-heading text-h2 font-semibold text-scheme-heading" id="{ section.id }-title">{ settings.heading }</h2>
+      {#if settings.text}<p class="text-body-lg text-scheme-muted">{ settings.text }</p>{/if}
+      {#if settings.proof}<p class="font-mono text-meta font-medium text-scheme-meta uppercase">{ settings.proof }</p>{/if}
+    </div>
+    <div class="w-full max-w-side md:flex-1">
+      <Form handle={ settings.form } class="grid gap-space-xs" id="newsletter-{ section.id }">
+        {#if form.sent}
+          <p class="text-body-lg" role="status">{ form.success_message || t('newsletter_success') }</p>
+        {:else}
+          {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
+          <div class="flex flex-col gap-space-xs sm:flex-row">
+            {#for field in form.fields}
+              <div class="flex-1"><Field name={ field.id } label={ field.label } type={ field.type } required={ field.required } maxlength={ field.max_length } value={ field.value } error={ field.error } placeholder={ settings.placeholder || field.label } prefix="nl-{ section.id }" options={ field.options } /></div>
+            {/for}
+            <Submit>{ form.submit_label || t('subscribe') }</Submit>
+          </div>
+          {#if settings.note}<p class="text-body-sm text-scheme-muted">{ settings.note }</p>{/if}
+          <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+        {/if}
+      </Form>
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Newsletter",
+  "description": "Postcards from the road: an email sign-up on Dusk with a contour texture.",
+  "kind": "Contact",
+  "icon": "send",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Postcards from the road" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "One email when I move, with what the last place cost. About once a month." },
+    { "type": "text", "id": "placeholder", "label": "Field placeholder", "default": "Your email" },
+    { "type": "text", "id": "proof", "label": "Proof line", "default": "", "info": "Optional. Leave it empty rather than invent a reader count." },
+    { "type": "text", "id": "note", "label": "Note", "default": "No tracking pixels. Unsubscribe in one click." },
+    { "type": "form", "id": "form", "label": "Form", "default": "newsletter" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "dusk" }
+  ],
+  "presets": [
+    { "name": "Postcards", "settings": { "heading": "Postcards from the road", "text": "One email when I move, with what the last place cost. About once a month.", "placeholder": "Your email", "proof": "", "note": "No tracking pixels. Unsubscribe in one click.", "form": "newsletter", "color_scheme": "dusk" } }
+  ]
+}
+</schema>

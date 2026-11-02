@@ -1,0 +1,58 @@
+<!-- TODO sync with Figma (batch D) -->
+<!-- Write to Ilse: the form at the left (name, email, the subject as a <select-dropdown>, the message, Send and the reply note), and at the right the email address and where you are now. The page header above it carries the heading, so its own is off by default. -->
+{#let
+  s = site.settings
+  newest = content.posts.entries | sort('fields.date') | last
+  current = (s.current_place ? (content.places.entries | find('handle', s.current_place)) : null) ?? newest.fields.place
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" aria-label="{ t('contact') }">
+  <div class="mx-auto flex max-w-column flex-wrap items-start justify-between gap-space-2xl">
+    <div class="grid w-full max-w-side gap-space-md md:flex-1">
+      {#if settings.show_heading && settings.heading}<h2 class="font-heading text-h2 font-semibold text-scheme-heading">{ settings.heading }</h2>{/if}
+      {#if settings.text}<p class="text-body-lg text-scheme-muted">{ settings.text }</p>{/if}
+      <Form handle={ settings.form } class="grid gap-space-sm" id="contact-{ section.id }">
+        {#if form.sent}
+          <p class="text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
+        {:else}
+          {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
+          {#for field in form.fields}
+            <Field name={ field.id } label={ field.label } type={ field.type } required={ field.required } maxlength={ field.max_length } value={ field.value } error={ field.error } prefix="contact-{ section.id }" options={ field.options } visible_label={ true } />
+          {/for}
+          <div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+            <Submit>{ form.submit_label || t('send') }</Submit>
+            {#if settings.note || s.reply_note}<p class="text-body-sm text-scheme-muted">{ settings.note || s.reply_note }</p>{/if}
+          </div>
+          <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+        {/if}
+      </Form>
+    </div>
+    {#if settings.show_details}
+      <div class="grid w-full max-w-list content-start gap-space-xs md:flex-1">
+        <h3 class="font-heading text-h5 font-medium text-scheme-heading">{ t('or_by_email') }</h3>
+        {#if s.contact_email}<a class="w-fit text-body text-scheme-links underline decoration-1 underline-offset-4 hover:no-underline" href="mailto:{ s.contact_email }">{ s.contact_email }</a>{/if}
+        {#if current}<p class="pt-space-xs font-mono text-meta font-medium text-scheme-meta uppercase">{ t('now_in') } { current.title }{#if current.fields.country}, { current.fields.country }{/if}</p>{/if}
+      </div>
+    {/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Contact",
+  "description": "A contact form with a subject list, beside the email address and where you are now.",
+  "kind": "Contact",
+  "icon": "mail",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Write to Ilse" },
+    { "type": "checkbox", "id": "show_heading", "label": "Show the heading", "default": false, "info": "Off when a page header above says it already." },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "" },
+    { "type": "checkbox", "id": "show_details", "label": "Show the email and where you are", "default": true, "info": "Reads the Contact email and Current place theme settings." },
+    { "type": "form", "id": "form", "label": "Form", "default": "contact" },
+    { "type": "text", "id": "note", "label": "Reply note", "default": "", "info": "Empty uses the Contact reply note." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "heading": "Write to Ilse", "show_heading": false, "text": "", "show_details": true, "form": "contact", "note": "" } }
+  ]
+}
+</schema>

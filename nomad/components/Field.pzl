@@ -1,0 +1,26 @@
+<!-- component: Field -->
+<!-- props: name label type required maxlength value error placeholder prefix options visible_label -->
+<!-- One form field on the scheme's input colours. A select is a
+     @magic-spells <select-dropdown> over a native select, so it posts and
+     works without JavaScript. visible_label shows the label above the field;
+     otherwise the placeholder carries it and the label is for screen
+     readers. -->
+{#let
+  id = 'field-' + prefix + '-' + name
+  control = 'block w-full rounded-input border border-scheme-input-border bg-scheme-input-background px-space-sm font-body text-body text-scheme-input-foreground placeholder:text-scheme-muted focus:outline-2 focus:outline-offset-2 focus:outline-scheme-links'
+}
+<div class="grid gap-space-xs">
+  <label class="{ visible_label ? 'text-body-sm font-medium' : 'sr-only' }" for={ id }>{ label }</label>
+  {#if type == 'textarea'}
+    <textarea class="{ control } min-h-textarea resize-y py-space-xs" id={ id } name={ name } rows="5" maxlength={ maxlength } required={ required } placeholder={ placeholder ?? label } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + id : null }>{ value }</textarea>
+  {:else if type == 'select'}
+    <select-dropdown>
+      <select class="{ control } min-h-control" id={ id } name={ name } required={ required } aria-invalid={ error ? 'true' : 'false' }>
+        {#for option in options}<option value={ option } selected={ value == option }>{ option }</option>{/for}
+      </select>
+    </select-dropdown>
+  {:else}
+    <input class="{ control } min-h-control" id={ id } name={ name } type={ type ?? 'text' } autocomplete={ type == 'email' ? 'email' : (name == 'name' ? 'name' : 'off') } maxlength={ maxlength } required={ required } value={ value } placeholder={ placeholder ?? label } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + id : null } />
+  {/if}
+  {#if error}<p class="font-mono text-meta text-scheme-error" id="error-{ id }">{ t('form_field_' + error) }</p>{/if}
+</div>

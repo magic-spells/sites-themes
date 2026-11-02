@@ -1,0 +1,12 @@
+<!-- component: Pin -->
+<!-- props: type -->
+<!-- A route pin. place: a filled dot in the text colour with a ring of the
+     background; now: the stamp-ink dot with one slow pulse ring ("you are
+     here", still under reduced motion); next: a hollow dot. -->
+{#if type == 'now'}
+  <span class="relative flex size-pulse items-center justify-center" aria-hidden="true"><span class="absolute inset-0 animate-pulse-ring rounded-full border-2 border-scheme-pulse"></span><span class="size-pin-now rounded-full bg-scheme-stamp ring-2 ring-scheme-background"></span></span>
+{:else if type == 'next'}
+  <span class="block size-pin rounded-full border-2 border-scheme-foreground bg-scheme-background" aria-hidden="true"></span>
+{:else}
+  <span class="block size-pin rounded-full bg-scheme-foreground ring-2 ring-scheme-background" aria-hidden="true"></span>
+{/if}

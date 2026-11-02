@@ -1,0 +1,43 @@
+<!-- TODO sync with Figma (batch C) -->
+<!-- A picture on the offset plane (a terracotta block 1.5rem down and outward, crossing the column edge) beside a 30rem column of text with the 2xl gap between them. Image first puts the picture on the left; text first puts the text on the left edge and the picture on the right edge. The picture comes first on a phone. -->
+{#let
+  well = settings.ratio == 'portrait' ? 'aspect-4/5' : (settings.ratio == 'square' ? 'aspect-square' : 'aspect-3/2')
+  text_first = settings.layout == 'text_first'
+}
+<section class="overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground { site.settings.reveal_on_scroll ? 'reveal reveal-fade-up' : '' }" aria-labelledby="{ section.id }-title">
+  <div class="mx-auto flex max-w-column flex-col gap-space-2xl md:flex-row md:items-center md:justify-between { text_first ? 'md:flex-row-reverse' : '' }">
+    <div class="relative w-full md:max-w-copy md:flex-1">
+      <span class="absolute inset-0 translate-y-plane rounded-sm bg-plane { text_first ? 'translate-x-plane' : '-translate-x-plane' }" aria-hidden="true"></span>
+      <div class="relative overflow-hidden rounded-sm bg-scheme-surface-2 { well }">{#if settings.image}<img class="size-full object-cover" src="{ image_url(settings.image, 1280) }" srcset="{ image_srcset(settings.image, [640, 1024, 1280, 1600]) }" sizes="(min-width: 48rem) 45vw, 100vw" alt="{ settings.image.alt }" loading="lazy" width={ settings.image.width } height={ settings.image.height } />{/if}</div>
+    </div>
+    <div class="grid max-w-side gap-space-md md:flex-1">
+      {#if settings.eyebrow}<p class="font-mono text-meta font-medium text-scheme-meta uppercase">{ settings.eyebrow }</p>{/if}
+      <h2 class="font-heading text-h2 font-semibold text-balance text-scheme-heading" id="{ section.id }-title">{ settings.heading }</h2>
+      <div class="sites-prose">{ settings.body }</div>
+      {#if settings.link_label && settings.link}<div><Button href={ settings.link } tone="secondary">{ settings.link_label }</Button></div>{/if}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Image with text",
+  "description": "A picture on the offset plane beside a short column of text.",
+  "kind": "Content",
+  "icon": "image",
+  "settings": [
+    { "type": "image", "id": "image", "label": "Image" },
+    { "type": "select", "id": "ratio", "label": "Ratio", "default": "landscape", "options": [ { "value": "portrait", "label": "Portrait (4:5)" }, { "value": "landscape", "label": "Landscape (3:2)" }, { "value": "square", "label": "Square (1:1)" } ] },
+    { "type": "select", "id": "layout", "label": "Layout", "default": "text_first", "options": [ { "value": "image_first", "label": "Image first" }, { "value": "text_first", "label": "Text first" } ] },
+    { "type": "text", "id": "eyebrow", "label": "Label", "default": "", "info": "Optional. Off by default: a label only where it carries information." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "How I work from the road" },
+    { "type": "richtext", "id": "body", "label": "Text", "default": "<p>A laptop, a stand, a folding keyboard and a travel router that turns any flat's Wi-Fi into something I can take calls on. I book a month at a time and look for a coworking space within a walk.</p><p>Mornings are for calls with Europe. Afternoons are for the city.</p>" },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "What I carry" },
+    { "type": "url", "id": "link", "label": "Link", "default": "/gear" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "ratio": "landscape", "layout": "text_first", "eyebrow": "", "heading": "How I work from the road", "link_label": "What I carry", "link": "/gear" } }
+  ]
+}
+</schema>

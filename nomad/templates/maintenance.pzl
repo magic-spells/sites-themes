@@ -1,0 +1,12 @@
+<!-- template: Maintenance -->
+<!-- layout: default -->
+<!-- Between stops: the wordmark, the line and the email address, centred on the contour texture. data-bare hides the groups (styles/theme.css). -->
+<section class="relative isolate grid min-h-dvh flex-1 place-items-center overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground" data-bare>
+  <span class="sites-fill texture-contour absolute inset-0 -z-10 text-scheme-foreground" aria-hidden="true">{#svg 'decor/contours.svg'}</span>
+  <div class="grid w-full max-w-reading justify-items-center gap-space-sm text-center">
+    <p class="font-heading text-h4 font-semibold text-scheme-heading">{ site.settings.wordmark || site.name }</p>
+    <h1 class="font-heading text-h1 font-semibold text-balance text-scheme-heading">{ t('maintenance_title') }</h1>
+    <p class="text-body-lg text-pretty text-scheme-muted">{ t('maintenance_body') }</p>
+    {#if site.settings.contact_email}<a class="text-body text-scheme-links underline decoration-1 underline-offset-4 hover:no-underline" href="mailto:{ site.settings.contact_email }">{ site.settings.contact_email }</a>{/if}
+  </div>
+</section>

@@ -1,0 +1,30 @@
+<!-- One line on Night Train: the message, its link, and a × that hides the bar for good for this key (theme.ts). On a phone it wraps to two lines, the × at the top right. -->
+<aside class="bg-scheme-background px-gutter py-space-xs text-scheme-foreground" data-dismiss-key="{ settings.key }" aria-label="{ t('announcement') }">
+  <div class="mx-auto flex max-w-column items-start gap-space-md md:items-center">
+    <p class="flex-1 text-body-sm text-pretty md:text-center">
+      { settings.text }
+      {#if settings.link_label && settings.link}<a class="ml-1 font-semibold whitespace-nowrap text-scheme-links underline decoration-1 underline-offset-4 hover:no-underline" href="{ settings.link }">{ settings.link_label }</a>{/if}
+    </p>
+    {#if settings.show_close}<button class="-m-space-xs flex size-icon-button shrink-0 items-center justify-center" type="button" data-dismiss><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/close.svg'}</span><span class="sr-only">{ t('dismiss') }</span></button>{/if}
+  </div>
+</aside>
+
+<schema>
+{
+  "name": "Announcement bar",
+  "description": "One dismissable line above the header: where you go next, or anything dated.",
+  "kind": "Header",
+  "icon": "megaphone",
+  "settings": [
+    { "type": "text", "id": "text", "label": "Text", "default": "Next stop: the Carretera Austral, from Dec 8, 2026." },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "See the route" },
+    { "type": "url", "id": "link", "label": "Link", "default": "/trips/the-americas" },
+    { "type": "checkbox", "id": "show_close", "label": "Show the close button", "default": true },
+    { "type": "text", "id": "key", "label": "Dismiss key", "default": "nomad-next-stop-2026-12", "info": "A reader who closes the bar does not see it again until you change this key." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "night" }
+  ],
+  "presets": [
+    { "name": "Next stop", "settings": { "text": "Next stop: the Carretera Austral, from Dec 8, 2026.", "link_label": "See the route", "link": "/trips/the-americas", "show_close": true, "key": "nomad-next-stop-2026-12", "color_scheme": "night" } }
+  ]
+}
+</schema>

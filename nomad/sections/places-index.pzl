@@ -1,0 +1,82 @@
+<!-- TODO sync with Figma (batch B) -->
+<!-- Destinations A–Z: every place as a big Besley row, grouped by country under mono heads with counts, each row with its 64 square picture (a list of visual work shows the work) and its post count and last visit at the right. From 48rem a sticky 4:5 photograph beside the list shows the row under the pointer (theme.ts). The country filter hides rows by data-country. -->
+{#let
+  places_path = site.settings.places_path || '/places'
+  places = content.places.entries | sort('title')
+  posts = content.posts.entries
+  stops = content.stops.entries
+  countries = places | map('fields.country') | compact | uniq | sort
+  grouped = settings.group_by == 'country'
+  newest = posts | sort('fields.date') | last
+  current = (site.settings.current_place ? (places | find('handle', site.settings.current_place)) : null) ?? newest.fields.place
+  first_photo = (current ?? (places | first)).fields.image
+  groups = grouped ? countries : ['']
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" aria-label="{ t('destinations') }" data-country-scope>
+  <div class="mx-auto flex max-w-column items-start gap-space-2xl">
+    <div class="grid min-w-0 flex-1 gap-space-lg">
+      {#if settings.country_filter || settings.show_counts}
+        <div class="flex flex-wrap items-center gap-space-md">
+          {#if settings.country_filter && countries.length > 1}
+            <dropdown-component class="w-fit" close-delay="150">
+              <dropdown-trigger class="inline-flex min-h-control-small cursor-pointer items-center gap-space-xs rounded-button border border-scheme-rule px-space-sm text-body-sm"><span data-country-label>{ t('all_countries') }</span><span class="sites-icon size-icon-sm rotate-90" aria-hidden="true">{#svg 'icons/angle-right.svg'}</span></dropdown-trigger>
+              <dropdown-panel class="z-30 mt-1 rounded-sm border border-scheme-rule bg-scheme-background p-space-xs" effect="fade">
+                <ul class="grid min-w-48 text-body-sm">
+                  <li><button class="w-full rounded-sm px-space-sm py-1.5 text-left hover:bg-scheme-surface-2 current:font-semibold" type="button" data-country-set="" aria-current="true">{ t('all_countries') }</button></li>
+                  {#for country in countries}<li><button class="flex w-full justify-between gap-space-md rounded-sm px-space-sm py-1.5 text-left hover:bg-scheme-surface-2 current:font-semibold" type="button" data-country-set={ country }>{ country }<span class="font-mono text-meta text-scheme-meta">{ size(places | where('fields.country', country)) }</span></button></li>{/for}
+                </ul>
+              </dropdown-panel>
+            </dropdown-component>
+          {/if}
+          {#if settings.show_counts}<p class="font-mono text-meta font-medium text-scheme-meta uppercase">{ places.length | pluralize(t('place_one'), t('place_many')) } · { countries.length | pluralize(t('country_one'), t('country_many')) }</p>{/if}
+        </div>
+      {/if}
+      {#for country in groups}
+        {#let members = grouped ? (places | where('fields.country', country)) : places}
+        <div class="grid" data-country={ grouped ? country : null } data-country-group>
+          {#if grouped}<h2 class="border-b border-scheme-rule pb-space-xs font-mono text-meta font-medium text-scheme-meta uppercase">{ country }{#if settings.show_counts} · { members.length }{/if}</h2>{/if}
+          <ul>
+            {#for p in members}
+              {#let
+                here = posts | where('fields.place.handle', p.handle) | sort('fields.date')
+                next_stop = stops | where('fields.place.handle', p.handle) | where('fields.next') | first
+                is_now = current && current.handle == p.handle
+              }
+              <li class="border-b border-scheme-rule { site.settings.reveal_on_scroll ? 'reveal reveal-fade-up' : '' }" data-country={ p.fields.country }>
+                <a class="group flex items-center gap-space-md py-space-sm" href="{ places_path }/{ p.handle }" data-photo-src={ p.fields.image ? image_url(p.fields.image, 1024, { height: 1280 }) : null }>
+                  <span class="block size-thumb shrink-0 overflow-hidden rounded-sm bg-scheme-surface-2">{#if p.fields.image}<img class="size-full object-cover" src="{ image_url(p.fields.image, 160, { height: 160 }) }" alt="" loading="lazy" width="160" height="160" />{/if}</span>
+                  <span class="min-w-0 flex-1 font-heading text-h2 font-semibold text-scheme-heading decoration-2 underline-offset-8 group-hover:text-scheme-links group-hover:underline">{ p.title }</span>
+                  <span class="hidden shrink-0 text-right font-mono text-meta font-medium text-scheme-meta uppercase sm:block">{#if is_now}{ t('now') } · {:else if next_stop}{ t('next') } · { date(next_stop.fields.arrive) }{#if here.length} · {/if}{/if}{#if here.length}{ here.length | pluralize(t('post_one'), t('post_many')) } · { t('last_short', { date: date((here | last).fields.date) }) }{/if}</span>
+                </a>
+              </li>
+            {/for}
+          </ul>
+        </div>
+      {/for}
+    </div>
+    {#if settings.show_photo}
+      <div class="sticky top-24 hidden w-full max-w-side flex-1 md:block">
+        <div class="aspect-4/5 overflow-hidden rounded-sm bg-scheme-surface-2">{#if first_photo}<img class="size-full object-cover" src="{ image_url(first_photo, 1024, { height: 1280 }) }" alt="" loading="lazy" width="1024" height="1280" data-hover-photo />{/if}</div>
+      </div>
+    {/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Places index",
+  "description": "Destinations A to Z: every place as a big row, grouped by country, with a photograph that follows the pointer.",
+  "kind": "Collections",
+  "icon": "list",
+  "settings": [
+    { "type": "select", "id": "group_by", "label": "Group", "default": "country", "options": [ { "value": "country", "label": "By country" }, { "value": "none", "label": "A to Z" } ], "info": "Reads places entries: title, handle, country, image; counts come from posts and stops." },
+    { "type": "checkbox", "id": "show_counts", "label": "Show the counts", "default": true },
+    { "type": "checkbox", "id": "show_photo", "label": "Show the photograph beside the list", "default": true, "info": "From 48rem. It shows the place under the pointer." },
+    { "type": "checkbox", "id": "country_filter", "label": "Show the country filter", "default": true },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Destinations", "settings": { "group_by": "country", "show_counts": true, "show_photo": true, "country_filter": true } }
+  ]
+}
+</schema>

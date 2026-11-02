@@ -1,0 +1,17 @@
+<!-- component: PlaceRow -->
+<!-- props: place href count arrived now next -->
+<!-- A place as a row on a hairline: a 56 square picture, a route dot (the
+     current place's in stamp ink), the name over the country and arrival,
+     and the post count at the right in mono. -->
+{#let f = place.fields}
+<li class="border-b border-scheme-rule" data-country={ f.country } data-place-row={ place.handle }>
+  <a class="group flex items-center gap-space-sm py-space-xs" href={ href }>
+    <span class="block size-thumb-sm shrink-0 overflow-hidden rounded-sm bg-scheme-surface-2">{#if f.image}<img class="size-full object-cover" src="{ image_url(f.image, 160, { height: 160 }) }" alt="" loading="lazy" width="160" height="160" />{/if}</span>
+    <span class="size-dot shrink-0 rounded-full { now ? 'bg-scheme-stamp' : 'bg-scheme-route' }" aria-hidden="true"></span>
+    <span class="grid flex-1 gap-0.5">
+      <span class="font-heading text-h5 font-medium text-scheme-heading decoration-1 underline-offset-4 group-hover:underline">{ place.title }</span>
+      <span class="text-body-sm text-scheme-muted">{ f.country }{#if arrived} · {#if now}{ t('since_date', { date: date(arrived) }) }{:else}{ date(arrived) }{/if}{/if}</span>
+    </span>
+    <span class="shrink-0 font-mono text-meta font-medium text-scheme-meta uppercase">{#if now}{ t('now') } · {:else if next}{ t('next') } · {/if}{ count | pluralize(t('post_one'), t('post_many')) }</span>
+  </a>
+</li>

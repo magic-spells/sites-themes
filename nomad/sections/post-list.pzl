@@ -1,0 +1,107 @@
+<!-- Posts as cards or rows (Folio's id and settings, plus scope, a featured first card and a topic filter). Grid: the first card featured across the column at 16:9, then two per row at 4:3, each with its date stamp crossing the picture's edge and its place tag above the title. List: rows on hairlines. With the switch on, both views render and a reader's choice is remembered (theme.ts). No pagination: a cap of 12, "12 of 14 posts" and a view-all link. The topic filter is a GET form, so it works without JavaScript; theme.ts sends it on change. -->
+{#let
+  posts_path = settings.base_path || site.settings.posts_path || '/journal'
+  places_path = site.settings.places_path || '/places'
+  newest_all = content.posts.entries | sort('fields.date') | last
+  here = template.type == 'place' ? page.entry : (template.type == 'post' ? page.entry.fields.place : ((site.settings.current_place ? (content.places.entries | find('handle', site.settings.current_place)) : null) ?? newest_all.fields.place))
+  this_trip = template.type == 'trip' ? page.entry : (template.type == 'post' ? page.entry.fields.trip : null)
+  sorted = (settings.collection.entries ?? content.posts.entries) | sort('fields.date') | reverse
+  scoped = settings.scope == 'current_place' ? (here ? (sorted | where('fields.place.handle', here.handle)) : []) : (settings.scope == 'current_trip' ? (this_trip ? (sorted | where('fields.trip.handle', this_trip.handle)) : []) : sorted)
+  query_topic = settings.show_topic_filter || settings.scope == 'topic_query' ? request.query.topic : null
+  topic = query_topic || settings.topic
+  by_topic = topic ? (scoped | where('fields.topic', topic)) : scoped
+  pool = settings.exclude_current && page.entry ? (by_topic | reject('handle', page.entry.handle)) : by_topic
+  posts = pool | slice(0, settings.limit)
+  topics = scoped | map('fields.topic') | compact | uniq | sort
+  view = settings.layout == 'grid' ? 'grid' : 'list'
+  toggle = settings.show_toggle
+  reveal = site.settings.reveal_on_scroll
+  show_view_all = settings.view_all_label && (settings.view_all_href || posts_path)
+  heading = settings.heading | replace('{place}', here ? here.title : '') | replace('{trip}', this_trip ? this_trip.title : '')
+  toolbar = toggle || settings.show_topic_filter || settings.show_count
+}
+{#if posts.length || settings.scope == 'all'}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-view={ toggle ? view : false } aria-labelledby={ heading ? section.id + '-title' : null }>
+  <div class="mx-auto grid max-w-column gap-space-lg">
+    {#if heading || show_view_all}
+      <div class="flex flex-wrap items-end justify-between gap-space-sm">
+        {#if heading}<h2 class="font-heading text-h2 font-semibold text-scheme-heading" id="{ section.id }-title">{ heading }</h2>{:else}<span></span>{/if}
+        {#if show_view_all && pool.length > posts.length || show_view_all && settings.always_link}<a class="inline-flex items-center gap-1 text-body-sm text-scheme-links hover:underline" href="{ settings.view_all_href || posts_path }">{ settings.view_all_label | replace('{count}', `${pool.length}`) }<span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/arrow-right.svg'}</span></a>{/if}
+      </div>
+    {/if}
+    {#if toolbar}
+      <div class="flex flex-wrap items-center gap-x-space-md gap-y-space-sm border-b border-scheme-rule pb-space-sm">
+        {#if settings.show_topic_filter && topics.length > 1}
+          <form class="flex items-center gap-space-xs" method="get" action="{ page.path }" data-topic-filter>
+            <label class="sr-only" for="{ section.id }-topic">{ t('topic') }</label>
+            <select-dropdown class="min-w-48">
+              <select class="block min-h-control-small w-full rounded-input border border-scheme-input-border bg-scheme-input-background px-space-sm text-body-sm text-scheme-input-foreground" id="{ section.id }-topic" name="topic">
+                <option value="">{ t('all_topics') }</option>
+                {#for name in topics}<option value={ name } selected={ topic == name }>{ name }</option>{/for}
+              </select>
+            </select-dropdown>
+            <noscript><button class="min-h-control-small rounded-button border border-scheme-foreground px-space-sm text-body-sm font-semibold" type="submit">{ t('show') }</button></noscript>
+          </form>
+        {/if}
+        {#if settings.show_count && posts.length}<p class="font-mono text-meta font-medium text-scheme-meta uppercase">{ t('post_count', { shown: posts.length, total: pool.length }) }</p>{/if}
+        {#if toggle}
+          <div class="ms-auto flex gap-space-xs" role="group" hidden data-view-switch aria-label="{ t('view_label') }">
+            <button class="inline-flex min-h-control-small items-center gap-1.5 rounded-full border border-scheme-rule bg-scheme-surface-2 px-space-sm text-body-sm aria-pressed:border-scheme-foreground aria-pressed:bg-scheme-foreground aria-pressed:text-scheme-background" type="button" data-view-set="grid" aria-pressed="{ view == 'grid' ? 'true' : 'false' }"><span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/grid.svg'}</span>{ t('view_grid') }</button>
+            <button class="inline-flex min-h-control-small items-center gap-1.5 rounded-full border border-scheme-rule bg-scheme-surface-2 px-space-sm text-body-sm aria-pressed:border-scheme-foreground aria-pressed:bg-scheme-foreground aria-pressed:text-scheme-background" type="button" data-view-set="list" aria-pressed="{ view == 'list' ? 'true' : 'false' }"><span class="sites-icon size-icon-sm" aria-hidden="true">{#svg 'icons/list.svg'}</span>{ t('view_list') }</button>
+          </div>
+        {/if}
+      </div>
+    {/if}
+    {#if posts.length == 0}
+      <p class="text-body text-scheme-muted">{ t('posts_empty') }</p>
+    {:else}
+      {#if toggle || view == 'grid'}
+        <ul class="grid gap-x-space-md gap-y-space-xl md:grid-cols-2 { settings.columns == '3' ? 'lg:grid-cols-3' : '' } view-list:hidden">
+          {#for entry in posts, i}<PostCard entry={ entry } href="{ posts_path }/{ entry.handle }" place_href={ places_path } featured={ settings.featured_first && i == 0 } reveal={ reveal } />{/for}
+        </ul>
+      {/if}
+      {#if toggle || view == 'list'}
+        <ul class="border-t border-scheme-rule view-grid:hidden">
+          {#for entry in posts}<PostRow entry={ entry } href="{ posts_path }/{ entry.handle }" reveal={ reveal } image={ settings.show_images } />{/for}
+        </ul>
+      {/if}
+    {/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Post list",
+  "description": "Posts as cards (a featured first card, then two per row) or rows, scoped to everything, a place or a trip.",
+  "kind": "Collections",
+  "icon": "newspaper",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Latest posts", "info": "{place} and {trip} are replaced with the page's place or trip." },
+    { "type": "collection", "id": "collection", "label": "Content type", "info": "Uses posts fields topic, date, author, reading_minutes, standfirst, image, image_alt, body and image_caption (Folio's), plus place, trip, video and photos. Empty uses posts." },
+    { "type": "url", "id": "base_path", "label": "Index path", "default": "", "info": "Each post links to this path plus its handle. Empty uses the Journal path." },
+    { "type": "select", "id": "scope", "label": "Posts from", "default": "all", "options": [ { "value": "all", "label": "Everywhere" }, { "value": "current_place", "label": "This place" }, { "value": "current_trip", "label": "This trip" }, { "value": "topic_query", "label": "The topic in the address (?topic=)" } ], "info": "This place: the page's place on a place or post page, otherwise the Current place. This trip: the page's trip on a trip or post page. The section hides when a place or trip has no posts." },
+    { "type": "select", "id": "layout", "label": "Layout", "default": "grid", "options": [ { "value": "grid", "label": "Grid" }, { "value": "list", "label": "List" } ] },
+    { "type": "checkbox", "id": "featured_first", "label": "Feature the first post", "default": true, "info": "In the grid, the first card runs across the column at 16:9." },
+    { "type": "select", "id": "columns", "label": "Columns", "default": "2", "options": [ { "value": "2", "label": "Two" }, { "value": "3", "label": "Three" } ] },
+    { "type": "checkbox", "id": "show_images", "label": "Show thumbnails in the list", "default": true },
+    { "type": "checkbox", "id": "show_toggle", "label": "Let readers switch between grid and list", "default": false, "info": "The layout above is the view a reader sees first." },
+    { "type": "checkbox", "id": "show_topic_filter", "label": "Show the topic filter", "default": false, "info": "A menu of the topics in this list. It reloads the page with ?topic= in the address." },
+    { "type": "range", "id": "limit", "label": "Posts shown", "min": 1, "max": 12, "step": 1, "default": 5 },
+    { "type": "text", "id": "topic", "label": "Only this topic", "default": "", "info": "Type a topic exactly as the posts spell it. Empty shows every topic." },
+    { "type": "checkbox", "id": "exclude_current", "label": "Leave out the post being read", "default": false },
+    { "type": "checkbox", "id": "show_count", "label": "Show the count", "default": false, "info": "For example 12 of 14 posts." },
+    { "type": "text", "id": "view_all_label", "label": "View all label", "default": "All {count} posts", "info": "Shown when there are more posts than the list holds. {count} is the total." },
+    { "type": "url", "id": "view_all_href", "label": "View all link", "default": "", "info": "Empty uses the Journal path." },
+    { "type": "checkbox", "id": "always_link", "label": "Always show the view all link", "default": false },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Latest", "settings": { "heading": "Latest posts", "collection": "posts", "scope": "all", "layout": "grid", "featured_first": true, "columns": "2", "show_toggle": false, "show_topic_filter": false, "limit": 5, "show_count": false, "view_all_label": "All {count} posts", "always_link": true } },
+    { "name": "Journal", "settings": { "heading": "", "collection": "posts", "scope": "all", "layout": "grid", "featured_first": true, "columns": "2", "show_toggle": true, "show_topic_filter": true, "limit": 12, "show_count": true, "view_all_label": "" } },
+    { "name": "From this place", "settings": { "heading": "From {place}", "collection": "posts", "scope": "current_place", "layout": "grid", "featured_first": false, "columns": "2", "limit": 6, "view_all_label": "" } },
+    { "name": "This trip", "settings": { "heading": "Posts from {trip}", "collection": "posts", "scope": "current_trip", "layout": "grid", "featured_first": false, "columns": "3", "limit": 6, "view_all_label": "" } },
+    { "name": "More from here", "settings": { "heading": "More from {place}", "collection": "posts", "scope": "current_place", "layout": "list", "featured_first": false, "limit": 3, "exclude_current": true, "view_all_label": "" } }
+  ]
+}
+</schema>

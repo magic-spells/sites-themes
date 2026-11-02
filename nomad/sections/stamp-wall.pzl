@@ -1,0 +1,58 @@
+<!-- TODO sync with Figma (batch C) -->
+<!-- The countries as a stamp wall, carrying the counters: the heading line reads "11 countries · 12 places · 14 posts, since Apr 3, 2023", every number computed. Then one ring per country in first-arrival order (from the stops), in stamp ink at one of three tilts by position: the country, its first place and the first arrival date. The next country's ring is dashed only and reads NEXT. A distance shows only when the Traveller setting holds one. -->
+{#let
+  places = content.places.entries
+  stops = content.stops.entries | sort('fields.arrive')
+  countries = places | map('fields.country') | compact | uniq
+  posts = content.posts.entries
+  since = site.settings.on_road_since
+  wall = stops | map('fields.place.fields.country') | compact | uniq
+  tilts = ['tilt-stamp', 'tilt-left', 'tilt-right']
+  km = site.settings.distance_km
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" aria-labelledby="{ section.id }-title">
+  <div class="mx-auto grid max-w-column gap-space-xl">
+    <h2 class="max-w-copy font-heading text-h2 font-semibold text-balance text-scheme-heading" id="{ section.id }-title">{#if settings.show_counts}<span class="text-scheme-stamp">{ countries.length }</span> { countries.length == 1 ? t('country_word_one') : t('country_word_many') } · <span class="text-scheme-stamp">{ places.length }</span> { places.length == 1 ? t('place_word_one') : t('place_word_many') } · <span class="text-scheme-stamp">{ posts.length }</span> { posts.length == 1 ? t('post_word_one') : t('post_word_many') }{#if settings.distance && km} · <span class="text-scheme-stamp">{ km | number_with_delimiter }</span> { t('km') }{/if}{#if since}, { t('since_date', { date: date(since) }) }{/if}{:else}{ settings.heading }{/if}</h2>
+    {#if wall.length}
+      <ul class="flex flex-wrap justify-center gap-x-space-md gap-y-space-lg">
+        {#for country in wall, i}
+          {#let
+            visits = stops | where('fields.place.fields.country', country)
+            arrival = visits | reject('fields.next') | first
+            upcoming = arrival ? null : (visits | first)
+            stop = arrival ?? upcoming
+          }
+          <li class="{ tilts[i % 3] } { site.settings.reveal_on_scroll ? 'reveal reveal-fade-up' : '' }">
+            <span class="relative flex size-ring items-center justify-center rounded-full text-center text-scheme-stamp { upcoming ? 'border-2 border-dashed border-scheme-stamp' : 'border-2 border-scheme-stamp' }">
+              {#unless upcoming}<span class="absolute inset-2 rounded-full border border-dashed border-scheme-stamp" aria-hidden="true"></span>{/unless}
+              <span class="relative grid max-w-24 gap-0.5">
+                <span class="font-mono text-meta font-medium uppercase">{ country }</span>
+                <span class="font-heading text-h5 font-medium">{ stop.fields.place.title }</span>
+                {#if settings.show_first_arrival && stop.fields.arrive}<span class="font-mono text-meta font-medium uppercase">{#if upcoming}{ t('next') } · {/if}{ date(stop.fields.arrive) }</span>{/if}
+              </span>
+            </span>
+          </li>
+        {/for}
+      </ul>
+    {/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Stamp wall",
+  "description": "The countries as a wall of passport stamps, with the counters in the heading line.",
+  "kind": "Content",
+  "icon": "stamp",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Where I've stamped in", "info": "Shown when the counts are off." },
+    { "type": "checkbox", "id": "show_counts", "label": "Put the counts in the heading", "default": true, "info": "Countries, places and posts, computed; then On the road since." },
+    { "type": "checkbox", "id": "show_first_arrival", "label": "Show the first arrival in each country", "default": true, "info": "From the stops content type." },
+    { "type": "checkbox", "id": "distance", "label": "Show the distance travelled", "default": true, "info": "Only when the Traveller setting Distance travelled holds a number." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "heading": "Where I've stamped in", "show_counts": true, "show_first_arrival": true, "distance": true } }
+  ]
+}
+</schema>

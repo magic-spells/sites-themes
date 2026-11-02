@@ -1,0 +1,56 @@
+<!-- The marquee: mono uppercase phrases with ››› between, on flare or black,
+     two copies of the list scrolling as one (the second hidden from screen
+     readers). Paused on hover, a still row under reduced motion. Phrases
+     come from the blocks, or from the Floor ticker lines when there are
+     none. Slash cuts the band's top edge at 12°. -->
+{#let
+  lines = blocks.length ? blocks : (site.settings.ticker_lines | split('\n'))
+  slash = settings.edge == 'slash' && section.index > 0
+}
+<section class="overflow-hidden border-y border-scheme-rule bg-scheme-background text-scheme-foreground { slash ? 'edge-slash pt-rise' : '' }" aria-label="{ settings.label || t('highlights') }" data-ticker data-speed={ settings.speed } data-direction={ settings.direction }>
+  <div class="flex w-max" data-ticker-track>
+    {#for copy in [1, 2]}
+      <ul class="flex shrink-0 items-center" aria-hidden={ copy == 2 ? 'true' : null }>
+        {#for line in lines}
+          {#let text = (line.settings ? line.settings.text : line) | strip}
+          {#if text}<li class="flex items-center gap-step-md py-step-sm pr-step-xs pl-step-md font-mono text-ticker font-medium whitespace-nowrap uppercase" data-block={ copy == 1 && line.settings ? line.editor_id : null }>{ text }<span class="tracking-normal text-scheme-meta" aria-hidden="true">›››</span></li>{/if}
+        {/for}
+      </ul>
+    {/for}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Ticker",
+  "description": "A marquee of short phrases in mono capitals: first class free, no contracts, opening hours.",
+  "kind": "Content",
+  "icon": "megaphone",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label for screen readers", "default": "Highlights" },
+    { "type": "select", "id": "speed", "label": "Speed", "default": "normal", "options": [
+      { "value": "slow", "label": "Slow" },
+      { "value": "normal", "label": "Normal" },
+      { "value": "fast", "label": "Fast" }
+    ] },
+    { "type": "select", "id": "direction", "label": "Direction", "default": "left", "options": [
+      { "value": "left", "label": "Leftward" },
+      { "value": "right", "label": "Rightward" }
+    ] },
+    { "type": "select", "id": "edge", "label": "Top edge", "default": "flat", "options": [
+      { "value": "flat", "label": "Flat" },
+      { "value": "slash", "label": "Slash" }
+    ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "flare" }
+  ],
+  "blocks": [
+    { "type": "phrase", "name": "Phrase", "settings": [
+      { "type": "text", "id": "text", "label": "Text", "default": "First class free" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Flare", "settings": { "color_scheme": "flare" } },
+    { "name": "Black", "settings": { "color_scheme": "black" } }
+  ]
+}
+</schema>

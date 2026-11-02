@@ -1,0 +1,16 @@
+<!-- component: SessionChip -->
+<!-- One session in the timetable: the time in mono, the class name in
+     Archivo 700, the coach and the location in the Spec mono. It links to
+     the class and carries the class handle for the class filter. Always on
+     a white surface with a hairline, whatever band the timetable sits on. -->
+{#let
+  f = slot_entry.fields
+  klass = f.class
+  coach = f.coach || klass.fields.coach
+}
+<a class="grid gap-step-2xs border border-scheme-rule bg-scheme-surface p-step-sm text-scheme-foreground transition-colors duration-fast hover:border-scheme-foreground" href="{ base_path }/{ klass.handle }" data-session data-class={ klass.handle }>
+  <span class="font-mono text-time font-medium">{ f.start }{#if f.end}–{ f.end }{/if}</span>
+  <span class="text-body-sm leading-tight font-bold text-scheme-heading uppercase">{ klass.title }</span>
+  {#if (show_coach && coach) || (show_location && f.location)}<span class="font-mono text-spec text-scheme-meta uppercase">{#if show_coach && coach}{ coach.title }{/if}{#if show_coach && coach && show_location && f.location} · {/if}{#if show_location && f.location}{ f.location.title }{/if}</span>{/if}
+  {#if f.note}<span class="text-body-xs text-scheme-muted">{ f.note }</span>{/if}
+</a>

@@ -1,0 +1,28 @@
+<!-- Prose in the 40rem reading column: the setting's text, or the page's
+     own body when the setting is empty. -->
+{#let body = settings.body || page.content}
+{#if body || settings.heading}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-reading gap-step-md">
+    {#if settings.heading}<h2 class="font-heading text-h2 font-black text-scheme-heading uppercase stretch-heading">{ settings.heading }</h2>{/if}
+    {#if settings.body}<div class="sites-prose">{ settings.body }</div>{:else}<div class="sites-prose">{ page.content }</div>{/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Rich text",
+  "description": "Prose in the reading column; empty, it shows the page's own text.",
+  "kind": "Content",
+  "icon": "align-left",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "" },
+    { "type": "richtext", "id": "body", "label": "Text", "default": "", "info": "Leave empty to show the page's body." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

@@ -1,0 +1,61 @@
+<!-- The same class cards on a tarot track, 3.2 / 2.2 / 1.2 across. Below
+     48rem the track keeps the left gutter and runs off the right edge with
+     the next card cut, with no arrows; from 48rem it sits in the column and
+     the arrows sit in the heading row. On a class page it leaves that class
+     out. -->
+{#let
+  all = settings.classes.entries | sort('fields.order')
+  others = page.entry && settings.exclude_current ? (all | reject('id', page.entry.id)) : all
+  pool = settings.source == 'featured' ? (others | where('fields.featured')) : others
+  shown = pool | slice(0, Math.min(settings.limit, 12))
+  id = 'classes-' + section.id
+  options = { slidesPerView: 1.2, gap: '1rem', paddingLeft: '1rem', paddingRight: 0, navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { slidesPerView: 2.2, gap: '1.5rem', paddingLeft: 0, paddingRight: 0, navigation: { showButtons: true, showPagination: false } }, '1024': { slidesPerView: 3.2, gap: '1.5rem', paddingLeft: 0, paddingRight: 0, navigation: { showButtons: true, showPagination: false } } } }
+}
+{#if shown.length}
+<section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter" aria-labelledby="{ id }-title">
+  <tarot-carousel class="mx-auto block max-w-column" id={ id } data-track="cards">
+    <script type="application/json" data-tarot-options>{ options | json }</script>
+    <SectionHead heading={ settings.heading } text={ settings.text } id="{ id }-title" link_label={ settings.view_all_label } link_href={ settings.view_all_href } inset={ true }><Arrows /></SectionHead>
+    <tarot-viewport>
+      <tarot-track>
+        {#for entry in shown}<tarot-slide><ClassCard entry={ entry } href="{ settings.base_path }/{ entry.handle }" show_specs={ settings.show_specs } show_coach={ settings.show_coach } treatment={ settings.treatment } /></tarot-slide>{/for}
+      </tarot-track>
+    </tarot-viewport>
+  </tarot-carousel>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Class carousel",
+  "description": "Class cards on a draggable track with arrows in the heading row.",
+  "kind": "Collections",
+  "icon": "images",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What’s on the floor" },
+    { "type": "text", "id": "text", "label": "Text", "default": "Twelve classes across North and Riverside. Every one is coached." },
+    { "type": "select", "id": "source", "label": "Classes", "default": "all", "options": [
+      { "value": "all", "label": "All" },
+      { "value": "featured", "label": "Featured" }
+    ] },
+    { "type": "collection", "id": "classes", "label": "Classes collection", "info": "Reads classes: title, handle, summary, image, image_alt, tag, coach, duration_minutes, intensity, level, featured and order." },
+    { "type": "checkbox", "id": "exclude_current", "label": "Leave out the class on show", "default": true, "info": "On a class page." },
+    { "type": "range", "id": "limit", "label": "Limit", "min": 2, "max": 12, "step": 1, "default": 12 },
+    { "type": "checkbox", "id": "show_specs", "label": "Show the spec strip", "default": true },
+    { "type": "checkbox", "id": "show_coach", "label": "Show the coach", "default": true },
+    { "type": "select", "id": "treatment", "label": "Photo treatment", "default": "natural", "options": [
+      { "value": "natural", "label": "Natural" },
+      { "value": "mono", "label": "Mono" },
+      { "value": "duotone", "label": "Duotone" }
+    ] },
+    { "type": "url", "id": "base_path", "label": "Class page path", "default": "/classes" },
+    { "type": "text", "id": "view_all_label", "label": "View-all label", "default": "All classes" },
+    { "type": "url", "id": "view_all_href", "label": "View-all link", "default": "/classes" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "classes": "classes" } },
+    { "name": "More classes", "settings": { "classes": "classes", "heading": "More classes", "text": "" } }
+  ]
+}
+</schema>

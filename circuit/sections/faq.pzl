@@ -1,0 +1,53 @@
+<!-- Questions as rows on hairlines that open and close (a plus, a minus when
+     open), the heading on the left. Without JavaScript every answer shows. -->
+{#if blocks.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-step-xl md:grid-cols-3 md:gap-step-3xl">
+    <div class="grid content-start gap-step-sm">
+      <h2 class="font-heading text-h2 font-black text-scheme-heading uppercase stretch-heading">{ settings.heading }</h2>
+      {#if settings.text}<p class="text-body text-scheme-muted">{ settings.text }</p>{/if}
+    </div>
+    <ul class="border-t border-scheme-rule md:col-span-2">
+      {#for block in blocks, i}
+        {#let b = block.settings}
+        <li class="border-b border-scheme-rule" data-block={ block.editor_id }>
+          <collapsible-component>
+            <h3><button class="group flex w-full items-center justify-between gap-step-md py-step-md text-left text-body-lg font-semibold text-scheme-heading" type="button">{ b.question }<span class="sites-icon size-icon shrink-0 group-aria-expanded:hidden" aria-hidden="true">{#svg 'icons/plus.svg'}</span><span class="sites-icon hidden size-icon shrink-0 group-aria-expanded:block" aria-hidden="true">{#svg 'icons/minus.svg'}</span></button></h3>
+            <collapsible-content open={ settings.first_open && i == 0 }>
+              <div class="sites-prose pb-step-md text-scheme-muted">{ b.answer }</div>
+            </collapsible-content>
+          </collapsible-component>
+        </li>
+      {/for}
+    </ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "FAQ",
+  "description": "Questions and answers as rows that open.",
+  "kind": "Content",
+  "icon": "list",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Questions" },
+    { "type": "text", "id": "text", "label": "Text", "default": "Anything else? Ask at the desk or write to us." },
+    { "type": "checkbox", "id": "first_open", "label": "First answer open", "default": true },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "concrete" }
+  ],
+  "blocks": [
+    { "type": "item", "name": "Question", "settings": [
+      { "type": "text", "id": "question", "label": "Question", "default": "Do I need to be fit already?" },
+      { "type": "richtext", "id": "answer", "label": "Answer", "default": "<p>No. Every class is scaled to you by the coach, and most people start with Strength Foundations.</p>" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {}, "blocks": [
+      { "type": "item", "settings": { "question": "Do I need to be fit already?", "answer": "<p>No. Every class is scaled to you by the coach, and most people start with Strength Foundations.</p>" } },
+      { "type": "item", "settings": { "question": "What should I bring?", "answer": "<p>Trainers with a flat sole, a water bottle and a towel. We have chalk, belts and lockers.</p>" } },
+      { "type": "item", "settings": { "question": "Can I cancel?", "answer": "<p>Yes. Memberships are month to month; give us a month's notice and that is it.</p>" } }
+    ] }
+  ]
+}
+</schema>

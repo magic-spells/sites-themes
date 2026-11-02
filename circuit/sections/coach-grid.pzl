@@ -1,0 +1,74 @@
+<!-- The coaches: 4:5 portraits (mono optional, a flare flood on hover
+     optional), the name in Archivo 800 uppercase, the role in mono, the
+     specialties as chips; four, two and one across, or a tarot row that
+     bleeds right on a phone. -->
+{#let
+  all = settings.coaches.entries | sort('fields.order')
+  pool = settings.source == 'featured' ? (all | where('fields.featured')) : all
+  shown = pool | slice(0, Math.min(settings.limit, 12))
+  id = 'coaches-' + section.id
+  options = { slidesPerView: 1.3, gap: '1rem', paddingLeft: '1rem', paddingRight: 0, navigation: { showButtons: false, showPagination: false } }
+  cols = settings.columns == '3' ? 'lg:grid-cols-3' : 'lg:grid-cols-4'
+}
+{#if shown.length}
+<section class="bg-scheme-background py-section text-scheme-foreground { settings.mobile == 'row' ? 'md:px-gutter' : 'px-gutter' }">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.view_all_label } link_href={ settings.view_all_href } inset={ settings.mobile == 'row' } />
+    {#if settings.mobile == 'row'}
+      <tarot-carousel class="block md:hidden" id={ id } data-track="cards">
+        <script type="application/json" data-tarot-options>{ options | json }</script>
+        <tarot-viewport><tarot-track>
+          {#for entry in shown}<tarot-slide><CoachCard entry={ entry } href="{ settings.base_path }/{ entry.handle }" treatment={ settings.treatment } hover={ settings.hover } show_specialties={ settings.show_specialties } /></tarot-slide>{/for}
+        </tarot-track></tarot-viewport>
+      </tarot-carousel>
+    {/if}
+    <ul class="{ settings.mobile == 'row' ? 'hidden md:grid' : 'grid' } gap-x-gap-lg gap-y-step-xl md:grid-cols-2 { cols }">
+      {#for entry in shown}<li><CoachCard entry={ entry } href="{ settings.base_path }/{ entry.handle }" treatment={ settings.treatment } hover={ settings.hover } show_specialties={ settings.show_specialties } reveal={ site.settings.reveal } /></li>{/for}
+    </ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Coach grid",
+  "description": "Coach portraits with name, role and specialties.",
+  "kind": "Collections",
+  "icon": "layout-template",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Coaches" },
+    { "type": "text", "id": "text", "label": "Text", "default": "" },
+    { "type": "collection", "id": "coaches", "label": "Coaches", "info": "Reads coaches: title, handle, role, specialties, image, image_alt, featured and order." },
+    { "type": "select", "id": "source", "label": "Coaches shown", "default": "all", "options": [
+      { "value": "all", "label": "All" },
+      { "value": "featured", "label": "Featured" }
+    ] },
+    { "type": "range", "id": "limit", "label": "Limit", "min": 1, "max": 12, "step": 1, "default": 8 },
+    { "type": "select", "id": "columns", "label": "Columns", "default": "4", "options": [
+      { "value": "3", "label": "3" },
+      { "value": "4", "label": "4" }
+    ] },
+    { "type": "select", "id": "mobile", "label": "On a phone", "default": "stack", "options": [
+      { "value": "stack", "label": "Stacked" },
+      { "value": "row", "label": "A row you swipe" }
+    ] },
+    { "type": "select", "id": "treatment", "label": "Photo treatment", "default": "natural", "options": [
+      { "value": "natural", "label": "Natural" },
+      { "value": "mono", "label": "Mono" },
+      { "value": "duotone", "label": "Duotone" }
+    ] },
+    { "type": "select", "id": "hover", "label": "Hover", "default": "none", "options": [
+      { "value": "none", "label": "None" },
+      { "value": "flare", "label": "Flare" }
+    ] },
+    { "type": "checkbox", "id": "show_specialties", "label": "Show specialties", "default": true },
+    { "type": "url", "id": "base_path", "label": "Coach page path", "default": "/coaches" },
+    { "type": "text", "id": "view_all_label", "label": "View-all label", "default": "All coaches" },
+    { "type": "url", "id": "view_all_href", "label": "View-all link", "default": "/coaches" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "coaches": "coaches" } }
+  ]
+}
+</schema>

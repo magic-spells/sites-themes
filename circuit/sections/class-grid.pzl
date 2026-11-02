@@ -1,0 +1,75 @@
+<!-- The signature grid: class cards three, two and one across. The source
+     is every class, the featured ones, or the classes listed as blocks; on
+     a coach's page, "classes" limits it to that coach's classes. Capped at
+     the limit (12 at most) with "N of M" and the view-all link when there
+     are more. -->
+{#let
+  all = settings.classes.entries | sort('fields.order')
+  coach_id = settings.source == 'coach' && page.entry ? page.entry.id : ''
+  pool = settings.source == 'featured' ? (all | where('fields.featured')) : (settings.source == 'coach' ? (all | where('fields.coach.id', coach_id)) : all)
+  listed = settings.source == 'listed'
+  shown = listed ? blocks : (pool | slice(0, Math.min(settings.limit, 12)))
+  total = listed ? blocks.length : pool.length
+  heading = settings.source == 'coach' && page.entry ? t('classes_with', { name: page.entry.title }) : settings.heading
+  more = !listed && total > shown.length
+}
+{#if shown.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ heading } text={ settings.text } link_label={ settings.view_all_label ? (more ? t('n_of_m', { n: shown.length, m: total }) + ' · ' + settings.view_all_label : settings.view_all_label) : '' } link_href={ settings.view_all_href } />
+    <ul class="grid gap-gap-lg md:grid-cols-2 { settings.columns == '2' ? '' : (settings.columns == '4' ? 'lg:grid-cols-4' : 'lg:grid-cols-3') }">
+      {#if listed}
+        {#for block in blocks}{#if block.settings.class}<li data-block={ block.editor_id }><ClassCard entry={ block.settings.class } href="{ settings.base_path }/{ block.settings.class.handle }" show_specs={ settings.show_specs } show_coach={ settings.show_coach } treatment={ settings.treatment } reveal={ site.settings.reveal } /></li>{/if}{/for}
+      {:else}
+        {#for entry in shown}<li><ClassCard entry={ entry } href="{ settings.base_path }/{ entry.handle }" show_specs={ settings.show_specs } show_coach={ settings.show_coach } treatment={ settings.treatment } reveal={ site.settings.reveal } /></li>{/for}
+      {/if}
+    </ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Class grid",
+  "description": "Class cards with the spec strip, three, two and one across.",
+  "kind": "Collections",
+  "icon": "layout-template",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What’s on the floor" },
+    { "type": "text", "id": "text", "label": "Text", "default": "" },
+    { "type": "select", "id": "source", "label": "Classes", "default": "all", "options": [
+      { "value": "all", "label": "All" },
+      { "value": "featured", "label": "Featured" },
+      { "value": "listed", "label": "Listed below" },
+      { "value": "coach", "label": "This coach's (coach pages)" }
+    ] },
+    { "type": "collection", "id": "classes", "label": "Classes collection", "info": "Reads classes: title, handle, summary, image, image_alt, tag, coach, duration_minutes, intensity, level, featured and order." },
+    { "type": "range", "id": "limit", "label": "Limit", "min": 1, "max": 12, "step": 1, "default": 12 },
+    { "type": "select", "id": "columns", "label": "Columns", "default": "3", "options": [
+      { "value": "2", "label": "2" },
+      { "value": "3", "label": "3" },
+      { "value": "4", "label": "4" }
+    ] },
+    { "type": "checkbox", "id": "show_specs", "label": "Show the spec strip", "default": true },
+    { "type": "checkbox", "id": "show_coach", "label": "Show the coach", "default": true },
+    { "type": "select", "id": "treatment", "label": "Photo treatment", "default": "natural", "options": [
+      { "value": "natural", "label": "Natural" },
+      { "value": "mono", "label": "Mono" },
+      { "value": "duotone", "label": "Duotone" }
+    ] },
+    { "type": "url", "id": "base_path", "label": "Class page path", "default": "/classes" },
+    { "type": "text", "id": "view_all_label", "label": "View-all label", "default": "All classes" },
+    { "type": "url", "id": "view_all_href", "label": "View-all link", "default": "/classes" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "blocks": [
+    { "type": "class", "name": "Class", "settings": [
+      { "type": "entry", "id": "class", "label": "Class", "info": "Reads the same fields as the collection." }
+    ] }
+  ],
+  "presets": [
+    { "name": "All classes", "settings": { "source": "all", "classes": "classes" } },
+    { "name": "Featured", "settings": { "source": "featured", "classes": "classes", "limit": 6 } }
+  ]
+}
+</schema>

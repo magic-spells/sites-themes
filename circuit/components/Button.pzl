@@ -1,0 +1,13 @@
+<!-- component: Button -->
+<!-- The square button: uppercase, tracked, no radius. tone: primary (the
+     scheme's button), outline (a hairline in the text colour, no fill),
+     photo (light outline over a photograph), accent (the flare, black type).
+     size "small" is the 40 high button. With action set it is the primary
+     action: it links to the booking URL when one is set, otherwise to the
+     trial page, which theme.ts turns into opening the trial sheet. -->
+{#let
+  url = action ? (site.settings.booking_url || site.settings.trial_path || '/trial') : href
+  sheet = action && !site.settings.booking_url ? 'trial' : null
+  look = tone == 'outline' ? 'border-scheme-secondary-button-foreground bg-scheme-secondary-button-background text-scheme-secondary-button-foreground hover:border-scheme-secondary-button-hover-background hover:bg-scheme-secondary-button-hover-background hover:text-scheme-secondary-button-hover-foreground' : (tone == 'photo' ? 'border-on-photo bg-transparent text-on-photo hover:bg-on-photo hover:text-ink' : (tone == 'accent' ? 'border-accent bg-accent text-on-accent hover:border-on-photo hover:bg-on-photo hover:text-ink' : 'border-scheme-button-background bg-scheme-button-background text-scheme-button-foreground hover:border-scheme-button-hover-background hover:bg-scheme-button-hover-background hover:text-scheme-button-hover-foreground'))
+}
+<a class="inline-flex items-center justify-center gap-step-xs rounded-button border font-body font-bold whitespace-nowrap uppercase transition-colors duration-fast { size == 'small' ? 'min-h-control-small px-step-md text-button-small' : 'min-h-control px-button-x text-button' } { look } { wide ? 'w-full' : '' }" href="{ url }" target={ external ? '_blank' : null } rel={ external ? 'noopener' : null } data-panel-open={ sheet } aria-haspopup={ sheet ? 'dialog' : null }><Children/></a>

@@ -1,0 +1,41 @@
+<!-- A heading, a line and one email field with its button, on graphite. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-end gap-step-lg md:grid-cols-2">
+    <div class="grid gap-step-xs">
+      <h2 class="font-heading text-h2 font-black text-scheme-heading uppercase stretch-heading">{ settings.heading }</h2>
+      {#if settings.text}<p class="text-body text-scheme-muted">{ settings.text }</p>{/if}
+    </div>
+    <Form handle={ settings.form } class="grid gap-step-xs" id="newsletter-{ section.id }">
+      {#if form.sent}
+        <p class="text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
+      {:else}
+        <div class="flex flex-wrap items-end gap-step-xs">
+          {#for field in form.fields}<Field wrapper_class="min-w-0 flex-1" name={ field.id } label={ field.label } type={ field.type } required={ field.required } maxlength={ field.max_length } value={ field.value } error={ field.error } prefix="newsletter-{ section.id }" />{/for}
+          <Submit>{ form.submit_label || t('subscribe') }</Submit>
+        </div>
+        {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
+        {#if settings.note}<p class="font-mono text-spec text-scheme-meta uppercase">{ settings.note }</p>{/if}
+        <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+      {/if}
+    </Form>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Newsletter",
+  "description": "A heading and one email field.",
+  "kind": "Contact",
+  "icon": "mail",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "The weekly whiteboard" },
+    { "type": "text", "id": "text", "label": "Text", "default": "New classes, meet-ups and the odd workout, every Sunday." },
+    { "type": "form", "id": "form", "label": "Form", "default": "newsletter" },
+    { "type": "text", "id": "note", "label": "Note", "default": "One email a week. Leave any time." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "graphite" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

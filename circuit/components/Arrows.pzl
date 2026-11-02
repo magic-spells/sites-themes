@@ -1,0 +1,8 @@
+<!-- component: Arrows -->
+<!-- A carousel's previous and next buttons: 48 square, a hairline in the
+     text colour, filled on hover. They sit inside the <tarot-carousel>,
+     which finds them by their data-action attributes; hidden below 48rem. -->
+<div class="hidden shrink-0 md:flex">
+  <button class="flex size-control items-center justify-center border border-scheme-foreground text-scheme-foreground transition-colors duration-fast hover:bg-scheme-foreground hover:text-scheme-background disabled:pointer-events-none disabled:opacity-40" type="button" data-action-tarot-previous aria-label="{ t('previous') }"><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/angle-left.svg'}</span></button>
+  <button class="-ml-px flex size-control items-center justify-center border border-scheme-foreground text-scheme-foreground transition-colors duration-fast hover:bg-scheme-foreground hover:text-scheme-background disabled:pointer-events-none disabled:opacity-40" type="button" data-action-tarot-next aria-label="{ t('next') }"><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/angle-right.svg'}</span></button>
+</div>

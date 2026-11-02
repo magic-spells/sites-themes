@@ -1,0 +1,61 @@
+<!-- Meet-ups, by date ascending (the workspace removes past ones: there is no
+     clock to hide them). Cards: three across, the date block over each
+     photo. Rows: date block, title and meta, and a thumbnail. Capped with
+     "N of M" and the view-all link. On an event's page it leaves that event
+     out. -->
+{#let
+  all = settings.events.entries | sort('fields.date')
+  others = page.entry && settings.exclude_current ? (all | reject('id', page.entry.id)) : all
+  pool = settings.source == 'with_album' ? (others | where('fields.album')) : others
+  shown = pool | slice(0, Math.min(settings.limit, 12))
+  more = pool.length > shown.length
+}
+{#if shown.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.view_all_label ? (more ? t('n_of_m', { n: shown.length, m: pool.length }) + ' · ' + settings.view_all_label : settings.view_all_label) : '' } link_href={ settings.view_all_href } />
+    {#if settings.layout == 'rows'}
+      <ul class="border-t border-scheme-rule">
+        {#for entry in shown}<li><EventCard entry={ entry } layout="rows" href="{ settings.base_path }/{ entry.handle }" album_path={ settings.album_path } reveal={ site.settings.reveal } /></li>{/for}
+      </ul>
+    {:else}
+      <ul class="grid gap-x-gap-lg gap-y-step-xl md:grid-cols-2 lg:grid-cols-3">
+        {#for entry in shown}<li><EventCard entry={ entry } layout="cards" href="{ settings.base_path }/{ entry.handle }" album_path={ settings.album_path } reveal={ site.settings.reveal } /></li>{/for}
+      </ul>
+    {/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Events list",
+  "description": "Meet-ups by date: cards with a date block, or rows.",
+  "kind": "Collections",
+  "icon": "list",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Meet-ups" },
+    { "type": "text", "id": "text", "label": "Text", "default": "" },
+    { "type": "select", "id": "layout", "label": "Layout", "default": "cards", "options": [
+      { "value": "cards", "label": "Cards" },
+      { "value": "rows", "label": "Rows" }
+    ] },
+    { "type": "collection", "id": "events", "label": "Events", "info": "Reads events: title, handle, date, time, location, route, pace, image and album. Sorted by date; remove past events in the workspace." },
+    { "type": "select", "id": "source", "label": "Events shown", "default": "all", "options": [
+      { "value": "all", "label": "All" },
+      { "value": "with_album", "label": "With photos" }
+    ] },
+    { "type": "checkbox", "id": "exclude_current", "label": "Leave out the event on show", "default": true },
+    { "type": "range", "id": "limit", "label": "Limit", "min": 1, "max": 12, "step": 1, "default": 3 },
+    { "type": "url", "id": "base_path", "label": "Event page path", "default": "/events" },
+    { "type": "url", "id": "album_path", "label": "Album page path", "default": "/gallery" },
+    { "type": "text", "id": "view_all_label", "label": "View-all label", "default": "All events" },
+    { "type": "url", "id": "view_all_href", "label": "View-all link", "default": "/events" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Cards", "settings": { "layout": "cards", "events": "events" } },
+    { "name": "Rows", "settings": { "layout": "rows", "events": "events", "limit": 12 } }
+  ]
+}
+</schema>

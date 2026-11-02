@@ -1,0 +1,63 @@
+<!-- The big photos of people working out. Bento: one 4:5 tile and four 3:2
+     tiles in a two-by-two beside it (two across, then one, on smaller
+     screens). Pairs: two 3:2 across. Single: one 21:9. Gaps or none, full
+     bleed or in the column, and the wall can rise over the band above. Each
+     tile opens the lightbox; the gallery alt text is the mono caption. -->
+{#let
+  items = settings.gallery.items | slice(0, settings.layout == 'bento' ? 5 : (settings.layout == 'pairs' ? 2 : 1))
+  id = 'wall-' + section.id
+  lb = { lightbox: true, navigation: { showButtons: false, showPagination: false } }
+  gap = settings.gaps ? 'gap-gap-sm' : 'gap-0'
+  rise = settings.overlap && section.index > 0
+}
+{#if items.length}
+<section class="bg-scheme-background text-scheme-foreground { settings.full_bleed ? '' : 'px-gutter' } { rise ? 'relative z-10 -mt-step-2xl pb-section md:-mt-step-3xl' : 'py-section' }">
+  <div class="mx-auto { settings.full_bleed ? '' : 'max-w-column' }">
+    {#if settings.heading}<div class="{ settings.full_bleed ? 'px-gutter' : '' }"><SectionHead heading={ settings.heading } text={ settings.text } /></div>{/if}
+    <LightboxCompanion items={ items } id={ id }><script type="application/json" data-tarot-options>{ lb | json }</script></LightboxCompanion>
+    <ul class="grid { gap } { settings.layout == 'bento' ? 'sm:grid-cols-2 lg:grid-cols-bento lg:grid-rows-2' : (settings.layout == 'pairs' ? 'md:grid-cols-2' : '') }">
+      {#for item in items, i}
+        <li class="{ settings.layout == 'bento' && i == 0 ? 'sm:col-span-2 lg:col-span-1 lg:row-span-2' : '' }">
+          <button class="group relative block size-full cursor-zoom-in" type="button" data-lightbox-open={ id } data-index={ i } aria-label="{ t('open_photo', { index: i + 1 }) }">
+            <Photo asset={ item.asset } alt={ item.alt } ratio="{ settings.layout == 'single' ? 'aspect-video md:aspect-21/9' : (settings.layout == 'bento' && i == 0 ? 'aspect-4/5 lg:aspect-auto lg:h-full' : 'aspect-3/2') }" treatment={ settings.treatment } zoom={ true } sizes="{ settings.layout == 'single' ? '100vw' : '(min-width: 64rem) 34vw, (min-width: 40rem) 50vw, 100vw' }" width={ settings.layout == 'single' ? 2000 : 1024 }>{#if settings.show_captions && item.caption}<span class="absolute bottom-0 left-0 bg-ink/80 px-step-xs py-step-2xs font-mono text-spec text-on-photo uppercase">{ item.caption }</span>{/if}</Photo>
+          </button>
+        </li>
+      {/for}
+    </ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Photo wall",
+  "description": "Big photos: one tall and four wide, two across, or one wide, with a lightbox.",
+  "kind": "Content",
+  "icon": "images",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "" },
+    { "type": "text", "id": "text", "label": "Text", "default": "" },
+    { "type": "gallery", "id": "gallery", "label": "Gallery", "info": "Reads each item's asset, alt and caption. Bento takes five (a portrait first), pairs two, single one." },
+    { "type": "select", "id": "layout", "label": "Layout", "default": "bento", "options": [
+      { "value": "bento", "label": "Bento: one tall and four" },
+      { "value": "pairs", "label": "Pairs" },
+      { "value": "single", "label": "Single" }
+    ] },
+    { "type": "checkbox", "id": "gaps", "label": "Gaps between photos", "default": true },
+    { "type": "checkbox", "id": "full_bleed", "label": "Full bleed", "default": false },
+    { "type": "checkbox", "id": "overlap", "label": "Rise over the band above", "default": false },
+    { "type": "checkbox", "id": "show_captions", "label": "Show captions", "default": true },
+    { "type": "select", "id": "treatment", "label": "Photo treatment", "default": "natural", "options": [
+      { "value": "natural", "label": "Natural" },
+      { "value": "mono", "label": "Mono" },
+      { "value": "duotone", "label": "Duotone" }
+    ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Bento", "settings": { "layout": "bento" } },
+    { "name": "Pairs", "settings": { "layout": "pairs" } },
+    { "name": "Single", "settings": { "layout": "single", "full_bleed": true } }
+  ]
+}
+</schema>

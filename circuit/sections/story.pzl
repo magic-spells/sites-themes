@@ -1,0 +1,46 @@
+<!-- Image with text: a 3:2 photo and a 30rem text column with the big gap,
+     the picture right or left: kicker, heading (the page's h1 when it opens
+     the page), body and a link. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-center gap-step-xl md:grid-cols-2 lg:gap-step-3xl">
+    <div class="grid max-w-text content-start gap-step-md { settings.image_side == 'left' ? 'md:order-2' : '' }">
+      {#if settings.kicker}<p class="font-mono text-overline font-medium text-scheme-meta uppercase">{ settings.kicker }</p>{/if}
+      {#if section.index == 0}<h1 class="font-heading text-h1 font-black text-balance text-scheme-heading uppercase stretch-heading">{ settings.heading }</h1>
+      {:else}<h2 class="font-heading text-h2 font-black text-balance text-scheme-heading uppercase stretch-heading">{ settings.heading }</h2>{/if}
+      <div class="sites-prose text-scheme-muted">{ settings.body }</div>
+      {#if settings.link_label && settings.link}<a class="font-mono text-spec font-medium text-scheme-links uppercase hover:underline" href="{ settings.link }">{ settings.link_label }</a>{/if}
+    </div>
+    <div class="{ settings.image_side == 'left' ? 'md:order-1' : '' }"><Photo asset={ settings.image } alt={ settings.image.alt } ratio="aspect-3/2" treatment={ settings.treatment } eager={ section.index == 0 } sizes="(min-width: 48rem) 45vw, 90vw" /></div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Story",
+  "description": "A photo beside a heading, text and a link.",
+  "kind": "Content",
+  "icon": "image",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Since 2014" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Two racks and a borrowed rower" },
+    { "type": "richtext", "id": "body", "label": "Text", "default": "<p>Common Ground started in a lock-up on Foundry Lane with two racks, a borrowed rower and six members. It is still on Foundry Lane, with a lot more racks, a studio by the river and a run club that meets every Saturday whatever the weather.</p><p>Every class is coached. Nobody is a number. Everyone is welcome.</p>" },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "Meet the coaches" },
+    { "type": "url", "id": "link", "label": "Link", "default": "/coaches" },
+    { "type": "image", "id": "image", "label": "Image (3:2)" },
+    { "type": "select", "id": "image_side", "label": "Image side", "default": "right", "options": [
+      { "value": "right", "label": "Right" },
+      { "value": "left", "label": "Left" }
+    ] },
+    { "type": "select", "id": "treatment", "label": "Photo treatment", "default": "natural", "options": [
+      { "value": "natural", "label": "Natural" },
+      { "value": "mono", "label": "Mono" },
+      { "value": "duotone", "label": "Duotone" }
+    ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Picture right", "settings": { "image_side": "right" } },
+    { "name": "Picture left", "settings": { "image_side": "left" } }
+  ]
+}
+</schema>

@@ -1,0 +1,17 @@
+<!-- component: CoachCard -->
+<!-- A coach: the 4:5 portrait (mono optional; hover flare floods it with the
+     accent), the name in Archivo 800 uppercase, the role in mono, the
+     specialties as chips. The whole card links to the coach's page. -->
+{#let f = entry.fields}
+<a class="group grid content-start gap-step-sm { reveal ? 'reveal reveal-fade-up' : '' }" href="{ href }">
+  <span class="relative block">
+    <Photo asset={ f.image } alt={ f.image_alt } ratio="aspect-4/5" treatment={ treatment } zoom={ true } sizes="(min-width: 64rem) 22vw, (min-width: 48rem) 45vw, 90vw">{#if hover == 'flare'}<span class="absolute inset-0 bg-accent opacity-0 mix-blend-multiply transition-opacity duration-hover group-hover:opacity-100" aria-hidden="true"></span>{/if}</Photo>
+  </span>
+  <span class="grid gap-step-2xs">
+    <span class="font-heading text-h4 font-extrabold text-scheme-heading uppercase stretch-heading">{ entry.title }</span>
+    {#if f.role}<span class="font-mono text-spec font-medium text-scheme-meta uppercase">{ f.role }</span>{/if}
+  </span>
+  {#if show_specialties && f.specialties}
+    <span class="flex flex-wrap gap-step-2xs">{#for s in f.specialties | split(',')}<span class="inline-flex min-h-tag items-center rounded-chip border border-scheme-rule bg-scheme-surface-2 px-step-xs font-mono text-spec text-scheme-muted uppercase">{ s | strip }</span>{/for}</span>
+  {/if}
+</a>

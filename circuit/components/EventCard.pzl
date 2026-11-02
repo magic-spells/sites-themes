@@ -1,0 +1,32 @@
+<!-- component: EventCard -->
+<!-- A meet-up. Cards: a 3:2 photo with the date block over its top-left
+     corner, the title, time and place in Spec, route and pace in mono,
+     Details and (with an album) Photos. Rows: the date block, the title and
+     meta, and the thumbnail on the right, which every row keeps. -->
+{#let
+  f = entry.fields
+  place = f.location ? f.location.title : ''
+}
+{#if layout == 'rows'}
+<article class="grid grid-cols-meta items-start gap-step-md border-b border-scheme-rule py-step-md md:grid-cols-row { reveal ? 'reveal reveal-fade-up' : '' }">
+  <DateBlock value={ f.date } />
+  <div class="grid gap-step-xs">
+    <h3 class="font-heading text-h4 font-extrabold text-scheme-heading uppercase stretch-heading"><a class="hover:underline" href="{ href }">{ entry.title }</a></h3>
+    <p class="font-mono text-spec text-scheme-meta uppercase">{ f.time }{#if place} · { place }{/if}</p>
+    {#if f.route}<p class="font-mono text-body-xs text-scheme-muted">{ f.route }</p>{/if}
+    <p class="flex flex-wrap gap-x-step-md font-mono text-spec font-medium uppercase"><a class="text-scheme-links hover:underline" href="{ href }">{ t('details') }</a>{#if f.album && album_path}<a class="text-scheme-links hover:underline" href="{ album_path }/{ f.album.handle }">{ t('photos') }</a>{/if}</p>
+  </div>
+  <a class="hidden w-thumb md:block" href="{ href }" tabindex="-1" aria-hidden="true"><Photo asset={ f.image } alt="" ratio="aspect-3/2" width={ 320 } sizes="6rem" /></a>
+</article>
+{:else}
+<article class="grid content-start gap-step-sm { reveal ? 'reveal reveal-fade-up' : '' }">
+  <a class="group relative block" href="{ href }" tabindex="-1" aria-hidden="true">
+    <Photo asset={ f.image } alt="" ratio="aspect-3/2" zoom={ true } sizes="(min-width: 64rem) 30vw, (min-width: 48rem) 45vw, 90vw" />
+    <span class="absolute top-0 left-0"><DateBlock value={ f.date } /></span>
+  </a>
+  <h3 class="font-heading text-h4 font-extrabold text-scheme-heading uppercase stretch-heading"><a class="hover:underline" href="{ href }">{ entry.title }</a></h3>
+  <p class="font-mono text-spec text-scheme-meta uppercase">{ f.time }{#if place} · { place }{/if}</p>
+  {#if f.route || f.pace}<p class="grid gap-step-2xs font-mono text-body-xs text-scheme-muted">{#if f.route}<span>{ f.route }</span>{/if}{#if f.pace}<span>{ f.pace }</span>{/if}</p>{/if}
+  <p class="flex flex-wrap gap-x-step-md font-mono text-spec font-medium uppercase"><a class="text-scheme-links hover:underline" href="{ href }">{ t('details') }</a>{#if f.album && album_path}<a class="text-scheme-links hover:underline" href="{ album_path }/{ f.album.handle }">{ t('photos') }</a>{/if}</p>
+</article>
+{/if}

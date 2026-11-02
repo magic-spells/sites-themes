@@ -1,0 +1,5 @@
+<!-- component: Ticks -->
+<!-- Intensity as three ticks inside a spec cell: filled in the accent up to
+     the level, a hairline for the rest. A glyph in a cell, never an edge. -->
+{#let n = intensity == 'high' ? 3 : (intensity == 'moderate' ? 2 : (intensity == 'low' ? 1 : 0))}
+<span class="inline-flex items-center gap-step-2xs"><span class="inline-flex gap-0.5" aria-hidden="true">{#for 1...3, k}<span class="h-tick-h w-tick-w border { k <= n ? 'border-accent bg-accent' : 'border-scheme-meta' }"></span>{/for}</span><span class="sr-only">{ t('intensity_label', { level: t('intensity.' + intensity) }) }</span></span>

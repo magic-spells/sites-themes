@@ -1,0 +1,28 @@
+<!-- component: ClassCard -->
+<!-- The signature card: the photo on top flush to the edges with the tag
+     pill over its corner, then the name, the summary and the coach, then the
+     spec strip of three hairline cells (duration, intensity ticks, level).
+     A hairline frame, no radius, no shadow; the whole card is one link.
+     Hover scales the photo inside its well and flips the tag to black. -->
+{#let
+  f = entry.fields
+  coach = f.coach
+}
+<a class="group grid h-full grid-rows-card border border-scheme-rule bg-scheme-surface text-scheme-foreground { reveal ? 'reveal reveal-fade-up' : '' }" href="{ href }">
+  <span class="relative block">
+    <Photo asset={ f.image } alt={ f.image_alt } ratio="aspect-3/2" treatment={ treatment } zoom={ true } sizes="(min-width: 64rem) 30vw, (min-width: 48rem) 45vw, 90vw" />
+    {#if f.tag}<span class="absolute top-step-sm left-step-sm inline-flex min-h-tag items-center rounded-chip bg-accent px-step-xs font-mono text-spec font-medium text-on-accent uppercase transition-colors duration-fast group-hover:bg-ink group-hover:text-on-photo">{ f.tag }</span>{/if}
+  </span>
+  <span class="grid content-start gap-step-xs p-step-md">
+    <span class="font-heading text-h4 font-extrabold text-scheme-heading uppercase stretch-heading">{ entry.title }</span>
+    {#if f.summary}<span class="text-body-sm text-scheme-muted">{ f.summary }</span>{/if}
+    {#if show_coach && coach}<span class="font-mono text-spec text-scheme-meta uppercase">{ t('with_coach', { name: coach.title }) }</span>{/if}
+  </span>
+  {#if show_specs}
+    <span class="grid grid-cols-3 border-t border-scheme-rule font-mono text-spec font-medium uppercase">
+      <span class="flex min-h-cell items-center px-step-sm">{ t('minutes_short', { n: f.duration_minutes }) }</span>
+      <span class="flex min-h-cell items-center border-l border-scheme-rule px-step-sm"><Ticks intensity={ f.intensity } /></span>
+      <span class="flex min-h-cell items-center border-l border-scheme-rule px-step-sm">{ t('level_short.' + f.level) }</span>
+    </span>
+  {/if}
+</a>

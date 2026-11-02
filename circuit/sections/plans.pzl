@@ -1,0 +1,86 @@
+<!-- Memberships and packages. Cards: three across (a row you swipe on a
+     phone), the featured plan raised and inverted. Table: plans across the
+     top and every feature line down the side, a check where a plan has it,
+     for a workspace with many tiers. -->
+{#let
+  all = settings.plans.entries | sort('fields.order')
+  shown = settings.source == 'listed' ? blocks : (all | slice(0, 12))
+  dark = settings.color_scheme == 'black' || settings.color_scheme == 'graphite'
+  invert = dark ? 'sites-scheme-white' : 'sites-scheme-black'
+  features = all | map('fields.features') | join('\n') | split('\n') | uniq
+}
+{#if shown.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    {#if settings.layout == 'table'}
+      <div class="-mx-gutter overflow-x-auto px-gutter md:mx-0 md:px-0">
+        <table class="w-full min-w-wide border-collapse text-left">
+          <caption class="sr-only">{ settings.heading }</caption>
+          <thead>
+            <tr class="border-b-2 border-scheme-foreground align-bottom">
+              <td></td>
+              {#for plan in all}<th class="px-step-sm py-step-sm" scope="col"><span class="block font-heading text-body leading-tight font-extrabold uppercase stretch-heading">{ plan.title }</span><span class="font-mono text-body-sm">{ plan.fields.period == 'free' || plan.fields.price == 0 ? t('free') : plan.fields.price | currency(site.settings.currency_symbol, 0) }{#if plan.fields.period != 'free' && plan.fields.price != 0} / { t('period.' + plan.fields.period) }{/if}</span></th>{/for}
+            </tr>
+          </thead>
+          <tbody class="font-mono text-body-sm">
+            {#for line in features}{#if line | strip}
+              <tr class="border-b border-scheme-rule">
+                <th class="py-step-xs pr-step-md font-normal" scope="row">{ line | strip }</th>
+                {#for plan in all}<td class="px-step-sm py-step-xs">{#if contains(plan.fields.features | split('\n'), line)}<span class="sites-icon block size-icon-small text-scheme-heading" aria-hidden="true">{#svg 'icons/check.svg'}</span><span class="sr-only">{ t('included') }</span>{:else}<span class="text-scheme-meta" aria-hidden="true">–</span><span class="sr-only">{ t('not_included') }</span>{/if}</td>{/for}
+              </tr>
+            {/if}{/for}
+          </tbody>
+        </table>
+      </div>
+    {:else}
+      <ul class="-mx-gutter flex snap-x snap-mandatory gap-gap-lg overflow-x-auto px-gutter pb-step-xs md:mx-0 md:grid md:overflow-visible md:px-0 md:pb-0 md:py-step-md { settings.columns == '2' ? 'md:grid-cols-2' : (settings.columns == '4' ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3') }" data-strip>
+        {#if settings.source == 'listed'}
+          {#for block in blocks}{#if block.settings.plan}<li class="w-4/5 shrink-0 snap-start md:w-auto" data-block={ block.editor_id }><PlanCard entry={ block.settings.plan } featured={ block.settings.plan.fields.featured } invert={ invert } raise={ true } show_note={ settings.show_note } action_label={ settings.action_label } /></li>{/if}{/for}
+        {:else}
+          {#for plan in shown}<li class="w-4/5 shrink-0 snap-start md:w-auto"><PlanCard entry={ plan } featured={ plan.fields.featured } invert={ invert } raise={ true } show_note={ settings.show_note } action_label={ settings.action_label } /></li>{/for}
+        {/if}
+      </ul>
+    {/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Plans",
+  "description": "Memberships or packages as cards with the featured one raised, or a comparison table.",
+  "kind": "Collections",
+  "icon": "list",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Memberships" },
+    { "type": "text", "id": "text", "label": "Text", "default": "Month to month. Your first class is free on every plan." },
+    { "type": "select", "id": "layout", "label": "Layout", "default": "cards", "options": [
+      { "value": "cards", "label": "Cards" },
+      { "value": "table", "label": "Comparison table" }
+    ] },
+    { "type": "collection", "id": "plans", "label": "Plans", "info": "Reads plans: title, price, period (month, week, session, pack, once, free), summary, features (one per line), featured, note, link and order." },
+    { "type": "select", "id": "source", "label": "Plans shown", "default": "all", "options": [
+      { "value": "all", "label": "All" },
+      { "value": "listed", "label": "Listed below" }
+    ], "info": "The table always compares every plan." },
+    { "type": "select", "id": "columns", "label": "Columns", "default": "3", "options": [
+      { "value": "2", "label": "2" },
+      { "value": "3", "label": "3" },
+      { "value": "4", "label": "4" }
+    ] },
+    { "type": "checkbox", "id": "show_note", "label": "Show each plan's note", "default": true },
+    { "type": "text", "id": "action_label", "label": "Button label", "default": "", "info": "For plans without their own checkout link. Leave empty to use the Floor setting." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "black" }
+  ],
+  "blocks": [
+    { "type": "plan", "name": "Plan", "settings": [
+      { "type": "entry", "id": "plan", "label": "Plan", "info": "Reads the same fields as the collection." }
+    ] }
+  ],
+  "presets": [
+    { "name": "Cards", "settings": { "layout": "cards", "plans": "plans" } },
+    { "name": "Table", "settings": { "layout": "table", "plans": "plans", "color_scheme": "concrete" } }
+  ]
+}
+</schema>

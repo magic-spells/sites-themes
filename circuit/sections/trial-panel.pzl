@@ -1,0 +1,51 @@
+<!-- The trial sheet behind every primary action: the trial form in a
+     <bottom-sheet>, full width on a phone and a 35rem column from 48rem. It
+     drags down to dismiss and hands focus back to the button that opened
+     it. With a booking URL set every primary action links out instead and
+     this sheet never opens. -->
+{#let note = settings.note || site.settings.trial_note}
+<dialog-panel>
+  <dialog class="text-scheme-foreground md:mx-auto md:max-w-panel" aria-labelledby="trial-title">
+    <bottom-sheet id="trial">
+      <bottom-sheet-header class="flex items-start justify-between gap-step-md pt-step-md">
+        <div class="grid gap-step-xs">
+          <h2 class="font-heading text-h3 font-black text-scheme-heading uppercase stretch-heading" id="trial-title">{ settings.heading || site.settings.action_label }</h2>
+          {#if settings.text}<p class="text-body-sm text-scheme-muted">{ settings.text }</p>{/if}
+        </div>
+        <button class="-m-step-xs flex size-icon-button shrink-0 items-center justify-center text-scheme-muted hover:text-scheme-foreground" type="button" data-action-hide-dialog><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/close.svg'}</span><span class="sr-only">{ t('close') }</span></button>
+      </bottom-sheet-header>
+      <bottom-sheet-content>
+        <Form handle={ settings.form || site.settings.trial_form } class="grid gap-step-md" id="trial-form">
+          {#if form.sent}
+            <p class="text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
+          {:else}
+            {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
+            <FormFields fields={ form.fields } prefix="trial" compact={ true } />
+            <Submit wide={ true }>{ form.submit_label || site.settings.action_label }</Submit>
+            {#if note}<p class="font-mono text-spec text-scheme-meta uppercase">{ note }</p>{/if}
+            <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+          {/if}
+        </Form>
+      </bottom-sheet-content>
+    </bottom-sheet>
+  </dialog>
+</dialog-panel>
+
+<schema>
+{
+  "name": "Trial panel",
+  "description": "The trial form as a bottom sheet, opened by every primary action.",
+  "kind": "Panels",
+  "icon": "panel-bottom",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "", "info": "Leave empty to use the primary action label." },
+    { "type": "text", "id": "text", "label": "Text", "default": "Your first class is on us. Tell us a little and a coach will call to book it." },
+    { "type": "form", "id": "form", "label": "Form", "default": "trial", "info": "Reads name, email, phone, goal, class, location and notes; selects become drop-downs and a one-option select is sent hidden." },
+    { "type": "textarea", "id": "note", "label": "Note", "default": "", "info": "Leave empty to use the Floor note." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" } }
+  ]
+}
+</schema>

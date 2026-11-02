@@ -1,0 +1,53 @@
+<!-- The coach page's head: the coach-feature layout for the page's coach,
+     with a back link. "Classes with <name>" and the rest follow as their own
+     sections (class-grid set to this coach's classes). -->
+{#let
+  coach = page.entry
+  f = coach.fields
+  action = settings.action_label || site.settings.action_label
+}
+{#if coach}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-step-lg">
+    {#if settings.back_label}<a class="justify-self-start font-mono text-spec font-medium text-scheme-links uppercase hover:underline" href="{ settings.back_href }">← { settings.back_label }</a>{/if}
+    <div class="grid items-start gap-step-xl md:grid-cols-2 lg:gap-step-3xl">
+      <Photo asset={ f.image } alt={ f.image_alt } ratio="aspect-4/5" treatment={ settings.treatment } eager={ true } sizes="(min-width: 48rem) 45vw, 90vw" />
+      <div class="grid max-w-text content-start gap-step-md">
+        <h1 class="font-heading text-h1 font-black text-balance text-scheme-heading uppercase stretch-heading">{ coach.title }</h1>
+        {#if f.role}<p class="font-mono text-spec font-medium text-scheme-links uppercase">{ f.role }</p>{/if}
+        {#if f.bio}<div class="sites-prose text-scheme-muted">{ f.bio }</div>{/if}
+        {#if f.credentials}<ul class="grid gap-step-2xs border-t border-scheme-rule pt-step-sm font-mono text-body-xs uppercase">{#for line in f.credentials | split('\n')}{#if line | strip}<li class="grid grid-cols-check gap-step-xs"><span class="sites-icon mt-0.5 size-icon-small text-accent" aria-hidden="true">{#svg 'icons/check.svg'}</span>{ line | strip }</li>{/if}{/for}</ul>{/if}
+        {#if f.specialties}<p class="flex flex-wrap gap-step-2xs">{#for s in f.specialties | split(',')}<span class="inline-flex min-h-tag items-center rounded-chip border border-scheme-rule bg-scheme-surface-2 px-step-xs font-mono text-spec text-scheme-muted uppercase">{ s | strip }</span>{/for}</p>{/if}
+        <div class="flex flex-wrap gap-step-xs pt-step-xs">
+          {#if action}<Button action={ true }>{ action }</Button>{/if}
+          {#if f.link}<Button href={ f.link } tone="outline" external={ true }>{ t('follow') }</Button>{/if}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Coach detail",
+  "description": "The coach page's head: portrait, bio, credentials and the primary action.",
+  "kind": "Content",
+  "icon": "file-text",
+  "templates": ["coach"],
+  "settings": [
+    { "type": "text", "id": "action_label", "label": "Action label", "default": "Book a session" },
+    { "type": "text", "id": "back_label", "label": "Back link label", "default": "All coaches" },
+    { "type": "url", "id": "back_href", "label": "Back link", "default": "/coaches" },
+    { "type": "select", "id": "treatment", "label": "Photo treatment", "default": "natural", "options": [
+      { "value": "natural", "label": "Natural" },
+      { "value": "mono", "label": "Mono" },
+      { "value": "duotone", "label": "Duotone" }
+    ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

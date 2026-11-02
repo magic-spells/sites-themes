@@ -1,0 +1,128 @@
+<!-- The opener. Cover: a full-bleed photo (or a muted looping video with the
+     photo as its poster, the poster alone under reduced motion, or a tarot
+     fade slideshow) under a black scrim, the headline in the display face
+     with its last word slashed in flare, a line, the primary action and a
+     secondary, an optional mono strip, the ghost word behind. Tall caps at
+     80svh from 64rem; on a phone the content sets the height. Split: the
+     headline left, a 4:5 photo right with a flare block offset behind it.
+     The headline is the page's h1 when the hero opens the page. -->
+{#let
+  words = settings.heading | strip | split(' ')
+  last = settings.slash_last && words.length > 1 ? words | last : ''
+  lead = last ? (settings.heading | strip | slice(0, size(settings.heading | strip) - size(last))) : settings.heading
+  tag = section.index == 0 ? 'h1' : 'h2'
+  action = settings.action_label || site.settings.action_label
+  ghost = settings.ghost_word || site.settings.ghost_word
+  slides = settings.slideshow && settings.gallery ? settings.gallery.items : []
+  id = 'hero-' + section.id
+  options = { effect: 'fade', loop: true, autoplay: { interval: settings.interval * 1000 }, navigation: { showButtons: false, showPagination: false } }
+}
+{#if settings.layout == 'split'}
+<section class="overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground" data-layout="split" data-texture={ settings.texture }>
+  <div class="mx-auto grid max-w-column items-center gap-step-2xl md:grid-cols-2">
+    <div class="grid justify-items-start gap-step-md { settings.photo_side == 'left' ? 'md:order-2' : '' }">
+      {#if settings.kicker}<p class="font-mono text-overline font-medium text-scheme-meta uppercase">{ settings.kicker }</p>{/if}
+      {#if tag == 'h1'}<h1 class="max-w-headline font-heading text-display font-black text-balance text-scheme-heading uppercase stretch-display">{ lead }{#if last}<span class="slashed">{ last }</span>{/if}</h1>
+      {:else}<h2 class="max-w-headline font-heading text-display font-black text-balance text-scheme-heading uppercase stretch-display">{ lead }{#if last}<span class="slashed">{ last }</span>{/if}</h2>{/if}
+      {#if settings.text}<p class="max-w-lede text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+      <div class="flex flex-wrap gap-step-xs">
+        {#if settings.show_action && action}<Button action={ true }>{ action }</Button>{/if}
+        {#if settings.secondary_label && settings.secondary_link}<Button href={ settings.secondary_link } tone="outline">{ settings.secondary_label }</Button>{/if}
+      </div>
+      {#if settings.show_strip && settings.strip}<p class="flex flex-wrap gap-x-step-md gap-y-step-2xs border-t border-scheme-rule pt-step-sm font-mono text-spec text-scheme-muted uppercase">{ settings.strip }</p>{/if}
+    </div>
+    <div class="relative isolate { settings.photo_side == 'left' ? 'md:order-1' : '' }">
+      <span class="absolute inset-0 -z-10 translate-x-step-md translate-y-step-md bg-accent" aria-hidden="true"></span>
+      <Photo asset={ settings.image } alt={ settings.image.alt } ratio="aspect-4/5" treatment={ settings.treatment } eager={ section.index == 0 } sizes="(min-width: 48rem) 45vw, 90vw" />
+      <span class="absolute top-1/2 -left-step-xl h-step-sm w-1/3 -rotate-12 bg-accent" aria-hidden="true"></span>
+    </div>
+  </div>
+</section>
+{:else}
+<section class="relative isolate flex overflow-hidden bg-scheme-background pt-header text-on-photo { settings.height == 'full' ? 'lg:min-h-hero-full' : 'lg:min-h-hero-tall' }" data-layout="cover" data-texture={ settings.texture }>
+  {#if slides.length}
+    <tarot-carousel class="absolute inset-0 -z-30 block" id={ id } data-on-photo>
+      <script type="application/json" data-tarot-options>{ options | json }</script>
+      <tarot-viewport class="block h-full">
+        <tarot-track class="h-full">
+          {#for item in slides, i}<tarot-slide class="h-full"><img class="size-full object-cover { settings.treatment != 'natural' ? 'grayscale' : '' }" src="{ image_url(item.asset, 2000) }" srcset="{ image_srcset(item.asset, [768, 1280, 2000, 2560]) }" sizes="100vw" alt="{ item.alt }" loading="{ i == 0 ? 'eager' : 'lazy' }" width={ item.asset.width } height={ item.asset.height } /></tarot-slide>{/for}
+        </tarot-track>
+      </tarot-viewport>
+    </tarot-carousel>
+  {:else if settings.image}
+    <img class="absolute inset-0 -z-30 size-full object-cover { settings.treatment != 'natural' ? 'grayscale' : '' }" src="{ image_url(settings.image, 2000) }" srcset="{ image_srcset(settings.image, [768, 1280, 2000, 2560]) }" sizes="100vw" alt="{ settings.image.alt }" fetchpriority={ section.index == 0 ? 'high' : null } width={ settings.image.width } height={ settings.image.height } />
+    {#if settings.video}<video class="absolute inset-0 -z-30 size-full object-cover" data-hero-video src="{ settings.video.url }" poster="{ image_url(settings.image, 2000) }" autoplay muted loop playsinline aria-hidden="true"></video>{/if}
+  {/if}
+  {#if settings.treatment == 'duotone'}<span class="absolute inset-0 -z-20 bg-accent mix-blend-multiply" aria-hidden="true"></span>{/if}
+  <span class="absolute inset-0 -z-20 bg-linear-to-t from-ink/90 via-ink/45 to-ink/55" aria-hidden="true"></span>
+  {#if settings.show_ghost && ghost}<span class="pointer-events-none absolute top-step-3xl left-gutter -z-10 font-heading text-ghost font-black whitespace-nowrap uppercase select-none ghost-stroke stretch-display" aria-hidden="true">{ ghost }</span>{/if}
+  <span class="absolute top-1/4 right-0 -z-10 h-step-md w-1/2 origin-right translate-x-1/5 -rotate-12 bg-accent" aria-hidden="true"></span>
+  <div class="mx-auto grid w-full max-w-column content-end justify-items-start gap-step-md self-end px-gutter pt-step-3xl pb-step-xl">
+    {#if settings.kicker}<p class="font-mono text-overline font-medium uppercase">{ settings.kicker }</p>{/if}
+    {#if tag == 'h1'}<h1 class="max-w-headline font-heading text-display font-black text-balance uppercase stretch-display">{ lead }{#if last}<span class="slashed">{ last }</span>{/if}</h1>
+    {:else}<h2 class="max-w-headline font-heading text-display font-black text-balance uppercase stretch-display">{ lead }{#if last}<span class="slashed">{ last }</span>{/if}</h2>{/if}
+    {#if settings.text}<p class="max-w-lede text-body-lg text-pretty text-on-photo/85">{ settings.text }</p>{/if}
+    <div class="flex flex-wrap gap-step-xs">
+      {#if settings.show_action && action}<Button action={ true } tone="accent">{ action }</Button>{/if}
+      {#if settings.secondary_label && settings.secondary_link}<Button href={ settings.secondary_link } tone="photo">{ settings.secondary_label }</Button>{/if}
+    </div>
+    {#if settings.show_strip && settings.strip}<p class="w-full border-t border-on-photo/25 pt-step-sm font-mono text-spec text-on-photo/85 uppercase">{ settings.strip }</p>{/if}
+    {#if slides.length > 1}<button class="flex size-control-small items-center justify-center self-end justify-self-end border border-on-photo/40 hover:bg-on-photo hover:text-ink" type="button" data-autoplay-toggle={ id } data-interval={ settings.interval * 1000 } aria-pressed="false"><span class="sites-icon size-icon-small" aria-hidden="true">{#svg 'icons/pause.svg'}</span><span class="sr-only">{ t('pause_slideshow') }</span></button>{/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Hero",
+  "description": "The opener: a full-bleed photo, video or slideshow under a scrim, or a headline beside a 4:5 photo.",
+  "kind": "Hero",
+  "icon": "image",
+  "settings": [
+    { "type": "select", "id": "layout", "label": "Layout", "default": "cover", "options": [
+      { "value": "cover", "label": "Cover" },
+      { "value": "split", "label": "Split" }
+    ] },
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Train with people who show up" },
+    { "type": "checkbox", "id": "slash_last", "label": "Slash the last word", "default": true, "info": "Underlines the heading's last word with the flare slash." },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Coached strength and conditioning in Marlow Bridge, and a free run club from the river gate every Saturday." },
+    { "type": "checkbox", "id": "show_action", "label": "Show primary action", "default": true },
+    { "type": "text", "id": "action_label", "label": "Action label", "default": "", "info": "Leave empty to use the Floor setting." },
+    { "type": "text", "id": "secondary_label", "label": "Second button label", "default": "See the timetable" },
+    { "type": "url", "id": "secondary_link", "label": "Second button link", "default": "/timetable" },
+    { "type": "checkbox", "id": "show_strip", "label": "Show the strip", "default": true },
+    { "type": "text", "id": "strip", "label": "Strip", "default": "06:00–22:00 · 2 locations · 75 classes a week" },
+    { "type": "image", "id": "image", "label": "Image", "info": "Cover: landscape, at least 2000 wide. Split: portrait 4:5. Also the video's poster." },
+    { "type": "video", "id": "video", "label": "Video", "info": "Cover only: plays muted on a loop over the image. Visitors who ask for reduced motion see the image." },
+    { "type": "checkbox", "id": "slideshow", "label": "Slideshow", "default": false, "info": "Cover only: fades through the gallery instead of the image." },
+    { "type": "gallery", "id": "gallery", "label": "Slideshow gallery", "info": "Reads each item's asset and alt." },
+    { "type": "range", "id": "interval", "label": "Seconds per slide", "min": 3, "max": 10, "step": 1, "default": 6 },
+    { "type": "select", "id": "height", "label": "Height", "default": "tall", "options": [
+      { "value": "tall", "label": "Tall (80% of the screen)" },
+      { "value": "full", "label": "Full screen" }
+    ], "info": "From 64rem only; on a phone the content sets the height." },
+    { "type": "select", "id": "photo_side", "label": "Photo side (split)", "default": "right", "options": [
+      { "value": "right", "label": "Right" },
+      { "value": "left", "label": "Left" }
+    ] },
+    { "type": "select", "id": "treatment", "label": "Photo treatment", "default": "natural", "options": [
+      { "value": "natural", "label": "Natural" },
+      { "value": "mono", "label": "Mono" },
+      { "value": "duotone", "label": "Duotone" }
+    ] },
+    { "type": "select", "id": "texture", "label": "Texture", "default": "none", "options": [
+      { "value": "none", "label": "None" },
+      { "value": "halftone", "label": "Halftone" },
+      { "value": "grain", "label": "Grain" }
+    ] },
+    { "type": "checkbox", "id": "show_ghost", "label": "Show the ghost word", "default": true, "info": "Cover only." },
+    { "type": "text", "id": "ghost_word", "label": "Ghost word", "default": "", "info": "Leave empty to use the Brand ghost word." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "black" }
+  ],
+  "presets": [
+    { "name": "Cover", "settings": { "layout": "cover", "color_scheme": "black" } },
+    { "name": "Split", "settings": { "layout": "split", "show_ghost": false, "show_strip": false, "color_scheme": "black" } }
+  ]
+}
+</schema>

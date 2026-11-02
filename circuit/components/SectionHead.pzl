@@ -1,0 +1,17 @@
+<!-- component: SectionHead -->
+<!-- A section's heading row: the heading in h2
+     (uppercase, the display face at width 112) and a line under it on the
+     left; the view-all link and anything the section passes in (carousel
+     arrows) on the right, on the heading's baseline. -->
+{#if heading || link_label}
+<div class="mb-step-xl flex flex-wrap items-end justify-between gap-x-step-lg gap-y-step-sm { inset ? 'px-gutter md:px-0' : '' }">
+  <div class="grid max-w-reading gap-step-xs">
+    {#if heading}<h2 class="font-heading text-h2 font-black text-balance text-scheme-heading uppercase stretch-heading" id={ id }>{ heading }</h2>{/if}
+    {#if text}<p class="text-body text-pretty text-scheme-muted">{ text }</p>{/if}
+  </div>
+  <div class="flex shrink-0 items-center gap-step-md">
+    {#if link_label && link_href}<a class="group inline-flex min-h-icon-button items-center gap-step-2xs font-mono text-spec font-medium whitespace-nowrap text-scheme-links uppercase" href="{ link_href }"><span class="underline-offset-4 group-hover:underline">{ link_label }</span><span class="sites-icon size-icon-small" aria-hidden="true">{#svg 'icons/chevrons.svg'}</span></a>{/if}
+    <Children/>
+  </div>
+</div>
+{/if}

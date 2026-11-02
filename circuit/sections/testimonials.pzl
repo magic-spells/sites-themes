@@ -1,0 +1,74 @@
+<!-- What members say. Carousel: a tarot one-up, the quote in Archivo 600 at
+     h3, the name and a mono line ("Member since 2023"), an optional square
+     portrait, arrows and a counter. Grid: three across. -->
+{#let
+  id = 'quotes-' + section.id
+  options = { slidesPerView: 1, gap: '1.5rem', loop: true, navigation: { showButtons: true, showPagination: false } }
+}
+{#if blocks.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    {#if settings.layout == 'grid'}
+      <SectionHead heading={ settings.heading } />
+      <ul class="grid gap-gap-lg md:grid-cols-2 lg:grid-cols-3">
+        {#for block in blocks}
+          {#let b = block.settings}
+          <li class="flex flex-col gap-step-md border-t-2 border-scheme-foreground pt-step-md" data-block={ block.editor_id }>
+            <blockquote class="flex-1 text-body-lg font-medium text-pretty">“{ b.quote }”</blockquote>
+            <p class="flex items-center gap-step-sm">{#if b.image}<span class="block w-portrait shrink-0"><Photo asset={ b.image } alt="" ratio="aspect-square" width={ 320 } sizes="4rem" /></span>{/if}<span class="grid gap-step-2xs"><span class="text-body-sm font-bold uppercase">{ b.name }</span>{#if b.line}<span class="font-mono text-spec text-scheme-meta uppercase">{ b.line }</span>{/if}</span></p>
+          </li>
+        {/for}
+      </ul>
+    {:else}
+      <tarot-carousel class="block max-w-wide" id={ id }>
+        <script type="application/json" data-tarot-options>{ options | json }</script>
+        {#if settings.heading}<h2 class="mb-step-lg font-mono text-overline font-medium text-scheme-meta uppercase">{ settings.heading }</h2>{/if}
+        <tarot-viewport><tarot-track>
+          {#for block in blocks}
+            {#let b = block.settings}
+            <tarot-slide data-block={ block.editor_id }>
+              <figure class="grid gap-step-lg">
+                <blockquote class="font-body text-h3 font-semibold text-balance">“{ b.quote }”</blockquote>
+                <figcaption class="flex items-center gap-step-sm">{#if b.image}<span class="block w-portrait shrink-0"><Photo asset={ b.image } alt="" ratio="aspect-square" width={ 320 } sizes="4rem" /></span>{/if}<span class="grid gap-step-2xs"><span class="text-body font-bold uppercase">{ b.name }</span>{#if b.line}<span class="font-mono text-spec text-scheme-meta uppercase">{ b.line }</span>{/if}</span></figcaption>
+              </figure>
+            </tarot-slide>
+          {/for}
+        </tarot-track></tarot-viewport>
+        {#if blocks.length > 1}<div class="mt-step-lg flex justify-end border-t border-scheme-rule pt-step-md"><Arrows /></div>{/if}
+      </tarot-carousel>
+    {/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Testimonials",
+  "description": "Members in their own words: one at a time, or three across.",
+  "kind": "Content",
+  "icon": "align-left",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Members" },
+    { "type": "select", "id": "layout", "label": "Layout", "default": "carousel", "options": [
+      { "value": "carousel", "label": "One at a time" },
+      { "value": "grid", "label": "Grid" }
+    ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "blocks": [
+    { "type": "quote", "name": "Quote", "settings": [
+      { "type": "textarea", "id": "quote", "label": "Quote", "default": "I came for the free class and never left." },
+      { "type": "text", "id": "name", "label": "Name", "default": "Amira K." },
+      { "type": "text", "id": "line", "label": "Line", "default": "Member since 2023" },
+      { "type": "image", "id": "image", "label": "Portrait (square)" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Carousel", "settings": { "layout": "carousel" }, "blocks": [
+      { "type": "quote", "settings": { "quote": "I came for the free class and never left. Dana had me deadlifting my bodyweight by the summer.", "name": "Amira K.", "line": "Member since 2023" } },
+      { "type": "quote", "settings": { "quote": "The run club got me round my first marathon. Jo's 6:30 group never left anyone behind.", "name": "Tom W.", "line": "First marathon 2026" } }
+    ] },
+    { "name": "Grid", "settings": { "layout": "grid" } }
+  ]
+}
+</schema>

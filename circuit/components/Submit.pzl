@@ -1,0 +1,3 @@
+<!-- component: Submit -->
+<!-- A form's submit button: the square primary button. -->
+<button class="inline-flex min-h-control items-center justify-center rounded-button border border-scheme-button-background bg-scheme-button-background px-button-x font-body text-button font-bold text-scheme-button-foreground uppercase transition-colors duration-fast hover:border-scheme-button-hover-background hover:bg-scheme-button-hover-background hover:text-scheme-button-hover-foreground { wide ? 'w-full' : '' }" type="submit"><Children/></button>

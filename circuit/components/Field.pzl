@@ -1,0 +1,14 @@
+<!-- component: Field -->
+<!-- A labelled input. The label sits above the field in the Label style;
+     inputs are 48 high, a 0.25rem radius, a hairline in the scheme's input
+     border. A declared form field carries no autocomplete token, so name,
+     email and phone are recognised by id. -->
+<div class={ wrapper_class }>
+  <label class="mb-step-2xs block text-label font-semibold text-scheme-foreground" for="field-{ prefix }-{ name }">{ label }{#if required}<span class="text-scheme-meta" aria-hidden="true"> *</span>{/if}</label>
+  {#if type == 'textarea'}
+    <textarea class="block min-h-textarea w-full resize-y rounded-input border border-scheme-input-border bg-scheme-input-background px-step-sm py-step-xs font-body text-body text-scheme-input-foreground focus:outline-2 focus:outline-offset-2 focus:outline-scheme-links" id="field-{ prefix }-{ name }" name={ name } rows={ rows ?? 4 } maxlength={ maxlength } required={ required } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null }>{ value }</textarea>
+  {:else}
+    <input class="block min-h-control w-full rounded-input border border-scheme-input-border bg-scheme-input-background px-step-sm py-step-xs font-body text-body text-scheme-input-foreground focus:outline-2 focus:outline-offset-2 focus:outline-scheme-links" id="field-{ prefix }-{ name }" name={ name } type={ type ?? 'text' } autocomplete={ autocomplete ?? (type == 'email' ? 'email' : (name == 'name' ? 'name' : (type == 'tel' ? 'tel' : 'off'))) } maxlength={ maxlength } required={ required } value={ value } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ error ? 'error-' + prefix + '-' + name : null } />
+  {/if}
+  {#if error}<p class="mt-step-2xs font-mono text-spec text-scheme-error uppercase" id="error-{ prefix }-{ name }">{ t('form_field_' + error) }</p>{/if}
+</div>

@@ -1,0 +1,52 @@
+<!-- The contact form (with its subject as a drop-down) beside the first
+     location's details, or the Contact settings when there is no location. -->
+{#let
+  location = settings.locations.entries | sort('fields.order') | first
+  phone = location.fields.phone || site.settings.phone
+  email = location.fields.email || site.settings.email
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-start gap-step-xl md:grid-cols-3 lg:gap-step-3xl">
+    <div class="grid content-start gap-step-md">
+      {#if settings.heading}<h2 class="font-heading text-h2 font-black text-scheme-heading uppercase stretch-heading">{ settings.heading }</h2>{/if}
+      {#if settings.text}<p class="text-body text-scheme-muted">{ settings.text }</p>{/if}
+      {#if settings.show_details}
+        <dl class="grid gap-step-sm border-t border-scheme-rule pt-step-md">
+          {#if location}<div><dt class="font-mono text-overline font-medium text-scheme-meta uppercase">{ location.title }</dt><dd class="text-body">{ location.fields.address | newline_to_br }</dd></div>{/if}
+          {#if phone}<div><dt class="font-mono text-overline font-medium text-scheme-meta uppercase">{ t('phone') }</dt><dd><a class="font-mono text-body-sm hover:text-scheme-links" href="tel:{ phone | replace(' ', '') }">{ phone }</a></dd></div>{/if}
+          {#if email}<div><dt class="font-mono text-overline font-medium text-scheme-meta uppercase">{ t('email') }</dt><dd><a class="font-mono text-body-sm break-all hover:text-scheme-links" href="mailto:{ email }">{ email }</a></dd></div>{/if}
+        </dl>
+      {/if}
+    </div>
+    <Form handle={ settings.form } class="grid gap-step-md md:col-span-2" id="contact-form">
+      {#if form.sent}
+        <p class="text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
+      {:else}
+        {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
+        <FormFields fields={ form.fields } prefix="contact" />
+        <div><Submit>{ form.submit_label || t('send') }</Submit></div>
+        <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+      {/if}
+    </Form>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Contact",
+  "description": "The contact form beside the address, phone and email.",
+  "kind": "Contact",
+  "icon": "mail",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Write to us" },
+    { "type": "text", "id": "text", "label": "Text", "default": "Questions about memberships, coaching or events. We reply within two working days." },
+    { "type": "form", "id": "form", "label": "Form", "default": "contact", "info": "Reads name, email, subject (a drop-down) and message." },
+    { "type": "checkbox", "id": "show_details", "label": "Show contact details", "default": true },
+    { "type": "collection", "id": "locations", "label": "Locations", "info": "Reads the first location by order: title, address, phone and email; the Contact settings stand in when missing." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "locations": "locations" } }
+  ]
+}
+</schema>

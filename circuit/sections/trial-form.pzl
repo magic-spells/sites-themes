@@ -1,0 +1,53 @@
+<!-- The trial form inline: the fields on a concrete panel beside a 4:5
+     photo, the same fields as the trial sheet. With a booking URL set it
+     shows a button to the booking page instead. -->
+{#let note = settings.note || site.settings.trial_note}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-start gap-step-xl md:grid-cols-2 lg:gap-step-3xl">
+    <div class="sites-scheme-concrete grid gap-step-md bg-scheme-background p-step-lg text-scheme-foreground md:p-step-xl">
+      {#if settings.heading}<h2 class="font-heading text-h2 font-black text-scheme-heading uppercase stretch-heading">{ settings.heading }</h2>{/if}
+      {#if settings.text}<p class="text-body text-scheme-muted">{ settings.text }</p>{/if}
+      {#if site.settings.booking_url}
+        <Button href={ site.settings.booking_url } external={ true }>{ site.settings.action_label }</Button>
+      {:else}
+        <Form handle={ settings.form || site.settings.trial_form } class="grid gap-step-md" id="trial-page-form">
+          {#if form.sent}
+            <p class="text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
+          {:else}
+            {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
+            <FormFields fields={ form.fields } prefix="trial-page" />
+            <div><Submit>{ form.submit_label || site.settings.action_label }</Submit></div>
+            {#if note}<p class="font-mono text-spec text-scheme-meta uppercase">{ note }</p>{/if}
+            <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+          {/if}
+        </Form>
+      {/if}
+    </div>
+    <div class="hidden md:block"><Photo asset={ settings.image } alt={ settings.image.alt } ratio="aspect-4/5" treatment={ settings.treatment } sizes="45vw" /></div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Trial form",
+  "description": "The trial form on a panel beside a portrait photo.",
+  "kind": "Contact",
+  "icon": "send",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Book your free class" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Tell us a little about you and a coach will call within a day to find the right first class." },
+    { "type": "form", "id": "form", "label": "Form", "default": "trial", "info": "Reads name, email, phone, goal, class, location and notes." },
+    { "type": "textarea", "id": "note", "label": "Note", "default": "", "info": "Leave empty to use the Floor note." },
+    { "type": "image", "id": "image", "label": "Photo (4:5)" },
+    { "type": "select", "id": "treatment", "label": "Photo treatment", "default": "natural", "options": [
+      { "value": "natural", "label": "Natural" },
+      { "value": "mono", "label": "Mono" },
+      { "value": "duotone", "label": "Duotone" }
+    ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

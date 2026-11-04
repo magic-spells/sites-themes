@@ -75,7 +75,6 @@
         "events": "events",
         "layout": "cards",
         "limit": 3,
-        "color_scheme": "white",
         "kicker": "Events"
       },
       "blocks": []
@@ -102,7 +101,6 @@
         "heading": "",
         "gallery": "club-wall",
         "layout": "bento",
-        "color_scheme": "white",
         "kicker": "Last Saturday"
       },
       "blocks": []
@@ -156,7 +154,6 @@
       "settings": {
         "heading": "Run leaders",
         "coaches": "coaches",
-        "color_scheme": "white",
         "kicker": "Coaches",
         "source": "listed",
         "columns": "4"

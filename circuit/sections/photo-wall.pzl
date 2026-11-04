@@ -54,7 +54,7 @@
       { "value": "mono", "label": "Mono" },
       { "value": "duotone", "label": "Duotone" }
     ] },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
     { "name": "Bento", "settings": { "layout": "bento" } },

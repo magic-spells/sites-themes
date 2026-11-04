@@ -27,8 +27,7 @@
       "preset": "Default",
       "settings": {
         "coach": "coach_dana_okafor",
-        "overlap": true,
-        "color_scheme": "white"
+        "overlap": true
       },
       "blocks": []
     },
@@ -158,7 +157,6 @@
         "source": "listed",
         "classes": "classes",
         "columns": "3",
-        "color_scheme": "white",
         "kicker": "Classes"
       },
       "blocks": [

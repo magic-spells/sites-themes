@@ -9,8 +9,7 @@
         "show_classes": true,
         "classes": "classes",
         "classes_path": "/classes",
-        "base_path": "/classes",
-        "color_scheme": "white"
+        "base_path": "/classes"
       },
       "blocks": []
     },
@@ -20,8 +19,7 @@
       "preset": "Default",
       "settings": {
         "text": "Your first class is on us. Tell us a little and a coach will call to book it.",
-        "form": "trial",
-        "color_scheme": "white"
+        "form": "trial"
       },
       "blocks": []
     },
@@ -30,8 +28,7 @@
       "type": "cookie-notice",
       "preset": "Default",
       "settings": {
-        "key": "circuit-notice-2026-11",
-        "color_scheme": "white"
+        "key": "circuit-notice-2026-11"
       },
       "blocks": []
     }

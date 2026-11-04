@@ -38,7 +38,7 @@
     { "type": "text", "id": "back_label", "label": "Link to every album", "default": "More galleries" },
     { "type": "url", "id": "back_href", "label": "Back link", "default": "/gallery" },
     { "type": "url", "id": "event_path", "label": "Event page path", "default": "/events" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
     { "name": "Default", "settings": {} }

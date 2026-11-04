@@ -34,7 +34,7 @@
     { "type": "url", "id": "base_path", "label": "Album page path", "default": "/gallery" },
     { "type": "text", "id": "view_all_label", "label": "View-all label", "default": "" },
     { "type": "url", "id": "view_all_href", "label": "View-all link", "default": "/gallery" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
     { "name": "Default", "settings": { "albums": "albums" } }

@@ -7,8 +7,7 @@
       "type": "class-detail",
       "preset": "Default",
       "settings": {
-        "sessions": "sessions",
-        "color_scheme": "white"
+        "sessions": "sessions"
       },
       "blocks": []
     },
@@ -20,7 +19,6 @@
         "classes": "classes",
         "heading": "More classes",
         "text": "",
-        "color_scheme": "white",
         "kicker": "Classes"
       },
       "blocks": []

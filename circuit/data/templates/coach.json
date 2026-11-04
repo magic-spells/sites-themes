@@ -6,9 +6,7 @@
       "id": "s_detail",
       "type": "coach-detail",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "white"
-      },
+      "settings": {},
       "blocks": []
     },
     {
@@ -20,8 +18,7 @@
         "source": "coach",
         "classes": "classes",
         "columns": "3",
-        "view_all_label": "",
-        "color_scheme": "white"
+        "view_all_label": ""
       },
       "blocks": []
     },

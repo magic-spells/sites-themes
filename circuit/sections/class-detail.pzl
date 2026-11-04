@@ -110,7 +110,7 @@
   "name": "Class detail",
   "description": "A class's page: photo, the spec strip, what it involves, what to bring, the coach and when it runs.",
   "kind": "Content",
-  "icon": "file-text",
+  "icon": "dumbbell",
   "templates": ["class"],
   "settings": [
     { "type": "checkbox", "id": "show_photos", "label": "Show the class photos", "default": true, "info": "With two or more photos in the class's gallery, the top is a one-up you swipe, with a lightbox." },
@@ -121,7 +121,7 @@
     { "type": "text", "id": "when_heading", "label": "When heading", "default": "When" },
     { "type": "url", "id": "timetable_href", "label": "Timetable link", "default": "/timetable" },
     { "type": "url", "id": "coach_path", "label": "Coach page path", "default": "/coaches" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
     { "name": "Default", "settings": { "sessions": "sessions" } }

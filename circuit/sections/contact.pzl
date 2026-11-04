@@ -58,7 +58,7 @@
     { "type": "form", "id": "form", "label": "Form", "default": "contact", "info": "Reads name, email, subject (a drop-down) and message." },
     { "type": "checkbox", "id": "show_details", "label": "Show contact details", "default": true },
     { "type": "collection", "id": "locations", "label": "Locations", "info": "Reads up to four locations by order: title, address, note and hours; the first one's phone and email, with the Contact settings standing in when missing." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
     { "name": "Default", "settings": { "locations": "locations" } }

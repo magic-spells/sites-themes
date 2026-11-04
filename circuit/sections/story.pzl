@@ -19,7 +19,7 @@
   "name": "Story",
   "description": "A photo beside a heading, text and a link.",
   "kind": "Content",
-  "icon": "image",
+  "icon": "book-open",
   "settings": [
     { "type": "text", "id": "kicker", "label": "Kicker", "default": "Since 2014" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Two racks and a borrowed rower" },
@@ -36,7 +36,7 @@
       { "value": "mono", "label": "Mono" },
       { "value": "duotone", "label": "Duotone" }
     ] },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
     { "name": "Picture right", "settings": { "image_side": "right" } },

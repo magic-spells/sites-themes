@@ -33,7 +33,7 @@
   "name": "Trial form",
   "description": "The trial form on a panel beside a portrait photo.",
   "kind": "Contact",
-  "icon": "send",
+  "icon": "mail",
   "settings": [
     { "type": "text", "id": "kicker", "label": "Kicker", "default": "Start here" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "First class is free" },
@@ -46,7 +46,7 @@
       { "value": "mono", "label": "Mono" },
       { "value": "duotone", "label": "Duotone" }
     ] },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
     { "name": "Default", "settings": {} }

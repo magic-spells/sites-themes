@@ -18,9 +18,7 @@
       "id": "s_body",
       "type": "rich-text",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "white"
-      },
+      "settings": {},
       "blocks": []
     }
   ]

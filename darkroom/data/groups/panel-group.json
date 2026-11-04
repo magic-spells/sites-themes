@@ -5,7 +5,6 @@
       "type": "mobile-menu",
       "preset": "Default",
       "settings": {
-        "color_scheme": "surface",
         "menu": "main",
         "menu_secondary": "social",
         "collection": "series",
@@ -23,8 +22,7 @@
         "decline_label": "Decline",
         "link_label": "Privacy",
         "link_href": "/privacy",
-        "key": "darkroom-notice-2026-10",
-        "color_scheme": "surface"
+        "key": "darkroom-notice-2026-10"
       },
       "blocks": []
     }

@@ -69,6 +69,8 @@
 {
   "name": "Packages",
   "description": "Photographic packages as rows or photo tiles.",
+  "kind": "Content",
+  "icon": "package",
   "settings": [
     {
       "type": "text",
@@ -125,8 +127,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "blocks": [
@@ -201,8 +202,7 @@
         "footnote": "<p>All rates exclude travel and applicable tax. Usage is agreed in writing. <a href=\"/contact\">Write</a> for a proposal.</p>",
         "enquire_label": "Enquire",
         "enquire_href": "/contact?subject=Commission",
-        "layout": "rows",
-        "color_scheme": "surface"
+        "layout": "rows"
       },
       "blocks": [
         {

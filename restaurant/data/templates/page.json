@@ -12,8 +12,7 @@
         "standfirst": "",
         "align": "left",
         "show_eyebrow": true,
-        "show_standfirst": true,
-        "color_scheme": "paper"
+        "show_standfirst": true
       },
       "blocks": []
     },
@@ -24,8 +23,7 @@
       "settings": {
         "heading": "",
         "body": "",
-        "width": "reading",
-        "color_scheme": "paper"
+        "width": "reading"
       },
       "blocks": []
     }

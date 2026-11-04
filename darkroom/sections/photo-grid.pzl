@@ -29,6 +29,8 @@
 {
   "name": "Photo grid",
   "description": "A gallery grid with a companion carousel for the lightbox.",
+  "kind": "Content",
+  "icon": "layout-grid",
   "settings": [
     {
       "type": "gallery",
@@ -148,8 +150,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -162,8 +163,7 @@
         "captions": "none",
         "lightbox": true,
         "limit": 0,
-        "offset": 0,
-        "color_scheme": "surface"
+        "offset": 0
       }
     }
   ]

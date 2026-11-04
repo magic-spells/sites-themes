@@ -39,7 +39,6 @@
       "id": "s_logos",
       "type": "logo-cloud",
       "settings": {
-        "color_scheme": "default",
         "heading": "Stocked and supported by"
       },
       "blocks": [
@@ -94,7 +93,6 @@
       "id": "s_features",
       "type": "features-grid",
       "settings": {
-        "color_scheme": "default",
         "columns": "3",
         "heading": "What you will find",
         "padding": "normal",
@@ -162,7 +160,6 @@
       "type": "image-with-text",
       "settings": {
         "body": "\u003cp\u003eAda opened the front room in 1998 with about six hundred books and a folding table. The back room came later, and with it the chairs, the readings, and the habit of staying open late.\u003c/p\u003e\u003cp\u003eIt is still two people and a cat, and still the same rule: nothing on the shelf that nobody here has read.\u003c/p\u003e",
-        "color_scheme": "default",
         "eyebrow": "Our room",
         "heading": "Eighteen years on the same street",
         "image": "as_interior",
@@ -178,7 +175,6 @@
       "id": "s_gallery",
       "type": "gallery",
       "settings": {
-        "color_scheme": "default",
         "columns": "3",
         "gallery": "shop",
         "heading": "Inside the shop",
@@ -192,7 +188,6 @@
       "id": "s_testimonials",
       "type": "testimonials",
       "settings": {
-        "color_scheme": "default",
         "columns": "3",
         "heading": "What people say",
         "padding": "normal",
@@ -237,7 +232,6 @@
       "settings": {
         "base_path": "/journal",
         "collection": "posts",
-        "color_scheme": "default",
         "columns": "3",
         "heading": "From the journal",
         "limit": 3,

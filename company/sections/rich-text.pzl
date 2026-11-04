@@ -12,6 +12,8 @@
 <schema>
 {
   "name": "Rich text",
+  "kind": "Content",
+  "icon": "align-left",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "info": "Leave empty for body copy on its own.", "default": "" },
     { "type": "richtext", "id": "body", "label": "Body", "default": "<p>Write something here.</p>",
@@ -32,11 +34,11 @@
         { "value": "normal", "label": "Normal" },
         { "value": "compact", "label": "Compact" }
       ] },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "body": "<p>Write something here.</p>", "width": "narrow", "align": "left", "padding": "normal", "color_scheme": "default" } },
-    { "name": "Wide", "settings": { "body": "<p>Write something here.</p>", "width": "wide", "align": "left", "padding": "normal", "color_scheme": "default" } },
+    { "name": "Default", "settings": { "body": "<p>Write something here.</p>", "width": "narrow", "align": "left", "padding": "normal" } },
+    { "name": "Wide", "settings": { "body": "<p>Write something here.</p>", "width": "wide", "align": "left", "padding": "normal" } },
     { "name": "Statement", "settings": { "body": "<p>Write something here.</p>", "width": "narrow", "align": "center", "padding": "normal", "color_scheme": "inverse" } }
   ]
 }

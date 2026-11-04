@@ -65,6 +65,8 @@
 {
   "name": "Hero slideshow",
   "description": "A full-screen gallery with fade or sliding photographs.",
+  "kind": "Hero",
+  "icon": "gallery-horizontal",
   "settings": [
     {
       "type": "gallery",
@@ -179,8 +181,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -196,7 +197,6 @@
         "show_counter": true,
         "show_dots": true,
         "show_arrows": "hover",
-        "color_scheme": "surface",
         "gallery": "home-hero",
         "base_path": "/work"
       }

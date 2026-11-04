@@ -26,6 +26,8 @@
 {
   "name": "Image with text",
   "description": "An image beside a heading and writing; the image comes first on mobile.",
+  "kind": "Content",
+  "icon": "columns-2",
   "settings": [
     {
       "type": "image",
@@ -101,8 +103,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -115,8 +116,7 @@
         "heading": "A valley with one café and two buses a day",
         "body": "<p>I write about towns, weather and the paths between them, mostly on foot and mostly slowly.</p><p>The journal started as notes for myself. It became letters when people started asking where the closed path went.</p>",
         "link_label": "More about the walks",
-        "link": "/journal",
-        "color_scheme": "paper"
+        "link": "/journal"
       }
     }
   ]

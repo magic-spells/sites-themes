@@ -28,6 +28,8 @@
 {
   "name": "Faq",
   "description": "Questions and answers in collapsible rows.",
+  "kind": "Content",
+  "icon": "list",
   "settings": [
     {
       "type": "text",
@@ -44,8 +46,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "blocks": [
@@ -74,8 +75,7 @@
       "name": "Prints",
       "settings": {
         "heading": "FAQs",
-        "note": "Write if your question is not here.",
-        "color_scheme": "surface"
+        "note": "Write if your question is not here."
       },
       "blocks": [
         {
@@ -119,8 +119,7 @@
       "name": "Packages",
       "settings": {
         "heading": "FAQs",
-        "note": "Write if your question is not here.",
-        "color_scheme": "surface"
+        "note": "Write if your question is not here."
       },
       "blocks": [
         {

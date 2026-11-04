@@ -4,7 +4,6 @@
       "id": "sg_mobile_menu",
       "type": "mobile-menu",
       "settings": {
-        "color_scheme": "default",
         "cta_href": "/contact",
         "cta_label": "Visit us",
         "menu": "main"

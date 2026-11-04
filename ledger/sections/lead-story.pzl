@@ -69,6 +69,8 @@
 {
   "name": "Lead story",
   "description": "One lead story and a rail of two to four stories, with square thumbnails.",
+  "kind": "Hero",
+  "icon": "newspaper",
   "settings": [
     {
       "type": "entry",
@@ -125,8 +127,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -139,7 +140,6 @@
         "show_rail": true,
         "rail_limit": 4,
         "show_rail_rule": true,
-        "color_scheme": "paper",
         "collection": "posts"
       }
     }

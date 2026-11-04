@@ -27,6 +27,8 @@
 {
   "name": "Prints band",
   "description": "A print beside edition details and a contact link.",
+  "kind": "Content",
+  "icon": "frame",
   "settings": [
     {
       "type": "image",

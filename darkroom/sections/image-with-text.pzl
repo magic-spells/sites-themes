@@ -28,6 +28,8 @@
 {
   "name": "Image with text",
   "description": "A portrait and writing; the photograph comes first on mobile.",
+  "kind": "Content",
+  "icon": "columns-2",
   "settings": [
     {
       "type": "image",
@@ -111,8 +113,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -126,7 +127,6 @@
         "body": "<p>I photograph landscapes and the traces of people who work in them. I live in Gothenburg and work across the Nordic countries and further afield.</p>",
         "link_label": "About the practice",
         "link": "/about",
-        "color_scheme": "surface",
         "caption": ""
       }
     }

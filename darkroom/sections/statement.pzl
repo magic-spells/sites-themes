@@ -12,6 +12,8 @@
 {
   "name": "Statement",
   "description": "A sentence with Spectral italic emphasis inside rich text.",
+  "kind": "Content",
+  "icon": "quote",
   "settings": [
     {
       "type": "text",
@@ -28,8 +30,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -37,8 +38,7 @@
       "name": "Default",
       "settings": {
         "eyebrow": "The practice",
-        "body": "<p>I return to places until the familiar becomes <em>specific</em>: the mark on the wall, the edge of the field, the light that stays for <em>a minute</em>.</p>",
-        "color_scheme": "surface"
+        "body": "<p>I return to places until the familiar becomes <em>specific</em>: the mark on the wall, the edge of the field, the light that stays for <em>a minute</em>.</p>"
       }
     }
   ]

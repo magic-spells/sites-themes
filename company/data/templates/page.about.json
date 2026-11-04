@@ -11,8 +11,7 @@
         "chip": "",
         "heading": "",
         "standfirst": "",
-        "align": "left",
-        "color_scheme": "default"
+        "align": "left"
       },
       "blocks": []
     },
@@ -25,8 +24,7 @@
         "body": "",
         "width": "narrow",
         "align": "left",
-        "padding": "normal",
-        "color_scheme": "default"
+        "padding": "normal"
       },
       "blocks": []
     },
@@ -42,8 +40,7 @@
         "link": "/contact",
         "layout": "image_first",
         "ratio": "landscape",
-        "padding": "normal",
-        "color_scheme": "default"
+        "padding": "normal"
       },
       "blocks": []
     },
@@ -55,8 +52,7 @@
         "body": "<p>We order what we would read and we say so when we have not read something. If a book is not right for you we would rather you put it back.</p><h3>Buying</h3><p>Tuesday mornings, a box at a time. We pay in cash or in credit, and credit is worth a third more.</p><h3>Ordering</h3><p>Almost anything in print arrives within three days. We hold it for a fortnight and we will text you when it lands.</p>",
         "width": "narrow",
         "align": "left",
-        "padding": "compact",
-        "color_scheme": "default"
+        "padding": "compact"
       },
       "blocks": []
     },
@@ -69,8 +65,7 @@
         "gallery": "shop",
         "columns": "2",
         "ratio": "landscape",
-        "padding": "normal",
-        "color_scheme": "default"
+        "padding": "normal"
       },
       "blocks": []
     },

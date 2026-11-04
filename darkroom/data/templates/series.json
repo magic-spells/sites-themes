@@ -10,8 +10,7 @@
         "show_cover": true,
         "show_meta": true,
         "show_statement": true,
-        "align": "left",
-        "color_scheme": "surface"
+        "align": "left"
       },
       "blocks": []
     },
@@ -25,8 +24,7 @@
         "show_captions": true,
         "show_counter": true,
         "show_arrows": true,
-        "lightbox": true,
-        "color_scheme": "surface"
+        "lightbox": true
       },
       "blocks": []
     },
@@ -37,8 +35,7 @@
       "settings": {
         "stagger": "alternate",
         "show_counter": false,
-        "lightbox": true,
-        "color_scheme": "surface"
+        "lightbox": true
       },
       "blocks": []
     },
@@ -53,8 +50,7 @@
         "captions": "none",
         "lightbox": true,
         "limit": 0,
-        "offset": 0,
-        "color_scheme": "surface"
+        "offset": 0
       },
       "blocks": []
     },
@@ -67,8 +63,7 @@
         "caption": "",
         "number": false,
         "width": "wide",
-        "ratio": "16:9",
-        "color_scheme": "surface"
+        "ratio": "16:9"
       },
       "blocks": []
     },
@@ -81,8 +76,7 @@
         "index_b": 9,
         "caption_a": "",
         "caption_b": "",
-        "ratio": "4:5",
-        "color_scheme": "surface"
+        "ratio": "4:5"
       },
       "blocks": []
     },
@@ -94,7 +88,6 @@
         "base_path": "/work",
         "all_label": "All work",
         "all_href": "/work",
-        "color_scheme": "surface",
         "collection": "series"
       },
       "blocks": []

@@ -25,8 +25,7 @@
       "type": "rich-text",
       "settings": {
         "body": "<p>A page is a stack of sections. This one is <code>rich-text</code>: one rich text setting and a width, which is enough for most of the writing on a site.</p><p>The header and footer are not in this stack. They are <em>section groups</em> \u2014 site-level stacks that render in every page's layout.</p>",
-        "width": "narrow",
-        "color_scheme": "default"
+        "width": "narrow"
       },
       "blocks": []
     }

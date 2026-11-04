@@ -42,6 +42,8 @@
 {
   "name": "Author card",
   "description": "An author portrait, role, biography and links, using Editor settings when empty.",
+  "kind": "Content",
+  "icon": "user",
   "settings": [
     {
       "type": "image",
@@ -84,8 +86,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -95,8 +96,7 @@
         "name": "",
         "label": "Science correspondent",
         "bio": "",
-        "use_post_author": false,
-        "color_scheme": "paper"
+        "use_post_author": false
       }
     }
   ]

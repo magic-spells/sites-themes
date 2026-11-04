@@ -98,6 +98,8 @@
 {
   "name": "Contact",
   "description": "A site form overlapping a studio photograph, followed by direct contact details.",
+  "kind": "Contact",
+  "icon": "mail",
   "settings": [
     {
       "type": "text",
@@ -162,8 +164,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -178,8 +179,7 @@
         "consent_text": "I agree to the use of these details to reply to my enquiry.",
         "direct": true,
         "direct_heading": "Prefer to write directly?",
-        "note": "Your details are used only to answer this enquiry.",
-        "color_scheme": "surface"
+        "note": "Your details are used only to answer this enquiry."
       }
     }
   ]

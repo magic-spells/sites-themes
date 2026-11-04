@@ -56,6 +56,8 @@
 {
   "name": "Mobile menu",
   "description": "A bottom sheet containing the main and social menus.",
+  "kind": "Panels",
+  "icon": "menu",
   "settings": [
     {
       "type": "menu",
@@ -83,15 +85,13 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "presets": [
     {
       "name": "Default",
       "settings": {
-        "color_scheme": "surface",
         "menu": "main",
         "menu_secondary": "social",
         "collection": "series",

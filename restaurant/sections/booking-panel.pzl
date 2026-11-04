@@ -35,6 +35,8 @@
 {
   "name": "Booking panel",
   "description": "A reservation sheet using the workspace form.",
+  "kind": "Panels",
+  "icon": "calendar-check",
   "settings": [
     {
       "type": "text",
@@ -63,8 +65,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -74,8 +75,7 @@
         "heading": "Book a table",
         "text": "Tables for 2 to 10. For larger parties call us.",
         "form": "reservation",
-        "note": "We hold the table for 15 minutes.",
-        "color_scheme": "paper"
+        "note": "We hold the table for 15 minutes."
       }
     }
   ]

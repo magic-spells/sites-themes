@@ -19,6 +19,8 @@
 <schema>
 {
   "name": "Image with text",
+  "kind": "Content",
+  "icon": "columns-2",
   "settings": [
     { "type": "image", "id": "image", "label": "Image" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Our room" },
@@ -42,17 +44,17 @@
         { "value": "normal", "label": "Normal" },
         { "value": "compact", "label": "Compact" }
       ] },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
     { "name": "Default",
       "settings": { "eyebrow": "Our room", "heading": "Eighteen years on the same street",
         "body": "<p>Say what the business is, in the voice a person would use standing in the doorway.</p>",
-        "link_label": "About the shop", "link": "/about", "layout": "image_first", "ratio": "landscape", "padding": "normal", "color_scheme": "default" } },
+        "link_label": "About the shop", "link": "/about", "layout": "image_first", "ratio": "landscape", "padding": "normal" } },
     { "name": "Text first",
       "settings": { "eyebrow": "Our room", "heading": "Eighteen years on the same street",
         "body": "<p>Say what the business is, in the voice a person would use standing in the doorway.</p>",
-        "link_label": "About the shop", "link": "/about", "layout": "text_first", "ratio": "portrait", "padding": "normal", "color_scheme": "default" } }
+        "link_label": "About the shop", "link": "/about", "layout": "text_first", "ratio": "portrait", "padding": "normal" } }
   ]
 }
 </schema>

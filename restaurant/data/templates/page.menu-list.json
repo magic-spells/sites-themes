@@ -12,8 +12,7 @@
         "standfirst": "Breakfast 8–11 · Lunch 12–3 · Dinner 5–10",
         "align": "center",
         "show_eyebrow": true,
-        "show_standfirst": true,
-        "color_scheme": "paper"
+        "show_standfirst": true
       },
       "blocks": []
     },
@@ -28,7 +27,6 @@
         "show_legend": true,
         "base_path": "/dishes",
         "show_category_description": true,
-        "color_scheme": "paper",
         "collection": "menu_items",
         "categories": "menu_categories"
       },

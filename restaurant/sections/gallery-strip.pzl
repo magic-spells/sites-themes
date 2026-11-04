@@ -38,6 +38,8 @@
 {
   "name": "Gallery strip",
   "description": "A photographic strip with natural proportions.",
+  "kind": "Content",
+  "icon": "gallery-thumbnails",
   "settings": [
     {
       "type": "gallery",
@@ -82,8 +84,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -94,7 +95,6 @@
         "show_heading": false,
         "stagger": "none",
         "lightbox": true,
-        "color_scheme": "paper",
         "gallery": "the-room"
       }
     },
@@ -105,7 +105,6 @@
         "show_heading": false,
         "stagger": "alternate",
         "lightbox": true,
-        "color_scheme": "paper",
         "gallery": "the-room"
       }
     }

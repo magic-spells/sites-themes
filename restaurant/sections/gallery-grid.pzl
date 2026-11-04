@@ -32,6 +32,8 @@
 {
   "name": "Gallery grid",
   "description": "A grid of photographs with an optional lightbox.",
+  "kind": "Content",
+  "icon": "images",
   "settings": [
     {
       "type": "gallery",
@@ -89,8 +91,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -102,7 +103,6 @@
         "ratio": "4:3",
         "limit": 8,
         "lightbox": true,
-        "color_scheme": "paper",
         "gallery": "the-room"
       }
     }

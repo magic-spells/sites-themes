@@ -42,6 +42,8 @@
 <schema>
 {
   "name": "Journal list",
+  "kind": "Collections",
+  "icon": "newspaper",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "From the journal" },
     { "type": "collection", "id": "collection", "label": "Content type",
@@ -60,15 +62,15 @@
         { "value": "normal", "label": "Normal" },
         { "value": "compact", "label": "Compact" }
       ] },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
     { "name": "Default",
       "settings": { "heading": "From the journal", "collection": "posts", "base_path": "/journal", "limit": 6,
-        "view_all_label": "Everything in the journal", "columns": "3", "padding": "normal", "color_scheme": "default" } },
+        "view_all_label": "Everything in the journal", "columns": "3", "padding": "normal" } },
     { "name": "Index",
       "settings": { "heading": "", "collection": "posts", "base_path": "/journal", "limit": 12,
-        "view_all_label": "", "columns": "3", "padding": "normal", "color_scheme": "default" } }
+        "view_all_label": "", "columns": "3", "padding": "normal" } }
   ]
 }
 </schema>

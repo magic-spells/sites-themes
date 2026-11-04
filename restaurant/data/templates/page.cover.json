@@ -35,8 +35,7 @@
       "preset": "Default",
       "settings": {
         "heading": "Where to next",
-        "show_heading": false,
-        "color_scheme": "paper"
+        "show_heading": false
       },
       "blocks": [
         {
@@ -86,7 +85,6 @@
         "full_menu_label": "Full menu",
         "menu_path": "/menu",
         "base_path": "/dishes",
-        "color_scheme": "paper",
         "collection": "menu_items",
         "categories": "menu_categories"
       },
@@ -100,8 +98,7 @@
         "heading": "This month",
         "show_heading": true,
         "loop": true,
-        "show_dots": true,
-        "color_scheme": "paper"
+        "show_dots": true
       },
       "blocks": [
         {
@@ -164,7 +161,6 @@
         "body": "<p>Halfmoon began with a simple idea: a good meal, a warm room and a place to come back to.</p><p>We cook with the season and the boats, bake each morning and keep a seat for our neighbours.</p>",
         "link_label": "About us",
         "link": "/about",
-        "color_scheme": "paper",
         "image": "as_3x2_1"
       },
       "blocks": []
@@ -232,7 +228,6 @@
         "heading": "Hours & location",
         "show_map": true,
         "directions_label": "Open in Maps",
-        "color_scheme": "paper",
         "map_image": "as_3x2_1"
       },
       "blocks": []

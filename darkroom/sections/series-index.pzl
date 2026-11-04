@@ -50,6 +50,8 @@
 {
   "name": "Series index",
   "description": "Series as a grid or thumbnail rows, ordered by year.",
+  "kind": "Collections",
+  "icon": "layout-list",
   "settings": [
     {
       "type": "text",
@@ -154,8 +156,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -172,7 +173,6 @@
         "show_toggle": false,
         "view_all_label": "All work",
         "view_all_href": "/work",
-        "color_scheme": "surface",
         "collection": "series"
       }
     },
@@ -189,7 +189,6 @@
         "show_toggle": true,
         "view_all_label": "",
         "view_all_href": "",
-        "color_scheme": "surface",
         "collection": "series"
       }
     },
@@ -206,7 +205,6 @@
         "show_toggle": false,
         "view_all_label": "All work",
         "view_all_href": "/work",
-        "color_scheme": "surface",
         "collection": "series"
       }
     }

@@ -45,6 +45,8 @@
 {
   "name": "Dish carousel",
   "description": "A carousel of dishes from one category or the kitchen’s favourites.",
+  "kind": "Collections",
+  "icon": "gallery-horizontal-end",
   "settings": [
     {
       "type": "text",
@@ -166,8 +168,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -186,7 +187,6 @@
         "info_style": "plain",
         "show_dots": false,
         "see_all_label": "See all",
-        "color_scheme": "paper",
         "category": "cat_small_plates",
         "collection": "menu_items"
       }
@@ -206,7 +206,6 @@
         "info_style": "plain",
         "show_dots": false,
         "see_all_label": "See all",
-        "color_scheme": "paper",
         "collection": "menu_items"
       }
     }

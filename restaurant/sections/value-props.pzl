@@ -23,6 +23,8 @@
 {
   "name": "Value props",
   "description": "Three or four notes about the kitchen, room and welcome.",
+  "kind": "Content",
+  "icon": "badge-check",
   "settings": [
     {
       "type": "select",

@@ -47,6 +47,8 @@
 {
   "name": "Photo carousel",
   "description": "One photograph at a time, with captions, a counter and lightbox.",
+  "kind": "Content",
+  "icon": "gallery-horizontal-end",
   "settings": [
     {
       "type": "gallery",
@@ -107,8 +109,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -120,8 +121,7 @@
         "show_captions": true,
         "show_counter": true,
         "show_arrows": true,
-        "lightbox": true,
-        "color_scheme": "surface"
+        "lightbox": true
       }
     },
     {
@@ -133,7 +133,6 @@
         "show_counter": true,
         "show_arrows": true,
         "lightbox": true,
-        "color_scheme": "surface",
         "gallery": "live"
       }
     }

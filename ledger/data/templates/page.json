@@ -10,8 +10,7 @@
         "chip": "",
         "heading": "",
         "standfirst": "",
-        "align": "left",
-        "color_scheme": "paper"
+        "align": "left"
       },
       "blocks": []
     },
@@ -22,8 +21,7 @@
       "settings": {
         "heading": "",
         "body": "",
-        "width": "narrow",
-        "color_scheme": "paper"
+        "width": "narrow"
       },
       "blocks": []
     }

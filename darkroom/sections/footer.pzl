@@ -26,6 +26,8 @@
 {
   "name": "Footer",
   "description": "The photographer’s colophon, main menu and social links.",
+  "kind": "Footer",
+  "icon": "panel-bottom",
   "settings": [
     {
       "type": "menu",
@@ -53,8 +55,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -63,7 +64,6 @@
       "settings": {
         "copyright": "",
         "show_colophon": true,
-        "color_scheme": "surface",
         "menu_primary": "main",
         "menu_secondary": "social"
       }

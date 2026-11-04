@@ -8,7 +8,6 @@
         "menu_path": "/menu",
         "book_label": "Book a table",
         "show_phone": true,
-        "color_scheme": "paper",
         "menu": "main",
         "categories": "menu_categories"
       },
@@ -22,8 +21,7 @@
         "heading": "Book a table",
         "text": "Tables for 2 to 10. For larger parties call us.",
         "form": "reservation",
-        "note": "We hold the table for 15 minutes.",
-        "color_scheme": "paper"
+        "note": "We hold the table for 15 minutes."
       },
       "blocks": []
     },
@@ -37,8 +35,7 @@
         "decline_label": "Decline",
         "link_label": "",
         "link_href": "/privacy",
-        "key": "restaurant-notice-2026-11",
-        "color_scheme": "paper"
+        "key": "restaurant-notice-2026-11"
       },
       "blocks": []
     }

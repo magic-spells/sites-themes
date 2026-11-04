@@ -45,6 +45,8 @@
 <schema>
 {
   "name": "Header",
+  "kind": "Header",
+  "icon": "panel-top",
   "settings": [
     { "type": "image", "id": "logo", "label": "Logo", "info": "Leave empty to print the business name instead." },
     { "type": "text", "id": "logo_text", "label": "Logo text", "info": "Used when there is no logo image. Defaults to the site name." },
@@ -53,11 +55,11 @@
     { "type": "url", "id": "cta_href", "label": "Button link", "default": "/contact" },
     { "type": "checkbox", "id": "sticky", "label": "Stick to the top of the page", "default": true },
     { "type": "checkbox", "id": "bordered", "label": "Show a bottom border", "default": true },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
     { "name": "Default",
-      "settings": { "menu": "main", "cta_label": "Visit us", "cta_href": "/contact", "sticky": true, "bordered": true, "color_scheme": "default" } }
+      "settings": { "menu": "main", "cta_label": "Visit us", "cta_href": "/contact", "sticky": true, "bordered": true } }
   ]
 }
 </schema>

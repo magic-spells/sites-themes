@@ -10,8 +10,7 @@
         "chip": "",
         "heading": "Contact",
         "standfirst": "Prints, commissions, press and other enquiries.",
-        "align": "left",
-        "color_scheme": "surface"
+        "align": "left"
       },
       "blocks": []
     },
@@ -25,8 +24,7 @@
         "standfirst": "",
         "show_arrows": true,
         "enquire_label": "Enquire",
-        "contact_path": "/contact",
-        "color_scheme": "surface"
+        "contact_path": "/contact"
       },
       "blocks": [
         {
@@ -95,7 +93,6 @@
         "direct": true,
         "direct_heading": "Prefer to write directly?",
         "note": "Your details are used only to answer this enquiry.",
-        "color_scheme": "surface",
         "photo": "as_3x2_2"
       },
       "blocks": []

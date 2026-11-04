@@ -66,6 +66,8 @@
 <schema>
 {
   "name": "Footer",
+  "kind": "Footer",
+  "icon": "panel-bottom",
   "settings": [
     { "type": "menu", "id": "menu_primary", "label": "Main footer menu" },
     { "type": "menu", "id": "menu_secondary", "label": "Small print menu" },

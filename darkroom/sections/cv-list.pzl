@@ -21,6 +21,8 @@
 {
   "name": "Cv list",
   "description": "Exhibitions, publications or awards in dated rows.",
+  "kind": "Content",
+  "icon": "award",
   "settings": [
     {
       "type": "text",
@@ -31,8 +33,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "blocks": [
@@ -66,8 +67,7 @@
     {
       "name": "Exhibitions",
       "settings": {
-        "heading": "Exhibitions",
-        "color_scheme": "surface"
+        "heading": "Exhibitions"
       },
       "blocks": [
         {
@@ -99,8 +99,7 @@
     {
       "name": "Publications",
       "settings": {
-        "heading": "Publications",
-        "color_scheme": "surface"
+        "heading": "Publications"
       },
       "blocks": [
         {
@@ -124,8 +123,7 @@
     {
       "name": "Awards",
       "settings": {
-        "heading": "Awards",
-        "color_scheme": "surface"
+        "heading": "Awards"
       },
       "blocks": [
         {

@@ -74,6 +74,8 @@
 {
   "name": "Hero",
   "description": "A split introduction or a full-height photographic cover.",
+  "kind": "Hero",
+  "icon": "image",
   "settings": [
     {
       "type": "select",
@@ -254,8 +256,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -278,7 +279,6 @@
         "height": "full",
         "autoplay": true,
         "interval": 5,
-        "color_scheme": "paper",
         "image": "as_4x5_1"
       }
     },

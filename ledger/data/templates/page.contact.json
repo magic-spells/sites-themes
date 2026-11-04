@@ -10,8 +10,7 @@
         "chip": "Newsroom",
         "heading": "Send us a story",
         "standfirst": "Tips, corrections and letters all reach a person in the newsroom, usually the same day.",
-        "align": "left",
-        "color_scheme": "paper"
+        "align": "left"
       },
       "blocks": []
     },
@@ -25,8 +24,7 @@
         "text": "Seen something the valley should know about? Write to the newsroom. We read everything, and we protect our sources.",
         "show_details": true,
         "form": "contact",
-        "note": "",
-        "color_scheme": "paper"
+        "note": ""
       },
       "blocks": []
     }

@@ -48,6 +48,8 @@
 {
   "name": "Post list",
   "description": "Journal entries as rows or cards, with an optional count and view-all link.",
+  "kind": "Collections",
+  "icon": "newspaper",
   "settings": [
     {
       "type": "text",
@@ -166,8 +168,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -186,7 +187,6 @@
         "show_count": true,
         "view_all_label": "Everything in the journal",
         "view_all_href": "/journal",
-        "color_scheme": "paper",
         "collection": "posts"
       }
     },
@@ -205,7 +205,6 @@
         "show_count": true,
         "view_all_label": "",
         "view_all_href": "",
-        "color_scheme": "paper",
         "collection": "posts"
       }
     },
@@ -224,7 +223,6 @@
         "show_count": false,
         "view_all_label": "",
         "view_all_href": "",
-        "color_scheme": "paper",
         "collection": "posts"
       }
     },
@@ -243,7 +241,6 @@
         "show_count": true,
         "view_all_label": "Everything in the journal",
         "view_all_href": "/journal",
-        "color_scheme": "paper",
         "collection": "posts"
       }
     }

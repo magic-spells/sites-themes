@@ -56,6 +56,8 @@
 {
   "name": "Header",
   "description": "The wordmark, main menu and a desktop panel of series.",
+  "kind": "Header",
+  "icon": "panel-top",
   "settings": [
     {
       "type": "text",
@@ -113,8 +115,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -126,7 +127,6 @@
         "sticky": true,
         "work_label": "Work",
         "work_path": "/work",
-        "color_scheme": "surface",
         "menu": "main",
         "collection": "series"
       }
@@ -139,7 +139,6 @@
         "sticky": true,
         "work_label": "Work",
         "work_path": "/work",
-        "color_scheme": "surface",
         "menu": "main",
         "collection": "series"
       }

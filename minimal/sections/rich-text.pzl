@@ -7,6 +7,8 @@
 <schema>
 {
   "name": "Rich text",
+  "kind": "Content",
+  "icon": "align-left",
   "settings": [
     { "type": "richtext", "id": "body", "label": "Body", "default": "",
       "info": "Leave this empty and the section shows the page's own writing." },
@@ -16,12 +18,12 @@
         { "value": "narrow", "label": "Narrow" },
         { "value": "wide", "label": "Wide" }
       ] },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default",
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme",
       "info": "The surface this section is rendered on. Schemes are declared in settings/design.json under schemes." }
   ],
   "presets": [
-    { "name": "Default", "settings": { "body": "", "width": "narrow", "color_scheme": "default" } },
-    { "name": "Wide", "settings": { "body": "", "width": "wide", "color_scheme": "default" } }
+    { "name": "Default", "settings": { "body": "", "width": "narrow" } },
+    { "name": "Wide", "settings": { "body": "", "width": "wide" } }
   ]
 }
 </schema>

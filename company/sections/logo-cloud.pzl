@@ -30,9 +30,11 @@
 <schema>
 {
   "name": "Logo cloud",
+  "kind": "Content",
+  "icon": "award",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Stocked and supported by" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "blocks": [
     { "type": "logo", "name": "Logo", "settings": [
@@ -44,7 +46,7 @@
   "max_blocks": 8,
   "presets": [
     { "name": "Default",
-      "settings": { "heading": "Stocked and supported by", "color_scheme": "default" },
+      "settings": { "heading": "Stocked and supported by" },
       "blocks": [
         { "type": "logo", "settings": { "name": "Quill & Co" } },
         { "type": "logo", "settings": { "name": "Northbank" } },

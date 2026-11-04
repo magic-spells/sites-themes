@@ -10,8 +10,7 @@
         "chip": "Work",
         "heading": "Six series, 2020 to 2025",
         "standfirst": "Documentary landscapes, in long stays, printed by hand.",
-        "align": "left",
-        "color_scheme": "surface"
+        "align": "left"
       },
       "blocks": []
     },
@@ -30,7 +29,6 @@
         "show_toggle": true,
         "view_all_label": "",
         "view_all_href": "",
-        "color_scheme": "surface",
         "collection": "series"
       },
       "blocks": []

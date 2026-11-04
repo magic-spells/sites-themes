@@ -36,15 +36,17 @@
 <schema>
 {
   "name": "Mobile menu",
+  "kind": "Panels",
+  "icon": "menu",
   "settings": [
     { "type": "menu", "id": "menu", "label": "Menu" },
     { "type": "text", "id": "cta_label", "label": "Button label", "default": "Visit us" },
     { "type": "url", "id": "cta_href", "label": "Button link", "default": "/contact" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "default" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
     { "name": "Default",
-      "settings": { "menu": "main", "cta_label": "Visit us", "cta_href": "/contact", "color_scheme": "default" } }
+      "settings": { "menu": "main", "cta_label": "Visit us", "cta_href": "/contact" } }
   ]
 }
 </schema>

@@ -24,7 +24,6 @@
         "italic_tail": "after rain",
         "show_image": true,
         "read_label": "Read the essay",
-        "color_scheme": "paper",
         "collection": "posts"
       },
       "blocks": []
@@ -47,7 +46,6 @@
         "show_count": true,
         "view_all_label": "",
         "view_all_href": "",
-        "color_scheme": "paper",
         "collection": "posts"
       },
       "blocks": []

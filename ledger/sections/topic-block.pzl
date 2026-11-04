@@ -51,6 +51,8 @@
 {
   "name": "Topic block",
   "description": "Stories filtered by topic, in two or three columns, with a count and view link.",
+  "kind": "Collections",
+  "icon": "tag",
   "settings": [
     {
       "type": "text",
@@ -169,8 +171,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -190,7 +191,6 @@
         "show_count": true,
         "view_all_label": "All stories",
         "view_all_href": "/news",
-        "color_scheme": "paper",
         "collection": "posts"
       }
     },
@@ -210,7 +210,6 @@
         "show_count": true,
         "view_all_label": "All stories",
         "view_all_href": "/news",
-        "color_scheme": "paper",
         "collection": "posts"
       }
     },
@@ -230,7 +229,6 @@
         "show_count": false,
         "view_all_label": "",
         "view_all_href": "",
-        "color_scheme": "paper",
         "collection": "posts"
       }
     }

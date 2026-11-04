@@ -27,6 +27,8 @@
 {
   "name": "Image with text",
   "description": "An image beside a heading and writing; the image comes first on mobile.",
+  "kind": "Content",
+  "icon": "columns-2",
   "settings": [
     {
       "type": "image",
@@ -102,8 +104,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -116,8 +117,7 @@
         "heading": "A newsroom above the mill",
         "body": "<p>Eleven reporters, two photographers and one editor work from the second floor of the old mill, a short walk from the bridge.</p><p>We publish every day and print a weekend edition that still sells out at the station kiosk.</p>",
         "link_label": "About the Ledger",
-        "link": "/about",
-        "color_scheme": "paper"
+        "link": "/about"
       }
     }
   ]

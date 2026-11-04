@@ -17,6 +17,8 @@
 {
   "name": "Page header",
   "description": "A page title and standfirst above a strong bottom rule.",
+  "kind": "Hero",
+  "icon": "heading-1",
   "settings": [
     {
       "type": "text",
@@ -57,8 +59,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -68,8 +69,7 @@
         "chip": "",
         "heading": "",
         "standfirst": "",
-        "align": "left",
-        "color_scheme": "paper"
+        "align": "left"
       }
     },
     {
@@ -78,8 +78,7 @@
         "chip": "",
         "heading": "",
         "standfirst": "",
-        "align": "center",
-        "color_scheme": "paper"
+        "align": "center"
       }
     }
   ]

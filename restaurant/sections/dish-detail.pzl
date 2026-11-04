@@ -82,6 +82,8 @@
 {
   "name": "Dish detail",
   "description": "The current dish’s photographs, ingredients and dietary information.",
+  "kind": "Content",
+  "icon": "chef-hat",
   "settings": [
     {
       "type": "checkbox",
@@ -144,8 +146,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -159,8 +160,7 @@
         "back_label": "Back to menu",
         "menu_path": "/menu",
         "well_shape": "rounded",
-        "show_tag": true,
-        "color_scheme": "paper"
+        "show_tag": true
       }
     }
   ],

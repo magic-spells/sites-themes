@@ -44,6 +44,8 @@
 {
   "name": "Footer",
   "description": "The place details and navigation in a quiet colophon.",
+  "kind": "Footer",
+  "icon": "panel-bottom",
   "settings": [
     {
       "type": "menu",

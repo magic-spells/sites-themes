@@ -24,6 +24,8 @@
 {
   "name": "Series header",
   "description": "The current series title, metadata, statement and cover.",
+  "kind": "Hero",
+  "icon": "book-image",
   "settings": [
     {
       "type": "checkbox",
@@ -62,8 +64,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "surface"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -73,8 +74,7 @@
         "show_cover": true,
         "show_meta": true,
         "show_statement": true,
-        "align": "left",
-        "color_scheme": "surface"
+        "align": "left"
       }
     }
   ],

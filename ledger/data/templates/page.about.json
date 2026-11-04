@@ -10,8 +10,7 @@
         "chip": "About",
         "heading": "News for the valley since 1962",
         "standfirst": "Eleven reporters above the mill, a paper every weekday, and corrections printed where you can find them.",
-        "align": "left",
-        "color_scheme": "paper"
+        "align": "left"
       },
       "blocks": []
     },
@@ -27,7 +26,6 @@
         "body": "<p>Eleven reporters, two photographers and one editor work from the second floor of the old mill, a short walk from the bridge.</p><p>We publish every weekday and print a weekend edition that still sells out at the station kiosk.</p>",
         "link_label": "About the Ledger",
         "link": "/about",
-        "color_scheme": "paper",
         "image": "as_newsroom"
       },
       "blocks": []
@@ -39,8 +37,7 @@
       "settings": {
         "heading": "How we report",
         "body": "<p>The Daily Ledger has covered the valley since 1962. We publish every weekday and update stories as they change, with the date of each update printed under the headline.</p><p>Every story names its reporter and its sources. When we get something wrong, we correct it in the story and say what changed at the foot of the page.</p><h3>What we cover</h3><ul><li>Politics and the council, from the agenda to the vote</li><li>Business on the high street and at the mill</li><li>Weather, the river and the roads they close</li></ul><p>Read our <a href=\"/contact#corrections\">corrections policy</a>, or write to the newsroom with a story we should be chasing.</p>",
-        "width": "narrow",
-        "color_scheme": "paper"
+        "width": "narrow"
       },
       "blocks": []
     },

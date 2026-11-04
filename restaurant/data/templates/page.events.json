@@ -12,8 +12,7 @@
         "standfirst": "A few dates for the diary.",
         "align": "left",
         "show_eyebrow": true,
-        "show_standfirst": true,
-        "color_scheme": "paper"
+        "show_standfirst": true
       },
       "blocks": []
     },
@@ -28,7 +27,6 @@
         "limit": 12,
         "view_all_label": "All events",
         "view_all_href": "/events",
-        "color_scheme": "paper",
         "collection": "events"
       },
       "blocks": []

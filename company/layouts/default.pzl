@@ -20,7 +20,7 @@
     {:else}<link rel="icon" type="image/svg+xml" href="{ asset_url('favicon.svg') }" />{/if}
     <Slot name="head-content"/>
   </head>
-  <body class="flex min-h-screen flex-col bg-white font-body text-base text-scheme-foreground antialiased">
+  <body class="flex min-h-screen flex-col bg-scheme-background font-body text-base text-scheme-foreground antialiased">
     <a class="sr-only focus:not-sr-only focus:absolute focus:top-space-sm focus:left-space-sm focus:z-50 focus:rounded-md focus:bg-brand-primary focus:px-space-md focus:py-space-sm focus:text-white" href="#content">{ t('skip_to_content') }</a>
     <Slot name="header-group"/>
     <main id="content" class="flex-1"><Slot/></main>

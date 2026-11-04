@@ -13,6 +13,8 @@
 <schema>
 {
   "name": "Announcement bar",
+  "kind": "Header",
+  "icon": "megaphone",
   "settings": [
     { "type": "text", "id": "text", "label": "Text", "default": "Late opening every first Thursday — until 9pm." },
     { "type": "text", "id": "link_label", "label": "Link label", "info": "Leave empty for a bar with no link.", "default": "What's on" },

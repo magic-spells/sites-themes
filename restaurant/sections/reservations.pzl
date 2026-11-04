@@ -33,6 +33,8 @@
 {
   "name": "Reservations",
   "description": "The reservation form beside a photograph.",
+  "kind": "Contact",
+  "icon": "calendar-check",
   "settings": [
     {
       "type": "text",
@@ -72,8 +74,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -85,7 +86,6 @@
         "show_intro": false,
         "form": "reservation",
         "note": "We hold the table for 15 minutes.",
-        "color_scheme": "paper",
         "image": "as_3x2_1"
       }
     }

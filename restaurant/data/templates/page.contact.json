@@ -12,8 +12,7 @@
         "standfirst": "",
         "align": "left",
         "show_eyebrow": false,
-        "show_standfirst": false,
-        "color_scheme": "paper"
+        "show_standfirst": false
       },
       "blocks": []
     },
@@ -28,7 +27,6 @@
         "show_details": true,
         "show_address": false,
         "show_service_strip": true,
-        "color_scheme": "paper",
         "photo": "as_3x2_1"
       },
       "blocks": []
@@ -41,7 +39,6 @@
         "heading": "Hours & location",
         "show_map": true,
         "directions_label": "Open in Maps",
-        "color_scheme": "paper",
         "map_image": "as_3x2_1"
       },
       "blocks": []

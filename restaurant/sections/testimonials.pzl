@@ -50,6 +50,8 @@
 {
   "name": "Testimonials",
   "description": "Guest and press notes as a carousel or a grid.",
+  "kind": "Content",
+  "icon": "message-square-quote",
   "settings": [
     {
       "type": "select",

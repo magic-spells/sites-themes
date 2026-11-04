@@ -16,7 +16,6 @@
         "show_counter": true,
         "show_dots": true,
         "show_arrows": "hover",
-        "color_scheme": "surface",
         "gallery": "home-hero",
         "base_path": "/work"
       },
@@ -37,7 +36,6 @@
         "show_toggle": false,
         "view_all_label": "All work",
         "view_all_href": "/work",
-        "color_scheme": "surface",
         "collection": "series"
       },
       "blocks": []
@@ -54,7 +52,6 @@
         "body": "<p>I photograph landscapes and the traces of people who work in them. I live in Gothenburg and work across the Nordic countries and further afield.</p>",
         "link_label": "About the practice",
         "link": "/about",
-        "color_scheme": "surface",
         "image": "as_4x5_1",
         "caption": ""
       },
@@ -68,7 +65,6 @@
         "stagger": "alternate",
         "show_counter": false,
         "lightbox": true,
-        "color_scheme": "surface",
         "gallery": "salt-roads"
       },
       "blocks": []
@@ -83,8 +79,7 @@
         "standfirst": "",
         "show_arrows": true,
         "enquire_label": "Enquire",
-        "contact_path": "/contact",
-        "color_scheme": "surface"
+        "contact_path": "/contact"
       },
       "blocks": [
         {

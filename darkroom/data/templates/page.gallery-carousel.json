@@ -10,8 +10,7 @@
         "chip": "",
         "heading": "Live",
         "standfirst": "Stage photographs, 2019 to 2025",
-        "align": "left",
-        "color_scheme": "surface"
+        "align": "left"
       },
       "blocks": []
     },
@@ -26,7 +25,6 @@
         "show_counter": true,
         "show_arrows": true,
         "lightbox": true,
-        "color_scheme": "surface",
         "gallery": "live"
       },
       "blocks": []

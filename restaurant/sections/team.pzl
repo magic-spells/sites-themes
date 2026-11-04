@@ -22,6 +22,8 @@
 {
   "name": "Team",
   "description": "The people behind the food.",
+  "kind": "Content",
+  "icon": "users",
   "settings": [
     {
       "type": "text",
@@ -54,8 +56,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -64,8 +65,7 @@
       "settings": {
         "heading": "The kitchen",
         "show_heading": true,
-        "well_shape": "rounded",
-        "color_scheme": "paper"
+        "well_shape": "rounded"
       },
       "blocks": [
         {

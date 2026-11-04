@@ -33,6 +33,8 @@
 {
   "name": "Post",
   "description": "One journal entry, its metadata, image, byline and writing.",
+  "kind": "Content",
+  "icon": "file-text",
   "settings": [
     {
       "type": "checkbox",
@@ -67,8 +69,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "templates": [
@@ -82,8 +83,7 @@
         "show_image": true,
         "show_byline": true,
         "drop_cap": true,
-        "show_end_rule": true,
-        "color_scheme": "paper"
+        "show_end_rule": true
       }
     }
   ]

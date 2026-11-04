@@ -65,6 +65,8 @@
 {
   "name": "Header",
   "description": "The wordmark, navigation, category panel and reservation action.",
+  "kind": "Header",
+  "icon": "panel-top",
   "settings": [
     {
       "type": "text",
@@ -138,8 +140,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -154,7 +155,6 @@
         "menu_label": "Menu",
         "menu_path": "/menu",
         "show_chevron": true,
-        "color_scheme": "paper",
         "menu": "main",
         "categories": "menu_categories"
       }
@@ -170,7 +170,6 @@
         "menu_label": "Menu",
         "menu_path": "/menu",
         "show_chevron": true,
-        "color_scheme": "paper",
         "menu": "main",
         "categories": "menu_categories"
       }

@@ -27,7 +27,6 @@
         "menu_label": "Menu",
         "menu_path": "/menu",
         "show_chevron": true,
-        "color_scheme": "paper",
         "menu": "main",
         "categories": "menu_categories"
       },

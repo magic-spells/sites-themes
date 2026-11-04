@@ -61,6 +61,8 @@
 {
   "name": "Contact form",
   "description": "A contact form with optional heading and site contact details.",
+  "kind": "Contact",
+  "icon": "mail",
   "settings": [
     {
       "type": "text",
@@ -101,8 +103,7 @@
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "paper"
+      "label": "Color scheme"
     }
   ],
   "presets": [
@@ -114,8 +115,7 @@
         "text": "Seen something the valley should know about? Write to the newsroom. We read everything, and we protect our sources.",
         "show_details": true,
         "form": "contact",
-        "note": "",
-        "color_scheme": "paper"
+        "note": ""
       }
     }
   ]

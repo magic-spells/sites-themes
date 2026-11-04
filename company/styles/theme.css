@@ -41,12 +41,13 @@
    inline`: the utility Tailwind generates then reads --sites-scheme-* on the
    element it lands on. Without `inline` Tailwind emits
    `--color-scheme-background: var(--sites-scheme-background)` on :root, CSS
-   substitutes it there once, and every section inherits the default scheme's
+   substitutes it there once, and every section inherits the base scheme's
    color however it is classed. */
 @theme inline {
-	/* The current color scheme. Sites writes the first scheme's properties at
-	   :root and one .sites-scheme-<name> rule per scheme; a section set to a
-	   scheme carries that class, so every utility below recolors with it. Reach
+	/* The current color scheme. Sites writes the base scheme's properties at
+	   :root (the site's base_scheme, the first scheme when unset) and one
+	   .sites-scheme-<name> rule per scheme; a section set to a scheme carries
+	   that class, so every utility below recolors with it. Reach
 	   for these on anything inside a section — bg-scheme-background,
 	   text-scheme-heading — and for the palette names above only where a color
 	   must not follow the surface. */

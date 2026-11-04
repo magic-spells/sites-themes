@@ -12,8 +12,7 @@
         "standfirst": "",
         "align": "left",
         "show_eyebrow": false,
-        "show_standfirst": false,
-        "color_scheme": "paper"
+        "show_standfirst": false
       },
       "blocks": []
     },
@@ -27,7 +26,6 @@
         "show_intro": false,
         "form": "reservation",
         "note": "We hold the table for 15 minutes.",
-        "color_scheme": "paper",
         "image": "as_3x2_1"
       },
       "blocks": []
@@ -39,8 +37,7 @@
       "settings": {
         "heading": "A table for a few more",
         "note": "A few things before you visit.",
-        "first_open": true,
-        "color_scheme": "paper"
+        "first_open": true
       },
       "blocks": [
         {

@@ -1,30 +1,30 @@
-<!-- A strip of photographs: a tarot track of equal-width slides cropped to one ratio, 1.2, 2.5 then 3.5 across, starting at the column edge and bleeding off the right on a phone, with the progress bar and round arrows under it. Collage: the first three photos overlap across the column at every width, a 3:2 landscape, a square hanging below it and an upright 4:5 portal; the grid lines and ratios are tokens in styles/theme.css. Capsules: five tall rounded photos in a row, every second one lower, cut at the right edge on a phone. Each photo opens the lightbox. -->
+<!-- A strip of photographs: a tarot track of equal-width slides cropped to one ratio, each rounded at every corner, and the progress bar and round arrows under it. On a phone the track runs edge to edge, the first slide inset by the gutter and the next one cut at the right edge; from 48rem whole slides fill the column, two across, then three from 64rem. Collage: the first three photos overlap across the column at every width, a 3:2 landscape, a square hanging below it and an upright 4:5 portal; the grid lines and ratios are tokens in styles/theme.css. Capsules: five tall rounded photos in a row, every second one lower, cut at the right edge on a phone. Each photo opens the lightbox. -->
 {#let
   items = settings.gallery ? settings.gallery.items | slice(0, 12) : []
   id = 'strip-' + section.id
   strip = settings.layout == 'strip'
   ratio = settings.slide_ratio == '1:1' ? 'aspect-square' : (settings.slide_ratio == '3:2' ? 'aspect-3/2' : 'aspect-portrait')
   collage = settings.layout == 'collage'
-  options = { lightbox: true, progressBar: strip ? { selector: '#bar-' + id } : false, slidesPerView: 1.2, gap: '1rem', navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { lightbox: true, slidesPerView: 2.5, gap: '1.5rem', navigation: { showButtons: strip, showPagination: false } }, '1024': { lightbox: true, slidesPerView: 3.5, gap: '1.5rem', navigation: { showButtons: strip, showPagination: false } } } }
+  options = { lightbox: true, progressBar: strip ? { selector: '#bar-' + id } : false, slidesPerView: 1.2, gap: '1rem', paddingLeft: '1rem', navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { lightbox: true, slidesPerView: 2, gap: '1.5rem', paddingLeft: 0, navigation: { showButtons: strip, showPagination: false } }, '1024': { lightbox: true, slidesPerView: 3, gap: '1.5rem', paddingLeft: 0, navigation: { showButtons: strip, showPagination: false } } } }
 }
 {#if items.length}
 <section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter">
-  <tarot-carousel class="mx-auto block max-w-column ps-gutter md:ps-0" id={ id } data-track>
+  <tarot-carousel class="mx-auto block max-w-column" id={ id } data-track>
     <script type="application/json" data-tarot-options>{ options | json }</script>
-    <div class="pe-gutter md:pe-0"><SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } /></div>
+    <div class="px-gutter md:px-0"><SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } /></div>
     <tarot-viewport class={ strip ? null : 'sr-only' }>
       <tarot-track>
         {#for item in items, i}
           <tarot-slide>
             <a class="group block cursor-zoom-in" href="{ image_url(item.asset, 2560) }" data-tarot-lightbox aria-label="{ t('open_photo', { index: i + 1 }) }">
-              <span class="relative block overflow-hidden rounded-cap bg-scheme-surface-2 { ratio }"><img class="absolute inset-0 size-full object-cover" src="{ image_url(item.asset, 1024) }" srcset="{ image_srcset(item.asset, [480, 768, 1024]) }" sizes="(min-width: 64rem) 22rem, (min-width: 48rem) 40vw, 80vw" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } /></span>
+              <span class="relative block overflow-hidden rounded-cap bg-scheme-surface-2 { ratio }"><img class="absolute inset-0 size-full object-cover" src="{ image_url(item.asset, 1024) }" srcset="{ image_srcset(item.asset, [480, 768, 1024]) }" sizes="(min-width: 64rem) 27rem, (min-width: 48rem) 45vw, 80vw" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } /></span>
             </a>
             {#if item.caption}<p class="mt-space-xs text-body-sm text-scheme-meta" data-caption data-tarot-lightbox-fade>{ item.caption }</p>{/if}
           </tarot-slide>
         {/for}
       </tarot-track>
     </tarot-viewport>
-    {#if strip}<div class="pe-gutter md:pe-0"><Arrows bar="bar-{ id }" /></div>{/if}
+    {#if strip}<div class="px-gutter md:px-0"><Arrows bar="bar-{ id }" /></div>{/if}
   </tarot-carousel>
   {#if collage}
     <ul class="mx-gutter grid aspect-collage grid-cols-collage grid-rows-collage md:mx-auto md:max-w-column md:aspect-collage-wide md:grid-cols-collage-wide md:grid-rows-collage-wide" aria-hidden="true">

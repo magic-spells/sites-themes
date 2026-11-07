@@ -494,7 +494,7 @@ tarot-carousel[data-track]:not(:defined) tarot-slide {
 .tarot-lightbox__close,
 .tarot-lightbox .tarot-button {
 	background: #38463A;
-	border-radius: 9999px;
+	border-radius: var(--sites-radius-full);
 }
 .tarot-lightbox__close:hover,
 .tarot-lightbox .tarot-button:hover {
@@ -523,6 +523,7 @@ dialog-panel:has(bottom-sheet) {
 		inset: 0;
 		margin: auto;
 		width: min(90vw, 35rem);
+		height: fit-content;
 		max-height: 90dvh;
 		border-radius: var(--sites-radius-md);
 		box-shadow: none;

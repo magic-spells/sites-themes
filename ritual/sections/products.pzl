@@ -5,8 +5,8 @@
   options = { slidesPerView: 1.6, gap: '1rem', navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { slidesPerView: 3, gap: '1.5rem', navigation: { showButtons: true, showPagination: false } }, '1024': { slidesPerView: 5, gap: '1.5rem', navigation: { showButtons: true, showPagination: false } } } }
 }
 {#if items.length}
-<section class="bg-scheme-background py-section text-scheme-foreground">
-  <tarot-carousel class="mx-auto block max-w-column ps-gutter md:px-gutter" id={ id } data-track>
+<section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter">
+  <tarot-carousel class="mx-auto block max-w-column ps-gutter md:ps-0" id={ id } data-track>
     <script type="application/json" data-tarot-options>{ options | json }</script>
     <div class="pe-gutter md:pe-0"><SectionHead kicker={ settings.kicker } heading={ settings.heading } text={ settings.text }>{#if items.length > 5}<Arrows />{/if}</SectionHead></div>
     <tarot-viewport>

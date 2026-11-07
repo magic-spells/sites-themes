@@ -12,9 +12,9 @@
       {#for block in items, i}
         <li class="border-b border-scheme-rule" data-block={ block.editor_id }>
           <collapsible-component>
-            <h3><button class="group flex w-full items-center justify-between gap-space-md py-space-md text-left text-body-lg font-semibold" type="button">{ block.s.question }<span class="sites-icon size-icon shrink-0 transition-transform duration-fast group-aria-expanded:rotate-180" aria-hidden="true">{#svg 'icons/angle-down.svg'}</span></button></h3>
+            <h3><button class="group flex w-full items-center justify-between gap-space-md py-space-md text-left text-body-lg font-semibold" type="button">{ block.settings.question }<span class="sites-icon size-icon shrink-0 transition-transform duration-fast group-aria-expanded:rotate-180" aria-hidden="true">{#svg 'icons/angle-down.svg'}</span></button></h3>
             <collapsible-content open={ s.first_open && i == 0 }>
-              <div class="sites-prose pb-space-md text-scheme-muted">{ block.s.answer }</div>
+              <div class="sites-prose pb-space-md text-scheme-muted">{ block.settings.answer }</div>
             </collapsible-content>
           </collapsible-component>
         </li>

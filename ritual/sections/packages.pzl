@@ -3,11 +3,11 @@
   all = content.packages.entries | sort('fields.order')
   picked = (settings.source == 'featured' ? all | where('fields.featured') : all) | slice(0, 12)
 }
-<section class="bg-scheme-background py-section text-scheme-foreground">
-  <div class="mx-auto max-w-column px-gutter">
+<section class="bg-scheme-background py-section md:px-gutter text-scheme-foreground">
+  <div class="mx-auto max-w-column px-gutter md:px-0">
     <SectionHead kicker={ settings.kicker } heading={ settings.heading } text={ settings.text } />
   </div>
-  <ul class="mx-auto flex max-w-column snap-x snap-mandatory scroll-px-gutter items-start gap-space-md overflow-x-auto px-gutter md:grid md:snap-none md:overflow-visible { settings.columns == 2 ? 'md:grid-cols-2' : 'md:grid-cols-3' }">
+  <ul class="mx-auto flex max-w-column snap-x snap-mandatory scroll-px-gutter items-start gap-space-md overflow-x-auto px-gutter md:px-0 md:grid md:snap-none md:overflow-visible { settings.columns == 2 ? 'md:grid-cols-2' : 'md:grid-cols-3' }">
     {#for entry in picked}<li class="w-4/5 shrink-0 snap-start md:w-auto"><PackageCard entry={ entry } /></li>{/for}
   </ul>
 </section>

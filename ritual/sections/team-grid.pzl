@@ -4,11 +4,11 @@
   people = (settings.source == 'featured' ? team | where('fields.featured') : team) | slice(0, Math.min(settings.limit, 12))
   row = settings.mobile == 'row'
 }
-<section class="bg-scheme-background py-section text-scheme-foreground">
-  <div class="mx-auto max-w-column px-gutter">
+<section class="bg-scheme-background py-section md:px-gutter text-scheme-foreground">
+  <div class="mx-auto max-w-column px-gutter md:px-0">
     <SectionHead kicker={ settings.kicker } heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } />
   </div>
-  <ul class="mx-auto max-w-column gap-x-space-md gap-y-space-xl px-gutter md:grid md:grid-cols-2 lg:grid-cols-3 { row ? 'flex snap-x snap-mandatory scroll-px-gutter overflow-x-auto md:snap-none md:overflow-visible' : 'grid' }">
+  <ul class="mx-auto max-w-column gap-x-space-md gap-y-space-xl px-gutter md:grid md:px-0 md:grid-cols-2 lg:grid-cols-3 { row ? 'flex snap-x snap-mandatory scroll-px-gutter overflow-x-auto md:snap-none md:overflow-visible' : 'grid' }">
     {#for entry in people}<li class="{ row ? 'w-3/4 shrink-0 snap-start md:w-auto' : '' }"><TeamCard entry={ entry } base_path={ settings.base_path } /></li>{/for}
   </ul>
 </section>

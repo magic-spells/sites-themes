@@ -7,9 +7,9 @@
   options = { lightbox: true, slidesPerView: 1.2, gap: '1rem', navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { lightbox: true, slidesPerView: 2.5, gap: '1.5rem', navigation: { showButtons: true, showPagination: false } }, '1024': { lightbox: true, slidesPerView: 3.5, gap: '1.5rem', navigation: { showButtons: true, showPagination: false } } } }
 }
 {#if items.length}
-<section class="bg-scheme-background py-section text-scheme-foreground">
-  {#if settings.rule}<div class="mx-auto max-w-column px-gutter"><hr class="mb-space-xl border-scheme-rule" /></div>{/if}
-  <tarot-carousel class="mx-auto block max-w-column ps-gutter md:px-gutter" id={ id } data-track>
+<section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter">
+  {#if settings.rule}<div class="mx-auto max-w-column px-gutter md:px-0"><hr class="mb-space-xl border-scheme-rule" /></div>{/if}
+  <tarot-carousel class="mx-auto block max-w-column ps-gutter md:ps-0" id={ id } data-track>
     <script type="application/json" data-tarot-options>{ options | json }</script>
     <div class="pe-gutter md:pe-0"><SectionHead kicker={ settings.kicker } heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href }>{#if !collage}<Arrows />{/if}</SectionHead></div>
     <tarot-viewport class={ collage ? 'md:sr-only' : null }>
@@ -26,7 +26,7 @@
     </tarot-viewport>
   </tarot-carousel>
   {#if collage}
-    <ul class="mx-auto hidden max-w-column grid-cols-12 items-center px-gutter md:grid" aria-hidden="true">
+    <ul class="mx-auto hidden max-w-column grid-cols-12 items-center md:grid" aria-hidden="true">
       {#for item in items | slice(0, 3), i}
         <li class="row-start-1 { i == 0 ? 'col-span-5 col-start-1' : (i == 1 ? 'z-10 col-span-4 col-start-5 mt-space-3xl' : 'col-span-4 col-start-9') }">
           <button class="group block w-full cursor-zoom-in" type="button" tabindex="-1" data-lightbox-open={ id } data-index={ i }><Well asset={ item.asset } alt="" ratio={ i == 1 ? 'aspect-3/2' : 'aspect-portrait' } shape={ i == 1 ? 'cap' : 'portal' } width={ 800 } sizes="40vw" tilt={ i == 1 } zoom={ true } /></button>

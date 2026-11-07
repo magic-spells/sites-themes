@@ -1,9 +1,9 @@
-<!-- What people say. Carousel: a tarot one-up on fern, the head with round arrows right, the quote centred in Gloock with its accent word, the name and the treatment under it. Portraits: three across from 48rem, each a small 4:5 portal portrait, the quote in Body large and one Meta line with the name and the treatment. -->
+<!-- What people say. Carousel: a tarot one-up on fern under a centred head, the quote centred in Gloock with its accent word, the name and the treatment under it, page dots below; from 64rem round arrows at the stage's sides show on hover or keyboard focus. Portraits: three across from 48rem, each a small 4:5 portal portrait, the quote in Body large and one Meta line with the name and the treatment. -->
 {#let
   id = 'quotes-' + section.id
   all = content.testimonials.entries | sort('fields.order')
   quotes = (settings.source == 'featured' ? all | where('fields.featured') : all) | slice(0, settings.limit)
-  options = { slidesPerView: 1, gap: '1.5rem', loop: true, navigation: { showButtons: true, showPagination: false } }
+  options = { slidesPerView: 1, gap: '1.5rem', loop: true, navigation: { showButtons: true, showPagination: true } }
 }
 {#if quotes.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
@@ -25,18 +25,21 @@
     {:else}
       <tarot-carousel class="block" id={ id }>
         <script type="application/json" data-tarot-options>{ options | json }</script>
-        <SectionHead heading={ settings.heading }>{#if quotes.length > 1}<Arrows />{/if}</SectionHead>
-        <tarot-viewport><tarot-track>
-          {#for entry in quotes}
-            {#let f = entry.fields}
-            <tarot-slide>
-              <figure class="mx-auto grid max-w-reading justify-items-center gap-space-md py-space-lg text-center">
-                <blockquote class="font-heading text-h2 text-balance"><Accent text={ '“' + f.quote + '”' } /></blockquote>
-                <figcaption class="text-body-sm"><span class="font-semibold">{ f.name }</span>{#if f.line || f.service} <span class="text-scheme-meta">· { f.line || f.service.title }</span>{/if}</figcaption>
-              </figure>
-            </tarot-slide>
-          {/for}
-        </tarot-track></tarot-viewport>
+        <SectionHead heading={ settings.heading } centred={ true } />
+        <div class="group relative">
+          <tarot-viewport><tarot-track>
+            {#for entry in quotes}
+              {#let f = entry.fields}
+              <tarot-slide>
+                <figure class="mx-auto grid max-w-reading justify-items-center gap-space-md pt-space-lg text-center">
+                  <blockquote class="font-heading text-h2 text-balance"><Accent text={ '“' + f.quote + '”' } /></blockquote>
+                  <figcaption class="text-body-sm"><span class="font-semibold">{ f.name }</span>{#if f.line || f.service} <span class="text-scheme-meta">· { f.line || f.service.title }</span>{/if}</figcaption>
+                </figure>
+              </tarot-slide>
+            {/for}
+          </tarot-track></tarot-viewport>
+          {#if quotes.length > 1}<Arrows wrap="pointer-events-none absolute inset-0 hidden items-center justify-between opacity-0 transition-opacity duration-fast group-hover:opacity-100 has-focus-visible:opacity-100 lg:flex" />{/if}
+        </div>
       </tarot-carousel>
     {/if}
   </div>

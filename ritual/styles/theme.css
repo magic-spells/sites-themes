@@ -176,6 +176,7 @@
 	--grid-template-columns-collage-wide: 47fr 12fr 9fr 8fr 24fr;
 	--grid-template-rows-collage: 52fr 22fr 77.4fr;
 	--grid-template-rows-collage-wide: 22.5fr 40fr 73.7fr;
+	--opacity-dots-inactive: 35%;
 	--transition-duration-fast: 150ms;
 	--transition-duration-panel: 250ms;
 	--ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
@@ -459,7 +460,7 @@ dropdown-component:not(:defined) dropdown-panel {
    shows its first slide and a track lays its slides out as a row that
    scrolls. */
 tarot-carousel {
-	--color-pagination-dot: color-mix(in srgb, var(--sites-scheme-foreground) 35%, transparent);
+	--color-pagination-dot: color-mix(in srgb, var(--sites-scheme-foreground) var(--opacity-dots-inactive), transparent);
 	--color-pagination-dot-active: var(--sites-scheme-links);
 }
 tarot-carousel > .tarot-dots-list {

@@ -2,6 +2,7 @@
 
 ## 0.1.0
 
+- The Book page puts the house's phone, address and hours in three cards beside the request form; the booking form section's Aside setting chooses them or a photo.
 - Visit us puts the picture first, in the wide column: the photo, the map image or the embedded map as a 4:3 stadium.
 - Landscape image wells are round at every corner, not only at the top.
 - Team cards take capsule portraits.

@@ -7,7 +7,7 @@
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "heading": "Request an *appointment*",
+        "heading": "Book an *appointment*",
         "text": "Tell us what you would like and when suits you. We confirm by text within a day.",
         "color_scheme": "sand"
       },
@@ -18,10 +18,9 @@
       "type": "booking-form",
       "preset": "Default",
       "settings": {
-        "heading": "",
+        "aside": "details",
+        "heading": "Tell us what you would *like*",
         "text": "",
-        "image": "as_4x5_clay",
-        "image_alt": "A treatment room",
         "color_scheme": "linen"
       },
       "blocks": []

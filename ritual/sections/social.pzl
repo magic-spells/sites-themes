@@ -20,7 +20,7 @@
     </ul>
     {#if split}
       <div class="grid justify-items-start gap-space-sm">
-        <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ settings.heading } /></h2>
+        <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ settings.heading } rise={ true } /></h2>
         {#if settings.handle}<a class="text-body font-semibold text-accent underline underline-offset-4 hover:text-scheme-foreground" href="{ settings.url }" target="_blank" rel="noopener">{ settings.handle }</a>{/if}
         {#if settings.text}<p class="text-body text-pretty text-scheme-muted">{ settings.text }</p>{/if}
         <div class="pt-space-xs"><Button href={ settings.url } external={ true }>{ settings.button_label }</Button></div>

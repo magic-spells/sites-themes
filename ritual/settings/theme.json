@@ -1,0 +1,54 @@
+{
+  "name": "Ritual",
+  "version": "0.1.0",
+  "default_template": "page",
+  "not_found_template": "404",
+  "maintenance_template": "maintenance",
+  "query": ["category"],
+  "groups": {
+    "header-group": { "label": "Header", "accepts": ["announcement-bar", "header"] },
+    "footer-group": { "label": "Footer", "accepts": ["footer"] },
+    "panel-group": { "label": "Panels", "accepts": ["mobile-menu", "booking-panel", "cookie-notice"] }
+  },
+  "settings": [
+    {
+      "name": "Brand",
+      "settings": [
+        { "type": "text", "id": "wordmark", "label": "Wordmark", "default": "Juniper House", "info": "Set in the heading face, mixed case, in the header, the footer stamp and the gift card." },
+        { "type": "image", "id": "favicon", "label": "Favicon" },
+        { "type": "text", "id": "tagline", "label": "Tagline", "default": "A day spa and salon on Alder Street." },
+        { "type": "text", "id": "currency_symbol", "label": "Currency symbol", "default": "$" },
+        { "type": "checkbox", "id": "reveal", "label": "Reveal on scroll", "default": true, "info": "Cards and tiles fade up as they enter view. Never the first screen." }
+      ]
+    },
+    {
+      "name": "House",
+      "settings": [
+        { "type": "textarea", "id": "ticker_lines", "label": "Ticker lines", "default": "Open Sundays 10–4\nGift cards for the holidays\nNew: dermaplaning with June", "info": "One phrase per line, read by the announcement bar." },
+        { "type": "text", "id": "action_label", "label": "Primary action label", "default": "Book", "info": "Book, or Request an appointment. Every primary button carries it." },
+        { "type": "select", "id": "booking", "label": "Booking", "default": "form", "options": [
+          { "value": "form", "label": "Request form (the booking panel)" },
+          { "value": "link", "label": "Link to a booking page" }
+        ] },
+        { "type": "url", "id": "booking_url", "label": "Booking page", "default": "", "info": "Your booking provider's page, used when Booking is a link." },
+        { "type": "url", "id": "booking_path", "label": "Request page", "default": "/book", "info": "Where the primary action leads without JavaScript." },
+        { "type": "form", "id": "booking_form", "label": "Booking form", "default": "booking" },
+        { "type": "text", "id": "confirm_line", "label": "Confirm line", "default": "We confirm by text within a day." },
+        { "type": "url", "id": "gift_card_url", "label": "Gift card page", "default": "", "info": "Where Buy a gift card leads. Empty opens the booking form." },
+        { "type": "text", "id": "text_number", "label": "Text or WhatsApp number", "default": "" },
+        { "type": "text", "id": "stamp_line", "label": "Stamp line", "default": "", "info": "The word under the wordmark in the footer stamp. Empty uses the first location's street." },
+        { "type": "select", "id": "texture", "label": "Texture", "default": "grain", "options": [
+          { "value": "none", "label": "None" },
+          { "value": "grain", "label": "Grain" }
+        ], "info": "A fine grain over the cover hero, the gift card band and the booking band." }
+      ]
+    },
+    {
+      "name": "Contact",
+      "settings": [
+        { "type": "text", "id": "phone", "label": "Phone", "default": "", "info": "Used when no location is set up." },
+        { "type": "text", "id": "email", "label": "Email", "default": "" }
+      ]
+    }
+  ]
+}

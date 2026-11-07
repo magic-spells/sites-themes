@@ -18,7 +18,7 @@
   "name": "Locations",
   "description": "Each location with its photo or map, address, hours, Directions and Call.",
   "kind": "Contact",
-  "icon": "mail",
+  "icon": "map-pin",
   "settings": [
     { "type": "text", "id": "kicker", "label": "Kicker", "default": "", "info": "A short mono line above the heading." },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Find us" },

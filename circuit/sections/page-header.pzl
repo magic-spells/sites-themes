@@ -13,8 +13,8 @@
 {
   "name": "Page header",
   "description": "A kicker, the page heading and a standfirst.",
-  "kind": "Content",
-  "icon": "file-text",
+  "kind": "Hero",
+  "icon": "heading-1",
   "settings": [
     { "type": "text", "id": "kicker", "label": "Kicker", "default": "" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "", "info": "Leave empty to use the page title." },

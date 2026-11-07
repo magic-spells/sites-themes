@@ -6,9 +6,7 @@
       "id": "s_photos",
       "type": "album-photos",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "white"
-      },
+      "settings": {},
       "blocks": []
     },
     {

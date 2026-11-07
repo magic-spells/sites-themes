@@ -63,7 +63,7 @@
   "name": "Location detail",
   "description": "A location's page: photo, address, hours, contact, map and the sessions held there.",
   "kind": "Contact",
-  "icon": "mail",
+  "icon": "map-pin",
   "templates": ["location"],
   "settings": [
     { "type": "text", "id": "back_label", "label": "Back link label", "default": "All locations" },
@@ -74,7 +74,7 @@
     { "type": "collection", "id": "sessions", "label": "Sessions", "info": "Reads sessions: class, day, start and location." },
     { "type": "url", "id": "class_path", "label": "Class page path", "default": "/classes" },
     { "type": "text", "id": "action_label", "label": "Action label", "default": "" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
     { "name": "Default", "settings": { "sessions": "sessions" } }

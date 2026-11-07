@@ -24,7 +24,7 @@
   "name": "Stats",
   "description": "Three or four big numbers with a unit in flare and a label.",
   "kind": "Content",
-  "icon": "list",
+  "icon": "hash",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "", "info": "Optional; screen readers get one either way." },
     { "type": "select", "id": "columns", "label": "Columns", "default": "4", "options": [

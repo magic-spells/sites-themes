@@ -18,7 +18,7 @@
   "name": "Cookie notice",
   "description": "A short notice shown once per visitor, bottom right.",
   "kind": "Panels",
-  "icon": "sticky-note",
+  "icon": "cookie",
   "settings": [
     { "type": "richtext", "id": "body", "label": "Text", "default": "<p>This site uses your browser’s local storage to remember that you have seen this note, and nothing else.</p>" },
     { "type": "text", "id": "accept_label", "label": "Accept label", "default": "OK" },
@@ -26,10 +26,10 @@
     { "type": "text", "id": "link_label", "label": "Link label", "default": "Privacy" },
     { "type": "url", "id": "link_href", "label": "Link", "default": "/privacy" },
     { "type": "text", "id": "key", "label": "Key", "default": "circuit-notice-2026-11", "info": "Change it to show the notice again." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "white" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

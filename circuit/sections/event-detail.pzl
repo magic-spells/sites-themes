@@ -58,7 +58,7 @@
   "name": "Event detail",
   "description": "An event's page: photo, date, place, description, route and pace, and the photos from last time.",
   "kind": "Content",
-  "icon": "file-text",
+  "icon": "calendar-days",
   "templates": ["event"],
   "settings": [
     { "type": "text", "id": "back_label", "label": "Back link label", "default": "" },
@@ -67,7 +67,7 @@
     { "type": "checkbox", "id": "show_album", "label": "Show the photos from last time", "default": true },
     { "type": "text", "id": "album_heading", "label": "Photos heading", "default": "Photos from last time" },
     { "type": "url", "id": "album_path", "label": "Album page path", "default": "/gallery" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
     { "name": "Default", "settings": {} }

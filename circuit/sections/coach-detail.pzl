@@ -35,7 +35,7 @@
   "name": "Coach detail",
   "description": "The coach page's head: portrait, bio, credentials and the primary action.",
   "kind": "Content",
-  "icon": "file-text",
+  "icon": "user",
   "templates": ["coach"],
   "settings": [
     { "type": "text", "id": "action_label", "label": "Action label", "default": "Book a session" },
@@ -46,7 +46,7 @@
       { "value": "mono", "label": "Mono" },
       { "value": "duotone", "label": "Duotone" }
     ] },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
     { "name": "Default", "settings": {} }

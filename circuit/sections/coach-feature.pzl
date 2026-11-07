@@ -39,7 +39,7 @@
   "name": "Coach feature",
   "description": "One coach, large: portrait, bio, credentials and the primary action.",
   "kind": "Content",
-  "icon": "image",
+  "icon": "user",
   "settings": [
     { "type": "entry", "id": "coach", "label": "Coach", "info": "Reads title, role, bio, credentials, specialties, image, image_alt and link." },
     { "type": "checkbox", "id": "use_page", "label": "Use the page's coach", "default": true, "info": "On a coach's page, show that coach instead." },
@@ -57,7 +57,7 @@
       { "value": "mono", "label": "Mono" },
       { "value": "duotone", "label": "Duotone" }
     ] },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
     { "name": "Default", "settings": {} }

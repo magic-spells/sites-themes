@@ -1,5 +1,22 @@
 # Circuit
 
+## 0.2.0
+
+- Every section names a `kind` and a Lucide `icon` that match the other themes' (the page header
+  is a Hero; the cookie notice, mobile menu, newsletter, testimonials, CTA band and the class,
+  coach, event, location, plan and timetable sections draw their own icons), so the Add-section
+  picker groups them and draws their icons.
+- The panel group is labelled Panel.
+- A section whose color scheme defaulted to the first scheme now has no default and follows the
+  site's base scheme; sections that default to another scheme keep it: the header, footer, hero,
+  plans and stats keep `black`; the page header, FAQ, locations and timetable `concrete`; the
+  announcement bar, ticker, CTA band and community links `flare`; the newsletter and value props
+  `graphite`.
+- The starter templates, section groups and presets no longer store the first scheme, so a new
+  site's sections follow its base scheme too. A stored `white` that overrides its section's own
+  default (the header, the plans, the FAQ, the locations and the timetable on some pages, and
+  the header's presets) keeps its value.
+
 ## 0.1.0
 
 - 36 sections: the global header, footer, announcement, ticker, mobile menu, trial sheet and

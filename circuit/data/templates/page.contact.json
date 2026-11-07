@@ -20,8 +20,7 @@
       "preset": "Default",
       "settings": {
         "heading": "",
-        "locations": "locations",
-        "color_scheme": "white"
+        "locations": "locations"
       },
       "blocks": []
     },

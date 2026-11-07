@@ -6,9 +6,7 @@
       "id": "s_detail",
       "type": "event-detail",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "white"
-      },
+      "settings": {},
       "blocks": []
     },
     {
@@ -20,7 +18,6 @@
         "events": "events",
         "layout": "cards",
         "limit": 3,
-        "color_scheme": "white",
         "kicker": "Events"
       },
       "blocks": []

@@ -30,7 +30,6 @@
       "preset": "Default",
       "settings": {
         "classes": "classes",
-        "color_scheme": "white",
         "kicker": "Classes",
         "heading": "What’s on the floor",
         "text": ""
@@ -95,8 +94,7 @@
       "settings": {
         "gallery": "home-wall",
         "layout": "bento",
-        "overlap": true,
-        "color_scheme": "white"
+        "overlap": true
       },
       "blocks": []
     },
@@ -119,7 +117,6 @@
       "preset": "Default",
       "settings": {
         "coaches": "coaches",
-        "color_scheme": "white",
         "kicker": "Coaches",
         "heading": "The people on the floor",
         "limit": 4
@@ -168,8 +165,7 @@
       "type": "testimonials",
       "preset": "Carousel",
       "settings": {
-        "layout": "carousel",
-        "color_scheme": "white"
+        "layout": "carousel"
       },
       "blocks": [
         {
@@ -222,7 +218,6 @@
         "events": "events",
         "layout": "cards",
         "limit": 3,
-        "color_scheme": "white",
         "kicker": "Events",
         "heading": "Next meet-ups"
       },

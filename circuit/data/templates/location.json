@@ -7,8 +7,7 @@
       "type": "location-detail",
       "preset": "Default",
       "settings": {
-        "sessions": "sessions",
-        "color_scheme": "white"
+        "sessions": "sessions"
       },
       "blocks": []
     },

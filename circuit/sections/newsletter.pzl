@@ -29,7 +29,7 @@
   "name": "Newsletter",
   "description": "A heading and one email field.",
   "kind": "Contact",
-  "icon": "mail",
+  "icon": "send",
   "settings": [
     { "type": "text", "id": "kicker", "label": "Kicker", "default": "The weekly" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "The timetable, in your inbox, every Sunday" },

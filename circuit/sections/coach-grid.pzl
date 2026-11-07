@@ -36,7 +36,7 @@
   "name": "Coach grid",
   "description": "Coach portraits with name, role and specialties.",
   "kind": "Collections",
-  "icon": "layout-template",
+  "icon": "users",
   "settings": [
     { "type": "text", "id": "kicker", "label": "Kicker", "default": "", "info": "A short mono line above the heading." },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Coaches" },
@@ -69,7 +69,7 @@
     { "type": "url", "id": "base_path", "label": "Coach page path", "default": "/coaches" },
     { "type": "text", "id": "view_all_label", "label": "View-all label", "default": "All coaches" },
     { "type": "url", "id": "view_all_href", "label": "View-all link", "default": "/coaches" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "blocks": [
     { "type": "coach", "name": "Coach", "settings": [

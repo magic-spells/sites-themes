@@ -10,7 +10,6 @@
         "image": "as_3x2_2",
         "image_side": "right",
         "body": "<p>In 2014 twelve runners met in the car park behind Foundry Lane every Saturday at eight. No kit, no fees, just a loop of the river and coffee after.</p><p>The first barbell arrived a year later, in a lock-up beside the bike shop. Since then it has grown to two rooms, six coaches and seventy-five classes a week, and the Saturday run still leaves from the river gate.</p>",
-        "color_scheme": "white",
         "kicker": "Our story",
         "heading": "A gym that started as a run club"
       },
@@ -73,8 +72,7 @@
       "preset": "Default",
       "settings": {
         "coach": "coach_dana_okafor",
-        "kicker": "Head coach",
-        "color_scheme": "white"
+        "kicker": "Head coach"
       },
       "blocks": []
     },
@@ -131,8 +129,7 @@
       "preset": "Pairs",
       "settings": {
         "gallery": "about-pairs",
-        "layout": "pairs",
-        "color_scheme": "white"
+        "layout": "pairs"
       },
       "blocks": []
     },

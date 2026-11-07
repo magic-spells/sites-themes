@@ -21,8 +21,7 @@
       "settings": {
         "heading": "",
         "albums": "albums",
-        "view_all_label": "",
-        "color_scheme": "white"
+        "view_all_label": ""
       },
       "blocks": []
     },
@@ -32,7 +31,6 @@
       "preset": "Default",
       "settings": {
         "gallery": "floor-strip",
-        "color_scheme": "white",
         "heading": "On the floor"
       },
       "blocks": []

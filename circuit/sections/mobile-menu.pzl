@@ -46,17 +46,17 @@
   "name": "Mobile menu",
   "description": "The menu as a bottom sheet below 64rem, with the classes under Classes and the primary action.",
   "kind": "Panels",
-  "icon": "panel-bottom",
+  "icon": "menu",
   "settings": [
     { "type": "menu", "id": "menu", "label": "Menu" },
     { "type": "checkbox", "id": "show_classes", "label": "List the classes", "default": true, "info": "Under the menu item that links to the classes page." },
     { "type": "collection", "id": "classes", "label": "Classes", "info": "Reads classes: title, handle, duration_minutes, level and order. Shows the first 12." },
     { "type": "url", "id": "classes_path", "label": "Classes page", "default": "/classes" },
     { "type": "url", "id": "base_path", "label": "Class page path", "default": "/classes" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "menu": "main", "classes": "classes", "color_scheme": "white" } }
+    { "name": "Default", "settings": { "menu": "main", "classes": "classes" } }
   ]
 }
 </schema>

@@ -24,7 +24,6 @@
         "classes": "classes",
         "columns": "3",
         "limit": 12,
-        "color_scheme": "white",
         "view_all_label": ""
       },
       "blocks": []

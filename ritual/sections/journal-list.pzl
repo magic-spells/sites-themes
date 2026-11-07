@@ -17,7 +17,7 @@
     {/if}
     {#if lead}<div class="mb-space-2xl view-list:mb-space-md"><PostCard entry={ lead } base_path={ settings.base_path } featured={ true } eager={ true } /></div>{/if}
     <ul class="grid gap-x-space-md gap-y-space-xl md:grid-cols-2 view-list:gap-y-space-md view-list:md:grid-cols-1 { feature ? 'lg:grid-cols-3' : '' }">
-      {#for entry in rest, i}<li class={ feature && i == 0 ? 'md:col-span-2 lg:row-span-2' : null }><PostCard entry={ entry } base_path={ settings.base_path } featured={ feature && i == 0 } compact={ feature && i > 0 } /></li>{/for}
+      {#for entry in rest, i}<li class={ feature && i == 0 ? 'md:col-span-2 lg:row-span-2' : null }><PostCard entry={ entry } base_path={ settings.base_path } featured={ feature && i == 0 } ratio={ feature && i == 0 ? 'aspect-3/2' : null } compact={ feature && i > 0 } /></li>{/for}
     </ul>
   </div>
 </section>

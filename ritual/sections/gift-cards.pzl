@@ -1,4 +1,4 @@
-<!-- The gift card band, on clay with grain: a fern portal card left (the kicker, the amount in Price, the wordmark small), and beside it the heading with its accent word, a line, the amounts as chips, one button to the gift card shop (or the booking form) and the fine print in Meta. -->
+<!-- The gift card band, on clay with grain: a fern portal card left (the Gift card label, the amount in Price, the wordmark small), and beside it the heading with its accent word, a line, the amounts as chips, one button to the gift card shop (or the booking form) and the fine print in Meta. -->
 {#let
   amounts = settings.amounts | split(',')
   url = settings.link || site.settings.gift_card_url
@@ -11,7 +11,6 @@
       <span class="font-heading text-h4">{ wordmark }</span>
     </div>
     <div class="grid max-w-text gap-space-md">
-      {#if settings.kicker}<p class="text-kicker font-semibold text-scheme-meta uppercase">{ settings.kicker }</p>{/if}
       <h2 class="font-heading text-h1 text-balance text-scheme-heading"><Accent text={ settings.heading } /></h2>
       {#if settings.text}<p class="text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
       {#if amounts.length}
@@ -32,7 +31,6 @@
   "kind": "Call to action",
   "icon": "gift",
   "settings": [
-    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Give an hour", "info": "Words only: no numbers or dates." },
     { "type": "text", "id": "heading", "label": "Heading", "default": "The gift of *nothing* to do", "info": "Wrap one word in asterisks to set it in the accent." },
     { "type": "textarea", "id": "text", "label": "Text", "default": "Any treatment, any amount, for anyone who could use an hour off." },
     { "type": "text", "id": "card_amount", "label": "Amount on the card", "default": "$100" },

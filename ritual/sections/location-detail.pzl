@@ -9,7 +9,6 @@
     <div class="grid items-center gap-space-xl md:grid-cols-2 lg:gap-space-3xl">
       <div class="w-full max-w-photo"><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="(min-width: 48rem) 30rem, 100vw" eager={ true } /></div>
       <div class="grid gap-space-md">
-        <p class="text-kicker font-semibold text-scheme-meta uppercase">{ settings.kicker }</p>
         <h1 class="font-heading text-h1 text-balance text-scheme-heading">{ loc.title }</h1>
         {#if f.description}<p class="max-w-text text-body-lg text-pretty text-scheme-muted">{ f.description }</p>{/if}
         <div class="grid gap-space-lg pt-space-sm lg:grid-cols-3">
@@ -48,7 +47,6 @@
   "icon": "map-pin",
   "templates": ["location"],
   "settings": [
-    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Visit", "info": "Words only: no numbers or dates." },
     { "type": "checkbox", "id": "show_events", "label": "Show events here", "default": true },
     { "type": "url", "id": "events_path", "label": "Event page path", "default": "/events" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }

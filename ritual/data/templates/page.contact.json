@@ -7,7 +7,6 @@
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "kicker": "Contact",
         "heading": "Say *hello*",
         "color_scheme": "sand"
       },

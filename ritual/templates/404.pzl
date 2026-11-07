@@ -4,7 +4,6 @@
 {#let services = content.services.entries | where('fields.featured') | sort('fields.order') | slice(0, 3)}
 <section class="sites-scheme-sand bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column justify-items-start gap-space-md">
-    <p class="text-kicker font-semibold text-scheme-meta uppercase">{ t('not_found_kicker') }</p>
     <h1 class="max-w-reading font-heading text-h1 text-balance text-scheme-heading"><Accent text={ t('not_found_title') } /></h1>
     <p class="max-w-text text-body-lg text-pretty text-scheme-muted">{ t('not_found_body') }</p>
     <Button href="/">{ t('home') }</Button>

@@ -7,7 +7,6 @@
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "kicker": "Gallery",
         "heading": "The work and the *rooms*",
         "color_scheme": "sand"
       },

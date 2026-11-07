@@ -1,9 +1,8 @@
 <!-- component: SectionHead -->
-<!-- A section's heading block: the kicker (words only), the heading in h2 with its accent word, a line under it and the view-all link under that; anything the section passes in (carousel arrows) sits right, on the heading's baseline. -->
-{#if heading || kicker}
+<!-- A section's heading block: the heading in h2 with its accent word, a line under it and the view-all link under that; anything the section passes in (carousel arrows) sits right, on the heading's baseline. -->
+{#if heading}
 <div class="mb-space-xl flex flex-wrap items-end justify-between gap-x-space-lg gap-y-space-sm">
   <div class="grid max-w-reading gap-space-xs">
-    {#if kicker}<p class="text-kicker font-semibold text-scheme-meta uppercase">{ kicker }</p>{/if}
     {#if heading}<h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ heading } /></h2>{/if}
     {#if text}<p class="text-body text-pretty text-scheme-muted">{ text }</p>{/if}
     {#if link_label && link_href}<a class="mt-space-2xs justify-self-start text-body-sm font-semibold text-accent underline underline-offset-4 hover:text-scheme-foreground" href="{ link_href }">{ link_label }</a>{/if}

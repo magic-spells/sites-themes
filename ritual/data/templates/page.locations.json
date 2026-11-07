@@ -7,7 +7,6 @@
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "kicker": "Visit",
         "heading": "Find the *house*",
         "color_scheme": "sand"
       },
@@ -27,7 +26,6 @@
       "type": "faq",
       "preset": "Default",
       "settings": {
-        "kicker": "Getting here",
         "heading": "Parking and *access*",
         "color_scheme": "linen"
       },

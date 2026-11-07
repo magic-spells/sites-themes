@@ -2263,7 +2263,7 @@
         {
           "id": "topic",
           "type": "text",
-          "label": "Topic (the kicker)"
+          "label": "Topic"
         },
         {
           "id": "location",

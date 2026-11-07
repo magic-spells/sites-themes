@@ -7,7 +7,6 @@
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "kicker": "Events",
         "heading": "Workshops and *classes*",
         "text": "Small groups, in the studio or a treatment room. Listed by date.",
         "color_scheme": "sand"

@@ -7,7 +7,6 @@
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "kicker": "Team",
         "heading": "The *people*",
         "text": "Six of us, each with a room of our own.",
         "color_scheme": "sand"
@@ -20,7 +19,6 @@
       "preset": "Default",
       "settings": {
         "source": "all",
-        "kicker": "",
         "heading": "",
         "link_label": "",
         "mobile": "stack",

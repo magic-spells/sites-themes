@@ -7,7 +7,6 @@
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "kicker": "Book",
         "heading": "Request an *appointment*",
         "text": "Tell us what you would like and when suits you. We confirm by text within a day.",
         "color_scheme": "sand"
@@ -19,7 +18,6 @@
       "type": "booking-form",
       "preset": "Default",
       "settings": {
-        "kicker": "",
         "heading": "",
         "text": "",
         "image": "as_4x5_clay",

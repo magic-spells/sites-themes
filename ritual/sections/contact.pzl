@@ -8,7 +8,7 @@
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-5 lg:gap-space-3xl">
     <div class="md:col-span-3">
-      <SectionHead kicker={ settings.kicker } heading={ settings.heading } text={ settings.text } />
+      <SectionHead heading={ settings.heading } text={ settings.text } />
       <Form handle={ settings.form } class="grid gap-space-md" id="contact-{ section.id }">
         {#if form.sent}
           <p class="text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
@@ -42,7 +42,6 @@
   "kind": "Forms",
   "icon": "mail",
   "settings": [
-    { "type": "text", "id": "kicker", "label": "Kicker", "default": "", "info": "Words only: no numbers or dates." },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Write to *us*", "info": "Wrap one word in asterisks to set it in the accent." },
     { "type": "text", "id": "text", "label": "Text", "default": "For appointments, Book is quicker. For anything else, here." },
     { "type": "form", "id": "form", "label": "Form" },

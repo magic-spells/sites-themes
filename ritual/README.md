@@ -46,8 +46,7 @@ sites.fixtures.json Juniper House: pages, menus, galleries, forms, categories, s
 ## Writing headings
 
 Every heading setting marks its accent word with asterisks: `Come in and *breathe*` prints
-"breathe" upright in the scheme's accent colour. One word per heading. Kickers hold words only,
-never numbers or dates.
+"breathe" upright in the scheme's accent colour. One word per heading.
 
 ## Content
 

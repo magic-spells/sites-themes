@@ -7,7 +7,6 @@
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "kicker": "Policies",
         "heading": "The small *print*",
         "color_scheme": "sand"
       },
@@ -18,7 +17,6 @@
       "type": "policies",
       "preset": "Default",
       "settings": {
-        "kicker": "",
         "heading": "",
         "color_scheme": "linen"
       },

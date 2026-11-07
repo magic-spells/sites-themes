@@ -11,7 +11,7 @@
   {#if settings.rule}<div class="mx-auto max-w-column px-gutter md:px-0"><hr class="mb-space-xl border-scheme-rule" /></div>{/if}
   <tarot-carousel class="mx-auto block max-w-column ps-gutter md:ps-0" id={ id } data-track>
     <script type="application/json" data-tarot-options>{ options | json }</script>
-    <div class="pe-gutter md:pe-0"><SectionHead kicker={ settings.kicker } heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href }>{#if !collage}<Arrows />{/if}</SectionHead></div>
+    <div class="pe-gutter md:pe-0"><SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href }>{#if !collage}<Arrows />{/if}</SectionHead></div>
     <tarot-viewport class={ collage ? 'md:sr-only' : null }>
       <tarot-track>
         {#for item in items, i}
@@ -54,7 +54,6 @@
       { "value": "4:5", "label": "Portrait 4:5" },
       { "value": "3:2", "label": "Landscape 3:2" }
     ] },
-    { "type": "text", "id": "kicker", "label": "Kicker", "default": "", "info": "Words only: no numbers or dates." },
     { "type": "text", "id": "heading", "label": "Heading", "default": "From the *chair*", "info": "Wrap one word in asterisks to set it in the accent." },
     { "type": "text", "id": "text", "label": "Text", "default": "" },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "See more" },

@@ -17,7 +17,6 @@
       "preset": "You might also like",
       "settings": {
         "source": "related",
-        "kicker": "",
         "heading": "You might also *like*",
         "handles": "hot-stone, signature-facial, blowout",
         "limit": 3,

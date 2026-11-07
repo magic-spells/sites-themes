@@ -16,7 +16,6 @@
       "type": "faq",
       "preset": "Default",
       "settings": {
-        "kicker": "Gift cards",
         "heading": "About gift *cards*",
         "color_scheme": "linen"
       },

@@ -7,7 +7,6 @@
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "kicker": "Packages",
         "heading": "Memberships and *series*",
         "text": "For people who would rather not think about booking.",
         "color_scheme": "sand"
@@ -19,7 +18,6 @@
       "type": "packages",
       "preset": "Default",
       "settings": {
-        "kicker": "",
         "heading": "",
         "color_scheme": "linen"
       },

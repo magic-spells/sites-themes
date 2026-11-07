@@ -1,4 +1,4 @@
-<!-- An event's page: the topic as the kicker, the title in h1, the date, time and place on a Meta line, the host as a portrait row, the price, the description and the sign-up link or Book; the 16:9 capped photo above it all. -->
+<!-- An event's page: the title in h1, the topic, date, time and place on a Meta line, the host as a portrait row, the price, the description and the sign-up link or Book; the 16:9 capped photo above it all. -->
 {#let
   ev = page.entry
   f = ev.fields
@@ -9,9 +9,8 @@
     <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-video md:aspect-wide" shape="cap" width={ 1600 } sizes="100vw" eager={ true } />
     <div class="grid gap-space-xl md:grid-cols-3 lg:gap-space-3xl">
       <div class="grid content-start gap-space-md md:col-span-2">
-        {#if f.topic}<p class="text-kicker font-semibold text-scheme-meta uppercase">{ f.topic }</p>{/if}
         <h1 class="font-heading text-h1 text-balance text-scheme-heading">{ ev.title }</h1>
-        <p class="text-body-lg text-scheme-muted tabular-nums"><time datetime="{ f.date | date('iso') }">{ f.date | date('long') }</time>{#if f.time} · { f.time }{/if}{#if f.room || f.location} · { f.room || f.location.title }{/if}</p>
+        <p class="text-body-lg text-scheme-muted tabular-nums">{#if f.topic}{ f.topic } · {/if}<time datetime="{ f.date | date('iso') }">{ f.date | date('long') }</time>{#if f.time} · { f.time }{/if}{#if f.room || f.location} · { f.room || f.location.title }{/if}</p>
         {#if f.description}<div class="sites-prose max-w-reading">{ f.description }</div>{/if}
       </div>
       <div class="grid content-start gap-space-md md:border-s md:border-scheme-rule md:ps-space-xl">

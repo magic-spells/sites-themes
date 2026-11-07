@@ -1,5 +1,5 @@
 <!-- component: Stamp -->
-<!-- The house mark: the wordmark in Label over its street in Kicker, inside a hollow ring. -->
+<!-- The house mark: the wordmark in Label over its street in small capitals, inside a hollow ring. -->
 <span class="flex size-ring shrink-0 flex-col items-center justify-center gap-space-2xs rounded-full border border-scheme-foreground p-space-sm text-center">
   <span class="font-heading text-body leading-tight">{ name }</span>
   {#if line}<span class="text-kicker font-semibold text-scheme-meta uppercase">{ line }</span>{/if}

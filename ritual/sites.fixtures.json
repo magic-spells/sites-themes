@@ -938,7 +938,7 @@
           "fields": {
             "category": "cat_massage",
             "summary": "Long, slow strokes. The one to start with.",
-            "description": "<p>Long, slow strokes. The one to start with.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>Pressure is yours to set, and we will check in as we go. Wear what you like; you will be draped throughout.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 60,
             "price": 115,
             "price_from": false,
@@ -959,7 +959,7 @@
           "fields": {
             "category": "cat_massage",
             "summary": "Slower and deeper, for the knots that stay.",
-            "description": "<p>Slower and deeper, for the knots that stay.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>Pressure is yours to set, and we will check in as we go. Wear what you like; you will be draped throughout.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 90,
             "price": 165,
             "price_from": false,
@@ -980,7 +980,7 @@
           "fields": {
             "category": "cat_massage",
             "summary": "Warm basalt stones, worked along the back and legs.",
-            "description": "<p>Warm basalt stones, worked along the back and legs.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>Pressure is yours to set, and we will check in as we go. Wear what you like; you will be draped throughout.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 75,
             "price": 140,
             "price_from": false,
@@ -1001,7 +1001,7 @@
           "fields": {
             "category": "cat_massage",
             "summary": "Side-lying, with a bolster for every trimester.",
-            "description": "<p>Side-lying, with a bolster for every trimester.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>Pressure is yours to set, and we will check in as we go. Wear what you like; you will be draped throughout.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 60,
             "price": 120,
             "price_from": false,
@@ -1022,7 +1022,7 @@
           "fields": {
             "category": "cat_massage",
             "summary": "Stretching and pressure for the day after.",
-            "description": "<p>Stretching and pressure for the day after.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>Pressure is yours to set, and we will check in as we go. Wear what you like; you will be draped throughout.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 60,
             "price": 130,
             "price_from": false,
@@ -1043,7 +1043,7 @@
           "fields": {
             "category": "cat_massage",
             "summary": "Feet first, with a warm soak to begin.",
-            "description": "<p>Feet first, with a warm soak to begin.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>Pressure is yours to set, and we will check in as we go. Wear what you like; you will be draped throughout.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 50,
             "price": 80,
             "price_from": false,
@@ -1064,7 +1064,7 @@
           "fields": {
             "category": "cat_massage",
             "summary": "Two tables, one room, the same hour.",
-            "description": "<p>Two tables, one room, the same hour.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>Pressure is yours to set, and we will check in as we go. Wear what you like; you will be draped throughout.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 60,
             "price": 230,
             "price_from": false,
@@ -1085,7 +1085,7 @@
           "fields": {
             "category": "cat_massage",
             "summary": "Light, rhythmic strokes that ease swelling.",
-            "description": "<p>Light, rhythmic strokes that ease swelling.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>Pressure is yours to set, and we will check in as we go. Wear what you like; you will be draped throughout.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 60,
             "price": 125,
             "price_from": false,
@@ -1106,7 +1106,7 @@
           "fields": {
             "category": "cat_skin",
             "summary": "Cleanse, steam, extractions and a mask chosen for you.",
-            "description": "<p>Cleanse, steam, extractions and a mask chosen for you.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>We look at your skin before we choose anything, and tell you what we used and why. Come without makeup if you can.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 60,
             "price": 120,
             "price_from": false,
@@ -1127,7 +1127,7 @@
           "fields": {
             "category": "cat_skin",
             "summary": "For sensitive skin: no steam, no extractions.",
-            "description": "<p>For sensitive skin: no steam, no extractions.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>We look at your skin before we choose anything, and tell you what we used and why. Come without makeup if you can.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 45,
             "price": 105,
             "price_from": false,
@@ -1148,7 +1148,7 @@
           "fields": {
             "category": "cat_skin",
             "summary": "A fine blade lifts dead skin and fuzz.",
-            "description": "<p>A fine blade lifts dead skin and fuzz.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>We look at your skin before we choose anything, and tell you what we used and why. Come without makeup if you can.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 30,
             "price": 65,
             "price_from": true,
@@ -1169,7 +1169,7 @@
           "fields": {
             "category": "cat_skin",
             "summary": "Red light after any facial, to calm and repair.",
-            "description": "<p>Red light after any facial, to calm and repair.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>We look at your skin before we choose anything, and tell you what we used and why. Come without makeup if you can.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 15,
             "price": 30,
             "price_from": false,
@@ -1190,7 +1190,7 @@
           "fields": {
             "category": "cat_skin",
             "summary": "Cleanse, exfoliate and a mask where you cannot reach.",
-            "description": "<p>Cleanse, exfoliate and a mask where you cannot reach.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>We look at your skin before we choose anything, and tell you what we used and why. Come without makeup if you can.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 45,
             "price": 95,
             "price_from": false,
@@ -1211,7 +1211,7 @@
           "fields": {
             "category": "cat_hair",
             "summary": "A cut, a wash and a finish to walk out with.",
-            "description": "<p>A cut, a wash and a finish to walk out with.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>We talk it through in the chair before we start, with photos if you have them. Come with your hair as you usually wear it.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 60,
             "price": 68,
             "price_from": true,
@@ -1232,7 +1232,7 @@
           "fields": {
             "category": "cat_hair",
             "summary": "Cut dry, curl by curl.",
-            "description": "<p>Cut dry, curl by curl.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>We talk it through in the chair before we start, with photos if you have them. Come with your hair as you usually wear it.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 75,
             "price": 85,
             "price_from": true,
@@ -1253,7 +1253,7 @@
           "fields": {
             "category": "cat_hair",
             "summary": "One colour, root to tip.",
-            "description": "<p>One colour, root to tip.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>We talk it through in the chair before we start, with photos if you have them. Come with your hair as you usually wear it.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 90,
             "price": 95,
             "price_from": true,
@@ -1274,7 +1274,7 @@
           "fields": {
             "category": "cat_hair",
             "summary": "Hand-painted, grown-out on purpose.",
-            "description": "<p>Hand-painted, grown-out on purpose.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>We talk it through in the chair before we start, with photos if you have them. Come with your hair as you usually wear it.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 180,
             "price": 210,
             "price_from": true,
@@ -1295,7 +1295,7 @@
           "fields": {
             "category": "cat_hair",
             "summary": "Shine and a softer tone between colours.",
-            "description": "<p>Shine and a softer tone between colours.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>We talk it through in the chair before we start, with photos if you have them. Come with your hair as you usually wear it.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 30,
             "price": 45,
             "price_from": false,
@@ -1316,7 +1316,7 @@
           "fields": {
             "category": "cat_hair",
             "summary": "Wash and a long, smooth blow-dry.",
-            "description": "<p>Wash and a long, smooth blow-dry.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>We talk it through in the chair before we start, with photos if you have them. Come with your hair as you usually wear it.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 45,
             "price": 55,
             "price_from": false,
@@ -1337,7 +1337,7 @@
           "fields": {
             "category": "cat_hair",
             "summary": "Your wedding hair, tried and photographed.",
-            "description": "<p>Your wedding hair, tried and photographed.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>We talk it through in the chair before we start, with photos if you have them. Come with your hair as you usually wear it.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 90,
             "price": 120,
             "price_from": false,
@@ -1358,7 +1358,7 @@
           "fields": {
             "category": "cat_hair",
             "summary": "Colour on the regrowth only.",
-            "description": "<p>Colour on the regrowth only.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>We talk it through in the chair before we start, with photos if you have them. Come with your hair as you usually wear it.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 60,
             "price": 75,
             "price_from": true,
@@ -1379,7 +1379,7 @@
           "fields": {
             "category": "cat_nails",
             "summary": "Shape, cuticles and a polish of your choice.",
-            "description": "<p>Shape, cuticles and a polish of your choice.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>Tools are cleaned between every client and files are never shared. Bring your own colour if you have a favourite.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 30,
             "price": 38,
             "price_from": false,
@@ -1400,7 +1400,7 @@
           "fields": {
             "category": "cat_nails",
             "summary": "A gel polish that lasts two to three weeks.",
-            "description": "<p>A gel polish that lasts two to three weeks.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>Tools are cleaned between every client and files are never shared. Bring your own colour if you have a favourite.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 45,
             "price": 52,
             "price_from": false,
@@ -1421,7 +1421,7 @@
           "fields": {
             "category": "cat_nails",
             "summary": "A soak, a scrub and polish.",
-            "description": "<p>A soak, a scrub and polish.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>Tools are cleaned between every client and files are never shared. Bring your own colour if you have a favourite.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 50,
             "price": 58,
             "price_from": false,
@@ -1442,7 +1442,7 @@
           "fields": {
             "category": "cat_nails",
             "summary": "Lines, dots or a single painted nail.",
-            "description": "<p>Lines, dots or a single painted nail.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>Tools are cleaned between every client and files are never shared. Bring your own colour if you have a favourite.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 15,
             "price": 12,
             "price_from": false,
@@ -1463,7 +1463,7 @@
           "fields": {
             "category": "cat_nails",
             "summary": "Shape and polish, nothing else.",
-            "description": "<p>Shape and polish, nothing else.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>Tools are cleaned between every client and files are never shared. Bring your own colour if you have a favourite.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 20,
             "price": 25,
             "price_from": false,
@@ -1484,7 +1484,7 @@
           "fields": {
             "category": "cat_makeup",
             "summary": "Your event look, tried before the day.",
-            "description": "<p>Your event look, tried before the day.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>We work with your skin and your features, not over them, and write down every product so you can find it again.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 60,
             "price": 95,
             "price_from": false,
@@ -1505,7 +1505,7 @@
           "fields": {
             "category": "cat_makeup",
             "summary": "For a party, a photo or a night out.",
-            "description": "<p>For a party, a photo or a night out.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>We work with your skin and your features, not over them, and write down every product so you can find it again.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 45,
             "price": 85,
             "price_from": false,
@@ -1526,7 +1526,7 @@
           "fields": {
             "category": "cat_makeup",
             "summary": "On the day, with touch-ups to take with you.",
-            "description": "<p>On the day, with touch-ups to take with you.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>We work with your skin and your features, not over them, and write down every product so you can find it again.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 90,
             "price": 180,
             "price_from": false,
@@ -1547,7 +1547,7 @@
           "fields": {
             "category": "cat_makeup",
             "summary": "Your own kit, your own face, step by step.",
-            "description": "<p>Your own kit, your own face, step by step.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>We work with your skin and your features, not over them, and write down every product so you can find it again.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 90,
             "price": 120,
             "price_from": false,
@@ -1568,7 +1568,7 @@
           "fields": {
             "category": "cat_studio",
             "summary": "A slow flow upstairs, all levels.",
-            "description": "<p>A slow flow upstairs, all levels.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>Mats, blocks and blankets are here for you. Arrive ten minutes early on your first class so we can set you up.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 60,
             "price": 22,
             "price_from": false,
@@ -1589,7 +1589,7 @@
           "fields": {
             "category": "cat_studio",
             "summary": "Six reformers, one teacher.",
-            "description": "<p>Six reformers, one teacher.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>Mats, blocks and blankets are here for you. Arrive ten minutes early on your first class so we can set you up.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 50,
             "price": 38,
             "price_from": false,
@@ -1610,7 +1610,7 @@
           "fields": {
             "category": "cat_studio",
             "summary": "Lying down, guided, no experience needed.",
-            "description": "<p>Lying down, guided, no experience needed.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>Mats, blocks and blankets are here for you. Arrive ten minutes early on your first class so we can set you up.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "duration_minutes": 45,
             "price": 30,
             "price_from": false,
@@ -1631,7 +1631,7 @@
           "fields": {
             "category": "cat_studio",
             "summary": "Any six studio classes, used within three months.",
-            "description": "<p>Any six studio classes, used within three months.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "description": "<p>Mats, blocks and blankets are here for you. Arrive ten minutes early on your first class so we can set you up.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
             "price": 120,
             "price_from": false,
             "add_ons": "",
@@ -2729,7 +2729,7 @@
         "fields": {
           "category": "cat_massage",
           "summary": "Long, slow strokes. The one to start with.",
-          "description": "<p>Long, slow strokes. The one to start with.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>Pressure is yours to set, and we will check in as we go. Wear what you like; you will be draped throughout.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 60,
           "price": 115,
           "price_from": false,
@@ -2758,7 +2758,7 @@
         "fields": {
           "category": "cat_massage",
           "summary": "Slower and deeper, for the knots that stay.",
-          "description": "<p>Slower and deeper, for the knots that stay.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>Pressure is yours to set, and we will check in as we go. Wear what you like; you will be draped throughout.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 90,
           "price": 165,
           "price_from": false,
@@ -2787,7 +2787,7 @@
         "fields": {
           "category": "cat_massage",
           "summary": "Warm basalt stones, worked along the back and legs.",
-          "description": "<p>Warm basalt stones, worked along the back and legs.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>Pressure is yours to set, and we will check in as we go. Wear what you like; you will be draped throughout.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 75,
           "price": 140,
           "price_from": false,
@@ -2816,7 +2816,7 @@
         "fields": {
           "category": "cat_massage",
           "summary": "Side-lying, with a bolster for every trimester.",
-          "description": "<p>Side-lying, with a bolster for every trimester.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>Pressure is yours to set, and we will check in as we go. Wear what you like; you will be draped throughout.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 60,
           "price": 120,
           "price_from": false,
@@ -2845,7 +2845,7 @@
         "fields": {
           "category": "cat_massage",
           "summary": "Stretching and pressure for the day after.",
-          "description": "<p>Stretching and pressure for the day after.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>Pressure is yours to set, and we will check in as we go. Wear what you like; you will be draped throughout.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 60,
           "price": 130,
           "price_from": false,
@@ -2874,7 +2874,7 @@
         "fields": {
           "category": "cat_massage",
           "summary": "Feet first, with a warm soak to begin.",
-          "description": "<p>Feet first, with a warm soak to begin.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>Pressure is yours to set, and we will check in as we go. Wear what you like; you will be draped throughout.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 50,
           "price": 80,
           "price_from": false,
@@ -2903,7 +2903,7 @@
         "fields": {
           "category": "cat_massage",
           "summary": "Two tables, one room, the same hour.",
-          "description": "<p>Two tables, one room, the same hour.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>Pressure is yours to set, and we will check in as we go. Wear what you like; you will be draped throughout.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 60,
           "price": 230,
           "price_from": false,
@@ -2932,7 +2932,7 @@
         "fields": {
           "category": "cat_massage",
           "summary": "Light, rhythmic strokes that ease swelling.",
-          "description": "<p>Light, rhythmic strokes that ease swelling.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>Pressure is yours to set, and we will check in as we go. Wear what you like; you will be draped throughout.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 60,
           "price": 125,
           "price_from": false,
@@ -2961,7 +2961,7 @@
         "fields": {
           "category": "cat_skin",
           "summary": "Cleanse, steam, extractions and a mask chosen for you.",
-          "description": "<p>Cleanse, steam, extractions and a mask chosen for you.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>We look at your skin before we choose anything, and tell you what we used and why. Come without makeup if you can.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 60,
           "price": 120,
           "price_from": false,
@@ -2990,7 +2990,7 @@
         "fields": {
           "category": "cat_skin",
           "summary": "For sensitive skin: no steam, no extractions.",
-          "description": "<p>For sensitive skin: no steam, no extractions.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>We look at your skin before we choose anything, and tell you what we used and why. Come without makeup if you can.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 45,
           "price": 105,
           "price_from": false,
@@ -3019,7 +3019,7 @@
         "fields": {
           "category": "cat_skin",
           "summary": "A fine blade lifts dead skin and fuzz.",
-          "description": "<p>A fine blade lifts dead skin and fuzz.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>We look at your skin before we choose anything, and tell you what we used and why. Come without makeup if you can.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 30,
           "price": 65,
           "price_from": true,
@@ -3048,7 +3048,7 @@
         "fields": {
           "category": "cat_skin",
           "summary": "Red light after any facial, to calm and repair.",
-          "description": "<p>Red light after any facial, to calm and repair.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>We look at your skin before we choose anything, and tell you what we used and why. Come without makeup if you can.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 15,
           "price": 30,
           "price_from": false,
@@ -3077,7 +3077,7 @@
         "fields": {
           "category": "cat_skin",
           "summary": "Cleanse, exfoliate and a mask where you cannot reach.",
-          "description": "<p>Cleanse, exfoliate and a mask where you cannot reach.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>We look at your skin before we choose anything, and tell you what we used and why. Come without makeup if you can.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 45,
           "price": 95,
           "price_from": false,
@@ -3106,7 +3106,7 @@
         "fields": {
           "category": "cat_hair",
           "summary": "A cut, a wash and a finish to walk out with.",
-          "description": "<p>A cut, a wash and a finish to walk out with.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>We talk it through in the chair before we start, with photos if you have them. Come with your hair as you usually wear it.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 60,
           "price": 68,
           "price_from": true,
@@ -3135,7 +3135,7 @@
         "fields": {
           "category": "cat_hair",
           "summary": "Cut dry, curl by curl.",
-          "description": "<p>Cut dry, curl by curl.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>We talk it through in the chair before we start, with photos if you have them. Come with your hair as you usually wear it.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 75,
           "price": 85,
           "price_from": true,
@@ -3164,7 +3164,7 @@
         "fields": {
           "category": "cat_hair",
           "summary": "One colour, root to tip.",
-          "description": "<p>One colour, root to tip.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>We talk it through in the chair before we start, with photos if you have them. Come with your hair as you usually wear it.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 90,
           "price": 95,
           "price_from": true,
@@ -3193,7 +3193,7 @@
         "fields": {
           "category": "cat_hair",
           "summary": "Hand-painted, grown-out on purpose.",
-          "description": "<p>Hand-painted, grown-out on purpose.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>We talk it through in the chair before we start, with photos if you have them. Come with your hair as you usually wear it.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 180,
           "price": 210,
           "price_from": true,
@@ -3222,7 +3222,7 @@
         "fields": {
           "category": "cat_hair",
           "summary": "Shine and a softer tone between colours.",
-          "description": "<p>Shine and a softer tone between colours.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>We talk it through in the chair before we start, with photos if you have them. Come with your hair as you usually wear it.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 30,
           "price": 45,
           "price_from": false,
@@ -3251,7 +3251,7 @@
         "fields": {
           "category": "cat_hair",
           "summary": "Wash and a long, smooth blow-dry.",
-          "description": "<p>Wash and a long, smooth blow-dry.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>We talk it through in the chair before we start, with photos if you have them. Come with your hair as you usually wear it.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 45,
           "price": 55,
           "price_from": false,
@@ -3280,7 +3280,7 @@
         "fields": {
           "category": "cat_hair",
           "summary": "Your wedding hair, tried and photographed.",
-          "description": "<p>Your wedding hair, tried and photographed.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>We talk it through in the chair before we start, with photos if you have them. Come with your hair as you usually wear it.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 90,
           "price": 120,
           "price_from": false,
@@ -3309,7 +3309,7 @@
         "fields": {
           "category": "cat_hair",
           "summary": "Colour on the regrowth only.",
-          "description": "<p>Colour on the regrowth only.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>We talk it through in the chair before we start, with photos if you have them. Come with your hair as you usually wear it.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 60,
           "price": 75,
           "price_from": true,
@@ -3338,7 +3338,7 @@
         "fields": {
           "category": "cat_nails",
           "summary": "Shape, cuticles and a polish of your choice.",
-          "description": "<p>Shape, cuticles and a polish of your choice.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>Tools are cleaned between every client and files are never shared. Bring your own colour if you have a favourite.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 30,
           "price": 38,
           "price_from": false,
@@ -3367,7 +3367,7 @@
         "fields": {
           "category": "cat_nails",
           "summary": "A gel polish that lasts two to three weeks.",
-          "description": "<p>A gel polish that lasts two to three weeks.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>Tools are cleaned between every client and files are never shared. Bring your own colour if you have a favourite.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 45,
           "price": 52,
           "price_from": false,
@@ -3396,7 +3396,7 @@
         "fields": {
           "category": "cat_nails",
           "summary": "A soak, a scrub and polish.",
-          "description": "<p>A soak, a scrub and polish.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>Tools are cleaned between every client and files are never shared. Bring your own colour if you have a favourite.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 50,
           "price": 58,
           "price_from": false,
@@ -3425,7 +3425,7 @@
         "fields": {
           "category": "cat_nails",
           "summary": "Lines, dots or a single painted nail.",
-          "description": "<p>Lines, dots or a single painted nail.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>Tools are cleaned between every client and files are never shared. Bring your own colour if you have a favourite.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 15,
           "price": 12,
           "price_from": false,
@@ -3454,7 +3454,7 @@
         "fields": {
           "category": "cat_nails",
           "summary": "Shape and polish, nothing else.",
-          "description": "<p>Shape and polish, nothing else.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>Tools are cleaned between every client and files are never shared. Bring your own colour if you have a favourite.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 20,
           "price": 25,
           "price_from": false,
@@ -3483,7 +3483,7 @@
         "fields": {
           "category": "cat_makeup",
           "summary": "Your event look, tried before the day.",
-          "description": "<p>Your event look, tried before the day.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>We work with your skin and your features, not over them, and write down every product so you can find it again.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 60,
           "price": 95,
           "price_from": false,
@@ -3512,7 +3512,7 @@
         "fields": {
           "category": "cat_makeup",
           "summary": "For a party, a photo or a night out.",
-          "description": "<p>For a party, a photo or a night out.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>We work with your skin and your features, not over them, and write down every product so you can find it again.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 45,
           "price": 85,
           "price_from": false,
@@ -3541,7 +3541,7 @@
         "fields": {
           "category": "cat_makeup",
           "summary": "On the day, with touch-ups to take with you.",
-          "description": "<p>On the day, with touch-ups to take with you.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>We work with your skin and your features, not over them, and write down every product so you can find it again.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 90,
           "price": 180,
           "price_from": false,
@@ -3570,7 +3570,7 @@
         "fields": {
           "category": "cat_makeup",
           "summary": "Your own kit, your own face, step by step.",
-          "description": "<p>Your own kit, your own face, step by step.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>We work with your skin and your features, not over them, and write down every product so you can find it again.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 90,
           "price": 120,
           "price_from": false,
@@ -3599,7 +3599,7 @@
         "fields": {
           "category": "cat_studio",
           "summary": "A slow flow upstairs, all levels.",
-          "description": "<p>A slow flow upstairs, all levels.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>Mats, blocks and blankets are here for you. Arrive ten minutes early on your first class so we can set you up.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 60,
           "price": 22,
           "price_from": false,
@@ -3628,7 +3628,7 @@
         "fields": {
           "category": "cat_studio",
           "summary": "Six reformers, one teacher.",
-          "description": "<p>Six reformers, one teacher.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>Mats, blocks and blankets are here for you. Arrive ten minutes early on your first class so we can set you up.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 50,
           "price": 38,
           "price_from": false,
@@ -3657,7 +3657,7 @@
         "fields": {
           "category": "cat_studio",
           "summary": "Lying down, guided, no experience needed.",
-          "description": "<p>Lying down, guided, no experience needed.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>Mats, blocks and blankets are here for you. Arrive ten minutes early on your first class so we can set you up.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "duration_minutes": 45,
           "price": 30,
           "price_from": false,
@@ -3686,7 +3686,7 @@
         "fields": {
           "category": "cat_studio",
           "summary": "Any six studio classes, used within three months.",
-          "description": "<p>Any six studio classes, used within three months.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "description": "<p>Mats, blocks and blankets are here for you. Arrive ten minutes early on your first class so we can set you up.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
           "price": 120,
           "price_from": false,
           "add_ons": "",

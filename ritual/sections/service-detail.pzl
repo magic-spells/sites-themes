@@ -1,4 +1,4 @@
-<!-- A service's page: the 4:5 portal photo on one side (the category's photo stands in), and beside it the name in h1, the category on a Meta line, duration and price in Price, the summary, Book, and the description in the reading column; then What it includes and Add-ons as rows that open, and Offered by: the person who leads it as a small portrait row. -->
+<!-- A service's page: the 4:5 portal photo on one side (the category's photo stands in), and beside it the category as the one overline, the name in h1, the summary as a standfirst, one decision row (duration and price, Book) over a hairline, the description, then What it includes and Add-ons as rows that open, and Offered by: the person who leads it as a small portrait row. -->
 {#let
   entry = page.entry
   f = entry.fields
@@ -9,12 +9,16 @@
   <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-2 lg:gap-space-3xl">
     <div class="w-full max-w-photo { settings.photo_side == 'right' ? 'md:order-last md:justify-self-end' : '' }"><Well asset={ image } alt={ f.image ? f.image_alt : '' } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="(min-width: 48rem) 30rem, 100vw" eager={ true } /></div>
     <div class="grid max-w-text gap-space-md">
-      <h1 class="font-heading text-h1 text-balance text-scheme-heading">{ entry.title }</h1>
-      {#if f.category}<p class="text-body-sm text-scheme-meta"><a class="hover:underline" href="{ settings.services_path }?category={ f.category.handle }">{ f.category.title }</a></p>{/if}
-      <p class="font-heading text-h3 tabular-nums">{#if f.duration_minutes}{ t('minutes', { n: f.duration_minutes }) } · {/if}<Price f={ f } /></p>
+      <div class="grid gap-space-xs">
+        {#if f.category}<p class="text-kicker font-semibold text-scheme-meta uppercase">{ f.category.title }</p>{/if}
+        <h1 class="font-heading text-h1 text-balance text-scheme-heading">{ entry.title }</h1>
+      </div>
       {#if f.summary}<p class="text-body-lg text-pretty text-scheme-muted">{ f.summary }</p>{/if}
-      <div class="pt-space-xs"><Button action={ true }>{ settings.action_label || site.settings.action_label }</Button></div>
-      {#if f.description}<div class="sites-prose max-w-reading pt-space-md">{ f.description }</div>{/if}
+      <div class="flex flex-wrap items-center justify-between gap-space-md border-b border-scheme-rule pb-space-md">
+        <p class="font-heading text-h3 tabular-nums">{#if f.duration_minutes}{ t('minutes', { n: f.duration_minutes }) } · {/if}<Price f={ f } /></p>
+        <Button action={ true }>{ settings.action_label || site.settings.action_label }</Button>
+      </div>
+      {#if f.description}<div class="sites-prose">{ f.description }</div>{/if}
       {#if f.includes || f.add_ons}
         <ul class="mt-space-sm border-t border-scheme-rule">
           {#for row in [{ label: t('includes'), text: f.includes }, { label: t('add_ons'), text: f.add_ons }]}
@@ -59,7 +63,6 @@
       { "value": "right", "label": "Right" }
     ] },
     { "type": "text", "id": "action_label", "label": "Action label", "default": "", "info": "Leave empty to use the House setting." },
-    { "type": "url", "id": "services_path", "label": "Services page", "default": "/services" },
     { "type": "url", "id": "team_path", "label": "Team page path", "default": "/team", "info": "Offered by links to this path plus the person's handle." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
   ],

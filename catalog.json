@@ -90,6 +90,19 @@
       "zip": "https://github.com/magic-spells/sites-themes/releases/download/circuit/v0.1.0/circuit-v0.1.0.zip",
       "sha256": null,
       "screenshots": []
+    },
+    {
+      "name": "ritual",
+      "label": "Ritual",
+      "description": "A day spa, salon or studio: the service menu with dotted price lines, arched team portraits, packages, gift cards, a gallery with before and after, and one Book button that opens an appointment request from anywhere.",
+      "category": "content",
+      "vertical": "Health and beauty",
+      "license": "MIT",
+      "publisher": "Magic Spells",
+      "version": "0.1.0",
+      "zip": "https://github.com/magic-spells/sites-themes/releases/download/ritual/v0.1.0/ritual-v0.1.0.zip",
+      "sha256": null,
+      "screenshots": []
     }
   ]
 }

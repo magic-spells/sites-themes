@@ -100,7 +100,7 @@
 	--radius-full: var(--sites-radius-full);
 	--radius-button: var(--sites-button-radius);
 	--radius-input: var(--sites-input-radius);
-	/* The landscape well's capped top corners. */
+	/* The round well's corners. */
 	--radius-cap: var(--ritual-cap);
 	--shadow-sm: var(--sites-shadow-sm);
 	--shadow-md: var(--sites-shadow-md);

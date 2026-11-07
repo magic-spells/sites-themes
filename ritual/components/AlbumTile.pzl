@@ -1,8 +1,8 @@
 <!-- component: AlbumTile -->
-<!-- An album: a 3:2 capped well with its cover, the title in Card title and its kind and date in Meta. -->
+<!-- An album: a 3:2 rounded well with its cover, the title in Card title and its kind and date in Meta. -->
 {#let f = entry.fields}
 <article class="group relative grid content-start gap-space-sm { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
-  <Well asset={ f.cover } alt={ f.cover_alt } ratio="aspect-3/2" shape="cap" width={ 800 } sizes="(min-width: 64rem) 30rem, (min-width: 48rem) 50vw, 100vw" zoom={ true } />
+  <Well asset={ f.cover } alt={ f.cover_alt } ratio="aspect-3/2" shape="round" width={ 800 } sizes="(min-width: 64rem) 30rem, (min-width: 48rem) 50vw, 100vw" zoom={ true } />
   <div class="grid gap-space-2xs">
     <h3 class="font-heading text-h4"><a class="after:absolute after:inset-0 hover:underline hover:underline-offset-4" href="{ base_path }/{ entry.handle }">{ entry.title }</a></h3>
     <p class="text-body-sm text-scheme-meta">{ t('album_kind.' + (f.kind || 'work')) }{#if f.date} · <time datetime="{ f.date | date('iso') }">{ f.date | date('long') }</time>{/if}</p>

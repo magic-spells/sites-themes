@@ -1,4 +1,4 @@
-<!-- The gallery. Albums: each album a tile with the capped well, the title and its kind and date, three, two then one across. Photos (on an album's page): the album's title and line, then its photos three, two then two across, each opening the lightbox; a before-and-after album reads its photos in pairs, each pair one tile split by a hairline with Before and After labels. -->
+<!-- The gallery. Albums: each album a tile with the rounded well, the title and its kind and date, three, two then one across. Photos (on an album's page): the album's title and line, then its photos three, two then two across, each opening the lightbox; a before-and-after album reads its photos in pairs, each pair one tile split by a hairline with Before and After labels. -->
 {#let
   album = settings.mode == 'photos' ? page.entry : null
   f = album ? album.fields : null
@@ -21,7 +21,7 @@
           <ul class="grid gap-space-md md:grid-cols-2">
             {#for item in items, i}
               {#if i % 2 == 0}
-                <li class="grid grid-cols-2 gap-px overflow-hidden rounded-t-cap bg-scheme-rule">
+                <li class="grid grid-cols-2 gap-px overflow-hidden rounded-cap bg-scheme-rule">
                   {#for half in items | slice(i, 2), j}
                     <button class="group relative block cursor-zoom-in bg-scheme-surface-2" type="button" data-lightbox-open={ id } data-index={ i + j } aria-label="{ t('open_photo', { index: i + j + 1 }) }">
                       <Well asset={ half.asset } alt={ half.alt } ratio="aspect-portrait" width={ 640 } sizes="(min-width: 48rem) 25vw, 50vw" zoom={ true } />
@@ -34,7 +34,7 @@
           </ul>
         {:else}
           <ul class="grid grid-cols-2 gap-space-sm lg:grid-cols-3">
-            {#for item in items, i}<li><button class="group block w-full cursor-zoom-in" type="button" data-lightbox-open={ id } data-index={ i } aria-label="{ t('open_photo', { index: i + 1 }) }"><Well asset={ item.asset } alt={ item.alt } ratio="aspect-square" shape="cap" width={ 640 } sizes="(min-width: 64rem) 30vw, 50vw" zoom={ true } /></button></li>{/for}
+            {#for item in items, i}<li><button class="group block w-full cursor-zoom-in" type="button" data-lightbox-open={ id } data-index={ i } aria-label="{ t('open_photo', { index: i + 1 }) }"><Well asset={ item.asset } alt={ item.alt } ratio="aspect-square" shape="round" width={ 640 } sizes="(min-width: 64rem) 30vw, 50vw" zoom={ true } /></button></li>{/for}
           </ul>
         {/if}
       {/if}

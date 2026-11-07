@@ -1,4 +1,4 @@
-<!-- One location: the heading, the hours as a two-column table, the address, phone and note, Directions and Call; beside them the 3:5 capsule photo, or the map: an image or an embedded map in a 3:2 well with the capped top. -->
+<!-- One location: the heading, the hours as a two-column table, the address, phone and note, Directions and Call; beside them the 3:5 capsule photo, or the map: an image or an embedded map in a 3:2 well with rounded corners. -->
 {#let
   loc = settings.location || (content.locations.entries | sort('fields.order') | first)
   f = loc ? loc.fields : null
@@ -19,9 +19,9 @@
     </div>
     {#if settings.show_map}
       {#if embed}
-        <div class="relative aspect-3/2 overflow-hidden rounded-t-cap bg-scheme-surface-2"><iframe class="absolute inset-0 size-full" src="{ f.map_embed_url }" title="{ t('map_of', { name: loc.title }) }" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="relative aspect-3/2 overflow-hidden rounded-cap bg-scheme-surface-2"><iframe class="absolute inset-0 size-full" src="{ f.map_embed_url }" title="{ t('map_of', { name: loc.title }) }" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       {:else if settings.map == 'map' && f.map_image}
-        <a class="block" href={ f.map_url || null } target="_blank" rel="noopener"><Well asset={ f.map_image } alt={ f.map_image_alt } ratio="aspect-3/2" shape="cap" width={ 1200 } sizes="(min-width: 48rem) 40vw, 100vw" /></a>
+        <a class="block" href={ f.map_url || null } target="_blank" rel="noopener"><Well asset={ f.map_image } alt={ f.map_image_alt } ratio="aspect-3/2" shape="round" width={ 1200 } sizes="(min-width: 48rem) 40vw, 100vw" /></a>
       {:else}
         <div><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-capsule" shape="capsule" width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" /></div>
       {/if}

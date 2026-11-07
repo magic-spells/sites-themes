@@ -12,7 +12,7 @@
     {:else if layout == 'collage' && settings.image}
       <div class="relative grid grid-cols-6">
         <div class="col-span-4"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" shape="portal" width={ 800 } sizes="(min-width: 48rem) 25vw, 66vw" /></div>
-        {#if settings.image_2}<div class="col-span-3 col-start-4 row-start-1 mt-space-3xl self-end"><Well asset={ settings.image_2 } alt={ settings.image_2_alt } ratio="aspect-3/2" shape="cap" width={ 640 } sizes="(min-width: 48rem) 20vw, 50vw" tilt={ settings.tilt } /></div>{/if}
+        {#if settings.image_2}<div class="col-span-3 col-start-4 row-start-1 mt-space-3xl self-end"><Well asset={ settings.image_2 } alt={ settings.image_2_alt } ratio="aspect-3/2" shape="round" width={ 640 } sizes="(min-width: 48rem) 20vw, 50vw" tilt={ settings.tilt } /></div>{/if}
       </div>
     {/if}
   </div>

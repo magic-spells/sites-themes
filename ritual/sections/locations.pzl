@@ -1,4 +1,4 @@
-<!-- Every location as a card: a 3:2 capped photo, the name, the address, the hours and Directions and Call. Two across from 48rem. -->
+<!-- Every location as a card: a 3:2 rounded photo, the name, the address, the hours and Directions and Call. Two across from 48rem. -->
 {#let locs = content.locations.entries | sort('fields.order') | slice(0, 12)}
 {#if locs.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">

@@ -17,7 +17,7 @@
         {#for item in items, i}
           <tarot-slide>
             <a class="group block cursor-zoom-in" href="{ image_url(item.asset, 2560) }" data-tarot-lightbox aria-label="{ t('open_photo', { index: i + 1 }) }">
-              <span class="relative block overflow-hidden rounded-t-cap bg-scheme-surface-2 { ratio }"><img class="absolute inset-0 size-full object-cover" src="{ image_url(item.asset, 1024) }" srcset="{ image_srcset(item.asset, [480, 768, 1024]) }" sizes="(min-width: 64rem) 22rem, (min-width: 48rem) 40vw, 80vw" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } /></span>
+              <span class="relative block overflow-hidden rounded-cap bg-scheme-surface-2 { ratio }"><img class="absolute inset-0 size-full object-cover" src="{ image_url(item.asset, 1024) }" srcset="{ image_srcset(item.asset, [480, 768, 1024]) }" sizes="(min-width: 64rem) 22rem, (min-width: 48rem) 40vw, 80vw" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } /></span>
             </a>
             {#if item.caption}<p class="mt-space-xs text-body-sm text-scheme-meta" data-caption data-tarot-lightbox-fade>{ item.caption }</p>{/if}
           </tarot-slide>
@@ -30,7 +30,7 @@
     <ul class="mx-gutter grid aspect-collage grid-cols-collage grid-rows-collage md:mx-auto md:max-w-column md:aspect-collage-wide md:grid-cols-collage-wide md:grid-rows-collage-wide" aria-hidden="true">
       {#for item in items | slice(0, 3), i}
         <li class="min-h-0 self-start { i == 0 ? 'col-start-1 col-end-3 row-start-1 row-end-4' : (i == 1 ? 'col-start-1 col-end-2 row-start-3 row-end-4 md:col-start-2 md:col-end-5' : 'col-start-2 col-end-3 row-start-2 row-end-4 md:col-start-4 md:col-end-6') }">
-          <button class="group block w-full cursor-zoom-in" type="button" tabindex="-1" data-lightbox-open={ id } data-index={ i }><Well asset={ item.asset } alt="" ratio={ i == 0 ? 'aspect-3/2' : (i == 1 ? 'aspect-square' : 'aspect-portrait') } shape={ i == 0 ? 'cap' : (i == 1 ? 'square' : 'portal') } width={ i == 0 ? 1200 : 800 } sizes="(min-width: 48rem) 40vw, 60vw" zoom={ true } /></button>
+          <button class="group block w-full cursor-zoom-in" type="button" tabindex="-1" data-lightbox-open={ id } data-index={ i }><Well asset={ item.asset } alt="" ratio={ i == 0 ? 'aspect-3/2' : (i == 1 ? 'aspect-square' : 'aspect-portrait') } shape={ i == 0 ? 'round' : (i == 1 ? 'square' : 'portal') } width={ i == 0 ? 1200 : 800 } sizes="(min-width: 48rem) 40vw, 60vw" zoom={ true } /></button>
         </li>
       {/for}
     </ul>

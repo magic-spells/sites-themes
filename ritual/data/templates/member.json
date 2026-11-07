@@ -1,0 +1,24 @@
+{
+  "label": "Person",
+  "description": "A person's page: their portrait, bio and the treatments they lead.",
+  "sections": [
+    {
+      "id": "s_detail",
+      "type": "team-detail",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "booking-cta",
+      "preset": "Clay",
+      "settings": {
+        "color_scheme": "clay"
+      },
+      "blocks": []
+    }
+  ]
+}

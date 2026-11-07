@@ -1,0 +1,33 @@
+{
+  "sections": [
+    {
+      "id": "sg_mobile_menu",
+      "type": "mobile-menu",
+      "preset": "Default",
+      "settings": {
+        "menu": "main",
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_booking",
+      "type": "booking-panel",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_cookie",
+      "type": "cookie-notice",
+      "preset": "Default",
+      "settings": {
+        "key": "ritual-notice-2026-11",
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    }
+  ]
+}

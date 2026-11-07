@@ -1,0 +1,98 @@
+{
+  "label": "About",
+  "description": "The house's story, how it works, the team and the products.",
+  "sections": [
+    {
+      "id": "s_intro",
+      "type": "intro",
+      "preset": "Collage",
+      "settings": {
+        "layout": "collage",
+        "kicker": "About",
+        "heading": "A house for slow *hours*",
+        "image": "as_4x5_sea",
+        "image_alt": "The stairs to the studio",
+        "image_2": "as_3x2_clay",
+        "image_2_alt": "Towels on a shelf",
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_story",
+      "type": "story",
+      "preset": "Default",
+      "settings": {
+        "image": "as_3x2_sand",
+        "image_alt": "The front of the house on Alder Street",
+        "color_scheme": "sand"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_props",
+      "type": "value-props",
+      "preset": "Default",
+      "settings": {
+        "layout": "stack",
+        "color_scheme": "linen"
+      },
+      "blocks": [
+        {
+          "id": "s_props_b1",
+          "type": "prop",
+          "settings": {
+            "heading": "Small on purpose",
+            "text": "Six of us, one room each, no double booking."
+          }
+        },
+        {
+          "id": "s_props_b2",
+          "type": "prop",
+          "settings": {
+            "heading": "Honest about products",
+            "text": "We sell what we use and nothing we don't."
+          }
+        },
+        {
+          "id": "s_props_b3",
+          "type": "prop",
+          "settings": {
+            "heading": "Time is the treatment",
+            "text": "Nothing here is rushed, including you."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_team",
+      "type": "team-grid",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "linen",
+        "kicker": "",
+        "link_label": ""
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_products",
+      "type": "products",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "sand"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_quotes",
+      "type": "testimonials",
+      "preset": "Carousel",
+      "settings": {
+        "layout": "carousel",
+        "color_scheme": "fern"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "label": "Services",
+  "description": "The full menu by category, the first visit and questions.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "kicker": "Services",
+        "heading": "The *menu*",
+        "text": "Every treatment, its time and its price. Prices marked from depend on length and thickness.",
+        "color_scheme": "sand"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_menu",
+      "type": "service-menu",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_first_visit",
+      "type": "first-visit",
+      "preset": "List",
+      "settings": {
+        "layout": "list",
+        "color_scheme": "sand"
+      },
+      "blocks": [
+        {
+          "id": "s_first_visit_b1",
+          "type": "step",
+          "settings": {
+            "heading": "Arrive ten minutes early",
+            "text": "There is tea in the front room and a form to fill in."
+          }
+        },
+        {
+          "id": "s_first_visit_b2",
+          "type": "step",
+          "settings": {
+            "heading": "Tell us everything",
+            "text": "Pressure, allergies, a sore shoulder, a wedding on the calendar. It all helps."
+          }
+        },
+        {
+          "id": "s_first_visit_b3",
+          "type": "step",
+          "settings": {
+            "heading": "Settle in",
+            "text": "Robes, lockers and a quiet room before your treatment."
+          }
+        },
+        {
+          "id": "s_first_visit_b4",
+          "type": "step",
+          "settings": {
+            "heading": "Take the day slowly",
+            "text": "Drink water, skip the gym, keep the glow."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "linen"
+      },
+      "blocks": [
+        {
+          "id": "s_faq_b1",
+          "type": "item",
+          "settings": {
+            "question": "What should I wear?",
+            "answer": "<p>Whatever is comfortable. We have robes, slippers and lockers, and you undress to your own comfort.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b2",
+          "type": "item",
+          "settings": {
+            "question": "Can I come in pregnant?",
+            "answer": "<p>Yes. Noor gives prenatal massage side-lying with a bolster, from the second trimester on. Tell us when you book.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b3",
+          "type": "item",
+          "settings": {
+            "question": "Do you take walk-ins?",
+            "answer": "<p>When a room is free, yes. Text us first and we will tell you.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b4",
+          "type": "item",
+          "settings": {
+            "question": "How do I cancel or reschedule?",
+            "answer": "<p>Text or call a day ahead and there is no charge.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b5",
+          "type": "item",
+          "settings": {
+            "question": "Which products do you use?",
+            "answer": "<p>The ones on our shelves: Alder & Co. in the salon, Still Water in the treatment rooms and Nettle oils for massage.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_cta",
+      "type": "booking-cta",
+      "preset": "Clay",
+      "settings": {
+        "color_scheme": "clay"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "label": "Gallery",
+  "description": "The albums, then a collage of photos.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "kicker": "Gallery",
+        "heading": "The work and the *rooms*",
+        "color_scheme": "sand"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_albums",
+      "type": "gallery-grid",
+      "preset": "Albums",
+      "settings": {
+        "mode": "albums",
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_collage",
+      "type": "gallery-strip",
+      "preset": "Collage",
+      "settings": {
+        "layout": "collage",
+        "gallery": "the-rooms",
+        "heading": "Around the *house*",
+        "link_label": "",
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    }
+  ]
+}

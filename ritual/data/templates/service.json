@@ -1,0 +1,49 @@
+{
+  "label": "Service",
+  "description": "A service's page: its photo, time and price, what it includes and who offers it.",
+  "sections": [
+    {
+      "id": "s_detail",
+      "type": "service-detail",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_more",
+      "type": "service-grid",
+      "preset": "You might also like",
+      "settings": {
+        "source": "related",
+        "kicker": "",
+        "heading": "You might also *like*",
+        "handles": "hot-stone, signature-facial, blowout",
+        "limit": 3,
+        "link_label": "",
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_quotes",
+      "type": "testimonials",
+      "preset": "Carousel",
+      "settings": {
+        "layout": "carousel",
+        "color_scheme": "fern"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "booking-cta",
+      "preset": "Clay",
+      "settings": {
+        "color_scheme": "clay"
+      },
+      "blocks": []
+    }
+  ]
+}

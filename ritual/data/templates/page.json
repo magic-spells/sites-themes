@@ -1,0 +1,24 @@
+{
+  "label": "Page",
+  "description": "A plain page: the title and its body.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "sand"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_body",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    }
+  ]
+}

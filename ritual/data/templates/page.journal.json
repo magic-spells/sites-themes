@@ -1,0 +1,36 @@
+{
+  "label": "Journal",
+  "description": "Posts, with the newest first.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "kicker": "Journal",
+        "heading": "Notes from the *house*",
+        "color_scheme": "sand"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_posts",
+      "type": "journal-list",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_news",
+      "type": "newsletter",
+      "preset": "Fern",
+      "settings": {
+        "form": "newsletter",
+        "color_scheme": "fern"
+      },
+      "blocks": []
+    }
+  ]
+}

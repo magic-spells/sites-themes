@@ -1,0 +1,62 @@
+{
+  "label": "Visit",
+  "description": "Every location, and questions about getting here.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "kicker": "Visit",
+        "heading": "Find the *house*",
+        "color_scheme": "sand"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_locations",
+      "type": "locations",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "kicker": "Getting here",
+        "heading": "Parking and *access*",
+        "color_scheme": "linen"
+      },
+      "blocks": [
+        {
+          "id": "s_faq_b1",
+          "type": "item",
+          "settings": {
+            "question": "Is there parking?",
+            "answer": "<p>On the street until 5, and behind the building after 5.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b2",
+          "type": "item",
+          "settings": {
+            "question": "Is the house step-free?",
+            "answer": "<p>The ground floor is: the front room, two treatment rooms and the salon. The studio is up one flight of stairs.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b3",
+          "type": "item",
+          "settings": {
+            "question": "Can I bring my child?",
+            "answer": "<p>Children are welcome in the salon with a grown-up. The treatment rooms and the studio are for over-16s.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}

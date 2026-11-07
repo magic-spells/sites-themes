@@ -1,0 +1,4238 @@
+{
+  "site": {
+    "name": "Juniper House",
+    "url": "https://juniperhouse.example",
+    "locale": "en",
+    "settings": {
+      "wordmark": "Juniper House",
+      "tagline": "A day spa and salon on Alder Street.",
+      "currency_symbol": "$",
+      "reveal": true,
+      "ticker_lines": "Open Sundays 10–4\nGift cards for the holidays\nNew: dermaplaning with June",
+      "action_label": "Book",
+      "booking": "form",
+      "booking_url": "",
+      "booking_path": "/book",
+      "booking_form": "booking",
+      "confirm_line": "We confirm by text within a day.",
+      "gift_card_url": "",
+      "text_number": "(503) 555-0142",
+      "stamp_line": "",
+      "texture": "grain",
+      "phone": "(503) 555-0142",
+      "email": "hello@juniperhouse.example"
+    }
+  },
+  "menus": {
+    "main": {
+      "handle": "main",
+      "title": "Main menu",
+      "items": [
+        {
+          "id": "m1",
+          "label": "Services",
+          "target": {
+            "kind": "url",
+            "url": "/services"
+          },
+          "children": []
+        },
+        {
+          "id": "m2",
+          "label": "Team",
+          "target": {
+            "kind": "url",
+            "url": "/team"
+          },
+          "children": []
+        },
+        {
+          "id": "m3",
+          "label": "Gallery",
+          "target": {
+            "kind": "url",
+            "url": "/gallery"
+          },
+          "children": []
+        },
+        {
+          "id": "m4",
+          "label": "Gift cards",
+          "target": {
+            "kind": "url",
+            "url": "/gift-cards"
+          },
+          "children": []
+        },
+        {
+          "id": "m5",
+          "label": "Visit",
+          "target": {
+            "kind": "url",
+            "url": "/locations"
+          },
+          "children": []
+        }
+      ]
+    },
+    "legal": {
+      "handle": "legal",
+      "title": "Legal",
+      "items": [
+        {
+          "id": "l1",
+          "label": "Privacy",
+          "target": {
+            "kind": "url",
+            "url": "/privacy"
+          },
+          "children": []
+        },
+        {
+          "id": "l2",
+          "label": "Policies",
+          "target": {
+            "kind": "url",
+            "url": "/policies"
+          },
+          "children": []
+        },
+        {
+          "id": "l3",
+          "label": "Terms",
+          "target": {
+            "kind": "url",
+            "url": "/terms"
+          },
+          "children": []
+        }
+      ]
+    },
+    "social": {
+      "handle": "social",
+      "title": "Social",
+      "items": [
+        {
+          "id": "s1",
+          "label": "Instagram",
+          "target": {
+            "kind": "url",
+            "url": "https://instagram.com/"
+          },
+          "children": []
+        },
+        {
+          "id": "s2",
+          "label": "Pinterest",
+          "target": {
+            "kind": "url",
+            "url": "https://pinterest.com/"
+          },
+          "children": []
+        }
+      ]
+    }
+  },
+  "galleries": {
+    "the-rooms": {
+      "handle": "the-rooms",
+      "title": "The rooms",
+      "items": [
+        {
+          "asset_id": "as_3x2_clay",
+          "caption": "",
+          "alt": "The rooms 1"
+        },
+        {
+          "asset_id": "as_4x5_sand",
+          "caption": "",
+          "alt": "The rooms 2"
+        },
+        {
+          "asset_id": "as_1x1_sea",
+          "caption": "",
+          "alt": "The rooms 3"
+        },
+        {
+          "asset_id": "as_3x2_clay",
+          "caption": "",
+          "alt": "The rooms 4"
+        },
+        {
+          "asset_id": "as_4x5_sand",
+          "caption": "",
+          "alt": "The rooms 5"
+        },
+        {
+          "asset_id": "as_1x1_sea",
+          "caption": "",
+          "alt": "The rooms 6"
+        },
+        {
+          "asset_id": "as_3x2_clay",
+          "caption": "",
+          "alt": "The rooms 7"
+        },
+        {
+          "asset_id": "as_4x5_sand",
+          "caption": "",
+          "alt": "The rooms 8"
+        },
+        {
+          "asset_id": "as_1x1_sea",
+          "caption": "",
+          "alt": "The rooms 9"
+        },
+        {
+          "asset_id": "as_3x2_clay",
+          "caption": "",
+          "alt": "The rooms 10"
+        }
+      ]
+    },
+    "hair": {
+      "handle": "hair",
+      "title": "Hair",
+      "items": [
+        {
+          "asset_id": "as_4x5_clay",
+          "caption": "",
+          "alt": "Hair 1"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "",
+          "alt": "Hair 2"
+        },
+        {
+          "asset_id": "as_3x2_sea",
+          "caption": "",
+          "alt": "Hair 3"
+        },
+        {
+          "asset_id": "as_4x5_clay",
+          "caption": "",
+          "alt": "Hair 4"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "",
+          "alt": "Hair 5"
+        },
+        {
+          "asset_id": "as_3x2_sea",
+          "caption": "",
+          "alt": "Hair 6"
+        },
+        {
+          "asset_id": "as_4x5_clay",
+          "caption": "",
+          "alt": "Hair 7"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "",
+          "alt": "Hair 8"
+        },
+        {
+          "asset_id": "as_3x2_sea",
+          "caption": "",
+          "alt": "Hair 9"
+        },
+        {
+          "asset_id": "as_4x5_clay",
+          "caption": "",
+          "alt": "Hair 10"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "",
+          "alt": "Hair 11"
+        },
+        {
+          "asset_id": "as_3x2_sea",
+          "caption": "",
+          "alt": "Hair 12"
+        }
+      ]
+    },
+    "before-and-after": {
+      "handle": "before-and-after",
+      "title": "Before and after",
+      "items": [
+        {
+          "asset_id": "as_4x5_clay",
+          "caption": "Before",
+          "alt": "Before 1"
+        },
+        {
+          "asset_id": "as_4x5_sand",
+          "caption": "After",
+          "alt": "After 2"
+        },
+        {
+          "asset_id": "as_4x5_sea",
+          "caption": "Before",
+          "alt": "Before 3"
+        },
+        {
+          "asset_id": "as_4x5_clay",
+          "caption": "After",
+          "alt": "After 4"
+        },
+        {
+          "asset_id": "as_4x5_sand",
+          "caption": "Before",
+          "alt": "Before 5"
+        },
+        {
+          "asset_id": "as_4x5_sea",
+          "caption": "After",
+          "alt": "After 6"
+        },
+        {
+          "asset_id": "as_4x5_clay",
+          "caption": "Before",
+          "alt": "Before 7"
+        },
+        {
+          "asset_id": "as_4x5_sand",
+          "caption": "After",
+          "alt": "After 8"
+        }
+      ]
+    },
+    "the-studio": {
+      "handle": "the-studio",
+      "title": "The studio",
+      "items": [
+        {
+          "asset_id": "as_3x2_clay",
+          "caption": "",
+          "alt": "The studio 1"
+        },
+        {
+          "asset_id": "as_4x5_sand",
+          "caption": "",
+          "alt": "The studio 2"
+        },
+        {
+          "asset_id": "as_3x2_sea",
+          "caption": "",
+          "alt": "The studio 3"
+        },
+        {
+          "asset_id": "as_4x5_clay",
+          "caption": "",
+          "alt": "The studio 4"
+        },
+        {
+          "asset_id": "as_3x2_sand",
+          "caption": "",
+          "alt": "The studio 5"
+        },
+        {
+          "asset_id": "as_4x5_sea",
+          "caption": "",
+          "alt": "The studio 6"
+        },
+        {
+          "asset_id": "as_3x2_clay",
+          "caption": "",
+          "alt": "The studio 7"
+        },
+        {
+          "asset_id": "as_4x5_sand",
+          "caption": "",
+          "alt": "The studio 8"
+        }
+      ]
+    },
+    "home-strip": {
+      "handle": "home-strip",
+      "title": "From the chair",
+      "items": [
+        {
+          "asset_id": "as_4x5_clay",
+          "caption": "",
+          "alt": "From the chair 1"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "",
+          "alt": "From the chair 2"
+        },
+        {
+          "asset_id": "as_4x5_sea",
+          "caption": "",
+          "alt": "From the chair 3"
+        },
+        {
+          "asset_id": "as_1x1_clay",
+          "caption": "",
+          "alt": "From the chair 4"
+        },
+        {
+          "asset_id": "as_4x5_sand",
+          "caption": "",
+          "alt": "From the chair 5"
+        },
+        {
+          "asset_id": "as_1x1_sea",
+          "caption": "",
+          "alt": "From the chair 6"
+        },
+        {
+          "asset_id": "as_4x5_clay",
+          "caption": "",
+          "alt": "From the chair 7"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "",
+          "alt": "From the chair 8"
+        }
+      ]
+    },
+    "hero-slides": {
+      "handle": "hero-slides",
+      "title": "The house",
+      "items": [
+        {
+          "asset_id": "as_16x9_clay",
+          "caption": "",
+          "alt": "The house 1"
+        },
+        {
+          "asset_id": "as_16x9_sand",
+          "caption": "",
+          "alt": "The house 2"
+        },
+        {
+          "asset_id": "as_16x9_sea",
+          "caption": "",
+          "alt": "The house 3"
+        }
+      ]
+    }
+  },
+  "assets": {
+    "as_16x9_clay": {
+      "id": "as_16x9_clay",
+      "status": "ready",
+      "file_name": "16x9-clay.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 358,
+      "url": "/_sites/theme/photos/16x9-clay.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "16:9 clay placeholder",
+      "created_at": "2026-11-07T09:00:00Z"
+    },
+    "as_16x9_sand": {
+      "id": "as_16x9_sand",
+      "status": "ready",
+      "file_name": "16x9-sand.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 358,
+      "url": "/_sites/theme/photos/16x9-sand.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "16:9 sand placeholder",
+      "created_at": "2026-11-07T09:00:00Z"
+    },
+    "as_16x9_sea": {
+      "id": "as_16x9_sea",
+      "status": "ready",
+      "file_name": "16x9-sea.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 357,
+      "url": "/_sites/theme/photos/16x9-sea.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "16:9 sea placeholder",
+      "created_at": "2026-11-07T09:00:00Z"
+    },
+    "as_1x1_clay": {
+      "id": "as_1x1_clay",
+      "status": "ready",
+      "file_name": "1x1-clay.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/1x1-clay.svg",
+      "width": 1200,
+      "height": 1200,
+      "alt": "1:1 clay placeholder",
+      "created_at": "2026-11-07T09:00:00Z"
+    },
+    "as_1x1_sand": {
+      "id": "as_1x1_sand",
+      "status": "ready",
+      "file_name": "1x1-sand.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/1x1-sand.svg",
+      "width": 1200,
+      "height": 1200,
+      "alt": "1:1 sand placeholder",
+      "created_at": "2026-11-07T09:00:00Z"
+    },
+    "as_1x1_sea": {
+      "id": "as_1x1_sea",
+      "status": "ready",
+      "file_name": "1x1-sea.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 359,
+      "url": "/_sites/theme/photos/1x1-sea.svg",
+      "width": 1200,
+      "height": 1200,
+      "alt": "1:1 sea placeholder",
+      "created_at": "2026-11-07T09:00:00Z"
+    },
+    "as_21x9_clay": {
+      "id": "as_21x9_clay",
+      "status": "ready",
+      "file_name": "21x9-clay.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 359,
+      "url": "/_sites/theme/photos/21x9-clay.svg",
+      "width": 2100,
+      "height": 900,
+      "alt": "21:9 clay placeholder",
+      "created_at": "2026-11-07T09:00:00Z"
+    },
+    "as_21x9_sand": {
+      "id": "as_21x9_sand",
+      "status": "ready",
+      "file_name": "21x9-sand.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 359,
+      "url": "/_sites/theme/photos/21x9-sand.svg",
+      "width": 2100,
+      "height": 900,
+      "alt": "21:9 sand placeholder",
+      "created_at": "2026-11-07T09:00:00Z"
+    },
+    "as_21x9_sea": {
+      "id": "as_21x9_sea",
+      "status": "ready",
+      "file_name": "21x9-sea.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 358,
+      "url": "/_sites/theme/photos/21x9-sea.svg",
+      "width": 2100,
+      "height": 900,
+      "alt": "21:9 sea placeholder",
+      "created_at": "2026-11-07T09:00:00Z"
+    },
+    "as_3x2_clay": {
+      "id": "as_3x2_clay",
+      "status": "ready",
+      "file_name": "3x2-clay.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 359,
+      "url": "/_sites/theme/photos/3x2-clay.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "3:2 clay placeholder",
+      "created_at": "2026-11-07T09:00:00Z"
+    },
+    "as_3x2_sand": {
+      "id": "as_3x2_sand",
+      "status": "ready",
+      "file_name": "3x2-sand.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 359,
+      "url": "/_sites/theme/photos/3x2-sand.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "3:2 sand placeholder",
+      "created_at": "2026-11-07T09:00:00Z"
+    },
+    "as_3x2_sea": {
+      "id": "as_3x2_sea",
+      "status": "ready",
+      "file_name": "3x2-sea.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 358,
+      "url": "/_sites/theme/photos/3x2-sea.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "3:2 sea placeholder",
+      "created_at": "2026-11-07T09:00:00Z"
+    },
+    "as_4x5_clay": {
+      "id": "as_4x5_clay",
+      "status": "ready",
+      "file_name": "4x5-clay.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/4x5-clay.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "4:5 clay placeholder",
+      "created_at": "2026-11-07T09:00:00Z"
+    },
+    "as_4x5_sand": {
+      "id": "as_4x5_sand",
+      "status": "ready",
+      "file_name": "4x5-sand.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/4x5-sand.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "4:5 sand placeholder",
+      "created_at": "2026-11-07T09:00:00Z"
+    },
+    "as_4x5_sea": {
+      "id": "as_4x5_sea",
+      "status": "ready",
+      "file_name": "4x5-sea.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 359,
+      "url": "/_sites/theme/photos/4x5-sea.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "4:5 sea placeholder",
+      "created_at": "2026-11-07T09:00:00Z"
+    }
+  },
+  "forms": {
+    "booking": {
+      "handle": "booking",
+      "name": "Appointment request",
+      "fields": [
+        {
+          "id": "service",
+          "type": "select",
+          "label": "Service",
+          "required": true,
+          "options": [
+            "Swedish massage, 60 min · $115",
+            "Deep tissue, 90 min · $165",
+            "Hot stone, 75 min · $140",
+            "Prenatal, 60 min · $120",
+            "Sports recovery, 60 min · $130",
+            "Reflexology, 50 min · $80",
+            "Couples massage, 60 min · $230",
+            "Lymphatic drainage, 60 min · $125",
+            "Signature facial, 60 min · $120",
+            "Gentle facial, 45 min · $105",
+            "Dermaplaning, 30 min · from $65",
+            "LED add-on, 15 min · $30",
+            "Back facial, 45 min · $95",
+            "Cut and blow-dry, 60 min · from $68",
+            "Curly cut, 75 min · from $85",
+            "Single-process colour, 90 min · from $95",
+            "Balayage, 180 min · from $210",
+            "Gloss, 30 min · $45",
+            "Blowout, 45 min · $55",
+            "Bridal hair trial, 90 min · $120",
+            "Root touch-up, 60 min · from $75",
+            "Manicure, 30 min · $38",
+            "Gel manicure, 45 min · $52",
+            "Pedicure, 50 min · $58",
+            "Nail art add-on, 15 min · $12",
+            "Express manicure, 20 min · $25",
+            "Makeup trial, 60 min · $95",
+            "Event makeup, 45 min · $85",
+            "Bridal makeup, 90 min · $180",
+            "Makeup lesson, 90 min · $120",
+            "Yoga drop-in, 60 min · $22",
+            "Pilates reformer, 50 min · $38",
+            "Breathwork, 45 min · $30",
+            "Six-class pass · $120"
+          ]
+        },
+        {
+          "id": "day",
+          "type": "text",
+          "label": "Preferred day",
+          "required": false,
+          "max_length": 40
+        },
+        {
+          "id": "time",
+          "type": "select",
+          "label": "Time of day",
+          "required": false,
+          "options": [
+            "Morning",
+            "Afternoon",
+            "Evening"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Name",
+          "required": true,
+          "max_length": 120
+        },
+        {
+          "id": "phone",
+          "type": "text",
+          "label": "Phone",
+          "required": true,
+          "max_length": 40
+        },
+        {
+          "id": "note",
+          "type": "textarea",
+          "label": "A note",
+          "required": false,
+          "max_length": 2000
+        }
+      ],
+      "success_message": "Thank you. We confirm by text within a day.",
+      "submit_label": "Request appointment",
+      "redirect_path": ""
+    },
+    "contact": {
+      "handle": "contact",
+      "name": "Contact",
+      "fields": [
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Name",
+          "required": true,
+          "max_length": 120
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        },
+        {
+          "id": "subject",
+          "type": "select",
+          "label": "Subject",
+          "required": false,
+          "options": [
+            "Appointment",
+            "Gift cards",
+            "Events",
+            "Press",
+            "Other"
+          ]
+        },
+        {
+          "id": "message",
+          "type": "textarea",
+          "label": "Message",
+          "required": true,
+          "max_length": 4000
+        }
+      ],
+      "success_message": "Thank you. We reply within a day.",
+      "submit_label": "Send",
+      "redirect_path": ""
+    },
+    "newsletter": {
+      "handle": "newsletter",
+      "name": "Newsletter",
+      "fields": [
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        }
+      ],
+      "success_message": "You are on the list.",
+      "submit_label": "Sign up",
+      "redirect_path": ""
+    }
+  },
+  "content": {
+    "categories": {
+      "name": "Categories",
+      "fields": [
+        {
+          "id": "description",
+          "type": "text",
+          "label": "Line (one line under the name)"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image (3:2)"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "note",
+          "type": "text",
+          "label": "Note (beside the name on the menu)"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "cat_massage",
+          "handle": "massage",
+          "title": "Massage",
+          "fields": {
+            "description": "Eight kinds, 50 to 90 minutes",
+            "image": "as_3x2_clay",
+            "image_alt": "Massage room at Juniper House",
+            "note": "Every massage ends with a few minutes to rest",
+            "order": 1
+          }
+        },
+        {
+          "id": "cat_skin",
+          "handle": "skin",
+          "title": "Skin",
+          "fields": {
+            "description": "Five treatments, 15 to 60 minutes",
+            "image": "as_3x2_sand",
+            "image_alt": "Skin room at Juniper House",
+            "note": "Skin consultation included",
+            "order": 2
+          }
+        },
+        {
+          "id": "cat_hair",
+          "handle": "hair",
+          "title": "Hair",
+          "fields": {
+            "description": "Eight services, 30 to 180 minutes",
+            "image": "as_3x2_sea",
+            "image_alt": "Hair room at Juniper House",
+            "note": "Cut prices include a wash and blow-dry",
+            "order": 3
+          }
+        },
+        {
+          "id": "cat_nails",
+          "handle": "nails",
+          "title": "Nails",
+          "fields": {
+            "description": "Five services, 15 to 50 minutes",
+            "image": "as_3x2_clay",
+            "image_alt": "Nails room at Juniper House",
+            "note": "Gel removal is $15 unless we applied it",
+            "order": 4
+          }
+        },
+        {
+          "id": "cat_makeup",
+          "handle": "makeup",
+          "title": "Makeup",
+          "fields": {
+            "description": "Four services, 45 to 90 minutes",
+            "image": "as_3x2_sand",
+            "image_alt": "Makeup room at Juniper House",
+            "note": "Trials are booked before every event",
+            "order": 5
+          }
+        },
+        {
+          "id": "cat_studio",
+          "handle": "studio",
+          "title": "Studio",
+          "fields": {
+            "description": "Four classes, 45 to 60 minutes",
+            "image": "as_3x2_sea",
+            "image_alt": "Studio room at Juniper House",
+            "note": "Mats and props provided",
+            "order": 6
+          }
+        }
+      ]
+    },
+    "services": {
+      "name": "Services",
+      "fields": [
+        {
+          "id": "category",
+          "type": "entry",
+          "label": "Category",
+          "content_type": "categories"
+        },
+        {
+          "id": "summary",
+          "type": "text",
+          "label": "Summary"
+        },
+        {
+          "id": "description",
+          "type": "richtext",
+          "label": "Description"
+        },
+        {
+          "id": "duration_minutes",
+          "type": "number",
+          "label": "Duration (minutes)"
+        },
+        {
+          "id": "price",
+          "type": "number",
+          "label": "Price"
+        },
+        {
+          "id": "price_from",
+          "type": "checkbox",
+          "label": "Price is a starting price"
+        },
+        {
+          "id": "add_ons",
+          "type": "textarea",
+          "label": "Add-ons (one per line: Name · 15 min · +$20)"
+        },
+        {
+          "id": "includes",
+          "type": "textarea",
+          "label": "What it includes (one per line)"
+        },
+        {
+          "id": "team",
+          "type": "entry",
+          "label": "Offered by",
+          "content_type": "team"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image (4:5)"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "featured",
+          "type": "checkbox",
+          "label": "Most booked"
+        },
+        {
+          "id": "tag",
+          "type": "text",
+          "label": "Tag"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "svc_swedish_massage",
+          "handle": "swedish-massage",
+          "title": "Swedish massage",
+          "fields": {
+            "category": "cat_massage",
+            "summary": "Long, slow strokes. The one to start with.",
+            "description": "<p>Long, slow strokes. The one to start with.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 60,
+            "price": 115,
+            "price_from": false,
+            "add_ons": "Hot towels · 10 min · +$15\nScalp massage · 15 min · +$20",
+            "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+            "team": "team_noor_haddad",
+            "image": "as_4x5_clay",
+            "image_alt": "Swedish massage at Juniper House",
+            "featured": true,
+            "tag": "",
+            "order": 1
+          }
+        },
+        {
+          "id": "svc_deep_tissue",
+          "handle": "deep-tissue",
+          "title": "Deep tissue",
+          "fields": {
+            "category": "cat_massage",
+            "summary": "Slower and deeper, for the knots that stay.",
+            "description": "<p>Slower and deeper, for the knots that stay.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 90,
+            "price": 165,
+            "price_from": false,
+            "add_ons": "Hot towels · 10 min · +$15\nScalp massage · 15 min · +$20",
+            "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+            "team": "team_noor_haddad",
+            "image": "as_4x5_sand",
+            "image_alt": "Deep tissue at Juniper House",
+            "featured": true,
+            "tag": "",
+            "order": 2
+          }
+        },
+        {
+          "id": "svc_hot_stone",
+          "handle": "hot-stone",
+          "title": "Hot stone",
+          "fields": {
+            "category": "cat_massage",
+            "summary": "Warm basalt stones, worked along the back and legs.",
+            "description": "<p>Warm basalt stones, worked along the back and legs.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 75,
+            "price": 140,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+            "team": "team_noor_haddad",
+            "image": "as_4x5_sea",
+            "image_alt": "Hot stone at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 3
+          }
+        },
+        {
+          "id": "svc_prenatal",
+          "handle": "prenatal",
+          "title": "Prenatal",
+          "fields": {
+            "category": "cat_massage",
+            "summary": "Side-lying, with a bolster for every trimester.",
+            "description": "<p>Side-lying, with a bolster for every trimester.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 60,
+            "price": 120,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+            "team": "team_noor_haddad",
+            "image": "as_4x5_clay",
+            "image_alt": "Prenatal at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 4
+          }
+        },
+        {
+          "id": "svc_sports_recovery",
+          "handle": "sports-recovery",
+          "title": "Sports recovery",
+          "fields": {
+            "category": "cat_massage",
+            "summary": "Stretching and pressure for the day after.",
+            "description": "<p>Stretching and pressure for the day after.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 60,
+            "price": 130,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+            "team": "team_noor_haddad",
+            "image": "as_4x5_sand",
+            "image_alt": "Sports recovery at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 5
+          }
+        },
+        {
+          "id": "svc_reflexology",
+          "handle": "reflexology",
+          "title": "Reflexology",
+          "fields": {
+            "category": "cat_massage",
+            "summary": "Feet first, with a warm soak to begin.",
+            "description": "<p>Feet first, with a warm soak to begin.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 50,
+            "price": 80,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+            "team": "team_noor_haddad",
+            "image": "as_4x5_sea",
+            "image_alt": "Reflexology at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 6
+          }
+        },
+        {
+          "id": "svc_couples_massage",
+          "handle": "couples-massage",
+          "title": "Couples massage",
+          "fields": {
+            "category": "cat_massage",
+            "summary": "Two tables, one room, the same hour.",
+            "description": "<p>Two tables, one room, the same hour.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 60,
+            "price": 230,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+            "team": "team_noor_haddad",
+            "image": "as_4x5_clay",
+            "image_alt": "Couples massage at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 7
+          }
+        },
+        {
+          "id": "svc_lymphatic_drainage",
+          "handle": "lymphatic-drainage",
+          "title": "Lymphatic drainage",
+          "fields": {
+            "category": "cat_massage",
+            "summary": "Light, rhythmic strokes that ease swelling.",
+            "description": "<p>Light, rhythmic strokes that ease swelling.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 60,
+            "price": 125,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+            "team": "team_noor_haddad",
+            "image": "as_4x5_sand",
+            "image_alt": "Lymphatic drainage at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 8
+          }
+        },
+        {
+          "id": "svc_signature_facial",
+          "handle": "signature-facial",
+          "title": "Signature facial",
+          "fields": {
+            "category": "cat_skin",
+            "summary": "Cleanse, steam, extractions and a mask chosen for you.",
+            "description": "<p>Cleanse, steam, extractions and a mask chosen for you.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 60,
+            "price": 120,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+            "team": "team_june_okafor",
+            "image": "as_4x5_sea",
+            "image_alt": "Signature facial at Juniper House",
+            "featured": true,
+            "tag": "New clients",
+            "order": 9
+          }
+        },
+        {
+          "id": "svc_gentle_facial",
+          "handle": "gentle-facial",
+          "title": "Gentle facial",
+          "fields": {
+            "category": "cat_skin",
+            "summary": "For sensitive skin: no steam, no extractions.",
+            "description": "<p>For sensitive skin: no steam, no extractions.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 45,
+            "price": 105,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+            "team": "team_june_okafor",
+            "image": "as_4x5_clay",
+            "image_alt": "Gentle facial at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 10
+          }
+        },
+        {
+          "id": "svc_dermaplaning",
+          "handle": "dermaplaning",
+          "title": "Dermaplaning",
+          "fields": {
+            "category": "cat_skin",
+            "summary": "A fine blade lifts dead skin and fuzz.",
+            "description": "<p>A fine blade lifts dead skin and fuzz.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 30,
+            "price": 65,
+            "price_from": true,
+            "add_ons": "",
+            "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+            "team": "team_june_okafor",
+            "image": "as_4x5_sand",
+            "image_alt": "Dermaplaning at Juniper House",
+            "featured": false,
+            "tag": "New",
+            "order": 11
+          }
+        },
+        {
+          "id": "svc_led_add_on",
+          "handle": "led-add-on",
+          "title": "LED add-on",
+          "fields": {
+            "category": "cat_skin",
+            "summary": "Red light after any facial, to calm and repair.",
+            "description": "<p>Red light after any facial, to calm and repair.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 15,
+            "price": 30,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+            "team": "team_june_okafor",
+            "image": "as_4x5_sea",
+            "image_alt": "LED add-on at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 12
+          }
+        },
+        {
+          "id": "svc_back_facial",
+          "handle": "back-facial",
+          "title": "Back facial",
+          "fields": {
+            "category": "cat_skin",
+            "summary": "Cleanse, exfoliate and a mask where you cannot reach.",
+            "description": "<p>Cleanse, exfoliate and a mask where you cannot reach.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 45,
+            "price": 95,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+            "team": "team_june_okafor",
+            "image": "as_4x5_clay",
+            "image_alt": "Back facial at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 13
+          }
+        },
+        {
+          "id": "svc_cut_and_blow_dry",
+          "handle": "cut-and-blow-dry",
+          "title": "Cut and blow-dry",
+          "fields": {
+            "category": "cat_hair",
+            "summary": "A cut, a wash and a finish to walk out with.",
+            "description": "<p>A cut, a wash and a finish to walk out with.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 60,
+            "price": 68,
+            "price_from": true,
+            "add_ons": "",
+            "includes": "A consultation at the chair\nA wash with a scalp massage\nA finish to walk out with",
+            "team": "team_mara_ellison",
+            "image": "as_4x5_sand",
+            "image_alt": "Cut and blow-dry at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 14
+          }
+        },
+        {
+          "id": "svc_curly_cut",
+          "handle": "curly-cut",
+          "title": "Curly cut",
+          "fields": {
+            "category": "cat_hair",
+            "summary": "Cut dry, curl by curl.",
+            "description": "<p>Cut dry, curl by curl.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 75,
+            "price": 85,
+            "price_from": true,
+            "add_ons": "",
+            "includes": "A consultation at the chair\nA wash with a scalp massage\nA finish to walk out with",
+            "team": "team_mara_ellison",
+            "image": "as_4x5_sea",
+            "image_alt": "Curly cut at Juniper House",
+            "featured": true,
+            "tag": "",
+            "order": 15
+          }
+        },
+        {
+          "id": "svc_single_process_colour",
+          "handle": "single-process-colour",
+          "title": "Single-process colour",
+          "fields": {
+            "category": "cat_hair",
+            "summary": "One colour, root to tip.",
+            "description": "<p>One colour, root to tip.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 90,
+            "price": 95,
+            "price_from": true,
+            "add_ons": "",
+            "includes": "A consultation at the chair\nA wash with a scalp massage\nA finish to walk out with",
+            "team": "team_mara_ellison",
+            "image": "as_4x5_clay",
+            "image_alt": "Single-process colour at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 16
+          }
+        },
+        {
+          "id": "svc_balayage",
+          "handle": "balayage",
+          "title": "Balayage",
+          "fields": {
+            "category": "cat_hair",
+            "summary": "Hand-painted, grown-out on purpose.",
+            "description": "<p>Hand-painted, grown-out on purpose.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 180,
+            "price": 210,
+            "price_from": true,
+            "add_ons": "",
+            "includes": "A consultation at the chair\nA wash with a scalp massage\nA finish to walk out with",
+            "team": "team_mara_ellison",
+            "image": "as_4x5_sand",
+            "image_alt": "Balayage at Juniper House",
+            "featured": true,
+            "tag": "",
+            "order": 17
+          }
+        },
+        {
+          "id": "svc_gloss",
+          "handle": "gloss",
+          "title": "Gloss",
+          "fields": {
+            "category": "cat_hair",
+            "summary": "Shine and a softer tone between colours.",
+            "description": "<p>Shine and a softer tone between colours.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 30,
+            "price": 45,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "A consultation at the chair\nA wash with a scalp massage\nA finish to walk out with",
+            "team": "team_mara_ellison",
+            "image": "as_4x5_sea",
+            "image_alt": "Gloss at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 18
+          }
+        },
+        {
+          "id": "svc_blowout",
+          "handle": "blowout",
+          "title": "Blowout",
+          "fields": {
+            "category": "cat_hair",
+            "summary": "Wash and a long, smooth blow-dry.",
+            "description": "<p>Wash and a long, smooth blow-dry.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 45,
+            "price": 55,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "A consultation at the chair\nA wash with a scalp massage\nA finish to walk out with",
+            "team": "team_mara_ellison",
+            "image": "as_4x5_clay",
+            "image_alt": "Blowout at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 19
+          }
+        },
+        {
+          "id": "svc_bridal_hair_trial",
+          "handle": "bridal-hair-trial",
+          "title": "Bridal hair trial",
+          "fields": {
+            "category": "cat_hair",
+            "summary": "Your wedding hair, tried and photographed.",
+            "description": "<p>Your wedding hair, tried and photographed.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 90,
+            "price": 120,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "A consultation at the chair\nA wash with a scalp massage\nA finish to walk out with",
+            "team": "team_mara_ellison",
+            "image": "as_4x5_sand",
+            "image_alt": "Bridal hair trial at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 20
+          }
+        },
+        {
+          "id": "svc_root_touch_up",
+          "handle": "root-touch-up",
+          "title": "Root touch-up",
+          "fields": {
+            "category": "cat_hair",
+            "summary": "Colour on the regrowth only.",
+            "description": "<p>Colour on the regrowth only.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 60,
+            "price": 75,
+            "price_from": true,
+            "add_ons": "",
+            "includes": "A consultation at the chair\nA wash with a scalp massage\nA finish to walk out with",
+            "team": "team_mara_ellison",
+            "image": "as_4x5_sea",
+            "image_alt": "Root touch-up at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 21
+          }
+        },
+        {
+          "id": "svc_manicure",
+          "handle": "manicure",
+          "title": "Manicure",
+          "fields": {
+            "category": "cat_nails",
+            "summary": "Shape, cuticles and a polish of your choice.",
+            "description": "<p>Shape, cuticles and a polish of your choice.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 30,
+            "price": 38,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "",
+            "team": "team_tess_lindqvist",
+            "image": "as_4x5_clay",
+            "image_alt": "Manicure at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 22
+          }
+        },
+        {
+          "id": "svc_gel_manicure",
+          "handle": "gel-manicure",
+          "title": "Gel manicure",
+          "fields": {
+            "category": "cat_nails",
+            "summary": "A gel polish that lasts two to three weeks.",
+            "description": "<p>A gel polish that lasts two to three weeks.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 45,
+            "price": 52,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "",
+            "team": "team_tess_lindqvist",
+            "image": "as_4x5_sand",
+            "image_alt": "Gel manicure at Juniper House",
+            "featured": true,
+            "tag": "",
+            "order": 23
+          }
+        },
+        {
+          "id": "svc_pedicure",
+          "handle": "pedicure",
+          "title": "Pedicure",
+          "fields": {
+            "category": "cat_nails",
+            "summary": "A soak, a scrub and polish.",
+            "description": "<p>A soak, a scrub and polish.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 50,
+            "price": 58,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "",
+            "team": "team_tess_lindqvist",
+            "image": "as_4x5_sea",
+            "image_alt": "Pedicure at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 24
+          }
+        },
+        {
+          "id": "svc_nail_art_add_on",
+          "handle": "nail-art-add-on",
+          "title": "Nail art add-on",
+          "fields": {
+            "category": "cat_nails",
+            "summary": "Lines, dots or a single painted nail.",
+            "description": "<p>Lines, dots or a single painted nail.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 15,
+            "price": 12,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "",
+            "team": "team_tess_lindqvist",
+            "image": "as_4x5_clay",
+            "image_alt": "Nail art add-on at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 25
+          }
+        },
+        {
+          "id": "svc_express_manicure",
+          "handle": "express-manicure",
+          "title": "Express manicure",
+          "fields": {
+            "category": "cat_nails",
+            "summary": "Shape and polish, nothing else.",
+            "description": "<p>Shape and polish, nothing else.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 20,
+            "price": 25,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "",
+            "team": "team_tess_lindqvist",
+            "image": "as_4x5_sand",
+            "image_alt": "Express manicure at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 26
+          }
+        },
+        {
+          "id": "svc_makeup_trial",
+          "handle": "makeup-trial",
+          "title": "Makeup trial",
+          "fields": {
+            "category": "cat_makeup",
+            "summary": "Your event look, tried before the day.",
+            "description": "<p>Your event look, tried before the day.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 60,
+            "price": 95,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "",
+            "team": "team_priya_nair",
+            "image": "as_4x5_sea",
+            "image_alt": "Makeup trial at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 27
+          }
+        },
+        {
+          "id": "svc_event_makeup",
+          "handle": "event-makeup",
+          "title": "Event makeup",
+          "fields": {
+            "category": "cat_makeup",
+            "summary": "For a party, a photo or a night out.",
+            "description": "<p>For a party, a photo or a night out.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 45,
+            "price": 85,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "",
+            "team": "team_priya_nair",
+            "image": "as_4x5_clay",
+            "image_alt": "Event makeup at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 28
+          }
+        },
+        {
+          "id": "svc_bridal_makeup",
+          "handle": "bridal-makeup",
+          "title": "Bridal makeup",
+          "fields": {
+            "category": "cat_makeup",
+            "summary": "On the day, with touch-ups to take with you.",
+            "description": "<p>On the day, with touch-ups to take with you.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 90,
+            "price": 180,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "",
+            "team": "team_priya_nair",
+            "image": "as_4x5_sand",
+            "image_alt": "Bridal makeup at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 29
+          }
+        },
+        {
+          "id": "svc_makeup_lesson",
+          "handle": "makeup-lesson",
+          "title": "Makeup lesson",
+          "fields": {
+            "category": "cat_makeup",
+            "summary": "Your own kit, your own face, step by step.",
+            "description": "<p>Your own kit, your own face, step by step.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 90,
+            "price": 120,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "",
+            "team": "team_priya_nair",
+            "image": "as_4x5_sea",
+            "image_alt": "Makeup lesson at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 30
+          }
+        },
+        {
+          "id": "svc_yoga_drop_in",
+          "handle": "yoga-drop-in",
+          "title": "Yoga drop-in",
+          "fields": {
+            "category": "cat_studio",
+            "summary": "A slow flow upstairs, all levels.",
+            "description": "<p>A slow flow upstairs, all levels.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 60,
+            "price": 22,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "",
+            "team": "team_sol_reyes",
+            "image": "as_4x5_clay",
+            "image_alt": "Yoga drop-in at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 31
+          }
+        },
+        {
+          "id": "svc_pilates_reformer",
+          "handle": "pilates-reformer",
+          "title": "Pilates reformer",
+          "fields": {
+            "category": "cat_studio",
+            "summary": "Six reformers, one teacher.",
+            "description": "<p>Six reformers, one teacher.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 50,
+            "price": 38,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "",
+            "team": "team_sol_reyes",
+            "image": "as_4x5_sand",
+            "image_alt": "Pilates reformer at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 32
+          }
+        },
+        {
+          "id": "svc_breathwork",
+          "handle": "breathwork",
+          "title": "Breathwork",
+          "fields": {
+            "category": "cat_studio",
+            "summary": "Lying down, guided, no experience needed.",
+            "description": "<p>Lying down, guided, no experience needed.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "duration_minutes": 45,
+            "price": 30,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "",
+            "team": "team_sol_reyes",
+            "image": "as_4x5_sea",
+            "image_alt": "Breathwork at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 33
+          }
+        },
+        {
+          "id": "svc_six_class_pass",
+          "handle": "six-class-pass",
+          "title": "Six-class pass",
+          "fields": {
+            "category": "cat_studio",
+            "summary": "Any six studio classes, used within three months.",
+            "description": "<p>Any six studio classes, used within three months.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+            "price": 120,
+            "price_from": false,
+            "add_ons": "",
+            "includes": "",
+            "team": "team_sol_reyes",
+            "image": "as_4x5_clay",
+            "image_alt": "Six-class pass at Juniper House",
+            "featured": false,
+            "tag": "",
+            "order": 34
+          }
+        }
+      ]
+    },
+    "team": {
+      "name": "Team",
+      "fields": [
+        {
+          "id": "role",
+          "type": "text",
+          "label": "Role"
+        },
+        {
+          "id": "level",
+          "type": "text",
+          "label": "Level (Master, Senior, Studio, Junior)"
+        },
+        {
+          "id": "specialties",
+          "type": "text",
+          "label": "Specialties (comma-separated)"
+        },
+        {
+          "id": "bio",
+          "type": "richtext",
+          "label": "Bio"
+        },
+        {
+          "id": "credentials",
+          "type": "textarea",
+          "label": "Credentials (one per line)"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Portrait (4:5)"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Portrait alt text"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "id": "featured",
+          "type": "checkbox",
+          "label": "Featured"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "team_mara_ellison",
+          "handle": "mara-ellison",
+          "title": "Mara Ellison",
+          "fields": {
+            "role": "Colourist and stylist",
+            "level": "Master",
+            "specialties": "Curls, balayage, bridal",
+            "bio": "<p>Mara opened the salon side of the house and still cuts most Saturdays. She cuts curls dry, one at a time, and colours for the way hair grows out.</p><p>She will tell you when a cut will not suit you. Most people come back for that.</p>",
+            "credentials": "Trained in London and Lisbon\nCurly cut specialist\nFifteen years behind the chair",
+            "image": "as_4x5_clay",
+            "image_alt": "Mara Ellison, colourist and stylist",
+            "link": "https://instagram.com/",
+            "featured": true,
+            "order": 1
+          }
+        },
+        {
+          "id": "team_noor_haddad",
+          "handle": "noor-haddad",
+          "title": "Noor Haddad",
+          "fields": {
+            "role": "Massage therapist",
+            "level": "Senior",
+            "specialties": "Deep tissue, sports recovery, prenatal",
+            "bio": "<p>Noor leads the massage rooms. She works slowly and asks a lot of questions first, so the hour goes where you need it.</p><p>Deep tissue is hers; so is the prenatal bolster, which she designed.</p>",
+            "credentials": "LMT, 12 years\nPrenatal massage certificate\nSports massage diploma",
+            "image": "as_4x5_sand",
+            "image_alt": "Noor Haddad, massage therapist",
+            "link": "https://instagram.com/",
+            "featured": true,
+            "order": 2
+          }
+        },
+        {
+          "id": "team_june_okafor",
+          "handle": "june-okafor",
+          "title": "June Okafor",
+          "fields": {
+            "role": "Esthetician",
+            "level": "Senior",
+            "specialties": "Facials, dermaplaning, LED",
+            "bio": "<p>June looks after skin. Every first facial starts with a consultation with her, and every facial ends with her notes on what to use at home.</p>",
+            "credentials": "Licensed esthetician\nAdvanced chemical peels\nLED therapy course",
+            "image": "as_4x5_sea",
+            "image_alt": "June Okafor, esthetician",
+            "link": "https://instagram.com/",
+            "featured": true,
+            "order": 3
+          }
+        },
+        {
+          "id": "team_tess_lindqvist",
+          "handle": "tess-lindqvist",
+          "title": "Tess Lindqvist",
+          "fields": {
+            "role": "Nail artist",
+            "level": "Studio",
+            "specialties": "Gel, nail art",
+            "bio": "<p>Tess runs the nail bar by the front window: clean lines, quiet colours and the occasional painted moon.</p>",
+            "credentials": "Gel systems certificate\nNail art course",
+            "image": "as_4x5_clay",
+            "image_alt": "Tess Lindqvist, nail artist",
+            "link": "https://instagram.com/",
+            "featured": false,
+            "order": 4
+          }
+        },
+        {
+          "id": "team_priya_nair",
+          "handle": "priya-nair",
+          "title": "Priya Nair",
+          "fields": {
+            "role": "Makeup artist",
+            "level": "Studio",
+            "specialties": "Bridal, editorial",
+            "bio": "<p>Priya does bridal parties, photo shoots and lessons for people who want to do it themselves.</p>",
+            "credentials": "Bridal makeup diploma\nEditorial work for local magazines",
+            "image": "as_4x5_sand",
+            "image_alt": "Priya Nair, makeup artist",
+            "link": "https://instagram.com/",
+            "featured": false,
+            "order": 5
+          }
+        },
+        {
+          "id": "team_sol_reyes",
+          "handle": "sol-reyes",
+          "title": "Sol Reyes",
+          "fields": {
+            "role": "Yoga and pilates",
+            "level": "Studio",
+            "specialties": "Reformer, breathwork",
+            "bio": "<p>Sol teaches every class in the studio upstairs: morning yoga, Thursday reformer and breathwork on Sundays.</p>",
+            "credentials": "500-hour yoga teacher\nComprehensive reformer certificate",
+            "image": "as_4x5_sea",
+            "image_alt": "Sol Reyes, yoga and pilates",
+            "link": "https://instagram.com/",
+            "featured": false,
+            "order": 6
+          }
+        }
+      ]
+    },
+    "locations": {
+      "name": "Locations",
+      "fields": [
+        {
+          "id": "address",
+          "type": "textarea",
+          "label": "Address"
+        },
+        {
+          "id": "hours",
+          "type": "textarea",
+          "label": "Hours (one line per day or range: Mon–Sat 09:00–19:00)"
+        },
+        {
+          "id": "phone",
+          "type": "text",
+          "label": "Phone"
+        },
+        {
+          "id": "email",
+          "type": "text",
+          "label": "Email"
+        },
+        {
+          "id": "map_url",
+          "type": "url",
+          "label": "Map link"
+        },
+        {
+          "id": "map_embed_url",
+          "type": "url",
+          "label": "Map embed link"
+        },
+        {
+          "id": "map_image",
+          "type": "image",
+          "label": "Map image"
+        },
+        {
+          "id": "map_image_alt",
+          "type": "text",
+          "label": "Map image alt text"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image (4:5)"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "description",
+          "type": "text",
+          "label": "Description"
+        },
+        {
+          "id": "note",
+          "type": "text",
+          "label": "Note"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "loc_alder_street",
+          "handle": "alder-street",
+          "title": "Alder Street",
+          "fields": {
+            "address": "14 Alder Street\nRiverton, OR 97201",
+            "hours": "Mon–Sat 09:00–19:00\nSun 10:00–16:00",
+            "phone": "(503) 555-0142",
+            "email": "hello@juniperhouse.example",
+            "map_url": "https://maps.example/?q=14+Alder+Street",
+            "map_embed_url": "",
+            "map_image": "as_3x2_sand",
+            "map_image_alt": "Map of Alder Street",
+            "image": "as_4x5_clay",
+            "image_alt": "The front room on Alder Street",
+            "description": "The house: six treatment rooms, the salon and the studio upstairs.",
+            "note": "Parking behind the building after 5",
+            "order": 1
+          }
+        },
+        {
+          "id": "loc_riverside",
+          "handle": "riverside",
+          "title": "Riverside",
+          "fields": {
+            "address": "3 Mill Lane\nRiverton, OR 97202",
+            "hours": "Tue–Sat 10:00–18:00",
+            "phone": "(503) 555-0187",
+            "email": "riverside@juniperhouse.example",
+            "map_url": "https://maps.example/?q=3+Mill+Lane",
+            "map_embed_url": "",
+            "map_image": "as_3x2_sea",
+            "map_image_alt": "Map of Mill Lane",
+            "image": "as_4x5_sea",
+            "image_alt": "The Riverside studio",
+            "description": "A second, smaller studio by the river: two massage rooms and breathwork.",
+            "note": "Ring the bell by the blue door",
+            "order": 2
+          }
+        }
+      ]
+    },
+    "packages": {
+      "name": "Packages",
+      "fields": [
+        {
+          "id": "price",
+          "type": "number",
+          "label": "Price"
+        },
+        {
+          "id": "period",
+          "type": "text",
+          "label": "Period (month, series, once)"
+        },
+        {
+          "id": "summary",
+          "type": "text",
+          "label": "Summary"
+        },
+        {
+          "id": "includes",
+          "type": "textarea",
+          "label": "Includes (one per line)"
+        },
+        {
+          "id": "expires",
+          "type": "text",
+          "label": "Expires"
+        },
+        {
+          "id": "featured",
+          "type": "checkbox",
+          "label": "Featured"
+        },
+        {
+          "id": "note",
+          "type": "text",
+          "label": "Note"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Checkout link"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "pkg_monthly_massage",
+          "handle": "monthly-massage",
+          "title": "Monthly massage",
+          "fields": {
+            "price": 99,
+            "period": "month",
+            "summary": "One hour a month, booked when it suits you.",
+            "includes": "One 60-minute massage a month\n10% off add-ons\nBring a friend at member price",
+            "expires": "",
+            "featured": true,
+            "note": "Cancel any time",
+            "link": "",
+            "order": 1
+          }
+        },
+        {
+          "id": "pkg_facial_series",
+          "handle": "facial-series",
+          "title": "Facial series",
+          "fields": {
+            "price": 540,
+            "period": "series",
+            "summary": "Six signature facials with June, for skin that changes with the season.",
+            "includes": "Six signature facials\nA skin plan after the first\nLED add-on at half price",
+            "expires": "Use within 12 months",
+            "featured": false,
+            "note": "",
+            "link": "",
+            "order": 2
+          }
+        },
+        {
+          "id": "pkg_colour_club",
+          "handle": "colour-club",
+          "title": "Colour club",
+          "fields": {
+            "price": 45,
+            "period": "month",
+            "summary": "Colour that never looks grown out.",
+            "includes": "A gloss every six weeks\nPriority Saturdays\n10% off colour",
+            "expires": "",
+            "featured": false,
+            "note": "Cancel any time",
+            "link": "",
+            "order": 3
+          }
+        }
+      ]
+    },
+    "testimonials": {
+      "name": "Testimonials",
+      "fields": [
+        {
+          "id": "quote",
+          "type": "textarea",
+          "label": "Quote"
+        },
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Name"
+        },
+        {
+          "id": "service",
+          "type": "entry",
+          "label": "Service",
+          "content_type": "services"
+        },
+        {
+          "id": "line",
+          "type": "text",
+          "label": "Line (the treatment)"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Portrait (4:5)"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Portrait alt text"
+        },
+        {
+          "id": "featured",
+          "type": "checkbox",
+          "label": "Featured"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "tm_amara_osei",
+          "handle": "amara-osei",
+          "title": "Amara Osei",
+          "fields": {
+            "quote": "I walked in wound tight and walked out two inches *taller*.",
+            "name": "Amara Osei",
+            "service": "svc_deep_tissue",
+            "line": "Deep tissue, 90 min",
+            "featured": true,
+            "order": 1,
+            "image": "as_4x5_sand",
+            "image_alt": "Amara Osei"
+          }
+        },
+        {
+          "id": "tm_lena_marsh",
+          "handle": "lena-marsh",
+          "title": "Lena Marsh",
+          "fields": {
+            "quote": "Mara is the first person to cut my curls dry. I am never going *back*.",
+            "name": "Lena Marsh",
+            "service": "svc_curly_cut",
+            "line": "Curly cut",
+            "featured": true,
+            "order": 2,
+            "image": "as_4x5_sea",
+            "image_alt": "Lena Marsh"
+          }
+        },
+        {
+          "id": "tm_tom_whitfield",
+          "handle": "tom-whitfield",
+          "title": "Tom Whitfield",
+          "fields": {
+            "quote": "The *quietest* hour of my week.",
+            "name": "Tom Whitfield",
+            "service": "svc_swedish_massage",
+            "line": "Swedish massage",
+            "featured": true,
+            "order": 3,
+            "image": "as_4x5_clay",
+            "image_alt": "Tom Whitfield"
+          }
+        },
+        {
+          "id": "tm_priya_shah",
+          "handle": "priya-shah",
+          "title": "Priya Shah",
+          "fields": {
+            "quote": "They did my whole bridal party and nobody cried off their *makeup*.",
+            "name": "Priya Shah",
+            "service": "svc_bridal_makeup",
+            "line": "Bridal makeup",
+            "featured": false,
+            "order": 4
+          }
+        },
+        {
+          "id": "tm_jo_lindqvist",
+          "handle": "jo-lindqvist",
+          "title": "Jo Lindqvist",
+          "fields": {
+            "quote": "Reformer at eight, coffee at *nine*.",
+            "name": "Jo Lindqvist",
+            "service": "svc_pilates_reformer",
+            "line": "Pilates",
+            "featured": false,
+            "order": 5
+          }
+        },
+        {
+          "id": "tm_dana_whitfield",
+          "handle": "dana-whitfield",
+          "title": "Dana Whitfield",
+          "fields": {
+            "quote": "June knows my skin better than I *do*.",
+            "name": "Dana Whitfield",
+            "service": "svc_signature_facial",
+            "line": "Signature facial",
+            "featured": false,
+            "order": 6
+          }
+        }
+      ]
+    },
+    "albums": {
+      "name": "Albums",
+      "fields": [
+        {
+          "id": "date",
+          "type": "date",
+          "label": "Date"
+        },
+        {
+          "id": "description",
+          "type": "text",
+          "label": "Description"
+        },
+        {
+          "id": "cover",
+          "type": "image",
+          "label": "Cover (3:2)"
+        },
+        {
+          "id": "cover_alt",
+          "type": "text",
+          "label": "Cover alt text"
+        },
+        {
+          "id": "photos",
+          "type": "gallery",
+          "label": "Photos"
+        },
+        {
+          "id": "kind",
+          "type": "text",
+          "label": "Kind (work, rooms, before-after)"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "album_the_rooms",
+          "handle": "the-rooms",
+          "title": "The rooms",
+          "fields": {
+            "date": "2026-10-01",
+            "description": "Six treatment rooms, each with its own door.",
+            "cover": "as_3x2_clay",
+            "cover_alt": "A treatment room",
+            "photos": "the-rooms",
+            "kind": "rooms",
+            "order": 1
+          }
+        },
+        {
+          "id": "album_hair",
+          "handle": "hair",
+          "title": "Hair",
+          "fields": {
+            "date": "2026-10-14",
+            "description": "Curls, colour and a few bridal trials.",
+            "cover": "as_3x2_sand",
+            "cover_alt": "A balayage finish",
+            "photos": "hair",
+            "kind": "work",
+            "order": 2
+          }
+        },
+        {
+          "id": "album_before_and_after",
+          "handle": "before-and-after",
+          "title": "Before and after",
+          "fields": {
+            "date": "2026-10-21",
+            "description": "Four pairs: colour, curls and a facial series.",
+            "cover": "as_3x2_sea",
+            "cover_alt": "Before and after a curly cut",
+            "photos": "before-and-after",
+            "kind": "before-after",
+            "order": 3
+          }
+        },
+        {
+          "id": "album_the_studio",
+          "handle": "the-studio",
+          "title": "The studio",
+          "fields": {
+            "date": "2026-09-30",
+            "description": "Upstairs: reformers, mats and the long window.",
+            "cover": "as_3x2_clay",
+            "cover_alt": "The studio upstairs",
+            "photos": "the-studio",
+            "kind": "rooms",
+            "order": 4
+          }
+        }
+      ]
+    },
+    "events": {
+      "name": "Events",
+      "fields": [
+        {
+          "id": "date",
+          "type": "date",
+          "label": "Date"
+        },
+        {
+          "id": "time",
+          "type": "text",
+          "label": "Time"
+        },
+        {
+          "id": "topic",
+          "type": "text",
+          "label": "Topic (the kicker)"
+        },
+        {
+          "id": "location",
+          "type": "entry",
+          "label": "Location",
+          "content_type": "locations"
+        },
+        {
+          "id": "room",
+          "type": "text",
+          "label": "Room"
+        },
+        {
+          "id": "description",
+          "type": "richtext",
+          "label": "Description"
+        },
+        {
+          "id": "price",
+          "type": "number",
+          "label": "Price (empty or 0 is free)"
+        },
+        {
+          "id": "host",
+          "type": "entry",
+          "label": "Host",
+          "content_type": "team"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image (3:2)"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Sign-up link"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ev_thursday_evening_pilates",
+          "handle": "thursday-evening-pilates",
+          "title": "Thursday evening pilates",
+          "fields": {
+            "date": "2026-11-19",
+            "time": "18:30",
+            "topic": "Studio",
+            "location": "loc_alder_street",
+            "room": "Studio",
+            "description": "<p>Thursday evening pilates at Juniper House. Small numbers, so save a place.</p><p>Tea before and after; come ten minutes early.</p>",
+            "price": 38,
+            "host": "team_sol_reyes",
+            "image": "as_3x2_clay",
+            "image_alt": "Thursday evening pilates",
+            "link": "",
+            "order": 1
+          }
+        },
+        {
+          "id": "ev_winter_skin_workshop",
+          "handle": "winter-skin-workshop",
+          "title": "Winter skin workshop",
+          "fields": {
+            "date": "2026-12-05",
+            "time": "10:00",
+            "topic": "Skin",
+            "location": "loc_alder_street",
+            "room": "Treatment room 2",
+            "description": "<p>Winter skin workshop at Juniper House. Small numbers, so save a place.</p><p>Tea before and after; come ten minutes early.</p>",
+            "price": 45,
+            "host": "team_june_okafor",
+            "image": "as_3x2_sand",
+            "image_alt": "Winter skin workshop",
+            "link": "",
+            "order": 2
+          }
+        },
+        {
+          "id": "ev_new_year_breathwork",
+          "handle": "new-year-breathwork",
+          "title": "New year breathwork",
+          "fields": {
+            "date": "2027-01-10",
+            "time": "08:00",
+            "topic": "Studio",
+            "location": "loc_riverside",
+            "room": "The river room",
+            "description": "<p>New year breathwork at Juniper House. Small numbers, so save a place.</p><p>Tea before and after; come ten minutes early.</p>",
+            "price": 30,
+            "host": "team_sol_reyes",
+            "image": "as_3x2_sea",
+            "image_alt": "New year breathwork",
+            "link": "",
+            "order": 3
+          }
+        },
+        {
+          "id": "ev_bridal_preview_morning",
+          "handle": "bridal-preview-morning",
+          "title": "Bridal preview morning",
+          "fields": {
+            "date": "2027-01-16",
+            "time": "09:00",
+            "topic": "Bridal",
+            "location": "loc_alder_street",
+            "room": "The salon",
+            "description": "<p>Bridal preview morning at Juniper House. Small numbers, so save a place.</p><p>Tea before and after; come ten minutes early.</p>",
+            "price": 0,
+            "host": "team_mara_ellison",
+            "image": "as_3x2_clay",
+            "image_alt": "Bridal preview morning",
+            "link": "",
+            "order": 4
+          }
+        }
+      ]
+    },
+    "products": {
+      "name": "Products",
+      "fields": [
+        {
+          "id": "brand",
+          "type": "text",
+          "label": "Brand"
+        },
+        {
+          "id": "description",
+          "type": "text",
+          "label": "Line"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image (1:1)"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "prod_alder_and_co",
+          "handle": "alder-and-co",
+          "title": "Alder & Co.",
+          "fields": {
+            "brand": "Alder & Co.",
+            "description": "Shampoo, conditioner and a curl cream",
+            "image": "as_1x1_clay",
+            "image_alt": "Alder & Co.",
+            "link": "",
+            "order": 1
+          }
+        },
+        {
+          "id": "prod_still_water",
+          "handle": "still-water",
+          "title": "Still Water",
+          "fields": {
+            "brand": "Still Water",
+            "description": "Cleansers and serums for every skin",
+            "image": "as_1x1_sand",
+            "image_alt": "Still Water",
+            "link": "",
+            "order": 2
+          }
+        },
+        {
+          "id": "prod_nettle",
+          "handle": "nettle",
+          "title": "Nettle",
+          "fields": {
+            "brand": "Nettle",
+            "description": "Massage and body oils",
+            "image": "as_1x1_sea",
+            "image_alt": "Nettle",
+            "link": "",
+            "order": 3
+          }
+        },
+        {
+          "id": "prod_salt_and_fern",
+          "handle": "salt-and-fern",
+          "title": "Salt + Fern",
+          "fields": {
+            "brand": "Salt + Fern",
+            "description": "Bath salts and soaks",
+            "image": "as_1x1_clay",
+            "image_alt": "Salt + Fern",
+            "link": "",
+            "order": 4
+          }
+        },
+        {
+          "id": "prod_larkspur",
+          "handle": "larkspur",
+          "title": "Larkspur",
+          "fields": {
+            "brand": "Larkspur",
+            "description": "Nail polish and cuticle oil",
+            "image": "as_1x1_sand",
+            "image_alt": "Larkspur",
+            "link": "",
+            "order": 5
+          }
+        },
+        {
+          "id": "prod_juniper_house",
+          "handle": "juniper-house",
+          "title": "Juniper House",
+          "fields": {
+            "brand": "Juniper House",
+            "description": "Our own candle and room spray",
+            "image": "as_1x1_sea",
+            "image_alt": "Juniper House",
+            "link": "",
+            "order": 6
+          }
+        }
+      ]
+    },
+    "posts": {
+      "name": "Posts",
+      "fields": [
+        {
+          "id": "topic",
+          "type": "text",
+          "label": "Topic"
+        },
+        {
+          "id": "date",
+          "type": "date",
+          "label": "Date"
+        },
+        {
+          "id": "author",
+          "type": "text",
+          "label": "Author"
+        },
+        {
+          "id": "standfirst",
+          "type": "text",
+          "label": "Standfirst"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image (16:9)"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "body",
+          "type": "richtext",
+          "label": "Body"
+        }
+      ],
+      "entries": [
+        {
+          "id": "post_winter_skin",
+          "handle": "winter-skin",
+          "title": "Winter skin, gently",
+          "fields": {
+            "topic": "Skin",
+            "date": "2026-10-28",
+            "author": "June Okafor",
+            "standfirst": "Cold air, hot showers and radiators: what changes in your skin, and the three things worth doing about it.",
+            "image": "as_16x9_clay",
+            "image_alt": "Winter skin, gently",
+            "body": "<p>Cold air, hot showers and radiators: what changes in your skin, and the three things worth doing about it.</p><h2>Start small</h2><p>Change one thing at a time and give it two weeks. Skin, hair and backs all take longer than we would like to tell you what is working.</p><h2>Ask us</h2><p>Bring it up at your next appointment, or text the house. We would rather talk it through than sell you something.</p>"
+          }
+        },
+        {
+          "id": "post_growing_out_colour",
+          "handle": "growing-out-colour",
+          "title": "Growing out colour without a hard line",
+          "fields": {
+            "topic": "Hair",
+            "date": "2026-10-14",
+            "author": "Mara Ellison",
+            "standfirst": "Balayage was made for this. How we plan a grow-out over three appointments.",
+            "image": "as_16x9_sand",
+            "image_alt": "Growing out colour without a hard line",
+            "body": "<p>Balayage was made for this. How we plan a grow-out over three appointments.</p><h2>Start small</h2><p>Change one thing at a time and give it two weeks. Skin, hair and backs all take longer than we would like to tell you what is working.</p><h2>Ask us</h2><p>Bring it up at your next appointment, or text the house. We would rather talk it through than sell you something.</p>"
+          }
+        },
+        {
+          "id": "post_after_a_deep_tissue",
+          "handle": "after-a-deep-tissue",
+          "title": "What to do after a deep tissue massage",
+          "fields": {
+            "topic": "Massage",
+            "date": "2026-10-02",
+            "author": "Noor Haddad",
+            "standfirst": "Water, a walk and no gym. Why the day after matters as much as the hour.",
+            "image": "as_16x9_sea",
+            "image_alt": "What to do after a deep tissue massage",
+            "body": "<p>Water, a walk and no gym. Why the day after matters as much as the hour.</p><h2>Start small</h2><p>Change one thing at a time and give it two weeks. Skin, hair and backs all take longer than we would like to tell you what is working.</p><h2>Ask us</h2><p>Bring it up at your next appointment, or text the house. We would rather talk it through than sell you something.</p>"
+          }
+        },
+        {
+          "id": "post_reformer_for_beginners",
+          "handle": "reformer-for-beginners",
+          "title": "Reformer for beginners",
+          "fields": {
+            "topic": "Studio",
+            "date": "2026-09-21",
+            "author": "Sol Reyes",
+            "standfirst": "The machine looks strange. The first class is mostly about the springs.",
+            "image": "as_16x9_clay",
+            "image_alt": "Reformer for beginners",
+            "body": "<p>The machine looks strange. The first class is mostly about the springs.</p><h2>Start small</h2><p>Change one thing at a time and give it two weeks. Skin, hair and backs all take longer than we would like to tell you what is working.</p><h2>Ask us</h2><p>Bring it up at your next appointment, or text the house. We would rather talk it through than sell you something.</p>"
+          }
+        },
+        {
+          "id": "post_the_gel_question",
+          "handle": "the-gel-question",
+          "title": "The gel question",
+          "fields": {
+            "topic": "Nails",
+            "date": "2026-09-09",
+            "author": "Tess Lindqvist",
+            "standfirst": "How long gel should last, and why taking it off matters more than putting it on.",
+            "image": "as_16x9_sand",
+            "image_alt": "The gel question",
+            "body": "<p>How long gel should last, and why taking it off matters more than putting it on.</p><h2>Start small</h2><p>Change one thing at a time and give it two weeks. Skin, hair and backs all take longer than we would like to tell you what is working.</p><h2>Ask us</h2><p>Bring it up at your next appointment, or text the house. We would rather talk it through than sell you something.</p>"
+          }
+        },
+        {
+          "id": "post_a_calm_bridal_morning",
+          "handle": "a-calm-bridal-morning",
+          "title": "A calm bridal morning",
+          "fields": {
+            "topic": "Makeup",
+            "date": "2026-08-30",
+            "author": "Priya Nair",
+            "standfirst": "A timetable for the morning of the wedding that leaves an hour spare.",
+            "image": "as_16x9_sea",
+            "image_alt": "A calm bridal morning",
+            "body": "<p>A timetable for the morning of the wedding that leaves an hour spare.</p><h2>Start small</h2><p>Change one thing at a time and give it two weeks. Skin, hair and backs all take longer than we would like to tell you what is working.</p><h2>Ask us</h2><p>Bring it up at your next appointment, or text the house. We would rather talk it through than sell you something.</p>"
+          }
+        }
+      ]
+    }
+  },
+  "pages": {
+    "/": {
+      "id": "pg_home",
+      "template": "home",
+      "title": "Juniper House",
+      "seo": {
+        "description": "A day spa and salon on Alder Street: massage, facials, hair, nails, makeup and a studio upstairs."
+      }
+    },
+    "/services": {
+      "id": "pg_services",
+      "template": "page.services",
+      "title": "Services"
+    },
+    "/team": {
+      "id": "pg_team",
+      "template": "page.team",
+      "title": "Team"
+    },
+    "/gallery": {
+      "id": "pg_gallery",
+      "template": "page.gallery",
+      "title": "Gallery"
+    },
+    "/packages": {
+      "id": "pg_packages",
+      "template": "page.packages",
+      "title": "Packages"
+    },
+    "/gift-cards": {
+      "id": "pg_gift_cards",
+      "template": "page.gift-cards",
+      "title": "Gift cards"
+    },
+    "/events": {
+      "id": "pg_events",
+      "template": "page.events",
+      "title": "Events"
+    },
+    "/locations": {
+      "id": "pg_locations",
+      "template": "page.locations",
+      "title": "Visit"
+    },
+    "/about": {
+      "id": "pg_about",
+      "template": "page.about",
+      "title": "About"
+    },
+    "/journal": {
+      "id": "pg_journal",
+      "template": "page.journal",
+      "title": "Journal"
+    },
+    "/book": {
+      "id": "pg_book",
+      "template": "page.book",
+      "title": "Book"
+    },
+    "/contact": {
+      "id": "pg_contact",
+      "template": "page.contact",
+      "title": "Contact"
+    },
+    "/policies": {
+      "id": "pg_policies",
+      "template": "page.policies",
+      "title": "Policies"
+    },
+    "/privacy": {
+      "id": "pg_privacy",
+      "template": "page",
+      "title": "Privacy",
+      "content": "<p>Juniper House keeps the details you send through our forms to reply to you and to book your appointments. We do not sell them or share them with anyone else.</p><h2>What we keep</h2><p>Your name, phone number, email and the notes you choose to add.</p><h2>How long</h2><p>Two years after your last visit, then we delete them. Ask us and we will delete them sooner.</p>"
+    },
+    "/terms": {
+      "id": "pg_terms",
+      "template": "page",
+      "title": "Terms",
+      "content": "<p>Prices are in US dollars and include the time on the menu. Gift cards are sent by email and do not expire.</p><h2>Appointments</h2><p>Cancel or move an appointment up to a day ahead at no charge. Inside a day we charge half the treatment.</p>"
+    },
+    "/services/swedish-massage": {
+      "id": "pg_svc_swedish_massage",
+      "template": "service",
+      "title": "Swedish massage",
+      "params": {
+        "service": "swedish-massage"
+      },
+      "entry": {
+        "id": "svc_swedish_massage",
+        "handle": "swedish-massage",
+        "title": "Swedish massage",
+        "fields": {
+          "category": "cat_massage",
+          "summary": "Long, slow strokes. The one to start with.",
+          "description": "<p>Long, slow strokes. The one to start with.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 60,
+          "price": 115,
+          "price_from": false,
+          "add_ons": "Hot towels · 10 min · +$15\nScalp massage · 15 min · +$20",
+          "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+          "team": "team_noor_haddad",
+          "image": "as_4x5_clay",
+          "image_alt": "Swedish massage at Juniper House",
+          "featured": true,
+          "tag": "",
+          "order": 1
+        }
+      }
+    },
+    "/services/deep-tissue": {
+      "id": "pg_svc_deep_tissue",
+      "template": "service",
+      "title": "Deep tissue",
+      "params": {
+        "service": "deep-tissue"
+      },
+      "entry": {
+        "id": "svc_deep_tissue",
+        "handle": "deep-tissue",
+        "title": "Deep tissue",
+        "fields": {
+          "category": "cat_massage",
+          "summary": "Slower and deeper, for the knots that stay.",
+          "description": "<p>Slower and deeper, for the knots that stay.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 90,
+          "price": 165,
+          "price_from": false,
+          "add_ons": "Hot towels · 10 min · +$15\nScalp massage · 15 min · +$20",
+          "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+          "team": "team_noor_haddad",
+          "image": "as_4x5_sand",
+          "image_alt": "Deep tissue at Juniper House",
+          "featured": true,
+          "tag": "",
+          "order": 2
+        }
+      }
+    },
+    "/services/hot-stone": {
+      "id": "pg_svc_hot_stone",
+      "template": "service",
+      "title": "Hot stone",
+      "params": {
+        "service": "hot-stone"
+      },
+      "entry": {
+        "id": "svc_hot_stone",
+        "handle": "hot-stone",
+        "title": "Hot stone",
+        "fields": {
+          "category": "cat_massage",
+          "summary": "Warm basalt stones, worked along the back and legs.",
+          "description": "<p>Warm basalt stones, worked along the back and legs.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 75,
+          "price": 140,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+          "team": "team_noor_haddad",
+          "image": "as_4x5_sea",
+          "image_alt": "Hot stone at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 3
+        }
+      }
+    },
+    "/services/prenatal": {
+      "id": "pg_svc_prenatal",
+      "template": "service",
+      "title": "Prenatal",
+      "params": {
+        "service": "prenatal"
+      },
+      "entry": {
+        "id": "svc_prenatal",
+        "handle": "prenatal",
+        "title": "Prenatal",
+        "fields": {
+          "category": "cat_massage",
+          "summary": "Side-lying, with a bolster for every trimester.",
+          "description": "<p>Side-lying, with a bolster for every trimester.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 60,
+          "price": 120,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+          "team": "team_noor_haddad",
+          "image": "as_4x5_clay",
+          "image_alt": "Prenatal at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 4
+        }
+      }
+    },
+    "/services/sports-recovery": {
+      "id": "pg_svc_sports_recovery",
+      "template": "service",
+      "title": "Sports recovery",
+      "params": {
+        "service": "sports-recovery"
+      },
+      "entry": {
+        "id": "svc_sports_recovery",
+        "handle": "sports-recovery",
+        "title": "Sports recovery",
+        "fields": {
+          "category": "cat_massage",
+          "summary": "Stretching and pressure for the day after.",
+          "description": "<p>Stretching and pressure for the day after.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 60,
+          "price": 130,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+          "team": "team_noor_haddad",
+          "image": "as_4x5_sand",
+          "image_alt": "Sports recovery at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 5
+        }
+      }
+    },
+    "/services/reflexology": {
+      "id": "pg_svc_reflexology",
+      "template": "service",
+      "title": "Reflexology",
+      "params": {
+        "service": "reflexology"
+      },
+      "entry": {
+        "id": "svc_reflexology",
+        "handle": "reflexology",
+        "title": "Reflexology",
+        "fields": {
+          "category": "cat_massage",
+          "summary": "Feet first, with a warm soak to begin.",
+          "description": "<p>Feet first, with a warm soak to begin.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 50,
+          "price": 80,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+          "team": "team_noor_haddad",
+          "image": "as_4x5_sea",
+          "image_alt": "Reflexology at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 6
+        }
+      }
+    },
+    "/services/couples-massage": {
+      "id": "pg_svc_couples_massage",
+      "template": "service",
+      "title": "Couples massage",
+      "params": {
+        "service": "couples-massage"
+      },
+      "entry": {
+        "id": "svc_couples_massage",
+        "handle": "couples-massage",
+        "title": "Couples massage",
+        "fields": {
+          "category": "cat_massage",
+          "summary": "Two tables, one room, the same hour.",
+          "description": "<p>Two tables, one room, the same hour.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 60,
+          "price": 230,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+          "team": "team_noor_haddad",
+          "image": "as_4x5_clay",
+          "image_alt": "Couples massage at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 7
+        }
+      }
+    },
+    "/services/lymphatic-drainage": {
+      "id": "pg_svc_lymphatic_drainage",
+      "template": "service",
+      "title": "Lymphatic drainage",
+      "params": {
+        "service": "lymphatic-drainage"
+      },
+      "entry": {
+        "id": "svc_lymphatic_drainage",
+        "handle": "lymphatic-drainage",
+        "title": "Lymphatic drainage",
+        "fields": {
+          "category": "cat_massage",
+          "summary": "Light, rhythmic strokes that ease swelling.",
+          "description": "<p>Light, rhythmic strokes that ease swelling.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 60,
+          "price": 125,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+          "team": "team_noor_haddad",
+          "image": "as_4x5_sand",
+          "image_alt": "Lymphatic drainage at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 8
+        }
+      }
+    },
+    "/services/signature-facial": {
+      "id": "pg_svc_signature_facial",
+      "template": "service",
+      "title": "Signature facial",
+      "params": {
+        "service": "signature-facial"
+      },
+      "entry": {
+        "id": "svc_signature_facial",
+        "handle": "signature-facial",
+        "title": "Signature facial",
+        "fields": {
+          "category": "cat_skin",
+          "summary": "Cleanse, steam, extractions and a mask chosen for you.",
+          "description": "<p>Cleanse, steam, extractions and a mask chosen for you.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 60,
+          "price": 120,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+          "team": "team_june_okafor",
+          "image": "as_4x5_sea",
+          "image_alt": "Signature facial at Juniper House",
+          "featured": true,
+          "tag": "New clients",
+          "order": 9
+        }
+      }
+    },
+    "/services/gentle-facial": {
+      "id": "pg_svc_gentle_facial",
+      "template": "service",
+      "title": "Gentle facial",
+      "params": {
+        "service": "gentle-facial"
+      },
+      "entry": {
+        "id": "svc_gentle_facial",
+        "handle": "gentle-facial",
+        "title": "Gentle facial",
+        "fields": {
+          "category": "cat_skin",
+          "summary": "For sensitive skin: no steam, no extractions.",
+          "description": "<p>For sensitive skin: no steam, no extractions.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 45,
+          "price": 105,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+          "team": "team_june_okafor",
+          "image": "as_4x5_clay",
+          "image_alt": "Gentle facial at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 10
+        }
+      }
+    },
+    "/services/dermaplaning": {
+      "id": "pg_svc_dermaplaning",
+      "template": "service",
+      "title": "Dermaplaning",
+      "params": {
+        "service": "dermaplaning"
+      },
+      "entry": {
+        "id": "svc_dermaplaning",
+        "handle": "dermaplaning",
+        "title": "Dermaplaning",
+        "fields": {
+          "category": "cat_skin",
+          "summary": "A fine blade lifts dead skin and fuzz.",
+          "description": "<p>A fine blade lifts dead skin and fuzz.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 30,
+          "price": 65,
+          "price_from": true,
+          "add_ons": "",
+          "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+          "team": "team_june_okafor",
+          "image": "as_4x5_sand",
+          "image_alt": "Dermaplaning at Juniper House",
+          "featured": false,
+          "tag": "New",
+          "order": 11
+        }
+      }
+    },
+    "/services/led-add-on": {
+      "id": "pg_svc_led_add_on",
+      "template": "service",
+      "title": "LED add-on",
+      "params": {
+        "service": "led-add-on"
+      },
+      "entry": {
+        "id": "svc_led_add_on",
+        "handle": "led-add-on",
+        "title": "LED add-on",
+        "fields": {
+          "category": "cat_skin",
+          "summary": "Red light after any facial, to calm and repair.",
+          "description": "<p>Red light after any facial, to calm and repair.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 15,
+          "price": 30,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+          "team": "team_june_okafor",
+          "image": "as_4x5_sea",
+          "image_alt": "LED add-on at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 12
+        }
+      }
+    },
+    "/services/back-facial": {
+      "id": "pg_svc_back_facial",
+      "template": "service",
+      "title": "Back facial",
+      "params": {
+        "service": "back-facial"
+      },
+      "entry": {
+        "id": "svc_back_facial",
+        "handle": "back-facial",
+        "title": "Back facial",
+        "fields": {
+          "category": "cat_skin",
+          "summary": "Cleanse, exfoliate and a mask where you cannot reach.",
+          "description": "<p>Cleanse, exfoliate and a mask where you cannot reach.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 45,
+          "price": 95,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "A consultation before you start\nRobe, slippers and a locker\nTea in the front room after",
+          "team": "team_june_okafor",
+          "image": "as_4x5_clay",
+          "image_alt": "Back facial at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 13
+        }
+      }
+    },
+    "/services/cut-and-blow-dry": {
+      "id": "pg_svc_cut_and_blow_dry",
+      "template": "service",
+      "title": "Cut and blow-dry",
+      "params": {
+        "service": "cut-and-blow-dry"
+      },
+      "entry": {
+        "id": "svc_cut_and_blow_dry",
+        "handle": "cut-and-blow-dry",
+        "title": "Cut and blow-dry",
+        "fields": {
+          "category": "cat_hair",
+          "summary": "A cut, a wash and a finish to walk out with.",
+          "description": "<p>A cut, a wash and a finish to walk out with.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 60,
+          "price": 68,
+          "price_from": true,
+          "add_ons": "",
+          "includes": "A consultation at the chair\nA wash with a scalp massage\nA finish to walk out with",
+          "team": "team_mara_ellison",
+          "image": "as_4x5_sand",
+          "image_alt": "Cut and blow-dry at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 14
+        }
+      }
+    },
+    "/services/curly-cut": {
+      "id": "pg_svc_curly_cut",
+      "template": "service",
+      "title": "Curly cut",
+      "params": {
+        "service": "curly-cut"
+      },
+      "entry": {
+        "id": "svc_curly_cut",
+        "handle": "curly-cut",
+        "title": "Curly cut",
+        "fields": {
+          "category": "cat_hair",
+          "summary": "Cut dry, curl by curl.",
+          "description": "<p>Cut dry, curl by curl.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 75,
+          "price": 85,
+          "price_from": true,
+          "add_ons": "",
+          "includes": "A consultation at the chair\nA wash with a scalp massage\nA finish to walk out with",
+          "team": "team_mara_ellison",
+          "image": "as_4x5_sea",
+          "image_alt": "Curly cut at Juniper House",
+          "featured": true,
+          "tag": "",
+          "order": 15
+        }
+      }
+    },
+    "/services/single-process-colour": {
+      "id": "pg_svc_single_process_colour",
+      "template": "service",
+      "title": "Single-process colour",
+      "params": {
+        "service": "single-process-colour"
+      },
+      "entry": {
+        "id": "svc_single_process_colour",
+        "handle": "single-process-colour",
+        "title": "Single-process colour",
+        "fields": {
+          "category": "cat_hair",
+          "summary": "One colour, root to tip.",
+          "description": "<p>One colour, root to tip.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 90,
+          "price": 95,
+          "price_from": true,
+          "add_ons": "",
+          "includes": "A consultation at the chair\nA wash with a scalp massage\nA finish to walk out with",
+          "team": "team_mara_ellison",
+          "image": "as_4x5_clay",
+          "image_alt": "Single-process colour at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 16
+        }
+      }
+    },
+    "/services/balayage": {
+      "id": "pg_svc_balayage",
+      "template": "service",
+      "title": "Balayage",
+      "params": {
+        "service": "balayage"
+      },
+      "entry": {
+        "id": "svc_balayage",
+        "handle": "balayage",
+        "title": "Balayage",
+        "fields": {
+          "category": "cat_hair",
+          "summary": "Hand-painted, grown-out on purpose.",
+          "description": "<p>Hand-painted, grown-out on purpose.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 180,
+          "price": 210,
+          "price_from": true,
+          "add_ons": "",
+          "includes": "A consultation at the chair\nA wash with a scalp massage\nA finish to walk out with",
+          "team": "team_mara_ellison",
+          "image": "as_4x5_sand",
+          "image_alt": "Balayage at Juniper House",
+          "featured": true,
+          "tag": "",
+          "order": 17
+        }
+      }
+    },
+    "/services/gloss": {
+      "id": "pg_svc_gloss",
+      "template": "service",
+      "title": "Gloss",
+      "params": {
+        "service": "gloss"
+      },
+      "entry": {
+        "id": "svc_gloss",
+        "handle": "gloss",
+        "title": "Gloss",
+        "fields": {
+          "category": "cat_hair",
+          "summary": "Shine and a softer tone between colours.",
+          "description": "<p>Shine and a softer tone between colours.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 30,
+          "price": 45,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "A consultation at the chair\nA wash with a scalp massage\nA finish to walk out with",
+          "team": "team_mara_ellison",
+          "image": "as_4x5_sea",
+          "image_alt": "Gloss at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 18
+        }
+      }
+    },
+    "/services/blowout": {
+      "id": "pg_svc_blowout",
+      "template": "service",
+      "title": "Blowout",
+      "params": {
+        "service": "blowout"
+      },
+      "entry": {
+        "id": "svc_blowout",
+        "handle": "blowout",
+        "title": "Blowout",
+        "fields": {
+          "category": "cat_hair",
+          "summary": "Wash and a long, smooth blow-dry.",
+          "description": "<p>Wash and a long, smooth blow-dry.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 45,
+          "price": 55,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "A consultation at the chair\nA wash with a scalp massage\nA finish to walk out with",
+          "team": "team_mara_ellison",
+          "image": "as_4x5_clay",
+          "image_alt": "Blowout at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 19
+        }
+      }
+    },
+    "/services/bridal-hair-trial": {
+      "id": "pg_svc_bridal_hair_trial",
+      "template": "service",
+      "title": "Bridal hair trial",
+      "params": {
+        "service": "bridal-hair-trial"
+      },
+      "entry": {
+        "id": "svc_bridal_hair_trial",
+        "handle": "bridal-hair-trial",
+        "title": "Bridal hair trial",
+        "fields": {
+          "category": "cat_hair",
+          "summary": "Your wedding hair, tried and photographed.",
+          "description": "<p>Your wedding hair, tried and photographed.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 90,
+          "price": 120,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "A consultation at the chair\nA wash with a scalp massage\nA finish to walk out with",
+          "team": "team_mara_ellison",
+          "image": "as_4x5_sand",
+          "image_alt": "Bridal hair trial at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 20
+        }
+      }
+    },
+    "/services/root-touch-up": {
+      "id": "pg_svc_root_touch_up",
+      "template": "service",
+      "title": "Root touch-up",
+      "params": {
+        "service": "root-touch-up"
+      },
+      "entry": {
+        "id": "svc_root_touch_up",
+        "handle": "root-touch-up",
+        "title": "Root touch-up",
+        "fields": {
+          "category": "cat_hair",
+          "summary": "Colour on the regrowth only.",
+          "description": "<p>Colour on the regrowth only.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 60,
+          "price": 75,
+          "price_from": true,
+          "add_ons": "",
+          "includes": "A consultation at the chair\nA wash with a scalp massage\nA finish to walk out with",
+          "team": "team_mara_ellison",
+          "image": "as_4x5_sea",
+          "image_alt": "Root touch-up at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 21
+        }
+      }
+    },
+    "/services/manicure": {
+      "id": "pg_svc_manicure",
+      "template": "service",
+      "title": "Manicure",
+      "params": {
+        "service": "manicure"
+      },
+      "entry": {
+        "id": "svc_manicure",
+        "handle": "manicure",
+        "title": "Manicure",
+        "fields": {
+          "category": "cat_nails",
+          "summary": "Shape, cuticles and a polish of your choice.",
+          "description": "<p>Shape, cuticles and a polish of your choice.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 30,
+          "price": 38,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "",
+          "team": "team_tess_lindqvist",
+          "image": "as_4x5_clay",
+          "image_alt": "Manicure at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 22
+        }
+      }
+    },
+    "/services/gel-manicure": {
+      "id": "pg_svc_gel_manicure",
+      "template": "service",
+      "title": "Gel manicure",
+      "params": {
+        "service": "gel-manicure"
+      },
+      "entry": {
+        "id": "svc_gel_manicure",
+        "handle": "gel-manicure",
+        "title": "Gel manicure",
+        "fields": {
+          "category": "cat_nails",
+          "summary": "A gel polish that lasts two to three weeks.",
+          "description": "<p>A gel polish that lasts two to three weeks.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 45,
+          "price": 52,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "",
+          "team": "team_tess_lindqvist",
+          "image": "as_4x5_sand",
+          "image_alt": "Gel manicure at Juniper House",
+          "featured": true,
+          "tag": "",
+          "order": 23
+        }
+      }
+    },
+    "/services/pedicure": {
+      "id": "pg_svc_pedicure",
+      "template": "service",
+      "title": "Pedicure",
+      "params": {
+        "service": "pedicure"
+      },
+      "entry": {
+        "id": "svc_pedicure",
+        "handle": "pedicure",
+        "title": "Pedicure",
+        "fields": {
+          "category": "cat_nails",
+          "summary": "A soak, a scrub and polish.",
+          "description": "<p>A soak, a scrub and polish.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 50,
+          "price": 58,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "",
+          "team": "team_tess_lindqvist",
+          "image": "as_4x5_sea",
+          "image_alt": "Pedicure at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 24
+        }
+      }
+    },
+    "/services/nail-art-add-on": {
+      "id": "pg_svc_nail_art_add_on",
+      "template": "service",
+      "title": "Nail art add-on",
+      "params": {
+        "service": "nail-art-add-on"
+      },
+      "entry": {
+        "id": "svc_nail_art_add_on",
+        "handle": "nail-art-add-on",
+        "title": "Nail art add-on",
+        "fields": {
+          "category": "cat_nails",
+          "summary": "Lines, dots or a single painted nail.",
+          "description": "<p>Lines, dots or a single painted nail.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 15,
+          "price": 12,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "",
+          "team": "team_tess_lindqvist",
+          "image": "as_4x5_clay",
+          "image_alt": "Nail art add-on at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 25
+        }
+      }
+    },
+    "/services/express-manicure": {
+      "id": "pg_svc_express_manicure",
+      "template": "service",
+      "title": "Express manicure",
+      "params": {
+        "service": "express-manicure"
+      },
+      "entry": {
+        "id": "svc_express_manicure",
+        "handle": "express-manicure",
+        "title": "Express manicure",
+        "fields": {
+          "category": "cat_nails",
+          "summary": "Shape and polish, nothing else.",
+          "description": "<p>Shape and polish, nothing else.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 20,
+          "price": 25,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "",
+          "team": "team_tess_lindqvist",
+          "image": "as_4x5_sand",
+          "image_alt": "Express manicure at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 26
+        }
+      }
+    },
+    "/services/makeup-trial": {
+      "id": "pg_svc_makeup_trial",
+      "template": "service",
+      "title": "Makeup trial",
+      "params": {
+        "service": "makeup-trial"
+      },
+      "entry": {
+        "id": "svc_makeup_trial",
+        "handle": "makeup-trial",
+        "title": "Makeup trial",
+        "fields": {
+          "category": "cat_makeup",
+          "summary": "Your event look, tried before the day.",
+          "description": "<p>Your event look, tried before the day.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 60,
+          "price": 95,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "",
+          "team": "team_priya_nair",
+          "image": "as_4x5_sea",
+          "image_alt": "Makeup trial at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 27
+        }
+      }
+    },
+    "/services/event-makeup": {
+      "id": "pg_svc_event_makeup",
+      "template": "service",
+      "title": "Event makeup",
+      "params": {
+        "service": "event-makeup"
+      },
+      "entry": {
+        "id": "svc_event_makeup",
+        "handle": "event-makeup",
+        "title": "Event makeup",
+        "fields": {
+          "category": "cat_makeup",
+          "summary": "For a party, a photo or a night out.",
+          "description": "<p>For a party, a photo or a night out.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 45,
+          "price": 85,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "",
+          "team": "team_priya_nair",
+          "image": "as_4x5_clay",
+          "image_alt": "Event makeup at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 28
+        }
+      }
+    },
+    "/services/bridal-makeup": {
+      "id": "pg_svc_bridal_makeup",
+      "template": "service",
+      "title": "Bridal makeup",
+      "params": {
+        "service": "bridal-makeup"
+      },
+      "entry": {
+        "id": "svc_bridal_makeup",
+        "handle": "bridal-makeup",
+        "title": "Bridal makeup",
+        "fields": {
+          "category": "cat_makeup",
+          "summary": "On the day, with touch-ups to take with you.",
+          "description": "<p>On the day, with touch-ups to take with you.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 90,
+          "price": 180,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "",
+          "team": "team_priya_nair",
+          "image": "as_4x5_sand",
+          "image_alt": "Bridal makeup at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 29
+        }
+      }
+    },
+    "/services/makeup-lesson": {
+      "id": "pg_svc_makeup_lesson",
+      "template": "service",
+      "title": "Makeup lesson",
+      "params": {
+        "service": "makeup-lesson"
+      },
+      "entry": {
+        "id": "svc_makeup_lesson",
+        "handle": "makeup-lesson",
+        "title": "Makeup lesson",
+        "fields": {
+          "category": "cat_makeup",
+          "summary": "Your own kit, your own face, step by step.",
+          "description": "<p>Your own kit, your own face, step by step.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 90,
+          "price": 120,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "",
+          "team": "team_priya_nair",
+          "image": "as_4x5_sea",
+          "image_alt": "Makeup lesson at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 30
+        }
+      }
+    },
+    "/services/yoga-drop-in": {
+      "id": "pg_svc_yoga_drop_in",
+      "template": "service",
+      "title": "Yoga drop-in",
+      "params": {
+        "service": "yoga-drop-in"
+      },
+      "entry": {
+        "id": "svc_yoga_drop_in",
+        "handle": "yoga-drop-in",
+        "title": "Yoga drop-in",
+        "fields": {
+          "category": "cat_studio",
+          "summary": "A slow flow upstairs, all levels.",
+          "description": "<p>A slow flow upstairs, all levels.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 60,
+          "price": 22,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "",
+          "team": "team_sol_reyes",
+          "image": "as_4x5_clay",
+          "image_alt": "Yoga drop-in at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 31
+        }
+      }
+    },
+    "/services/pilates-reformer": {
+      "id": "pg_svc_pilates_reformer",
+      "template": "service",
+      "title": "Pilates reformer",
+      "params": {
+        "service": "pilates-reformer"
+      },
+      "entry": {
+        "id": "svc_pilates_reformer",
+        "handle": "pilates-reformer",
+        "title": "Pilates reformer",
+        "fields": {
+          "category": "cat_studio",
+          "summary": "Six reformers, one teacher.",
+          "description": "<p>Six reformers, one teacher.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 50,
+          "price": 38,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "",
+          "team": "team_sol_reyes",
+          "image": "as_4x5_sand",
+          "image_alt": "Pilates reformer at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 32
+        }
+      }
+    },
+    "/services/breathwork": {
+      "id": "pg_svc_breathwork",
+      "template": "service",
+      "title": "Breathwork",
+      "params": {
+        "service": "breathwork"
+      },
+      "entry": {
+        "id": "svc_breathwork",
+        "handle": "breathwork",
+        "title": "Breathwork",
+        "fields": {
+          "category": "cat_studio",
+          "summary": "Lying down, guided, no experience needed.",
+          "description": "<p>Lying down, guided, no experience needed.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "duration_minutes": 45,
+          "price": 30,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "",
+          "team": "team_sol_reyes",
+          "image": "as_4x5_sea",
+          "image_alt": "Breathwork at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 33
+        }
+      }
+    },
+    "/services/six-class-pass": {
+      "id": "pg_svc_six_class_pass",
+      "template": "service",
+      "title": "Six-class pass",
+      "params": {
+        "service": "six-class-pass"
+      },
+      "entry": {
+        "id": "svc_six_class_pass",
+        "handle": "six-class-pass",
+        "title": "Six-class pass",
+        "fields": {
+          "category": "cat_studio",
+          "summary": "Any six studio classes, used within three months.",
+          "description": "<p>Any six studio classes, used within three months.</p><p>Every appointment starts with a few questions and ends with a glass of water and a few quiet minutes. Tell us anything we should know when you book.</p>",
+          "price": 120,
+          "price_from": false,
+          "add_ons": "",
+          "includes": "",
+          "team": "team_sol_reyes",
+          "image": "as_4x5_clay",
+          "image_alt": "Six-class pass at Juniper House",
+          "featured": false,
+          "tag": "",
+          "order": 34
+        }
+      }
+    },
+    "/team/mara-ellison": {
+      "id": "pg_team_mara_ellison",
+      "template": "member",
+      "title": "Mara Ellison",
+      "params": {
+        "member": "mara-ellison"
+      },
+      "entry": {
+        "id": "team_mara_ellison",
+        "handle": "mara-ellison",
+        "title": "Mara Ellison",
+        "fields": {
+          "role": "Colourist and stylist",
+          "level": "Master",
+          "specialties": "Curls, balayage, bridal",
+          "bio": "<p>Mara opened the salon side of the house and still cuts most Saturdays. She cuts curls dry, one at a time, and colours for the way hair grows out.</p><p>She will tell you when a cut will not suit you. Most people come back for that.</p>",
+          "credentials": "Trained in London and Lisbon\nCurly cut specialist\nFifteen years behind the chair",
+          "image": "as_4x5_clay",
+          "image_alt": "Mara Ellison, colourist and stylist",
+          "link": "https://instagram.com/",
+          "featured": true,
+          "order": 1
+        }
+      }
+    },
+    "/team/noor-haddad": {
+      "id": "pg_team_noor_haddad",
+      "template": "member",
+      "title": "Noor Haddad",
+      "params": {
+        "member": "noor-haddad"
+      },
+      "entry": {
+        "id": "team_noor_haddad",
+        "handle": "noor-haddad",
+        "title": "Noor Haddad",
+        "fields": {
+          "role": "Massage therapist",
+          "level": "Senior",
+          "specialties": "Deep tissue, sports recovery, prenatal",
+          "bio": "<p>Noor leads the massage rooms. She works slowly and asks a lot of questions first, so the hour goes where you need it.</p><p>Deep tissue is hers; so is the prenatal bolster, which she designed.</p>",
+          "credentials": "LMT, 12 years\nPrenatal massage certificate\nSports massage diploma",
+          "image": "as_4x5_sand",
+          "image_alt": "Noor Haddad, massage therapist",
+          "link": "https://instagram.com/",
+          "featured": true,
+          "order": 2
+        }
+      }
+    },
+    "/team/june-okafor": {
+      "id": "pg_team_june_okafor",
+      "template": "member",
+      "title": "June Okafor",
+      "params": {
+        "member": "june-okafor"
+      },
+      "entry": {
+        "id": "team_june_okafor",
+        "handle": "june-okafor",
+        "title": "June Okafor",
+        "fields": {
+          "role": "Esthetician",
+          "level": "Senior",
+          "specialties": "Facials, dermaplaning, LED",
+          "bio": "<p>June looks after skin. Every first facial starts with a consultation with her, and every facial ends with her notes on what to use at home.</p>",
+          "credentials": "Licensed esthetician\nAdvanced chemical peels\nLED therapy course",
+          "image": "as_4x5_sea",
+          "image_alt": "June Okafor, esthetician",
+          "link": "https://instagram.com/",
+          "featured": true,
+          "order": 3
+        }
+      }
+    },
+    "/team/tess-lindqvist": {
+      "id": "pg_team_tess_lindqvist",
+      "template": "member",
+      "title": "Tess Lindqvist",
+      "params": {
+        "member": "tess-lindqvist"
+      },
+      "entry": {
+        "id": "team_tess_lindqvist",
+        "handle": "tess-lindqvist",
+        "title": "Tess Lindqvist",
+        "fields": {
+          "role": "Nail artist",
+          "level": "Studio",
+          "specialties": "Gel, nail art",
+          "bio": "<p>Tess runs the nail bar by the front window: clean lines, quiet colours and the occasional painted moon.</p>",
+          "credentials": "Gel systems certificate\nNail art course",
+          "image": "as_4x5_clay",
+          "image_alt": "Tess Lindqvist, nail artist",
+          "link": "https://instagram.com/",
+          "featured": false,
+          "order": 4
+        }
+      }
+    },
+    "/team/priya-nair": {
+      "id": "pg_team_priya_nair",
+      "template": "member",
+      "title": "Priya Nair",
+      "params": {
+        "member": "priya-nair"
+      },
+      "entry": {
+        "id": "team_priya_nair",
+        "handle": "priya-nair",
+        "title": "Priya Nair",
+        "fields": {
+          "role": "Makeup artist",
+          "level": "Studio",
+          "specialties": "Bridal, editorial",
+          "bio": "<p>Priya does bridal parties, photo shoots and lessons for people who want to do it themselves.</p>",
+          "credentials": "Bridal makeup diploma\nEditorial work for local magazines",
+          "image": "as_4x5_sand",
+          "image_alt": "Priya Nair, makeup artist",
+          "link": "https://instagram.com/",
+          "featured": false,
+          "order": 5
+        }
+      }
+    },
+    "/team/sol-reyes": {
+      "id": "pg_team_sol_reyes",
+      "template": "member",
+      "title": "Sol Reyes",
+      "params": {
+        "member": "sol-reyes"
+      },
+      "entry": {
+        "id": "team_sol_reyes",
+        "handle": "sol-reyes",
+        "title": "Sol Reyes",
+        "fields": {
+          "role": "Yoga and pilates",
+          "level": "Studio",
+          "specialties": "Reformer, breathwork",
+          "bio": "<p>Sol teaches every class in the studio upstairs: morning yoga, Thursday reformer and breathwork on Sundays.</p>",
+          "credentials": "500-hour yoga teacher\nComprehensive reformer certificate",
+          "image": "as_4x5_sea",
+          "image_alt": "Sol Reyes, yoga and pilates",
+          "link": "https://instagram.com/",
+          "featured": false,
+          "order": 6
+        }
+      }
+    },
+    "/gallery/the-rooms": {
+      "id": "pg_album_the_rooms",
+      "template": "album",
+      "title": "The rooms",
+      "params": {
+        "album": "the-rooms"
+      },
+      "entry": {
+        "id": "album_the_rooms",
+        "handle": "the-rooms",
+        "title": "The rooms",
+        "fields": {
+          "date": "2026-10-01",
+          "description": "Six treatment rooms, each with its own door.",
+          "cover": "as_3x2_clay",
+          "cover_alt": "A treatment room",
+          "photos": "the-rooms",
+          "kind": "rooms",
+          "order": 1
+        }
+      }
+    },
+    "/gallery/hair": {
+      "id": "pg_album_hair",
+      "template": "album",
+      "title": "Hair",
+      "params": {
+        "album": "hair"
+      },
+      "entry": {
+        "id": "album_hair",
+        "handle": "hair",
+        "title": "Hair",
+        "fields": {
+          "date": "2026-10-14",
+          "description": "Curls, colour and a few bridal trials.",
+          "cover": "as_3x2_sand",
+          "cover_alt": "A balayage finish",
+          "photos": "hair",
+          "kind": "work",
+          "order": 2
+        }
+      }
+    },
+    "/gallery/before-and-after": {
+      "id": "pg_album_before_and_after",
+      "template": "album",
+      "title": "Before and after",
+      "params": {
+        "album": "before-and-after"
+      },
+      "entry": {
+        "id": "album_before_and_after",
+        "handle": "before-and-after",
+        "title": "Before and after",
+        "fields": {
+          "date": "2026-10-21",
+          "description": "Four pairs: colour, curls and a facial series.",
+          "cover": "as_3x2_sea",
+          "cover_alt": "Before and after a curly cut",
+          "photos": "before-and-after",
+          "kind": "before-after",
+          "order": 3
+        }
+      }
+    },
+    "/gallery/the-studio": {
+      "id": "pg_album_the_studio",
+      "template": "album",
+      "title": "The studio",
+      "params": {
+        "album": "the-studio"
+      },
+      "entry": {
+        "id": "album_the_studio",
+        "handle": "the-studio",
+        "title": "The studio",
+        "fields": {
+          "date": "2026-09-30",
+          "description": "Upstairs: reformers, mats and the long window.",
+          "cover": "as_3x2_clay",
+          "cover_alt": "The studio upstairs",
+          "photos": "the-studio",
+          "kind": "rooms",
+          "order": 4
+        }
+      }
+    },
+    "/events/thursday-evening-pilates": {
+      "id": "pg_ev_thursday_evening_pilates",
+      "template": "event",
+      "title": "Thursday evening pilates",
+      "params": {
+        "event": "thursday-evening-pilates"
+      },
+      "entry": {
+        "id": "ev_thursday_evening_pilates",
+        "handle": "thursday-evening-pilates",
+        "title": "Thursday evening pilates",
+        "fields": {
+          "date": "2026-11-19",
+          "time": "18:30",
+          "topic": "Studio",
+          "location": "loc_alder_street",
+          "room": "Studio",
+          "description": "<p>Thursday evening pilates at Juniper House. Small numbers, so save a place.</p><p>Tea before and after; come ten minutes early.</p>",
+          "price": 38,
+          "host": "team_sol_reyes",
+          "image": "as_3x2_clay",
+          "image_alt": "Thursday evening pilates",
+          "link": "",
+          "order": 1
+        }
+      }
+    },
+    "/events/winter-skin-workshop": {
+      "id": "pg_ev_winter_skin_workshop",
+      "template": "event",
+      "title": "Winter skin workshop",
+      "params": {
+        "event": "winter-skin-workshop"
+      },
+      "entry": {
+        "id": "ev_winter_skin_workshop",
+        "handle": "winter-skin-workshop",
+        "title": "Winter skin workshop",
+        "fields": {
+          "date": "2026-12-05",
+          "time": "10:00",
+          "topic": "Skin",
+          "location": "loc_alder_street",
+          "room": "Treatment room 2",
+          "description": "<p>Winter skin workshop at Juniper House. Small numbers, so save a place.</p><p>Tea before and after; come ten minutes early.</p>",
+          "price": 45,
+          "host": "team_june_okafor",
+          "image": "as_3x2_sand",
+          "image_alt": "Winter skin workshop",
+          "link": "",
+          "order": 2
+        }
+      }
+    },
+    "/events/new-year-breathwork": {
+      "id": "pg_ev_new_year_breathwork",
+      "template": "event",
+      "title": "New year breathwork",
+      "params": {
+        "event": "new-year-breathwork"
+      },
+      "entry": {
+        "id": "ev_new_year_breathwork",
+        "handle": "new-year-breathwork",
+        "title": "New year breathwork",
+        "fields": {
+          "date": "2027-01-10",
+          "time": "08:00",
+          "topic": "Studio",
+          "location": "loc_riverside",
+          "room": "The river room",
+          "description": "<p>New year breathwork at Juniper House. Small numbers, so save a place.</p><p>Tea before and after; come ten minutes early.</p>",
+          "price": 30,
+          "host": "team_sol_reyes",
+          "image": "as_3x2_sea",
+          "image_alt": "New year breathwork",
+          "link": "",
+          "order": 3
+        }
+      }
+    },
+    "/events/bridal-preview-morning": {
+      "id": "pg_ev_bridal_preview_morning",
+      "template": "event",
+      "title": "Bridal preview morning",
+      "params": {
+        "event": "bridal-preview-morning"
+      },
+      "entry": {
+        "id": "ev_bridal_preview_morning",
+        "handle": "bridal-preview-morning",
+        "title": "Bridal preview morning",
+        "fields": {
+          "date": "2027-01-16",
+          "time": "09:00",
+          "topic": "Bridal",
+          "location": "loc_alder_street",
+          "room": "The salon",
+          "description": "<p>Bridal preview morning at Juniper House. Small numbers, so save a place.</p><p>Tea before and after; come ten minutes early.</p>",
+          "price": 0,
+          "host": "team_mara_ellison",
+          "image": "as_3x2_clay",
+          "image_alt": "Bridal preview morning",
+          "link": "",
+          "order": 4
+        }
+      }
+    },
+    "/locations/alder-street": {
+      "id": "pg_loc_alder_street",
+      "template": "location",
+      "title": "Alder Street",
+      "params": {
+        "location": "alder-street"
+      },
+      "entry": {
+        "id": "loc_alder_street",
+        "handle": "alder-street",
+        "title": "Alder Street",
+        "fields": {
+          "address": "14 Alder Street\nRiverton, OR 97201",
+          "hours": "Mon–Sat 09:00–19:00\nSun 10:00–16:00",
+          "phone": "(503) 555-0142",
+          "email": "hello@juniperhouse.example",
+          "map_url": "https://maps.example/?q=14+Alder+Street",
+          "map_embed_url": "",
+          "map_image": "as_3x2_sand",
+          "map_image_alt": "Map of Alder Street",
+          "image": "as_4x5_clay",
+          "image_alt": "The front room on Alder Street",
+          "description": "The house: six treatment rooms, the salon and the studio upstairs.",
+          "note": "Parking behind the building after 5",
+          "order": 1
+        }
+      }
+    },
+    "/locations/riverside": {
+      "id": "pg_loc_riverside",
+      "template": "location",
+      "title": "Riverside",
+      "params": {
+        "location": "riverside"
+      },
+      "entry": {
+        "id": "loc_riverside",
+        "handle": "riverside",
+        "title": "Riverside",
+        "fields": {
+          "address": "3 Mill Lane\nRiverton, OR 97202",
+          "hours": "Tue–Sat 10:00–18:00",
+          "phone": "(503) 555-0187",
+          "email": "riverside@juniperhouse.example",
+          "map_url": "https://maps.example/?q=3+Mill+Lane",
+          "map_embed_url": "",
+          "map_image": "as_3x2_sea",
+          "map_image_alt": "Map of Mill Lane",
+          "image": "as_4x5_sea",
+          "image_alt": "The Riverside studio",
+          "description": "A second, smaller studio by the river: two massage rooms and breathwork.",
+          "note": "Ring the bell by the blue door",
+          "order": 2
+        }
+      }
+    },
+    "/journal/winter-skin": {
+      "id": "pg_post_winter_skin",
+      "template": "post",
+      "title": "Winter skin, gently",
+      "params": {
+        "post": "winter-skin"
+      },
+      "entry": {
+        "id": "post_winter_skin",
+        "handle": "winter-skin",
+        "title": "Winter skin, gently",
+        "fields": {
+          "topic": "Skin",
+          "date": "2026-10-28",
+          "author": "June Okafor",
+          "standfirst": "Cold air, hot showers and radiators: what changes in your skin, and the three things worth doing about it.",
+          "image": "as_16x9_clay",
+          "image_alt": "Winter skin, gently",
+          "body": "<p>Cold air, hot showers and radiators: what changes in your skin, and the three things worth doing about it.</p><h2>Start small</h2><p>Change one thing at a time and give it two weeks. Skin, hair and backs all take longer than we would like to tell you what is working.</p><h2>Ask us</h2><p>Bring it up at your next appointment, or text the house. We would rather talk it through than sell you something.</p>"
+        }
+      }
+    },
+    "/journal/growing-out-colour": {
+      "id": "pg_post_growing_out_colour",
+      "template": "post",
+      "title": "Growing out colour without a hard line",
+      "params": {
+        "post": "growing-out-colour"
+      },
+      "entry": {
+        "id": "post_growing_out_colour",
+        "handle": "growing-out-colour",
+        "title": "Growing out colour without a hard line",
+        "fields": {
+          "topic": "Hair",
+          "date": "2026-10-14",
+          "author": "Mara Ellison",
+          "standfirst": "Balayage was made for this. How we plan a grow-out over three appointments.",
+          "image": "as_16x9_sand",
+          "image_alt": "Growing out colour without a hard line",
+          "body": "<p>Balayage was made for this. How we plan a grow-out over three appointments.</p><h2>Start small</h2><p>Change one thing at a time and give it two weeks. Skin, hair and backs all take longer than we would like to tell you what is working.</p><h2>Ask us</h2><p>Bring it up at your next appointment, or text the house. We would rather talk it through than sell you something.</p>"
+        }
+      }
+    },
+    "/journal/after-a-deep-tissue": {
+      "id": "pg_post_after_a_deep_tissue",
+      "template": "post",
+      "title": "What to do after a deep tissue massage",
+      "params": {
+        "post": "after-a-deep-tissue"
+      },
+      "entry": {
+        "id": "post_after_a_deep_tissue",
+        "handle": "after-a-deep-tissue",
+        "title": "What to do after a deep tissue massage",
+        "fields": {
+          "topic": "Massage",
+          "date": "2026-10-02",
+          "author": "Noor Haddad",
+          "standfirst": "Water, a walk and no gym. Why the day after matters as much as the hour.",
+          "image": "as_16x9_sea",
+          "image_alt": "What to do after a deep tissue massage",
+          "body": "<p>Water, a walk and no gym. Why the day after matters as much as the hour.</p><h2>Start small</h2><p>Change one thing at a time and give it two weeks. Skin, hair and backs all take longer than we would like to tell you what is working.</p><h2>Ask us</h2><p>Bring it up at your next appointment, or text the house. We would rather talk it through than sell you something.</p>"
+        }
+      }
+    },
+    "/journal/reformer-for-beginners": {
+      "id": "pg_post_reformer_for_beginners",
+      "template": "post",
+      "title": "Reformer for beginners",
+      "params": {
+        "post": "reformer-for-beginners"
+      },
+      "entry": {
+        "id": "post_reformer_for_beginners",
+        "handle": "reformer-for-beginners",
+        "title": "Reformer for beginners",
+        "fields": {
+          "topic": "Studio",
+          "date": "2026-09-21",
+          "author": "Sol Reyes",
+          "standfirst": "The machine looks strange. The first class is mostly about the springs.",
+          "image": "as_16x9_clay",
+          "image_alt": "Reformer for beginners",
+          "body": "<p>The machine looks strange. The first class is mostly about the springs.</p><h2>Start small</h2><p>Change one thing at a time and give it two weeks. Skin, hair and backs all take longer than we would like to tell you what is working.</p><h2>Ask us</h2><p>Bring it up at your next appointment, or text the house. We would rather talk it through than sell you something.</p>"
+        }
+      }
+    },
+    "/journal/the-gel-question": {
+      "id": "pg_post_the_gel_question",
+      "template": "post",
+      "title": "The gel question",
+      "params": {
+        "post": "the-gel-question"
+      },
+      "entry": {
+        "id": "post_the_gel_question",
+        "handle": "the-gel-question",
+        "title": "The gel question",
+        "fields": {
+          "topic": "Nails",
+          "date": "2026-09-09",
+          "author": "Tess Lindqvist",
+          "standfirst": "How long gel should last, and why taking it off matters more than putting it on.",
+          "image": "as_16x9_sand",
+          "image_alt": "The gel question",
+          "body": "<p>How long gel should last, and why taking it off matters more than putting it on.</p><h2>Start small</h2><p>Change one thing at a time and give it two weeks. Skin, hair and backs all take longer than we would like to tell you what is working.</p><h2>Ask us</h2><p>Bring it up at your next appointment, or text the house. We would rather talk it through than sell you something.</p>"
+        }
+      }
+    },
+    "/journal/a-calm-bridal-morning": {
+      "id": "pg_post_a_calm_bridal_morning",
+      "template": "post",
+      "title": "A calm bridal morning",
+      "params": {
+        "post": "a-calm-bridal-morning"
+      },
+      "entry": {
+        "id": "post_a_calm_bridal_morning",
+        "handle": "a-calm-bridal-morning",
+        "title": "A calm bridal morning",
+        "fields": {
+          "topic": "Makeup",
+          "date": "2026-08-30",
+          "author": "Priya Nair",
+          "standfirst": "A timetable for the morning of the wedding that leaves an hour spare.",
+          "image": "as_16x9_sea",
+          "image_alt": "A calm bridal morning",
+          "body": "<p>A timetable for the morning of the wedding that leaves an hour spare.</p><h2>Start small</h2><p>Change one thing at a time and give it two weeks. Skin, hair and backs all take longer than we would like to tell you what is working.</p><h2>Ask us</h2><p>Bring it up at your next appointment, or text the house. We would rather talk it through than sell you something.</p>"
+        }
+      }
+    }
+  }
+}

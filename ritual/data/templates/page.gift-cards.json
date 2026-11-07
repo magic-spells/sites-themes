@@ -1,0 +1,51 @@
+{
+  "label": "Gift cards",
+  "description": "The gift card band and its questions.",
+  "sections": [
+    {
+      "id": "s_gift",
+      "type": "gift-cards",
+      "preset": "Clay",
+      "settings": {
+        "color_scheme": "clay"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "kicker": "Gift cards",
+        "heading": "About gift *cards*",
+        "color_scheme": "linen"
+      },
+      "blocks": [
+        {
+          "id": "s_faq_b1",
+          "type": "item",
+          "settings": {
+            "question": "How is a gift card sent?",
+            "answer": "<p>By email, the same day, to you or straight to them, with a note if you like.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b2",
+          "type": "item",
+          "settings": {
+            "question": "What can a gift card buy?",
+            "answer": "<p>Any treatment, class or product in the house, in any amount.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b3",
+          "type": "item",
+          "settings": {
+            "question": "Do gift cards expire?",
+            "answer": "<p>No. A gift card keeps its value until it is spent, on any treatment or product.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}

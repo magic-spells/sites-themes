@@ -1,0 +1,17 @@
+{
+  "sections": [
+    {
+      "id": "sg_footer",
+      "type": "footer",
+      "preset": "Sand",
+      "settings": {
+        "menu": "main",
+        "social_menu": "social",
+        "legal_menu": "legal",
+        "small_print": "© 2026 Juniper House",
+        "color_scheme": "sand"
+      },
+      "blocks": []
+    }
+  ]
+}

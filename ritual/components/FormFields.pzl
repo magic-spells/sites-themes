@@ -1,0 +1,28 @@
+<!-- component: FormFields -->
+<!-- A site form's fields, shared by the booking panel, the booking form and contact. The engine's field types are text, textarea, email, checkbox and select, so the id picks the input: "phone" is a telephone field and "day" a date. Selects are select-dropdowns; a select with one option is sent hidden. Two columns from 48rem for the short fields when columns is set. -->
+<div class="grid gap-space-sm { columns ? 'md:grid-cols-2' : '' }">
+  {#for field in fields}
+    {#if field.type == 'select' && field.options.length == 1}
+      <input type="hidden" name={ field.id } value={ field.options[0] } />
+    {:else if field.type == 'select'}
+      <div class={ columns && field.id != 'time' && field.id != 'subject' ? 'md:col-span-2' : '' }>
+        <span class="mb-space-2xs block text-body-sm font-semibold" id="label-{ prefix }-{ field.id }">{ field.label }{#if field.required}<span aria-hidden="true"> *</span>{/if}</span>
+        <select-dropdown class="text-body" aria-labelledby="label-{ prefix }-{ field.id }">
+          <select-trigger class="flex min-h-control items-center justify-between gap-space-sm rounded-input border bg-scheme-input-background px-space-sm text-scheme-input-foreground { field.error ? 'border-scheme-error' : 'border-scheme-input-border' }" aria-describedby={ field.error ? 'error-' + prefix + '-' + field.id : null }>
+            <span class="select-label-text truncate">{ field.value || t('choose') }</span>
+            <span class="sites-icon size-icon shrink-0 text-scheme-meta" aria-hidden="true">{#svg 'icons/angle-down.svg'}</span>
+          </select-trigger>
+          <input type="hidden" name={ field.id } value={ field.value } />
+          <select-panel>
+            {#for option in field.options}<select-option value={ option } selected={ field.value == option }>{ option }</select-option>{/for}
+          </select-panel>
+        </select-dropdown>
+        {#if field.error}<p class="mt-space-2xs text-body-sm text-scheme-error" id="error-{ prefix }-{ field.id }">{ t('form_field_' + field.error) }</p>{/if}
+      </div>
+    {:else if field.type == 'checkbox'}
+      <label class="flex items-start gap-space-xs text-body-sm md:col-span-2"><input class="mt-space-2xs size-icon accent-accent" type="checkbox" name={ field.id } value="on" checked={ field.value == 'on' } required={ field.required } />{ field.label }</label>
+    {:else}
+      <Field name={ field.id } label={ field.label } type={ field.id == 'phone' ? 'tel' : (field.id == 'day' ? 'date' : field.type) } required={ field.required } maxlength={ field.max_length } value={ field.value } error={ field.error } prefix={ prefix } rows={ 3 } wrapper_class={ columns && (field.type == 'textarea' || field.id == 'email') ? 'md:col-span-2' : '' } />
+    {/if}
+  {/for}
+</div>

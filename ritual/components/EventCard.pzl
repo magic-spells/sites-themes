@@ -1,0 +1,28 @@
+<!-- component: EventCard -->
+<!-- An event. cards: a 3:2 capped well, the date and time on a Meta line, the title in Card title, the place and price, the host as a small portrait and a Details link. rows: date and time left, title and line, a thumbnail right. -->
+{#let
+  f = entry.fields
+  when = (f.date | date('long')) + (f.time ? ' · ' + f.time : '')
+  price = f.price ? f.price | currency(site.settings.currency_symbol, 0) : t('free')
+  href = base_path + '/' + entry.handle
+}
+{#if layout == 'rows'}
+<article class="group relative grid grid-cols-row items-center gap-space-md border-b border-scheme-rule py-space-md max-md:grid-cols-1 { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+  <p class="text-body-sm text-scheme-meta tabular-nums"><time datetime="{ f.date | date('iso') }">{ when }</time></p>
+  <div class="grid gap-space-2xs">
+    <h3 class="font-heading text-h4"><a class="after:absolute after:inset-0 hover:underline hover:underline-offset-4" href="{ href }">{ entry.title }</a></h3>
+    <p class="text-body-sm text-scheme-muted">{ [f.room || f.location.title, price, f.host ? t('with_name', { name: f.host.title }) : ''] | compact | join(' · ') }</p>
+  </div>
+  <span class="hidden w-thumb md:block"><Well asset={ f.image } alt="" ratio="aspect-3/2" shape="cap" width={ 320 } sizes="10rem" /></span>
+</article>
+{:else}
+<article class="group relative flex h-full flex-col gap-space-sm { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+  <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-3/2" shape="cap" width={ 800 } sizes="(min-width: 64rem) 30rem, (min-width: 48rem) 50vw, 100vw" zoom={ true } />
+  <div class="flex flex-1 flex-col gap-space-2xs">
+    <p class="text-body-sm text-scheme-meta tabular-nums"><time datetime="{ f.date | date('iso') }">{ when }</time></p>
+    <h3 class="font-heading text-h4"><a class="after:absolute after:inset-0 hover:underline hover:underline-offset-4" href="{ href }">{ entry.title }</a></h3>
+    <p class="text-body-sm text-scheme-muted">{ [f.room || f.location.title, price] | compact | join(' · ') }</p>
+    {#if f.host}<p class="mt-auto flex items-center pt-space-2xs gap-space-xs text-body-sm"><span class="block w-avatar"><Well asset={ f.host.fields.image } alt="" ratio="aspect-portrait" shape="portal" width={ 120 } sizes="2.75rem" /></span>{ t('with_name', { name: f.host.title }) }</p>{/if}
+  </div>
+</article>
+{/if}

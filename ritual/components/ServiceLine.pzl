@@ -1,0 +1,21 @@
+<!-- component: ServiceLine -->
+<!-- The menu's signature line: the name, the duration in Meta, a dotted leader in the rule colour, the price; the summary under it at 30rem; add-ons indented, each after a hollow ring. The row wraps the price under the name only on the narrowest phones. -->
+{#let f = entry.fields}
+<li class="grid break-inside-avoid gap-space-2xs py-space-sm">
+  <a class="group flex flex-wrap items-baseline gap-x-space-xs" href="{ base_path }/{ entry.handle }">
+    <span class="text-body-lg font-semibold group-hover:underline group-hover:underline-offset-4">{ entry.title }</span>
+    {#if f.duration_minutes}<span class="text-body-sm text-scheme-meta">{ t('minutes', { n: f.duration_minutes }) }</span>{/if}
+    {#if f.tag}<span class="rounded-full bg-scheme-surface-2 px-space-xs text-kicker font-semibold text-scheme-muted uppercase">{ f.tag }</span>{/if}
+    <span class="min-w-space-md flex-1 border-b border-dotted border-scheme-rule" aria-hidden="true"></span>
+    <span class="text-body-lg font-semibold tabular-nums"><Price f={ f } /></span>
+  </a>
+  {#if show_summary && f.summary}<p class="max-w-summary text-body-sm text-scheme-meta">{ f.summary }</p>{/if}
+  {#if show_add_ons && f.add_ons}
+    <ul class="grid gap-space-2xs ps-indent">
+      {#for line in f.add_ons | split('\n')}
+        {#let parts = line | split('·')}
+        {#if parts.length > 1}<li class="flex items-baseline gap-x-space-xs text-body-sm text-scheme-meta"><span class="size-bullet shrink-0 self-center rounded-full border border-accent" aria-hidden="true"></span><span>{ parts[0] | strip } · { parts[1] | strip }</span><span class="min-w-space-md flex-1 border-b border-dotted border-scheme-rule" aria-hidden="true"></span><span class="tabular-nums text-scheme-foreground">{ parts[2] | strip }</span></li>{/if}
+      {/for}
+    </ul>
+  {/if}
+</li>

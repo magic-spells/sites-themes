@@ -1,0 +1,52 @@
+<!-- The colophon on a hairline: the stamp (the workspace name over its street, in a ring) left; the first location's address, hours and phone in the middle; the menus as columns at the right edge; the small print under them. -->
+{#let
+  loc = content.locations.entries | sort('fields.order') | first
+  name = site.settings.wordmark || site.name
+  phone = (loc && loc.fields.phone) || site.settings.phone
+}
+<footer class="border-t border-scheme-rule bg-scheme-background px-gutter pt-space-2xl pb-space-lg text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-xl">
+    <div class="grid gap-space-xl md:grid-cols-2 lg:grid-cols-4">
+      <Stamp />
+      {#if loc}
+        <div class="grid content-start gap-space-sm text-body-sm">
+          <address class="not-italic">{ loc.fields.address | newline_to_br }</address>
+          {#if phone}<a class="justify-self-start underline-offset-4 hover:underline" href="tel:{ phone | replace(' ', '') }">{ phone }</a>{/if}
+        </div>
+        <div class="text-body-sm"><HoursTable hours={ loc.fields.hours } /></div>
+      {/if}
+      <div class="grid grid-cols-3 gap-space-md text-body-sm lg:col-start-4">
+        {#for menu in [settings.menu, settings.social_menu, settings.legal_menu]}
+          {#if menu && menu.items.length}
+            <nav aria-label="{ menu.title }">
+              <ul class="grid gap-space-xs">
+                {#for item in menu.items}<li><a class="underline-offset-4 hover:underline" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null }>{ item.label }</a></li>{/for}
+              </ul>
+            </nav>
+          {/if}
+        {/for}
+      </div>
+    </div>
+    <p class="border-t border-scheme-rule pt-space-md text-body-sm text-scheme-meta">{ settings.small_print || '© ' + name }</p>
+  </div>
+</footer>
+
+<schema>
+{
+  "name": "Footer",
+  "description": "The colophon: the stamp, the address and hours of the first location, and the menus.",
+  "kind": "Footer",
+  "icon": "panel-bottom",
+  "settings": [
+    { "type": "menu", "id": "menu", "label": "Menu" },
+    { "type": "menu", "id": "social_menu", "label": "Social menu" },
+    { "type": "menu", "id": "legal_menu", "label": "Legal menu" },
+    { "type": "text", "id": "small_print", "label": "Small print", "default": "", "info": "Leave empty for © and the wordmark." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "sand", "info": "Pick a scheme that differs from the band above." }
+  ],
+  "presets": [
+    { "name": "Sand", "settings": { "menu": "main", "social_menu": "social", "legal_menu": "legal", "color_scheme": "sand" } },
+    { "name": "Fig", "settings": { "menu": "main", "social_menu": "social", "legal_menu": "legal", "color_scheme": "fig" } }
+  ]
+}
+</schema>

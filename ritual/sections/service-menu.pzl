@@ -1,0 +1,80 @@
+<!-- The menu, the theme's signature: category tabs as ?category= links (All first), then a group per category, its name in h2 (h3 size) on a hairline with its note right in Meta, its lines in two columns from 48rem, filling each column top to bottom: the name, the duration, a dotted leader, the price, the summary under it and add-ons indented after a ring. Below 48rem each group folds, the first open (theme.ts keeps them all open from 48rem). Each group shows up to twelve. Book a treatment and the phone at the foot. -->
+{#let
+  current = request.query.category
+  all = content.categories.entries | sort('fields.order') | slice(0, 12)
+  picked = current ? all | where('handle', current) : []
+  groups = picked.length ? picked : all
+  services = content.services.entries | sort('fields.order')
+  loc = content.locations.entries | sort('fields.order') | first
+  phone = (loc && loc.fields.phone) || site.settings.phone
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-service-menu>
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    {#if settings.show_tabs && all.length > 1}
+      <nav class="-mx-gutter mb-space-xl overflow-x-auto px-gutter" aria-label="{ t('categories') }">
+        <ul class="flex gap-space-xs">
+          <li><a class="inline-flex min-h-tap items-center rounded-full border border-scheme-rule px-space-md text-body-sm font-semibold whitespace-nowrap hover:border-scheme-foreground current:border-scheme-button-background current:bg-scheme-button-background current:text-scheme-button-foreground" href="{ page.path }" aria-current={ picked.length ? null : 'page' }>{ t('all') }</a></li>
+          {#for entry in all}<li><a class="inline-flex min-h-tap items-center rounded-full border border-scheme-rule px-space-md text-body-sm font-semibold whitespace-nowrap hover:border-scheme-foreground current:border-scheme-button-background current:bg-scheme-button-background current:text-scheme-button-foreground" href="{ page.path }?category={ entry.handle }" aria-current={ picked.length && entry.handle == current ? 'page' : null }>{ entry.title }</a></li>{/for}
+        </ul>
+      </nav>
+    {/if}
+    <div class="grid gap-space-xl">
+      {#for group in groups, i}
+        {#let lines = services | where('fields.category.handle', group.handle) | slice(0, 12)}
+        {#if lines.length}
+          <collapsible-component class="block border-t border-scheme-rule pt-space-md md:border-0 md:pt-0">
+            <h2 class="font-heading text-h3 text-scheme-heading md:border-b md:border-scheme-rule md:pb-space-sm">
+              <button class="group flex w-full items-baseline justify-between gap-space-md text-left md:pointer-events-none" type="button">
+                <span>{ group.title }</span>
+                <span class="flex items-center gap-space-sm">
+                  {#if group.fields.note}<span class="hidden font-body text-body-sm text-scheme-meta md:inline">{ group.fields.note }</span>{/if}
+                  <span class="sites-icon size-icon shrink-0 transition-transform duration-fast group-aria-expanded:rotate-180 md:hidden" aria-hidden="true">{#svg 'icons/angle-down.svg'}</span>
+                </span>
+              </button>
+            </h2>
+            <collapsible-content open={ i == 0 }>
+              {#if group.fields.note}<p class="pt-space-xs text-body-sm text-scheme-meta md:hidden">{ group.fields.note }</p>{/if}
+              <ul class="pt-space-sm { settings.columns == 2 ? 'md:columns-2 md:gap-x-space-2xl' : 'max-w-reading' }">
+                {#for entry in lines}<ServiceLine entry={ entry } base_path={ settings.base_path } show_summary={ settings.show_summary } show_add_ons={ settings.show_add_ons } />{/for}
+              </ul>
+            </collapsible-content>
+          </collapsible-component>
+        {/if}
+      {/for}
+    </div>
+    {#if settings.show_action}
+      <div class="mt-space-2xl flex flex-wrap items-center gap-x-space-md gap-y-space-sm">
+        <Button action={ true }>{ settings.action_label }</Button>
+        {#if phone}<p class="text-body-sm text-scheme-muted">{ t('not_sure') } <a class="font-semibold text-accent underline underline-offset-4" href="tel:{ phone | replace(' ', '') }">{ t('call_number', { phone: phone }) }</a></p>{/if}
+      </div>
+    {/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Service menu",
+  "description": "The full menu by category: each service's name, duration, price and add-ons on one dotted line.",
+  "kind": "Services",
+  "icon": "list",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "", "info": "Wrap one word in asterisks to set it in the accent." },
+    { "type": "text", "id": "text", "label": "Text", "default": "" },
+    { "type": "checkbox", "id": "show_tabs", "label": "Category tabs", "default": true, "info": "All and each category as tabs that filter the menu." },
+    { "type": "select", "id": "columns", "label": "Columns", "default": "2", "options": [
+      { "value": "1", "label": "One" },
+      { "value": "2", "label": "Two" }
+    ], "info": "From tablets up; phones always show one." },
+    { "type": "checkbox", "id": "show_summary", "label": "Show summaries", "default": true },
+    { "type": "checkbox", "id": "show_add_ons", "label": "Show add-ons", "default": true },
+    { "type": "url", "id": "base_path", "label": "Service page path", "default": "/services", "info": "Each line links to this path plus the service handle." },
+    { "type": "checkbox", "id": "show_action", "label": "Show Book", "default": true },
+    { "type": "text", "id": "action_label", "label": "Action label", "default": "Book a treatment" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "linen" } }
+  ]
+}
+</schema>

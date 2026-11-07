@@ -1,0 +1,52 @@
+<!-- Photo doors, one per category: a 3:2 well with the capped top, the name in Card title, its line in Meta and "See the menu", each opening the menu at that category. Three, two, then one across. With feature first the first door runs the full row at 64rem on a wide well and the other five sit in one row, so six never leave an orphan. -->
+{#let
+  wanted = settings.handles | split(',')
+  listed = settings.source == 'listed' && settings.handles
+  feature = settings.feature_first
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <ul class="grid gap-x-space-md gap-y-space-xl md:grid-cols-2 { feature ? 'lg:grid-cols-5' : 'lg:grid-cols-3' }">
+      {#for entry in content.categories.entries | sort('fields.order') | slice(0, 12), i}
+        {#if !listed || (wanted | contains(entry.handle))}
+          {#let wide = feature && i == 0}
+          <li class={ wide ? 'lg:col-span-5' : null }>
+            <a class="group grid gap-space-sm { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" href="{ settings.services_path }?category={ entry.handle }">
+              <Well asset={ entry.fields.image } alt={ entry.fields.image_alt } ratio={ wide ? 'aspect-3/2 lg:aspect-wide' : 'aspect-3/2' } shape="cap" width={ wide ? 1600 : 800 } sizes={ wide ? '100vw' : '(min-width: 64rem) 16rem, (min-width: 48rem) 50vw, 100vw' } zoom={ true } />
+              <span class="grid gap-space-2xs">
+                <span class="font-heading text-h3 text-scheme-heading">{ entry.title }</span>
+                {#if entry.fields.description}<span class="text-body-sm text-scheme-meta">{ entry.fields.description }</span>{/if}
+                <span class="mt-space-2xs text-body-sm font-semibold text-accent underline underline-offset-4">{ t('see_menu') }</span>
+              </span>
+            </a>
+          </li>
+        {/if}
+      {/for}
+    </ul>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Service categories",
+  "description": "A photo door for each kind of treatment, each opening the menu at that kind.",
+  "kind": "Services",
+  "icon": "layout-grid",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What we *offer*", "info": "Wrap one word in asterisks to set it in the accent." },
+    { "type": "text", "id": "text", "label": "Text", "default": "" },
+    { "type": "select", "id": "source", "label": "Categories", "default": "all", "options": [
+      { "value": "all", "label": "All" },
+      { "value": "listed", "label": "Listed" }
+    ] },
+    { "type": "text", "id": "handles", "label": "Listed handles", "default": "", "info": "Listed only: category handles, comma-separated." },
+    { "type": "checkbox", "id": "feature_first", "label": "Feature the first", "default": true, "info": "The first door runs the full width on large screens; the rest sit in one row." },
+    { "type": "url", "id": "services_path", "label": "Services page", "default": "/services" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "sand" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "sand" } }
+  ]
+}
+</schema>

@@ -1,0 +1,41 @@
+<!-- Workshops and classes in date order. Cards: a 3:2 capped photo, the date and time on a Meta line, the title, the place and price, the host as a small portrait. Rows: the date and time left, the title and its line, a thumbnail right. On an event's page it leaves that event out. Dates only: the workspace removes past events. -->
+{#let
+  events = content.events.entries | sort('fields.date') | reject('id', page.entry.id) | slice(0, settings.limit)
+  rows = settings.layout == 'rows'
+}
+{#if events.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } />
+    <ul class="{ rows ? 'border-t border-scheme-rule' : 'grid gap-x-space-md gap-y-space-xl md:grid-cols-2 lg:grid-cols-3' }">
+      {#for entry in events}<li><EventCard entry={ entry } base_path={ settings.base_path } layout={ settings.layout } /></li>{/for}
+    </ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Events list",
+  "description": "Workshops and classes by date, as cards or rows.",
+  "kind": "Events",
+  "icon": "calendar",
+  "settings": [
+    { "type": "select", "id": "layout", "label": "Layout", "default": "cards", "options": [
+      { "value": "cards", "label": "Cards" },
+      { "value": "rows", "label": "Rows" }
+    ] },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "", "info": "Wrap one word in asterisks to set it in the accent." },
+    { "type": "text", "id": "text", "label": "Text", "default": "" },
+    { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 12 },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "" },
+    { "type": "url", "id": "link_href", "label": "Link", "default": "/events" },
+    { "type": "url", "id": "base_path", "label": "Event page path", "default": "/events" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+  ],
+  "presets": [
+    { "name": "Rows", "settings": { "layout": "rows", "color_scheme": "linen" } },
+    { "name": "More events", "settings": { "layout": "cards", "limit": 3, "heading": "More *events*", "link_label": "All events", "color_scheme": "linen" } }
+  ]
+}
+</schema>

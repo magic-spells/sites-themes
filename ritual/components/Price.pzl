@@ -1,0 +1,3 @@
+<!-- component: Price -->
+<!-- A service's price: "from" before it when the price is a starting price. -->
+{#if f.price_from}{ t('from') } {/if}{ f.price | currency(site.settings.currency_symbol, 0) }

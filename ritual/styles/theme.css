@@ -1,0 +1,590 @@
+@import "tailwindcss";
+@import "./vendor/bottom-sheet.css" layer(components);
+@import "./vendor/collapsible-content.css" layer(components);
+@import "./vendor/dialog-panel.css" layer(components);
+@import "./vendor/dropdown-panel.css" layer(components);
+@import "./vendor/dropdown-panel.effects.css" layer(components);
+@import "./vendor/lightbox.css" layer(components);
+@import "./vendor/progress-bar.css" layer(components);
+@import "./vendor/reveal.css";
+@import "./vendor/scrolling-content.css" layer(components);
+@import "./vendor/select-dropdown.css" layer(components);
+@import "./vendor/split-text.css" layer(components);
+@import "./vendor/sticky-header.css" layer(components);
+@import "./vendor/tarot.css" layer(components);
+
+@source "../layouts/**/*.pzl";
+@source "../templates/**/*.pzl";
+@source "../sections/**/*.pzl";
+@source "../components/**/*.pzl";
+
+/* The palette: site-wide values from settings/design.json. */
+@theme {
+	--color-brand-primary: var(--sites-color-brand-primary);
+	--color-brand-secondary: var(--sites-color-brand-secondary);
+	--color-brand-accent: var(--sites-color-brand-accent);
+	--color-grey-extra-light: var(--sites-color-grey-extra-light);
+	--color-grey-light: var(--sites-color-grey-light);
+	--color-grey-medium: var(--sites-color-grey-medium);
+	--color-grey-dark: var(--sites-color-grey-dark);
+	--color-grey-extra-dark: var(--sites-color-grey-extra-dark);
+	--color-info-bg: var(--sites-color-info-bg);
+	--color-info-fg: var(--sites-color-info-fg);
+	--color-success-bg: var(--sites-color-success-bg);
+	--color-success-fg: var(--sites-color-success-fg);
+	--color-warning-bg: var(--sites-color-warning-bg);
+	--color-warning-fg: var(--sites-color-warning-fg);
+	--color-error-bg: var(--sites-color-error-bg);
+	--color-error-fg: var(--sites-color-error-fg);
+	/* Type over a photograph and the cover hero's scrim: the same on every scheme. */
+	--color-on-photo: #F6F1EA;
+	--color-scrim: rgb(46 58 48 / 0.55);
+}
+
+/* The scheme a section sits on. The engine has no muted, meta, border,
+   surface-2 or accent slot, so they ride on the chip, icon and link
+   slots (settings/design.json says which): the accent is the link colour. */
+@theme inline {
+	--color-scheme-background: var(--sites-scheme-background);
+	--color-scheme-foreground: var(--sites-scheme-foreground);
+	--color-scheme-heading: var(--sites-scheme-heading);
+	--color-scheme-muted: var(--sites-scheme-chip-foreground);
+	--color-scheme-meta: var(--sites-scheme-icons);
+	--color-scheme-rule: var(--sites-scheme-chip-border);
+	--color-scheme-surface-2: var(--sites-scheme-chip-background);
+	--color-scheme-input-background: var(--sites-scheme-input-background);
+	--color-scheme-input-foreground: var(--sites-scheme-input-foreground);
+	--color-scheme-input-border: var(--sites-scheme-input-border);
+	--color-scheme-button-background: var(--sites-scheme-button-background);
+	--color-scheme-button-foreground: var(--sites-scheme-button-foreground);
+	--color-scheme-button-hover-background: var(--sites-scheme-button-hover-background);
+	--color-scheme-button-hover-foreground: var(--sites-scheme-button-hover-foreground);
+	--color-scheme-secondary-button-foreground: var(--sites-scheme-secondary-button-foreground);
+	--color-scheme-secondary-button-hover-background: var(--sites-scheme-secondary-button-hover-background);
+	--color-scheme-secondary-button-hover-foreground: var(--sites-scheme-secondary-button-hover-foreground);
+	--color-accent: var(--sites-scheme-links);
+	--color-scheme-error: var(--ritual-error);
+	--color-backdrop: color-mix(in srgb, var(--sites-scheme-foreground) 50%, transparent);
+	--background-image-glow: radial-gradient(ellipse at 50% 40%, var(--sites-color-grey-extra-light), transparent 70%);
+	--background-image-grain: url("/_sites/theme/grain.svg");
+}
+
+/* The error colour, per scheme (the engine has no slot for it): dark red
+   on the light schemes, darker on clay and celadon, a pale coral on the
+   darks, paler on terracotta. Every value clears 4.5:1 on its background. */
+:root,
+[class*="sites-scheme-"] {
+	--ritual-error: #9B2C1E;
+}
+.sites-scheme-clay,
+.sites-scheme-celadon {
+	--ritual-error: #6E1F12;
+}
+.sites-scheme-fern,
+.sites-scheme-fig,
+.sites-scheme-sea,
+.sites-scheme-slate {
+	--ritual-error: #F2A08F;
+}
+.sites-scheme-terracotta {
+	--ritual-error: #FFD2C6;
+}
+
+@theme {
+	--font-heading: var(--sites-font-heading-family), Georgia, "Times New Roman", serif;
+	--font-body: var(--sites-font-body-family), ui-sans-serif, system-ui, sans-serif;
+	--radius-none: var(--sites-radius-none);
+	--radius-sm: var(--sites-radius-sm);
+	--radius-md: var(--sites-radius-md);
+	--radius-lg: var(--sites-radius-lg);
+	--radius-full: var(--sites-radius-full);
+	--radius-button: var(--sites-button-radius);
+	--radius-input: var(--sites-input-radius);
+	/* The landscape well's capped top corners. */
+	--radius-cap: var(--ritual-cap);
+	--shadow-sm: var(--sites-shadow-sm);
+	--shadow-md: var(--sites-shadow-md);
+	--shadow-lg: var(--sites-shadow-lg);
+
+	/* The type roles, each sized per breakpoint in :root below. */
+	--text-h1: var(--ritual-h1);
+	--text-h1--line-height: 1.05;
+	--text-h1--letter-spacing: -0.01em;
+	--text-h2: var(--ritual-h2);
+	--text-h2--line-height: 1.12;
+	--text-h3: var(--ritual-h3);
+	--text-h3--line-height: 1.2;
+	--text-h4: var(--ritual-h4);
+	--text-h4--line-height: 1.25;
+	--text-body-lg: var(--ritual-body-lg);
+	--text-body-lg--line-height: 1.55;
+	--text-body: var(--ritual-body);
+	--text-body--line-height: 1.6;
+	--text-body-sm: var(--ritual-body-sm);
+	--text-body-sm--line-height: 1.5;
+	--text-kicker: var(--sites-type-scale-xs);
+	--text-kicker--line-height: 1.3;
+	--text-kicker--letter-spacing: 0.14em;
+	--text-button: var(--ritual-button);
+	--text-button--line-height: 1;
+
+	--spacing-space-2xs: 0.25rem;
+	--spacing-space-xs: var(--sites-spacing-xs);
+	--spacing-space-sm: var(--sites-spacing-sm);
+	--spacing-space-md: var(--sites-spacing-md);
+	--spacing-space-lg: var(--sites-spacing-lg);
+	--spacing-space-xl: var(--sites-spacing-xl);
+	--spacing-space-2xl: var(--ritual-2xl);
+	--spacing-space-3xl: var(--ritual-3xl);
+	--spacing-section: var(--ritual-section);
+	--spacing-gutter: var(--ritual-gutter);
+	--spacing-dome: var(--ritual-dome);
+	--spacing-button-x: var(--sites-button-padding-x);
+	--spacing-button-y: var(--sites-button-padding-y);
+	--spacing-control: 3rem;
+	--spacing-tap: 2.75rem;
+	--spacing-icon: 1.25rem;
+	--spacing-bullet: 0.5rem;
+	--spacing-ring: 7.5rem;
+	--spacing-header: 4.5rem;
+	--spacing-hero: 80svh;
+	--spacing-thumb: 10rem;
+	--spacing-avatar: 2.75rem;
+	--spacing-portrait: 6rem;
+	--spacing-textarea: 6rem;
+	--spacing-indent: 1.25rem;
+	--container-column: 82.5rem;
+	--container-reading: 40rem;
+	--container-text: 30rem;
+	--container-summary: 30rem;
+	--container-quote: 25rem;
+	--container-panel: 35rem;
+	--container-drawer: 24rem;
+	--container-photo: 30rem;
+	--container-figure: 60rem;
+	--aspect-portrait: 4 / 5;
+	--aspect-tall: 3 / 4;
+	--aspect-capsule: 3 / 5;
+	--aspect-wide: 21 / 9;
+	--aspect-dome: 2 / 1;
+	--aspect-collage: 1000 / 1009;
+	--aspect-collage-wide: 1000 / 536;
+	--grid-template-columns-header: 1fr auto 1fr;
+	--grid-template-columns-row: 9rem 1fr auto;
+	/* A picture beside text: the text takes seven parts, the picture five, one 3xl gap between. */
+	--grid-template-columns-text-picture: 7fr 5fr;
+	--grid-template-columns-picture-text: 5fr 7fr;
+	/* The gallery collage: column lines at 47% and 100% on a phone; at 47, 59, 68 and 76% from 48rem. Row lines are the portal's and the square's tops in units of the landscape's height (52 and 74 on a phone, 22.5 and 62.5 from 48rem). */
+	--grid-template-columns-collage: 47fr 53fr;
+	--grid-template-columns-collage-wide: 47fr 12fr 9fr 8fr 24fr;
+	--grid-template-rows-collage: 52fr 22fr 77.4fr;
+	--grid-template-rows-collage-wide: 22.5fr 40fr 73.7fr;
+	--opacity-dots-inactive: 35%;
+	--transition-duration-fast: 150ms;
+	--transition-duration-panel: 250ms;
+	--ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+	--reveal-distance: 1.5rem;
+	--reveal-perspective: 75rem;
+	--reveal-blur: 0;
+}
+
+/* Sizes per breakpoint (mobile, from 48rem, from 64rem): each role reads a
+   design token and scales it by the plan's ratio for that width, so a
+   workspace that changes the scale moves every breakpoint with it. */
+:root {
+	--ritual-h1: calc(var(--sites-type-scale-4xl) * 36 / 60);
+	--ritual-h2: calc(var(--sites-type-scale-3xl) * 28 / 40);
+	--ritual-h3: calc(var(--sites-type-scale-2xl) * 22 / 28);
+	--ritual-h4: calc(var(--sites-type-scale-xl) * 19 / 22);
+	--ritual-body-lg: calc(var(--sites-type-scale-lg) * 18 / 20);
+	--ritual-body: calc(var(--sites-type-scale-base) * 16 / 17);
+	--ritual-body-sm: calc(var(--sites-type-scale-sm) * 14 / 15);
+	--ritual-button: calc(var(--sites-type-scale-sm) * 14 / 15);
+	--ritual-section: calc(var(--sites-spacing-xl) * 32 / 48);
+	--ritual-gutter: calc(var(--sites-spacing-md) * 16 / 24);
+	--ritual-2xl: calc(var(--sites-spacing-2xl) * 48 / 72);
+	--ritual-3xl: calc(var(--sites-spacing-2xl) * 64 / 72);
+	--ritual-cap: 1.5rem;
+	--ritual-dome: 7rem;
+	--ritual-rise: calc(var(--ritual-dome) / 2);
+}
+
+@media (min-width: 48rem) {
+	:root {
+		--ritual-h1: calc(var(--sites-type-scale-4xl) * 48 / 60);
+		--ritual-h2: calc(var(--sites-type-scale-3xl) * 34 / 40);
+		--ritual-h3: calc(var(--sites-type-scale-2xl) * 24 / 28);
+		--ritual-h4: calc(var(--sites-type-scale-xl) * 20 / 22);
+		--ritual-body-lg: calc(var(--sites-type-scale-lg) * 19 / 20);
+		--ritual-body: var(--sites-type-scale-base);
+		--ritual-section: var(--sites-spacing-xl);
+		--ritual-gutter: var(--sites-spacing-md);
+		--ritual-2xl: calc(var(--sites-spacing-2xl) * 60 / 72);
+		--ritual-3xl: calc(var(--sites-spacing-2xl) * 80 / 72);
+		--ritual-cap: 2rem;
+		--ritual-dome: 10rem;
+	}
+}
+
+@media (min-width: 64rem) {
+	:root {
+		--ritual-h1: var(--sites-type-scale-4xl);
+		--ritual-h2: var(--sites-type-scale-3xl);
+		--ritual-h3: var(--sites-type-scale-2xl);
+		--ritual-h4: var(--sites-type-scale-xl);
+		--ritual-body-lg: var(--sites-type-scale-lg);
+		--ritual-body-sm: var(--sites-type-scale-sm);
+		--ritual-button: var(--sites-type-scale-sm);
+		--ritual-section: calc(var(--sites-spacing-xl) * 64 / 48);
+		--ritual-gutter: calc(var(--sites-spacing-md) * 40 / 24);
+		--ritual-2xl: var(--sites-spacing-2xl);
+		--ritual-3xl: calc(var(--sites-spacing-2xl) * 96 / 72);
+		--ritual-dome: 15rem;
+	}
+}
+
+/* The dome: a half-ellipse, a photo hanging from the header (the hero's
+   and the page header's dome) or a band's top edge rising over the band
+   above. The edge rises by half the dome's height into the padding of the
+   band above, which grows by the rise so the curve never covers its
+   content. */
+@utility dome {
+	border-radius: 0 0 50% 50% / 0 0 100% 100%;
+}
+@utility edge-dome {
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		inset-inline: 0;
+		top: calc(var(--ritual-rise) * -1);
+		height: var(--ritual-rise);
+		border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+		background: var(--sites-scheme-background);
+	}
+	& > * {
+		position: relative;
+	}
+}
+main > [data-section]:has(+ [data-section] .edge-dome) > section {
+	padding-bottom: calc(var(--ritual-section) + var(--ritual-rise));
+}
+
+/* Grain: the turbulence tile, soft-light over the band so the flat colour
+   underneath keeps its value. */
+[data-texture="grain"] {
+	position: relative;
+	isolation: isolate;
+}
+[data-texture="grain"]::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+	background-image: var(--background-image-grain);
+	background-size: 10rem;
+	mix-blend-mode: soft-light;
+	opacity: 0.35;
+}
+
+/* Two bands on the same scheme in a row read as one: the second drops its
+   top padding so the seam carries one section's space, not two. */
+main > :is(.sites-scheme-linen + .sites-scheme-linen, .sites-scheme-sand + .sites-scheme-sand, .sites-scheme-clay + .sites-scheme-clay, .sites-scheme-fern + .sites-scheme-fern, .sites-scheme-fig + .sites-scheme-fig, .sites-scheme-celadon + .sites-scheme-celadon, .sites-scheme-sea + .sites-scheme-sea, .sites-scheme-slate + .sites-scheme-slate, .sites-scheme-terracotta + .sites-scheme-terracotta) > section:not(.edge-dome) {
+	padding-top: 0;
+}
+
+[data-dismissed] { display: none; }
+body:has([data-bare]) [data-group] { display: none; }
+
+html.reveal-off .reveal:not(.is-revealed) {
+	opacity: 1;
+	transform: none;
+	filter: none;
+}
+/* split-text hides a heading until it upgrades; with no script to upgrade it, show it. */
+html.reveal-off split-text:not(:defined) {
+	visibility: visible;
+}
+
+/* The header lies over a page that opens with a cover or dome hero
+   (data-over-hero): transparent at the top, its own scheme once the page
+   scrolls (sticky-header writes data-state on <body>). */
+@custom-variant overlaid {
+	&:where(body:not([data-state="scrolling"]):has(main > [data-section]:first-child [data-over-hero]) [data-header-style="over-hero"]),
+	&:where(body:not([data-state="scrolling"]):has(main > [data-section]:first-child [data-over-hero]) [data-header-style="over-hero"] *) {
+		@slot;
+	}
+}
+body:has([data-header-style="over-hero"]) main > [data-section]:first-child:has([data-over-hero]) {
+	margin-top: calc(var(--header-height, 4.5rem) * -1);
+}
+
+/* A tab, chip or switch button the page or a script marks as current. */
+@custom-variant current {
+	&[aria-current="true"],
+	&[aria-current="page"],
+	&[aria-pressed="true"] {
+		@slot;
+	}
+}
+
+/* The journal's two views: the section's data-view names the one shown. */
+@custom-variant view-list {
+	&:where([data-view="list"] *) {
+		@slot;
+	}
+}
+@custom-variant view-grid {
+	&:where([data-view="grid"] *) {
+		@slot;
+	}
+}
+
+:root {
+	font-size: var(--sites-type-base);
+	scrollbar-color: var(--sites-scheme-icons) transparent;
+}
+
+::selection {
+	background: var(--sites-color-brand-accent);
+	color: var(--sites-color-grey-extra-dark);
+}
+
+:focus-visible {
+	outline: 2px solid var(--sites-scheme-links);
+	outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+@layer base {
+	dialog {
+		border: 0;
+		padding: 0;
+		color: inherit;
+	}
+
+	[id] {
+		scroll-margin-top: 5.5rem;
+	}
+
+	/* Gloock has one weight and no italic: the accent word is colour only. */
+	.font-heading {
+		font-synthesis: none;
+	}
+
+	/* Durations, prices and times line up in columns. */
+	.tabular-nums,
+	time {
+		font-variant-numeric: tabular-nums lining-nums;
+	}
+}
+
+/* Rich text from the editor carries no classes, so its rhythm is set here. */
+@layer components {
+	.sites-prose {
+		font-size: var(--ritual-body);
+		line-height: 1.6;
+	}
+
+	.sites-prose > * + * {
+		margin-top: var(--sites-spacing-sm);
+	}
+
+	.sites-prose :is(h2, h3, h4) {
+		font-family: var(--sites-font-heading-family), Georgia, serif;
+		font-weight: 400;
+		line-height: 1.2;
+		color: var(--sites-scheme-heading);
+	}
+
+	.sites-prose h2 {
+		font-size: var(--ritual-h3);
+	}
+
+	.sites-prose :is(h3, h4) {
+		font-size: var(--ritual-h4);
+	}
+
+	.sites-prose a {
+		color: var(--sites-scheme-links);
+		text-decoration-line: underline;
+		text-underline-offset: 0.2em;
+	}
+
+	.sites-prose :is(ul, ol) {
+		display: grid;
+		gap: var(--sites-spacing-xs);
+		padding-inline-start: 1.25em;
+	}
+
+	.sites-prose ul {
+		list-style: circle;
+	}
+
+	.sites-prose ol {
+		list-style: decimal;
+	}
+}
+
+.sites-icon > svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/* sticky-header pins the element it is, so the renderer's wrapper steps
+   out of the way. */
+[data-section="header"]:has(sticky-header) {
+	display: contents;
+}
+
+@layer components {
+	sticky-header[disabled] {
+		position: static;
+		transform: none;
+	}
+
+	sticky-header::before {
+		content: none;
+	}
+}
+
+dropdown-component:not(:defined) dropdown-panel {
+	display: none;
+}
+
+/* The carousels: dots in the scheme's text at 35%, the current one in the
+   accent; the progress bar a 0.125rem rule-coloured line with a fill in the
+   text colour. Before tarot upgrades, or with no JavaScript, a one-up carousel
+   shows its first slide and a track lays its slides out as a row that
+   scrolls. */
+tarot-carousel {
+	--color-pagination-dot: color-mix(in srgb, var(--sites-scheme-foreground) var(--opacity-dots-inactive), transparent);
+	--color-pagination-dot-active: var(--sites-scheme-links);
+	--tarot-progress-height: 0.125rem;
+	--tarot-progress-margin: 0;
+	--tarot-progress-border-radius: 0;
+	--tarot-progress-bg: var(--sites-scheme-chip-border);
+	--tarot-progress-fill-bg: var(--sites-scheme-foreground);
+}
+tarot-carousel > .tarot-dots-list {
+	margin-top: var(--sites-spacing-md);
+}
+tarot-carousel:not(:defined) tarot-slide:first-child {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+tarot-carousel[data-track]:not(:defined) tarot-track {
+	display: flex;
+	gap: var(--sites-spacing-sm);
+	overflow-x: auto;
+}
+tarot-carousel[data-track]:not(:defined) tarot-slide {
+	flex: none;
+	width: 80%;
+	opacity: 1;
+	visibility: visible;
+}
+
+/* The lightbox: fern backdrop at 92%, linen chrome, round buttons. */
+:root {
+	--tarot-lightbox-backdrop: color-mix(in srgb, var(--color-brand-primary) 92%, transparent);
+	--tarot-lightbox-chrome-color: var(--color-on-photo);
+	--tarot-lightbox-chrome-size: 2.75rem;
+	--tarot-lightbox-chrome-inset: 1rem;
+	--tarot-lightbox-image-height: calc(100dvh - 8rem);
+}
+.tarot-lightbox__counter {
+	font-family: var(--sites-font-body-family), sans-serif;
+	font-size: var(--ritual-body-sm);
+	font-variant-numeric: tabular-nums;
+	color: var(--color-on-photo);
+}
+.tarot-lightbox__close,
+.tarot-lightbox .tarot-button {
+	background: color-mix(in srgb, var(--color-on-photo) 6%, transparent);
+	border-radius: var(--sites-radius-full);
+}
+.tarot-lightbox__close:hover,
+.tarot-lightbox .tarot-button:hover {
+	background: color-mix(in srgb, var(--color-on-photo) 12%, transparent);
+}
+
+/* The sheets and the drawer: the scheme's background over the backdrop
+   (the text at 50%), square-topped, a hairline along the top. */
+dialog-panel:has(bottom-sheet) {
+	--bs-panel-background: var(--sites-scheme-background);
+	--bs-panel-border-radius: var(--sites-radius-md);
+	--bs-panel-box-shadow: 0 -1px 0 var(--sites-scheme-chip-border);
+	--bs-handle-color: var(--sites-scheme-chip-border);
+	--bs-handle-width: 2.25rem;
+	--bs-handle-height: 0.25rem;
+	--bs-content-padding: var(--ritual-gutter);
+	--bs-content-padding-block: 0 var(--sites-spacing-lg);
+	--bs-overlay-background: color-mix(in srgb, var(--sites-scheme-foreground) 50%, transparent);
+	--bs-overlay-blur: 0.125rem;
+}
+
+/* The booking panel is a sheet on a phone and a centred dialog from 48rem:
+   the same markup, the sheet's slide replaced by a fade. */
+@media (min-width: 48rem) {
+	dialog-panel:has(bottom-sheet[data-centred]) > dialog {
+		inset: 0;
+		margin: auto;
+		width: min(90vw, 35rem);
+		height: fit-content;
+		max-height: 90dvh;
+		border-radius: var(--sites-radius-md);
+		box-shadow: none;
+		overflow-y: auto;
+	}
+	dialog-panel:is([state="hidden"], [state="showing"], [state="hiding"]):has(bottom-sheet[data-centred]) > dialog {
+		transform: scale(0.97);
+		opacity: 0;
+		transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+	}
+	dialog-panel[state="shown"]:has(bottom-sheet[data-centred]) > dialog {
+		transform: none;
+		opacity: 1;
+	}
+	bottom-sheet[data-centred] bottom-sheet-handle {
+		display: none;
+	}
+}
+
+select-dropdown {
+	--select-shadow: none;
+	--select-shadow-soft: none;
+	--select-color-text: var(--sites-scheme-input-foreground);
+	--select-color-background: var(--sites-scheme-input-background);
+	--select-color-border: var(--sites-scheme-input-border);
+	--select-color-border-hover: var(--sites-scheme-input-foreground);
+	--select-color-border-dark: var(--sites-scheme-input-foreground);
+	--select-color-primary: var(--sites-scheme-links);
+	--select-color-hover: var(--sites-scheme-chip-background);
+	--select-color-focus: var(--sites-scheme-chip-background);
+	--select-color-selected: var(--sites-scheme-chip-background);
+	display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
+	/* The ticker stands still: one copy, cut with an ellipsis. */
+	[data-ticker] scrolling-content { mask-image: none; }
+	[data-ticker] scrolling-track { width: auto; transform: none !important; }
+	[data-ticker] scrolling-item[data-clone] { display: none; }
+	[data-ticker] scrolling-item { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+	.reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+}

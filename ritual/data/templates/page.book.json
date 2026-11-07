@@ -1,0 +1,64 @@
+{
+  "label": "Book",
+  "description": "The appointment request form on the page.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "Request an *appointment*",
+        "text": "Tell us what you would like and when suits you. We confirm by text within a day.",
+        "color_scheme": "sand"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_form",
+      "type": "booking-form",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "text": "",
+        "image": "as_4x5_clay",
+        "image_alt": "A treatment room",
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "celadon"
+      },
+      "blocks": [
+        {
+          "id": "s_faq_b1",
+          "type": "item",
+          "settings": {
+            "question": "How do I cancel or reschedule?",
+            "answer": "<p>Text or call a day ahead and there is no charge.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b2",
+          "type": "item",
+          "settings": {
+            "question": "Do you take walk-ins?",
+            "answer": "<p>When a room is free, yes. Text us first and we will tell you.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b3",
+          "type": "item",
+          "settings": {
+            "question": "Can I come in pregnant?",
+            "answer": "<p>Yes. Noor gives prenatal massage side-lying with a bolster, from the second trimester on. Tell us when you book.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}

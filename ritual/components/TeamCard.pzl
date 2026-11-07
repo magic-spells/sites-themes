@@ -1,0 +1,7 @@
+<!-- component: TeamCard -->
+<!-- A person, one link to their page: the 4:5 portal portrait, the role in Meta, then the name in Card title (first in the markup, so it leads the link's name). -->
+<a class="group flex h-full flex-col gap-space-2xs { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" href="{ base_path }/{ entry.handle }">
+  <Well asset={ entry.fields.image } alt="" ratio="aspect-portrait" shape="portal" width={ 640 } sizes="(min-width: 64rem) 25rem, (min-width: 48rem) 50vw, 70vw" zoom={ true } />
+  <h3 class="order-last font-heading text-h4 group-hover:underline group-hover:underline-offset-4">{ entry.title }</h3>
+  <p class="pt-space-xs text-body-sm text-scheme-meta">{ entry.fields.role }</p>
+</a>

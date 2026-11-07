@@ -1,0 +1,66 @@
+{
+  "label": "Policies",
+  "description": "The house policies as rows that open.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "sand"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_policies",
+      "type": "policies",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "color_scheme": "linen"
+      },
+      "blocks": [
+        {
+          "id": "s_policies_b1",
+          "type": "item",
+          "settings": {
+            "question": "Cancellation",
+            "answer": "<p>Cancel or move an appointment up to a day ahead at no charge. Inside a day we charge half the treatment, and the full treatment when you do not come.</p>"
+          }
+        },
+        {
+          "id": "s_policies_b2",
+          "type": "item",
+          "settings": {
+            "question": "Late arrival",
+            "answer": "<p>We keep your room as long as we can and finish on time for the next guest, so a late start is a shorter treatment at the full price.</p>"
+          }
+        },
+        {
+          "id": "s_policies_b3",
+          "type": "item",
+          "settings": {
+            "question": "Children",
+            "answer": "<p>Children are welcome in the salon with a grown-up. The treatment rooms and the studio are for over-16s.</p>"
+          }
+        },
+        {
+          "id": "s_policies_b4",
+          "type": "item",
+          "settings": {
+            "question": "Gift cards",
+            "answer": "<p>Gift cards do not expire and cannot be exchanged for cash. A lost card can be sent again.</p>"
+          }
+        },
+        {
+          "id": "s_policies_b5",
+          "type": "item",
+          "settings": {
+            "question": "Health",
+            "answer": "<p>Tell us about pregnancy, allergies, recent surgery or anything on your skin before you book. Some treatments wait until you are well.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}

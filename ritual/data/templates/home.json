@@ -1,0 +1,210 @@
+{
+  "label": "Day spa",
+  "description": "The front page: the arch hero, the categories, the most booked, the team, the first visit and the gift card.",
+  "sections": [
+    {
+      "id": "s_hero",
+      "type": "hero",
+      "preset": "Arch",
+      "settings": {
+        "layout": "arch",
+        "image": "as_4x5_clay",
+        "image_alt": "The front room at Juniper House",
+        "text": "Massage, facials, hair, nails and makeup, with a quiet studio upstairs. On Alder Street since 2014.",
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_categories",
+      "type": "service-categories",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "sand"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_intro",
+      "type": "intro",
+      "preset": "Portal",
+      "settings": {
+        "layout": "portal",
+        "image": "as_4x5_sand",
+        "image_alt": "A treatment room with a window",
+        "link_label": "About the house",
+        "link_href": "/about",
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_most_booked",
+      "type": "service-grid",
+      "preset": "Most booked",
+      "settings": {
+        "source": "featured",
+        "limit": 6,
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_quotes",
+      "type": "testimonials",
+      "preset": "Carousel",
+      "settings": {
+        "layout": "carousel",
+        "color_scheme": "fern"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_team",
+      "type": "team-grid",
+      "preset": "Default",
+      "settings": {
+        "source": "featured",
+        "limit": 3,
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_first_visit",
+      "type": "first-visit",
+      "preset": "Stack",
+      "settings": {
+        "layout": "stack",
+        "color_scheme": "sand"
+      },
+      "blocks": [
+        {
+          "id": "s_first_visit_b1",
+          "type": "step",
+          "settings": {
+            "heading": "Arrive ten minutes early",
+            "text": "There is tea in the front room and a form to fill in."
+          }
+        },
+        {
+          "id": "s_first_visit_b2",
+          "type": "step",
+          "settings": {
+            "heading": "Tell us everything",
+            "text": "Pressure, allergies, a sore shoulder, a wedding on the calendar. It all helps."
+          }
+        },
+        {
+          "id": "s_first_visit_b3",
+          "type": "step",
+          "settings": {
+            "heading": "Settle in",
+            "text": "Robes, lockers and a quiet room before your treatment."
+          }
+        },
+        {
+          "id": "s_first_visit_b4",
+          "type": "step",
+          "settings": {
+            "heading": "Take the day slowly",
+            "text": "Drink water, skip the gym, keep the glow."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_strip",
+      "type": "gallery-strip",
+      "preset": "Strip",
+      "settings": {
+        "gallery": "home-strip",
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_gift",
+      "type": "gift-cards",
+      "preset": "Clay",
+      "settings": {
+        "color_scheme": "clay"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_visit",
+      "type": "hours-location",
+      "preset": "Default",
+      "settings": {
+        "heading": "Visit *us*",
+        "map": "map",
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "booking-cta",
+      "preset": "Clay",
+      "settings": {
+        "color_scheme": "clay",
+        "edge": "dome"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_social",
+      "type": "social",
+      "preset": "Strip",
+      "settings": {
+        "layout": "strip",
+        "color_scheme": "linen"
+      },
+      "blocks": [
+        {
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_clay",
+            "image_alt": "The front room in the afternoon"
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_sand",
+            "image_alt": "Towels folded on the shelf"
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_sea",
+            "image_alt": "The studio before a class"
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_sand",
+            "image_alt": "A gel manicure in a pale clay"
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_clay",
+            "image_alt": "The tea tray in the front room"
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_sea",
+            "image_alt": "The stairs to the studio"
+          }
+        }
+      ]
+    }
+  ]
+}

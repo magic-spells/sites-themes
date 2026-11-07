@@ -1,0 +1,15 @@
+{
+  "label": "Location",
+  "description": "A location's page.",
+  "sections": [
+    {
+      "id": "s_detail",
+      "type": "location-detail",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    }
+  ]
+}

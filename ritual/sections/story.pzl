@@ -1,0 +1,28 @@
+<!-- The house's story: a photo, turned 3° by default, beside the heading, the prose and a link (components/PictureText.pzl). -->
+<PictureText s={ settings } />
+
+<schema>
+{
+  "name": "Story",
+  "description": "The house's story: a photo beside a heading, prose and a link.",
+  "kind": "Content",
+  "icon": "book-open",
+  "settings": [
+    { "type": "image", "id": "image", "label": "Image", "info": "3:2." },
+    { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "" },
+    { "type": "select", "id": "image_side", "label": "Image", "default": "right", "options": [
+      { "value": "left", "label": "Left" },
+      { "value": "right", "label": "Right" }
+    ] },
+    { "type": "checkbox", "id": "tilt", "label": "Tilt the photo", "default": true },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Our *story*", "info": "Wrap one word in asterisks to set it in the accent." },
+    { "type": "richtext", "id": "body", "label": "Body", "default": "<p>Juniper House opened on Alder Street with one massage table and a kettle. The rooms came one at a time, each when someone we trusted wanted one.</p><p>We still book every appointment ourselves, by text, so the hour is yours from the moment you ask.</p>" },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "" },
+    { "type": "url", "id": "link_href", "label": "Link", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "sand" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "sand" } }
+  ]
+}
+</schema>

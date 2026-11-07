@@ -1,0 +1,38 @@
+{
+  "label": "Gallery",
+  "description": "The albums, then a collage of photos.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "sand"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_albums",
+      "type": "gallery-grid",
+      "preset": "Albums",
+      "settings": {
+        "mode": "albums",
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_capsules",
+      "type": "gallery-strip",
+      "preset": "Capsules",
+      "settings": {
+        "layout": "capsules",
+        "gallery": "the-rooms",
+        "heading": "Latest *photos*",
+        "link_label": "",
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    }
+  ]
+}

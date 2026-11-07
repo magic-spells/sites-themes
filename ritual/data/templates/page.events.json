@@ -1,0 +1,36 @@
+{
+  "label": "Events",
+  "description": "Workshops and classes by date, and the newsletter.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Small groups, in the studio or a treatment room. Listed by date.",
+        "color_scheme": "sand"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_events",
+      "type": "events-list",
+      "preset": "Rows",
+      "settings": {
+        "layout": "rows",
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_news",
+      "type": "newsletter",
+      "preset": "Fern",
+      "settings": {
+        "form": "newsletter",
+        "color_scheme": "fern"
+      },
+      "blocks": []
+    }
+  ]
+}

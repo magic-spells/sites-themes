@@ -1,0 +1,37 @@
+{
+  "label": "Journal",
+  "description": "Posts, with the newest first.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "sand"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_posts",
+      "type": "journal-list",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_news",
+      "type": "newsletter",
+      "preset": "Fern",
+      "settings": {
+        "form": "newsletter",
+        "image_style": "capsule",
+        "image": "as_4x5_sea",
+        "image_alt": "The studio window",
+        "color_scheme": "fern"
+      },
+      "blocks": []
+    }
+  ]
+}

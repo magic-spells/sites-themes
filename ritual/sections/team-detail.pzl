@@ -1,0 +1,54 @@
+<!-- A person's page: the 4:5 portal portrait beside a seven-part column with the name in h1, role and level as a standfirst, the bio, credentials as a ring list, specialties, then one decision row (Book and their link) over a hairline; then the treatments they lead as service cards. -->
+{#let
+  entry = page.entry
+  f = entry.fields
+  first = entry.title | split(' ') | first
+  theirs = content.services.entries | where('fields.team.handle', entry.handle) | sort('fields.order') | slice(0, 12)
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-picture-text md:gap-space-3xl">
+    <div><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" eager={ true } /></div>
+    <div class="grid gap-space-md">
+      <h1 class="font-heading text-h1 text-balance text-scheme-heading"><Accent text={ entry.title } rise={ true } /></h1>
+      <p class="text-body-lg text-pretty text-scheme-muted">{ f.role }{#if f.level} · { f.level }{/if}</p>
+      {#if f.bio}<div class="sites-prose">{ f.bio }</div>{/if}
+      {#if f.credentials}
+        <ul class="grid gap-space-xs text-body-sm">
+          {#for line in f.credentials | split('\n')}<li class="flex items-center gap-space-xs"><span class="size-bullet shrink-0 rounded-full border border-accent" aria-hidden="true"></span>{ line }</li>{/for}
+        </ul>
+      {/if}
+      {#if f.specialties}<p class="text-body text-scheme-muted">{ f.specialties | replace(', ', ' · ') }</p>{/if}
+      <div class="flex flex-wrap items-center gap-space-md border-b border-scheme-rule pb-space-md">
+        <Button action={ true }>{ t('book_with', { name: first }) }</Button>
+        {#if f.link}<a class="text-body-sm font-semibold text-accent underline underline-offset-4" href="{ f.link }" target="_blank" rel="noopener">{ settings.link_label }</a>{/if}
+      </div>
+    </div>
+  </div>
+  {#if settings.show_services && theirs.length}
+    <div class="mx-auto mt-space-3xl max-w-column">
+      <h2 class="mb-space-xl font-heading text-h2 text-scheme-heading">{ t('treatments_with', { name: first }) }</h2>
+      <ul class="grid gap-space-md md:grid-cols-2 lg:grid-cols-3">
+        {#for service in theirs}<li><ServiceCard entry={ service } base_path={ settings.services_path } /></li>{/for}
+      </ul>
+    </div>
+  {/if}
+</section>
+
+<schema>
+{
+  "name": "Team detail",
+  "description": "A person's page: their portrait, bio, credentials, Book with them and the treatments they lead.",
+  "kind": "Team",
+  "icon": "user",
+  "templates": ["member"],
+  "settings": [
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "Instagram", "info": "For the person's own link, when they have one." },
+    { "type": "checkbox", "id": "show_services", "label": "Show their treatments", "default": true, "info": "The services that name this person under Offered by." },
+    { "type": "url", "id": "services_path", "label": "Service page path", "default": "/services" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "linen" } }
+  ]
+}
+</schema>

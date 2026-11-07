@@ -1,0 +1,32 @@
+<!-- A journal post: the title in h1, the standfirst, the author, topic and date on a Meta line, the 16:9 capped image, then the body in the reading column. -->
+{#let
+  post = page.entry
+  f = post.fields
+}
+<article class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column justify-items-center gap-space-xl">
+    <header class="grid max-w-reading justify-items-center gap-space-md text-center">
+      <h1 class="font-heading text-h1 text-balance text-scheme-heading"><Accent text={ post.title } rise={ true } /></h1>
+      {#if f.standfirst}<p class="text-body-lg text-pretty text-scheme-muted">{ f.standfirst }</p>{/if}
+      <p class="text-body-sm text-scheme-meta">{#if f.author}{ f.author } · {/if}{#if f.topic}{ f.topic } · {/if}<time datetime="{ f.date | date('iso') }">{ f.date | date('long') }</time></p>
+    </header>
+    <div class="w-full max-w-figure"><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-video" shape="cap" width={ 1600 } sizes="(min-width: 64rem) 60rem, 100vw" eager={ true } /></div>
+    {#if f.body}<div class="sites-prose w-full max-w-reading">{ f.body }</div>{/if}
+  </div>
+</article>
+
+<schema>
+{
+  "name": "Post",
+  "description": "A journal post: its title, standfirst, image and body.",
+  "kind": "Journal",
+  "icon": "file-text",
+  "templates": ["post"],
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "linen" } }
+  ]
+}
+</schema>

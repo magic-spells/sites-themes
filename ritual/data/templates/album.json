@@ -1,0 +1,29 @@
+{
+  "label": "Album",
+  "description": "An album's photos with a lightbox, then the other albums.",
+  "sections": [
+    {
+      "id": "s_photos",
+      "type": "gallery-grid",
+      "preset": "Album photos",
+      "settings": {
+        "mode": "photos",
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_more",
+      "type": "gallery-grid",
+      "preset": "Albums",
+      "settings": {
+        "mode": "albums",
+        "heading": "More *albums*",
+        "link_label": "All photos",
+        "limit": 3,
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    }
+  ]
+}

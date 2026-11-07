@@ -1,0 +1,10 @@
+<!-- component: Stamp -->
+<!-- The house mark: the wordmark in Label over the stamp line (the first location's street when empty) in small capitals, inside a hollow ring. -->
+{#let
+  loc = content.locations.entries | sort('fields.order') | first
+  line = site.settings.stamp_line || (loc ? loc.fields.address | split('\n') | first | split(' ') | slice(1) | join(' ') : '')
+}
+<span class="flex size-ring shrink-0 flex-col items-center justify-center gap-space-2xs rounded-full border border-scheme-foreground p-space-sm text-center">
+  <span class="font-heading text-body leading-tight">{ site.settings.wordmark || site.name }</span>
+  {#if line}<span class="text-kicker font-semibold text-scheme-meta uppercase">{ line }</span>{/if}
+</span>

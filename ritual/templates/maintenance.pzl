@@ -1,0 +1,12 @@
+<!-- template: Maintenance -->
+<!-- layout: default -->
+<!-- A short pause on linen: the wordmark, the line and the phone and email meanwhile. data-bare hides the groups (styles/theme.css). -->
+<section class="sites-scheme-linen grid min-h-dvh flex-1 place-items-center bg-scheme-background px-gutter py-section text-scheme-foreground" data-bare>
+  <div class="grid w-full max-w-reading justify-items-center gap-space-md text-center">
+    <p class="font-heading text-h4 text-scheme-heading">{ site.settings.wordmark || site.name }</p>
+    <h1 class="font-heading text-h1 text-balance text-scheme-heading"><Accent text={ t('maintenance_title') } /></h1>
+    <p class="text-body-lg text-pretty text-scheme-muted">{ t('maintenance_body') }</p>
+    {#if site.settings.phone}<a class="font-semibold text-accent underline underline-offset-4" href="tel:{ site.settings.phone | replace(' ', '') }">{ site.settings.phone }</a>{/if}
+    {#if site.settings.email}<a class="text-accent underline underline-offset-4" href="mailto:{ site.settings.email }">{ site.settings.email }</a>{/if}
+  </div>
+</section>

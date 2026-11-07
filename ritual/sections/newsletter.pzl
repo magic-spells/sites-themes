@@ -1,0 +1,50 @@
+<!-- A short sign-up: the heading with its accent word and a line on the left, one email field labelled by its placeholder only and one button on the right, the sent and error states in place. With a capsule: the heading over the field in the seven-part column and a 3:5 capsule photo beside them from 48rem. -->
+{#let capsule = settings.image_style == 'capsule' && settings.image}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-lg md:gap-x-space-3xl { capsule ? 'md:grid-cols-text-picture' : 'items-end md:grid-cols-2' }">
+    {#if capsule}<div class="hidden md:col-start-2 md:row-span-2 md:row-start-1 md:block"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-capsule" shape="capsule" width={ 960 } sizes="40vw" /></div>{/if}
+    <div class="grid gap-space-sm { capsule ? 'self-end' : '' }">
+      <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ settings.heading } rise={ true } /></h2>
+      {#if settings.text}<p class="text-body text-scheme-muted">{ settings.text }</p>{/if}
+    </div>
+    <Form handle={ settings.form } class="grid content-start gap-space-xs" id="newsletter-{ section.id }">
+      {#if form.sent}
+        <p class="text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
+      {:else}
+        {#let field = form.fields | find('type', 'email')}
+        <div class="flex flex-wrap gap-space-xs">
+          <input class="min-h-control min-w-0 flex-1 rounded-full border bg-scheme-input-background px-space-md text-body text-scheme-input-foreground placeholder:text-scheme-meta focus:outline-2 focus:outline-offset-2 focus:outline-accent { field && field.error ? 'border-scheme-error' : 'border-scheme-input-border' }" type="email" name={ field ? field.id : 'email' } value={ field ? field.value : null } placeholder="{ settings.placeholder }" aria-label="{ settings.placeholder }" autocomplete="email" required aria-invalid={ field && field.error ? 'true' : 'false' } aria-describedby={ field && field.error ? 'error-newsletter-' + section.id : null } />
+          <Button type="submit">{ form.submit_label || settings.button_label }</Button>
+        </div>
+        {#if field && field.error}<p class="text-body-sm text-scheme-error" id="error-newsletter-{ section.id }">{ t('form_field_' + field.error) }</p>{:else if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
+        <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+      {/if}
+    </Form>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Newsletter",
+  "description": "A heading, a line and one email field.",
+  "kind": "Forms",
+  "icon": "mail",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Stay in *touch*", "info": "Wrap one word in asterisks to set it in the accent." },
+    { "type": "text", "id": "text", "label": "Text", "default": "New treatments, workshops and the odd quiet Sunday. Once a month at most." },
+    { "type": "form", "id": "form", "label": "Form" },
+    { "type": "text", "id": "placeholder", "label": "Field placeholder", "default": "Your email" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Sign up" },
+    { "type": "select", "id": "image_style", "label": "Image", "default": "none", "options": [
+      { "value": "none", "label": "None" },
+      { "value": "capsule", "label": "Capsule" }
+    ], "info": "Capsule: a tall rounded photo beside the sign-up from 48rem." },
+    { "type": "image", "id": "image", "label": "Photo" },
+    { "type": "text", "id": "image_alt", "label": "Photo alt text", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "fern" }
+  ],
+  "presets": [
+    { "name": "Fern", "settings": { "form": "newsletter", "color_scheme": "fern" } }
+  ]
+}
+</schema>

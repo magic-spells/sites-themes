@@ -1,0 +1,32 @@
+<!-- A non-modal notice: the page stays usable behind it. It renders hidden; theme.ts shows it once per key, both buttons hide it and the choice is remembered. Full width on a phone with a rounded top, a card bottom right from 48rem. -->
+<section class="fixed inset-x-0 bottom-0 z-40 rounded-t-md border-t border-scheme-rule bg-scheme-background text-scheme-foreground md:inset-x-auto md:right-gutter md:bottom-gutter md:w-drawer md:rounded-md md:border" id="cookie-notice" data-notice="{ settings.key }" role="region" aria-label="{ t('cookie_notice') }" hidden>
+  <div class="grid gap-space-md p-space-lg">
+    <div class="sites-prose text-body-sm">{ settings.body }</div>
+    {#if settings.link_label}<p><a class="text-body-sm font-semibold text-accent underline underline-offset-4" href="{ settings.link_href }">{ settings.link_label }</a></p>{/if}
+    <div class="flex flex-wrap gap-space-xs">
+      <Button type="button">{ settings.accept_label }</Button>
+      {#if settings.decline_label}<Button type="button" tone="secondary">{ settings.decline_label }</Button>{/if}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Cookie notice",
+  "description": "A short notice shown once per visitor.",
+  "kind": "Panels",
+  "icon": "sticky-note",
+  "settings": [
+    { "type": "richtext", "id": "body", "label": "Text", "default": "<p>This site uses your browser’s local storage to remember that you have seen this note, and nothing else.</p>" },
+    { "type": "text", "id": "accept_label", "label": "Accept label", "default": "OK" },
+    { "type": "text", "id": "decline_label", "label": "Decline label", "default": "No thanks" },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "Privacy" },
+    { "type": "url", "id": "link_href", "label": "Link", "default": "/privacy" },
+    { "type": "text", "id": "key", "label": "Key", "default": "ritual-notice", "info": "Change the key to show the notice again to everyone." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "linen" } }
+  ]
+}
+</schema>

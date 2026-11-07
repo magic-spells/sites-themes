@@ -1,0 +1,28 @@
+{
+  "label": "Event",
+  "description": "An event's page, then the others.",
+  "sections": [
+    {
+      "id": "s_detail",
+      "type": "event-detail",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_more",
+      "type": "events-list",
+      "preset": "More events",
+      "settings": {
+        "layout": "cards",
+        "limit": 3,
+        "heading": "More *events*",
+        "link_label": "All events",
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    }
+  ]
+}

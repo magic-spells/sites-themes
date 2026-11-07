@@ -1,0 +1,50 @@
+<!-- The appointment request behind every primary action: the booking form in a bottom-sheet on a phone that becomes a centred 35rem dialog from 48rem (styles/theme.css). It hands focus back to the button that opened it. Sent and error states come back on the page as ?form=…&sent=1 or &error=1, so the panel opens on its own there. With House booking set to link this panel never opens. -->
+{#let
+  handle = settings.form || site.settings.booking_form
+  confirm = settings.confirm || site.settings.confirm_line
+}
+<dialog-panel>
+  <dialog class="text-scheme-foreground" aria-labelledby="booking-title">
+    <bottom-sheet id="booking" data-centred>
+      <bottom-sheet-header class="flex items-start justify-between gap-space-md pt-space-md">
+        <div class="grid gap-space-xs">
+          <h2 class="font-heading text-h3 text-scheme-heading" id="booking-title"><Accent text={ settings.heading } /></h2>
+          {#if settings.text}<p class="text-body-sm text-scheme-muted">{ settings.text }</p>{/if}
+        </div>
+        <button class="-m-space-xs flex size-tap shrink-0 items-center justify-center text-scheme-meta hover:text-scheme-foreground" type="button" data-action-hide-dialog><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/close.svg'}</span><span class="sr-only">{ t('close') }</span></button>
+      </bottom-sheet-header>
+      <bottom-sheet-content>
+        <Form handle={ handle } class="grid gap-space-md" id="booking-form">
+          {#if form.sent}
+            <p class="text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
+          {:else}
+            {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
+            <FormFields fields={ form.fields } prefix="booking" />
+            <Button type="submit" wide={ true }>{ form.submit_label || t('request_appointment') }</Button>
+            {#if confirm}<p class="text-body-sm text-scheme-meta">{ confirm }</p>{/if}
+            <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+          {/if}
+        </Form>
+      </bottom-sheet-content>
+    </bottom-sheet>
+  </dialog>
+</dialog-panel>
+
+<schema>
+{
+  "name": "Booking panel",
+  "description": "The appointment request form, opened by every Book button: a sheet on phones, a dialog from tablets.",
+  "kind": "Panels",
+  "icon": "calendar-plus",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Request an *appointment*", "info": "Wrap one word in asterisks to set it in the accent." },
+    { "type": "text", "id": "text", "label": "Text", "default": "Tell us what you would like and when suits you." },
+    { "type": "form", "id": "form", "label": "Form", "info": "Leave empty to use the House booking form." },
+    { "type": "text", "id": "confirm", "label": "Confirm line", "default": "", "info": "Leave empty to use the House confirm line." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "linen" } }
+  ]
+}
+</schema>

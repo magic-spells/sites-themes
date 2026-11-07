@@ -1,0 +1,29 @@
+{
+  "label": "Post",
+  "description": "A journal post, then two more.",
+  "sections": [
+    {
+      "id": "s_post",
+      "type": "post",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_more",
+      "type": "journal-list",
+      "preset": "More",
+      "settings": {
+        "heading": "More *posts*",
+        "feature_first": false,
+        "show_switch": false,
+        "limit": 2,
+        "link_label": "All posts",
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    }
+  ]
+}

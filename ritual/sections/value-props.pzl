@@ -1,0 +1,53 @@
+<!-- Three pillars as blocks, never numbered. Row: three across, a hollow ring above each heading. Stack: staggered rounded tiles, each on its own scheme in turn (fern, clay, celadon). -->
+{#let tiles = ['sites-scheme-fern', 'sites-scheme-clay', 'sites-scheme-celadon']}
+{#if blocks.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <ul class="grid gap-space-md md:grid-cols-3 { settings.layout == 'stack' ? '' : 'md:gap-space-xl' }">
+      {#for block in blocks, i}
+        {#let b = block.settings}
+        <li class="grid content-start gap-space-sm { settings.layout == 'stack' ? 'rounded-lg bg-scheme-background p-space-lg text-scheme-foreground ' + tiles[i % 3] + (i % 2 == 1 ? ' md:translate-y-space-xl' : '') : '' } { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-block={ block.editor_id }>
+          <span class="size-tap rounded-full border { settings.layout == 'stack' ? 'border-scheme-foreground' : 'border-accent' }" aria-hidden="true"></span>
+          <h3 class="font-heading text-h3 text-scheme-heading">{ b.heading }</h3>
+          <p class="text-body text-scheme-muted">{ b.text }</p>
+          {#if b.link_label && b.link_href}<a class="justify-self-start text-body-sm font-semibold text-accent underline underline-offset-4" href="{ b.link_href }">{ b.link_label }</a>{/if}
+        </li>
+      {/for}
+    </ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Value props",
+  "description": "Three things the house stands for, in a row or as staggered tiles.",
+  "kind": "Content",
+  "icon": "sparkles",
+  "settings": [
+    { "type": "select", "id": "layout", "label": "Layout", "default": "row", "options": [
+      { "value": "row", "label": "Row" },
+      { "value": "stack", "label": "Staggered tiles" }
+    ] },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "How we *work*", "info": "Wrap one word in asterisks to set it in the accent." },
+    { "type": "text", "id": "text", "label": "Text", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+  ],
+  "blocks": [
+    { "type": "prop", "name": "Pillar", "settings": [
+      { "type": "text", "id": "heading", "label": "Heading", "default": "Small on purpose" },
+      { "type": "textarea", "id": "text", "label": "Text", "default": "Six of us, one room each, no double booking." },
+      { "type": "text", "id": "link_label", "label": "Link label", "default": "" },
+      { "type": "url", "id": "link_href", "label": "Link", "default": "" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {}, "blocks": [
+      { "type": "prop", "settings": { "heading": "Small on purpose", "text": "Six of us, one room each, no double booking." } },
+      { "type": "prop", "settings": { "heading": "Honest about products", "text": "We sell what we use and nothing we don't." } },
+      { "type": "prop", "settings": { "heading": "Time is the treatment", "text": "Nothing here is rushed, including you." } }
+    ] }
+  ]
+}
+</schema>

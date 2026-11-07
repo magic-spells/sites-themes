@@ -1,0 +1,69 @@
+{
+  "label": "Packages",
+  "description": "Memberships and series, with questions.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "For people who would rather not think about booking.",
+        "color_scheme": "sand"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_packages",
+      "type": "packages",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "sand"
+      },
+      "blocks": [
+        {
+          "id": "s_faq_b1",
+          "type": "item",
+          "settings": {
+            "question": "How do I cancel or reschedule?",
+            "answer": "<p>Text or call a day ahead and there is no charge.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b2",
+          "type": "item",
+          "settings": {
+            "question": "Do gift cards expire?",
+            "answer": "<p>No. A gift card keeps its value until it is spent, on any treatment or product.</p>"
+          }
+        },
+        {
+          "id": "s_faq_b3",
+          "type": "item",
+          "settings": {
+            "question": "Which products do you use?",
+            "answer": "<p>The ones on our shelves: Alder & Co. in the salon, Still Water in the treatment rooms and Nettle oils for massage.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_cta",
+      "type": "booking-cta",
+      "preset": "Clay",
+      "settings": {
+        "color_scheme": "clay"
+      },
+      "blocks": []
+    }
+  ]
+}

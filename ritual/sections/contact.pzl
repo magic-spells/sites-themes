@@ -6,8 +6,8 @@
   email = (f && f.email) || site.settings.email
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-5 lg:gap-space-3xl">
-    <div class="md:col-span-3">
+  <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-text-picture md:gap-space-3xl">
+    <div>
       <SectionHead heading={ settings.heading } text={ settings.text } />
       <Form handle={ settings.form } class="grid gap-space-md" id="contact-{ section.id }">
         {#if form.sent}
@@ -21,7 +21,7 @@
       </Form>
     </div>
     {#if loc}
-      <div class="grid gap-space-md rounded-md bg-scheme-surface-2 p-space-lg md:col-span-2">
+      <div class="grid gap-space-md rounded-md bg-scheme-surface-2 p-space-lg">
         <h2 class="font-heading text-h3 text-scheme-heading">{ loc.title }</h2>
         <address class="text-body not-italic">{ f.address | newline_to_br }</address>
         <HoursTable hours={ f.hours } />

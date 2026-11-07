@@ -1,4 +1,4 @@
-<!-- A person's page: the 4:5 portal portrait beside a 30rem column with the name in h1, role and level as a standfirst, the bio, credentials as a ring list, specialties, then one decision row (Book and their link) over a hairline; then the treatments they lead as service cards. -->
+<!-- A person's page: the 4:5 portal portrait beside a seven-part column with the name in h1, role and level as a standfirst, the bio, credentials as a ring list, specialties, then one decision row (Book and their link) over a hairline; then the treatments they lead as service cards. -->
 {#let
   entry = page.entry
   f = entry.fields
@@ -6,9 +6,9 @@
   theirs = content.services.entries | where('fields.team.handle', entry.handle) | sort('fields.order') | slice(0, 12)
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-2 lg:gap-space-3xl">
-    <div class="w-full max-w-photo"><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="(min-width: 48rem) 30rem, 100vw" eager={ true } /></div>
-    <div class="grid max-w-text gap-space-md">
+  <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-picture-text md:gap-space-3xl">
+    <div><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" eager={ true } /></div>
+    <div class="grid gap-space-md">
       <h1 class="font-heading text-h1 text-balance text-scheme-heading">{ entry.title }</h1>
       <p class="text-body-lg text-pretty text-scheme-muted">{ f.role }{#if f.level} · { f.level }{/if}</p>
       {#if f.bio}<div class="sites-prose">{ f.bio }</div>{/if}

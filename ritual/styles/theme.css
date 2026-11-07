@@ -171,6 +171,9 @@
 	--aspect-collage-wide: 1000 / 536;
 	--grid-template-columns-header: 1fr auto 1fr;
 	--grid-template-columns-row: 9rem 1fr auto;
+	/* A picture beside text: the text takes seven parts, the picture five, one 3xl gap between. */
+	--grid-template-columns-text-picture: 7fr 5fr;
+	--grid-template-columns-picture-text: 5fr 7fr;
 	/* The gallery collage: column lines at 47% and 100% on a phone; at 47, 59, 68 and 76% from 48rem. Row lines are the portal's and the square's tops in units of the landscape's height (52 and 74 on a phone, 22.5 and 62.5 from 48rem). */
 	--grid-template-columns-collage: 47fr 53fr;
 	--grid-template-columns-collage-wide: 47fr 12fr 9fr 8fr 24fr;

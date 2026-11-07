@@ -6,8 +6,8 @@
 }
 {#if loc}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column items-center gap-space-xl md:grid-cols-2 lg:gap-space-3xl">
-    <div class="grid max-w-text gap-space-md">
+  <div class="mx-auto grid max-w-column items-center gap-space-xl md:grid-cols-text-picture md:gap-space-3xl">
+    <div class="grid gap-space-md">
       <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ settings.heading || loc.title } /></h2>
       <address class="text-body-lg not-italic text-scheme-muted">{ f.address | newline_to_br }</address>
       {#if settings.show_hours}<HoursTable hours={ f.hours } />{/if}
@@ -21,9 +21,9 @@
       {#if embed}
         <div class="relative aspect-3/2 overflow-hidden rounded-t-cap bg-scheme-surface-2"><iframe class="absolute inset-0 size-full" src="{ f.map_embed_url }" title="{ t('map_of', { name: loc.title }) }" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       {:else if settings.map == 'map' && f.map_image}
-        <a class="block" href={ f.map_url || null } target="_blank" rel="noopener"><Well asset={ f.map_image } alt={ f.map_image_alt } ratio="aspect-3/2" shape="cap" width={ 1200 } sizes="(min-width: 48rem) 50vw, 100vw" /></a>
+        <a class="block" href={ f.map_url || null } target="_blank" rel="noopener"><Well asset={ f.map_image } alt={ f.map_image_alt } ratio="aspect-3/2" shape="cap" width={ 1200 } sizes="(min-width: 48rem) 40vw, 100vw" /></a>
       {:else}
-        <div class="w-full max-w-photo md:justify-self-end"><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="(min-width: 48rem) 30rem, 100vw" /></div>
+        <div><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" /></div>
       {/if}
     {/if}
   </div>

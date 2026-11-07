@@ -5,12 +5,12 @@
   wordmark = site.settings.wordmark || site.name
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-texture={ settings.grain && site.settings.texture == 'grain' ? 'grain' : null }>
-  <div class="mx-auto grid max-w-column items-center gap-space-xl md:grid-cols-2 lg:gap-space-3xl">
-    <div class="sites-scheme-fern grid aspect-portrait w-full max-w-photo content-between justify-items-center rounded-t-full rounded-b-md bg-scheme-background px-space-lg pt-space-3xl pb-space-lg text-center text-scheme-foreground" aria-hidden="true">
+  <div class="mx-auto grid max-w-column items-center gap-space-xl md:grid-cols-picture-text md:gap-space-3xl">
+    <div class="sites-scheme-fern grid aspect-portrait content-between justify-items-center rounded-t-full rounded-b-md bg-scheme-background px-space-lg pt-space-3xl pb-space-lg text-center text-scheme-foreground" aria-hidden="true">
       <span class="grid gap-space-xs"><span class="text-kicker font-semibold text-scheme-meta uppercase">{ t('gift_card') }</span><span class="font-heading text-display tabular-nums">{ settings.card_amount }</span></span>
       <span class="font-heading text-h4">{ wordmark }</span>
     </div>
-    <div class="grid max-w-text gap-space-md">
+    <div class="grid gap-space-md">
       <h2 class="font-heading text-h1 text-balance text-scheme-heading"><Accent text={ settings.heading } /></h2>
       {#if settings.text}<p class="text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
       {#if amounts.length}

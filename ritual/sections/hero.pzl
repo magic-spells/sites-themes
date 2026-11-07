@@ -37,9 +37,9 @@
       </div>
     </div>
   {:else}
-    <div class="mx-auto grid max-w-column items-center gap-space-xl { layout == 'arch' ? 'pt-space-lg lg:grid-cols-2 lg:gap-space-3xl' : '' } { centred ? 'justify-items-center text-center' : '' }">
+    <div class="mx-auto grid max-w-column items-center gap-space-xl { layout == 'arch' ? 'pt-space-lg lg:grid-cols-text-picture lg:gap-space-3xl' : '' } { centred ? 'justify-items-center text-center' : '' }">
       {#if layout == 'dome' && settings.image}<div class="-mx-gutter w-screen max-w-column lg:mx-0 lg:w-full"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-dome" shape="dome" width={ 1600 } sizes="100vw" eager={ true } /></div>{/if}
-      <div class="grid max-w-reading gap-space-md { centred ? 'justify-items-center' : 'py-space-xl' }">
+      <div class="grid gap-space-md { centred ? 'max-w-reading justify-items-center' : 'py-space-xl' }">
         <h1 class="font-heading text-display text-balance text-scheme-heading"><Accent text={ settings.heading } /></h1>
         {#if settings.text}<p class="max-w-text text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
         <div class="flex flex-wrap gap-space-xs pt-space-xs { centred ? 'justify-center' : '' }">
@@ -47,7 +47,7 @@
           {#if settings.show_call && phone}<Button href="tel:{ phone | replace(' ', '') }" tone="secondary">{ t('call_number', { phone: phone }) }</Button>{/if}
         </div>
       </div>
-      {#if layout == 'arch' && settings.image}<div class="w-full max-w-photo justify-self-end max-lg:order-first"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="(min-width: 64rem) 30rem, 100vw" eager={ true } /></div>{/if}
+      {#if layout == 'arch' && settings.image}<div class="max-lg:order-first"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="(min-width: 64rem) 40vw, 100vw" eager={ true } /></div>{/if}
     </div>
   {/if}
 </section>

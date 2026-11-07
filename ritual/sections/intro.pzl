@@ -1,16 +1,16 @@
 <!-- The welcome: one Display sentence with its accent word and a line of body in the reading column. Portal sets an arched photo beside it; collage overlaps two photos, the second turned 3°, at 48rem and up. -->
 {#let layout = settings.layout}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column items-center gap-space-xl { layout == 'text' ? 'justify-items-center text-center' : 'md:grid-cols-2 md:gap-space-3xl' }">
-    <div class="grid max-w-reading gap-space-md">
+  <div class="mx-auto grid max-w-column items-center gap-space-xl { layout == 'text' ? 'justify-items-center text-center' : 'md:grid-cols-text-picture md:gap-space-3xl' }">
+    <div class="grid gap-space-md { layout == 'text' ? 'max-w-reading' : '' }">
       <h2 class="font-heading text-h1 text-balance text-scheme-heading"><Accent text={ settings.heading } /></h2>
       {#if settings.text}<p class="text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
       {#if settings.link_label && settings.link_href}<a class="justify-self-start text-body font-semibold text-accent underline underline-offset-4 hover:text-scheme-foreground { layout == 'text' ? 'justify-self-center' : '' }" href="{ settings.link_href }">{ settings.link_label }</a>{/if}
     </div>
     {#if layout == 'portal' && settings.image}
-      <div class="w-full max-w-photo md:justify-self-end"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="(min-width: 48rem) 30rem, 100vw" /></div>
+      <div><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" /></div>
     {:else if layout == 'collage' && settings.image}
-      <div class="relative grid w-full grid-cols-6 md:justify-self-end">
+      <div class="relative grid grid-cols-6">
         <div class="col-span-4"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" shape="portal" width={ 800 } sizes="(min-width: 48rem) 25vw, 66vw" /></div>
         {#if settings.image_2}<div class="col-span-3 col-start-4 row-start-1 mt-space-3xl self-end"><Well asset={ settings.image_2 } alt={ settings.image_2_alt } ratio="aspect-3/2" shape="cap" width={ 640 } sizes="(min-width: 48rem) 20vw, 50vw" tilt={ settings.tilt } /></div>{/if}
       </div>

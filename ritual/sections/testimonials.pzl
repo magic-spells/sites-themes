@@ -2,7 +2,7 @@
 {#let
   id = 'quotes-' + section.id
   all = content.testimonials.entries | sort('fields.order')
-  quotes = (settings.source == 'featured' ? all | where('fields.featured') : all) | slice(0, Math.min(settings.limit, 12))
+  quotes = (settings.source == 'featured' ? all | where('fields.featured') : all) | slice(0, settings.limit)
   options = { slidesPerView: 1, gap: '1.5rem', loop: true, navigation: { showButtons: true, showPagination: false } }
 }
 {#if quotes.length}

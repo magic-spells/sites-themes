@@ -1,9 +1,10 @@
 <!-- component: Button -->
-<!-- The pill button, mixed case. tone: primary (the scheme's button), secondary (a hairline in the text colour), photo (linen over a photograph). With action set it is the primary action: a link to the booking URL when House says link, otherwise the booking page, which theme.ts turns into the booking panel. -->
+<!-- The pill button, mixed case. tone: primary (the scheme's button), secondary (a hairline in the text colour), photo (linen over a photograph). With type it is a <button> of that type. With action set it is the primary action: a link to the booking URL when House says link, otherwise the booking page, which theme.ts turns into the booking panel. -->
 {#let
   linked = action && site.settings.booking == 'link' && site.settings.booking_url
-  url = action ? (linked ? site.settings.booking_url : (site.settings.booking_path || '/book')) : href
+  url = action ? (linked ? site.settings.booking_url : site.settings.booking_path) : href
   panel = action && !linked ? 'booking' : null
   look = tone == 'secondary' ? 'border-scheme-secondary-button-foreground text-scheme-secondary-button-foreground hover:bg-scheme-secondary-button-hover-background hover:text-scheme-secondary-button-hover-foreground' : (tone == 'photo' ? 'border-on-photo text-on-photo hover:bg-on-photo hover:text-brand-primary' : 'border-scheme-button-background bg-scheme-button-background text-scheme-button-foreground hover:border-scheme-button-hover-background hover:bg-scheme-button-hover-background hover:text-scheme-button-hover-foreground')
+  cls = 'inline-flex min-h-control items-center justify-center gap-space-xs rounded-button border px-button-x text-button font-semibold whitespace-nowrap transition-colors duration-fast ' + look + (wide ? ' w-full' : '')
 }
-<a class="inline-flex min-h-control items-center justify-center gap-space-xs rounded-button border px-button-x text-button font-semibold whitespace-nowrap transition-colors duration-fast { look } { wide ? 'w-full' : '' }" href="{ url }" target={ linked || external ? '_blank' : null } rel={ linked || external ? 'noopener' : null } data-panel-open={ panel } aria-haspopup={ panel ? 'dialog' : null }><Children/></a>
+{#if type}<button class="{ cls }" type="{ type }"><Children/></button>{:else}<a class="{ cls }" href="{ url }" target={ linked || external ? '_blank' : null } rel={ linked || external ? 'noopener' : null } data-panel-open={ panel } aria-haspopup={ panel ? 'dialog' : null }><Children/></a>{/if}

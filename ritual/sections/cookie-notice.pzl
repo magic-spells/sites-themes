@@ -4,8 +4,8 @@
     <div class="sites-prose text-body-sm">{ settings.body }</div>
     {#if settings.link_label}<p><a class="text-body-sm font-semibold text-accent underline underline-offset-4" href="{ settings.link_href }">{ settings.link_label }</a></p>{/if}
     <div class="flex flex-wrap gap-space-xs">
-      <button class="inline-flex min-h-control items-center rounded-button border border-scheme-button-background bg-scheme-button-background px-button-x text-button font-semibold text-scheme-button-foreground hover:bg-scheme-button-hover-background" type="button" data-notice-close="accept">{ settings.accept_label }</button>
-      {#if settings.decline_label}<button class="inline-flex min-h-control items-center rounded-button border border-scheme-foreground px-button-x text-button font-semibold hover:bg-scheme-foreground hover:text-scheme-background" type="button" data-notice-close="decline">{ settings.decline_label }</button>{/if}
+      <Button type="button">{ settings.accept_label }</Button>
+      {#if settings.decline_label}<Button type="button" tone="secondary">{ settings.decline_label }</Button>{/if}
     </div>
   </div>
 </section>

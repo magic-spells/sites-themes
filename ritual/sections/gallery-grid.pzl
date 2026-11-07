@@ -2,11 +2,11 @@
 {#let
   album = settings.mode == 'photos' ? page.entry : null
   f = album ? album.fields : null
-  items = f && f.photos ? f.photos.items | slice(0, 24) : []
+  items = f && f.photos ? f.photos.items | slice(0, 12) : []
   pairs = f && f.kind == 'before-after'
   id = 'album-' + section.id
   lb = { lightbox: true, navigation: { showButtons: false, showPagination: false } }
-  others = content.albums.entries | sort('fields.order') | reject('id', page.entry ? page.entry.id : '') | slice(0, Math.min(settings.limit, 12))
+  others = content.albums.entries | sort('fields.order') | reject('id', page.entry.id) | slice(0, settings.limit)
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">

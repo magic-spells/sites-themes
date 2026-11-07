@@ -5,7 +5,6 @@
   related = settings.source == 'related' && here ? services | where('fields.category.handle', here.fields.category.handle) : []
   picked = settings.source == 'featured' ? services | where('fields.featured') : (settings.source == 'related' ? related : services)
   wanted = settings.handles | split(',')
-  limit = Math.min(settings.limit, 12)
 }
 <section class="bg-scheme-background py-section md:px-gutter text-scheme-foreground">
   <div class="mx-auto max-w-column px-gutter md:px-0">
@@ -15,10 +14,10 @@
     {#if settings.handles}
       {#for h in wanted}
         {#let entry = services | find('handle', (h | strip))}
-        {#if entry}<li class="w-4/5 shrink-0 snap-start md:w-auto"><ServiceCard entry={ entry } base_path={ settings.base_path } /></li>{/if}
+        {#if entry && entry.id != here.id}<li class="w-4/5 shrink-0 snap-start md:w-auto"><ServiceCard entry={ entry } base_path={ settings.base_path } /></li>{/if}
       {/for}
     {:else}
-      {#for entry in picked | reject('id', here ? here.id : '') | slice(0, limit)}
+      {#for entry in picked | reject('id', here.id) | slice(0, settings.limit)}
         <li class="w-4/5 shrink-0 snap-start md:w-auto"><ServiceCard entry={ entry } base_path={ settings.base_path } /></li>
       {/for}
     {/if}

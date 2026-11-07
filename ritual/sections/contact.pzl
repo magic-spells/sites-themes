@@ -15,7 +15,7 @@
         {:else}
           {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
           <FormFields fields={ form.fields } prefix="contact-{ section.id }" columns={ true } />
-          <div><Submit>{ form.submit_label || t('send') }</Submit></div>
+          <div><Button type="submit">{ form.submit_label || t('send') }</Button></div>
           <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
         {/if}
       </Form>

@@ -40,9 +40,8 @@
 }
 
 /* The scheme a section sits on. The engine has no muted, meta, border,
-   surface-2, accent or on-accent slot, so they ride on the chip, icon,
-   link and button slots (settings/design.json says which): the accent is
-   the link colour, the on-accent the primary button's text. */
+   surface-2 or accent slot, so they ride on the chip, icon and link
+   slots (settings/design.json says which): the accent is the link colour. */
 @theme inline {
 	--color-scheme-background: var(--sites-scheme-background);
 	--color-scheme-foreground: var(--sites-scheme-foreground);
@@ -62,7 +61,6 @@
 	--color-scheme-secondary-button-hover-background: var(--sites-scheme-secondary-button-hover-background);
 	--color-scheme-secondary-button-hover-foreground: var(--sites-scheme-secondary-button-hover-foreground);
 	--color-accent: var(--sites-scheme-links);
-	--color-on-accent: var(--sites-scheme-button-foreground);
 	--color-scheme-error: var(--ritual-error);
 	--color-backdrop: color-mix(in srgb, var(--sites-scheme-foreground) 50%, transparent);
 	--background-image-glow: radial-gradient(ellipse at 50% 40%, var(--sites-color-grey-extra-light), transparent 70%);
@@ -138,7 +136,6 @@
 	--spacing-space-3xl: var(--ritual-3xl);
 	--spacing-section: var(--ritual-section);
 	--spacing-gutter: var(--ritual-gutter);
-	--spacing-rise: var(--ritual-rise);
 	--spacing-dome: var(--ritual-dome);
 	--spacing-button-x: var(--sites-button-padding-x);
 	--spacing-button-y: var(--sites-button-padding-y);
@@ -165,7 +162,7 @@
 	--aspect-tall: 3 / 4;
 	--aspect-wide: 21 / 9;
 	--aspect-dome: 2 / 1;
-	--grid-template-columns-hours: auto 1fr;
+	--grid-template-columns-header: 1fr auto 1fr;
 	--grid-template-columns-row: 9rem 1fr auto;
 	--transition-duration-fast: 150ms;
 	--transition-duration-panel: 250ms;
@@ -248,8 +245,8 @@
 		position: absolute;
 		inset-inline: 0;
 		top: calc(var(--ritual-rise) * -1);
-		height: var(--ritual-dome);
-		border-radius: 50%;
+		height: var(--ritual-rise);
+		border-radius: 50% 50% 0 0 / 100% 100% 0 0;
 		background: var(--sites-scheme-background);
 	}
 	& > * {
@@ -258,10 +255,6 @@
 }
 main > [data-section]:has(+ [data-section] .edge-dome) > section {
 	padding-bottom: calc(var(--ritual-section) + var(--ritual-rise));
-}
-
-@utility bg-glow {
-	background-image: var(--background-image-glow);
 }
 
 /* Grain: the turbulence tile, soft-light over the band so the flat colour
@@ -479,8 +472,8 @@ tarot-carousel[data-track]:not(:defined) tarot-slide {
 
 /* The lightbox: fern backdrop at 92%, linen chrome, round buttons. */
 :root {
-	--tarot-lightbox-backdrop: rgb(46 58 48 / 0.92);
-	--tarot-lightbox-chrome-color: #F6F1EA;
+	--tarot-lightbox-backdrop: color-mix(in srgb, var(--color-brand-primary) 92%, transparent);
+	--tarot-lightbox-chrome-color: var(--color-on-photo);
 	--tarot-lightbox-chrome-size: 2.75rem;
 	--tarot-lightbox-chrome-inset: 1rem;
 	--tarot-lightbox-image-height: calc(100dvh - 8rem);
@@ -489,16 +482,16 @@ tarot-carousel[data-track]:not(:defined) tarot-slide {
 	font-family: var(--sites-font-body-family), sans-serif;
 	font-size: var(--ritual-body-sm);
 	font-variant-numeric: tabular-nums;
-	color: #F6F1EA;
+	color: var(--color-on-photo);
 }
 .tarot-lightbox__close,
 .tarot-lightbox .tarot-button {
-	background: #38463A;
+	background: color-mix(in srgb, var(--color-on-photo) 6%, transparent);
 	border-radius: var(--sites-radius-full);
 }
 .tarot-lightbox__close:hover,
 .tarot-lightbox .tarot-button:hover {
-	background: #44513F;
+	background: color-mix(in srgb, var(--color-on-photo) 12%, transparent);
 }
 
 /* The sheets and the drawer: the scheme's background over the backdrop

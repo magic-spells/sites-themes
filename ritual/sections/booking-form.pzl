@@ -12,7 +12,7 @@
           {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
           <FormFields fields={ form.fields } prefix="book-{ section.id }" columns={ true } />
           <div class="flex flex-wrap items-center gap-space-md">
-            <Submit>{ form.submit_label || t('request_appointment') }</Submit>
+            <Button type="submit">{ form.submit_label || t('request_appointment') }</Button>
             {#if confirm}<p class="text-body-sm text-scheme-meta">{ confirm }</p>{/if}
           </div>
           <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>

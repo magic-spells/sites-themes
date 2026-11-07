@@ -1,4 +1,4 @@
-<!-- The menu, the theme's signature: category tabs as ?category= links (All first), then a group per category, its name in h2 with its note right in Meta, its lines in two columns from 48rem: the name, the duration, a dotted leader, the price, the summary under it and add-ons indented after a ring. Below 48rem each group folds, the first open (theme.ts keeps them all open from 48rem). Each group shows up to twelve. Book a treatment and the phone at the foot. -->
+<!-- The menu, the theme's signature: category tabs as ?category= links (All first), then a group per category, its name in h2 (h3 size) on a hairline with its note right in Meta, its lines in two columns from 48rem, filling each column top to bottom: the name, the duration, a dotted leader, the price, the summary under it and add-ons indented after a ring. Below 48rem each group folds, the first open (theme.ts keeps them all open from 48rem). Each group shows up to twelve. Book a treatment and the phone at the foot. -->
 {#let
   current = request.query.category
   all = content.categories.entries | sort('fields.order') | slice(0, 12)
@@ -24,7 +24,7 @@
         {#let lines = services | where('fields.category.handle', group.handle) | slice(0, 12)}
         {#if lines.length}
           <collapsible-component class="block border-t border-scheme-rule pt-space-md md:border-0 md:pt-0">
-            <h2 class="font-heading text-h2 text-scheme-heading">
+            <h2 class="font-heading text-h3 text-scheme-heading md:border-b md:border-scheme-rule md:pb-space-sm">
               <button class="group flex w-full items-baseline justify-between gap-space-md text-left md:pointer-events-none" type="button">
                 <span>{ group.title }</span>
                 <span class="flex items-center gap-space-sm">
@@ -35,7 +35,7 @@
             </h2>
             <collapsible-content open={ i == 0 }>
               {#if group.fields.note}<p class="pt-space-xs text-body-sm text-scheme-meta md:hidden">{ group.fields.note }</p>{/if}
-              <ul class="grid pt-space-sm { settings.columns == 2 ? 'md:grid-cols-2 md:gap-x-space-2xl' : 'max-w-reading' }">
+              <ul class="pt-space-sm { settings.columns == 2 ? 'md:columns-2 md:gap-x-space-2xl' : 'max-w-reading' }">
                 {#for entry in lines}<ServiceLine entry={ entry } base_path={ settings.base_path } show_summary={ settings.show_summary } show_add_ons={ settings.show_add_ons } />{/for}
               </ul>
             </collapsible-content>

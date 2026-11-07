@@ -1,6 +1,6 @@
 <!-- The journal: the newest post as a wide featured card, then two per row, the topic and date on a Meta line, no reading time. A List and Grid switch (shown once theme.ts runs) swaps the cards for rows with a thumbnail. On a post's page it leaves that post out. -->
 {#let
-  posts = content.posts.entries | sort('fields.date') | reverse | reject('id', page.entry ? page.entry.id : '') | slice(0, Math.min(settings.limit, 12))
+  posts = content.posts.entries | sort('fields.date') | reverse | reject('id', page.entry.id) | slice(0, settings.limit)
   lead = settings.feature_first ? posts | first : null
   rest = lead ? posts | slice(1) : posts
 }

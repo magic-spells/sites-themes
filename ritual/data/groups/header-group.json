@@ -1,17 +1,6 @@
 {
   "sections": [
     {
-      "id": "sg_ticker",
-      "type": "announcement-bar",
-      "preset": "Fern",
-      "settings": {
-        "link": "/gift-cards",
-        "key": "",
-        "color_scheme": "fern"
-      },
-      "blocks": []
-    },
-    {
       "id": "sg_header",
       "type": "header",
       "preset": "Solid",
@@ -19,6 +8,17 @@
         "style": "solid",
         "menu": "main",
         "color_scheme": "linen"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_ticker",
+      "type": "announcement-bar",
+      "preset": "Fern",
+      "settings": {
+        "link": "/gift-cards",
+        "key": "",
+        "color_scheme": "fern"
       },
       "blocks": []
     }

@@ -17,7 +17,7 @@
             <article class="group relative grid gap-space-sm">
               <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-square" shape="cap" width={ 480 } sizes="(min-width: 64rem) 15rem, (min-width: 48rem) 30vw, 60vw" />
               <div class="grid gap-space-2xs">
-                <h3 class="text-body-lg font-semibold">{#if f.link}<a class="after:absolute after:inset-0 hover:underline hover:underline-offset-4" href="{ f.link }" target="_blank" rel="noopener">{ f.brand || entry.title }</a>{:else}{ f.brand || entry.title }{/if}</h3>
+                <h3 class="font-heading text-h4">{#if f.link}<a class="after:absolute after:inset-0 hover:underline hover:underline-offset-4" href="{ f.link }" target="_blank" rel="noopener">{ f.brand || entry.title }</a>{:else}{ f.brand || entry.title }{/if}</h3>
                 {#if f.description}<p class="text-body-sm text-scheme-meta">{ f.description }</p>{/if}
               </div>
             </article>

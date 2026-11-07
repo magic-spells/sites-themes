@@ -1,4 +1,4 @@
-<!-- The wordmark in Gloock left, the main menu and Book right. The menu item that points at the services page opens a dropdown-panel of the categories, each a 3:2 capped thumbnail with its name and line, and "See the full menu". Below 64rem: the wordmark, Book and the menu icon. Over-hero: transparent at the top of a page that opens with a cover hero, solid once it scrolls. While the panel is open one dim lies under the header (theme.ts). -->
+<!-- The wordmark in Gloock left, the main menu centred and Book right. The menu item that points at the services page opens a dropdown-panel of the categories, each a 3:2 capped thumbnail with its name and line, and "See the full menu". Below 64rem: the wordmark, Book and the menu icon. Over-hero: transparent at the top of a page that opens with a cover hero, solid once it scrolls. While the panel is open one dim lies under the header (theme.ts). -->
 {#let
   wordmark = settings.logo_text || site.settings.wordmark || site.name
   categories = content.categories.entries | sort('fields.order') | slice(0, 12)
@@ -7,44 +7,42 @@
 <div class="pointer-events-none fixed inset-0 z-20 bg-backdrop opacity-0 transition-opacity duration-panel data-open:pointer-events-auto data-open:opacity-100" data-page-dim aria-hidden="true"></div>
 <sticky-header class="block" settle-overshoot="0" disabled={ !settings.sticky } data-header-style={ settings.style }>
   <header class="relative isolate border-b border-scheme-rule bg-scheme-background px-gutter text-scheme-foreground transition-colors duration-panel overlaid:border-transparent overlaid:bg-transparent overlaid:text-on-photo">
-    <div class="mx-auto flex min-h-header max-w-column items-center justify-between gap-space-md">
+    <div class="mx-auto flex min-h-header max-w-column items-center justify-between gap-space-md lg:grid lg:grid-cols-header">
       <a class="font-heading text-h4 whitespace-nowrap" href="/">{ wordmark }</a>
-      <div class="flex items-center gap-space-lg">
-        {#if settings.menu.items.length}
-          <nav class="hidden lg:block" aria-label="{ t('main_navigation') }">
-            <ul class="flex items-center text-body font-medium">
-              {#for item in settings.menu.items}
-                {#if settings.show_dropdown && item.href == settings.services_path && categories.length}
-                  <li>
-                    <dropdown-component trigger="both" close-delay="150">
-                      <dropdown-trigger class="flex min-h-header cursor-pointer items-center gap-space-2xs px-space-sm">{ item.label }<span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/angle-down.svg'}</span></dropdown-trigger>
-                      <dropdown-panel class="border-y border-scheme-rule bg-scheme-background px-gutter py-space-xl text-scheme-foreground" wide effect="fade">
-                        <div class="mx-auto grid max-w-column gap-space-lg">
-                          <ul class="grid grid-cols-6 gap-space-md">
-                            {#for entry in categories}
-                              <li><a class="group grid gap-space-xs" href="{ settings.services_path }?category={ entry.handle }">
-                                <Well asset={ entry.fields.image } alt="" ratio="aspect-3/2" shape="cap" width={ 400 } sizes="12rem" zoom={ true } />
-                                <span class="text-body font-semibold group-hover:underline group-hover:underline-offset-4">{ entry.title }</span>
-                                <span class="text-body-sm text-scheme-meta">{ entry.fields.description }</span>
-                              </a></li>
-                            {/for}
-                          </ul>
-                          <a class="justify-self-start text-body-sm font-semibold text-accent underline underline-offset-4 hover:text-scheme-foreground" href="{ settings.services_path }">{ t('full_menu') }</a>
-                        </div>
-                      </dropdown-panel>
-                    </dropdown-component>
-                  </li>
-                {:else}
-                  <li><a class="flex min-h-header items-center px-space-sm underline-offset-8 hover:underline current:underline" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>
-                {/if}
-              {/for}
-            </ul>
-          </nav>
-        {/if}
-        <div class="flex items-center gap-space-xs">
-          {#if settings.show_action && action}<Button action={ true }>{ action }</Button>{/if}
-          <button class="-mr-space-xs flex size-tap items-center justify-center lg:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu"><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/menu.svg'}</span><span class="sr-only">{ t('menu') }</span></button>
-        </div>
+      {#if settings.menu.items.length}
+        <nav class="hidden lg:block" aria-label="{ t('main_navigation') }">
+          <ul class="flex items-center text-body font-medium">
+            {#for item in settings.menu.items}
+              {#if settings.show_dropdown && item.href == settings.services_path && categories.length}
+                <li>
+                  <dropdown-component trigger="both" close-delay="150">
+                    <dropdown-trigger class="flex min-h-header cursor-pointer items-center gap-space-2xs px-space-sm">{ item.label }<span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/angle-down.svg'}</span></dropdown-trigger>
+                    <dropdown-panel class="border-y border-scheme-rule bg-scheme-background px-gutter py-space-xl text-scheme-foreground" wide effect="fade">
+                      <div class="mx-auto grid max-w-column gap-space-lg">
+                        <ul class="grid grid-cols-6 gap-space-md">
+                          {#for entry in categories}
+                            <li><a class="group grid gap-space-xs" href="{ settings.services_path }?category={ entry.handle }">
+                              <Well asset={ entry.fields.image } alt="" ratio="aspect-3/2" shape="cap" width={ 400 } sizes="12rem" zoom={ true } />
+                              <span class="text-body font-semibold group-hover:underline group-hover:underline-offset-4">{ entry.title }</span>
+                              <span class="text-body-sm text-scheme-meta">{ entry.fields.description }</span>
+                            </a></li>
+                          {/for}
+                        </ul>
+                        <a class="justify-self-start text-body-sm font-semibold text-accent underline underline-offset-4 hover:text-scheme-foreground" href="{ settings.services_path }">{ t('full_menu') }</a>
+                      </div>
+                    </dropdown-panel>
+                  </dropdown-component>
+                </li>
+              {:else}
+                <li><a class="flex min-h-header items-center px-space-sm underline-offset-8 hover:underline current:underline" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>
+              {/if}
+            {/for}
+          </ul>
+        </nav>
+      {/if}
+      <div class="flex items-center gap-space-xs lg:col-start-3 lg:justify-self-end">
+        {#if settings.show_action && action}<Button action={ true }>{ action }</Button>{/if}
+        <button class="-mr-space-xs flex size-tap items-center justify-center lg:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu"><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/menu.svg'}</span><span class="sr-only">{ t('menu') }</span></button>
       </div>
     </div>
   </header>

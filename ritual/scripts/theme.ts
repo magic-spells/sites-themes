@@ -98,7 +98,7 @@ for (const notice of document.querySelectorAll<HTMLElement>('[data-notice]')) {
 	const key = notice.getAttribute('data-notice') || notice.id;
 	if (dismissed(key)) continue;
 	notice.hidden = false;
-	for (const button of notice.querySelectorAll('[data-notice-close]')) {
+	for (const button of notice.querySelectorAll('button')) {
 		button.addEventListener('click', () => {
 			remember(key);
 			notice.hidden = true;

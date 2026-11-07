@@ -2,14 +2,12 @@
 {#let
   loc = content.locations.entries | sort('fields.order') | first
   name = site.settings.wordmark || site.name
-  street = loc ? (loc.fields.address | split('\n') | first | split(' ') | slice(1) | join(' ')) : ''
-  line = site.settings.stamp_line || street
   phone = (loc && loc.fields.phone) || site.settings.phone
 }
 <footer class="border-t border-scheme-rule bg-scheme-background px-gutter pt-space-2xl pb-space-lg text-scheme-foreground">
   <div class="mx-auto grid max-w-column gap-space-xl">
     <div class="grid gap-space-xl md:grid-cols-2 lg:grid-cols-4">
-      <Stamp name={ name } line={ line } />
+      <Stamp />
       {#if loc}
         <div class="grid content-start gap-space-sm text-body-sm">
           <address class="not-italic">{ loc.fields.address | newline_to_br }</address>

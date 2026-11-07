@@ -1,7 +1,7 @@
 <!-- The people: 4:5 portal portraits with the name, role and level, specialties and a Book with link. Three across from 64rem, two from 48rem; on phones a row that scrolls with the next portrait peeking in, or a stack. -->
 {#let
   team = content.team.entries | sort('fields.order')
-  people = (settings.source == 'featured' ? team | where('fields.featured') : team) | slice(0, Math.min(settings.limit, 12))
+  people = (settings.source == 'featured' ? team | where('fields.featured') : team) | slice(0, settings.limit)
   row = settings.mobile == 'row'
 }
 <section class="bg-scheme-background py-section md:px-gutter text-scheme-foreground">

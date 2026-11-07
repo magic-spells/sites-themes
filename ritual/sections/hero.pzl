@@ -47,7 +47,7 @@
           {#if settings.show_call && phone}<Button href="tel:{ phone | replace(' ', '') }" tone="secondary">{ t('call_number', { phone: phone }) }</Button>{/if}
         </div>
       </div>
-      {#if layout == 'arch' && settings.image}<div class="w-full max-w-photo justify-self-end"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="(min-width: 64rem) 30rem, 100vw" eager={ true } /></div>{/if}
+      {#if layout == 'arch' && settings.image}<div class="w-full max-w-photo justify-self-end max-lg:order-first"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="(min-width: 64rem) 30rem, 100vw" eager={ true } /></div>{/if}
     </div>
   {/if}
 </section>

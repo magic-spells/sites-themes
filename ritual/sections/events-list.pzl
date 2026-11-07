@@ -1,6 +1,6 @@
 <!-- Workshops and classes in date order. Cards: a 3:2 capped photo, the date and time on a Meta line, the title, the place and price, the host as a small portrait. Rows: the date and time left, the title and its line, a thumbnail right. On an event's page it leaves that event out. Dates only: the workspace removes past events. -->
 {#let
-  events = content.events.entries | sort('fields.date') | reject('id', page.entry ? page.entry.id : '') | slice(0, Math.min(settings.limit, 12))
+  events = content.events.entries | sort('fields.date') | reject('id', page.entry.id) | slice(0, settings.limit)
   rows = settings.layout == 'rows'
 }
 {#if events.length}

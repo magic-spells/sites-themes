@@ -8,7 +8,7 @@
       "tagline": "A day spa and salon on Alder Street.",
       "currency_symbol": "$",
       "reveal": true,
-      "ticker_lines": "Open Sundays 10–4\nGift cards for the holidays\nNew: dermaplaning with June",
+      "ticker_lines": "Open Sundays 10–4\nPackages for regulars\nNew: dermaplaning with June",
       "action_label": "Book",
       "booking": "form",
       "booking_url": "",
@@ -704,7 +704,6 @@
           "required": false,
           "options": [
             "Appointment",
-            "Gift cards",
             "Events",
             "Press",
             "Other"
@@ -2698,7 +2697,7 @@
       "id": "pg_terms",
       "template": "page",
       "title": "Terms",
-      "content": "<p>Prices are in US dollars and include the time on the menu. Gift cards are sent by email and do not expire.</p><h2>Appointments</h2><p>Cancel or move an appointment up to a day ahead at no charge. Inside a day we charge half the treatment.</p>"
+      "content": "<p>Prices are in US dollars and include the time on the menu.</p><h2>Appointments</h2><p>Cancel or move an appointment up to a day ahead at no charge. Inside a day we charge half the treatment.</p>"
     },
     "/services/swedish-massage": {
       "id": "pg_svc_swedish_massage",

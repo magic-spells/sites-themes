@@ -45,14 +45,6 @@
           }
         },
         {
-          "id": "s_policies_b4",
-          "type": "item",
-          "settings": {
-            "question": "Gift cards",
-            "answer": "<p>Gift cards do not expire and cannot be exchanged for cash. A lost card can be sent again.</p>"
-          }
-        },
-        {
           "id": "s_policies_b5",
           "type": "item",
           "settings": {

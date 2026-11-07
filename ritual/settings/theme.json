@@ -24,7 +24,7 @@
     {
       "name": "House",
       "settings": [
-        { "type": "textarea", "id": "ticker_lines", "label": "Ticker lines", "default": "Open Sundays 10–4\nGift cards for the holidays\nNew: dermaplaning with June", "info": "One phrase per line, read by the announcement bar." },
+        { "type": "textarea", "id": "ticker_lines", "label": "Ticker lines", "default": "Open Sundays 10–4\nPackages for regulars\nNew: dermaplaning with June", "info": "One phrase per line, read by the announcement bar." },
         { "type": "text", "id": "action_label", "label": "Primary action label", "default": "Book", "info": "Book, or Request an appointment. Every primary button carries it." },
         { "type": "select", "id": "booking", "label": "Booking", "default": "form", "options": [
           { "value": "form", "label": "Request form (the booking panel)" },

@@ -64,6 +64,45 @@
       ]
     },
     {
+      "id": "s_rooms",
+      "type": "image-with-text",
+      "preset": "Capsules",
+      "settings": {
+        "layout": "capsules",
+        "heading": "The *rooms*",
+        "body": "<p>Each treatment room has a door that closes, a heated table and a window onto the garden. Nobody walks through on the way to somewhere else.</p><p>Between appointments we air the room, change the linen and leave it empty for ten minutes, so it is quiet again when you come in.</p>",
+        "link_label": "Book a room",
+        "link_href": "/book",
+        "color_scheme": "sand"
+      },
+      "blocks": [
+        {
+          "id": "s_rooms_b1",
+          "type": "media",
+          "settings": {
+            "image": "as_4x5_clay",
+            "image_alt": "A treatment room with the blinds half down"
+          }
+        },
+        {
+          "id": "s_rooms_b2",
+          "type": "media",
+          "settings": {
+            "image": "as_4x5_sand",
+            "image_alt": "Linen folded on the heated table"
+          }
+        },
+        {
+          "id": "s_rooms_b3",
+          "type": "media",
+          "settings": {
+            "image": "as_4x5_sea",
+            "image_alt": "The garden window"
+          }
+        }
+      ]
+    },
+    {
       "id": "s_team",
       "type": "team-grid",
       "preset": "Default",

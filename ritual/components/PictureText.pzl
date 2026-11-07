@@ -1,8 +1,18 @@
 <!-- component: PictureText -->
-<!-- A picture beside copy, for image-with-text and story: a 3:2 rounded photo (turned 3° with tilt) on the column's edge, and the heading with its accent word, the body and a link in the seven-part column. s is the section's settings; image_side sets the side. -->
+<!-- A picture beside copy, for image-with-text and story: a 3:2 rounded photo (turned 3° with tilt) in the five-part column, and the heading with its accent word, the body and a link in the seven-part column. With capsules (image-with-text's layout) the picture takes the seven parts: three 3:5 capsules, the middle one lower, each a photo or a muted looping video over it. s is the section's settings, media its blocks; image_side sets the side. -->
+{#let trio = s.layout == 'capsules'}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column items-center gap-space-xl md:gap-space-3xl { s.image_side == 'right' ? 'md:grid-cols-wide-narrow' : 'md:grid-cols-narrow-wide' }">
-    <div class="{ s.image_side == 'right' ? 'md:order-last' : '' }"><Well asset={ s.image } alt={ s.image_alt } ratio="aspect-3/2" shape="round" width={ 1200 } sizes="(min-width: 48rem) 40vw, 100vw" tilt={ s.tilt } /></div>
+  <div class="mx-auto grid max-w-column items-center gap-space-xl md:gap-space-3xl { (s.image_side == 'right') != trio ? 'md:grid-cols-wide-narrow' : 'md:grid-cols-narrow-wide' }">
+    <div class="{ s.image_side == 'right' ? 'md:order-last' : '' } { trio ? 'grid grid-cols-3 items-start gap-space-md' : '' }">
+      {#if trio}
+        {#for block in media | slice(0, 3), i}
+          {#let b = block.settings}
+          <div class="{ i == 1 ? 'mt-space-lg md:mt-space-xl lg:mt-space-2xl' : '' }" data-block={ block.editor_id }><Well asset={ b.image } alt={ b.image_alt } ratio="aspect-capsule" shape="capsule" width={ 640 } sizes="(min-width: 48rem) 18vw, 30vw">{#if b.video}<video class="absolute inset-0 size-full object-cover" src="{ b.video.url }" poster="{ image_url(b.image, 640) }" autoplay muted loop playsinline aria-hidden="true"></video>{/if}</Well></div>
+        {/for}
+      {:else}
+        <Well asset={ s.image } alt={ s.image_alt } ratio="aspect-3/2" shape="round" width={ 1200 } sizes="(min-width: 48rem) 40vw, 100vw" tilt={ s.tilt } />
+      {/if}
+    </div>
     <div class="grid gap-space-md">
       <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ s.heading } /></h2>
       {#if s.body}<div class="sites-prose text-scheme-muted">{ s.body }</div>{/if}

@@ -1,14 +1,18 @@
-<!-- A photo beside copy: the heading with its accent word, the body and a link (components/PictureText.pzl). -->
-<PictureText s={ settings } />
+<!-- A photo, or three capsules, beside copy: the heading with its accent word, the body and a link (components/PictureText.pzl). -->
+<PictureText s={ settings } media={ blocks } />
 
 <schema>
 {
   "name": "Image with text",
-  "description": "A photo beside a heading, a few lines and a link.",
+  "description": "A photo, or three tall capsules (photos or short videos), beside a heading, a few lines and a link.",
   "kind": "Content",
   "icon": "image",
   "settings": [
-    { "type": "image", "id": "image", "label": "Image", "info": "3:2." },
+    { "type": "select", "id": "layout", "label": "Layout", "default": "single", "options": [
+      { "value": "single", "label": "One photo" },
+      { "value": "capsules", "label": "Three capsules" }
+    ], "info": "Three capsules uses the Media blocks." },
+    { "type": "image", "id": "image", "label": "Image", "info": "One photo only; 3:2." },
     { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "" },
     { "type": "select", "id": "image_side", "label": "Image", "default": "left", "options": [
       { "value": "left", "label": "Left" },
@@ -21,8 +25,17 @@
     { "type": "url", "id": "link_href", "label": "Link", "default": "" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
   ],
+  "blocks": [
+    { "type": "media", "name": "Media", "settings": [
+      { "type": "image", "id": "image", "label": "Image", "info": "3:5 portrait crops best. With a video it is the poster." },
+      { "type": "text", "id": "image_alt", "label": "Alt text", "default": "" },
+      { "type": "video", "id": "video", "label": "Video", "info": "Optional: a short clip that plays muted on a loop." }
+    ] }
+  ],
+  "max_blocks": 3,
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "linen" } }
+    { "name": "Default", "settings": { "layout": "single", "color_scheme": "linen" } },
+    { "name": "Capsules", "settings": { "layout": "capsules", "color_scheme": "linen" } }
   ]
 }
 </schema>

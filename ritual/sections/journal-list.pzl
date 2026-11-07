@@ -7,14 +7,13 @@
 {#if posts.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-view={ settings.view }>
   <div class="mx-auto max-w-column">
-    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href }>
-      {#if settings.show_switch}
-        <div class="flex gap-space-2xs rounded-full border border-scheme-rule p-space-2xs" data-view-switch hidden>
-          <button class="flex size-tap items-center justify-center rounded-full current:bg-scheme-surface-2" type="button" data-view-set="grid" aria-pressed={ settings.view == 'grid' ? 'true' : 'false' }><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/grid.svg'}</span><span class="sr-only">{ t('view_grid') }</span></button>
-          <button class="flex size-tap items-center justify-center rounded-full current:bg-scheme-surface-2" type="button" data-view-set="list" aria-pressed={ settings.view == 'list' ? 'true' : 'false' }><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/list.svg'}</span><span class="sr-only">{ t('view_list') }</span></button>
-        </div>
-      {/if}
-    </SectionHead>
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } />
+    {#if settings.show_switch}
+      <div class="mb-space-md ms-auto flex w-fit gap-space-2xs rounded-full border border-scheme-rule p-space-2xs" data-view-switch hidden>
+        <button class="flex size-tap items-center justify-center rounded-full current:bg-scheme-surface-2" type="button" data-view-set="grid" aria-pressed={ settings.view == 'grid' ? 'true' : 'false' }><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/grid.svg'}</span><span class="sr-only">{ t('view_grid') }</span></button>
+        <button class="flex size-tap items-center justify-center rounded-full current:bg-scheme-surface-2" type="button" data-view-set="list" aria-pressed={ settings.view == 'list' ? 'true' : 'false' }><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/list.svg'}</span><span class="sr-only">{ t('view_list') }</span></button>
+      </div>
+    {/if}
     {#if lead}<div class="mb-space-2xl view-list:mb-space-md"><PostCard entry={ lead } base_path={ settings.base_path } featured={ true } /></div>{/if}
     <ul class="grid gap-x-space-md gap-y-space-xl md:grid-cols-2 view-list:gap-y-space-md view-list:md:grid-cols-1">
       {#for entry in rest}<li><PostCard entry={ entry } base_path={ settings.base_path } /></li>{/for}

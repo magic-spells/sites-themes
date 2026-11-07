@@ -7,7 +7,7 @@
   <div class="mx-auto max-w-column px-gutter md:px-0">
     <SectionHead heading={ settings.heading } text={ settings.text } />
   </div>
-  <ul class="mx-auto flex max-w-column snap-x snap-mandatory scroll-px-gutter items-start gap-space-md overflow-x-auto px-gutter md:px-0 md:grid md:snap-none md:overflow-visible { settings.columns == 2 ? 'md:grid-cols-2' : 'md:grid-cols-3' }">
+  <ul class="mx-auto flex max-w-column snap-x snap-mandatory scroll-px-gutter gap-space-md overflow-x-auto px-gutter md:px-0 md:grid md:snap-none md:overflow-visible { settings.columns == 2 ? 'md:grid-cols-2' : 'md:grid-cols-3' }">
     {#for entry in picked}<li class="w-4/5 shrink-0 snap-start md:w-auto"><PackageCard entry={ entry } /></li>{/for}
   </ul>
 </section>

@@ -3,7 +3,7 @@
 {#if heading}
 <div class="mb-space-xl flex flex-wrap items-end gap-x-space-lg gap-y-space-sm { centred ? 'justify-center text-center' : 'justify-between' }">
   <div class="grid max-w-reading gap-space-xs">
-    {#if heading}<h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ heading } /></h2>{/if}
+    <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ heading } /></h2>
     {#if text}<p class="text-body text-pretty text-scheme-muted">{ text }</p>{/if}
     {#if link_label && link_href}<a class="mt-space-2xs justify-self-start text-body-sm font-semibold text-accent underline underline-offset-4 hover:text-scheme-foreground" href="{ link_href }">{ link_label }</a>{/if}
   </div>

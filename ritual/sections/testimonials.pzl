@@ -1,4 +1,4 @@
-<!-- What people say. Carousel: a tarot one-up on fern under a centred head, the quote centred in Gloock with its accent word, the name and the treatment under it, page dots below; from 64rem round arrows at the stage's sides show on hover or keyboard focus. Portraits: three across from 48rem, each a small 4:5 portal portrait, the quote in Body large and one Meta line with the name and the treatment. -->
+<!-- What people say. Carousel: a tarot one-up on fern under a centred head, the quote centred in Gloock, the name and the treatment under it, page dots below; from 64rem round arrows at the stage's sides show on hover or keyboard focus. Portraits: three across from 48rem, each a small 4:5 portal portrait, the quote in Body large and one Meta line with the name and the treatment. -->
 {#let
   id = 'quotes-' + section.id
   all = content.testimonials.entries | sort('fields.order')
@@ -16,7 +16,7 @@
           <li class="grid max-w-quote content-start gap-space-sm { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
             {#if f.image}<span class="block w-portrait"><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-portrait" shape="portal" width={ 240 } sizes="6rem" /></span>{/if}
             <figure class="grid gap-space-xs">
-              <blockquote class="text-body-lg text-pretty"><Accent text={ '“' + f.quote + '”' } /></blockquote>
+              <blockquote class="text-body-lg text-pretty">“{ f.quote }”</blockquote>
               <figcaption class="text-body-sm text-scheme-meta">{ f.name }{#if f.line || f.service} · { f.line || f.service.title }{/if}</figcaption>
             </figure>
           </li>
@@ -32,13 +32,13 @@
               {#let f = entry.fields}
               <tarot-slide>
                 <figure class="mx-auto grid max-w-reading justify-items-center gap-space-md pt-space-lg text-center">
-                  <blockquote class="font-heading text-h2 text-balance"><Accent text={ '“' + f.quote + '”' } /></blockquote>
+                  <blockquote class="font-heading text-h2 text-balance">“{ f.quote }”</blockquote>
                   <figcaption class="text-body-sm"><span class="font-semibold">{ f.name }</span>{#if f.line || f.service} <span class="text-scheme-meta">· { f.line || f.service.title }</span>{/if}</figcaption>
                 </figure>
               </tarot-slide>
             {/for}
           </tarot-track></tarot-viewport>
-          {#if quotes.length > 1}<Arrows wrap="pointer-events-none absolute inset-0 hidden items-center justify-between opacity-0 transition-opacity duration-fast group-hover:opacity-100 has-focus-visible:opacity-100 lg:flex" />{/if}
+          {#if quotes.length > 1}<Arrows wrap="pointer-events-none absolute *:pointer-events-auto inset-0 hidden items-center justify-between opacity-0 transition-opacity duration-fast group-hover:opacity-100 has-focus-visible:opacity-100 lg:flex" />{/if}
         </div>
       </tarot-carousel>
     {/if}
@@ -57,7 +57,7 @@
       { "value": "carousel", "label": "Carousel" },
       { "value": "portraits", "label": "Portraits" }
     ] },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "What people *say*", "info": "Wrap one word in asterisks to set it in the accent. A quote may mark its own word the same way." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What people say" },
     { "type": "select", "id": "source", "label": "Testimonials", "default": "all", "options": [
       { "value": "all", "label": "All" },
       { "value": "featured", "label": "Featured" }

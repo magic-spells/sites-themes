@@ -83,6 +83,39 @@
       "blocks": []
     },
     {
+      "id": "s_social",
+      "type": "social",
+      "preset": "Split",
+      "settings": {
+        "layout": "split",
+        "text": "New work, the rooms and the odd quiet Sunday.",
+        "color_scheme": "linen"
+      },
+      "blocks": [
+        {
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_clay",
+            "image_alt": "The front room in the afternoon"
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_sand",
+            "image_alt": "Towels folded on the shelf"
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_sea",
+            "image_alt": "The studio before a class"
+          }
+        }
+      ]
+    },
+    {
       "id": "s_quotes",
       "type": "testimonials",
       "preset": "Carousel",

@@ -2,10 +2,11 @@
 
 ## 0.1.0
 
-- 40 sections: the header with the Services panel, the ticker, the footer colophon with the
+- 41 sections: the header with the Services panel, the ticker, the footer colophon with the
   stamp, the mobile menu, the booking panel and the cookie notice; the service menu with its
   dotted lines, service cards and pages, the team, packages and gift cards; hero, intro, first
-  visit, testimonials, gallery, locations, events, journal, policies, FAQ and form sections.
+  visit, testimonials, gallery, social (square tiles the workspace uploads, a strip or beside
+  Follow), locations, events, journal, policies, FAQ and form sections.
 - Day spa front page; service, person, album, event, location and post pages; services, team,
   gallery, packages, gift cards, events, locations, about, journal, book, contact, policies and
   page templates; the 404, password and maintenance pages.

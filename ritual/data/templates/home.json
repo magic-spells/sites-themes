@@ -152,6 +152,59 @@
         "edge": "dome"
       },
       "blocks": []
+    },
+    {
+      "id": "s_social",
+      "type": "social",
+      "preset": "Strip",
+      "settings": {
+        "layout": "strip",
+        "color_scheme": "linen"
+      },
+      "blocks": [
+        {
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_clay",
+            "image_alt": "The front room in the afternoon"
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_sand",
+            "image_alt": "Towels folded on the shelf"
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_sea",
+            "image_alt": "The studio before a class"
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_sand",
+            "image_alt": "A gel manicure in a pale clay"
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_clay",
+            "image_alt": "The tea tray in the front room"
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_sea",
+            "image_alt": "The stairs to the studio"
+          }
+        }
+      ]
     }
   ]
 }

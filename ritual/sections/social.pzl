@@ -1,0 +1,64 @@
+<!-- The workspace's social feed, as photos it uploads (no fetch, no API): square tiles with rounded corners, each with the Instagram glyph in its corner, linking to its post or to the profile. Strip: the head with the handle as its button, six tiles across from 64rem, a row that scrolls and bleeds right below. Split: three tiles in a row beside the heading, the handle, a line and Follow. -->
+{#let
+  split = settings.layout == 'split'
+  tiles = blocks | slice(0, split ? 3 : 6)
+}
+{#if tiles.length}
+<section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter">
+  <div class="mx-auto max-w-column { split ? 'grid items-center gap-space-xl px-gutter md:grid-cols-text-picture md:gap-space-3xl md:px-0' : '' }">
+    {#if !split}<div class="px-gutter md:px-0"><SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.handle } link_href={ settings.url } /></div>{/if}
+    <ul class="flex gap-space-sm { split ? '' : 'snap-x snap-mandatory scroll-px-gutter overflow-x-auto px-gutter md:gap-space-md md:px-0 lg:grid lg:grid-cols-6' }">
+      {#for block in tiles}
+        {#let b = block.settings}
+        <li class="shrink-0 snap-start { split ? 'flex-1' : 'w-2/5 md:w-1/4 lg:w-auto' }" data-block={ block.editor_id }>
+          <a class="group relative block aspect-square overflow-hidden rounded-md bg-scheme-surface-2" href="{ b.link || settings.url }" target="_blank" rel="noopener">
+            {#if b.image}<img class="size-full object-cover transition-transform duration-panel ease-out-soft group-hover:scale-105" src="{ image_url(b.image, 640) }" srcset="{ image_srcset(b.image, [320, 640, 960]) }" sizes="(min-width: 64rem) 13rem, 40vw" alt="{ b.image_alt || t('social_post') }" loading="lazy" width={ b.image.width } height={ b.image.height } />{/if}
+            <span class="sites-icon absolute end-space-sm bottom-space-sm size-icon text-on-photo" aria-hidden="true">{#svg 'icons/instagram.svg'}</span>
+          </a>
+        </li>
+      {/for}
+    </ul>
+    {#if split}
+      <div class="grid justify-items-start gap-space-sm">
+        <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ settings.heading } /></h2>
+        {#if settings.handle}<a class="text-body font-semibold text-accent underline underline-offset-4 hover:text-scheme-foreground" href="{ settings.url }" target="_blank" rel="noopener">{ settings.handle }</a>{/if}
+        {#if settings.text}<p class="text-body text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+        <div class="pt-space-xs"><Button href={ settings.url } external={ true }>{ settings.button_label }</Button></div>
+      </div>
+    {/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Social",
+  "description": "Photos from the workspace's social profile, a strip of six or three beside a Follow button.",
+  "kind": "Gallery",
+  "icon": "camera",
+  "settings": [
+    { "type": "select", "id": "layout", "label": "Layout", "default": "strip", "options": [
+      { "value": "strip", "label": "Strip" },
+      { "value": "split", "label": "Split" }
+    ], "info": "Strip: six tiles under the heading. Split: three tiles beside the heading and Follow." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Follow *along*", "info": "Wrap one word in asterisks to set it in the accent." },
+    { "type": "text", "id": "handle", "label": "Handle", "default": "@juniperhouse", "info": "The tiles are photos you upload, each linking to its post: a live feed would need the engine to fetch it, which sections cannot." },
+    { "type": "url", "id": "url", "label": "Profile link", "default": "https://www.instagram.com/juniperhouse" },
+    { "type": "text", "id": "text", "label": "Text", "default": "" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Follow", "info": "Split only." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "sand" }
+  ],
+  "blocks": [
+    { "type": "tile", "name": "Tile", "settings": [
+      { "type": "image", "id": "image", "label": "Image", "info": "Square crops best." },
+      { "type": "text", "id": "image_alt", "label": "Alt text", "default": "" },
+      { "type": "url", "id": "link", "label": "Post link", "default": "", "info": "Leave empty to link to the profile." }
+    ] }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    { "name": "Strip", "settings": { "layout": "strip", "color_scheme": "sand" } },
+    { "name": "Split", "settings": { "layout": "split", "text": "New work, the rooms and the odd quiet Sunday.", "color_scheme": "sand" } }
+  ]
+}
+</schema>

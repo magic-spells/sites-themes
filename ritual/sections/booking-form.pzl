@@ -17,7 +17,7 @@
           <p class="text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
         {:else}
           {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
-          <FormFields fields={ form.fields } prefix="book-{ section.id }" columns={ true } />
+          <FormFields fields={ form.fields } prefix="book-{ section.id }" columns={ !loc } />
           <div class="flex flex-wrap items-center gap-space-md">
             <Button type="submit">{ form.submit_label || t('request_appointment') }</Button>
             {#if confirm}<p class="text-body-sm text-scheme-meta">{ confirm }</p>{/if}

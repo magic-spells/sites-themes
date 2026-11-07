@@ -7,7 +7,6 @@
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "heading": "Memberships and *series*",
         "text": "For people who would rather not think about booking.",
         "color_scheme": "sand"
       },

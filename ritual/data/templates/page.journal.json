@@ -7,7 +7,6 @@
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "heading": "Notes from the *house*",
         "color_scheme": "sand"
       },
       "blocks": []

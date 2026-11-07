@@ -41,8 +41,8 @@
       { "value": "stack", "label": "Staggered tiles" },
       { "value": "list", "label": "List" }
     ] },
-    { "type": "text", "id": "ring", "label": "Ring", "default": "Your first visit", "info": "Sits inside the ring: two or three words, no numbers." },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Nothing to *prepare*", "info": "Wrap one word in asterisks to set it in the accent." },
+    { "type": "text", "id": "ring", "label": "Ring", "default": "New here", "info": "Sits inside the ring: two or three words, no numbers." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Your first *visit*", "info": "Wrap one word in asterisks to set it in the accent." },
     { "type": "textarea", "id": "text", "label": "Text", "default": "Your first facial starts with a consultation with June. Everything else, we will walk you through." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "sand" }
   ],

@@ -7,7 +7,6 @@
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "heading": "The *menu*",
         "text": "Every treatment, its time and its price. Prices marked from depend on length and thickness.",
         "color_scheme": "sand"
       },

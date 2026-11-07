@@ -15,7 +15,7 @@
       { "value": "right", "label": "Right" }
     ] },
     { "type": "checkbox", "id": "tilt", "label": "Tilt the photo", "default": true },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Started in one *room*", "info": "Wrap one word in asterisks to set it in the accent." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Our *story*", "info": "Wrap one word in asterisks to set it in the accent." },
     { "type": "richtext", "id": "body", "label": "Body", "default": "<p>Juniper House opened on Alder Street with one massage table and a kettle. The rooms came one at a time, each when someone we trusted wanted one.</p><p>We still book every appointment ourselves, by text, so the hour is yours from the moment you ask.</p>" },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "" },
     { "type": "url", "id": "link_href", "label": "Link", "default": "" },

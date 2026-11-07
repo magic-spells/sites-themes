@@ -1,5 +1,5 @@
 {
-  "label": "Visit",
+  "label": "Locations",
   "description": "Every location, and questions about getting here.",
   "sections": [
     {
@@ -7,7 +7,6 @@
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "heading": "Find the *house*",
         "color_scheme": "sand"
       },
       "blocks": []

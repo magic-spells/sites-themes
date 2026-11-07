@@ -7,7 +7,6 @@
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "heading": "The small *print*",
         "color_scheme": "sand"
       },
       "blocks": []

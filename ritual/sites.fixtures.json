@@ -2676,7 +2676,7 @@
     "/locations": {
       "id": "pg_locations",
       "template": "page.locations",
-      "title": "Visit"
+      "title": "Locations"
     },
     "/about": {
       "id": "pg_about",

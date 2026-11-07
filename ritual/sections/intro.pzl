@@ -30,7 +30,7 @@
       { "value": "portal", "label": "Beside an arched photo" },
       { "value": "collage", "label": "Collage" }
     ] },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "A slow *hour* in the middle of a fast week.", "info": "Wrap one word in asterisks to set it in the accent." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Welcome to Juniper *House*", "info": "Wrap one word in asterisks to set it in the accent." },
     { "type": "textarea", "id": "text", "label": "Text", "default": "Six rooms, six people and nothing on a timer. Come in early, leave when you are ready." },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "" },
     { "type": "url", "id": "link_href", "label": "Link", "default": "/about" },

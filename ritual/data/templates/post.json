@@ -16,7 +16,7 @@
       "type": "journal-list",
       "preset": "More",
       "settings": {
-        "heading": "More from the *journal*",
+        "heading": "More *posts*",
         "feature_first": false,
         "show_switch": false,
         "limit": 2,

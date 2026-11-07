@@ -7,7 +7,6 @@
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "heading": "The work and the *rooms*",
         "color_scheme": "sand"
       },
       "blocks": []
@@ -29,7 +28,7 @@
       "settings": {
         "layout": "collage",
         "gallery": "the-rooms",
-        "heading": "Around the *house*",
+        "heading": "Our *rooms*",
         "link_label": "",
         "color_scheme": "linen"
       },

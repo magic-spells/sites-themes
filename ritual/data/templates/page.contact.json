@@ -7,7 +7,6 @@
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "heading": "Say *hello*",
         "color_scheme": "sand"
       },
       "blocks": []

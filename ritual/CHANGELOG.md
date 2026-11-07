@@ -7,6 +7,7 @@
 - Team cards take capsule portraits.
 - First-visit tiles drop the small ring; the big ring with its words stays.
 - Image with text gains Capsules: three tall capsules beside the text, the middle one lower, each a photo or a short muted video.
+- The gallery on Home is a bundle of overlapping photos in mixed shapes; the strip and capsules stay as layouts.
 - The gallery strip shows whole slides from 48rem, two then three across, and runs edge to edge on a phone.
 - On a domed band the grain covers the dome too, so the curve and the band are one colour.
 - No gift cards section or page: the theme sells nothing.

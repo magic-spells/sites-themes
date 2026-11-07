@@ -116,8 +116,9 @@
     {
       "id": "s_strip",
       "type": "gallery-strip",
-      "preset": "Strip",
+      "preset": "Bundle",
       "settings": {
+        "layout": "bundle",
         "gallery": "home-strip",
         "color_scheme": "linen"
       },

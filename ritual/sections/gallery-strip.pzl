@@ -1,61 +1,68 @@
-<!-- A strip of photographs: a tarot track of equal-width slides cropped to one ratio, each rounded at every corner, and the progress bar and round arrows under it. On a phone the track runs edge to edge, the first slide inset by the gutter and the next one cut at the right edge; from 48rem whole slides fill the column, two across, then three from 64rem. Collage: the first three photos overlap across the column at every width, a 3:2 landscape, a square hanging below it and an upright 4:5 portal; the grid lines and ratios are tokens in styles/theme.css. Capsules: five tall rounded photos in a row, every second one lower, cut at the right edge on a phone. Each photo opens the lightbox. -->
+<!-- A strip of photographs: a tarot track of equal-width slides cropped to one ratio, each rounded at every corner, and the progress bar and round arrows under it. On a phone the track runs edge to edge, the first slide inset by the gutter and the next one cut at the right edge; from 48rem whole slides fill the column, two across, then three from 64rem. Bundle: the first five photos overlap in a pile of mixed shapes, back to front an arch, a soft rectangle turned 3°, a stadium, a circle and a tall capsule, each placed by fractions of its stage (the Figma board's numbers at 375, 768 and 1440); the head sits above it, and beside it from 64rem with the pile on the left. Capsules: five tall rounded photos in a row, every second one lower, cut at the right edge on a phone. Each photo opens the lightbox. -->
 {#let
   items = settings.gallery ? settings.gallery.items | slice(0, 12) : []
   id = 'strip-' + section.id
   strip = settings.layout == 'strip'
+  bundle = settings.layout == 'bundle'
   ratio = settings.slide_ratio == '1:1' ? 'aspect-square' : (settings.slide_ratio == '3:2' ? 'aspect-3/2' : 'aspect-portrait')
-  collage = settings.layout == 'collage'
+  wells = [
+    { at: 'bottom-0 left-0 w-9/16 md:w-12/25 lg:w-7/16', ratio: 'aspect-portrait', shape: 'portal' },
+    { at: 'top-3/10 left-12/25 w-1/2 rotate-3 md:top-7/20 md:left-7/12 md:w-2/5 lg:left-3/5 lg:w-3/8', ratio: 'aspect-3/2', shape: 'round' },
+    { at: 'bottom-0 left-11/25 w-9/16 md:left-3/8 md:w-5/11 lg:left-8/25 lg:w-5/12', ratio: 'aspect-4/3', shape: 'capsule' },
+    { at: 'top-1/16 left-2/3 w-3/10 md:top-1/12 md:left-8/15 md:w-1/4 lg:left-13/25 lg:w-3/13', ratio: 'aspect-square', shape: 'capsule' },
+    { at: 'top-0 left-7/25 w-3/8 md:left-3/11 md:w-7/24 lg:left-9/32 lg:w-3/11', ratio: 'aspect-capsule', shape: 'capsule' }
+  ]
   options = { lightbox: true, progressBar: strip ? { selector: '#bar-' + id } : false, slidesPerView: 1.2, gap: '1rem', paddingLeft: '1rem', navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { lightbox: true, slidesPerView: 2, gap: '1.5rem', paddingLeft: 0, navigation: { showButtons: strip, showPagination: false } }, '1024': { lightbox: true, slidesPerView: 3, gap: '1.5rem', paddingLeft: 0, navigation: { showButtons: strip, showPagination: false } } } }
 }
 {#if items.length}
 <section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter">
-  <tarot-carousel class="mx-auto block max-w-column" id={ id } data-track>
-    <script type="application/json" data-tarot-options>{ options | json }</script>
-    <div class="px-gutter md:px-0"><SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } /></div>
-    <tarot-viewport class={ strip ? null : 'sr-only' }>
-      <tarot-track>
-        {#for item in items, i}
-          <tarot-slide>
-            <a class="group block cursor-zoom-in" href="{ image_url(item.asset, 2560) }" data-tarot-lightbox aria-label="{ t('open_photo', { index: i + 1 }) }">
-              <span class="relative block overflow-hidden rounded-cap bg-scheme-surface-2 { ratio }"><img class="absolute inset-0 size-full object-cover" src="{ image_url(item.asset, 1024) }" srcset="{ image_srcset(item.asset, [480, 768, 1024]) }" sizes="(min-width: 64rem) 27rem, (min-width: 48rem) 45vw, 80vw" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } /></span>
-            </a>
-            {#if item.caption}<p class="mt-space-xs text-body-sm text-scheme-meta" data-caption data-tarot-lightbox-fade>{ item.caption }</p>{/if}
-          </tarot-slide>
+  <div class="mx-auto max-w-column { bundle ? 'lg:flex lg:flex-row-reverse lg:items-center lg:gap-space-3xl' : '' }">
+    <tarot-carousel class="block lg:flex-1" id={ id } data-track>
+      <script type="application/json" data-tarot-options>{ options | json }</script>
+      <div class="px-gutter md:px-0"><SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } beside={ bundle } /></div>
+      <tarot-viewport class={ strip ? null : 'sr-only' }>
+        <tarot-track>
+          {#for item in items, i}
+            <tarot-slide>
+              <a class="group block cursor-zoom-in" href="{ image_url(item.asset, 2560) }" data-tarot-lightbox aria-label="{ t('open_photo', { index: i + 1 }) }">
+                <span class="relative block overflow-hidden rounded-cap bg-scheme-surface-2 { ratio }"><img class="absolute inset-0 size-full object-cover" src="{ image_url(item.asset, 1024) }" srcset="{ image_srcset(item.asset, [480, 768, 1024]) }" sizes="(min-width: 64rem) 27rem, (min-width: 48rem) 45vw, 80vw" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } /></span>
+              </a>
+              {#if item.caption}<p class="mt-space-xs text-body-sm text-scheme-meta" data-caption data-tarot-lightbox-fade>{ item.caption }</p>{/if}
+            </tarot-slide>
+          {/for}
+        </tarot-track>
+      </tarot-viewport>
+      {#if strip}<div class="px-gutter md:px-0"><Arrows bar="bar-{ id }" /></div>{/if}
+    </tarot-carousel>
+    {#if bundle}
+      <ul class="relative mx-gutter aspect-343/400 md:mx-auto md:w-6/7 md:aspect-616/492 lg:mx-0 lg:w-8/11 lg:shrink-0 lg:aspect-960/592" aria-hidden="true">
+        {#for item in items | slice(0, 5), i}
+          <li class="absolute { wells[i].at }"><button class="group block w-full cursor-zoom-in" type="button" tabindex="-1" data-lightbox-open={ id } data-index={ i }><Well asset={ item.asset } alt="" ratio={ wells[i].ratio } shape={ wells[i].shape } width={ 800 } sizes="(min-width: 64rem) 30vw, 55vw" zoom={ true } /></button></li>
         {/for}
-      </tarot-track>
-    </tarot-viewport>
-    {#if strip}<div class="px-gutter md:px-0"><Arrows bar="bar-{ id }" /></div>{/if}
-  </tarot-carousel>
-  {#if collage}
-    <ul class="mx-gutter grid aspect-collage grid-cols-collage grid-rows-collage md:mx-auto md:max-w-column md:aspect-collage-wide md:grid-cols-collage-wide md:grid-rows-collage-wide" aria-hidden="true">
-      {#for item in items | slice(0, 3), i}
-        <li class="min-h-0 self-start { i == 0 ? 'col-start-1 col-end-3 row-start-1 row-end-4' : (i == 1 ? 'col-start-1 col-end-2 row-start-3 row-end-4 md:col-start-2 md:col-end-5' : 'col-start-2 col-end-3 row-start-2 row-end-4 md:col-start-4 md:col-end-6') }">
-          <button class="group block w-full cursor-zoom-in" type="button" tabindex="-1" data-lightbox-open={ id } data-index={ i }><Well asset={ item.asset } alt="" ratio={ i == 0 ? 'aspect-3/2' : (i == 1 ? 'aspect-square' : 'aspect-portrait') } shape={ i == 0 ? 'round' : (i == 1 ? 'square' : 'portal') } width={ i == 0 ? 1200 : 800 } sizes="(min-width: 48rem) 40vw, 60vw" zoom={ true } /></button>
-        </li>
-      {/for}
-    </ul>
-  {:else if !strip}
-    <ul class="flex items-start gap-space-sm overflow-hidden ps-gutter md:mx-auto md:max-w-column md:gap-space-lg md:ps-0" aria-hidden="true">
-      {#for item in items | slice(0, 5), i}
-        <li class="w-2/5 shrink-0 even:mt-space-xl md:w-auto md:flex-1"><button class="group block w-full cursor-zoom-in" type="button" tabindex="-1" data-lightbox-open={ id } data-index={ i }><Well asset={ item.asset } alt="" ratio="aspect-capsule" shape="capsule" width={ 640 } sizes="(min-width: 48rem) 20vw, 40vw" zoom={ true } /></button></li>
-      {/for}
-    </ul>
-  {/if}
+      </ul>
+    {:else if !strip}
+      <ul class="flex items-start gap-space-sm overflow-hidden ps-gutter md:gap-space-lg md:ps-0" aria-hidden="true">
+        {#for item in items | slice(0, 5), i}
+          <li class="w-2/5 shrink-0 even:mt-space-xl md:w-auto md:flex-1"><button class="group block w-full cursor-zoom-in" type="button" tabindex="-1" data-lightbox-open={ id } data-index={ i }><Well asset={ item.asset } alt="" ratio="aspect-capsule" shape="capsule" width={ 640 } sizes="(min-width: 48rem) 20vw, 40vw" zoom={ true } /></button></li>
+        {/for}
+      </ul>
+    {/if}
+  </div>
 </section>
 {/if}
 
 <schema>
 {
   "name": "Gallery strip",
-  "description": "A strip of photos that scrolls sideways, or three overlapping, each opening a lightbox.",
+  "description": "A pile of overlapping photos in mixed shapes, a strip that scrolls sideways or a row of capsules, each photo opening a lightbox.",
   "kind": "Gallery",
   "icon": "gallery-horizontal",
   "settings": [
-    { "type": "select", "id": "layout", "label": "Layout", "default": "strip", "options": [
+    { "type": "select", "id": "layout", "label": "Layout", "default": "bundle", "options": [
+      { "value": "bundle", "label": "Bundle" },
       { "value": "strip", "label": "Strip" },
-      { "value": "collage", "label": "Collage" },
       { "value": "capsules", "label": "Capsules" }
-    ], "info": "Collage overlaps the first three photos. Capsules sets the first five as tall rounded photos in a staggered row." },
+    ], "info": "Bundle overlaps the first five photos in mixed shapes. Capsules sets the first five as tall rounded photos in a staggered row." },
     { "type": "gallery", "id": "gallery", "label": "Gallery" },
     { "type": "select", "id": "slide_ratio", "label": "Slide shape", "default": "4:5", "options": [
       { "value": "1:1", "label": "Square" },
@@ -69,8 +76,8 @@
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
   ],
   "presets": [
+    { "name": "Bundle", "settings": { "layout": "bundle", "color_scheme": "linen" } },
     { "name": "Strip", "settings": { "layout": "strip", "color_scheme": "linen" } },
-    { "name": "Collage", "settings": { "layout": "collage", "color_scheme": "linen" } },
     { "name": "Capsules", "settings": { "layout": "capsules", "color_scheme": "linen" } }
   ]
 }

@@ -1,0 +1,47 @@
+<!-- An event's page: the topic as the kicker, the title in h1, the date, time and place on a Meta line, the host as a portrait row, the price, the description and the sign-up link or Book; the 16:9 capped photo above it all. -->
+{#let
+  ev = page.entry
+  f = ev.fields
+  price = f.price ? f.price | currency(site.settings.currency_symbol, 0) : t('free')
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-xl">
+    <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-video md:aspect-wide" shape="cap" width={ 1600 } sizes="100vw" eager={ true } />
+    <div class="grid gap-space-xl md:grid-cols-3 lg:gap-space-3xl">
+      <div class="grid content-start gap-space-md md:col-span-2">
+        {#if f.topic}<p class="text-kicker font-semibold text-scheme-meta uppercase">{ f.topic }</p>{/if}
+        <h1 class="font-heading text-h1 text-balance text-scheme-heading">{ ev.title }</h1>
+        <p class="text-body-lg text-scheme-muted tabular-nums"><time datetime="{ f.date | date('iso') }">{ f.date | date('long') }</time>{#if f.time} · { f.time }{/if}{#if f.room || f.location} · { f.room || f.location.title }{/if}</p>
+        {#if f.description}<div class="sites-prose max-w-reading">{ f.description }</div>{/if}
+      </div>
+      <div class="grid content-start gap-space-md md:border-s md:border-scheme-rule md:ps-space-xl">
+        {#if f.host}
+          <a class="group flex items-center gap-space-sm" href="{ settings.team_path }/{ f.host.handle }">
+            <span class="block w-avatar"><Well asset={ f.host.fields.image } alt="" ratio="aspect-portrait" shape="portal" width={ 120 } sizes="2.75rem" /></span>
+            <span class="grid"><span class="font-semibold group-hover:underline group-hover:underline-offset-4">{ t('with_name', { name: f.host.title }) }</span><span class="text-body-sm text-scheme-meta">{ f.host.fields.role }</span></span>
+          </a>
+        {/if}
+        <p class="font-heading text-h3 tabular-nums">{ price }</p>
+        {#if f.link}<Button href={ f.link } external={ true }>{ settings.signup_label }</Button>{:else}<Button action={ true }>{ site.settings.action_label }</Button>{/if}
+      </div>
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Event detail",
+  "description": "An event's page: its photo, date and time, host, price, description and sign-up.",
+  "kind": "Events",
+  "icon": "calendar-days",
+  "templates": ["event"],
+  "settings": [
+    { "type": "text", "id": "signup_label", "label": "Sign-up label", "default": "Save a place" },
+    { "type": "url", "id": "team_path", "label": "Team page path", "default": "/team" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "linen" } }
+  ]
+}
+</schema>

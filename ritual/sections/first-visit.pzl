@@ -1,0 +1,68 @@
+<!-- What happens on a first visit: the kicker inside a large hollow ring, the heading with its accent word and a line, then the steps as blocks with no numbers. List: each step after a hollow ring, two columns from 48rem. Stack: staggered rounded tiles, each on its own scheme in turn (clay, linen, fern, celadon). -->
+{#let tiles = ['sites-scheme-clay', 'sites-scheme-linen', 'sites-scheme-fern', 'sites-scheme-celadon']}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-xl { settings.layout == 'stack' ? 'lg:grid-cols-3 lg:gap-space-3xl' : '' }">
+    <div class="grid content-start justify-items-start gap-space-md">
+      {#if settings.kicker}<p class="flex size-ring items-center justify-center rounded-full border border-scheme-foreground p-space-sm text-center text-kicker font-semibold uppercase">{ settings.kicker }</p>{/if}
+      <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ settings.heading } /></h2>
+      {#if settings.text}<p class="max-w-text text-body text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+    </div>
+    {#if settings.layout == 'stack'}
+      <ul class="grid gap-space-md md:grid-cols-2 lg:col-span-2">
+        {#for block in blocks, i}
+          <li class="grid content-start gap-space-sm rounded-lg bg-scheme-background p-space-lg text-scheme-foreground { tiles[i % 4] } { i % 2 == 1 ? 'md:translate-y-space-xl' : '' } { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-block={ block.editor_id }>
+            <span class="size-tap rounded-full border border-scheme-foreground" aria-hidden="true"></span>
+            <h3 class="font-heading text-h3 text-scheme-heading">{ block.settings.heading }</h3>
+            <p class="text-body text-scheme-muted">{ block.settings.text }</p>
+          </li>
+        {/for}
+      </ul>
+    {:else}
+      <ul class="grid gap-x-space-2xl gap-y-space-lg md:grid-cols-2">
+        {#for block in blocks}
+          <li class="flex gap-space-sm" data-block={ block.editor_id }>
+            <span class="mt-space-xs size-bullet shrink-0 rounded-full border border-accent" aria-hidden="true"></span>
+            <span class="grid gap-space-2xs"><span class="text-body-lg font-semibold">{ block.settings.heading }</span><span class="text-body text-scheme-muted">{ block.settings.text }</span></span>
+          </li>
+        {/for}
+      </ul>
+    {/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "First visit",
+  "description": "What happens on a first visit, step by step, as a list or as staggered tiles.",
+  "kind": "Content",
+  "icon": "footprints",
+  "settings": [
+    { "type": "select", "id": "layout", "label": "Layout", "default": "stack", "options": [
+      { "value": "stack", "label": "Staggered tiles" },
+      { "value": "list", "label": "List" }
+    ] },
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Your first visit", "info": "Sits inside the ring: two or three words, no numbers." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Nothing to *prepare*", "info": "Wrap one word in asterisks to set it in the accent." },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Your first facial starts with a consultation with June. Everything else, we will walk you through." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "sand" }
+  ],
+  "blocks": [
+    { "type": "step", "name": "Step", "settings": [
+      { "type": "text", "id": "heading", "label": "Heading", "default": "Arrive ten minutes early" },
+      { "type": "textarea", "id": "text", "label": "Text", "default": "There is tea in the front room and a form to fill in." }
+    ] }
+  ],
+  "presets": [
+    { "name": "Stack", "settings": { "layout": "stack" }, "blocks": [
+      { "type": "step", "settings": { "heading": "Arrive ten minutes early", "text": "There is tea in the front room and a form to fill in." } },
+      { "type": "step", "settings": { "heading": "Tell us everything", "text": "Pressure, allergies, a sore shoulder, a wedding on the calendar. It all helps." } },
+      { "type": "step", "settings": { "heading": "Settle in", "text": "Robes, lockers and a quiet room before your treatment." } },
+      { "type": "step", "settings": { "heading": "Take the day slowly", "text": "Drink water, skip the gym, keep the glow." } }
+    ] },
+    { "name": "List", "settings": { "layout": "list" }, "blocks": [
+      { "type": "step", "settings": { "heading": "Arrive ten minutes early", "text": "There is tea in the front room and a form to fill in." } },
+      { "type": "step", "settings": { "heading": "Tell us everything", "text": "Pressure, allergies, a sore shoulder, a wedding on the calendar. It all helps." } }
+    ] }
+  ]
+}
+</schema>

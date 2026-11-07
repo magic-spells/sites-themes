@@ -1,0 +1,15 @@
+<!-- component: LocationCard -->
+<!-- A location: a 3:2 capped well, the name, the address, the hours table and Directions and Call. -->
+{#let f = entry.fields}
+<article class="grid content-start gap-space-md { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+  {#if show_map}<Well asset={ f.image } alt={ f.image_alt } ratio="aspect-3/2" shape="cap" width={ 960 } sizes="(min-width: 48rem) 50vw, 100vw" />{/if}
+  <div class="grid gap-space-xs">
+    <h3 class="font-heading text-h3 text-scheme-heading"><a class="hover:underline hover:underline-offset-4" href="{ base_path }/{ entry.handle }">{ entry.title }</a></h3>
+    <address class="text-body not-italic text-scheme-muted">{ f.address | newline_to_br }</address>
+  </div>
+  {#if show_hours}<HoursTable hours={ f.hours } />{/if}
+  <div class="flex flex-wrap gap-space-xs">
+    {#if f.map_url}<Button href={ f.map_url } external={ true }>{ t('directions') }</Button>{/if}
+    {#if f.phone}<Button href="tel:{ f.phone | replace(' ', '') }" tone="secondary">{ t('call') }</Button>{/if}
+  </div>
+</article>

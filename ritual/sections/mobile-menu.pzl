@@ -1,0 +1,58 @@
+<!-- The mobile menu: a dialog-panel drawer from the right over the page dimmed by the text colour at 50%. It closes on the backdrop, Escape and its ×, and hands focus back to the menu icon. The main menu in Gloock with the categories under Services, then Book, the phone and the first location's hours. -->
+{#let
+  categories = content.categories.entries | sort('fields.order') | slice(0, 12)
+  loc = content.locations.entries | sort('fields.order') | first
+  phone = (loc && loc.fields.phone) || site.settings.phone
+}
+<dialog-panel id="mobile-menu" position="right">
+  <dialog-backdrop class="bg-backdrop backdrop-blur-sm"></dialog-backdrop>
+  <dialog class="ms-auto h-dvh w-full max-w-drawer overflow-y-auto bg-scheme-background text-scheme-foreground shadow-none" aria-label="{ t('menu') }">
+    <div class="grid gap-space-lg p-gutter">
+      <div class="flex min-h-header items-center justify-between gap-space-md">
+        <a class="font-heading text-h4" href="/">{ site.settings.wordmark || site.name }</a>
+        <button class="-mr-space-xs flex size-tap items-center justify-center" type="button" data-action-hide-dialog><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/close.svg'}</span><span class="sr-only">{ t('close') }</span></button>
+      </div>
+      {#if settings.menu.items.length}
+        <nav aria-label="{ t('main_navigation') }">
+          <ul class="grid gap-space-sm">
+            {#for item in settings.menu.items}
+              <li>
+                <a class="font-heading text-h3 text-scheme-heading hover:text-accent" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a>
+                {#if settings.show_categories && item.href == settings.services_path && categories.length}
+                  <ul class="mt-space-xs grid gap-space-2xs ps-indent">
+                    {#for entry in categories}<li><a class="text-body text-scheme-muted hover:text-scheme-foreground" href="{ settings.services_path }?category={ entry.handle }">{ entry.title }</a></li>{/for}
+                  </ul>
+                {/if}
+              </li>
+            {/for}
+          </ul>
+        </nav>
+      {/if}
+      <Button action={ true } wide={ true }>{ site.settings.action_label }</Button>
+      {#if phone || loc}
+        <div class="grid gap-space-sm border-t border-scheme-rule pt-space-md text-body-sm">
+          {#if phone}<a class="justify-self-start font-semibold underline underline-offset-4" href="tel:{ phone | replace(' ', '') }">{ phone }</a>{/if}
+          {#if loc}<HoursTable hours={ loc.fields.hours } />{/if}
+        </div>
+      {/if}
+    </div>
+  </dialog>
+</dialog-panel>
+
+<schema>
+{
+  "name": "Mobile menu",
+  "description": "The menu drawer below 64rem: the main menu, the categories, Book, the phone and the hours.",
+  "kind": "Panels",
+  "icon": "menu",
+  "settings": [
+    { "type": "menu", "id": "menu", "label": "Menu" },
+    { "type": "checkbox", "id": "show_categories", "label": "Categories under Services", "default": true },
+    { "type": "url", "id": "services_path", "label": "Services page", "default": "/services" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "menu": "main", "color_scheme": "linen" } }
+  ]
+}
+</schema>

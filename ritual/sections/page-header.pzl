@@ -1,0 +1,42 @@
+<!-- A page's opening: the kicker, the title in h1 with its accent word and a standfirst, left or centred. dome hangs a half circle of photo above the title. edge dome raises a half-ellipse of this band into the band above. -->
+{#let centre = settings.align == 'centre'}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground { settings.edge == 'dome' ? 'edge-dome' : '' }">
+  <div class="mx-auto grid max-w-column gap-space-xl { centre ? 'justify-items-center text-center' : '' }">
+    {#if settings.dome && settings.image}<div class="w-full max-w-figure"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-dome" shape="dome" width={ 1200 } sizes="(min-width: 64rem) 60rem, 100vw" eager={ true } /></div>{/if}
+    <div class="grid max-w-reading gap-space-sm { centre ? 'justify-items-center' : '' }">
+      {#if settings.kicker}<p class="text-kicker font-semibold text-scheme-meta uppercase">{ settings.kicker }</p>{/if}
+      <h1 class="font-heading text-h1 text-balance text-scheme-heading"><Accent text={ settings.heading || page.title } /></h1>
+      {#if settings.text}<p class="text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Page header",
+  "description": "A page's title, kicker and standfirst, with an optional dome of photo above.",
+  "kind": "Hero",
+  "icon": "heading",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "", "info": "Words only: no numbers or dates." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "", "info": "Leave empty to use the page title. Wrap one word in asterisks to set it in the accent." },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "select", "id": "align", "label": "Align", "default": "left", "options": [
+      { "value": "left", "label": "Left" },
+      { "value": "centre", "label": "Centre" }
+    ] },
+    { "type": "checkbox", "id": "dome", "label": "Dome photo", "default": false, "info": "A half circle of photo above the title." },
+    { "type": "image", "id": "image", "label": "Dome image", "info": "2:1." },
+    { "type": "text", "id": "image_alt", "label": "Dome image alt text", "default": "" },
+    { "type": "select", "id": "edge", "label": "Top edge", "default": "flat", "options": [
+      { "value": "flat", "label": "Flat" },
+      { "value": "dome", "label": "Dome" }
+    ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "sand" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "sand" } },
+    { "name": "Dome", "settings": { "dome": true, "align": "centre", "color_scheme": "sand" } }
+  ]
+}
+</schema>

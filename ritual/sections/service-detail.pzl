@@ -1,0 +1,70 @@
+<!-- A service's page: the 4:5 portal photo on one side (the category's photo stands in), and beside it the category kicker, the name in h1, duration and price in Price, the summary, Book, and the description in the reading column; then What it includes and Add-ons as rows that open, and Offered by: the person who leads it as a small portrait row. -->
+{#let
+  entry = page.entry
+  f = entry.fields
+  image = f.image || f.category.fields.image
+  lead = f.team
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-2 lg:gap-space-3xl">
+    <div class="w-full max-w-photo { settings.photo_side == 'right' ? 'md:order-last md:justify-self-end' : '' }"><Well asset={ image } alt={ f.image ? f.image_alt : '' } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="(min-width: 48rem) 30rem, 100vw" eager={ true } /></div>
+    <div class="grid max-w-text gap-space-md">
+      {#if f.category}<p class="text-kicker font-semibold text-scheme-meta uppercase"><a class="hover:underline" href="{ settings.services_path }?category={ f.category.handle }">{ f.category.title }</a></p>{/if}
+      <h1 class="font-heading text-h1 text-balance text-scheme-heading">{ entry.title }</h1>
+      <p class="font-heading text-h3 tabular-nums">{#if f.duration_minutes}{ t('minutes', { n: f.duration_minutes }) } · {/if}<Price f={ f } /></p>
+      {#if f.summary}<p class="text-body-lg text-pretty text-scheme-muted">{ f.summary }</p>{/if}
+      <div class="pt-space-xs"><Button action={ true }>{ settings.action_label || site.settings.action_label }</Button></div>
+      {#if f.description}<div class="sites-prose max-w-reading pt-space-md">{ f.description }</div>{/if}
+      {#if f.includes || f.add_ons}
+        <ul class="mt-space-sm border-t border-scheme-rule">
+          {#for row in [{ label: t('includes'), text: f.includes }, { label: t('add_ons'), text: f.add_ons }]}
+            {#if row.text}
+              <li class="border-b border-scheme-rule">
+                <collapsible-component>
+                  <h2><button class="group flex w-full items-center justify-between gap-space-md py-space-md text-left text-body-lg font-semibold" type="button">{ row.label }<span class="sites-icon size-icon shrink-0 transition-transform duration-fast group-aria-expanded:rotate-180" aria-hidden="true">{#svg 'icons/angle-down.svg'}</span></button></h2>
+                  <collapsible-content>
+                    <ul class="grid gap-space-xs pb-space-md text-body-sm">
+                      {#for line in row.text | split('\n')}<li class="flex items-center gap-space-xs"><span class="size-bullet shrink-0 rounded-full border border-accent" aria-hidden="true"></span>{ line }</li>{/for}
+                    </ul>
+                  </collapsible-content>
+                </collapsible-component>
+              </li>
+            {/if}
+          {/for}
+        </ul>
+      {/if}
+      {#if lead}
+        <div class="grid gap-space-sm pt-space-md">
+          <h2 class="text-kicker font-semibold text-scheme-meta uppercase">{ t('offered_by') }</h2>
+          <a class="group flex items-center gap-space-sm" href="{ settings.team_path }/{ lead.handle }">
+            <span class="block w-avatar"><Well asset={ lead.fields.image } alt="" ratio="aspect-portrait" shape="portal" width={ 120 } sizes="2.75rem" /></span>
+            <span class="grid"><span class="font-semibold group-hover:underline group-hover:underline-offset-4">{ lead.title }</span><span class="text-body-sm text-scheme-meta">{ lead.fields.role }</span></span>
+          </a>
+        </div>
+      {/if}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Service detail",
+  "description": "A service's page: its photo, duration and price, what it includes, add-ons, who offers it and Book.",
+  "kind": "Services",
+  "icon": "file-text",
+  "templates": ["service"],
+  "settings": [
+    { "type": "select", "id": "photo_side", "label": "Photo", "default": "left", "options": [
+      { "value": "left", "label": "Left" },
+      { "value": "right", "label": "Right" }
+    ] },
+    { "type": "text", "id": "action_label", "label": "Action label", "default": "", "info": "Leave empty to use the House setting." },
+    { "type": "url", "id": "services_path", "label": "Services page", "default": "/services" },
+    { "type": "url", "id": "team_path", "label": "Team page path", "default": "/team", "info": "Offered by links to this path plus the person's handle." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "linen" } }
+  ]
+}
+</schema>

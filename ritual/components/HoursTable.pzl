@@ -1,0 +1,17 @@
+<!-- component: HoursTable -->
+<!-- A location's hours: the textarea split into lines, each line's last word the times and the rest the days, as a two-column table in Meta. No day is marked: there is no clock. -->
+{#if hours}
+<table class="w-full text-body-sm tabular-nums">
+  <caption class="sr-only">{ t('opening_hours') }</caption>
+  <tbody>
+    {#for line in hours | split('\n')}
+      {#let
+        row = line | strip
+        times = row | split(' ') | last
+        days = row | replace(times, '') | strip
+      }
+      {#if row}<tr class="border-b border-scheme-rule"><th class="py-space-xs pr-space-md text-left font-normal text-scheme-meta" scope="row">{ days }</th><td class="py-space-xs text-right">{ times }</td></tr>{/if}
+    {/for}
+  </tbody>
+</table>
+{/if}

@@ -1,0 +1,78 @@
+<!-- The wordmark in Gloock left, the main menu and Book right. The menu item that points at the services page opens a dropdown-panel of the categories, each a 3:2 capped thumbnail with its name and line, and "See the full menu". Below 64rem: the wordmark, Book and the menu icon. Over-hero: transparent at the top of a page that opens with a cover hero, solid once it scrolls. While the panel is open one dim lies under the header (theme.ts). -->
+{#let
+  wordmark = settings.logo_text || site.settings.wordmark || site.name
+  categories = content.categories.entries | sort('fields.order') | slice(0, 12)
+  action = settings.action_label || site.settings.action_label
+}
+<div class="pointer-events-none fixed inset-0 z-20 bg-backdrop opacity-0 transition-opacity duration-panel data-open:pointer-events-auto data-open:opacity-100" data-page-dim aria-hidden="true"></div>
+<sticky-header class="block" settle-overshoot="0" disabled={ !settings.sticky } data-header-style={ settings.style }>
+  <header class="relative isolate border-b border-scheme-rule bg-scheme-background px-gutter text-scheme-foreground transition-colors duration-panel overlaid:border-transparent overlaid:bg-transparent overlaid:text-on-photo">
+    <div class="mx-auto flex min-h-header max-w-column items-center justify-between gap-space-md">
+      <a class="font-heading text-h4 whitespace-nowrap" href="/">{ wordmark }</a>
+      <div class="flex items-center gap-space-lg">
+        {#if settings.menu.items.length}
+          <nav class="hidden lg:block" aria-label="{ t('main_navigation') }">
+            <ul class="flex items-center text-body font-medium">
+              {#for item in settings.menu.items}
+                {#if settings.show_dropdown && item.href == settings.services_path && categories.length}
+                  <li>
+                    <dropdown-component trigger="both" close-delay="150">
+                      <dropdown-trigger class="flex min-h-header cursor-pointer items-center gap-space-2xs px-space-sm">{ item.label }<span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/angle-down.svg'}</span></dropdown-trigger>
+                      <dropdown-panel class="border-y border-scheme-rule bg-scheme-background px-gutter py-space-xl text-scheme-foreground" wide effect="fade">
+                        <div class="mx-auto grid max-w-column gap-space-lg">
+                          <ul class="grid grid-cols-6 gap-space-md">
+                            {#for entry in categories}
+                              <li><a class="group grid gap-space-xs" href="{ settings.services_path }?category={ entry.handle }">
+                                <Well asset={ entry.fields.image } alt="" ratio="aspect-3/2" shape="cap" width={ 400 } sizes="12rem" zoom={ true } />
+                                <span class="text-body font-semibold group-hover:underline group-hover:underline-offset-4">{ entry.title }</span>
+                                <span class="text-body-sm text-scheme-meta">{ entry.fields.description }</span>
+                              </a></li>
+                            {/for}
+                          </ul>
+                          <a class="justify-self-start text-body-sm font-semibold text-accent underline underline-offset-4 hover:text-scheme-foreground" href="{ settings.services_path }">{ t('full_menu') }</a>
+                        </div>
+                      </dropdown-panel>
+                    </dropdown-component>
+                  </li>
+                {:else}
+                  <li><a class="flex min-h-header items-center px-space-sm underline-offset-8 hover:underline current:underline" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>
+                {/if}
+              {/for}
+            </ul>
+          </nav>
+        {/if}
+        <div class="flex items-center gap-space-xs">
+          {#if settings.show_action && action}<Button action={ true }>{ action }</Button>{/if}
+          <button class="-mr-space-xs flex size-tap items-center justify-center lg:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu"><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/menu.svg'}</span><span class="sr-only">{ t('menu') }</span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+</sticky-header>
+
+<schema>
+{
+  "name": "Header",
+  "description": "The wordmark, the main menu with the Services panel, and Book.",
+  "kind": "Header",
+  "icon": "panel-top",
+  "settings": [
+    { "type": "text", "id": "logo_text", "label": "Wordmark text", "default": "", "info": "Leave empty to use the Brand wordmark." },
+    { "type": "menu", "id": "menu", "label": "Menu" },
+    { "type": "select", "id": "style", "label": "Style", "default": "solid", "options": [
+      { "value": "solid", "label": "Solid" },
+      { "value": "over-hero", "label": "Over the hero" }
+    ], "info": "Over the hero: transparent on a page that opens with a cover hero, solid once the page scrolls. Solid everywhere else." },
+    { "type": "checkbox", "id": "sticky", "label": "Sticky", "default": true },
+    { "type": "checkbox", "id": "show_dropdown", "label": "Services panel", "default": true, "info": "The menu item that links to the services page opens a panel of the categories." },
+    { "type": "url", "id": "services_path", "label": "Services page", "default": "/services" },
+    { "type": "checkbox", "id": "show_action", "label": "Show Book", "default": true },
+    { "type": "text", "id": "action_label", "label": "Action label", "default": "", "info": "Leave empty to use the House setting." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+  ],
+  "presets": [
+    { "name": "Solid", "settings": { "style": "solid", "menu": "main", "color_scheme": "linen" } },
+    { "name": "Over the hero", "settings": { "style": "over-hero", "menu": "main", "color_scheme": "linen" } }
+  ]
+}
+</schema>

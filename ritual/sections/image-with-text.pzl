@@ -1,0 +1,29 @@
+<!-- A photo beside copy: the kicker, the heading with its accent word, the body and a link (components/PictureText.pzl). -->
+<PictureText s={ settings } />
+
+<schema>
+{
+  "name": "Image with text",
+  "description": "A photo beside a heading, a few lines and a link.",
+  "kind": "Content",
+  "icon": "image",
+  "settings": [
+    { "type": "image", "id": "image", "label": "Image", "info": "3:2." },
+    { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "" },
+    { "type": "select", "id": "image_side", "label": "Image", "default": "left", "options": [
+      { "value": "left", "label": "Left" },
+      { "value": "right", "label": "Right" }
+    ] },
+    { "type": "checkbox", "id": "tilt", "label": "Tilt the photo", "default": false },
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "", "info": "Words only: no numbers or dates." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "A room of your *own*", "info": "Wrap one word in asterisks to set it in the accent." },
+    { "type": "richtext", "id": "body", "label": "Body", "default": "<p>Every treatment room has its own door, its own playlist and a chair to sit in afterwards.</p>" },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "" },
+    { "type": "url", "id": "link_href", "label": "Link", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "linen" } }
+  ]
+}
+</schema>

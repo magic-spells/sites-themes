@@ -1,0 +1,13 @@
+<!-- component: PictureText -->
+<!-- A picture beside copy, for image-with-text and story: a 3:2 capped photo (turned 3° with tilt) on the column's edge, and the kicker, the heading with its accent word, the body and a link in a 30rem column. s is the section's settings; image_side sets the side. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-center gap-space-xl md:grid-cols-2 lg:gap-space-3xl">
+    <div class="{ s.image_side == 'right' ? 'md:order-last' : '' }"><Well asset={ s.image } alt={ s.image_alt } ratio="aspect-3/2" shape="cap" width={ 1200 } sizes="(min-width: 48rem) 50vw, 100vw" tilt={ s.tilt } /></div>
+    <div class="grid max-w-text gap-space-md">
+      {#if s.kicker}<p class="text-kicker font-semibold text-scheme-meta uppercase">{ s.kicker }</p>{/if}
+      <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ s.heading } /></h2>
+      {#if s.body}<div class="sites-prose text-scheme-muted">{ s.body }</div>{/if}
+      {#if s.link_label && s.link_href}<a class="justify-self-start text-body font-semibold text-accent underline underline-offset-4 hover:text-scheme-foreground" href="{ s.link_href }">{ s.link_label }</a>{/if}
+    </div>
+  </div>
+</section>

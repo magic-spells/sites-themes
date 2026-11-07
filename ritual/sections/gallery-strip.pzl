@@ -1,0 +1,70 @@
+<!-- A strip of photographs under a hairline: a tarot track of equal-width slides cropped to one ratio, 1.2, 2.5 then 3.5 across, starting at the column edge and bleeding off the right on a phone, with round arrows in the head. Collage: from 48rem the first three photos overlap, the middle one turned 3°; phones keep the strip. Each photo opens the lightbox. -->
+{#let
+  items = settings.gallery ? settings.gallery.items | slice(0, 24) : []
+  id = 'strip-' + section.id
+  ratio = settings.slide_ratio == '1:1' ? 'aspect-square' : (settings.slide_ratio == '3:2' ? 'aspect-3/2' : 'aspect-portrait')
+  collage = settings.layout == 'collage'
+  options = { lightbox: true, slidesPerView: 1.2, gap: '1rem', navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { lightbox: true, slidesPerView: 2.5, gap: '1.5rem', navigation: { showButtons: true, showPagination: false } }, '1024': { lightbox: true, slidesPerView: 3.5, gap: '1.5rem', navigation: { showButtons: true, showPagination: false } } } }
+}
+{#if items.length}
+<section class="bg-scheme-background py-section text-scheme-foreground">
+  {#if settings.rule}<div class="mx-auto max-w-column px-gutter"><hr class="mb-space-xl border-scheme-rule" /></div>{/if}
+  <tarot-carousel class="mx-auto block max-w-column ps-gutter md:px-gutter" id={ id } data-track>
+    <script type="application/json" data-tarot-options>{ options | json }</script>
+    <div class="pe-gutter md:pe-0"><SectionHead kicker={ settings.kicker } heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href }>{#if !collage}<Arrows />{/if}</SectionHead></div>
+    <tarot-viewport class={ collage ? 'md:sr-only' : null }>
+      <tarot-track>
+        {#for item in items, i}
+          <tarot-slide>
+            <a class="group block cursor-zoom-in" href="{ image_url(item.asset, 2560) }" data-tarot-lightbox aria-label="{ t('open_photo', { index: i + 1 }) }">
+              <span class="relative block overflow-hidden rounded-t-cap bg-scheme-surface-2 { ratio }"><img class="absolute inset-0 size-full object-cover" src="{ image_url(item.asset, 1024) }" srcset="{ image_srcset(item.asset, [480, 768, 1024]) }" sizes="(min-width: 64rem) 22rem, (min-width: 48rem) 40vw, 80vw" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } /></span>
+            </a>
+            {#if item.caption}<p class="mt-space-xs text-body-sm text-scheme-meta" data-caption data-tarot-lightbox-fade>{ item.caption }</p>{/if}
+          </tarot-slide>
+        {/for}
+      </tarot-track>
+    </tarot-viewport>
+  </tarot-carousel>
+  {#if collage}
+    <ul class="mx-auto hidden max-w-column grid-cols-12 items-center px-gutter md:grid" aria-hidden="true">
+      {#for item in items | slice(0, 3), i}
+        <li class="row-start-1 { i == 0 ? 'col-span-5 col-start-1' : (i == 1 ? 'z-10 col-span-4 col-start-5 mt-space-3xl' : 'col-span-4 col-start-9') }">
+          <button class="group block w-full cursor-zoom-in" type="button" tabindex="-1" data-lightbox-open={ id } data-index={ i }><Well asset={ item.asset } alt="" ratio={ i == 1 ? 'aspect-3/2' : 'aspect-portrait' } shape={ i == 1 ? 'cap' : 'portal' } width={ 800 } sizes="40vw" tilt={ i == 1 } zoom={ true } /></button>
+        </li>
+      {/for}
+    </ul>
+  {/if}
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Gallery strip",
+  "description": "A strip of photos that scrolls sideways, or three overlapping, each opening a lightbox.",
+  "kind": "Gallery",
+  "icon": "gallery-horizontal",
+  "settings": [
+    { "type": "select", "id": "layout", "label": "Layout", "default": "strip", "options": [
+      { "value": "strip", "label": "Strip" },
+      { "value": "collage", "label": "Collage" }
+    ], "info": "Collage overlaps the first three photos from tablets up; phones show the strip." },
+    { "type": "gallery", "id": "gallery", "label": "Gallery" },
+    { "type": "select", "id": "slide_ratio", "label": "Slide shape", "default": "4:5", "options": [
+      { "value": "1:1", "label": "Square" },
+      { "value": "4:5", "label": "Portrait 4:5" },
+      { "value": "3:2", "label": "Landscape 3:2" }
+    ] },
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "", "info": "Words only: no numbers or dates." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "From the *chair*", "info": "Wrap one word in asterisks to set it in the accent." },
+    { "type": "text", "id": "text", "label": "Text", "default": "" },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "See more" },
+    { "type": "url", "id": "link_href", "label": "Link", "default": "/gallery" },
+    { "type": "checkbox", "id": "rule", "label": "Hairline above", "default": true },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+  ],
+  "presets": [
+    { "name": "Strip", "settings": { "layout": "strip", "color_scheme": "linen" } },
+    { "name": "Collage", "settings": { "layout": "collage", "color_scheme": "linen" } }
+  ]
+}
+</schema>

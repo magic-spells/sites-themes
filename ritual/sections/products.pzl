@@ -1,0 +1,48 @@
+<!-- The lines the house sells and uses: a tarot strip of brand cards, each a square well, the brand in Card title and its line in Meta, equal width and bleeding right on a phone, round arrows in the head. -->
+{#let
+  items = content.products.entries | sort('fields.order') | slice(0, 12)
+  id = 'products-' + section.id
+  options = { slidesPerView: 1.6, gap: '1rem', navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { slidesPerView: 3, gap: '1.5rem', navigation: { showButtons: true, showPagination: false } }, '1024': { slidesPerView: 5, gap: '1.5rem', navigation: { showButtons: true, showPagination: false } } } }
+}
+{#if items.length}
+<section class="bg-scheme-background py-section text-scheme-foreground">
+  <tarot-carousel class="mx-auto block max-w-column ps-gutter md:px-gutter" id={ id } data-track>
+    <script type="application/json" data-tarot-options>{ options | json }</script>
+    <div class="pe-gutter md:pe-0"><SectionHead kicker={ settings.kicker } heading={ settings.heading } text={ settings.text }>{#if items.length > 5}<Arrows />{/if}</SectionHead></div>
+    <tarot-viewport>
+      <tarot-track>
+        {#for entry in items}
+          {#let f = entry.fields}
+          <tarot-slide>
+            <article class="group relative grid gap-space-sm">
+              <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-square" shape="cap" width={ 480 } sizes="(min-width: 64rem) 15rem, (min-width: 48rem) 30vw, 60vw" />
+              <div class="grid gap-space-2xs">
+                <h3 class="text-body-lg font-semibold">{#if f.link}<a class="after:absolute after:inset-0 hover:underline hover:underline-offset-4" href="{ f.link }" target="_blank" rel="noopener">{ f.brand || entry.title }</a>{:else}{ f.brand || entry.title }{/if}</h3>
+                {#if f.description}<p class="text-body-sm text-scheme-meta">{ f.description }</p>{/if}
+              </div>
+            </article>
+          </tarot-slide>
+        {/for}
+      </tarot-track>
+    </tarot-viewport>
+  </tarot-carousel>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Products",
+  "description": "The product lines the house sells, as a strip of brand cards.",
+  "kind": "Content",
+  "icon": "shopping-bag",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Available in the salon", "info": "Words only: no numbers or dates." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What we *use*", "info": "Wrap one word in asterisks to set it in the accent." },
+    { "type": "text", "id": "text", "label": "Text", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "sand" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "sand" } }
+  ]
+}
+</schema>

@@ -1,0 +1,37 @@
+<!-- The ticker: the House ticker lines (or this bar's own) on a marquee, a hollow ring between phrases, the whole line one link; a pause button and, with a key, a close button that hides it for good. Under reduced motion it stands still, one copy, cut with an ellipsis. -->
+{#let lines = (settings.lines || site.settings.ticker_lines) | split('\n') | slice(0, 6)}
+{#if lines.length}
+<aside class="relative bg-scheme-background text-scheme-foreground" data-dismiss-key="{ settings.key }" aria-label="{ t('announcement') }" data-ticker>
+  <div class="flex items-center">
+    <a class="block min-w-0 flex-1 py-space-xs text-body-sm focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent" href={ settings.link || null }>
+      <scrolling-content class="block" speed="30" fade>
+        <scrolling-track>
+          <scrolling-item class="flex items-center">
+            {#for line in lines}<span class="whitespace-nowrap">{ line | strip }</span><span class="mx-space-md size-bullet shrink-0 rounded-full border border-accent" aria-hidden="true"></span>{/for}
+          </scrolling-item>
+        </scrolling-track>
+      </scrolling-content>
+    </a>
+    <button class="flex size-tap shrink-0 items-center justify-center text-scheme-meta hover:text-scheme-foreground" type="button" data-ticker-toggle aria-pressed="false"><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/pause.svg'}</span><span class="sr-only">{ t('pause') }</span></button>
+    {#if settings.key}<button class="flex size-tap shrink-0 items-center justify-center text-scheme-meta hover:text-scheme-foreground" type="button" data-dismiss><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/close.svg'}</span><span class="sr-only">{ t('dismiss') }</span></button>{/if}
+  </div>
+</aside>
+{/if}
+
+<schema>
+{
+  "name": "Announcement bar",
+  "description": "A line of short phrases that scrolls as a ticker above the header.",
+  "kind": "Header",
+  "icon": "megaphone",
+  "settings": [
+    { "type": "textarea", "id": "lines", "label": "Phrases", "default": "", "info": "One per line, up to six. Leave empty to use the House ticker lines." },
+    { "type": "url", "id": "link", "label": "Link", "default": "", "info": "The whole line links here." },
+    { "type": "text", "id": "key", "label": "Dismiss key", "default": "", "info": "Set a key to show a close button. A visitor who closes the bar does not see it again until you change the key." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "fern" }
+  ],
+  "presets": [
+    { "name": "Fern", "settings": { "link": "/gift-cards", "color_scheme": "fern" } }
+  ]
+}
+</schema>

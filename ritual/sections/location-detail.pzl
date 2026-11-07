@@ -1,0 +1,60 @@
+<!-- A location's page: the 4:5 portal photo beside the name in h1, the description, the address, hours and contact in three columns, the note and Book; then the map (an image or an embedded map in a capped 3:2 well) and the events held there. -->
+{#let
+  loc = page.entry
+  f = loc.fields
+  events = content.events.entries | where('fields.location.handle', loc.handle) | sort('fields.date') | slice(0, 3)
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-2xl">
+    <div class="grid items-center gap-space-xl md:grid-cols-2 lg:gap-space-3xl">
+      <div class="w-full max-w-photo"><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="(min-width: 48rem) 30rem, 100vw" eager={ true } /></div>
+      <div class="grid gap-space-md">
+        <p class="text-kicker font-semibold text-scheme-meta uppercase">{ settings.kicker }</p>
+        <h1 class="font-heading text-h1 text-balance text-scheme-heading">{ loc.title }</h1>
+        {#if f.description}<p class="max-w-text text-body-lg text-pretty text-scheme-muted">{ f.description }</p>{/if}
+        <div class="grid gap-space-lg pt-space-sm lg:grid-cols-3">
+          <div class="grid content-start gap-space-xs"><h2 class="text-kicker font-semibold text-scheme-meta uppercase">{ t('address') }</h2><address class="text-body-sm not-italic">{ f.address | newline_to_br }</address></div>
+          <div class="grid content-start gap-space-xs"><h2 class="text-kicker font-semibold text-scheme-meta uppercase">{ t('opening_hours') }</h2><HoursTable hours={ f.hours } /></div>
+          <div class="grid content-start gap-space-xs text-body-sm"><h2 class="text-kicker font-semibold text-scheme-meta uppercase">{ t('contact') }</h2>{#if f.phone}<a class="justify-self-start underline-offset-4 hover:underline" href="tel:{ f.phone | replace(' ', '') }">{ f.phone }</a>{/if}{#if f.email}<a class="justify-self-start underline-offset-4 hover:underline" href="mailto:{ f.email }">{ f.email }</a>{/if}</div>
+        </div>
+        {#if f.note}<p class="text-body-sm text-scheme-meta">{ f.note }</p>{/if}
+        <div class="flex flex-wrap gap-space-xs pt-space-xs">
+          <Button action={ true }>{ site.settings.action_label }</Button>
+          {#if f.map_url}<Button href={ f.map_url } tone="secondary" external={ true }>{ t('directions') }</Button>{/if}
+        </div>
+      </div>
+    </div>
+    {#if f.map_embed_url}
+      <div class="relative aspect-3/2 overflow-hidden rounded-t-cap bg-scheme-surface-2 md:aspect-wide"><iframe class="absolute inset-0 size-full" src="{ f.map_embed_url }" title="{ t('map_of', { name: loc.title }) }" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    {:else if f.map_image}
+      <a class="block" href={ f.map_url || null } target="_blank" rel="noopener"><Well asset={ f.map_image } alt={ f.map_image_alt } ratio="aspect-3/2 md:aspect-wide" shape="cap" width={ 1600 } sizes="100vw" /></a>
+    {/if}
+    {#if settings.show_events && events.length}
+      <div>
+        <h2 class="mb-space-xl font-heading text-h2 text-scheme-heading">{ t('events_here') }</h2>
+        <ul class="grid gap-x-space-md gap-y-space-xl md:grid-cols-2 lg:grid-cols-3">
+          {#for entry in events}<li><EventCard entry={ entry } base_path={ settings.events_path } layout="cards" /></li>{/for}
+        </ul>
+      </div>
+    {/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Location detail",
+  "description": "A location's page: its photo, address, hours, contact, map and the events held there.",
+  "kind": "Contact",
+  "icon": "map-pin",
+  "templates": ["location"],
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Visit", "info": "Words only: no numbers or dates." },
+    { "type": "checkbox", "id": "show_events", "label": "Show events here", "default": true },
+    { "type": "url", "id": "events_path", "label": "Event page path", "default": "/events" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "linen" } }
+  ]
+}
+</schema>

@@ -1,0 +1,25 @@
+<!-- component: Questions -->
+<!-- Rows on hairlines that open and close, for the faq and the policies: the kicker, heading and line on the left, the rows on the right, the first open when s.first_open. Without JavaScript every row shows. s is the section's settings and items its blocks. -->
+{#if items.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground { s.edge == 'dome' ? 'edge-dome' : '' }">
+  <div class="mx-auto grid max-w-column gap-space-xl md:grid-cols-2 md:gap-space-3xl">
+    <div class="grid content-start gap-space-sm">
+      {#if s.kicker}<p class="text-kicker font-semibold text-scheme-meta uppercase">{ s.kicker }</p>{/if}
+      <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ s.heading } /></h2>
+      {#if s.text}<p class="text-body text-scheme-muted">{ s.text }</p>{/if}
+    </div>
+    <ul class="border-t border-scheme-rule">
+      {#for block in items, i}
+        <li class="border-b border-scheme-rule" data-block={ block.editor_id }>
+          <collapsible-component>
+            <h3><button class="group flex w-full items-center justify-between gap-space-md py-space-md text-left text-body-lg font-semibold" type="button">{ block.s.question }<span class="sites-icon size-icon shrink-0 transition-transform duration-fast group-aria-expanded:rotate-180" aria-hidden="true">{#svg 'icons/angle-down.svg'}</span></button></h3>
+            <collapsible-content open={ s.first_open && i == 0 }>
+              <div class="sites-prose pb-space-md text-scheme-muted">{ block.s.answer }</div>
+            </collapsible-content>
+          </collapsible-component>
+        </li>
+      {/for}
+    </ul>
+  </div>
+</section>
+{/if}

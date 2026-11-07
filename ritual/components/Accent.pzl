@@ -1,0 +1,4 @@
+<!-- component: Accent -->
+<!-- A heading's text with its accent word: the editor marks one word with asterisks ("Come in and *breathe*"), which prints upright in the scheme's accent. -->
+{#let parts = text | split('*')}
+{ parts[0] }{#if parts.length > 1}<em class="text-accent not-italic">{ parts[1] }</em>{ parts[2] }{/if}

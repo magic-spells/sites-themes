@@ -1,0 +1,15 @@
+<!-- component: ServiceCard -->
+<!-- A service as a card: a bordered card with a full-portal 4:5 well (the category's photo stands in), the name in Card title, duration · price in Meta, the summary and a Book link. -->
+{#let
+  f = entry.fields
+  image = f.image || f.category.fields.image
+}
+<article class="group relative grid content-start overflow-hidden rounded-t-full rounded-b-md border border-scheme-rule bg-scheme-background { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+  <Well asset={ image } alt={ f.image ? f.image_alt : '' } ratio="aspect-portrait" shape="portal" width={ 640 } sizes="(min-width: 64rem) 25rem, (min-width: 48rem) 50vw, 80vw" zoom={ true } />
+  <div class="grid gap-space-xs p-space-md">
+    <h3 class="text-body-lg font-semibold"><a class="after:absolute after:inset-0 hover:underline hover:underline-offset-4" href="{ base_path }/{ entry.handle }">{ entry.title }</a></h3>
+    <p class="text-body-sm text-scheme-meta tabular-nums">{#if f.duration_minutes}{ t('minutes', { n: f.duration_minutes }) } · {/if}<Price f={ f } /></p>
+    {#if f.summary}<p class="text-body-sm text-pretty text-scheme-muted">{ f.summary }</p>{/if}
+    <span class="mt-space-2xs text-body-sm font-semibold text-accent underline underline-offset-4">{ t('book') }</span>
+  </div>
+</article>

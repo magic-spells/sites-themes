@@ -1,0 +1,55 @@
+<!-- The contact form beside the first location's details: the form (name, email, a subject select, the message) on the left; the address, hours, phone and email on the right. -->
+{#let
+  loc = content.locations.entries | sort('fields.order') | first
+  f = loc ? loc.fields : null
+  phone = (f && f.phone) || site.settings.phone
+  email = (f && f.email) || site.settings.email
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-5 lg:gap-space-3xl">
+    <div class="md:col-span-3">
+      <SectionHead kicker={ settings.kicker } heading={ settings.heading } text={ settings.text } />
+      <Form handle={ settings.form } class="grid gap-space-md" id="contact-{ section.id }">
+        {#if form.sent}
+          <p class="text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
+        {:else}
+          {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
+          <FormFields fields={ form.fields } prefix="contact-{ section.id }" columns={ true } />
+          <div><Submit>{ form.submit_label || t('send') }</Submit></div>
+          <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+        {/if}
+      </Form>
+    </div>
+    {#if loc}
+      <div class="grid gap-space-md rounded-md bg-scheme-surface-2 p-space-lg md:col-span-2">
+        <h2 class="font-heading text-h3 text-scheme-heading">{ loc.title }</h2>
+        <address class="text-body not-italic">{ f.address | newline_to_br }</address>
+        <HoursTable hours={ f.hours } />
+        <div class="grid gap-space-2xs text-body-sm">
+          {#if phone}<a class="justify-self-start font-semibold underline underline-offset-4" href="tel:{ phone | replace(' ', '') }">{ phone }</a>{/if}
+          {#if email}<a class="justify-self-start underline underline-offset-4" href="mailto:{ email }">{ email }</a>{/if}
+        </div>
+        {#if f.note}<p class="text-body-sm text-scheme-meta">{ f.note }</p>{/if}
+      </div>
+    {/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Contact",
+  "description": "The contact form beside the address, hours and phone.",
+  "kind": "Forms",
+  "icon": "mail",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "", "info": "Words only: no numbers or dates." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Write to *us*", "info": "Wrap one word in asterisks to set it in the accent." },
+    { "type": "text", "id": "text", "label": "Text", "default": "For appointments, Book is quicker. For anything else, here." },
+    { "type": "form", "id": "form", "label": "Form" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "form": "contact", "color_scheme": "linen" } }
+  ]
+}
+</schema>

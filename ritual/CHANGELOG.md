@@ -2,7 +2,13 @@
 
 ## 0.1.0
 
-- The hours-and-location photo is a capsule, round at the top and the bottom.
+- Visit us puts the picture first, in the wide column: the photo, the map image or the embedded map as a 4:3 stadium.
+- Landscape image wells are round at every corner, not only at the top.
+- Team cards take capsule portraits.
+- First-visit tiles drop the small ring; the big ring with its words stays.
+- Image with text gains Capsules: three tall capsules beside the text, the middle one lower, each a photo or a short muted video.
+- The gallery strip shows whole slides from 48rem, two then three across, and runs edge to edge on a phone.
+- On a domed band the grain covers the dome too, so the curve and the band are one colour.
 - No gift cards section or page: the theme sells nothing.
 - Home gains Articles and news: the journal list's Feature view, the newest post across two columns and the next two stacked beside it.
 - 40 sections: the header with the Services panel, the ticker, the footer colophon with the
@@ -14,7 +20,7 @@
   gallery, packages, events, locations, about, journal, book, contact, policies and
   page templates; the 404, password and maintenance pages.
 - Nine colour schemes (linen, sand, clay, fern, fig, celadon, sea, slate, terracotta), the portal and
-  capped image wells, the capsule (the Capsules hero and gallery strip, the newsletter photo and
+  round image wells, the capsule (the Capsules hero and gallery strip, the newsletter photo and
   the small portraits), the dome edge, the grain texture and the accent word in every heading.
 - Juniper House fixtures: six categories, 34 services, six people, two locations, three
   packages, six testimonials, four albums, four events, six product lines, six posts, three

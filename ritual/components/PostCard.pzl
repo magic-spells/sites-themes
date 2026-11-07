@@ -1,11 +1,11 @@
 <!-- component: PostCard -->
-<!-- A journal post. As a card: a capped well (16:9 when featured, 3:2 otherwise), the topic and date in Meta, the title and standfirst. In the list view it is a row with a 3:2 thumbnail right. -->
+<!-- A journal post. As a card: a capped well (16:9 when featured, 3:2 otherwise), the topic and date in Meta, the title and standfirst. compact drops the standfirst; eager loads the photo first. In the list view it is a row with a 3:2 thumbnail right. -->
 {#let f = entry.fields}
 <article class="group relative grid content-start gap-space-sm view-list:grid-cols-row view-list:items-center view-list:border-b view-list:border-scheme-rule view-list:pb-space-md max-md:view-list:grid-cols-1 { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
-  <span class="view-list:order-last view-list:w-thumb max-md:view-list:hidden"><Well asset={ f.image } alt={ f.image_alt } ratio={ featured ? 'aspect-video' : 'aspect-3/2' } shape="cap" width={ featured ? 1600 : 800 } sizes={ featured ? '100vw' : '(min-width: 48rem) 50vw, 100vw' } zoom={ true } eager={ featured } /></span>
+  <span class="view-list:order-last view-list:w-thumb max-md:view-list:hidden"><Well asset={ f.image } alt={ f.image_alt } ratio={ featured ? 'aspect-video' : 'aspect-3/2' } shape="cap" width={ featured ? 1600 : 800 } sizes={ featured ? '100vw' : '(min-width: 48rem) 50vw, 100vw' } zoom={ true } eager={ eager } /></span>
   <p class="text-body-sm text-scheme-meta">{ f.topic }{#if f.date} · <time datetime="{ f.date | date('iso') }">{ f.date | date('iso') }</time>{/if}</p>
   <div class="grid gap-space-xs">
     <h3 class="font-heading text-scheme-heading { featured ? 'text-h2' : 'text-h3' }"><a class="after:absolute after:inset-0 hover:underline hover:underline-offset-4" href="{ base_path }/{ entry.handle }">{ entry.title }</a></h3>
-    {#if f.standfirst}<p class="max-w-reading text-body text-scheme-muted">{ f.standfirst }</p>{/if}
+    {#if f.standfirst && !compact}<p class="max-w-reading text-body text-scheme-muted">{ f.standfirst }</p>{/if}
   </div>
 </article>

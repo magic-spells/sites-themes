@@ -124,6 +124,20 @@
       "blocks": []
     },
     {
+      "id": "s_journal",
+      "type": "journal-list",
+      "preset": "Feature",
+      "settings": {
+        "heading": "Articles and *news*",
+        "view": "feature",
+        "limit": 3,
+        "link_label": "All posts",
+        "link_href": "/journal",
+        "color_scheme": "sand"
+      },
+      "blocks": []
+    },
+    {
       "id": "s_gift",
       "type": "gift-cards",
       "preset": "Clay",

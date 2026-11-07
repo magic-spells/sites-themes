@@ -6,7 +6,7 @@
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground { settings.edge == 'dome' ? 'edge-dome' : '' }" data-texture={ settings.grain && site.settings.texture == 'grain' ? 'grain' : null }>
   <div class="mx-auto grid max-w-reading justify-items-center gap-space-md py-space-xl text-center">
-    <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ settings.heading } /></h2>
+    <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ settings.heading } rise={ true } /></h2>
     {#if confirm}<p class="text-body-lg text-scheme-muted">{ confirm }</p>{/if}
     <div class="flex flex-wrap justify-center gap-space-xs pt-space-xs">
       <Button action={ true }>{ settings.action_label || site.settings.action_label }</Button>

@@ -9,7 +9,7 @@
     <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-video md:aspect-wide" shape="cap" width={ 1600 } sizes="100vw" eager={ true } />
     <div class="grid gap-space-xl md:grid-cols-3 lg:gap-space-3xl">
       <div class="grid content-start gap-space-md md:col-span-2">
-        <h1 class="font-heading text-h1 text-balance text-scheme-heading">{ ev.title }</h1>
+        <h1 class="font-heading text-h1 text-balance text-scheme-heading"><Accent text={ ev.title } rise={ true } /></h1>
         <p class="text-body-lg text-scheme-muted tabular-nums">{#if f.topic}{ f.topic } · {/if}<time datetime="{ f.date | date('iso') }">{ f.date | date('long') }</time>{#if f.time} · { f.time }{/if}{#if f.room || f.location} · { f.room || f.location.title }{/if}</p>
         {#if f.description}<div class="sites-prose max-w-reading">{ f.description }</div>{/if}
       </div>

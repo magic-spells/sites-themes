@@ -11,7 +11,7 @@
     <div class="grid gap-space-md">
       <div class="grid gap-space-xs">
         {#if f.category}<p class="text-kicker font-semibold text-scheme-meta uppercase">{ f.category.title }</p>{/if}
-        <h1 class="font-heading text-h1 text-balance text-scheme-heading">{ entry.title }</h1>
+        <h1 class="font-heading text-h1 text-balance text-scheme-heading"><Accent text={ entry.title } rise={ true } /></h1>
       </div>
       {#if f.summary}<p class="text-body-lg text-pretty text-scheme-muted">{ f.summary }</p>{/if}
       <div class="flex flex-wrap items-center justify-between gap-space-md border-b border-scheme-rule pb-space-md">

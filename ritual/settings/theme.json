@@ -18,7 +18,7 @@
         { "type": "image", "id": "favicon", "label": "Favicon" },
         { "type": "text", "id": "tagline", "label": "Tagline", "default": "A day spa and salon on Alder Street." },
         { "type": "text", "id": "currency_symbol", "label": "Currency symbol", "default": "$" },
-        { "type": "checkbox", "id": "reveal", "label": "Reveal on scroll", "default": true, "info": "Cards and tiles fade up as they enter view. Never the first screen." }
+        { "type": "checkbox", "id": "reveal", "label": "Reveal on scroll", "default": true, "info": "Cards and tiles fade up and headings rise in, word by word, as they enter view." }
       ]
     },
     {

@@ -19,6 +19,7 @@ import './vendor/select-dropdown.js';
 import './vendor/sticky-header.js';
 import './vendor/tarot.esm.js';
 import Reveal from './vendor/reveal.js';
+import './vendor/split-text.esm.js';
 
 const DISMISSED_PREFIX = 'sites:dismissed:';
 

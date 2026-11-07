@@ -16,4 +16,6 @@
 - Juniper House fixtures: six categories, 34 services, six people, two locations, three
   packages, six testimonials, four albums, four events, six product lines, six posts, three
   forms and 71 pages.
+- Headings rise in word by word (split-text) while Reveal on scroll is on: section heads, the
+  hero, page headers, the detail pages' titles and the band headings.
 - Vendored Magic Spells components, Gloock and Albert Sans, and build wiring.

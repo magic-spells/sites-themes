@@ -4,7 +4,7 @@
   <div class="mx-auto grid max-w-column gap-space-xl { settings.layout == 'stack' ? 'lg:grid-cols-3 lg:gap-space-3xl' : '' }">
     <div class="grid content-start justify-items-start gap-space-md">
       {#if settings.ring}<p class="flex size-ring items-center justify-center rounded-full border border-scheme-foreground p-space-sm text-center text-kicker font-semibold uppercase">{ settings.ring }</p>{/if}
-      <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ settings.heading } /></h2>
+      <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ settings.heading } rise={ true } /></h2>
       {#if settings.text}<p class="max-w-text text-body text-pretty text-scheme-muted">{ settings.text }</p>{/if}
     </div>
     {#if settings.layout == 'stack'}

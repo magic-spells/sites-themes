@@ -11,7 +11,7 @@
       <span class="font-heading text-h4">{ wordmark }</span>
     </div>
     <div class="grid gap-space-md">
-      <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ settings.heading } /></h2>
+      <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ settings.heading } rise={ true } /></h2>
       {#if settings.text}<p class="text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
       {#if amounts.length}
         <ul class="flex flex-wrap gap-space-xs" aria-label="{ t('amounts') }">

@@ -9,7 +9,7 @@
     <div class="grid items-center gap-space-xl md:grid-cols-picture-text md:gap-space-3xl">
       <div><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" eager={ true } /></div>
       <div class="grid gap-space-md">
-        <h1 class="font-heading text-h1 text-balance text-scheme-heading">{ loc.title }</h1>
+        <h1 class="font-heading text-h1 text-balance text-scheme-heading"><Accent text={ loc.title } rise={ true } /></h1>
         {#if f.description}<p class="max-w-text text-body-lg text-pretty text-scheme-muted">{ f.description }</p>{/if}
         <div class="grid gap-space-lg pt-space-sm lg:grid-cols-3">
           <div class="grid content-start gap-space-xs"><h2 class="text-kicker font-semibold text-scheme-meta uppercase">{ t('address') }</h2><address class="text-body-sm not-italic">{ f.address | newline_to_br }</address></div>

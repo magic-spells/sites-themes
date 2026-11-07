@@ -9,6 +9,7 @@
 @import "./vendor/reveal.css";
 @import "./vendor/scrolling-content.css" layer(components);
 @import "./vendor/select-dropdown.css" layer(components);
+@import "./vendor/split-text.css" layer(components);
 @import "./vendor/sticky-header.css" layer(components);
 @import "./vendor/tarot.css" layer(components);
 
@@ -300,6 +301,10 @@ html.reveal-off .reveal:not(.is-revealed) {
 	opacity: 1;
 	transform: none;
 	filter: none;
+}
+/* split-text hides a heading until it upgrades; with no script to upgrade it, show it. */
+html.reveal-off split-text:not(:defined) {
+	visibility: visible;
 }
 
 /* The header lies over a page that opens with a cover or dome hero

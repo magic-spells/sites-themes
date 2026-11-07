@@ -4,7 +4,7 @@
   <div class="mx-auto grid max-w-column gap-space-xl { centre ? 'justify-items-center text-center' : '' }">
     {#if settings.dome && settings.image}<div class="w-full max-w-figure"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-dome" shape="dome" width={ 1200 } sizes="(min-width: 64rem) 60rem, 100vw" eager={ true } /></div>{/if}
     <div class="grid max-w-reading gap-space-sm { centre ? 'justify-items-center' : '' }">
-      <h1 class="font-heading text-h1 text-balance text-scheme-heading"><Accent text={ settings.heading || page.title } /></h1>
+      <h1 class="font-heading text-h1 text-balance text-scheme-heading"><Accent text={ settings.heading || page.title } rise={ true } /></h1>
       {#if settings.text}<p class="text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
     </div>
   </div>

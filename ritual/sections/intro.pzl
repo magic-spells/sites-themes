@@ -1,4 +1,4 @@
-<!-- The welcome: one Display sentence with its accent word and a line of body in the reading column. Portal sets an arched photo beside it; collage overlaps two photos, the second turned 3°, at 48rem and up. -->
+<!-- The welcome: one H1-sized sentence with its accent word and a line of body in the reading column. Portal sets an arched photo beside it; collage overlaps two photos, the second turned 3°, at 48rem and up. -->
 {#let layout = settings.layout}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column items-center gap-space-xl { layout == 'text' ? 'justify-items-center text-center' : 'md:grid-cols-text-picture md:gap-space-3xl' }">

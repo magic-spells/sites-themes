@@ -1,7 +1,7 @@
-<!-- One Display line with its accent word and one button, centred, on any scheme. edge dome raises a half-ellipse of this band into the band above. -->
+<!-- One H2 line with its accent word and one button, centred, on any scheme. edge dome raises a half-ellipse of this band into the band above. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground { settings.edge == 'dome' ? 'edge-dome' : '' }">
   <div class="mx-auto grid max-w-reading justify-items-center gap-space-md py-space-lg text-center">
-    <h2 class="font-heading text-h1 text-balance text-scheme-heading"><Accent text={ settings.heading } /></h2>
+    <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ settings.heading } /></h2>
     {#if settings.text}<p class="text-body-lg text-scheme-muted">{ settings.text }</p>{/if}
     {#if settings.link_href}<Button href={ settings.link_href }>{ settings.link_label }</Button>{:else}<Button action={ true }>{ settings.link_label || site.settings.action_label }</Button>{/if}
   </div>

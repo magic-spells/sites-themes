@@ -106,9 +106,6 @@
 	--shadow-lg: var(--sites-shadow-lg);
 
 	/* The type roles, each sized per breakpoint in :root below. */
-	--text-display: var(--ritual-display);
-	--text-display--line-height: 1;
-	--text-display--letter-spacing: -0.015em;
 	--text-h1: var(--ritual-h1);
 	--text-h1--line-height: 1.05;
 	--text-h1--letter-spacing: -0.01em;
@@ -194,7 +191,6 @@
    design token and scales it by the plan's ratio for that width, so a
    workspace that changes the scale moves every breakpoint with it. */
 :root {
-	--ritual-display: calc(var(--sites-type-scale-5xl) * 48 / 96);
 	--ritual-h1: calc(var(--sites-type-scale-4xl) * 36 / 60);
 	--ritual-h2: calc(var(--sites-type-scale-3xl) * 28 / 40);
 	--ritual-h3: calc(var(--sites-type-scale-2xl) * 22 / 28);
@@ -214,7 +210,6 @@
 
 @media (min-width: 48rem) {
 	:root {
-		--ritual-display: calc(var(--sites-type-scale-5xl) * 72 / 96);
 		--ritual-h1: calc(var(--sites-type-scale-4xl) * 48 / 60);
 		--ritual-h2: calc(var(--sites-type-scale-3xl) * 34 / 40);
 		--ritual-h3: calc(var(--sites-type-scale-2xl) * 24 / 28);
@@ -232,7 +227,6 @@
 
 @media (min-width: 64rem) {
 	:root {
-		--ritual-display: var(--sites-type-scale-5xl);
 		--ritual-h1: var(--sites-type-scale-4xl);
 		--ritual-h2: var(--sites-type-scale-3xl);
 		--ritual-h3: var(--sites-type-scale-2xl);

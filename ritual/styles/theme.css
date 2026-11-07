@@ -148,12 +148,14 @@
 	--spacing-hero: 80svh;
 	--spacing-thumb: 10rem;
 	--spacing-avatar: 2.75rem;
+	--spacing-portrait: 6rem;
 	--spacing-textarea: 6rem;
 	--spacing-indent: 1.25rem;
 	--container-column: 82.5rem;
 	--container-reading: 40rem;
 	--container-text: 30rem;
 	--container-summary: 30rem;
+	--container-quote: 25rem;
 	--container-panel: 35rem;
 	--container-drawer: 24rem;
 	--container-photo: 30rem;

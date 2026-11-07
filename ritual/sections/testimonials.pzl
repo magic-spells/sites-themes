@@ -1,4 +1,4 @@
-<!-- What people say. Carousel: a tarot one-up on fern, the head with round arrows right, the quote centred in Gloock with its accent word, the name and the treatment under it. Portraits: three across, each a 4:5 portal portrait, the quote, the name and the treatment. -->
+<!-- What people say. Carousel: a tarot one-up on fern, the head with round arrows right, the quote centred in Gloock with its accent word, the name and the treatment under it. Portraits: three across from 48rem, each a small 4:5 portal portrait, the quote in Body large and one Meta line with the name and the treatment. -->
 {#let
   id = 'quotes-' + section.id
   all = content.testimonials.entries | sort('fields.order')
@@ -10,14 +10,14 @@
   <div class="mx-auto max-w-column">
     {#if settings.layout == 'portraits'}
       <SectionHead heading={ settings.heading } />
-      <ul class="grid gap-x-space-md gap-y-space-xl md:grid-cols-2 lg:grid-cols-3">
+      <ul class="grid gap-space-lg md:grid-cols-3">
         {#for entry in quotes}
           {#let f = entry.fields}
-          <li class="grid content-start gap-space-md { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
-            {#if f.image}<span class="block w-full max-w-thumb"><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-portrait" shape="portal" width={ 480 } sizes="10rem" /></span>{/if}
-            <figure class="grid gap-space-sm">
-              <blockquote class="font-heading text-h4 text-pretty"><Accent text={ '“' + f.quote + '”' } /></blockquote>
-              <figcaption class="text-body-sm"><span class="font-semibold">{ f.name }</span>{#if f.line || f.service} <span class="text-scheme-meta">· { f.line || f.service.title }</span>{/if}</figcaption>
+          <li class="grid max-w-quote content-start gap-space-sm { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+            {#if f.image}<span class="block w-portrait"><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-portrait" shape="portal" width={ 240 } sizes="6rem" /></span>{/if}
+            <figure class="grid gap-space-xs">
+              <blockquote class="text-body-lg text-pretty"><Accent text={ '“' + f.quote + '”' } /></blockquote>
+              <figcaption class="text-body-sm text-scheme-meta">{ f.name }{#if f.line || f.service} · { f.line || f.service.title }{/if}</figcaption>
             </figure>
           </li>
         {/for}

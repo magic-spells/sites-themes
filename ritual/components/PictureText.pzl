@@ -1,7 +1,7 @@
 <!-- component: PictureText -->
 <!-- A picture beside copy, for image-with-text and story: a 3:2 rounded photo (turned 3° with tilt) on the column's edge, and the heading with its accent word, the body and a link in the seven-part column. s is the section's settings; image_side sets the side. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column items-center gap-space-xl md:gap-space-3xl { s.image_side == 'right' ? 'md:grid-cols-text-picture' : 'md:grid-cols-picture-text' }">
+  <div class="mx-auto grid max-w-column items-center gap-space-xl md:gap-space-3xl { s.image_side == 'right' ? 'md:grid-cols-wide-narrow' : 'md:grid-cols-narrow-wide' }">
     <div class="{ s.image_side == 'right' ? 'md:order-last' : '' }"><Well asset={ s.image } alt={ s.image_alt } ratio="aspect-3/2" shape="round" width={ 1200 } sizes="(min-width: 48rem) 40vw, 100vw" tilt={ s.tilt } /></div>
     <div class="grid gap-space-md">
       <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ s.heading } /></h2>

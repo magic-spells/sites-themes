@@ -5,7 +5,7 @@
 }
 {#if tiles.length}
 <section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter">
-  <div class="mx-auto max-w-column { split ? 'grid items-center gap-space-xl px-gutter md:grid-cols-text-picture md:gap-space-3xl md:px-0' : '' }">
+  <div class="mx-auto max-w-column { split ? 'grid items-center gap-space-xl px-gutter md:grid-cols-wide-narrow md:gap-space-3xl md:px-0' : '' }">
     {#if !split}<div class="px-gutter md:px-0"><SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.handle } link_href={ settings.url } /></div>{/if}
     <ul class="flex gap-space-sm { split ? '' : 'snap-x snap-mandatory scroll-px-gutter overflow-x-auto px-gutter md:gap-space-md md:px-0 lg:grid lg:grid-cols-6' }">
       {#for block in tiles}

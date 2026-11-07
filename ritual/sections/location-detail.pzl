@@ -6,7 +6,7 @@
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column gap-space-2xl">
-    <div class="grid items-center gap-space-xl md:grid-cols-picture-text md:gap-space-3xl">
+    <div class="grid items-center gap-space-xl md:grid-cols-narrow-wide md:gap-space-3xl">
       <div><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" eager={ true } /></div>
       <div class="grid gap-space-md">
         <h1 class="font-heading text-h1 text-balance text-scheme-heading"><Accent text={ loc.title } rise={ true } /></h1>

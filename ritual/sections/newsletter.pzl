@@ -1,7 +1,7 @@
 <!-- A short sign-up: the heading with its accent word and a line on the left, one email field labelled by its placeholder only and one button on the right, the sent and error states in place. With a capsule: the heading over the field in the seven-part column and a 3:5 capsule photo beside them from 48rem. -->
 {#let capsule = settings.image_style == 'capsule' && settings.image}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column gap-space-lg md:gap-x-space-3xl { capsule ? 'md:grid-cols-text-picture' : 'items-end md:grid-cols-2' }">
+  <div class="mx-auto grid max-w-column gap-space-lg md:gap-x-space-3xl { capsule ? 'md:grid-cols-wide-narrow' : 'items-end md:grid-cols-2' }">
     {#if capsule}<div class="hidden md:col-start-2 md:row-span-2 md:row-start-1 md:block"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-capsule" shape="capsule" width={ 960 } sizes="40vw" /></div>{/if}
     <div class="grid gap-space-sm { capsule ? 'self-end' : '' }">
       <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ settings.heading } rise={ true } /></h2>

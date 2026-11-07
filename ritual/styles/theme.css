@@ -253,9 +253,11 @@
 }
 @utility edge-dome {
 	position: relative;
+	isolation: isolate;
 	&::before {
 		content: "";
 		position: absolute;
+		z-index: -2;
 		inset-inline: 0;
 		top: calc(var(--ritual-rise) * -1);
 		height: var(--ritual-rise);
@@ -286,6 +288,11 @@ main > [data-section]:has(+ [data-section] .edge-dome) > section {
 	background-size: 10rem;
 	mix-blend-mode: soft-light;
 	opacity: 0.35;
+}
+/* On a domed band the grain covers the dome too, so the curve and the band read as one colour. */
+.edge-dome[data-texture="grain"]::after {
+	top: calc(var(--ritual-rise) * -1);
+	border-radius: 50% 50% 0 0 / var(--ritual-rise) var(--ritual-rise) 0 0;
 }
 
 /* Two bands on the same scheme in a row read as one: the second drops its

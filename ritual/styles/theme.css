@@ -5,6 +5,7 @@
 @import "./vendor/dropdown-panel.css" layer(components);
 @import "./vendor/dropdown-panel.effects.css" layer(components);
 @import "./vendor/lightbox.css" layer(components);
+@import "./vendor/progress-bar.css" layer(components);
 @import "./vendor/reveal.css";
 @import "./vendor/scrolling-content.css" layer(components);
 @import "./vendor/select-dropdown.css" layer(components);
@@ -459,12 +460,18 @@ dropdown-component:not(:defined) dropdown-panel {
 }
 
 /* The carousels: dots in the scheme's text at 35%, the current one in the
-   accent. Before tarot upgrades, or with no JavaScript, a one-up carousel
+   accent; the progress bar a 0.125rem rule-coloured line with a fill in the
+   text colour. Before tarot upgrades, or with no JavaScript, a one-up carousel
    shows its first slide and a track lays its slides out as a row that
    scrolls. */
 tarot-carousel {
 	--color-pagination-dot: color-mix(in srgb, var(--sites-scheme-foreground) var(--opacity-dots-inactive), transparent);
 	--color-pagination-dot-active: var(--sites-scheme-links);
+	--tarot-progress-height: 0.125rem;
+	--tarot-progress-margin: 0;
+	--tarot-progress-border-radius: 0;
+	--tarot-progress-bg: var(--sites-scheme-chip-border);
+	--tarot-progress-fill-bg: var(--sites-scheme-foreground);
 }
 tarot-carousel > .tarot-dots-list {
 	margin-top: var(--sites-spacing-md);

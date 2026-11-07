@@ -1,14 +1,14 @@
-<!-- The lines the house sells and uses: a tarot strip of brand cards, each a square well, the brand in Card title and its line in Meta, equal width and bleeding right on a phone, round arrows in the head. -->
+<!-- The lines the house sells and uses: a tarot strip of brand cards, each a square well, the brand in Card title and its line in Meta, equal width and bleeding right on a phone, the progress bar and round arrows under it. -->
 {#let
   items = content.products.entries | sort('fields.order') | slice(0, 12)
   id = 'products-' + section.id
-  options = { slidesPerView: 1.6, gap: '1rem', navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { slidesPerView: 3, gap: '1.5rem', navigation: { showButtons: true, showPagination: false } }, '1024': { slidesPerView: 5, gap: '1.5rem', navigation: { showButtons: true, showPagination: false } } } }
+  options = { progressBar: { selector: '#bar-' + id }, slidesPerView: 1.6, gap: '1rem', navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { slidesPerView: 3, gap: '1.5rem', navigation: { showButtons: true, showPagination: false } }, '1024': { slidesPerView: 5, gap: '1.5rem', navigation: { showButtons: true, showPagination: false } } } }
 }
 {#if items.length}
 <section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter">
   <tarot-carousel class="mx-auto block max-w-column ps-gutter md:ps-0" id={ id } data-track>
     <script type="application/json" data-tarot-options>{ options | json }</script>
-    <div class="pe-gutter md:pe-0"><SectionHead heading={ settings.heading } text={ settings.text }>{#if items.length > 5}<Arrows />{/if}</SectionHead></div>
+    <div class="pe-gutter md:pe-0"><SectionHead heading={ settings.heading } text={ settings.text } /></div>
     <tarot-viewport>
       <tarot-track>
         {#for entry in items}
@@ -25,6 +25,7 @@
         {/for}
       </tarot-track>
     </tarot-viewport>
+    <div class="pe-gutter md:pe-0"><Arrows bar="bar-{ id }" /></div>
   </tarot-carousel>
 </section>
 {/if}

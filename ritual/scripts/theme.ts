@@ -13,6 +13,7 @@ import './vendor/bottom-sheet.js';
 import './vendor/collapsible-content.js';
 import './vendor/dropdown-panel.js';
 import './vendor/lightbox.min.js';
+import './vendor/progress-bar.esm.js';
 import './vendor/scrolling-content.js';
 import './vendor/select-dropdown.js';
 import './vendor/sticky-header.js';

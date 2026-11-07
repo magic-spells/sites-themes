@@ -20,7 +20,7 @@
         "feature_first": false,
         "show_switch": false,
         "limit": 2,
-        "link_label": "Every post",
+        "link_label": "All posts",
         "color_scheme": "linen"
       },
       "blocks": []

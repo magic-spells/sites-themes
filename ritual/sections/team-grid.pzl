@@ -31,7 +31,7 @@
       { "value": "row", "label": "A row that scrolls" },
       { "value": "stack", "label": "A stack" }
     ] },
-    { "type": "text", "id": "link_label", "label": "Link label", "default": "Meet everyone" },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "All team" },
     { "type": "url", "id": "link_href", "label": "Link", "default": "/team" },
     { "type": "url", "id": "base_path", "label": "Person page path", "default": "/team" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }

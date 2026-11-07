@@ -44,7 +44,7 @@
       { "value": "3", "label": "Three" },
       { "value": "4", "label": "Four" }
     ] },
-    { "type": "text", "id": "link_label", "label": "Link label", "default": "See the full menu" },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "All services" },
     { "type": "url", "id": "link_href", "label": "Link", "default": "/services" },
     { "type": "url", "id": "base_path", "label": "Service page path", "default": "/services" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }

@@ -27,7 +27,7 @@
   ],
   "blocks": [
     { "type": "media", "name": "Media", "settings": [
-      { "type": "image", "id": "image", "label": "Image", "info": "3:5 portrait crops best. With a video it is the poster." },
+      { "type": "image", "id": "image", "label": "Image", "info": "Required; shown until a video plays. 3:5 portrait crops best." },
       { "type": "text", "id": "image_alt", "label": "Alt text", "default": "" },
       { "type": "video", "id": "video", "label": "Video", "info": "Optional: a short clip that plays muted on a loop." }
     ] }

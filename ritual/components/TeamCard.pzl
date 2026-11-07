@@ -1,12 +1,12 @@
 <!-- component: TeamCard -->
 <!-- A person: the 4:5 portal portrait, the name in Card title, role · level in Meta, the specialties as a line and a "Book with" link to their page. -->
 {#let f = entry.fields}
-<article class="group relative grid content-start gap-space-sm { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+<article class="group relative flex h-full flex-col gap-space-sm { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
   <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-portrait" shape="portal" width={ 640 } sizes="(min-width: 64rem) 25rem, (min-width: 48rem) 50vw, 70vw" zoom={ true } />
-  <div class="grid gap-space-2xs">
+  <div class="flex flex-1 flex-col gap-space-2xs">
     <h3 class="font-heading text-h4"><a class="after:absolute after:inset-0 hover:underline hover:underline-offset-4" href="{ base_path }/{ entry.handle }">{ entry.title }</a></h3>
     <p class="text-body-sm text-scheme-meta">{ f.role }{#if f.level} · { f.level }{/if}</p>
     {#if f.specialties}<p class="text-body-sm text-scheme-muted">{ f.specialties | replace(', ', ' · ') }</p>{/if}
-    <span class="mt-space-2xs text-body-sm font-semibold text-accent underline underline-offset-4">{ t('book_with', { name: (entry.title | split(' ') | first) }) }</span>
+    <span class="mt-auto pt-space-2xs text-body-sm font-semibold text-accent underline underline-offset-4">{ t('book_with', { name: (entry.title | split(' ') | first) }) }</span>
   </div>
 </article>

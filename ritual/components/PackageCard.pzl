@@ -1,12 +1,12 @@
 <!-- component: PackageCard -->
 <!-- A package as a portal card: a 3:4 top whose arch holds the price in Price and the period in Meta, then the name, summary, includes as a ring list, the expiry and note in Meta and a full-width button at the foot. featured inverts it to fern. -->
 {#let f = entry.fields}
-<article class="grid content-start overflow-hidden rounded-t-full rounded-b-md border border-scheme-rule { f.featured ? 'sites-scheme-fern bg-scheme-background text-scheme-foreground' : 'bg-scheme-background' } { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+<article class="flex h-full flex-col overflow-hidden rounded-t-full rounded-b-md border border-scheme-rule { f.featured ? 'sites-scheme-fern bg-scheme-background text-scheme-foreground' : 'bg-scheme-background' } { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
   <div class="grid aspect-tall content-center justify-items-center gap-space-2xs rounded-t-full bg-scheme-surface-2 px-space-lg text-center">
     <p class="font-heading text-h1 tabular-nums">{ f.price | currency(site.settings.currency_symbol, 0) }</p>
     <p class="text-body-sm text-scheme-meta">{ t('period.' + f.period) }</p>
   </div>
-  <div class="grid gap-space-sm p-space-lg">
+  <div class="flex flex-1 flex-col gap-space-sm p-space-lg">
     <h3 class="font-heading text-h3 text-scheme-heading">{ entry.title }</h3>
     {#if f.summary}<p class="text-body-sm text-scheme-muted">{ f.summary }</p>{/if}
     {#if f.includes}
@@ -15,7 +15,7 @@
       </ul>
     {/if}
     {#if f.expires || f.note}<p class="text-body-sm text-scheme-meta">{ [f.expires, f.note] | compact | join(' · ') }</p>{/if}
-    <div class="mt-space-xs">
+    <div class="mt-auto pt-space-xs">
       {#if f.link}<Button href={ f.link } wide={ true } external={ true }>{ t('choose') }</Button>{:else}<Button action={ true } wide={ true }>{ site.settings.action_label }</Button>{/if}
     </div>
   </div>

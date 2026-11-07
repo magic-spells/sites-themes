@@ -1,6 +1,6 @@
 {
   "label": "Day spa",
-  "description": "The front page: the arch hero, the categories, the most booked, the team, the first visit and the gift card.",
+  "description": "The front page: the arch hero, the categories, the most booked, the team and the first visit.",
   "sections": [
     {
       "id": "s_hero",
@@ -134,15 +134,6 @@
         "link_label": "All posts",
         "link_href": "/journal",
         "color_scheme": "sand"
-      },
-      "blocks": []
-    },
-    {
-      "id": "s_gift",
-      "type": "gift-cards",
-      "preset": "Clay",
-      "settings": {
-        "color_scheme": "clay"
       },
       "blocks": []
     },

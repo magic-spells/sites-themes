@@ -14,7 +14,7 @@
     {
       "name": "Brand",
       "settings": [
-        { "type": "text", "id": "wordmark", "label": "Wordmark", "default": "Juniper House", "info": "Set in the heading face, mixed case, in the header, the footer stamp and the gift card." },
+        { "type": "text", "id": "wordmark", "label": "Wordmark", "default": "Juniper House", "info": "Set in the heading face, mixed case, in the header and the footer stamp." },
         { "type": "image", "id": "favicon", "label": "Favicon" },
         { "type": "text", "id": "tagline", "label": "Tagline", "default": "A day spa and salon on Alder Street." },
         { "type": "text", "id": "currency_symbol", "label": "Currency symbol", "default": "$" },
@@ -34,13 +34,12 @@
         { "type": "url", "id": "booking_path", "label": "Request page", "default": "/book", "info": "Where the primary action leads without JavaScript." },
         { "type": "form", "id": "booking_form", "label": "Booking form", "default": "booking" },
         { "type": "text", "id": "confirm_line", "label": "Confirm line", "default": "We confirm by text within a day." },
-        { "type": "url", "id": "gift_card_url", "label": "Gift card page", "default": "", "info": "Where Buy a gift card leads. Empty opens the booking form." },
         { "type": "text", "id": "text_number", "label": "Text or WhatsApp number", "default": "" },
         { "type": "text", "id": "stamp_line", "label": "Stamp line", "default": "", "info": "The word under the wordmark in the footer stamp. Empty uses the first location's street." },
         { "type": "select", "id": "texture", "label": "Texture", "default": "grain", "options": [
           { "value": "none", "label": "None" },
           { "value": "grain", "label": "Grain" }
-        ], "info": "A fine grain over the cover hero, the gift card band and the booking band." }
+        ], "info": "A fine grain over the cover hero and the booking band." }
       ]
     },
     {

@@ -1,4 +1,4 @@
-<!-- The house policies (cancellation, late arrival, children, gift cards, health) as rows that open (components/Questions.pzl). -->
+<!-- The house policies (cancellation, late arrival, children, health) as rows that open (components/Questions.pzl). -->
 <Questions s={ settings } items={ blocks } />
 
 <schema>

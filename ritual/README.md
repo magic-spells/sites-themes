@@ -21,11 +21,11 @@ settings/design.json every design token and the nine colour schemes (linen, sand
                     fig, celadon, sea, slate, terracotta)
 layouts/default.pzl the <html> document: SEO, Open Graph, the reveal pre-paint script, skip link, slots
 data/templates/     home (Day spa), service, member, album, event, location, post and page (+ about,
-                    book, contact, events, gallery, gift-cards, journal, locations, packages,
+                    book, contact, events, gallery, journal, locations, packages,
                     policies, services, team) as JSON
 data/groups/        header-group.json, footer-group.json, panel-group.json
 templates/          404.pzl, password.pzl, maintenance.pzl
-sections/           41, each with a full <schema>
+sections/           40, each with a full <schema>
 components/         Accent, AlbumTile, Arrows, Button, EventCard, Field, FormFields, HoursTable,
                     LightboxCompanion, LocationCard, PackageCard, PictureText, PostCard, Price,
                     Questions, SectionHead, ServiceCard, ServiceLine, Stamp, TeamCard, Well

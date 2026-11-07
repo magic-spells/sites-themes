@@ -15,7 +15,6 @@
       "booking_path": "/book",
       "booking_form": "booking",
       "confirm_line": "We confirm by text within a day.",
-      "gift_card_url": "",
       "text_number": "(503) 555-0142",
       "stamp_line": "",
       "texture": "grain",
@@ -52,15 +51,6 @@
           "target": {
             "kind": "url",
             "url": "/gallery"
-          },
-          "children": []
-        },
-        {
-          "id": "m4",
-          "label": "Gift cards",
-          "target": {
-            "kind": "url",
-            "url": "/gift-cards"
           },
           "children": []
         },
@@ -2662,11 +2652,6 @@
       "id": "pg_packages",
       "template": "page.packages",
       "title": "Packages"
-    },
-    "/gift-cards": {
-      "id": "pg_gift_cards",
-      "template": "page.gift-cards",
-      "title": "Gift cards"
     },
     "/events": {
       "id": "pg_events",

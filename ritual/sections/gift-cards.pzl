@@ -1,4 +1,4 @@
-<!-- The gift card band, on clay with grain: a fern portal card left (the Gift card label, the amount in Price, the wordmark small), and beside it the heading with its accent word, a line, the amounts as chips, one button to the gift card shop (or the booking form) and the fine print in Meta. -->
+<!-- The gift card band, on clay with grain: a fern capsule card left (the Gift card label, the amount in Price, the wordmark small), and beside it the heading with its accent word, a line, the amounts as chips, one button to the gift card shop (or the booking form) and the fine print in Meta. -->
 {#let
   amounts = settings.amounts | split(',')
   url = settings.link || site.settings.gift_card_url
@@ -6,7 +6,7 @@
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-texture={ settings.grain && site.settings.texture == 'grain' ? 'grain' : null }>
   <div class="mx-auto grid max-w-column items-center gap-space-xl md:grid-cols-picture-text md:gap-space-3xl">
-    <div class="sites-scheme-fern grid aspect-portrait content-between justify-items-center rounded-t-full rounded-b-md bg-scheme-background px-space-lg pt-space-3xl pb-space-lg text-center text-scheme-foreground" aria-hidden="true">
+    <div class="sites-scheme-fern grid aspect-capsule content-between justify-items-center rounded-full bg-scheme-background px-space-lg py-space-3xl text-center text-scheme-foreground" aria-hidden="true">
       <span class="grid gap-space-xs"><span class="text-kicker font-semibold text-scheme-meta uppercase">{ t('gift_card') }</span><span class="font-heading text-h1 tabular-nums">{ settings.card_amount }</span></span>
       <span class="font-heading text-h4">{ wordmark }</span>
     </div>

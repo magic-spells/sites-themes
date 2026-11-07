@@ -2,6 +2,7 @@
 
 ## 0.1.0
 
+- The gift card and the hours-and-location photo are capsules, round at the top and the bottom.
 - 41 sections: the header with the Services panel, the ticker, the footer colophon with the
   stamp, the mobile menu, the booking panel and the cookie notice; the service menu with its
   dotted lines, service cards and pages, the team, packages and gift cards; hero, intro, first

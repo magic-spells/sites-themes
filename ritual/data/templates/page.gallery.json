@@ -22,11 +22,11 @@
       "blocks": []
     },
     {
-      "id": "s_collage",
+      "id": "s_capsules",
       "type": "gallery-strip",
-      "preset": "Collage",
+      "preset": "Capsules",
       "settings": {
-        "layout": "collage",
+        "layout": "capsules",
         "gallery": "the-rooms",
         "heading": "Our *rooms*",
         "link_label": "",

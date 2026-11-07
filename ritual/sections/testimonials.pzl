@@ -1,4 +1,4 @@
-<!-- What people say. Carousel: a tarot one-up on fern under a centred head, the quote centred in Gloock, the name and the treatment under it, page dots below; from 64rem round arrows at the stage's sides show on hover or keyboard focus. Portraits: three across from 48rem, each a small 4:5 portal portrait, the quote in Body large and one Meta line with the name and the treatment. -->
+<!-- What people say. Carousel: a tarot one-up on fern under a centred head, the quote centred in Gloock, the name and the treatment under it, page dots below; from 64rem round arrows at the stage's sides show on hover or keyboard focus. Portraits: three across from 48rem, each a small 4:5 capsule portrait, the quote in Body large and one Meta line with the name and the treatment. -->
 {#let
   id = 'quotes-' + section.id
   all = content.testimonials.entries | sort('fields.order')
@@ -14,7 +14,7 @@
         {#for entry in quotes}
           {#let f = entry.fields}
           <li class="grid max-w-quote content-start gap-space-sm { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
-            {#if f.image}<span class="block w-portrait"><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-portrait" shape="portal" width={ 240 } sizes="6rem" /></span>{/if}
+            {#if f.image}<span class="block w-portrait"><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-portrait" shape="capsule" width={ 240 } sizes="6rem" /></span>{/if}
             <figure class="grid gap-space-xs">
               <blockquote class="text-body-lg text-pretty">“{ f.quote }”</blockquote>
               <figcaption class="text-body-sm text-scheme-meta">{ f.name }{#if f.line || f.service} · { f.line || f.service.title }{/if}</figcaption>

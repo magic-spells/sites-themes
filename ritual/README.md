@@ -4,7 +4,8 @@ A theme for a day spa, a salon, a massage or skin studio, or a small yoga and pi
 menu is the centre of it: every service sits on one dotted line, its name, its time and its
 price, with add-ons indented under it, grouped by category and filtered by tabs. One shape runs
 through the rest: the portal, an arch over every portrait and a capped top over every
-landscape. Book opens one appointment request from anywhere on the site, a sheet on a phone and
+landscape; the capsule, a tall photo rounded at both ends, is the editorial accent (the
+Capsules hero and gallery strip, the newsletter photo, the small portraits). Book opens one appointment request from anywhere on the site, a sheet on a phone and
 a dialog from tablets, or links out to a booking page. Gloock carries the headings with one word
 of each in the accent, Albert Sans the text, on nine warm schemes from linen to terracotta.
 
@@ -27,7 +28,7 @@ templates/          404.pzl, password.pzl, maintenance.pzl
 sections/           40, each with a full <schema>
 components/         Accent, AlbumTile, Arrows, Button, EventCard, Field, FormFields, HoursTable,
                     LightboxCompanion, LocationCard, PackageCard, PictureText, PostCard, Price,
-                    Questions, SectionHead, ServiceCard, ServiceLine, Stamp, Submit, TeamCard, Well
+                    Questions, SectionHead, ServiceCard, ServiceLine, Stamp, TeamCard, Well
 styles/theme.css    the Tailwind entry: @theme maps the --sites-* tokens and Ritual's role sizes,
                     and the few rules utilities cannot express (the dome edge, the grain, the
                     booking dialog from 48rem, sheets and carousels before they upgrade)

@@ -41,7 +41,7 @@
         <div class="grid gap-space-sm pt-space-md">
           <h2 class="text-kicker font-semibold text-scheme-meta uppercase">{ t('offered_by') }</h2>
           <a class="group flex items-center gap-space-sm" href="{ settings.team_path }/{ lead.handle }">
-            <span class="block w-avatar"><Well asset={ lead.fields.image } alt="" ratio="aspect-portrait" shape="portal" width={ 120 } sizes="2.75rem" /></span>
+            <span class="block w-avatar"><Well asset={ lead.fields.image } alt="" ratio="aspect-portrait" shape="capsule" width={ 120 } sizes="2.75rem" /></span>
             <span class="grid"><span class="font-semibold group-hover:underline group-hover:underline-offset-4">{ lead.title }</span><span class="text-body-sm text-scheme-meta">{ lead.fields.role }</span></span>
           </a>
         </div>

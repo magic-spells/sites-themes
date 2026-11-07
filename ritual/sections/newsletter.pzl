@@ -1,11 +1,13 @@
-<!-- A short sign-up: the heading with its accent word and a line on the left, one email field labelled by its placeholder only and one button on the right, the sent and error states in place. -->
+<!-- A short sign-up: the heading with its accent word and a line on the left, one email field labelled by its placeholder only and one button on the right, the sent and error states in place. With a capsule: the heading over the field in the seven-part column and a 3:5 capsule photo beside them from 48rem. -->
+{#let capsule = settings.image_style == 'capsule' && settings.image}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column items-end gap-space-lg md:grid-cols-2 md:gap-space-3xl">
-    <div class="grid gap-space-sm">
+  <div class="mx-auto grid max-w-column gap-space-lg md:gap-x-space-3xl { capsule ? 'md:grid-cols-text-picture' : 'items-end md:grid-cols-2' }">
+    {#if capsule}<div class="hidden md:col-start-2 md:row-span-2 md:row-start-1 md:block"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-capsule" shape="capsule" width={ 960 } sizes="40vw" /></div>{/if}
+    <div class="grid gap-space-sm { capsule ? 'self-end' : '' }">
       <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ settings.heading } /></h2>
       {#if settings.text}<p class="text-body text-scheme-muted">{ settings.text }</p>{/if}
     </div>
-    <Form handle={ settings.form } class="grid gap-space-xs" id="newsletter-{ section.id }">
+    <Form handle={ settings.form } class="grid content-start gap-space-xs" id="newsletter-{ section.id }">
       {#if form.sent}
         <p class="text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
       {:else}
@@ -33,6 +35,12 @@
     { "type": "form", "id": "form", "label": "Form" },
     { "type": "text", "id": "placeholder", "label": "Field placeholder", "default": "Your email" },
     { "type": "text", "id": "button_label", "label": "Button label", "default": "Sign up" },
+    { "type": "select", "id": "image_style", "label": "Image", "default": "none", "options": [
+      { "value": "none", "label": "None" },
+      { "value": "capsule", "label": "Capsule" }
+    ], "info": "Capsule: a tall rounded photo beside the sign-up from 48rem." },
+    { "type": "image", "id": "image", "label": "Photo" },
+    { "type": "text", "id": "image_alt", "label": "Photo alt text", "default": "" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "fern" }
   ],
   "presets": [

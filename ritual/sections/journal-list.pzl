@@ -45,7 +45,7 @@
   ],
   "presets": [
     { "name": "Default", "settings": { "color_scheme": "linen" } },
-    { "name": "More", "settings": { "heading": "More from the *journal*", "feature_first": false, "show_switch": false, "limit": 2, "link_label": "Every post", "color_scheme": "linen" } }
+    { "name": "More", "settings": { "heading": "More *posts*", "feature_first": false, "show_switch": false, "limit": 2, "link_label": "All posts", "color_scheme": "linen" } }
   ]
 }
 </schema>

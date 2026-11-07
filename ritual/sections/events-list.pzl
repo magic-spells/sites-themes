@@ -35,7 +35,7 @@
   ],
   "presets": [
     { "name": "Rows", "settings": { "layout": "rows", "color_scheme": "linen" } },
-    { "name": "More events", "settings": { "layout": "cards", "limit": 3, "heading": "More *events*", "link_label": "Every event", "color_scheme": "linen" } }
+    { "name": "More events", "settings": { "layout": "cards", "limit": 3, "heading": "More *events*", "link_label": "All events", "color_scheme": "linen" } }
   ]
 }
 </schema>

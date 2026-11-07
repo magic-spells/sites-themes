@@ -1,4 +1,4 @@
-<!-- The opener, four ways. Arch: the type left (Display with the accent word, the line, Book and Call) and a 4:5 portal photo right on the column's edge. Cover: a photo (or a fade slideshow with its pause button) under the fern scrim, with grain when House texture is on, the type in linen centred or low left; full bleed, or inset in the column with rounded corners. Quiet: the type alone, centred on a soft glow. Dome: a half circle of photo hanging from the header, the type centred under it. -->
+<!-- The opener, four ways. Arch: the type left (Display with the accent word, the line, Book and Call) and a 4:5 portal photo right on the column's edge. Cover: a photo (or a fade slideshow with its pause button) under the fern scrim, with grain when House texture is on, the type in linen centred or low left; full bleed, or inset in the column with rounded corners. Capsules: the type left and a two-column mosaic of five capsules right, each column offset by half a capsule and bleeding off the band; on phones a row of three under the type. Quiet: the type alone, centred on a soft glow. Dome: a half circle of photo hanging from the header, the type centred under it. -->
 {#let
   id = 'hero-' + section.id
   layout = settings.layout
@@ -8,12 +8,14 @@
   phone = (loc && loc.fields.phone) || site.settings.phone
   grain = settings.treatment == 'grain' && site.settings.texture == 'grain'
   cover = layout == 'cover'
+  capsules = layout == 'capsules'
+  images = blocks | slice(0, 5)
   inset = settings.frame == 'inset'
   left = settings.align == 'left'
   second = settings.secondary_url ? settings.secondary_url : (settings.show_call && phone ? 'tel:' + (phone | replace(' ', '')) : null)
   centred = layout == 'quiet' || layout == 'dome'
 }
-<section class="relative isolate bg-scheme-background text-scheme-foreground { cover ? (inset ? 'px-gutter pt-space-lg' : '') : (layout == 'arch' ? 'px-gutter pb-section' : 'px-gutter py-section') } { layout == 'quiet' ? 'bg-glow' : '' }" data-over-hero={ cover && !inset ? true : null }>
+<section class="relative isolate bg-scheme-background text-scheme-foreground { cover ? (inset ? 'px-gutter pt-space-lg' : '') : (layout == 'arch' ? 'px-gutter pb-section' : 'px-gutter py-section') } { capsules ? 'overflow-hidden lg:h-hero lg:py-0' : '' } { layout == 'quiet' ? 'bg-glow' : '' }" data-over-hero={ cover && !inset ? true : null }>
   {#if cover}
     <div class="relative isolate flex overflow-hidden { settings.height == 'full' ? 'min-h-svh' : 'min-h-hero' } { inset ? 'mx-auto max-w-column rounded-lg' : '' }" data-texture={ grain ? 'grain' : null }>
       {#if slides.length > 1}
@@ -42,7 +44,7 @@
       </div>
     </div>
   {:else}
-    <div class="mx-auto grid max-w-column items-center gap-space-xl { layout == 'arch' ? 'pt-space-lg lg:grid-cols-text-picture lg:gap-space-3xl' : '' } { centred ? 'justify-items-center text-center' : '' }">
+    <div class="mx-auto grid max-w-column items-center gap-space-xl { layout == 'arch' ? 'pt-space-lg' : '' } { layout == 'arch' || capsules ? 'lg:grid-cols-text-picture lg:gap-space-3xl' : '' } { capsules ? 'lg:h-full lg:grid-rows-1' : '' } { centred ? 'justify-items-center text-center' : '' }">
       {#if layout == 'dome' && settings.image}<div class="-mx-gutter w-screen max-w-column lg:mx-0 lg:w-full"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-dome" shape="dome" width={ 1600 } sizes="100vw" eager={ true } /></div>{/if}
       <div class="grid gap-space-md { centred ? 'max-w-reading justify-items-center' : 'py-space-xl' }">
         <h1 class="font-heading text-display text-balance text-scheme-heading"><Accent text={ settings.heading } /></h1>
@@ -53,6 +55,15 @@
         </div>
       </div>
       {#if layout == 'arch' && settings.image}<div class="max-lg:order-first"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="(min-width: 64rem) 40vw, 100vw" eager={ true } /></div>{/if}
+      {#if capsules && images.length}
+        <div class="-me-gutter flex gap-space-sm overflow-hidden lg:me-0 lg:h-full lg:items-center lg:gap-space-lg lg:overflow-visible">
+          {#for c in [0, 1]}
+            <div class="flex w-full flex-col gap-space-lg { c ? 'max-lg:hidden' : 'max-lg:contents' }">
+              {#for block in images, i}{#if i % 2 == c}<div class="w-2/5 shrink-0 lg:w-full" data-block={ block.editor_id }><Well asset={ block.settings.image } alt={ block.settings.image_alt } ratio="aspect-capsule" shape="capsule" width={ 640 } sizes="(min-width: 64rem) 20vw, 40vw" eager={ i < 2 } /></div>{/if}{/for}
+            </div>
+          {/for}
+        </div>
+      {/if}
     </div>
   {/if}
 </section>
@@ -68,8 +79,9 @@
       { "value": "arch", "label": "Arch" },
       { "value": "cover", "label": "Cover" },
       { "value": "quiet", "label": "Quiet" },
-      { "value": "dome", "label": "Dome" }
-    ], "info": "Arch: an arched 4:5 photo beside the type. Cover: a full-bleed photo under a scrim. Quiet: the type alone. Dome: a half circle of photo over the type." },
+      { "value": "dome", "label": "Dome" },
+      { "value": "capsules", "label": "Capsules" }
+    ], "info": "Arch: an arched 4:5 photo beside the type. Cover: a full-bleed photo under a scrim. Quiet: the type alone. Dome: a half circle of photo over the type. Capsules: up to five tall rounded photos (the Image blocks) beside the type." },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Come in and *breathe*", "info": "Wrap one word in asterisks to set it in the accent." },
     { "type": "textarea", "id": "text", "label": "Text", "default": "Massage, facials, hair, nails and makeup, with a quiet studio upstairs." },
     { "type": "text", "id": "action_label", "label": "Action label", "default": "", "info": "Leave empty to use the House setting." },
@@ -99,11 +111,19 @@
     ], "info": "Cover only: a fine grain over the photo while House texture is on." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
   ],
+  "blocks": [
+    { "type": "image", "name": "Image", "settings": [
+      { "type": "image", "id": "image", "label": "Image", "info": "Capsules only; 3:5 portrait crops best." },
+      { "type": "text", "id": "image_alt", "label": "Alt text", "default": "" }
+    ] }
+  ],
+  "max_blocks": 5,
   "presets": [
     { "name": "Arch", "settings": { "layout": "arch", "color_scheme": "linen" } },
     { "name": "Cover", "settings": { "layout": "cover", "treatment": "grain", "color_scheme": "fern" } },
     { "name": "Quiet", "settings": { "layout": "quiet", "color_scheme": "linen" } },
-    { "name": "Dome", "settings": { "layout": "dome", "color_scheme": "linen" } }
+    { "name": "Dome", "settings": { "layout": "dome", "color_scheme": "linen" } },
+    { "name": "Capsules", "settings": { "layout": "capsules", "color_scheme": "linen" } }
   ]
 }
 </schema>

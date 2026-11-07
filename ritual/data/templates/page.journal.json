@@ -26,6 +26,9 @@
       "preset": "Fern",
       "settings": {
         "form": "newsletter",
+        "image_style": "capsule",
+        "image": "as_4x5_sea",
+        "image_alt": "The studio window",
         "color_scheme": "fern"
       },
       "blocks": []

@@ -6,7 +6,7 @@ price, with add-ons indented under it, grouped by category and filtered by tabs.
 through the rest: the portal, an arch over every portrait and a capped top over every
 landscape. Book opens one appointment request from anywhere on the site, a sheet on a phone and
 a dialog from tablets, or links out to a booking page. Gloock carries the headings with one word
-of each in the accent, Albert Sans the text, on eight warm schemes from linen to fern.
+of each in the accent, Albert Sans the text, on nine warm schemes from linen to terracotta.
 
 The fixtures are an invented house, **Juniper House** on Alder Street, with a second, smaller
 studio at Riverside, so `sites dev` shows six categories, 34 services, six people, three
@@ -16,8 +16,8 @@ replace them before publishing.
 
 ```
 settings/theme.json template roles, 3 section groups, Brand, House and Contact settings
-settings/design.json every design token and the eight colour schemes (linen, sand, clay, fern,
-                    fig, celadon, sea, slate)
+settings/design.json every design token and the nine colour schemes (linen, sand, clay, fern,
+                    fig, celadon, sea, slate, terracotta)
 layouts/default.pzl the <html> document: SEO, Open Graph, the reveal pre-paint script, skip link, slots
 data/templates/     home (Day spa), service, member, album, event, location, post and page (+ about,
                     book, contact, events, gallery, gift-cards, journal, locations, packages,

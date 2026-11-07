@@ -69,7 +69,7 @@
 
 /* The error colour, per scheme (the engine has no slot for it): dark red
    on the light schemes, darker on clay and celadon, a pale coral on the
-   darks. Every value clears 4.5:1 on its background. */
+   darks, paler on terracotta. Every value clears 4.5:1 on its background. */
 :root,
 [class*="sites-scheme-"] {
 	--ritual-error: #9B2C1E;
@@ -83,6 +83,9 @@
 .sites-scheme-sea,
 .sites-scheme-slate {
 	--ritual-error: #F2A08F;
+}
+.sites-scheme-terracotta {
+	--ritual-error: #FFD2C6;
 }
 
 @theme {
@@ -286,7 +289,7 @@ main > [data-section]:has(+ [data-section] .edge-dome) > section {
 
 /* Two bands on the same scheme in a row read as one: the second drops its
    top padding so the seam carries one section's space, not two. */
-main > :is(.sites-scheme-linen + .sites-scheme-linen, .sites-scheme-sand + .sites-scheme-sand, .sites-scheme-clay + .sites-scheme-clay, .sites-scheme-fern + .sites-scheme-fern, .sites-scheme-fig + .sites-scheme-fig, .sites-scheme-celadon + .sites-scheme-celadon, .sites-scheme-sea + .sites-scheme-sea, .sites-scheme-slate + .sites-scheme-slate) > section:not(.edge-dome) {
+main > :is(.sites-scheme-linen + .sites-scheme-linen, .sites-scheme-sand + .sites-scheme-sand, .sites-scheme-clay + .sites-scheme-clay, .sites-scheme-fern + .sites-scheme-fern, .sites-scheme-fig + .sites-scheme-fig, .sites-scheme-celadon + .sites-scheme-celadon, .sites-scheme-sea + .sites-scheme-sea, .sites-scheme-slate + .sites-scheme-slate, .sites-scheme-terracotta + .sites-scheme-terracotta) > section:not(.edge-dome) {
 	padding-top: 0;
 }
 

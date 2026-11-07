@@ -309,6 +309,29 @@
       "secondary_button_foreground": "#F3EEE6",
       "secondary_button_hover_background": "#F3EEE6",
       "secondary_button_hover_foreground": "#2F3A44"
+    },
+    {
+      "handle": "terracotta",
+      "name": "Terracotta",
+      "background": "#83533F",
+      "foreground": "#F6F1EA",
+      "heading": "#F6F1EA",
+      "input_background": "#754A38",
+      "input_foreground": "#F6F1EA",
+      "input_border": "#E9DED2",
+      "chip_background": "#754A38",
+      "chip_foreground": "#EEE5DB",
+      "chip_border": "#9A7361",
+      "icons": "#E9DED2",
+      "links": "#F5D9BC",
+      "button_background": "#F6F1EA",
+      "button_foreground": "#83533F",
+      "button_hover_background": "#FBF8F3",
+      "button_hover_foreground": "#83533F",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#F6F1EA",
+      "secondary_button_hover_background": "#F6F1EA",
+      "secondary_button_hover_foreground": "#83533F"
     }
   ]
 }

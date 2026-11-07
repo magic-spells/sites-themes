@@ -1,4 +1,4 @@
-<!-- A strip of photographs under a hairline: a tarot track of equal-width slides cropped to one ratio, 1.2, 2.5 then 3.5 across, starting at the column edge and bleeding off the right on a phone, with round arrows in the head. Collage: from 48rem the first three photos overlap, the middle one turned 3°; phones keep the strip. Each photo opens the lightbox. -->
+<!-- A strip of photographs under a hairline: a tarot track of equal-width slides cropped to one ratio, 1.2, 2.5 then 3.5 across, starting at the column edge and bleeding off the right on a phone, with round arrows in the head. Collage: the first three photos overlap across the column at every width, a 3:2 landscape, a square hanging below it and an upright 4:5 portal; the grid lines and ratios are tokens in styles/theme.css. Each photo opens the lightbox. -->
 {#let
   items = settings.gallery ? settings.gallery.items | slice(0, 12) : []
   id = 'strip-' + section.id
@@ -12,7 +12,7 @@
   <tarot-carousel class="mx-auto block max-w-column ps-gutter md:ps-0" id={ id } data-track>
     <script type="application/json" data-tarot-options>{ options | json }</script>
     <div class="pe-gutter md:pe-0"><SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href }>{#if !collage}<Arrows />{/if}</SectionHead></div>
-    <tarot-viewport class={ collage ? 'md:sr-only' : null }>
+    <tarot-viewport class={ collage ? 'sr-only' : null }>
       <tarot-track>
         {#for item in items, i}
           <tarot-slide>
@@ -26,10 +26,10 @@
     </tarot-viewport>
   </tarot-carousel>
   {#if collage}
-    <ul class="mx-auto hidden max-w-column grid-cols-12 items-center md:grid" aria-hidden="true">
+    <ul class="mx-gutter grid aspect-collage grid-cols-collage grid-rows-collage md:mx-auto md:max-w-column md:aspect-collage-wide md:grid-cols-collage-wide md:grid-rows-collage-wide" aria-hidden="true">
       {#for item in items | slice(0, 3), i}
-        <li class="row-start-1 { i == 0 ? 'col-span-5 col-start-1' : (i == 1 ? 'z-10 col-span-4 col-start-5 mt-space-3xl' : 'col-span-4 col-start-9') }">
-          <button class="group block w-full cursor-zoom-in" type="button" tabindex="-1" data-lightbox-open={ id } data-index={ i }><Well asset={ item.asset } alt="" ratio={ i == 1 ? 'aspect-3/2' : 'aspect-portrait' } shape={ i == 1 ? 'cap' : 'portal' } width={ 800 } sizes="40vw" tilt={ i == 1 } zoom={ true } /></button>
+        <li class="min-h-0 self-start { i == 0 ? 'col-start-1 col-end-3 row-start-1 row-end-4' : (i == 1 ? 'col-start-1 col-end-2 row-start-3 row-end-4 md:col-start-2 md:col-end-5' : 'col-start-2 col-end-3 row-start-2 row-end-4 md:col-start-4 md:col-end-6') }">
+          <button class="group block w-full cursor-zoom-in" type="button" tabindex="-1" data-lightbox-open={ id } data-index={ i }><Well asset={ item.asset } alt="" ratio={ i == 0 ? 'aspect-3/2' : (i == 1 ? 'aspect-square' : 'aspect-portrait') } shape={ i == 0 ? 'cap' : (i == 1 ? 'square' : 'portal') } width={ i == 0 ? 1200 : 800 } sizes="(min-width: 48rem) 40vw, 60vw" zoom={ true } /></button>
         </li>
       {/for}
     </ul>
@@ -47,7 +47,7 @@
     { "type": "select", "id": "layout", "label": "Layout", "default": "strip", "options": [
       { "value": "strip", "label": "Strip" },
       { "value": "collage", "label": "Collage" }
-    ], "info": "Collage overlaps the first three photos from tablets up; phones show the strip." },
+    ], "info": "Collage overlaps the first three photos." },
     { "type": "gallery", "id": "gallery", "label": "Gallery" },
     { "type": "select", "id": "slide_ratio", "label": "Slide shape", "default": "4:5", "options": [
       { "value": "1:1", "label": "Square" },

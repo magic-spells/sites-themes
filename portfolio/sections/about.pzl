@@ -1,0 +1,60 @@
+<!-- TODO sync with Figma -->
+<!-- Who the person is: the text at body-lg in seven parts beside a 4:5 or square picture in five (the caption under it), or a full-column 3:2 photo above the text. Under the text a contact block on a hairline: the email and the social links as text. short prints the first paragraph only, with a link under it (Home). On a phone the picture comes first. -->
+{#let
+  s = site.settings
+  above = settings.picture == 'above'
+  body = settings.short ? (settings.text | split('</p>') | first) + '</p>' : settings.text
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } />
+    <div class="grid items-start gap-space-xl { above ? '' : 'md:gap-space-3xl' } { settings.picture == 'left' ? 'md:grid-cols-picture-text' : (above ? '' : 'md:grid-cols-text-picture') }">
+      <div class="{ settings.picture == 'right' ? 'md:order-last' : '' }"><Picture asset={ settings.image } alt={ settings.image_alt } ratio={ above ? 'aspect-photo' : (settings.ratio == '1:1' ? 'aspect-square' : 'aspect-portrait') } width={ above ? 2000 : 1200 } sizes={ above ? '(min-width: 82.5rem) 82.5rem, 100vw' : '(min-width: 48rem) 40vw, 100vw' } caption={ settings.caption } /></div>
+      <div class="grid justify-items-start gap-space-lg { above ? 'max-w-reading' : '' }">
+        <div class="sites-prose text-body-lg">{ body | raw }</div>
+        {#if settings.short && settings.link_label && settings.link_href}<a class="text-body text-link underline decoration-1 underline-offset-4" href="{ settings.link_href }">{ settings.link_label }</a>{/if}
+        {#if settings.show_contact && (s.email || settings.social_menu.items.length)}
+          <div class="flex w-full flex-wrap gap-x-space-md gap-y-space-xs border-t border-scheme-border pt-space-md text-body">
+            {#if s.email}<a class="text-link underline decoration-1 underline-offset-4" href="mailto:{ s.email }">{ s.email }</a>{/if}
+            {#for item in settings.social_menu.items}<a class="text-link underline decoration-1 underline-offset-4" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null }>{ item.label }</a>{/for}
+          </div>
+        {/if}
+      </div>
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "About",
+  "description": "Who you are, beside or under a picture, with your email and social links.",
+  "kind": "Content",
+  "icon": "user-round",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>I'm Juno, a designer and illustrator in Lisbon. I make identities, books and drawings, mostly for people who make things themselves.</p><p>I take on a few commissions a year and teach a drawing class most springs.</p>", "info": "In the first person. Links are underlined." },
+    { "type": "checkbox", "id": "short", "label": "First paragraph only", "default": false, "info": "For Home: the first paragraph, then the link." },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "About", "info": "Shown when First paragraph only is on." },
+    { "type": "url", "id": "link_href", "label": "Link", "default": "/about" },
+    { "type": "image", "id": "image", "label": "Picture" },
+    { "type": "text", "id": "image_alt", "label": "Picture alt text", "default": "" },
+    { "type": "text", "id": "caption", "label": "Caption", "default": "", "info": "Under the picture, in meta." },
+    { "type": "select", "id": "picture", "label": "Picture", "default": "right", "options": [
+      { "value": "right", "label": "Right" },
+      { "value": "left", "label": "Left" },
+      { "value": "above", "label": "Above, full width" }
+    ], "info": "Above crops the photo to 3:2." },
+    { "type": "select", "id": "ratio", "label": "Ratio", "default": "4:5", "options": [
+      { "value": "4:5", "label": "4:5" },
+      { "value": "1:1", "label": "1:1" }
+    ], "info": "Beside the text." },
+    { "type": "checkbox", "id": "show_contact", "label": "Contact links", "default": true, "info": "The email from Person and the social menu, under the text." },
+    { "type": "menu", "id": "social_menu", "label": "Social menu" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Full", "settings": { "social_menu": "social", "color_scheme": "paper" } },
+    { "name": "Short", "settings": { "heading": "About", "short": true, "show_contact": false, "social_menu": "social", "color_scheme": "paper" } }
+  ]
+}
+</schema>

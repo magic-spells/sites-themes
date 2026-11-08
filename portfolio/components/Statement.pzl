@@ -1,0 +1,4 @@
+<!-- component: Statement -->
+<!-- props: text muted size align -->
+<!-- The two-tone statement: one paragraph at h1 or h2 (size), the first sentence in the text colour and the second in muted, left or centred (align). While Brand reveal is on it blooms in word by word. -->
+<p class="{ size == 'h2' ? 'text-h2' : 'text-h1' } max-w-column text-balance { align == 'centre' ? 'mx-auto text-center' : '' }">{#if site.settings.reveal}<split-text effect="bloom" split="words">{ text } <span class="text-scheme-muted">{ muted }</span></split-text>{:else}{ text } <span class="text-scheme-muted">{ muted }</span>{/if}</p>

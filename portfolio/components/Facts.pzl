@@ -1,0 +1,6 @@
+<!-- component: Facts -->
+<!-- props: items -->
+<!-- The facts row on a hairline above and below: label / value pairs ({ label, value }), only those with a value; one per row on a phone, two across from 48rem, four from 64rem. -->
+<dl class="grid gap-x-space-xl gap-y-space-sm border-y border-scheme-border py-space-md md:grid-cols-2 lg:grid-cols-4">
+  {#for item in items | where('value')}<div class="grid content-start gap-space-2xs"><dt class="text-body-sm text-scheme-meta">{ item.label }</dt><dd class="text-body font-medium">{ item.value }</dd></div>{/for}
+</dl>

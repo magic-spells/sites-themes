@@ -1,0 +1,42 @@
+{
+  "label": "Work",
+  "description": "Every collection, then every work with the category filter.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "Work",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_collections",
+      "type": "collections",
+      "preset": "Row",
+      "settings": {
+        "heading": "",
+        "link_label": "",
+        "limit": 8,
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_work",
+      "type": "work-index",
+      "preset": "Grid",
+      "settings": {
+        "heading": "All work",
+        "link_label": "",
+        "source": "all",
+        "limit": 12,
+        "filters": true,
+        "color_scheme": "stone"
+      },
+      "blocks": []
+    }
+  ]
+}

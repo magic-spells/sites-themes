@@ -1,0 +1,44 @@
+<!-- TODO sync with Figma -->
+<!-- One line above the header: short phrases with a dot between them, the whole line one link. scroll on: a ticker on scrolling-content with a pause button. With a key, a close button hides it for good. Under reduced motion the ticker stands still, one copy, cut with an ellipsis. -->
+{#let lines = settings.lines | split('\n') | slice(0, 4)}
+{#if lines.length}
+<aside class="bg-scheme-background text-scheme-foreground" data-dismiss-key="{ settings.key }" aria-label="{ t('announcement') }" data-ticker={ settings.scroll ? true : null }>
+  <div class="flex items-center">
+    <a class="block min-w-0 flex-1 py-space-xs text-body-sm focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent" href={ settings.link || null }>
+      {#if settings.scroll}
+        <scrolling-content class="block" speed="30" fade>
+          <scrolling-track>
+            <scrolling-item class="flex items-center">
+              {#for line in lines}<span class="whitespace-nowrap">{ line | strip }</span><span class="mx-space-md text-scheme-meta" aria-hidden="true">·</span>{/for}
+            </scrolling-item>
+          </scrolling-track>
+        </scrolling-content>
+      {:else}
+        <span class="flex flex-wrap items-center justify-center gap-x-space-md px-gutter text-center">{#for line in lines, i}{#if i}<span class="text-scheme-meta" aria-hidden="true">·</span>{/if}<span>{ line | strip }</span>{/for}</span>
+      {/if}
+    </a>
+    {#if settings.scroll}<button class="flex size-tap shrink-0 items-center justify-center text-scheme-meta hover:text-scheme-foreground" type="button" data-ticker-toggle aria-pressed="false"><Glyph name="pause" /><span class="sr-only">{ t('pause') }</span></button>{/if}
+    {#if settings.key}<button class="flex size-tap shrink-0 items-center justify-center text-scheme-meta hover:text-scheme-foreground" type="button" data-dismiss><Glyph name="close" /><span class="sr-only">{ t('dismiss') }</span></button>{/if}
+  </div>
+</aside>
+{/if}
+
+<schema>
+{
+  "name": "Announcement bar",
+  "description": "One line above the header, standing still or scrolling as a ticker.",
+  "kind": "Header",
+  "icon": "megaphone",
+  "settings": [
+    { "type": "textarea", "id": "lines", "label": "Phrases", "default": "Taking commissions from January 2027\nPaper Weather at Galeria Norte until December", "info": "One per line, up to four. A dot sits between them." },
+    { "type": "url", "id": "link", "label": "Link", "default": "", "info": "The whole line links here." },
+    { "type": "checkbox", "id": "scroll", "label": "Scroll", "default": false, "info": "On: the phrases move as a ticker with a pause button. Off: they stand still, centred." },
+    { "type": "text", "id": "key", "label": "Dismiss key", "default": "", "info": "Set a key to show a close button. A visitor who closes the bar does not see it again until you change the key." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "ink" }
+  ],
+  "presets": [
+    { "name": "Ink", "settings": { "color_scheme": "ink" } },
+    { "name": "Stone", "settings": { "color_scheme": "stone" } }
+  ]
+}
+</schema>

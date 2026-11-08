@@ -1,0 +1,312 @@
+{
+  "colors": {
+    "brand": {
+      "primary": "#1C1A17",
+      "secondary": "#6A645A",
+      "accent": "#1F3FBF"
+    },
+    "grey": {
+      "extra_light": "#EFEBE3",
+      "light": "#DDD7CC",
+      "medium": "#8E8880",
+      "dark": "#5E5951",
+      "extra_dark": "#1C1A17"
+    },
+    "info": {
+      "bg": "#E6EAF8",
+      "fg": "#1A36A8"
+    },
+    "success": {
+      "bg": "#E3EBE3",
+      "fg": "#2F5A3A"
+    },
+    "warning": {
+      "bg": "#F3EAD6",
+      "fg": "#6B4A0E"
+    },
+    "error": {
+      "bg": "#F6E0DC",
+      "fg": "#B3261E"
+    }
+  },
+  "fonts": {
+    "heading": {
+      "family": "Mona Sans",
+      "weights": [
+        500,
+        600
+      ],
+      "source": "self-hosted",
+      "url": "/_sites/theme/fonts/mona-sans-latin-wdth-normal.woff2"
+    },
+    "body": {
+      "family": "Mona Sans",
+      "weights": [
+        400,
+        500
+      ],
+      "source": "self-hosted",
+      "url": "/_sites/theme/fonts/mona-sans-latin-wdth-normal.woff2"
+    },
+    "mono": {
+      "family": "Mona Sans",
+      "weights": [
+        400,
+        500
+      ],
+      "source": "self-hosted",
+      "url": "/_sites/theme/fonts/mona-sans-latin-wdth-normal.woff2"
+    }
+  },
+  "type": {
+    "base": "1rem",
+    "scale": {
+      "xs": "0.75rem",
+      "sm": "0.9375rem",
+      "base": "1.0625rem",
+      "lg": "1.25rem",
+      "xl": "1.375rem",
+      "2xl": "1.75rem",
+      "3xl": "2.5rem",
+      "4xl": "3.5rem",
+      "5xl": "4.5rem"
+    },
+    "leading": {
+      "tight": "1",
+      "normal": "1.6",
+      "relaxed": "1.7"
+    }
+  },
+  "spacing": {
+    "xs": "0.5rem",
+    "sm": "1rem",
+    "md": "1.5rem",
+    "lg": "2rem",
+    "xl": "3rem",
+    "2xl": "4.5rem"
+  },
+  "radius": {
+    "none": "0",
+    "sm": "0.25rem",
+    "md": "0.5rem",
+    "lg": "1rem",
+    "full": "9999rem"
+  },
+  "shadow": {
+    "sm": "none",
+    "md": "none",
+    "lg": "none"
+  },
+  "border": {
+    "width": "1px",
+    "color": "#DDD7CC"
+  },
+  "input": {
+    "background": "#FBF9F5",
+    "border": "#6E685E",
+    "radius": "0.25rem",
+    "text": "#1C1A17",
+    "placeholder": "#6E685E",
+    "focus_ring": "#1F3FBF"
+  },
+  "button": {
+    "radius": "0.25rem",
+    "padding_x": "1.25rem",
+    "padding_y": "0.75rem",
+    "weight": "500",
+    "primary_bg": "transparent",
+    "primary_text": "#1C1A17",
+    "secondary_bg": "transparent",
+    "secondary_text": "#1C1A17"
+  },
+  "link": {
+    "color": "#1F3FBF",
+    "hover_color": "#1C1A17",
+    "underline": "always"
+  },
+  "suggested_palettes": [
+    {
+      "name": "Gallery",
+      "colors": {
+        "brand": {
+          "primary": "#111111",
+          "secondary": "#6B6B6B",
+          "accent": "#111111"
+        },
+        "grey": {
+          "extra_light": "#F3F3F2",
+          "light": "#E2E2E0",
+          "medium": "#8F8F8C",
+          "dark": "#5D5D5B",
+          "extra_dark": "#111111"
+        },
+        "info": {
+          "bg": "#E6EAF8",
+          "fg": "#1A36A8"
+        },
+        "success": {
+          "bg": "#E3EBE3",
+          "fg": "#2F5A3A"
+        },
+        "warning": {
+          "bg": "#F3EAD6",
+          "fg": "#6B4A0E"
+        },
+        "error": {
+          "bg": "#F6E0DC",
+          "fg": "#B3261E"
+        }
+      }
+    },
+    {
+      "name": "Moss",
+      "colors": {
+        "brand": {
+          "primary": "#22272A",
+          "secondary": "#5F6663",
+          "accent": "#3F5F53"
+        },
+        "grey": {
+          "extra_light": "#EBE8E0",
+          "light": "#D8D5CC",
+          "medium": "#909B95",
+          "dark": "#555F5A",
+          "extra_dark": "#1A201D"
+        },
+        "info": {
+          "bg": "#E6EAF8",
+          "fg": "#1A36A8"
+        },
+        "success": {
+          "bg": "#E3EBE3",
+          "fg": "#2F5A3A"
+        },
+        "warning": {
+          "bg": "#F3EAD6",
+          "fg": "#6B4A0E"
+        },
+        "error": {
+          "bg": "#F6E0DC",
+          "fg": "#B3261E"
+        }
+      }
+    }
+  ],
+  "schemes": [
+    {
+      "handle": "paper",
+      "name": "Paper",
+      "background": "#F7F5F0",
+      "foreground": "#1C1A17",
+      "heading": "#1C1A17",
+      "input_background": "#FBF9F5",
+      "input_foreground": "#1C1A17",
+      "input_border": "#6E685E",
+      "chip_background": "#EFEBE3",
+      "chip_foreground": "#6A645A",
+      "chip_border": "#DDD7CC",
+      "icons": "#6E685E",
+      "links": "#1F3FBF",
+      "button_background": "transparent",
+      "button_foreground": "#1C1A17",
+      "button_hover_background": "#EFEBE3",
+      "button_hover_foreground": "#1C1A17",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#1C1A17",
+      "secondary_button_hover_background": "#EFEBE3",
+      "secondary_button_hover_foreground": "#1C1A17"
+    },
+    {
+      "handle": "white",
+      "name": "White",
+      "background": "#FFFFFF",
+      "foreground": "#111214",
+      "heading": "#111214",
+      "input_background": "#FFFFFF",
+      "input_foreground": "#111214",
+      "input_border": "#686866",
+      "chip_background": "#F3F3F1",
+      "chip_foreground": "#5C5C5A",
+      "chip_border": "#E4E4E1",
+      "icons": "#686866",
+      "links": "#1F3FBF",
+      "button_background": "transparent",
+      "button_foreground": "#111214",
+      "button_hover_background": "#F3F3F1",
+      "button_hover_foreground": "#111214",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#111214",
+      "secondary_button_hover_background": "#F3F3F1",
+      "secondary_button_hover_foreground": "#111214"
+    },
+    {
+      "handle": "stone",
+      "name": "Stone",
+      "background": "#E7E2D9",
+      "foreground": "#1C1A17",
+      "heading": "#1C1A17",
+      "input_background": "#EFEBE3",
+      "input_foreground": "#1C1A17",
+      "input_border": "#625D55",
+      "chip_background": "#DED8CD",
+      "chip_foreground": "#5E5951",
+      "chip_border": "#CFC8BC",
+      "icons": "#625D55",
+      "links": "#1A36A8",
+      "button_background": "transparent",
+      "button_foreground": "#1C1A17",
+      "button_hover_background": "#DED8CD",
+      "button_hover_foreground": "#1C1A17",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#1C1A17",
+      "secondary_button_hover_background": "#DED8CD",
+      "secondary_button_hover_foreground": "#1C1A17"
+    },
+    {
+      "handle": "ink",
+      "name": "Ink",
+      "background": "#15171B",
+      "foreground": "#EDEAE4",
+      "heading": "#EDEAE4",
+      "input_background": "#1E2126",
+      "input_foreground": "#EDEAE4",
+      "input_border": "#938E86",
+      "chip_background": "#1E2126",
+      "chip_foreground": "#A09B93",
+      "chip_border": "#2C3038",
+      "icons": "#938E86",
+      "links": "#9DB2FF",
+      "button_background": "transparent",
+      "button_foreground": "#EDEAE4",
+      "button_hover_background": "#1E2126",
+      "button_hover_foreground": "#EDEAE4",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#EDEAE4",
+      "secondary_button_hover_background": "#1E2126",
+      "secondary_button_hover_foreground": "#EDEAE4"
+    },
+    {
+      "handle": "cobalt",
+      "name": "Cobalt",
+      "background": "#1F3FBF",
+      "foreground": "#FFFFFF",
+      "heading": "#FFFFFF",
+      "input_background": "#2A4AC8",
+      "input_foreground": "#FFFFFF",
+      "input_border": "#C9D2FF",
+      "chip_background": "#2A4AC8",
+      "chip_foreground": "#D6DDFF",
+      "chip_border": "#3B58D0",
+      "icons": "#C9D2FF",
+      "links": "#FFFFFF",
+      "button_background": "transparent",
+      "button_foreground": "#FFFFFF",
+      "button_hover_background": "#2A4AC8",
+      "button_hover_foreground": "#FFFFFF",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#FFFFFF",
+      "secondary_button_hover_background": "#2A4AC8",
+      "secondary_button_hover_foreground": "#FFFFFF"
+    }
+  ]
+}

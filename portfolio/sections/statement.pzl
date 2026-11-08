@@ -1,0 +1,36 @@
+<!-- TODO sync with Figma -->
+<!-- The large two-tone text as its own band: the first sentence in the text colour, the second in muted, as one paragraph at h1 or h2 across the column, left or centred. It blooms in word by word while Brand reveal is on. An optional small text link under it. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-lg { settings.align == 'centre' ? 'justify-items-center' : 'justify-items-start' }">
+    <Statement text={ settings.text } muted={ settings.text_muted } size={ settings.size } align={ settings.align } />
+    {#if settings.link_label && settings.link_href}<a class="text-body text-link underline decoration-1 underline-offset-4" href="{ settings.link_href }">{ settings.link_label }</a>{/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Statement",
+  "description": "Two sentences in two tones, large.",
+  "kind": "Content",
+  "icon": "text-align-start",
+  "settings": [
+    { "type": "text", "id": "text", "label": "First sentence", "default": "Identities, books and drawings for people who make things.", "info": "In the text colour. Up to twenty words." },
+    { "type": "text", "id": "text_muted", "label": "Second sentence", "default": "Working from a small studio in Lisbon since 2016.", "info": "In the muted tone. Up to twenty words." },
+    { "type": "select", "id": "size", "label": "Size", "default": "h1", "options": [
+      { "value": "h1", "label": "Heading 1" },
+      { "value": "h2", "label": "Heading 2" }
+    ] },
+    { "type": "select", "id": "align", "label": "Align", "default": "left", "options": [
+      { "value": "left", "label": "Left" },
+      { "value": "centre", "label": "Centre" }
+    ] },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "" },
+    { "type": "url", "id": "link_href", "label": "Link", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "stone" }
+  ],
+  "presets": [
+    { "name": "Large", "settings": { "size": "h1", "color_scheme": "stone" } },
+    { "name": "Centred", "settings": { "size": "h2", "align": "centre", "color_scheme": "paper" } }
+  ]
+}
+</schema>

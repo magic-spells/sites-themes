@@ -1,0 +1,18 @@
+<!-- component: CollectionCard -->
+<!-- props: category works covers arrangement base_path -->
+<!-- A collection, one link to the work index filtered to it: its first works' covers in a tight row of squares (row), or one 4:5 left and two squares stacked right (lead), then its name at h3 and its description in muted under them. A category with fewer works shows what it has. -->
+{#let
+  lead = arrangement == 'lead'
+  shown = works | slice(0, lead ? 3 : (covers ?? 3))
+}
+<a class="group grid content-start gap-space-sm { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" href="{ base_path ?? '/work' }?category={ category.handle }#work">
+  <span class="grid gap-space-xs { lead ? 'grid-cols-5 grid-rows-2' : (shown.length == 4 ? 'grid-cols-4' : 'grid-cols-3') }">
+    {#for work in shown, i}
+      <span class="block overflow-hidden bg-scheme-surface-2 { lead ? (i ? 'col-span-2 aspect-square' : 'col-span-3 row-span-2') : 'aspect-square' }"><img class="size-full object-cover" src="{ image_url(work.fields.cover, 640) }" alt="" loading="lazy" width={ work.fields.cover.width } height={ work.fields.cover.height } /></span>
+    {/for}
+  </span>
+  <span class="grid gap-space-2xs">
+    <span class="text-h3 underline-offset-4 group-hover:underline">{ category.title }</span>
+    {#if category.fields.description}<span class="text-body-sm text-scheme-meta">{ category.fields.description }</span>{/if}
+  </span>
+</a>

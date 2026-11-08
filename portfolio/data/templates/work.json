@@ -1,0 +1,38 @@
+{
+  "label": "Work detail",
+  "description": "One work: its facts, pictures and text, then more work.",
+  "sections": [
+    {
+      "id": "s_work",
+      "type": "work-detail",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_more",
+      "type": "work-index",
+      "preset": "Grid",
+      "settings": {
+        "heading": "More work",
+        "source": "featured",
+        "limit": 3,
+        "filters": false,
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_contact",
+      "type": "contact-band",
+      "preset": "Stone",
+      "settings": {
+        "social_menu": "social",
+        "color_scheme": "stone"
+      },
+      "blocks": []
+    }
+  ]
+}

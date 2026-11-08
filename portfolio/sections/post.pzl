@@ -1,0 +1,36 @@
+<!-- TODO sync with Figma -->
+<!-- A post: the title as the h1 at 110% width, the standfirst in muted and "Topic · Sep 14, 2026" in meta, an optional 16:9 picture across the column, the body in the reading column, then the link back to the writing. -->
+{#let
+  post = page.entry
+  f = post.fields
+}
+<article class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-xl">
+    <header class="grid max-w-reading gap-space-sm">
+      <h1 class="font-wide text-h1 text-balance text-scheme-heading">{ post.title }</h1>
+      {#if f.standfirst}<p class="text-body-lg text-pretty text-scheme-muted">{ f.standfirst }</p>{/if}
+      <p class="text-body-sm text-scheme-meta">{ [f.topic || null, f.date ? f.date | date : null] | compact | join(' · ') }</p>
+    </header>
+    <Picture asset={ f.image } alt={ f.image_alt } ratio="aspect-wide" width={ 2000 } sizes="(min-width: 82.5rem) 82.5rem, 100vw" eager={ true } />
+    {#if f.body}<div class="sites-prose max-w-reading text-body">{ f.body }</div>{/if}
+    {#if settings.link_label}<a class="justify-self-start text-body text-link underline decoration-1 underline-offset-4" href="{ settings.link_href }">{ settings.link_label }</a>{/if}
+  </div>
+</article>
+
+<schema>
+{
+  "name": "Post",
+  "description": "A post: its title, standfirst, picture and body.",
+  "kind": "Writing",
+  "icon": "file-text",
+  "templates": ["post"],
+  "settings": [
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "All writing" },
+    { "type": "url", "id": "link_href", "label": "Link", "default": "/writing" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "paper" } }
+  ]
+}
+</schema>

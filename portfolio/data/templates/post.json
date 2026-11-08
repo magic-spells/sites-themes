@@ -1,0 +1,26 @@
+{
+  "label": "Post",
+  "description": "A post, then more writing.",
+  "sections": [
+    {
+      "id": "s_post",
+      "type": "post",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_more",
+      "type": "writing-list",
+      "preset": "List",
+      "settings": {
+        "heading": "More writing",
+        "limit": 3,
+        "color_scheme": "stone"
+      },
+      "blocks": []
+    }
+  ]
+}

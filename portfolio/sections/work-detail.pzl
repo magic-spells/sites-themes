@@ -1,0 +1,51 @@
+<!-- TODO sync with Figma -->
+<!-- STUB (code B builds it): the title, the summary, the facts row, the cover, the body and the gallery as a stack. -->
+{#let
+  work = page.entry
+  f = work.fields
+}
+<article class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-xl">
+    <header class="grid max-w-reading gap-space-sm">
+      <h1 class="font-wide text-h1 text-balance">{ work.title }</h1>
+      {#if f.summary}<p class="text-body-lg text-pretty text-scheme-muted">{ f.summary }</p>{/if}
+    </header>
+    <Facts items={ [{ label: t('fact.year'), value: f.year }, { label: t('fact.category'), value: f.category.title }, { label: t('fact.role'), value: f.role }, { label: t('fact.client'), value: f.client }, { label: t('fact.details'), value: f.details }] } />
+    <Picture asset={ f.cover } alt={ f.cover_alt } ratio="aspect-wide" width={ 2000 } sizes="(min-width: 82.5rem) 82.5rem, 100vw" eager={ true } />
+    {#if f.body}<div class="sites-prose max-w-reading text-body-lg">{ f.body }</div>{/if}
+    <ul class="grid gap-space-xl">{#for item in f.gallery.items}<li><Picture asset={ item.asset } alt={ item.alt } ratio="aspect-photo" caption={ item.caption } /></li>{/for}</ul>
+  </div>
+</article>
+
+<schema>
+{
+  "name": "Work detail",
+  "description": "A work's page: the title, the facts, the lead picture, the text and the gallery.",
+  "kind": "Collections",
+  "icon": "frame",
+  "templates": ["work"],
+  "settings": [
+    { "type": "select", "id": "lead", "label": "Lead", "default": "cover", "options": [
+      { "value": "cover", "label": "The cover" },
+      { "value": "pair", "label": "The first two gallery pictures side by side" }
+    ] },
+    { "type": "select", "id": "gallery_layout", "label": "Gallery", "default": "stack", "options": [
+      { "value": "stack", "label": "Stack" },
+      { "value": "grid", "label": "Grid" },
+      { "value": "carousel", "label": "Carousel" }
+    ], "info": "Stack: every picture full width with its caption under it, portraits in pairs. Grid: two across, square. Carousel: equal slides with arrows." },
+    { "type": "select", "id": "slide_ratio", "label": "Slide ratio", "default": "3:2", "options": [
+      { "value": "1:1", "label": "1:1" },
+      { "value": "4:5", "label": "4:5" },
+      { "value": "3:2", "label": "3:2" }
+    ], "info": "For the carousel." },
+    { "type": "text", "id": "link_label", "label": "Link button label", "default": "Visit", "info": "Shown when the work has a link." },
+    { "type": "checkbox", "id": "show_foot", "label": "Previous and next", "default": true, "info": "Previous, All work and Next under the gallery, by order." },
+    { "type": "url", "id": "base_path", "label": "Work page path", "default": "/work" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "paper" } }
+  ]
+}
+</schema>

@@ -1,0 +1,45 @@
+<!-- TODO sync with Figma -->
+<!-- The names worked with, as plain text: one ruled row with 2xl between the names, wrapping on smaller screens, or a marquee on scrolling-content with a pause button that stands still under reduced motion. No logos. -->
+{#let names = settings.names | split('\n') | slice(0, 24)}
+{#if names.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    {#if settings.layout == 'marquee'}
+      <div class="flex items-center border-y border-scheme-border text-body-lg" data-ticker>
+        <scrolling-content class="block min-w-0 flex-1 py-space-md" speed="30" fade>
+          <scrolling-track>
+            <scrolling-item class="flex">{#for name in names}<span class="me-space-2xl whitespace-nowrap">{ name | strip }</span>{/for}</scrolling-item>
+          </scrolling-track>
+        </scrolling-content>
+        <button class="flex size-tap shrink-0 items-center justify-center text-scheme-meta hover:text-scheme-foreground" type="button" data-ticker-toggle aria-pressed="false"><Glyph name="pause" /><span class="sr-only">{ t('pause') }</span></button>
+      </div>
+    {:else}
+      <ul class="flex flex-wrap gap-x-space-2xl gap-y-space-sm border-y border-scheme-border py-space-md text-body-lg">{#for name in names}<li>{ name | strip }</li>{/for}</ul>
+    {/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Clients",
+  "description": "The people and studios you have worked with, as a row of names.",
+  "kind": "Content",
+  "icon": "users",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Clients" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "textarea", "id": "names", "label": "Names", "default": "Studio Lumen\nAn independent press\nA ceramics studio\nA city museum\nA furniture maker\nA small record label", "info": "One per line." },
+    { "type": "select", "id": "layout", "label": "Layout", "default": "row", "options": [
+      { "value": "row", "label": "Row" },
+      { "value": "marquee", "label": "Marquee" }
+    ], "info": "Marquee scrolls the names, with a pause button." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Row", "settings": { "color_scheme": "paper" } },
+    { "name": "Marquee", "settings": { "layout": "marquee", "color_scheme": "paper" } }
+  ]
+}
+</schema>

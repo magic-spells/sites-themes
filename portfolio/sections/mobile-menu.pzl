@@ -1,0 +1,41 @@
+<!-- TODO sync with Figma -->
+<!-- The mobile menu: a dialog-panel drawer from the right over the page dimmed by the text colour at 50% with a small blur. It closes on the backdrop, Escape and its ×, and hands focus back to the menu icon. The main menu large; the email and the social links as text at the foot. -->
+{#let s = site.settings}
+<dialog-panel id="mobile-menu" position="right">
+  <dialog-backdrop class="bg-backdrop backdrop-blur-xs"></dialog-backdrop>
+  <dialog class="ms-auto flex h-dvh w-17/20 flex-col gap-space-xl overflow-y-auto bg-scheme-background px-gutter pb-space-lg text-scheme-foreground shadow-none" aria-label="{ t('menu') }">
+    <div class="flex min-h-header items-center justify-end"><button class="-me-space-xs flex size-tap items-center justify-center" type="button" data-action-hide-dialog aria-label="{ t('close') }"><Glyph name="close" cls="size-glyph" /></button></div>
+    {#if settings.menu.items.length}
+      <nav aria-label="{ t('main_navigation') }">
+        <ul class="grid gap-space-sm">
+          {#for item in settings.menu.items}<li><a class="text-h2 decoration-1 underline-offset-8 hover:underline current:underline" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>{/for}
+        </ul>
+      </nav>
+    {/if}
+    <div class="mt-auto grid gap-space-sm border-t border-scheme-border pt-space-md text-body">
+      {#if s.email}<a class="justify-self-start text-link underline decoration-1 underline-offset-4" href="mailto:{ s.email }">{ s.email }</a>{/if}
+      {#if settings.social_menu.items.length}
+        <ul class="flex flex-wrap gap-x-space-md gap-y-space-xs">
+          {#for item in settings.social_menu.items}<li><a class="text-link underline decoration-1 underline-offset-4" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null }>{ item.label }</a></li>{/for}
+        </ul>
+      {/if}
+    </div>
+  </dialog>
+</dialog-panel>
+
+<schema>
+{
+  "name": "Mobile menu",
+  "description": "The menu drawer on phones: the main menu, then the email and the social links.",
+  "kind": "Panels",
+  "icon": "menu",
+  "settings": [
+    { "type": "menu", "id": "menu", "label": "Menu" },
+    { "type": "menu", "id": "social_menu", "label": "Social menu", "info": "Shown as text links under the email from Person." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "menu": "main", "social_menu": "social", "color_scheme": "paper" } }
+  ]
+}
+</schema>

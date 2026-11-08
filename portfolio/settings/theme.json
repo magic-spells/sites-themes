@@ -1,0 +1,41 @@
+{
+  "name": "Portfolio",
+  "version": "0.1.0",
+  "default_template": "page",
+  "not_found_template": "404",
+  "maintenance_template": "maintenance",
+  "query": ["category"],
+  "groups": {
+    "header-group": { "label": "Header", "accepts": ["announcement-bar", "header"] },
+    "footer-group": { "label": "Footer", "accepts": ["footer"] },
+    "panel-group": { "label": "Panels", "accepts": ["mobile-menu", "cookie-notice"] }
+  },
+  "settings": [
+    {
+      "name": "Brand",
+      "settings": [
+        { "type": "text", "id": "wordmark", "label": "Wordmark", "default": "Juno Reyes", "info": "Your name, as the header and footer wordmark and the name hero. Leave empty to use the site name." },
+        { "type": "image", "id": "favicon", "label": "Favicon" },
+        { "type": "checkbox", "id": "reveal", "label": "Reveal on scroll", "default": true, "info": "The name and the statements bloom in word by word; tiles, cards and CV rows fade up as the page scrolls. Off under reduced motion." }
+      ]
+    },
+    {
+      "name": "Person",
+      "settings": [
+        { "type": "text", "id": "role_line", "label": "Role", "default": "Designer and illustrator", "info": "One short line, shown above the name hero." },
+        { "type": "text", "id": "location", "label": "Location", "default": "Lisbon" },
+        { "type": "checkbox", "id": "available", "label": "Available for work", "default": true, "info": "The status dot is the accent colour when on, muted when off." },
+        { "type": "text", "id": "availability_line", "label": "Availability line", "default": "Taking commissions from January 2027", "info": "Beside the dot in the hero and the footer. Leave empty to hide the status line." },
+        { "type": "text", "id": "email", "label": "Email", "default": "" },
+        { "type": "link", "id": "cv_link", "label": "CV download", "info": "Upload your CV as a PDF and link it here, for example: Download CV. The CV button hides when this is empty." },
+        { "type": "form", "id": "contact_form", "label": "Contact form", "default": "contact" }
+      ]
+    },
+    {
+      "name": "Contact",
+      "settings": [
+        { "type": "form", "id": "newsletter_form", "label": "Newsletter form", "default": "newsletter", "info": "Optional. The social links come from the social menu." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1970 @@
+{
+  "site": {
+    "name": "Juno Reyes",
+    "url": "https://junoreyes.example",
+    "locale": "en",
+    "settings": {
+      "wordmark": "Juno Reyes",
+      "reveal": true,
+      "role_line": "Designer and illustrator",
+      "location": "Lisbon",
+      "available": true,
+      "availability_line": "Taking commissions from January 2027",
+      "email": "hello@junoreyes.example",
+      "cv_link": {
+        "href": "/assets/juno-reyes-cv.pdf",
+        "label": "Download CV"
+      },
+      "contact_form": "contact",
+      "newsletter_form": "newsletter"
+    }
+  },
+  "menus": {
+    "main": {
+      "handle": "main",
+      "title": "Main menu",
+      "items": [
+        {
+          "id": "m_work",
+          "label": "Work",
+          "target": {
+            "kind": "url",
+            "url": "/work"
+          },
+          "open_in_new": false,
+          "children": []
+        },
+        {
+          "id": "m_cv",
+          "label": "CV",
+          "target": {
+            "kind": "url",
+            "url": "/cv"
+          },
+          "open_in_new": false,
+          "children": []
+        },
+        {
+          "id": "m_about",
+          "label": "About",
+          "target": {
+            "kind": "url",
+            "url": "/about"
+          },
+          "open_in_new": false,
+          "children": []
+        },
+        {
+          "id": "m_writing",
+          "label": "Writing",
+          "target": {
+            "kind": "url",
+            "url": "/writing"
+          },
+          "open_in_new": false,
+          "children": []
+        },
+        {
+          "id": "m_contact",
+          "label": "Contact",
+          "target": {
+            "kind": "url",
+            "url": "/contact"
+          },
+          "open_in_new": false,
+          "children": []
+        }
+      ]
+    },
+    "legal": {
+      "handle": "legal",
+      "title": "Legal",
+      "items": [
+        {
+          "id": "l_privacy",
+          "label": "Privacy",
+          "target": {
+            "kind": "url",
+            "url": "/privacy"
+          },
+          "open_in_new": false,
+          "children": []
+        }
+      ]
+    },
+    "social": {
+      "handle": "social",
+      "title": "Elsewhere",
+      "items": [
+        {
+          "id": "s_instagram",
+          "label": "Instagram",
+          "target": {
+            "kind": "url",
+            "url": "https://instagram.example/junoreyes"
+          },
+          "open_in_new": true,
+          "children": []
+        },
+        {
+          "id": "s_arena",
+          "label": "Are.na",
+          "target": {
+            "kind": "url",
+            "url": "https://are.na.example/juno-reyes"
+          },
+          "open_in_new": true,
+          "children": []
+        },
+        {
+          "id": "s_email",
+          "label": "Email",
+          "target": {
+            "kind": "url",
+            "url": "mailto:hello@junoreyes.example"
+          },
+          "open_in_new": false,
+          "children": []
+        }
+      ]
+    }
+  },
+  "galleries": {
+    "tidewater": {
+      "handle": "tidewater",
+      "title": "Tidewater",
+      "items": [
+        {
+          "asset_id": "as_1x1_linen",
+          "caption": "The stroke, final",
+          "alt": "Tidewater, picture 1"
+        },
+        {
+          "asset_id": "as_4x5_stone",
+          "caption": "Letterhead and cards",
+          "alt": "Tidewater, picture 2"
+        },
+        {
+          "asset_id": "as_4x5_mist",
+          "caption": "The sign, before install",
+          "alt": "Tidewater, picture 3"
+        },
+        {
+          "asset_id": "as_16x9_linen",
+          "caption": "On the door",
+          "alt": "Tidewater, picture 4"
+        },
+        {
+          "asset_id": "as_3x2_stone",
+          "caption": "Kiln tags",
+          "alt": "Tidewater, picture 5"
+        }
+      ]
+    },
+    "casa-rio": {
+      "handle": "casa-rio",
+      "title": "Casa Rio",
+      "items": [
+        {
+          "asset_id": "as_3x2_stone",
+          "caption": "",
+          "alt": "Casa Rio, picture 1"
+        },
+        {
+          "asset_id": "as_4x5_mist",
+          "caption": "",
+          "alt": "Casa Rio, picture 2"
+        },
+        {
+          "asset_id": "as_4x5_linen",
+          "caption": "",
+          "alt": "Casa Rio, picture 3"
+        },
+        {
+          "asset_id": "as_16x9_stone",
+          "caption": "",
+          "alt": "Casa Rio, picture 4"
+        }
+      ]
+    },
+    "loom": {
+      "handle": "loom",
+      "title": "Loom",
+      "items": [
+        {
+          "asset_id": "as_1x1_mist",
+          "caption": "",
+          "alt": "Loom, picture 1"
+        },
+        {
+          "asset_id": "as_3x2_linen",
+          "caption": "",
+          "alt": "Loom, picture 2"
+        },
+        {
+          "asset_id": "as_4x5_stone",
+          "caption": "",
+          "alt": "Loom, picture 3"
+        },
+        {
+          "asset_id": "as_4x5_mist",
+          "caption": "",
+          "alt": "Loom, picture 4"
+        },
+        {
+          "asset_id": "as_3x2_linen",
+          "caption": "",
+          "alt": "Loom, picture 5"
+        },
+        {
+          "asset_id": "as_16x9_stone",
+          "caption": "",
+          "alt": "Loom, picture 6"
+        }
+      ]
+    },
+    "the-long-table": {
+      "handle": "the-long-table",
+      "title": "The Long Table",
+      "items": [
+        {
+          "asset_id": "as_16x9_linen",
+          "caption": "",
+          "alt": "The Long Table, picture 1"
+        },
+        {
+          "asset_id": "as_4x5_stone",
+          "caption": "",
+          "alt": "The Long Table, picture 2"
+        },
+        {
+          "asset_id": "as_4x5_mist",
+          "caption": "",
+          "alt": "The Long Table, picture 3"
+        },
+        {
+          "asset_id": "as_3x2_linen",
+          "caption": "",
+          "alt": "The Long Table, picture 4"
+        },
+        {
+          "asset_id": "as_1x1_stone",
+          "caption": "",
+          "alt": "The Long Table, picture 5"
+        }
+      ]
+    },
+    "field-notes": {
+      "handle": "field-notes",
+      "title": "Field Notes",
+      "items": [
+        {
+          "asset_id": "as_3x2_stone",
+          "caption": "",
+          "alt": "Field Notes, picture 1"
+        },
+        {
+          "asset_id": "as_4x5_mist",
+          "caption": "",
+          "alt": "Field Notes, picture 2"
+        },
+        {
+          "asset_id": "as_4x5_linen",
+          "caption": "",
+          "alt": "Field Notes, picture 3"
+        },
+        {
+          "asset_id": "as_16x9_stone",
+          "caption": "",
+          "alt": "Field Notes, picture 4"
+        }
+      ]
+    },
+    "salt": {
+      "handle": "salt",
+      "title": "Salt",
+      "items": [
+        {
+          "asset_id": "as_1x1_mist",
+          "caption": "",
+          "alt": "Salt, picture 1"
+        },
+        {
+          "asset_id": "as_3x2_linen",
+          "caption": "",
+          "alt": "Salt, picture 2"
+        },
+        {
+          "asset_id": "as_4x5_stone",
+          "caption": "",
+          "alt": "Salt, picture 3"
+        },
+        {
+          "asset_id": "as_4x5_mist",
+          "caption": "",
+          "alt": "Salt, picture 4"
+        },
+        {
+          "asset_id": "as_3x2_linen",
+          "caption": "",
+          "alt": "Salt, picture 5"
+        },
+        {
+          "asset_id": "as_16x9_stone",
+          "caption": "",
+          "alt": "Salt, picture 6"
+        }
+      ]
+    },
+    "morning-series": {
+      "handle": "morning-series",
+      "title": "Morning Series",
+      "items": [
+        {
+          "asset_id": "as_16x9_linen",
+          "caption": "",
+          "alt": "Morning Series, picture 1"
+        },
+        {
+          "asset_id": "as_4x5_stone",
+          "caption": "",
+          "alt": "Morning Series, picture 2"
+        },
+        {
+          "asset_id": "as_4x5_mist",
+          "caption": "",
+          "alt": "Morning Series, picture 3"
+        },
+        {
+          "asset_id": "as_3x2_linen",
+          "caption": "",
+          "alt": "Morning Series, picture 4"
+        },
+        {
+          "asset_id": "as_1x1_stone",
+          "caption": "",
+          "alt": "Morning Series, picture 5"
+        }
+      ]
+    },
+    "harbour-studies": {
+      "handle": "harbour-studies",
+      "title": "Harbour Studies",
+      "items": [
+        {
+          "asset_id": "as_3x2_stone",
+          "caption": "",
+          "alt": "Harbour Studies, picture 1"
+        },
+        {
+          "asset_id": "as_4x5_mist",
+          "caption": "",
+          "alt": "Harbour Studies, picture 2"
+        },
+        {
+          "asset_id": "as_4x5_linen",
+          "caption": "",
+          "alt": "Harbour Studies, picture 3"
+        },
+        {
+          "asset_id": "as_16x9_stone",
+          "caption": "",
+          "alt": "Harbour Studies, picture 4"
+        }
+      ]
+    },
+    "quiet-rooms": {
+      "handle": "quiet-rooms",
+      "title": "Quiet Rooms",
+      "items": [
+        {
+          "asset_id": "as_1x1_mist",
+          "caption": "",
+          "alt": "Quiet Rooms, picture 1"
+        },
+        {
+          "asset_id": "as_3x2_linen",
+          "caption": "",
+          "alt": "Quiet Rooms, picture 2"
+        },
+        {
+          "asset_id": "as_4x5_stone",
+          "caption": "",
+          "alt": "Quiet Rooms, picture 3"
+        },
+        {
+          "asset_id": "as_4x5_mist",
+          "caption": "",
+          "alt": "Quiet Rooms, picture 4"
+        },
+        {
+          "asset_id": "as_3x2_linen",
+          "caption": "",
+          "alt": "Quiet Rooms, picture 5"
+        },
+        {
+          "asset_id": "as_16x9_stone",
+          "caption": "",
+          "alt": "Quiet Rooms, picture 6"
+        }
+      ]
+    },
+    "paper-weather": {
+      "handle": "paper-weather",
+      "title": "Paper Weather",
+      "items": [
+        {
+          "asset_id": "as_16x9_linen",
+          "caption": "",
+          "alt": "Paper Weather, picture 1"
+        },
+        {
+          "asset_id": "as_4x5_stone",
+          "caption": "",
+          "alt": "Paper Weather, picture 2"
+        },
+        {
+          "asset_id": "as_4x5_mist",
+          "caption": "",
+          "alt": "Paper Weather, picture 3"
+        },
+        {
+          "asset_id": "as_3x2_linen",
+          "caption": "",
+          "alt": "Paper Weather, picture 4"
+        },
+        {
+          "asset_id": "as_1x1_stone",
+          "caption": "",
+          "alt": "Paper Weather, picture 5"
+        }
+      ]
+    },
+    "twelve-months": {
+      "handle": "twelve-months",
+      "title": "Twelve Months",
+      "items": [
+        {
+          "asset_id": "as_3x2_stone",
+          "caption": "",
+          "alt": "Twelve Months, picture 1"
+        },
+        {
+          "asset_id": "as_4x5_mist",
+          "caption": "",
+          "alt": "Twelve Months, picture 2"
+        },
+        {
+          "asset_id": "as_4x5_linen",
+          "caption": "",
+          "alt": "Twelve Months, picture 3"
+        },
+        {
+          "asset_id": "as_16x9_stone",
+          "caption": "",
+          "alt": "Twelve Months, picture 4"
+        }
+      ]
+    },
+    "margins": {
+      "handle": "margins",
+      "title": "Margins",
+      "items": [
+        {
+          "asset_id": "as_1x1_mist",
+          "caption": "",
+          "alt": "Margins, picture 1"
+        },
+        {
+          "asset_id": "as_3x2_linen",
+          "caption": "",
+          "alt": "Margins, picture 2"
+        },
+        {
+          "asset_id": "as_4x5_stone",
+          "caption": "",
+          "alt": "Margins, picture 3"
+        },
+        {
+          "asset_id": "as_4x5_mist",
+          "caption": "",
+          "alt": "Margins, picture 4"
+        },
+        {
+          "asset_id": "as_3x2_linen",
+          "caption": "",
+          "alt": "Margins, picture 5"
+        },
+        {
+          "asset_id": "as_16x9_stone",
+          "caption": "",
+          "alt": "Margins, picture 6"
+        }
+      ]
+    },
+    "studio": {
+      "handle": "studio",
+      "title": "The studio",
+      "items": [
+        {
+          "asset_id": "as_4x5_linen",
+          "caption": "The long table",
+          "alt": "The long table under the north window"
+        },
+        {
+          "asset_id": "as_4x5_stone",
+          "caption": "Inks",
+          "alt": "Bottles of ink on a shelf"
+        },
+        {
+          "asset_id": "as_1x1_mist",
+          "caption": "The press downstairs",
+          "alt": "The print shop below the studio"
+        },
+        {
+          "asset_id": "as_4x5_linen",
+          "caption": "Proofs drying",
+          "alt": "Proofs pegged on a line"
+        }
+      ]
+    }
+  },
+  "assets": {
+    "as_1x1_linen": {
+      "id": "as_1x1_linen",
+      "status": "ready",
+      "file_name": "1x1-linen.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 347,
+      "url": "/_sites/theme/photos/1x1-linen.svg",
+      "width": 1200,
+      "height": 1200,
+      "alt": "1:1 linen placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_1x1_stone": {
+      "id": "as_1x1_stone",
+      "status": "ready",
+      "file_name": "1x1-stone.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 347,
+      "url": "/_sites/theme/photos/1x1-stone.svg",
+      "width": 1200,
+      "height": 1200,
+      "alt": "1:1 stone placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_1x1_mist": {
+      "id": "as_1x1_mist",
+      "status": "ready",
+      "file_name": "1x1-mist.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 346,
+      "url": "/_sites/theme/photos/1x1-mist.svg",
+      "width": 1200,
+      "height": 1200,
+      "alt": "1:1 mist placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_4x5_linen": {
+      "id": "as_4x5_linen",
+      "status": "ready",
+      "file_name": "4x5-linen.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 347,
+      "url": "/_sites/theme/photos/4x5-linen.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "4:5 linen placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_4x5_stone": {
+      "id": "as_4x5_stone",
+      "status": "ready",
+      "file_name": "4x5-stone.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 347,
+      "url": "/_sites/theme/photos/4x5-stone.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "4:5 stone placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_4x5_mist": {
+      "id": "as_4x5_mist",
+      "status": "ready",
+      "file_name": "4x5-mist.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 346,
+      "url": "/_sites/theme/photos/4x5-mist.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "4:5 mist placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_3x2_linen": {
+      "id": "as_3x2_linen",
+      "status": "ready",
+      "file_name": "3x2-linen.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 347,
+      "url": "/_sites/theme/photos/3x2-linen.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "3:2 linen placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_3x2_stone": {
+      "id": "as_3x2_stone",
+      "status": "ready",
+      "file_name": "3x2-stone.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 347,
+      "url": "/_sites/theme/photos/3x2-stone.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "3:2 stone placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_3x2_mist": {
+      "id": "as_3x2_mist",
+      "status": "ready",
+      "file_name": "3x2-mist.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 346,
+      "url": "/_sites/theme/photos/3x2-mist.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "3:2 mist placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_16x9_linen": {
+      "id": "as_16x9_linen",
+      "status": "ready",
+      "file_name": "16x9-linen.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 344,
+      "url": "/_sites/theme/photos/16x9-linen.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "16:9 linen placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_16x9_stone": {
+      "id": "as_16x9_stone",
+      "status": "ready",
+      "file_name": "16x9-stone.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 344,
+      "url": "/_sites/theme/photos/16x9-stone.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "16:9 stone placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_16x9_mist": {
+      "id": "as_16x9_mist",
+      "status": "ready",
+      "file_name": "16x9-mist.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 343,
+      "url": "/_sites/theme/photos/16x9-mist.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "16:9 mist placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    }
+  },
+  "forms": {
+    "contact": {
+      "handle": "contact",
+      "name": "Contact",
+      "fields": [
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Name",
+          "required": true,
+          "max_length": 120
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        },
+        {
+          "id": "subject",
+          "type": "select",
+          "label": "Subject",
+          "required": true,
+          "options": [
+            "Commission",
+            "Talk",
+            "Press",
+            "Something else"
+          ]
+        },
+        {
+          "id": "message",
+          "type": "textarea",
+          "label": "Message",
+          "required": true,
+          "max_length": 4000
+        }
+      ],
+      "success_message": "Thank you. I answer within a few days.",
+      "submit_label": "Send",
+      "redirect_path": ""
+    },
+    "newsletter": {
+      "handle": "newsletter",
+      "name": "Newsletter",
+      "fields": [
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        }
+      ],
+      "success_message": "Thank you. The next letter comes your way.",
+      "submit_label": "Subscribe",
+      "redirect_path": ""
+    }
+  },
+  "content": {
+    "categories": {
+      "name": "Categories",
+      "fields": [
+        {
+          "id": "description",
+          "type": "text",
+          "label": "Description"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "cat_identity",
+          "handle": "identity",
+          "title": "Identity",
+          "fields": {
+            "description": "Marks, type and print for small studios",
+            "order": 1
+          }
+        },
+        {
+          "id": "cat_books",
+          "handle": "books",
+          "title": "Books",
+          "fields": {
+            "description": "Hardbacks and zines, cover to colophon",
+            "order": 2
+          }
+        },
+        {
+          "id": "cat_drawings",
+          "handle": "drawings",
+          "title": "Drawings",
+          "fields": {
+            "description": "Ink on paper, most mornings",
+            "order": 3
+          }
+        },
+        {
+          "id": "cat_exhibitions",
+          "handle": "exhibitions",
+          "title": "Exhibitions",
+          "fields": {
+            "description": "Group and solo shows since 2022",
+            "order": 4
+          }
+        }
+      ]
+    },
+    "works": {
+      "name": "Work",
+      "fields": [
+        {
+          "id": "year",
+          "type": "number",
+          "label": "Year"
+        },
+        {
+          "id": "category",
+          "type": "entry",
+          "label": "Category",
+          "content_type": "categories"
+        },
+        {
+          "id": "details",
+          "type": "text",
+          "label": "Details",
+          "info": "One free line: Oil on linen, 120 × 90 cm."
+        },
+        {
+          "id": "role",
+          "type": "text",
+          "label": "Role"
+        },
+        {
+          "id": "client",
+          "type": "text",
+          "label": "Client"
+        },
+        {
+          "id": "summary",
+          "type": "text",
+          "label": "Summary"
+        },
+        {
+          "id": "cover",
+          "type": "image",
+          "label": "Cover"
+        },
+        {
+          "id": "cover_alt",
+          "type": "text",
+          "label": "Cover alt text"
+        },
+        {
+          "id": "gallery",
+          "type": "gallery",
+          "label": "Gallery"
+        },
+        {
+          "id": "body",
+          "type": "richtext",
+          "label": "Body"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "id": "featured",
+          "type": "checkbox",
+          "label": "Featured"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "work_tidewater",
+          "handle": "tidewater",
+          "title": "Tidewater",
+          "fields": {
+            "year": 2025,
+            "category": "cat_identity",
+            "details": "Print and signage",
+            "role": "Art direction and type",
+            "client": "A ceramics studio in Porto",
+            "summary": "A wordmark cut from one brushstroke, and the signage to carry it.",
+            "cover": "as_1x1_linen",
+            "cover_alt": "Tidewater, the cover",
+            "gallery": "tidewater",
+            "body": "<p>The studio throws everything by hand, so the mark had to be made the same way: one stroke, no cleanup. We drew it a few hundred times and kept the eleventh.</p><p>The signage uses the same stroke at the scale of a doorway, routed into oak and left unpainted.</p>",
+            "link": "",
+            "featured": true,
+            "order": 1
+          }
+        },
+        {
+          "id": "work_casa_rio",
+          "handle": "casa-rio",
+          "title": "Casa Rio",
+          "fields": {
+            "year": 2024,
+            "category": "cat_identity",
+            "details": "Stationery and web",
+            "role": "Identity and art direction",
+            "client": "A guesthouse on the Douro",
+            "summary": "Letterforms borrowed from the river's old tide tables.",
+            "cover": "as_4x5_stone",
+            "cover_alt": "Casa Rio, the cover",
+            "gallery": "casa-rio",
+            "body": "<p>The guesthouse kept a drawer of printed tide tables from the 1950s. Their numerals became the starting point for a small set of letters.</p><p>The letters run through the stationery, the room keys and a plain website that reads like a timetable.</p>",
+            "link": "",
+            "featured": true,
+            "order": 2
+          }
+        },
+        {
+          "id": "work_loom",
+          "handle": "loom",
+          "title": "Loom",
+          "fields": {
+            "year": 2023,
+            "category": "cat_identity",
+            "details": "Labels and packaging",
+            "role": "Identity",
+            "client": "A weaving workshop",
+            "summary": "A mark that threads itself through every label.",
+            "cover": "as_3x2_mist",
+            "cover_alt": "Loom, the cover",
+            "gallery": "loom",
+            "body": "<p>The workshop sells by the metre and by the blanket, so the labels had to work at both sizes.</p><p>The mark is one line that passes over and under itself, woven into the cloth labels and printed on the boxes.</p>",
+            "link": "",
+            "featured": false,
+            "order": 3
+          }
+        },
+        {
+          "id": "work_the_long_table",
+          "handle": "the-long-table",
+          "title": "The Long Table",
+          "fields": {
+            "year": 2025,
+            "category": "cat_books",
+            "details": "Hardback, 240 pages",
+            "role": "Design and illustration",
+            "client": "An independent press",
+            "summary": "Forty dinners, forty drawings, one long table.",
+            "cover": "as_1x1_linen",
+            "cover_alt": "The Long Table, the cover",
+            "gallery": "the-long-table",
+            "body": "<p>A cookbook built around one table and the people who sat at it over a year. Every dinner has a drawing and a page of notes.</p><p>The drawings were made on the night, in ink, and printed at the size they were drawn.</p>",
+            "link": "https://press.example/the-long-table",
+            "featured": true,
+            "order": 4
+          }
+        },
+        {
+          "id": "work_field_notes",
+          "handle": "field-notes",
+          "title": "Field Notes",
+          "fields": {
+            "year": 2024,
+            "category": "cat_books",
+            "details": "Softcover, 96 pages",
+            "role": "Design",
+            "client": "A walking collective",
+            "summary": "A pocket book for a year of Sunday walks.",
+            "cover": "as_4x5_stone",
+            "cover_alt": "Field Notes, the cover",
+            "gallery": "field-notes",
+            "body": "<p>Fifty-two walks around the city, one for each Sunday, with a map, a route and a blank page for notes.</p><p>The book is sized for a coat pocket and printed on paper that takes a pencil.</p>",
+            "link": "",
+            "featured": false,
+            "order": 5
+          }
+        },
+        {
+          "id": "work_salt",
+          "handle": "salt",
+          "title": "Salt",
+          "fields": {
+            "year": 2022,
+            "category": "cat_books",
+            "details": "Zine, 32 pages",
+            "role": "Design and illustration",
+            "client": "Self-published",
+            "summary": "Everything I know about the coast, in ink.",
+            "cover": "as_3x2_mist",
+            "cover_alt": "Salt, the cover",
+            "gallery": "salt",
+            "body": "<p>A small zine about the stretch of coast south of the city, drawn over one summer.</p><p>Printed on a risograph in two colours and folded by hand.</p>",
+            "link": "",
+            "featured": false,
+            "order": 6
+          }
+        },
+        {
+          "id": "work_morning_series",
+          "handle": "morning-series",
+          "title": "Morning Series",
+          "fields": {
+            "year": 2025,
+            "category": "cat_drawings",
+            "details": "Ink on paper, 30 × 40 cm",
+            "role": "",
+            "client": "",
+            "summary": "Thirty mornings, one window, the same cup.",
+            "cover": "as_1x1_linen",
+            "cover_alt": "Morning Series, the cover",
+            "gallery": "morning-series",
+            "body": "<p>Every morning for a month I drew the same cup on the same sill before starting work.</p><p>The light changed more than the cup did. The drawings hang in the order they were made.</p>",
+            "link": "",
+            "featured": true,
+            "order": 7
+          }
+        },
+        {
+          "id": "work_harbour_studies",
+          "handle": "harbour-studies",
+          "title": "Harbour Studies",
+          "fields": {
+            "year": 2024,
+            "category": "cat_drawings",
+            "details": "Ink and wash, 21 × 30 cm",
+            "role": "",
+            "client": "",
+            "summary": "Boats at rest in the Tagus, drawn from the ferry.",
+            "cover": "as_4x5_stone",
+            "cover_alt": "Harbour Studies, the cover",
+            "gallery": "harbour-studies",
+            "body": "<p>Drawn on the morning ferry over a winter, each one finished before the boat docked.</p><p>The wash went on later, from memory, in the studio.</p>",
+            "link": "",
+            "featured": true,
+            "order": 8
+          }
+        },
+        {
+          "id": "work_quiet_rooms",
+          "handle": "quiet-rooms",
+          "title": "Quiet Rooms",
+          "fields": {
+            "year": 2023,
+            "category": "cat_drawings",
+            "details": "Pencil, 30 × 30 cm",
+            "role": "",
+            "client": "",
+            "summary": "Interiors with nobody in them.",
+            "cover": "as_3x2_mist",
+            "cover_alt": "Quiet Rooms, the cover",
+            "gallery": "quiet-rooms",
+            "body": "<p>Rooms in friends' houses, drawn while they were out.</p><p>Each drawing took an afternoon and was left unfinished where the light ran out.</p>",
+            "link": "",
+            "featured": false,
+            "order": 9
+          }
+        },
+        {
+          "id": "work_paper_weather",
+          "handle": "paper-weather",
+          "title": "Paper Weather",
+          "fields": {
+            "year": 2025,
+            "category": "cat_exhibitions",
+            "details": "Group show, Galeria Norte",
+            "role": "",
+            "client": "",
+            "summary": "Twelve drawings about rain, hung in a dry room.",
+            "cover": "as_1x1_linen",
+            "cover_alt": "Paper Weather, the cover",
+            "gallery": "paper-weather",
+            "body": "<p>A group show about weather, with twelve of my drawings of rain across one wall.</p><p>The drawings were hung low, at the height of a child, so you look down into them.</p>",
+            "link": "https://galerianorte.example/paper-weather",
+            "featured": true,
+            "order": 10
+          }
+        },
+        {
+          "id": "work_twelve_months",
+          "handle": "twelve-months",
+          "title": "Twelve Months",
+          "fields": {
+            "year": 2024,
+            "category": "cat_exhibitions",
+            "details": "Solo show, Casa da Imagem",
+            "role": "",
+            "client": "",
+            "summary": "A year of mornings on one wall.",
+            "cover": "as_4x5_stone",
+            "cover_alt": "Twelve Months, the cover",
+            "gallery": "twelve-months",
+            "body": "<p>My first solo show: a drawing for every morning of one year, three hundred and sixty-five in a grid.</p><p>The grid ran the length of the room and finished at the door.</p>",
+            "link": "",
+            "featured": false,
+            "order": 11
+          }
+        },
+        {
+          "id": "work_margins",
+          "handle": "margins",
+          "title": "Margins",
+          "fields": {
+            "year": 2022,
+            "category": "cat_exhibitions",
+            "details": "Group show, Sala Sul",
+            "role": "",
+            "client": "",
+            "summary": "Drawings made in the margins of other work.",
+            "cover": "as_3x2_mist",
+            "cover_alt": "Margins, the cover",
+            "gallery": "margins",
+            "body": "<p>A group show of drawings made beside other jobs: in notebooks, on proofs, on the backs of letters.</p><p>My part was a wall of proof sheets with the drawings left where they fell.</p>",
+            "link": "",
+            "featured": false,
+            "order": 12
+          }
+        }
+      ]
+    },
+    "cv_entries": {
+      "name": "CV",
+      "fields": [
+        {
+          "id": "kind",
+          "type": "text",
+          "label": "Kind",
+          "info": "One of experience, education, exhibition, award, press, talk."
+        },
+        {
+          "id": "organisation",
+          "type": "text",
+          "label": "Organisation"
+        },
+        {
+          "id": "place",
+          "type": "text",
+          "label": "Place"
+        },
+        {
+          "id": "start",
+          "type": "text",
+          "label": "Start (a year)"
+        },
+        {
+          "id": "end",
+          "type": "text",
+          "label": "End (a year, Now, or empty)"
+        },
+        {
+          "id": "note",
+          "type": "text",
+          "label": "Note"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "cv_1",
+          "handle": "cv-1",
+          "title": "Senior designer",
+          "fields": {
+            "kind": "experience",
+            "organisation": "Studio Lumen",
+            "place": "Lisbon",
+            "start": "2021",
+            "end": "Now",
+            "note": "Identity systems and books for small makers",
+            "link": "",
+            "order": 1
+          }
+        },
+        {
+          "id": "cv_2",
+          "handle": "cv-2",
+          "title": "Designer",
+          "fields": {
+            "kind": "experience",
+            "organisation": "Atelier Norte",
+            "place": "Porto",
+            "start": "2018",
+            "end": "2021",
+            "note": "Editorial and exhibition design",
+            "link": "",
+            "order": 2
+          }
+        },
+        {
+          "id": "cv_3",
+          "handle": "cv-3",
+          "title": "Junior designer",
+          "fields": {
+            "kind": "experience",
+            "organisation": "Bureau Vale",
+            "place": "Lisbon",
+            "start": "2016",
+            "end": "2018",
+            "note": "",
+            "link": "",
+            "order": 3
+          }
+        },
+        {
+          "id": "cv_4",
+          "handle": "cv-4",
+          "title": "Illustrator",
+          "fields": {
+            "kind": "experience",
+            "organisation": "Freelance",
+            "place": "Lisbon",
+            "start": "2016",
+            "end": "Now",
+            "note": "Books, posters and the occasional wall",
+            "link": "",
+            "order": 4
+          }
+        },
+        {
+          "id": "cv_5",
+          "handle": "cv-5",
+          "title": "Paper Weather (group)",
+          "fields": {
+            "kind": "exhibition",
+            "organisation": "Galeria Norte",
+            "place": "Lisbon",
+            "start": "2025",
+            "end": "",
+            "note": "",
+            "link": "",
+            "order": 5
+          }
+        },
+        {
+          "id": "cv_6",
+          "handle": "cv-6",
+          "title": "Twelve Months (solo)",
+          "fields": {
+            "kind": "exhibition",
+            "organisation": "Casa da Imagem",
+            "place": "Porto",
+            "start": "2024",
+            "end": "",
+            "note": "",
+            "link": "",
+            "order": 6
+          }
+        },
+        {
+          "id": "cv_7",
+          "handle": "cv-7",
+          "title": "Margins (group)",
+          "fields": {
+            "kind": "exhibition",
+            "organisation": "Sala Sul",
+            "place": "Lisbon",
+            "start": "2022",
+            "end": "",
+            "note": "",
+            "link": "",
+            "order": 7
+          }
+        },
+        {
+          "id": "cv_8",
+          "handle": "cv-8",
+          "title": "MA Communication Design",
+          "fields": {
+            "kind": "education",
+            "organisation": "A school in Lisbon",
+            "place": "Lisbon",
+            "start": "2014",
+            "end": "2016",
+            "note": "",
+            "link": "",
+            "order": 8
+          }
+        },
+        {
+          "id": "cv_9",
+          "handle": "cv-9",
+          "title": "BA Fine Art",
+          "fields": {
+            "kind": "education",
+            "organisation": "A school in Porto",
+            "place": "Porto",
+            "start": "2010",
+            "end": "2014",
+            "note": "",
+            "link": "",
+            "order": 9
+          }
+        },
+        {
+          "id": "cv_10",
+          "handle": "cv-10",
+          "title": "Book Design Prize, shortlist",
+          "fields": {
+            "kind": "award",
+            "organisation": "",
+            "place": "",
+            "start": "2025",
+            "end": "",
+            "note": "For The Long Table",
+            "link": "",
+            "order": 10
+          }
+        },
+        {
+          "id": "cv_11",
+          "handle": "cv-11",
+          "title": "Young Illustrator Award",
+          "fields": {
+            "kind": "award",
+            "organisation": "",
+            "place": "",
+            "start": "2019",
+            "end": "",
+            "note": "",
+            "link": "",
+            "order": 11
+          }
+        },
+        {
+          "id": "cv_12",
+          "handle": "cv-12",
+          "title": "“The quiet type”, an interview",
+          "fields": {
+            "kind": "press",
+            "organisation": "A design magazine",
+            "place": "",
+            "start": "2024",
+            "end": "",
+            "note": "",
+            "link": "https://magazine.example/the-quiet-type",
+            "order": 12
+          }
+        }
+      ]
+    },
+    "posts": {
+      "name": "Writing",
+      "fields": [
+        {
+          "id": "topic",
+          "type": "text",
+          "label": "Topic"
+        },
+        {
+          "id": "date",
+          "type": "date",
+          "label": "Date"
+        },
+        {
+          "id": "author",
+          "type": "text",
+          "label": "Author"
+        },
+        {
+          "id": "standfirst",
+          "type": "text",
+          "label": "Standfirst"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image (3:2)"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "body",
+          "type": "richtext",
+          "label": "Body"
+        }
+      ],
+      "entries": [
+        {
+          "id": "post_a_page_of_ink_before_anything_else",
+          "handle": "a-page-of-ink-before-anything-else",
+          "title": "A page of ink before anything else",
+          "fields": {
+            "topic": "Process",
+            "date": "2026-09-14",
+            "author": "Juno Reyes",
+            "standfirst": "Why every project starts with a drawing, even the websites.",
+            "image": "as_3x2_linen",
+            "image_alt": "A page of ink before anything else",
+            "body": "<p>Before a brief turns into a grid or a typeface, I fill a page with ink. Not sketches of the answer: marks, shapes, the feel of the thing.</p><p>It is the slowest part of a project and the one I would cut last.</p>"
+          }
+        },
+        {
+          "id": "post_binding_the_long_table",
+          "handle": "binding-the-long-table",
+          "title": "Binding The Long Table",
+          "fields": {
+            "topic": "Books",
+            "date": "2026-06-02",
+            "author": "Juno Reyes",
+            "standfirst": "Forty drawings, one spine, a week at the bindery.",
+            "image": "as_3x2_stone",
+            "image_alt": "Binding The Long Table",
+            "body": "<p>The book was bound by hand at a small bindery north of the river. I spent a week there folding and watching.</p><p>The spine is cloth, the boards are bare, and every copy smells faintly of glue.</p>"
+          }
+        },
+        {
+          "id": "post_why_i_draw_the_same_cup",
+          "handle": "why-i-draw-the-same-cup",
+          "title": "Why I draw the same cup",
+          "fields": {
+            "topic": "Process",
+            "date": "2026-03-21",
+            "author": "Juno Reyes",
+            "standfirst": "On repetition as a way of seeing.",
+            "image": "as_3x2_mist",
+            "image_alt": "Why I draw the same cup",
+            "body": "<p>The cup has not changed in three years. The drawings of it have.</p><p>Drawing one thing over and over is the best way I know to stop seeing what I expect.</p>"
+          }
+        },
+        {
+          "id": "post_the_studio_in_winter",
+          "handle": "the-studio-in-winter",
+          "title": "The studio in winter",
+          "fields": {
+            "topic": "Studio",
+            "date": "2026-01-18",
+            "author": "Juno Reyes",
+            "standfirst": "North light, a heater, and the long table.",
+            "image": "as_3x2_linen",
+            "image_alt": "The studio in winter",
+            "body": "<p>In winter the light in the studio is flat and grey and very good for drawing.</p><p>The heater is loud, the table is long, and most days nobody else comes up the stairs.</p>"
+          }
+        },
+        {
+          "id": "post_notes_from_casa_da_imagem",
+          "handle": "notes-from-casa-da-imagem",
+          "title": "Notes from Casa da Imagem",
+          "fields": {
+            "topic": "Studio",
+            "date": "2026-10-05",
+            "author": "Juno Reyes",
+            "standfirst": "Hanging a year of mornings on one wall.",
+            "image": "as_3x2_stone",
+            "image_alt": "Notes from Casa da Imagem",
+            "body": "<p>Three hundred and sixty-five drawings take two days to hang. We did it in order, January at the window.</p><p>The hardest part was the gaps: the days I missed are on the wall too, as blank frames.</p>"
+          }
+        },
+        {
+          "id": "post_zines_i_keep_coming_back_to",
+          "handle": "zines-i-keep-coming-back-to",
+          "title": "Zines I keep coming back to",
+          "fields": {
+            "topic": "Books",
+            "date": "2026-04-27",
+            "author": "Juno Reyes",
+            "standfirst": "Six small books that taught me more than the big ones.",
+            "image": "as_3x2_mist",
+            "image_alt": "Zines I keep coming back to",
+            "body": "<p>A short list of zines that live on the shelf above my desk.</p><p>None of them is longer than thirty-two pages, and every one of them was folded by its maker.</p>"
+          }
+        }
+      ]
+    }
+  },
+  "pages": {
+    "/": {
+      "id": "pg_home",
+      "template": "home",
+      "title": "Juno Reyes",
+      "seo": {
+        "description": "Juno Reyes, designer and illustrator in Lisbon: identities, books and drawings."
+      }
+    },
+    "/work": {
+      "id": "pg_work",
+      "template": "page.work",
+      "title": "Work"
+    },
+    "/work/tidewater": {
+      "id": "pg_work_tidewater",
+      "template": "work",
+      "title": "Tidewater",
+      "params": {
+        "work": "tidewater"
+      },
+      "entry": {
+        "id": "work_tidewater",
+        "handle": "tidewater",
+        "title": "Tidewater",
+        "fields": {
+          "year": 2025,
+          "category": "cat_identity",
+          "details": "Print and signage",
+          "role": "Art direction and type",
+          "client": "A ceramics studio in Porto",
+          "summary": "A wordmark cut from one brushstroke, and the signage to carry it.",
+          "cover": "as_1x1_linen",
+          "cover_alt": "Tidewater, the cover",
+          "gallery": "tidewater",
+          "body": "<p>The studio throws everything by hand, so the mark had to be made the same way: one stroke, no cleanup. We drew it a few hundred times and kept the eleventh.</p><p>The signage uses the same stroke at the scale of a doorway, routed into oak and left unpainted.</p>",
+          "link": "",
+          "featured": true,
+          "order": 1
+        }
+      }
+    },
+    "/work/casa-rio": {
+      "id": "pg_work_casa_rio",
+      "template": "work",
+      "title": "Casa Rio",
+      "params": {
+        "work": "casa-rio"
+      },
+      "entry": {
+        "id": "work_casa_rio",
+        "handle": "casa-rio",
+        "title": "Casa Rio",
+        "fields": {
+          "year": 2024,
+          "category": "cat_identity",
+          "details": "Stationery and web",
+          "role": "Identity and art direction",
+          "client": "A guesthouse on the Douro",
+          "summary": "Letterforms borrowed from the river's old tide tables.",
+          "cover": "as_4x5_stone",
+          "cover_alt": "Casa Rio, the cover",
+          "gallery": "casa-rio",
+          "body": "<p>The guesthouse kept a drawer of printed tide tables from the 1950s. Their numerals became the starting point for a small set of letters.</p><p>The letters run through the stationery, the room keys and a plain website that reads like a timetable.</p>",
+          "link": "",
+          "featured": true,
+          "order": 2
+        }
+      }
+    },
+    "/work/loom": {
+      "id": "pg_work_loom",
+      "template": "work",
+      "title": "Loom",
+      "params": {
+        "work": "loom"
+      },
+      "entry": {
+        "id": "work_loom",
+        "handle": "loom",
+        "title": "Loom",
+        "fields": {
+          "year": 2023,
+          "category": "cat_identity",
+          "details": "Labels and packaging",
+          "role": "Identity",
+          "client": "A weaving workshop",
+          "summary": "A mark that threads itself through every label.",
+          "cover": "as_3x2_mist",
+          "cover_alt": "Loom, the cover",
+          "gallery": "loom",
+          "body": "<p>The workshop sells by the metre and by the blanket, so the labels had to work at both sizes.</p><p>The mark is one line that passes over and under itself, woven into the cloth labels and printed on the boxes.</p>",
+          "link": "",
+          "featured": false,
+          "order": 3
+        }
+      }
+    },
+    "/work/the-long-table": {
+      "id": "pg_work_the_long_table",
+      "template": "work",
+      "title": "The Long Table",
+      "params": {
+        "work": "the-long-table"
+      },
+      "entry": {
+        "id": "work_the_long_table",
+        "handle": "the-long-table",
+        "title": "The Long Table",
+        "fields": {
+          "year": 2025,
+          "category": "cat_books",
+          "details": "Hardback, 240 pages",
+          "role": "Design and illustration",
+          "client": "An independent press",
+          "summary": "Forty dinners, forty drawings, one long table.",
+          "cover": "as_1x1_linen",
+          "cover_alt": "The Long Table, the cover",
+          "gallery": "the-long-table",
+          "body": "<p>A cookbook built around one table and the people who sat at it over a year. Every dinner has a drawing and a page of notes.</p><p>The drawings were made on the night, in ink, and printed at the size they were drawn.</p>",
+          "link": "https://press.example/the-long-table",
+          "featured": true,
+          "order": 4
+        }
+      }
+    },
+    "/work/field-notes": {
+      "id": "pg_work_field_notes",
+      "template": "work",
+      "title": "Field Notes",
+      "params": {
+        "work": "field-notes"
+      },
+      "entry": {
+        "id": "work_field_notes",
+        "handle": "field-notes",
+        "title": "Field Notes",
+        "fields": {
+          "year": 2024,
+          "category": "cat_books",
+          "details": "Softcover, 96 pages",
+          "role": "Design",
+          "client": "A walking collective",
+          "summary": "A pocket book for a year of Sunday walks.",
+          "cover": "as_4x5_stone",
+          "cover_alt": "Field Notes, the cover",
+          "gallery": "field-notes",
+          "body": "<p>Fifty-two walks around the city, one for each Sunday, with a map, a route and a blank page for notes.</p><p>The book is sized for a coat pocket and printed on paper that takes a pencil.</p>",
+          "link": "",
+          "featured": false,
+          "order": 5
+        }
+      }
+    },
+    "/work/salt": {
+      "id": "pg_work_salt",
+      "template": "work",
+      "title": "Salt",
+      "params": {
+        "work": "salt"
+      },
+      "entry": {
+        "id": "work_salt",
+        "handle": "salt",
+        "title": "Salt",
+        "fields": {
+          "year": 2022,
+          "category": "cat_books",
+          "details": "Zine, 32 pages",
+          "role": "Design and illustration",
+          "client": "Self-published",
+          "summary": "Everything I know about the coast, in ink.",
+          "cover": "as_3x2_mist",
+          "cover_alt": "Salt, the cover",
+          "gallery": "salt",
+          "body": "<p>A small zine about the stretch of coast south of the city, drawn over one summer.</p><p>Printed on a risograph in two colours and folded by hand.</p>",
+          "link": "",
+          "featured": false,
+          "order": 6
+        }
+      }
+    },
+    "/work/morning-series": {
+      "id": "pg_work_morning_series",
+      "template": "work",
+      "title": "Morning Series",
+      "params": {
+        "work": "morning-series"
+      },
+      "entry": {
+        "id": "work_morning_series",
+        "handle": "morning-series",
+        "title": "Morning Series",
+        "fields": {
+          "year": 2025,
+          "category": "cat_drawings",
+          "details": "Ink on paper, 30 × 40 cm",
+          "role": "",
+          "client": "",
+          "summary": "Thirty mornings, one window, the same cup.",
+          "cover": "as_1x1_linen",
+          "cover_alt": "Morning Series, the cover",
+          "gallery": "morning-series",
+          "body": "<p>Every morning for a month I drew the same cup on the same sill before starting work.</p><p>The light changed more than the cup did. The drawings hang in the order they were made.</p>",
+          "link": "",
+          "featured": true,
+          "order": 7
+        }
+      }
+    },
+    "/work/harbour-studies": {
+      "id": "pg_work_harbour_studies",
+      "template": "work",
+      "title": "Harbour Studies",
+      "params": {
+        "work": "harbour-studies"
+      },
+      "entry": {
+        "id": "work_harbour_studies",
+        "handle": "harbour-studies",
+        "title": "Harbour Studies",
+        "fields": {
+          "year": 2024,
+          "category": "cat_drawings",
+          "details": "Ink and wash, 21 × 30 cm",
+          "role": "",
+          "client": "",
+          "summary": "Boats at rest in the Tagus, drawn from the ferry.",
+          "cover": "as_4x5_stone",
+          "cover_alt": "Harbour Studies, the cover",
+          "gallery": "harbour-studies",
+          "body": "<p>Drawn on the morning ferry over a winter, each one finished before the boat docked.</p><p>The wash went on later, from memory, in the studio.</p>",
+          "link": "",
+          "featured": true,
+          "order": 8
+        }
+      }
+    },
+    "/work/quiet-rooms": {
+      "id": "pg_work_quiet_rooms",
+      "template": "work",
+      "title": "Quiet Rooms",
+      "params": {
+        "work": "quiet-rooms"
+      },
+      "entry": {
+        "id": "work_quiet_rooms",
+        "handle": "quiet-rooms",
+        "title": "Quiet Rooms",
+        "fields": {
+          "year": 2023,
+          "category": "cat_drawings",
+          "details": "Pencil, 30 × 30 cm",
+          "role": "",
+          "client": "",
+          "summary": "Interiors with nobody in them.",
+          "cover": "as_3x2_mist",
+          "cover_alt": "Quiet Rooms, the cover",
+          "gallery": "quiet-rooms",
+          "body": "<p>Rooms in friends' houses, drawn while they were out.</p><p>Each drawing took an afternoon and was left unfinished where the light ran out.</p>",
+          "link": "",
+          "featured": false,
+          "order": 9
+        }
+      }
+    },
+    "/work/paper-weather": {
+      "id": "pg_work_paper_weather",
+      "template": "work",
+      "title": "Paper Weather",
+      "params": {
+        "work": "paper-weather"
+      },
+      "entry": {
+        "id": "work_paper_weather",
+        "handle": "paper-weather",
+        "title": "Paper Weather",
+        "fields": {
+          "year": 2025,
+          "category": "cat_exhibitions",
+          "details": "Group show, Galeria Norte",
+          "role": "",
+          "client": "",
+          "summary": "Twelve drawings about rain, hung in a dry room.",
+          "cover": "as_1x1_linen",
+          "cover_alt": "Paper Weather, the cover",
+          "gallery": "paper-weather",
+          "body": "<p>A group show about weather, with twelve of my drawings of rain across one wall.</p><p>The drawings were hung low, at the height of a child, so you look down into them.</p>",
+          "link": "https://galerianorte.example/paper-weather",
+          "featured": true,
+          "order": 10
+        }
+      }
+    },
+    "/work/twelve-months": {
+      "id": "pg_work_twelve_months",
+      "template": "work",
+      "title": "Twelve Months",
+      "params": {
+        "work": "twelve-months"
+      },
+      "entry": {
+        "id": "work_twelve_months",
+        "handle": "twelve-months",
+        "title": "Twelve Months",
+        "fields": {
+          "year": 2024,
+          "category": "cat_exhibitions",
+          "details": "Solo show, Casa da Imagem",
+          "role": "",
+          "client": "",
+          "summary": "A year of mornings on one wall.",
+          "cover": "as_4x5_stone",
+          "cover_alt": "Twelve Months, the cover",
+          "gallery": "twelve-months",
+          "body": "<p>My first solo show: a drawing for every morning of one year, three hundred and sixty-five in a grid.</p><p>The grid ran the length of the room and finished at the door.</p>",
+          "link": "",
+          "featured": false,
+          "order": 11
+        }
+      }
+    },
+    "/work/margins": {
+      "id": "pg_work_margins",
+      "template": "work",
+      "title": "Margins",
+      "params": {
+        "work": "margins"
+      },
+      "entry": {
+        "id": "work_margins",
+        "handle": "margins",
+        "title": "Margins",
+        "fields": {
+          "year": 2022,
+          "category": "cat_exhibitions",
+          "details": "Group show, Sala Sul",
+          "role": "",
+          "client": "",
+          "summary": "Drawings made in the margins of other work.",
+          "cover": "as_3x2_mist",
+          "cover_alt": "Margins, the cover",
+          "gallery": "margins",
+          "body": "<p>A group show of drawings made beside other jobs: in notebooks, on proofs, on the backs of letters.</p><p>My part was a wall of proof sheets with the drawings left where they fell.</p>",
+          "link": "",
+          "featured": false,
+          "order": 12
+        }
+      }
+    },
+    "/cv": {
+      "id": "pg_cv",
+      "template": "page.cv",
+      "title": "CV"
+    },
+    "/about": {
+      "id": "pg_about",
+      "template": "page.about",
+      "title": "About"
+    },
+    "/writing": {
+      "id": "pg_writing",
+      "template": "page.writing",
+      "title": "Writing"
+    },
+    "/writing/a-page-of-ink-before-anything-else": {
+      "id": "pg_post_a_page_of_ink_before_anything_else",
+      "template": "post",
+      "title": "A page of ink before anything else",
+      "params": {
+        "post": "a-page-of-ink-before-anything-else"
+      },
+      "entry": {
+        "id": "post_a_page_of_ink_before_anything_else",
+        "handle": "a-page-of-ink-before-anything-else",
+        "title": "A page of ink before anything else",
+        "fields": {
+          "topic": "Process",
+          "date": "2026-09-14",
+          "author": "Juno Reyes",
+          "standfirst": "Why every project starts with a drawing, even the websites.",
+          "image": "as_3x2_linen",
+          "image_alt": "A page of ink before anything else",
+          "body": "<p>Before a brief turns into a grid or a typeface, I fill a page with ink. Not sketches of the answer: marks, shapes, the feel of the thing.</p><p>It is the slowest part of a project and the one I would cut last.</p>"
+        }
+      }
+    },
+    "/writing/binding-the-long-table": {
+      "id": "pg_post_binding_the_long_table",
+      "template": "post",
+      "title": "Binding The Long Table",
+      "params": {
+        "post": "binding-the-long-table"
+      },
+      "entry": {
+        "id": "post_binding_the_long_table",
+        "handle": "binding-the-long-table",
+        "title": "Binding The Long Table",
+        "fields": {
+          "topic": "Books",
+          "date": "2026-06-02",
+          "author": "Juno Reyes",
+          "standfirst": "Forty drawings, one spine, a week at the bindery.",
+          "image": "as_3x2_stone",
+          "image_alt": "Binding The Long Table",
+          "body": "<p>The book was bound by hand at a small bindery north of the river. I spent a week there folding and watching.</p><p>The spine is cloth, the boards are bare, and every copy smells faintly of glue.</p>"
+        }
+      }
+    },
+    "/writing/why-i-draw-the-same-cup": {
+      "id": "pg_post_why_i_draw_the_same_cup",
+      "template": "post",
+      "title": "Why I draw the same cup",
+      "params": {
+        "post": "why-i-draw-the-same-cup"
+      },
+      "entry": {
+        "id": "post_why_i_draw_the_same_cup",
+        "handle": "why-i-draw-the-same-cup",
+        "title": "Why I draw the same cup",
+        "fields": {
+          "topic": "Process",
+          "date": "2026-03-21",
+          "author": "Juno Reyes",
+          "standfirst": "On repetition as a way of seeing.",
+          "image": "as_3x2_mist",
+          "image_alt": "Why I draw the same cup",
+          "body": "<p>The cup has not changed in three years. The drawings of it have.</p><p>Drawing one thing over and over is the best way I know to stop seeing what I expect.</p>"
+        }
+      }
+    },
+    "/writing/the-studio-in-winter": {
+      "id": "pg_post_the_studio_in_winter",
+      "template": "post",
+      "title": "The studio in winter",
+      "params": {
+        "post": "the-studio-in-winter"
+      },
+      "entry": {
+        "id": "post_the_studio_in_winter",
+        "handle": "the-studio-in-winter",
+        "title": "The studio in winter",
+        "fields": {
+          "topic": "Studio",
+          "date": "2026-01-18",
+          "author": "Juno Reyes",
+          "standfirst": "North light, a heater, and the long table.",
+          "image": "as_3x2_linen",
+          "image_alt": "The studio in winter",
+          "body": "<p>In winter the light in the studio is flat and grey and very good for drawing.</p><p>The heater is loud, the table is long, and most days nobody else comes up the stairs.</p>"
+        }
+      }
+    },
+    "/writing/notes-from-casa-da-imagem": {
+      "id": "pg_post_notes_from_casa_da_imagem",
+      "template": "post",
+      "title": "Notes from Casa da Imagem",
+      "params": {
+        "post": "notes-from-casa-da-imagem"
+      },
+      "entry": {
+        "id": "post_notes_from_casa_da_imagem",
+        "handle": "notes-from-casa-da-imagem",
+        "title": "Notes from Casa da Imagem",
+        "fields": {
+          "topic": "Studio",
+          "date": "2026-10-05",
+          "author": "Juno Reyes",
+          "standfirst": "Hanging a year of mornings on one wall.",
+          "image": "as_3x2_stone",
+          "image_alt": "Notes from Casa da Imagem",
+          "body": "<p>Three hundred and sixty-five drawings take two days to hang. We did it in order, January at the window.</p><p>The hardest part was the gaps: the days I missed are on the wall too, as blank frames.</p>"
+        }
+      }
+    },
+    "/writing/zines-i-keep-coming-back-to": {
+      "id": "pg_post_zines_i_keep_coming_back_to",
+      "template": "post",
+      "title": "Zines I keep coming back to",
+      "params": {
+        "post": "zines-i-keep-coming-back-to"
+      },
+      "entry": {
+        "id": "post_zines_i_keep_coming_back_to",
+        "handle": "zines-i-keep-coming-back-to",
+        "title": "Zines I keep coming back to",
+        "fields": {
+          "topic": "Books",
+          "date": "2026-04-27",
+          "author": "Juno Reyes",
+          "standfirst": "Six small books that taught me more than the big ones.",
+          "image": "as_3x2_mist",
+          "image_alt": "Zines I keep coming back to",
+          "body": "<p>A short list of zines that live on the shelf above my desk.</p><p>None of them is longer than thirty-two pages, and every one of them was folded by its maker.</p>"
+        }
+      }
+    },
+    "/contact": {
+      "id": "pg_contact",
+      "template": "page.contact",
+      "title": "Contact"
+    },
+    "/privacy": {
+      "id": "pg_privacy",
+      "template": "page",
+      "title": "Privacy",
+      "content": "<p>This site keeps a note in your browser that you have seen the cookie notice, and nothing else. The contact form sends your name, email and message to me and to no one else.</p><h2>What is kept</h2><p>Messages are kept for as long as the conversation lasts, then deleted. Write to hello@junoreyes.example to have yours removed sooner.</p>"
+    }
+  }
+}

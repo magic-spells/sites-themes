@@ -1221,7 +1221,7 @@
             "image": "as_3x2_sand",
             "image_alt": "The sauna",
             "featured": true,
-            "order": 2
+            "order": 4
           }
         },
         {
@@ -1237,7 +1237,7 @@
             "image": "as_3x2_lake",
             "image_alt": "The orchard",
             "featured": true,
-            "order": 3
+            "order": 5
           }
         },
         {
@@ -1253,7 +1253,7 @@
             "image": "as_3x2_forest",
             "image_alt": "Spion Kop hike",
             "featured": false,
-            "order": 4,
+            "order": 2,
             "link": "https://example.com/spion-kop-hike"
           }
         },
@@ -1270,7 +1270,7 @@
             "image": "as_3x2_sand",
             "image_alt": "Okanagan Rail Trail",
             "featured": false,
-            "order": 5,
+            "order": 6,
             "link": "https://example.com/okanagan-rail-trail"
           }
         },
@@ -1287,7 +1287,7 @@
             "image": "as_3x2_lake",
             "image_alt": "Gray Monk winery",
             "featured": false,
-            "order": 6,
+            "order": 7,
             "link": "https://example.com/gray-monk-winery"
           }
         },
@@ -1304,7 +1304,7 @@
             "image": "as_3x2_forest",
             "image_alt": "Kelowna farmers' market",
             "featured": false,
-            "order": 7,
+            "order": 8,
             "link": "https://example.com/kelowna-farmers-market"
           }
         },
@@ -1321,7 +1321,7 @@
             "image": "as_3x2_sand",
             "image_alt": "A guided paddle to the point",
             "featured": true,
-            "order": 8,
+            "order": 3,
             "price": 140,
             "link": "https://example.com/a-guided-paddle-to-the-point"
           }
@@ -1504,7 +1504,8 @@
             "date": "2026-10-05",
             "rating": 5,
             "featured": false,
-            "order": 8
+            "order": 8,
+            "stay": "stay_alder"
           }
         }
       ]
@@ -2005,7 +2006,7 @@
           "image": "as_3x2_sand",
           "image_alt": "The sauna",
           "featured": true,
-          "order": 2
+          "order": 4
         }
       }
     },
@@ -2029,7 +2030,7 @@
           "image": "as_3x2_lake",
           "image_alt": "The orchard",
           "featured": true,
-          "order": 3
+          "order": 5
         }
       }
     },
@@ -2053,7 +2054,7 @@
           "image": "as_3x2_forest",
           "image_alt": "Spion Kop hike",
           "featured": false,
-          "order": 4,
+          "order": 2,
           "link": "https://example.com/spion-kop-hike"
         }
       }
@@ -2078,7 +2079,7 @@
           "image": "as_3x2_sand",
           "image_alt": "Okanagan Rail Trail",
           "featured": false,
-          "order": 5,
+          "order": 6,
           "link": "https://example.com/okanagan-rail-trail"
         }
       }
@@ -2103,7 +2104,7 @@
           "image": "as_3x2_lake",
           "image_alt": "Gray Monk winery",
           "featured": false,
-          "order": 6,
+          "order": 7,
           "link": "https://example.com/gray-monk-winery"
         }
       }
@@ -2128,7 +2129,7 @@
           "image": "as_3x2_forest",
           "image_alt": "Kelowna farmers' market",
           "featured": false,
-          "order": 7,
+          "order": 8,
           "link": "https://example.com/kelowna-farmers-market"
         }
       }
@@ -2153,7 +2154,7 @@
           "image": "as_3x2_sand",
           "image_alt": "A guided paddle to the point",
           "featured": true,
-          "order": 8,
+          "order": 3,
           "price": 140,
           "link": "https://example.com/a-guided-paddle-to-the-point"
         }

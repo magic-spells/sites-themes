@@ -27,7 +27,8 @@
         "image_alt": "Alder, the first cabin",
         "caption": "Alder",
         "caption_meta": "2009",
-        "color_scheme": "paper"
+        "color_scheme": "paper",
+        "body": "<p>Alder went up first, a single cabin on the east shore with a woodstove, two bunks and a rowboat tied to the dock. We built most of it by hand over one long summer, and the first guests were friends who didn't mind the outhouse.</p><p>Birch and Cedar followed, then the farmhouse, where we still live upstairs. We keep it small on purpose: five cabins, a sauna on the water and the same rowboat, repainted most springs. Most of what we know about the lake, we learned from the people who stay.</p>"
       },
       "blocks": [
         {
@@ -45,7 +46,9 @@
           "settings": {
             "year": "2013",
             "title": "Birch and Cedar",
-            "text": "Two more cabins and the first season we sold out."
+            "text": "Two more cabins and the first season we sold out.",
+            "image": "as_3x2_forest",
+            "image_alt": "Birch and Cedar from the dock"
           }
         },
         {
@@ -63,7 +66,9 @@
           "settings": {
             "year": "2021",
             "title": "The bunkhouse",
-            "text": "For the paddling groups who kept asking."
+            "text": "For the paddling groups who kept asking.",
+            "image": "as_3x2_sand",
+            "image_alt": "The bunkhouse porch"
           }
         },
         {

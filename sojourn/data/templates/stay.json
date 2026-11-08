@@ -17,6 +17,7 @@
       "preset": "Home",
       "settings": {
         "heading": "Things to do nearby",
+        "text": "Hikes, wineries, a rail trail and the lake itself.",
         "limit": 3,
         "color_scheme": "lake"
       },

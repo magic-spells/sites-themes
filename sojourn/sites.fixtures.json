@@ -1111,7 +1111,7 @@
           "handle": "bunkhouse",
           "title": "Bunkhouse",
           "fields": {
-            "type": "Bunkhouse bed",
+            "type": "Bunkhouse",
             "summary": "Six bunks, two showers, a long table.",
             "description": "<p>Six bunks, two showers, a long table. Bunkhouse sits among the cedars on the quiet side of the lake, a short walk from the dock, the sauna and the barn.</p><p>Linens and towels are on the beds when you arrive, the wood is stacked, and there is coffee in the cupboard. Bring food, a book and something warm for the evenings.</p>",
             "sleeps": 6,
@@ -1941,7 +1941,7 @@
         "handle": "bunkhouse",
         "title": "Bunkhouse",
         "fields": {
-          "type": "Bunkhouse bed",
+          "type": "Bunkhouse",
           "summary": "Six bunks, two showers, a long table.",
           "description": "<p>Six bunks, two showers, a long table. Bunkhouse sits among the cedars on the quiet side of the lake, a short walk from the dock, the sauna and the barn.</p><p>Linens and towels are on the beds when you arrive, the wood is stacked, and there is coffee in the cupboard. Bring food, a book and something warm for the evenings.</p>",
           "sleeps": 6,

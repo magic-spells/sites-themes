@@ -24,6 +24,7 @@
         "heading": "",
         "limit": 12,
         "chips": true,
+        "mobile": "list",
         "link_label": "",
         "color_scheme": "paper"
       },

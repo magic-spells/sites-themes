@@ -93,7 +93,7 @@
 	--text-h1--letter-spacing: -0.02em;
 	--text-h1--font-weight: 500;
 	--text-h2: var(--portfolio-h2);
-	--text-h2--line-height: 1.1;
+	--text-h2--line-height: 1.05;
 	--text-h2--letter-spacing: -0.02em;
 	--text-h2--font-weight: 500;
 	--text-h3: var(--portfolio-h3);
@@ -103,15 +103,17 @@
 	--text-h4--line-height: 1.25;
 	--text-h4--font-weight: 500;
 	--text-body-lg: var(--portfolio-body-lg);
-	--text-body-lg--line-height: 1.55;
+	--text-body-lg--line-height: 1.4;
 	--text-body: var(--portfolio-body);
-	--text-body--line-height: 1.6;
+	--text-body--line-height: 1.55;
 	--text-body-sm: var(--portfolio-body-sm);
-	--text-body-sm--line-height: 1.5;
+	--text-body-sm--line-height: 1.45;
 	--text-xs: var(--sites-type-scale-xs);
-	--text-xs--line-height: 1.4;
+	--text-xs--line-height: 1.45;
 	--text-button: var(--portfolio-body-sm);
 	--text-button--line-height: 1;
+	/* Every text link: a 1px underline this far under the text. */
+	--text-underline-offset-link: 0.1875rem;
 
 	--spacing-space-2xs: 0.25rem;
 	--spacing-space-xs: var(--sites-spacing-xs);
@@ -138,6 +140,7 @@
 	--container-column: 82.5rem;
 	--container-reading: 40rem;
 	--container-notice: 26rem;
+	--container-utility: 30rem;
 	--aspect-square: 1 / 1;
 	--aspect-portrait: 4 / 5;
 	--aspect-photo: 3 / 2;
@@ -145,6 +148,8 @@
 	/* A picture beside prose: seven parts and five, one 3xl gap between. */
 	--grid-template-columns-text-picture: 7fr 5fr;
 	--grid-template-columns-picture-text: 5fr 7fr;
+	/* A writing row: the title and standfirst, the meta at the right edge. */
+	--grid-template-columns-row: 1fr auto;
 	--transition-duration-fast: 150ms;
 	--reveal-distance: 1.5rem;
 	--reveal-perspective: 75rem;
@@ -245,7 +250,7 @@ html.reveal-off split-text:not(:defined) {
 }
 
 :focus-visible {
-	outline: 2px solid var(--sites-scheme-links);
+	outline: 2px solid var(--sites-scheme-foreground);
 	outline-offset: 3px;
 }
 
@@ -296,7 +301,7 @@ html.reveal-off split-text:not(:defined) {
 		color: var(--sites-scheme-links);
 		text-decoration-line: underline;
 		text-decoration-thickness: 1px;
-		text-underline-offset: 0.2em;
+		text-underline-offset: var(--text-underline-offset-link);
 	}
 
 	.sites-prose :is(ul, ol) {

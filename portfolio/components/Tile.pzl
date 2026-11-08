@@ -6,7 +6,7 @@
   <Picture asset={ f.cover } alt={ f.cover_alt } ratio={ ratio ?? 'aspect-square' } sizes={ sizes } />
   {#if caption}
     <div class="grid">
-      <h3 class="text-body font-medium underline-offset-4 group-hover:underline">{ entry.title }</h3>
+      <h3 class="text-body font-medium decoration-1 underline-offset-link group-hover:underline">{ entry.title }</h3>
       <span class="text-body-sm text-scheme-meta">{ summary ? f.summary : [f.year, f.category.title] | compact | join(' · ') }</span>
     </div>
   {/if}

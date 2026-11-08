@@ -16,8 +16,8 @@
         {/if}
       </Form>
       <div class="grid gap-space-sm max-md:order-first">
-        {#if settings.note}<p class="text-body-lg text-pretty">{ settings.note }</p>{/if}
-        <Reach menu={ settings.social_menu } cls="text-body-lg" />
+        {#if settings.note}<p class="text-body text-pretty text-scheme-muted">{ settings.note }</p>{/if}
+        <Reach menu={ settings.social_menu } />
       </div>
     </div>
   </div>

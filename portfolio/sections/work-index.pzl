@@ -19,7 +19,7 @@
             {#if settings.thumbnails && entry.fields.cover}<span class="block size-thumb shrink-0 overflow-hidden bg-scheme-surface-2"><img class="size-full object-cover" src="{ image_url(entry.fields.cover, 320) }" alt="" loading="lazy" width={ entry.fields.cover.width } height={ entry.fields.cover.height } /></span>{/if}
             <div class="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-space-lg gap-y-space-2xs">
               <div class="me-auto grid gap-space-2xs max-md:w-full">
-                <h3 class="text-h3 underline-offset-4 group-hover:underline">{ entry.title }</h3>
+                <h3 class="text-h3 decoration-1 underline-offset-link group-hover:underline">{ entry.title }</h3>
                 {#if entry.fields.summary}<span class="text-body-sm text-pretty text-scheme-muted">{ entry.fields.summary }</span>{/if}
               </div>
               <span class="tabular-nums text-body-sm text-scheme-meta">{ entry.fields.year }</span>

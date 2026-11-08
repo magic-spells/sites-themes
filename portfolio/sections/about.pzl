@@ -1,5 +1,5 @@
 <!-- TODO sync with Figma -->
-<!-- Who the person is: the text at body-lg in seven parts beside a 4:5 or square picture in five (the caption under it), or a full-column 3:2 photo above the text. Under the text a contact block on a hairline: the email and the social links as text. short prints the first paragraph only, with a link under it (Home). On a phone the picture comes first. -->
+<!-- Who the person is: the text at body-lg in seven parts beside a square or 4:5 picture in five (the caption under it), or a full-column 3:2 photo above the text. Under the text a contact block on a hairline: the email and the social links as text. short prints the first paragraph only, with a link under it (Home). On a phone the picture comes first. -->
 {#let
   s = site.settings
   above = settings.picture == 'above'
@@ -9,10 +9,10 @@
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } />
     <div class="grid items-start gap-space-xl { above ? '' : 'md:gap-space-3xl' } { settings.picture == 'left' ? 'md:grid-cols-picture-text' : (above ? '' : 'md:grid-cols-text-picture') }">
-      <div class="{ settings.picture == 'right' ? 'md:order-last' : '' }"><Picture asset={ settings.image } alt={ settings.image_alt } ratio={ above ? 'aspect-photo' : (settings.ratio == '1:1' ? 'aspect-square' : 'aspect-portrait') } width={ above ? 2000 : 1200 } sizes={ above ? '(min-width: 82.5rem) 82.5rem, 100vw' : '(min-width: 48rem) 40vw, 100vw' } caption={ settings.caption } /></div>
+      <div class="{ settings.picture == 'right' ? 'md:order-last' : '' }"><Picture asset={ settings.image } alt={ settings.image_alt } ratio={ above ? 'aspect-photo' : (settings.ratio == '4:5' ? 'aspect-portrait' : 'aspect-square') } width={ above ? 2000 : 1200 } sizes={ above ? '(min-width: 82.5rem) 82.5rem, 100vw' : '(min-width: 48rem) 40vw, 100vw' } caption={ settings.caption } /></div>
       <div class="grid justify-items-start gap-space-lg { above ? 'max-w-reading' : '' }">
         <div class="sites-prose text-body-lg">{ body | raw }</div>
-        {#if settings.short && settings.link_label && settings.link_href}<a class="text-body text-link underline decoration-1 underline-offset-4" href="{ settings.link_href }">{ settings.link_label }</a>{/if}
+        {#if settings.short && settings.link_label && settings.link_href}<a class="text-body text-link underline decoration-1 underline-offset-link" href="{ settings.link_href }">{ settings.link_label }</a>{/if}
         {#if settings.show_contact && (s.email || settings.social_menu.items.length)}
           <div class="flex w-full flex-wrap gap-x-space-md gap-y-space-xs border-t border-scheme-border pt-space-md text-body">
             <Reach menu={ settings.social_menu } />
@@ -43,9 +43,9 @@
       { "value": "left", "label": "Left" },
       { "value": "above", "label": "Above, full width" }
     ], "info": "Above crops the photo to 3:2." },
-    { "type": "select", "id": "ratio", "label": "Ratio", "default": "4:5", "options": [
-      { "value": "4:5", "label": "4:5" },
-      { "value": "1:1", "label": "1:1" }
+    { "type": "select", "id": "ratio", "label": "Ratio", "default": "1:1", "options": [
+      { "value": "1:1", "label": "1:1" },
+      { "value": "4:5", "label": "4:5" }
     ], "info": "Beside the text." },
     { "type": "checkbox", "id": "show_contact", "label": "Contact links", "default": true, "info": "The email from Person and the social menu, under the text." },
     { "type": "menu", "id": "social_menu", "label": "Social menu" },
@@ -53,7 +53,7 @@
   ],
   "presets": [
     { "name": "Full", "settings": { "social_menu": "social", "color_scheme": "paper" } },
-    { "name": "Short", "settings": { "heading": "About", "short": true, "show_contact": false, "social_menu": "social", "color_scheme": "paper" } }
+    { "name": "Short", "settings": { "short": true, "show_contact": false, "social_menu": "social", "color_scheme": "paper" } }
   ]
 }
 </schema>

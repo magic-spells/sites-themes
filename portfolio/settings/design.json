@@ -99,7 +99,7 @@
   },
   "border": {
     "width": "1px",
-    "color": "#DDD7CC"
+    "color": "#DCD9D2"
   },
   "input": {
     "background": "#FBF9F5",
@@ -196,24 +196,24 @@
     {
       "handle": "paper",
       "name": "Paper",
-      "background": "#F7F5F0",
+      "background": "#F7F6F3",
       "foreground": "#1C1A17",
       "heading": "#1C1A17",
       "input_background": "#FBF9F5",
       "input_foreground": "#1C1A17",
       "input_border": "#6E685E",
-      "chip_background": "#EFEBE3",
+      "chip_background": "#EEECE7",
       "chip_foreground": "#6A645A",
-      "chip_border": "#DDD7CC",
+      "chip_border": "#DCD9D2",
       "icons": "#6E685E",
       "links": "#1F3FBF",
       "button_background": "transparent",
       "button_foreground": "#1C1A17",
-      "button_hover_background": "#EFEBE3",
+      "button_hover_background": "#EEECE7",
       "button_hover_foreground": "#1C1A17",
       "secondary_button_background": "transparent",
       "secondary_button_foreground": "#1C1A17",
-      "secondary_button_hover_background": "#EFEBE3",
+      "secondary_button_hover_background": "#EEECE7",
       "secondary_button_hover_foreground": "#1C1A17"
     },
     {
@@ -242,24 +242,24 @@
     {
       "handle": "stone",
       "name": "Stone",
-      "background": "#E7E2D9",
+      "background": "#EBE8E2",
       "foreground": "#1C1A17",
       "heading": "#1C1A17",
       "input_background": "#EFEBE3",
       "input_foreground": "#1C1A17",
       "input_border": "#625D55",
-      "chip_background": "#DED8CD",
+      "chip_background": "#E1DDD5",
       "chip_foreground": "#5E5951",
-      "chip_border": "#CFC8BC",
+      "chip_border": "#D1CCC3",
       "icons": "#625D55",
       "links": "#1A36A8",
       "button_background": "transparent",
       "button_foreground": "#1C1A17",
-      "button_hover_background": "#DED8CD",
+      "button_hover_background": "#E1DDD5",
       "button_hover_foreground": "#1C1A17",
       "secondary_button_background": "transparent",
       "secondary_button_foreground": "#1C1A17",
-      "secondary_button_hover_background": "#DED8CD",
+      "secondary_button_hover_background": "#E1DDD5",
       "secondary_button_hover_foreground": "#1C1A17"
     },
     {

@@ -1,5 +1,5 @@
 <!-- TODO sync with Figma -->
-<!-- Posts, newest first. list: rows on hairlines, the title, the standfirst and "Topic · Sep 14, 2026" in meta. cards: the newest across the column, then two per row, each with a 3:2 picture. On a post's page it leaves that post out. -->
+<!-- Posts, newest first. list: rows on hairlines, the title and the standfirst, "Topic · Sep 14, 2026" in meta at the right. cards: the newest across the column, then two per row, each with a 3:2 picture. On a post's page it leaves that post out. -->
 {#let
   posts = content.posts.entries | sort('fields.date') | reverse | reject('id', page.entry.id) | slice(0, settings.limit)
   cards = settings.layout == 'cards'
@@ -8,7 +8,7 @@
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } />
-    <ul class="grid { cards ? 'gap-x-grid gap-y-space-xl md:grid-cols-2' : 'border-t border-scheme-border' }">
+    <ul class="{ cards ? 'grid gap-x-grid gap-y-space-xl md:grid-cols-2' : '' }">
       {#for entry in posts, i}<li class="{ cards && !i ? 'md:col-span-2' : '' }"><PostCard entry={ entry } base_path={ settings.base_path } layout={ cards ? 'card' : 'list' } /></li>{/for}
     </ul>
   </div>

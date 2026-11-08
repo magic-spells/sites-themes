@@ -52,9 +52,9 @@
             next = all[i + 1]
           }
           <nav class="grid grid-cols-3 items-baseline gap-space-md border-t border-scheme-border pt-space-md text-body font-medium" aria-label="{ t('more_work') }">
-            <span>{#if prev}<a class="underline-offset-4 hover:underline" href="{ settings.base_path }/{ prev.handle }" rel="prev">{ t('previous') }</a>{/if}</span>
-            <a class="justify-self-center underline-offset-4 hover:underline" href="{ settings.base_path }">{ t('all_work') }</a>
-            <span class="justify-self-end">{#if next}<a class="underline-offset-4 hover:underline" href="{ settings.base_path }/{ next.handle }" rel="next">{ t('next') }</a>{/if}</span>
+            <span>{#if prev}<a class="text-link underline decoration-1 underline-offset-link" href="{ settings.base_path }/{ prev.handle }" rel="prev">{ t('previous') }</a>{/if}</span>
+            <a class="justify-self-center text-link underline decoration-1 underline-offset-link" href="{ settings.base_path }">{ t('all_work') }</a>
+            <span class="justify-self-end">{#if next}<a class="text-link underline decoration-1 underline-offset-link" href="{ settings.base_path }/{ next.handle }" rel="next">{ t('next') }</a>{/if}</span>
           </nav>
         {/if}
       {/for}

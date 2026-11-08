@@ -21,7 +21,7 @@
   "icon": "gallery-thumbnails",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Collections" },
-    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "Identities, books, drawings and exhibitions." },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "All work" },
     { "type": "url", "id": "link_href", "label": "Link", "default": "/work" },
     { "type": "range", "id": "limit", "label": "Most to show", "min": 2, "max": 8, "step": 1, "default": 4 },

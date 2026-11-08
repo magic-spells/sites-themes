@@ -2,12 +2,12 @@
 <!-- A picture beside prose on a twelve-column grid: the heading, text and a text link in seven parts, the 4:5 picture in five with its caption under it, one 3xl gap between. picture sets its side; on a phone the picture comes first. -->
 {#let left = settings.picture == 'left'}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column items-center gap-space-xl md:gap-space-3xl { left ? 'md:grid-cols-picture-text' : 'md:grid-cols-text-picture' }">
+  <div class="mx-auto grid max-w-column items-start gap-space-xl md:gap-space-3xl { left ? 'md:grid-cols-picture-text' : 'md:grid-cols-text-picture' }">
     <div class="{ left ? '' : 'md:order-last' }"><Picture asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" width={ 1200 } sizes="(min-width: 48rem) 40vw, 100vw" caption={ settings.caption } /></div>
     <div class="grid justify-items-start gap-space-md">
       <h2 class="text-h2 text-balance text-scheme-heading">{ settings.heading }</h2>
       {#if settings.body}<div class="sites-prose text-body-lg">{ settings.body }</div>{/if}
-      {#if settings.link_label && settings.link_href}<a class="text-body text-link underline decoration-1 underline-offset-4" href="{ settings.link_href }">{ settings.link_label }</a>{/if}
+      {#if settings.link_label && settings.link_href}<a class="text-body text-link underline decoration-1 underline-offset-link" href="{ settings.link_href }">{ settings.link_label }</a>{/if}
     </div>
   </div>
 </section>

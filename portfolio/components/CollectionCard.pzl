@@ -12,7 +12,7 @@
     {/for}
   </span>
   <div class="grid gap-space-2xs">
-    <h3 class="text-h3 underline-offset-4 group-hover:underline">{ category.title }</h3>
+    <h3 class="text-h3 decoration-1 underline-offset-link group-hover:underline">{ category.title }</h3>
     {#if category.fields.description}<span class="text-body-sm text-scheme-muted">{ category.fields.description }</span>{/if}
   </div>
 </a>

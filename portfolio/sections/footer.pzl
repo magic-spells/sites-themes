@@ -1,17 +1,16 @@
-<!-- TODO sync with Figma -->
-<!-- The colophon: the wordmark and the status line small under it at the left; the main menu, then the social and legal menus, as text links at the right edge. No year, no form. -->
+<!-- The colophon: the wordmark and the availability line small under it, text only at the left; the main menu in a row on a hairline, the social and legal menus small in a row under it, as text links at the right edge. No year, no form. -->
 <footer class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto flex max-w-column flex-wrap items-start justify-between gap-x-space-2xl gap-y-space-xl">
     <div class="grid gap-space-xs">
       <a class="justify-self-start text-h4" href="/">{ site.settings.wordmark || site.name }</a>
-      {#if settings.show_status}<Status cls="text-scheme-muted" />{/if}
+      {#if settings.show_status && site.settings.availability_line}<p class="text-body-sm text-scheme-muted">{ site.settings.availability_line }</p>{/if}
     </div>
-    <div class="flex flex-wrap gap-x-space-2xl gap-y-space-lg">
+    <div class="flex flex-wrap gap-x-space-md gap-y-space-md md:justify-end">
       {#for menu in [settings.menu, settings.social_menu, settings.legal_menu], i}
         {#if menu && menu.items.length}
-          <nav aria-label="{ menu.title }">
-            <ul class="grid gap-space-xs { i ? 'text-body-sm text-scheme-muted' : 'text-body' }">
-              {#for item in menu.items}<li><a class="underline-offset-4 hover:text-scheme-foreground hover:underline" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null }>{ item.label }</a></li>{/for}
+          <nav aria-label="{ menu.title }" class="{ i ? '' : 'w-full border-b border-scheme-border pb-space-md' }">
+            <ul class="flex flex-wrap gap-x-space-md gap-y-space-xs md:justify-end { i ? 'text-body-sm text-scheme-muted' : 'text-body' }">
+              {#for item in menu.items}<li><a class="decoration-1 underline-offset-link hover:text-scheme-foreground hover:underline" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null }>{ item.label }</a></li>{/for}
             </ul>
           </nav>
         {/if}
@@ -30,7 +29,7 @@
     { "type": "menu", "id": "menu", "label": "Menu" },
     { "type": "menu", "id": "social_menu", "label": "Social menu", "info": "Text links." },
     { "type": "menu", "id": "legal_menu", "label": "Legal menu" },
-    { "type": "checkbox", "id": "show_status", "label": "Status line", "default": true, "info": "The availability dot and line from Person." },
+    { "type": "checkbox", "id": "show_status", "label": "Status line", "default": true, "info": "The availability line from Person, as text." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "ink", "info": "Pick a scheme that differs from the band above." }
   ],
   "presets": [

@@ -6,7 +6,7 @@
     <div class="flex flex-wrap items-center gap-space-xs">
       <Button type="button">{ settings.accept_label }</Button>
       {#if settings.decline_label}<Button type="button">{ settings.decline_label }</Button>{/if}
-      {#if settings.link_label}<a class="ms-space-xs text-body-sm text-link underline decoration-1 underline-offset-4" href="{ settings.link_href }">{ settings.link_label }</a>{/if}
+      {#if settings.link_label}<a class="ms-space-xs text-body-sm text-link underline decoration-1 underline-offset-link" href="{ settings.link_href }">{ settings.link_label }</a>{/if}
     </div>
   </div>
 </section>

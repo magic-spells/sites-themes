@@ -17,7 +17,7 @@
       <ol class="mx-auto mt-space-2xl max-w-chapters">
         {#for block in blocks, i}
           {#let c = block.settings}
-          <li class="flex flex-wrap items-baseline gap-x-space-xs gap-y-space-sm py-space-lg md:grid md:grid-cols-chapter md:gap-x-space-lg { i ? 'border-t border-scheme-border' : '' }" data-block={ block.editor_id }>
+          <li class="flex flex-wrap items-baseline gap-x-space-xs gap-y-space-xs py-space-lg md:grid md:grid-cols-chapter md:gap-x-space-lg { i ? 'border-t border-scheme-border' : '' }" data-block={ block.editor_id }>
             <h3 class="text-h4 font-medium md:col-start-2">{ c.title }</h3>
             <p class="text-body-sm text-scheme-meta md:row-start-1"><span class="md:hidden">· </span>{ c.year }</p>
             <p class="w-full text-body text-scheme-muted md:col-start-2">{ c.text }</p>

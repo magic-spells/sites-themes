@@ -1,4 +1,4 @@
 <!-- component: ExploreMeta -->
 <!-- props: f -->
 <!-- A thing to do's meta line in meta: "Here · Year round", the pin and "Nearby · 20 min drive · April–November", "Trip · Full day · $140" (a price stands in for the season). -->
-<p class="flex items-center gap-space-xs text-body-sm text-scheme-meta">{#if f.kind == 'nearby'}<Glyph name="pin" cls="size-icon text-accent" />{/if}{ [t('kind.' + (f.kind || 'here')), f.distance, f.price ? f.price | currency(site.settings.currency_symbol, 0) : f.season] | compact | join(' · ') }</p>
+<p class="flex items-center gap-space-xs text-body-sm text-scheme-meta">{#if f.kind == 'nearby'}<Glyph name="pin" cls="size-icon text-accent" />{/if}{ [t('kind.' + (f.kind || 'here')), f.distance || null, f.price ? f.price | currency(site.settings.currency_symbol, 0) : (f.season || null)] | compact | join(' · ') }</p>

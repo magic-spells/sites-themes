@@ -1,11 +1,27 @@
-<!-- STUB (agent B builds it): the head and the stays as cards. -->
-{#let stays = content.stays.entries | sort('fields.order') | slice(0, settings.limit)}
+<!-- The stays as cards: three across from 64rem, two from 48rem, equal heights per row. On phones a row of cards that scrolls and bleeds off the right edge, or (Phones: list) the cards stacked with their first four amenities. View list: from 48rem each card is a row, the photo left and the text right. Type chips (All, then each stay type as a ?type= link) show only that type. -->
+{#let
+  all = content.stays.entries | sort('fields.order')
+  types = all | map('fields.type') | compact | uniq
+  current = settings.chips && request.query.type
+  picked = current ? all | where('fields.type', current) : []
+  stays = (picked.length ? picked : all) | slice(0, settings.limit)
+  row = settings.mobile != 'list'
+  chip = 'inline-flex min-h-tap items-center rounded-chip border border-scheme-foreground px-space-md text-body-sm font-semibold whitespace-nowrap transition-colors duration-fast hover:bg-scheme-surface-2 current:border-scheme-button-background current:bg-scheme-button-background current:text-scheme-button-foreground'
+}
 {#if stays.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } />
-    <ul class="grid gap-space-md md:grid-cols-2 lg:grid-cols-3">
-      {#for entry in stays}<li><StayCard entry={ entry } base_path={ settings.base_path } view={ settings.view } /></li>{/for}
+    {#if settings.chips && types.length > 1}
+      <div class="-me-gutter mb-space-lg overflow-x-auto pe-gutter md:me-0 md:pe-0">
+        <ul class="flex w-max gap-space-xs">
+          <li><a class="{ chip }" href="{ page.path }" aria-current={ picked.length ? null : 'page' }>{ t('all') }</a></li>
+          {#for type in types}<li><a class="{ chip }" href="{ page.path }?type={ encodeURIComponent(type) }" aria-current={ picked.length && type == current ? 'page' : null }>{ type }</a></li>{/for}
+        </ul>
+      </div>
+    {/if}
+    <ul class="grid gap-space-md md:gap-space-lg { settings.view == 'list' ? '' : 'md:grid-cols-2 lg:grid-cols-3' } { row ? 'max-md:-me-gutter max-md:flex max-md:snap-x max-md:snap-mandatory max-md:overflow-x-auto max-md:pe-gutter' : '' }">
+      {#for entry in stays}<li class="{ row ? 'max-md:w-stay-card max-md:shrink-0 max-md:snap-start' : '' }"><StayCard entry={ entry } base_path={ settings.base_path } view={ settings.view } stack={ !row } /></li>{/for}
     </ul>
   </div>
 </section>
@@ -24,7 +40,11 @@
     { "type": "select", "id": "view", "label": "View", "default": "grid", "options": [
       { "value": "grid", "label": "Grid" },
       { "value": "list", "label": "List" }
-    ], "info": "List: the photo beside the text with the first four amenities." },
+    ], "info": "List: from 48rem the photo beside the text with the first four amenities." },
+    { "type": "select", "id": "mobile", "label": "On phones", "default": "row", "options": [
+      { "value": "row", "label": "A row that scrolls" },
+      { "value": "list", "label": "Stacked, with amenities" }
+    ] },
     { "type": "checkbox", "id": "chips", "label": "Type chips", "default": false, "info": "Chips for each stay type (All, Cabins, Rooms…) as links that show only that type. For the stays page." },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "All stays" },
     { "type": "url", "id": "link_href", "label": "Link", "default": "/stays" },
@@ -33,7 +53,7 @@
   ],
   "presets": [
     { "name": "Home", "settings": { "limit": 3, "color_scheme": "white" } },
-    { "name": "All stays", "settings": { "heading": "", "limit": 12, "chips": true, "link_label": "", "color_scheme": "paper" } }
+    { "name": "All stays", "settings": { "heading": "", "limit": 12, "chips": true, "mobile": "list", "link_label": "", "color_scheme": "paper" } }
   ]
 }
 </schema>

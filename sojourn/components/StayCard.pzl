@@ -5,7 +5,7 @@
   f = entry.fields
   list = view == 'list'
 }
-<article class="group relative flex h-full flex-col gap-space-sm rounded-content border border-scheme-border p-space-sm { list ? 'md:grid md:grid-cols-picture-text md:items-center md:gap-space-xl' : '' } { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+<article class="group relative flex h-full flex-col gap-space-sm rounded-content border border-scheme-border p-space-xs { list ? 'md:grid md:grid-cols-picture-text md:items-center md:gap-space-xl' : '' } { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
   <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-photo" radius="well" width={ 800 } sizes="{ list ? '(min-width: 48rem) 40vw, 100vw' : '(min-width: 64rem) 25rem, (min-width: 48rem) 50vw, 19rem' }" zoom={ true }><PriceChip f={ f } /></Well>
   <div class="flex flex-1 flex-col gap-space-2xs px-space-xs pb-space-xs">
     <h3 class="text-h4 font-semibold"><a class="after:absolute after:inset-0 hover:underline hover:underline-offset-4" href="{ base_path ?? '/stays' }/{ entry.handle }">{ entry.title }</a></h3>

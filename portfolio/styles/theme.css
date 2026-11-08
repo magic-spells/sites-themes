@@ -277,9 +277,8 @@ split-text {
 	}
 
 	/* Years, dates and facts line up in columns. */
-	time,
-	.tabular-nums {
-		font-variant-numeric: tabular-nums lining-nums;
+	time {
+		font-variant-numeric: tabular-nums;
 	}
 }
 

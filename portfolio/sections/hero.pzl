@@ -7,10 +7,10 @@
   bloom = s.reveal
   ratio = settings.ratio == '3:2' ? 'md:aspect-photo' : (settings.ratio == '4:5' ? '' : 'md:aspect-wide')
 }
-<section class="bg-scheme-background py-section text-scheme-foreground">
+<section class="bg-scheme-background py-section text-scheme-foreground { settings.layout == 'picture' ? '' : 'px-gutter' }">
   {#case settings.layout}
     {:when 'statement'}
-      <div class="mx-auto grid max-w-column gap-space-xl px-gutter">
+      <div class="mx-auto grid max-w-column gap-space-xl">
         <h1 class="sr-only">{ name }</h1>
         <Statement text={ settings.statement } muted={ settings.statement_muted } size="h1" align={ settings.align } />
         {#if settings.show_status}<Status cls="{ settings.align == 'centre' ? 'justify-center' : '' }" />{/if}
@@ -33,7 +33,7 @@
         </div>
       </div>
     {:else}
-      <div class="mx-auto grid max-w-column gap-space-3xl px-gutter">
+      <div class="mx-auto grid max-w-column gap-space-3xl">
         <div class="flex flex-wrap items-center justify-between gap-x-space-lg gap-y-space-xs">
           <p class="text-body-sm text-scheme-muted">{ line }</p>
           {#if settings.show_status}<Status />{/if}

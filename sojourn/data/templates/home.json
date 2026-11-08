@@ -105,7 +105,9 @@
         "image": "as_4x5_forest",
         "image_alt": "Ingrid and Hanne on the porch",
         "link_label": "Our story",
-        "color_scheme": "paper"
+        "color_scheme": "paper",
+        "caption": "The first summer",
+        "caption_meta": "2009"
       },
       "blocks": []
     },

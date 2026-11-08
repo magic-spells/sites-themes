@@ -19,7 +19,8 @@
       "settings": {
         "layout": "stagger",
         "gallery": "collage",
-        "color_scheme": "paper"
+        "color_scheme": "paper",
+        "link_label": ""
       },
       "blocks": []
     },

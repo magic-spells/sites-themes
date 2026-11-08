@@ -573,6 +573,10 @@ select-dropdown {
 	--select-color-selected: var(--sites-scheme-chip-background);
 	display: block;
 }
+/* A closed panel that has never opened has no height, so its option list does not lengthen the page; opening sets the height inline. */
+select-panel {
+	max-height: 0;
+}
 
 @media (prefers-reduced-motion: reduce) {
 	*, *::before, *::after {

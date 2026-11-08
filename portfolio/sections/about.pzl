@@ -15,8 +15,7 @@
         {#if settings.short && settings.link_label && settings.link_href}<a class="text-body text-link underline decoration-1 underline-offset-4" href="{ settings.link_href }">{ settings.link_label }</a>{/if}
         {#if settings.show_contact && (s.email || settings.social_menu.items.length)}
           <div class="flex w-full flex-wrap gap-x-space-md gap-y-space-xs border-t border-scheme-border pt-space-md text-body">
-            {#if s.email}<a class="text-link underline decoration-1 underline-offset-4" href="mailto:{ s.email }">{ s.email }</a>{/if}
-            {#for item in settings.social_menu.items}<a class="text-link underline decoration-1 underline-offset-4" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null }>{ item.label }</a>{/for}
+            <Reach menu={ settings.social_menu } />
           </div>
         {/if}
       </div>

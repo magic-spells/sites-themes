@@ -5,7 +5,6 @@
   name = settings.heading || s.wordmark || site.name
   line = [s.role_line || null, s.location || null] | compact | join(' · ')
   bloom = s.reveal
-  ratio = settings.ratio == '3:2' ? 'md:aspect-photo' : (settings.ratio == '4:5' ? '' : 'md:aspect-wide')
 }
 <section class="bg-scheme-background py-section text-scheme-foreground { settings.layout == 'picture' ? '' : 'px-gutter' }">
   {#case settings.layout}
@@ -29,7 +28,7 @@
           </div>
         </div>
         <div class="{ settings.type == 'above' ? '' : 'order-first' } { settings.inset ? 'px-gutter' : '' }">
-          <div class="mx-auto overflow-hidden bg-scheme-surface-2 aspect-portrait { ratio } { settings.inset ? 'max-w-column' : '' }">{#if settings.image}<img class="size-full object-cover" src="{ image_url(settings.image, 2000) }" srcset="{ image_srcset(settings.image, [768, 1280, 2000, 2560]) }" sizes="(min-width: 82.5rem) 82.5rem, 100vw" alt="{ settings.image_alt || settings.image.alt }" fetchpriority="high" width={ settings.image.width } height={ settings.image.height } />{/if}</div>
+          <div class="mx-auto overflow-hidden bg-scheme-surface-2 aspect-portrait { settings.ratio } { settings.inset ? 'max-w-column' : '' }">{#if settings.image}<img class="size-full object-cover" src="{ image_url(settings.image, 2000) }" srcset="{ image_srcset(settings.image, [768, 1280, 2000, 2560]) }" sizes="(min-width: 82.5rem) 82.5rem, 100vw" alt="{ settings.image_alt || settings.image.alt }" fetchpriority="high" width={ settings.image.width } height={ settings.image.height } />{/if}</div>
         </div>
       </div>
     {:else}
@@ -67,10 +66,10 @@
     { "type": "header", "content": "Picture" },
     { "type": "image", "id": "image", "label": "Photo", "info": "Cropped to the ratio from 48rem and to 4:5 on a phone." },
     { "type": "text", "id": "image_alt", "label": "Photo alt text", "default": "" },
-    { "type": "select", "id": "ratio", "label": "Ratio", "default": "16:9", "options": [
-      { "value": "16:9", "label": "16:9" },
-      { "value": "3:2", "label": "3:2" },
-      { "value": "4:5", "label": "4:5" }
+    { "type": "select", "id": "ratio", "label": "Ratio", "default": "md:aspect-wide", "options": [
+      { "value": "md:aspect-wide", "label": "16:9" },
+      { "value": "md:aspect-photo", "label": "3:2" },
+      { "value": "md:aspect-portrait", "label": "4:5" }
     ] },
     { "type": "checkbox", "id": "inset", "label": "Inside the gutters", "default": true, "info": "Off: the photo runs to the screen edges; the type stays inside the gutters." },
     { "type": "select", "id": "type", "label": "Type", "default": "below", "options": [

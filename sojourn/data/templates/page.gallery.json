@@ -1,0 +1,37 @@
+{
+  "label": "Gallery",
+  "description": "The photos: the stagger and the grid with its lightbox.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "Gallery",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_collage",
+      "type": "gallery-collage",
+      "preset": "Stagger",
+      "settings": {
+        "layout": "stagger",
+        "gallery": "collage",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_grid",
+      "type": "gallery-grid",
+      "preset": "Default",
+      "settings": {
+        "gallery": "place",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    }
+  ]
+}

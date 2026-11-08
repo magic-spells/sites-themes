@@ -1,0 +1,9 @@
+<!-- component: ReviewCard -->
+<!-- props: entry -->
+<!-- A review on surface-2: five stars in the accent, the rating's filled, the quote, and "Dana · Toronto, Canada · August 2026" in meta. -->
+{#let f = entry.fields}
+<figure class="flex h-full flex-col gap-space-sm rounded-content bg-scheme-surface-2 p-space-lg { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+  {#if f.rating}<p class="flex gap-space-2xs text-accent" role="img" aria-label="{ t('rating', { n: f.rating }) }">{#for n in [1, 2, 3, 4, 5]}<Glyph name={ n <= f.rating ? 'star-filled' : 'star' } />{/for}</p>{/if}
+  <blockquote class="flex-1 text-h4 text-pretty">“{ f.quote }”</blockquote>
+  <figcaption class="text-body-sm text-scheme-meta">{ [f.name, f.place] | compact | join(' · ') }{#if f.date} · <Month d={ f.date } />{/if}</figcaption>
+</figure>

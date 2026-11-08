@@ -1,0 +1,54 @@
+<!-- STUB (agent B builds it): two wide tiles, each a stay or a free title, line and link. -->
+{#if blocks.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <ul class="grid gap-space-md md:grid-cols-2">
+      {#for block in blocks}
+        {#let
+          b = block.settings
+          stay = b.stay
+        }
+        <li data-block={ block.editor_id }>
+          <Well asset={ b.image || (stay ? stay.fields.image : null) } alt={ b.image_alt } ratio="aspect-photo" edge={ true } />
+          <p class="text-h4 font-semibold">{ b.title || (stay ? stay.title : '') }</p>
+          <p class="text-body-sm text-scheme-muted">{ b.text || (stay ? stay.fields.summary : '') }</p>
+        </li>
+      {/for}
+    </ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Stays featured",
+  "description": "Two wide photo tiles, each a stay or a title, a line and a link.",
+  "kind": "Stays",
+  "icon": "gallery-horizontal",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "blocks": [
+    { "type": "tile", "name": "Tile", "settings": [
+      { "type": "entry", "id": "stay", "label": "Stay", "info": "Its photo, title, summary and page fill the tile. The fields below replace them." },
+      { "type": "text", "id": "title", "label": "Title", "default": "" },
+      { "type": "text", "id": "text", "label": "Line", "default": "" },
+      { "type": "image", "id": "image", "label": "Image", "info": "2:1 on desktop, 3:2 on phones." },
+      { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "" },
+      { "type": "video", "id": "video", "label": "Video", "info": "Plays muted over the image, which is its poster." },
+      { "type": "text", "id": "link_label", "label": "Button label", "default": "See the cabin" },
+      { "type": "url", "id": "link_href", "label": "Button link", "default": "", "info": "Leave empty to link to the stay." }
+    ] }
+  ],
+  "max_blocks": 2,
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "paper" }, "blocks": [
+      { "type": "tile", "settings": { "title": "The lake cabins", "text": "Five cedar cabins on the water.", "link_label": "See the cabins", "link_href": "/stays?type=Cabin" } },
+      { "type": "tile", "settings": { "title": "The farmhouse", "text": "Two rooms upstairs, breakfast included.", "link_label": "See the rooms", "link_href": "/stays?type=Farmhouse+room" } }
+    ] }
+  ]
+}
+</schema>

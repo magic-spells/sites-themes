@@ -1,0 +1,26 @@
+<!-- component: PostCard -->
+<!-- props: entry base_path layout -->
+<!-- A journal post, one link. card (the default): a 3:2 well, the title, the topic and date in meta and the standfirst; feature: the larger well with the title and meta under it. row: a 3:2 thumbnail left, the title and meta right, for the column beside the feature. -->
+{#let
+  f = entry.fields
+  meta = [f.topic, f.date ? f.date | date('long') : ''] | compact | join(' · ')
+  href = (base_path ?? '/journal') + '/' + entry.handle
+}
+{#if layout == 'row'}
+<article class="group relative flex items-center gap-space-md { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+  <span class="block w-post-thumb shrink-0"><Well asset={ f.image } alt="" ratio="aspect-photo" width={ 320 } sizes="10rem" zoom={ true } /></span>
+  <div class="grid gap-space-2xs">
+    <h3 class="text-h4 font-semibold text-balance"><a class="after:absolute after:inset-0 hover:underline hover:underline-offset-4" href="{ href }">{ entry.title }</a></h3>
+    <p class="text-body-sm text-scheme-meta">{ meta }</p>
+  </div>
+</article>
+{:else}
+<article class="group relative flex h-full flex-col gap-space-sm { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+  <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-photo" width={ layout == 'feature' ? 1200 : 800 } sizes="{ layout == 'feature' ? '(min-width: 48rem) 55vw, 100vw' : '(min-width: 48rem) 33vw, 100vw' }" zoom={ true } />
+  <div class="grid gap-space-xs">
+    <h3 class="font-semibold text-balance text-h4"><a class="after:absolute after:inset-0 hover:underline hover:underline-offset-4" href="{ href }">{ entry.title }</a></h3>
+    <p class="text-body-sm text-scheme-meta">{ meta }</p>
+    {#if f.standfirst && layout != 'feature'}<p class="text-body text-pretty text-scheme-muted">{ f.standfirst }</p>{/if}
+  </div>
+</article>
+{/if}

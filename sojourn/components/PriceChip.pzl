@@ -1,0 +1,4 @@
+<!-- component: PriceChip -->
+<!-- props: f -->
+<!-- A stay's price as a paper pill at a photo's bottom-left: "from $220 / night", "from $45 / bed". Put it inside a Well. -->
+<span class="absolute bottom-space-sm left-space-sm rounded-chip bg-chip px-space-sm py-space-xs text-body-sm font-semibold text-on-chip tabular-nums"><Price f={ f } /></span>

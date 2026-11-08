@@ -1,0 +1,34 @@
+<!-- The welcome: one sentence in h2 and a line of body in the seven parts, an optional row of short facts under them, and an optional 4:5 picture (3:2 on phones) in the five with the caption card over its corner. -->
+{#let facts = settings.facts | split('\n') | compact}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-center gap-space-xl { settings.image ? 'md:grid-cols-text-picture md:gap-space-3xl' : '' }">
+    <div class="grid max-w-reading gap-space-md">
+      <h2 class="text-h2 font-semibold text-balance text-scheme-heading"><Accent text={ settings.heading } rise={ true } /></h2>
+      {#if settings.text}<p class="text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+      {#if facts.length}<ul class="flex flex-wrap gap-x-space-lg gap-y-space-xs pt-space-xs text-body-sm text-scheme-meta">{#for fact in facts}<li>{ fact | strip }</li>{/for}</ul>{/if}
+    </div>
+    {#if settings.image}<div><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-photo md:aspect-portrait" caption={ settings.caption } caption_meta={ settings.caption_meta } width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" /></div>{/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Intro",
+  "description": "A welcome sentence and a line, with short facts and a picture.",
+  "kind": "Content",
+  "icon": "text",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Five cabins, two rooms and a bunkhouse on the quiet side of Okanagan Lake." },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "We built the first cabin in 2009 and have been adding one every few summers since. Come for the water, the orchard and a dock that catches the last of the light." },
+    { "type": "textarea", "id": "facts", "label": "Facts", "default": "", "info": "Short facts in a row under the text, one per line: Check-in 3 pm, Dogs welcome." },
+    { "type": "image", "id": "image", "label": "Picture", "info": "4:5. Shown 3:2 on phones." },
+    { "type": "text", "id": "image_alt", "label": "Picture alt text", "default": "" },
+    { "type": "text", "id": "caption", "label": "Caption title", "default": "", "info": "A paper card over the picture's corner." },
+    { "type": "text", "id": "caption_meta", "label": "Caption line", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "paper" } }
+  ]
+}
+</schema>

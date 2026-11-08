@@ -1,0 +1,40 @@
+{
+  "label": "Journal",
+  "description": "The posts, newest first, and the newsletter.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "Journal",
+        "text": "Notes from the lake, the orchard and the trails.",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_list",
+      "type": "journal-list",
+      "preset": "Feature",
+      "settings": {
+        "view": "feature",
+        "heading": "",
+        "limit": 12,
+        "link_label": "",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Forest",
+      "settings": {
+        "form": "newsletter",
+        "color_scheme": "forest"
+      },
+      "blocks": []
+    }
+  ]
+}

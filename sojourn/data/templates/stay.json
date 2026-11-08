@@ -1,0 +1,36 @@
+{
+  "label": "Stay",
+  "description": "A stay's page: the photos, the price, the amenities and the things to know.",
+  "sections": [
+    {
+      "id": "s_detail",
+      "type": "stay-detail",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_nearby",
+      "type": "explore-grid",
+      "preset": "Home",
+      "settings": {
+        "heading": "Things to do nearby",
+        "limit": 3,
+        "color_scheme": "lake"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_booking",
+      "type": "booking-band",
+      "preset": "Beside",
+      "settings": {
+        "embed_position": "beside",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+<!-- The contact form with labels beside the place's details: the address, the directions, the phone and email, and the static map linking to the map. picture on puts a 4:3 photo on the wide seven parts instead of the details. -->
+{#let
+  s = site.settings
+  picture = settings.picture && settings.image
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <div class="grid items-start gap-space-xl md:grid-cols-text-picture md:gap-space-3xl">
+      {#if picture}
+        <Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-map" width={ 1200 } sizes="(min-width: 48rem) 55vw, 100vw" />
+      {:else}
+        <div class="grid gap-space-md">
+          {#if s.address}<address class="text-body-lg not-italic">{ s.address | newline_to_br }</address>{/if}
+          {#if s.directions}<p class="text-body text-scheme-muted">{ s.directions }</p>{/if}
+          <div class="grid gap-space-2xs text-body">
+            {#if s.phone}<a class="justify-self-start underline-offset-4 hover:underline" href="tel:{ s.phone | replace(' ', '') }">{ s.phone }</a>{/if}
+            {#if s.email}<a class="justify-self-start text-accent underline underline-offset-4" href="mailto:{ s.email }">{ s.email }</a>{/if}
+          </div>
+          {#if s.map_image}<a class="block" href={ s.map_url || null } target="_blank" rel="noopener"><Well asset={ s.map_image } alt={ s.map_image_alt || t('map_of', { name: site.name }) } ratio="aspect-tile" width={ 960 } sizes="(min-width: 48rem) 55vw, 100vw"><span class="absolute inset-0 flex items-center justify-center text-accent"><Glyph name="pin" cls="size-glyph" /></span></Well></a>{/if}
+        </div>
+      {/if}
+      <Form handle={ settings.form } class="grid gap-space-md" id="contact-{ section.id }">
+        {#if form.sent}
+          <p class="text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
+        {:else}
+          {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
+          <FormFields fields={ form.fields } prefix="contact-{ section.id }" />
+          <div><Button type="submit">{ form.submit_label || t('send') }</Button></div>
+          {#if settings.note}<p class="text-body-sm text-scheme-muted">{ settings.note }</p>{/if}
+          <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+        {/if}
+      </Form>
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Contact",
+  "description": "The contact form beside the address, phone and map, or beside a photo.",
+  "kind": "Forms",
+  "icon": "mail",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Write to us" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "We answer within a day." },
+    { "type": "form", "id": "form", "label": "Form" },
+    { "type": "text", "id": "note", "label": "Note under the button", "default": "We'll reply to the address you give." },
+    { "type": "checkbox", "id": "picture", "label": "Picture", "default": false, "info": "On: a photo beside the form instead of the address and map." },
+    { "type": "image", "id": "image", "label": "Photo", "info": "4:3." },
+    { "type": "text", "id": "image_alt", "label": "Photo alt text", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "form": "contact", "color_scheme": "paper" } },
+    { "name": "Picture", "settings": { "form": "contact", "picture": true, "color_scheme": "paper" } }
+  ]
+}
+</schema>

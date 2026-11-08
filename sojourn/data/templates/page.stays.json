@@ -1,0 +1,121 @@
+{
+  "label": "Stays",
+  "description": "Every stay, with the type chips, what's here and booking.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Photo",
+      "settings": {
+        "heading": "Our stays",
+        "text": "Five cabins, two rooms and a bunkhouse on the quiet side of Okanagan Lake.",
+        "media": "photo",
+        "image": "as_16x9_forest",
+        "image_alt": "The cabins among the cedars",
+        "color_scheme": "night"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_stays",
+      "type": "stays-grid",
+      "preset": "All stays",
+      "settings": {
+        "heading": "",
+        "limit": 12,
+        "chips": true,
+        "link_label": "",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_amenities",
+      "type": "amenities",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "id": "s_amenities_b1",
+          "type": "amenity",
+          "settings": {
+            "label": "Sauna",
+            "glyph": "hot tub",
+            "line": "Wood-fired, open 4–9 pm"
+          }
+        },
+        {
+          "id": "s_amenities_b2",
+          "type": "amenity",
+          "settings": {
+            "label": "The dock",
+            "glyph": "lake view",
+            "line": "Canoes and boards"
+          }
+        },
+        {
+          "id": "s_amenities_b3",
+          "type": "amenity",
+          "settings": {
+            "label": "Canoes and boards",
+            "line": "First come, first served"
+          }
+        },
+        {
+          "id": "s_amenities_b4",
+          "type": "amenity",
+          "settings": {
+            "label": "Fire pits",
+            "glyph": "fire pit",
+            "line": "Wood by the barn"
+          }
+        },
+        {
+          "id": "s_amenities_b5",
+          "type": "amenity",
+          "settings": {
+            "label": "Laundry",
+            "line": "In the barn"
+          }
+        },
+        {
+          "id": "s_amenities_b6",
+          "type": "amenity",
+          "settings": {
+            "label": "Parking",
+            "line": "One car at each cabin"
+          }
+        },
+        {
+          "id": "s_amenities_b7",
+          "type": "amenity",
+          "settings": {
+            "label": "Breakfast (farmhouse)",
+            "glyph": "breakfast",
+            "line": "At eight"
+          }
+        },
+        {
+          "id": "s_amenities_b8",
+          "type": "amenity",
+          "settings": {
+            "label": "Wifi",
+            "line": "Everywhere but the point"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_booking",
+      "type": "booking-band",
+      "preset": "Beside",
+      "settings": {
+        "embed_position": "beside",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    }
+  ]
+}

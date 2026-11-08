@@ -1,0 +1,33 @@
+<!-- A centred H2, a line and one or two buttons, on any scheme. The first button is the booking action unless it has its own link. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-reading justify-items-center gap-space-md text-center">
+    <h2 class="text-h2 font-semibold text-balance text-scheme-heading"><Accent text={ settings.heading } rise={ true } /></h2>
+    {#if settings.text}<p class="text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+    <div class="flex flex-wrap justify-center gap-space-xs pt-space-xs">
+      {#if settings.link_href}<Button href={ settings.link_href }>{ settings.link_label }</Button>{:else}<Button action={ true }>{ settings.link_label || site.settings.booking_label }</Button>{/if}
+      {#if settings.second_label && settings.second_href}<Button href={ settings.second_href } tone="secondary">{ settings.second_label }</Button>{/if}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Call to action",
+  "description": "A centred heading, a line and one or two buttons.",
+  "kind": "Call to action",
+  "icon": "megaphone",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Come for the water" },
+    { "type": "text", "id": "text", "label": "Text", "default": "Five cabins, two rooms and a bunkhouse, open May to October." },
+    { "type": "text", "id": "link_label", "label": "Button label", "default": "", "info": "Leave empty to use the Place booking label." },
+    { "type": "url", "id": "link_href", "label": "Button link", "default": "", "info": "Leave empty for the booking link." },
+    { "type": "text", "id": "second_label", "label": "Second button label", "default": "The cabins" },
+    { "type": "url", "id": "second_href", "label": "Second button link", "default": "/stays" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "lake" }
+  ],
+  "presets": [
+    { "name": "Lake", "settings": { "color_scheme": "lake" } },
+    { "name": "Forest", "settings": { "color_scheme": "forest" } }
+  ]
+}
+</schema>

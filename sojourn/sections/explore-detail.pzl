@@ -1,0 +1,35 @@
+<!-- STUB (agent C builds it): a thing to do: photo, title, meta, body and the operator's link. -->
+{#let
+  thing = page.entry
+  f = thing.fields
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-xl">
+    <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-wide" eager={ true } width={ 1600 } sizes="100vw" />
+    <div class="grid max-w-reading gap-space-sm">
+      <h1 class="text-h1 font-bold text-balance">{ thing.title }</h1>
+      <p class="text-body text-scheme-meta">{ [t('kind.' + (f.kind || 'here')), f.distance, f.season] | compact | join(' · ') }</p>
+      {#if f.description}<div class="sites-prose">{ f.description }</div>{/if}
+      {#if f.link}<div><Button href={ f.link } external={ true }>{ settings.link_label }</Button></div>{/if}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Explore detail",
+  "description": "A thing to do: its photo, title, season and distance, the description and the operator's link.",
+  "kind": "Explore",
+  "icon": "compass",
+  "templates": ["experience"],
+  "settings": [
+    { "type": "text", "id": "link_label", "label": "Operator button label", "default": "Book with the operator", "info": "Shown when the experience has a link." },
+    { "type": "text", "id": "back_label", "label": "Back link label", "default": "Back to things to do" },
+    { "type": "url", "id": "back_href", "label": "Back link", "default": "/explore" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "paper" } }
+  ]
+}
+</schema>

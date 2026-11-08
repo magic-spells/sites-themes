@@ -1,0 +1,17 @@
+{
+  "sections": [
+    {
+      "id": "sg_footer",
+      "type": "footer",
+      "preset": "Night",
+      "settings": {
+        "menu": "main",
+        "legal_menu": "legal",
+        "social_menu": "social",
+        "small_print": "© 2026 Fern Hollow",
+        "color_scheme": "night"
+      },
+      "blocks": []
+    }
+  ]
+}

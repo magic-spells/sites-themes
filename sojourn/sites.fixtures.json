@@ -1,0 +1,2321 @@
+{
+  "site": {
+    "name": "Fern Hollow",
+    "url": "https://fernhollow.example",
+    "locale": "en",
+    "settings": {
+      "wordmark": "Fern Hollow",
+      "tagline": "Cedar cabins on the water.",
+      "currency_symbol": "$",
+      "reveal": true,
+      "texture": "none",
+      "address": "4120 Lakeshore Road\nLake Country, British Columbia",
+      "directions": "An hour north of Kelowna on Highway 97, left at the fruit stand",
+      "check_in": "3 pm",
+      "check_out": "11 am",
+      "open_season": "May to October",
+      "house_rules": "No smoking indoors\nQuiet after 10 pm\nCampfires in the pits only\nPlease take your boots off",
+      "cancellation": "Free cancellation up to 14 days before arrival; after that the first night is kept",
+      "pets": "Dogs welcome in the cabins, $25 a night, not in the farmhouse rooms",
+      "parking": "One car at each cabin, overflow by the barn",
+      "founded": 2009,
+      "booking": "both",
+      "booking_url": "https://booking.example/fern-hollow",
+      "booking_label": "Check availability",
+      "booking_embed_url": "/_sites/theme/embed.html",
+      "booking_embed_height": 640,
+      "map_url": "https://maps.example/?q=4120+Lakeshore+Road+Lake+Country",
+      "map_image": "as_2x1_lake",
+      "map_image_alt": "Map of Fern Hollow on Okanagan Lake",
+      "phone": "(250) 555-0199",
+      "email": "hello@fernhollow.example"
+    }
+  },
+  "menus": {
+    "main": {
+      "handle": "main",
+      "title": "Main menu",
+      "items": [
+        {
+          "id": "main0",
+          "label": "Stays",
+          "target": {
+            "kind": "url",
+            "url": "/stays"
+          },
+          "children": []
+        },
+        {
+          "id": "main1",
+          "label": "Things to do",
+          "target": {
+            "kind": "url",
+            "url": "/explore"
+          },
+          "children": []
+        },
+        {
+          "id": "main2",
+          "label": "Gallery",
+          "target": {
+            "kind": "url",
+            "url": "/gallery"
+          },
+          "children": []
+        },
+        {
+          "id": "main3",
+          "label": "About",
+          "target": {
+            "kind": "url",
+            "url": "/about"
+          },
+          "children": []
+        },
+        {
+          "id": "main4",
+          "label": "Journal",
+          "target": {
+            "kind": "url",
+            "url": "/journal"
+          },
+          "children": []
+        },
+        {
+          "id": "main5",
+          "label": "Contact",
+          "target": {
+            "kind": "url",
+            "url": "/contact"
+          },
+          "children": []
+        }
+      ]
+    },
+    "legal": {
+      "handle": "legal",
+      "title": "Legal",
+      "items": [
+        {
+          "id": "legal0",
+          "label": "Privacy",
+          "target": {
+            "kind": "url",
+            "url": "/privacy"
+          },
+          "children": []
+        },
+        {
+          "id": "legal1",
+          "label": "Terms",
+          "target": {
+            "kind": "url",
+            "url": "/terms"
+          },
+          "children": []
+        },
+        {
+          "id": "legal2",
+          "label": "Accessibility",
+          "target": {
+            "kind": "url",
+            "url": "/accessibility"
+          },
+          "children": []
+        }
+      ]
+    },
+    "social": {
+      "handle": "social",
+      "title": "Social",
+      "items": [
+        {
+          "id": "social0",
+          "label": "Instagram",
+          "target": {
+            "kind": "url",
+            "url": "https://www.instagram.com/fernhollow"
+          },
+          "children": []
+        },
+        {
+          "id": "social1",
+          "label": "Facebook",
+          "target": {
+            "kind": "url",
+            "url": "https://www.facebook.com/fernhollow"
+          },
+          "children": []
+        }
+      ]
+    }
+  },
+  "galleries": {
+    "alder": {
+      "handle": "alder",
+      "title": "Alder",
+      "items": [
+        {
+          "asset_id": "as_3x2_lake",
+          "caption": "",
+          "alt": "Alder, photo 1"
+        },
+        {
+          "asset_id": "as_1x1_forest",
+          "caption": "",
+          "alt": "Alder, photo 2"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "",
+          "alt": "Alder, photo 3"
+        },
+        {
+          "asset_id": "as_1x1_lake",
+          "caption": "",
+          "alt": "Alder, photo 4"
+        },
+        {
+          "asset_id": "as_1x1_forest",
+          "caption": "",
+          "alt": "Alder, photo 5"
+        },
+        {
+          "asset_id": "as_3x2_sand",
+          "caption": "",
+          "alt": "Alder, photo 6"
+        }
+      ]
+    },
+    "birch": {
+      "handle": "birch",
+      "title": "Birch",
+      "items": [
+        {
+          "asset_id": "as_3x2_forest",
+          "caption": "",
+          "alt": "Birch, photo 1"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "",
+          "alt": "Birch, photo 2"
+        },
+        {
+          "asset_id": "as_1x1_lake",
+          "caption": "",
+          "alt": "Birch, photo 3"
+        },
+        {
+          "asset_id": "as_1x1_forest",
+          "caption": "",
+          "alt": "Birch, photo 4"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "",
+          "alt": "Birch, photo 5"
+        },
+        {
+          "asset_id": "as_3x2_lake",
+          "caption": "",
+          "alt": "Birch, photo 6"
+        }
+      ]
+    },
+    "cedar": {
+      "handle": "cedar",
+      "title": "Cedar",
+      "items": [
+        {
+          "asset_id": "as_3x2_sand",
+          "caption": "",
+          "alt": "Cedar, photo 1"
+        },
+        {
+          "asset_id": "as_1x1_lake",
+          "caption": "",
+          "alt": "Cedar, photo 2"
+        },
+        {
+          "asset_id": "as_1x1_forest",
+          "caption": "",
+          "alt": "Cedar, photo 3"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "",
+          "alt": "Cedar, photo 4"
+        },
+        {
+          "asset_id": "as_1x1_lake",
+          "caption": "",
+          "alt": "Cedar, photo 5"
+        },
+        {
+          "asset_id": "as_3x2_forest",
+          "caption": "",
+          "alt": "Cedar, photo 6"
+        }
+      ]
+    },
+    "fir": {
+      "handle": "fir",
+      "title": "Fir",
+      "items": [
+        {
+          "asset_id": "as_3x2_lake",
+          "caption": "",
+          "alt": "Fir, photo 1"
+        },
+        {
+          "asset_id": "as_1x1_forest",
+          "caption": "",
+          "alt": "Fir, photo 2"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "",
+          "alt": "Fir, photo 3"
+        },
+        {
+          "asset_id": "as_1x1_lake",
+          "caption": "",
+          "alt": "Fir, photo 4"
+        },
+        {
+          "asset_id": "as_1x1_forest",
+          "caption": "",
+          "alt": "Fir, photo 5"
+        },
+        {
+          "asset_id": "as_3x2_sand",
+          "caption": "",
+          "alt": "Fir, photo 6"
+        }
+      ]
+    },
+    "hemlock": {
+      "handle": "hemlock",
+      "title": "Hemlock",
+      "items": [
+        {
+          "asset_id": "as_3x2_forest",
+          "caption": "",
+          "alt": "Hemlock, photo 1"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "",
+          "alt": "Hemlock, photo 2"
+        },
+        {
+          "asset_id": "as_1x1_lake",
+          "caption": "",
+          "alt": "Hemlock, photo 3"
+        },
+        {
+          "asset_id": "as_1x1_forest",
+          "caption": "",
+          "alt": "Hemlock, photo 4"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "",
+          "alt": "Hemlock, photo 5"
+        },
+        {
+          "asset_id": "as_3x2_lake",
+          "caption": "",
+          "alt": "Hemlock, photo 6"
+        }
+      ]
+    },
+    "lake-room": {
+      "handle": "lake-room",
+      "title": "Lake room",
+      "items": [
+        {
+          "asset_id": "as_3x2_sand",
+          "caption": "",
+          "alt": "Lake room, photo 1"
+        },
+        {
+          "asset_id": "as_1x1_lake",
+          "caption": "",
+          "alt": "Lake room, photo 2"
+        },
+        {
+          "asset_id": "as_1x1_forest",
+          "caption": "",
+          "alt": "Lake room, photo 3"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "",
+          "alt": "Lake room, photo 4"
+        },
+        {
+          "asset_id": "as_1x1_lake",
+          "caption": "",
+          "alt": "Lake room, photo 5"
+        },
+        {
+          "asset_id": "as_3x2_forest",
+          "caption": "",
+          "alt": "Lake room, photo 6"
+        }
+      ]
+    },
+    "orchard-room": {
+      "handle": "orchard-room",
+      "title": "Orchard room",
+      "items": [
+        {
+          "asset_id": "as_3x2_lake",
+          "caption": "",
+          "alt": "Orchard room, photo 1"
+        },
+        {
+          "asset_id": "as_1x1_forest",
+          "caption": "",
+          "alt": "Orchard room, photo 2"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "",
+          "alt": "Orchard room, photo 3"
+        },
+        {
+          "asset_id": "as_1x1_lake",
+          "caption": "",
+          "alt": "Orchard room, photo 4"
+        },
+        {
+          "asset_id": "as_1x1_forest",
+          "caption": "",
+          "alt": "Orchard room, photo 5"
+        },
+        {
+          "asset_id": "as_3x2_sand",
+          "caption": "",
+          "alt": "Orchard room, photo 6"
+        }
+      ]
+    },
+    "bunkhouse": {
+      "handle": "bunkhouse",
+      "title": "Bunkhouse",
+      "items": [
+        {
+          "asset_id": "as_3x2_forest",
+          "caption": "",
+          "alt": "Bunkhouse, photo 1"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "",
+          "alt": "Bunkhouse, photo 2"
+        },
+        {
+          "asset_id": "as_1x1_lake",
+          "caption": "",
+          "alt": "Bunkhouse, photo 3"
+        },
+        {
+          "asset_id": "as_1x1_forest",
+          "caption": "",
+          "alt": "Bunkhouse, photo 4"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "",
+          "alt": "Bunkhouse, photo 5"
+        },
+        {
+          "asset_id": "as_3x2_lake",
+          "caption": "",
+          "alt": "Bunkhouse, photo 6"
+        }
+      ]
+    },
+    "collage": {
+      "handle": "collage",
+      "title": "Around Fern Hollow",
+      "items": [
+        {
+          "asset_id": "as_4x5_lake",
+          "caption": "The dock",
+          "alt": "The dock, Early June"
+        },
+        {
+          "asset_id": "as_4x5_forest",
+          "caption": "Alder",
+          "alt": "Alder, The first cabin"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "The sauna",
+          "alt": "The sauna, Open 4–9 pm"
+        },
+        {
+          "asset_id": "as_4x5_lake",
+          "caption": "The orchard",
+          "alt": "The orchard, September"
+        },
+        {
+          "asset_id": "as_4x5_forest",
+          "caption": "The point",
+          "alt": "The point, Late light"
+        },
+        {
+          "asset_id": "as_3x2_sand",
+          "caption": "The barn",
+          "alt": "The barn, Bikes and maps"
+        },
+        {
+          "asset_id": "as_1x1_lake",
+          "caption": "The bunkhouse",
+          "alt": "The bunkhouse, Six bunks"
+        }
+      ]
+    },
+    "strip": {
+      "handle": "strip",
+      "title": "From the lake",
+      "items": [
+        {
+          "asset_id": "as_4x5_lake",
+          "caption": "",
+          "alt": "From the lake, photo 1"
+        },
+        {
+          "asset_id": "as_3x2_forest",
+          "caption": "",
+          "alt": "From the lake, photo 2"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "",
+          "alt": "From the lake, photo 3"
+        },
+        {
+          "asset_id": "as_4x5_lake",
+          "caption": "",
+          "alt": "From the lake, photo 4"
+        },
+        {
+          "asset_id": "as_3x2_forest",
+          "caption": "",
+          "alt": "From the lake, photo 5"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "",
+          "alt": "From the lake, photo 6"
+        },
+        {
+          "asset_id": "as_4x5_lake",
+          "caption": "",
+          "alt": "From the lake, photo 7"
+        },
+        {
+          "asset_id": "as_3x2_forest",
+          "caption": "",
+          "alt": "From the lake, photo 8"
+        }
+      ]
+    },
+    "place": {
+      "handle": "place",
+      "title": "Gallery",
+      "items": [
+        {
+          "asset_id": "as_3x2_forest",
+          "caption": "The dock",
+          "alt": "Fern Hollow, photo 1"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "Alder",
+          "alt": "Fern Hollow, photo 2"
+        },
+        {
+          "asset_id": "as_4x5_lake",
+          "caption": "The sauna",
+          "alt": "Fern Hollow, photo 3"
+        },
+        {
+          "asset_id": "as_3x2_forest",
+          "caption": "The orchard",
+          "alt": "Fern Hollow, photo 4"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "The point",
+          "alt": "Fern Hollow, photo 5"
+        },
+        {
+          "asset_id": "as_4x5_lake",
+          "caption": "The barn",
+          "alt": "Fern Hollow, photo 6"
+        },
+        {
+          "asset_id": "as_3x2_forest",
+          "caption": "The bunkhouse",
+          "alt": "Fern Hollow, photo 7"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "The dock",
+          "alt": "Fern Hollow, photo 8"
+        },
+        {
+          "asset_id": "as_4x5_lake",
+          "caption": "Alder",
+          "alt": "Fern Hollow, photo 9"
+        },
+        {
+          "asset_id": "as_3x2_forest",
+          "caption": "The sauna",
+          "alt": "Fern Hollow, photo 10"
+        },
+        {
+          "asset_id": "as_1x1_sand",
+          "caption": "The orchard",
+          "alt": "Fern Hollow, photo 11"
+        },
+        {
+          "asset_id": "as_4x5_lake",
+          "caption": "The point",
+          "alt": "Fern Hollow, photo 12"
+        }
+      ]
+    }
+  },
+  "assets": {
+    "as_3x2_lake": {
+      "id": "as_3x2_lake",
+      "status": "ready",
+      "file_name": "3x2-lake.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 359,
+      "url": "/_sites/theme/photos/3x2-lake.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "3:2 lake placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_3x2_forest": {
+      "id": "as_3x2_forest",
+      "status": "ready",
+      "file_name": "3x2-forest.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 361,
+      "url": "/_sites/theme/photos/3x2-forest.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "3:2 forest placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_3x2_sand": {
+      "id": "as_3x2_sand",
+      "status": "ready",
+      "file_name": "3x2-sand.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 359,
+      "url": "/_sites/theme/photos/3x2-sand.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "3:2 sand placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_4x5_lake": {
+      "id": "as_4x5_lake",
+      "status": "ready",
+      "file_name": "4x5-lake.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/4x5-lake.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "4:5 lake placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_4x5_forest": {
+      "id": "as_4x5_forest",
+      "status": "ready",
+      "file_name": "4x5-forest.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 362,
+      "url": "/_sites/theme/photos/4x5-forest.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "4:5 forest placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_4x5_sand": {
+      "id": "as_4x5_sand",
+      "status": "ready",
+      "file_name": "4x5-sand.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/4x5-sand.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "4:5 sand placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_16x9_lake": {
+      "id": "as_16x9_lake",
+      "status": "ready",
+      "file_name": "16x9-lake.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 358,
+      "url": "/_sites/theme/photos/16x9-lake.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "16:9 lake placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_16x9_forest": {
+      "id": "as_16x9_forest",
+      "status": "ready",
+      "file_name": "16x9-forest.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/16x9-forest.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "16:9 forest placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_16x9_sand": {
+      "id": "as_16x9_sand",
+      "status": "ready",
+      "file_name": "16x9-sand.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 358,
+      "url": "/_sites/theme/photos/16x9-sand.svg",
+      "width": 1600,
+      "height": 900,
+      "alt": "16:9 sand placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_1x1_lake": {
+      "id": "as_1x1_lake",
+      "status": "ready",
+      "file_name": "1x1-lake.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/1x1-lake.svg",
+      "width": 1200,
+      "height": 1200,
+      "alt": "1:1 lake placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_1x1_forest": {
+      "id": "as_1x1_forest",
+      "status": "ready",
+      "file_name": "1x1-forest.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 362,
+      "url": "/_sites/theme/photos/1x1-forest.svg",
+      "width": 1200,
+      "height": 1200,
+      "alt": "1:1 forest placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_1x1_sand": {
+      "id": "as_1x1_sand",
+      "status": "ready",
+      "file_name": "1x1-sand.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/1x1-sand.svg",
+      "width": 1200,
+      "height": 1200,
+      "alt": "1:1 sand placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_2x1_lake": {
+      "id": "as_2x1_lake",
+      "status": "ready",
+      "file_name": "2x1-lake.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 355,
+      "url": "/_sites/theme/photos/2x1-lake.svg",
+      "width": 1600,
+      "height": 800,
+      "alt": "2:1 lake placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_2x1_forest": {
+      "id": "as_2x1_forest",
+      "status": "ready",
+      "file_name": "2x1-forest.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 357,
+      "url": "/_sites/theme/photos/2x1-forest.svg",
+      "width": 1600,
+      "height": 800,
+      "alt": "2:1 forest placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_2x1_sand": {
+      "id": "as_2x1_sand",
+      "status": "ready",
+      "file_name": "2x1-sand.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 355,
+      "url": "/_sites/theme/photos/2x1-sand.svg",
+      "width": 1600,
+      "height": 800,
+      "alt": "2:1 sand placeholder",
+      "created_at": "2026-11-08T09:00:00Z"
+    },
+    "as_loop_lake": {
+      "id": "as_loop_lake",
+      "status": "ready",
+      "file_name": "loop-sea.mp4",
+      "mime": "video/mp4",
+      "byte_size": 21601,
+      "url": "/_sites/theme/video/loop-sea.mp4",
+      "width": 640,
+      "height": 360,
+      "alt": "Water under a low sun, looping (placeholder)",
+      "created_at": "2026-11-08T09:00:00Z"
+    }
+  },
+  "forms": {
+    "contact": {
+      "handle": "contact",
+      "name": "Contact",
+      "fields": [
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Name",
+          "required": true,
+          "max_length": 120
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        },
+        {
+          "id": "message",
+          "type": "textarea",
+          "label": "Message",
+          "required": true,
+          "max_length": 4000
+        }
+      ],
+      "success_message": "Thank you. We answer within a day.",
+      "submit_label": "Send",
+      "redirect_path": ""
+    },
+    "newsletter": {
+      "handle": "newsletter",
+      "name": "Newsletter",
+      "fields": [
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        }
+      ],
+      "success_message": "Thank you. The next letter comes your way.",
+      "submit_label": "Subscribe",
+      "redirect_path": ""
+    }
+  },
+  "content": {
+    "stays": {
+      "name": "Stays",
+      "fields": [
+        {
+          "id": "type",
+          "type": "text",
+          "label": "Type"
+        },
+        {
+          "id": "summary",
+          "type": "text",
+          "label": "Summary"
+        },
+        {
+          "id": "description",
+          "type": "richtext",
+          "label": "Description"
+        },
+        {
+          "id": "sleeps",
+          "type": "number",
+          "label": "Sleeps"
+        },
+        {
+          "id": "bedrooms",
+          "type": "number",
+          "label": "Bedrooms"
+        },
+        {
+          "id": "beds",
+          "type": "text",
+          "label": "Beds"
+        },
+        {
+          "id": "baths",
+          "type": "number",
+          "label": "Bathrooms"
+        },
+        {
+          "id": "amenities",
+          "type": "textarea",
+          "label": "Amenities (one per line)"
+        },
+        {
+          "id": "highlights",
+          "type": "textarea",
+          "label": "Highlights (Title: sentence, one per line)"
+        },
+        {
+          "id": "price_night",
+          "type": "number",
+          "label": "Price per night"
+        },
+        {
+          "id": "price_week",
+          "type": "number",
+          "label": "Price per week"
+        },
+        {
+          "id": "price_unit",
+          "type": "text",
+          "label": "Price unit (night or bed)"
+        },
+        {
+          "id": "min_nights",
+          "type": "number",
+          "label": "Minimum nights"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image (3:2)"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "photos",
+          "type": "gallery",
+          "label": "Photos"
+        },
+        {
+          "id": "featured",
+          "type": "checkbox",
+          "label": "Featured"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "stay_alder",
+          "handle": "alder",
+          "title": "Alder",
+          "fields": {
+            "type": "Cabin",
+            "summary": "The first cabin, closest to the dock.",
+            "description": "<p>The first cabin, closest to the dock. Alder sits among the cedars on the quiet side of the lake, a short walk from the dock, the sauna and the barn.</p><p>Linens and towels are on the beds when you arrive, the wood is stacked, and there is coffee in the cupboard. Bring food, a book and something warm for the evenings.</p>",
+            "sleeps": 2,
+            "bedrooms": 1,
+            "beds": "1 queen",
+            "baths": 1,
+            "amenities": "Wifi\nQueen bed\nPrivate bathroom\nKitchen\nWood stove\nFire pit\nLake view\nParking\nPets\nLinens\nCanoe at the dock",
+            "highlights": "Wake up on the water: The dock is twenty steps from the door.\nA real kitchen: Full stove, big fridge, the pans you'd want.\nDogs welcome: A fenced yard and a bowl by the door.",
+            "price_night": 220,
+            "price_unit": "night",
+            "min_nights": 2,
+            "image": "as_3x2_lake",
+            "image_alt": "Alder from the water",
+            "photos": "alder",
+            "featured": true,
+            "order": 1,
+            "price_week": 1320
+          }
+        },
+        {
+          "id": "stay_birch",
+          "handle": "birch",
+          "title": "Birch",
+          "fields": {
+            "type": "Cabin",
+            "summary": "Two bedrooms and a screened porch.",
+            "description": "<p>Two bedrooms and a screened porch. Birch sits among the cedars on the quiet side of the lake, a short walk from the dock, the sauna and the barn.</p><p>Linens and towels are on the beds when you arrive, the wood is stacked, and there is coffee in the cupboard. Bring food, a book and something warm for the evenings.</p>",
+            "sleeps": 4,
+            "bedrooms": 2,
+            "beds": "1 queen, 2 twins",
+            "baths": 1,
+            "amenities": "Wifi\nQueen bed\nPrivate bathroom\nKitchen\nFireplace\nFire pit\nLake view\nBalcony\nParking\nLinens",
+            "highlights": "A screened porch: Supper outside without the mosquitoes.\nRoom for four: Two bedrooms, one each side of the hall.\nThe fireplace: Wood is stacked by the door every afternoon.",
+            "price_night": 260,
+            "price_unit": "night",
+            "min_nights": 2,
+            "image": "as_3x2_forest",
+            "image_alt": "Birch from the water",
+            "photos": "birch",
+            "featured": true,
+            "order": 2,
+            "price_week": 1560
+          }
+        },
+        {
+          "id": "stay_cedar",
+          "handle": "cedar",
+          "title": "Cedar",
+          "fields": {
+            "type": "Cabin",
+            "summary": "A sleeping loft under the ridge beam.",
+            "description": "<p>A sleeping loft under the ridge beam. Cedar sits among the cedars on the quiet side of the lake, a short walk from the dock, the sauna and the barn.</p><p>Linens and towels are on the beds when you arrive, the wood is stacked, and there is coffee in the cupboard. Bring food, a book and something warm for the evenings.</p>",
+            "sleeps": 4,
+            "bedrooms": 1,
+            "beds": "1 king, 1 double",
+            "baths": 1,
+            "amenities": "Wifi\nKing bed\nPrivate bathroom\nKitchen\nWood stove\nFire pit\nLake view\nWorkspace\nParking\nLinens",
+            "highlights": "The loft: A double bed under the ridge beam, reached by a ladder.\nA desk by the window: For the one who has to check in.\nMorning light: The cabin faces east over the water.",
+            "price_night": 280,
+            "price_unit": "night",
+            "min_nights": 2,
+            "image": "as_3x2_sand",
+            "image_alt": "Cedar from the water",
+            "photos": "cedar",
+            "featured": true,
+            "order": 3,
+            "price_week": 1680
+          }
+        },
+        {
+          "id": "stay_fir",
+          "handle": "fir",
+          "title": "Fir",
+          "fields": {
+            "type": "Cabin",
+            "summary": "The big one, for two families.",
+            "description": "<p>The big one, for two families. Fir sits among the cedars on the quiet side of the lake, a short walk from the dock, the sauna and the barn.</p><p>Linens and towels are on the beds when you arrive, the wood is stacked, and there is coffee in the cupboard. Bring food, a book and something warm for the evenings.</p>",
+            "sleeps": 6,
+            "bedrooms": 2,
+            "beds": "1 king, 2 bunks",
+            "baths": 2,
+            "amenities": "Wifi\nAir conditioning\nKing bed\nBunk beds\nPrivate bathroom\nKitchen\nLaundry\nFireplace\nBalcony\nWorkspace\nTV\nLake view",
+            "highlights": "Two bathrooms: No queue in the morning.\nA long table: Seats ten, and the bench folds out.\nA laundry: For the week the kids find the mud.",
+            "price_night": 340,
+            "price_unit": "night",
+            "min_nights": 3,
+            "image": "as_3x2_lake",
+            "image_alt": "Fir from the water",
+            "photos": "fir",
+            "featured": false,
+            "order": 4,
+            "price_week": 2040
+          }
+        },
+        {
+          "id": "stay_hemlock",
+          "handle": "hemlock",
+          "title": "Hemlock",
+          "fields": {
+            "type": "Cabin",
+            "summary": "On the point, water on three sides.",
+            "description": "<p>On the point, water on three sides. Hemlock sits among the cedars on the quiet side of the lake, a short walk from the dock, the sauna and the barn.</p><p>Linens and towels are on the beds when you arrive, the wood is stacked, and there is coffee in the cupboard. Bring food, a book and something warm for the evenings.</p>",
+            "sleeps": 2,
+            "bedrooms": 0,
+            "beds": "1 queen",
+            "baths": 1,
+            "amenities": "Wifi\nQueen bed\nPrivate bathroom\nKitchenette\nWood stove\nHot tub\nLake view\nMountain view\nParking\nLinens",
+            "highlights": "Water on three sides: The point is yours after the day boats go.\nA cedar hot tub: Filled and warm by four.\nA studio: One room, big windows, nothing to tidy.",
+            "price_night": 240,
+            "price_unit": "night",
+            "min_nights": 2,
+            "image": "as_3x2_forest",
+            "image_alt": "Hemlock from the water",
+            "photos": "hemlock",
+            "featured": false,
+            "order": 5,
+            "price_week": 1440
+          }
+        },
+        {
+          "id": "stay_lake_room",
+          "handle": "lake-room",
+          "title": "Lake room",
+          "fields": {
+            "type": "Farmhouse room",
+            "summary": "Upstairs in the farmhouse, breakfast included.",
+            "description": "<p>Upstairs in the farmhouse, breakfast included. Lake room sits among the cedars on the quiet side of the lake, a short walk from the dock, the sauna and the barn.</p><p>Linens and towels are on the beds when you arrive, the wood is stacked, and there is coffee in the cupboard. Bring food, a book and something warm for the evenings.</p>",
+            "sleeps": 2,
+            "bedrooms": 1,
+            "beds": "1 queen",
+            "baths": 1,
+            "amenities": "Wifi\nQueen bed\nPrivate bathroom\nHeating\nBreakfast\nLake view\nParking\nLinens",
+            "highlights": "Breakfast at eight: Eggs from the barn and bread from the oven.\nA lake window: The bed faces the water.\nQuiet hours: The farmhouse sleeps early.",
+            "price_night": 160,
+            "price_unit": "night",
+            "min_nights": 1,
+            "image": "as_3x2_sand",
+            "image_alt": "Lake room from the water",
+            "photos": "lake-room",
+            "featured": false,
+            "order": 6,
+            "price_week": 960
+          }
+        },
+        {
+          "id": "stay_orchard_room",
+          "handle": "orchard-room",
+          "title": "Orchard room",
+          "fields": {
+            "type": "Farmhouse room",
+            "summary": "Looks over the apple trees.",
+            "description": "<p>Looks over the apple trees. Orchard room sits among the cedars on the quiet side of the lake, a short walk from the dock, the sauna and the barn.</p><p>Linens and towels are on the beds when you arrive, the wood is stacked, and there is coffee in the cupboard. Bring food, a book and something warm for the evenings.</p>",
+            "sleeps": 2,
+            "bedrooms": 1,
+            "beds": "1 double",
+            "baths": 1,
+            "amenities": "Wifi\nPrivate bathroom\nHeating\nBreakfast\nMountain view\nParking\nLinens\nOrchard view",
+            "highlights": "The orchard: Pick what you can carry in September.\nBreakfast at eight: The same table as the Lake room.\nUnder the eaves: A slanted ceiling and a reading chair.",
+            "price_night": 150,
+            "price_unit": "night",
+            "min_nights": 1,
+            "image": "as_3x2_lake",
+            "image_alt": "Orchard room from the water",
+            "photos": "orchard-room",
+            "featured": false,
+            "order": 7,
+            "price_week": 900
+          }
+        },
+        {
+          "id": "stay_bunkhouse",
+          "handle": "bunkhouse",
+          "title": "Bunkhouse",
+          "fields": {
+            "type": "Bunkhouse bed",
+            "summary": "Six bunks, two showers, a long table.",
+            "description": "<p>Six bunks, two showers, a long table. Bunkhouse sits among the cedars on the quiet side of the lake, a short walk from the dock, the sauna and the barn.</p><p>Linens and towels are on the beds when you arrive, the wood is stacked, and there is coffee in the cupboard. Bring food, a book and something warm for the evenings.</p>",
+            "sleeps": 6,
+            "bedrooms": 1,
+            "beds": "6 bunks",
+            "baths": 2,
+            "amenities": "Wifi\nBunk beds\nShared bathroom\nKitchenette\nLinens\nParking\nBreakfast\nLockers",
+            "highlights": "Built for groups: Six bunks, book one or the lot.\nTwo showers: Hot water from the same stove as the sauna.\nA long table: Maps, cards and a kettle.",
+            "price_night": 45,
+            "price_unit": "bed",
+            "min_nights": 1,
+            "image": "as_3x2_forest",
+            "image_alt": "Bunkhouse from the water",
+            "photos": "bunkhouse",
+            "featured": false,
+            "order": 8
+          }
+        }
+      ]
+    },
+    "experiences": {
+      "name": "Experiences",
+      "fields": [
+        {
+          "id": "kind",
+          "type": "text",
+          "label": "Kind (here, nearby or trip)"
+        },
+        {
+          "id": "summary",
+          "type": "text",
+          "label": "Summary"
+        },
+        {
+          "id": "description",
+          "type": "richtext",
+          "label": "Description"
+        },
+        {
+          "id": "distance",
+          "type": "text",
+          "label": "Distance"
+        },
+        {
+          "id": "season",
+          "type": "text",
+          "label": "Season"
+        },
+        {
+          "id": "price",
+          "type": "number",
+          "label": "Price"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Operator link"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image (3:2)"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "featured",
+          "type": "checkbox",
+          "label": "Featured"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "exp_the_dock_and_canoes",
+          "handle": "the-dock-and-canoes",
+          "title": "The dock and canoes",
+          "fields": {
+            "kind": "here",
+            "summary": "Two canoes, four paddleboards, first come first served.",
+            "description": "<p>Two canoes, four paddleboards, first come first served.</p><p>Ask at the barn for maps, times and anything you need to borrow. We are happy to point you the right way.</p>",
+            "distance": "",
+            "season": "Year round",
+            "image": "as_3x2_forest",
+            "image_alt": "The dock and canoes",
+            "featured": true,
+            "order": 1
+          }
+        },
+        {
+          "id": "exp_the_sauna",
+          "handle": "the-sauna",
+          "title": "The sauna",
+          "fields": {
+            "kind": "here",
+            "summary": "Wood-fired, by the water, a cold plunge off the end of the dock.",
+            "description": "<p>Wood-fired, by the water, a cold plunge off the end of the dock.</p><p>Ask at the barn for maps, times and anything you need to borrow. We are happy to point you the right way.</p>",
+            "distance": "",
+            "season": "Open 4–9 pm",
+            "image": "as_3x2_sand",
+            "image_alt": "The sauna",
+            "featured": true,
+            "order": 2
+          }
+        },
+        {
+          "id": "exp_the_orchard",
+          "handle": "the-orchard",
+          "title": "The orchard",
+          "fields": {
+            "kind": "here",
+            "summary": "Pick what you can carry.",
+            "description": "<p>Pick what you can carry.</p><p>Ask at the barn for maps, times and anything you need to borrow. We are happy to point you the right way.</p>",
+            "distance": "",
+            "season": "August–October",
+            "image": "as_3x2_lake",
+            "image_alt": "The orchard",
+            "featured": true,
+            "order": 3
+          }
+        },
+        {
+          "id": "exp_spion_kop_hike",
+          "handle": "spion-kop-hike",
+          "title": "Spion Kop hike",
+          "fields": {
+            "kind": "nearby",
+            "summary": "A ridge walk with the lake on both sides.",
+            "description": "<p>A ridge walk with the lake on both sides.</p><p>Ask at the barn for maps, times and anything you need to borrow. We are happy to point you the right way.</p>",
+            "distance": "20 min drive",
+            "season": "April–November",
+            "image": "as_3x2_forest",
+            "image_alt": "Spion Kop hike",
+            "featured": false,
+            "order": 4,
+            "link": "https://example.com/spion-kop-hike"
+          }
+        },
+        {
+          "id": "exp_okanagan_rail_trail",
+          "handle": "okanagan-rail-trail",
+          "title": "Okanagan Rail Trail",
+          "fields": {
+            "kind": "nearby",
+            "summary": "Flat and paved; bikes at the barn.",
+            "description": "<p>Flat and paved; bikes at the barn.</p><p>Ask at the barn for maps, times and anything you need to borrow. We are happy to point you the right way.</p>",
+            "distance": "10 min drive",
+            "season": "Year round",
+            "image": "as_3x2_sand",
+            "image_alt": "Okanagan Rail Trail",
+            "featured": false,
+            "order": 5,
+            "link": "https://example.com/okanagan-rail-trail"
+          }
+        },
+        {
+          "id": "exp_gray_monk_winery",
+          "handle": "gray-monk-winery",
+          "title": "Gray Monk winery",
+          "fields": {
+            "kind": "nearby",
+            "summary": "Lunch on the terrace, the lake below.",
+            "description": "<p>Lunch on the terrace, the lake below.</p><p>Ask at the barn for maps, times and anything you need to borrow. We are happy to point you the right way.</p>",
+            "distance": "15 min drive",
+            "season": "Year round",
+            "image": "as_3x2_lake",
+            "image_alt": "Gray Monk winery",
+            "featured": false,
+            "order": 6,
+            "link": "https://example.com/gray-monk-winery"
+          }
+        },
+        {
+          "id": "exp_kelowna_farmers_market",
+          "handle": "kelowna-farmers-market",
+          "title": "Kelowna farmers' market",
+          "fields": {
+            "kind": "nearby",
+            "summary": "Fruit, bread and the best coffee in the valley.",
+            "description": "<p>Fruit, bread and the best coffee in the valley.</p><p>Ask at the barn for maps, times and anything you need to borrow. We are happy to point you the right way.</p>",
+            "distance": "40 min drive",
+            "season": "Saturdays, April–October",
+            "image": "as_3x2_forest",
+            "image_alt": "Kelowna farmers' market",
+            "featured": false,
+            "order": 7,
+            "link": "https://example.com/kelowna-farmers-market"
+          }
+        },
+        {
+          "id": "exp_a_guided_paddle_to_the_point",
+          "handle": "a-guided-paddle-to-the-point",
+          "title": "A guided paddle to the point",
+          "fields": {
+            "kind": "trip",
+            "summary": "We take six people out, lunch on the rocks, back by four.",
+            "description": "<p>We take six people out, lunch on the rocks, back by four.</p><p>Ask at the barn for maps, times and anything you need to borrow. We are happy to point you the right way.</p>",
+            "distance": "Full day",
+            "season": "June–September",
+            "image": "as_3x2_sand",
+            "image_alt": "A guided paddle to the point",
+            "featured": true,
+            "order": 8,
+            "price": 140,
+            "link": "https://example.com/a-guided-paddle-to-the-point"
+          }
+        },
+        {
+          "id": "exp_fall_mushroom_walk",
+          "handle": "fall-mushroom-walk",
+          "title": "Fall mushroom walk",
+          "fields": {
+            "kind": "trip",
+            "summary": "September and October, with Hanne, who knows where to look.",
+            "description": "<p>September and October, with Hanne, who knows where to look.</p><p>Ask at the barn for maps, times and anything you need to borrow. We are happy to point you the right way.</p>",
+            "distance": "Half day",
+            "season": "September–October",
+            "image": "as_3x2_lake",
+            "image_alt": "Fall mushroom walk",
+            "featured": true,
+            "order": 9,
+            "price": 60,
+            "link": "https://example.com/fall-mushroom-walk"
+          }
+        }
+      ]
+    },
+    "reviews": {
+      "name": "Reviews",
+      "fields": [
+        {
+          "id": "quote",
+          "type": "textarea",
+          "label": "Quote"
+        },
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Name"
+        },
+        {
+          "id": "place",
+          "type": "text",
+          "label": "Place"
+        },
+        {
+          "id": "date",
+          "type": "date",
+          "label": "Date"
+        },
+        {
+          "id": "stay",
+          "type": "entry",
+          "label": "Stay",
+          "content_type": "stays"
+        },
+        {
+          "id": "rating",
+          "type": "number",
+          "label": "Rating (1–5)"
+        },
+        {
+          "id": "featured",
+          "type": "checkbox",
+          "label": "Featured"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "rev_1",
+          "handle": "dana",
+          "title": "Dana",
+          "fields": {
+            "quote": "We came for a weekend and stayed a week. The dock at sunset did it.",
+            "name": "Dana",
+            "place": "Toronto, Canada",
+            "date": "2026-08-14",
+            "rating": 5,
+            "featured": true,
+            "order": 1,
+            "stay": "stay_alder"
+          }
+        },
+        {
+          "id": "rev_2",
+          "handle": "marcus",
+          "title": "Marcus",
+          "fields": {
+            "quote": "Quiet, clean, and the sisters leave fresh bread on the porch.",
+            "name": "Marcus",
+            "place": "Seattle, USA",
+            "date": "2026-07-21",
+            "rating": 5,
+            "featured": true,
+            "order": 2,
+            "stay": "stay_birch"
+          }
+        },
+        {
+          "id": "rev_3",
+          "handle": "priya",
+          "title": "Priya",
+          "fields": {
+            "quote": "The loft was a hit with the kids and the canoe was a hit with me.",
+            "name": "Priya",
+            "place": "Vancouver, Canada",
+            "date": "2026-09-03",
+            "rating": 5,
+            "featured": true,
+            "order": 3,
+            "stay": "stay_cedar"
+          }
+        },
+        {
+          "id": "rev_4",
+          "handle": "okafors",
+          "title": "The Okafors",
+          "fields": {
+            "quote": "Two families, two bathrooms, zero arguments.",
+            "name": "The Okafors",
+            "place": "Calgary, Canada",
+            "date": "2026-08-02",
+            "rating": 5,
+            "featured": true,
+            "order": 4
+          }
+        },
+        {
+          "id": "rev_5",
+          "handle": "lena",
+          "title": "Lena",
+          "fields": {
+            "quote": "Water on three sides. We barely left.",
+            "name": "Lena",
+            "place": "Portland, USA",
+            "date": "2026-06-18",
+            "rating": 5,
+            "featured": true,
+            "order": 5
+          }
+        },
+        {
+          "id": "rev_6",
+          "handle": "tom",
+          "title": "Tom",
+          "fields": {
+            "quote": "Best breakfast of the trip, and the orchard smelled like September.",
+            "name": "Tom",
+            "place": "Edmonton, Canada",
+            "date": "2026-09-22",
+            "rating": 4,
+            "featured": true,
+            "order": 6
+          }
+        },
+        {
+          "id": "rev_7",
+          "handle": "jo",
+          "title": "Jo",
+          "fields": {
+            "quote": "The bunkhouse was perfect for our paddling group.",
+            "name": "Jo",
+            "place": "Kelowna, Canada",
+            "date": "2026-07-09",
+            "rating": 5,
+            "featured": false,
+            "order": 7
+          }
+        },
+        {
+          "id": "rev_8",
+          "handle": "amara",
+          "title": "Amara",
+          "fields": {
+            "quote": "Already booked for next summer.",
+            "name": "Amara",
+            "place": "Victoria, Canada",
+            "date": "2026-10-05",
+            "rating": 5,
+            "featured": false,
+            "order": 8
+          }
+        }
+      ]
+    },
+    "posts": {
+      "name": "Posts",
+      "fields": [
+        {
+          "id": "topic",
+          "type": "text",
+          "label": "Topic"
+        },
+        {
+          "id": "date",
+          "type": "date",
+          "label": "Date"
+        },
+        {
+          "id": "author",
+          "type": "text",
+          "label": "Author"
+        },
+        {
+          "id": "standfirst",
+          "type": "text",
+          "label": "Standfirst"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image (3:2)"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "body",
+          "type": "richtext",
+          "label": "Body"
+        }
+      ],
+      "entries": [
+        {
+          "id": "post_a_week_of_lake_mornings",
+          "handle": "a-week-of-lake-mornings",
+          "title": "A week of lake mornings",
+          "fields": {
+            "topic": "Stays",
+            "date": "2026-09-12",
+            "author": "Ingrid Holm",
+            "standfirst": "Seven mornings on the dock, one coffee at a time.",
+            "image": "as_3x2_lake",
+            "image_alt": "A week of lake mornings",
+            "body": "<p>Seven mornings on the dock, one coffee at a time.</p><h2>On the lake</h2><p>The water is still before eight, and the loons are louder than the road. Take the canoe out early and you will have the bay to yourself.</p><h2>Back at the cabin</h2><p>Light the stove, put the kettle on and let the day decide itself. There is no schedule here, and that is the point.</p>"
+          }
+        },
+        {
+          "id": "post_what_to_pack_for_a_cabin_in_may",
+          "handle": "what-to-pack-for-a-cabin-in-may",
+          "title": "What to pack for a cabin in May",
+          "fields": {
+            "topic": "Tips",
+            "date": "2026-04-20",
+            "author": "Ingrid Holm",
+            "standfirst": "Warm layers, bug spray, and boots you don't mind getting wet.",
+            "image": "as_3x2_forest",
+            "image_alt": "What to pack for a cabin in May",
+            "body": "<p>Warm layers, bug spray, and boots you don't mind getting wet.</p><h2>On the lake</h2><p>The water is still before eight, and the loons are louder than the road. Take the canoe out early and you will have the bay to yourself.</p><h2>Back at the cabin</h2><p>Light the stove, put the kettle on and let the day decide itself. There is no schedule here, and that is the point.</p>"
+          }
+        },
+        {
+          "id": "post_the_orchard_year_by_year",
+          "handle": "the-orchard-year-by-year",
+          "title": "The orchard, year by year",
+          "fields": {
+            "topic": "The farm",
+            "date": "2026-10-02",
+            "author": "Hanne Holm",
+            "standfirst": "Forty trees, three kinds of apple and one stubborn pear.",
+            "image": "as_3x2_sand",
+            "image_alt": "The orchard, year by year",
+            "body": "<p>Forty trees, three kinds of apple and one stubborn pear.</p><h2>On the lake</h2><p>The water is still before eight, and the loons are louder than the road. Take the canoe out early and you will have the bay to yourself.</p><h2>Back at the cabin</h2><p>Light the stove, put the kettle on and let the day decide itself. There is no schedule here, and that is the point.</p>"
+          }
+        },
+        {
+          "id": "post_six_paddles_we_love",
+          "handle": "six-paddles-we-love",
+          "title": "Six paddles we love",
+          "fields": {
+            "topic": "Trips",
+            "date": "2026-07-08",
+            "author": "Hanne Holm",
+            "standfirst": "From the dock to the point, and four more worth the drive.",
+            "image": "as_3x2_lake",
+            "image_alt": "Six paddles we love",
+            "body": "<p>From the dock to the point, and four more worth the drive.</p><h2>On the lake</h2><p>The water is still before eight, and the loons are louder than the road. Take the canoe out early and you will have the bay to yourself.</p><h2>Back at the cabin</h2><p>Light the stove, put the kettle on and let the day decide itself. There is no schedule here, and that is the point.</p>"
+          }
+        },
+        {
+          "id": "post_fresh_bread_on_the_porch",
+          "handle": "fresh-bread-on-the-porch",
+          "title": "Fresh bread on the porch",
+          "fields": {
+            "topic": "The farm",
+            "date": "2026-06-15",
+            "author": "Ingrid Holm",
+            "standfirst": "Why there is a loaf on your step at seven.",
+            "image": "as_3x2_forest",
+            "image_alt": "Fresh bread on the porch",
+            "body": "<p>Why there is a loaf on your step at seven.</p><h2>On the lake</h2><p>The water is still before eight, and the loons are louder than the road. Take the canoe out early and you will have the bay to yourself.</p><h2>Back at the cabin</h2><p>Light the stove, put the kettle on and let the day decide itself. There is no schedule here, and that is the point.</p>"
+          }
+        },
+        {
+          "id": "post_fall_at_the_point",
+          "handle": "fall-at-the-point",
+          "title": "Fall at the point",
+          "fields": {
+            "topic": "Stays",
+            "date": "2026-10-20",
+            "author": "Ingrid Holm",
+            "standfirst": "The last weeks of the season are the quietest, and the best.",
+            "image": "as_3x2_sand",
+            "image_alt": "Fall at the point",
+            "body": "<p>The last weeks of the season are the quietest, and the best.</p><h2>On the lake</h2><p>The water is still before eight, and the loons are louder than the road. Take the canoe out early and you will have the bay to yourself.</p><h2>Back at the cabin</h2><p>Light the stove, put the kettle on and let the day decide itself. There is no schedule here, and that is the point.</p>"
+          }
+        }
+      ]
+    }
+  },
+  "pages": {
+    "/": {
+      "id": "pg_home",
+      "template": "home",
+      "title": "Fern Hollow",
+      "seo": {
+        "description": "Five cedar cabins, two farmhouse rooms and a bunkhouse on the quiet side of Okanagan Lake."
+      }
+    },
+    "/stays": {
+      "id": "pg_stays",
+      "template": "page.stays",
+      "title": "Stays"
+    },
+    "/explore": {
+      "id": "pg_explore",
+      "template": "page.explore",
+      "title": "Things to do"
+    },
+    "/gallery": {
+      "id": "pg_gallery",
+      "template": "page.gallery",
+      "title": "Gallery"
+    },
+    "/about": {
+      "id": "pg_about",
+      "template": "page.about",
+      "title": "About"
+    },
+    "/journal": {
+      "id": "pg_journal",
+      "template": "page.journal",
+      "title": "Journal"
+    },
+    "/contact": {
+      "id": "pg_contact",
+      "template": "page.contact",
+      "title": "Contact"
+    },
+    "/policies": {
+      "id": "pg_policies",
+      "template": "page.policies",
+      "title": "Policies"
+    },
+    "/privacy": {
+      "id": "pg_privacy",
+      "template": "page",
+      "title": "Privacy",
+      "content": "<p>Fern Hollow keeps the name, email and dates you give us to run your stay and to answer you. We do not sell them or share them.</p><h2>The booking frame</h2><p>Booking runs through our booking partner, whose own policy covers what you enter there.</p>"
+    },
+    "/terms": {
+      "id": "pg_terms",
+      "template": "page",
+      "title": "Terms",
+      "content": "<p>A booking is confirmed by our booking partner. The house rules and the cancellation policy on the Policies page are part of every stay.</p>"
+    },
+    "/accessibility": {
+      "id": "pg_accessibility",
+      "template": "page",
+      "title": "Accessibility",
+      "content": "<p>Alder and the Lake room have step-free entrances. Write to us and we will tell you exactly what to expect.</p>"
+    },
+    "/stays/alder": {
+      "id": "pg_stay_alder",
+      "template": "stay",
+      "title": "Alder",
+      "params": {
+        "stay": "alder"
+      },
+      "entry": {
+        "id": "stay_alder",
+        "handle": "alder",
+        "title": "Alder",
+        "fields": {
+          "type": "Cabin",
+          "summary": "The first cabin, closest to the dock.",
+          "description": "<p>The first cabin, closest to the dock. Alder sits among the cedars on the quiet side of the lake, a short walk from the dock, the sauna and the barn.</p><p>Linens and towels are on the beds when you arrive, the wood is stacked, and there is coffee in the cupboard. Bring food, a book and something warm for the evenings.</p>",
+          "sleeps": 2,
+          "bedrooms": 1,
+          "beds": "1 queen",
+          "baths": 1,
+          "amenities": "Wifi\nQueen bed\nPrivate bathroom\nKitchen\nWood stove\nFire pit\nLake view\nParking\nPets\nLinens\nCanoe at the dock",
+          "highlights": "Wake up on the water: The dock is twenty steps from the door.\nA real kitchen: Full stove, big fridge, the pans you'd want.\nDogs welcome: A fenced yard and a bowl by the door.",
+          "price_night": 220,
+          "price_unit": "night",
+          "min_nights": 2,
+          "image": "as_3x2_lake",
+          "image_alt": "Alder from the water",
+          "photos": "alder",
+          "featured": true,
+          "order": 1,
+          "price_week": 1320
+        }
+      }
+    },
+    "/stays/birch": {
+      "id": "pg_stay_birch",
+      "template": "stay",
+      "title": "Birch",
+      "params": {
+        "stay": "birch"
+      },
+      "entry": {
+        "id": "stay_birch",
+        "handle": "birch",
+        "title": "Birch",
+        "fields": {
+          "type": "Cabin",
+          "summary": "Two bedrooms and a screened porch.",
+          "description": "<p>Two bedrooms and a screened porch. Birch sits among the cedars on the quiet side of the lake, a short walk from the dock, the sauna and the barn.</p><p>Linens and towels are on the beds when you arrive, the wood is stacked, and there is coffee in the cupboard. Bring food, a book and something warm for the evenings.</p>",
+          "sleeps": 4,
+          "bedrooms": 2,
+          "beds": "1 queen, 2 twins",
+          "baths": 1,
+          "amenities": "Wifi\nQueen bed\nPrivate bathroom\nKitchen\nFireplace\nFire pit\nLake view\nBalcony\nParking\nLinens",
+          "highlights": "A screened porch: Supper outside without the mosquitoes.\nRoom for four: Two bedrooms, one each side of the hall.\nThe fireplace: Wood is stacked by the door every afternoon.",
+          "price_night": 260,
+          "price_unit": "night",
+          "min_nights": 2,
+          "image": "as_3x2_forest",
+          "image_alt": "Birch from the water",
+          "photos": "birch",
+          "featured": true,
+          "order": 2,
+          "price_week": 1560
+        }
+      }
+    },
+    "/stays/cedar": {
+      "id": "pg_stay_cedar",
+      "template": "stay",
+      "title": "Cedar",
+      "params": {
+        "stay": "cedar"
+      },
+      "entry": {
+        "id": "stay_cedar",
+        "handle": "cedar",
+        "title": "Cedar",
+        "fields": {
+          "type": "Cabin",
+          "summary": "A sleeping loft under the ridge beam.",
+          "description": "<p>A sleeping loft under the ridge beam. Cedar sits among the cedars on the quiet side of the lake, a short walk from the dock, the sauna and the barn.</p><p>Linens and towels are on the beds when you arrive, the wood is stacked, and there is coffee in the cupboard. Bring food, a book and something warm for the evenings.</p>",
+          "sleeps": 4,
+          "bedrooms": 1,
+          "beds": "1 king, 1 double",
+          "baths": 1,
+          "amenities": "Wifi\nKing bed\nPrivate bathroom\nKitchen\nWood stove\nFire pit\nLake view\nWorkspace\nParking\nLinens",
+          "highlights": "The loft: A double bed under the ridge beam, reached by a ladder.\nA desk by the window: For the one who has to check in.\nMorning light: The cabin faces east over the water.",
+          "price_night": 280,
+          "price_unit": "night",
+          "min_nights": 2,
+          "image": "as_3x2_sand",
+          "image_alt": "Cedar from the water",
+          "photos": "cedar",
+          "featured": true,
+          "order": 3,
+          "price_week": 1680
+        }
+      }
+    },
+    "/stays/fir": {
+      "id": "pg_stay_fir",
+      "template": "stay",
+      "title": "Fir",
+      "params": {
+        "stay": "fir"
+      },
+      "entry": {
+        "id": "stay_fir",
+        "handle": "fir",
+        "title": "Fir",
+        "fields": {
+          "type": "Cabin",
+          "summary": "The big one, for two families.",
+          "description": "<p>The big one, for two families. Fir sits among the cedars on the quiet side of the lake, a short walk from the dock, the sauna and the barn.</p><p>Linens and towels are on the beds when you arrive, the wood is stacked, and there is coffee in the cupboard. Bring food, a book and something warm for the evenings.</p>",
+          "sleeps": 6,
+          "bedrooms": 2,
+          "beds": "1 king, 2 bunks",
+          "baths": 2,
+          "amenities": "Wifi\nAir conditioning\nKing bed\nBunk beds\nPrivate bathroom\nKitchen\nLaundry\nFireplace\nBalcony\nWorkspace\nTV\nLake view",
+          "highlights": "Two bathrooms: No queue in the morning.\nA long table: Seats ten, and the bench folds out.\nA laundry: For the week the kids find the mud.",
+          "price_night": 340,
+          "price_unit": "night",
+          "min_nights": 3,
+          "image": "as_3x2_lake",
+          "image_alt": "Fir from the water",
+          "photos": "fir",
+          "featured": false,
+          "order": 4,
+          "price_week": 2040
+        }
+      }
+    },
+    "/stays/hemlock": {
+      "id": "pg_stay_hemlock",
+      "template": "stay",
+      "title": "Hemlock",
+      "params": {
+        "stay": "hemlock"
+      },
+      "entry": {
+        "id": "stay_hemlock",
+        "handle": "hemlock",
+        "title": "Hemlock",
+        "fields": {
+          "type": "Cabin",
+          "summary": "On the point, water on three sides.",
+          "description": "<p>On the point, water on three sides. Hemlock sits among the cedars on the quiet side of the lake, a short walk from the dock, the sauna and the barn.</p><p>Linens and towels are on the beds when you arrive, the wood is stacked, and there is coffee in the cupboard. Bring food, a book and something warm for the evenings.</p>",
+          "sleeps": 2,
+          "bedrooms": 0,
+          "beds": "1 queen",
+          "baths": 1,
+          "amenities": "Wifi\nQueen bed\nPrivate bathroom\nKitchenette\nWood stove\nHot tub\nLake view\nMountain view\nParking\nLinens",
+          "highlights": "Water on three sides: The point is yours after the day boats go.\nA cedar hot tub: Filled and warm by four.\nA studio: One room, big windows, nothing to tidy.",
+          "price_night": 240,
+          "price_unit": "night",
+          "min_nights": 2,
+          "image": "as_3x2_forest",
+          "image_alt": "Hemlock from the water",
+          "photos": "hemlock",
+          "featured": false,
+          "order": 5,
+          "price_week": 1440
+        }
+      }
+    },
+    "/stays/lake-room": {
+      "id": "pg_stay_lake_room",
+      "template": "stay",
+      "title": "Lake room",
+      "params": {
+        "stay": "lake-room"
+      },
+      "entry": {
+        "id": "stay_lake_room",
+        "handle": "lake-room",
+        "title": "Lake room",
+        "fields": {
+          "type": "Farmhouse room",
+          "summary": "Upstairs in the farmhouse, breakfast included.",
+          "description": "<p>Upstairs in the farmhouse, breakfast included. Lake room sits among the cedars on the quiet side of the lake, a short walk from the dock, the sauna and the barn.</p><p>Linens and towels are on the beds when you arrive, the wood is stacked, and there is coffee in the cupboard. Bring food, a book and something warm for the evenings.</p>",
+          "sleeps": 2,
+          "bedrooms": 1,
+          "beds": "1 queen",
+          "baths": 1,
+          "amenities": "Wifi\nQueen bed\nPrivate bathroom\nHeating\nBreakfast\nLake view\nParking\nLinens",
+          "highlights": "Breakfast at eight: Eggs from the barn and bread from the oven.\nA lake window: The bed faces the water.\nQuiet hours: The farmhouse sleeps early.",
+          "price_night": 160,
+          "price_unit": "night",
+          "min_nights": 1,
+          "image": "as_3x2_sand",
+          "image_alt": "Lake room from the water",
+          "photos": "lake-room",
+          "featured": false,
+          "order": 6,
+          "price_week": 960
+        }
+      }
+    },
+    "/stays/orchard-room": {
+      "id": "pg_stay_orchard_room",
+      "template": "stay",
+      "title": "Orchard room",
+      "params": {
+        "stay": "orchard-room"
+      },
+      "entry": {
+        "id": "stay_orchard_room",
+        "handle": "orchard-room",
+        "title": "Orchard room",
+        "fields": {
+          "type": "Farmhouse room",
+          "summary": "Looks over the apple trees.",
+          "description": "<p>Looks over the apple trees. Orchard room sits among the cedars on the quiet side of the lake, a short walk from the dock, the sauna and the barn.</p><p>Linens and towels are on the beds when you arrive, the wood is stacked, and there is coffee in the cupboard. Bring food, a book and something warm for the evenings.</p>",
+          "sleeps": 2,
+          "bedrooms": 1,
+          "beds": "1 double",
+          "baths": 1,
+          "amenities": "Wifi\nPrivate bathroom\nHeating\nBreakfast\nMountain view\nParking\nLinens\nOrchard view",
+          "highlights": "The orchard: Pick what you can carry in September.\nBreakfast at eight: The same table as the Lake room.\nUnder the eaves: A slanted ceiling and a reading chair.",
+          "price_night": 150,
+          "price_unit": "night",
+          "min_nights": 1,
+          "image": "as_3x2_lake",
+          "image_alt": "Orchard room from the water",
+          "photos": "orchard-room",
+          "featured": false,
+          "order": 7,
+          "price_week": 900
+        }
+      }
+    },
+    "/stays/bunkhouse": {
+      "id": "pg_stay_bunkhouse",
+      "template": "stay",
+      "title": "Bunkhouse",
+      "params": {
+        "stay": "bunkhouse"
+      },
+      "entry": {
+        "id": "stay_bunkhouse",
+        "handle": "bunkhouse",
+        "title": "Bunkhouse",
+        "fields": {
+          "type": "Bunkhouse bed",
+          "summary": "Six bunks, two showers, a long table.",
+          "description": "<p>Six bunks, two showers, a long table. Bunkhouse sits among the cedars on the quiet side of the lake, a short walk from the dock, the sauna and the barn.</p><p>Linens and towels are on the beds when you arrive, the wood is stacked, and there is coffee in the cupboard. Bring food, a book and something warm for the evenings.</p>",
+          "sleeps": 6,
+          "bedrooms": 1,
+          "beds": "6 bunks",
+          "baths": 2,
+          "amenities": "Wifi\nBunk beds\nShared bathroom\nKitchenette\nLinens\nParking\nBreakfast\nLockers",
+          "highlights": "Built for groups: Six bunks, book one or the lot.\nTwo showers: Hot water from the same stove as the sauna.\nA long table: Maps, cards and a kettle.",
+          "price_night": 45,
+          "price_unit": "bed",
+          "min_nights": 1,
+          "image": "as_3x2_forest",
+          "image_alt": "Bunkhouse from the water",
+          "photos": "bunkhouse",
+          "featured": false,
+          "order": 8
+        }
+      }
+    },
+    "/explore/the-dock-and-canoes": {
+      "id": "pg_exp_the_dock_and_canoes",
+      "template": "experience",
+      "title": "The dock and canoes",
+      "params": {
+        "experience": "the-dock-and-canoes"
+      },
+      "entry": {
+        "id": "exp_the_dock_and_canoes",
+        "handle": "the-dock-and-canoes",
+        "title": "The dock and canoes",
+        "fields": {
+          "kind": "here",
+          "summary": "Two canoes, four paddleboards, first come first served.",
+          "description": "<p>Two canoes, four paddleboards, first come first served.</p><p>Ask at the barn for maps, times and anything you need to borrow. We are happy to point you the right way.</p>",
+          "distance": "",
+          "season": "Year round",
+          "image": "as_3x2_forest",
+          "image_alt": "The dock and canoes",
+          "featured": true,
+          "order": 1
+        }
+      }
+    },
+    "/explore/the-sauna": {
+      "id": "pg_exp_the_sauna",
+      "template": "experience",
+      "title": "The sauna",
+      "params": {
+        "experience": "the-sauna"
+      },
+      "entry": {
+        "id": "exp_the_sauna",
+        "handle": "the-sauna",
+        "title": "The sauna",
+        "fields": {
+          "kind": "here",
+          "summary": "Wood-fired, by the water, a cold plunge off the end of the dock.",
+          "description": "<p>Wood-fired, by the water, a cold plunge off the end of the dock.</p><p>Ask at the barn for maps, times and anything you need to borrow. We are happy to point you the right way.</p>",
+          "distance": "",
+          "season": "Open 4–9 pm",
+          "image": "as_3x2_sand",
+          "image_alt": "The sauna",
+          "featured": true,
+          "order": 2
+        }
+      }
+    },
+    "/explore/the-orchard": {
+      "id": "pg_exp_the_orchard",
+      "template": "experience",
+      "title": "The orchard",
+      "params": {
+        "experience": "the-orchard"
+      },
+      "entry": {
+        "id": "exp_the_orchard",
+        "handle": "the-orchard",
+        "title": "The orchard",
+        "fields": {
+          "kind": "here",
+          "summary": "Pick what you can carry.",
+          "description": "<p>Pick what you can carry.</p><p>Ask at the barn for maps, times and anything you need to borrow. We are happy to point you the right way.</p>",
+          "distance": "",
+          "season": "August–October",
+          "image": "as_3x2_lake",
+          "image_alt": "The orchard",
+          "featured": true,
+          "order": 3
+        }
+      }
+    },
+    "/explore/spion-kop-hike": {
+      "id": "pg_exp_spion_kop_hike",
+      "template": "experience",
+      "title": "Spion Kop hike",
+      "params": {
+        "experience": "spion-kop-hike"
+      },
+      "entry": {
+        "id": "exp_spion_kop_hike",
+        "handle": "spion-kop-hike",
+        "title": "Spion Kop hike",
+        "fields": {
+          "kind": "nearby",
+          "summary": "A ridge walk with the lake on both sides.",
+          "description": "<p>A ridge walk with the lake on both sides.</p><p>Ask at the barn for maps, times and anything you need to borrow. We are happy to point you the right way.</p>",
+          "distance": "20 min drive",
+          "season": "April–November",
+          "image": "as_3x2_forest",
+          "image_alt": "Spion Kop hike",
+          "featured": false,
+          "order": 4,
+          "link": "https://example.com/spion-kop-hike"
+        }
+      }
+    },
+    "/explore/okanagan-rail-trail": {
+      "id": "pg_exp_okanagan_rail_trail",
+      "template": "experience",
+      "title": "Okanagan Rail Trail",
+      "params": {
+        "experience": "okanagan-rail-trail"
+      },
+      "entry": {
+        "id": "exp_okanagan_rail_trail",
+        "handle": "okanagan-rail-trail",
+        "title": "Okanagan Rail Trail",
+        "fields": {
+          "kind": "nearby",
+          "summary": "Flat and paved; bikes at the barn.",
+          "description": "<p>Flat and paved; bikes at the barn.</p><p>Ask at the barn for maps, times and anything you need to borrow. We are happy to point you the right way.</p>",
+          "distance": "10 min drive",
+          "season": "Year round",
+          "image": "as_3x2_sand",
+          "image_alt": "Okanagan Rail Trail",
+          "featured": false,
+          "order": 5,
+          "link": "https://example.com/okanagan-rail-trail"
+        }
+      }
+    },
+    "/explore/gray-monk-winery": {
+      "id": "pg_exp_gray_monk_winery",
+      "template": "experience",
+      "title": "Gray Monk winery",
+      "params": {
+        "experience": "gray-monk-winery"
+      },
+      "entry": {
+        "id": "exp_gray_monk_winery",
+        "handle": "gray-monk-winery",
+        "title": "Gray Monk winery",
+        "fields": {
+          "kind": "nearby",
+          "summary": "Lunch on the terrace, the lake below.",
+          "description": "<p>Lunch on the terrace, the lake below.</p><p>Ask at the barn for maps, times and anything you need to borrow. We are happy to point you the right way.</p>",
+          "distance": "15 min drive",
+          "season": "Year round",
+          "image": "as_3x2_lake",
+          "image_alt": "Gray Monk winery",
+          "featured": false,
+          "order": 6,
+          "link": "https://example.com/gray-monk-winery"
+        }
+      }
+    },
+    "/explore/kelowna-farmers-market": {
+      "id": "pg_exp_kelowna_farmers_market",
+      "template": "experience",
+      "title": "Kelowna farmers' market",
+      "params": {
+        "experience": "kelowna-farmers-market"
+      },
+      "entry": {
+        "id": "exp_kelowna_farmers_market",
+        "handle": "kelowna-farmers-market",
+        "title": "Kelowna farmers' market",
+        "fields": {
+          "kind": "nearby",
+          "summary": "Fruit, bread and the best coffee in the valley.",
+          "description": "<p>Fruit, bread and the best coffee in the valley.</p><p>Ask at the barn for maps, times and anything you need to borrow. We are happy to point you the right way.</p>",
+          "distance": "40 min drive",
+          "season": "Saturdays, April–October",
+          "image": "as_3x2_forest",
+          "image_alt": "Kelowna farmers' market",
+          "featured": false,
+          "order": 7,
+          "link": "https://example.com/kelowna-farmers-market"
+        }
+      }
+    },
+    "/explore/a-guided-paddle-to-the-point": {
+      "id": "pg_exp_a_guided_paddle_to_the_point",
+      "template": "experience",
+      "title": "A guided paddle to the point",
+      "params": {
+        "experience": "a-guided-paddle-to-the-point"
+      },
+      "entry": {
+        "id": "exp_a_guided_paddle_to_the_point",
+        "handle": "a-guided-paddle-to-the-point",
+        "title": "A guided paddle to the point",
+        "fields": {
+          "kind": "trip",
+          "summary": "We take six people out, lunch on the rocks, back by four.",
+          "description": "<p>We take six people out, lunch on the rocks, back by four.</p><p>Ask at the barn for maps, times and anything you need to borrow. We are happy to point you the right way.</p>",
+          "distance": "Full day",
+          "season": "June–September",
+          "image": "as_3x2_sand",
+          "image_alt": "A guided paddle to the point",
+          "featured": true,
+          "order": 8,
+          "price": 140,
+          "link": "https://example.com/a-guided-paddle-to-the-point"
+        }
+      }
+    },
+    "/explore/fall-mushroom-walk": {
+      "id": "pg_exp_fall_mushroom_walk",
+      "template": "experience",
+      "title": "Fall mushroom walk",
+      "params": {
+        "experience": "fall-mushroom-walk"
+      },
+      "entry": {
+        "id": "exp_fall_mushroom_walk",
+        "handle": "fall-mushroom-walk",
+        "title": "Fall mushroom walk",
+        "fields": {
+          "kind": "trip",
+          "summary": "September and October, with Hanne, who knows where to look.",
+          "description": "<p>September and October, with Hanne, who knows where to look.</p><p>Ask at the barn for maps, times and anything you need to borrow. We are happy to point you the right way.</p>",
+          "distance": "Half day",
+          "season": "September–October",
+          "image": "as_3x2_lake",
+          "image_alt": "Fall mushroom walk",
+          "featured": true,
+          "order": 9,
+          "price": 60,
+          "link": "https://example.com/fall-mushroom-walk"
+        }
+      }
+    },
+    "/journal/a-week-of-lake-mornings": {
+      "id": "pg_post_a_week_of_lake_mornings",
+      "template": "post",
+      "title": "A week of lake mornings",
+      "params": {
+        "post": "a-week-of-lake-mornings"
+      },
+      "entry": {
+        "id": "post_a_week_of_lake_mornings",
+        "handle": "a-week-of-lake-mornings",
+        "title": "A week of lake mornings",
+        "fields": {
+          "topic": "Stays",
+          "date": "2026-09-12",
+          "author": "Ingrid Holm",
+          "standfirst": "Seven mornings on the dock, one coffee at a time.",
+          "image": "as_3x2_lake",
+          "image_alt": "A week of lake mornings",
+          "body": "<p>Seven mornings on the dock, one coffee at a time.</p><h2>On the lake</h2><p>The water is still before eight, and the loons are louder than the road. Take the canoe out early and you will have the bay to yourself.</p><h2>Back at the cabin</h2><p>Light the stove, put the kettle on and let the day decide itself. There is no schedule here, and that is the point.</p>"
+        }
+      }
+    },
+    "/journal/what-to-pack-for-a-cabin-in-may": {
+      "id": "pg_post_what_to_pack_for_a_cabin_in_may",
+      "template": "post",
+      "title": "What to pack for a cabin in May",
+      "params": {
+        "post": "what-to-pack-for-a-cabin-in-may"
+      },
+      "entry": {
+        "id": "post_what_to_pack_for_a_cabin_in_may",
+        "handle": "what-to-pack-for-a-cabin-in-may",
+        "title": "What to pack for a cabin in May",
+        "fields": {
+          "topic": "Tips",
+          "date": "2026-04-20",
+          "author": "Ingrid Holm",
+          "standfirst": "Warm layers, bug spray, and boots you don't mind getting wet.",
+          "image": "as_3x2_forest",
+          "image_alt": "What to pack for a cabin in May",
+          "body": "<p>Warm layers, bug spray, and boots you don't mind getting wet.</p><h2>On the lake</h2><p>The water is still before eight, and the loons are louder than the road. Take the canoe out early and you will have the bay to yourself.</p><h2>Back at the cabin</h2><p>Light the stove, put the kettle on and let the day decide itself. There is no schedule here, and that is the point.</p>"
+        }
+      }
+    },
+    "/journal/the-orchard-year-by-year": {
+      "id": "pg_post_the_orchard_year_by_year",
+      "template": "post",
+      "title": "The orchard, year by year",
+      "params": {
+        "post": "the-orchard-year-by-year"
+      },
+      "entry": {
+        "id": "post_the_orchard_year_by_year",
+        "handle": "the-orchard-year-by-year",
+        "title": "The orchard, year by year",
+        "fields": {
+          "topic": "The farm",
+          "date": "2026-10-02",
+          "author": "Hanne Holm",
+          "standfirst": "Forty trees, three kinds of apple and one stubborn pear.",
+          "image": "as_3x2_sand",
+          "image_alt": "The orchard, year by year",
+          "body": "<p>Forty trees, three kinds of apple and one stubborn pear.</p><h2>On the lake</h2><p>The water is still before eight, and the loons are louder than the road. Take the canoe out early and you will have the bay to yourself.</p><h2>Back at the cabin</h2><p>Light the stove, put the kettle on and let the day decide itself. There is no schedule here, and that is the point.</p>"
+        }
+      }
+    },
+    "/journal/six-paddles-we-love": {
+      "id": "pg_post_six_paddles_we_love",
+      "template": "post",
+      "title": "Six paddles we love",
+      "params": {
+        "post": "six-paddles-we-love"
+      },
+      "entry": {
+        "id": "post_six_paddles_we_love",
+        "handle": "six-paddles-we-love",
+        "title": "Six paddles we love",
+        "fields": {
+          "topic": "Trips",
+          "date": "2026-07-08",
+          "author": "Hanne Holm",
+          "standfirst": "From the dock to the point, and four more worth the drive.",
+          "image": "as_3x2_lake",
+          "image_alt": "Six paddles we love",
+          "body": "<p>From the dock to the point, and four more worth the drive.</p><h2>On the lake</h2><p>The water is still before eight, and the loons are louder than the road. Take the canoe out early and you will have the bay to yourself.</p><h2>Back at the cabin</h2><p>Light the stove, put the kettle on and let the day decide itself. There is no schedule here, and that is the point.</p>"
+        }
+      }
+    },
+    "/journal/fresh-bread-on-the-porch": {
+      "id": "pg_post_fresh_bread_on_the_porch",
+      "template": "post",
+      "title": "Fresh bread on the porch",
+      "params": {
+        "post": "fresh-bread-on-the-porch"
+      },
+      "entry": {
+        "id": "post_fresh_bread_on_the_porch",
+        "handle": "fresh-bread-on-the-porch",
+        "title": "Fresh bread on the porch",
+        "fields": {
+          "topic": "The farm",
+          "date": "2026-06-15",
+          "author": "Ingrid Holm",
+          "standfirst": "Why there is a loaf on your step at seven.",
+          "image": "as_3x2_forest",
+          "image_alt": "Fresh bread on the porch",
+          "body": "<p>Why there is a loaf on your step at seven.</p><h2>On the lake</h2><p>The water is still before eight, and the loons are louder than the road. Take the canoe out early and you will have the bay to yourself.</p><h2>Back at the cabin</h2><p>Light the stove, put the kettle on and let the day decide itself. There is no schedule here, and that is the point.</p>"
+        }
+      }
+    },
+    "/journal/fall-at-the-point": {
+      "id": "pg_post_fall_at_the_point",
+      "template": "post",
+      "title": "Fall at the point",
+      "params": {
+        "post": "fall-at-the-point"
+      },
+      "entry": {
+        "id": "post_fall_at_the_point",
+        "handle": "fall-at-the-point",
+        "title": "Fall at the point",
+        "fields": {
+          "topic": "Stays",
+          "date": "2026-10-20",
+          "author": "Ingrid Holm",
+          "standfirst": "The last weeks of the season are the quietest, and the best.",
+          "image": "as_3x2_sand",
+          "image_alt": "Fall at the point",
+          "body": "<p>The last weeks of the season are the quietest, and the best.</p><h2>On the lake</h2><p>The water is still before eight, and the loons are louder than the road. Take the canoe out early and you will have the bay to yourself.</p><h2>Back at the cabin</h2><p>Light the stove, put the kettle on and let the day decide itself. There is no schedule here, and that is the point.</p>"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+<!-- component: Price -->
+<!-- props: f -->
+<!-- A stay's nightly price: "from" when it has a weekly rate too, the price through the Brand currency, and "/ night" or "/ bed" from price_unit. -->
+{#if f.price_week}{ t('from') } {/if}{ f.price_night | currency(site.settings.currency_symbol, 0) } / { t('unit.' + (f.price_unit || 'night')) }

@@ -1,0 +1,35 @@
+{
+  "label": "Contact",
+  "description": "The contact form beside the address and map, then the facts.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "Contact",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_contact",
+      "type": "contact",
+      "preset": "Default",
+      "settings": {
+        "form": "contact",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_facts",
+      "type": "facts",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    }
+  ]
+}

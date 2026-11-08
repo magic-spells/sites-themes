@@ -1,0 +1,30 @@
+<!-- STUB (agent C builds it): the gallery's photos in a grid. -->
+{#let items = settings.gallery ? settings.gallery.items | slice(0, 12) : []}
+{#if items.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <ul class="grid grid-cols-2 gap-space-sm lg:grid-cols-3">
+      {#for item in items}<li><Well asset={ item.asset } alt={ item.alt } ratio="aspect-square" width={ 640 } sizes="(min-width: 64rem) 30vw, 50vw" /></li>{/for}
+    </ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Gallery grid",
+  "description": "A gallery's photos in a grid that opens a lightbox.",
+  "kind": "Gallery",
+  "icon": "grid-3x3",
+  "settings": [
+    { "type": "gallery", "id": "gallery", "label": "Gallery", "info": "Reads each item's asset, alt and caption." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" } }
+  ]
+}
+</schema>

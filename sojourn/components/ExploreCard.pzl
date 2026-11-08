@@ -1,0 +1,15 @@
+<!-- component: ExploreCard -->
+<!-- props: entry base_path -->
+<!-- A thing to do, one link: a 3:2 well, the title, the meta line ("Nearby · 20 min drive · April–November", "Trip · Full day · $140") and one line of summary. -->
+{#let
+  f = entry.fields
+  meta = [t('kind.' + (f.kind || 'here')), f.distance, f.season, f.price ? f.price | currency(site.settings.currency_symbol, 0) : ''] | compact | join(' · ')
+}
+<article class="group relative flex h-full flex-col gap-space-sm { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+  <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-photo" width={ 800 } sizes="(min-width: 64rem) 25rem, (min-width: 48rem) 50vw, 85vw" zoom={ true } />
+  <div class="flex flex-1 flex-col gap-space-2xs">
+    <h3 class="text-h4 font-semibold"><a class="after:absolute after:inset-0 hover:underline hover:underline-offset-4" href="{ base_path ?? '/explore' }/{ entry.handle }">{ entry.title }</a></h3>
+    <p class="text-body-sm text-scheme-meta">{ meta }</p>
+    {#if f.summary}<p class="text-body-sm text-pretty text-scheme-muted">{ f.summary }</p>{/if}
+  </div>
+</article>

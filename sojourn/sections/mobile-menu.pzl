@@ -1,0 +1,36 @@
+<!-- The mobile menu: a dialog-panel drawer, 85% wide from the right, over the page dimmed by the text colour at 50%. It closes on the backdrop, Escape and its ×, and hands focus back to the menu button. The main menu large, a hairline, the booking button at full width; the phone and the check-in line at the foot. -->
+{#let s = site.settings}
+<dialog-panel id="mobile-menu" position="right">
+  <dialog-backdrop class="bg-backdrop backdrop-blur-sm"></dialog-backdrop>
+  <dialog class="ms-auto flex h-dvh w-17/20 flex-col gap-space-lg overflow-y-auto bg-scheme-background p-gutter text-scheme-foreground shadow-none" aria-label="{ t('menu') }">
+    <button class="flex size-tap shrink-0 items-center justify-center self-end rounded-full border border-scheme-foreground text-accent" type="button" data-action-hide-dialog><Glyph name="close" /><span class="sr-only">{ t('close') }</span></button>
+    {#if settings.menu.items.length}
+      <nav aria-label="{ t('main_navigation') }">
+        <ul class="grid gap-space-xs">
+          {#for item in settings.menu.items}<li><a class="text-h3 font-semibold text-scheme-heading hover:text-accent" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>{/for}
+        </ul>
+      </nav>
+    {/if}
+    <div class="border-t border-scheme-border pt-space-md"><Button action={ true } wide={ true }>{ s.booking_label }</Button></div>
+    <div class="mt-auto grid gap-space-2xs text-body-sm text-scheme-muted">
+      {#if s.phone}<a class="justify-self-start hover:text-scheme-foreground" href="tel:{ s.phone | replace(' ', '') }">{ s.phone }</a>{/if}
+      {#if s.check_in}<p>{ [t('fact.check_in') + ' ' + s.check_in, s.check_out ? t('fact.check_out') + ' ' + s.check_out : ''] | compact | join(' · ') }</p>{/if}
+    </div>
+  </dialog>
+</dialog-panel>
+
+<schema>
+{
+  "name": "Mobile menu",
+  "description": "The menu drawer below 64rem: the main menu, the booking button, the phone and the check-in times.",
+  "kind": "Panels",
+  "icon": "menu",
+  "settings": [
+    { "type": "menu", "id": "menu", "label": "Menu" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "menu": "main", "color_scheme": "paper" } }
+  ]
+}
+</schema>

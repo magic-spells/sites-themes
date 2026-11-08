@@ -1,0 +1,38 @@
+<!-- STUB (agent B builds it): the stay's title, facts, price, highlights, amenities, description and reviews. -->
+{#let
+  stay = page.entry
+  f = stay.fields
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-xl">
+    <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-photo" eager={ true } sizes="100vw" width={ 1600 } />
+    <div class="grid gap-space-xs">
+      <h1 class="text-h1 font-bold text-balance">{ stay.title }</h1>
+      <p class="text-body text-scheme-meta">{ f.type } · <FactsLine f={ f } /></p>
+      <p class="text-body-lg font-semibold"><Price f={ f } /></p>
+      <div><Button action={ true }>{ site.settings.booking_label }</Button></div>
+    </div>
+    {#if f.amenities}<ul class="grid grid-cols-2 gap-space-sm md:grid-cols-4">{#for line in f.amenities | split('\n')}<li><Amenity label={ line } look="tile" /></li>{/for}</ul>{/if}
+    {#if f.description}<div class="sites-prose max-w-reading">{ f.description }</div>{/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Stay detail",
+  "description": "A stay's page: the photos, the title and price, the highlights, the amenities, the description, the things to know and its reviews.",
+  "kind": "Stays",
+  "icon": "bed-double",
+  "templates": ["stay"],
+  "settings": [
+    { "type": "range", "id": "amenities_shown", "label": "Amenities before Show all", "min": 4, "max": 12, "step": 1, "default": 8 },
+    { "type": "checkbox", "id": "show_reviews", "label": "Reviews of this stay", "default": true },
+    { "type": "text", "id": "reviews_link_label", "label": "Reviews link label", "default": "All reviews" },
+    { "type": "url", "id": "reviews_link_href", "label": "Reviews link", "default": "/about" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" } }
+  ]
+}
+</schema>

@@ -1,0 +1,7 @@
+<!-- component: Arrows -->
+<!-- props: wrap -->
+<!-- A carousel's round previous and next buttons, under its track at the right, hidden below 48rem. Tarot finds the buttons by their data-action attributes. wrap replaces the row's classes (the quote carousel puts the buttons at the stage's sides). -->
+<div class="{ wrap ?? 'mt-space-md flex items-center justify-end gap-space-xs' }">
+  <button class="flex size-control max-md:hidden items-center justify-center rounded-full border border-scheme-foreground transition-colors duration-fast hover:bg-scheme-foreground hover:text-scheme-background disabled:pointer-events-none disabled:opacity-40" type="button" data-action-tarot-previous aria-label="{ t('previous') }"><Glyph name="arrow-left" /></button>
+  <button class="flex size-control max-md:hidden items-center justify-center rounded-full border border-scheme-foreground transition-colors duration-fast hover:bg-scheme-foreground hover:text-scheme-background disabled:pointer-events-none disabled:opacity-40" type="button" data-action-tarot-next aria-label="{ t('next') }"><Glyph name="arrow-right" /></button>
+</div>

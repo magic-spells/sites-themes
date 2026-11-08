@@ -1,0 +1,36 @@
+{
+  "label": "Experience",
+  "description": "A thing to do, then more to do and booking.",
+  "sections": [
+    {
+      "id": "s_detail",
+      "type": "explore-detail",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_more",
+      "type": "explore-grid",
+      "preset": "Home",
+      "settings": {
+        "heading": "More to do",
+        "limit": 3,
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_booking",
+      "type": "booking-band",
+      "preset": "Beside",
+      "settings": {
+        "embed_position": "beside",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    }
+  ]
+}

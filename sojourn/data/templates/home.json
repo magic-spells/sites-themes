@@ -1,0 +1,144 @@
+{
+  "label": "Lakeside cabins",
+  "description": "The front page: the cover hero, the stays, the collage, the things to do, the reviews and booking.",
+  "sections": [
+    {
+      "id": "s_hero",
+      "type": "hero",
+      "preset": "Cover",
+      "settings": {
+        "layout": "cover",
+        "image": "as_16x9_lake",
+        "image_alt": "Okanagan Lake from the dock at Fern Hollow",
+        "video": "as_loop_lake",
+        "color_scheme": "night"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_intro",
+      "type": "intro",
+      "preset": "Default",
+      "settings": {
+        "image": "as_4x5_lake",
+        "image_alt": "The dock at Fern Hollow",
+        "caption": "The dock",
+        "caption_meta": "Early June",
+        "facts": "Check-in 3 pm\nCheck-out 11 am\nOpen May–October\nDogs welcome",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_stays",
+      "type": "stays-grid",
+      "preset": "Home",
+      "settings": {
+        "limit": 3,
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_collage",
+      "type": "gallery-collage",
+      "preset": "Collage",
+      "settings": {
+        "layout": "collage",
+        "gallery": "collage",
+        "color_scheme": "brick"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_featured",
+      "type": "stays-featured",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "id": "s_featured_b1",
+          "type": "tile",
+          "settings": {
+            "title": "The lake cabins",
+            "text": "Five cedar cabins on the water.",
+            "image": "as_2x1_forest",
+            "image_alt": "Cedar cabins on the shore",
+            "link_label": "See the cabins",
+            "link_href": "/stays?type=Cabin"
+          }
+        },
+        {
+          "id": "s_featured_b2",
+          "type": "tile",
+          "settings": {
+            "title": "The farmhouse",
+            "text": "Two rooms upstairs, breakfast included.",
+            "image": "as_2x1_sand",
+            "image_alt": "The farmhouse porch",
+            "link_label": "See the rooms",
+            "link_href": "/stays?type=Farmhouse+room"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_explore",
+      "type": "explore-grid",
+      "preset": "Home",
+      "settings": {
+        "limit": 3,
+        "text": "The lake, the trails and the valley's wineries.",
+        "color_scheme": "lake"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_story",
+      "type": "story",
+      "preset": "Short",
+      "settings": {
+        "layout": "short",
+        "image": "as_4x5_forest",
+        "image_alt": "Ingrid and Hanne on the porch",
+        "link_label": "Our story",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_reviews",
+      "type": "reviews",
+      "preset": "Grid",
+      "settings": {
+        "layout": "grid",
+        "link_label": "All reviews",
+        "color_scheme": "forest"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_journal",
+      "type": "journal-list",
+      "preset": "Feature",
+      "settings": {
+        "view": "feature",
+        "limit": 3,
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_booking",
+      "type": "booking-band",
+      "preset": "Beside",
+      "settings": {
+        "embed_position": "beside",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    }
+  ]
+}

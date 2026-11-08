@@ -1,0 +1,40 @@
+<!-- STUB (agent C builds it): the gallery's photos as prints. -->
+{#let items = settings.gallery ? settings.gallery.items | slice(0, 7) : []}
+{#if items.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } />
+    <ul class="grid grid-cols-2 gap-space-sm md:grid-cols-4">
+      {#for item in items}<li><Well asset={ item.asset } alt={ item.alt } ratio="aspect-portrait" edge={ true } width={ 640 } sizes="(min-width: 48rem) 25vw, 50vw" /></li>{/for}
+    </ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Gallery collage",
+  "description": "A gallery's photos laid out as overlapping prints of mixed sizes.",
+  "kind": "Gallery",
+  "icon": "images",
+  "settings": [
+    { "type": "gallery", "id": "gallery", "label": "Gallery", "info": "Reads each item's asset, alt and caption. Collage arranges five or seven." },
+    { "type": "select", "id": "layout", "label": "Layout", "default": "collage", "options": [
+      { "value": "collage", "label": "Collage" },
+      { "value": "fan", "label": "Fan" },
+      { "value": "stagger", "label": "Stagger" },
+      { "value": "mosaic", "label": "Mosaic" }
+    ], "info": "Collage: five prints in a stepped row, or seven in two interlocking rows. Fan: five prints in an arc. Stagger: two tall photos with their captions. Mosaic: one large photo and four small." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "" },
+    { "type": "url", "id": "link_href", "label": "Link", "default": "/gallery" },
+    { "type": "checkbox", "id": "parallax", "label": "Parallax", "default": true, "info": "The prints drift a little on scroll. Off for visitors who ask for reduced motion." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "brick" }
+  ],
+  "presets": [
+    { "name": "Collage", "settings": { "layout": "collage", "gallery": "collage", "color_scheme": "brick" } },
+    { "name": "Stagger", "settings": { "layout": "stagger", "gallery": "collage", "color_scheme": "paper" } }
+  ]
+}
+</schema>

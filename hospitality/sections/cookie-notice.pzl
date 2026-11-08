@@ -22,7 +22,7 @@
     { "type": "text", "id": "decline_label", "label": "Decline label", "default": "No thanks" },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "Privacy" },
     { "type": "url", "id": "link_href", "label": "Link", "default": "/policies" },
-    { "type": "text", "id": "key", "label": "Key", "default": "sojourn-notice", "info": "Change the key to show the notice again to everyone." },
+    { "type": "text", "id": "key", "label": "Key", "default": "hospitality-notice", "info": "Change the key to show the notice again to everyone." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
   ],
   "presets": [

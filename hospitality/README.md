@@ -1,4 +1,4 @@
-# Sojourn
+# Hospitality
 
 A theme for a small place to stay: a handful of cabins, a small inn, a farmhouse with rooms, a
 hostel. The stays are the centre of it: each a card with its photo, its price on a paper chip,
@@ -52,6 +52,6 @@ frame takes a page address, not a pasted script.
 ## Develop
 
 ```
-sites check ./sojourn
-sites dev ./sojourn
+sites check ./hospitality
+sites dev ./hospitality
 ```

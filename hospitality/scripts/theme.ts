@@ -1,4 +1,4 @@
-// The whole of Sojourn's browser JavaScript. The carousels, the lightbox, the
+// The whole of Hospitality's browser JavaScript. The carousels, the lightbox, the
 // drawer, the collapsible rows, the sticky header, the ticker and the scroll
 // reveals are Magic Spells web components, vendored under ./vendor (see
 // vendor/VERSIONS.md); importing them registers the elements. This file adds

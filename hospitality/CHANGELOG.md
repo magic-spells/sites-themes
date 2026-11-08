@@ -1,4 +1,4 @@
-# Sojourn
+# Hospitality
 
 ## 0.1.0
 

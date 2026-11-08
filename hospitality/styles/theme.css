@@ -62,7 +62,7 @@
 	--color-scheme-secondary-button-hover-background: var(--sites-scheme-secondary-button-hover-background);
 	--color-scheme-secondary-button-hover-foreground: var(--sites-scheme-secondary-button-hover-foreground);
 	--color-accent: var(--sites-scheme-links);
-	--color-scheme-error: var(--sojourn-error);
+	--color-scheme-error: var(--hospitality-error);
 	--color-backdrop: color-mix(in srgb, var(--sites-scheme-foreground) 50%, transparent);
 	/* The flat dot grid (Brand texture: dots): meta at 12%. */
 	--background-image-dots: radial-gradient(color-mix(in srgb, var(--sites-scheme-icons) 12%, transparent) 0.125rem, transparent 0.125rem);
@@ -72,18 +72,18 @@
    clears 4.5:1 on its background. */
 :root,
 [class*="sites-scheme-"] {
-	--sojourn-error: #B3261E;
+	--hospitality-error: #B3261E;
 }
 .sites-scheme-night,
 .sites-scheme-forest {
-	--sojourn-error: #F2A08F;
+	--hospitality-error: #F2A08F;
 }
 .sites-scheme-lake,
 .sites-scheme-brick {
-	--sojourn-error: #F8C9BE;
+	--hospitality-error: #F8C9BE;
 }
 .sites-scheme-sunset {
-	--sojourn-error: #3A0E07;
+	--hospitality-error: #3A0E07;
 }
 
 @theme {
@@ -103,26 +103,26 @@
 	--radius-input: var(--sites-input-radius);
 
 	/* The type roles, each sized per breakpoint in :root below. */
-	--text-h1: var(--sojourn-h1);
+	--text-h1: var(--hospitality-h1);
 	--text-h1--line-height: 1.02;
 	--text-h1--letter-spacing: -0.02em;
 	--text-h1--font-weight: 700;
-	--text-h2: var(--sojourn-h2);
+	--text-h2: var(--hospitality-h2);
 	--text-h2--line-height: 1.1;
 	--text-h2--letter-spacing: -0.02em;
-	--text-h3: var(--sojourn-h3);
+	--text-h3: var(--hospitality-h3);
 	--text-h3--line-height: 1.2;
-	--text-h4: var(--sojourn-h4);
+	--text-h4: var(--hospitality-h4);
 	--text-h4--line-height: 1.25;
-	--text-body-lg: var(--sojourn-body-lg);
+	--text-body-lg: var(--hospitality-body-lg);
 	--text-body-lg--line-height: 1.5;
-	--text-body: var(--sojourn-body);
+	--text-body: var(--hospitality-body);
 	--text-body--line-height: 1.6;
-	--text-body-sm: var(--sojourn-body-sm);
+	--text-body-sm: var(--hospitality-body-sm);
 	--text-body-sm--line-height: 1.5;
 	--text-xs: var(--sites-type-scale-xs);
 	--text-xs--line-height: 1.4;
-	--text-button: var(--sojourn-body-sm);
+	--text-button: var(--hospitality-body-sm);
 	--text-button--line-height: 1;
 
 	--spacing-space-2xs: 0.25rem;
@@ -130,11 +130,11 @@
 	--spacing-space-sm: var(--sites-spacing-sm);
 	--spacing-space-md: var(--sites-spacing-md);
 	--spacing-space-lg: var(--sites-spacing-lg);
-	--spacing-space-xl: var(--sojourn-xl);
-	--spacing-space-2xl: var(--sojourn-2xl);
-	--spacing-space-3xl: var(--sojourn-3xl);
-	--spacing-section: var(--sojourn-section);
-	--spacing-gutter: var(--sojourn-gutter);
+	--spacing-space-xl: var(--hospitality-xl);
+	--spacing-space-2xl: var(--hospitality-2xl);
+	--spacing-space-3xl: var(--hospitality-3xl);
+	--spacing-section: var(--hospitality-section);
+	--spacing-gutter: var(--hospitality-gutter);
 	--spacing-bleed: calc(50vw - 50%);
 	--spacing-button-x: var(--sites-button-padding-x);
 	--spacing-button-y: var(--sites-button-padding-y);
@@ -175,49 +175,49 @@
    design token and scales it by the plan's ratio for that width, so a
    workspace that changes the scale moves every breakpoint with it. */
 :root {
-	--sojourn-h1: calc(var(--sites-type-scale-4xl) * 36 / 64);
-	--sojourn-h2: calc(var(--sites-type-scale-3xl) * 28 / 40);
-	--sojourn-h3: calc(var(--sites-type-scale-2xl) * 22 / 28);
-	--sojourn-h4: calc(var(--sites-type-scale-xl) * 19 / 22);
-	--sojourn-body-lg: calc(var(--sites-type-scale-lg) * 18 / 20);
-	--sojourn-body: calc(var(--sites-type-scale-base) * 16 / 17);
-	--sojourn-body-sm: calc(var(--sites-type-scale-sm) * 14 / 15);
-	--sojourn-section: calc(var(--sites-spacing-xl) * 32 / 48);
-	--sojourn-gutter: calc(var(--sites-spacing-md) * 16 / 24);
-	--sojourn-xl: calc(var(--sites-spacing-xl) * 32 / 48);
-	--sojourn-2xl: calc(var(--sites-spacing-2xl) * 48 / 72);
-	--sojourn-3xl: calc(var(--sites-spacing-2xl) * 64 / 72);
+	--hospitality-h1: calc(var(--sites-type-scale-4xl) * 36 / 64);
+	--hospitality-h2: calc(var(--sites-type-scale-3xl) * 28 / 40);
+	--hospitality-h3: calc(var(--sites-type-scale-2xl) * 22 / 28);
+	--hospitality-h4: calc(var(--sites-type-scale-xl) * 19 / 22);
+	--hospitality-body-lg: calc(var(--sites-type-scale-lg) * 18 / 20);
+	--hospitality-body: calc(var(--sites-type-scale-base) * 16 / 17);
+	--hospitality-body-sm: calc(var(--sites-type-scale-sm) * 14 / 15);
+	--hospitality-section: calc(var(--sites-spacing-xl) * 32 / 48);
+	--hospitality-gutter: calc(var(--sites-spacing-md) * 16 / 24);
+	--hospitality-xl: calc(var(--sites-spacing-xl) * 32 / 48);
+	--hospitality-2xl: calc(var(--sites-spacing-2xl) * 48 / 72);
+	--hospitality-3xl: calc(var(--sites-spacing-2xl) * 64 / 72);
 }
 
 @media (min-width: 48rem) {
 	:root {
-		--sojourn-h1: calc(var(--sites-type-scale-4xl) * 48 / 64);
-		--sojourn-h2: calc(var(--sites-type-scale-3xl) * 34 / 40);
-		--sojourn-h3: calc(var(--sites-type-scale-2xl) * 24 / 28);
-		--sojourn-h4: calc(var(--sites-type-scale-xl) * 20 / 22);
-		--sojourn-body-lg: calc(var(--sites-type-scale-lg) * 19 / 20);
-		--sojourn-body: var(--sites-type-scale-base);
-		--sojourn-section: var(--sites-spacing-xl);
-		--sojourn-gutter: var(--sites-spacing-md);
-		--sojourn-xl: calc(var(--sites-spacing-xl) * 40 / 48);
-		--sojourn-2xl: calc(var(--sites-spacing-2xl) * 60 / 72);
-		--sojourn-3xl: calc(var(--sites-spacing-2xl) * 80 / 72);
+		--hospitality-h1: calc(var(--sites-type-scale-4xl) * 48 / 64);
+		--hospitality-h2: calc(var(--sites-type-scale-3xl) * 34 / 40);
+		--hospitality-h3: calc(var(--sites-type-scale-2xl) * 24 / 28);
+		--hospitality-h4: calc(var(--sites-type-scale-xl) * 20 / 22);
+		--hospitality-body-lg: calc(var(--sites-type-scale-lg) * 19 / 20);
+		--hospitality-body: var(--sites-type-scale-base);
+		--hospitality-section: var(--sites-spacing-xl);
+		--hospitality-gutter: var(--sites-spacing-md);
+		--hospitality-xl: calc(var(--sites-spacing-xl) * 40 / 48);
+		--hospitality-2xl: calc(var(--sites-spacing-2xl) * 60 / 72);
+		--hospitality-3xl: calc(var(--sites-spacing-2xl) * 80 / 72);
 	}
 }
 
 @media (min-width: 64rem) {
 	:root {
-		--sojourn-h1: var(--sites-type-scale-4xl);
-		--sojourn-h2: var(--sites-type-scale-3xl);
-		--sojourn-h3: var(--sites-type-scale-2xl);
-		--sojourn-h4: var(--sites-type-scale-xl);
-		--sojourn-body-lg: var(--sites-type-scale-lg);
-		--sojourn-body-sm: var(--sites-type-scale-sm);
-		--sojourn-section: calc(var(--sites-spacing-xl) * 64 / 48);
-		--sojourn-gutter: calc(var(--sites-spacing-md) * 40 / 24);
-		--sojourn-xl: var(--sites-spacing-xl);
-		--sojourn-2xl: var(--sites-spacing-2xl);
-		--sojourn-3xl: calc(var(--sites-spacing-2xl) * 96 / 72);
+		--hospitality-h1: var(--sites-type-scale-4xl);
+		--hospitality-h2: var(--sites-type-scale-3xl);
+		--hospitality-h3: var(--sites-type-scale-2xl);
+		--hospitality-h4: var(--sites-type-scale-xl);
+		--hospitality-body-lg: var(--sites-type-scale-lg);
+		--hospitality-body-sm: var(--sites-type-scale-sm);
+		--hospitality-section: calc(var(--sites-spacing-xl) * 64 / 48);
+		--hospitality-gutter: calc(var(--sites-spacing-md) * 40 / 24);
+		--hospitality-xl: var(--sites-spacing-xl);
+		--hospitality-2xl: var(--sites-spacing-2xl);
+		--hospitality-3xl: calc(var(--sites-spacing-2xl) * 96 / 72);
 	}
 }
 
@@ -310,7 +310,7 @@ body:has([data-header-style="over-hero"]) main > [data-section]:first-child:has(
 /* Rich text from the editor carries no classes, so its rhythm is set here. */
 @layer components {
 	.sites-prose {
-		font-size: var(--sojourn-body);
+		font-size: var(--hospitality-body);
 		line-height: 1.6;
 	}
 
@@ -326,11 +326,11 @@ body:has([data-header-style="over-hero"]) main > [data-section]:first-child:has(
 	}
 
 	.sites-prose h2 {
-		font-size: var(--sojourn-h3);
+		font-size: var(--hospitality-h3);
 	}
 
 	.sites-prose :is(h3, h4) {
-		font-size: var(--sojourn-h4);
+		font-size: var(--hospitality-h4);
 	}
 
 	.sites-prose a {
@@ -415,7 +415,7 @@ tarot-carousel[data-track]:not(:defined) tarot-slide {
 }
 .tarot-lightbox__counter {
 	font-family: var(--font-body);
-	font-size: var(--sojourn-body-sm);
+	font-size: var(--hospitality-body-sm);
 	font-variant-numeric: tabular-nums;
 	color: var(--color-chip);
 }

@@ -1,17 +1,37 @@
 <!-- TODO sync with Figma -->
-<!-- STUB (code B builds it): the head, the ?category= row when filters is on, then the works as tiles. -->
+<!-- The works: featured, all or one category by order, narrowed to ?category= when the filter row is on, then capped at limit (the work a page shows is left out). Grid: a Tile each, two or three across from 48rem, one or two on a phone. List: rows on hairlines, an optional square thumbnail, the title and summary, the year at the right (under the title below 48rem). -->
 {#let
-  current = request.query.category
+  current = settings.filters ? request.query.category : null
   all = content.works.entries | sort('fields.order')
-  works = (settings.filters && current ? all | where('fields.category.handle', current) : (settings.source == 'featured' ? all | where('fields.featured') : all)) | reject('id', page.entry.id) | slice(0, settings.limit)
+  pool = settings.source == 'featured' ? all | where('fields.featured') : settings.source == 'category' ? all | where('fields.category.handle', settings.category.handle) : all
+  works = (current ? pool | where('fields.category.handle', current) : pool) | reject('id', page.entry.id) | slice(0, settings.limit)
+  two = settings.columns == '2'
+  phone_two = settings.phone_columns == '2'
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground" id="work">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } />
     {#if settings.filters}<Filters categories={ content.categories.entries | sort('fields.order') } current={ current } href={ settings.base_path } />{/if}
-    <ul class="grid gap-grid md:grid-cols-3">
-      {#for entry in works}<li><Tile entry={ entry } ratio="aspect-square" caption={ settings.caption } sizes="(min-width: 48rem) 33vw, 100vw" base_path={ settings.base_path } /></li>{/for}
-    </ul>
+    {#if settings.layout == 'list'}
+      <ul class="border-t border-scheme-border">
+        {#for entry in works}
+          <li><a class="group flex items-center gap-space-md border-b border-scheme-border py-space-md { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" href="{ settings.base_path }/{ entry.handle }">
+            {#if settings.thumbnails && entry.fields.cover}<span class="block size-thumb shrink-0 overflow-hidden bg-scheme-surface-2"><img class="size-full object-cover" src="{ image_url(entry.fields.cover, 320) }" alt="" loading="lazy" width={ entry.fields.cover.width } height={ entry.fields.cover.height } /></span>{/if}
+            <span class="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-space-lg gap-y-space-2xs">
+              <span class="me-auto grid gap-space-2xs max-md:w-full">
+                <span class="text-h3 underline-offset-4 group-hover:underline">{ entry.title }</span>
+                {#if entry.fields.summary}<span class="text-body-sm text-pretty text-scheme-muted">{ entry.fields.summary }</span>{/if}
+              </span>
+              <span class="tabular-nums text-body-sm text-scheme-meta">{ entry.fields.year }</span>
+            </span>
+          </a></li>
+        {/for}
+      </ul>
+    {:else}
+      <ul class="grid gap-x-grid gap-y-space-xl { phone_two ? 'grid-cols-2' : '' } { two ? 'md:grid-cols-2' : 'md:grid-cols-3' }">
+        {#for entry in works}<li><Tile entry={ entry } ratio={ settings.ratio } caption={ settings.caption } summary={ settings.caption_line == 'summary' } sizes="(min-width: 48rem) { two ? '50vw' : '33vw' }, { phone_two ? '50vw' : '100vw' }" base_path={ settings.base_path } /></li>{/for}
+      </ul>
+    {/if}
   </div>
 </section>
 
@@ -45,14 +65,14 @@
       { "value": "1", "label": "One" },
       { "value": "2", "label": "Two" }
     ] },
-    { "type": "select", "id": "ratio", "label": "Ratio", "default": "1:1", "options": [
-      { "value": "1:1", "label": "1:1" },
-      { "value": "4:5", "label": "4:5" },
-      { "value": "3:2", "label": "3:2" }
+    { "type": "select", "id": "ratio", "label": "Ratio", "default": "aspect-square", "options": [
+      { "value": "aspect-square", "label": "1:1" },
+      { "value": "aspect-portrait", "label": "4:5" },
+      { "value": "aspect-photo", "label": "3:2" }
     ] },
     { "type": "checkbox", "id": "caption", "label": "Captions", "default": true, "info": "The title and a line under each cover." },
-    { "type": "select", "id": "caption_line", "label": "Caption line", "default": "year", "options": [
-      { "value": "year", "label": "Year and category" },
+    { "type": "select", "id": "caption_line", "label": "Caption line", "default": "meta", "options": [
+      { "value": "meta", "label": "Year and category" },
       { "value": "summary", "label": "Summary" }
     ] },
     { "type": "checkbox", "id": "thumbnails", "label": "List thumbnails", "default": false, "info": "In the list layout, a small square cover beside each row." },

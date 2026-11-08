@@ -1,5 +1,6 @@
 {
   "all": "All",
+  "all_work": "All work",
   "announcement": "Announcement",
   "categories": "Categories",
   "choose": "Choose one",
@@ -28,6 +29,7 @@
   "main_navigation": "Main navigation",
   "maintenance_title": "Back soon.",
   "menu": "Menu",
+  "more_work": "More work",
   "next": "Next",
   "password_label": "Password",
   "password_submit": "Enter",

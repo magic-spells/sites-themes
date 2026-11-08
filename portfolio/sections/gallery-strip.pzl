@@ -1,19 +1,19 @@
 <!-- TODO sync with Figma -->
-<!-- STUB (code B builds it): the head, then a tarot row of equal photos with their captions under them, the progress hairline and the arrows under the track. -->
+<!-- A gallery's photos as a carousel of equal slides at one shape, 1.25, 2.25 then 3.25 across, captions under them; the track runs off the right edge below 48rem. Under it the progress hairline, and the arrows at its right from 48rem. -->
 {#let
   items = settings.gallery ? settings.gallery.items | slice(0, 12) : []
   id = 'strip-' + section.id
+  nav = { showButtons: true, showPagination: false }
+  options = { slidesPerView: 1.25, gap: '1rem', progressBar: { selector: '#bar-' + id }, navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { slidesPerView: 2.25, gap: '1.5rem', navigation: nav }, '1024': { slidesPerView: 3.25, gap: '2rem', navigation: nav } } }
 }
 {#if items.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <tarot-carousel class="mx-auto block max-w-column" id={ id } data-track>
-    <script type="application/json" data-tarot-options>{ { progressBar: { selector: '#bar-' + id }, slidesPerView: 1.2, gap: '1rem', navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { slidesPerView: 2.5, gap: '1.5rem', navigation: { showButtons: true, showPagination: false } } } } | json }</script>
+    <script type="application/json" data-tarot-options>{ options | json }</script>
     <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } />
-    <tarot-viewport>
-      <tarot-track>
-        {#for item in items}<tarot-slide><Picture asset={ item.asset } alt={ item.alt } ratio="aspect-portrait" caption={ item.caption } /></tarot-slide>{/for}
-      </tarot-track>
-    </tarot-viewport>
+    <tarot-viewport class="w-auto max-md:-me-gutter"><tarot-track>
+      {#for item in items}<tarot-slide><Picture asset={ item.asset } alt={ item.alt } ratio={ settings.slide_ratio } caption={ item.caption } sizes="(min-width: 64rem) 25rem, (min-width: 48rem) 40vw, 80vw" /></tarot-slide>{/for}
+    </tarot-track></tarot-viewport>
     <Arrows bar="bar-{ id }" />
   </tarot-carousel>
 </section>
@@ -31,10 +31,10 @@
     { "type": "text", "id": "link_label", "label": "Link label", "default": "" },
     { "type": "url", "id": "link_href", "label": "Link", "default": "" },
     { "type": "gallery", "id": "gallery", "label": "Gallery" },
-    { "type": "select", "id": "slide_ratio", "label": "Slide ratio", "default": "4:5", "options": [
-      { "value": "1:1", "label": "1:1" },
-      { "value": "4:5", "label": "4:5" },
-      { "value": "3:2", "label": "3:2" }
+    { "type": "select", "id": "slide_ratio", "label": "Slide ratio", "default": "aspect-portrait", "options": [
+      { "value": "aspect-square", "label": "1:1" },
+      { "value": "aspect-portrait", "label": "4:5" },
+      { "value": "aspect-photo", "label": "3:2" }
     ] },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
   ],

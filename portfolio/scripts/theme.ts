@@ -21,6 +21,10 @@ import './vendor/split-text.esm.js';
 
 const DISMISSED_PREFIX = 'sites:dismissed:';
 
+interface Carousel extends HTMLElement {
+	on(event: string, listener: () => void): void;
+}
+
 /** localStorage is unavailable in some privacy modes; both sides of the
  * remembering are guarded. */
 function dismissed(key: string): boolean {
@@ -87,3 +91,20 @@ for (const bar of document.querySelectorAll<HTMLElement>('[data-dismiss-key]')) 
 // Scroll reveals on tiles, cards and CV rows only. Sections write
 // `reveal reveal-fade-up` only while the Brand setting is on.
 if (document.querySelector('.reveal')) Reveal.init({ offset: 0, duration: 400, once: true });
+
+// A work's or a gallery's pictures are links to the full image that open the
+// lightbox of the section's hidden carousel (components/Lightbox.pzl) at their
+// index instead: the plugin opens from a slide, so the link clicks that
+// slide. Focus goes back to the picture when the lightbox closes.
+const openerFor = new Map<Element, HTMLElement>();
+document.addEventListener('click', (event) => {
+	const link = closest(event, '[data-lightbox-open]');
+	if (!link) return;
+	const carousel = document.getElementById(link.getAttribute('data-lightbox-open') ?? '') as Carousel | null;
+	const slide = carousel?.querySelectorAll('tarot-slide')[Number(link.getAttribute('data-index'))];
+	if (!carousel || !slide) return;
+	event.preventDefault();
+	if (!openerFor.has(carousel)) carousel.on('lightbox:closed', () => openerFor.get(carousel)?.focus());
+	openerFor.set(carousel, link);
+	slide.querySelector('img')?.click();
+});

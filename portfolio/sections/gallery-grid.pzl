@@ -1,14 +1,30 @@
 <!-- TODO sync with Figma -->
-<!-- STUB (code B builds it): the head, then the gallery's photos as an equal grid with their captions under them. -->
-{#let items = settings.gallery ? settings.gallery.items : []}
+<!-- A gallery's photos as an equal grid at one shape, captions under them; every photo opens the lightbox. Two across on a phone, up to the columns setting from 48rem and 64rem. Past twelve the rest wait behind Show all. -->
+{#let
+  items = settings.gallery.items
+  id = 'lightbox-' + section.id
+  cols = settings.columns == '4' ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4' : settings.columns == '2' ? 'grid-cols-2' : 'grid-cols-2 lg:grid-cols-3'
+  sizes = settings.columns == '2' ? '50vw' : '(min-width: 64rem) 33vw, 50vw'
+}
 {#if items.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } />
-    <ul class="grid grid-cols-2 gap-grid lg:grid-cols-3">
-      {#for item in items | slice(0, 12)}<li><Picture asset={ item.asset } alt={ item.alt } ratio="aspect-square" caption={ settings.caption ? item.caption : '' } /></li>{/for}
+    <ul class="grid gap-x-grid gap-y-space-lg { cols }">
+      {#for item in items | slice(0, 12), i}<li><a class="block cursor-zoom-in" href="{ image_url(item.asset, 2560) }" data-lightbox-open={ id } data-index={ i }><Picture asset={ item.asset } alt={ item.alt } ratio={ settings.ratio } caption={ settings.captions ? item.caption : '' } sizes={ sizes } /></a></li>{/for}
     </ul>
+    {#if items.length > 12}
+      <collapsible-component class="flex flex-col-reverse items-start">
+        <Button type="button" cls="mt-space-xl aria-expanded:hidden">{ t('show_all') }</Button>
+        <collapsible-content class="w-full">
+          <ul class="grid gap-x-grid gap-y-space-lg pt-space-lg { cols }">
+            {#for item in items | slice(12), i}<li><a class="block cursor-zoom-in" href="{ image_url(item.asset, 2560) }" data-lightbox-open={ id } data-index={ i + 12 }><Picture asset={ item.asset } alt={ item.alt } ratio={ settings.ratio } caption={ settings.captions ? item.caption : '' } sizes={ sizes } /></a></li>{/for}
+          </ul>
+        </collapsible-content>
+      </collapsible-component>
+    {/if}
   </div>
+  <Lightbox items={ items } id={ id }><script type="application/json" data-tarot-options>{ { lightbox: true, draggable: false, navigation: { showButtons: false, showPagination: false } } | json }</script></Lightbox>
 </section>
 {/if}
 
@@ -27,12 +43,12 @@
       { "value": "3", "label": "Three" },
       { "value": "4", "label": "Four" }
     ] },
-    { "type": "select", "id": "ratio", "label": "Ratio", "default": "1:1", "options": [
-      { "value": "1:1", "label": "1:1" },
-      { "value": "4:5", "label": "4:5" },
-      { "value": "3:2", "label": "3:2" }
+    { "type": "select", "id": "ratio", "label": "Ratio", "default": "aspect-square", "options": [
+      { "value": "aspect-square", "label": "1:1" },
+      { "value": "aspect-portrait", "label": "4:5" },
+      { "value": "aspect-photo", "label": "3:2" }
     ] },
-    { "type": "checkbox", "id": "caption", "label": "Captions", "default": true },
+    { "type": "checkbox", "id": "captions", "label": "Captions", "default": true, "info": "Under each photo, and in the lightbox either way." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
   ],
   "presets": [

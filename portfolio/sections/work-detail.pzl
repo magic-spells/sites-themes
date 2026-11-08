@@ -1,8 +1,15 @@
 <!-- TODO sync with Figma -->
-<!-- STUB (code B builds it): the title, the summary, the facts row, the cover, the body and the gallery as a stack. -->
+<!-- A work's page: the title and the summary once, the facts row, the lead (the cover at its ratio, or the first two gallery pictures side by side at 4:5), the body in the reading column, the rest of the gallery, the Visit button when the work has a link, and Previous, All work and Next by order. The pair and the stack and grid pictures open the lightbox; captions are always under the picture. -->
 {#let
   work = page.entry
   f = work.fields
+  items = f.gallery.items
+  pair = settings.lead == 'pair' && items.length > 1
+  gallery = items | slice(pair ? 2 : 0)
+  layout = settings.gallery_layout
+  id = 'gallery-' + section.id
+  box = 'lightbox-' + section.id
+  all = content.works.entries | sort('fields.order')
 }
 <article class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column gap-space-xl">
@@ -11,9 +18,47 @@
       {#if f.summary}<p class="text-body-lg text-pretty text-scheme-muted">{ f.summary }</p>{/if}
     </header>
     <Facts items={ [{ label: t('fact.year'), value: f.year }, { label: t('fact.category'), value: f.category.title }, { label: t('fact.role'), value: f.role }, { label: t('fact.client'), value: f.client }, { label: t('fact.details'), value: f.details }] } />
-    <Picture asset={ f.cover } alt={ f.cover_alt } ratio="aspect-wide" width={ 2000 } sizes="(min-width: 82.5rem) 82.5rem, 100vw" eager={ true } />
+    {#if pair}
+      <div class="grid grid-cols-2 gap-grid">
+        {#for item in items | slice(0, 2), i}<a class="cursor-zoom-in" href="{ image_url(item.asset, 2560) }" data-lightbox-open={ box } data-index={ i }><Picture asset={ item.asset } alt={ item.alt } ratio="aspect-portrait" sizes="50vw" eager={ true } /></a>{/for}
+      </div>
+    {:else}
+      <Picture asset={ f.cover } alt={ f.cover_alt } ratio={ settings.cover_ratio } width={ 2000 } sizes="(min-width: 82.5rem) 82.5rem, 100vw" eager={ true } />
+    {/if}
     {#if f.body}<div class="sites-prose max-w-reading text-body-lg">{ f.body }</div>{/if}
-    <ul class="grid gap-space-xl">{#for item in f.gallery.items}<li><Picture asset={ item.asset } alt={ item.alt } ratio="aspect-photo" caption={ item.caption } /></li>{/for}</ul>
+    {#if layout == 'carousel' && gallery.length}
+      <tarot-carousel class="block" id={ id } data-track>
+        <script type="application/json" data-tarot-options>{ { slidesPerView: 1.15, gap: '1rem', progressBar: { selector: '#bar-' + id }, navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { slidesPerView: 2, gap: '1.5rem', navigation: { showButtons: true, showPagination: false } } } } | json }</script>
+        <tarot-viewport class="w-auto max-md:-me-gutter"><tarot-track>
+          {#for item in gallery}<tarot-slide><Picture asset={ item.asset } alt={ item.alt } ratio={ settings.slide_ratio } caption={ item.caption } sizes="(min-width: 48rem) 50vw, 85vw" /></tarot-slide>{/for}
+        </tarot-track></tarot-viewport>
+        <Arrows bar="bar-{ id }" />
+      </tarot-carousel>
+    {:else if gallery.length}
+      <ul class="{ layout == 'grid' ? 'grid grid-cols-2 gap-x-grid gap-y-space-xl' : 'flex flex-wrap items-start gap-x-grid gap-y-space-xl' }">
+        {#for item in gallery, i}
+          {#let portrait = item.asset.height > item.asset.width}
+          <li class="{ layout == 'grid' ? '' : portrait ? 'grow basis-2/5' : 'basis-full' }"><a class="block cursor-zoom-in" href="{ image_url(item.asset, 2560) }" data-lightbox-open={ box } data-index={ i + (pair ? 2 : 0) }><Picture asset={ item.asset } alt={ item.alt } ratio="{ layout == 'grid' ? 'aspect-square' : 'aspect-auto' }" caption={ item.caption } sizes="{ layout == 'grid' || portrait ? '50vw' : '(min-width: 82.5rem) 82.5rem, 100vw' }" /></a></li>
+        {/for}
+      </ul>
+    {/if}
+    {#if items.length}<Lightbox items={ items } id={ box }><script type="application/json" data-tarot-options>{ { lightbox: true, draggable: false, navigation: { showButtons: false, showPagination: false } } | json }</script></Lightbox>{/if}
+    {#if f.link}<Button href={ f.link } external={ true } cls="justify-self-start">{ settings.link_label }<Glyph name="arrow-up-right" /></Button>{/if}
+    {#if settings.show_foot}
+      {#for entry in all, i}
+        {#if entry.id == work.id}
+          {#let
+            prev = all[i - 1]
+            next = all[i + 1]
+          }
+          <nav class="grid grid-cols-3 items-baseline gap-space-md border-t border-scheme-border pt-space-md text-body font-medium" aria-label="{ t('more_work') }">
+            <span>{#if prev}<a class="underline-offset-4 hover:underline" href="{ settings.base_path }/{ prev.handle }" rel="prev">{ t('previous') }</a>{/if}</span>
+            <a class="justify-self-center underline-offset-4 hover:underline" href="{ settings.base_path }">{ t('all_work') }</a>
+            <span class="justify-self-end">{#if next}<a class="underline-offset-4 hover:underline" href="{ settings.base_path }/{ next.handle }" rel="next">{ t('next') }</a>{/if}</span>
+          </nav>
+        {/if}
+      {/for}
+    {/if}
   </div>
 </article>
 
@@ -29,15 +74,20 @@
       { "value": "cover", "label": "The cover" },
       { "value": "pair", "label": "The first two gallery pictures side by side" }
     ] },
+    { "type": "select", "id": "cover_ratio", "label": "Cover shape", "default": "aspect-wide", "options": [
+      { "value": "aspect-auto", "label": "Its own" },
+      { "value": "aspect-wide", "label": "16:9" },
+      { "value": "aspect-portrait", "label": "4:5" }
+    ], "info": "For the cover lead." },
     { "type": "select", "id": "gallery_layout", "label": "Gallery", "default": "stack", "options": [
       { "value": "stack", "label": "Stack" },
       { "value": "grid", "label": "Grid" },
       { "value": "carousel", "label": "Carousel" }
     ], "info": "Stack: every picture full width with its caption under it, portraits in pairs. Grid: two across, square. Carousel: equal slides with arrows." },
-    { "type": "select", "id": "slide_ratio", "label": "Slide ratio", "default": "3:2", "options": [
-      { "value": "1:1", "label": "1:1" },
-      { "value": "4:5", "label": "4:5" },
-      { "value": "3:2", "label": "3:2" }
+    { "type": "select", "id": "slide_ratio", "label": "Slide ratio", "default": "aspect-photo", "options": [
+      { "value": "aspect-square", "label": "1:1" },
+      { "value": "aspect-portrait", "label": "4:5" },
+      { "value": "aspect-photo", "label": "3:2" }
     ], "info": "For the carousel." },
     { "type": "text", "id": "link_label", "label": "Link button label", "default": "Visit", "info": "Shown when the work has a link." },
     { "type": "checkbox", "id": "show_foot", "label": "Previous and next", "default": true, "info": "Previous, All work and Next under the gallery, by order." },

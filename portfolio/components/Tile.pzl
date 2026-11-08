@@ -1,13 +1,13 @@
 <!-- component: Tile -->
-<!-- props: entry ratio caption sizes base_path -->
-<!-- A work tile, one link: the cover at ratio, then the title in body 500 and "2025 · Identity" in meta under it; caption off leaves the cover alone. The title underlines on hover; nothing sits on the cover. -->
+<!-- props: entry ratio caption summary sizes base_path -->
+<!-- A work tile, one link: the cover at ratio, then the title in body 500 and "2025 · Identity" in meta under it (the summary instead with summary); caption off leaves the cover alone. The title underlines on hover; nothing sits on the cover. -->
 {#let f = entry.fields}
-<a class="group grid gap-space-xs { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" href="{ base_path ?? '/work' }/{ entry.handle }">
+<a class="group grid content-start gap-space-xs { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" href="{ base_path ?? '/work' }/{ entry.handle }">
   <Picture asset={ f.cover } alt={ f.cover_alt } ratio={ ratio ?? 'aspect-square' } sizes={ sizes } />
   {#if caption}
     <span class="grid">
       <span class="text-body font-medium underline-offset-4 group-hover:underline">{ entry.title }</span>
-      <span class="text-body-sm text-scheme-meta">{ [f.year, f.category.title] | compact | join(' · ') }</span>
+      <span class="text-body-sm text-scheme-meta">{ summary ? f.summary : [f.year, f.category.title] | compact | join(' · ') }</span>
     </span>
   {/if}
 </a>

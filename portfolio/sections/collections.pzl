@@ -1,14 +1,18 @@
 <!-- TODO sync with Figma -->
-<!-- STUB (code B builds it): the head, then one card per category in order, each its first works' covers and its name. -->
+<!-- The collections: one card per category in order, each its first works' covers in a tight row with its name and line below them, linking to the work index filtered to it. Two cards across from 64rem, one below. -->
 {#let
-  cats = content.categories.entries | sort('fields.order') | slice(0, settings.limit)
+  cats = content.categories.entries | sort('fields.order')
+  handles = (settings.source == 'handles' ? settings.handles | replace(' ', '') | split(',') : cats | map('handle')) | slice(0, settings.limit)
   works = content.works.entries | sort('fields.order')
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } />
-    <ul class="grid gap-grid lg:grid-cols-2">
-      {#for category in cats}<li><CollectionCard category={ category } works={ works | where('fields.category.handle', category.handle) } covers={ settings.covers == '4' ? 4 : 3 } arrangement={ settings.arrangement } base_path={ settings.base_path } /></li>{/for}
+    <ul class="grid gap-x-grid gap-y-space-xl lg:grid-cols-2">
+      {#for handle in handles}
+        {#let category = cats | find('handle', handle)}
+        {#if category}<li><CollectionCard category={ category } works={ works | where('fields.category.handle', handle) } covers={ settings.covers == '4' ? 4 : 3 } arrangement={ settings.arrangement } base_path={ settings.base_path } /></li>{/if}
+      {/for}
     </ul>
   </div>
 </section>
@@ -24,6 +28,11 @@
     { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "All work" },
     { "type": "url", "id": "link_href", "label": "Link", "default": "/work" },
+    { "type": "select", "id": "source", "label": "Collections", "default": "all", "options": [
+      { "value": "all", "label": "All, in order" },
+      { "value": "handles", "label": "Chosen" }
+    ] },
+    { "type": "text", "id": "handles", "label": "Chosen collections", "default": "", "info": "For Chosen: category handles, comma separated, in the order to show them (identity, books)." },
     { "type": "range", "id": "limit", "label": "Most to show", "min": 2, "max": 8, "step": 1, "default": 4 },
     { "type": "select", "id": "covers", "label": "Covers", "default": "3", "options": [
       { "value": "3", "label": "Three" },

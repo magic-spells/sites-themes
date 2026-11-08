@@ -113,7 +113,7 @@
     { "type": "range", "id": "amenities_shown", "label": "Amenities before Show all", "min": 4, "max": 12, "step": 1, "default": 8 },
     { "type": "checkbox", "id": "show_reviews", "label": "Reviews of this stay", "default": true },
     { "type": "text", "id": "reviews_link_label", "label": "Reviews link label", "default": "All reviews" },
-    { "type": "url", "id": "reviews_link_href", "label": "Reviews link", "default": "/about" },
+    { "type": "url", "id": "reviews_link_href", "label": "Reviews link", "default": "/about#reviews" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
   ],
   "presets": [

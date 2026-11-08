@@ -6,7 +6,7 @@
   options = { slidesPerView: 1, gap: '1.5rem', loop: true, navigation: { showButtons: true, showPagination: true } }
 }
 {#if reviews.length}
-<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" id="reviews">
   <div class="mx-auto max-w-column">
     {#if settings.layout == 'carousel'}
       <tarot-carousel class="block" id={ id }>

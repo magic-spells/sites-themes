@@ -5,9 +5,9 @@
 <a class="group grid content-start gap-space-xs { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" href="{ base_path ?? '/work' }/{ entry.handle }">
   <Picture asset={ f.cover } alt={ f.cover_alt } ratio={ ratio ?? 'aspect-square' } sizes={ sizes } />
   {#if caption}
-    <span class="grid">
-      <span class="text-body font-medium underline-offset-4 group-hover:underline">{ entry.title }</span>
+    <div class="grid">
+      <h3 class="text-body font-medium underline-offset-4 group-hover:underline">{ entry.title }</h3>
       <span class="text-body-sm text-scheme-meta">{ summary ? f.summary : [f.year, f.category.title] | compact | join(' · ') }</span>
-    </span>
+    </div>
   {/if}
 </a>

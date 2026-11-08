@@ -1,5 +1,5 @@
 <!-- TODO sync with Figma -->
-<!-- The CV, newest first by order: one group per kind in the order the groups setting lists them, only groups with entries, each a plain h3 over its rows on hairlines (no h3 when one group is listed: the head names it). The Download CV button from Person sits at the head's right. limit caps each group: with a link (Full CV on Home) the rest are left out, without one they wait behind Show all. -->
+<!-- The CV, newest first by order: one group per kind in the order the groups setting lists them, only groups with entries, each a plain h3 over its rows on hairlines (h2 when the section has no heading; none when one group is listed: the head names it). The Download CV button from Person sits at the head's right. limit caps each group: with a link (Full CV on Home) the rest are left out, without one they wait behind Show all. -->
 {#let
   cv = site.settings.cv_link
   download = settings.download && cv.href
@@ -16,7 +16,7 @@
         {#let rows = entries | where('fields.kind', kind)}
         {#if rows.length}
           <div class="grid gap-space-md">
-            {#if kinds.length > 1}<h3 class="text-h3">{ t('cv.' + kind) }</h3>{/if}
+            {#if kinds.length > 1}{#if settings.heading}<h3 class="text-h3">{ t('cv.' + kind) }</h3>{:else}<h2 class="text-h3">{ t('cv.' + kind) }</h2>{/if}{/if}
             <ul class="border-t border-scheme-border">{#for entry in limit ? rows | slice(0, limit) : rows}<Row entry={ entry } />{/for}</ul>
             {#if limit && !linked && rows.length > limit}
               <collapsible-component class="flex flex-col-reverse items-start">

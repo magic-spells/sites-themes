@@ -25,7 +25,7 @@
     <Slot name="head-content"/>
   </head>
   <body class="flex min-h-screen flex-col bg-scheme-background font-body text-body text-scheme-foreground antialiased">
-    <a class="sr-only focus:not-sr-only focus:fixed focus:top-space-sm focus:left-space-sm focus:z-50 focus:rounded-full focus:bg-scheme-button-background focus:px-space-md focus:py-space-xs focus:text-button focus:font-semibold focus:text-scheme-button-foreground" href="#content">{ t('skip_to_content') }</a>
+    <a class="sr-only focus:not-sr-only focus:fixed focus:top-space-sm focus:left-space-sm focus:z-50 focus:rounded-full focus:border focus:bg-scheme-background focus:px-space-md focus:py-space-xs focus:text-button focus:font-medium focus:text-scheme-foreground" href="#content">{ t('skip_to_content') }</a>
     <Slot name="header-group"/>
     <main id="content" class="flex flex-1 flex-col"><Slot/></main>
     <Slot name="footer-group"/>

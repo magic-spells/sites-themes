@@ -11,8 +11,8 @@
       <span class="block overflow-hidden bg-scheme-surface-2 { lead ? (i ? 'col-span-2 aspect-square' : 'col-span-3 row-span-2') : 'aspect-square' }"><img class="size-full object-cover" src="{ image_url(work.fields.cover, 640) }" alt="" loading="lazy" width={ work.fields.cover.width } height={ work.fields.cover.height } /></span>
     {/for}
   </span>
-  <span class="grid gap-space-2xs">
-    <span class="text-h3 underline-offset-4 group-hover:underline">{ category.title }</span>
-    {#if category.fields.description}<span class="text-body-sm text-scheme-meta">{ category.fields.description }</span>{/if}
-  </span>
+  <div class="grid gap-space-2xs">
+    <h3 class="text-h3 underline-offset-4 group-hover:underline">{ category.title }</h3>
+    {#if category.fields.description}<span class="text-body-sm text-scheme-muted">{ category.fields.description }</span>{/if}
+  </div>
 </a>

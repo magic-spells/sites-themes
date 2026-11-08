@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- A gallery's photos as a carousel of equal slides at one shape, 1.25, 2.25 then 3.25 across, captions under them; the track runs off the right edge below 48rem. Under it the progress hairline, and the arrows at its right from 48rem. -->
 {#let
   items = settings.gallery ? settings.gallery.items | slice(0, 12) : []

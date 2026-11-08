@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- The large two-tone text as its own band: the first sentence in the text colour, the second in muted, as one paragraph at h1 or h2 across the column, left or centred. It blooms in word by word while Brand reveal is on. An optional small text link under it. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column gap-space-lg { settings.align == 'centre' ? 'justify-items-center' : 'justify-items-start' }">

@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- The CV, newest first by order: one group per kind in the order the groups setting lists them, only groups with entries, each a plain h3 over its rows on hairlines (h2 when the section has no heading; none when one group is listed: the head names it). The Download CV button from Person sits at the head's right. limit caps each group: with a link (Full CV on Home) the rest are left out, without one they wait behind Show all. -->
 {#let
   cv = site.settings.cv_link

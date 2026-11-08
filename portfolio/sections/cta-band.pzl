@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- A centred h2, a line and one or two outlined buttons, on any scheme. The contact band is the usual close; this is for the rare page that wants a call. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-reading justify-items-center gap-space-md text-center">

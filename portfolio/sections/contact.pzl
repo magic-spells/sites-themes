@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- The contact form with labels in seven parts (Name, Email, Subject on select-dropdown, Message, Send) beside the line, the email and the social links in five. The form is Person's contact form; ?sent=1 shows the thanks in its place and ?error=1 a note above the fields, each field's error under it. -->
 {#let s = site.settings}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">

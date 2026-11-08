@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- A work's page: the title and the summary once, the facts row, the lead (the cover at its ratio, or the first two gallery pictures side by side at 4:5), the body in the reading column, the rest of the gallery, the Visit button when the work has a link, and Previous, All work and Next by order. The pair and the stack and grid pictures open the lightbox; captions are always under the picture. -->
 {#let
   work = page.entry

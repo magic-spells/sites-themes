@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- The usual close: the heading, one line, the email from Person large (h3 size) and underlined, the social links as text in a row. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column justify-items-start gap-space-md">

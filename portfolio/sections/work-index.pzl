@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- The works: featured, all or one category by order, narrowed to ?category= when the filter row is on, then capped at limit (the work a page shows is left out). Grid: a Tile each, two or three across from 48rem, one or two on a phone. List: rows on hairlines, an optional square thumbnail, the title and summary, the year at the right (under the title below 48rem). -->
 {#let
   current = settings.filters ? request.query.category : null

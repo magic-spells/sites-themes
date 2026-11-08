@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- Who the person is: the text at body-lg in seven parts beside a square or 4:5 picture in five (the caption under it), or a full-column 3:2 photo above the text. Under the text a contact block on a hairline: the email and the social links as text. short prints the first paragraph only, with a link under it (Home). On a phone the picture comes first. -->
 {#let
   s = site.settings

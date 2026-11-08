@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- A gallery's photos as an equal grid at one shape, captions under them; every photo opens the lightbox. Two across on a phone, up to the columns setting from 48rem and 64rem. Past twelve the rest wait behind Show all. -->
 {#let
   items = settings.gallery.items

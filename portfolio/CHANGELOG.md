@@ -13,3 +13,5 @@
   the password and maintenance pages on paper.
 - Category filtering on the work index through `?category=` links.
 - One outlined button everywhere; text never sits on a picture.
+- Matched to the final Figma pages: a lighter, more neutral paper and stone, every text link a
+  1px underline, the footer status line as text, and the password page as a narrow column.

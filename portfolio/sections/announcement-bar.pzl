@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- One line above the header: short phrases with a dot between them, the whole line one link. scroll on: a ticker on scrolling-content with a pause button. With a key, a close button hides it for good. Under reduced motion the ticker stands still, one copy, cut with an ellipsis. -->
 {#let lines = settings.lines | split('\n') | slice(0, 4)}
 {#if lines.length}

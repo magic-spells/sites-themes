@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- The wordmark left in heading 500, the main menu right from 48rem; below it the 44px menu icon opens the drawer. No button. The current page's link is underlined. -->
 <sticky-header class="block" settle-overshoot="0" disabled={ !settings.sticky }>
   <header class="border-b border-scheme-border bg-scheme-background px-gutter text-scheme-foreground">

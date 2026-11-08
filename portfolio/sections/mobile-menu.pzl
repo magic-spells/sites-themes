@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- The mobile menu: a dialog-panel drawer from the right over the page dimmed by the text colour at 50% with a small blur. It closes on the backdrop, Escape and its ×, and hands focus back to the menu icon. The main menu large; the email and the social links as text at the foot. -->
 <dialog-panel id="mobile-menu" position="right">
   <dialog-backdrop class="bg-backdrop backdrop-blur-xs"></dialog-backdrop>

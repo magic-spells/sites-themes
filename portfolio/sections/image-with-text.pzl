@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- A picture beside prose on a twelve-column grid: the heading, text and a text link in seven parts, the 4:5 picture in five with its caption under it, one 3xl gap between. picture sets its side; on a phone the picture comes first. -->
 {#let left = settings.picture == 'left'}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">

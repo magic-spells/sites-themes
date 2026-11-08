@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- Prose in the reading column: the section's own text, or the page's body when it has none. -->
 {#let body = settings.body || page.content}
 {#if body || settings.heading}

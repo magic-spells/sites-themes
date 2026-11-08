@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- A page's opening: the title as the h1 at 110% width and an optional standfirst in muted. Its bottom padding is xl, so the seam to the first section reads as one step. -->
 <section class="bg-scheme-background px-gutter pt-section pb-space-xl text-scheme-foreground">
   <div class="mx-auto grid max-w-column gap-space-sm">

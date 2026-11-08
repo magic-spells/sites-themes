@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- The collections: one card per category in order, each its first works' covers in a tight row with its name and line below them, linking to the work index filtered to it. Two cards across from 64rem, one below. -->
 {#let
   cats = content.categories.entries | sort('fields.order')

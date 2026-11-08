@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- A short sign-up: the heading and a line in seven parts, one email field labelled by its placeholder only and the button in five; stacked on phones. The form is Contact's newsletter form; the sent and error states show in place. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column items-center gap-space-lg md:grid-cols-text-picture md:gap-x-space-3xl">

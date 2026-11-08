@@ -1,4 +1,4 @@
-<!-- The gallery's photos as prints on the band. collage: no rotation, each print at its box in an aspect-ratio stage (the box is its left, top and width as fractions of the stage; its ratio sets its height); up to six photos make the stepped row of five, seven or more the two interlocking rows of seven; phones show a stepped column of five. fan: five prints tilted in an arc, the middle on top. stagger: two tall photos, the second lower, with their caption cards. mosaic: one large photo and four squares. Prints in the collage and the fan drift at their own depths when parallax is on. -->
+<!-- The gallery's photos as prints on the band. collage: no rotation, each print at its box in an aspect-ratio stage (the box is its left, top and width as fractions of the stage; its ratio sets its height); up to six photos make the stepped row of five, seven or more the two interlocking rows of seven; phones show a stepped column of five. fan: five prints tilted in an arc, the middle on top. stagger: two tall photos, the second lower, with their caption cards. mosaic: one large photo and four squares. Prints in the collage and the fan drift at their own depths when parallax is on, behind the head. -->
 {#let
   all = settings.gallery ? settings.gallery.items : []
   layout = settings.layout
@@ -39,7 +39,7 @@
 {#if items.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
-    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } />
+    <div class="relative z-10"><SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } /></div>
     {#case layout}
       {:when 'fan'}
         <ul class="flex items-center justify-center py-space-xl">

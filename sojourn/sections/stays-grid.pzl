@@ -6,7 +6,6 @@
   picked = current ? all | where('fields.type', current) : []
   stays = (picked.length ? picked : all) | slice(0, settings.limit)
   row = settings.mobile != 'list'
-  chip = 'inline-flex min-h-tap items-center rounded-chip border border-scheme-foreground px-space-md text-body-sm font-semibold whitespace-nowrap transition-colors duration-fast hover:bg-scheme-surface-2 current:border-scheme-button-background current:bg-scheme-button-background current:text-scheme-button-foreground'
 }
 {#if stays.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
@@ -15,8 +14,8 @@
     {#if settings.chips && types.length > 1}
       <div class="-me-gutter mb-space-lg overflow-x-auto pe-gutter md:me-0 md:pe-0">
         <ul class="flex w-max gap-space-xs">
-          <li><a class="{ chip }" href="{ page.path }" aria-current={ picked.length ? null : 'page' }>{ t('all') }</a></li>
-          {#for type in types}<li><a class="{ chip }" href="{ page.path }?type={ encodeURIComponent(type) }" aria-current={ picked.length && type == current ? 'page' : null }>{ type }</a></li>{/for}
+          <li><Chip href={ page.path } current={ !picked.length } label={ t('all') } /></li>
+          {#for type in types}<li><Chip href={ page.path + '?type=' + encodeURIComponent(type) } current={ picked.length && type == current } label={ type } /></li>{/for}
         </ul>
       </div>
     {/if}

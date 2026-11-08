@@ -8,7 +8,7 @@
     <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-wide" eager={ true } width={ 1600 } sizes="(min-width: 82.5rem) 82.5rem, 100vw" />
     <div class="mx-auto mt-space-xl grid max-w-reading gap-space-md">
       <div class="grid gap-space-sm">
-        <h1 class="font-heading text-h1 font-semibold text-balance text-scheme-heading">{ thing.title }</h1>
+        <h1 class="font-heading text-h1 text-balance text-scheme-heading">{ thing.title }</h1>
         <ExploreMeta f={ f } />
       </div>
       {#if f.description}<div class="sites-prose">{ f.description }</div>{/if}

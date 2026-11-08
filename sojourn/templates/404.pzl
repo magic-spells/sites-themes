@@ -2,7 +2,7 @@
 <!-- layout: default -->
 <!-- A wrong path, on night: a tall photo, the line and a way home. -->
 <Utility>
-  <h1 class="text-h1 font-bold text-balance text-scheme-heading">{ t('not_found_title') }</h1>
+  <h1 class="text-h1 text-balance text-scheme-heading">{ t('not_found_title') }</h1>
   <p class="text-body-lg text-pretty text-scheme-muted">{ t('not_found_body') }</p>
   <Button href="/">{ t('home') }</Button>
 </Utility>

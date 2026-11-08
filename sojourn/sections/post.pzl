@@ -6,7 +6,7 @@
 <article class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column justify-items-center gap-space-xl">
     <header class="grid w-full max-w-reading gap-space-sm">
-      <h1 class="text-h1 font-bold text-balance text-scheme-heading"><Accent text={ post.title } rise={ true } /></h1>
+      <h1 class="text-h1 text-balance text-scheme-heading"><Accent text={ post.title } rise={ true } /></h1>
       {#if f.standfirst}<p class="text-body-lg text-pretty text-scheme-muted">{ f.standfirst }</p>{/if}
       <p class="text-body-sm text-scheme-meta">{ [f.topic, f.date ? f.date | date('long') : null, f.author] | compact | join(' · ') }</p>
     </header>

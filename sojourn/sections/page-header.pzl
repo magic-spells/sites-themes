@@ -6,14 +6,14 @@
       <img class="absolute inset-0 -z-20 size-full object-cover" src="{ image_url(settings.image, 2000) }" srcset="{ image_srcset(settings.image, [768, 1280, 2000, 2560]) }" sizes="(min-width: 82.5rem) 82.5rem, 100vw" alt="{ settings.image_alt || settings.image.alt }" fetchpriority="high" width={ settings.image.width } height={ settings.image.height } />
       <span class="absolute inset-0 -z-10 bg-linear-to-t from-scrim to-transparent" aria-hidden="true"></span>
       <div class="grid max-w-reading gap-space-sm p-gutter text-chip md:p-space-xl">
-        <h1 class="text-h1 font-bold text-balance"><Accent text={ settings.heading || page.title } rise={ true } /></h1>
+        <h1 class="text-h1 text-balance"><Accent text={ settings.heading || page.title } rise={ true } /></h1>
         {#if settings.text}<p class="text-body-lg text-pretty">{ settings.text }</p>{/if}
       </div>
     </div>
   {:else}
     <div class="mx-auto grid max-w-column">
       <div class="grid max-w-reading gap-space-sm">
-        <h1 class="text-h1 font-bold text-balance text-scheme-heading"><Accent text={ settings.heading || page.title } rise={ true } /></h1>
+        <h1 class="text-h1 text-balance text-scheme-heading"><Accent text={ settings.heading || page.title } rise={ true } /></h1>
         {#if settings.text}<p class="text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
       </div>
     </div>

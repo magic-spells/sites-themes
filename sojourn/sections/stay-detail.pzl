@@ -45,7 +45,7 @@
 
     <div class="grid gap-space-sm md:flex md:items-start md:justify-between md:gap-space-lg">
       <div class="grid gap-space-2xs">
-        <h1 class="font-heading text-h1 font-semibold text-balance text-scheme-heading">{ stay.title }</h1>
+        <h1 class="font-heading text-h1 text-balance text-scheme-heading">{ stay.title }</h1>
         {#if f.type}<p class="text-body-sm text-scheme-meta">{ f.type }</p>{/if}
         <p class="text-body-sm text-scheme-meta"><FactsLine f={ f } /></p>
       </div>

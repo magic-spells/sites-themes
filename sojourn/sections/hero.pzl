@@ -15,7 +15,7 @@
       <span class="absolute inset-0 -z-10 bg-linear-to-t from-scrim to-transparent" aria-hidden="true"></span>
       <div class="mx-auto flex w-full max-w-column items-end px-gutter pt-space-3xl pb-section text-chip">
         <div class="grid max-w-reading gap-space-md">
-          <h1 class="text-h1 font-bold text-balance"><Accent text={ settings.heading } rise={ true } /></h1>
+          <h1 class="text-h1 text-balance"><Accent text={ settings.heading } rise={ true } /></h1>
           {#if settings.text}<p class="text-body-lg text-pretty">{ settings.text }</p>{/if}
           <div class="flex flex-wrap gap-space-xs pt-space-xs">
             <Button action={ true } tone="photo">{ first }</Button>
@@ -28,7 +28,7 @@
     <div class="mx-auto grid max-w-column gap-space-xl { layout == 'centred' ? 'justify-items-center text-center' : '' }">
       {#if layout == 'inset' && settings.image}<Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-wide" width={ 2000 } sizes="(min-width: 82.5rem) 82.5rem, 100vw" eager={ true } parallax={ settings.parallax ? '0.1' : null } />{/if}
       <div class="grid max-w-reading gap-space-md { layout == 'centred' ? 'justify-items-center py-space-2xl' : '' }">
-        <h1 class="text-h1 font-bold text-balance text-scheme-heading"><Accent text={ settings.heading } rise={ true } /></h1>
+        <h1 class="text-h1 text-balance text-scheme-heading"><Accent text={ settings.heading } rise={ true } /></h1>
         {#if settings.text}<p class="text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
         <div class="flex flex-wrap gap-space-xs pt-space-xs { layout == 'centred' ? 'justify-center' : '' }">
           <Button action={ true }>{ first }</Button>

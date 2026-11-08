@@ -15,7 +15,7 @@
             <span class="absolute inset-0 bg-linear-to-t from-scrim from-60% to-transparent"></span>
             {#if b.video}<span class="absolute top-space-md right-space-md flex size-tap items-center justify-center rounded-full bg-chip text-on-chip" aria-hidden="true"><Glyph name="play" /></span>{/if}
             <span class="absolute inset-x-0 bottom-0 grid justify-items-start gap-space-xs p-space-lg text-chip">
-              <span class="font-heading text-h3 font-semibold text-balance">{ b.title || (stay ? stay.title : '') }</span>
+              <h3 class="font-heading text-h3 font-semibold text-balance">{ b.title || (stay ? stay.title : '') }</h3>
               <span class="mb-space-sm text-body text-pretty">{ b.text || (stay ? stay.fields.summary : '') }</span>
               <Button href={ b.link_href || (stay ? '/stays/' + stay.handle : '') } tone="photo-secondary" cls="after:absolute after:inset-0">{ b.link_label }</Button>
             </span>

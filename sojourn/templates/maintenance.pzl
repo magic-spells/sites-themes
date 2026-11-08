@@ -4,7 +4,7 @@
 {#let s = site.settings}
 <Utility bare={ true }>
   <p class="text-h4 font-bold">{ s.wordmark || site.name }</p>
-  <h1 class="text-h1 font-bold text-balance text-scheme-heading">{ t('maintenance_title') }</h1>
+  <h1 class="text-h1 text-balance text-scheme-heading">{ t('maintenance_title') }</h1>
   <p class="text-body-lg text-pretty text-scheme-muted">{ t('maintenance_body') }</p>
   <p class="grid gap-space-2xs text-body">{#if s.phone}<a class="underline-offset-4 hover:underline" href="tel:{ s.phone | replace(' ', '') }">{ s.phone }</a>{/if}{#if s.email}<a class="text-accent underline underline-offset-4" href="mailto:{ s.email }">{ s.email }</a>{/if}</p>
 </Utility>

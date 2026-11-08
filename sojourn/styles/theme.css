@@ -106,6 +106,7 @@
 	--text-h1: var(--sojourn-h1);
 	--text-h1--line-height: 1.02;
 	--text-h1--letter-spacing: -0.02em;
+	--text-h1--font-weight: 700;
 	--text-h2: var(--sojourn-h2);
 	--text-h2--line-height: 1.1;
 	--text-h2--letter-spacing: -0.02em;
@@ -134,6 +135,7 @@
 	--spacing-space-3xl: var(--sojourn-3xl);
 	--spacing-section: var(--sojourn-section);
 	--spacing-gutter: var(--sojourn-gutter);
+	--spacing-bleed: calc(50vw - 50%);
 	--spacing-button-x: var(--sites-button-padding-x);
 	--spacing-button-y: var(--sites-button-padding-y);
 	--spacing-control: 3rem;
@@ -142,12 +144,9 @@
 	--spacing-glyph: 1.5rem;
 	--spacing-header: 4.5rem;
 	--spacing-hero: 80svh;
-	--spacing-thumb: 6rem;
 	--spacing-post-thumb: 10rem;
 	--spacing-stay-card: 18.75rem;
 	--spacing-textarea: 6rem;
-	--spacing-edge: 0.25rem;
-	--spacing-utility: 60svh;
 	--container-column: 82.5rem;
 	--container-reading: 40rem;
 	--container-text: 30rem;

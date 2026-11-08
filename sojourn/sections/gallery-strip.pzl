@@ -1,4 +1,4 @@
-<!-- A gallery's photos as a carousel of equal slides at one shape, 1.25, 2.25 then 3.2 across, the track bleeding off the right. Dots under it on phones; from 48rem the progress hairline and the round arrows at its right. -->
+<!-- A gallery's photos as a carousel of equal slides at one shape, 1.25, 2.25 then 3.2 across, the track bleeding off the right edge of the screen. Dots under it on phones; from 48rem the progress hairline and the round arrows at its right. -->
 {#let
   items = settings.gallery ? settings.gallery.items | slice(0, 12) : []
   id = 'strip-' + section.id
@@ -10,7 +10,7 @@
   <tarot-carousel class="mx-auto block max-w-column" id={ id } data-track>
     <script type="application/json" data-tarot-options>{ options | json }</script>
     <SectionHead heading={ settings.heading } text={ settings.text } />
-    <tarot-viewport class="ms-0 -me-gutter w-auto"><tarot-track>
+    <tarot-viewport class="ms-0 -me-bleed w-auto"><tarot-track>
       {#for item in items}<tarot-slide><Well asset={ item.asset } alt={ item.alt } ratio="aspect-{ settings.slide_ratio }" width={ 800 } sizes="(min-width: 64rem) 27rem, (min-width: 48rem) 40vw, 80vw" /></tarot-slide>{/for}
     </tarot-track></tarot-viewport>
     <div class="mt-space-md flex items-center gap-space-md max-md:hidden"><div class="flex-1" id="bar-{ id }"></div><Arrows wrap="flex gap-space-xs" /></div>

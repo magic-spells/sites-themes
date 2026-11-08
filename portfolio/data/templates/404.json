@@ -18,8 +18,6 @@
       "type": "work-index",
       "preset": "Grid",
       "settings": {
-        "heading": "",
-        "link_label": "",
         "source": "featured",
         "limit": 3,
         "filters": false,

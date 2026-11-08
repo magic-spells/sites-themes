@@ -17,6 +17,8 @@
       "type": "collections",
       "preset": "Row",
       "settings": {
+        "text": "",
+        "link_label": "",
         "color_scheme": "paper"
       },
       "blocks": []
@@ -65,7 +67,7 @@
       "type": "about",
       "preset": "Short",
       "settings": {
-        "heading": "About",
+        "heading": "",
         "short": true,
         "show_contact": false,
         "picture": "right",

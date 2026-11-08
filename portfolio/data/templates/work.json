@@ -17,6 +17,7 @@
       "preset": "Grid",
       "settings": {
         "heading": "More work",
+        "link_label": "",
         "source": "featured",
         "limit": 3,
         "filters": false,

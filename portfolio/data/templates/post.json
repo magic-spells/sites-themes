@@ -17,6 +17,7 @@
       "preset": "List",
       "settings": {
         "heading": "More writing",
+        "link_label": "",
         "limit": 3,
         "color_scheme": "stone"
       },

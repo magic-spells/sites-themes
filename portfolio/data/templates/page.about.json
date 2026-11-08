@@ -35,7 +35,7 @@
         "caption": "The studio, Alfama",
         "social_menu": "social",
         "color_scheme": "paper",
-        "text": "<p>I'm Juno, a designer and illustrator in Lisbon. I make identities, books and drawings, mostly for people who make things themselves: potters, printers, a weaving workshop, a guesthouse. I draw first and design second, and most projects start as a page of ink. Before the studio I worked at <a href=\"https://ateliernorte.example\">Atelier Norte</a> in Porto and <a href=\"https://bureauvale.example\">Bureau Vale</a> in Lisbon.</p><p>I take on a few commissions a year and teach a drawing class most springs.</p>"
+        "text": "<p>I'm Juno, a designer and illustrator in Lisbon. I make identities, books and drawings, mostly for people who make things themselves: potters, printers, a weaving workshop, a guesthouse. Before the studio I worked at <a href=\"https://ateliernorte.example\">Atelier Norte</a> in Porto and <a href=\"https://bureauvale.example\">Bureau Vale</a> in Lisbon.</p><p>I take on a few commissions a year and teach a drawing class most springs.</p>"
       },
       "blocks": []
     },
@@ -44,6 +44,7 @@
       "type": "gallery-strip",
       "preset": "Default",
       "settings": {
+        "heading": "The studio",
         "gallery": "studio",
         "color_scheme": "paper"
       },

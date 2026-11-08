@@ -8,6 +8,7 @@
       "preset": "Default",
       "settings": {
         "heading": "Work",
+        "text": "Identities, books, drawings and exhibitions since 2016.",
         "color_scheme": "paper"
       },
       "blocks": []
@@ -17,7 +18,6 @@
       "type": "collections",
       "preset": "Row",
       "settings": {
-        "heading": "",
         "link_label": "",
         "limit": 8,
         "color_scheme": "paper"

@@ -135,17 +135,17 @@
       "title": "Tidewater",
       "items": [
         {
-          "asset_id": "as_1x1_linen",
+          "asset_id": "as_3x2_linen",
           "caption": "The stroke, final",
           "alt": "Tidewater, picture 1"
         },
         {
-          "asset_id": "as_4x5_stone",
+          "asset_id": "as_3x2_stone",
           "caption": "Letterhead and cards",
           "alt": "Tidewater, picture 2"
         },
         {
-          "asset_id": "as_4x5_mist",
+          "asset_id": "as_3x2_mist",
           "caption": "The sign, before install",
           "alt": "Tidewater, picture 3"
         },
@@ -155,9 +155,14 @@
           "alt": "Tidewater, picture 4"
         },
         {
-          "asset_id": "as_3x2_stone",
+          "asset_id": "as_4x5_stone",
           "caption": "Kiln tags",
           "alt": "Tidewater, picture 5"
+        },
+        {
+          "asset_id": "as_4x5_mist",
+          "caption": "Studio wall",
+          "alt": "Tidewater, picture 6"
         }
       ]
     },
@@ -1382,7 +1387,7 @@
             "standfirst": "Why every project starts with a drawing, even the websites.",
             "image": "as_3x2_linen",
             "image_alt": "A page of ink before anything else",
-            "body": "<p>Before a brief turns into a grid or a typeface, I fill a page with ink. Not sketches of the answer: marks, shapes, the feel of the thing.</p><p>It is the slowest part of a project and the one I would cut last.</p>"
+            "body": "<p>Every project here started as a page of ink. Before type, before a grid, I draw the thing I am trying to say until the shape is obvious.</p><p>The drawings are rarely used as they are. They set the proportions, the weight and the mood, and the design follows them. When a client sees the ink first, the conversation is about the idea, not the software.</p><p>This is why the studio keeps a long table and north light. Most mornings begin there, and the screens wait until the afternoon.</p>"
           }
         },
         {
@@ -1841,7 +1846,7 @@
           "standfirst": "Why every project starts with a drawing, even the websites.",
           "image": "as_3x2_linen",
           "image_alt": "A page of ink before anything else",
-          "body": "<p>Before a brief turns into a grid or a typeface, I fill a page with ink. Not sketches of the answer: marks, shapes, the feel of the thing.</p><p>It is the slowest part of a project and the one I would cut last.</p>"
+          "body": "<p>Every project here started as a page of ink. Before type, before a grid, I draw the thing I am trying to say until the shape is obvious.</p><p>The drawings are rarely used as they are. They set the proportions, the weight and the mood, and the design follows them. When a client sees the ink first, the conversation is about the idea, not the software.</p><p>This is why the studio keeps a long table and north light. Most mornings begin there, and the screens wait until the afternoon.</p>"
         }
       }
     },

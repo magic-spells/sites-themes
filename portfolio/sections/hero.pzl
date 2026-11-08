@@ -19,7 +19,7 @@
       <div class="flex flex-col gap-space-xl">
         <div class="px-gutter">
           <div class="mx-auto grid max-w-column justify-items-start gap-space-sm">
-            <h1 class="font-wide text-h1 text-balance">{#if bloom}<split-text effect="bloom" split="words">{ name }</split-text>{:else}{ name }{/if}</h1>
+            <h1 class="font-wide text-h1 text-balance">{#if bloom}<split-text effect="bloom" split="words" stagger="40">{ name }</split-text>{:else}{ name }{/if}</h1>
             {#if settings.text}<p class="text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
             {#if settings.show_status}<Status />{/if}
             <div class="flex flex-wrap gap-space-xs pt-space-xs empty:hidden">
@@ -38,7 +38,7 @@
           <p class="text-body-sm text-scheme-muted">{ line }</p>
           {#if settings.show_status}<Status />{/if}
         </div>
-        <h1 class="font-wide text-h1 text-balance">{#if bloom}<split-text effect="bloom" split="words">{ name }</split-text>{:else}{ name }{/if}</h1>
+        <h1 class="font-wide text-h1 text-balance">{#if bloom}<split-text effect="bloom" split="words" stagger="40">{ name }</split-text>{:else}{ name }{/if}</h1>
       </div>
   {/case}
 </section>

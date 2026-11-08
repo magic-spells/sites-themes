@@ -2,4 +2,4 @@
 <!-- props: cls -->
 <!-- The status line from Person: the dot (the accent when available, meta when not), then the availability line. Hidden when the line is empty. -->
 {#let s = site.settings}
-{#if s.availability_line}<p class="flex items-center gap-space-xs text-body-sm { cls ?? '' }"><span class="size-dot shrink-0 rounded-pill { s.available ? 'bg-accent' : 'bg-status-off' }" aria-hidden="true"></span>{ s.availability_line }</p>{/if}
+{#if s.availability_line}<p class="flex items-center gap-space-xs text-body-sm { cls ?? '' }"><span class="size-dot shrink-0 rounded-full { s.available ? 'bg-link' : 'bg-scheme-meta' }" aria-hidden="true"></span>{ s.availability_line }</p>{/if}

@@ -12,7 +12,7 @@
       {:else}
         {#let field = form.fields | find('type', 'email')}
         <div class="flex flex-wrap gap-space-xs">
-          <input class="min-h-control min-w-0 flex-1 rounded-input border bg-scheme-input-background px-space-sm text-body text-scheme-input-foreground placeholder:text-scheme-meta focus:outline-2 focus:outline-offset-2 focus:outline-accent { field.error ? 'border-scheme-error' : 'border-scheme-input-border' }" type="email" name={ field.id ?? 'email' } value={ field.value } placeholder="{ settings.placeholder }" aria-label="{ settings.placeholder }" autocomplete="email" required aria-invalid={ field.error ? 'true' : 'false' } aria-describedby={ field.error ? 'error-newsletter-' + section.id : null } />
+          <input class="min-h-control min-w-0 flex-1 rounded-input border bg-scheme-input-background px-space-sm text-body text-scheme-input-foreground placeholder:text-scheme-meta focus:outline-2 focus:outline-offset-2 focus:outline-link { field.error ? 'border-scheme-error' : 'border-scheme-input-border' }" type="email" name={ field.id ?? 'email' } value={ field.value } placeholder="{ settings.placeholder }" aria-label="{ settings.placeholder }" autocomplete="email" required aria-invalid={ field.error ? 'true' : 'false' } aria-describedby={ field.error ? 'error-newsletter-' + section.id : null } />
           <Button type="submit">{ form.submit_label || settings.button_label }</Button>
         </div>
         {#if field.error}<p class="text-body-sm text-scheme-error" id="error-newsletter-{ section.id }">{ t('form_field_' + field.error) }</p>{:else if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}

@@ -4,7 +4,7 @@
 {#if lines.length}
 <aside class="bg-scheme-background text-scheme-foreground" data-dismiss-key="{ settings.key }" aria-label="{ t('announcement') }" data-ticker={ settings.scroll ? true : null }>
   <div class="flex items-center">
-    <a class="block min-w-0 flex-1 py-space-xs text-body-sm focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent" href={ settings.link || null }>
+    <a class="block min-w-0 flex-1 py-space-xs text-body-sm focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-link" href={ settings.link || null }>
       {#if settings.scroll}
         <scrolling-content class="block" speed="30" fade>
           <scrolling-track>

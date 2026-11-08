@@ -1,7 +1,7 @@
 <!-- component: Filters -->
 <!-- props: categories current href -->
 <!-- The ?category= row: All, then each category, as plain links to href (the work index, anchored #work); the current one in the text colour with a 1px accent underline and aria-current, the rest in muted. Below 48rem the row scrolls and runs off the right edge. -->
-{#let link = 'block pb-space-2xs text-body font-medium text-scheme-muted decoration-accent decoration-1 underline-offset-8 hover:text-scheme-foreground current:text-scheme-foreground current:underline'}
+{#let link = 'block pb-space-2xs text-body font-medium text-scheme-muted decoration-link decoration-1 underline-offset-8 hover:text-scheme-foreground current:text-scheme-foreground current:underline'}
 <nav class="mb-space-xl overflow-x-auto max-md:-me-gutter" aria-label="{ t('categories') }">
   <ul class="flex gap-space-lg whitespace-nowrap max-md:pe-gutter">
     <li><a class="{ link }" href="{ href }#work" aria-current={ current ? null : 'page' }>{ t('all') }</a></li>

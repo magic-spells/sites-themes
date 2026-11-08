@@ -47,6 +47,8 @@ function closest(event: Event, selector: string): HTMLElement | null {
 	return ((event.target as Element | null)?.closest?.(selector) as HTMLElement | null) ?? null;
 }
 
+const openerFor = new Map<Element, HTMLElement>();
+
 document.addEventListener('click', (event) => {
 	// The hamburger opens the mobile menu; focus goes back to it on close.
 	const opener = closest(event, '[data-panel-open]');
@@ -55,10 +57,25 @@ document.addEventListener('click', (event) => {
 
 	// A marquee's pause button (WCAG 2.2.2) sets its own paused attribute.
 	const toggle = closest(event, '[data-ticker-toggle]');
-	if (!toggle) return;
-	const paused = toggle.getAttribute('aria-pressed') !== 'true';
-	toggle.setAttribute('aria-pressed', String(paused));
-	toggle.closest('[data-ticker]')?.querySelector('scrolling-content')?.toggleAttribute('paused', paused);
+	if (toggle) {
+		const paused = toggle.getAttribute('aria-pressed') !== 'true';
+		toggle.setAttribute('aria-pressed', String(paused));
+		toggle.closest('[data-ticker]')?.querySelector('scrolling-content')?.toggleAttribute('paused', paused);
+	}
+
+	// A work's or a gallery's pictures are links to the full image that open
+	// the lightbox of the section's hidden carousel (components/Lightbox.pzl)
+	// at their index instead: the plugin opens from a slide, so the link
+	// clicks that slide. Focus goes back to the picture when it closes.
+	const link = closest(event, '[data-lightbox-open]');
+	if (!link) return;
+	const carousel = document.getElementById(link.getAttribute('data-lightbox-open') ?? '') as Carousel | null;
+	const slide = carousel?.querySelectorAll('tarot-slide')[Number(link.getAttribute('data-index'))];
+	if (!carousel || !slide) return;
+	event.preventDefault();
+	if (!openerFor.has(carousel)) carousel.on('lightbox:closed', () => openerFor.get(carousel)?.focus());
+	openerFor.set(carousel, link);
+	slide.querySelector('img')?.click();
 });
 
 // The cookie notice shows once per visitor and key; either button hides it
@@ -79,11 +96,11 @@ for (const notice of document.querySelectorAll<HTMLElement>('[data-notice]')) {
 for (const bar of document.querySelectorAll<HTMLElement>('[data-dismiss-key]')) {
 	const key = bar.getAttribute('data-dismiss-key') ?? '';
 	if (key && dismissed(key)) {
-		bar.setAttribute('data-dismissed', '');
+		bar.hidden = true;
 		continue;
 	}
 	bar.querySelector('[data-dismiss]')?.addEventListener('click', () => {
-		bar.setAttribute('data-dismissed', '');
+		bar.hidden = true;
 		if (key) remember(key);
 	});
 }
@@ -91,20 +108,3 @@ for (const bar of document.querySelectorAll<HTMLElement>('[data-dismiss-key]')) 
 // Scroll reveals on tiles, cards and CV rows only. Sections write
 // `reveal reveal-fade-up` only while the Brand setting is on.
 if (document.querySelector('.reveal')) Reveal.init({ offset: 0, duration: 400, once: true });
-
-// A work's or a gallery's pictures are links to the full image that open the
-// lightbox of the section's hidden carousel (components/Lightbox.pzl) at their
-// index instead: the plugin opens from a slide, so the link clicks that
-// slide. Focus goes back to the picture when the lightbox closes.
-const openerFor = new Map<Element, HTMLElement>();
-document.addEventListener('click', (event) => {
-	const link = closest(event, '[data-lightbox-open]');
-	if (!link) return;
-	const carousel = document.getElementById(link.getAttribute('data-lightbox-open') ?? '') as Carousel | null;
-	const slide = carousel?.querySelectorAll('tarot-slide')[Number(link.getAttribute('data-index'))];
-	if (!carousel || !slide) return;
-	event.preventDefault();
-	if (!openerFor.has(carousel)) carousel.on('lightbox:closed', () => openerFor.get(carousel)?.focus());
-	openerFor.set(carousel, link);
-	slide.querySelector('img')?.click();
-});

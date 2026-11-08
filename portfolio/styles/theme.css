@@ -37,8 +37,8 @@
 
 /* The scheme a section sits on. The engine has no muted, meta, border or
    surface-2 slot, so they ride on the chip and icon slots (settings/design.json
-   says which). The accent is the link colour: text links, the active filter
-   underline and the status dot; status-off is meta. */
+   says which). The link colour is the one accent: text links, the active
+   filter underline and the status dot. */
 @theme inline {
 	--color-scheme-background: var(--sites-scheme-background);
 	--color-scheme-foreground: var(--sites-scheme-foreground);
@@ -56,8 +56,6 @@
 	--color-scheme-button-hover-foreground: var(--sites-scheme-button-hover-foreground);
 	--color-scheme-error: var(--portfolio-error);
 	--color-link: var(--sites-scheme-links);
-	--color-accent: var(--sites-scheme-links);
-	--color-status-off: var(--sites-scheme-icons);
 	--color-backdrop: color-mix(in srgb, var(--sites-scheme-foreground) 50%, transparent);
 }
 
@@ -87,8 +85,6 @@
 	--radius-full: var(--sites-radius-full);
 	--radius-button: var(--sites-button-radius);
 	--radius-input: var(--sites-input-radius);
-	/* The view-all pill and the status dot. */
-	--radius-pill: var(--sites-radius-full);
 	--font-weight-button: var(--sites-button-weight);
 
 	/* The type roles, each sized per breakpoint in :root below. */
@@ -150,8 +146,6 @@
 	--grid-template-columns-text-picture: 7fr 5fr;
 	--grid-template-columns-picture-text: 5fr 7fr;
 	--transition-duration-fast: 150ms;
-	--transition-duration-panel: 250ms;
-	--ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 	--reveal-distance: 1.5rem;
 	--reveal-perspective: 75rem;
 	--reveal-blur: 0;
@@ -228,7 +222,6 @@
 	}
 }
 
-[data-dismissed] { display: none; }
 body:has([data-bare]) [data-group] { display: none; }
 
 html.reveal-off .reveal:not(.is-revealed) {
@@ -239,9 +232,6 @@ html.reveal-off .reveal:not(.is-revealed) {
 /* split-text hides its words until it upgrades; with no script to upgrade it, show them. */
 html.reveal-off split-text:not(:defined) {
 	visibility: visible;
-}
-split-text {
-	--split-text-stagger: 40ms;
 }
 
 :root {
@@ -273,7 +263,7 @@ split-text {
 	}
 
 	[id] {
-		scroll-margin-top: 5.5rem;
+		scroll-margin-top: calc(var(--spacing-header) + 1rem);
 	}
 
 	/* Years, dates and facts line up in columns. */
@@ -359,9 +349,10 @@ tarot-carousel[data-track]:not(:defined) tarot-slide {
 	visibility: visible;
 }
 
-/* The lightbox: ink at 94%, the chrome in the ink scheme's text. */
-:root {
-	--tarot-lightbox-backdrop: rgb(21 23 27 / 0.94);
+/* The lightbox: the ink scheme's background at 94%, the chrome in its text.
+   Set on the overlay itself, which declares its own defaults. */
+.tarot-lightbox {
+	--tarot-lightbox-backdrop: color-mix(in srgb, #15171B 94%, transparent);
 	--tarot-lightbox-chrome-color: #EDEAE4;
 	--tarot-lightbox-chrome-size: 2.75rem;
 	--tarot-lightbox-chrome-inset: 1rem;
@@ -371,7 +362,7 @@ tarot-carousel[data-track]:not(:defined) tarot-slide {
 	font-family: var(--font-body);
 	font-size: var(--portfolio-body-sm);
 	font-variant-numeric: tabular-nums;
-	color: #EDEAE4;
+	color: var(--tarot-lightbox-chrome-color);
 }
 
 select-dropdown {

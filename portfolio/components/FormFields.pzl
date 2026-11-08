@@ -21,7 +21,7 @@
         {#if field.error}<p class="mt-space-2xs text-body-sm text-scheme-error" id="error-{ prefix }-{ field.id }">{ t('form_field_' + field.error) }</p>{/if}
       </div>
     {:else if field.type == 'checkbox'}
-      <label class="flex items-start gap-space-xs text-body-sm"><input class="mt-space-2xs size-icon accent-accent" type="checkbox" name={ field.id } value="on" checked={ field.value == 'on' } required={ field.required } />{ field.label }</label>
+      <label class="flex items-start gap-space-xs text-body-sm"><input class="mt-space-2xs size-icon accent-link" type="checkbox" name={ field.id } value="on" checked={ field.value == 'on' } required={ field.required } />{ field.label }</label>
     {:else}
       <Field name={ field.id } label={ field.label } type={ field.type } required={ field.required } maxlength={ field.max_length } value={ field.value } error={ field.error } prefix={ prefix } />
     {/if}

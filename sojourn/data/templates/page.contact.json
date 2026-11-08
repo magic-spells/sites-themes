@@ -8,6 +8,7 @@
       "preset": "Default",
       "settings": {
         "heading": "Contact",
+        "text": "Write, call, or just turn up.",
         "color_scheme": "paper"
       },
       "blocks": []

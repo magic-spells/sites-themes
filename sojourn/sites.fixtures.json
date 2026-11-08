@@ -23,7 +23,7 @@
       "booking_url": "https://booking.example/fern-hollow",
       "booking_label": "Check availability",
       "booking_embed_url": "/_sites/theme/embed.html",
-      "booking_embed_height": 640,
+      "booking_embed_height": 360,
       "map_url": "https://maps.example/?q=4120+Lakeshore+Road+Lake+Country",
       "map_image": "as_2x1_lake",
       "map_image_alt": "Map of Fern Hollow on Okanagan Lake",

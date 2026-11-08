@@ -13,10 +13,7 @@
         <div class="grid gap-space-md">
           {#if s.address}<address class="text-body-lg not-italic">{ s.address | newline_to_br }</address>{/if}
           {#if s.directions}<p class="text-body text-scheme-muted">{ s.directions }</p>{/if}
-          <div class="grid gap-space-2xs text-body">
-            {#if s.phone}<a class="justify-self-start underline-offset-4 hover:underline" href="tel:{ s.phone | replace(' ', '') }">{ s.phone }</a>{/if}
-            {#if s.email}<a class="justify-self-start text-accent underline underline-offset-4" href="mailto:{ s.email }">{ s.email }</a>{/if}
-          </div>
+          {#if s.phone || s.email}<p class="text-body-sm">{#if s.phone}<a class="underline-offset-4 hover:underline" href="tel:{ s.phone | replace(' ', '') }">{ s.phone }</a>{/if}{#if s.phone && s.email} · {/if}{#if s.email}<a class="underline-offset-4 hover:underline" href="mailto:{ s.email }">{ s.email }</a>{/if}</p>{/if}
           {#if s.map_image}<a class="block" href={ s.map_url || null } target="_blank" rel="noopener"><Well asset={ s.map_image } alt={ s.map_image_alt || t('map_of', { name: site.name }) } ratio="aspect-tile" width={ 960 } sizes="(min-width: 48rem) 55vw, 100vw"><span class="absolute inset-0 flex items-center justify-center text-accent"><Glyph name="pin" cls="size-glyph" /></span></Well></a>{/if}
         </div>
       {/if}

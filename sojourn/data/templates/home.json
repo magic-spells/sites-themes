@@ -35,6 +35,7 @@
       "preset": "Home",
       "settings": {
         "limit": 3,
+        "text": "Five cabins, two rooms and a bunkhouse.",
         "color_scheme": "white"
       },
       "blocks": []
@@ -46,6 +47,8 @@
       "settings": {
         "layout": "collage",
         "gallery": "collage",
+        "heading": "The place",
+        "link_label": "All photos",
         "color_scheme": "brick"
       },
       "blocks": []
@@ -62,8 +65,8 @@
           "id": "s_featured_b1",
           "type": "tile",
           "settings": {
-            "title": "The lake cabins",
-            "text": "Five cedar cabins on the water.",
+            "title": "The cabins",
+            "text": "Five on the water, one on the point.",
             "image": "as_2x1_forest",
             "image_alt": "Cedar cabins on the shore",
             "link_label": "See the cabins",
@@ -74,12 +77,10 @@
           "id": "s_featured_b2",
           "type": "tile",
           "settings": {
-            "title": "The farmhouse",
-            "text": "Two rooms upstairs, breakfast included.",
-            "image": "as_2x1_sand",
-            "image_alt": "The farmhouse porch",
-            "link_label": "See the rooms",
-            "link_href": "/stays?type=Farmhouse+room"
+            "stay": "stay_bunkhouse",
+            "title": "The bunkhouse",
+            "text": "Six bunks for the paddling crowd.",
+            "link_label": "See the bunkhouse"
           }
         }
       ]
@@ -90,7 +91,7 @@
       "preset": "Home",
       "settings": {
         "limit": 3,
-        "text": "The lake, the trails and the valley's wineries.",
+        "text": "Hikes, wineries, a rail trail and the lake itself.",
         "color_scheme": "lake"
       },
       "blocks": []

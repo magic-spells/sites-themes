@@ -150,6 +150,7 @@
 	--container-column: 82.5rem;
 	--container-reading: 40rem;
 	--container-text: 30rem;
+	--container-chapters: 53rem;
 	--aspect-photo: 3 / 2;
 	--aspect-portrait: 4 / 5;
 	--aspect-wide: 16 / 9;
@@ -159,6 +160,7 @@
 	/* A picture beside text: the text takes seven parts, the picture five, one 3xl gap between. */
 	--grid-template-columns-text-picture: 7fr 5fr;
 	--grid-template-columns-picture-text: 5fr 7fr;
+	--grid-template-columns-chapter: 9rem 1fr;
 	--opacity-dots-inactive: 35%;
 	--transition-duration-fast: 150ms;
 	--transition-duration-panel: 250ms;

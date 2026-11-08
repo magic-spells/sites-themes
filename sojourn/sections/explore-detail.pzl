@@ -1,16 +1,21 @@
-<!-- STUB (agent C builds it): a thing to do: photo, title, meta, body and the operator's link. -->
+<!-- A thing to do: its 16:9 photo across the column, then in the reading column the title, the meta line ("Trip · Full day · $140"), the description, the operator's button when it has a link and the way back to the list. -->
 {#let
   thing = page.entry
   f = thing.fields
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column gap-space-xl">
-    <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-wide" eager={ true } width={ 1600 } sizes="100vw" />
-    <div class="grid max-w-reading gap-space-sm">
-      <h1 class="text-h1 font-bold text-balance">{ thing.title }</h1>
-      <p class="text-body text-scheme-meta">{ [t('kind.' + (f.kind || 'here')), f.distance, f.season] | compact | join(' · ') }</p>
+  <div class="mx-auto max-w-column">
+    <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-wide" eager={ true } width={ 1600 } sizes="(min-width: 82.5rem) 82.5rem, 100vw" />
+    <div class="mx-auto mt-space-xl grid max-w-reading gap-space-md">
+      <div class="grid gap-space-sm">
+        <h1 class="font-heading text-h1 font-semibold text-balance text-scheme-heading">{ thing.title }</h1>
+        <ExploreMeta f={ f } />
+      </div>
       {#if f.description}<div class="sites-prose">{ f.description }</div>{/if}
-      {#if f.link}<div><Button href={ f.link } external={ true }>{ settings.link_label }</Button></div>{/if}
+      <div class="mt-space-xs flex flex-wrap items-center gap-x-space-lg gap-y-space-sm">
+        {#if f.link}<Button href={ f.link } external={ true }>{ settings.link_label }</Button>{/if}
+        <a class="inline-flex min-h-tap items-center gap-space-xs text-body-sm font-medium hover:underline hover:underline-offset-4" href="{ settings.back_href }"><Glyph name="arrow-left" cls="size-icon text-accent" />{ settings.back_label }</a>
+      </div>
     </div>
   </div>
 </section>

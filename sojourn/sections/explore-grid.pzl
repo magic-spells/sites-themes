@@ -1,11 +1,21 @@
-<!-- STUB (agent C builds it): the head and the things to do as cards. -->
-{#let things = content.experiences.entries | sort('fields.order') | reject('id', page.entry.id) | slice(0, settings.limit)}
-{#if things.length}
+<!-- Things to do as cards, three, then two across in fixed columns (a short last row keeps its width, left). With chips, All · Here · Nearby · Trips link to ?kind= and the grid shows only that kind. On phones a short list (three or fewer, no chips) is a peeking row that scrolls and bleeds right; the listing stacks. On a thing's own page it leaves that thing out. -->
+{#let
+  kind = settings.chips ? request.query.kind : null
+  all = content.experiences.entries | sort('fields.order') | reject('id', page.entry.id)
+  things = (kind ? all | where('fields.kind', kind) : all) | slice(0, settings.limit)
+  peek = !settings.chips && settings.limit <= 3
+}
+{#if things.length || kind}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } />
-    <ul class="grid gap-x-space-md gap-y-space-xl md:grid-cols-2 lg:grid-cols-3">
-      {#for entry in things}<li><ExploreCard entry={ entry } base_path={ settings.base_path } /></li>{/for}
+    {#if settings.chips}
+      <div class="mb-space-xl flex flex-wrap gap-space-xs">
+        {#for chip in ['', 'here', 'nearby', 'trip']}<a class="inline-flex min-h-tap items-center rounded-chip border border-scheme-foreground px-space-md text-body-sm font-medium transition-colors duration-fast hover:bg-scheme-foreground hover:text-scheme-background current:bg-scheme-foreground current:text-scheme-background" href="{ request.path }{ chip ? '?kind=' + chip : '' }" aria-current={ (kind ?? '') == chip ? 'page' : null }>{ t(chip ? 'chip.' + chip : 'all') }</a>{/for}
+      </div>
+    {/if}
+    <ul class="grid gap-space-md md:grid-cols-2 lg:grid-cols-3 { peek ? 'max-md:-me-gutter max-md:flex max-md:snap-x max-md:snap-mandatory max-md:overflow-x-auto max-md:pe-gutter' : '' }">
+      {#for entry in things}<li class="{ peek ? 'max-md:w-7/8 max-md:shrink-0 max-md:snap-start' : '' }"><ExploreCard entry={ entry } base_path={ settings.base_path } /></li>{/for}
     </ul>
   </div>
 </section>
@@ -20,7 +30,7 @@
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Things to do" },
     { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
-    { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 3 },
+    { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 3, "info": "Three or fewer scroll sideways on phones." },
     { "type": "checkbox", "id": "chips", "label": "Kind chips", "default": false, "info": "All, Here, Nearby and Trips as links that show only that kind. For the things to do page." },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "All things to do" },
     { "type": "url", "id": "link_href", "label": "Link", "default": "/explore" },

@@ -1,13 +1,37 @@
-<!-- STUB (agent C builds it): the gallery's photos in a grid. -->
-{#let items = settings.gallery ? settings.gallery.items | slice(0, 12) : []}
+<!-- A gallery's photos as 4:3 wells, three, then two across; each opens the lightbox, whose captions are the only ones shown. Past twelve the rest wait behind Show more. The lightbox runs from a visually hidden carousel of the same photos (the plugin opens from a slide), which theme.ts opens at a tile's index. -->
+{#let
+  items = settings.gallery ? settings.gallery.items | slice(0, 24) : []
+  id = 'photos-' + section.id
+}
 {#if items.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } />
     <ul class="grid grid-cols-2 gap-space-sm lg:grid-cols-3">
-      {#for item in items}<li><Well asset={ item.asset } alt={ item.alt } ratio="aspect-square" width={ 640 } sizes="(min-width: 64rem) 30vw, 50vw" /></li>{/for}
+      {#for item in items | slice(0, 12), i}<li><GalleryTile item={ item } id={ id } i={ i } /></li>{/for}
     </ul>
+    {#if items.length > 12}
+      <collapsible-component class="flex flex-col-reverse items-center">
+        <Button type="button" tone="secondary" small={ true } cls="mt-space-xl w-auto aria-expanded:hidden">{ t('show_more') }</Button>
+        <collapsible-content class="w-full">
+          <ul class="grid grid-cols-2 gap-space-sm pt-space-sm lg:grid-cols-3">
+            {#for item in items | slice(12), i}<li><GalleryTile item={ item } id={ id } i={ i + 12 } /></li>{/for}
+          </ul>
+        </collapsible-content>
+      </collapsible-component>
+    {/if}
   </div>
+  <tarot-carousel class="sr-only" id={ id } aria-hidden="true">
+    <script type="application/json" data-tarot-options>{ { lightbox: true, draggable: false, navigation: { showButtons: false, showPagination: false } } | json }</script>
+    <tarot-viewport><tarot-track>
+      {#for item in items}
+        <tarot-slide>
+          <img src="{ image_url(item.asset, 480) }" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } />
+          {#if item.caption}<p data-caption data-tarot-lightbox-fade>{ item.caption }</p>{/if}
+        </tarot-slide>
+      {/for}
+    </tarot-track></tarot-viewport>
+  </tarot-carousel>
 </section>
 {/if}
 

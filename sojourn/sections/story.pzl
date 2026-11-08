@@ -1,15 +1,32 @@
-<!-- STUB (agent C builds it): the story's head, prose, picture and chapters. -->
+<!-- The place's story: the head, then the prose left seven parts with the button under it and the 4:5 picture right five (the picture first on phones). full adds the chapters: a hairline between each, the year in meta at the left (after the title on phones), the title, the text and an optional 3:2 photo; then "Since 2009 · Lake Country, British Columbia" from Place. -->
+{#let
+  s = site.settings
+  full = settings.layout == 'full'
+}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column gap-space-xl">
+  <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } />
-    {#if settings.body}<div class="sites-prose max-w-reading">{ settings.body }</div>{/if}
-    <Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" caption={ settings.caption } caption_meta={ settings.caption_meta } width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" />
-    {#if settings.layout == 'full' && blocks.length}
-      <ol class="grid">
-        {#for block in blocks}<li class="border-t border-scheme-border py-space-md" data-block={ block.editor_id }><span class="text-scheme-meta">{ block.settings.year }</span> { block.settings.title }: { block.settings.text }</li>{/for}
+    <div class="grid items-start gap-space-xl md:grid-cols-text-picture md:gap-space-3xl">
+      <div class="grid justify-items-start gap-space-md">
+        {#if settings.body}<div class="sites-prose">{ settings.body }</div>{/if}
+        {#if settings.link_label && settings.link_href}<Button href={ settings.link_href } tone="secondary">{ settings.link_label }</Button>{/if}
+      </div>
+      <div class="max-md:order-first"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" caption={ settings.caption } caption_meta={ settings.caption_meta } width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" /></div>
+    </div>
+    {#if full && blocks.length}
+      <ol class="mx-auto mt-space-2xl max-w-chapters">
+        {#for block in blocks, i}
+          {#let c = block.settings}
+          <li class="flex flex-wrap items-baseline gap-x-space-xs gap-y-space-xs py-space-lg md:grid md:grid-cols-chapter md:gap-x-space-lg { i ? 'border-t border-scheme-border' : '' }" data-block={ block.editor_id }>
+            <h3 class="text-h4 font-medium md:col-start-2">{ c.title }</h3>
+            <p class="text-body-sm text-scheme-meta md:row-start-1"><span class="md:hidden">· </span>{ c.year }</p>
+            <p class="w-full text-body text-scheme-muted md:col-start-2">{ c.text }</p>
+            {#if c.image}<div class="w-full md:col-start-2 md:w-1/2"><Well asset={ c.image } alt={ c.image_alt } ratio="aspect-photo" width={ 640 } sizes="(min-width: 48rem) 20rem, 90vw" /></div>{/if}
+          </li>
+        {/for}
       </ol>
+      {#if s.founded}<p class="mx-auto max-w-chapters text-body-sm text-scheme-meta">{ [t('since', { year: s.founded }), (s.address ?? '') | split('\n') | last] | compact | join(' · ') }</p>{/if}
     {/if}
-    {#if settings.link_label && settings.link_href}<div><Button href={ settings.link_href }>{ settings.link_label }</Button></div>{/if}
   </div>
 </section>
 

@@ -1,4 +1,4 @@
-<!-- A gallery's photos as 4:3 wells, three, then two across; each opens the lightbox, whose captions are the only ones shown. Past twelve the rest wait behind Show more. The lightbox runs from a visually hidden carousel of the same photos (the plugin opens from a slide), which theme.ts opens at a tile's index. -->
+<!-- A gallery's photos as 4:3 wells, three, then two across; each opens the lightbox, whose captions are the only ones shown. Past twelve the rest wait behind Show more. The lightbox runs from a hidden carousel of the same photos (the plugin opens from a slide), which theme.ts opens at a tile's index. -->
 {#let
   items = settings.gallery ? settings.gallery.items | slice(0, 24) : []
   id = 'photos-' + section.id
@@ -21,7 +21,7 @@
       </collapsible-component>
     {/if}
   </div>
-  <tarot-carousel class="sr-only" id={ id } aria-hidden="true">
+  <tarot-carousel class="hidden" id={ id }>
     <script type="application/json" data-tarot-options>{ { lightbox: true, draggable: false, navigation: { showButtons: false, showPagination: false } } | json }</script>
     <tarot-viewport><tarot-track>
       {#for item in items}

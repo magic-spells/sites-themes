@@ -9,7 +9,7 @@
     <div class="grid gap-space-xl md:grid-cols-2">
       <div class="grid content-start gap-space-md">
         <a class="justify-self-start text-h3 font-bold" href="/">{ name }</a>
-        {#if s.address}<address class="text-body-sm not-italic text-scheme-muted">{ s.address | split('\n') | compact | join(', ') }</address>{/if}
+        {#if s.address}<address class="text-body-sm not-italic text-scheme-muted">{ s.address | split('\n') | join(', ') }</address>{/if}
         {#if social.length}
           <ul class="-ms-space-sm flex">
             {#for item in social}

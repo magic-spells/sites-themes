@@ -9,15 +9,15 @@
   mosaic = photos | slice(0, 5)
   options = { slidesPerView: 1, gap: 0, lightbox: true, navigation: { showButtons: false, showPagination: true } }
   money = s.currency_symbol
-  rates = [f.price_week ? (f.price_week | currency(money, 0)) + ' / ' + t('unit.week') : '', f.min_nights ? t(f.min_nights == 1 ? 'min_night' : 'min_nights', { n: f.min_nights }) : ''] | compact
-  amenities = (f.amenities || '') | split('\n') | compact
+  rates = [f.price_week ? (f.price_week | currency(money, 0)) + ' / ' + t('unit.week') : null, f.min_nights ? t(f.min_nights == 1 ? 'min_night' : 'min_nights', { n: f.min_nights }) : null] | compact
+  amenities = (f.amenities || '') | split('\n')
   shown = settings.amenities_shown
-  tiles = 'grid grid-cols-2 gap-space-sm md:grid-cols-3 lg:grid-cols-4'
+  tiles = 'grid gap-space-sm sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
   knows = [
-    { settings: { question: t('know.check_in'), answer: s.check_in && s.check_out ? t('check_in_line', { in: s.check_in, out: s.check_out }) + '.' : '' } },
-    { settings: { question: t('know.rules'), answer: s.house_rules ? (s.house_rules | split('\n') | compact | join('. ')) + '.' : '' } },
-    { settings: { question: t('know.cancellation'), answer: s.cancellation ? s.cancellation + '.' : '' } },
-    { settings: { question: t('know.pets_parking'), answer: s.pets || s.parking ? ([s.pets, s.parking] | compact | join('. ')) + '.' : '' } }
+    { settings: { question: t('know.check_in'), answer: s.check_in && s.check_out ? t('check_in_line', { in: s.check_in, out: s.check_out }) : '' } },
+    { settings: { question: t('know.rules'), answer: s.house_rules ? (s.house_rules | split('\n') | join('. ')) + '.' : '' } },
+    { settings: { question: t('know.cancellation'), answer: s.cancellation } },
+    { settings: { question: t('know.pets_parking'), answer: [s.pets, s.parking] | compact | join(' ') } }
   ] | where('settings.answer')
   reviews = settings.show_reviews ? content.reviews.entries | where('fields.stay.handle', stay.handle) | sort('fields.order') | slice(0, 3) : []
 }
@@ -25,7 +25,7 @@
   <div class="mx-auto flex max-w-column flex-col gap-space-2xl">
     {#if photos.length}
       <div>
-        <tarot-carousel class="block max-md:-mx-gutter max-md:-mt-section md:sr-only" id={ id }>
+        <tarot-carousel class="block max-md:-mx-gutter max-md:-mt-section md:hidden" id={ id }>
           <script type="application/json" data-tarot-options>{ options | json }</script>
           <tarot-viewport><tarot-track>
             {#for item in photos, i}<tarot-slide><img class="aspect-photo w-full bg-scheme-surface-2 object-cover" src="{ image_url(item.asset, 800) }" srcset="{ image_srcset(item.asset, [480, 768, 1024]) }" sizes="100vw" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="{ i == 0 ? 'eager' : 'lazy' }" width={ item.asset.width } height={ item.asset.height } /></tarot-slide>{/for}
@@ -34,9 +34,9 @@
         <div class="grid grid-cols-mosaic gap-space-xs max-md:hidden">
           {#for item in mosaic, i}
             {#if i == 0}
-              <div class="row-span-2"><Well asset={ item.asset } alt="" ratio="aspect-photo" width={ 1200 } sizes="58vw" eager={ true } /></div>
+              <div class="row-span-2"><Well asset={ item.asset } alt={ item.alt } ratio="aspect-photo" width={ 1200 } sizes="58vw" eager={ true } /></div>
             {:else}
-              <Well asset={ item.asset } alt="" ratio="h-full" width={ 480 } sizes="20vw">{#if i == mosaic.length - 1}<button class="absolute right-space-sm bottom-space-sm min-h-tap rounded-button bg-chip px-space-md text-body-sm font-semibold text-on-chip transition-colors duration-fast hover:bg-scheme-background hover:text-scheme-foreground" type="button" data-lightbox-open={ id } data-index="0">{ t('all_photos') }</button>{/if}</Well>
+              <Well asset={ item.asset } alt={ item.alt } ratio="h-full" width={ 480 } sizes="20vw">{#if i == mosaic.length - 1}<button class="absolute right-space-sm bottom-space-sm min-h-tap rounded-button bg-chip px-space-md text-body-sm font-semibold text-on-chip transition-colors duration-fast hover:bg-scheme-background hover:text-scheme-foreground" type="button" data-lightbox-open={ id } data-index="0">{ t('all_photos') }</button>{/if}</Well>
             {/if}
           {/for}
         </div>
@@ -59,7 +59,7 @@
 
     {#if f.highlights}
       <ul class="grid gap-space-lg lg:grid-cols-3">
-        {#for line in f.highlights | split('\n') | compact}
+        {#for line in f.highlights | split('\n')}
           {#let parts = line | split(': ')}
           <li class="grid content-start gap-space-2xs"><p class="text-body font-semibold">{ parts | first }</p><p class="text-body text-pretty text-scheme-muted">{ parts | slice(1) | join(': ') }</p></li>
         {/for}

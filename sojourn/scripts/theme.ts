@@ -90,7 +90,7 @@ document.addEventListener('click', (event) => {
 	button.closest('[data-ticker]')?.querySelector('scrolling-content')?.toggleAttribute('paused', paused);
 });
 
-// Grid tiles open the lightbox of a visually hidden companion carousel
+// Grid tiles open the lightbox of a hidden companion carousel
 // holding the same photographs (the plugin opens from a slide and has no
 // public open(index)). Focus goes back to the tile when it closes.
 const tileFor = new Map<Element, HTMLElement>();

@@ -8,7 +8,7 @@
   "baths": "{n} baths",
   "book_with_operator": "Book with the operator",
   "booking_frame": "Booking",
-  "check_in_line": "Check-in from {in}, check-out by {out}",
+  "check_in_line": "Check-in from {in}, check-out by {out}.",
   "chip.here": "Here",
   "chip.nearby": "Nearby",
   "chip.trip": "Trips",

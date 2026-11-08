@@ -1,4 +1,4 @@
-<!-- What guests say, under a centred head. grid: review cards three, two, then one across. carousel: one centred quote at a time with the stars and the attribution, page dots under it, round arrows at the stage's sides on hover from 64rem. -->
+<!-- What guests say, under a centred head. grid: review cards three, then two across, on phones a row that scrolls and bleeds off the right edge. carousel: one centred quote at a time with the stars and the attribution, page dots under it, round arrows at the stage's sides on hover from 64rem. -->
 {#let
   id = 'reviews-' + section.id
   all = content.reviews.entries | sort('fields.order')
@@ -19,7 +19,7 @@
               <tarot-slide>
                 <figure class="mx-auto grid max-w-reading justify-items-center gap-space-md text-center">
                   {#if f.rating}<p class="flex gap-space-2xs text-accent" role="img" aria-label="{ t('rating', { n: f.rating }) }">{#for n in [1, 2, 3, 4, 5]}<Glyph name={ n <= f.rating ? 'star-filled' : 'star' } />{/for}</p>{/if}
-                  <blockquote class="text-h3 font-medium text-balance">“{ f.quote }”</blockquote>
+                  <blockquote class="text-h3 font-medium text-balance">{ f.quote }</blockquote>
                   <figcaption class="text-body-sm text-scheme-meta">{ [f.name, f.place] | compact | join(' · ') }{#if f.date} · <Month d={ f.date } />{/if}</figcaption>
                 </figure>
               </tarot-slide>
@@ -30,8 +30,8 @@
       </tarot-carousel>
     {:else}
       <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } centred={ true } />
-      <ul class="grid items-stretch gap-space-md md:grid-cols-2 lg:grid-cols-3">
-        {#for entry in reviews}<li><ReviewCard entry={ entry } /></li>{/for}
+      <ul class="grid items-stretch gap-space-md max-md:-me-gutter max-md:flex max-md:snap-x max-md:snap-mandatory max-md:overflow-x-auto max-md:pe-gutter md:grid-cols-2 lg:grid-cols-3">
+        {#for entry in reviews}<li class="max-md:w-stay-card max-md:shrink-0 max-md:snap-start"><ReviewCard entry={ entry } /></li>{/for}
       </ul>
     {/if}
   </div>
@@ -54,7 +54,7 @@
     { "type": "checkbox", "id": "featured_only", "label": "Featured only", "default": false },
     { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 6 },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "" },
-    { "type": "url", "id": "link_href", "label": "Link", "default": "/about" },
+    { "type": "url", "id": "link_href", "label": "Link", "default": "/about#reviews" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "forest" }
   ],
   "presets": [

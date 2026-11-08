@@ -8,7 +8,7 @@
     <header class="grid w-full max-w-reading gap-space-sm">
       <h1 class="text-h1 font-bold text-balance text-scheme-heading"><Accent text={ post.title } rise={ true } /></h1>
       {#if f.standfirst}<p class="text-body-lg text-pretty text-scheme-muted">{ f.standfirst }</p>{/if}
-      <p class="text-body-sm text-scheme-meta">{ [f.topic, f.date ? f.date | date('long') : '', f.author] | compact | join(' · ') }</p>
+      <p class="text-body-sm text-scheme-meta">{ [f.topic, f.date ? f.date | date('long') : null, f.author] | compact | join(' · ') }</p>
     </header>
     <div class="w-full"><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-wide" width={ 1600 } sizes="(min-width: 82.5rem) 82.5rem, 100vw" eager={ true } /></div>
     {#if f.body}<div class="sites-prose w-full max-w-reading">{ f.body }</div>{/if}

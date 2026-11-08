@@ -14,7 +14,7 @@
     <div class="border-t border-scheme-border pt-space-md"><Button action={ true } wide={ true }>{ s.booking_label }</Button></div>
     <div class="mt-auto grid gap-space-2xs text-body-sm text-scheme-muted">
       {#if s.phone}<a class="justify-self-start hover:text-scheme-foreground" href="tel:{ s.phone | replace(' ', '') }">{ s.phone }</a>{/if}
-      {#if s.check_in}<p>{ [t('fact.check_in') + ' ' + s.check_in, s.check_out ? t('fact.check_out') + ' ' + s.check_out : ''] | compact | join(' · ') }</p>{/if}
+      {#if s.check_in}<p>{ [t('fact.check_in') + ' ' + s.check_in, s.check_out ? t('fact.check_out') + ' ' + s.check_out : null] | compact | join(' · ') }</p>{/if}
     </div>
   </dialog>
 </dialog-panel>

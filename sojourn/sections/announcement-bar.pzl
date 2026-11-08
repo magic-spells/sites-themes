@@ -1,5 +1,5 @@
 <!-- The ticker: short phrases with a pin between them on a marquee, the whole line one link; a pause button and, with a key, a close button that hides it for good. scroll off: the phrases stand still, centred. Under reduced motion the marquee stands still, one copy, cut with an ellipsis. -->
-{#let lines = settings.lines | split('\n') | compact | slice(0, 6)}
+{#let lines = settings.lines | split('\n') | slice(0, 6)}
 {#if lines.length}
 <aside class="relative bg-scheme-background text-scheme-foreground" data-dismiss-key="{ settings.key }" aria-label="{ t('announcement') }" data-ticker={ settings.scroll ? true : null }>
   <div class="flex items-center">

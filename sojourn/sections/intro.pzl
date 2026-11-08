@@ -1,5 +1,5 @@
 <!-- The welcome: one sentence in h2 and a line of body in the seven parts, an optional row of short facts under them, and an optional 4:5 picture (3:2 on phones) in the five with the caption card over its corner. -->
-{#let facts = settings.facts | split('\n') | compact}
+{#let facts = settings.facts | split('\n')}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column items-center gap-space-xl { settings.image ? 'md:grid-cols-text-picture md:gap-space-3xl' : '' }">
     <div class="grid max-w-reading gap-space-md">

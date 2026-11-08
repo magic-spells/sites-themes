@@ -8,7 +8,7 @@
       <div class="grid gap-space-md">
         {#if s.address}<address class="text-body-lg not-italic">{ s.address | newline_to_br }</address>{/if}
         {#if s.directions}<p class="text-body text-scheme-muted">{ s.directions }</p>{/if}
-        {#if s.check_in}<p class="text-body-sm text-scheme-meta">{ [t('fact.check_in') + ' ' + s.check_in, s.check_out ? t('fact.check_out') + ' ' + s.check_out : ''] | compact | join(' · ') }</p>{/if}
+        {#if s.check_in}<p class="text-body-sm text-scheme-meta">{ [t('fact.check_in') + ' ' + s.check_in, s.check_out ? t('fact.check_out') + ' ' + s.check_out : null] | compact | join(' · ') }</p>{/if}
         {#if s.map_image}<a class="block" href={ s.map_url || null } target="_blank" rel="noopener"><Well asset={ s.map_image } alt={ s.map_image_alt || t('map_of', { name: site.name }) } ratio="aspect-tile" width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw"><span class="absolute inset-0 flex items-center justify-center text-accent"><Glyph name="pin" cls="size-glyph" /></span></Well></a>{/if}
         {#if s.map_url}<a class="inline-flex items-center gap-space-xs justify-self-start text-body-sm font-semibold hover:underline hover:underline-offset-4" href="{ s.map_url }" target="_blank" rel="noopener">{ t('open_map') }<span class="text-accent"><Glyph name="arrow-right" /></span></a>{/if}
       </div>

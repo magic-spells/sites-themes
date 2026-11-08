@@ -1,9 +1,9 @@
-<!-- What the whole place has: amenity tiles (glyph and label, an optional line under it) four, three, then two across. lines off hides the lines. -->
+<!-- What the whole place has: amenity tiles (glyph and label, an optional line under it) four, three, two, then one across. lines off hides the lines. -->
 {#if blocks.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } />
-    <ul class="grid grid-cols-2 gap-space-sm md:grid-cols-3 lg:grid-cols-4">
+    <ul class="grid gap-space-sm sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {#for block in blocks}<li data-block={ block.editor_id }><Amenity label={ block.settings.label } glyph={ block.settings.glyph } line={ settings.lines ? block.settings.line : '' } look="tile" /></li>{/for}
     </ul>
   </div>

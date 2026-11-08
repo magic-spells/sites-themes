@@ -1,0 +1,64 @@
+{
+  "name": "Hospitality",
+  "version": "0.1.0",
+  "default_template": "page",
+  "not_found_template": "404",
+  "maintenance_template": "maintenance",
+  "query": ["type", "kind"],
+  "groups": {
+    "header-group": { "label": "Header", "accepts": ["announcement-bar", "header"] },
+    "footer-group": { "label": "Footer", "accepts": ["footer"] },
+    "panel-group": { "label": "Panels", "accepts": ["mobile-menu", "cookie-notice"] }
+  },
+  "settings": [
+    {
+      "name": "Brand",
+      "settings": [
+        { "type": "text", "id": "wordmark", "label": "Wordmark", "default": "Fern Hollow", "info": "Set in the heading face in the header, the menu and the footer. Leave empty to use the site name." },
+        { "type": "image", "id": "logo", "label": "Logo", "info": "Shown in place of the wordmark in the header when set." },
+        { "type": "image", "id": "favicon", "label": "Favicon" },
+        { "type": "text", "id": "tagline", "label": "Tagline", "default": "Cedar cabins on the water." },
+        { "type": "text", "id": "currency_symbol", "label": "Currency symbol", "default": "$" },
+        { "type": "checkbox", "id": "reveal", "label": "Reveal on scroll", "default": true, "info": "Cards and photos fade up, headings rise in word by word and photos drift as the page scrolls." },
+        { "type": "select", "id": "texture", "label": "Texture", "default": "none", "options": [
+          { "value": "none", "label": "None" },
+          { "value": "dots", "label": "Dot grid" }
+        ], "info": "A flat dot grid in a corner of the inset hero and the booking band's link layout." }
+      ]
+    },
+    {
+      "name": "Place",
+      "settings": [
+        { "type": "textarea", "id": "address", "label": "Address", "default": "", "info": "One line per line of the address." },
+        { "type": "text", "id": "directions", "label": "Directions", "default": "", "info": "One line, for example: An hour north of Kelowna on Highway 97." },
+        { "type": "text", "id": "check_in", "label": "Check-in", "default": "3 pm" },
+        { "type": "text", "id": "check_out", "label": "Check-out", "default": "11 am" },
+        { "type": "text", "id": "open_season", "label": "Open", "default": "Year round", "info": "May to October, or Year round." },
+        { "type": "textarea", "id": "house_rules", "label": "House rules", "default": "", "info": "One rule per line." },
+        { "type": "text", "id": "cancellation", "label": "Cancellation", "default": "" },
+        { "type": "text", "id": "pets", "label": "Pets", "default": "" },
+        { "type": "text", "id": "parking", "label": "Parking", "default": "" },
+        { "type": "number", "id": "founded", "label": "Founded", "info": "The year you opened." },
+        { "type": "select", "id": "booking", "label": "Booking", "default": "link", "options": [
+          { "value": "link", "label": "A link to the booking app" },
+          { "value": "embed", "label": "The booking app embedded" },
+          { "value": "both", "label": "Both" }
+        ], "info": "The theme takes no bookings: the button links to your booking app, and the booking band can embed its page." },
+        { "type": "url", "id": "booking_url", "label": "Booking link", "default": "", "info": "Your booking app's page. Every Check availability button links here." },
+        { "type": "text", "id": "booking_label", "label": "Booking button label", "default": "Check availability" },
+        { "type": "url", "id": "booking_embed_url", "label": "Booking embed address", "default": "", "info": "The address of your booking app's embeddable page. The booking band shows it in a frame. Script widgets cannot be embedded." },
+        { "type": "number", "id": "booking_embed_height", "label": "Booking embed height", "default": 640, "unit": "px", "min": 320, "max": 1600 },
+        { "type": "url", "id": "map_url", "label": "Map link", "default": "" },
+        { "type": "image", "id": "map_image", "label": "Map image", "info": "A static map, linked to the map link." },
+        { "type": "text", "id": "map_image_alt", "label": "Map image alt text", "default": "" }
+      ]
+    },
+    {
+      "name": "Contact",
+      "settings": [
+        { "type": "text", "id": "phone", "label": "Phone", "default": "" },
+        { "type": "text", "id": "email", "label": "Email", "default": "" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+<!-- component: Accent -->
+<!-- props: text rise -->
+<!-- A heading's text. rise wraps it in split-text so its words rise in, while Brand reveal is on. -->
+{#if rise && site.settings.reveal}<split-text split="words">{ text }</split-text>{:else}{ text }{/if}

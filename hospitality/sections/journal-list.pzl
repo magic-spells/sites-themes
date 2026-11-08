@@ -1,0 +1,50 @@
+<!-- The journal, newest first. feature: the newest as a large 3:2 card in seven parts, the next ones as rows with a thumbnail in the five beside it. grid: cards three, two, then one across. On a post's page it leaves that post out. -->
+{#let
+  posts = content.posts.entries | sort('fields.date') | reverse | reject('id', page.entry.id) | slice(0, settings.limit)
+  feature = settings.view == 'feature' && posts.length > 1
+}
+{#if posts.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } />
+    {#if feature}
+      <div class="grid items-start gap-space-xl md:grid-cols-text-picture md:gap-space-lg">
+        <PostCard entry={ posts | first } base_path={ settings.base_path } layout="feature" />
+        <ul class="grid gap-space-lg">
+          {#for entry in posts | slice(1)}<li><PostCard entry={ entry } base_path={ settings.base_path } layout="row" /></li>{/for}
+        </ul>
+      </div>
+    {:else}
+      <ul class="grid gap-x-space-md gap-y-space-xl md:grid-cols-2 lg:grid-cols-3">
+        {#for entry in posts}<li><PostCard entry={ entry } base_path={ settings.base_path } /></li>{/for}
+      </ul>
+    {/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Journal list",
+  "description": "Posts, newest first: one featured with rows beside it, or a grid of cards.",
+  "kind": "Journal",
+  "icon": "newspaper",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "From the journal" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "select", "id": "view", "label": "View", "default": "feature", "options": [
+      { "value": "feature", "label": "Feature" },
+      { "value": "grid", "label": "Grid" }
+    ], "info": "Feature: the newest large, the next ones as rows beside it." },
+    { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 3 },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "All posts" },
+    { "type": "url", "id": "link_href", "label": "Link", "default": "/journal" },
+    { "type": "url", "id": "base_path", "label": "Post page path", "default": "/journal" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Feature", "settings": { "view": "feature", "color_scheme": "paper" } },
+    { "name": "Grid", "settings": { "view": "grid", "color_scheme": "paper" } }
+  ]
+}
+</schema>

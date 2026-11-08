@@ -1,0 +1,26 @@
+{
+  "sections": [
+    {
+      "id": "sg_ticker",
+      "type": "announcement-bar",
+      "preset": "Night",
+      "settings": {
+        "scroll": true,
+        "key": "",
+        "color_scheme": "night"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_header",
+      "type": "header",
+      "preset": "Over the hero",
+      "settings": {
+        "style": "over-hero",
+        "menu": "main",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    }
+  ]
+}

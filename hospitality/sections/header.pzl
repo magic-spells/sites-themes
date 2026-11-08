@@ -1,0 +1,42 @@
+<!-- The wordmark left, the main menu and the booking pill right; below 64rem the wordmark, the pill and the round menu button. Over the hero: transparent with paper type on a page that opens with a cover hero, its own scheme once the page scrolls. -->
+{#let wordmark = settings.logo_text || site.settings.wordmark || site.name}
+<sticky-header class="block" settle-overshoot="0" disabled={ !settings.sticky } data-header-style={ settings.style }>
+  <header class="relative isolate border-b border-scheme-border bg-scheme-background px-gutter text-scheme-foreground transition-colors duration-panel overlaid:border-transparent overlaid:bg-transparent overlaid:text-chip">
+    <div class="mx-auto flex min-h-header max-w-column items-center gap-space-md">
+      <a class="me-auto text-h4 font-bold whitespace-nowrap" href="/">{#if site.settings.logo}<img class="h-control w-auto" src="{ image_url(site.settings.logo, 320) }" alt="{ wordmark }" width={ site.settings.logo.width } height={ site.settings.logo.height } />{:else}{ wordmark }{/if}</a>
+      {#if settings.menu.items.length}
+        <nav class="hidden lg:block" aria-label="{ t('main_navigation') }">
+          <ul class="flex items-center text-body">
+            {#for item in settings.menu.items}<li><a class="flex min-h-header items-center px-space-sm underline-offset-8 hover:underline current:underline" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>{/for}
+          </ul>
+        </nav>
+      {/if}
+      {#if settings.show_booking}<Button action={ true } small={ true } cls="max-sm:px-space-sm overlaid:border-chip overlaid:bg-chip overlaid:text-on-chip">{ site.settings.booking_label }</Button>{/if}
+      <button class="flex size-tap shrink-0 items-center justify-center rounded-full border border-scheme-foreground text-accent overlaid:border-chip overlaid:text-chip lg:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu"><Glyph name="menu" /><span class="sr-only">{ t('menu') }</span></button>
+    </div>
+  </header>
+</sticky-header>
+
+<schema>
+{
+  "name": "Header",
+  "description": "The wordmark, the main menu and the booking pill.",
+  "kind": "Header",
+  "icon": "panel-top",
+  "settings": [
+    { "type": "text", "id": "logo_text", "label": "Wordmark text", "default": "", "info": "Leave empty to use the Brand wordmark. A Brand logo replaces it." },
+    { "type": "menu", "id": "menu", "label": "Menu" },
+    { "type": "select", "id": "style", "label": "Style", "default": "over-hero", "options": [
+      { "value": "solid", "label": "Solid" },
+      { "value": "over-hero", "label": "Over the hero" }
+    ], "info": "Over the hero: transparent with paper type on a page that opens with a cover hero, solid once the page scrolls. Solid everywhere else." },
+    { "type": "checkbox", "id": "sticky", "label": "Sticky", "default": true },
+    { "type": "checkbox", "id": "show_booking", "label": "Booking button", "default": true, "info": "Labelled and linked by the Place booking settings." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Over the hero", "settings": { "style": "over-hero", "menu": "main", "color_scheme": "paper" } },
+    { "name": "Solid", "settings": { "style": "solid", "menu": "main", "color_scheme": "paper" } }
+  ]
+}
+</schema>

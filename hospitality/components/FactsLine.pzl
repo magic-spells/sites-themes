@@ -1,0 +1,4 @@
+<!-- component: FactsLine -->
+<!-- props: f -->
+<!-- A stay's facts as one line in meta: "Sleeps 2 · 1 queen · 1 bath". -->
+{ [f.sleeps ? t('sleeps', { n: f.sleeps }) : null, f.beds, f.baths ? t(f.baths == 1 ? 'bath' : 'baths', { n: f.baths }) : null] | compact | join(' · ') }

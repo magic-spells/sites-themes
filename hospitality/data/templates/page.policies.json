@@ -1,0 +1,66 @@
+{
+  "label": "Policies",
+  "description": "House rules, cancellation and privacy.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "Policies",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_policies",
+      "type": "policies",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "id": "s_policies_b1",
+          "type": "item",
+          "settings": {
+            "question": "House rules",
+            "answer": "<ul><li>No smoking indoors</li><li>Quiet after 10 pm</li><li>Campfires in the pits only</li><li>Please take your boots off</li></ul>"
+          }
+        },
+        {
+          "id": "s_policies_b2",
+          "type": "item",
+          "settings": {
+            "question": "Check-in and check-out",
+            "answer": "<p>Check-in from 3 pm, check-out by 11 am.</p>"
+          }
+        },
+        {
+          "id": "s_policies_b3",
+          "type": "item",
+          "settings": {
+            "question": "Cancellation",
+            "answer": "<p>Free cancellation up to 14 days before arrival; after that the first night is kept.</p>"
+          }
+        },
+        {
+          "id": "s_policies_b4",
+          "type": "item",
+          "settings": {
+            "question": "Pets and parking",
+            "answer": "<p>Dogs welcome in the cabins, $25 a night, not in the farmhouse rooms. One car at each cabin, overflow by the barn.</p>"
+          }
+        },
+        {
+          "id": "s_policies_b5",
+          "type": "item",
+          "settings": {
+            "question": "Privacy",
+            "answer": "<p>We keep your name, email and dates to run your stay, and nothing else.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}

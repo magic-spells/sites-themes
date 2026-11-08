@@ -1,0 +1,32 @@
+<!-- A journal post in the reading column: the title in h1, the standfirst, "Topic · Date · Author" in meta, the 16:9 image wider than the column, then the body. -->
+{#let
+  post = page.entry
+  f = post.fields
+}
+<article class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column justify-items-center gap-space-xl">
+    <header class="grid w-full max-w-reading gap-space-sm">
+      <h1 class="text-h1 text-balance text-scheme-heading"><Accent text={ post.title } rise={ true } /></h1>
+      {#if f.standfirst}<p class="text-body-lg text-pretty text-scheme-muted">{ f.standfirst }</p>{/if}
+      <p class="text-body-sm text-scheme-meta">{ [f.topic, f.date ? f.date | date('long') : null, f.author] | compact | join(' · ') }</p>
+    </header>
+    <div class="w-full"><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-wide" width={ 1600 } sizes="(min-width: 82.5rem) 82.5rem, 100vw" eager={ true } /></div>
+    {#if f.body}<div class="sites-prose w-full max-w-reading">{ f.body }</div>{/if}
+  </div>
+</article>
+
+<schema>
+{
+  "name": "Post",
+  "description": "A journal post: its title, standfirst, image and body.",
+  "kind": "Journal",
+  "icon": "file-text",
+  "templates": ["post"],
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "paper" } }
+  ]
+}
+</schema>

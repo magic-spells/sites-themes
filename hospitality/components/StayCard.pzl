@@ -1,0 +1,20 @@
+<!-- component: StayCard -->
+<!-- props: entry base_path view stack -->
+<!-- A stay, one link, on a hairline card at content radius: a 3:2 well at well radius with the price chip, the title, the facts line in meta and one line of summary; the text grows so a row's cards end level. view list: from 48rem the photo takes five parts and the text seven, with the first four amenities as glyph and label pairs. stack: on phones the card shows those amenities too (the stacked list). -->
+{#let
+  f = entry.fields
+  list = view == 'list'
+}
+<article class="group relative flex h-full flex-col gap-space-sm rounded-content border border-scheme-border p-space-xs { list ? 'md:grid md:grid-cols-picture-text md:items-center md:gap-space-xl' : '' } { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+  <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-photo" radius="well" width={ 800 } sizes="{ list ? '(min-width: 48rem) 40vw, 100vw' : '(min-width: 64rem) 25rem, (min-width: 48rem) 50vw, 19rem' }" zoom={ true }><PriceChip f={ f } /></Well>
+  <div class="flex flex-1 flex-col gap-space-2xs px-space-xs pb-space-xs">
+    <h3 class="text-h4 font-semibold"><a class="after:absolute after:inset-0 hover:underline hover:underline-offset-4" href="{ base_path ?? '/stays' }/{ entry.handle }">{ entry.title }</a></h3>
+    <p class="text-body-sm text-scheme-meta"><FactsLine f={ f } /></p>
+    {#if f.summary}<p class="text-body-sm text-pretty text-scheme-muted">{ f.summary }</p>{/if}
+    {#if (list || stack) && f.amenities}
+      <ul class="mt-space-sm flex flex-wrap gap-x-space-md gap-y-space-xs { list == stack ? '' : (list ? 'max-md:hidden' : 'md:hidden') }">
+        {#for line in f.amenities | split('\n') | slice(0, 4)}<li><Amenity label={ line } /></li>{/for}
+      </ul>
+    {/if}
+  </div>
+</article>

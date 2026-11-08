@@ -1,0 +1,45 @@
+<!-- A page's opening: the title in h1 and a standfirst. media photo: the title and standfirst sit low-left over the photo under the night gradient, the photo in a content-radius well inside the gutters from 48rem and edge to edge on phones. -->
+{#let photo = settings.media == 'photo' && settings.image}
+<section class="bg-scheme-background { photo ? 'pb-space-xl md:px-gutter md:pt-space-lg' : 'px-gutter py-section' } text-scheme-foreground">
+  {#if photo}
+    <div class="relative isolate mx-auto flex aspect-portrait max-w-column items-end md:aspect-tile overflow-hidden bg-scheme-surface-2 md:rounded-content">
+      <img class="absolute inset-0 -z-20 size-full object-cover" src="{ image_url(settings.image, 2000) }" srcset="{ image_srcset(settings.image, [768, 1280, 2000, 2560]) }" sizes="(min-width: 82.5rem) 82.5rem, 100vw" alt="{ settings.image_alt || settings.image.alt }" fetchpriority="high" width={ settings.image.width } height={ settings.image.height } />
+      <span class="absolute inset-0 -z-10 bg-linear-to-t from-scrim to-transparent" aria-hidden="true"></span>
+      <div class="grid max-w-reading gap-space-sm p-gutter text-chip md:p-space-xl">
+        <h1 class="text-h1 text-balance"><Accent text={ settings.heading || page.title } rise={ true } /></h1>
+        {#if settings.text}<p class="text-body-lg text-pretty">{ settings.text }</p>{/if}
+      </div>
+    </div>
+  {:else}
+    <div class="mx-auto grid max-w-column">
+      <div class="grid max-w-reading gap-space-sm">
+        <h1 class="text-h1 text-balance text-scheme-heading"><Accent text={ settings.heading || page.title } rise={ true } /></h1>
+        {#if settings.text}<p class="text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+      </div>
+    </div>
+  {/if}
+</section>
+
+<schema>
+{
+  "name": "Page header",
+  "description": "A page's title and standfirst, alone or over a photo.",
+  "kind": "Hero",
+  "icon": "heading",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "", "info": "Leave empty to use the page title." },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "select", "id": "media", "label": "Media", "default": "none", "options": [
+      { "value": "none", "label": "None" },
+      { "value": "photo", "label": "Photo" }
+    ], "info": "Photo: the title sits over the photo. Pair it with a dark scheme such as Night." },
+    { "type": "image", "id": "image", "label": "Photo", "info": "16:9 or wider." },
+    { "type": "text", "id": "image_alt", "label": "Photo alt text", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "paper" } },
+    { "name": "Photo", "settings": { "media": "photo", "color_scheme": "night" } }
+  ]
+}
+</schema>

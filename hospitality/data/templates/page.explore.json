@@ -1,0 +1,51 @@
+{
+  "label": "Things to do",
+  "description": "Everything here and nearby, with the kind chips and a strip of photos.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "Things to do",
+        "text": "The lake, the trails and the valley, here and a short drive away.",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_explore",
+      "type": "explore-grid",
+      "preset": "All",
+      "settings": {
+        "heading": "",
+        "limit": 12,
+        "chips": true,
+        "link_label": "",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_strip",
+      "type": "gallery-strip",
+      "preset": "Default",
+      "settings": {
+        "heading": "From the lake",
+        "gallery": "strip",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_booking",
+      "type": "booking-band",
+      "preset": "Beside",
+      "settings": {
+        "embed_position": "beside",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+<!-- component: Well -->
+<!-- props: asset alt ratio radius width sizes eager zoom edge caption caption_meta parallax -->
+<!-- A photo well: a frame on surface-2 that clips its photo. ratio is the aspect utility (aspect-photo, aspect-portrait, aspect-wide, aspect-square, aspect-tile, aspect-map). radius: content (a standalone well, the default) or well (inside a card). edge draws a 4px stroke in the band's background (collage prints, featured tiles). caption and caption_meta put the paper caption card over the bottom-left corner, outside the clip. parallax sets the photo's drift depth. Children (a price chip) sit inside the clip. -->
+{#if asset}
+<span class="relative block { caption ? 'mb-space-md' : '' }">
+  <span class="relative block overflow-hidden bg-scheme-surface-2 { ratio ?? 'aspect-photo' } { radius == 'well' ? 'rounded-well' : 'rounded-content' } { edge ? 'border-4 border-scheme-background' : '' }">
+    <span class="absolute { parallax ? 'inset-x-0 -inset-y-space-xl' : 'inset-0' }" data-parallax={ parallax }><img class="size-full object-cover { zoom ? 'transition-transform duration-panel ease-out-soft group-hover:scale-105' : '' }" src="{ image_url(asset, width ?? 800) }" srcset="{ image_srcset(asset, [480, 768, 1024, 1600]) }" sizes="{ sizes ?? '100vw' }" alt="{ alt ?? asset.alt }" loading="{ eager ? 'eager' : 'lazy' }" fetchpriority={ eager ? 'high' : null } width={ asset.width } height={ asset.height } /></span>
+    <Children/>
+  </span>
+  {#if caption}<span class="absolute -bottom-space-md left-space-sm grid max-w-text gap-space-2xs rounded-well border border-scheme-border bg-chip p-space-md text-on-chip md:-left-space-md"><span class="text-body font-semibold">{ caption }</span>{#if caption_meta}<span class="text-body-sm opacity-70">{ caption_meta }</span>{/if}</span>{/if}
+</span>
+{/if}

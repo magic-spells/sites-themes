@@ -1,0 +1,46 @@
+<!-- The workspace's social profile as photos it uploads (no feed): square tiles at well radius, each with the Instagram glyph in its corner, linking to its post or the profile; six across from 64rem, a row that scrolls below. The handle is the head's pill. -->
+{#let tiles = blocks | slice(0, 6)}
+{#if tiles.length}
+<section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter">
+  <div class="mx-auto max-w-column">
+    <div class="px-gutter md:px-0"><SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.handle } link_href={ settings.url } /></div>
+    <ul class="flex snap-x snap-mandatory scroll-px-gutter gap-space-sm overflow-x-auto px-gutter md:px-0 lg:grid lg:grid-cols-6">
+      {#for block in tiles}
+        {#let b = block.settings}
+        <li class="w-2/5 shrink-0 snap-start md:w-1/4 lg:w-auto" data-block={ block.editor_id }>
+          <a class="group relative block" href="{ b.link || settings.url }" target="_blank" rel="noopener">
+            <Well asset={ b.image } alt={ b.image_alt || t('social_post') } ratio="aspect-square" radius="well" width={ 480 } sizes="(min-width: 64rem) 13rem, 40vw" zoom={ true }><span class="absolute end-space-sm bottom-space-sm text-chip"><Glyph name="instagram" /></span></Well>
+          </a>
+        </li>
+      {/for}
+    </ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Social",
+  "description": "Photos from the workspace's social profile, each linking to its post.",
+  "kind": "Gallery",
+  "icon": "camera",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "On the lake lately" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "text", "id": "handle", "label": "Handle", "default": "@fernhollow", "info": "The tiles are photos you upload, each linking to its post: a live feed would need the engine to fetch it, which sections cannot." },
+    { "type": "url", "id": "url", "label": "Profile link", "default": "https://www.instagram.com/fernhollow" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "blocks": [
+    { "type": "tile", "name": "Tile", "settings": [
+      { "type": "image", "id": "image", "label": "Image", "info": "Square crops best." },
+      { "type": "text", "id": "image_alt", "label": "Alt text", "default": "" },
+      { "type": "url", "id": "link", "label": "Post link", "default": "", "info": "Leave empty to link to the profile." }
+    ] }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "paper" } }
+  ]
+}
+</schema>

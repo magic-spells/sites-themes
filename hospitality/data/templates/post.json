@@ -1,0 +1,37 @@
+{
+  "label": "Post",
+  "description": "A journal post, more posts and booking.",
+  "sections": [
+    {
+      "id": "s_post",
+      "type": "post",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_more",
+      "type": "journal-list",
+      "preset": "Grid",
+      "settings": {
+        "view": "grid",
+        "heading": "More from the journal",
+        "limit": 3,
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_booking",
+      "type": "booking-band",
+      "preset": "Link",
+      "settings": {
+        "embed_position": "off",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    }
+  ]
+}

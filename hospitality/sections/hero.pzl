@@ -1,0 +1,80 @@
+<!-- The opener, three ways. Cover: the photo (or a muted looping video laid over it, so the photo is its poster) edge to edge under the night gradient, the type low-left in paper, two buttons; the header lies over it. Inset: the photo at 16:9 in a content-radius frame inside the gutters, the type under it. Centred: the type alone, centred. With Brand texture dots, a dot grid sits in a corner behind inset and centred. -->
+{#let
+  layout = settings.layout
+  cover = layout == 'cover'
+  dots = !cover && site.settings.texture == 'dots'
+  video = settings.media == 'video' && settings.video
+  first = settings.action_label || site.settings.booking_label
+}
+<section class="relative isolate bg-scheme-background text-scheme-foreground { cover ? '' : 'px-gutter py-section' }" data-over-hero={ cover ? true : null }>
+  {#if dots}<span class="pointer-events-none absolute top-0 right-0 -z-10 h-full w-1/4 bg-dots" aria-hidden="true"></span>{/if}
+  {#if cover}
+    <div class="relative isolate flex overflow-hidden bg-scheme-surface-2 { settings.height == 'full' ? 'min-h-svh' : 'min-h-hero' }">
+      {#if settings.image}<span class="absolute -z-20 { settings.parallax ? 'inset-x-0 -inset-y-space-2xl' : 'inset-0' }" data-parallax={ settings.parallax ? '0.1' : null }><img class="size-full object-cover" src="{ image_url(settings.image, 2000) }" srcset="{ image_srcset(settings.image, [768, 1280, 2000, 2560]) }" sizes="100vw" alt="{ settings.image_alt || settings.image.alt }" fetchpriority="high" width={ settings.image.width } height={ settings.image.height } /></span>{/if}
+      {#if video}<video class="absolute inset-0 -z-20 size-full object-cover motion-reduce:hidden" src="{ settings.video.url }" autoplay muted loop playsinline aria-hidden="true"></video>{/if}
+      <span class="absolute inset-0 -z-10 bg-linear-to-t from-scrim to-transparent" aria-hidden="true"></span>
+      <div class="mx-auto flex w-full max-w-column items-end px-gutter pt-space-3xl pb-section text-chip">
+        <div class="grid max-w-reading gap-space-md">
+          <h1 class="text-h1 text-balance"><Accent text={ settings.heading } rise={ true } /></h1>
+          {#if settings.text}<p class="text-body-lg text-pretty">{ settings.text }</p>{/if}
+          <div class="flex flex-wrap gap-space-xs pt-space-xs">
+            <Button action={ true } tone="photo">{ first }</Button>
+            {#if settings.second_label && settings.second_href}<Button href={ settings.second_href } tone="photo-secondary">{ settings.second_label }</Button>{/if}
+          </div>
+        </div>
+      </div>
+    </div>
+  {:else}
+    <div class="mx-auto grid max-w-column gap-space-xl { layout == 'centred' ? 'justify-items-center text-center' : '' }">
+      {#if layout == 'inset' && settings.image}<Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-wide" width={ 2000 } sizes="(min-width: 82.5rem) 82.5rem, 100vw" eager={ true } parallax={ settings.parallax ? '0.1' : null } />{/if}
+      <div class="grid max-w-reading gap-space-md { layout == 'centred' ? 'justify-items-center py-space-2xl' : '' }">
+        <h1 class="text-h1 text-balance text-scheme-heading"><Accent text={ settings.heading } rise={ true } /></h1>
+        {#if settings.text}<p class="text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+        <div class="flex flex-wrap gap-space-xs pt-space-xs { layout == 'centred' ? 'justify-center' : '' }">
+          <Button action={ true }>{ first }</Button>
+          {#if settings.second_label && settings.second_href}<Button href={ settings.second_href } tone="secondary">{ settings.second_label }</Button>{/if}
+        </div>
+      </div>
+    </div>
+  {/if}
+</section>
+
+<schema>
+{
+  "name": "Hero",
+  "description": "The opener: a photo or video edge to edge under the type, a framed photo over it, or the type alone.",
+  "kind": "Hero",
+  "icon": "image",
+  "settings": [
+    { "type": "select", "id": "layout", "label": "Layout", "default": "cover", "options": [
+      { "value": "cover", "label": "Cover" },
+      { "value": "inset", "label": "Inset" },
+      { "value": "centred", "label": "Centred" }
+    ], "info": "Cover: the photo edge to edge with the type over it; pair it with Night and the header's Over the hero style. Inset: a framed 16:9 photo above the type. Centred: the type alone." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "A lake, five cabins, and nothing to do" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Cedar cabins on the water, an hour from Kelowna." },
+    { "type": "text", "id": "action_label", "label": "First button label", "default": "", "info": "The booking button. Leave empty to use the Place booking label." },
+    { "type": "text", "id": "second_label", "label": "Second button label", "default": "The cabins" },
+    { "type": "url", "id": "second_href", "label": "Second button link", "default": "/stays" },
+    { "type": "select", "id": "media", "label": "Media", "default": "image", "options": [
+      { "value": "image", "label": "Image" },
+      { "value": "video", "label": "Video" }
+    ], "info": "Video: cover only, plays muted on a loop over the image, which stays as its poster. Visitors who ask for reduced motion see the image." },
+    { "type": "image", "id": "image", "label": "Image", "info": "3:2 or wider. Required for video too." },
+    { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "" },
+    { "type": "video", "id": "video", "label": "Video", "info": "A short MP4 loop, no sound." },
+    { "type": "select", "id": "height", "label": "Cover height", "default": "full", "options": [
+      { "value": "full", "label": "Full screen" },
+      { "value": "tall", "label": "Tall" }
+    ] },
+    { "type": "checkbox", "id": "parallax", "label": "Parallax", "default": true, "info": "The photo drifts a little on scroll. Off for visitors who ask for reduced motion." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "night" }
+  ],
+  "presets": [
+    { "name": "Cover", "settings": { "layout": "cover", "color_scheme": "night" } },
+    { "name": "Video", "settings": { "layout": "cover", "media": "video", "color_scheme": "night" } },
+    { "name": "Inset", "settings": { "layout": "inset", "color_scheme": "paper" } },
+    { "name": "Centred", "settings": { "layout": "centred", "color_scheme": "paper" } }
+  ]
+}
+</schema>

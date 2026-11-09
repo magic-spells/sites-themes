@@ -1,4 +1,4 @@
-<!-- A town's page from the areas collection: the pin line, the Brand tagline in the town as the title, the town's line; its paragraph beside its map at 4:5; then the featured services under a section head, the jobs in the town and the reviews that name it under h3-size headings; the ask button centred to close. -->
+<!-- A town's page from the areas collection: the pin line, the Brand tagline in the town as the title, the town's line and its paragraph, seven parts to five beside its map at 4:5 from 48rem, the map after the line on phones; then the featured services under a section head, the jobs in the town and the reviews that name it under h3-size headings; the ask button centred to close. -->
 {#let
   entry = page.entry
   f = entry.fields
@@ -10,14 +10,16 @@
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column gap-section">
-    <header class="grid max-w-reading gap-space-sm">
-      <p class="flex items-center gap-space-xs text-body-sm text-scheme-muted"><Glyph name="pin" cls="size-icon text-accent" />{ t('serving', { town: town }) }</p>
-      <h1 class="font-heading text-h1 case-heading text-scheme-heading">{ t('in_town', { line: site.settings.tagline, town: town }) }</h1>
-      {#if f.description}<p class="text-body-lg text-pretty">{ f.description }</p>{/if}
-    </header>
     <div class="grid items-start gap-space-xl md:grid-cols-text-picture md:gap-space-3xl">
-      {#if f.body}<div class="sites-prose max-w-reading" data-lead>{ f.body }</div>{/if}
-      <div class="md:col-start-2">{#if f.map_embed_url}<iframe class="aspect-portrait w-full rounded-card bg-scheme-surface-2" src="{ f.map_embed_url }" title="{ f.map_image_alt }" loading="lazy"></iframe>{:else}<Well asset={ f.map_image } alt={ f.map_image_alt } ratio="aspect-portrait" sizes="(min-width: 48rem) 40vw, 100vw" />{/if}</div>
+      <div class="contents md:grid md:content-start md:gap-space-xl">
+        <header class="grid max-w-reading gap-space-sm">
+          <p class="flex items-center gap-space-xs text-body-sm text-scheme-muted"><Glyph name="pin" cls="size-icon text-accent" />{ t('serving', { town: town }) }</p>
+          <h1 class="font-heading text-h1 case-heading text-scheme-heading">{ t('in_town', { line: site.settings.tagline, town: town }) }</h1>
+          {#if f.description}<p class="text-body-lg text-pretty">{ f.description }</p>{/if}
+        </header>
+        {#if f.body}<div class="sites-prose max-w-reading max-md:order-last" data-lead>{ f.body }</div>{/if}
+      </div>
+      <div>{#if f.map_embed_url}<iframe class="aspect-portrait w-full rounded-card bg-scheme-surface-2" src="{ f.map_embed_url }" title="{ f.map_image_alt }" loading="lazy"></iframe>{:else}<Well asset={ f.map_image } alt={ f.map_image_alt } ratio="aspect-portrait" sizes="(min-width: 48rem) 40vw, 100vw" />{/if}</div>
     </div>
     <div>
       <SectionHead heading={ t('services') } link_label={ t('all_services') } link_href="/services" />
@@ -28,7 +30,7 @@
       <ul class="grid gap-x-space-lg gap-y-space-xl md:grid-cols-2 lg:grid-cols-3">{#for project in projects}<li><ProjectCard entry={ project } /></li>{/for}</ul>
     </div>{/if}
     {#if contains(lines, town)}<div class="grid gap-space-lg">
-      <h2 class="font-heading text-h3 case-heading text-scheme-heading">{ t('town_says', { town: town }) }</h2>
+      <h2 class="font-heading text-h3 case-heading text-scheme-heading">{ t('customers_love') }</h2>
       <ul class="grid gap-space-sm md:grid-cols-2 md:gap-space-lg lg:grid-cols-3">{#for review in reviews}{#if contains(review.fields.line, town)}<li><ReviewCard entry={ review } /></li>{/if}{/for}</ul>
     </div>{/if}
     <Button ask cls="justify-self-center" />

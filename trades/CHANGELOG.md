@@ -34,3 +34,4 @@
 - The badge row sits on navy by default, its logos inverted on the navy, charcoal and rust bands.
 - The header is chalk by default on every page.
 - FAQ questions are set in medium weight over their regular answers.
+- A town page sets its map beside the pin line, title and line, and its reviews read "Our customers love our work".

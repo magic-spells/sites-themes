@@ -142,6 +142,19 @@
       "zip": "https://github.com/magic-spells/sites-themes/releases/download/trades/v0.1.0/trades-v0.1.0.zip",
       "sha256": null,
       "screenshots": []
+    },
+    {
+      "name": "clinic",
+      "label": "Clinic",
+      "description": "A practice site for a dentist, a physio, a therapist or a vet: services and concerns, the team, the first visit, fees and insurance, reviews, the offices' hours, and an appointment request behind every button.",
+      "category": "content",
+      "vertical": "Clinic and practice",
+      "license": "MIT",
+      "publisher": "Magic Spells",
+      "version": "0.1.0",
+      "zip": "https://github.com/magic-spells/sites-themes/releases/download/clinic/v0.1.0/clinic-v0.1.0.zip",
+      "sha256": null,
+      "screenshots": []
     }
   ]
 }

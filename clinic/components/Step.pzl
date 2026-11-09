@@ -1,0 +1,10 @@
+<!-- component: Step -->
+<!-- A first-visit step from a step block: the plain numeral in Step style (left out without number), the title in Card title, the line in Meta. A hairline above it in a row; with rail the numeral sits left of a vertical hairline that runs on to the next step. -->
+{#let b = block.settings}
+<li class="group { rail ? 'flex' : 'grid content-start gap-space-xs border-t border-scheme-border pt-space-md' } { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-block={ editor_id }>
+  {#if number}<p class="font-heading text-h2 tnum { rail ? 'w-control shrink-0' : '' }">{ number }</p>{/if}
+  <div class="grid content-start gap-space-xs { rail ? 'flex-1 border-s border-scheme-border ps-space-lg pb-space-xl group-last:pb-0' : '' }">
+    <h3 class="font-heading text-card">{ b.title }</h3>
+    {#if b.text}<p class="text-body-sm text-pretty text-scheme-muted">{ b.text }</p>{/if}
+  </div>
+</li>

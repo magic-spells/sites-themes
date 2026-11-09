@@ -1,0 +1,42 @@
+<!-- One line on cloud, the whole line one link (underlined on hover); a close button at the column's right edge that, with a key, hides it for good. Ticker: the line repeats on a marquee with a pause button; under reduced motion it stands still. -->
+{#if settings.text}
+<aside class="bg-scheme-background px-gutter text-scheme-foreground" data-dismiss-key="{ settings.key }" aria-label="{ t('announcement') }" data-ticker={ settings.motion == 'ticker' ? true : null }>
+  <div class="mx-auto flex min-h-control max-w-column items-center ps-tap">
+    <a class="block min-w-0 flex-1 py-space-xs text-body-sm underline-offset-4 hover:underline" href={ settings.link || null }>
+      {#if settings.motion == 'ticker'}
+        <scrolling-content class="block" speed="30" fade>
+          <scrolling-track>
+            <scrolling-item class="flex items-center">{#for n in [1, 2, 3]}<span class="whitespace-nowrap">{ settings.text }</span><Glyph name="dot" cls="mx-space-lg size-space-2xs text-scheme-muted" />{/for}</scrolling-item>
+          </scrolling-track>
+        </scrolling-content>
+      {:else}
+        <span class="block text-center text-pretty">{ settings.text }</span>
+      {/if}
+    </a>
+    {#if settings.motion == 'ticker'}<button class="flex size-tap shrink-0 items-center justify-center text-scheme-muted hover:text-scheme-foreground" type="button" data-ticker-toggle aria-pressed="false"><Glyph name="pause" /><span class="sr-only">{ t('pause') }</span></button>{/if}
+    <button class="flex size-tap shrink-0 items-center justify-center hover:text-link" type="button" data-dismiss><Glyph name="close" /><span class="sr-only">{ t('dismiss') }</span></button>
+  </div>
+</aside>
+{/if}
+
+<schema>
+{
+  "name": "Announcement bar",
+  "description": "One notice above the header, the whole line a link, with a close button.",
+  "kind": "Header",
+  "icon": "megaphone",
+  "settings": [
+    { "type": "text", "id": "text", "label": "Text", "default": "Now welcoming new patients at both offices", "info": "A notice, not a sale: new patients, a holiday closure, new hours." },
+    { "type": "url", "id": "link", "label": "Link", "default": "/book" },
+    { "type": "select", "id": "motion", "label": "Motion", "default": "static", "options": [
+      { "value": "static", "label": "Still" },
+      { "value": "ticker", "label": "Ticker" }
+    ], "info": "Ticker repeats the line on a slow marquee with a pause button. It stands still for visitors who ask for less motion." },
+    { "type": "text", "id": "key", "label": "Dismiss key", "default": "", "info": "Set a key (any word) and a closed bar stays closed for that visitor. Change it to show a new notice to everyone." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "cloud" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "cloud" } }
+  ]
+}
+</schema>

@@ -1,0 +1,35 @@
+{
+  "label": "Team member",
+  "description": "A clinician's page, their reviews and the routes.",
+  "sections": [
+    {
+      "id": "s_detail",
+      "type": "team-detail",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_reviews",
+      "type": "testimonials",
+      "preset": "Rows",
+      "settings": {
+        "layout": "rows",
+        "limit": 3,
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    }
+  ]
+}

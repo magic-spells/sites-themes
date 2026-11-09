@@ -1,0 +1,71 @@
+<!-- The first visit: the section head with the duration line, then the steps down a vertical hairline beside a 4:5 photo (rail, seven parts to five from 48rem) or in a row (4 / 2 / 1, a hairline above each). Under the steps: what to bring as check rows, two columns from 48rem, then the forms button and the portal link; the forms and portal go to the Practice links and hide without them. -->
+{#let
+  s = site.settings
+  rail = settings.layout == 'rail'
+  bring = blocks | where('type', 'bring')
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.duration_line } />
+    <div class="grid gap-space-xl { rail ? 'md:grid-cols-text-picture md:gap-space-3xl' : '' }">
+      <div class="grid content-start gap-space-2xl">
+        <ol class="grid { rail ? '' : 'gap-space-lg md:grid-cols-2 lg:grid-cols-4' }">{#for block in blocks | where('type', 'step'), i}<Step block={ block } number={ settings.show_numbers ? i + 1 : null } rail={ rail } editor_id={ block.editor_id } />{/for}</ol>
+        {#if bring.length}
+        <div>
+          <h3 class="mb-space-md font-heading text-h4">{ settings.bring_heading }</h3>
+          <ul class="grid gap-x-space-lg gap-y-space-sm md:grid-cols-2">{#for block in bring}<li class="flex gap-space-sm text-body" data-block={ block.editor_id }><Glyph name="check" cls="mt-space-2xs size-icon text-link" />{ block.settings.text }</li>{/for}</ul>
+        </div>
+        {/if}
+        <div class="flex flex-wrap items-center gap-x-space-lg gap-y-space-sm empty:hidden">{#if s.forms_url && settings.forms_label}<Button href={ s.forms_url }>{ settings.forms_label }</Button>{/if}{#if s.portal_url && settings.portal_label}<a class="text-body font-medium text-link underline underline-offset-4" href="{ s.portal_url }">{ settings.portal_label }</a>{/if}</div>
+      </div>
+      {#if rail}<Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" width={ 1024 } sizes="(min-width: 48rem) 40vw, 100vw" />{/if}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "First visit",
+  "description": "What happens at a first visit, step by step, with what to bring and the forms to fill in ahead.",
+  "kind": "Content",
+  "icon": "list-ordered",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Your first visit" },
+    { "type": "select", "id": "head_align", "label": "Heading", "default": "left", "options": [{ "value": "left", "label": "Left" }, { "value": "center", "label": "Centred" }] },
+    { "type": "select", "id": "layout", "label": "Layout", "default": "rail", "options": [
+      { "value": "rail", "label": "Steps down a line, beside a photo" },
+      { "value": "row", "label": "Steps in a row" }
+    ] },
+    { "type": "checkbox", "id": "show_numbers", "label": "Step numbers", "default": true },
+    { "type": "text", "id": "duration_line", "label": "Duration line", "default": "Plan for 60–90 minutes" },
+    { "type": "image", "id": "image", "label": "Photo (4:5)", "info": "Steps down a line only." },
+    { "type": "text", "id": "image_alt", "label": "Photo alt text", "default": "" },
+    { "type": "text", "id": "bring_heading", "label": "What to bring heading", "default": "What to bring" },
+    { "type": "text", "id": "forms_label", "label": "Forms button", "default": "Fill in your forms ahead", "info": "Goes to the Practice patient forms link; hidden without one." },
+    { "type": "text", "id": "portal_label", "label": "Portal link", "default": "Patient portal", "info": "Goes to the Practice patient portal; hidden without one." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "cloud" }
+  ],
+  "blocks": [
+    { "type": "step", "name": "Step", "limit": 6, "settings": [
+      { "type": "text", "id": "title", "label": "Title" },
+      { "type": "text", "id": "text", "label": "Line" }
+    ] },
+    { "type": "bring", "name": "What to bring", "limit": 6, "settings": [
+      { "type": "text", "id": "text", "label": "Item" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Rail", "settings": { "layout": "rail", "color_scheme": "cloud" }, "blocks": [
+      { "type": "step", "settings": { "title": "Forms ahead", "text": "Fill in your forms online, or arrive 15 minutes early." } },
+      { "type": "step", "settings": { "title": "Welcome and X-rays", "text": "A hygienist takes your history and the X-rays we need." } },
+      { "type": "step", "settings": { "title": "Your exam", "text": "Your dentist checks every tooth and your gums, and listens." } },
+      { "type": "step", "settings": { "title": "Your plan and next visit", "text": "We go through options and costs before anything starts." } },
+      { "type": "bring", "settings": { "text": "Photo ID" } },
+      { "type": "bring", "settings": { "text": "Your insurance card" } },
+      { "type": "bring", "settings": { "text": "A list of your medications" } },
+      { "type": "bring", "settings": { "text": "Your previous dentist's details, if you have them" } }
+    ] },
+    { "name": "Row", "settings": { "layout": "row", "color_scheme": "cloud" } }
+  ]
+}
+</schema>

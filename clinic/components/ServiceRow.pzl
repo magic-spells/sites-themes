@@ -1,0 +1,15 @@
+<!-- component: ServiceRow -->
+<!-- A service as one row on a hairline, the whole row one link: the icon in a tint circle, the name in Card title over the summary, then the duration in Meta, the price in Fee in its own right-aligned column and a Details link at the right. On phones Details sits beside the name and the duration and price go under the summary. -->
+{#let f = entry.fields}
+<li class="group relative grid grid-cols-service-row items-center gap-x-space-md gap-y-space-xs border-b border-scheme-border py-space-md md:grid-cols-service-row-md">
+  <IconCircle icon={ f.icon || 'tooth' } />
+  <div class="grid min-w-0 gap-space-2xs">
+    <h3 class="font-heading text-card"><a class="after:absolute after:inset-0 group-hover:underline group-hover:underline-offset-4" href="/services/{ entry.handle }">{ entry.title }</a></h3>
+    {#if f.summary}<p class="text-body-sm text-pretty text-scheme-muted">{ f.summary }</p>{/if}
+  </div>
+  <p class="col-start-2 flex items-center gap-space-sm md:contents">
+    {#if f.duration_minutes}<span class="text-body-sm text-scheme-muted tnum">{ t('minutes', { n: f.duration_minutes }) }</span>{/if}
+    <Price entry={ entry } cls="text-body font-medium md:col-start-4 md:text-right" />
+  </p>
+  <span class="col-start-3 row-start-1 text-body-sm font-medium text-link md:col-start-5" aria-hidden="true">{ t('details') }</span>
+</li>

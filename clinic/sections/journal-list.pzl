@@ -1,0 +1,39 @@
+<!-- Advice: the newest post as a feature, its 3:2 photo in seven parts beside topic and date in Meta, the title in h3 size and the standfirst; then the rest two across from 48rem, each the 3:2 photo, topic and date, and the title in Card title. No reading time. -->
+{#let posts = content.posts.entries | sort('fields.date') | reverse | slice(0, settings.limit)}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <ul class="grid gap-x-space-lg gap-y-space-xl md:grid-cols-2">
+      {#for entry in posts, i}
+        {#let f = entry.fields}
+        <li class="group relative grid gap-space-md { i == 0 ? 'md:col-span-2 md:grid-cols-text-picture md:items-center md:gap-x-space-3xl' : 'content-start' }">
+          <Well asset={ f.image } alt={ f.image_alt } width={ i == 0 ? 1200 : 800 } sizes="(min-width: 48rem) { i == 0 ? '55vw' : '50vw' }, 100vw" zoom />
+          <div class="grid content-start gap-space-sm">
+            <p class="text-body-sm text-scheme-muted">{ [f.topic, f.date ? f.date | date : null] | compact | join(' · ') }</p>
+            <h3 class="font-heading text-balance { i == 0 ? 'text-h3' : 'text-card' }"><a class="after:absolute after:inset-0 group-hover:underline group-hover:underline-offset-4" href="/advice/{ entry.handle }">{ entry.title }</a></h3>
+            {#if i == 0 && f.standfirst}<p class="max-w-reading text-body-lg text-pretty text-scheme-muted">{ f.standfirst }</p>{/if}
+          </div>
+        </li>
+      {/for}
+    </ul>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Journal list",
+  "description": "Advice and practice news: the newest post as a feature, then the rest.",
+  "kind": "Collections",
+  "icon": "newspaper",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "" },
+    { "type": "select", "id": "head_align", "label": "Heading", "default": "left", "options": [{ "value": "left", "label": "Left" }, { "value": "center", "label": "Centred" }] },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 12 },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" } }
+  ]
+}
+</schema>

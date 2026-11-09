@@ -1,0 +1,8 @@
+<!-- component: ResourceRow -->
+<!-- A patient form or guide, one link on a hairline: a file, arrow or portal glyph in the link colour (kind pdf, link or portal), the label in Card title, the note in Meta. -->
+<li class="break-inside-avoid border-b border-scheme-border" data-block={ editor_id }>
+  <a class="group flex items-start gap-space-md py-space-md" href="{ link }">
+    <Glyph name={ kind == 'portal' ? 'external' : (kind == 'link' ? 'arrow-up-right' : 'file') } cls="size-glyph text-link" />
+    <span class="grid gap-space-2xs"><span class="font-heading text-card group-hover:underline group-hover:underline-offset-4">{ label }</span>{#if note}<span class="text-body-sm text-scheme-muted">{ note }</span>{/if}</span>
+  </a>
+</li>

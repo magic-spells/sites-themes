@@ -1,0 +1,64 @@
+<!-- Patients' reviews. Rows: review cards 3 / 2 / 1. Carousel: the head centred, one quote at a time (the quote, the stars, the name line), the round arrows at the sides on hover from 48rem, dots under. Featured or all, up to the limit; on a service's or a clinician's page only the reviews that name them, when there are any. Nothing without reviews. -->
+{#let
+  id = 'reviews-' + section.id
+  all = content.testimonials.entries | sort('fields.order')
+  key = template.type == 'service' ? 'fields.service.id' : (template.type == 'member' ? 'fields.team.id' : null)
+  named = key ? all | where(key, page.entry.id) : []
+  reviews = (named.length ? named : (settings.source == 'featured' ? all | where('fields.featured') : all)) | slice(0, settings.limit)
+  carousel = settings.layout == 'carousel'
+  options = { slidesPerView: 1, gap: '1.5rem', loop: true, navigation: { showButtons: false, showPagination: true }, breakpoints: { '768': { navigation: { showButtons: true, showPagination: true } } } }
+}
+{#if reviews.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } center={ carousel } />
+    {#if carousel}
+      <tarot-carousel class="group relative block" id={ id }>
+        <script type="application/json" data-tarot-options>{ options | json }</script>
+        <tarot-viewport><tarot-track>
+          {#for entry in reviews}
+            {#let f = entry.fields}
+            <tarot-slide>
+              <figure class="mx-auto grid max-w-reading justify-items-center gap-space-md text-center">
+                <blockquote class="text-body-lg text-pretty">{ f.quote }</blockquote>
+                <Stars stars={ f.stars } />
+                <figcaption class="text-body-sm text-scheme-muted">{ [f.name, f.line] | compact | join(' · ') }</figcaption>
+              </figure>
+            </tarot-slide>
+          {/for}
+        </tarot-track></tarot-viewport>
+        <Arrows />
+      </tarot-carousel>
+    {:else}
+      <ul class="grid gap-space-sm md:grid-cols-2 md:gap-space-md lg:grid-cols-3 lg:gap-space-lg">{#for entry in reviews}<li><ReviewCard entry={ entry } /></li>{/for}</ul>
+    {/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Testimonials",
+  "description": "Patients' reviews as cards or a carousel.",
+  "kind": "Collections",
+  "icon": "quote",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Reviews" },
+    { "type": "select", "id": "head_align", "label": "Heading", "default": "left", "options": [{ "value": "left", "label": "Left" }, { "value": "center", "label": "Centred" }] },
+    { "type": "select", "id": "layout", "label": "Layout", "default": "rows", "options": [
+      { "value": "rows", "label": "Cards in rows" },
+      { "value": "carousel", "label": "Carousel" }
+    ] },
+    { "type": "select", "id": "source", "label": "Reviews", "default": "featured", "options": [
+      { "value": "featured", "label": "Featured first" },
+      { "value": "all", "label": "All" }
+    ], "info": "On a service's or a clinician's page, the reviews that name them come first when there are any." },
+    { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 3 },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Rows", "settings": { "layout": "rows", "color_scheme": "white" } },
+    { "name": "Carousel", "settings": { "layout": "carousel", "limit": 8, "color_scheme": "cloud" } }
+  ]
+}
+</schema>

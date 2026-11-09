@@ -1,0 +1,28 @@
+<!-- The cookie notice: a card fixed to the foot of the screen (above the call bar on phones), the line, then two buttons and the privacy link; either hides it for good for that visitor and key. Hidden until the script shows it, so it never shows without JavaScript. -->
+<aside class="fixed inset-x-0 bottom-0 z-40 max-md:bottom-call-bar p-gutter md:max-w-reading" data-notice="{ settings.key }" aria-label="{ t('cookie_notice') }" hidden>
+  <div class="grid gap-space-md rounded-card border border-scheme-border bg-scheme-background p-space-md text-scheme-foreground md:p-space-lg">
+    <p class="text-body-sm text-pretty">{ settings.text }</p>
+    <div class="flex items-center gap-space-sm"><Button type="button" small>{ settings.accept_label }</Button><Button type="button" tone="outline" small>{ settings.decline_label }</Button>{#if settings.privacy_url}<a class="text-body-sm text-link underline underline-offset-4" href="{ settings.privacy_url }">{ settings.privacy_label }</a>{/if}</div>
+  </div>
+</aside>
+
+<schema>
+{
+  "name": "Cookie notice",
+  "description": "A short notice at the foot of the screen with Accept and Decline.",
+  "kind": "Panels",
+  "icon": "cookie",
+  "settings": [
+    { "type": "text", "id": "text", "label": "Text", "default": "A few cookies keep the site working. Nothing is sold." },
+    { "type": "text", "id": "privacy_label", "label": "Privacy link label", "default": "Privacy" },
+    { "type": "url", "id": "privacy_url", "label": "Privacy page", "default": "/privacy" },
+    { "type": "text", "id": "accept_label", "label": "Accept label", "default": "Accept" },
+    { "type": "text", "id": "decline_label", "label": "Decline label", "default": "Decline" },
+    { "type": "text", "id": "key", "label": "Key", "default": "clinic-notice", "info": "Change it to show the notice again to everyone." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" } }
+  ]
+}
+</schema>

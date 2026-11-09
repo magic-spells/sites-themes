@@ -1,0 +1,25 @@
+{
+  "label": "Advice",
+  "description": "Advice and practice news.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Plain answers from our clinicians, and news from both offices.",
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_posts",
+      "type": "journal-list",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": []
+    }
+  ]
+}

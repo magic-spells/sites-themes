@@ -1,0 +1,8 @@
+<!-- component: ClinicianCard -->
+<!-- A clinician, one link to their page: the 4:5 portrait, the name in Card title with the letters in Meta after it, the role in Meta. Nothing else. -->
+{#let f = entry.fields}
+<article class="group relative grid content-start gap-space-sm { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+  <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-portrait" width={ 640 } sizes="(min-width: 64rem) 20rem, 50vw" zoom />
+  <h3 class="flex flex-wrap items-baseline gap-x-space-xs"><a class="font-heading text-card after:absolute after:inset-0 group-hover:underline group-hover:underline-offset-4" href="/team/{ entry.handle }">{ entry.title }</a>{#if f.letters}<span class="text-body-sm font-normal text-scheme-muted">{ f.letters }</span>{/if}</h3>
+  {#if f.role}<p class="text-body-sm text-scheme-muted">{ f.role }</p>{/if}
+</article>

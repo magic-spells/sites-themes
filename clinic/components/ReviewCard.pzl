@@ -1,0 +1,11 @@
+<!-- component: ReviewCard -->
+<!-- A review on a card with a hairline: the stars in the accent, the quote in Quote, a rule, then the reviewer's square thumbnail when it has one and the name and line in Meta ("Greg B. · Patient since 2015"), as tall as the thumbnail either way so the rules line up across a row. -->
+{#let f = entry.fields}
+<figure class="flex h-full flex-col gap-space-md rounded-card border border-scheme-border bg-scheme-background p-space-md md:p-space-lg { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+  <Stars stars={ f.stars } />
+  <blockquote class="flex-1 text-body-lg text-pretty">{ f.quote }</blockquote>
+  <figcaption class="flex items-center gap-space-sm border-t border-scheme-border pt-space-md text-body-sm text-scheme-muted">
+    {#if f.image}<span class="w-circle shrink-0"><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-square" card width={ 96 } sizes="2.5rem" /></span>{/if}
+    <span class="flex min-h-circle items-center">{ [f.name, f.line] | compact | join(' · ') }</span>
+  </figcaption>
+</figure>

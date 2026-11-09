@@ -1,0 +1,38 @@
+<!-- Questions and answers: the heading centred, then the rows that open and close in the 40rem column, centred; the first open when set. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-reading">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <Questions items={ blocks } first_open={ settings.first_open } />
+  </div>
+</section>
+
+<schema>
+{
+  "name": "FAQ",
+  "description": "Questions and answers that open and close, in a narrow centred column.",
+  "kind": "Content",
+  "icon": "circle-help",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Questions" },
+    { "type": "select", "id": "head_align", "label": "Heading", "default": "center", "options": [{ "value": "left", "label": "Left" }, { "value": "center", "label": "Centred" }] },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "checkbox", "id": "first_open", "label": "First one open", "default": true },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "blocks": [
+    { "type": "question", "name": "Question", "settings": [
+      { "type": "text", "id": "question", "label": "Question" },
+      { "type": "richtext", "id": "answer", "label": "Answer" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" }, "blocks": [
+      { "type": "question", "settings": { "question": "Do you take my insurance?", "answer": "<p>We're in-network with most major plans and file claims for you. Call us with your plan name and we'll check before your visit.</p>" } },
+      { "type": "question", "settings": { "question": "What happens at a first visit?", "answer": "<p>Forms, X-rays, a full exam and a plan, in about an hour and a half.</p>" } },
+      { "type": "question", "settings": { "question": "Do you see children?", "answer": "<p>Yes, from their first tooth. Dr Marsh looks after most of our younger patients.</p>" } },
+      { "type": "question", "settings": { "question": "What if I'm nervous?", "answer": "<p>Tell us. We book longer appointments, explain every step, and can offer sedation.</p>" } },
+      { "type": "question", "settings": { "question": "How do I cancel?", "answer": "<p>Call or text at least 24 hours ahead and there's no charge.</p>" } }
+    ] }
+  ]
+}
+</schema>

@@ -1,0 +1,11 @@
+<!-- component: ChooserTile -->
+<!-- A concern as a bordered tile, the whole tile one link: the icon in a tint circle with a chevron at the top right, the concern in Card title under them, and with summary its summary, muted; surface-2 on hover. target service links to the treatment that usually helps instead of the concern's page. -->
+{#let
+  f = entry.fields
+  href = target == 'service' && f.service ? '/services/' + f.service.handle : '/conditions/' + entry.handle
+}
+<article class="group relative grid h-full content-start gap-space-md rounded-card border border-scheme-border bg-scheme-background p-space-md transition-colors duration-fast hover:bg-scheme-surface-2 md:p-space-lg { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+  <p class="flex items-center justify-between"><IconCircle icon={ f.icon || 'tooth' } /><Glyph name="chevron-right" cls="size-glyph" /></p>
+  <h3 class="font-heading text-card"><a class="after:absolute after:inset-0" href="{ href }">{ entry.title }</a></h3>
+  {#if summary && f.summary}<p class="text-body text-pretty text-scheme-muted">{ f.summary }</p>{/if}
+</article>

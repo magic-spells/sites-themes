@@ -1,0 +1,3 @@
+<!-- component: IconCircle -->
+<!-- A glyph or service icon in the link colour on a round tint: 2.5rem with a 1.5rem icon, or lg, 3.5rem with a 2rem icon. -->
+<span class="flex shrink-0 items-center justify-center rounded-full bg-scheme-tint text-link { size == 'lg' ? 'size-circle-lg' : 'size-circle' }"><Glyph name={ icon } cls={ size == 'lg' ? 'size-glyph-lg' : 'size-glyph' } /></span>

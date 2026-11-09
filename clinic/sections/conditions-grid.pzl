@@ -1,0 +1,41 @@
+<!-- "What brings you in?": the concerns as chooser tiles, three across from 64rem and two below, every row as tall as the tallest; the featured ones or all, up to the limit. Each tile goes to the concern's page, or with target service to the treatment that usually helps. -->
+{#let
+  all = content.conditions.entries | sort('fields.order')
+  concerns = (settings.source == 'featured' ? all | where('fields.featured') : all) | slice(0, settings.limit)
+}
+{#if concerns.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link }><ul class="grid auto-rows-fr grid-cols-2 gap-space-sm md:gap-space-md lg:grid-cols-3 lg:gap-space-lg">{#for entry in concerns}<li><ChooserTile entry={ entry } target={ settings.target } /></li>{/for}</ul></SectionHead>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Concerns grid",
+  "description": "What brings you in: the concerns you treat as tiles.",
+  "kind": "Collections",
+  "icon": "layout-grid",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Concerns we treat" },
+    { "type": "select", "id": "head_align", "label": "Heading", "default": "left", "options": [{ "value": "left", "label": "Left" }, { "value": "center", "label": "Centred" }] },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "What brings you in?" },
+    { "type": "text", "id": "link_label", "label": "Button label", "default": "All concerns" },
+    { "type": "url", "id": "link", "label": "Button link", "default": "/conditions" },
+    { "type": "select", "id": "source", "label": "Concerns", "default": "featured", "options": [
+      { "value": "featured", "label": "Featured" },
+      { "value": "all", "label": "All" }
+    ] },
+    { "type": "range", "id": "limit", "label": "Most to show", "min": 2, "max": 12, "step": 1, "default": 6 },
+    { "type": "select", "id": "target", "label": "Tiles link to", "default": "condition", "options": [
+      { "value": "condition", "label": "The concern's page" },
+      { "value": "service", "label": "The treatment that usually helps" }
+    ], "info": "Choose the treatment when you keep no concern pages." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "cloud" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "cloud" } }
+  ]
+}
+</schema>

@@ -1,0 +1,87 @@
+{
+  "label": "Insurance and fees",
+  "description": "The plans you take, the fee table, the Smile Plan and payment questions.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "Insurance and fees",
+        "text": "Clear prices, and help with your plan.",
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_insurance",
+      "type": "insurance",
+      "preset": "Logos",
+      "settings": {
+        "layout": "logos",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_fees",
+      "type": "fees",
+      "preset": "Default",
+      "settings": {
+        "source": "all",
+        "columns": "2",
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_plans",
+      "type": "plans",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "cloud"
+      },
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "How do I pay?",
+            "answer": "<p>Card, cash or a payment plan. We confirm the cost before treatment begins.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do you take my insurance?",
+            "answer": "<p>We're in-network with most major plans and file claims for you. Call us with your plan name and we'll check before your visit.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "How do I cancel?",
+            "answer": "<p>Call or text at least 24 hours ahead and there's no charge.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    }
+  ]
+}

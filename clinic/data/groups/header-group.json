@@ -1,0 +1,24 @@
+{
+  "sections": [
+    {
+      "id": "sg_announcement",
+      "type": "announcement-bar",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_header",
+      "type": "header",
+      "preset": "Solid",
+      "settings": {
+        "menu": "main",
+        "style": "solid",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    }
+  ]
+}

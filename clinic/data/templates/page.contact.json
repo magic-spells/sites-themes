@@ -1,0 +1,25 @@
+{
+  "label": "Contact",
+  "description": "The contact form beside the hours cards.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Call, write or visit. For an appointment, the quickest way is the Book button.",
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_contact",
+      "type": "contact",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": []
+    }
+  ]
+}

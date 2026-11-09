@@ -1,0 +1,32 @@
+<!-- Two or more offices, centred under a centred head: each a 4:3 map image (or its photo) linked to the location's page over its hours card, at most 26.25rem wide, as many across as fit from 48rem, one on phones. -->
+{#let locs = content.locations.entries | sort('fields.order') | slice(0, 12)}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } center />
+    <ul class="flex flex-wrap justify-center gap-space-lg">
+      {#for loc in locs}
+        <li class="flex grow basis-full flex-col gap-space-md md:max-w-card md:basis-text">
+          <a class="block" href="/locations/{ loc.handle }" aria-label="{ loc.title }"><Well asset={ loc.fields.map_image || loc.fields.image } alt={ loc.fields.map_image_alt } ratio="aspect-map" width={ 800 } sizes="(min-width: 64rem) 26rem, (min-width: 48rem) 50vw, 100vw" /></a>
+          <HoursCard entry={ loc } />
+        </li>
+      {/for}
+    </ul>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Locations",
+  "description": "Every office as an hours card under its map.",
+  "kind": "Contact",
+  "icon": "map-pin",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Visit us" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "cloud" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "cloud" } }
+  ]
+}
+</schema>

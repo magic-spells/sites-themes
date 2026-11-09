@@ -1,0 +1,35 @@
+<!-- Membership or health plans: the section head, then the plans as cards at most 26.25rem wide, centred side by side from 48rem, a row that scrolls past the right edge on phones; the featured one on navy. Nothing without plans. -->
+{#let
+  all = content.plans.entries | sort('fields.order')
+  plans = (settings.source == 'featured' ? all | where('fields.featured') : all) | slice(0, 3)
+}
+{#if plans.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <ul class="-mx-gutter flex snap-x gap-space-md overflow-x-auto px-gutter scroll-px-gutter md:mx-0 md:justify-center md:overflow-visible md:px-0 md:gap-space-lg">{#for entry in plans}<li class="w-4/5 shrink-0 snap-start md:w-auto md:max-w-card md:flex-1"><PlanCard entry={ entry } /></li>{/for}</ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Plans",
+  "description": "Membership or health plans as cards, the featured one raised.",
+  "kind": "Collections",
+  "icon": "badge-check",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "No insurance? Our Smile Plan" },
+    { "type": "select", "id": "head_align", "label": "Heading", "default": "center", "options": [{ "value": "left", "label": "Left" }, { "value": "center", "label": "Centred" }] },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "select", "id": "source", "label": "Plans", "default": "all", "options": [
+      { "value": "all", "label": "All" },
+      { "value": "featured", "label": "Featured" }
+    ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "cloud" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "cloud" } }
+  ]
+}
+</schema>

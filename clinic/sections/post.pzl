@@ -1,0 +1,34 @@
+<!-- A post in one centred reading column: the title in h1, the standfirst, the topic and date in Meta, the 3:2 photo, then the body with its first paragraph as the lead. No reading time. -->
+{#let
+  entry = page.entry
+  f = entry.fields
+}
+{#if entry}
+<article class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-reading gap-space-xl">
+    <header class="grid gap-space-md">
+      <h1 class="font-heading text-h1 text-balance"><Rise text={ entry.title } /></h1>
+      {#if f.standfirst}<p class="text-body-lg text-pretty text-scheme-muted">{ f.standfirst }</p>{/if}
+      <p class="text-body-sm text-scheme-muted">{ [f.topic, f.date ? f.date | date : null] | compact | join(' · ') }</p>
+    </header>
+    <Well asset={ f.image } alt={ f.image_alt } width={ 1600 } sizes="(min-width: 40rem) 40rem, 100vw" eager />
+    <div class="sites-prose text-body" data-lead>{ f.body }</div>
+  </div>
+</article>
+{/if}
+
+<schema>
+{
+  "name": "Post",
+  "description": "A post: the title, the photo and the body.",
+  "kind": "Content",
+  "icon": "file-text",
+  "templates": ["post"],
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" } }
+  ]
+}
+</schema>

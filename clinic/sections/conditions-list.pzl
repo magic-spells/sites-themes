@@ -1,0 +1,29 @@
+<!-- The Concerns page: every concern as a chooser tile with its summary, three across from 64rem, two from 48rem, one on phones. -->
+{#let concerns = content.conditions.entries | sort('fields.order') | slice(0, 12)}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <ul class="grid gap-space-sm md:grid-cols-2 md:gap-space-md lg:grid-cols-3 lg:gap-space-lg">{#for entry in concerns}<li><ChooserTile entry={ entry } target={ settings.target } summary /></li>{/for}</ul>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Concerns list",
+  "description": "Every concern you treat as a tile with its line.",
+  "kind": "Collections",
+  "icon": "list",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "select", "id": "target", "label": "Tiles link to", "default": "condition", "options": [
+      { "value": "condition", "label": "The concern's page" },
+      { "value": "service", "label": "The treatment that usually helps" }
+    ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" } }
+  ]
+}
+</schema>

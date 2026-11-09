@@ -1,0 +1,43 @@
+<!-- The plans you take: the section head with the Practice insurance line, then the insurers (up to 12) as names on hairlines in two columns from 48rem, or as logo tiles 2 / 3 / 4 across. Under them the button (a link, or a call to the Practice phone) and, when you have plans, the no-insurance line linking to them. -->
+{#let
+  s = site.settings
+  insurers = content.insurers.entries | sort('fields.order') | slice(0, 12)
+  logos = settings.layout == 'logos'
+  cta = settings.cta_link || (s.phone ? 'tel:' + (s.phone | replace(' ', '')) : null)
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ s.insurance_line } />
+    <ul class="{ logos ? 'grid grid-cols-2 gap-space-sm md:grid-cols-3 md:gap-space-lg lg:grid-cols-4' : 'gap-x-space-xl md:columns-2' }">{#for entry in insurers}<InsurerRow entry={ entry } logo={ logos } />{/for}</ul>
+    <div class="mt-space-xl flex flex-wrap items-center gap-x-space-lg gap-y-space-md">
+      {#if cta && settings.cta_label}<Button href={ cta }>{ settings.cta_label }</Button>{/if}
+      {#if content.plans.entries.length && settings.no_insurance_line}<a class="text-body text-link underline underline-offset-4" href="{ settings.plans_link }">{ settings.no_insurance_line }</a>{/if}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Insurance",
+  "description": "The plans you take, as a list or logos, with the Practice insurance line.",
+  "kind": "Collections",
+  "icon": "shield-check",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Insurance" },
+    { "type": "select", "id": "head_align", "label": "Heading", "default": "left", "options": [{ "value": "left", "label": "Left" }, { "value": "center", "label": "Centred" }] },
+    { "type": "select", "id": "layout", "label": "Layout", "default": "list", "options": [
+      { "value": "list", "label": "Names and notes" },
+      { "value": "logos", "label": "Logos" }
+    ] },
+    { "type": "text", "id": "cta_label", "label": "Button label", "default": "Call us to check your cover" },
+    { "type": "url", "id": "cta_link", "label": "Button link", "default": "", "info": "Leave empty to call the Practice phone." },
+    { "type": "text", "id": "no_insurance_line", "label": "No insurance line", "default": "No insurance? Our Smile Plan covers the basics for $299 a year.", "info": "Shown when you have plans." },
+    { "type": "url", "id": "plans_link", "label": "Plans link", "default": "/fees" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "List", "settings": { "layout": "list", "color_scheme": "white" } },
+    { "name": "Logos", "settings": { "layout": "logos", "color_scheme": "white" } }
+  ]
+}
+</schema>

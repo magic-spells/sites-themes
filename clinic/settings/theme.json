@@ -1,0 +1,54 @@
+{
+  "name": "Clinic",
+  "version": "0.1.0",
+  "default_template": "page",
+  "not_found_template": "404",
+  "maintenance_template": "maintenance",
+  "query": ["category"],
+  "groups": {
+    "header-group": { "label": "Header", "accepts": ["announcement-bar", "header"] },
+    "footer-group": { "label": "Footer", "accepts": ["footer"] },
+    "panel-group": { "label": "Panels", "accepts": ["mobile-menu", "appointment-panel", "call-bar", "cookie-notice"] }
+  },
+  "settings": [
+    {
+      "name": "Brand",
+      "settings": [
+        { "type": "text", "id": "wordmark", "label": "Wordmark", "default": "", "info": "Set in the heading face in the header and the footer. Leave empty to use the site name." },
+        { "type": "text", "id": "tagline", "label": "Tagline", "default": "", "info": "The line under the wordmark in the footer." },
+        { "type": "image", "id": "favicon", "label": "Favicon" },
+        { "type": "text", "id": "currency_symbol", "label": "Currency symbol", "default": "$", "info": "Printed before every price and fee: $, £, €." },
+        { "type": "checkbox", "id": "reveal", "label": "Reveal on scroll", "default": true, "info": "Cards, tiles and steps fade up as the page scrolls. Never the first screen." },
+        { "type": "checkbox", "id": "heading_motion", "label": "Headings rise in", "default": false, "info": "The hero heading and page titles rise in word by word on load." }
+      ]
+    },
+    {
+      "name": "Practice",
+      "settings": [
+        { "type": "text", "id": "phone", "label": "Phone", "default": "", "info": "Printed as typed; the call links drop the spaces." },
+        { "type": "text", "id": "ask_label", "label": "Ask button label", "default": "Book an appointment", "info": "Book a free call, Request an appointment, Register your pet." },
+        { "type": "url", "id": "booking_url", "label": "Booking link", "default": "", "info": "Your online scheduler. Set: every ask button goes there. Empty: every ask button opens the appointment request." },
+        { "type": "url", "id": "booking_path", "label": "Booking page", "default": "/book", "info": "The page with the request form inline, for a browser without JavaScript." },
+        { "type": "form", "id": "appointment_form", "label": "Appointment form", "default": "appointment" },
+        { "type": "text", "id": "confirm_line", "label": "Confirm line", "default": "We confirm by phone or text within one working day.", "info": "Under every request button." },
+        { "type": "text", "id": "caution_line", "label": "Caution line", "default": "Please don't include medical details here. We'll talk those through by phone.", "info": "Always under the note field of the request form." },
+        { "type": "text", "id": "insurance_line", "label": "Insurance line", "default": "", "info": "In-network with most major plans; we file claims for you." },
+        { "type": "textarea", "id": "registration_lines", "label": "Registration lines", "default": "", "info": "One licence, registration or membership per line. Printed in the footer and the story." },
+        { "type": "url", "id": "portal_url", "label": "Patient portal", "default": "" },
+        { "type": "url", "id": "forms_url", "label": "Patient forms", "default": "", "info": "Where new patients fill in their forms ahead." },
+        { "type": "text", "id": "emergency_line", "label": "Emergency line", "default": "", "info": "Tooth pain? We keep same-day slots for emergencies. Empty hides the emergency band." },
+        { "type": "text", "id": "emergency_phone", "label": "Emergency phone", "default": "", "info": "Leave empty to use the phone." },
+        { "type": "text", "id": "footer_note", "label": "Footer note", "default": "", "info": "If this is a medical emergency, call 911." },
+        { "type": "checkbox", "id": "show_call_bar", "label": "Call bar on phones", "default": true, "info": "A bar fixed to the bottom of the screen on phones: Call and the ask button." }
+      ]
+    },
+    {
+      "name": "Contact",
+      "settings": [
+        { "type": "text", "id": "email", "label": "Email", "default": "", "info": "A text link under the contact form's heading." },
+        { "type": "form", "id": "contact_form", "label": "Contact form", "default": "contact" },
+        { "type": "form", "id": "newsletter_form", "label": "Newsletter form", "default": "newsletter" }
+      ]
+    }
+  ]
+}

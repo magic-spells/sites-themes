@@ -1,0 +1,6 @@
+<!-- component: FormCard -->
+<!-- A form on a white card with a hairline, on any band: the heading in Card title when there is one, then the form. -->
+<div class="sites-scheme-white grid gap-space-md rounded-card border border-scheme-border bg-scheme-background p-space-lg text-scheme-foreground md:p-space-xl">
+  {#if heading}<h2 class="font-heading text-card">{ heading }</h2>{/if}
+  <Children/>
+</div>

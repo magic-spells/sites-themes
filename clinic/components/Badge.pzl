@@ -1,0 +1,7 @@
+<!-- component: Badge -->
+<!-- An accreditation logo from a badge block, greyscale at the badge opacity on light bands, inverted on dark ones (dark); a link when set, full strength on hover. -->
+{#let
+  b = block.settings
+  img = image_tag(b.image, { alt: b.alt, class: 'h-control w-auto grayscale' + (dark ? ' invert' : ''), sizes: '10rem' })
+}
+<li class="shrink-0 snap-start opacity-badge transition-opacity duration-fast { b.link ? 'hover:opacity-100' : '' }" data-block={ editor_id }>{#if b.link}<a class="block" href="{ b.link }">{ img }</a>{:else}{ img }{/if}</li>

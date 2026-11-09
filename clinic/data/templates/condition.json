@@ -1,0 +1,24 @@
+{
+  "label": "Concern",
+  "description": "A concern's page and the routes.",
+  "sections": [
+    {
+      "id": "s_detail",
+      "type": "condition-detail",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    }
+  ]
+}

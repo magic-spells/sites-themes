@@ -1,0 +1,14 @@
+<!-- component: SectionHead -->
+<!-- A section's head: the h2, an optional standfirst under it, and at the right the outlined "All …" button, level with the heading. rule draws a hairline under both. Centred (center, or the section's head_align): the heading and standfirst centre, and the button moves under the content the head wraps. Stacks on phones. The gap to the content is xl. -->
+{#let centre = center || settings.head_align == 'center'}
+{#if heading}
+<div class="mb-space-xl flex flex-wrap gap-x-space-lg gap-y-space-md { centre ? 'flex-col items-center text-center' : 'items-start justify-between' } { rule ? 'border-b border-scheme-border pb-space-md' : '' }">
+  <div class="grid max-w-reading gap-space-sm">
+    <h2 class="font-heading text-h2 text-balance">{ heading }</h2>
+    {#if text}<p class="text-body-lg text-pretty text-scheme-muted">{ text }</p>{/if}
+  </div>
+  {#if link_label && link_href && !centre}<Button href={ link_href } tone="outline">{ link_label }</Button>{/if}
+</div>
+{/if}
+<Children/>
+{#if link_label && link_href && centre}<p class="mt-space-xl text-center"><Button href={ link_href } tone="outline">{ link_label }</Button></p>{/if}

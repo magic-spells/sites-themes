@@ -1,0 +1,48 @@
+{
+  "label": "Location",
+  "description": "One office: its hours, its map and its team.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_hours",
+      "type": "hours-location",
+      "preset": "Default",
+      "settings": {
+        "map": "embed",
+        "heading": "Hours and directions",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_team",
+      "type": "team-grid",
+      "preset": "Default",
+      "settings": {
+        "source": "all",
+        "limit": 12,
+        "heading": "The team here",
+        "link_label": "",
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    }
+  ]
+}

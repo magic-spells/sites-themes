@@ -8,7 +8,6 @@
 set -eu
 
 api=${SITES_API:-https://sites-api.magicspells.io}/v1/theme-packages
-query=${SITES_WORKSPACE:+?workspace_id=$SITES_WORKSPACE}
 dry=${1:-}
 semver='^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$'
 repo=$(cd "$(dirname "$0")/.." && pwd)
@@ -46,8 +45,8 @@ for tag in $(git -C "$repo" tag -l '*/v*' --sort=version:refname); do
     continue
   fi
 
-  if [ "$name" != "$current" ] && [ "$(call GET "$api/$name$query")" = 404 ]; then
-    # Creation takes the workspace in the body; the other routes take it as a query.
+  if [ "$name" != "$current" ] && [ "$(call GET "$api/$name")" = 404 ]; then
+    # Creation names the workspace; every later route finds it from the package.
     echo "$listings" | jq --arg n "$name" --arg w "${SITES_WORKSPACE:-}" '.themes[] | select(.name == $n) |
       {name, listing: {label, description, category, vertical, license, publisher, screenshots}} +
       if $w == "" then {} else {workspace_id: $w} end' >"$tmp/package"
@@ -56,7 +55,7 @@ for tag in $(git -C "$repo" tag -l '*/v*' --sort=version:refname); do
   fi
   current=$name
 
-  release=$api/$name/releases/$version$query
+  release=$api/$name/releases/$version
   state=$( [ "$(call GET "$release")" = 200 ] && jq -r .status "$tmp/body" || echo none)
   case $state in
     published | yanked)
@@ -65,7 +64,7 @@ for tag in $(git -C "$repo" tag -l '*/v*' --sort=version:refname); do
       ;;
     pending) ;;
     *)
-      status=$(call POST "$api/$name/releases$query" -F "archive=@$tmp/$zip;type=application/zip" \
+      status=$(call POST "$api/$name/releases" -F "archive=@$tmp/$zip;type=application/zip" \
         --form-string "version=$version" --form-string "notes=$(cat "$tmp/notes")")
       [ "$status" = 202 ] || { echo "$tag: upload failed ($status): $(cat "$tmp/body")" >&2; exit 1; }
       ;;

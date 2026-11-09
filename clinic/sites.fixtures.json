@@ -273,16 +273,16 @@
    "alt": "4:5 mist placeholder",
    "created_at": "2026-11-08T09:00:00Z"
   },
-  "as_1x1_ice": {
-   "id": "as_1x1_ice",
+  "as_1x1_blank": {
+   "id": "as_1x1_blank",
    "status": "ready",
-   "file_name": "1x1-ice.svg",
+   "file_name": "1x1-blank.svg",
    "mime": "image/svg+xml",
-   "byte_size": 420,
-   "url": "/_sites/theme/photos/1x1-ice.svg",
+   "byte_size": 60,
+   "url": "/_sites/theme/photos/1x1-blank.svg",
    "width": 1200,
    "height": 1200,
-   "alt": "1:1 ice placeholder",
+   "alt": "A blank 1:1 placeholder",
    "created_at": "2026-11-08T09:00:00Z"
   },
   "as_1x1_cloud": {
@@ -1770,11 +1770,6 @@
      "label": "Phone"
     },
     {
-     "id": "fax",
-     "type": "text",
-     "label": "Fax"
-    },
-    {
      "id": "email",
      "type": "text",
      "label": "Email"
@@ -1834,7 +1829,6 @@
       "address": "22 Linden Avenue\nOakfield, WI 53000",
       "hours": "Mon–Thu 8:00–5:00\nFri 8:00–2:00\nSat–Sun Closed",
       "phone": "(262) 555-0148",
-      "fax": "(262) 555-0149",
       "email": "hello@oakfielddental.example",
       "map_url": "https://maps.example/?q=22+Linden+Avenue+Oakfield,+WI+53000",
       "map_embed_url": "",
@@ -1855,7 +1849,6 @@
       "address": "410 Mill Road\nPine Ridge, WI 53001",
       "hours": "Mon–Thu 8:00–5:00\nFri–Sun Closed",
       "phone": "(262) 555-0190",
-      "fax": "",
       "email": "hello@oakfielddental.example",
       "map_url": "https://maps.example/?q=410+Mill+Road+Pine+Ridge,+WI+53001",
       "map_embed_url": "",
@@ -1961,7 +1954,7 @@
       "order": 2,
       "team": "team_lena_marsh",
       "service": "svc_new_patient_exam",
-      "image": "as_1x1_cloud",
+      "image": "as_1x1_blank",
       "image_alt": "Dana M."
      }
     },
@@ -2011,7 +2004,7 @@
       "order": 5,
       "team": "team_hannah_reyes",
       "service": "svc_clear_aligners",
-      "image": "as_1x1_cloud",
+      "image": "as_1x1_blank",
       "image_alt": "Omar K."
      }
     },
@@ -3063,7 +3056,6 @@
      "address": "22 Linden Avenue\nOakfield, WI 53000",
      "hours": "Mon–Thu 8:00–5:00\nFri 8:00–2:00\nSat–Sun Closed",
      "phone": "(262) 555-0148",
-     "fax": "(262) 555-0149",
      "email": "hello@oakfielddental.example",
      "map_url": "https://maps.example/?q=22+Linden+Avenue+Oakfield,+WI+53000",
      "map_embed_url": "",
@@ -3092,7 +3084,6 @@
      "address": "410 Mill Road\nPine Ridge, WI 53001",
      "hours": "Mon–Thu 8:00–5:00\nFri–Sun Closed",
      "phone": "(262) 555-0190",
-     "fax": "",
      "email": "hello@oakfielddental.example",
      "map_url": "https://maps.example/?q=410+Mill+Road+Pine+Ridge,+WI+53001",
      "map_embed_url": "",

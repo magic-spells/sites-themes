@@ -1,4 +1,4 @@
-<!-- "What brings you in?": the concerns as chooser tiles, three across from 64rem and two below; the featured ones or all, up to the limit. Each tile goes to the concern's page, or with target service to the treatment that usually helps. -->
+<!-- "What brings you in?": the concerns as chooser tiles, three across from 64rem and two below, every row as tall as the tallest; the featured ones or all, up to the limit. Each tile goes to the concern's page, or with target service to the treatment that usually helps. -->
 {#let
   all = content.conditions.entries | sort('fields.order')
   concerns = (settings.source == 'featured' ? all | where('fields.featured') : all) | slice(0, settings.limit)
@@ -6,7 +6,7 @@
 {#if concerns.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
-    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link }><ul class="grid grid-cols-2 gap-space-sm md:gap-space-md lg:grid-cols-3 lg:gap-space-lg">{#for entry in concerns}<li><ChooserTile entry={ entry } target={ settings.target } /></li>{/for}</ul></SectionHead>
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link }><ul class="grid auto-rows-fr grid-cols-2 gap-space-sm md:gap-space-md lg:grid-cols-3 lg:gap-space-lg">{#for entry in concerns}<li><ChooserTile entry={ entry } target={ settings.target } /></li>{/for}</ul></SectionHead>
   </div>
 </section>
 {/if}

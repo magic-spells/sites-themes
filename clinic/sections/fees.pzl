@@ -53,7 +53,7 @@
   ],
   "presets": [
     { "name": "Default", "settings": { "color_scheme": "cloud" } },
-    { "name": "Featured", "settings": { "source": "featured", "color_scheme": "cloud" } }
+    { "name": "Featured", "settings": { "source": "featured", "columns": "2", "color_scheme": "cloud" } }
   ]
 }
 </schema>

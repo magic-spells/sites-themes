@@ -5,7 +5,7 @@
     <SectionHead heading={ settings.heading } text={ settings.text } center />
     <ul class="flex flex-wrap justify-center gap-space-lg">
       {#for loc in locs}
-        <li class="grid grow basis-full content-start gap-space-md md:max-w-card md:basis-text">
+        <li class="flex grow basis-full flex-col gap-space-md md:max-w-card md:basis-text">
           <a class="block" href="/locations/{ loc.handle }" aria-label="{ loc.title }"><Well asset={ loc.fields.map_image || loc.fields.image } alt={ loc.fields.map_image_alt } ratio="aspect-map" width={ 800 } sizes="(min-width: 64rem) 26rem, (min-width: 48rem) 50vw, 100vw" /></a>
           <HoursCard entry={ loc } />
         </li>

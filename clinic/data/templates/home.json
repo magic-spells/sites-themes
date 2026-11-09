@@ -170,6 +170,7 @@
       "preset": "Featured",
       "settings": {
         "source": "featured",
+        "columns": "2",
         "cta_link": "/fees",
         "color_scheme": "cloud"
       },

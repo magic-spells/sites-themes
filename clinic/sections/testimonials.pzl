@@ -30,7 +30,7 @@
         <Arrows />
       </tarot-carousel>
     {:else}
-      <ul class="grid gap-space-sm md:grid-cols-2 md:gap-space-md lg:grid-cols-3 lg:gap-space-lg">{#for entry in reviews}<li class="md:max-lg:odd:last:col-span-2"><ReviewCard entry={ entry } /></li>{/for}</ul>
+      <ul class="grid gap-space-sm md:grid-cols-2 md:gap-space-md lg:grid-cols-3 lg:gap-space-lg">{#for entry in reviews}<li><ReviewCard entry={ entry } /></li>{/for}</ul>
     {/if}
   </div>
 </section>

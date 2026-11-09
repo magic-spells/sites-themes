@@ -13,7 +13,7 @@
             {#if card}<IconCircle icon={ f.icon || 'tooth' } size="lg" />{:else}<Glyph name={ f.icon || 'tooth' } cls="mb-space-xs size-glyph-xl text-link" />{/if}
             <h3 class="font-heading text-h3">{ category.title }</h3>
             {#if f.description}<p class="text-body-sm text-pretty text-scheme-muted">{ f.description }</p>{/if}
-            <a class="mt-space-xs text-body-sm font-semibold underline underline-offset-4 hover:text-link" href="{ settings.services_path }?category={ category.handle }">{ t('all_category', { name: category.title | downcase }) }</a>
+            <a class="mt-space-xs text-body-sm font-semibold text-link underline underline-offset-4" href="{ settings.services_path }?category={ category.handle }">{ t('all_category', { name: category.title | downcase }) }</a>
           </li>
         {/for}
       </ul>

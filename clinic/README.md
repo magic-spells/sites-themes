@@ -50,7 +50,7 @@ sites.fixtures.json Oakfield Family Dental: pages, menus, forms and every conten
   type empty and its sections hide.
 - **team**: role, letters (DDS, PT, DPT, LCSW), specialties (comma-separated), bio,
   credentials (one per line), location, a 4:5 portrait, featured and a position.
-- **insurers**, **plans**, **locations** (with fax), **testimonials** (stars, date, the
+- **insurers**, **plans**, **locations**, **testimonials** (stars, date, the
   service and clinician they name, an optional square photo) and **posts** as their sections describe.
 
 ## Practice settings

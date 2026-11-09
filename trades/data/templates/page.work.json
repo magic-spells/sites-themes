@@ -7,6 +7,7 @@
       "type": "page-header",
       "preset": "Default",
       "settings": {
+        "text": "Boilers, bathrooms and the odd burst pipe, from Ashby and the villages around it.",
         "color_scheme": "paper"
       },
       "blocks": []
@@ -16,11 +17,11 @@
       "type": "projects-grid",
       "preset": "Work page",
       "settings": {
-        "heading": "",
         "source": "all",
         "limit": 12,
         "show_tabs": true,
-        "color_scheme": "paper"
+        "color_scheme": "paper",
+        "link_label": ""
       },
       "blocks": []
     },

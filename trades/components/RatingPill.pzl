@@ -2,7 +2,7 @@
 <!-- The Yard rating in a small box with a hairline: the star and the rating, the review count with its source, and "Read all" to the review url. Nothing without a rating. -->
 {#let s = site.settings}
 {#if s.rating}
-<p class="flex flex-wrap items-center gap-x-space-xs rounded-button border border-scheme-border bg-scheme-card px-space-md py-space-xs text-body-sm">
+<p class="flex flex-wrap items-center gap-x-space-xs rounded-full border border-scheme-border bg-scheme-card px-space-md py-space-xs text-body-sm">
   <Glyph name="star-filled" cls="size-icon-sm text-accent" /><span class="font-semibold">{ s.rating }</span>
   {#if s.review_count}<span class="text-scheme-muted">{ t('review_count', { n: s.review_count | number_with_delimiter, source: s.review_source }) }</span>{/if}
   {#if s.review_url}<a class="text-accent underline underline-offset-4" href="{ s.review_url }">{ t('read_all') }</a>{/if}

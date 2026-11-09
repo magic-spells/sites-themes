@@ -1,5 +1,4 @@
-<!-- TODO sync with Figma -->
-<!-- The towns served: the section head with the Yard service radius line, then the towns as pin links three, then two across beside the first location's map at 4:5 (its image, or its embedded map when set and chosen). On phones the map comes first at 3:2. -->
+<!-- The towns served: the section head with the Yard service radius line, then the towns as pin links in three columns, then two, read down, beside the first location's map at 4:5 (its image, or its embedded map when set and chosen). On phones the map comes first at 3:2. -->
 {#let
   all = content.areas.entries | sort('fields.order')
   towns = (settings.source == 'featured' ? all | where('fields.featured') : all) | slice(0, 12)
@@ -10,7 +9,7 @@
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ site.settings.service_radius_line } link_label={ settings.link_label } link_href={ settings.link_href } />
     <div class="grid items-start gap-space-3xl max-md:gap-space-xl md:grid-cols-text-picture">
-      <ul class="grid grid-cols-2 gap-x-space-lg lg:grid-cols-3">{#for entry in towns}<AreaLink entry={ entry } />{/for}</ul>
+      <ul class="columns-2 gap-x-space-lg lg:columns-3">{#for entry in towns}<AreaLink entry={ entry } />{/for}</ul>
       <div class="max-md:order-first">{#if settings.map == 'embed' && map.map_embed_url}<iframe class="w-full rounded-card bg-scheme-surface-2 { ratio }" src="{ map.map_embed_url }" title="{ map.map_image_alt }" loading="lazy"></iframe>{:else}<Well asset={ map.map_image } alt={ map.map_image_alt } ratio={ ratio } sizes="(min-width: 48rem) 40vw, 100vw" />{/if}</div>
     </div>
   </div>

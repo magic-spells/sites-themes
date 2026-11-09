@@ -1,9 +1,8 @@
-<!-- TODO sync with Figma -->
 <!-- Accreditations: an optional heading, then the logos from the blocks, muted to the scheme's text colour at 70%; a wrapping row from 48rem, a row that scrolls on phones. A logo with a link opens it. -->
 <section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter">
   <div class="mx-auto max-w-column">
     {#if settings.heading}<h2 class="mb-space-lg px-gutter text-center text-body-sm text-scheme-muted md:px-0">{ settings.heading }</h2>{/if}
-    <ul class="flex snap-x gap-space-xl overflow-x-auto px-gutter md:flex-wrap md:items-center md:justify-center md:overflow-visible md:px-0">
+    <ul class="flex snap-x gap-space-xl overflow-x-auto md:gap-space-2xl px-gutter md:flex-wrap md:items-center md:justify-center md:overflow-visible md:px-0">
       {#for block in blocks}
         <li class="shrink-0 snap-start" data-block={ block.editor_id }>
           {#if block.settings.link}<a class="block opacity-70 grayscale transition-opacity hover:opacity-100" href="{ block.settings.link }"><img class="h-control w-auto" src="{ image_url(block.settings.logo, 320) }" alt="{ block.settings.alt }" loading="lazy" width={ block.settings.logo.width } height={ block.settings.logo.height } /></a>

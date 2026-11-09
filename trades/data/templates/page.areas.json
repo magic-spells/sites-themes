@@ -41,9 +41,9 @@
         {
           "type": "prop",
           "settings": {
-            "icon": "badge-check",
+            "icon": "check",
             "title": "Upfront pricing",
-            "text": "A fixed price before we start, and the invoice matches it."
+            "text": "A fixed price before we start, never a meter running by the hour."
           }
         },
         {
@@ -51,31 +51,31 @@
           "settings": {
             "icon": "clock",
             "title": "Same-day callouts",
-            "text": "A real person answers, and a van is on its way within the hour."
+            "text": "Call before noon and a technician is at your door the same day."
           }
         },
         {
           "type": "prop",
           "settings": {
-            "icon": "check",
-            "title": "12-month guarantee",
-            "text": "Every job guaranteed for a year, parts and labour."
+            "icon": "badge-check",
+            "title": "Every job guaranteed",
+            "text": "Twelve months on parts and labour, written on every invoice."
           }
         },
         {
           "type": "prop",
           "settings": {
-            "icon": "house",
-            "title": "Family-run since 1986",
-            "text": "Second generation, same yard, same phone number."
+            "icon": "phone",
+            "title": "24/7 live answering",
+            "text": "A real person picks up, day or night, and books the next slot."
           }
         },
         {
           "type": "prop",
           "settings": {
-            "icon": "star",
-            "title": "4.9 on Google",
-            "text": "612 reviews from your neighbours across ten towns."
+            "icon": "pin",
+            "title": "Local since 1986",
+            "text": "Family-run, second generation, within 40 miles of Ashby."
           }
         }
       ]

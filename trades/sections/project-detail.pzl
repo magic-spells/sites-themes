@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- A job's page: the 3:2 photo, the service, town and date in Meta, the title, the summary, the before and after when both are set, the story in the reading column, the photos three then two across (each opens the lightbox of a hidden carousel of the same photos, theme.ts) and three more jobs of the same service. -->
 {#let
   entry = page.entry
@@ -13,13 +12,13 @@
     <header class="grid max-w-reading gap-space-sm">
       <p class="text-body-sm text-scheme-muted">{ [f.service.title, f.area.title, f.date ? f.date | date : null] | compact | join(' · ') }</p>
       <h1 class="font-heading text-h1 case-heading text-balance text-scheme-heading">{ entry.title }</h1>
-      {#if f.summary}<p class="text-body-lg text-pretty text-scheme-muted">{ f.summary }</p>{/if}
+      {#if f.summary}<p class="text-body-lg text-pretty">{ f.summary }</p>{/if}
     </header>
     <PairWell entry={ entry } />
     {#if f.description}<div class="sites-prose max-w-reading" data-lead>{ f.description }</div>{/if}
     {#if photos.length}<div class="mt-space-xl grid gap-space-lg">
       <h2 class="font-heading text-h3 case-heading text-scheme-heading">{ t('photos') }</h2>
-      <ul class="grid grid-cols-2 gap-space-md lg:grid-cols-3">
+      <ul class="grid grid-cols-2 gap-space-sm lg:grid-cols-3 lg:gap-space-lg">
         {#for item in photos, i}<li><a class="group block cursor-zoom-in" href="{ image_url(item.asset, 2560) }" data-lightbox-open={ id } data-index={ i } aria-label="{ t('open_photo', { index: i + 1 }) }"><Well asset={ item.asset } alt={ item.alt } ratio="aspect-square" width={ 640 } sizes="(min-width: 64rem) 26rem, 50vw" zoom /></a></li>{/for}
       </ul>
       <tarot-carousel class="hidden" id={ id }>

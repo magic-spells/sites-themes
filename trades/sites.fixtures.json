@@ -735,7 +735,7 @@
       "icon": "water-heater",
       "image": "as_1x1_sea",
       "image_alt": "Water heaters by Hollis & Sons",
-      "featured": false,
+      "featured": true,
       "tag": "",
       "order": 6
      }
@@ -864,8 +864,8 @@
      "fields": {
       "area": "area_ashby",
       "date": "2026-10-14",
-      "summary": "A full refit in Ashby, done to a fixed price.",
-      "description": "<p>The brief, the fixed quote and the finished job in Ashby. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+      "summary": "A tired 1970s bathroom became a wet room with underfloor heating in nine working days.",
+      "description": "<p>The owners wanted a bathroom they could grow old in: no step into the shower, a warm floor underfoot and nothing to scrub around. We stripped the room to the joists, moved the soil stack and laid a sloped wet-room deck in one go.</p><p>Underfloor heating runs off the existing boiler on its own zone, with a thermostat by the door. The tiles are large-format porcelain, so there are few grout lines, and the screen is a single fixed panel with no track to clean.</p><p>Nine working days from strip-out to sealant, with the toilet back in service every evening. Building control signed off the new extract fan on the last morning.</p>",
       "image": "as_3x2_clay",
       "image_alt": "Clay Lane bathroom, finished",
       "photos": "job-photos",
@@ -1131,7 +1131,7 @@
      "handle": "ashby",
      "title": "Ashby",
      "fields": {
-      "description": "Our home town, same-day callouts",
+      "description": "Home of the yard",
       "body": "<p>We have worked in Ashby for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Ashby gets the same fixed price before we start and the same twelve-month guarantee.</p>",
       "map_embed_url": "",
       "map_image": "as_map",
@@ -1159,7 +1159,7 @@
      "handle": "marlow-green",
      "title": "Marlow Green",
      "fields": {
-      "description": "Boilers and bathrooms since 1990",
+      "description": "20 min from the yard",
       "body": "<p>We have worked in Marlow Green for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Marlow Green gets the same fixed price before we start and the same twelve-month guarantee.</p>",
       "map_embed_url": "",
       "map_image": "as_map",
@@ -1173,7 +1173,7 @@
      "handle": "hatch-end",
      "title": "Hatch End",
      "fields": {
-      "description": "Same-day callouts",
+      "description": "25 min from the yard",
       "body": "<p>We have worked in Hatch End for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Hatch End gets the same fixed price before we start and the same twelve-month guarantee.</p>",
       "map_embed_url": "",
       "map_image": "as_map",
@@ -1187,7 +1187,7 @@
      "handle": "kings-ferry",
      "title": "Kings Ferry",
      "fields": {
-      "description": "20 min from the yard",
+      "description": "",
       "body": "<p>We have worked in Kings Ferry for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Kings Ferry gets the same fixed price before we start and the same twelve-month guarantee.</p>",
       "map_embed_url": "",
       "map_image": "as_map",
@@ -1201,7 +1201,7 @@
      "handle": "oakridge",
      "title": "Oakridge",
      "fields": {
-      "description": "Same-day callouts most weekdays",
+      "description": "",
       "body": "<p>We have worked in Oakridge for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Oakridge gets the same fixed price before we start and the same twelve-month guarantee.</p>",
       "map_embed_url": "",
       "map_image": "as_map",
@@ -1215,7 +1215,7 @@
      "handle": "brimley",
      "title": "Brimley",
      "fields": {
-      "description": "25 min from the yard",
+      "description": "",
       "body": "<p>We have worked in Brimley for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Brimley gets the same fixed price before we start and the same twelve-month guarantee.</p>",
       "map_embed_url": "",
       "map_image": "as_map",
@@ -1229,7 +1229,7 @@
      "handle": "stanton",
      "title": "Stanton",
      "fields": {
-      "description": "Next-day visits",
+      "description": "",
       "body": "<p>We have worked in Stanton for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Stanton gets the same fixed price before we start and the same twelve-month guarantee.</p>",
       "map_embed_url": "",
       "map_image": "as_map",
@@ -1243,7 +1243,7 @@
      "handle": "ferris-cross",
      "title": "Ferris Cross",
      "fields": {
-      "description": "30 min from the yard",
+      "description": "",
       "body": "<p>We have worked in Ferris Cross for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Ferris Cross gets the same fixed price before we start and the same twelve-month guarantee.</p>",
       "map_embed_url": "",
       "map_image": "as_map",
@@ -1257,7 +1257,7 @@
      "handle": "lowick",
      "title": "Lowick",
      "fields": {
-      "description": "Within 40 miles of Ashby",
+      "description": "",
       "body": "<p>We have worked in Lowick for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Lowick gets the same fixed price before we start and the same twelve-month guarantee.</p>",
       "map_embed_url": "",
       "map_image": "as_map",
@@ -1516,7 +1516,7 @@
      "fields": {
       "role": "Owner, master plumber",
       "bio": "<p>Dan has been with Hollis &amp; Sons for years and knows most of Ashby's boilers by sound.</p>",
-      "credentials": "Gas Safe 512345\nPlumbing licence PL-0417",
+      "credentials": "Gas Safe 512345",
       "image": "as_4x5_clay",
       "image_alt": "Dan Hollis, owner, master plumber",
       "featured": true,
@@ -2266,7 +2266,7 @@
      "icon": "water-heater",
      "image": "as_1x1_sea",
      "image_alt": "Water heaters by Hollis & Sons",
-     "featured": false,
+     "featured": true,
      "tag": "",
      "order": 6
     }
@@ -2340,8 +2340,8 @@
     "fields": {
      "area": "area_ashby",
      "date": "2026-10-14",
-     "summary": "A full refit in Ashby, done to a fixed price.",
-     "description": "<p>The brief, the fixed quote and the finished job in Ashby. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+     "summary": "A tired 1970s bathroom became a wet room with underfloor heating in nine working days.",
+     "description": "<p>The owners wanted a bathroom they could grow old in: no step into the shower, a warm floor underfoot and nothing to scrub around. We stripped the room to the joists, moved the soil stack and laid a sloped wet-room deck in one go.</p><p>Underfloor heating runs off the existing boiler on its own zone, with a thermostat by the door. The tiles are large-format porcelain, so there are few grout lines, and the screen is a single fixed panel with no track to clean.</p><p>Nine working days from strip-out to sealant, with the toilet back in service every evening. Building control signed off the new extract fan on the last morning.</p>",
      "image": "as_3x2_clay",
      "image_alt": "Clay Lane bathroom, finished",
      "photos": "job-photos",
@@ -2661,7 +2661,7 @@
     "handle": "ashby",
     "title": "Ashby",
     "fields": {
-     "description": "Our home town, same-day callouts",
+     "description": "Home of the yard",
      "body": "<p>We have worked in Ashby for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Ashby gets the same fixed price before we start and the same twelve-month guarantee.</p>",
      "map_embed_url": "",
      "map_image": "as_map",
@@ -2705,7 +2705,7 @@
     "handle": "marlow-green",
     "title": "Marlow Green",
     "fields": {
-     "description": "Boilers and bathrooms since 1990",
+     "description": "20 min from the yard",
      "body": "<p>We have worked in Marlow Green for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Marlow Green gets the same fixed price before we start and the same twelve-month guarantee.</p>",
      "map_embed_url": "",
      "map_image": "as_map",
@@ -2727,7 +2727,7 @@
     "handle": "hatch-end",
     "title": "Hatch End",
     "fields": {
-     "description": "Same-day callouts",
+     "description": "25 min from the yard",
      "body": "<p>We have worked in Hatch End for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Hatch End gets the same fixed price before we start and the same twelve-month guarantee.</p>",
      "map_embed_url": "",
      "map_image": "as_map",
@@ -2749,7 +2749,7 @@
     "handle": "kings-ferry",
     "title": "Kings Ferry",
     "fields": {
-     "description": "20 min from the yard",
+     "description": "",
      "body": "<p>We have worked in Kings Ferry for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Kings Ferry gets the same fixed price before we start and the same twelve-month guarantee.</p>",
      "map_embed_url": "",
      "map_image": "as_map",
@@ -2771,7 +2771,7 @@
     "handle": "oakridge",
     "title": "Oakridge",
     "fields": {
-     "description": "Same-day callouts most weekdays",
+     "description": "",
      "body": "<p>We have worked in Oakridge for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Oakridge gets the same fixed price before we start and the same twelve-month guarantee.</p>",
      "map_embed_url": "",
      "map_image": "as_map",
@@ -2793,7 +2793,7 @@
     "handle": "brimley",
     "title": "Brimley",
     "fields": {
-     "description": "25 min from the yard",
+     "description": "",
      "body": "<p>We have worked in Brimley for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Brimley gets the same fixed price before we start and the same twelve-month guarantee.</p>",
      "map_embed_url": "",
      "map_image": "as_map",
@@ -2815,7 +2815,7 @@
     "handle": "stanton",
     "title": "Stanton",
     "fields": {
-     "description": "Next-day visits",
+     "description": "",
      "body": "<p>We have worked in Stanton for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Stanton gets the same fixed price before we start and the same twelve-month guarantee.</p>",
      "map_embed_url": "",
      "map_image": "as_map",
@@ -2837,7 +2837,7 @@
     "handle": "ferris-cross",
     "title": "Ferris Cross",
     "fields": {
-     "description": "30 min from the yard",
+     "description": "",
      "body": "<p>We have worked in Ferris Cross for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Ferris Cross gets the same fixed price before we start and the same twelve-month guarantee.</p>",
      "map_embed_url": "",
      "map_image": "as_map",
@@ -2859,7 +2859,7 @@
     "handle": "lowick",
     "title": "Lowick",
     "fields": {
-     "description": "Within 40 miles of Ashby",
+     "description": "",
      "body": "<p>We have worked in Lowick for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Lowick gets the same fixed price before we start and the same twelve-month guarantee.</p>",
      "map_embed_url": "",
      "map_image": "as_map",

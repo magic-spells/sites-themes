@@ -6,9 +6,9 @@
 }
 <figure class="flex h-full flex-col gap-space-md rounded-card border border-scheme-border bg-scheme-card p-space-xl { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
   {#if f.stars}<p class="flex gap-space-2xs text-accent" role="img" aria-label="{ t('rating', { n: f.stars }) }">{#for n in [1, 2, 3, 4, 5]}<Glyph name={ n <= f.stars ? 'star-filled' : 'star' } cls="size-icon-sm" />{/for}</p>{/if}
-  <blockquote class="flex-1 text-body-lg text-pretty">“{ f.quote }”</blockquote>
+  <blockquote class="flex-1 text-body-lg text-pretty">{ f.quote }</blockquote>
   <figcaption class="flex items-center gap-space-md border-t border-scheme-border pt-space-md">
-    <span class="grid flex-1 gap-space-xs text-body-sm">
+    <span class="grid flex-1 gap-space-md text-body-sm">
       <span class="font-semibold">{ [f.name, f.line] | compact | join(' · ') }</span>
       {#if tech}<span class="flex items-center gap-space-xs text-scheme-muted">{#if tech.fields.image}<img class="size-circle-sm rounded-full object-cover" src="{ image_url(tech.fields.image, 64) }" alt="" loading="lazy" width="32" height="32" />{:else}<span class="size-circle-sm rounded-full bg-scheme-tint"></span>{/if}{ t('technician', { name: tech.title }) }</span>{/if}
     </span>

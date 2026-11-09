@@ -5,5 +5,5 @@
   <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-portrait" width={ 640 } sizes="(min-width: 64rem) 20rem, 50vw" />
   <h3 class="mt-space-xs text-h4 font-semibold">{ entry.title }</h3>
   {#if f.role}<p class="text-body-sm text-scheme-muted">{ f.role }</p>{/if}
-  {#if f.credentials}<ul class="grid text-body-sm font-semibold tnum">{#for line in f.credentials | split('\n')}{#if line | strip}<li>{ line | strip }</li>{/if}{/for}</ul>{/if}
+  {#if f.credentials}<ul class="grid text-body-sm font-medium tnum">{#for line in f.credentials | split('\n')}{#if line | strip}<li>{ line | strip }</li>{/if}{/for}</ul>{/if}
 </article>

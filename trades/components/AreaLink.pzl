@@ -1,6 +1,6 @@
 <!-- component: AreaLink -->
 <!-- A town served, one link to its page on a hairline: the pin in the accent, the town in Card title, its line in Meta. -->
-<li class="border-b border-scheme-border">
+<li class="break-inside-avoid border-b border-scheme-border">
   <a class="group flex items-start gap-space-sm py-space-sm" href="/areas/{ entry.handle }">
     <Glyph name="pin" cls="mt-space-2xs size-icon text-accent" />
     <span class="grid gap-space-2xs"><span class="text-h4 font-semibold group-hover:underline group-hover:underline-offset-4">{ entry.title }</span>{#if entry.fields.description}<span class="text-body-sm text-scheme-muted">{ entry.fields.description }</span>{/if}</span>

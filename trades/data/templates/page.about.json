@@ -94,7 +94,7 @@
           "type": "badge",
           "settings": {
             "logo": "as_logo_halcyon",
-            "alt": "Better Business Bureau (placeholder)",
+            "alt": "Gas Safe Register (placeholder)",
             "link": ""
           }
         },
@@ -102,7 +102,7 @@
           "type": "badge",
           "settings": {
             "logo": "as_logo_quill",
-            "alt": "Google Guaranteed (placeholder)",
+            "alt": "Licensed plumber (placeholder)",
             "link": ""
           }
         },
@@ -110,7 +110,7 @@
           "type": "badge",
           "settings": {
             "logo": "as_logo_northbank",
-            "alt": "Boiler maker accredited installer (placeholder)",
+            "alt": "Heat pump installer (placeholder)",
             "link": ""
           }
         },
@@ -118,7 +118,7 @@
           "type": "badge",
           "settings": {
             "logo": "as_logo_verso",
-            "alt": "Trade association member (placeholder)",
+            "alt": "Trading Standards (placeholder)",
             "link": ""
           }
         },
@@ -126,7 +126,7 @@
           "type": "badge",
           "settings": {
             "logo": "as_logo_foxglove",
-            "alt": "Ashby business award (placeholder)",
+            "alt": "Chamber of Commerce (placeholder)",
             "link": ""
           }
         }

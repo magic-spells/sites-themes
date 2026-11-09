@@ -7,7 +7,6 @@
       "type": "page-header",
       "preset": "Reviews",
       "settings": {
-        "show_rating": true,
         "color_scheme": "paper"
       },
       "blocks": []
@@ -17,8 +16,7 @@
       "type": "testimonials",
       "preset": "Rows",
       "settings": {
-        "heading": "",
-        "show_rating": false,
+        "show_rating": true,
         "source": "all",
         "limit": 12,
         "color_scheme": "paper"

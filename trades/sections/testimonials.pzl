@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- What neighbours say: the section head with the Yard rating pill at its right. Rows: review cards three across from 64rem, two from 48rem, one on phones. Carousel: the same cards on a tarot track, 1.1, 2 then 3 across, the progress hairline and round arrows under it. Featured first or all, capped at the limit. -->
 {#let
   id = 'reviews-' + section.id
@@ -19,7 +18,7 @@
         <Arrows bar="bar-{ id }" />
       </tarot-carousel>
     {:else}
-      <ul class="grid gap-space-md md:grid-cols-2 lg:grid-cols-3">{#for entry in reviews}<li><ReviewCard entry={ entry } /></li>{/for}</ul>
+      <ul class="grid gap-space-sm md:grid-cols-2 md:gap-space-lg lg:grid-cols-3">{#for entry in reviews}<li><ReviewCard entry={ entry } /></li>{/for}</ul>
     {/if}
   </div>
 </section>

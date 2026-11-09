@@ -13,9 +13,7 @@
           </li>
         {/for}
       </ul>
-      <div class="sites-scheme-chalk rounded-card border border-scheme-border bg-scheme-background p-space-xl text-scheme-foreground">
-        <EstimateFields handle={ settings.form } prefix="apply" plain />
-      </div>
+      <FormCard handle={ settings.form } prefix="apply" />
     </div>
   </div>
 </section>

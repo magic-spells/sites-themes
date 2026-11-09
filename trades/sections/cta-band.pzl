@@ -7,9 +7,9 @@
     <div class="grid justify-items-start gap-space-lg">
       <h2 class="font-heading text-display case-heading text-balance text-scheme-heading">{ settings.heading }</h2>
       <Routes stack />
-      {#if s.licence_lines}<p class="grid border-t border-scheme-border pt-space-md text-body-sm font-semibold tnum">{#for line in s.licence_lines | split('\n')}<span>{ line }</span>{/for}</p>{/if}
+      <LicenceLines cls="border-t border-scheme-border pt-space-md text-body-sm" />
     </div>
-    <div class="sites-scheme-chalk rounded-card border border-scheme-border bg-scheme-background p-space-xl text-scheme-foreground"><EstimateFields prefix="cta-{ section.id }" /></div>
+    <FormCard prefix="cta-{ section.id }" />
   </div>
   {:else}
   <div class="mx-auto grid max-w-column justify-items-center gap-space-lg text-center">

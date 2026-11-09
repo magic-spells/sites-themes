@@ -10,7 +10,6 @@
    "heading_case": "upper",
    "phone": "(802) 555-0164",
    "phone_line": "24/7 live answering",
-   "emergency_phone": "(802) 555-0164",
    "ask_label": "Get a free estimate",
    "ask": "form",
    "ask_url": "/estimate",
@@ -23,7 +22,6 @@
    "since_year": "1986",
    "licence_lines": "Gas Safe 512345 · Plumbing licence PL-0417 · Fully insured to $5M",
    "insured_line": "Licensed & insured",
-   "guarantee_line": "Every job guaranteed for 12 months",
    "financing_url": "https://lender.example/hollis",
    "financing_line": "Spread a new boiler over 24 months",
    "service_radius_line": "Within 40 miles of Ashby",
@@ -31,7 +29,6 @@
    "email": "hello@hollisandsons.example",
    "address": "3 Mill Lane, Ashby",
    "hours_line": "Mon–Sat 7:00–18:00 · 24/7 emergency",
-   "contact_form": "contact",
    "newsletter_form": "newsletter"
   }
  },

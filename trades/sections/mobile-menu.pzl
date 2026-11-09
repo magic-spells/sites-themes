@@ -34,13 +34,7 @@
         </nav>
       {/if}
       <div class="grid gap-space-md border-t border-scheme-border pt-space-lg">
-        <Button ask wide />
-        {#if s.phone}
-          <a class="grid justify-self-start gap-space-2xs" href="tel:{ s.phone | replace(' ', '') }">
-            <span class="flex items-center gap-space-xs font-heading text-h3 tnum"><Glyph name="phone" cls="size-glyph text-accent" />{ s.phone }</span>
-            {#if s.phone_line}<span class="flex items-center gap-space-xs text-body-sm text-scheme-muted"><Glyph name="dot" cls="size-dot text-accent" />{ s.phone_line }</span>{/if}
-          </a>
-        {/if}
+        <Routes stack />
         {#if s.hours_line}<p class="text-body-sm text-scheme-muted">{ s.hours_line }</p>{/if}
       </div>
     </div>

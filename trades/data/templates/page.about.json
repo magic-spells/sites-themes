@@ -74,6 +74,15 @@
       "blocks": []
     },
     {
+      "id": "s_projects",
+      "type": "projects-strip",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "chalk"
+      },
+      "blocks": []
+    },
+    {
       "id": "s_badges",
       "type": "badge-row",
       "preset": "Default",

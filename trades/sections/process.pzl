@@ -3,7 +3,7 @@
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } />
-    <ol class="grid gap-x-space-2xl gap-y-space-xl md:grid-cols-2 lg:grid-cols-4">{#for block in blocks | slice(0, 6), i}<Step block={ block } editor_id={ block.editor_id } number={ i < 9 ? '0' + (i + 1) : i + 1 } />{/for}</ol>
+    <ol class="grid gap-x-space-2xl gap-y-space-xl md:grid-cols-2 lg:grid-cols-4">{#for block in blocks | slice(0, 6), i}<Step block={ block } editor_id={ block.editor_id } number={ '0' + (i + 1) } />{/for}</ol>
   </div>
 </section>
 

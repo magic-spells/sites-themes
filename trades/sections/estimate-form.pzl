@@ -1,4 +1,4 @@
-<!-- The estimate form on the page: the heading (its accent phrase in the accent), the standfirst and the four contact rows left; the form on a chalk card right, with the confirm line under the full-width button. Stacked on phones, the form after the rows. -->
+<!-- A site form on the page (the estimate form, or the one form names: the Contact page's contact form): the heading (its accent phrase in the accent), the standfirst and the four contact rows left; the form on a chalk card right, with the confirm line under the full-width button on the estimate form. Stacked on phones, the form after the rows. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-2 md:gap-space-3xl">
     <div class="grid gap-space-lg">
@@ -8,9 +8,7 @@
       </div>
       {#if settings.show_contact_rows}<ContactRows />{/if}
     </div>
-    <div class="sites-scheme-chalk rounded-card border border-scheme-border bg-scheme-background p-space-xl text-scheme-foreground">
-      <EstimateFields handle={ settings.form } prefix="page" />
-    </div>
+    <FormCard handle={ settings.form } prefix="page" />
   </div>
 </section>
 

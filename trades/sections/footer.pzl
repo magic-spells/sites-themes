@@ -36,7 +36,7 @@
     <div class="flex flex-wrap items-center gap-x-space-lg gap-y-space-sm border-t border-scheme-border pt-space-lg text-body-sm">
       {#if settings.small_print}<p class="text-scheme-muted">{ settings.small_print }</p>{/if}
       {#if settings.legal_menu.items.length}<ul class="flex flex-wrap gap-x-space-md">{#for item in settings.legal_menu.items}<li><a class="text-accent underline underline-offset-4 hover:text-scheme-foreground" href="{ item.href }">{ item.label }</a></li>{/for}</ul>{/if}
-      {#if s.licence_lines}<p class="grid font-semibold tnum lg:ms-auto lg:text-right">{#for line in s.licence_lines | split('\n')}<span>{ line }</span>{/for}</p>{/if}
+      <LicenceLines cls="lg:ms-auto lg:text-right" />
     </div>
   </div>
 </footer>

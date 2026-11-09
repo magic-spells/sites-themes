@@ -20,7 +20,7 @@ data/templates/     home, service, project, area, post and page (+ services, wor
                     reviews, specials, about, estimate, contact, careers, journal) as JSON
 data/groups/        header-group.json, footer-group.json, panel-group.json
 templates/          404.pzl, password.pzl, maintenance.pzl
-sections/           39, each with a full <schema>
+sections/           38, each with a full <schema>
 components/         the shared pieces: the routes, the proof row, the cards, the form
 styles/theme.css    Tailwind with every token in @theme
 scripts/theme.ts    the vendored components and the small behaviours they leave out

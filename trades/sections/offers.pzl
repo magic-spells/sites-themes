@@ -1,12 +1,12 @@
 <!-- TODO sync with Figma -->
-<!-- The specials: the section head with a text link to them all, then the offers as coupons two across from 64rem, stacked below. -->
+<!-- The specials: the section head with the outlined button to them all, then the offers as coupons two across from 64rem, stacked below. -->
 {#let
   all = content.offers.entries | sort('fields.order')
   offers = (settings.source == 'featured' ? all | where('fields.featured') : all) | slice(0, settings.limit)
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
-    <SectionHead heading={ settings.heading } text={ settings.text }>{#if settings.link_label && settings.link_href}<a class="flex items-center gap-space-xs font-medium underline underline-offset-4 hover:no-underline" href="{ settings.link_href }">{ settings.link_label }<Glyph name="arrow-right" /></a>{/if}</SectionHead>
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } />
     <ul class="grid gap-space-md lg:grid-cols-2">{#for entry in offers}<li><Coupon entry={ entry } ticket={ settings.coupon_style == 'ticket' } /></li>{/for}</ul>
   </div>
 </section>

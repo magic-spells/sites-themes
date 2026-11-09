@@ -1,6 +1,6 @@
 {
   "label": "Contact",
-  "description": "The contact form beside the ways to reach you, then the yard.",
+  "description": "The contact form beside the ways to reach you, then the yard; the form hero above it for the sync pass.",
   "sections": [
     {
       "id": "s_header",
@@ -12,10 +12,24 @@
       "blocks": []
     },
     {
+      "id": "s_hero",
+      "type": "hero",
+      "preset": "Form",
+      "settings": {
+        "layout": "form",
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    },
+    {
       "id": "s_contact",
-      "type": "contact",
+      "type": "estimate-form",
       "preset": "Default",
       "settings": {
+        "heading": "Write to the yard",
+        "accent_text": "",
+        "text": "For an existing job, a bill or anything that is not an estimate. Sarah answers within one business day.",
+        "form": "contact",
         "color_scheme": "paper"
       },
       "blocks": []

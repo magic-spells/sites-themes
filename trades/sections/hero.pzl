@@ -17,7 +17,7 @@
       {#if settings.show_proof_row}<div class="w-full border-t border-scheme-border pt-space-md"><ProofRow /></div>{/if}
     </div>
     {#if layout == 'form'}
-      <div class="sites-scheme-chalk rounded-card border border-scheme-border bg-scheme-background p-space-xl text-scheme-foreground"><EstimateFields prefix="hero-{ section.id }" /></div>
+      <FormCard prefix="hero-{ section.id }" />
     {:else if !cover}
       <div class="relative md:-me-bleed"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-photo md:aspect-portrait" width={ 1200 } sizes="(min-width: 48rem) 45vw, 100vw" eager /><span class="absolute inset-y-0 start-0 w-1/3 bg-linear-to-r from-scheme-background max-md:hidden"></span></div>
     {/if}

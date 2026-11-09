@@ -1,10 +1,12 @@
 <!-- component: EstimateFields -->
-<!-- A site form whole: its fields, the full-width button, the Yard confirm line under it, and the sent and error states (?form=…&sent=1 / &error=1). The estimate form by default, the one the sheet, estimate-form, the hero and the cta band share; handle names another (contact, apply), and plain drops the confirm line. prefix keeps the field ids apart when two forms share a page. -->
+<!-- A site form whole: its fields, the full-width button, the Yard confirm line under it, and the sent and error states (?form=…&sent=1 / &error=1). The estimate form by default, the one the sheet, estimate-form, the hero and the cta band share; handle names another (contact, apply), which drops the confirm line and asks with Send unless the form names its button. prefix keeps the field ids apart when two forms share a page. -->
 {#let
   s = site.settings
-  confirm = plain ? null : s.confirm_line
+  h = handle || s.estimate_form
+  estimate = h == s.estimate_form
+  confirm = estimate ? s.confirm_line : null
 }
-<Form handle={ handle || s.estimate_form } class="grid gap-space-md" id="form-{ prefix }">
+<Form handle={ h } class="grid gap-space-md" id="form-{ prefix }">
   {#if form.sent}
     <div class="grid justify-items-start gap-space-sm" role="status">
       <IconCircle icon="check" size="lg" />
@@ -14,7 +16,7 @@
   {:else}
     {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
     <FormFields fields={ form.fields } prefix={ prefix } />
-    <Button type="submit" wide>{ form.submit_label || s.ask_label }</Button>
+    <Button type="submit" wide>{ form.submit_label || (estimate ? s.ask_label : t('send')) }</Button>
     {#if confirm}<p class="text-center text-body-sm text-scheme-muted">{ confirm }</p>{/if}
     <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
   {/if}

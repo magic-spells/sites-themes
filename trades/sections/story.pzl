@@ -1,12 +1,11 @@
 <!-- TODO sync with Figma -->
 <!-- The owner's story: the heading (its accent phrase in the accent), the prose and the Yard licence lines under it in the Licence style, beside the 4:5 photo at the column's edge, left or right; seven parts to five from 48rem, the photo first on phones. -->
-{#let s = site.settings}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column items-center gap-space-xl md:gap-space-3xl { settings.image_side == 'left' ? 'md:grid-cols-picture-text' : 'md:grid-cols-text-picture' }">
     <div class="grid justify-items-start gap-space-md { settings.image_side == 'left' ? 'md:order-last' : '' }">
       <h2 class="font-heading text-h2 case-heading text-balance text-scheme-heading">{ settings.heading }{#if settings.accent_text} <span class="text-accent">{ settings.accent_text }</span>{/if}</h2>
       <div class="sites-prose max-w-reading text-body-lg">{ settings.text }</div>
-      {#if s.licence_lines}<p class="grid border-t border-scheme-border pt-space-md text-body-sm font-semibold tnum">{#for line in s.licence_lines | split('\n')}<span>{ line }</span>{/for}</p>{/if}
+      <LicenceLines cls="border-t border-scheme-border pt-space-md text-body-sm" />
       {#if settings.link_label && settings.link}<Button href={ settings.link } tone="outline">{ settings.link_label }</Button>{/if}
     </div>
     <div class="max-md:order-first"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" /></div>

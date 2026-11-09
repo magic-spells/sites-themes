@@ -49,18 +49,12 @@ function remember(key: string): void {
 	}
 }
 
-function closest(event: Event, selector: string): HTMLElement | null {
-	return ((event.target as Element | null)?.closest?.(selector) as HTMLElement | null) ?? null;
-}
-
 // A button or link names the panel it opens: the menu drawer, or the
 // estimate sheet behind every ask button. A link keeps its href (the
 // estimate page) for a page without JavaScript. A panel opened from inside
 // another closes that one first. Focus goes back to the trigger when the
 // panel would otherwise drop it on <body>.
-document.addEventListener('click', (event) => {
-	const opener = closest(event, '[data-panel-open]');
-	if (!opener) return;
+function openPanel(opener: HTMLElement, event: Event): void {
 	const panel = document.getElementById(opener.getAttribute('data-panel-open') ?? '') as Panel | null;
 	if (!panel || typeof panel.show !== 'function') return;
 	event.preventDefault();
@@ -75,7 +69,7 @@ document.addEventListener('click', (event) => {
 		},
 		{ once: true },
 	);
-});
+}
 
 // A request comes back to the page it was sent from (?form=…&sent=1 or
 // &error=1). When that form lives only in the sheet, the sheet opens to show
@@ -126,22 +120,18 @@ wide.addEventListener('change', unfold);
 
 // The ticker's pause button (WCAG 2.2.2) sets the marquee's own paused
 // attribute.
-document.addEventListener('click', (event) => {
-	const button = closest(event, '[data-ticker-toggle]');
-	if (!button) return;
+function toggleTicker(button: HTMLElement): void {
 	const paused = button.getAttribute('aria-pressed') !== 'true';
 	button.setAttribute('aria-pressed', String(paused));
 	button.closest('[data-ticker]')?.querySelector('scrolling-content')?.toggleAttribute('paused', paused);
-});
+}
 
 // A project's photos open the lightbox of a hidden carousel holding the
 // same photos (the plugin opens from a slide and has no public open(index)).
 // Each tile is a link to the full-size photo for a page without JavaScript.
 // Focus goes back to the tile when the lightbox closes.
 const tileFor = new Map<Element, HTMLElement>();
-document.addEventListener('click', (event) => {
-	const tile = closest(event, '[data-lightbox-open]');
-	if (!tile) return;
+function openLightbox(tile: HTMLElement, event: Event): void {
 	const carousel = document.getElementById(tile.getAttribute('data-lightbox-open') ?? '') as Carousel | null;
 	const slide = carousel?.querySelectorAll<HTMLElement>('tarot-slide')[Number(tile.getAttribute('data-index'))];
 	if (!carousel || !slide) return;
@@ -149,6 +139,15 @@ document.addEventListener('click', (event) => {
 	if (!tileFor.has(carousel)) carousel.on('lightbox:closed', () => tileFor.get(carousel)?.focus());
 	tileFor.set(carousel, tile);
 	(slide.querySelector('img') ?? slide).click();
+}
+
+// One listener for the three: a panel opener, the ticker's pause and a
+// photo tile.
+document.addEventListener('click', (event) => {
+	const el = (event.target as Element | null)?.closest?.<HTMLElement>('[data-panel-open], [data-ticker-toggle], [data-lightbox-open]');
+	if (el?.hasAttribute('data-panel-open')) openPanel(el, event);
+	else if (el?.hasAttribute('data-ticker-toggle')) toggleTicker(el);
+	else if (el) openLightbox(el, event);
 });
 
 // Scroll reveals on cards and tiles only. They write `reveal reveal-fade-up`

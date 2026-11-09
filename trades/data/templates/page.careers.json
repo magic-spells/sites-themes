@@ -80,6 +80,20 @@
           }
         }
       ]
+    },
+    {
+      "id": "s_hero",
+      "type": "hero",
+      "preset": "Split",
+      "settings": {
+        "layout": "split",
+        "heading": "Plumbing done right.",
+        "accent_text": "First time.",
+        "image": "as_4x5_sand",
+        "image_alt": "Dan Hollis fitting a boiler in a kitchen in Ashby",
+        "color_scheme": "paper"
+      },
+      "blocks": []
     }
   ]
 }

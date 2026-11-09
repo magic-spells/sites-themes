@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- The fee table: the section head with the disclaimer as its standfirst and "Check your coverage" (a link, or a call to the Practice phone); then, per category, an h4 over a 2px rule in the text colour and its priced services as fee rows on hairlines. All with a price, the featured ones, or one category; two tables side by side from 64rem with columns 2. -->
 {#let
   s = site.settings

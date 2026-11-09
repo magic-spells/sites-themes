@@ -1,10 +1,9 @@
-<!-- TODO sync with Figma -->
-<!-- Patient forms and guides: the section head, then one link per row on hairlines, two columns from 48rem; the Practice patient portal leads when set. -->
+<!-- Patient forms and guides: the section head, then one link per row on hairlines, two columns (down, then across) from 48rem; the Practice patient portal leads when set. -->
 {#let s = site.settings}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } />
-    <ul class="grid gap-x-space-xl md:grid-cols-2">
+    <ul class="gap-x-space-xl md:columns-2">
       {#if s.portal_url}<ResourceRow label={ settings.portal_label } note={ settings.portal_note } link={ s.portal_url } kind="portal" />{/if}
       {#for block in blocks}<ResourceRow label={ block.settings.label } note={ block.settings.note } link={ block.settings.link } kind={ block.settings.kind } editor_id={ block.editor_id } />{/for}
     </ul>

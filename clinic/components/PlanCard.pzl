@@ -4,11 +4,11 @@
 <article class="flex h-full flex-col gap-space-md rounded-card border border-scheme-border bg-scheme-background p-space-xl text-scheme-foreground { f.featured ? 'sites-scheme-navy' : '' }">
   <div class="flex items-start justify-between gap-space-sm">
     <h3 class="font-heading text-card">{ entry.title }</h3>
-    {#if f.featured}<p class="shrink-0 rounded-full bg-scheme-accent px-space-sm py-space-2xs text-body-xs font-semibold text-scheme-background">{ t('most_popular') }</p>{/if}
+    {#if f.featured}<p class="shrink-0 rounded-full bg-scheme-accent px-space-xs py-space-2xs text-body-xs font-medium text-scheme-background">{ t('most_popular') }</p>{/if}
   </div>
   <p class="flex items-baseline gap-space-xs"><span class="font-heading text-h3 tnum">{ f.price | currency(site.settings.currency_symbol || '$', 0) }</span>{#if f.period}<span class="text-body-sm text-scheme-muted">/ { t('period.' + f.period) }</span>{/if}</p>
   {#if f.summary}<p class="text-body text-pretty">{ f.summary }</p>{/if}
-  {#if f.includes}<ul class="grid gap-space-xs">{#for line in f.includes | split('\n')}{#if line | strip}<li class="flex gap-space-xs text-body"><Glyph name="check" cls="mt-space-2xs size-icon text-link" />{ line | strip }</li>{/if}{/for}</ul>{/if}
+  {#if f.includes}<ul class="grid gap-space-xs">{#for line in f.includes | split('\n')}{#if line | strip}<li class="flex gap-space-sm text-body"><Glyph name="check" cls="mt-space-2xs size-icon text-link" />{ line | strip }</li>{/if}{/for}</ul>{/if}
   {#if f.note}<p class="text-body-sm text-pretty text-scheme-muted">{ f.note }</p>{/if}
   <div class="mt-auto pt-space-xs"><Button href={ f.link } ask={ !f.link } wide>{ t('choose_plan') }</Button></div>
 </article>

@@ -1,0 +1,42 @@
+<!-- Tips by email: the heading and a line beside one field that carries its label as its placeholder (the label stays for screen readers) and the button. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-center gap-space-lg md:grid-cols-2">
+    <div class="grid gap-space-xs">
+      <h2 class="font-heading text-h2 case-heading text-balance text-scheme-heading">{ settings.heading }</h2>
+      {#if settings.text}<p class="text-body-sm text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+    </div>
+    <Form handle={ settings.form || site.settings.newsletter_form } class="grid gap-space-xs">
+      {#if form.sent}
+        <p class="text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
+      {:else}
+        <div class="flex gap-space-sm">
+          {#for field in form.fields}
+            <label class="sr-only" for="news-{ field.id }">{ field.label }</label>
+            <input class="block min-h-control w-full min-w-0 rounded-input border bg-scheme-background px-space-sm text-body placeholder:text-scheme-muted focus:border-scheme-foreground focus:outline-none { field.error ? 'border-scheme-error' : 'border-scheme-muted' }" id="news-{ field.id }" name={ field.id } type={ field.type } placeholder={ field.label } autocomplete="email" maxlength={ field.max_length } required={ field.required } value={ field.value } aria-invalid={ field.error ? 'true' : 'false' } aria-describedby={ field.error ? 'news-error' : null } />
+          {/for}
+          <Button type="submit">{ form.submit_label }</Button>
+        </div>
+        {#if form.error}<p class="text-body-sm text-scheme-error" id="news-error" role="alert">{ t('form_error') }</p>{/if}
+        <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+      {/if}
+    </Form>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Newsletter",
+  "description": "Seasonal tips by email: a heading and one field.",
+  "kind": "Contact",
+  "icon": "mail",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Seasonal reminders" },
+    { "type": "text", "id": "text", "label": "Text", "default": "Two emails a year: before the first frost and before the boiler service is due." },
+    { "type": "form", "id": "form", "label": "Form", "info": "Leave empty to use the Contact newsletter form." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "chalk" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "chalk" } }
+  ]
+}
+</schema>

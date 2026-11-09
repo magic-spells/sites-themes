@@ -1,0 +1,39 @@
+<!-- Two or more yards as cards, two across from 48rem: the 3:2 photo, the name, the address and the hours each on one line, then Directions and Call as accent links. -->
+{#let locs = content.locations.entries | sort('fields.order') | slice(0, 12)}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <ul class="grid gap-space-lg md:grid-cols-2">
+      {#for loc in locs}
+        {#let f = loc.fields}
+        <li class="grid content-start gap-space-xs rounded-card border border-scheme-border bg-scheme-card p-space-xl">
+          <Well asset={ f.image } alt={ f.image_alt } sizes="(min-width: 48rem) 40vw, 100vw" />
+          <h3 class="mt-space-sm text-h4 font-semibold">{ loc.title }</h3>
+          {#if f.address}<p class="text-body">{ f.address | split('\n') | join(', ') }</p>{/if}
+          {#if f.hours}<p class="text-body-sm text-scheme-muted tnum">{ f.hours | split('\n') | join(' · ') }</p>{/if}
+          <p class="flex flex-wrap gap-space-md text-accent">
+            {#if f.map_url}<a class="hover:underline hover:underline-offset-4" href="{ f.map_url }">{ t('directions') }</a>{/if}
+            {#if f.phone}<a class="hover:underline hover:underline-offset-4" href="tel:{ f.phone | replace(' ', '') }">{ t('call_now') }</a>{/if}
+          </p>
+        </li>
+      {/for}
+    </ul>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Locations",
+  "description": "Every yard or office as a card with its address, hours and phone.",
+  "kind": "Contact",
+  "icon": "map",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Our yards" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "paper" } }
+  ]
+}
+</schema>

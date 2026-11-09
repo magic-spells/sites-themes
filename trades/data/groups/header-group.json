@@ -1,0 +1,25 @@
+{
+  "sections": [
+    {
+      "id": "sg_announcement",
+      "type": "announcement-bar",
+      "preset": "Default",
+      "settings": {
+        "key": "offer-2026-11",
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_header",
+      "type": "header",
+      "preset": "Over the hero",
+      "settings": {
+        "menu": "main",
+        "style": "over-hero",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    }
+  ]
+}

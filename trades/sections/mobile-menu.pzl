@@ -1,0 +1,59 @@
+<!-- The menu drawer: a dialog-panel from the right over the page dimmed by the text colour at 50%. It closes on the backdrop, Escape and its ×, and hands focus back to the menu icon. The main menu in Barlow Condensed capitals, the services folded under Services, a rule, the ask button full width and the Yard hours line. -->
+{#let
+  s = site.settings
+  services = content.services.entries | sort('fields.order') | slice(0, 12)
+}
+<dialog-panel id="mobile-menu" position="right">
+  <dialog-backdrop class="bg-backdrop"></dialog-backdrop>
+  <dialog class="ms-auto h-dvh w-full max-w-drawer overflow-y-auto bg-scheme-background text-scheme-foreground" aria-label="{ t('menu') }">
+    <div class="grid gap-space-lg px-space-lg pb-space-xl">
+      <div class="flex min-h-header items-center justify-end">
+        <button class="-me-space-xs flex size-tap items-center justify-center" type="button" data-action-hide-dialog><Glyph name="close" cls="size-glyph" /><span class="sr-only">{ t('close') }</span></button>
+      </div>
+      {#if settings.menu.items.length}
+        <nav aria-label="{ t('main_navigation') }">
+          <ul class="grid gap-space-xs font-heading text-h2 case-heading">
+            {#for item in settings.menu.items}
+              <li>
+                {#if item.href == settings.services_path && services.length}
+                  <collapsible-component>
+                    <button class="group flex items-center gap-space-xs case-heading" type="button">{ item.label }<Glyph name="chevron-down" cls="size-icon transition-transform duration-fast group-aria-expanded:rotate-180" /></button>
+                    <collapsible-content>
+                      <ul class="grid gap-space-sm py-space-sm ps-space-md font-body text-body normal-case">
+                        <li><a class="hover:underline hover:underline-offset-4" href="{ item.href }">{ t('all_services') }</a></li>
+                        {#for entry in services}<li><a class="hover:underline hover:underline-offset-4" href="/services/{ entry.handle }">{ entry.title }</a></li>{/for}
+                      </ul>
+                    </collapsible-content>
+                  </collapsible-component>
+                {:else}
+                  <a class="hover:text-accent current:text-accent" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a>
+                {/if}
+              </li>
+            {/for}
+          </ul>
+        </nav>
+      {/if}
+      <div class="grid gap-space-md border-t border-scheme-border pt-space-lg">
+        <Button ask wide />
+        {#if s.hours_line}<p class="text-body-sm text-scheme-muted">{ s.hours_line }</p>{/if}
+      </div>
+    </div>
+  </dialog>
+</dialog-panel>
+
+<schema>
+{
+  "name": "Mobile menu",
+  "description": "The menu drawer below 64rem: the menu, the services, the ask button, the phone and the hours.",
+  "kind": "Panels",
+  "icon": "menu",
+  "settings": [
+    { "type": "menu", "id": "menu", "label": "Menu" },
+    { "type": "url", "id": "services_path", "label": "Services page", "default": "/services", "info": "The menu item pointing here folds the services under it." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "menu": "main", "color_scheme": "paper" } }
+  ]
+}
+</schema>

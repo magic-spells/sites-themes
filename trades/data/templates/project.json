@@ -1,0 +1,24 @@
+{
+  "label": "Project",
+  "description": "A job's page: the photos, before and after, and the story.",
+  "sections": [
+    {
+      "id": "s_detail",
+      "type": "project-detail",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Routes",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    }
+  ]
+}

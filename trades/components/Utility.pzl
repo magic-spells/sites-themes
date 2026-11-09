@@ -1,0 +1,5 @@
+<!-- component: Utility -->
+<!-- The utility pages' band on paper: the page's own heading, line and action (its children) in the reading column. bare hides the header, footer and panel groups (styles/theme.css). -->
+<section class="sites-scheme-paper flex flex-1 items-center bg-scheme-background px-gutter py-section text-scheme-foreground" data-bare={ bare ? true : null }>
+  <div class="mx-auto grid w-full max-w-column justify-items-start gap-space-md"><Children/></div>
+</section>

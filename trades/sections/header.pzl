@@ -1,0 +1,71 @@
+<!-- The header: the wordmark over the tagline left, the main menu, and at 64rem the ask button right. The menu item that points at the services page opens a dropdown-panel of every service in two columns (icon, name, price) and "All services". Below 64rem: the wordmark, a round tel: button and the menu icon, both 2.75rem. Sticky. Over-hero: transparent with the navy hero's colours at the top of a page that opens with a hero marked data-over-hero, its own scheme once the page scrolls. -->
+{#let
+  s = site.settings
+  services = content.services.entries | sort('fields.order') | slice(0, 12)
+  tel = s.phone | replace(' ', '')
+}
+<sticky-header class="block" settle-overshoot="0" data-header-style={ settings.style }>
+  <header class="relative border-b border-scheme-border bg-scheme-background px-gutter text-scheme-foreground transition-colors duration-panel overlaid:border-transparent overlaid:bg-transparent overlaid:text-grey-extra-light">
+    <div class="mx-auto flex min-h-header max-w-column items-center justify-between gap-space-md">
+      <a class="grid leading-none" href="/">
+        <span class="font-heading text-h3 font-extrabold case-heading">{ s.wordmark || site.name }</span>
+        {#if s.tagline}<span class="mt-space-2xs text-body-sm text-scheme-muted overlaid:text-grey-medium">{ s.tagline }</span>{/if}
+      </a>
+      {#if settings.menu.items.length}
+        <nav class="hidden lg:block" aria-label="{ t('main_navigation') }">
+          <ul class="flex items-center text-body">
+            {#for item in settings.menu.items}
+              {#if settings.show_services && item.href == settings.services_path && services.length}
+                <li>
+                  <dropdown-component trigger="both" close-delay="150">
+                    <dropdown-trigger class="flex min-h-header cursor-pointer items-center gap-space-2xs px-space-sm">{ item.label }<Glyph name="chevron-down" cls="size-icon-sm" /></dropdown-trigger>
+                    <dropdown-panel class="border-b border-scheme-border bg-scheme-background px-gutter py-space-xl text-scheme-foreground" wide>
+                      <div class="mx-auto grid max-w-column gap-space-md">
+                        <ul class="columns-2 gap-space-3xl">
+                          {#for entry in services}<ServiceRow entry={ entry } compact />{/for}
+                        </ul>
+                        <a class="justify-self-end text-body-sm text-accent underline underline-offset-4 hover:text-scheme-foreground" href="{ settings.services_path }">{ t('all_services') }</a>
+                      </div>
+                    </dropdown-panel>
+                  </dropdown-component>
+                </li>
+              {:else}
+                <li><a class="flex min-h-header items-center px-space-sm underline-offset-8 hover:underline current:underline" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>
+              {/if}
+            {/for}
+          </ul>
+        </nav>
+      {/if}
+      <div class="flex items-center gap-space-xs lg:gap-space-lg">
+        {#if s.phone}
+          <a class="flex size-tap items-center justify-center rounded-full bg-scheme-surface-2 text-accent lg:hidden overlaid:bg-transparent overlaid:text-brand-accent" href="tel:{ tel }"><Glyph name="phone" /><span class="sr-only">{ t('call', { phone: s.phone }) }</span></a>
+        {/if}
+        <span class="hidden lg:contents"><Button ask cls="overlaid:border-brand-accent overlaid:bg-brand-accent overlaid:text-brand-primary" /></span>
+        <button class="-me-space-xs flex size-tap items-center justify-center lg:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu"><Glyph name="menu" cls="size-glyph" /><span class="sr-only">{ t('menu') }</span></button>
+      </div>
+    </div>
+  </header>
+</sticky-header>
+
+<schema>
+{
+  "name": "Header",
+  "description": "The wordmark, the menu with a Services panel, the phone and the ask button; a call button and the menu icon on phones.",
+  "kind": "Header",
+  "icon": "panel-top",
+  "settings": [
+    { "type": "menu", "id": "menu", "label": "Menu" },
+    { "type": "select", "id": "style", "label": "Style", "default": "solid", "options": [
+      { "value": "solid", "label": "Solid" },
+      { "value": "over-hero", "label": "Over the hero" }
+    ], "info": "Over the hero: transparent at the top of a page that opens with a hero, solid once it scrolls." },
+    { "type": "checkbox", "id": "show_services", "label": "Services panel", "default": true, "info": "The menu item that points at the services page opens every service in two columns." },
+    { "type": "url", "id": "services_path", "label": "Services page", "default": "/services" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Solid", "settings": { "menu": "main", "style": "solid", "color_scheme": "paper" } },
+    { "name": "Over the hero", "settings": { "menu": "main", "style": "over-hero", "color_scheme": "paper" } }
+  ]
+}
+</schema>

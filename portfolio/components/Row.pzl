@@ -1,0 +1,15 @@
+<!-- component: Row -->
+<!-- props: entry -->
+<!-- A CV row on a hairline, a twelve-column grid from 48rem: the years in two (start – end, or start alone, tabular), the title in body 500 and "· organisation" in seven with the note under it in muted, the place in three at the right in meta. On a phone the years sit above the title in meta and the place follows the note. With a link the title is a text link. -->
+{#let
+  f = entry.fields
+  years = f.end ? f.start + ' – ' + f.end : f.start
+}
+<li class="grid gap-x-space-lg gap-y-space-2xs border-b border-scheme-border py-space-md md:grid-cols-12 { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+  <span class="text-body-sm whitespace-nowrap tabular-nums text-scheme-meta md:col-span-2 md:text-body md:text-scheme-foreground">{ years }</span>
+  <span class="grid gap-space-2xs md:col-span-7">
+    <span class="text-body">{#if f.link}<a class="link font-medium" href="{ f.link }" target="_blank" rel="noopener">{ entry.title }</a>{:else}<span class="font-medium">{ entry.title }</span>{/if}{#if f.organisation} · { f.organisation }{/if}</span>
+    {#if f.note}<span class="text-body-sm text-scheme-muted">{ f.note }</span>{/if}
+  </span>
+  {#if f.place}<span class="text-body-sm text-scheme-meta md:col-span-3 md:text-end">{ f.place }</span>{/if}
+</li>

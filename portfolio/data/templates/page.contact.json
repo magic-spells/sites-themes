@@ -1,0 +1,27 @@
+{
+  "label": "Contact",
+  "description": "The contact form beside the email and the social links.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "Contact",
+        "text": "For commissions, talks and anything else.",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_contact",
+      "type": "contact",
+      "preset": "Default",
+      "settings": {
+        "social_menu": "social",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+<!-- component: Lightbox -->
+<!-- props: items id -->
+<!-- The lightbox opens from a carousel slide, so a stack or grid renders its pictures again in this hidden carousel and each picture's link (data-lightbox-open, data-index) asks theme.ts to open it there. The caption sits under the picture on the ink scheme the lightbox is drawn in. A component holds no <script>, so the section passes the options block in as its children. -->
+<tarot-carousel class="hidden" id={ id }>
+  <Children/>
+  <tarot-viewport><tarot-track>
+    {#for item in items}
+      <tarot-slide>
+        <img src="{ image_url(item.asset, 480) }" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } />
+        {#if item.caption}<p class="sites-scheme-ink mt-space-sm text-center text-body-sm text-scheme-meta" data-tarot-lightbox-fade>{ item.caption }</p>{/if}
+      </tarot-slide>
+    {/for}
+  </tarot-track></tarot-viewport>
+</tarot-carousel>

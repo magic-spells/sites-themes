@@ -1,0 +1,70 @@
+<!-- A service's page: the name in h1, its tag in Meta, the price line with the price note, the summary and the ask button, beside the 3:2 photo (or the icon large in a surface-2 well). Under it the description in the reading column, "What's included" as check rows, "Recent work" (up to three projects of this service, left out when it has none) and the questions in the blocks. -->
+{#let
+  entry = page.entry
+  f = entry.fields
+  projects = content.projects.entries | sort('fields.order')
+  recent = projects | where('fields.service.id', entry.id) | slice(0, 3)
+}
+{#if entry}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-2xl">
+    <div class="grid items-start gap-space-xl md:grid-cols-text-picture md:gap-space-3xl">
+      <div class="grid justify-items-start gap-space-md">
+        <h1 class="font-heading text-h1 case-heading text-balance text-scheme-heading">{ entry.title }</h1>
+        {#if f.tag}<p class="text-body-sm text-scheme-muted">{ f.tag }</p>{/if}
+        {#if f.price || f.price_note}<p class="flex flex-wrap items-baseline gap-x-space-sm"><PriceLine entry={ entry } />{#if f.price_note}<span class="text-body-sm text-scheme-muted">{ f.price_note }</span>{/if}</p>{/if}
+        {#if f.summary}<p class="text-body-lg text-pretty text-scheme-muted">{ f.summary }</p>{/if}
+        <Button ask cls="mt-space-sm" />
+      </div>
+      {#if f.image}<Well asset={ f.image } alt={ f.image_alt } ratio="aspect-photo" width={ 1200 } sizes="(min-width: 48rem) 40vw, 100vw" eager />
+      {:else}<div class="flex aspect-photo items-center justify-center rounded-card bg-scheme-surface-2"><IconCircle icon={ f.icon || 'wrench' } size="xl" /></div>{/if}
+    </div>
+    {#if f.description}<div class="sites-prose max-w-reading text-body" data-lead>{ f.description }</div>{/if}
+    {#if f.includes}
+      <div class="grid max-w-reading gap-space-md">
+        <h2 class="font-heading text-h3">{ t('included') }</h2>
+        <ul class="grid gap-space-sm">{#for line in f.includes | split('\n')}{#if line | strip}<li class="flex items-center gap-space-sm"><Glyph name="check" cls="size-icon text-accent" />{ line | strip }</li>{/if}{/for}</ul>
+      </div>
+    {/if}
+    {#if settings.show_projects && recent.length}
+      <div class="grid gap-space-md">
+        <h2 class="font-heading text-h3">{ t('recent_work') }</h2>
+        <ul class="grid gap-space-lg md:grid-cols-3">{#for project in recent}<li><ProjectCard entry={ project } /></li>{/for}</ul>
+      </div>
+    {/if}
+    {#if blocks.length}
+      <div class="grid max-w-reading gap-space-xs">
+        <h2 class="font-heading text-h3">{ t('faq') }</h2>
+        <Questions items={ blocks } first_open />
+      </div>
+    {/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Service detail",
+  "description": "A service's page: the price, the ask button, the photo, what's included, recent work and questions.",
+  "kind": "Services",
+  "icon": "file-text",
+  "templates": ["service"],
+  "settings": [
+    { "type": "checkbox", "id": "show_projects", "label": "Recent work", "default": true, "info": "Up to three projects of this service; left out when it has none." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "blocks": [
+    { "type": "question", "name": "Question", "settings": [
+      { "type": "text", "id": "question", "label": "Question" },
+      { "type": "richtext", "id": "answer", "label": "Answer" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "paper" }, "blocks": [
+      { "type": "question", "settings": { "question": "Do you charge a callout fee?", "answer": "<p>No. The price covers the visit and the work. If we find more, you get a fixed price first.</p>" } },
+      { "type": "question", "settings": { "question": "How fast can you come?", "answer": "<p>Most days within the hour for emergencies, and the same or next day for everything else.</p>" } },
+      { "type": "question", "settings": { "question": "What if the job is bigger than it looked?", "answer": "<p>We stop, show you what we found and quote it before we go on. You decide.</p>" } }
+    ] }
+  ]
+}
+</schema>

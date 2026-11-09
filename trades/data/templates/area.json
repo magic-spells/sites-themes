@@ -1,0 +1,15 @@
+{
+  "label": "Town",
+  "description": "A town's page, built from the areas collection.",
+  "sections": [
+    {
+      "id": "s_detail",
+      "type": "area-detail",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    }
+  ]
+}

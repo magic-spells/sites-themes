@@ -1,0 +1,24 @@
+{
+  "label": "Post",
+  "description": "A journal post.",
+  "sections": [
+    {
+      "id": "s_post",
+      "type": "post",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Routes",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    }
+  ]
+}

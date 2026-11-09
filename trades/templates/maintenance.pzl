@@ -1,0 +1,8 @@
+<!-- template: Maintenance -->
+<!-- layout: default -->
+<!-- The site paused, on paper with no header or footer: the wordmark, "Back soon" and the phone for anything urgent. -->
+<Utility bare>
+  <p class="font-heading text-h3 font-extrabold case-heading">{ site.settings.wordmark || site.name }</p>
+  <h1 class="font-heading text-h1 case-heading text-balance text-scheme-heading">{ t('maintenance_title') }</h1>
+  <p class="text-body-lg text-pretty text-scheme-muted">{ t('maintenance_body', { phone: site.settings.phone }) }</p>
+</Utility>

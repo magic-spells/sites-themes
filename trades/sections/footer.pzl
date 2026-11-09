@@ -1,0 +1,63 @@
+<!-- The colophon on charcoal: the wordmark over the tagline, the blurb and the social text links; Contact as small contact rows (phone, email, address, hours); Quick links from the menu; every service. A strip under a rule: the small print, the legal links and the licence lines. Four columns at 64rem, two at 48rem, one on phones. -->
+{#let
+  s = site.settings
+  services = content.services.entries | sort('fields.order') | slice(0, 12)
+}
+<footer class="bg-scheme-background px-gutter pt-section pb-space-xl text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-2xl">
+    <div class="grid gap-space-xl md:grid-cols-2 lg:grid-cols-4">
+      <div class="grid content-start gap-space-md">
+        <a class="grid justify-self-start leading-none" href="/"><span class="font-heading text-h3 font-extrabold case-heading">{ s.wordmark || site.name }</span>{#if s.tagline}<span class="mt-space-2xs text-body-sm text-scheme-muted">{ s.tagline }</span>{/if}</a>
+        {#if settings.blurb}<p class="max-w-text text-body-sm text-pretty text-scheme-muted">{ settings.blurb }</p>{/if}
+        {#if settings.social_menu.items.length}<ul class="flex flex-wrap gap-x-space-md gap-y-space-xs border-t border-scheme-border pt-space-md text-body-sm">{#for item in settings.social_menu.items}<li><a class="text-accent underline underline-offset-4 hover:text-scheme-foreground" href="{ item.href }">{ item.label }</a></li>{/for}</ul>{/if}
+      </div>
+      <div>
+        <h2 class="mb-space-sm text-h4 font-semibold">{ t('contact') }</h2>
+        <ul>
+          {#if s.phone}<ContactRow icon="phone" label={ t('call_now') } value={ s.phone } href="tel:{ s.phone | replace(' ', '') }" small />{/if}
+          {#if s.email}<ContactRow icon="mail" label={ t('email_us') } value={ s.email } href="mailto:{ s.email }" small />{/if}
+          {#if s.address}<ContactRow icon="pin" label={ t('visit') } value={ s.address } small />{/if}
+          {#if s.hours_line}<ContactRow icon="clock" label={ t('hours') } value={ s.hours_line } small />{/if}
+        </ul>
+      </div>
+      {#if settings.menu.items.length}
+        <nav aria-label="{ t('quick_links') }">
+          <h2 class="mb-space-md text-h4 font-semibold">{ t('quick_links') }</h2>
+          <ul class="grid gap-space-sm text-body">{#for item in settings.menu.items}<li><a class="hover:underline hover:underline-offset-4" href="{ item.href }">{ item.label }</a></li>{/for}</ul>
+        </nav>
+      {/if}
+      {#if settings.show_services && services.length}
+        <nav aria-label="{ t('services') }">
+          <h2 class="mb-space-md text-h4 font-semibold">{ t('services') }</h2>
+          <ul class="grid gap-space-sm text-body">{#for entry in services}<li><a class="hover:underline hover:underline-offset-4" href="/services/{ entry.handle }">{ entry.title }</a></li>{/for}</ul>
+        </nav>
+      {/if}
+    </div>
+    <div class="flex flex-wrap items-center gap-x-space-lg gap-y-space-sm border-t border-scheme-border pt-space-lg text-body-sm">
+      {#if settings.small_print}<p class="text-scheme-muted">{ settings.small_print }</p>{/if}
+      {#if settings.legal_menu.items.length}<ul class="flex flex-wrap gap-x-space-md">{#for item in settings.legal_menu.items}<li><a class="text-accent underline underline-offset-4 hover:text-scheme-foreground" href="{ item.href }">{ item.label }</a></li>{/for}</ul>{/if}
+      <LicenceLines cls="lg:ms-auto lg:text-right" />
+    </div>
+  </div>
+</footer>
+
+<schema>
+{
+  "name": "Footer",
+  "description": "The wordmark and blurb, the contact rows, quick links and every service, then the small print and the licence lines.",
+  "kind": "Footer",
+  "icon": "panel-bottom",
+  "settings": [
+    { "type": "textarea", "id": "blurb", "label": "Blurb", "default": "Family-run plumbing and heating for Ashby and ten towns around it since 1986. Every job guaranteed for 12 months." },
+    { "type": "menu", "id": "menu", "label": "Quick links" },
+    { "type": "checkbox", "id": "show_services", "label": "Every service", "default": true },
+    { "type": "menu", "id": "social_menu", "label": "Social links" },
+    { "type": "menu", "id": "legal_menu", "label": "Legal links" },
+    { "type": "text", "id": "small_print", "label": "Small print", "default": "© 2026 Hollis & Sons Plumbing and Heating" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "charcoal" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "menu": "main", "social_menu": "social", "legal_menu": "legal", "color_scheme": "charcoal" } }
+  ]
+}
+</schema>

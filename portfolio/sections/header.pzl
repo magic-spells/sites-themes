@@ -1,0 +1,33 @@
+<!-- The wordmark left in heading 500, the main menu right from 48rem; below it the 44px menu icon opens the drawer. No button. The current page's link is underlined. -->
+<sticky-header class="block" settle-overshoot="0" disabled={ !settings.sticky }>
+  <header class="border-b border-scheme-border bg-scheme-background px-gutter text-scheme-foreground">
+    <div class="mx-auto flex min-h-header max-w-column items-center gap-space-md">
+      <a class="me-auto font-heading text-h4 whitespace-nowrap" href="/">{ site.settings.wordmark || site.name }</a>
+      {#if settings.menu.items.length}
+        <nav class="max-md:hidden" aria-label="{ t('main_navigation') }">
+          <ul class="flex items-center gap-space-lg text-body font-medium">
+            {#for item in settings.menu.items}<li><a class="flex min-h-header items-center decoration-1 underline-offset-8 hover:underline current:underline" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null } aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>{/for}
+          </ul>
+        </nav>
+      {/if}
+      <button class="-me-space-xs flex size-tap shrink-0 items-center justify-center md:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu" aria-label="{ t('menu') }"><Glyph name="menu" cls="size-glyph" /></button>
+    </div>
+  </header>
+</sticky-header>
+
+<schema>
+{
+  "name": "Header",
+  "description": "The wordmark and the main menu; the menu icon on phones.",
+  "kind": "Header",
+  "icon": "panel-top",
+  "settings": [
+    { "type": "menu", "id": "menu", "label": "Menu", "info": "Three to five links. The Brand wordmark sits at the left." },
+    { "type": "checkbox", "id": "sticky", "label": "Sticky", "default": true, "info": "Hides as the page scrolls down and returns on the way up." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "menu": "main", "color_scheme": "paper" } }
+  ]
+}
+</schema>

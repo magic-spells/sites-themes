@@ -1,0 +1,43 @@
+<!-- Questions and answers: the heading in h2 capitals over the standfirst, the rows that open and close beside it, five parts to seven from 48rem; stacked below. The first row opens when set. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-picture-text md:gap-space-3xl">
+    <div class="grid gap-space-xs">
+      <h2 class="font-heading text-h2 case-heading text-balance text-scheme-heading">{ settings.heading }</h2>
+      {#if settings.text}<p class="text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+    </div>
+    <Questions items={ blocks } first_open={ settings.first_open } />
+  </div>
+</section>
+
+<schema>
+{
+  "name": "FAQ",
+  "description": "Questions and answers that open and close.",
+  "kind": "Content",
+  "icon": "circle-help",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Questions we hear a lot" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "checkbox", "id": "first_open", "label": "First one open", "default": true },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "blocks": [
+    { "type": "question", "name": "Question", "settings": [
+      { "type": "text", "id": "question", "label": "Question" },
+      { "type": "richtext", "id": "answer", "label": "Answer" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "paper" }, "blocks": [
+      { "type": "question", "settings": { "question": "Do you charge a callout fee?", "answer": "<p>No. You pay for the job at the price we agree before we start.</p>" } },
+      { "type": "question", "settings": { "question": "Are you insured?", "answer": "<p>Yes, fully licensed and insured to $5M. We show the certificate on request.</p>" } },
+      { "type": "question", "settings": { "question": "How fast can you come?", "answer": "<p>For an emergency, usually within the hour. Everything else, the same or next day.</p>" } },
+      { "type": "question", "settings": { "question": "Do you offer financing?", "answer": "<p>Yes, on new boilers and bathrooms: spread the cost over 24 months, subject to credit approval.</p>" } },
+      { "type": "question", "settings": { "question": "Do you work weekends?", "answer": "<p>Yes. We book work Monday to Saturday, 7:00 to 18:00, and the emergency line answers every day.</p>" } },
+      { "type": "question", "settings": { "question": "Is the estimate really free?", "answer": "<p>Yes. We come out, look and give you a fixed price in writing. You owe nothing unless you go ahead.</p>" } },
+      { "type": "question", "settings": { "question": "What areas do you cover?", "answer": "<p>Ashby and ten towns within 40 miles of it. Every town is on our areas page.</p>" } },
+      { "type": "question", "settings": { "question": "Can offers be combined?", "answer": "<p>One offer per job, and offers cannot be combined with a plan discount.</p>" } }
+    ] }
+  ]
+}
+</schema>

@@ -1,0 +1,54 @@
+<!-- The CV, newest first by order: one group per kind in the order the groups setting lists them, only groups with entries, each a plain h3 over its rows on hairlines (h2 when the section has no heading; none when one group is listed: the head names it). The Download CV button from Person sits at the head's right. limit caps each group: with a link (Full CV on Home) the rest are left out, without one they wait behind Show all. -->
+{#let
+  cv = site.settings.cv_link
+  download = settings.download && cv.href
+  kinds = settings.groups | replace(' ', '') | split(',')
+  entries = content.cv_entries.entries | sort('fields.order')
+  limit = settings.limit
+  linked = settings.link_label && settings.link_href
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } aside={ download }>{#if download}<Button href={ cv.href } external={ true }>{ cv.label }<Glyph name="arrow-down" /></Button>{/if}</SectionHead>
+    <div class="grid gap-space-2xl">
+      {#for kind in kinds}
+        {#let rows = entries | where('fields.kind', kind)}
+        {#if rows.length}
+          <div class="grid gap-space-md">
+            {#if kinds.length > 1}{#if settings.heading}<h3 class="text-h3">{ t('cv.' + kind) }</h3>{:else}<h2 class="text-h3">{ t('cv.' + kind) }</h2>{/if}{/if}
+            <ul class="border-t border-scheme-border">{#for entry in limit ? rows | slice(0, limit) : rows}<Row entry={ entry } />{/for}</ul>
+            {#if limit && !linked && rows.length > limit}
+              <collapsible-component class="flex flex-col-reverse items-start">
+                <Button type="button" cls="mt-space-md aria-expanded:hidden">{ t('show_all') }</Button>
+                <collapsible-content class="w-full"><ul>{#for entry in rows | slice(limit)}<Row entry={ entry } />{/for}</ul></collapsible-content>
+              </collapsible-component>
+            {/if}
+          </div>
+        {/if}
+      {/for}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "CV",
+  "description": "Your experience, education, shows, awards, press and talks as dated rows.",
+  "kind": "Content",
+  "icon": "scroll-text",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "CV" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "text", "id": "groups", "label": "Groups", "default": "experience, exhibition, education, award, press, talk", "info": "The kinds to show, in order, separated by commas: experience, exhibition, education, award, press, talk." },
+    { "type": "range", "id": "limit", "label": "Rows per group", "min": 0, "max": 12, "step": 1, "default": 0, "info": "0 shows every row. Past the limit the rest wait behind Show all, unless the section has a link." },
+    { "type": "checkbox", "id": "download", "label": "Download button", "default": true, "info": "The CV download from Person, at the head's right." },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "" },
+    { "type": "url", "id": "link_href", "label": "Link", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Full", "settings": { "color_scheme": "paper" } },
+    { "name": "Experience", "settings": { "heading": "Experience", "groups": "experience", "limit": 4, "download": false, "link_label": "Full CV", "link_href": "/cv", "color_scheme": "stone" } }
+  ]
+}
+</schema>

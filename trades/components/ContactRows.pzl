@@ -1,0 +1,9 @@
+<!-- component: ContactRows -->
+<!-- The four ways to reach the firm from the Yard and Contact settings, each a contact row: email, phone, the service area and the hours; any that is empty is left out. -->
+{#let s = site.settings}
+<ul class="border-t border-scheme-border">
+  {#if s.email}<ContactRow icon="mail" label={ t('email_us') } value={ s.email } href="mailto:{ s.email }" />{/if}
+  {#if s.phone}<ContactRow icon="phone" label={ t('call_now') } value={ s.phone } href="tel:{ s.phone | replace(' ', '') }" />{/if}
+  {#if s.service_radius_line}<ContactRow icon="pin" label={ t('service_area') } value={ s.service_radius_line } />{/if}
+  {#if s.hours_line}<ContactRow icon="clock" label={ t('hours') } value={ s.hours_line } />{/if}
+</ul>

@@ -1,0 +1,29 @@
+{
+  "label": "Not found",
+  "description": "A wrong path: a line and some work.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "Page not found",
+        "text": "The link may be old. The work is still here.",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_work",
+      "type": "work-index",
+      "preset": "Grid",
+      "settings": {
+        "source": "featured",
+        "limit": 3,
+        "filters": false,
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    }
+  ]
+}

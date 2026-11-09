@@ -1,0 +1,14 @@
+<!-- component: Stat -->
+<!-- A figure from a stats block on a surface-2 card: the numeral in Barlow at h2 (tabular), a trailing +, % or K in the accent, the label in Card title over the line in Meta, at the card's foot from 64rem. -->
+{#let
+  b = block.settings
+  last = b.number | slice(-1)
+  suffix = contains(['+', '%', 'K'], last)
+}
+<li class="grid content-start gap-space-sm rounded-card bg-scheme-surface-2 p-space-xl lg:content-between lg:gap-space-xl" data-block={ editor_id }>
+  <p class="font-heading text-h2 tnum">{#if suffix}{ b.number | slice(0, size(b.number) - 1) }<span class="text-accent">{ last }</span>{:else}{ b.number }{/if}</p>
+  <div class="grid gap-space-xs">
+    <h3 class="text-h4 font-semibold">{ b.label }</h3>
+    {#if b.text}<p class="text-body-sm text-scheme-muted">{ b.text }</p>{/if}
+  </div>
+</li>

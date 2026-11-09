@@ -1,0 +1,11 @@
+<!-- component: Coupon -->
+<!-- An offer on a chalk card split by a dashed rule: the amount in the accent over "coupon" left (above on phones), the job, the fine print running into the expiry date, and one navy button right (the offer's link, or the estimate sheet). ticket adds a dashed inset. -->
+{#let f = entry.fields}
+<article class="sites-scheme-chalk grid rounded-card md:grid-cols-coupon bg-scheme-background text-scheme-foreground { ticket ? 'outline-1 outline-dashed -outline-offset-8 outline-scheme-border' : '' }">
+  <p class="grid content-center justify-items-center border-dashed border-scheme-border p-space-lg max-md:border-b md:border-e text-center"><span class="font-heading text-h2 case-heading text-accent tnum">{ f.amount }</span><span class="text-body-sm text-scheme-muted">{ t('coupon') }</span></p>
+  <div class="grid content-center justify-items-start gap-space-sm p-space-xl lg:gap-space-md">
+    <h3 class="text-h4 font-semibold">{ f.summary || entry.title }</h3>
+    {#if f.fine_print || f.expires}<p class="text-body-sm text-scheme-muted">{ f.fine_print }{#if f.expires} { t('expires', { date: f.expires | date }) }{/if}</p>{/if}
+    {#if f.link}<Button href={ f.link } small cls="sites-scheme-brass">{ t('get_coupon') }</Button>{:else}<Button ask small cls="sites-scheme-brass">{ t('get_coupon') }</Button>{/if}
+  </div>
+</article>

@@ -1,0 +1,39 @@
+<!-- The specials: the section head with the outlined button to them all, then the offers as coupons two across from 64rem, stacked below. -->
+{#let
+  all = content.offers.entries | sort('fields.order')
+  offers = (settings.source == 'featured' ? all | where('fields.featured') : all) | slice(0, settings.limit)
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } />
+    <ul class="grid gap-space-sm lg:grid-cols-2 lg:gap-space-lg">{#for entry in offers}<li><Coupon entry={ entry } ticket={ settings.coupon_style == 'ticket' } /></li>{/for}</ul>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Offers",
+  "description": "The current specials as coupons, each with one button.",
+  "kind": "Offers",
+  "icon": "ticket",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "This month's specials" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "text", "id": "link_label", "label": "Button label", "default": "View all specials" },
+    { "type": "url", "id": "link_href", "label": "Button link", "default": "/specials" },
+    { "type": "select", "id": "source", "label": "Offers", "default": "featured", "options": [
+      { "value": "featured", "label": "Featured" },
+      { "value": "all", "label": "All" }
+    ] },
+    { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 2 },
+    { "type": "select", "id": "coupon_style", "label": "Coupons", "default": "plain", "options": [
+      { "value": "plain", "label": "Plain" },
+      { "value": "ticket", "label": "Ticket (a dashed inset)" }
+    ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "brass" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "brass" } }
+  ]
+}
+</schema>

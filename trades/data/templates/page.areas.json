@@ -1,0 +1,131 @@
+{
+  "label": "Areas",
+  "description": "Every town served, why us and questions.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Within 40 miles of Ashby",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_areas",
+      "type": "areas",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "color_scheme": "chalk"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_props",
+      "type": "value-props",
+      "preset": "Cards",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": [
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "shield-check",
+            "title": "Licensed & insured",
+            "text": "Every technician carries a state licence and we are insured to $5M."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "check",
+            "title": "Upfront pricing",
+            "text": "A fixed price before we start, never a meter running by the hour."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "clock",
+            "title": "Same-day callouts",
+            "text": "Call before noon and a technician is at your door the same day."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "badge-check",
+            "title": "Every job guaranteed",
+            "text": "Twelve months on parts and labour, written on every invoice."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "phone",
+            "title": "24/7 live answering",
+            "text": "A real person picks up, day or night, and books the next slot."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "pin",
+            "title": "Local since 1986",
+            "text": "Family-run, second generation, within 40 miles of Ashby."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do you charge a callout fee?",
+            "answer": "<p>No. You pay for the job at the price we agree before we start.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Are you insured?",
+            "answer": "<p>Yes, fully licensed and insured to $5M. We show the certificate on request.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "How fast can you come?",
+            "answer": "<p>For an emergency, usually within the hour. Everything else, the same or next day.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do you offer financing?",
+            "answer": "<p>Yes, on new boilers and bathrooms: spread the cost over 24 months, subject to credit approval.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Routes",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    }
+  ]
+}

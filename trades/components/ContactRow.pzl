@@ -1,0 +1,9 @@
+<!-- component: ContactRow -->
+<!-- One way to reach the firm on a hairline: the glyph in a surface-2 circle, the label in Meta over the value in Card title (a link when href is set). small (the footer) takes the 2rem circle and the value alone in body type, the label kept for screen readers. -->
+<li class="flex items-center gap-space-md border-b border-scheme-border { small ? 'py-space-sm' : 'py-space-md' }">
+  <IconCircle icon={ icon } size={ small ? 'sm' : 'md' } />
+  <span class="grid min-w-0 gap-space-2xs wrap-anywhere">
+    <span class="{ small ? 'sr-only' : 'text-body-sm text-scheme-muted' }">{ label }</span>
+    {#if href}<a class="hover:underline hover:underline-offset-4 { small ? 'text-body' : 'text-body-lg font-semibold md:text-h4' }" href="{ href }">{ value }</a>{:else}<span class="{ small ? 'text-body' : 'text-body-lg font-semibold md:text-h4' }">{ value }</span>{/if}
+  </span>
+</li>

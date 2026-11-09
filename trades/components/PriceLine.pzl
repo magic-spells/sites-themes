@@ -1,0 +1,5 @@
+<!-- component: PriceLine -->
+<!-- A service's price: "from" in Meta when price_from, the amount in Price (Barlow Condensed, tabular); nothing when it has no price. plain prints it as one Meta line ("from $1,900"), the price note standing in when there is no price. -->
+{#let f = entry.fields}
+{#if plain}<span class="text-body-sm text-scheme-muted">{#if f.price}{ f.price_from ? t('from') + ' ' : '' }{ f.price | currency('$', 0) }{:else}{ f.price_note }{/if}</span>
+{:else if f.price}<span class="flex shrink-0 items-baseline gap-space-xs">{#if f.price_from}<span class="text-body-sm text-scheme-muted">{ t('from') }</span>{/if}<span class="font-heading text-h3 tnum text-scheme-heading">{ f.price | currency('$', 0) }</span></span>{/if}

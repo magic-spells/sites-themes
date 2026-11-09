@@ -1,0 +1,91 @@
+{
+  "label": "Careers",
+  "description": "The split hero as the page head, then the openings beside the apply form and the four reasons.",
+  "sections": [
+    {
+      "id": "s_hero",
+      "type": "hero",
+      "preset": "Split",
+      "settings": {
+        "layout": "split",
+        "heading": "Join the crew",
+        "text": "Local work, a van of your own and a family firm that has been here since 1986.",
+        "image": "as_4x5_sand",
+        "image_alt": "Dan Hollis fitting a boiler in a kitchen in Ashby",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_careers",
+      "type": "careers",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "type": "opening",
+          "settings": {
+            "title": "Heating engineer",
+            "line": "Full time · Ashby",
+            "text": "<p>Gas Safe registered, three years on boilers and heat pumps. Your own van, weekdays, one Saturday in four.</p>"
+          }
+        },
+        {
+          "type": "opening",
+          "settings": {
+            "title": "Apprentice plumber",
+            "line": "Full time · Ashby · Paid training",
+            "text": "<p>No experience needed, a driving licence and an early start are. Four years with us and college one day a week.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_props",
+      "type": "value-props",
+      "preset": "Row",
+      "settings": {
+        "layout": "row",
+        "heading": "",
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "shield-check",
+            "title": "Licensed & insured",
+            "text": "Every technician carries a state licence and we are insured to $5M."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "check",
+            "title": "Upfront pricing",
+            "text": "A fixed price before we start, never a meter running by the hour."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "clock",
+            "title": "Same-day callouts",
+            "text": "Call before noon and a technician is at your door the same day."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "badge-check",
+            "title": "Every job guaranteed",
+            "text": "Twelve months on parts and labour, written on every invoice."
+          }
+        }
+      ]
+    }
+  ]
+}

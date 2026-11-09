@@ -1,11 +1,14 @@
 <!-- TODO sync with Figma -->
-<!-- Stub: code B replaces this body. -->
-{#let plans = content.plans.entries | sort('fields.order') | slice(0, 6)}
+<!-- Membership or health plans: the section head, then the plans as cards at most 26.25rem wide, centred side by side from 48rem, a row that scrolls past the right edge on phones; the featured one on navy. Nothing without plans. -->
+{#let
+  all = content.plans.entries | sort('fields.order')
+  plans = (settings.source == 'featured' ? all | where('fields.featured') : all) | slice(0, 3)
+}
 {#if plans.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } />
-    <ul class="grid gap-space-lg md:grid-cols-3">{#for entry in plans}<li><PlanCard entry={ entry } /></li>{/for}</ul>
+    <ul class="-mx-gutter flex snap-x gap-space-md overflow-x-auto px-gutter md:mx-0 md:justify-center md:overflow-visible md:px-0 md:gap-space-lg">{#for entry in plans}<li class="w-4/5 shrink-0 snap-start md:w-auto md:max-w-card md:flex-1"><PlanCard entry={ entry } /></li>{/for}</ul>
   </div>
 </section>
 {/if}
@@ -22,10 +25,6 @@
     { "type": "select", "id": "source", "label": "Plans", "default": "all", "options": [
       { "value": "all", "label": "All" },
       { "value": "featured", "label": "Featured" }
-    ] },
-    { "type": "select", "id": "columns", "label": "Columns on desktop", "default": "3", "options": [
-      { "value": "2", "label": "Two" },
-      { "value": "3", "label": "Three" }
     ] },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "cloud" }
   ],

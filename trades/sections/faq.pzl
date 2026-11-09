@@ -1,8 +1,11 @@
-<!-- Questions and answers: the section head, then the rows that open and close in the reading column, the first open when set. -->
+<!-- Questions and answers: the heading in h2 capitals over the standfirst, the rows that open and close beside it, five parts to seven from 48rem; stacked below. The first row opens when set. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto max-w-column">
-    <SectionHead heading={ settings.heading } text={ settings.text } />
-    <div class="max-w-reading"><Questions items={ blocks } first_open={ settings.first_open } /></div>
+  <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-picture-text md:gap-space-3xl">
+    <div class="grid gap-space-xs">
+      <h2 class="font-heading text-h2 case-heading text-balance text-scheme-heading">{ settings.heading }</h2>
+      {#if settings.text}<p class="text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+    </div>
+    <Questions items={ blocks } first_open={ settings.first_open } />
   </div>
 </section>
 

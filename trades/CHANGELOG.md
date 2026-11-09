@@ -22,4 +22,6 @@
   line under its ask button.
 - The ask button stands alone wherever a page asks, with no phone number beside it; the split
   hero's photo meets the copy without a fade; chips, fields, icon circles and carousel arrows sit
-  on surface-2, the neutral of the cards, in place of the rust tint.
+  on surface-2, the neutral of the cards, in place of the rust tint. The FAQ sets its heading left of the questions from 48rem; the
+  projects strip shows whole slides from 48rem and lets its neighbours show through the gutters
+  on phones; the stats numerals are h2.

@@ -1,0 +1,29 @@
+{
+  "label": "Writing",
+  "description": "Every post, newest first.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "Writing",
+        "text": "Notes on process, type and the studio.",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_posts",
+      "type": "writing-list",
+      "preset": "List",
+      "settings": {
+        "heading": "",
+        "link_label": "",
+        "limit": 12,
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    }
+  ]
+}

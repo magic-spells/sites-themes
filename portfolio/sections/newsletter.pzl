@@ -1,0 +1,42 @@
+<!-- A short sign-up: the heading and a line in seven parts, one email field labelled by its placeholder only and the button in five; stacked on phones. The form is Contact's newsletter form; the sent and error states show in place. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-center gap-space-lg md:grid-cols-text-picture md:gap-x-space-3xl">
+    <div class="grid gap-space-xs">
+      <h2 class="text-h2 text-balance text-scheme-heading">{ settings.heading }</h2>
+      {#if settings.text}<p class="text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+    </div>
+    <Form handle={ site.settings.newsletter_form } class="grid gap-space-xs" id="newsletter-{ section.id }">
+      {#if form.sent}
+        <p class="text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
+      {:else}
+        {#let field = form.fields | find('type', 'email')}
+        <div class="flex flex-wrap gap-space-xs">
+          <input class="min-h-control min-w-0 flex-1 rounded-input border bg-scheme-input-background px-space-sm text-body text-scheme-input-foreground placeholder:text-scheme-meta focus:outline-2 focus:outline-offset-2 focus:outline-scheme-foreground { field.error ? 'border-scheme-error' : 'border-scheme-input-border' }" type="email" name={ field.id ?? 'email' } value={ field.value } placeholder="{ settings.placeholder }" aria-label="{ settings.placeholder }" autocomplete="email" required aria-invalid={ field.error ? 'true' : 'false' } aria-describedby={ field.error ? 'error-newsletter-' + section.id : null } />
+          <Button type="submit">{ form.submit_label || settings.button_label }</Button>
+        </div>
+        {#if field.error}<p class="text-body-sm text-scheme-error" id="error-newsletter-{ section.id }">{ t('form_field_' + field.error) }</p>{:else if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
+        <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+      {/if}
+    </Form>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Newsletter",
+  "description": "A heading, a line and one email field.",
+  "kind": "Contact",
+  "icon": "mail",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Letters from the studio" },
+    { "type": "text", "id": "text", "label": "Text", "default": "" },
+    { "type": "text", "id": "placeholder", "label": "Field placeholder", "default": "Your email" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Subscribe" },
+    { "type": "paragraph", "content": "The form is the Newsletter form in Theme settings → Contact." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "stone" }
+  ],
+  "presets": [
+    { "name": "Stone", "settings": { "color_scheme": "stone" } }
+  ]
+}
+</schema>

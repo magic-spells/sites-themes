@@ -1,0 +1,9 @@
+<!-- component: Picture -->
+<!-- props: asset alt ratio width sizes eager caption -->
+<!-- A picture: a square-cornered frame on surface-2 that clips the image to ratio (aspect-square, aspect-portrait, aspect-photo, aspect-wide), then an optional caption below it in meta. Nothing is ever drawn over the image. -->
+{#if asset}
+<figure class="grid gap-space-xs">
+  <span class="block overflow-hidden bg-scheme-surface-2 { ratio ?? 'aspect-photo' }"><img class="size-full object-cover" src="{ image_url(asset, width ?? 800) }" srcset="{ image_srcset(asset, [480, 768, 1024, 1600, 2000]) }" sizes="{ sizes ?? '100vw' }" alt="{ alt ?? asset.alt }" loading="{ eager ? 'eager' : 'lazy' }" fetchpriority={ eager ? 'high' : null } width={ asset.width } height={ asset.height } /></span>
+  {#if caption}<figcaption class="text-body-sm text-scheme-meta">{ caption }</figcaption>{/if}
+</figure>
+{/if}

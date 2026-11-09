@@ -1,0 +1,68 @@
+/* ===================================================================
+   PROGRESS BAR PLUGIN STYLES
+   =================================================================== */
+
+/* CSS Custom Properties for theming */
+:root {
+	--tarot-progress-height: 0.25rem;
+	--tarot-progress-bg: rgba(0, 0, 0, 0.1);
+	--tarot-progress-fill-bg: rgba(0, 0, 0, 0.6);
+	--tarot-progress-border-radius: 0.125rem;
+	--tarot-progress-margin: 0.75rem;
+}
+
+/* Progress bar container */
+.tarot-progress-container {
+	position: relative;
+	width: 100%;
+	height: var(--tarot-progress-height);
+	margin: var(--tarot-progress-margin) 0;
+	border-radius: var(--tarot-progress-border-radius);
+	overflow: hidden;
+}
+
+/* Progress track (background rail) — overflow: hidden clips both the
+   primary and the ghost during portal loop transitions */
+.tarot-progress-track {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: var(--tarot-progress-bg);
+	border-radius: var(--tarot-progress-border-radius);
+	overflow: hidden;
+}
+
+/* Progress fill (used by both primary and ghost) */
+.tarot-progress-fill {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	background: var(--tarot-progress-fill-bg);
+	border-radius: var(--tarot-progress-border-radius);
+}
+
+/* Ghost fill — always in the DOM, parked off-screen via inline style;
+   becomes visible only during loop overflow */
+.tarot-progress-fill--ghost {
+	pointer-events: none;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--tarot-progress-bg: rgba(255, 255, 255, 0.1);
+		--tarot-progress-fill-bg: rgba(255, 255, 255, 0.6);
+	}
+}
+
+/* hidden must beat an author's display rule on an external container */
+.tarot-progress-container[hidden] {
+	display: none !important;
+}
+
+/* Print styles (hide progress bar in print) */
+@media print {
+	.tarot-progress-container {
+		display: none !important;
+	}
+}

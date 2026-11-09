@@ -1,0 +1,44 @@
+<!-- A gallery's photos as a carousel of equal slides at one shape, 1.25, 2.25 then 3.25 across, captions under them; the track runs off the right edge below 48rem. Under it the progress hairline, and the arrows at its right from 48rem. -->
+{#let
+  items = settings.gallery ? settings.gallery.items | slice(0, 12) : []
+  id = 'strip-' + section.id
+  nav = { showButtons: true, showPagination: false }
+  options = { slidesPerView: 1.25, gap: '1rem', progressBar: { selector: '#bar-' + id }, navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { slidesPerView: 2.25, gap: '1.5rem', navigation: nav }, '1024': { slidesPerView: 3.25, gap: '2rem', navigation: nav } } }
+}
+{#if items.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <tarot-carousel class="mx-auto block max-w-column" id={ id } data-track>
+    <script type="application/json" data-tarot-options>{ options | json }</script>
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } />
+    <tarot-viewport class="w-auto max-md:-me-gutter"><tarot-track>
+      {#for item in items}<tarot-slide><Picture asset={ item.asset } alt={ item.alt } ratio={ settings.slide_ratio } caption={ item.caption } sizes="(min-width: 64rem) 25rem, (min-width: 48rem) 40vw, 80vw" /></tarot-slide>{/for}
+    </tarot-track></tarot-viewport>
+    <Arrows bar="bar-{ id }" />
+  </tarot-carousel>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Gallery strip",
+  "description": "A row of photos from a gallery, equal widths, captions under them.",
+  "kind": "Content",
+  "icon": "gallery-horizontal",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "" },
+    { "type": "url", "id": "link_href", "label": "Link", "default": "" },
+    { "type": "gallery", "id": "gallery", "label": "Gallery" },
+    { "type": "select", "id": "slide_ratio", "label": "Slide ratio", "default": "aspect-portrait", "options": [
+      { "value": "aspect-square", "label": "1:1" },
+      { "value": "aspect-portrait", "label": "4:5" },
+      { "value": "aspect-photo", "label": "3:2" }
+    ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "paper" } }
+  ]
+}
+</schema>

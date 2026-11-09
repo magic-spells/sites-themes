@@ -1,0 +1,43 @@
+<!-- The contact form with labels in seven parts (Name, Email, Subject on select-dropdown, Message, Send) beside the line, the email and the social links in five. The form is Person's contact form; ?sent=1 shows the thanks in its place and ?error=1 a note above the fields, each field's error under it. -->
+{#let s = site.settings}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <div class="grid items-start gap-space-xl md:grid-cols-text-picture md:gap-space-3xl">
+      <Form handle={ s.contact_form } class="grid gap-space-md" id="contact-{ section.id }">
+        {#if form.sent}
+          <p class="text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
+        {:else}
+          {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
+          <FormFields fields={ form.fields } prefix="contact-{ section.id }" />
+          <div><Button type="submit">{ form.submit_label || t('send') }</Button></div>
+          <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+        {/if}
+      </Form>
+      <div class="grid gap-space-sm">
+        {#if settings.note}<p class="text-body text-pretty text-scheme-muted">{ settings.note }</p>{/if}
+        <Reach menu={ settings.social_menu } />
+      </div>
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Contact",
+  "description": "The contact form beside the email and the social links.",
+  "kind": "Contact",
+  "icon": "send",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "text", "id": "note", "label": "Line beside the form", "default": "I answer within a few days." },
+    { "type": "menu", "id": "social_menu", "label": "Social menu" },
+    { "type": "paragraph", "content": "The form is the Contact form in Theme settings → Person, and the email is Person's." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "social_menu": "social", "color_scheme": "paper" } }
+  ]
+}
+</schema>

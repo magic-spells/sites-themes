@@ -1,0 +1,8 @@
+<!-- layout: default -->
+<!-- A short pause, on paper with no header or footer: the wordmark and the line, in a narrow column at the left, centred top to bottom. -->
+<section class="sites-scheme-paper flex flex-1 items-center bg-scheme-background px-gutter py-section text-scheme-foreground" data-bare>
+  <div class="grid w-full max-w-utility gap-space-xl">
+    <p class="font-heading text-h4">{ site.settings.wordmark || site.name }</p>
+    <h1 class="text-body-lg text-pretty">{ t('maintenance_title') }</h1>
+  </div>
+</section>

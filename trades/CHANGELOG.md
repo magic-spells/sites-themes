@@ -36,3 +36,4 @@
 - FAQ questions are set in medium weight over their regular answers.
 - A town page sets its map beside the pin line, title and line, and its reviews read "Our customers love our work".
 - Review cards drop the technician line; testimonials no longer carry a technician.
+- Page headers sit on navy by default.

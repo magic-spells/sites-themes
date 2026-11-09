@@ -376,6 +376,29 @@
       "secondary_button_foreground": "#F2EDE3",
       "secondary_button_hover_background": "#262729",
       "secondary_button_hover_foreground": "#F2EDE3"
+    },
+    {
+      "handle": "rust",
+      "name": "Rust",
+      "background": "#814E46",
+      "foreground": "#FAF7F1",
+      "heading": "#FAF7F1",
+      "input_background": "#814E46",
+      "input_foreground": "#FAF7F1",
+      "input_border": "#F0E6E2",
+      "chip_background": "#8E5B53",
+      "chip_foreground": "#F0E6E2",
+      "chip_border": "#A3776F",
+      "icons": "#F0E6E2",
+      "links": "#FAF7F1",
+      "button_background": "#FAF7F1",
+      "button_foreground": "#814E46",
+      "button_hover_background": "#EBDFDA",
+      "button_hover_foreground": "#814E46",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#FAF7F1",
+      "secondary_button_hover_background": "#8E5B53",
+      "secondary_button_hover_foreground": "#FAF7F1"
     }
   ]
 }

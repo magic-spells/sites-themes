@@ -1,5 +1,5 @@
-<!-- Accreditations: an optional heading, then the logos from the blocks, in greyscale at 70%, inverted on navy and charcoal; a wrapping row from 48rem, a row that scrolls on phones. A logo with a link opens it. -->
-{#let ink = 'opacity-70 grayscale' + (settings.color_scheme == 'navy' || settings.color_scheme == 'charcoal' ? ' invert' : '')}
+<!-- Accreditations: an optional heading, then the logos from the blocks, in greyscale at 70%, inverted on navy, charcoal and rust; a wrapping row from 48rem, a row that scrolls on phones. A logo with a link opens it. -->
+{#let ink = 'opacity-70 grayscale' + (contains(['navy', 'charcoal', 'rust'], settings.color_scheme) ? ' invert' : '')}
 <section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter">
   <div class="mx-auto max-w-column">
     {#if settings.heading}<h2 class="mb-space-lg px-gutter text-center text-body-sm text-scheme-muted md:px-0">{ settings.heading }</h2>{/if}

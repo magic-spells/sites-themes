@@ -4,8 +4,8 @@ A theme for a home-services firm: a plumber, a heating engineer, an electrician,
 landscaper or a general contractor. The site has two jobs, "call us" and "get a free estimate",
 so both are on every screen: the ask button in the header, a call bar fixed to
 the foot of a phone, and the estimate form a tap away in a sheet. Barlow Condensed carries the
-headings in capitals and Instrument Sans the rest, on five schemes: paper, chalk, a brass band
-for the specials, navy and charcoal.
+headings in capitals and Instrument Sans the rest, on six schemes: paper, chalk, a brass band
+for the specials, navy, charcoal and a muted rust.
 
 The fixtures are an invented firm, **Hollis & Sons Plumbing and Heating** in Ashby, so
 `sites dev` shows eight services, twelve projects, ten towns, four offers, two plans, five crew,
@@ -14,7 +14,7 @@ photographs are SVG placeholders; replace them before publishing.
 
 ```
 settings/theme.json template roles, 3 section groups, Brand, Yard and Contact settings
-settings/design.json every design token, the five schemes and four palettes
+settings/design.json every design token, the six schemes and four palettes
 layouts/default.pzl the <html> document: SEO, the reveal pre-paint script, skip link, slots
 data/templates/     home, service, project, area, post and page (+ services, work, areas,
                     reviews, specials, about, estimate, contact, careers, journal) as JSON

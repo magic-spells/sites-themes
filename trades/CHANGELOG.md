@@ -13,8 +13,9 @@
 - Home, service, project, town, post and page templates, with services, work, areas, reviews,
   specials, about, estimate, contact, careers and journal pages; the 404, password and
   maintenance pages on paper.
-- Five colour schemes (paper, chalk, brass, navy, charcoal) and four palettes; Barlow Condensed
-  and Instrument Sans self-hosted; 37 Lucide glyphs and service icons in one sprite.
+- Six colour schemes (paper, chalk, brass, navy, charcoal and a muted rust) and four palettes;
+  Barlow Condensed and Instrument Sans self-hosted; 37 Lucide glyphs and service icons in one
+  sprite.
 - Town pages from the areas collection and `?service=` filter links on the work page.
 - The hero opens as Split on navy, and a navy or charcoal hero runs under the header. Careers
   opens on a split hero, then the openings beside the apply form; Contact keeps its page header
@@ -30,5 +31,6 @@
   sets its list and questions on chalk between the paper bands, the areas page its list and
   the estimate page its questions, and the testimonials heading reads "What your neighbors
   say".
-- The badge row sits on navy by default, its logos inverted on the navy and charcoal bands.
+- The badge row sits on navy by default, its logos inverted on the navy, charcoal and rust bands.
 - The header is chalk by default on every page.
+- FAQ questions are set in medium weight over their regular answers.

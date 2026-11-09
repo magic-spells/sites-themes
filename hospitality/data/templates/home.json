@@ -1,0 +1,148 @@
+{
+  "label": "Lakeside cabins",
+  "description": "The front page: the cover hero, the stays, the collage, the things to do, the reviews and booking.",
+  "sections": [
+    {
+      "id": "s_hero",
+      "type": "hero",
+      "preset": "Cover",
+      "settings": {
+        "layout": "cover",
+        "image": "as_16x9_lake",
+        "image_alt": "Okanagan Lake from the dock at Fern Hollow",
+        "video": "as_loop_lake",
+        "color_scheme": "night"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_intro",
+      "type": "intro",
+      "preset": "Default",
+      "settings": {
+        "image": "as_4x5_lake",
+        "image_alt": "The dock at Fern Hollow",
+        "caption": "The dock",
+        "caption_meta": "Early June",
+        "facts": "Check-in 3 pm\nCheck-out 11 am\nOpen May–October\nDogs welcome",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_stays",
+      "type": "stays-grid",
+      "preset": "Home",
+      "settings": {
+        "limit": 3,
+        "text": "Five cabins, two rooms and a bunkhouse.",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_collage",
+      "type": "gallery-collage",
+      "preset": "Collage",
+      "settings": {
+        "layout": "collage",
+        "gallery": "collage",
+        "heading": "The place",
+        "link_label": "All photos",
+        "color_scheme": "brick"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_featured",
+      "type": "stays-featured",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "id": "s_featured_b1",
+          "type": "tile",
+          "settings": {
+            "title": "The cabins",
+            "text": "Five on the water, one on the point.",
+            "image": "as_2x1_forest",
+            "image_alt": "Cedar cabins on the shore",
+            "link_label": "See the cabins",
+            "link_href": "/stays?type=Cabin"
+          }
+        },
+        {
+          "id": "s_featured_b2",
+          "type": "tile",
+          "settings": {
+            "stay": "stay_bunkhouse",
+            "title": "The bunkhouse",
+            "text": "Six bunks for the paddling crowd.",
+            "link_label": "See the bunkhouse"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_explore",
+      "type": "explore-grid",
+      "preset": "Home",
+      "settings": {
+        "limit": 3,
+        "text": "Hikes, wineries, a rail trail and the lake itself.",
+        "color_scheme": "lake"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_story",
+      "type": "story",
+      "preset": "Short",
+      "settings": {
+        "layout": "short",
+        "image": "as_4x5_forest",
+        "image_alt": "Ingrid and Hanne on the porch",
+        "link_label": "Our story",
+        "color_scheme": "paper",
+        "caption": "The first summer",
+        "caption_meta": "2009",
+        "body": "<p>Alder went up first, a single cabin on the east shore with a woodstove, two bunks and a rowboat tied to the dock. We built most of it by hand over one long summer, and the first guests were friends who didn't mind the outhouse.</p><p>Birch and Cedar followed, then the farmhouse, where we still live upstairs. We keep it small on purpose: five cabins, a sauna on the water and the same rowboat, repainted most springs. Most of what we know about the lake, we learned from the people who stay.</p>"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_reviews",
+      "type": "reviews",
+      "preset": "Grid",
+      "settings": {
+        "layout": "grid",
+        "link_label": "All reviews",
+        "color_scheme": "forest"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_journal",
+      "type": "journal-list",
+      "preset": "Feature",
+      "settings": {
+        "view": "feature",
+        "limit": 3,
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_booking",
+      "type": "booking-band",
+      "preset": "Beside",
+      "settings": {
+        "embed_position": "beside",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    }
+  ]
+}

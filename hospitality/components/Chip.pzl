@@ -1,0 +1,4 @@
+<!-- component: Chip -->
+<!-- props: href current label -->
+<!-- A filter chip: an outlined pill link, filled in the scheme's button colours when current. -->
+<a class="inline-flex min-h-tap items-center rounded-chip border border-scheme-foreground px-space-md text-body-sm font-medium whitespace-nowrap transition-colors duration-fast hover:bg-scheme-surface-2 current:border-scheme-button-background current:bg-scheme-button-background current:text-scheme-button-foreground" href="{ href }" aria-current={ current ? 'page' : null }>{ label }</a>

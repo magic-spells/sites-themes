@@ -1,0 +1,123 @@
+<!-- The top of a stay's page, on one column. The photos: from 48rem a 3:2 well beside a two-by-two of wells, the last carrying All photos, which opens the lightbox; on phones a one-up carousel edge to edge with page dots, each photo opening the lightbox. The title with the type and facts in meta under it and the pin and place beside it; the price, the weekly rate and minimum stay with the booking button on a hairline, which on phones moves to the foot as a bar stuck to the bottom of the screen with the nightly price only. Then the highlights, the amenities (the first few, the rest behind Show all), the description, the things to know from Place and the stay's reviews. -->
+{#let
+  stay = page.entry
+  f = stay.fields
+  s = site.settings
+  word = (f.type || '') | downcase
+  id = 'photos-' + section.id
+  photos = f.photos ? f.photos.items | slice(0, 12) : []
+  mosaic = photos | slice(0, 5)
+  options = { slidesPerView: 1, gap: 0, lightbox: true, navigation: { showButtons: false, showPagination: true } }
+  money = s.currency_symbol
+  rates = [f.price_week ? (f.price_week | currency(money, 0)) + ' / ' + t('unit.week') : null, f.min_nights ? t(f.min_nights == 1 ? 'min_night' : 'min_nights', { n: f.min_nights }) : null] | compact
+  amenities = (f.amenities || '') | split('\n')
+  shown = settings.amenities_shown
+  tiles = 'grid gap-space-sm sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
+  knows = [
+    { settings: { question: t('know.check_in'), answer: s.check_in && s.check_out ? t('check_in_line', { in: s.check_in, out: s.check_out }) : '' } },
+    { settings: { question: t('know.rules'), answer: s.house_rules ? (s.house_rules | split('\n') | join('. ')) + '.' : '' } },
+    { settings: { question: t('know.cancellation'), answer: s.cancellation } },
+    { settings: { question: t('know.pets_parking'), answer: [s.pets, s.parking] | compact | join(' ') } }
+  ] | where('settings.answer')
+  reviews = settings.show_reviews ? content.reviews.entries | where('fields.stay.handle', stay.handle) | sort('fields.order') | slice(0, 3) : []
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto flex max-w-column flex-col gap-space-2xl">
+    {#if photos.length}
+      <div>
+        <tarot-carousel class="block max-md:-mx-gutter max-md:-mt-section md:hidden" id={ id }>
+          <script type="application/json" data-tarot-options>{ options | json }</script>
+          <tarot-viewport><tarot-track>
+            {#for item in photos, i}<tarot-slide><img class="aspect-photo w-full bg-scheme-surface-2 object-cover" src="{ image_url(item.asset, 800) }" srcset="{ image_srcset(item.asset, [480, 768, 1024]) }" sizes="100vw" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="{ i == 0 ? 'eager' : 'lazy' }" width={ item.asset.width } height={ item.asset.height } /></tarot-slide>{/for}
+          </tarot-track></tarot-viewport>
+        </tarot-carousel>
+        <div class="grid grid-cols-mosaic gap-space-xs max-md:hidden">
+          {#for item in mosaic, i}
+            {#if i == 0}
+              <div class="row-span-2"><Well asset={ item.asset } alt={ item.alt } ratio="aspect-photo" width={ 1200 } sizes="58vw" eager={ true } /></div>
+            {:else}
+              <Well asset={ item.asset } alt={ item.alt } ratio="h-full" width={ 480 } sizes="20vw">{#if i == mosaic.length - 1}<button class="absolute right-space-sm bottom-space-sm min-h-tap rounded-button bg-chip px-space-md text-body-sm font-semibold text-on-chip transition-colors duration-fast hover:bg-scheme-background hover:text-scheme-foreground" type="button" data-lightbox-open={ id } data-index="0">{ t('all_photos') }</button>{/if}</Well>
+            {/if}
+          {/for}
+        </div>
+      </div>
+    {/if}
+
+    <div class="grid gap-space-sm md:flex md:items-start md:justify-between md:gap-space-lg">
+      <div class="grid gap-space-2xs">
+        <h1 class="font-heading text-h1 text-balance text-scheme-heading">{ stay.title }</h1>
+        {#if f.type}<p class="text-body-sm text-scheme-meta">{ f.type }</p>{/if}
+        <p class="text-body-sm text-scheme-meta"><FactsLine f={ f } /></p>
+      </div>
+      {#if s.address}<p class="flex items-center gap-space-xs text-body-sm"><span class="text-accent"><Glyph name="pin" /></span>{ (s.address | split('\n'))[1] || s.address }</p>{/if}
+    </div>
+
+    <div class="flex items-center justify-between gap-space-md border-scheme-border bg-scheme-background py-space-md max-md:sticky max-md:bottom-0 max-md:z-10 max-md:order-last max-md:-mx-gutter max-md:border-t max-md:px-gutter max-md:py-space-sm md:border-b">
+      <p class="flex flex-wrap items-baseline gap-x-space-xs"><span class="text-h3 font-semibold tabular-nums">{ f.price_night | currency(money, 0) }</span><span class="text-body-sm text-scheme-meta">/ { t('unit.' + (f.price_unit || 'night')) }{#if rates.length}<span class="max-md:hidden"> · { rates | join(' · ') }</span>{/if}</span></p>
+      <Button action={ true }>{ s.booking_label }</Button>
+    </div>
+
+    {#if f.highlights}
+      <ul class="grid gap-space-lg lg:grid-cols-3">
+        {#for line in f.highlights | split('\n')}
+          {#let parts = line | split(': ')}
+          <li class="grid content-start gap-space-2xs"><p class="text-body font-semibold">{ parts | first }</p><p class="text-body text-pretty text-scheme-muted">{ parts | slice(1) | join(': ') }</p></li>
+        {/for}
+      </ul>
+    {/if}
+
+    {#if amenities.length}
+      <div>
+        <SectionHead heading={ t('stay_offers', { type: word }) } />
+        <ul class="{ tiles }">{#for line in amenities | slice(0, shown)}<li><Amenity label={ line } look="tile" /></li>{/for}</ul>
+        {#if amenities.length > shown}
+          <collapsible-component class="flex flex-col">
+            <collapsible-content><ul class="{ tiles } pt-space-sm">{#for line in amenities | slice(shown)}<li><Amenity label={ line } look="tile" /></li>{/for}</ul></collapsible-content>
+            <button class="group mt-space-md flex w-auto items-center gap-space-xs text-body-sm font-semibold text-accent hover:underline hover:underline-offset-4" type="button">{ t('show_all_amenities') }<Glyph name="arrow-right" cls="size-icon rotate-90 transition-transform duration-fast group-aria-expanded:-rotate-90" /></button>
+          </collapsible-component>
+        {/if}
+      </div>
+    {/if}
+
+    {#if f.description}
+      <div>
+        <SectionHead heading={ t('stay_about', { type: word }) } />
+        <div class="sites-prose max-w-reading text-body-lg">{ f.description }</div>
+      </div>
+    {/if}
+
+    {#if knows.length}
+      <div class="max-w-reading">
+        <SectionHead heading={ t('things_to_know') } />
+        <Questions items={ knows } first_open={ true } />
+      </div>
+    {/if}
+
+    {#if reviews.length}
+      <div>
+        <SectionHead heading={ t('stay_reviews', { type: word }) } link_label={ settings.reviews_link_label } link_href={ settings.reviews_link_href } />
+        <ul class="grid gap-space-md lg:grid-cols-2 lg:gap-space-lg">{#for entry in reviews}<li><ReviewCard entry={ entry } /></li>{/for}</ul>
+      </div>
+    {/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Stay detail",
+  "description": "A stay's page: the photos, the title and price, the highlights, the amenities, the description, the things to know and its reviews.",
+  "kind": "Stays",
+  "icon": "bed-double",
+  "templates": ["stay"],
+  "settings": [
+    { "type": "range", "id": "amenities_shown", "label": "Amenities before Show all", "min": 4, "max": 12, "step": 1, "default": 8 },
+    { "type": "checkbox", "id": "show_reviews", "label": "Reviews of this stay", "default": true },
+    { "type": "text", "id": "reviews_link_label", "label": "Reviews link label", "default": "All reviews" },
+    { "type": "url", "id": "reviews_link_href", "label": "Reviews link", "default": "/about#reviews" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" } }
+  ]
+}
+</schema>

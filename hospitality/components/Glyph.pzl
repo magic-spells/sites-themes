@@ -1,0 +1,4 @@
+<!-- component: Glyph -->
+<!-- props: name cls -->
+<!-- One line glyph from assets/glyphs.svg by its id, in the current colour; cls sets its size (size-icon by default). -->
+<svg class="shrink-0 { cls ?? 'size-icon' }" aria-hidden="true"><use href="{ asset_url('glyphs.svg') }#{ name }"/></svg>

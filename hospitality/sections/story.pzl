@@ -1,0 +1,73 @@
+<!-- The place's story: the head, then the prose left seven parts with the button under it and the 4:5 picture right five (the picture first on phones). full adds the chapters: a hairline between each, the year in meta at the left (after the title on phones), the title, the text and an optional 3:2 photo; then "Since 2009 · Lake Country, British Columbia" from Place. -->
+{#let
+  s = site.settings
+  full = settings.layout == 'full'
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <div class="grid items-start gap-space-xl md:grid-cols-text-picture md:gap-space-3xl">
+      <div class="grid justify-items-start gap-space-md">
+        {#if settings.body}<div class="sites-prose">{ settings.body }</div>{/if}
+        {#if settings.link_label && settings.link_href}<Button href={ settings.link_href } tone="secondary">{ settings.link_label }</Button>{/if}
+      </div>
+      <div class="max-md:order-first"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" caption={ settings.caption } caption_meta={ settings.caption_meta } width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" /></div>
+    </div>
+    {#if full && blocks.length}
+      <ol class="mx-auto mt-space-2xl max-w-chapters">
+        {#for block in blocks, i}
+          {#let c = block.settings}
+          <li class="flex flex-wrap items-baseline gap-x-space-xs gap-y-space-xs py-space-lg md:grid md:grid-cols-chapter md:gap-x-space-lg { i ? 'border-t border-scheme-border' : '' }" data-block={ block.editor_id }>
+            <h3 class="text-h4 font-medium md:col-start-2">{ c.title }</h3>
+            <p class="text-body-sm text-scheme-meta md:row-start-1"><span class="md:hidden">· </span>{ c.year }</p>
+            <p class="w-full text-body text-scheme-muted md:col-start-2">{ c.text }</p>
+            {#if c.image}<div class="w-full md:col-start-2 md:w-1/2"><Well asset={ c.image } alt={ c.image_alt } ratio="aspect-photo" width={ 640 } sizes="(min-width: 48rem) 20rem, 90vw" /></div>{/if}
+          </li>
+        {/for}
+      </ol>
+      {#if s.founded}<p class="mx-auto max-w-chapters text-body-sm text-scheme-meta">{ [t('since', { year: s.founded }), (s.address ?? '') | split('\n') | last] | compact | join(' · ') }</p>{/if}
+    {/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Story",
+  "description": "The place's story: prose beside a picture, then the chapters, year by year.",
+  "kind": "About",
+  "icon": "book-open",
+  "settings": [
+    { "type": "select", "id": "layout", "label": "Layout", "default": "full", "options": [
+      { "value": "short", "label": "Short" },
+      { "value": "full", "label": "Full" }
+    ], "info": "Short: the standfirst, the prose, the picture and a button. Full: the chapters follow." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Our story" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "Fern Hollow started in 2009 with one cabin and a rowboat." },
+    { "type": "richtext", "id": "body", "label": "Text", "default": "<p>Two sisters, a borrowed truck and a summer of weekends. The first cabin went up by hand, and the rowboat came with the land.</p>" },
+    { "type": "image", "id": "image", "label": "Picture", "info": "4:5." },
+    { "type": "text", "id": "image_alt", "label": "Picture alt text", "default": "" },
+    { "type": "text", "id": "caption", "label": "Caption title", "default": "", "info": "A paper card over the picture's corner." },
+    { "type": "text", "id": "caption_meta", "label": "Caption line", "default": "" },
+    { "type": "text", "id": "link_label", "label": "Button label", "default": "" },
+    { "type": "url", "id": "link_href", "label": "Button link", "default": "/about" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "blocks": [
+    { "type": "chapter", "name": "Chapter", "settings": [
+      { "type": "text", "id": "year", "label": "Year", "default": "2009" },
+      { "type": "text", "id": "title", "label": "Title", "default": "One cabin" },
+      { "type": "textarea", "id": "text", "label": "Text", "default": "Alder went up in a summer, mostly by hand." },
+      { "type": "image", "id": "image", "label": "Photo", "info": "Optional, 3:2." },
+      { "type": "text", "id": "image_alt", "label": "Photo alt text", "default": "" }
+    ] }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    { "name": "Full", "settings": { "layout": "full", "color_scheme": "paper" }, "blocks": [
+      { "type": "chapter", "settings": { "year": "2009", "title": "One cabin", "text": "Alder went up in a summer, mostly by hand." } },
+      { "type": "chapter", "settings": { "year": "2013", "title": "Birch and Cedar", "text": "Two more cabins and the first season we sold out." } }
+    ] },
+    { "name": "Short", "settings": { "layout": "short", "link_label": "Our story", "color_scheme": "paper" } }
+  ]
+}
+</schema>

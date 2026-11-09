@@ -1,0 +1,12 @@
+<!-- component: Amenity -->
+<!-- props: label glyph line look -->
+<!-- One amenity: its glyph in the accent and its label. The word (glyph, or the label when glyph is empty) picks the glyph: the 24 words below each have one, anything else gets a tick. look: flat (a glyph and label pair, the default) or tile (a surface-2 tile at well radius, with line under the label). -->
+{#let
+  key = (glyph || label) | strip | downcase
+  known = ['wifi', 'air conditioning', 'heating', 'queen bed', 'king bed', 'bunk beds', 'private bathroom', 'shared bathroom', 'kitchen', 'kitchenette', 'laundry', 'fireplace', 'wood stove', 'fire pit', 'hot tub', 'lake view', 'mountain view', 'balcony', 'parking', 'pets', 'workspace', 'tv', 'breakfast', 'linens']
+  name = contains(known, key) ? key | replace(' ', '-') : 'check'
+}
+<span class="flex items-center { look == 'tile' ? 'h-full gap-space-md rounded-well bg-scheme-surface-2 p-space-md text-body' : 'gap-space-xs text-body-sm' }">
+  <span class="text-accent"><Glyph name={ name } /></span>
+  <span class="grid gap-space-2xs">{ label | strip }{#if line}<span class="text-body-sm text-scheme-muted">{ line }</span>{/if}</span>
+</span>

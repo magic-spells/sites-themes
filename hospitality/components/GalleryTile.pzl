@@ -1,0 +1,4 @@
+<!-- component: GalleryTile -->
+<!-- props: item id i -->
+<!-- One photo of the gallery grid: a 4:3 well that opens the lightbox of the hidden carousel id at index i (theme.ts). -->
+<button class="group block w-full cursor-zoom-in" type="button" data-lightbox-open={ id } data-index={ i } aria-label="{ t('open_photo', { index: i + 1 }) }"><Well asset={ item.asset } alt={ item.alt } ratio="aspect-map" width={ 640 } sizes="(min-width: 64rem) 27rem, 50vw" zoom={ true } /></button>

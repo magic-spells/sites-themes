@@ -1,0 +1,46 @@
+<!-- What the whole place has: amenity tiles (glyph and label, an optional line under it) four, three, two, then one across. lines off hides the lines. -->
+{#if blocks.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <ul class="grid gap-space-sm sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      {#for block in blocks}<li data-block={ block.editor_id }><Amenity label={ block.settings.label } glyph={ block.settings.glyph } line={ settings.lines ? block.settings.line : '' } look="tile" /></li>{/for}
+    </ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Amenities",
+  "description": "What the whole place has, as tiles with a glyph.",
+  "kind": "Stays",
+  "icon": "list-checks",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What's here" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "Shared by every cabin and room." },
+    { "type": "checkbox", "id": "lines", "label": "Lines under the labels", "default": true },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "blocks": [
+    { "type": "amenity", "name": "Amenity", "settings": [
+      { "type": "text", "id": "label", "label": "Label", "default": "Wifi" },
+      { "type": "text", "id": "glyph", "label": "Glyph word", "default": "", "info": "One of: wifi, air conditioning, heating, queen bed, king bed, bunk beds, private bathroom, shared bathroom, kitchen, kitchenette, laundry, fireplace, wood stove, fire pit, hot tub, lake view, mountain view, balcony, parking, pets, workspace, tv, breakfast, linens. Leave empty to use the label; any other word shows a tick." },
+      { "type": "text", "id": "line", "label": "Line", "default": "" }
+    ] }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    { "name": "Default", "settings": {}, "blocks": [
+      { "type": "amenity", "settings": { "label": "Sauna", "glyph": "hot tub" } },
+      { "type": "amenity", "settings": { "label": "The dock", "glyph": "lake view" } },
+      { "type": "amenity", "settings": { "label": "Canoes and boards" } },
+      { "type": "amenity", "settings": { "label": "Fire pits", "glyph": "fire pit" } },
+      { "type": "amenity", "settings": { "label": "Laundry" } },
+      { "type": "amenity", "settings": { "label": "Parking" } },
+      { "type": "amenity", "settings": { "label": "Breakfast (farmhouse)", "glyph": "breakfast" } },
+      { "type": "amenity", "settings": { "label": "Wifi" } }
+    ] }
+  ]
+}
+</schema>

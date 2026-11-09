@@ -1,0 +1,195 @@
+{
+  "label": "About",
+  "description": "The story, what's here, where we are and the reviews.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Photo",
+      "settings": {
+        "heading": "Our story",
+        "text": "Two sisters, one cabin and a rowboat, in 2009.",
+        "media": "photo",
+        "image": "as_16x9_sand",
+        "image_alt": "The farmhouse from the orchard",
+        "color_scheme": "night"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_story",
+      "type": "story",
+      "preset": "Full",
+      "settings": {
+        "layout": "full",
+        "heading": "",
+        "image": "as_4x5_lake",
+        "image_alt": "Alder, the first cabin",
+        "caption": "Alder",
+        "caption_meta": "2009",
+        "color_scheme": "paper",
+        "body": "<p>Alder went up first, a single cabin on the east shore with a woodstove, two bunks and a rowboat tied to the dock. We built most of it by hand over one long summer, and the first guests were friends who didn't mind the outhouse.</p><p>Birch and Cedar followed, then the farmhouse, where we still live upstairs. We keep it small on purpose: five cabins, a sauna on the water and the same rowboat, repainted most springs. Most of what we know about the lake, we learned from the people who stay.</p>"
+      },
+      "blocks": [
+        {
+          "id": "s_story_b1",
+          "type": "chapter",
+          "settings": {
+            "year": "2009",
+            "title": "One cabin",
+            "text": "Alder went up in a summer, mostly by hand."
+          }
+        },
+        {
+          "id": "s_story_b2",
+          "type": "chapter",
+          "settings": {
+            "year": "2013",
+            "title": "Birch and Cedar",
+            "text": "Two more cabins and the first season we sold out.",
+            "image": "as_3x2_forest",
+            "image_alt": "Birch and Cedar from the dock"
+          }
+        },
+        {
+          "id": "s_story_b3",
+          "type": "chapter",
+          "settings": {
+            "year": "2017",
+            "title": "The farmhouse",
+            "text": "We moved in upstairs and opened two rooms."
+          }
+        },
+        {
+          "id": "s_story_b4",
+          "type": "chapter",
+          "settings": {
+            "year": "2021",
+            "title": "The bunkhouse",
+            "text": "For the paddling groups who kept asking.",
+            "image": "as_3x2_sand",
+            "image_alt": "The bunkhouse porch"
+          }
+        },
+        {
+          "id": "s_story_b5",
+          "type": "chapter",
+          "settings": {
+            "year": "2026",
+            "title": "Today",
+            "text": "Five cabins, a sauna, and the same rowboat."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_amenities",
+      "type": "amenities",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "id": "s_amenities_b1",
+          "type": "amenity",
+          "settings": {
+            "label": "Sauna",
+            "glyph": "hot tub",
+            "line": "Wood-fired, open 4–9 pm"
+          }
+        },
+        {
+          "id": "s_amenities_b2",
+          "type": "amenity",
+          "settings": {
+            "label": "The dock",
+            "glyph": "lake view",
+            "line": "Canoes and boards"
+          }
+        },
+        {
+          "id": "s_amenities_b3",
+          "type": "amenity",
+          "settings": {
+            "label": "Canoes and boards",
+            "line": "First come, first served"
+          }
+        },
+        {
+          "id": "s_amenities_b4",
+          "type": "amenity",
+          "settings": {
+            "label": "Fire pits",
+            "glyph": "fire pit",
+            "line": "Wood by the barn"
+          }
+        },
+        {
+          "id": "s_amenities_b5",
+          "type": "amenity",
+          "settings": {
+            "label": "Laundry",
+            "line": "In the barn"
+          }
+        },
+        {
+          "id": "s_amenities_b6",
+          "type": "amenity",
+          "settings": {
+            "label": "Parking",
+            "line": "One car at each cabin"
+          }
+        },
+        {
+          "id": "s_amenities_b7",
+          "type": "amenity",
+          "settings": {
+            "label": "Breakfast (farmhouse)",
+            "glyph": "breakfast",
+            "line": "At eight"
+          }
+        },
+        {
+          "id": "s_amenities_b8",
+          "type": "amenity",
+          "settings": {
+            "label": "Wifi",
+            "line": "Everywhere but the point"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_location",
+      "type": "location",
+      "preset": "Default",
+      "settings": {
+        "image": "as_3x2_forest",
+        "image_alt": "The road in through the cedars",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_reviews",
+      "type": "reviews",
+      "preset": "Carousel",
+      "settings": {
+        "layout": "carousel",
+        "color_scheme": "forest"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_booking",
+      "type": "booking-band",
+      "preset": "Beside",
+      "settings": {
+        "embed_position": "beside",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    }
+  ]
+}

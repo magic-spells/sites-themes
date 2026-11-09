@@ -1,0 +1,4 @@
+<!-- component: Month -->
+<!-- props: d -->
+<!-- A date as its month and year, "August 2026": the engine's date presets all carry the day. -->
+{#if d}{ d | date('long') | split(' ') | first } { d | date('iso') | slice(0, 4) }{/if}

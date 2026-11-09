@@ -105,6 +105,19 @@
       "screenshots": []
     },
     {
+      "name": "hospitality",
+      "label": "Hospitality",
+      "description": "A small place to stay: cabins, rooms or a hostel as cards with their price and facts, a page for each stay, things to do nearby, reviews, a journal and booking through your booking app.",
+      "category": "content",
+      "vertical": "Hospitality",
+      "license": "MIT",
+      "publisher": "Magic Spells",
+      "version": "0.1.0",
+      "zip": "https://github.com/magic-spells/sites-themes/releases/download/hospitality/v0.1.0/hospitality-v0.1.0.zip",
+      "sha256": null,
+      "screenshots": []
+    },
+    {
       "name": "portfolio",
       "label": "Portfolio",
       "description": "One person's site: the work in collections and a filterable index with a page per work, a CV with a downloadable PDF, an about page, writing and contact, on outlined buttons and five color schemes.",

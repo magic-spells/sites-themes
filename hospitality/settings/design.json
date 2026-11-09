@@ -1,0 +1,292 @@
+{
+  "colors": {
+    "brand": {
+      "primary": "#1B1F1D",
+      "secondary": "#4F5753",
+      "accent": "#AF451D"
+    },
+    "grey": {
+      "extra_light": "#EDE7DC",
+      "light": "#E3DDD2",
+      "medium": "#8C918D",
+      "dark": "#4F5753",
+      "extra_dark": "#1B1F1D"
+    },
+    "info": {
+      "bg": "#DCE9EC",
+      "fg": "#0F4F61"
+    },
+    "success": {
+      "bg": "#DDE6DF",
+      "fg": "#1F3B2D"
+    },
+    "warning": {
+      "bg": "#F2EBDB",
+      "fg": "#5E4110"
+    },
+    "error": {
+      "bg": "#F6DFD8",
+      "fg": "#B3261E"
+    }
+  },
+  "fonts": {
+    "heading": {
+      "family": "Figtree",
+      "weights": [
+        600,
+        700
+      ],
+      "source": "self-hosted",
+      "url": "/_sites/theme/fonts/figtree-latin-wght-normal.woff2"
+    },
+    "body": {
+      "family": "Figtree",
+      "weights": [
+        400,
+        500,
+        600
+      ],
+      "source": "self-hosted",
+      "url": "/_sites/theme/fonts/figtree-latin-wght-normal.woff2"
+    },
+    "mono": {
+      "family": "Figtree",
+      "weights": [
+        400,
+        500
+      ],
+      "source": "self-hosted",
+      "url": "/_sites/theme/fonts/figtree-latin-wght-normal.woff2"
+    }
+  },
+  "type": {
+    "base": "1rem",
+    "scale": {
+      "xs": "0.75rem",
+      "sm": "0.9375rem",
+      "base": "1.0625rem",
+      "lg": "1.25rem",
+      "xl": "1.375rem",
+      "2xl": "1.75rem",
+      "3xl": "2.5rem",
+      "4xl": "4rem",
+      "5xl": "4rem"
+    },
+    "leading": {
+      "tight": "1.02",
+      "normal": "1.6",
+      "relaxed": "1.7"
+    }
+  },
+  "spacing": {
+    "xs": "0.5rem",
+    "sm": "1rem",
+    "md": "1.5rem",
+    "lg": "2rem",
+    "xl": "3rem",
+    "2xl": "4.5rem"
+  },
+  "radius": {
+    "none": "0",
+    "sm": "0.5rem",
+    "md": "1rem",
+    "lg": "1.5rem",
+    "full": "9999rem"
+  },
+  "shadow": {
+    "sm": "none",
+    "md": "none",
+    "lg": "none"
+  },
+  "border": {
+    "width": "1px",
+    "color": "#E3DDD2"
+  },
+  "input": {
+    "background": "#F7F3EC",
+    "border": "#5C6460",
+    "radius": "1rem",
+    "text": "#1B1F1D",
+    "placeholder": "#5C6460",
+    "focus_ring": "#AF451D"
+  },
+  "button": {
+    "radius": "9999rem",
+    "padding_x": "1.5rem",
+    "padding_y": "0.8125rem",
+    "weight": "600",
+    "primary_bg": "#181C22",
+    "primary_text": "#F7F3EC",
+    "secondary_bg": "transparent",
+    "secondary_text": "#1B1F1D"
+  },
+  "link": {
+    "color": "#AF451D",
+    "hover_color": "#1B1F1D",
+    "underline": "hover"
+  },
+  "suggested_palettes": [],
+  "schemes": [
+    {
+      "handle": "paper",
+      "name": "Paper",
+      "background": "#F7F3EC",
+      "foreground": "#1B1F1D",
+      "heading": "#1B1F1D",
+      "input_background": "#F7F3EC",
+      "input_foreground": "#1B1F1D",
+      "input_border": "#5C6460",
+      "chip_background": "#EDE7DC",
+      "chip_foreground": "#4F5753",
+      "chip_border": "#E3DDD2",
+      "icons": "#5C6460",
+      "links": "#AF451D",
+      "button_background": "#181C22",
+      "button_foreground": "#F7F3EC",
+      "button_hover_background": "#0C1019",
+      "button_hover_foreground": "#F7F3EC",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#1B1F1D",
+      "secondary_button_hover_background": "#1B1F1D",
+      "secondary_button_hover_foreground": "#F7F3EC"
+    },
+    {
+      "handle": "white",
+      "name": "White",
+      "background": "#FFFFFF",
+      "foreground": "#1A1A1A",
+      "heading": "#1A1A1A",
+      "input_background": "#FFFFFF",
+      "input_foreground": "#1A1A1A",
+      "input_border": "#5C5C5C",
+      "chip_background": "#F4F1EB",
+      "chip_foreground": "#525252",
+      "chip_border": "#E7E2DA",
+      "icons": "#5C5C5C",
+      "links": "#AF451D",
+      "button_background": "#181C22",
+      "button_foreground": "#FFFFFF",
+      "button_hover_background": "#0C1019",
+      "button_hover_foreground": "#FFFFFF",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#1A1A1A",
+      "secondary_button_hover_background": "#1A1A1A",
+      "secondary_button_hover_foreground": "#FFFFFF"
+    },
+    {
+      "handle": "night",
+      "name": "Night",
+      "background": "#101723",
+      "foreground": "#F2EFE8",
+      "heading": "#F2EFE8",
+      "input_background": "#162031",
+      "input_foreground": "#F2EFE8",
+      "input_border": "#ACB1B9",
+      "chip_background": "#162031",
+      "chip_foreground": "#BCC0C8",
+      "chip_border": "#1E2C42",
+      "icons": "#ACB1B9",
+      "links": "#F2A27A",
+      "button_background": "#F2EFE8",
+      "button_foreground": "#101723",
+      "button_hover_background": "#FBF9F5",
+      "button_hover_foreground": "#101723",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#F2EFE8",
+      "secondary_button_hover_background": "#F2EFE8",
+      "secondary_button_hover_foreground": "#101723"
+    },
+    {
+      "handle": "forest",
+      "name": "Forest",
+      "background": "#1F3B2D",
+      "foreground": "#F2EFE8",
+      "heading": "#F2EFE8",
+      "input_background": "#284736",
+      "input_foreground": "#F2EFE8",
+      "input_border": "#B4C1B7",
+      "chip_background": "#284736",
+      "chip_foreground": "#C3CEC5",
+      "chip_border": "#33503F",
+      "icons": "#B4C1B7",
+      "links": "#F2B36A",
+      "button_background": "#F2EFE8",
+      "button_foreground": "#1F3B2D",
+      "button_hover_background": "#FBF9F5",
+      "button_hover_foreground": "#1F3B2D",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#F2EFE8",
+      "secondary_button_hover_background": "#F2EFE8",
+      "secondary_button_hover_foreground": "#1F3B2D"
+    },
+    {
+      "handle": "lake",
+      "name": "Lake",
+      "background": "#135E73",
+      "foreground": "#F4F8F7",
+      "heading": "#F4F8F7",
+      "input_background": "#0F4F61",
+      "input_foreground": "#F4F8F7",
+      "input_border": "#DCE9EC",
+      "chip_background": "#0F4F61",
+      "chip_foreground": "#DAE9EC",
+      "chip_border": "#2B7287",
+      "icons": "#DCE9EC",
+      "links": "#F8DD9E",
+      "button_background": "#F4F8F7",
+      "button_foreground": "#135E73",
+      "button_hover_background": "#FBFDFC",
+      "button_hover_foreground": "#135E73",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#F4F8F7",
+      "secondary_button_hover_background": "#F4F8F7",
+      "secondary_button_hover_foreground": "#135E73"
+    },
+    {
+      "handle": "sunset",
+      "name": "Sunset",
+      "background": "#F2EBDB",
+      "foreground": "#1A1412",
+      "heading": "#1A1412",
+      "input_background": "#F2EBDB",
+      "input_foreground": "#1A1412",
+      "input_border": "#4A3526",
+      "chip_background": "#E9DCC1",
+      "chip_foreground": "#3D2A1E",
+      "chip_border": "#DCCA9F",
+      "icons": "#4A3526",
+      "links": "#1A1412",
+      "button_background": "#181C22",
+      "button_foreground": "#F7F3EC",
+      "button_hover_background": "#0C1019",
+      "button_hover_foreground": "#F7F3EC",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#1A1412",
+      "secondary_button_hover_background": "#1A1412",
+      "secondary_button_hover_foreground": "#F2EBDB"
+    },
+    {
+      "handle": "brick",
+      "name": "Brick",
+      "background": "#8B1A1A",
+      "foreground": "#F7EDE6",
+      "heading": "#F7EDE6",
+      "input_background": "#962A2A",
+      "input_foreground": "#F7EDE6",
+      "input_border": "#E3C7BB",
+      "chip_background": "#962A2A",
+      "chip_foreground": "#E7C9BD",
+      "chip_border": "#A33A3A",
+      "icons": "#E3C7BB",
+      "links": "#F2C14E",
+      "button_background": "#F7EDE6",
+      "button_foreground": "#8B1A1A",
+      "button_hover_background": "#FCF7F3",
+      "button_hover_foreground": "#8B1A1A",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#F7EDE6",
+      "secondary_button_hover_background": "#F7EDE6",
+      "secondary_button_hover_foreground": "#8B1A1A"
+    }
+  ]
+}

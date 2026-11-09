@@ -1,0 +1,21 @@
+<!-- component: FormFields -->
+<!-- props: fields prefix -->
+<!-- A site form's fields: a "phone" id is a telephone field, a checkbox a ticked line, a select with one option is sent hidden, a longer select a native list. -->
+<div class="grid gap-space-sm">
+  {#for field in fields}
+    {#if field.type == 'select' && field.options.length == 1}
+      <input type="hidden" name={ field.id } value={ field.options[0] } />
+    {:else if field.type == 'select'}
+      <div>
+        <label class="mb-space-2xs block text-body-sm font-semibold" for="field-{ prefix }-{ field.id }">{ field.label }{#if field.required}<span aria-hidden="true"> *</span>{/if}</label>
+        <select class="block min-h-control w-full rounded-input border bg-scheme-input-background px-space-sm text-body text-scheme-input-foreground focus:outline-2 focus:outline-offset-2 focus:outline-accent { field.error ? 'border-scheme-error' : 'border-scheme-input-border' }" id="field-{ prefix }-{ field.id }" name={ field.id } required={ field.required }>
+          {#for option in field.options}<option value={ option } selected={ field.value == option }>{ option }</option>{/for}
+        </select>
+      </div>
+    {:else if field.type == 'checkbox'}
+      <label class="flex items-start gap-space-xs text-body-sm"><input class="mt-space-2xs size-icon accent-accent" type="checkbox" name={ field.id } value="on" checked={ field.value == 'on' } required={ field.required } />{ field.label }</label>
+    {:else}
+      <Field name={ field.id } label={ field.label } type={ field.id == 'phone' ? 'tel' : field.type } required={ field.required } maxlength={ field.max_length } value={ field.value } error={ field.error } prefix={ prefix } rows={ 4 } />
+    {/if}
+  {/for}
+</div>

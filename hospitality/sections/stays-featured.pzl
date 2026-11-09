@@ -1,0 +1,61 @@
+<!-- Two wide photo tiles side by side from 48rem (2:1), stacked on phones (3:2). Each tile is a stay (its photo, title, summary and page) or a free title, line, link and photo, with an optional muted loop laid over the photo; a night scrim rises from the foot under the title, the line and an outlined button, and the whole tile is the link. -->
+{#if blocks.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <ul class="grid gap-space-md md:grid-cols-2 md:gap-space-lg">
+      {#for block in blocks}
+        {#let
+          b = block.settings
+          stay = b.stay
+        }
+        <li data-block={ block.editor_id }>
+          <Well asset={ b.image || (stay ? stay.fields.image : null) } alt={ b.image_alt || (stay ? stay.fields.image_alt : '') } ratio="aspect-photo md:aspect-tile" edge={ true } width={ 1200 } sizes="(min-width: 48rem) 50vw, 100vw">
+            {#if b.video}<video class="absolute inset-0 size-full object-cover motion-reduce:hidden" src="{ b.video.url }" autoplay muted loop playsinline aria-hidden="true"></video>{/if}
+            <span class="absolute inset-0 bg-linear-to-t from-scrim from-60% to-transparent"></span>
+            {#if b.video}<span class="absolute top-space-md right-space-md flex size-tap items-center justify-center rounded-full bg-chip text-on-chip" aria-hidden="true"><Glyph name="play" /></span>{/if}
+            <span class="absolute inset-x-0 bottom-0 grid justify-items-start gap-space-xs p-space-lg text-chip">
+              <h3 class="font-heading text-h3 font-semibold text-balance">{ b.title || (stay ? stay.title : '') }</h3>
+              <span class="mb-space-sm text-body text-pretty">{ b.text || (stay ? stay.fields.summary : '') }</span>
+              <Button href={ b.link_href || (stay ? '/stays/' + stay.handle : '') } tone="photo-secondary" cls="after:absolute after:inset-0">{ b.link_label }</Button>
+            </span>
+          </Well>
+        </li>
+      {/for}
+    </ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Stays featured",
+  "description": "Two wide photo tiles, each a stay or a title, a line and a link.",
+  "kind": "Stays",
+  "icon": "gallery-horizontal",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "blocks": [
+    { "type": "tile", "name": "Tile", "settings": [
+      { "type": "entry", "id": "stay", "label": "Stay", "info": "Its photo, title, summary and page fill the tile. The fields below replace them." },
+      { "type": "text", "id": "title", "label": "Title", "default": "" },
+      { "type": "text", "id": "text", "label": "Line", "default": "" },
+      { "type": "image", "id": "image", "label": "Image", "info": "2:1 on desktop, 3:2 on phones." },
+      { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "" },
+      { "type": "video", "id": "video", "label": "Video", "info": "Plays muted over the image, which is its poster." },
+      { "type": "text", "id": "link_label", "label": "Button label", "default": "See the cabin" },
+      { "type": "url", "id": "link_href", "label": "Button link", "default": "", "info": "Leave empty to link to the stay." }
+    ] }
+  ],
+  "max_blocks": 2,
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "paper" }, "blocks": [
+      { "type": "tile", "settings": { "title": "The lake cabins", "text": "Five cedar cabins on the water.", "link_label": "See the cabins", "link_href": "/stays?type=Cabin" } },
+      { "type": "tile", "settings": { "title": "The farmhouse", "text": "Two rooms upstairs, breakfast included.", "link_label": "See the rooms", "link_href": "/stays?type=Farmhouse+room" } }
+    ] }
+  ]
+}
+</schema>

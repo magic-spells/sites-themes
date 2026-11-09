@@ -1,0 +1,15 @@
+<!-- component: Questions -->
+<!-- props: items first_open columns -->
+<!-- Rows on hairlines that open and close, for the faq, the policies and the stay's Things to know. items are blocks or plain objects, each with settings.question and settings.answer (richtext or text). The first opens when first_open. columns sets two columns of rows from 64rem. Without JavaScript every row shows. -->
+<ul class="{ columns ? 'gap-x-space-3xl lg:columns-2' : '' } border-t border-scheme-border">
+  {#for item in items, i}
+    <li class="break-inside-avoid border-b border-scheme-border" data-block={ item.editor_id }>
+      <collapsible-component>
+        <h3><button class="group flex w-full items-center justify-between gap-space-md py-space-md text-left text-body-lg font-semibold" type="button">{ item.settings.question }<Glyph name="arrow-right" cls="size-icon rotate-90 transition-transform duration-fast group-aria-expanded:-rotate-90" /></button></h3>
+        <collapsible-content open={ first_open && i == 0 }>
+          <div class="sites-prose pb-space-md text-scheme-muted">{ item.settings.answer }</div>
+        </collapsible-content>
+      </collapsible-component>
+    </li>
+  {/for}
+</ul>

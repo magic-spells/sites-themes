@@ -1,0 +1,12 @@
+<!-- component: Button -->
+<!-- props: tone href type wide external action small cls -->
+<!-- The pill button. tone: primary (the scheme's button), secondary (outlined in the text colour), photo (filled paper over a photograph), photo-secondary (outlined paper over a photograph). With type it is a <button> of that type. With action it is the booking action: the Place booking URL in a new tab, or the booking band on Home when Place booking is embed only. small is the 2.75rem height. cls adds classes (the header's over-hero look). -->
+{#let
+  s = site.settings
+  booked = action && s.booking != 'embed' && s.booking_url
+  url = action ? (booked ? s.booking_url : '/#book') : href
+  out = booked || external
+  look = tone == 'secondary' ? 'border-scheme-secondary-button-foreground text-scheme-secondary-button-foreground hover:bg-scheme-secondary-button-hover-background hover:text-scheme-secondary-button-hover-foreground' : (tone == 'photo' ? 'border-chip bg-chip text-on-chip hover:border-scheme-background hover:bg-scheme-background hover:text-scheme-foreground' : (tone == 'photo-secondary' ? 'border-chip text-chip hover:bg-chip hover:text-on-chip' : 'border-scheme-button-background bg-scheme-button-background text-scheme-button-foreground hover:border-scheme-button-hover-background hover:bg-scheme-button-hover-background hover:text-scheme-button-hover-foreground'))
+  cls = 'inline-flex items-center justify-center gap-space-xs rounded-button border px-button-x text-button font-semibold whitespace-nowrap transition-colors duration-fast ' + (small ? 'min-h-tap ' : 'min-h-control ') + look + (wide ? ' w-full' : '') + (cls ? ' ' + cls : '')
+}
+{#if type}<button class="{ cls }" type="{ type }"><Children/></button>{:else}<a class="{ cls }" href="{ url }" target={ out ? '_blank' : null } rel={ out ? 'noopener' : null }><Children/></a>{/if}

@@ -1,0 +1,40 @@
+<!-- A thing to do: its 16:9 photo across the column, then in the reading column the title, the meta line ("Trip · Full day · $140"), the description, the operator's button when it has a link and the way back to the list. -->
+{#let
+  thing = page.entry
+  f = thing.fields
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-wide" eager={ true } width={ 1600 } sizes="(min-width: 82.5rem) 82.5rem, 100vw" />
+    <div class="mx-auto mt-space-xl grid max-w-reading gap-space-md">
+      <div class="grid gap-space-sm">
+        <h1 class="font-heading text-h1 text-balance text-scheme-heading">{ thing.title }</h1>
+        <ExploreMeta f={ f } />
+      </div>
+      {#if f.description}<div class="sites-prose">{ f.description }</div>{/if}
+      <div class="mt-space-xs flex flex-wrap items-center gap-x-space-lg gap-y-space-sm">
+        {#if f.link}<Button href={ f.link } external={ true }>{ settings.link_label }</Button>{/if}
+        <a class="inline-flex min-h-tap items-center gap-space-xs text-body-sm font-medium hover:underline hover:underline-offset-4" href="{ settings.back_href }"><Glyph name="arrow-left" cls="size-icon text-accent" />{ settings.back_label }</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Explore detail",
+  "description": "A thing to do: its photo, title, season and distance, the description and the operator's link.",
+  "kind": "Explore",
+  "icon": "compass",
+  "templates": ["experience"],
+  "settings": [
+    { "type": "text", "id": "link_label", "label": "Operator button label", "default": "Book with the operator", "info": "Shown when the experience has a link." },
+    { "type": "text", "id": "back_label", "label": "Back link label", "default": "Back to things to do" },
+    { "type": "url", "id": "back_href", "label": "Back link", "default": "/explore" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "paper" } }
+  ]
+}
+</schema>

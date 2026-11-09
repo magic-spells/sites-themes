@@ -1,0 +1,24 @@
+{
+  "sections": [
+    {
+      "id": "sg_mobile_menu",
+      "type": "mobile-menu",
+      "preset": "Default",
+      "settings": {
+        "menu": "main",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_cookie",
+      "type": "cookie-notice",
+      "preset": "Default",
+      "settings": {
+        "key": "hospitality-notice-2026-11",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+<!-- component: SectionHead -->
+<!-- props: heading text link_label link_href centred -->
+<!-- A section's head: the heading in h2, an optional standfirst under it, and the outlined "All …" pill at the right from 48rem, under the standfirst below. Anything the section passes in sits beside the pill. centred centres the block and stacks the pill under the standfirst. The gap to the content is xl. -->
+{#if heading}
+<div class="mb-space-xl flex gap-x-space-lg gap-y-space-md { centred ? 'flex-col items-center text-center' : 'flex-wrap items-end' }">
+  <div class="grid max-w-reading gap-space-xs { centred ? '' : 'me-auto max-md:w-full' }">
+    <h2 class="font-heading text-h2 font-semibold text-balance text-scheme-heading"><Accent text={ heading } rise={ true } /></h2>
+    {#if text}<p class="text-body-lg text-pretty text-scheme-muted">{ text }</p>{/if}
+  </div>
+  {#if link_label && link_href}<Button href={ link_href } tone="secondary" small={ true }>{ link_label }</Button>{/if}
+  <Children/>
+</div>
+{/if}

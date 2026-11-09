@@ -362,8 +362,8 @@ tarot-carousel[data-track]:not(:defined) tarot-slide {
 /* The lightbox: the ink scheme's background at 94%, the chrome in its text.
    Set on the overlay itself, which declares its own defaults. */
 .tarot-lightbox {
-	--tarot-lightbox-backdrop: color-mix(in srgb, #15171B 94%, transparent);
-	--tarot-lightbox-chrome-color: #EDEAE4;
+	--tarot-lightbox-backdrop: color-mix(in srgb, #171717 94%, transparent);
+	--tarot-lightbox-chrome-color: #ECECEA;
 	--tarot-lightbox-chrome-size: 2.75rem;
 	--tarot-lightbox-chrome-inset: 1rem;
 	--tarot-lightbox-image-height: calc(100dvh - 8rem);

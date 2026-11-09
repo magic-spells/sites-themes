@@ -81,6 +81,16 @@
       "title": "Legal",
       "items": [
         {
+          "id": "l_email",
+          "label": "Email",
+          "target": {
+            "kind": "url",
+            "url": "mailto:hello@junoreyes.example"
+          },
+          "open_in_new": false,
+          "children": []
+        },
+        {
           "id": "l_privacy",
           "label": "Privacy",
           "target": {
@@ -114,16 +124,6 @@
             "url": "https://are.na.example/juno-reyes"
           },
           "open_in_new": true,
-          "children": []
-        },
-        {
-          "id": "s_email",
-          "label": "Email",
-          "target": {
-            "kind": "url",
-            "url": "mailto:hello@junoreyes.example"
-          },
-          "open_in_new": false,
           "children": []
         }
       ]
@@ -881,7 +881,7 @@
             "cover_alt": "Tidewater, the cover",
             "gallery": "tidewater",
             "body": "<p>The studio throws everything by hand, so the mark had to be made the same way: one stroke, no cleanup. We drew it a few hundred times and kept the eleventh.</p><p>The signage uses the same stroke at the scale of a doorway, routed into oak and left unpainted.</p>",
-            "link": "",
+            "link": "https://ceramicamare.example",
             "featured": true,
             "order": 1
           }
@@ -923,7 +923,7 @@
             "body": "<p>The workshop sells by the metre and by the blanket, so the labels had to work at both sizes.</p><p>The mark is one line that passes over and under itself, woven into the cloth labels and printed on the boxes.</p>",
             "link": "",
             "featured": false,
-            "order": 3
+            "order": 7
           }
         },
         {
@@ -943,7 +943,7 @@
             "body": "<p>A cookbook built around one table and the people who sat at it over a year. Every dinner has a drawing and a page of notes.</p><p>The drawings were made on the night, in ink, and printed at the size they were drawn.</p>",
             "link": "https://press.example/the-long-table",
             "featured": true,
-            "order": 4
+            "order": 3
           }
         },
         {
@@ -963,7 +963,7 @@
             "body": "<p>Fifty-two walks around the city, one for each Sunday, with a map, a route and a blank page for notes.</p><p>The book is sized for a coat pocket and printed on paper that takes a pencil.</p>",
             "link": "",
             "featured": false,
-            "order": 5
+            "order": 8
           }
         },
         {
@@ -983,7 +983,7 @@
             "body": "<p>A small zine about the stretch of coast south of the city, drawn over one summer.</p><p>Printed on a risograph in two colours and folded by hand.</p>",
             "link": "",
             "featured": false,
-            "order": 6
+            "order": 9
           }
         },
         {
@@ -1003,7 +1003,7 @@
             "body": "<p>Every morning for a month I drew the same cup on the same sill before starting work.</p><p>The light changed more than the cup did. The drawings hang in the order they were made.</p>",
             "link": "",
             "featured": true,
-            "order": 7
+            "order": 4
           }
         },
         {
@@ -1023,7 +1023,7 @@
             "body": "<p>Drawn on the morning ferry over a winter, each one finished before the boat docked.</p><p>The wash went on later, from memory, in the studio.</p>",
             "link": "",
             "featured": true,
-            "order": 8
+            "order": 5
           }
         },
         {
@@ -1043,7 +1043,7 @@
             "body": "<p>Rooms in friends' houses, drawn while they were out.</p><p>Each drawing took an afternoon and was left unfinished where the light ran out.</p>",
             "link": "",
             "featured": false,
-            "order": 9
+            "order": 10
           }
         },
         {
@@ -1063,7 +1063,7 @@
             "body": "<p>A group show about weather, with twelve of my drawings of rain across one wall.</p><p>The drawings were hung low, at the height of a child, so you look down into them.</p>",
             "link": "https://galerianorte.example/paper-weather",
             "featured": true,
-            "order": 10
+            "order": 6
           }
         },
         {
@@ -1499,7 +1499,7 @@
           "cover_alt": "Tidewater, the cover",
           "gallery": "tidewater",
           "body": "<p>The studio throws everything by hand, so the mark had to be made the same way: one stroke, no cleanup. We drew it a few hundred times and kept the eleventh.</p><p>The signage uses the same stroke at the scale of a doorway, routed into oak and left unpainted.</p>",
-          "link": "",
+          "link": "https://ceramicamare.example",
           "featured": true,
           "order": 1
         }
@@ -1557,7 +1557,7 @@
           "body": "<p>The workshop sells by the metre and by the blanket, so the labels had to work at both sizes.</p><p>The mark is one line that passes over and under itself, woven into the cloth labels and printed on the boxes.</p>",
           "link": "",
           "featured": false,
-          "order": 3
+          "order": 7
         }
       }
     },
@@ -1585,7 +1585,7 @@
           "body": "<p>A cookbook built around one table and the people who sat at it over a year. Every dinner has a drawing and a page of notes.</p><p>The drawings were made on the night, in ink, and printed at the size they were drawn.</p>",
           "link": "https://press.example/the-long-table",
           "featured": true,
-          "order": 4
+          "order": 3
         }
       }
     },
@@ -1613,7 +1613,7 @@
           "body": "<p>Fifty-two walks around the city, one for each Sunday, with a map, a route and a blank page for notes.</p><p>The book is sized for a coat pocket and printed on paper that takes a pencil.</p>",
           "link": "",
           "featured": false,
-          "order": 5
+          "order": 8
         }
       }
     },
@@ -1641,7 +1641,7 @@
           "body": "<p>A small zine about the stretch of coast south of the city, drawn over one summer.</p><p>Printed on a risograph in two colours and folded by hand.</p>",
           "link": "",
           "featured": false,
-          "order": 6
+          "order": 9
         }
       }
     },
@@ -1669,7 +1669,7 @@
           "body": "<p>Every morning for a month I drew the same cup on the same sill before starting work.</p><p>The light changed more than the cup did. The drawings hang in the order they were made.</p>",
           "link": "",
           "featured": true,
-          "order": 7
+          "order": 4
         }
       }
     },
@@ -1697,7 +1697,7 @@
           "body": "<p>Drawn on the morning ferry over a winter, each one finished before the boat docked.</p><p>The wash went on later, from memory, in the studio.</p>",
           "link": "",
           "featured": true,
-          "order": 8
+          "order": 5
         }
       }
     },
@@ -1725,7 +1725,7 @@
           "body": "<p>Rooms in friends' houses, drawn while they were out.</p><p>Each drawing took an afternoon and was left unfinished where the light ran out.</p>",
           "link": "",
           "featured": false,
-          "order": 9
+          "order": 10
         }
       }
     },
@@ -1753,7 +1753,7 @@
           "body": "<p>A group show about weather, with twelve of my drawings of rain across one wall.</p><p>The drawings were hung low, at the height of a child, so you look down into them.</p>",
           "link": "https://galerianorte.example/paper-weather",
           "featured": true,
-          "order": 10
+          "order": 6
         }
       }
     },

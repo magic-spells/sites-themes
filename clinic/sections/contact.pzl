@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- The contact page: the heading, the standfirst and the Contact email as a text link over the contact form (name, email, subject, message) on a white card in seven parts; every location's hours card stacked in five. -->
 {#let locations = content.locations.entries | sort('fields.order') | slice(0, 4)}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">

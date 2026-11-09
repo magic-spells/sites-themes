@@ -1,5 +1,4 @@
-<!-- TODO sync with Figma -->
-<!-- One location: its name in h2, then its card (hours, address, phone) in five parts beside, in seven, the 4:3 map (the embedded map when set and asked for, else the map image) or, without the map, its photo. The location in the setting, else the one whose page this is, else the first. -->
+<!-- One location: its name in h2, then its card (hours, address, phone), centred down five parts beside, in seven, the 4:3 map (the embedded map when set and asked for, else the map image) or, without the map, its photo. The location in the setting, else the one whose page this is, else the first. -->
 {#let
   here = page.entry ? content.locations.entries | find('id', page.entry.id) : null
   loc = settings.location || here || (content.locations.entries | sort('fields.order') | first)
@@ -9,7 +8,7 @@
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading || loc.title } text={ f.description } />
-    <div class="grid items-stretch gap-space-lg md:grid-cols-picture-text">
+    <div class="grid items-center gap-space-sm md:grid-cols-picture-text md:gap-space-lg">
       <HoursCard entry={ loc } bare={ !settings.show_hours } />
       <div>
         {#if settings.show_map && settings.map == 'embed' && f.map_embed_url}

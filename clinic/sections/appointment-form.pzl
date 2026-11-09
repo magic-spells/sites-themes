@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- The Book page: the full appointment form on a white card in seven parts, and in five every location's hours card (locations) or a 4:5 photo (photo). The page that works without JavaScript, where every ask button lands. -->
 {#let locations = content.locations.entries | sort('fields.order') | slice(0, 4)}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">

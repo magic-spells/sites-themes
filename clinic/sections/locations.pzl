@@ -1,12 +1,11 @@
-<!-- TODO sync with Figma -->
-<!-- Two or more offices as hours cards, three across from 64rem, two from 48rem, one on phones, each under its 4:3 map image (or its photo), linked to the location's page. -->
+<!-- Two or more offices, centred under a centred head: each a 4:3 map image (or its photo) linked to the location's page over its hours card, at most 26.25rem wide, as many across as fit from 48rem, one on phones. -->
 {#let locs = content.locations.entries | sort('fields.order') | slice(0, 12)}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
-    <SectionHead heading={ settings.heading } text={ settings.text } />
-    <ul class="grid gap-space-lg md:grid-cols-2 lg:grid-cols-3">
+    <SectionHead heading={ settings.heading } text={ settings.text } center />
+    <ul class="flex flex-wrap justify-center gap-space-lg">
       {#for loc in locs}
-        <li class="grid content-start gap-space-md">
+        <li class="grid grow basis-full content-start gap-space-md md:max-w-card md:basis-text">
           <a class="block" href="/locations/{ loc.handle }" aria-label="{ loc.title }"><Well asset={ loc.fields.map_image || loc.fields.image } alt={ loc.fields.map_image_alt } ratio="aspect-map" width={ 800 } sizes="(min-width: 64rem) 26rem, (min-width: 48rem) 50vw, 100vw" /></a>
           <HoursCard entry={ loc } />
         </li>

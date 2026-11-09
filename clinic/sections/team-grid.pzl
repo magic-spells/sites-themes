@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- The clinicians as cards: the 4:5 portrait, the name with the letters, the role; four across from 64rem (or three), three from 48rem, two on phones, or one swiping row on phones. Featured, all, or a group: the people whose role has (or lacks) the group's word, so a large practice shows Dentists and Hygienists as two bands. A location narrows any of them; on a location's own page it narrows to that location. -->
 {#let
   team = content.team.entries | sort('fields.order')
@@ -12,7 +11,7 @@
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link }>
-      <ul class="grid gap-x-space-md gap-y-space-xl md:grid-cols-3 md:gap-x-space-lg { settings.columns == '3' ? '' : 'lg:grid-cols-4' } { row ? 'max-md:-mx-gutter max-md:flex max-md:snap-x max-md:snap-mandatory max-md:overflow-x-auto max-md:px-gutter max-md:scroll-px-gutter' : 'grid-cols-2' }">
+      <ul class="grid gap-x-space-sm gap-y-space-xl md:grid-cols-3 md:gap-x-space-lg { settings.columns == '3' ? '' : 'lg:grid-cols-4' } { row ? 'max-md:-mx-gutter max-md:flex max-md:snap-x max-md:snap-mandatory max-md:overflow-x-auto max-md:px-gutter max-md:scroll-px-gutter' : 'grid-cols-2' }">
         {#for entry in people}
           {#if settings.source != 'group' || !word || contains(entry.fields.role | downcase, word) == (settings.match != 'lacks')}
           <li class="{ row ? 'max-md:w-3/5 max-md:shrink-0 max-md:snap-start' : '' }"><ClinicianCard entry={ entry } /></li>

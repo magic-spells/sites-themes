@@ -138,6 +138,7 @@
 	--spacing-button-x: var(--sites-button-padding-x);
 	--spacing-control: 3rem;
 	--spacing-tap: 2.75rem;
+	--spacing-chip: 0.75rem;
 	--spacing-icon-sm: 1rem;
 	--spacing-icon: 1.25rem;
 	--spacing-glyph: 1.5rem;
@@ -164,6 +165,9 @@
 	/* A picture beside text: the text takes seven parts, the picture five. */
 	--grid-template-columns-text-picture: 7fr 5fr;
 	--grid-template-columns-picture-text: 5fr 7fr;
+	/* A service row: icon, name, Details; from 48rem the duration and a price column join. */
+	--grid-template-columns-service-row: auto 1fr auto;
+	--grid-template-columns-service-row-md: auto 1fr auto 10.5rem auto;
 	/* The footer's columns: brand, services, patients, visit. */
 	--grid-template-columns-footer: 4fr 2fr 3fr 3fr;
 	--opacity-dots-inactive: 35%;

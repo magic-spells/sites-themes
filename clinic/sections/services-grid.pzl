@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- Services as cards, three across from 64rem (or two or four), two from 48rem, one on phones: the icon (or the 3:2 photo with image), the name, the summary, the arrow and the price. Featured, all, or one category's, in their order, up to the limit. -->
 {#let
   all = content.services.entries | sort('fields.order')

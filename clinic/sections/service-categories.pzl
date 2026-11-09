@@ -1,4 +1,4 @@
-<!-- The categories, three across from 48rem under the section head and its rule: the category's icon at 3rem in the link colour, the name in h3, the line in Meta and "All <category>" underlined, to the category's tab on the Services page. Open: on the band. Cards: each on a card with a hairline. -->
+<!-- The categories, three across from 48rem under the section head and its rule: the category's icon at 3rem in the link colour, the name in h3, the line in Meta and "All <category>" underlined, to the category's tab on the Services page. Open: on the band. Cards: each on a surface-2 card with a hairline, the icon in the larger tint circle. -->
 {#let
   categories = content.categories.entries | sort('fields.order') | slice(0, 6)
   card = settings.layout == 'cards'
@@ -6,11 +6,11 @@
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.services_path } rule={ !card }>
-      <ul class="grid gap-space-xl md:grid-cols-3 { card ? 'md:gap-space-lg' : '' }">
+      <ul class="grid md:grid-cols-3 { card ? 'gap-space-sm md:gap-space-lg' : 'gap-space-xl' }">
         {#for category in categories}
           {#let f = category.fields}
-          <li class="grid content-start justify-items-start gap-space-sm { card ? 'rounded-card border border-scheme-border p-space-lg' : '' } { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
-            <Glyph name={ f.icon || 'tooth' } cls="mb-space-xs size-glyph-xl text-link" />
+          <li class="grid content-start justify-items-start gap-space-sm { card ? 'rounded-card border border-scheme-border bg-scheme-surface-2 p-space-xl' : '' } { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+            {#if card}<IconCircle icon={ f.icon || 'tooth' } size="lg" />{:else}<Glyph name={ f.icon || 'tooth' } cls="mb-space-xs size-glyph-xl text-link" />{/if}
             <h3 class="font-heading text-h3">{ category.title }</h3>
             {#if f.description}<p class="text-body-sm text-pretty text-scheme-muted">{ f.description }</p>{/if}
             <a class="mt-space-xs text-body-sm font-semibold underline underline-offset-4 hover:text-link" href="{ settings.services_path }?category={ category.handle }">{ t('all_category', { name: category.title | downcase }) }</a>

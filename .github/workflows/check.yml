@@ -4,10 +4,15 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
-  catalog:
+  registry:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Check catalog.json
-        run: sh scripts/check-catalog.sh
+      - name: Check theme versions against the registry
+        env:
+          SITES_TOKEN: ${{ secrets.SITES_TOKEN }}
+        run: sh scripts/check-registry.sh

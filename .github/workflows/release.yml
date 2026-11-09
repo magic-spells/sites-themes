@@ -5,7 +5,9 @@ name: Release
 # its SHA-256 to a release named after the tag. Several such tags may sit on
 # one commit. The repo itself has no version.
 #
-# Sites pins a theme's zip by version and hash, so a published zip must never
+# The tag is provenance: Sites installs from its registry, where a release is
+# published through the Publisher page or scripts/publish-history.sh, and
+# scripts/zip.sh builds the same bytes locally. A published zip must never
 # change: fix a mistake with a new tag, never by re-uploading.
 
 on:
@@ -42,16 +44,8 @@ jobs:
             echo "::error::tag $tag: $name/settings/theme.json says version $theme_version"
             exit 1
           fi
-          listed=$(jq -r --arg n "$name" '.themes[] | select(.name == $n) | .version' catalog.json)
-          if [ -n "$listed" ] && [ "$listed" != "$version" ]; then
-            echo "::error::tag $tag: catalog.json lists $name at $listed"
-            exit 1
-          fi
           echo "name=$name" >> "$GITHUB_OUTPUT"
           echo "version=$version" >> "$GITHUB_OUTPUT"
-
-      - name: Check catalog.json
-        run: sh scripts/check-catalog.sh
 
       - name: Build the zip
         id: zip
@@ -61,15 +55,10 @@ jobs:
         run: |
           set -eu
           file=$NAME-v$VERSION
-          # git archive takes exactly the committed tree, so nothing a local
-          # install or build left behind can reach the zip. HEAD:<name> is the
-          # folder's own tree, so settings/ and data/ land at the zip root. A tree has
-          # no date of its own: --mtime pins the commit's, and zip entry times
-          # are local time, so TZ=UTC too; then the same commit always gives
-          # the same bytes and the same hash, here or on a laptop.
-          TZ=UTC git archive --format=zip --mtime="$(git log -1 --format=%cI HEAD)" \
-            -o "$RUNNER_TEMP/$file.zip" "HEAD:$NAME"
-          (cd "$RUNNER_TEMP" && sha256sum "$file.zip" | cut -d ' ' -f 1 > "$file.sha256")
+          # scripts/zip.sh is the one recipe, so a zip built on a laptop at the tag
+          # has the same bytes and the same hash as this one.
+          (cd "$RUNNER_TEMP" && sh "$GITHUB_WORKSPACE/scripts/zip.sh" "$NAME" &&
+            sha256sum "$file.zip" | cut -d ' ' -f 1 > "$file.sha256")
           # The release notes are this version's section of the theme's changelog.
           awk -v v="$VERSION" '/^## / { on = ($2 == v); next } on' "$NAME/CHANGELOG.md" > "$RUNNER_TEMP/notes.md"
           if [ ! -s "$RUNNER_TEMP/notes.md" ]; then

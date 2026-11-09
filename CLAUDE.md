@@ -13,16 +13,13 @@ The base themes for Magic Spells Sites, one folder per theme. The repo is public
   create tags and never publish. A published zip never changes: a mistake is fixed with a new version.
 - **Branches.** Feature branches off `main`, merged back to `main`. There are no release
   branches.
-- **A theme change bumps that theme** in the same change: its `settings/theme.json` `version`, a
-  `## <version>` section in its `CHANGELOG.md` (the release notes come from it) and its
-  `catalog.json` entry. The tag follows the merge, so until it is pushed the entry names a
-  release that does not exist yet and the store cannot install that version: tag right after
-  merging.
-- **`catalog.json` is the Sites theme store's feed.** One entry per theme the store sells;
-  `minimal` (the engine's scaffold) is never in it. An entry's `version` is a tagged release
-  equal to `settings/theme.json`'s, and its `zip` is that release's asset URL. `sha256` may stay `null`:
-  the release's `.sha256` asset is the hash of record. `sh scripts/check-catalog.sh` checks the
-  entries against the theme folders (not that the release exists), in CI and before every release.
+- **A theme change bumps that theme** in the same change: its `settings/theme.json` `version` and
+  a `## <version>` section in its `CHANGELOG.md` (the release notes come from it).
+- **The Sites registry owns releases.** The store installs what is published there, through the
+  Publisher page or `scripts/publish-history.sh`; listing copy lives on the package page in Sites.
+  The tag is provenance: its zip and `.sha256`, which `scripts/zip.sh` rebuilds byte for byte.
+  `sh scripts/check-registry.sh` checks each folder's version is published (skipped without
+  `SITES_TOKEN`, a read-only key for `GET /v1/themes/catalog`, never the publish key), so after merging a bump, tag and publish it.
 - **Tailwind first.** Every token reaches markup as a utility through `styles/theme.css`'s
   `@theme`. No arbitrary values (`p-[13px]`, `bg-[#070c16]`): add the token to `settings/design.json`
   first. No `<style>` in a `.pzl` file. Hand-written CSS only for what utilities cannot express.

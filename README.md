@@ -61,9 +61,12 @@ at the zip root) and `company-v0.1.0.sha256`. Several themes can be tagged on th
 at most three at a time, since GitHub runs no workflow for a push of more than three. Git cannot
 hold a plain tag `company` beside `company/v…`, so a bare theme name is never a tag.
 
-[`catalog.json`](catalog.json) is what the Sites theme store reads: one entry per theme it
-sells, each naming a released version and that release's zip. `minimal` is not in it; it is
-the engine's scaffold. `scripts/check-catalog.sh` checks the catalog against the theme folders.
+The tag is provenance. What the Sites theme store installs is the release published to the Sites
+registry, through the Publisher page or `scripts/publish-history.sh`, which publishes every
+tagged version not yet there. `scripts/zip.sh <name> [<ref>]` builds the same zip as the tag's
+release asset, byte for byte. `scripts/check-registry.sh` checks that each theme's version is
+published (skipped without `SITES_TOKEN`, which must be a read-only key for
+`GET /v1/themes/catalog`, never the publish key).
 
 A published zip never changes. A mistake is fixed with a new version.
 

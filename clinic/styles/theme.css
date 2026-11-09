@@ -156,7 +156,6 @@
 	--container-text: 20rem;
 	/* An hours or location card at its widest. */
 	--container-card: 26.25rem;
-	--container-drawer: 23.4375rem;
 	--container-panel: 40rem;
 	--aspect-photo: 3 / 2;
 	--aspect-portrait: 4 / 5;
@@ -168,8 +167,6 @@
 	/* A service row: icon, name, Details; from 48rem the duration and a price column join. */
 	--grid-template-columns-service-row: auto 1fr auto;
 	--grid-template-columns-service-row-md: auto 1fr auto 10.5rem auto;
-	/* The footer's columns: brand, services, patients, visit. */
-	--grid-template-columns-footer: 4fr 2fr 3fr 3fr;
 	--opacity-dots-inactive: 35%;
 	--opacity-badge: 70%;
 	--transition-duration-fast: 150ms;

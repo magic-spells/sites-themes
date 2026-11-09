@@ -1,8 +1,8 @@
 <!-- component: ValueProp -->
-<!-- One reason to call, from a value-props block. card: a tall card on surface-2, the icon in an 8rem tint circle, the title and line centred, the arrow bottom right. column: the icon in a 3rem circle top left, the title and line under it, for the row of four. -->
+<!-- One reason to call, from a value-props block. card: a tall card on surface-2, the icon in an 8rem tint circle, the title and line centred, the arrow bottom right. column: the icon in a 3rem circle top left, the title and line under it, one cell of the row of four on the band's background. -->
 {#let b = block.settings}
 {#if layout == 'column'}
-<li class="grid content-start gap-space-sm" data-block={ editor_id }>
+<li class="grid content-start gap-space-sm bg-scheme-background p-space-xl" data-block={ editor_id }>
   <IconCircle icon={ b.icon } />
   <h3 class="text-h4 font-semibold">{ b.title }</h3>
   <p class="text-body-sm text-pretty text-scheme-muted">{ b.text }</p>

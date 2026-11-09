@@ -1,12 +1,12 @@
 <!-- component: Coupon -->
-<!-- An offer on a chalk card split by a dashed rule: the amount over "coupon" left, the job, the fine print, the expiry date and one button right (the offer's link, or the estimate sheet). ticket adds a dashed inset. -->
+<!-- An offer on a chalk card split by a dashed rule: the amount over "coupon" left (above on phones), the job, the fine print, the expiry date and one navy button right (the offer's link, or the estimate sheet). ticket adds a dashed inset. -->
 {#let f = entry.fields}
-<article class="sites-scheme-chalk grid grid-cols-coupon rounded-card bg-scheme-background text-scheme-foreground { ticket ? 'outline-1 outline-dashed -outline-offset-8 outline-scheme-border' : '' }">
-  <p class="grid content-center justify-items-center border-e border-dashed border-scheme-border p-space-lg text-center"><span class="font-heading text-h2 case-heading tnum">{ f.amount }</span><span class="text-body-sm text-scheme-muted">{ t('coupon') }</span></p>
+<article class="sites-scheme-chalk grid rounded-card md:grid-cols-coupon bg-scheme-background text-scheme-foreground { ticket ? 'outline-1 outline-dashed -outline-offset-8 outline-scheme-border' : '' }">
+  <p class="grid content-center justify-items-center border-dashed border-scheme-border p-space-lg max-md:border-b md:border-e text-center"><span class="font-heading text-h2 case-heading tnum">{ f.amount }</span><span class="text-body-sm text-scheme-muted">{ t('coupon') }</span></p>
   <div class="grid content-start justify-items-start gap-space-xs p-space-lg">
     <h3 class="text-h4 font-semibold">{ f.summary || entry.title }</h3>
     {#if f.fine_print}<p class="text-body-sm text-scheme-muted">{ f.fine_print }</p>{/if}
     {#if f.expires}<p class="text-body-sm text-scheme-muted">{ t('expires', { date: f.expires | date }) }</p>{/if}
-    {#if f.link}<Button href={ f.link } small>{ t('get_coupon') }</Button>{:else}<Button ask small>{ t('get_coupon') }</Button>{/if}
+    {#if f.link}<Button href={ f.link } small cls="sites-scheme-brass">{ t('get_coupon') }</Button>{:else}<Button ask small cls="sites-scheme-brass">{ t('get_coupon') }</Button>{/if}
   </div>
 </article>

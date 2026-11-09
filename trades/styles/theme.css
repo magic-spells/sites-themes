@@ -170,12 +170,18 @@
 	--spacing-circle-lg: 4rem;
 	--spacing-circle-xl: 8rem;
 	--spacing-header: 5rem;
+	/* The cover hero's height, and how far the split hero's photo runs past
+	   the column to the screen's right edge. */
+	--spacing-hero: 80svh;
+	--spacing-bleed: max(var(--trades-gutter), calc((100vw - var(--container-column)) / 2));
 	--spacing-call-bar: 5rem;
 	--spacing-textarea: 10rem;
 	--container-column: 82.5rem;
 	--container-reading: 40rem;
 	--container-text: 30rem;
 	--container-summary: 26rem;
+	/* A plan card at its widest. */
+	--container-card: 26.25rem;
 	--container-drawer: 23.4375rem;
 	--container-panel: 40rem;
 	--aspect-photo: 3 / 2;

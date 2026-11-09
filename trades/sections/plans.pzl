@@ -1,5 +1,5 @@
 <!-- TODO sync with Figma -->
-<!-- Stub (code B builds it): the section head and the plans as cards. -->
+<!-- Maintenance plans: the section head, then the plans as cards, two (or three from 64rem) across, the row centred and each card at most 26.25rem; stacked on phones. -->
 {#let
   all = content.plans.entries | sort('fields.order')
   plans = (settings.source == 'featured' ? all | where('fields.featured') : all) | slice(0, 12)
@@ -7,7 +7,7 @@
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } />
-    <ul class="grid gap-space-md md:grid-cols-2 { settings.columns == 2 ? '' : 'lg:grid-cols-3' }">{#for entry in plans}<li><PlanCard entry={ entry } /></li>{/for}</ul>
+    <ul class="mx-auto grid gap-space-md md:w-fit md:grid-cols-2 { settings.columns == 3 ? 'lg:grid-cols-3' : '' }">{#for entry in plans}<li><PlanCard entry={ entry } /></li>{/for}</ul>
   </div>
 </section>
 

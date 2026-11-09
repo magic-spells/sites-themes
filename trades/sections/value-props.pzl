@@ -1,11 +1,13 @@
 <!-- TODO sync with Figma -->
-<!-- Stub (code B builds it): the section head and the reasons from the blocks, as tall cards or one row of columns. -->
+<!-- The reasons to call. Cards: the section head, then tall surface-2 cards three across from 64rem, two from 48rem, stacked on phones, equal heights. Row: no head, one chalk card of four columns split by hairlines (two by two from 48rem, stacked on phones), for under a hero. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
-    <SectionHead heading={ settings.heading } text={ settings.text } />
-    <ul class="grid gap-space-md md:grid-cols-2 { settings.layout == 'row' ? 'lg:grid-cols-4' : 'lg:grid-cols-3' }">
-      {#for block in blocks | slice(0, settings.layout == 'row' ? 4 : 12)}<ValueProp block={ block } editor_id={ block.editor_id } layout={ settings.layout == 'row' ? 'column' : 'card' } />{/for}
-    </ul>
+    {#if settings.layout == 'row'}
+      <ul class="sites-scheme-chalk grid gap-px overflow-hidden rounded-card border border-scheme-border bg-scheme-border text-scheme-foreground md:grid-cols-2 lg:grid-cols-4">{#for block in blocks | slice(0, 4)}<ValueProp block={ block } editor_id={ block.editor_id } layout="column" />{/for}</ul>
+    {:else}
+      <SectionHead heading={ settings.heading } text={ settings.text } />
+      <ul class="grid gap-space-md md:grid-cols-2 lg:grid-cols-3">{#for block in blocks | slice(0, 6)}<ValueProp block={ block } editor_id={ block.editor_id } layout="card" />{/for}</ul>
+    {/if}
   </div>
 </section>
 

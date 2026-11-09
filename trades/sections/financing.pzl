@@ -1,18 +1,24 @@
 <!-- TODO sync with Figma -->
-<!-- Stub (code B builds it): the heading, the Yard financing line, the lender button and the fine print. -->
-{#let s = site.settings}
+<!-- Pay over time, from the Yard financing line and link; nothing when both are empty. Band: one row from 48rem, the heading, the line over the fine print, the lender button. Split: the same copy stacked, seven parts to five beside the photo. -->
+{#let
+  s = site.settings
+  split = settings.layout == 'split'
+}
+{#if s.financing_url || s.financing_line}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto flex max-w-column flex-wrap items-center justify-between gap-space-lg">
-    <div class="grid gap-space-xs">
-      <h2 class="font-heading text-h2 case-heading text-scheme-heading">{ settings.heading }</h2>
-      {#if s.financing_line}<p class="text-body-lg text-scheme-muted">{ s.financing_line }</p>{/if}
-    </div>
-    <div class="grid gap-space-xs">
+  <div class="mx-auto grid max-w-column items-center gap-space-xl { split ? 'md:grid-cols-text-picture md:gap-space-3xl' : '' }">
+    <div class="flex flex-col items-start gap-space-lg { split ? '' : 'md:flex-row md:items-center md:gap-space-xl' }">
+      <h2 class="flex-1 font-heading text-h2 case-heading text-balance text-scheme-heading">{ settings.heading }</h2>
+      <div class="grid flex-1 gap-space-2xs">
+        {#if s.financing_line}<p class="text-body-lg text-pretty">{ s.financing_line }</p>{/if}
+        {#if settings.fine_print}<p class="text-body-sm text-scheme-muted">{ settings.fine_print }</p>{/if}
+      </div>
       {#if s.financing_url}<Button href={ s.financing_url }>{ settings.button_label }</Button>{/if}
-      {#if settings.fine_print}<p class="text-body-sm text-scheme-muted">{ settings.fine_print }</p>{/if}
     </div>
+    {#if split}<Well asset={ settings.image } alt={ settings.image_alt } sizes="(min-width: 48rem) 40vw, 100vw" />{/if}
   </div>
 </section>
+{/if}
 
 <schema>
 {

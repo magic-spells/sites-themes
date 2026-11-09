@@ -1,14 +1,24 @@
 <!-- TODO sync with Figma -->
-<!-- Stub (code B builds it): the heading, the Yard confirm line and the routes; inline adds the estimate form on a chalk card. -->
-<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column items-center gap-space-xl { settings.form == 'inline' ? 'md:grid-cols-2' : '' }">
-    <div class="grid gap-space-md">
+<!-- The band every page ends on, with a hairline at its foot above the footer. None: the Display heading, the Yard confirm line and the routes centred, the proof row under a rule. Inline: five parts to seven from 48rem, the heading, the routes stacked and the licence lines left; the estimate form on a chalk card right, the confirm line under its button. -->
+{#let s = site.settings}
+<section class="border-b border-scheme-border bg-scheme-background px-gutter py-section text-scheme-foreground">
+  {#if settings.form == 'inline'}
+  <div class="mx-auto grid max-w-column items-center gap-space-xl md:grid-cols-picture-text md:gap-space-3xl">
+    <div class="grid justify-items-start gap-space-lg">
       <h2 class="font-heading text-display case-heading text-balance text-scheme-heading">{ settings.heading }</h2>
-      {#if site.settings.confirm_line}<p class="text-body-lg text-scheme-muted">{ site.settings.confirm_line }</p>{/if}
-      <Routes />
+      <Routes stack />
+      {#if s.licence_lines}<p class="grid border-t border-scheme-border pt-space-md text-body-sm font-semibold tnum">{#for line in s.licence_lines | split('\n')}<span>{ line }</span>{/for}</p>{/if}
     </div>
-    {#if settings.form == 'inline'}<div class="sites-scheme-chalk rounded-card bg-scheme-background p-space-xl text-scheme-foreground"><EstimateFields prefix="cta-{ section.id }" /></div>{/if}
+    <div class="sites-scheme-chalk rounded-card border border-scheme-border bg-scheme-background p-space-xl text-scheme-foreground"><EstimateFields prefix="cta-{ section.id }" /></div>
   </div>
+  {:else}
+  <div class="mx-auto grid max-w-column justify-items-center gap-space-lg text-center">
+    <h2 class="font-heading text-display case-heading text-balance text-scheme-heading">{ settings.heading }</h2>
+    {#if s.confirm_line}<p class="text-body-lg text-pretty text-scheme-muted">{ s.confirm_line }</p>{/if}
+    <Routes />
+    <div class="grid w-full justify-items-center border-t border-scheme-border pt-space-lg"><ProofRow /></div>
+  </div>
+  {/if}
 </section>
 
 <schema>

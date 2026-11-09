@@ -1,7 +1,7 @@
 <!-- component: Routes -->
-<!-- The two ways in: the ask button and the phone as a tel: link in the Phone style, the Yard phone line under it after an accent dot. Side by side from 48rem; stacked on phones with the button full width. -->
+<!-- The two ways in: the ask button and the phone as a tel: link in the Phone style, the Yard phone line under it after an accent dot. Side by side from 48rem; stacked on phones, or always with stack, the button full width. -->
 {#let s = site.settings}
-<div class="flex flex-col gap-space-md md:flex-row md:items-center md:gap-space-lg">
+<div class="flex flex-col gap-space-md { stack ? '' : 'md:flex-row md:items-center md:gap-space-lg' }">
   <Button ask />
   {#if s.phone}
   <a class="grid gap-space-2xs justify-self-start" href="tel:{ s.phone | replace(' ', '') }">

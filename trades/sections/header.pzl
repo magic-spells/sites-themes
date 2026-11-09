@@ -19,7 +19,7 @@
                 <li>
                   <dropdown-component trigger="both" close-delay="150">
                     <dropdown-trigger class="flex min-h-header cursor-pointer items-center gap-space-2xs px-space-sm">{ item.label }<Glyph name="chevron-down" cls="size-icon-sm" /></dropdown-trigger>
-                    <dropdown-panel class="border-b border-scheme-border bg-scheme-background px-gutter py-space-xl text-scheme-foreground" wide>
+                    <dropdown-panel class="border-y border-scheme-border bg-scheme-background px-gutter py-space-xl text-scheme-foreground" wide>
                       <div class="mx-auto grid max-w-column gap-space-md">
                         <ul class="columns-2 gap-space-3xl">
                           {#for entry in services}<ServiceRow entry={ entry } compact />{/for}

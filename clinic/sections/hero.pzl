@@ -17,10 +17,7 @@
         </div>
       </div>
       {#if layout == 'panel'}
-        <div class="sites-scheme-white grid gap-space-md rounded-card border border-scheme-border bg-scheme-background p-space-xl text-scheme-foreground">
-          {#if settings.form_heading}<h2 class="font-heading text-card">{ settings.form_heading }</h2>{/if}
-          <AppointmentFields prefix="hero-{ section.id }" compact />
-        </div>
+        <FormCard heading={ settings.form_heading }><AppointmentFields prefix="hero-{ section.id }" compact /></FormCard>
       {:else if !cover}
         <div class="max-md:order-first"><Well asset={ settings.image } alt={ settings.image_alt } ratio={ settings.ratio == 'photo' ? 'aspect-photo' : 'aspect-photo md:aspect-portrait' } width={ 1200 } sizes="(min-width: 48rem) 40vw, 100vw" eager /></div>
       {/if}

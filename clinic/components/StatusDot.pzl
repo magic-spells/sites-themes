@@ -1,4 +1,0 @@
-<!-- component: StatusDot -->
-<!-- The one dot in the theme: the new-patient status before its line, green while accepting, amber for a waiting list, grey when closed. Nothing without the line. -->
-{#let s = site.settings}
-{#if s.new_patients_line}<span class="flex items-center gap-space-xs"><span class="size-dot shrink-0 rounded-full { s.new_patients == 'waitlist' ? 'bg-scheme-warning' : (s.new_patients == 'closed' ? 'bg-grey-medium' : 'bg-scheme-success') }" aria-hidden="true"></span>{ s.new_patients_line }</span>{/if}

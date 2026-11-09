@@ -1,12 +1,12 @@
 <!-- component: HoursCard -->
-<!-- A location on a surface-2 card: the name in h4, the hours as a two-column table in Meta (each line's last word is the times, the rest the days; no day is marked, there is no clock), the address and phone in Fee, the fax in Meta, the note, then Directions and Call as text links. -->
+<!-- A location on a surface-2 card: the name in h4, the hours as a two-column table in Meta (each line's last word is the times, the rest the days; no day is marked, there is no clock), the address and phone in Fee, the fax in Meta, the note, then Directions and Call as text links. bare leaves the hours out. -->
 {#let
   f = entry.fields
   tel = f.phone | replace(' ', '')
 }
 <article class="flex h-full flex-col gap-space-md rounded-card bg-scheme-surface-2 p-space-lg">
   <h3 class="font-heading text-h4">{ entry.title }</h3>
-  {#if f.hours}
+  {#if f.hours && !bare}
     <table class="w-full text-body-sm tnum">
       <caption class="sr-only">{ t('hours') }</caption>
       <tbody>

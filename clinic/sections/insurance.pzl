@@ -25,6 +25,7 @@
   "icon": "shield-check",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Insurance" },
+    { "type": "select", "id": "head_align", "label": "Heading", "default": "left", "options": [{ "value": "left", "label": "Left" }, { "value": "center", "label": "Centred" }] },
     { "type": "select", "id": "layout", "label": "Layout", "default": "list", "options": [
       { "value": "list", "label": "Names and notes" },
       { "value": "logos", "label": "Logos" }

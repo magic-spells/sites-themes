@@ -1,10 +1,9 @@
 <!-- TODO sync with Figma -->
-<!-- The colophon on slate: the wordmark, the tagline, the registration lines and the social text links; Services (each category on the Services page's tab, then All services); Patients (a menu); Visit (the first location's address, phone and hours, then each other location's phone). A strip under a rule: the small print, the legal links and the Practice footer note. Four columns from 64rem, two from 48rem, one on phones. -->
+<!-- The colophon on slate: the wordmark, the tagline, the registration lines and the social text links; Services (each category on the Services page's tab, then All services); Patients (a menu); Visit (the first location's address, phone and hours). A strip under a rule: the small print, the legal links and the Practice footer note. Four columns from 64rem, two from 48rem, one on phones. -->
 {#let
   s = site.settings
   categories = content.categories.entries | sort('fields.order') | slice(0, 6)
-  locations = content.locations.entries | sort('fields.order') | slice(0, 4)
-  home = locations | first
+  home = content.locations.entries | sort('fields.order') | first
   link = 'hover:underline hover:underline-offset-4'
 }
 <footer class="bg-scheme-background px-gutter pt-section pb-space-xl text-scheme-foreground">
@@ -34,16 +33,12 @@
       {#if home}
         <div>
           <h2 class="mb-space-md font-heading text-card">{ t('visit') }</h2>
-          <address class="grid gap-space-md text-body-sm not-italic">
-            {#for loc in locations, i}
-              {#let f = loc.fields}
-              <p class="grid gap-space-2xs">
-                <span class="font-semibold">{ loc.title }</span>
-                {#if i == 0 && f.address}<span class="whitespace-pre-line text-scheme-muted">{ f.address }</span>{/if}
-                {#if f.phone}<a class="justify-self-start text-body font-medium tnum { link }" href="tel:{ f.phone | replace(' ', '') }">{ f.phone }</a>{/if}
-                {#if i == 0 && f.hours}<span class="whitespace-pre-line text-scheme-muted tnum">{ f.hours }</span>{/if}
-              </p>
-            {/for}
+          {#let f = home.fields}
+          <address class="grid gap-space-2xs text-body-sm not-italic">
+            <span class="font-semibold">{ home.title }</span>
+            {#if f.address}<span class="whitespace-pre-line text-scheme-muted">{ f.address }</span>{/if}
+            {#if f.phone}<a class="justify-self-start text-body font-medium tnum { link }" href="tel:{ f.phone | replace(' ', '') }">{ f.phone }</a>{/if}
+            {#if f.hours}<span class="whitespace-pre-line text-scheme-muted tnum">{ f.hours }</span>{/if}
           </address>
         </div>
       {/if}
@@ -63,7 +58,7 @@
   "kind": "Footer",
   "icon": "panel-bottom",
   "settings": [
-    { "type": "paragraph", "content": "The tagline, registration lines and footer note come from the Brand and Practice settings; Visit lists your locations." },
+    { "type": "paragraph", "content": "The tagline, registration lines and footer note come from the Brand and Practice settings; Visit shows your first location." },
     { "type": "url", "id": "services_path", "label": "Services page", "default": "/services", "info": "Each category links to its tab on this page." },
     { "type": "menu", "id": "patients_menu", "label": "Patients menu", "info": "Its title heads the column: New patients, Insurance and fees, Patient forms, Patient portal." },
     { "type": "menu", "id": "social_menu", "label": "Social links" },

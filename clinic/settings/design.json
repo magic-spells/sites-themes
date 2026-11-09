@@ -186,7 +186,7 @@
         },
         "warning": {
           "bg": "#FCEFD3",
-          "fg": "#0B6B6E"
+          "fg": "#8A5A00"
         },
         "error": {
           "bg": "#FDECEA",
@@ -219,7 +219,7 @@
         },
         "warning": {
           "bg": "#FCEFD3",
-          "fg": "#8E3F55"
+          "fg": "#8A5A00"
         },
         "error": {
           "bg": "#FDECEA",
@@ -302,8 +302,8 @@
       "handle": "sky",
       "name": "Sky",
       "background": "$info-bg",
-      "foreground": "$brand-primary",
-      "heading": "$brand-primary",
+      "foreground": "$info-fg",
+      "heading": "$info-fg",
       "input_background": "#FFFFFF",
       "input_foreground": "#16222E",
       "input_border": "$grey-medium",
@@ -311,15 +311,15 @@
       "chip_foreground": "#1C3A58",
       "chip_border": "#3F9BCC",
       "icons": "#1C3A58",
-      "links": "$brand-primary",
+      "links": "$info-fg",
       "button_background": "$brand-primary",
       "button_foreground": "#F3F7FA",
       "button_hover_background": "#1B3C5C",
       "button_hover_foreground": "#F3F7FA",
       "secondary_button_background": "transparent",
-      "secondary_button_foreground": "$brand-primary",
+      "secondary_button_foreground": "$info-fg",
       "secondary_button_hover_background": "#7CC6EC",
-      "secondary_button_hover_foreground": "$brand-primary"
+      "secondary_button_hover_foreground": "$info-fg"
     },
     {
       "handle": "honey",

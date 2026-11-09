@@ -7,8 +7,7 @@
 {#if concerns.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
-    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link } />
-    <ul class="grid grid-cols-2 gap-space-sm md:gap-space-lg lg:grid-cols-3">{#for entry in concerns}<li><ChooserTile entry={ entry } target={ settings.target } /></li>{/for}</ul>
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link }><ul class="grid grid-cols-2 gap-space-sm md:gap-space-lg lg:grid-cols-3">{#for entry in concerns}<li><ChooserTile entry={ entry } target={ settings.target } /></li>{/for}</ul></SectionHead>
   </div>
 </section>
 {/if}
@@ -21,6 +20,7 @@
   "icon": "layout-grid",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Concerns we treat" },
+    { "type": "select", "id": "head_align", "label": "Heading", "default": "left", "options": [{ "value": "left", "label": "Left" }, { "value": "center", "label": "Centred" }] },
     { "type": "text", "id": "text", "label": "Standfirst", "default": "What brings you in?" },
     { "type": "text", "id": "link_label", "label": "Button label", "default": "All concerns" },
     { "type": "url", "id": "link", "label": "Button link", "default": "/conditions" },

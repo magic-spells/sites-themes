@@ -17,5 +17,5 @@
 - Seven colour schemes (white, cloud, ice, sky, honey, navy, slate) and three palettes (Clinic
   blue, Calm, Plum); Red Hat Display and Red Hat Text self-hosted; Lucide glyphs and service
   icons in one sprite.
-- `?category=` tabs on the Services page, team groups by role, and Practice settings that fit a
-  dentist, a physio, a therapist or a vet.
+- `?category=` tabs on the Services page, team groups by role, section heads left or centred,
+  and Practice settings that fit a dentist, a physio, a therapist or a vet.

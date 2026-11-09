@@ -1,17 +1,16 @@
 <!-- TODO sync with Figma -->
-<!-- A page's head: the h1 (the page title unless a heading is set), the standfirst under it, and the Practice rating pill when rating is on (the Reviews page). Left or centred; no kicker. -->
+<!-- A page's head: the h1 (the page title unless a heading is set), the standfirst under it. Left or centred; no kicker. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column gap-space-md { settings.align == 'center' ? 'justify-items-center text-center' : 'justify-items-start' }">
     <h1 class="max-w-reading font-heading text-h1 text-balance"><Rise text={ settings.heading || page.title } /></h1>
     {#if settings.text}<p class="max-w-reading text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
-    {#if settings.show_rating}<RatingPill />{/if}
   </div>
 </section>
 
 <schema>
 {
   "name": "Page header",
-  "description": "The page's title, a standfirst and, on the reviews page, the rating.",
+  "description": "The page's title and a standfirst.",
   "kind": "Content",
   "icon": "heading-1",
   "settings": [
@@ -21,12 +20,10 @@
       { "value": "left", "label": "Left" },
       { "value": "center", "label": "Centred" }
     ] },
-    { "type": "checkbox", "id": "show_rating", "label": "Rating", "default": false, "info": "The Practice rating, review count and review link in a pill." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "cloud" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "cloud" } },
-    { "name": "Reviews", "settings": { "show_rating": true, "color_scheme": "cloud" } }
+    { "name": "Default", "settings": { "color_scheme": "cloud" } }
   ]
 }
 </schema>

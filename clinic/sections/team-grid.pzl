@@ -11,14 +11,15 @@
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
-    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link } />
-    <ul class="grid gap-x-space-md gap-y-space-xl md:grid-cols-3 md:gap-x-space-lg { settings.columns == '3' ? '' : 'lg:grid-cols-4' } { row ? 'max-md:-mx-gutter max-md:flex max-md:snap-x max-md:snap-mandatory max-md:overflow-x-auto max-md:px-gutter max-md:scroll-px-gutter' : 'grid-cols-2' }">
-      {#for entry in people}
-        {#if settings.source != 'group' || !word || contains(entry.fields.role | downcase, word) == (settings.match != 'lacks')}
-        <li class="{ row ? 'max-md:w-3/5 max-md:shrink-0 max-md:snap-start' : '' }"><ClinicianCard entry={ entry } /></li>
-        {/if}
-      {/for}
-    </ul>
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link }>
+      <ul class="grid gap-x-space-md gap-y-space-xl md:grid-cols-3 md:gap-x-space-lg { settings.columns == '3' ? '' : 'lg:grid-cols-4' } { row ? 'max-md:-mx-gutter max-md:flex max-md:snap-x max-md:snap-mandatory max-md:overflow-x-auto max-md:px-gutter max-md:scroll-px-gutter' : 'grid-cols-2' }">
+        {#for entry in people}
+          {#if settings.source != 'group' || !word || contains(entry.fields.role | downcase, word) == (settings.match != 'lacks')}
+          <li class="{ row ? 'max-md:w-3/5 max-md:shrink-0 max-md:snap-start' : '' }"><ClinicianCard entry={ entry } /></li>
+          {/if}
+        {/for}
+      </ul>
+    </SectionHead>
   </div>
 </section>
 
@@ -30,6 +31,7 @@
   "icon": "users",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Our team" },
+    { "type": "select", "id": "head_align", "label": "Heading", "default": "left", "options": [{ "value": "left", "label": "Left" }, { "value": "center", "label": "Centred" }] },
     { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
     { "type": "text", "id": "link_label", "label": "Button label", "default": "All team" },
     { "type": "url", "id": "link", "label": "Button link", "default": "/team" },

@@ -1,12 +1,9 @@
 <!-- component: Routes -->
-<!-- The two ways in: the ask button and the phone as a tel: link in the Price style, the Practice phone line under it in Meta. Side by side from 48rem; stacked on phones, or always with stack, the button full width. label replaces the ask label (Book with Dr Reyes). -->
+<!-- The two ways in: the ask button and the phone as a tel: link in the Price style. Side by side from 48rem; stacked on phones, or always with stack, the button full width. label replaces the ask label (Book with Dr Reyes). -->
 {#let s = site.settings}
 <div class="flex flex-col gap-space-md { stack ? '' : 'md:flex-row md:items-center md:gap-space-lg' }">
   <Button ask wide={ stack } cls={ stack ? null : 'max-md:w-full' }>{ label || s.ask_label }</Button>
   {#if s.phone}
-  <a class="grid gap-space-2xs justify-self-start hover:underline hover:underline-offset-4" href="tel:{ s.phone | replace(' ', '') }">
-    <span class="font-heading text-h3 tnum">{ s.phone }</span>
-    {#if s.phone_line}<span class="text-body-sm text-scheme-muted">{ s.phone_line }</span>{/if}
-  </a>
+  <a class="self-start font-heading text-h3 tnum hover:underline hover:underline-offset-4" href="tel:{ s.phone | replace(' ', '') }">{ s.phone }</a>
   {/if}
 </div>

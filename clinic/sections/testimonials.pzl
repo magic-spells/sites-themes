@@ -1,5 +1,5 @@
 <!-- TODO sync with Figma -->
-<!-- Patients' reviews, with the Practice rating pill in the section head. Rows: review cards 3 / 2 / 1. Carousel: the head centred, one quote at a time (the quote, the stars, the name line), the round arrows at the sides on hover from 48rem, dots under. Featured or all, up to the limit; on a service's or a clinician's page only the reviews that name them, when there are any. Nothing without reviews. -->
+<!-- Patients' reviews. Rows: review cards 3 / 2 / 1. Carousel: the head centred, one quote at a time (the quote, the stars, the name line), the round arrows at the sides on hover from 48rem, dots under. Featured or all, up to the limit; on a service's or a clinician's page only the reviews that name them, when there are any. Nothing without reviews. -->
 {#let
   id = 'reviews-' + section.id
   all = content.testimonials.entries | sort('fields.order')
@@ -12,7 +12,7 @@
 {#if reviews.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
-    <SectionHead heading={ settings.heading } center={ carousel }>{#if settings.show_rating}<RatingPill />{/if}</SectionHead>
+    <SectionHead heading={ settings.heading } center={ carousel } />
     {#if carousel}
       <tarot-carousel class="group relative block" id={ id }>
         <script type="application/json" data-tarot-options>{ options | json }</script>
@@ -22,7 +22,7 @@
             <tarot-slide>
               <figure class="mx-auto grid max-w-reading justify-items-center gap-space-md text-center md:px-space-2xl">
                 <blockquote class="text-body-lg text-pretty">“{ f.quote }”</blockquote>
-                {#if f.stars}<p class="flex gap-space-2xs text-scheme-accent" role="img" aria-label="{ t('rating', { n: f.stars }) }">{#for n in [1, 2, 3, 4, 5]}{#if n <= f.stars}<Glyph name="star" cls="size-icon-sm" />{/if}{/for}</p>{/if}
+                <Stars stars={ f.stars } />
                 <figcaption class="text-body-sm text-scheme-muted">{ [f.name, f.line] | compact | join(' · ') }</figcaption>
               </figure>
             </tarot-slide>
@@ -40,12 +40,12 @@
 <schema>
 {
   "name": "Testimonials",
-  "description": "Patients' reviews as cards or a carousel, with your rating.",
+  "description": "Patients' reviews as cards or a carousel.",
   "kind": "Collections",
   "icon": "quote",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Reviews" },
-    { "type": "checkbox", "id": "show_rating", "label": "Rating", "default": true, "info": "The Practice rating, review count and review link beside the heading." },
+    { "type": "select", "id": "head_align", "label": "Heading", "default": "left", "options": [{ "value": "left", "label": "Left" }, { "value": "center", "label": "Centred" }] },
     { "type": "select", "id": "layout", "label": "Layout", "default": "rows", "options": [
       { "value": "rows", "label": "Cards in rows" },
       { "value": "carousel", "label": "Carousel" }

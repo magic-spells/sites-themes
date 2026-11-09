@@ -19,6 +19,7 @@
   "icon": "file-text",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Patient forms and guides" },
+    { "type": "select", "id": "head_align", "label": "Heading", "default": "left", "options": [{ "value": "left", "label": "Left" }, { "value": "center", "label": "Centred" }] },
     { "type": "text", "id": "portal_label", "label": "Portal label", "default": "Patient portal" },
     { "type": "text", "id": "portal_note", "label": "Portal note", "default": "Appointments, forms and statements", "info": "The Practice patient portal leads the list when set." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }

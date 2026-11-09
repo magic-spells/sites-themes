@@ -1,13 +1,12 @@
 {
   "label": "Reviews",
-  "description": "Every review with the rating.",
+  "description": "Every review.",
   "sections": [
     {
       "id": "s_header",
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "show_rating": true,
         "color_scheme": "cloud"
       },
       "blocks": []
@@ -20,7 +19,6 @@
         "layout": "rows",
         "source": "all",
         "limit": 12,
-        "show_rating": false,
         "heading": "",
         "color_scheme": "white"
       },

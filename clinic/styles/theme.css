@@ -3,8 +3,6 @@
 @import "./vendor/collapsible-content.css" layer(components);
 @import "./vendor/dialog-panel.css" layer(components);
 @import "./vendor/dropdown-panel.css" layer(components);
-@import "./vendor/dropdown-panel.effects.css" layer(components);
-@import "./vendor/progress-bar.css" layer(components);
 @import "./vendor/reveal.css";
 @import "./vendor/scrolling-content.css" layer(components);
 @import "./vendor/select-dropdown.css" layer(components);
@@ -39,8 +37,8 @@
 
 /* The scheme a section sits on. The engine has no muted, border or surface-2
    slot, so they ride on the chip slots (settings/design.json); the link is
-   the action blue. Tint, accent, accent text, the status colours and the
-   error have no slot at all and are set per scheme below. */
+   the action blue. Tint, accent and the error have no slot at all and are
+   set per scheme below. */
 @theme inline {
 	--color-scheme-background: var(--sites-scheme-background);
 	--color-scheme-foreground: var(--sites-scheme-foreground);
@@ -54,9 +52,6 @@
 	--color-link: var(--sites-scheme-links);
 	--color-scheme-tint: var(--clinic-tint);
 	--color-scheme-accent: var(--clinic-accent);
-	--color-scheme-accent-text: var(--clinic-accent-text);
-	--color-scheme-success: var(--clinic-success);
-	--color-scheme-warning: var(--clinic-warning);
 	--color-scheme-error: var(--clinic-error);
 	--color-backdrop: color-mix(in srgb, var(--sites-scheme-foreground) 50%, transparent);
 	/* The cover hero's fade: the band's background at 80% on the text side to
@@ -65,41 +60,27 @@
 }
 
 /* The colours without an engine slot, per scheme. Defaults are White and
-   Cloud's; every text value clears 4.5:1 on its background and every dot 3:1. */
+   Cloud's: the tint is Ice's background. Every error clears 4.5:1 on its band. */
 :root,
 [class*="sites-scheme-"] {
 	--clinic-tint: #DDEEF9;
 	--clinic-accent: var(--sites-color-brand-accent);
-	--clinic-accent-text: var(--sites-color-warning-fg);
-	--clinic-success: var(--sites-color-success-fg);
-	--clinic-warning: #B7791F;
 	--clinic-error: var(--sites-color-error-fg);
 }
 .sites-scheme-ice {
 	--clinic-tint: #FFFFFF;
-	--clinic-accent-text: #7A4F00;
-	--clinic-warning: #8F5E14;
 	--clinic-error: #A31F14;
 }
 .sites-scheme-sky,
 .sites-scheme-honey {
 	--clinic-tint: var(--sites-scheme-chip-background);
 	--clinic-accent: var(--sites-color-brand-primary);
-	--clinic-accent-text: var(--sites-color-brand-primary);
-	--clinic-success: #0F5A2E;
-	--clinic-warning: #6B4408;
 	--clinic-error: #6E130C;
 }
 .sites-scheme-navy,
 .sites-scheme-slate {
-	--clinic-tint: #1E3F5F;
-	--clinic-accent-text: var(--sites-color-brand-accent);
-	--clinic-success: #6FD39B;
-	--clinic-warning: var(--sites-color-brand-accent);
-	--clinic-error: #F4A79D;
-}
-.sites-scheme-slate {
 	--clinic-tint: var(--sites-scheme-chip-border);
+	--clinic-error: #F4A79D;
 }
 
 @theme {
@@ -157,7 +138,6 @@
 	--spacing-button-x: var(--sites-button-padding-x);
 	--spacing-control: 3rem;
 	--spacing-tap: 2.75rem;
-	--spacing-dot: 0.5rem;
 	--spacing-icon-sm: 1rem;
 	--spacing-icon: 1.25rem;
 	--spacing-glyph: 1.5rem;
@@ -280,7 +260,7 @@ html.reveal-off split-text:not(:defined) {
 	}
 }
 body:has([data-header-style="over-hero"]) main > [data-section]:first-child:has([data-over-hero]) {
-	margin-top: calc(var(--header-height, 4.5rem) * -1);
+	margin-top: calc(var(--header-height, var(--spacing-header)) * -1);
 }
 
 /* The call bar clears the phone's home indicator. */
@@ -402,17 +382,11 @@ dropdown-component:not(:defined) dropdown-panel {
 }
 
 /* The carousels: dots in the scheme's text at 35%, the current one in the
-   text; the progress bar a hairline in the border colour with a fill in the
-   text colour. Before tarot upgrades, or with no JavaScript, a track lays its
+   text. Before tarot upgrades, or with no JavaScript, a track lays its
    slides out as a row that scrolls. */
 tarot-carousel {
 	--color-pagination-dot: color-mix(in srgb, var(--sites-scheme-foreground) var(--opacity-dots-inactive), transparent);
 	--color-pagination-dot-active: var(--sites-scheme-foreground);
-	--tarot-progress-height: 1px;
-	--tarot-progress-margin: 0;
-	--tarot-progress-border-radius: 0;
-	--tarot-progress-bg: var(--sites-scheme-chip-border);
-	--tarot-progress-fill-bg: var(--sites-scheme-foreground);
 }
 tarot-carousel > .tarot-dots-list {
 	margin-top: var(--sites-spacing-md);
@@ -439,7 +413,6 @@ dialog-panel:has(bottom-sheet) {
 	--bs-handle-width: 2.5rem;
 	--bs-handle-height: 0.25rem;
 	--bs-content-padding: var(--clinic-gutter);
-	--bs-content-padding-block: 0 var(--sites-spacing-lg);
 	--bs-overlay-background: color-mix(in srgb, var(--sites-scheme-foreground) 50%, transparent);
 	--bs-overlay-blur: 0;
 }
@@ -461,14 +434,14 @@ dialog-panel:has(bottom-sheet) {
 	dialog-panel:is([state="hidden"], [state="showing"], [state="hiding"]):has(bottom-sheet[data-centred]) > dialog {
 		transform: scale(0.97);
 		opacity: 0;
-		transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+		transition: opacity var(--transition-duration-panel) ease-out, transform var(--transition-duration-panel) ease-out;
 	}
 	dialog-panel[state="shown"]:has(bottom-sheet[data-centred]) > dialog {
 		transform: none;
 		opacity: 1;
 	}
-	bottom-sheet[data-centred] bottom-sheet-handle {
-		display: none;
+	bottom-sheet[data-centred] bottom-sheet-header::before {
+		content: none;
 	}
 }
 

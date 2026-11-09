@@ -10,5 +10,5 @@
   {#if f.summary}<p class="text-body text-pretty">{ f.summary }</p>{/if}
   {#if f.includes}<ul class="grid gap-space-xs">{#for line in f.includes | split('\n')}{#if line | strip}<li class="flex gap-space-xs text-body"><Glyph name="check" cls="mt-space-2xs size-icon text-link" />{ line | strip }</li>{/if}{/for}</ul>{/if}
   {#if f.note}<p class="text-body-sm text-pretty text-scheme-muted">{ f.note }</p>{/if}
-  <div class="mt-auto pt-space-xs">{#if f.link}<Button href={ f.link } wide>{ t('choose_plan') }</Button>{:else}<Button ask wide>{ t('choose_plan') }</Button>{/if}</div>
+  <div class="mt-auto pt-space-xs"><Button href={ f.link } ask={ !f.link } wide>{ t('choose_plan') }</Button></div>
 </article>

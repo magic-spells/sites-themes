@@ -1,11 +1,11 @@
 <!-- component: ReviewCard -->
-<!-- A review on a card with a hairline: the stars in the accent, the quote in Quote, a rule, then the reviewer's square thumbnail when it has one, the name and line in Meta ("Greg B. · Patient since 2015") and "Seen by Dr Reyes" when a clinician is set. -->
+<!-- A review on a card with a hairline: the stars in the accent, the quote in Quote, a rule, then the reviewer's square thumbnail when it has one and the name and line in Meta ("Greg B. · Patient since 2015"). -->
 {#let f = entry.fields}
 <figure class="flex h-full flex-col gap-space-md rounded-card border border-scheme-border bg-scheme-background p-space-lg { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
-  {#if f.stars}<p class="flex gap-space-2xs text-scheme-accent" role="img" aria-label="{ t('rating', { n: f.stars }) }">{#for n in [1, 2, 3, 4, 5]}{#if n <= f.stars}<Glyph name="star" cls="size-icon-sm" />{/if}{/for}</p>{/if}
+  <Stars stars={ f.stars } />
   <blockquote class="flex-1 text-body-lg text-pretty">“{ f.quote }”</blockquote>
   <figcaption class="flex items-center gap-space-sm border-t border-scheme-border pt-space-md text-body-sm text-scheme-muted">
     {#if f.image}<span class="w-circle shrink-0"><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-square" card width={ 96 } sizes="2.5rem" /></span>{/if}
-    <span class="grid gap-space-2xs"><span>{ [f.name, f.line] | compact | join(' · ') }</span>{#if f.team}<span>{ t('seen_by', { name: f.team.title }) }</span>{/if}</span>
+    <span>{ [f.name, f.line] | compact | join(' · ') }</span>
   </figcaption>
 </figure>

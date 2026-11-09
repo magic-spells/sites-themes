@@ -1,5 +1,5 @@
 <!-- TODO sync with Figma -->
-<!-- The Services page: All and each category as tabs, plain ?category= links with aria-current on the one showing; then each category's services as rows (icon, name, summary, duration, price, Details) under its name and a 2px rule. Below 48rem each group folds, the first open; from 48rem they all stay open. -->
+<!-- The Services page: All and each category as tabs, plain ?category= links with aria-current on the one showing; then each category's services as rows (icon, name, summary, duration, price, Details) under its name and a 2px rule. -->
 {#let
   services = content.services.entries | sort('fields.order')
   categories = content.categories.entries | sort('fields.order') | slice(0, 6)
@@ -17,13 +17,11 @@
       </ul>
     </nav>
     <div class="grid gap-space-2xl">
-      {#for category in shown, i}
-        <collapsible-component class="block">
-          <h2><button class="group flex w-full items-center justify-between gap-space-md border-b-2 border-scheme-foreground pb-space-sm text-left font-heading text-h4 md:pointer-events-none" type="button">{ category.title }<Glyph name="chevron-down" cls="size-icon transition-transform duration-fast group-aria-expanded:rotate-180 md:hidden" /></button></h2>
-          <collapsible-content open={ i == 0 } data-unfold>
-            <ul>{#for entry in services | where('fields.category.id', category.id) | slice(0, 12)}<ServiceRow entry={ entry } />{/for}</ul>
-          </collapsible-content>
-        </collapsible-component>
+      {#for category in shown}
+        <div>
+          <h2 class="border-b-2 border-scheme-foreground pb-space-sm font-heading text-h4">{ category.title }</h2>
+          <ul>{#for entry in services | where('fields.category.id', category.id) | slice(0, 12)}<ServiceRow entry={ entry } />{/for}</ul>
+        </div>
       {/for}
     </div>
   </div>

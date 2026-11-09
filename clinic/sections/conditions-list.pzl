@@ -1,10 +1,10 @@
 <!-- TODO sync with Figma -->
-<!-- The Concerns page: every concern as a chooser tile with its line, three across from 64rem, two from 48rem, one on phones. -->
+<!-- The Concerns page: every concern as a chooser tile, three across from 64rem, two from 48rem, one on phones. -->
 {#let concerns = content.conditions.entries | sort('fields.order') | slice(0, 12)}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } />
-    <ul class="grid gap-space-md md:grid-cols-2 md:gap-space-lg lg:grid-cols-3">{#for entry in concerns}<li><ChooserTile entry={ entry } target={ settings.target } line /></li>{/for}</ul>
+    <ul class="grid gap-space-md md:grid-cols-2 md:gap-space-lg lg:grid-cols-3">{#for entry in concerns}<li><ChooserTile entry={ entry } target={ settings.target } /></li>{/for}</ul>
   </div>
 </section>
 

@@ -1,5 +1,5 @@
 <!-- TODO sync with Figma -->
-<!-- One line for emergencies: the Practice emergency line in h3 left, the emergency phone (or the phone) in Price as a call link with the hours line under it right; stacked on phones. Nothing while the emergency line is empty. -->
+<!-- One line for emergencies: the Practice emergency line in h3 left, the emergency phone (or the phone) in Price as a call link right; stacked on phones. Nothing while the emergency line is empty. -->
 {#let
   s = site.settings
   phone = s.emergency_phone || s.phone
@@ -9,10 +9,7 @@
   <div class="mx-auto flex max-w-column flex-col gap-space-md md:flex-row md:items-center md:justify-between md:gap-space-xl">
     <h2 class="max-w-reading font-heading text-h3 text-balance">{ s.emergency_line }</h2>
     {#if phone}
-    <a class="grid shrink-0 gap-space-2xs hover:underline hover:underline-offset-4" href="tel:{ phone | replace(' ', '') }">
-      <span class="font-heading text-h3 tnum">{ phone }</span>
-      {#if settings.hours_line}<span class="text-body-sm text-scheme-muted">{ settings.hours_line }</span>{/if}
-    </a>
+    <a class="shrink-0 font-heading text-h3 tnum hover:underline hover:underline-offset-4" href="tel:{ phone | replace(' ', '') }">{ phone }</a>
     {/if}
   </div>
 </section>
@@ -26,7 +23,6 @@
   "icon": "phone",
   "settings": [
     { "type": "paragraph", "content": "The line and the phone come from the Practice emergency line and emergency phone." },
-    { "type": "text", "id": "hours_line", "label": "Hours line", "default": "Call before 10 am and we'll see you today.", "info": "Out of hours: Pine Ridge Emergency Vets, 262-555-0190." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "sky" }
   ],
   "presets": [

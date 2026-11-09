@@ -170,6 +170,7 @@
       "preset": "Featured",
       "settings": {
         "source": "featured",
+        "cta_link": "/fees",
         "color_scheme": "cloud"
       },
       "blocks": []
@@ -221,7 +222,7 @@
             "text": "What to expect at your first visit.",
             "link_label": "Start here",
             "link": "/new-patients",
-            "color_scheme": "sky"
+            "color_scheme": "ice"
           }
         }
       ]

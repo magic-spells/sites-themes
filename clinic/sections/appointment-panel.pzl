@@ -5,10 +5,7 @@
   <dialog class="text-scheme-foreground" aria-labelledby="appointment-title">
     <bottom-sheet id="appointment" data-centred>
       <bottom-sheet-header class="flex items-start justify-between gap-space-md pt-space-md">
-        <div class="grid gap-space-xs">
-          <h2 class="font-heading text-h3" id="appointment-title">{ settings.heading || site.settings.ask_label }</h2>
-          <p class="text-body-sm text-scheme-muted"><StatusDot /></p>
-        </div>
+        <h2 class="font-heading text-h3" id="appointment-title">{ settings.heading || site.settings.ask_label }</h2>
         <button class="-m-space-xs flex size-tap shrink-0 items-center justify-center hover:text-link" type="button" data-action-hide-dialog><Glyph name="close" cls="size-glyph" /><span class="sr-only">{ t('close') }</span></button>
       </bottom-sheet-header>
       <bottom-sheet-content>

@@ -12,7 +12,6 @@ import './vendor/dialog-panel.js';
 import './vendor/bottom-sheet.js';
 import './vendor/collapsible-content.js';
 import './vendor/dropdown-panel.js';
-import './vendor/progress-bar.esm.js';
 import './vendor/scrolling-content.js';
 import './vendor/select-dropdown.js';
 import './vendor/split-text.esm.js';
@@ -110,17 +109,6 @@ for (const bar of document.querySelectorAll<HTMLElement>('[data-dismiss-key]')) 
 		if (key) remember(key);
 	});
 }
-
-// The services list's category groups (and the hours rows) fold below 48rem,
-// the first one open; from 48rem every group stays open and its heading is
-// only a heading.
-const wide = matchMedia('(min-width: 48rem)');
-const unfold = () => {
-	if (!wide.matches) return;
-	for (const group of document.querySelectorAll('[data-unfold]')) group.setAttribute('open', '');
-};
-unfold();
-wide.addEventListener('change', unfold);
 
 // The ticker's pause button (WCAG 2.2.2) sets the marquee's own paused
 // attribute.

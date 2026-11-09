@@ -10,32 +10,21 @@
    "reveal": true,
    "heading_motion": false,
    "phone": "(262) 555-0148",
-   "phone_line": "Same-day slots most weekdays",
-   "text_number": "(262) 555-0177",
    "ask_label": "Book an appointment",
    "booking_url": "",
    "booking_path": "/book",
    "appointment_form": "appointment",
    "confirm_line": "We confirm by phone or text within one working day.",
    "caution_line": "Please don't include medical details here. We'll talk those through by phone.",
-   "new_patients": "accepting",
-   "new_patients_line": "Accepting new patients",
    "insurance_line": "In-network with most major plans; we file claims for you.",
-   "rating": "4.9",
-   "review_count": 318,
-   "review_source": "Google",
-   "review_url": "https://google.example/oakfielddental/reviews",
-   "since_year": "2007",
    "registration_lines": "Dr Hannah Reyes, DDS · WI license 12345\nADA member",
    "portal_url": "https://portal.example/oakfield",
    "forms_url": "https://forms.example/oakfield",
    "emergency_line": "Tooth pain? We keep same-day slots for emergencies.",
    "emergency_phone": "(262) 555-0148",
    "footer_note": "If this is a medical emergency, call 911.",
-   "telehealth_line": "",
    "show_call_bar": true,
    "email": "hello@oakfielddental.example",
-   "address": "22 Linden Avenue\nOakfield, WI 53000",
    "contact_form": "contact",
    "newsletter_form": "newsletter"
   }
@@ -879,11 +868,6 @@
      "label": "Featured"
     },
     {
-     "id": "tag",
-     "type": "text",
-     "label": "Tag (New patients, Same-day)"
-    },
-    {
      "id": "order",
      "type": "number",
      "label": "Position"
@@ -908,7 +892,6 @@
       "image": "as_3x2_ice",
       "image_alt": "Exam and cleaning at Oakfield Family Dental",
       "featured": false,
-      "tag": "",
       "order": 1,
       "duration_minutes": 60
      }
@@ -931,7 +914,6 @@
       "image": "as_3x2_cloud",
       "image_alt": "New patient exam at Oakfield Family Dental",
       "featured": true,
-      "tag": "New patients",
       "order": 2,
       "duration_minutes": 90
      }
@@ -954,7 +936,6 @@
       "image": "as_3x2_mist",
       "image_alt": "Children's dentistry at Oakfield Family Dental",
       "featured": false,
-      "tag": "",
       "order": 3,
       "duration_minutes": 45
      }
@@ -977,7 +958,6 @@
       "image": "as_3x2_ice",
       "image_alt": "Gum care at Oakfield Family Dental",
       "featured": false,
-      "tag": "",
       "order": 4,
       "duration_minutes": 60
      }
@@ -1000,7 +980,6 @@
       "image": "as_3x2_cloud",
       "image_alt": "Fillings at Oakfield Family Dental",
       "featured": false,
-      "tag": "",
       "order": 5,
       "duration_minutes": 60
      }
@@ -1023,7 +1002,6 @@
       "image": "as_3x2_mist",
       "image_alt": "Crowns and bridges at Oakfield Family Dental",
       "featured": false,
-      "tag": "",
       "order": 6
      }
     },
@@ -1045,7 +1023,6 @@
       "image": "as_3x2_ice",
       "image_alt": "Root canal therapy at Oakfield Family Dental",
       "featured": false,
-      "tag": "",
       "order": 7,
       "duration_minutes": 90
      }
@@ -1068,7 +1045,6 @@
       "image": "as_3x2_cloud",
       "image_alt": "Dental implants at Oakfield Family Dental",
       "featured": false,
-      "tag": "",
       "order": 8
      }
     },
@@ -1090,7 +1066,6 @@
       "image": "as_3x2_mist",
       "image_alt": "Dentures at Oakfield Family Dental",
       "featured": false,
-      "tag": "",
       "order": 9
      }
     },
@@ -1112,7 +1087,6 @@
       "image": "as_3x2_ice",
       "image_alt": "Teeth whitening at Oakfield Family Dental",
       "featured": true,
-      "tag": "",
       "order": 10,
       "duration_minutes": 60
      }
@@ -1135,7 +1109,6 @@
       "image": "as_3x2_cloud",
       "image_alt": "Veneers at Oakfield Family Dental",
       "featured": false,
-      "tag": "",
       "order": 11
      }
     },
@@ -1157,7 +1130,6 @@
       "image": "as_3x2_mist",
       "image_alt": "Clear aligners at Oakfield Family Dental",
       "featured": true,
-      "tag": "",
       "order": 12
      }
     },
@@ -1179,7 +1151,6 @@
       "image": "as_3x2_ice",
       "image_alt": "Emergency care at Oakfield Family Dental",
       "featured": true,
-      "tag": "Same-day",
       "order": 13,
       "duration_minutes": 30
      }
@@ -1934,11 +1905,6 @@
      "label": "Date"
     },
     {
-     "id": "source",
-     "type": "text",
-     "label": "Source"
-    },
-    {
      "id": "team",
      "type": "entry",
      "label": "Seen by",
@@ -1976,7 +1942,6 @@
       "line": "Patient since 2015",
       "stars": 5,
       "date": "2026-10-28",
-      "source": "Google",
       "featured": true,
       "order": 1,
       "team": "team_hannah_reyes"
@@ -1992,7 +1957,6 @@
       "line": "Dental anxiety",
       "stars": 5,
       "date": "2026-10-19",
-      "source": "Google",
       "featured": true,
       "order": 2,
       "team": "team_lena_marsh",
@@ -2011,7 +1975,6 @@
       "line": "Emergency care",
       "stars": 5,
       "date": "2026-10-11",
-      "source": "Google",
       "featured": true,
       "order": 3,
       "team": "team_samuel_okafor",
@@ -2028,7 +1991,6 @@
       "line": "Patient since 2019",
       "stars": 5,
       "date": "2026-09-30",
-      "source": "",
       "featured": true,
       "order": 4,
       "team": "team_priya_nair",
@@ -2045,7 +2007,6 @@
       "line": "Clear aligners",
       "stars": 5,
       "date": "2026-09-22",
-      "source": "Google",
       "featured": true,
       "order": 5,
       "team": "team_hannah_reyes",
@@ -2064,7 +2025,6 @@
       "line": "Patient since 2021",
       "stars": 5,
       "date": "2026-09-09",
-      "source": "Google",
       "featured": true,
       "order": 6,
       "service": "svc_childrens_dentistry"
@@ -2080,7 +2040,6 @@
       "line": "Dental implants",
       "stars": 4,
       "date": "2026-08-27",
-      "source": "Google",
       "featured": true,
       "order": 7,
       "service": "svc_dental_implants"
@@ -2096,7 +2055,6 @@
       "line": "Patient since 2017",
       "stars": 5,
       "date": "2026-08-14",
-      "source": "",
       "featured": true,
       "order": 8
      }
@@ -2111,7 +2069,6 @@
       "line": "Patient since 2023",
       "stars": 5,
       "date": "2026-07-30",
-      "source": "Google",
       "featured": false,
       "order": 9
      }
@@ -2126,7 +2083,6 @@
       "line": "Teeth whitening",
       "stars": 4,
       "date": "2026-07-12",
-      "source": "",
       "featured": false,
       "order": 10,
       "service": "svc_teeth_whitening"
@@ -2142,7 +2098,6 @@
       "line": "Patient since 2012",
       "stars": 5,
       "date": "2026-06-25",
-      "source": "",
       "featured": false,
       "order": 11
      }
@@ -2157,7 +2112,6 @@
       "line": "Patient since 2020",
       "stars": 4,
       "date": "2026-06-02",
-      "source": "Google",
       "featured": false,
       "order": 12
      }

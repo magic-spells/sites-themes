@@ -10,18 +10,19 @@
 {#if services.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
-    <SectionHead heading={ settings.heading } text={ settings.disclaimer } link_label={ settings.cta_label } link_href={ cta } />
-    <div class="gap-x-space-2xl { settings.columns == '2' ? 'lg:columns-2' : '' }">
-      {#for category in groups}
-        {#let rows = services | where('fields.category.id', category.id) | slice(0, 12)}
-        {#if rows.length}
-        <div class="break-inside-avoid pb-space-2xl last:pb-0">
-          <h3 class="border-b-2 border-scheme-foreground pb-space-xs font-heading text-h4">{ category.title }</h3>
-          <ul>{#for entry in rows}<FeeRow entry={ entry } duration={ settings.show_duration } />{/for}</ul>
-        </div>
-        {/if}
-      {/for}
-    </div>
+    <SectionHead heading={ settings.heading } text={ settings.disclaimer } link_label={ settings.cta_label } link_href={ cta }>
+      <div class="gap-x-space-2xl { settings.columns == '2' ? 'lg:columns-2' : '' }">
+        {#for category in groups}
+          {#let rows = services | where('fields.category.id', category.id) | slice(0, 12)}
+          {#if rows.length}
+          <div class="break-inside-avoid pb-space-2xl last:pb-0">
+            <h3 class="border-b-2 border-scheme-foreground pb-space-xs font-heading text-h4">{ category.title }</h3>
+            <ul>{#for entry in rows}<FeeRow entry={ entry } duration={ settings.show_duration } />{/for}</ul>
+          </div>
+          {/if}
+        {/for}
+      </div>
+    </SectionHead>
   </div>
 </section>
 {/if}
@@ -34,6 +35,7 @@
   "icon": "receipt",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Fees" },
+    { "type": "select", "id": "head_align", "label": "Heading", "default": "left", "options": [{ "value": "left", "label": "Left" }, { "value": "center", "label": "Centred" }] },
     { "type": "select", "id": "source", "label": "Services", "default": "all", "options": [
       { "value": "all", "label": "All with a price" },
       { "value": "featured", "label": "Featured" },
@@ -47,7 +49,7 @@
     ] },
     { "type": "textarea", "id": "disclaimer", "label": "Disclaimer", "default": "Fees are a guide. We confirm the cost of your treatment before it begins." },
     { "type": "text", "id": "cta_label", "label": "Button label", "default": "Check your coverage" },
-    { "type": "url", "id": "cta_link", "label": "Button link", "default": "/fees", "info": "Leave empty to call the Practice phone." },
+    { "type": "url", "id": "cta_link", "label": "Button link", "default": "", "info": "Leave empty to call the Practice phone." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "cloud" }
   ],
   "presets": [

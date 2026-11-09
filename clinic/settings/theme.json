@@ -26,41 +26,26 @@
       "name": "Practice",
       "settings": [
         { "type": "text", "id": "phone", "label": "Phone", "default": "", "info": "Printed as typed; the call links drop the spaces." },
-        { "type": "text", "id": "phone_line", "label": "Phone line", "default": "", "info": "The short line under the phone: Same-day slots most weekdays." },
-        { "type": "text", "id": "text_number", "label": "Text number", "default": "", "info": "A number patients can text, when it differs from the phone." },
         { "type": "text", "id": "ask_label", "label": "Ask button label", "default": "Book an appointment", "info": "Book a free call, Request an appointment, Register your pet." },
         { "type": "url", "id": "booking_url", "label": "Booking link", "default": "", "info": "Your online scheduler. Set: every ask button goes there. Empty: every ask button opens the appointment request." },
         { "type": "url", "id": "booking_path", "label": "Booking page", "default": "/book", "info": "The page with the request form inline, for a browser without JavaScript." },
         { "type": "form", "id": "appointment_form", "label": "Appointment form", "default": "appointment" },
         { "type": "text", "id": "confirm_line", "label": "Confirm line", "default": "We confirm by phone or text within one working day.", "info": "Under every request button." },
         { "type": "text", "id": "caution_line", "label": "Caution line", "default": "Please don't include medical details here. We'll talk those through by phone.", "info": "Always under the note field of the request form." },
-        { "type": "select", "id": "new_patients", "label": "New patients", "default": "accepting", "options": [
-          { "value": "accepting", "label": "Accepting" },
-          { "value": "waitlist", "label": "Waiting list" },
-          { "value": "closed", "label": "Closed" }
-        ], "info": "Sets the colour of the status dot: green, amber or grey." },
-        { "type": "text", "id": "new_patients_line", "label": "New patients line", "default": "Accepting new patients", "info": "Beside the status dot. Say clients or pets if that is your word." },
         { "type": "text", "id": "insurance_line", "label": "Insurance line", "default": "", "info": "In-network with most major plans; we file claims for you." },
-        { "type": "text", "id": "rating", "label": "Rating", "default": "", "info": "Your average, typed as it should read: 4.9. Leave empty to hide the rating." },
-        { "type": "number", "id": "review_count", "label": "Review count" },
-        { "type": "text", "id": "review_source", "label": "Review source", "default": "Google" },
-        { "type": "url", "id": "review_url", "label": "Review link", "default": "", "info": "Where Read all goes: your reviews page or profile." },
-        { "type": "text", "id": "since_year", "label": "Since", "default": "", "info": "The year the practice opened, typed: 2007." },
         { "type": "textarea", "id": "registration_lines", "label": "Registration lines", "default": "", "info": "One licence, registration or membership per line. Printed in the footer and the story." },
         { "type": "url", "id": "portal_url", "label": "Patient portal", "default": "" },
         { "type": "url", "id": "forms_url", "label": "Patient forms", "default": "", "info": "Where new patients fill in their forms ahead." },
         { "type": "text", "id": "emergency_line", "label": "Emergency line", "default": "", "info": "Tooth pain? We keep same-day slots for emergencies. Empty hides the emergency band." },
         { "type": "text", "id": "emergency_phone", "label": "Emergency phone", "default": "", "info": "Leave empty to use the phone." },
         { "type": "text", "id": "footer_note", "label": "Footer note", "default": "", "info": "If this is a medical emergency, call 911." },
-        { "type": "text", "id": "telehealth_line", "label": "Telehealth line", "default": "", "info": "Online appointments available across the state." },
         { "type": "checkbox", "id": "show_call_bar", "label": "Call bar on phones", "default": true, "info": "A bar fixed to the bottom of the screen on phones: Call and the ask button." }
       ]
     },
     {
       "name": "Contact",
       "settings": [
-        { "type": "text", "id": "email", "label": "Email", "default": "" },
-        { "type": "textarea", "id": "address", "label": "Address", "default": "", "info": "Used when you have no location entry. One line per line." },
+        { "type": "text", "id": "email", "label": "Email", "default": "", "info": "A text link under the contact form's heading." },
         { "type": "form", "id": "contact_form", "label": "Contact form", "default": "contact" },
         { "type": "form", "id": "newsletter_form", "label": "Newsletter form", "default": "newsletter" }
       ]

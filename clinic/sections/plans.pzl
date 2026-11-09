@@ -21,6 +21,7 @@
   "icon": "badge-check",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "No insurance? Our Smile Plan" },
+    { "type": "select", "id": "head_align", "label": "Heading", "default": "left", "options": [{ "value": "left", "label": "Left" }, { "value": "center", "label": "Centred" }] },
     { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
     { "type": "select", "id": "source", "label": "Plans", "default": "all", "options": [
       { "value": "all", "label": "All" },

@@ -22,15 +22,15 @@ data/templates/     home, service, condition, member, location, post and page (+
 data/groups/        header-group.json, footer-group.json, panel-group.json
 templates/          404.pzl, password.pzl, maintenance.pzl
 sections/           40, each with a full <schema>
-components/         the shared shapes: Button, Routes, ProofRow, StatusDot, SectionHead, Well,
-                    Glyph, IconCircle, ChooserTile, ServiceCard, ServiceRow, FeeRow, Price,
-                    ClinicianCard, HoursCard, ReviewCard, RatingPill, PlanCard, Tile, Step,
-                    ResourceRow, InsurerRow, Badge, Arrows, Questions, the form parts
+components/         the shared shapes: Button, Routes, SectionHead, Well, Glyph, IconCircle,
+                    ChooserTile, ServiceCard, ServiceRow, FeeRow, Price, ClinicianCard,
+                    HoursCard, ReviewCard, Stars, PlanCard, Tile, Step, ResourceRow,
+                    InsurerRow, Badge, Arrows, Questions, FormCard, the form parts
 styles/theme.css    the Tailwind entry: @theme maps the --sites-* tokens and Clinic's role sizes,
                     and the few rules utilities cannot express
 scripts/theme.ts    the browser JavaScript: component registration, the appointment and menu
-                    panels, a sent request reopening its sheet, the notice, the folding groups,
-                    the ticker's pause button, scroll reveals
+                    panels, a sent request reopening its sheet, the notice, the ticker's
+                    pause button, scroll reveals
 scripts/vendor/     the Magic Spells components, copied in (see vendor/VERSIONS.md)
 styles/vendor/      the same components' stylesheets
 assets/             Red Hat Display and Red Hat Text (OFL), the glyph sprite, the placeholders
@@ -44,14 +44,14 @@ sites.fixtures.json Oakfield Family Dental: pages, menus, forms and every conten
   Classes; Dogs, Cats and Small pets), each with an icon, one line, a photo and a note.
 - **services**: category, summary, description, duration, price and whether it is a starting
   price ("from"), a price note ("per tooth", "Most plans cover this in full"), what the visit
-  includes (one per line), who provides it, an icon, a photo, featured, a tag and a position.
+  includes (one per line), who provides it, an icon, a photo, featured and a position.
 - **conditions**: the concerns a patient arrives with ("Tooth pain", "Lower back pain",
   "Anxiety"), each with a line, a body, the service that usually helps and who to see. Leave the
   type empty and its sections hide.
 - **team**: role, letters (DDS, PT, DPT, LCSW), specialties (comma-separated), bio,
   credentials (one per line), location, a 4:5 portrait, featured and a position.
-- **insurers**, **plans**, **locations** (with fax), **testimonials** (stars, date, source,
-  "Seen by" a clinician, an optional square photo) and **posts** as their sections describe.
+- **insurers**, **plans**, **locations** (with fax), **testimonials** (stars, date, the
+  service and clinician they name, an optional square photo) and **posts** as their sections describe.
 
 ## Practice settings
 
@@ -62,13 +62,18 @@ four kinds of practice without a preset:
 |---|---|---|---|---|
 | Ask button label | Book an appointment | Book an appointment | Book a free call | Book an appointment |
 | Booking link | empty (the request) | your scheduler | empty, or a scheduler | your scheduler |
-| New patients line | Accepting new patients | Accepting new patients | Taking new clients | Registering new pets |
 | Insurance line | In-network with most major plans | Direct billing for most insurers | Out-of-network; superbills provided | empty |
 | Emergency line | Tooth pain? Same-day slots. | empty | empty | Out of hours: … |
 | Footer note | If this is a medical emergency, call 911. | empty | If you are in crisis, call or text 988. | empty |
 
 A therapist removes the testimonials, fees and emergency band from Home in the editor; every
-"patient" string a therapist would change is a setting or section text.
+"patient" string a therapist would change is a setting or section text. A practice that is
+taking new patients says so in the announcement bar.
+
+## Section heads
+
+Every section with a head and a list under it has Heading: Left (the "All …" button right of
+the heading) or Centred (the heading centred, the button centred under the list).
 
 ## Booking
 
@@ -88,8 +93,9 @@ category columns link straight to a tab.
 
 The team grid shows the featured people, everyone, or a group: the people whose role has (or
 lacks) a word. The Team page shows "Dentists" (role has "dentist") and "Hygienists and team"
-(role lacks it), so a large practice stays under twelve a band. A location narrows any of
-them; on a location's page the grid narrows to that location by itself.
+(role lacks it). A location narrows any of them; on a location's page the grid narrows to that
+location by itself. A group is not capped at twelve: the engine has no substring filter, so the
+grid reads every person and keeps the ones whose role matches.
 
 ## Fonts
 
@@ -109,6 +115,14 @@ block:
 ## Palettes
 
 **Clinic blue** (navy, action blue, mustard) is the default. **Calm** (petrol and sea-glass) and
-**Plum** (aubergine and rose) recolour every scheme in one click: the navy, sky, honey and slate
-bands, the links, the accent and the buttons reference the palette; the white page and its two
-light greys stay as they are.
+**Plum** (aubergine and rose) recolour the brand in one click: the navy, sky, honey and slate
+bands, the links, the accent and the buttons reference the palette. The surfaces inside a band
+(its chips, hairlines, hovers and the icon-circle tint) are Clinic blue's and stay as they are,
+as do the white page, Cloud and Ice: the admin paints a scheme value only when it is a plain
+colour or a palette reference, so none is derived with color-mix().
+
+| Palette | Navy | Sky (`info.bg`) | Honey (`accent`) |
+|---|---|---|---|
+| Clinic blue | #102A43 | #5BB7E6 | #F2B94B |
+| Calm | #0E3A40 | #8ED2C8 | #8ED2C8 |
+| Plum | #33203A | #E7D3E4 (Plum's own sky: text 10.5:1, muted 8.3:1) | #E7B9C4 |

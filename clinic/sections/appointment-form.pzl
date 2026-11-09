@@ -3,10 +3,7 @@
 {#let locations = content.locations.entries | sort('fields.order') | slice(0, 4)}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-text-picture md:gap-space-2xl">
-    <div class="sites-scheme-white rounded-card border border-scheme-border bg-scheme-background p-space-lg text-scheme-foreground md:p-space-xl">
-      {#if settings.heading}<h2 class="mb-space-lg font-heading text-h3">{ settings.heading }</h2>{/if}
-      <AppointmentFields handle={ settings.form } prefix="book" />
-    </div>
+    <FormCard heading={ settings.heading }><AppointmentFields handle={ settings.form } prefix="book" /></FormCard>
     {#if settings.aside == 'photo'}
       <Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" />
     {:else}

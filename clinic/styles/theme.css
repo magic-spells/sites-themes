@@ -19,6 +19,7 @@
 
 /* The palette: site-wide values from settings/design.json. */
 @theme {
+	--breakpoint-xs: 30rem;
 	--color-brand-primary: var(--sites-color-brand-primary);
 	--color-brand-secondary: var(--sites-color-brand-secondary);
 	--color-brand-accent: var(--sites-color-brand-accent);

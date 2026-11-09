@@ -489,20 +489,20 @@ dialog-panel:has(bottom-sheet) {
 	}
 }
 
-/* The select lists: the field is surface-2 (the input slot) with no border, the panel the
-   scheme's background with a hairline. */
+/* The select lists: the field is the band colour in a muted hairline (the input
+   slots), the text colour on focus; the panel the same with a surface-2 highlight. */
 select-dropdown {
 	--select-shadow: none;
 	--select-shadow-soft: none;
 	--select-color-text: var(--sites-scheme-input-foreground);
 	--select-color-background: var(--sites-scheme-background);
-	--select-color-border: var(--sites-scheme-chip-border);
+	--select-color-border: var(--sites-scheme-input-border);
 	--select-color-border-hover: var(--sites-scheme-input-foreground);
 	--select-color-border-dark: var(--sites-scheme-input-foreground);
-	--select-color-primary: var(--sites-scheme-links);
-	--select-color-hover: var(--sites-scheme-input-background);
-	--select-color-focus: var(--sites-scheme-input-background);
-	--select-color-selected: var(--sites-scheme-input-background);
+	--select-color-primary: var(--sites-scheme-input-foreground);
+	--select-color-hover: var(--sites-scheme-chip-background);
+	--select-color-focus: var(--sites-scheme-chip-background);
+	--select-color-selected: var(--sites-scheme-chip-background);
 	display: block;
 }
 

@@ -10,7 +10,7 @@
       <div class="md:col-span-2">
         <span class="mb-space-xs block text-body-sm font-medium" id="label-{ prefix }-{ field.id }">{ field.label }{#if field.required}<span aria-hidden="true"> *</span>{/if}</span>
         <select-dropdown class="text-body" aria-labelledby="label-{ prefix }-{ field.id }">
-          <select-trigger class="flex min-h-control items-center justify-between gap-space-sm rounded-input border bg-scheme-surface-2 px-space-sm { field.error ? 'border-scheme-error' : 'border-transparent' }" aria-describedby={ field.error ? 'error-' + prefix + '-' + field.id : null }>
+          <select-trigger class="flex min-h-control items-center justify-between gap-space-sm rounded-input px-space-sm { field.error ? 'border-scheme-error' : '' }" aria-describedby={ field.error ? 'error-' + prefix + '-' + field.id : null }>
             <span class="select-label-text truncate { field.value ? '' : 'text-scheme-muted' }">{ field.value || t('choose') }</span>
             <Glyph name="chevron-down" />
           </select-trigger>
@@ -22,7 +22,7 @@
         {#if field.error}<p class="mt-space-xs text-body-sm text-scheme-error" id="error-{ prefix }-{ field.id }">{ t('form_field_' + field.error) }</p>{/if}
       </div>
     {:else if field.type == 'checkbox'}
-      <label class="flex items-start gap-space-xs text-body-sm md:col-span-2"><input class="mt-space-2xs size-icon accent-accent" type="checkbox" name={ field.id } value="on" checked={ field.value == 'on' } required={ field.required } />{ field.label }</label>
+      <label class="flex items-start gap-space-xs text-body-sm md:col-span-2"><input class="mt-space-2xs size-icon accent-scheme-foreground" type="checkbox" name={ field.id } value="on" checked={ field.value == 'on' } required={ field.required } />{ field.label }</label>
     {:else}
       <Field name={ field.id } label={ field.label } type={ field.id == 'phone' ? 'tel' : field.type } placeholder={ t('placeholder.' + field.id) } required={ field.required } maxlength={ field.max_length } value={ field.value } error={ field.error } prefix={ prefix } wide={ !half } />
     {/if}

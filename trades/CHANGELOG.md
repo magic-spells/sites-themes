@@ -21,10 +21,12 @@
   over the contact form. A plan's button reads "Join <plan>"; the CTA band shows the confirm
   line under its ask button.
 - The ask button stands alone wherever a page asks, with no phone number beside it; the split
-  hero's photo meets the copy without a fade; chips, fields and carousel arrows sit on
-  surface-2, the neutral of the cards, in place of the rust tint, and icon circles are a disc
-  of the band colour in a hairline ring. The FAQ sets its heading left of the questions from
-  48rem; the projects strip shows whole slides from 48rem and lets its neighbours show through
-  the gutters on phones; the stats numerals are h2. The services page sets its list and
-  questions on chalk between the paper bands, and the testimonials heading reads "What your
-  neighbors say".
+  hero's photo meets the copy without a fade; chips and carousel arrows sit on surface-2, the
+  neutral of the cards, in place of the rust tint, and icon circles are a disc of the band
+  colour in a hairline ring; fields are the band colour in a muted hairline that turns to the
+  text colour on focus. The FAQ sets its heading left of the questions from 48rem; the
+  projects strip and the testimonials carousel show whole slides from 48rem and let their
+  neighbours show through the gutters on phones; the stats numerals are h2. The services page
+  sets its list and questions on chalk between the paper bands, the areas page its list and
+  the estimate page its questions, and the testimonials heading reads "What your neighbors
+  say".

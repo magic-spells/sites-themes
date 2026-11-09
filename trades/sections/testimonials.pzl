@@ -1,4 +1,4 @@
-<!-- What neighbours say: the section head with the Yard rating pill at its right. Rows: review cards three across from 64rem, two from 48rem, one on phones. Carousel: the same cards on a tarot track, 1.1, 2 then 3 across, the progress hairline and round arrows under it. Featured first or all, capped at the limit. -->
+<!-- What neighbours say: the section head with the Yard rating pill at its right. Rows: review cards three across from 64rem, two from 48rem, one on phones. Carousel: the same cards on a tarot track, 1.1 across on phones with the neighbours showing through the gutters, then whole cards, 2 then 3 across, the progress hairline and round arrows under it. Featured first or all, capped at the limit. -->
 {#let
   id = 'reviews-' + section.id
   all = content.testimonials.entries | sort('fields.order')
@@ -12,7 +12,7 @@
     {#if settings.layout == 'carousel'}
       <tarot-carousel class="block" id={ id }>
         <script type="application/json" data-tarot-options>{ options | json }</script>
-        <tarot-viewport class="overflow-visible"><tarot-track>
+        <tarot-viewport class="max-md:overflow-visible"><tarot-track>
           {#for entry in reviews}<tarot-slide><ReviewCard entry={ entry } /></tarot-slide>{/for}
         </tarot-track></tarot-viewport>
         <Arrows bar="bar-{ id }" />

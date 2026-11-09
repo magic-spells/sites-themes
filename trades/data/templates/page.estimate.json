@@ -28,7 +28,7 @@
       "type": "faq",
       "preset": "Default",
       "settings": {
-        "color_scheme": "paper"
+        "color_scheme": "chalk"
       },
       "blocks": [
         {

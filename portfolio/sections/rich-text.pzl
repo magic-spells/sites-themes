@@ -1,8 +1,8 @@
-<!-- Prose in the reading column: the section's own text, or the page's body when it has none. -->
+<!-- Prose in the reading column at the left: the section's own text, or the page's body when it has none. -->
 {#let body = settings.body || page.content}
 {#if body || settings.heading}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-reading gap-space-md">
+  <div class="mx-auto grid max-w-column gap-space-md *:max-w-reading">
     {#if settings.heading}<h2 class="text-h2 text-balance text-scheme-heading">{ settings.heading }</h2>{/if}
     {#if body}<div class="sites-prose text-body">{ body }</div>{/if}
   </div>

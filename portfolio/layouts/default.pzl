@@ -19,8 +19,8 @@
     {#if site.settings.favicon}<link rel="icon" type="image/png" href="{ image_url(site.settings.favicon, 160, { height: 160, format: 'png' }) }" />
     {:else}<link rel="icon" type="image/svg+xml" href="{ asset_url('favicon.svg') }" />{/if}
     {#if site.settings.reveal}
-    <!-- Reveals are off until a script says otherwise: <html> is served with reveal-off, which shows every card with JavaScript disabled. This lifts it before the body paints, and puts it back if the theme script has not armed the reveals 1.5 s after load. -->
-    <script>{#raw}(function(){var r=document.documentElement;r.classList.remove('reveal-off');addEventListener('load',function(){setTimeout(function(){if(!r.classList.contains('reveal-armed'))r.classList.add('reveal-off')},1500)})})(){/raw}</script>
+    <!-- Reveals are off until a script says otherwise: <html> is served with reveal-off, which shows every card with JavaScript disabled. This lifts it before the body paints. -->
+    <script>{#raw}document.documentElement.classList.remove('reveal-off'){/raw}</script>
     {/if}
     <Slot name="head-content"/>
   </head>

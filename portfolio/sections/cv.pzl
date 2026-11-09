@@ -9,7 +9,7 @@
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
-    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } aside={ download }>{#if download}<Button href={ cv.href } external={ true }>{ cv.label }</Button>{/if}</SectionHead>
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } aside={ download }>{#if download}<Button href={ cv.href } external={ true }>{ cv.label }<Glyph name="arrow-down" /></Button>{/if}</SectionHead>
     <div class="grid gap-space-2xl">
       {#for kind in kinds}
         {#let rows = entries | where('fields.kind', kind)}

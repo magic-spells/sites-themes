@@ -6,7 +6,7 @@
     <div class="grid justify-items-start gap-space-md">
       <h2 class="text-h2 text-balance text-scheme-heading">{ settings.heading }</h2>
       {#if settings.body}<div class="sites-prose text-body-lg">{ settings.body }</div>{/if}
-      {#if settings.link_label && settings.link_href}<a class="text-body text-link underline decoration-1 underline-offset-link" href="{ settings.link_href }">{ settings.link_label }</a>{/if}
+      {#if settings.link_label && settings.link_href}<a class="link text-body" href="{ settings.link_href }">{ settings.link_label }</a>{/if}
     </div>
   </div>
 </section>

@@ -1,4 +1,4 @@
-<!-- A post: the title as the h1 at 110% width, the standfirst in muted and "Topic · Sep 14, 2026" in meta, an optional 3:2 picture and the body, all in the reading column at the left like a work page, then the link back to the writing. -->
+<!-- A post: the title as the h1 at 110% width, the standfirst in muted and "Topic · Sep 14, 2026 · the wordmark" in meta, an optional 3:2 picture and the body, all in the reading column at the left like a work page, then the link back to the writing on a hairline. -->
 {#let
   post = page.entry
   f = post.fields
@@ -6,13 +6,13 @@
 <article class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column gap-space-xl *:max-w-reading">
     <header class="grid gap-space-sm">
-      <h1 class="font-wide text-h1 text-balance text-scheme-heading">{ post.title }</h1>
+      <h1 class="font-wide text-h1 text-scheme-heading">{ post.title }</h1>
       {#if f.standfirst}<p class="text-body-lg text-pretty text-scheme-muted">{ f.standfirst }</p>{/if}
-      <p class="text-body-sm text-scheme-meta">{ [f.topic || null, f.date ? f.date | date : null] | compact | join(' · ') }</p>
+      <p class="text-body-sm text-scheme-meta">{ [f.topic || null, f.date ? f.date | date : null, site.settings.wordmark || null] | compact | join(' · ') }</p>
     </header>
     <Picture asset={ f.image } alt={ f.image_alt } ratio="aspect-photo" width={ 1280 } sizes="(min-width: 48rem) 40rem, 100vw" eager={ true } />
     {#if f.body}<div class="sites-prose text-body">{ f.body }</div>{/if}
-    {#if settings.link_label}<a class="justify-self-start text-body text-link underline decoration-1 underline-offset-link" href="{ settings.link_href }">{ settings.link_label }</a>{/if}
+    {#if settings.link_label}<p class="border-t border-scheme-border pt-space-md text-body"><a class="link inline-flex items-center gap-space-xs" href="{ settings.link_href }"><Glyph name="arrow-left" />{ settings.link_label }</a></p>{/if}
   </div>
 </article>
 

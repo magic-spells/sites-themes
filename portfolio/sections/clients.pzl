@@ -14,7 +14,7 @@
         <button class="flex size-tap shrink-0 items-center justify-center text-scheme-meta hover:text-scheme-foreground" type="button" data-ticker-toggle aria-pressed="false"><Glyph name="pause" /><span class="sr-only">{ t('pause') }</span></button>
       </div>
     {:else}
-      <ul class="flex flex-wrap gap-x-space-2xl gap-y-space-sm border-y border-scheme-border py-space-md text-body-lg">{#for name in names}<li>{ name | strip }</li>{/for}</ul>
+      <ul class="flex flex-wrap gap-x-space-2xl gap-y-space-sm border-y border-scheme-border py-space-md text-body">{#for name in names}<li>{ name | strip }</li>{/for}</ul>
     {/if}
   </div>
 </section>

@@ -14,7 +14,7 @@
           <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
         {/if}
       </Form>
-      <div class="grid gap-space-sm max-md:order-first">
+      <div class="grid gap-space-sm">
         {#if settings.note}<p class="text-body text-pretty text-scheme-muted">{ settings.note }</p>{/if}
         <Reach menu={ settings.social_menu } />
       </div>

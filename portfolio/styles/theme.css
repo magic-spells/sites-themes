@@ -134,7 +134,7 @@
 	--spacing-icon: 1.25rem;
 	--spacing-glyph: 1.5rem;
 	--spacing-dot: 0.5rem;
-	--spacing-header: 4.5rem;
+	--spacing-header: 3.75rem;
 	--spacing-thumb: 6rem;
 	--spacing-textarea: 8rem;
 	--container-column: 82.5rem;
@@ -212,6 +212,11 @@
 	}
 }
 
+/* Every text link: the link colour, underlined 1px on the offset token. */
+@utility link {
+	@apply text-link underline decoration-1 underline-offset-link;
+}
+
 /* The name hero and page titles at 110% width. The engine declares each
    weight of the variable file as its own face, without a stretch range, so
    font-stretch cannot reach the axis; the variation setting can. */
@@ -228,6 +233,9 @@
 }
 
 body:has([data-bare]) [data-group] { display: none; }
+
+/* The section after a page header starts at its standfirst, not a section gap below it. */
+[data-section="page-header"] + [data-section] > section { padding-top: 0; }
 
 html.reveal-off .reveal:not(.is-revealed) {
 	opacity: 1;
@@ -298,10 +306,7 @@ html.reveal-off split-text:not(:defined) {
 	}
 
 	.sites-prose a {
-		color: var(--sites-scheme-links);
-		text-decoration-line: underline;
-		text-decoration-thickness: 1px;
-		text-underline-offset: var(--text-underline-offset-link);
+		@apply link;
 	}
 
 	.sites-prose :is(ul, ol) {

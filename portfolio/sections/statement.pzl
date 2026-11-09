@@ -2,7 +2,7 @@
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column gap-space-lg { settings.align == 'centre' ? 'justify-items-center' : 'justify-items-start' }">
     <Statement text={ settings.text } muted={ settings.text_muted } size={ settings.size } align={ settings.align } />
-    {#if settings.link_label && settings.link_href}<a class="text-body text-link underline decoration-1 underline-offset-link" href="{ settings.link_href }">{ settings.link_label }</a>{/if}
+    {#if settings.link_label && settings.link_href}<a class="link text-body" href="{ settings.link_href }">{ settings.link_label }</a>{/if}
   </div>
 </section>
 

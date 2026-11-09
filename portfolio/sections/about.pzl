@@ -11,7 +11,7 @@
       <div class="{ settings.picture == 'right' ? 'md:order-last' : '' }"><Picture asset={ settings.image } alt={ settings.image_alt } ratio={ above ? 'aspect-photo' : (settings.ratio == '4:5' ? 'aspect-portrait' : 'aspect-square') } width={ above ? 2000 : 1200 } sizes={ above ? '(min-width: 82.5rem) 82.5rem, 100vw' : '(min-width: 48rem) 40vw, 100vw' } caption={ settings.caption } /></div>
       <div class="grid justify-items-start gap-space-lg { above ? 'max-w-reading' : '' }">
         <div class="sites-prose text-body-lg">{ body | raw }</div>
-        {#if settings.short && settings.link_label && settings.link_href}<a class="text-body text-link underline decoration-1 underline-offset-link" href="{ settings.link_href }">{ settings.link_label }</a>{/if}
+        {#if settings.short && settings.link_label && settings.link_href}<a class="link text-body" href="{ settings.link_href }">{ settings.link_label }</a>{/if}
         {#if settings.show_contact && (s.email || settings.social_menu.items.length)}
           <div class="flex w-full flex-wrap gap-x-space-md gap-y-space-xs border-t border-scheme-border pt-space-md text-body">
             <Reach menu={ settings.social_menu } />

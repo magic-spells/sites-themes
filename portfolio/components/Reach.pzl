@@ -1,9 +1,9 @@
 <!-- component: Reach -->
 <!-- props: menu cls -->
 <!-- The email from Person (cls sets its size) and the social menu, as underlined text links in the link colour. The parent lays the two out. -->
-{#if site.settings.email}<a class="justify-self-start text-link underline decoration-1 underline-offset-link { cls ?? '' }" href="mailto:{ site.settings.email }">{ site.settings.email }</a>{/if}
+{#if site.settings.email}<a class="link justify-self-start { cls ?? '' }" href="mailto:{ site.settings.email }">{ site.settings.email }</a>{/if}
 {#if menu.items.length}
   <ul class="flex flex-wrap gap-x-space-md gap-y-space-xs text-body">
-    {#for item in menu.items}<li><a class="text-link underline decoration-1 underline-offset-link" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null }>{ item.label }</a></li>{/for}
+    {#for item in menu.items}<li><a class="link" href="{ item.href }" target={ item.open_in_new ? '_blank' : null } rel={ item.open_in_new ? 'noopener' : null }>{ item.label }</a></li>{/for}
   </ul>
 {/if}

@@ -9,7 +9,7 @@
 }
 <article class="group grid gap-space-xs { card ? 'content-start' : 'border-b border-scheme-border py-space-md md:grid-cols-row md:gap-x-space-lg' } { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
   {#if card}<a class="mb-space-xs block" href="{ href }" tabindex="-1" aria-hidden="true"><Picture asset={ f.image } alt="" ratio="aspect-photo" sizes="(min-width: 48rem) 50vw, 100vw" /></a>{/if}
-  <h3 class="text-h3 text-balance"><a class="decoration-1 underline-offset-link hover:underline" href="{ href }">{ entry.title }</a></h3>
-  {#if f.standfirst}<p class="text-body text-pretty text-scheme-muted md:col-start-1">{ f.standfirst }</p>{/if}
+  <h3 class="text-h3"><a class="decoration-1 underline-offset-link hover:underline" href="{ href }">{ entry.title }</a></h3>
+  {#if f.standfirst}<p class="text-body text-scheme-muted md:col-start-1">{ f.standfirst }</p>{/if}
   <p class="text-body-sm text-scheme-meta { card ? '' : 'md:col-start-2 md:row-start-1' }">{ meta }</p>
 </article>

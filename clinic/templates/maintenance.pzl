@@ -1,7 +1,7 @@
 <!-- template: Maintenance -->
 <!-- layout: default -->
 <!-- The site paused, on navy with no header or footer: the wordmark, "Back soon." and one line with the phone for anything urgent. -->
-<Utility bare scheme="navy">
+<Utility bare>
   <p class="font-heading text-h3 font-bold">{ site.settings.wordmark || site.name }</p>
   <h1 class="font-heading text-h2 text-balance">{ t('maintenance_title') }</h1>
   {#if site.settings.phone}<p class="text-body text-pretty">{ t('maintenance_body', { phone: site.settings.phone }) }</p>{/if}

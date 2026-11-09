@@ -1,6 +1,6 @@
 {
   "label": "Day spa",
-  "description": "The front page: the arch hero, the categories, the most booked, the team, the first visit and the gift card.",
+  "description": "The front page: the arch hero, the categories, the most booked, the team and the first visit.",
   "sections": [
     {
       "id": "s_hero",
@@ -116,19 +116,25 @@
     {
       "id": "s_strip",
       "type": "gallery-strip",
-      "preset": "Strip",
+      "preset": "Bundle",
       "settings": {
+        "layout": "bundle",
         "gallery": "home-strip",
         "color_scheme": "linen"
       },
       "blocks": []
     },
     {
-      "id": "s_gift",
-      "type": "gift-cards",
-      "preset": "Clay",
+      "id": "s_journal",
+      "type": "journal-list",
+      "preset": "Feature",
       "settings": {
-        "color_scheme": "clay"
+        "heading": "Articles and *news*",
+        "view": "feature",
+        "limit": 3,
+        "link_label": "All posts",
+        "link_href": "/journal",
+        "color_scheme": "sand"
       },
       "blocks": []
     },

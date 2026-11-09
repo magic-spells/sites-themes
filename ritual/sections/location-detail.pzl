@@ -1,4 +1,4 @@
-<!-- A location's page: the 4:5 portal photo beside the name in h1, the description, the address, hours and contact in three columns, the note and Book; then the map (an image or an embedded map in a capped 3:2 well) and the events held there. -->
+<!-- A location's page: the 4:5 portal photo beside the name in h1, the description, the address, hours and contact in three columns, the note and Book; then the map (an image or an embedded map in a rounded 3:2 well) and the events held there. -->
 {#let
   loc = page.entry
   f = loc.fields
@@ -6,7 +6,7 @@
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column gap-space-2xl">
-    <div class="grid items-center gap-space-xl md:grid-cols-picture-text md:gap-space-3xl">
+    <div class="grid items-center gap-space-xl md:grid-cols-narrow-wide md:gap-space-3xl">
       <div><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" eager={ true } /></div>
       <div class="grid gap-space-md">
         <h1 class="font-heading text-h1 text-balance text-scheme-heading"><Accent text={ loc.title } rise={ true } /></h1>
@@ -24,9 +24,9 @@
       </div>
     </div>
     {#if f.map_embed_url}
-      <div class="relative aspect-3/2 overflow-hidden rounded-t-cap bg-scheme-surface-2 md:aspect-wide"><iframe class="absolute inset-0 size-full" src="{ f.map_embed_url }" title="{ t('map_of', { name: loc.title }) }" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="relative aspect-3/2 overflow-hidden rounded-cap bg-scheme-surface-2 md:aspect-wide"><iframe class="absolute inset-0 size-full" src="{ f.map_embed_url }" title="{ t('map_of', { name: loc.title }) }" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     {:else if f.map_image}
-      <a class="block" href={ f.map_url || null } target="_blank" rel="noopener"><Well asset={ f.map_image } alt={ f.map_image_alt } ratio="aspect-3/2 md:aspect-wide" shape="cap" width={ 1600 } sizes="100vw" /></a>
+      <a class="block" href={ f.map_url || null } target="_blank" rel="noopener"><Well asset={ f.map_image } alt={ f.map_image_alt } ratio="aspect-3/2 md:aspect-wide" shape="round" width={ 1600 } sizes="100vw" /></a>
     {/if}
     {#if settings.show_events && events.length}
       <div>

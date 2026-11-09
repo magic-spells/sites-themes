@@ -5,14 +5,14 @@
 }
 {#if tiles.length}
 <section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter">
-  <div class="mx-auto max-w-column { split ? 'grid items-center gap-space-xl px-gutter md:grid-cols-text-picture md:gap-space-3xl md:px-0' : '' }">
+  <div class="mx-auto max-w-column { split ? 'grid items-center gap-space-xl px-gutter md:grid-cols-wide-narrow md:gap-space-3xl md:px-0' : '' }">
     {#if !split}<div class="px-gutter md:px-0"><SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.handle } link_href={ settings.url } /></div>{/if}
     <ul class="flex gap-space-sm { split ? '' : 'snap-x snap-mandatory scroll-px-gutter overflow-x-auto px-gutter md:gap-space-md md:px-0 lg:grid lg:grid-cols-6' }">
       {#for block in tiles}
         {#let b = block.settings}
         <li class="shrink-0 snap-start { split ? 'flex-1' : 'w-2/5 md:w-1/4 lg:w-auto' }" data-block={ block.editor_id }>
           <a class="group relative block aspect-square overflow-hidden rounded-md bg-scheme-surface-2" href="{ b.link || settings.url }" target="_blank" rel="noopener">
-            {#if b.image}<img class="size-full object-cover transition-transform duration-panel ease-out-soft group-hover:scale-105" src="{ image_url(b.image, 640) }" srcset="{ image_srcset(b.image, [320, 640, 960]) }" sizes="(min-width: 64rem) 13rem, 40vw" alt="{ b.image_alt || t('social_post') }" loading="lazy" width={ b.image.width } height={ b.image.height } />{/if}
+            {#if b.image}<img class="size-full object-cover transition-transform duration-panel ease-out-soft group-hover:scale-105" src="{ image_url(b.image, 640) }" srcset="{ image_srcset(b.image, [320, 640, 1024]) }" sizes="(min-width: 64rem) 13rem, 40vw" alt="{ b.image_alt || t('social_post') }" loading="lazy" width={ b.image.width } height={ b.image.height } />{/if}
             <span class="sites-icon absolute end-space-sm bottom-space-sm size-icon text-on-photo" aria-hidden="true">{#svg 'icons/instagram.svg'}</span>
           </a>
         </li>

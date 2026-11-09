@@ -1,22 +1,23 @@
-<!-- The journal: the newest post as a wide featured card, then two per row, the topic and date on a Meta line, no reading time. A List and Grid switch (shown once theme.ts runs) swaps the cards for rows with a thumbnail. On a post's page it leaves that post out. -->
+<!-- The journal, three views. Grid: the newest post as a wide featured card, then two per row, the topic and date on a Meta line, no reading time. List: rows with a thumbnail; a Grid and List switch (shown once theme.ts runs) lets readers swap the two. Feature: the newest across two of three columns from 64rem, the next two stacked beside it without a standfirst, no switch. On a post's page it leaves that post out. -->
 {#let
   posts = content.posts.entries | sort('fields.date') | reverse | reject('id', page.entry.id) | slice(0, settings.limit)
-  lead = settings.feature_first ? posts | first : null
+  feature = settings.view == 'feature'
+  lead = settings.feature_first && !feature ? posts | first : null
   rest = lead ? posts | slice(1) : posts
 }
 {#if posts.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-view={ settings.view }>
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } />
-    {#if settings.show_switch}
+    {#if settings.show_switch && !feature}
       <div class="mb-space-md ms-auto flex w-fit gap-space-2xs rounded-full border border-scheme-rule p-space-2xs" data-view-switch hidden>
         <button class="flex size-tap items-center justify-center rounded-full current:bg-scheme-surface-2" type="button" data-view-set="grid" aria-pressed={ settings.view == 'grid' ? 'true' : 'false' }><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/grid.svg'}</span><span class="sr-only">{ t('view_grid') }</span></button>
         <button class="flex size-tap items-center justify-center rounded-full current:bg-scheme-surface-2" type="button" data-view-set="list" aria-pressed={ settings.view == 'list' ? 'true' : 'false' }><span class="sites-icon size-icon" aria-hidden="true">{#svg 'icons/list.svg'}</span><span class="sr-only">{ t('view_list') }</span></button>
       </div>
     {/if}
-    {#if lead}<div class="mb-space-2xl view-list:mb-space-md"><PostCard entry={ lead } base_path={ settings.base_path } featured={ true } /></div>{/if}
-    <ul class="grid gap-x-space-md gap-y-space-xl md:grid-cols-2 view-list:gap-y-space-md view-list:md:grid-cols-1">
-      {#for entry in rest}<li><PostCard entry={ entry } base_path={ settings.base_path } /></li>{/for}
+    {#if lead}<div class="mb-space-2xl view-list:mb-space-md"><PostCard entry={ lead } base_path={ settings.base_path } featured={ true } eager={ true } /></div>{/if}
+    <ul class="grid gap-x-space-md gap-y-space-xl md:grid-cols-2 view-list:gap-y-space-md view-list:md:grid-cols-1 { feature ? 'lg:grid-cols-3' : '' }">
+      {#for entry in rest, i}<li class={ feature && i == 0 ? 'md:col-span-2 lg:row-span-2' : null }><PostCard entry={ entry } base_path={ settings.base_path } featured={ feature && i == 0 } ratio={ feature && i == 0 ? 'aspect-3/2' : null } compact={ feature && i > 0 } /></li>{/for}
     </ul>
   </div>
 </section>
@@ -25,7 +26,7 @@
 <schema>
 {
   "name": "Journal list",
-  "description": "Posts as cards with the newest featured, or as rows.",
+  "description": "Posts as cards with the newest featured, as rows, or the newest beside two.",
   "kind": "Journal",
   "icon": "newspaper",
   "settings": [
@@ -34,7 +35,8 @@
     { "type": "checkbox", "id": "feature_first", "label": "Feature the newest", "default": true },
     { "type": "select", "id": "view", "label": "View", "default": "grid", "options": [
       { "value": "grid", "label": "Grid" },
-      { "value": "list", "label": "List" }
+      { "value": "list", "label": "List" },
+      { "value": "feature", "label": "Feature" }
     ] },
     { "type": "checkbox", "id": "show_switch", "label": "Let readers switch the view", "default": true },
     { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 11 },
@@ -45,7 +47,8 @@
   ],
   "presets": [
     { "name": "Default", "settings": { "color_scheme": "linen" } },
-    { "name": "More", "settings": { "heading": "More *posts*", "feature_first": false, "show_switch": false, "limit": 2, "link_label": "All posts", "color_scheme": "linen" } }
+    { "name": "More", "settings": { "heading": "More *posts*", "feature_first": false, "show_switch": false, "limit": 2, "link_label": "All posts", "color_scheme": "linen" } },
+    { "name": "Feature", "settings": { "heading": "Articles and *news*", "view": "feature", "limit": 3, "link_label": "All posts", "color_scheme": "sand" } }
   ]
 }
 </schema>

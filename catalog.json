@@ -94,7 +94,7 @@
     {
       "name": "ritual",
       "label": "Ritual",
-      "description": "A day spa, salon or studio: the service menu with dotted price lines, arched team portraits, packages, gift cards, a gallery with before and after, and one Book button that opens an appointment request from anywhere.",
+      "description": "A day spa, salon or studio: the service menu with dotted price lines, arched team portraits, packages, a gallery with before and after, and one Book button that opens an appointment request from anywhere.",
       "category": "content",
       "vertical": "Health and beauty",
       "license": "MIT",

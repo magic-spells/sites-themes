@@ -1,16 +1,23 @@
-<!-- The appointment request inline, for the booking page and for a visitor without JavaScript: the form on a surface-2 panel in two columns from 48rem, beside a 4:5 portal photo. -->
-{#let confirm = settings.confirm || site.settings.confirm_line}
+<!-- The appointment request inline, for the booking page and for a visitor without JavaScript: the form on a surface-2 panel in two columns from 48rem, beside a 4:5 portal photo or, with Aside set to Details, the first location's phone, address and hours in three cards. -->
+{#let
+  confirm = settings.confirm || site.settings.confirm_line
+  photo = settings.aside != 'details' && settings.image
+  loc = settings.aside == 'details' && (content.locations.entries | sort('fields.order') | first)
+  f = loc ? loc.fields : null
+  phone = (f && f.phone) || site.settings.phone
+  email = (f && f.email) || site.settings.email
+}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column items-start gap-space-xl lg:grid-cols-5 lg:gap-space-3xl">
-    {#if settings.image}<div class="hidden w-full max-w-photo lg:col-span-2 lg:block"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="30rem" /></div>{/if}
-    <div class="grid gap-space-lg rounded-md bg-scheme-surface-2 p-space-lg md:p-space-xl { settings.image ? 'lg:col-span-3' : 'lg:col-span-5 lg:max-w-panel' }">
+  <div class="mx-auto grid max-w-column items-start gap-space-xl { loc ? 'md:grid-cols-wide-narrow md:gap-space-3xl' : 'lg:grid-cols-5 lg:gap-space-3xl' }">
+    {#if photo}<div class="hidden w-full max-w-photo lg:col-span-2 lg:block"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="30rem" /></div>{/if}
+    <div class="grid gap-space-lg rounded-md bg-scheme-surface-2 p-space-lg md:p-space-xl { photo ? 'lg:col-span-3' : (loc ? '' : 'lg:col-span-5 lg:max-w-panel') }">
       <SectionHead heading={ settings.heading } text={ settings.text } />
       <Form handle={ settings.form || site.settings.booking_form } class="grid gap-space-md" id="booking-form-{ section.id }">
         {#if form.sent}
           <p class="text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
         {:else}
           {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
-          <FormFields fields={ form.fields } prefix="book-{ section.id }" columns={ true } />
+          <FormFields fields={ form.fields } prefix="book-{ section.id }" columns={ !loc } />
           <div class="flex flex-wrap items-center gap-space-md">
             <Button type="submit">{ form.submit_label || t('request_appointment') }</Button>
             {#if confirm}<p class="text-body-sm text-scheme-meta">{ confirm }</p>{/if}
@@ -19,13 +26,34 @@
         {/if}
       </Form>
     </div>
+    {#if loc}
+      <div class="grid gap-space-md">
+        <div class="grid gap-space-sm rounded-md bg-scheme-surface-2 p-space-lg">
+          <h2 class="font-heading text-h4 text-scheme-heading">{ t('call_or_text') }</h2>
+          {#if phone}<a class="justify-self-start text-body-lg font-semibold text-accent underline-offset-4 hover:underline" href="tel:{ phone | replace(' ', '') }">{ phone }</a>{/if}
+          {#if email}<a class="justify-self-start text-body underline-offset-4 hover:underline" href="mailto:{ email }">{ email }</a>{/if}
+          {#if phone}<div><Button href="tel:{ phone | replace(' ', '') }" tone="secondary">{ t('call') }</Button></div>{/if}
+        </div>
+        <div class="grid gap-space-sm rounded-md bg-scheme-surface-2 p-space-lg">
+          <h2 class="font-heading text-h4 text-scheme-heading">{ t('find_us') }</h2>
+          <p class="text-body font-semibold">{ loc.title }</p>
+          <address class="text-body not-italic text-scheme-muted">{ f.address | newline_to_br }</address>
+          {#if f.note}<p class="text-body-sm text-scheme-meta">{ f.note }</p>{/if}
+          {#if f.map_url}<div><Button href={ f.map_url } external={ true } tone="secondary">{ t('directions') }</Button></div>{/if}
+        </div>
+        <div class="grid gap-space-sm rounded-md bg-scheme-surface-2 p-space-lg">
+          <h2 class="font-heading text-h4 text-scheme-heading">{ t('opening_hours') }</h2>
+          <HoursTable hours={ f.hours } />
+        </div>
+      </div>
+    {/if}
   </div>
 </section>
 
 <schema>
 {
   "name": "Booking form",
-  "description": "The appointment request form on the page, beside a photo.",
+  "description": "The appointment request form beside a photo or the house's contact, address and hours.",
   "kind": "Forms",
   "icon": "calendar-plus",
   "settings": [
@@ -33,12 +61,17 @@
     { "type": "text", "id": "text", "label": "Text", "default": "Pick a treatment and a time of day. We will find the hour and confirm it with you." },
     { "type": "form", "id": "form", "label": "Form", "info": "Leave empty to use the House booking form." },
     { "type": "text", "id": "confirm", "label": "Confirm line", "default": "", "info": "Leave empty to use the House confirm line." },
-    { "type": "image", "id": "image", "label": "Image", "info": "4:5, beside the form on large screens." },
+    { "type": "select", "id": "aside", "label": "Aside", "default": "photo", "options": [
+      { "value": "photo", "label": "Photo" },
+      { "value": "details", "label": "Details" }
+    ] },
+    { "type": "image", "id": "image", "label": "Image", "info": "4:5, beside the form when Aside is Photo." },
     { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "linen" } }
+    { "name": "Default", "settings": { "color_scheme": "linen" } },
+    { "name": "Details", "settings": { "aside": "details", "color_scheme": "linen" } }
   ]
 }
 </schema>

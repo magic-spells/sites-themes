@@ -44,7 +44,7 @@
       </div>
     </div>
   {:else}
-    <div class="mx-auto grid max-w-column items-center gap-space-xl { layout == 'arch' ? 'pt-space-lg' : '' } { layout == 'arch' || capsules ? 'lg:grid-cols-text-picture lg:gap-space-3xl' : '' } { capsules ? 'lg:h-full lg:grid-rows-1' : '' } { centred ? 'justify-items-center text-center' : '' }">
+    <div class="mx-auto grid max-w-column items-center gap-space-xl { layout == 'arch' ? 'pt-space-lg' : '' } { layout == 'arch' || capsules ? 'lg:grid-cols-wide-narrow lg:gap-space-3xl' : '' } { capsules ? 'lg:h-full lg:grid-rows-1' : '' } { centred ? 'justify-items-center text-center' : '' }">
       {#if layout == 'dome' && settings.image}<div class="-mx-gutter w-screen max-w-column lg:mx-0 lg:w-full"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-dome" shape="dome" width={ 1600 } sizes="100vw" eager={ true } /></div>{/if}
       <div class="grid gap-space-md { centred ? 'max-w-reading justify-items-center' : 'py-space-xl' }">
         <h1 class="font-heading text-h1 text-balance text-scheme-heading"><Accent text={ settings.heading } rise={ true } /></h1>

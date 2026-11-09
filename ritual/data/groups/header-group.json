@@ -16,7 +16,6 @@
       "type": "announcement-bar",
       "preset": "Fern",
       "settings": {
-        "link": "/gift-cards",
         "key": "",
         "color_scheme": "fern"
       },

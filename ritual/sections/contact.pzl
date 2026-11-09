@@ -6,7 +6,7 @@
   email = (f && f.email) || site.settings.email
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-text-picture md:gap-space-3xl">
+  <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-wide-narrow md:gap-space-3xl">
     <div>
       <SectionHead heading={ settings.heading } text={ settings.text } />
       <Form handle={ settings.form } class="grid gap-space-md" id="contact-{ section.id }">

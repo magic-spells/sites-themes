@@ -100,7 +100,7 @@
 	--radius-full: var(--sites-radius-full);
 	--radius-button: var(--sites-button-radius);
 	--radius-input: var(--sites-input-radius);
-	/* The landscape well's capped top corners. */
+	/* The round well's corners. */
 	--radius-cap: var(--ritual-cap);
 	--shadow-sm: var(--sites-shadow-sm);
 	--shadow-md: var(--sites-shadow-md);
@@ -167,18 +167,11 @@
 	--aspect-capsule: 3 / 5;
 	--aspect-wide: 21 / 9;
 	--aspect-dome: 2 / 1;
-	--aspect-collage: 1000 / 1009;
-	--aspect-collage-wide: 1000 / 536;
 	--grid-template-columns-header: 1fr auto 1fr;
 	--grid-template-columns-row: 9rem 1fr auto;
-	/* A picture beside text: the text takes seven parts, the picture five, one 3xl gap between. */
-	--grid-template-columns-text-picture: 7fr 5fr;
-	--grid-template-columns-picture-text: 5fr 7fr;
-	/* The gallery collage: column lines at 47% and 100% on a phone; at 47, 59, 68 and 76% from 48rem. Row lines are the portal's and the square's tops in units of the landscape's height (52 and 74 on a phone, 22.5 and 62.5 from 48rem). */
-	--grid-template-columns-collage: 47fr 53fr;
-	--grid-template-columns-collage-wide: 47fr 12fr 9fr 8fr 24fr;
-	--grid-template-rows-collage: 52fr 22fr 77.4fr;
-	--grid-template-rows-collage-wide: 22.5fr 40fr 73.7fr;
+	/* A picture beside text: one column takes seven parts, the other five (the text usually the wide one). */
+	--grid-template-columns-wide-narrow: 7fr 5fr;
+	--grid-template-columns-narrow-wide: 5fr 7fr;
 	--opacity-dots-inactive: 35%;
 	--transition-duration-fast: 150ms;
 	--transition-duration-panel: 250ms;
@@ -253,9 +246,11 @@
 }
 @utility edge-dome {
 	position: relative;
+	isolation: isolate;
 	&::before {
 		content: "";
 		position: absolute;
+		z-index: -2;
 		inset-inline: 0;
 		top: calc(var(--ritual-rise) * -1);
 		height: var(--ritual-rise);
@@ -286,6 +281,11 @@ main > [data-section]:has(+ [data-section] .edge-dome) > section {
 	background-size: 10rem;
 	mix-blend-mode: soft-light;
 	opacity: 0.35;
+}
+/* On a domed band the grain covers the dome too, so the curve and the band read as one colour. */
+.edge-dome[data-texture="grain"]::after {
+	top: calc(var(--ritual-rise) * -1);
+	border-radius: 50% 50% 0 0 / var(--ritual-rise) var(--ritual-rise) 0 0;
 }
 
 /* Two bands on the same scheme in a row read as one: the second drops its
@@ -572,6 +572,10 @@ select-dropdown {
 	--select-color-focus: var(--sites-scheme-chip-background);
 	--select-color-selected: var(--sites-scheme-chip-background);
 	display: block;
+}
+/* A closed panel that has never opened has no height, so its option list does not lengthen the page; opening sets the height inline. */
+select-panel {
+	max-height: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {

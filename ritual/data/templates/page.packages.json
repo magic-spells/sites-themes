@@ -39,14 +39,6 @@
           }
         },
         {
-          "id": "s_faq_b2",
-          "type": "item",
-          "settings": {
-            "question": "Do gift cards expire?",
-            "answer": "<p>No. A gift card keeps its value until it is spent, on any treatment or product.</p>"
-          }
-        },
-        {
           "id": "s_faq_b3",
           "type": "item",
           "settings": {

@@ -1,4 +1,4 @@
-<!-- Photo doors, one per category: a 3:2 well with the capped top, the name in Card title, its line in Meta and "See the menu", each opening the menu at that category. Three, two, then one across. With feature first the first door runs the full row at 64rem on a wide well and the other five sit in one row, so six never leave an orphan. -->
+<!-- Photo doors, one per category: a 3:2 well with rounded corners, the name in Card title, its line in Meta and "See the menu", each opening the menu at that category. Three, two, then one across. With feature first the first door runs the full row at 64rem on a wide well and the other five sit in one row, so six never leave an orphan. -->
 {#let
   wanted = settings.handles | split(',')
   listed = settings.source == 'listed' && settings.handles
@@ -13,7 +13,7 @@
           {#let wide = feature && i == 0}
           <li class={ wide ? 'lg:col-span-5' : null }>
             <a class="group grid gap-space-sm { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" href="{ settings.services_path }?category={ entry.handle }">
-              <Well asset={ entry.fields.image } alt={ entry.fields.image_alt } ratio={ wide ? 'aspect-3/2 lg:aspect-wide' : 'aspect-3/2' } shape="cap" width={ wide ? 1600 : 800 } sizes={ wide ? '100vw' : '(min-width: 64rem) 16rem, (min-width: 48rem) 50vw, 100vw' } zoom={ true } />
+              <Well asset={ entry.fields.image } alt={ entry.fields.image_alt } ratio={ wide ? 'aspect-3/2 lg:aspect-wide' : 'aspect-3/2' } shape="round" width={ wide ? 1600 : 800 } sizes={ wide ? '100vw' : '(min-width: 64rem) 16rem, (min-width: 48rem) 50vw, 100vw' } zoom={ true } />
               <span class="grid gap-space-2xs">
                 <span class="font-heading text-h3 text-scheme-heading">{ entry.title }</span>
                 {#if entry.fields.description}<span class="text-body-sm text-scheme-meta">{ entry.fields.description }</span>{/if}

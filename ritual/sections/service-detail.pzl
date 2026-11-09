@@ -6,7 +6,7 @@
   lead = f.team
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column items-start gap-space-xl md:gap-space-3xl { settings.photo_side == 'right' ? 'md:grid-cols-text-picture' : 'md:grid-cols-picture-text' }">
+  <div class="mx-auto grid max-w-column items-start gap-space-xl md:gap-space-3xl { settings.photo_side == 'right' ? 'md:grid-cols-wide-narrow' : 'md:grid-cols-narrow-wide' }">
     <div class="{ settings.photo_side == 'right' ? 'md:order-last' : '' }"><Well asset={ image } alt={ f.image ? f.image_alt : '' } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" eager={ true } /></div>
     <div class="grid gap-space-md">
       <div class="grid gap-space-xs">

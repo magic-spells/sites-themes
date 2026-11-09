@@ -1,4 +1,4 @@
-<!-- One location: the heading, the hours as a two-column table, the address, phone and note, Directions and Call; beside them the 4:5 portal photo, or the map: an image or an embedded map in a 3:2 well with the capped top. -->
+<!-- One location: the photo, or the map (an image or an embedded map), a 4:3 stadium in the wide column, left from 48rem and first on a phone; beside it the heading, the address, the hours as a two-column table, the note, Directions and Call. -->
 {#let
   loc = settings.location || (content.locations.entries | sort('fields.order') | first)
   f = loc ? loc.fields : null
@@ -6,7 +6,16 @@
 }
 {#if loc}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column items-center gap-space-xl md:grid-cols-text-picture md:gap-space-3xl">
+  <div class="mx-auto grid max-w-column items-center gap-space-xl md:grid-cols-wide-narrow md:gap-space-3xl">
+    {#if settings.show_map}
+      {#if embed}
+        <div class="relative aspect-4/3 overflow-hidden rounded-full bg-scheme-surface-2"><iframe class="absolute inset-0 size-full" src="{ f.map_embed_url }" title="{ t('map_of', { name: loc.title }) }" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      {:else if settings.map == 'map' && f.map_image}
+        <a class="block" href={ f.map_url || null } target="_blank" rel="noopener"><Well asset={ f.map_image } alt={ f.map_image_alt } ratio="aspect-4/3" shape="capsule" width={ 1200 } sizes="(min-width: 48rem) 55vw, 100vw" /></a>
+      {:else}
+        <div><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-4/3" shape="capsule" width={ 1200 } sizes="(min-width: 48rem) 55vw, 100vw" /></div>
+      {/if}
+    {/if}
     <div class="grid gap-space-md">
       <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Accent text={ settings.heading || loc.title } /></h2>
       <address class="text-body-lg not-italic text-scheme-muted">{ f.address | newline_to_br }</address>
@@ -17,15 +26,6 @@
         {#if f.phone}<Button href="tel:{ f.phone | replace(' ', '') }" tone="secondary">{ t('call_number', { phone: f.phone }) }</Button>{/if}
       </div>
     </div>
-    {#if settings.show_map}
-      {#if embed}
-        <div class="relative aspect-3/2 overflow-hidden rounded-t-cap bg-scheme-surface-2"><iframe class="absolute inset-0 size-full" src="{ f.map_embed_url }" title="{ t('map_of', { name: loc.title }) }" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-      {:else if settings.map == 'map' && f.map_image}
-        <a class="block" href={ f.map_url || null } target="_blank" rel="noopener"><Well asset={ f.map_image } alt={ f.map_image_alt } ratio="aspect-3/2" shape="cap" width={ 1200 } sizes="(min-width: 48rem) 40vw, 100vw" /></a>
-      {:else}
-        <div><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-portrait" shape="portal" width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" /></div>
-      {/if}
-    {/if}
   </div>
 </section>
 {/if}

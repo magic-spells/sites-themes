@@ -31,3 +31,4 @@
   the estimate page its questions, and the testimonials heading reads "What your neighbors
   say".
 - The badge row sits on navy by default, its logos inverted on the navy and charcoal bands.
+- The header is chalk by default on every page.

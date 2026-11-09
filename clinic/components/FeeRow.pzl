@@ -1,0 +1,8 @@
+<!-- component: FeeRow -->
+<!-- A service's fee on a hairline: the name in Fee with its price note in Meta under it, the duration in Meta, the price in Fee right-aligned in a 6rem column. -->
+{#let f = entry.fields}
+<li class="flex items-baseline gap-space-md border-b border-scheme-border py-space-sm">
+  <span class="grid flex-1 gap-space-2xs"><span class="text-body font-medium">{ entry.title }</span>{#if f.price_note}<span class="text-body-sm text-scheme-muted">{ f.price_note }</span>{/if}</span>
+  {#if duration && f.duration_minutes}<span class="text-body-sm text-scheme-muted tnum">{ t('minutes', { n: f.duration_minutes }) }</span>{/if}
+  <span class="min-w-price text-right"><Price entry={ entry } /></span>
+</li>

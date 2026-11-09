@@ -1,0 +1,39 @@
+<!-- TODO sync with Figma -->
+<!-- The Book page: the full appointment form on a white card in seven parts, and in five every location's hours card (locations) or a 4:5 photo (photo). The page that works without JavaScript, where every ask button lands. -->
+{#let locations = content.locations.entries | sort('fields.order') | slice(0, 4)}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-text-picture md:gap-space-2xl">
+    <div class="sites-scheme-white rounded-card border border-scheme-border bg-scheme-background p-space-lg text-scheme-foreground md:p-space-xl">
+      {#if settings.heading}<h2 class="mb-space-lg font-heading text-h3">{ settings.heading }</h2>{/if}
+      <AppointmentFields handle={ settings.form } prefix="book" />
+    </div>
+    {#if settings.aside == 'photo'}
+      <Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" />
+    {:else}
+      <ul class="grid gap-space-md">{#for loc in locations}<li><HoursCard entry={ loc } /></li>{/for}</ul>
+    {/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Appointment form",
+  "description": "The full appointment request on a card beside the offices' hours or a photo.",
+  "kind": "Contact",
+  "icon": "calendar-check",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "" },
+    { "type": "form", "id": "form", "label": "Form", "info": "Leave empty to use the Practice appointment form." },
+    { "type": "select", "id": "aside", "label": "Beside the form", "default": "locations", "options": [
+      { "value": "locations", "label": "Hours and offices" },
+      { "value": "photo", "label": "A photo" }
+    ] },
+    { "type": "image", "id": "image", "label": "Photo (4:5)" },
+    { "type": "text", "id": "image_alt", "label": "Photo alt text", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" } }
+  ]
+}
+</schema>

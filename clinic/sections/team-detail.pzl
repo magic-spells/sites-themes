@@ -1,0 +1,48 @@
+<!-- TODO sync with Figma -->
+<!-- A clinician's page: the 4:5 portrait in five parts beside, in seven, the name in h1 with the letters, the role, the credentials in Meta, the specialties as chips, the location with its first hours line, the bio, the services they provide as rows, and the two routes with "Book with <name>". -->
+{#let
+  entry = page.entry
+  f = entry.fields
+  services = content.services.entries | sort('fields.order') | where('fields.team.id', entry.id) | slice(0, 6)
+  place = f.location
+}
+{#if entry}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-picture-text md:gap-space-3xl">
+    <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-portrait" width={ 960 } sizes="(min-width: 48rem) 34vw, 100vw" eager />
+    <div class="grid gap-space-xl">
+      <header class="grid justify-items-start gap-space-sm">
+        <h1 class="flex flex-wrap items-baseline gap-x-space-sm font-heading text-h1 text-balance"><Rise text={ entry.title } />{#if f.letters}<span class="text-h3 font-medium text-scheme-muted">{ f.letters }</span>{/if}</h1>
+        {#if f.role}<p class="text-body-lg text-scheme-muted">{ f.role }</p>{/if}
+        {#if f.credentials}<p class="grid text-body-sm text-scheme-muted">{#for line in f.credentials | split('\n')}<span>{ line }</span>{/for}</p>{/if}
+        {#if f.specialties}<ul class="mt-space-xs flex flex-wrap gap-space-xs">{#for item in f.specialties | split(',')}<li class="rounded-full bg-scheme-surface-2 px-space-sm py-space-2xs text-body-sm">{ item | strip }</li>{/for}</ul>{/if}
+        {#if place}<p class="flex items-center gap-space-xs text-body-sm"><Glyph name="pin" cls="size-icon text-link" /><a class="font-medium hover:underline hover:underline-offset-4" href="/locations/{ place.handle }">{ place.title }</a>{#if place.fields.hours}<span class="text-scheme-muted tnum">· { place.fields.hours | split('\n') | first }</span>{/if}</p>{/if}
+      </header>
+      {#if f.bio}<div class="sites-prose max-w-reading text-body" data-lead>{ f.bio }</div>{/if}
+      {#if services.length}
+        <div class="grid gap-space-sm">
+          <h2 class="font-heading text-h4">{ t('services') }</h2>
+          <ul class="border-t border-scheme-border">{#for s in services}<ServiceRow entry={ s } />{/for}</ul>
+        </div>
+      {/if}
+      <Routes label={ t('book_with', { name: entry.title }) } />
+    </div>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Team member",
+  "description": "A clinician's page: portrait, letters, credentials, specialties, bio, their services and the routes.",
+  "kind": "Content",
+  "icon": "user",
+  "templates": ["member"],
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" } }
+  ]
+}
+</schema>

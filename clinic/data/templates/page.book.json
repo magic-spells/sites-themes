@@ -1,0 +1,59 @@
+{
+  "label": "Book",
+  "description": "The appointment request beside the offices' hours, and what happens next.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "Book an appointment",
+        "text": "Tell us what you need and when suits you. We confirm by phone or text within one working day.",
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_form",
+      "type": "appointment-form",
+      "preset": "Default",
+      "settings": {
+        "aside": "locations",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "heading": "What happens next?",
+        "color_scheme": "cloud"
+      },
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "What happens at a first visit?",
+            "answer": "<p>Forms, X-rays, a full exam and a plan, in about an hour and a half.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "How do I cancel?",
+            "answer": "<p>Call or text at least 24 hours ahead and there's no charge.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do you treat emergencies?",
+            "answer": "<p>We keep same-day slots. Call before 10 am and we'll see you that day.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}

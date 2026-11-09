@@ -1,0 +1,4 @@
+<!-- component: Price -->
+<!-- A service's price as one line: "from" when price_from, then the amount in the Brand currency, tabular; nothing when it has no price. cls sets the style (Fee by default). -->
+{#let f = entry.fields}
+{#if f.price != null}<span class="tnum { cls ?? 'text-body font-medium' }">{ f.price_from ? t('from') + ' ' : '' }{ f.price | currency(site.settings.currency_symbol || '$', 0) }</span>{/if}

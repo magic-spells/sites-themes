@@ -1,0 +1,3 @@
+<!-- component: Rise -->
+<!-- A heading's text. Its words rise in through split-text while Brand headings rise in is on. -->
+{#if site.settings.heading_motion}<split-text split="words">{ text }</split-text>{:else}{ text }{/if}

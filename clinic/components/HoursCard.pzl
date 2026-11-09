@@ -1,0 +1,33 @@
+<!-- component: HoursCard -->
+<!-- A location on a surface-2 card: the name in h4, the hours as a two-column table in Meta (each line's last word is the times, the rest the days; no day is marked, there is no clock), the address and phone in Fee, the fax in Meta, the note, then Directions and Call as text links. -->
+{#let
+  f = entry.fields
+  tel = f.phone | replace(' ', '')
+}
+<article class="flex h-full flex-col gap-space-md rounded-card bg-scheme-surface-2 p-space-lg">
+  <h3 class="font-heading text-h4">{ entry.title }</h3>
+  {#if f.hours}
+    <table class="w-full text-body-sm tnum">
+      <caption class="sr-only">{ t('hours') }</caption>
+      <tbody>
+        {#for line in f.hours | split('\n')}
+          {#let
+            row = line | strip
+            times = row | split(' ') | last
+          }
+          {#if row}<tr><th class="py-space-2xs pe-space-md text-left font-normal text-scheme-muted" scope="row">{ row | replace(times, '') | strip }</th><td class="py-space-2xs text-right">{ times }</td></tr>{/if}
+        {/for}
+      </tbody>
+    </table>
+  {/if}
+  <address class="grid gap-space-2xs text-body font-medium not-italic">
+    {#if f.address}<span class="whitespace-pre-line">{ f.address }</span>{/if}
+    {#if f.phone}<a class="justify-self-start tnum hover:underline hover:underline-offset-4" href="tel:{ tel }">{ f.phone }</a>{/if}
+    {#if f.fax}<span class="text-body-sm font-normal text-scheme-muted tnum">{ t('fax', { n: f.fax }) }</span>{/if}
+  </address>
+  {#if f.note}<p class="text-body-sm text-pretty text-scheme-muted">{ f.note }</p>{/if}
+  <p class="mt-auto flex flex-wrap gap-x-space-lg text-body-sm font-medium">
+    {#if f.map_url}<a class="text-link underline underline-offset-4" href="{ f.map_url }">{ t('directions') }</a>{/if}
+    {#if f.phone}<a class="text-link underline underline-offset-4" href="tel:{ tel }">{ t('call') }</a>{/if}
+  </p>
+</article>

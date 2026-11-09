@@ -1,0 +1,78 @@
+<!-- TODO sync with Figma -->
+<!-- The colophon on slate: the wordmark, the tagline, the registration lines and the social text links; Services (each category on the Services page's tab, then All services); Patients (a menu); Visit (the first location's address, phone and hours, then each other location's phone). A strip under a rule: the small print, the legal links and the Practice footer note. Four columns from 64rem, two from 48rem, one on phones. -->
+{#let
+  s = site.settings
+  categories = content.categories.entries | sort('fields.order') | slice(0, 6)
+  locations = content.locations.entries | sort('fields.order') | slice(0, 4)
+  home = locations | first
+  link = 'hover:underline hover:underline-offset-4'
+}
+<footer class="bg-scheme-background px-gutter pt-section pb-space-xl text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-2xl">
+    <div class="grid gap-space-xl md:grid-cols-2 lg:grid-cols-footer">
+      <div class="grid content-start justify-items-start gap-space-md">
+        <a class="font-heading text-h4 font-bold" href="/">{ s.wordmark || site.name }</a>
+        {#if s.tagline}<p class="max-w-text text-body-sm text-pretty text-scheme-muted">{ s.tagline }</p>{/if}
+        {#if s.registration_lines}<p class="grid text-body-xs text-scheme-muted">{#for line in s.registration_lines | split('\n')}<span>{ line }</span>{/for}</p>{/if}
+        {#if settings.social_menu.items.length}<ul class="flex flex-wrap gap-x-space-md gap-y-space-xs text-body-sm">{#for item in settings.social_menu.items}<li><a class="text-link underline underline-offset-4" href="{ item.href }">{ item.label }</a></li>{/for}</ul>{/if}
+      </div>
+      {#if categories.length}
+        <nav aria-labelledby="footer-services">
+          <h2 class="mb-space-md font-heading text-card" id="footer-services">{ t('services') }</h2>
+          <ul class="grid gap-space-sm text-body-sm">
+            {#for category in categories}<li><a class="{ link }" href="{ settings.services_path }?category={ category.handle }">{ category.title }</a></li>{/for}
+            <li><a class="text-link underline underline-offset-4" href="{ settings.services_path }">{ t('all_services') }</a></li>
+          </ul>
+        </nav>
+      {/if}
+      {#if settings.patients_menu.items.length}
+        <nav aria-labelledby="footer-patients">
+          <h2 class="mb-space-md font-heading text-card" id="footer-patients">{ settings.patients_menu.title }</h2>
+          <ul class="grid gap-space-sm text-body-sm">{#for item in settings.patients_menu.items}<li><a class="{ link }" href="{ item.href }">{ item.label }</a></li>{/for}</ul>
+        </nav>
+      {/if}
+      {#if home}
+        <div>
+          <h2 class="mb-space-md font-heading text-card">{ t('visit') }</h2>
+          <address class="grid gap-space-md text-body-sm not-italic">
+            {#for loc in locations, i}
+              {#let f = loc.fields}
+              <p class="grid gap-space-2xs">
+                <span class="font-semibold">{ loc.title }</span>
+                {#if i == 0 && f.address}<span class="whitespace-pre-line text-scheme-muted">{ f.address }</span>{/if}
+                {#if f.phone}<a class="justify-self-start text-body font-medium tnum { link }" href="tel:{ f.phone | replace(' ', '') }">{ f.phone }</a>{/if}
+                {#if i == 0 && f.hours}<span class="whitespace-pre-line text-scheme-muted tnum">{ f.hours }</span>{/if}
+              </p>
+            {/for}
+          </address>
+        </div>
+      {/if}
+    </div>
+    <div class="flex flex-wrap items-center gap-x-space-lg gap-y-space-sm border-t border-scheme-border pt-space-lg text-body-sm">
+      {#if settings.small_print}<p class="text-scheme-muted">{ settings.small_print }</p>{/if}
+      {#if settings.legal_menu.items.length}<ul class="flex flex-wrap gap-x-space-md">{#for item in settings.legal_menu.items}<li><a class="{ link }" href="{ item.href }">{ item.label }</a></li>{/for}</ul>{/if}
+      {#if s.footer_note}<p class="text-scheme-muted lg:ms-auto">{ s.footer_note }</p>{/if}
+    </div>
+  </div>
+</footer>
+
+<schema>
+{
+  "name": "Footer",
+  "description": "The wordmark and registration lines, the services, a patients menu and the offices, then the small print.",
+  "kind": "Footer",
+  "icon": "panel-bottom",
+  "settings": [
+    { "type": "paragraph", "content": "The tagline, registration lines and footer note come from the Brand and Practice settings; Visit lists your locations." },
+    { "type": "url", "id": "services_path", "label": "Services page", "default": "/services", "info": "Each category links to its tab on this page." },
+    { "type": "menu", "id": "patients_menu", "label": "Patients menu", "info": "Its title heads the column: New patients, Insurance and fees, Patient forms, Patient portal." },
+    { "type": "menu", "id": "social_menu", "label": "Social links" },
+    { "type": "menu", "id": "legal_menu", "label": "Legal links" },
+    { "type": "text", "id": "small_print", "label": "Small print", "default": "© 2026 Oakfield Family Dental" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "slate" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "patients_menu": "patients", "social_menu": "social", "legal_menu": "legal", "color_scheme": "slate" } }
+  ]
+}
+</schema>

@@ -1,0 +1,48 @@
+<!-- TODO sync with Figma -->
+<!-- The Services page: All and each category as tabs, plain ?category= links with aria-current on the one showing; then each category's services as rows (icon, name, summary, duration, price, Details) under its name and a 2px rule. Below 48rem each group folds, the first open; from 48rem they all stay open. -->
+{#let
+  services = content.services.entries | sort('fields.order')
+  categories = content.categories.entries | sort('fields.order') | slice(0, 6)
+  current = request.query.category
+  shown = current ? categories | where('handle', current) : categories
+  tab = 'flex min-h-tap items-center rounded-full border border-scheme-border px-space-md text-body-sm font-medium hover:bg-scheme-surface-2 current:border-scheme-foreground current:bg-scheme-foreground current:text-scheme-background'
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-xl">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <nav aria-label="{ t('categories') }">
+      <ul class="flex flex-wrap gap-space-xs">
+        <li><a class="{ tab }" href="?" aria-current={ current ? null : 'page' }>{ t('all') }</a></li>
+        {#for category in categories}<li><a class="{ tab }" href="?category={ category.handle }" aria-current={ current == category.handle ? 'page' : null }>{ category.title }</a></li>{/for}
+      </ul>
+    </nav>
+    <div class="grid gap-space-2xl">
+      {#for category in shown, i}
+        <collapsible-component class="block">
+          <h2><button class="group flex w-full items-center justify-between gap-space-md border-b-2 border-scheme-foreground pb-space-sm text-left font-heading text-h4 md:pointer-events-none" type="button">{ category.title }<Glyph name="chevron-down" cls="size-icon transition-transform duration-fast group-aria-expanded:rotate-180 md:hidden" /></button></h2>
+          <collapsible-content open={ i == 0 } data-unfold>
+            <ul>{#for entry in services | where('fields.category.id', category.id) | slice(0, 12)}<ServiceRow entry={ entry } />{/for}</ul>
+          </collapsible-content>
+        </collapsible-component>
+      {/for}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Services list",
+  "description": "Every service as a row under its category, with category tabs.",
+  "kind": "Collections",
+  "icon": "list",
+  "templates": ["page.services", "page"],
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" } }
+  ]
+}
+</schema>

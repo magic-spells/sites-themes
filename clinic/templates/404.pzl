@@ -1,0 +1,10 @@
+<!-- template: 404 -->
+<!-- layout: default -->
+<!-- A wrong path, on white: the line, the featured concerns as chooser tiles, then the routes. -->
+{#let concerns = content.conditions.entries | sort('fields.order') | where('fields.featured') | slice(0, 6)}
+<Utility>
+  <h1 class="max-w-reading font-heading text-h1 text-balance">{ t('not_found_title') }</h1>
+  <p class="text-body-lg text-pretty text-scheme-muted">{ t('not_found_body') }</p>
+  {#if concerns.length}<ul class="my-space-lg grid w-full grid-cols-2 gap-space-sm text-left md:gap-space-lg lg:grid-cols-3">{#for entry in concerns}<li><ChooserTile entry={ entry } /></li>{/for}</ul>{/if}
+  <Routes />
+</Utility>

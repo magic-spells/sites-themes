@@ -1,0 +1,36 @@
+<!-- TODO sync with Figma -->
+<!-- A post: the topic and date in Meta, the title in h1, the standfirst, the 3:2 photo across the column, then the body in the reading column and the author. No reading time. -->
+{#let
+  entry = page.entry
+  f = entry.fields
+}
+{#if entry}
+<article class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-xl">
+    <header class="grid max-w-reading gap-space-md">
+      <p class="text-body-sm text-scheme-muted">{ [f.topic, f.date ? f.date | date : null] | compact | join(' · ') }</p>
+      <h1 class="font-heading text-h1 text-balance"><Rise text={ entry.title } /></h1>
+      {#if f.standfirst}<p class="text-body-lg text-pretty text-scheme-muted">{ f.standfirst }</p>{/if}
+    </header>
+    <Well asset={ f.image } alt={ f.image_alt } width={ 1600 } sizes="(min-width: 82.5rem) 82.5rem, 100vw" eager />
+    <div class="sites-prose max-w-reading text-body-lg">{ f.body }</div>
+    {#if f.author}<p class="text-body-sm text-scheme-muted">{ f.author }</p>{/if}
+  </div>
+</article>
+{/if}
+
+<schema>
+{
+  "name": "Post",
+  "description": "A post: the title, the photo and the body.",
+  "kind": "Content",
+  "icon": "file-text",
+  "templates": ["post"],
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" } }
+  ]
+}
+</schema>

@@ -1,0 +1,108 @@
+{
+  "label": "Services",
+  "description": "Every service under its category, with tabs, why us and questions.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "From a six-month clean to a new smile, in two offices.",
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_list",
+      "type": "services-list",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_props",
+      "type": "value-props",
+      "preset": "Row",
+      "settings": {
+        "layout": "row",
+        "color_scheme": "navy"
+      },
+      "blocks": [
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "heart",
+            "title": "Gentle, unhurried care",
+            "text": "Longer appointments, so nobody feels rushed."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "clock",
+            "title": "Same-day emergency slots",
+            "text": "Call before 10 am and we'll see you today."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "calendar",
+            "title": "Evening hours on Thursdays",
+            "text": "Open until 7 pm at Oakfield."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "pin",
+            "title": "Two offices, one team",
+            "text": "Oakfield and Pine Ridge, the same clinicians."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do you take my insurance?",
+            "answer": "<p>We're in-network with most major plans and file claims for you. Call us with your plan name and we'll check before your visit.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "How do I pay?",
+            "answer": "<p>Card, cash or a payment plan. We confirm the cost before treatment begins.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do you treat emergencies?",
+            "answer": "<p>We keep same-day slots. Call before 10 am and we'll see you that day.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    }
+  ]
+}

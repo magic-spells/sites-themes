@@ -1,0 +1,58 @@
+{
+  "label": "Locations",
+  "description": "Every office, then each one's hours and map.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "Visit us",
+        "text": "Two offices, one team.",
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_locations",
+      "type": "locations",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_oakfield",
+      "type": "hours-location",
+      "preset": "Default",
+      "settings": {
+        "location": "loc_oakfield",
+        "map": "embed",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_pine_ridge",
+      "type": "hours-location",
+      "preset": "Default",
+      "settings": {
+        "location": "loc_pine-ridge",
+        "map": "embed",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    }
+  ]
+}

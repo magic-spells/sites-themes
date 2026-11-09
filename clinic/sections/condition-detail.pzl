@@ -1,0 +1,45 @@
+<!-- TODO sync with Figma -->
+<!-- A concern's page: the title in h1, the summary as the standfirst, the body in seven parts beside the 3:2 photo in five; then the treatment that usually helps as one service card and who to see as one clinician card; then the two routes. -->
+{#let
+  entry = page.entry
+  f = entry.fields
+}
+{#if entry}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-2xl">
+    <header class="grid max-w-reading gap-space-sm">
+      <h1 class="font-heading text-h1 text-balance"><Rise text={ entry.title } /></h1>
+      {#if f.summary}<p class="text-body-lg text-pretty text-scheme-muted">{ f.summary }</p>{/if}
+    </header>
+    <div class="grid items-start gap-space-xl md:grid-cols-text-picture md:gap-space-3xl">
+      <div class="grid gap-space-xl">
+        {#if f.body}<div class="sites-prose max-w-reading text-body" data-lead>{ f.body }</div>{/if}
+        <Routes />
+      </div>
+      {#if f.image}<Well asset={ f.image } alt={ f.image_alt } width={ 1200 } sizes="(min-width: 48rem) 40vw, 100vw" eager />{/if}
+    </div>
+    {#if f.service || f.team}
+      <div class="grid gap-space-xl md:grid-cols-2 lg:grid-cols-3">
+        {#if f.service}<div class="grid content-start gap-space-md"><h2 class="font-heading text-card">{ t('treatment') }</h2><ServiceCard entry={ f.service } price /></div>{/if}
+        {#if f.team}<div class="grid content-start gap-space-md"><h2 class="font-heading text-card">{ t('who_to_see') }</h2><div class="max-w-text"><ClinicianCard entry={ f.team } /></div></div>{/if}
+      </div>
+    {/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Concern detail",
+  "description": "A concern's page: what it is, the treatment that usually helps, who to see and the routes.",
+  "kind": "Content",
+  "icon": "file-text",
+  "templates": ["condition"],
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" } }
+  ]
+}
+</schema>

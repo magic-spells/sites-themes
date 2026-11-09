@@ -1,0 +1,65 @@
+{
+  "label": "Team",
+  "description": "The clinicians in groups by role, the practice's story and the routes.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Six clinicians across two offices.",
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_dentists",
+      "type": "team-grid",
+      "preset": "Group",
+      "settings": {
+        "source": "group",
+        "group": "dentist",
+        "match": "has",
+        "heading": "Dentists",
+        "link_label": "",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_rest",
+      "type": "team-grid",
+      "preset": "Group",
+      "settings": {
+        "source": "group",
+        "group": "dentist",
+        "match": "lacks",
+        "heading": "Hygienists and team",
+        "link_label": "",
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_story",
+      "type": "story",
+      "preset": "Default",
+      "settings": {
+        "image": "as_4x5_mist",
+        "image_alt": "Dr Hannah Reyes in the Oakfield office",
+        "link_label": "",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    }
+  ]
+}

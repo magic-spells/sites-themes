@@ -1,0 +1,11 @@
+<!-- component: ServiceCard -->
+<!-- A service on a card with a hairline, the whole card one link: the icon in a tint circle (or, with photo, the 3:2 photo), the name in Card title, the summary in Meta, then the arrow left and the price right (left out by price false). -->
+{#let f = entry.fields}
+<article class="group relative flex h-full flex-col gap-space-md rounded-card border border-scheme-border bg-scheme-background p-space-lg { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+  {#if photo && f.image}<Well asset={ f.image } alt={ f.image_alt } card sizes="(min-width: 64rem) 26rem, (min-width: 48rem) 50vw, 100vw" zoom />{:else}<IconCircle icon={ f.icon || 'tooth' } />{/if}
+  <div class="grid gap-space-xs">
+    <h3 class="font-heading text-card"><a class="after:absolute after:inset-0 group-hover:underline group-hover:underline-offset-4" href="/services/{ entry.handle }">{ entry.title }</a></h3>
+    {#if f.summary}<p class="text-body-sm text-pretty text-scheme-muted">{ f.summary }</p>{/if}
+  </div>
+  <p class="mt-auto flex items-center justify-between gap-space-md pt-space-xs"><Glyph name="arrow-right" cls="size-icon text-link" />{#if price}<Price entry={ entry } />{/if}</p>
+</article>

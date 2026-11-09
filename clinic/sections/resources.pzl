@@ -1,0 +1,43 @@
+<!-- TODO sync with Figma -->
+<!-- Stub: code B replaces this body. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } />
+    <ul>{#for block in blocks}<ResourceRow block={ block } editor_id={ block.editor_id } />{/for}</ul>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Resources",
+  "description": "Patient forms and guides as a list of links, the patient portal first.",
+  "kind": "Content",
+  "icon": "file-text",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Patient forms and guides" },
+    { "type": "text", "id": "portal_note", "label": "Portal note", "default": "Appointments, forms and statements", "info": "The Practice patient portal leads the list when set." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "blocks": [
+    { "type": "resource", "name": "Resource", "settings": [
+      { "type": "text", "id": "label", "label": "Label" },
+      { "type": "text", "id": "note", "label": "Note" },
+      { "type": "url", "id": "link", "label": "Link" },
+      { "type": "select", "id": "kind", "label": "Kind", "default": "pdf", "options": [
+        { "value": "pdf", "label": "A file" },
+        { "value": "link", "label": "A page" },
+        { "value": "portal", "label": "A portal" }
+      ] }
+    ] }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" }, "blocks": [
+      { "type": "resource", "settings": { "label": "New patient forms", "note": "Fill in before your first visit", "link": "/new-patients", "kind": "pdf" } },
+      { "type": "resource", "settings": { "label": "Privacy notice", "note": "How we handle your information", "link": "/privacy", "kind": "pdf" } },
+      { "type": "resource", "settings": { "label": "After an extraction", "note": "Aftercare for the first 48 hours", "link": "/advice", "kind": "pdf" } },
+      { "type": "resource", "settings": { "label": "After a crown or bridge", "note": "What to expect and when to call", "link": "/advice", "kind": "pdf" } },
+      { "type": "resource", "settings": { "label": "Insurance and payment policy", "note": "Plans, payment and cancellations", "link": "/fees", "kind": "pdf" } }
+    ] }
+  ]
+}
+</schema>

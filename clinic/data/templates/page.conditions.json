@@ -1,0 +1,98 @@
+{
+  "label": "Concerns",
+  "description": "Every concern you treat, the first visit and the routes.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "Concerns we treat",
+        "text": "What brings you in? Choose the closest and we will take it from there.",
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_list",
+      "type": "conditions-list",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_visit",
+      "type": "first-visit",
+      "preset": "Row",
+      "settings": {
+        "layout": "row",
+        "color_scheme": "ice"
+      },
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "title": "Forms ahead",
+            "text": "Fill in your forms online, or arrive 15 minutes early."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Welcome and X-rays",
+            "text": "A hygienist takes your history and the X-rays we need."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Your exam",
+            "text": "Your dentist checks every tooth and your gums, and listens."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Your plan and next visit",
+            "text": "We go through options and costs before anything starts."
+          }
+        },
+        {
+          "type": "bring",
+          "settings": {
+            "text": "Photo ID"
+          }
+        },
+        {
+          "type": "bring",
+          "settings": {
+            "text": "Your insurance card"
+          }
+        },
+        {
+          "type": "bring",
+          "settings": {
+            "text": "A list of your medications"
+          }
+        },
+        {
+          "type": "bring",
+          "settings": {
+            "text": "Your previous dentist's details, if you have them"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    }
+  ]
+}

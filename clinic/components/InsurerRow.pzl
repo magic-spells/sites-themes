@@ -1,0 +1,7 @@
+<!-- component: InsurerRow -->
+<!-- An insurer on a hairline: the plan's name in Card title (or its logo with logo) and its note in Meta. -->
+{#let f = entry.fields}
+<li class="flex items-center justify-between gap-space-md border-b border-scheme-border py-space-md">
+  {#if logo && f.logo}<img class="h-control w-auto opacity-badge grayscale" src="{ image_url(f.logo, 320) }" alt="{ f.logo_alt || entry.title }" loading="lazy" width={ f.logo.width } height={ f.logo.height } />{:else}<span class="font-heading text-card">{ entry.title }</span>{/if}
+  {#if f.note}<span class="text-right text-body-sm text-scheme-muted">{ f.note }</span>{/if}
+</li>

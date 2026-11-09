@@ -1,0 +1,16 @@
+{
+  "sections": [
+    {
+      "id": "sg_footer",
+      "type": "footer",
+      "preset": "Default",
+      "settings": {
+        "patients_menu": "patients",
+        "social_menu": "social",
+        "legal_menu": "legal",
+        "color_scheme": "slate"
+      },
+      "blocks": []
+    }
+  ]
+}

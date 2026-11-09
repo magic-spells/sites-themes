@@ -1,0 +1,8 @@
+<!-- component: Step -->
+<!-- A first-visit step from a step block: the plain numeral in Step style (left out without number), the title in Card title, the line in Meta. -->
+{#let b = block.settings}
+<li class="grid content-start gap-space-xs { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-block={ editor_id }>
+  {#if number}<p class="font-heading text-h2 tnum">{ number }</p>{/if}
+  <h3 class="font-heading text-card">{ b.title }</h3>
+  {#if b.text}<p class="text-body-sm text-pretty text-scheme-muted">{ b.text }</p>{/if}
+</li>

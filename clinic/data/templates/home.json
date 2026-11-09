@@ -1,0 +1,249 @@
+{
+  "label": "Home",
+  "description": "The first screen and every way in: services, concerns, the team, the first visit, reviews, fees and the routes.",
+  "sections": [
+    {
+      "id": "s_hero",
+      "type": "hero",
+      "preset": "Split",
+      "settings": {
+        "layout": "split",
+        "image": "as_4x5_ice",
+        "image_alt": "The Oakfield treatment room",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_categories",
+      "type": "service-categories",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_concerns",
+      "type": "conditions-grid",
+      "preset": "Default",
+      "settings": {
+        "source": "featured",
+        "limit": 6,
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_props",
+      "type": "value-props",
+      "preset": "Row",
+      "settings": {
+        "layout": "row",
+        "color_scheme": "navy"
+      },
+      "blocks": [
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "heart",
+            "title": "Gentle, unhurried care",
+            "text": "Longer appointments, so nobody feels rushed."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "clock",
+            "title": "Same-day emergency slots",
+            "text": "Call before 10 am and we'll see you today."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "calendar",
+            "title": "Evening hours on Thursdays",
+            "text": "Open until 7 pm at Oakfield."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "pin",
+            "title": "Two offices, one team",
+            "text": "Oakfield and Pine Ridge, the same clinicians."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_team",
+      "type": "team-grid",
+      "preset": "Default",
+      "settings": {
+        "source": "featured",
+        "limit": 4,
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_visit",
+      "type": "first-visit",
+      "preset": "Rail",
+      "settings": {
+        "layout": "rail",
+        "image": "as_4x5_cloud",
+        "image_alt": "The Oakfield waiting room",
+        "color_scheme": "ice"
+      },
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "title": "Forms ahead",
+            "text": "Fill in your forms online, or arrive 15 minutes early."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Welcome and X-rays",
+            "text": "A hygienist takes your history and the X-rays we need."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Your exam",
+            "text": "Your dentist checks every tooth and your gums, and listens."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Your plan and next visit",
+            "text": "We go through options and costs before anything starts."
+          }
+        },
+        {
+          "type": "bring",
+          "settings": {
+            "text": "Photo ID"
+          }
+        },
+        {
+          "type": "bring",
+          "settings": {
+            "text": "Your insurance card"
+          }
+        },
+        {
+          "type": "bring",
+          "settings": {
+            "text": "A list of your medications"
+          }
+        },
+        {
+          "type": "bring",
+          "settings": {
+            "text": "Your previous dentist's details, if you have them"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_reviews",
+      "type": "testimonials",
+      "preset": "Rows",
+      "settings": {
+        "layout": "rows",
+        "limit": 3,
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_fees",
+      "type": "fees",
+      "preset": "Featured",
+      "settings": {
+        "source": "featured",
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_insurance",
+      "type": "insurance",
+      "preset": "List",
+      "settings": {
+        "layout": "list",
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_tiles",
+      "type": "tiles",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": [
+        {
+          "type": "tile",
+          "settings": {
+            "heading": "Insurance and fees",
+            "text": "Clear prices, and help with your plan.",
+            "link_label": "See fees",
+            "link": "/fees",
+            "color_scheme": "navy"
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "heading": "Meet the team",
+            "text": "Six clinicians across two offices.",
+            "link_label": "Our team",
+            "link": "/team",
+            "color_scheme": "white",
+            "image": "as_3x2_cloud",
+            "image_alt": "The Oakfield team"
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "heading": "New patients",
+            "text": "What to expect at your first visit.",
+            "link_label": "Start here",
+            "link": "/new-patients",
+            "color_scheme": "sky"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_emergency",
+      "type": "emergency-band",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "sky"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "With the form",
+      "settings": {
+        "form": "inline",
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    }
+  ]
+}

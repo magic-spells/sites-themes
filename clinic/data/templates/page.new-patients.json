@@ -1,0 +1,200 @@
+{
+  "label": "New patients",
+  "description": "The first visit, the forms, insurance and questions.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Everything you need before your first visit.",
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_visit",
+      "type": "first-visit",
+      "preset": "Rail",
+      "settings": {
+        "layout": "rail",
+        "image": "as_4x5_ice",
+        "image_alt": "The Oakfield waiting room",
+        "color_scheme": "white"
+      },
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "title": "Forms ahead",
+            "text": "Fill in your forms online, or arrive 15 minutes early."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Welcome and X-rays",
+            "text": "A hygienist takes your history and the X-rays we need."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Your exam",
+            "text": "Your dentist checks every tooth and your gums, and listens."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Your plan and next visit",
+            "text": "We go through options and costs before anything starts."
+          }
+        },
+        {
+          "type": "bring",
+          "settings": {
+            "text": "Photo ID"
+          }
+        },
+        {
+          "type": "bring",
+          "settings": {
+            "text": "Your insurance card"
+          }
+        },
+        {
+          "type": "bring",
+          "settings": {
+            "text": "A list of your medications"
+          }
+        },
+        {
+          "type": "bring",
+          "settings": {
+            "text": "Your previous dentist's details, if you have them"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_resources",
+      "type": "resources",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "cloud"
+      },
+      "blocks": [
+        {
+          "type": "resource",
+          "settings": {
+            "label": "New patient forms",
+            "note": "Fill in before your first visit",
+            "link": "https://forms.example/oakfield",
+            "kind": "pdf"
+          }
+        },
+        {
+          "type": "resource",
+          "settings": {
+            "label": "Privacy notice",
+            "note": "How we handle your information",
+            "link": "/privacy",
+            "kind": "pdf"
+          }
+        },
+        {
+          "type": "resource",
+          "settings": {
+            "label": "After an extraction",
+            "note": "Aftercare for the first 48 hours",
+            "link": "/advice",
+            "kind": "pdf"
+          }
+        },
+        {
+          "type": "resource",
+          "settings": {
+            "label": "After a crown or bridge",
+            "note": "What to expect and when to call",
+            "link": "/advice",
+            "kind": "pdf"
+          }
+        },
+        {
+          "type": "resource",
+          "settings": {
+            "label": "Insurance and payment policy",
+            "note": "Plans, payment and cancellations",
+            "link": "/fees",
+            "kind": "pdf"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_insurance",
+      "type": "insurance",
+      "preset": "List",
+      "settings": {
+        "layout": "list",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "cloud"
+      },
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "What happens at a first visit?",
+            "answer": "<p>Forms, X-rays, a full exam and a plan, in about an hour and a half.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do you see children?",
+            "answer": "<p>Yes, from their first tooth. Dr Marsh looks after most of our younger patients.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "What if I'm nervous?",
+            "answer": "<p>Tell us. We book longer appointments, explain every step, and can offer sedation.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "How do I cancel?",
+            "answer": "<p>Call or text at least 24 hours ahead and there's no charge.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Where do I park?",
+            "answer": "<p>Behind the building at Oakfield; on the street at Pine Ridge.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    }
+  ]
+}

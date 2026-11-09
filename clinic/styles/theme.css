@@ -1,0 +1,504 @@
+@import "tailwindcss";
+@import "./vendor/bottom-sheet.css" layer(components);
+@import "./vendor/collapsible-content.css" layer(components);
+@import "./vendor/dialog-panel.css" layer(components);
+@import "./vendor/dropdown-panel.css" layer(components);
+@import "./vendor/dropdown-panel.effects.css" layer(components);
+@import "./vendor/progress-bar.css" layer(components);
+@import "./vendor/reveal.css";
+@import "./vendor/scrolling-content.css" layer(components);
+@import "./vendor/select-dropdown.css" layer(components);
+@import "./vendor/split-text.css" layer(components);
+@import "./vendor/sticky-header.css" layer(components);
+@import "./vendor/tarot.css" layer(components);
+
+@source "../layouts/**/*.pzl";
+@source "../templates/**/*.pzl";
+@source "../sections/**/*.pzl";
+@source "../components/**/*.pzl";
+
+/* The palette: site-wide values from settings/design.json. */
+@theme {
+	--color-brand-primary: var(--sites-color-brand-primary);
+	--color-brand-secondary: var(--sites-color-brand-secondary);
+	--color-brand-accent: var(--sites-color-brand-accent);
+	--color-grey-extra-light: var(--sites-color-grey-extra-light);
+	--color-grey-light: var(--sites-color-grey-light);
+	--color-grey-medium: var(--sites-color-grey-medium);
+	--color-grey-dark: var(--sites-color-grey-dark);
+	--color-grey-extra-dark: var(--sites-color-grey-extra-dark);
+	/* Fields are white with a grey hairline on every band (a form on a dark
+	   band sits on a white card), so they read the site-wide input tokens. */
+	--color-input-background: var(--sites-input-background);
+	--color-input-border: var(--sites-input-border);
+	--color-input-text: var(--sites-input-text);
+	--color-input-placeholder: var(--sites-input-placeholder);
+	--color-input-active: var(--sites-input-focus-ring);
+}
+
+/* The scheme a section sits on. The engine has no muted, border or surface-2
+   slot, so they ride on the chip slots (settings/design.json); the link is
+   the action blue. Tint, accent, accent text, the status colours and the
+   error have no slot at all and are set per scheme below. */
+@theme inline {
+	--color-scheme-background: var(--sites-scheme-background);
+	--color-scheme-foreground: var(--sites-scheme-foreground);
+	--color-scheme-muted: var(--sites-scheme-chip-foreground);
+	--color-scheme-border: var(--sites-scheme-chip-border);
+	--color-scheme-surface-2: var(--sites-scheme-chip-background);
+	--color-scheme-button-background: var(--sites-scheme-button-background);
+	--color-scheme-button-foreground: var(--sites-scheme-button-foreground);
+	--color-scheme-button-hover-background: var(--sites-scheme-button-hover-background);
+	--color-scheme-button-hover-foreground: var(--sites-scheme-button-hover-foreground);
+	--color-link: var(--sites-scheme-links);
+	--color-scheme-tint: var(--clinic-tint);
+	--color-scheme-accent: var(--clinic-accent);
+	--color-scheme-accent-text: var(--clinic-accent-text);
+	--color-scheme-success: var(--clinic-success);
+	--color-scheme-warning: var(--clinic-warning);
+	--color-scheme-error: var(--clinic-error);
+	--color-backdrop: color-mix(in srgb, var(--sites-scheme-foreground) 50%, transparent);
+	/* The cover hero's fade: the band's background at 80% on the text side to
+	   20% at the far edge, never a black wash. */
+	--background-image-scrim: linear-gradient(to right, color-mix(in srgb, var(--sites-scheme-background) 80%, transparent), color-mix(in srgb, var(--sites-scheme-background) 20%, transparent));
+}
+
+/* The colours without an engine slot, per scheme. Defaults are White and
+   Cloud's; every text value clears 4.5:1 on its background and every dot 3:1. */
+:root,
+[class*="sites-scheme-"] {
+	--clinic-tint: #DDEEF9;
+	--clinic-accent: var(--sites-color-brand-accent);
+	--clinic-accent-text: var(--sites-color-warning-fg);
+	--clinic-success: var(--sites-color-success-fg);
+	--clinic-warning: #B7791F;
+	--clinic-error: var(--sites-color-error-fg);
+}
+.sites-scheme-ice {
+	--clinic-tint: #FFFFFF;
+	--clinic-accent-text: #7A4F00;
+	--clinic-warning: #8F5E14;
+	--clinic-error: #A31F14;
+}
+.sites-scheme-sky,
+.sites-scheme-honey {
+	--clinic-tint: var(--sites-scheme-chip-background);
+	--clinic-accent: var(--sites-color-brand-primary);
+	--clinic-accent-text: var(--sites-color-brand-primary);
+	--clinic-success: #0F5A2E;
+	--clinic-warning: #6B4408;
+	--clinic-error: #6E130C;
+}
+.sites-scheme-navy,
+.sites-scheme-slate {
+	--clinic-tint: #1E3F5F;
+	--clinic-accent-text: var(--sites-color-brand-accent);
+	--clinic-success: #6FD39B;
+	--clinic-warning: var(--sites-color-brand-accent);
+	--clinic-error: #F4A79D;
+}
+.sites-scheme-slate {
+	--clinic-tint: var(--sites-scheme-chip-border);
+}
+
+@theme {
+	--font-heading: var(--sites-font-heading-family), ui-sans-serif, system-ui, sans-serif;
+	--font-body: var(--sites-font-body-family), ui-sans-serif, system-ui, sans-serif;
+	--radius-button: var(--sites-button-radius);
+	--radius-input: var(--sites-input-radius);
+	--radius-card: var(--sites-radius-md);
+	--radius-photo: var(--sites-radius-lg);
+	--radius-full: var(--sites-radius-full);
+
+	/* The type roles, each sized per breakpoint in :root below. Red Hat
+	   Display for h1–h4, Card title (text-card), Price (text-h3), Step
+	   (text-h2) and the wordmark, Red Hat Text for the rest; sentence case
+	   throughout. */
+	--text-h1: var(--clinic-h1);
+	--text-h1--line-height: 1.05;
+	--text-h1--letter-spacing: -0.015em;
+	--text-h1--font-weight: 700;
+	--text-h2: var(--clinic-h2);
+	--text-h2--line-height: 1.1;
+	--text-h2--letter-spacing: -0.015em;
+	--text-h2--font-weight: 700;
+	--text-h3: var(--clinic-h3);
+	--text-h3--line-height: 1.2;
+	--text-h3--letter-spacing: -0.01em;
+	--text-h3--font-weight: 600;
+	--text-h4: var(--clinic-h4);
+	--text-h4--line-height: 1.3;
+	--text-h4--font-weight: 600;
+	--text-card: var(--clinic-body-lg);
+	--text-card--line-height: 1.3;
+	--text-card--font-weight: 600;
+	--text-body-lg: var(--clinic-body-lg);
+	--text-body-lg--line-height: 1.55;
+	--text-body: var(--clinic-body);
+	--text-body--line-height: 1.55;
+	--text-body-sm: var(--clinic-body-sm);
+	--text-body-sm--line-height: 1.5;
+	--text-body-xs: var(--clinic-body-xs);
+	--text-body-xs--line-height: 1.4;
+	--text-button: var(--clinic-button);
+	--text-button--line-height: 1;
+
+	--spacing-space-2xs: 0.25rem;
+	--spacing-space-xs: var(--sites-spacing-xs);
+	--spacing-space-sm: var(--sites-spacing-sm);
+	--spacing-space-md: var(--sites-spacing-md);
+	--spacing-space-lg: var(--sites-spacing-lg);
+	--spacing-space-xl: var(--clinic-xl);
+	--spacing-space-2xl: var(--clinic-2xl);
+	--spacing-space-3xl: var(--clinic-3xl);
+	--spacing-section: var(--clinic-section);
+	--spacing-gutter: var(--clinic-gutter);
+	--spacing-button-x: var(--sites-button-padding-x);
+	--spacing-control: 3rem;
+	--spacing-tap: 2.75rem;
+	--spacing-dot: 0.5rem;
+	--spacing-icon-sm: 1rem;
+	--spacing-icon: 1.25rem;
+	--spacing-glyph: 1.5rem;
+	--spacing-glyph-lg: 2rem;
+	--spacing-glyph-xl: 3rem;
+	--spacing-glyph-2xl: 6rem;
+	--spacing-circle: 2.5rem;
+	--spacing-circle-lg: 3.5rem;
+	--spacing-header: 4.5rem;
+	--spacing-call-bar: 5rem;
+	--spacing-textarea: 6rem;
+	--spacing-price: 6rem;
+	--container-column: 82.5rem;
+	--container-reading: 40rem;
+	--container-text: 20rem;
+	/* An hours or location card at its widest. */
+	--container-card: 26.25rem;
+	--container-drawer: 23.4375rem;
+	--container-panel: 40rem;
+	--aspect-photo: 3 / 2;
+	--aspect-portrait: 4 / 5;
+	--aspect-square: 1 / 1;
+	--aspect-map: 4 / 3;
+	/* A picture beside text: the text takes seven parts, the picture five. */
+	--grid-template-columns-text-picture: 7fr 5fr;
+	--grid-template-columns-picture-text: 5fr 7fr;
+	/* The footer's columns: brand, services, patients, visit. */
+	--grid-template-columns-footer: 4fr 2fr 3fr 3fr;
+	--opacity-dots-inactive: 35%;
+	--opacity-badge: 70%;
+	--transition-duration-fast: 150ms;
+	--transition-duration-panel: 250ms;
+}
+
+/* Sizes per breakpoint (mobile, from 48rem, from 64rem): each role reads a
+   design token and scales it by the design's ratio for that width, so a
+   workspace that changes the scale moves every breakpoint with it. */
+:root {
+	--clinic-h1: calc(var(--sites-type-scale-4xl) * 36 / 60);
+	--clinic-h2: calc(var(--sites-type-scale-3xl) * 28 / 40);
+	--clinic-h3: calc(var(--sites-type-scale-2xl) * 22 / 28);
+	--clinic-h4: calc(var(--sites-type-scale-xl) * 18 / 20);
+	--clinic-body-lg: calc(var(--sites-type-scale-lg) * 18 / 20);
+	--clinic-body: calc(var(--sites-type-scale-base) * 16 / 17);
+	--clinic-body-sm: calc(var(--sites-type-scale-sm) * 14 / 15);
+	--clinic-body-xs: calc(var(--sites-type-scale-xs) * 12 / 13);
+	--clinic-button: calc(var(--sites-type-scale-base) * 15 / 17);
+	--clinic-section: calc(var(--sites-spacing-2xl) * 40 / 80);
+	--clinic-gutter: calc(var(--sites-spacing-md) * 16 / 24);
+	--clinic-xl: calc(var(--sites-spacing-xl) * 32 / 48);
+	--clinic-2xl: calc(var(--sites-spacing-2xl) * 48 / 80);
+	--clinic-3xl: calc(var(--sites-spacing-2xl) * 64 / 80);
+}
+
+@media (min-width: 48rem) {
+	:root {
+		--clinic-h1: calc(var(--sites-type-scale-4xl) * 48 / 60);
+		--clinic-h2: calc(var(--sites-type-scale-3xl) * 34 / 40);
+		--clinic-h3: calc(var(--sites-type-scale-2xl) * 24 / 28);
+		--clinic-h4: calc(var(--sites-type-scale-xl) * 19 / 20);
+		--clinic-body-lg: calc(var(--sites-type-scale-lg) * 19 / 20);
+		--clinic-body: var(--sites-type-scale-base);
+		--clinic-body-xs: var(--sites-type-scale-xs);
+		--clinic-section: calc(var(--sites-spacing-2xl) * 56 / 80);
+		--clinic-gutter: var(--sites-spacing-md);
+		--clinic-xl: calc(var(--sites-spacing-xl) * 40 / 48);
+		--clinic-2xl: calc(var(--sites-spacing-2xl) * 64 / 80);
+		--clinic-3xl: var(--sites-spacing-2xl);
+	}
+}
+
+@media (min-width: 64rem) {
+	:root {
+		--clinic-h1: var(--sites-type-scale-4xl);
+		--clinic-h2: var(--sites-type-scale-3xl);
+		--clinic-h3: var(--sites-type-scale-2xl);
+		--clinic-h4: var(--sites-type-scale-xl);
+		--clinic-body-lg: var(--sites-type-scale-lg);
+		--clinic-body-sm: var(--sites-type-scale-sm);
+		--clinic-button: calc(var(--sites-type-scale-base) * 16 / 17);
+		--clinic-section: var(--sites-spacing-2xl);
+		--clinic-gutter: calc(var(--sites-spacing-md) * 40 / 24);
+		--clinic-xl: var(--sites-spacing-xl);
+		--clinic-2xl: var(--sites-spacing-2xl);
+		--clinic-3xl: calc(var(--sites-spacing-2xl) * 96 / 80);
+	}
+}
+
+/* Prices, fees, hours and the phone line up in columns. */
+@utility tnum {
+	font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* Two bands on the same light scheme in a row read as one: the second drops
+   its top padding so the seam carries one section's space, not two. */
+main > :is(.sites-scheme-white + .sites-scheme-white, .sites-scheme-cloud + .sites-scheme-cloud) > section {
+	padding-top: 0;
+}
+
+body:has([data-bare]) [data-group] { display: none; }
+
+html.reveal-off .reveal:not(.is-revealed) {
+	opacity: 1;
+	transform: none;
+	filter: none;
+}
+
+/* split-text hides a heading until it upgrades; with no script to upgrade it, show it. */
+html.reveal-off split-text:not(:defined) {
+	visibility: visible;
+}
+
+/* The header lies over a page that opens with a cover hero (data-over-hero):
+   transparent with the hero's own type colour at the top, its own scheme once
+   the page scrolls (sticky-header writes data-state on <body>). */
+@custom-variant overlaid {
+	&:where(body:not([data-state="scrolling"]):has(main > [data-section]:first-child [data-over-hero]) [data-header-style="over-hero"]),
+	&:where(body:not([data-state="scrolling"]):has(main > [data-section]:first-child [data-over-hero]) [data-header-style="over-hero"] *) {
+		@slot;
+	}
+}
+body:has([data-header-style="over-hero"]) main > [data-section]:first-child:has([data-over-hero]) {
+	margin-top: calc(var(--header-height, 4.5rem) * -1);
+}
+
+/* The call bar clears the phone's home indicator. */
+@utility pb-safe {
+	padding-bottom: max(env(safe-area-inset-bottom), var(--sites-spacing-sm));
+}
+
+/* The call bar steps aside while a sheet, dialog or the menu is open. */
+@custom-variant panel-open (body:has(dialog[open]) &);
+
+/* A link or tab the page marks as current. */
+@custom-variant current {
+	&[aria-current="true"],
+	&[aria-current="page"] {
+		@slot;
+	}
+}
+
+:root {
+	font-size: var(--sites-type-base);
+	scrollbar-color: var(--sites-scheme-chip-foreground) transparent;
+}
+
+::selection {
+	background: var(--sites-scheme-links);
+	color: var(--sites-scheme-background);
+}
+
+:focus-visible {
+	outline: 2px solid var(--sites-scheme-links);
+	outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+@layer base {
+	dialog {
+		border: 0;
+		padding: 0;
+		color: inherit;
+	}
+
+	[id] {
+		scroll-margin-top: calc(var(--spacing-header) + 1rem);
+	}
+}
+
+/* Rich text from the editor carries no classes, so its rhythm is set here. */
+@layer components {
+	.sites-prose > * + * {
+		margin-top: var(--sites-spacing-sm);
+	}
+
+	.sites-prose :is(h2, h3, h4) {
+		margin-top: var(--sites-spacing-lg);
+		font-family: var(--font-heading);
+		font-weight: 600;
+		line-height: 1.2;
+		color: var(--sites-scheme-heading);
+	}
+
+	.sites-prose h2 {
+		font-size: var(--clinic-h3);
+	}
+
+	.sites-prose :is(h3, h4) {
+		font-size: var(--clinic-h4);
+	}
+
+	.sites-prose a {
+		color: var(--sites-scheme-links);
+		text-decoration-line: underline;
+		text-underline-offset: 0.2em;
+	}
+
+	.sites-prose :is(ul, ol) {
+		display: grid;
+		gap: var(--sites-spacing-xs);
+		padding-inline-start: 1.25em;
+	}
+
+	.sites-prose ul {
+		list-style: disc;
+	}
+
+	.sites-prose ol {
+		list-style: decimal;
+	}
+
+	/* A description opens with its first paragraph a size up. */
+	.sites-prose[data-lead] > p:first-child {
+		font-size: var(--text-body-lg);
+	}
+}
+
+/* sticky-header pins the element it is, so the renderer's wrapper steps
+   out of the way. */
+[data-section="header"]:has(sticky-header) {
+	display: contents;
+}
+
+@layer components {
+	sticky-header[disabled] {
+		position: static;
+		transform: none;
+	}
+
+	sticky-header::before {
+		content: none;
+	}
+}
+
+dropdown-component:not(:defined) dropdown-panel {
+	display: none;
+}
+
+/* The carousels: dots in the scheme's text at 35%, the current one in the
+   text; the progress bar a hairline in the border colour with a fill in the
+   text colour. Before tarot upgrades, or with no JavaScript, a track lays its
+   slides out as a row that scrolls. */
+tarot-carousel {
+	--color-pagination-dot: color-mix(in srgb, var(--sites-scheme-foreground) var(--opacity-dots-inactive), transparent);
+	--color-pagination-dot-active: var(--sites-scheme-foreground);
+	--tarot-progress-height: 1px;
+	--tarot-progress-margin: 0;
+	--tarot-progress-border-radius: 0;
+	--tarot-progress-bg: var(--sites-scheme-chip-border);
+	--tarot-progress-fill-bg: var(--sites-scheme-foreground);
+}
+tarot-carousel > .tarot-dots-list {
+	margin-top: var(--sites-spacing-md);
+}
+tarot-carousel:not(:defined) tarot-track {
+	display: flex;
+	gap: var(--sites-spacing-sm);
+	overflow-x: auto;
+}
+tarot-carousel:not(:defined) tarot-slide {
+	flex: none;
+	width: 80%;
+	opacity: 1;
+	visibility: visible;
+}
+
+/* The appointment sheet: the scheme's background over the backdrop (the text
+   at 50%), card-rounded top, a hairline along the top. */
+dialog-panel:has(bottom-sheet) {
+	--bs-panel-background: var(--sites-scheme-background);
+	--bs-panel-border-radius: var(--sites-radius-md);
+	--bs-panel-box-shadow: 0 -1px 0 var(--sites-scheme-chip-border);
+	--bs-handle-color: var(--sites-scheme-chip-border);
+	--bs-handle-width: 2.5rem;
+	--bs-handle-height: 0.25rem;
+	--bs-content-padding: var(--clinic-gutter);
+	--bs-content-padding-block: 0 var(--sites-spacing-lg);
+	--bs-overlay-background: color-mix(in srgb, var(--sites-scheme-foreground) 50%, transparent);
+	--bs-overlay-blur: 0;
+}
+
+/* The appointment panel is a sheet on a phone and a centred dialog from 48rem
+   with the theme's one soft shadow (design.json shadow.lg): the same markup,
+   the slide replaced by a fade. */
+@media (min-width: 48rem) {
+	dialog-panel:has(bottom-sheet[data-centred]) > dialog {
+		inset: 0;
+		margin: auto;
+		width: min(90vw, var(--container-panel));
+		height: fit-content;
+		max-height: 90dvh;
+		border-radius: var(--sites-radius-md);
+		box-shadow: var(--sites-shadow-lg);
+		overflow-y: auto;
+	}
+	dialog-panel:is([state="hidden"], [state="showing"], [state="hiding"]):has(bottom-sheet[data-centred]) > dialog {
+		transform: scale(0.97);
+		opacity: 0;
+		transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+	}
+	dialog-panel[state="shown"]:has(bottom-sheet[data-centred]) > dialog {
+		transform: none;
+		opacity: 1;
+	}
+	bottom-sheet[data-centred] bottom-sheet-handle {
+		display: none;
+	}
+}
+
+/* The select lists: the field white with the grey hairline, the panel white
+   with a hairline, the hovered option in the tint. */
+select-dropdown {
+	--select-shadow: none;
+	--select-shadow-soft: none;
+	--select-color-text: var(--sites-input-text);
+	--select-color-background: var(--sites-input-background);
+	--select-color-border: var(--sites-input-border);
+	--select-color-border-hover: var(--sites-input-text);
+	--select-color-border-dark: var(--sites-input-text);
+	--select-color-primary: var(--sites-input-focus-ring);
+	--select-color-hover: var(--clinic-tint);
+	--select-color-focus: var(--clinic-tint);
+	--select-color-selected: var(--clinic-tint);
+	display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
+	/* The ticker stands still: one copy, cut with an ellipsis. */
+	[data-ticker] scrolling-content { mask-image: none; }
+	[data-ticker] scrolling-track { width: auto; transform: none !important; }
+	[data-ticker] scrolling-item[data-clone] { display: none; }
+	[data-ticker] scrolling-item { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+	.reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+}

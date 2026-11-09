@@ -1,0 +1,19 @@
+<!-- component: Field -->
+<!-- A labelled input: the label above, the box white with a grey hairline, the action blue on focus; the placeholder in the muted grey; hint (the caution line) and the error under it, both tied by aria-describedby. -->
+{#let
+  id = 'field-' + prefix + '-' + name
+  err = error ? 'error-' + prefix + '-' + name : null
+  tip = hint ? 'hint-' + prefix + '-' + name : null
+  box = 'block w-full rounded-input border bg-input-background px-space-sm text-body text-input-text placeholder:text-input-placeholder focus:border-input-active focus:outline-2 focus:outline-offset-1 focus:outline-input-active ' + (error ? 'border-scheme-error' : 'border-input-border')
+  described = [tip, err] | compact | join(' ')
+}
+<div class={ wide ? 'md:col-span-2' : null }>
+  <label class="mb-space-xs block text-body-sm font-medium" for="{ id }">{ label }{#if required}<span aria-hidden="true"> *</span>{/if}</label>
+  {#if type == 'textarea'}
+    <textarea class="{ box } min-h-textarea resize-y py-space-sm" id="{ id }" name={ name } placeholder={ placeholder } maxlength={ maxlength } required={ required } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ described || null }>{ value }</textarea>
+  {:else}
+    <input class="{ box } min-h-control" id="{ id }" name={ name } type={ type ?? 'text' } placeholder={ placeholder } autocomplete={ autocomplete ?? (type == 'email' ? 'email' : (name == 'name' ? 'name' : (type == 'tel' ? 'tel' : 'off'))) } maxlength={ maxlength } required={ required } value={ value } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ described || null } />
+  {/if}
+  {#if hint}<p class="mt-space-xs text-body-sm text-scheme-muted" id="{ tip }">{ hint }</p>{/if}
+  {#if error}<p class="mt-space-xs text-body-sm text-scheme-error" id="{ err }">{ t('form_field_' + error) }</p>{/if}
+</div>

@@ -1,0 +1,46 @@
+<!-- TODO sync with Figma -->
+<!-- Stub: code B replaces this body. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-over-hero={ settings.layout == 'cover' ? true : null }>
+  <div class="mx-auto grid max-w-column gap-space-md">
+    <h1 class="font-heading text-h1 text-balance"><Rise text={ settings.heading } /></h1>
+    {#if settings.text}<p class="max-w-reading text-body-lg text-scheme-muted">{ settings.text }</p>{/if}
+    <Routes />
+    {#if settings.show_proof_row}<ProofRow />{/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Hero",
+  "description": "The first screen: the heading, the two routes and the proof row beside a photo, over it, or beside the short request form.",
+  "kind": "Hero",
+  "icon": "panel-top",
+  "settings": [
+    { "type": "select", "id": "layout", "label": "Layout", "default": "split", "options": [
+      { "value": "split", "label": "Type beside a photo" },
+      { "value": "cover", "label": "Type over a photo" },
+      { "value": "panel", "label": "Type beside the request form" }
+    ], "info": "The request form shows four fields (reason, name, phone, time of day); the full form stays in the panel." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Family dentistry in Oakfield, with time to listen." },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "Two offices, six clinicians and evening hours on Thursdays. Gentle care for every age, since 2007." },
+    { "type": "image", "id": "image", "label": "Image", "info": "4:5 beside the type, 3:2 behind it." },
+    { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "" },
+    { "type": "select", "id": "ratio", "label": "Photo shape", "default": "portrait", "options": [
+      { "value": "portrait", "label": "Portrait (4:5)" },
+      { "value": "photo", "label": "Landscape (3:2)" }
+    ], "info": "Type beside a photo only." },
+    { "type": "select", "id": "height", "label": "Height", "default": "tall", "options": [
+      { "value": "tall", "label": "Tall" },
+      { "value": "full", "label": "The full screen" }
+    ], "info": "Type over a photo only." },
+    { "type": "checkbox", "id": "inset", "label": "Inset", "default": false, "info": "Type over a photo only: the photo rounded inside the page margins." },
+    { "type": "checkbox", "id": "show_proof_row", "label": "Proof row", "default": true, "info": "New-patient status, rating, insurance and the year you opened, from the Practice settings." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Split", "settings": { "layout": "split", "color_scheme": "white" } },
+    { "name": "Cover", "settings": { "layout": "cover", "color_scheme": "navy" } },
+    { "name": "Panel", "settings": { "layout": "panel", "color_scheme": "ice" } }
+  ]
+}
+</schema>

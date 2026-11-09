@@ -1,0 +1,29 @@
+<!-- TODO sync with Figma -->
+<!-- Stub: code B replaces this body. -->
+{#let s = site.settings}
+{#if s.emergency_line}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-xs">
+    <h2 class="font-heading text-h3">{ s.emergency_line }</h2>
+    <a class="font-heading text-h3 tnum" href="tel:{ (s.emergency_phone || s.phone) | replace(' ', '') }">{ s.emergency_phone || s.phone }</a>
+    {#if settings.hours_line}<p class="text-body-sm text-scheme-muted">{ settings.hours_line }</p>{/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Emergency band",
+  "description": "One line for emergencies with the phone to call. Hidden while the Practice emergency line is empty.",
+  "kind": "Contact",
+  "icon": "phone",
+  "settings": [
+    { "type": "paragraph", "content": "The line and the phone come from the Practice emergency line and emergency phone." },
+    { "type": "text", "id": "hours_line", "label": "Hours line", "default": "Call before 10 am and we'll see you today.", "info": "Out of hours: Pine Ridge Emergency Vets, 262-555-0190." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "sky" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "sky" } }
+  ]
+}
+</schema>

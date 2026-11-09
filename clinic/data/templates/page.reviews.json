@@ -1,0 +1,39 @@
+{
+  "label": "Reviews",
+  "description": "Every review with the rating.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "show_rating": true,
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_reviews",
+      "type": "testimonials",
+      "preset": "Rows",
+      "settings": {
+        "layout": "rows",
+        "source": "all",
+        "limit": 12,
+        "show_rating": false,
+        "heading": "",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    }
+  ]
+}

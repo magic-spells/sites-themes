@@ -1,0 +1,49 @@
+<!-- TODO sync with Figma -->
+<!-- One location: its name in h2, then its hours card in five parts beside, in seven, the 4:3 map (the embedded map when set and asked for, else the map image) or, without the map, its photo. The location in the setting, else the one whose page this is, else the first. -->
+{#let
+  here = page.entry ? content.locations.entries | find('id', page.entry.id) : null
+  loc = settings.location || here || (content.locations.entries | sort('fields.order') | first)
+  f = loc.fields
+}
+{#if loc}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading || loc.title } text={ f.description } />
+    <div class="grid items-stretch gap-space-lg md:grid-cols-picture-text">
+      {#if settings.show_hours}<HoursCard entry={ loc } />{/if}
+      <div class="{ settings.show_hours ? '' : 'md:col-span-2' }">
+        {#if settings.show_map && settings.map == 'embed' && f.map_embed_url}
+          <div class="aspect-map overflow-hidden rounded-photo bg-scheme-surface-2"><iframe class="size-full" src="{ f.map_embed_url }" title="{ t('map_of', { name: loc.title }) }" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        {:else if settings.show_map && f.map_image}
+          <Well asset={ f.map_image } alt={ f.map_image_alt } ratio="aspect-map" width={ 1200 } sizes="(min-width: 48rem) 55vw, 100vw" />
+        {:else}
+          <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-map" width={ 1200 } sizes="(min-width: 48rem) 55vw, 100vw" />
+        {/if}
+      </div>
+    </div>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Hours and location",
+  "description": "One office: its hours card beside its map or photo.",
+  "kind": "Contact",
+  "icon": "map-pin",
+  "settings": [
+    { "type": "entry", "id": "location", "label": "Location", "info": "Leave empty for this page's location, or the first." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "", "info": "Leave empty to use the location's name." },
+    { "type": "checkbox", "id": "show_hours", "label": "Hours card", "default": true },
+    { "type": "checkbox", "id": "show_map", "label": "Map", "default": true, "info": "Off shows the location's photo." },
+    { "type": "select", "id": "map", "label": "Map", "default": "image", "options": [
+      { "value": "image", "label": "The map image" },
+      { "value": "embed", "label": "The embedded map, when the location has one" }
+    ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" } }
+  ]
+}
+</schema>

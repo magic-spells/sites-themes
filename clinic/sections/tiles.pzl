@@ -1,0 +1,36 @@
+<!-- TODO sync with Figma -->
+<!-- Stub: code B replaces this body. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <ul class="mx-auto grid max-w-column gap-space-lg">{#for block in blocks, i}<Tile block={ block } editor_id={ block.editor_id } cls={ i == 0 ? 'lg:row-span-2' : '' } />{/for}</ul>
+</section>
+
+<schema>
+{
+  "name": "Tiles",
+  "description": "A mosaic of three or four tiles, each on its own colour or with a photo, linking on.",
+  "kind": "Content",
+  "icon": "layout-dashboard",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "blocks": [
+    { "type": "tile", "name": "Tile", "limit": 4, "settings": [
+      { "type": "text", "id": "heading", "label": "Heading" },
+      { "type": "text", "id": "text", "label": "Line" },
+      { "type": "text", "id": "link_label", "label": "Link label" },
+      { "type": "url", "id": "link", "label": "Link" },
+      { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "navy", "info": "Without a photo." },
+      { "type": "image", "id": "image", "label": "Photo (3:2)", "info": "A photo tile shows its text under the photo, on the band." },
+      { "type": "text", "id": "image_alt", "label": "Photo alt text" }
+    ] }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" }, "blocks": [
+      { "type": "tile", "settings": { "heading": "Insurance and fees", "text": "Clear prices, and help with your plan.", "link_label": "See fees", "link": "/fees", "color_scheme": "navy" } },
+      { "type": "tile", "settings": { "heading": "Meet the team", "text": "Six clinicians across two offices.", "link_label": "Our team", "link": "/team", "color_scheme": "white" } },
+      { "type": "tile", "settings": { "heading": "New patients", "text": "What to expect at your first visit.", "link_label": "Start here", "link": "/new-patients", "color_scheme": "sky" } }
+    ] }
+  ]
+}
+</schema>

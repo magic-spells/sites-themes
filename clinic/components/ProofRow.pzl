@@ -1,0 +1,11 @@
+<!-- component: ProofRow -->
+<!-- The proof under the routes in Meta, a small dot between items: the status dot and the new-patient line, the star with the rating and the review count, the insurance line and the since year, each from the Practice settings and left out when empty. Wraps on phones. -->
+{#let
+  s = site.settings
+  rest = [s.insurance_line || null, s.since_year ? t('since', { year: s.since_year }) : null] | compact
+}
+<ul class="flex flex-wrap items-center gap-x-space-sm gap-y-space-2xs text-body-sm text-scheme-muted">
+  {#if s.new_patients_line}<li class="group flex items-center gap-space-sm"><StatusDot /></li>{/if}
+  {#if s.rating}<li class="group flex items-center gap-space-sm"><Glyph name="dot" cls="size-space-2xs group-first:hidden" /><span class="flex items-center gap-space-2xs"><Glyph name="star" cls="size-icon-sm text-scheme-accent" />{ s.rating }{#if s.review_count} · { t('review_count', { n: s.review_count | number_with_delimiter, source: s.review_source }) }{/if}</span></li>{/if}
+  {#for item in rest}<li class="group flex items-center gap-space-sm"><Glyph name="dot" cls="size-space-2xs group-first:hidden" />{ item }</li>{/for}
+</ul>

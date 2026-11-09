@@ -1,0 +1,10 @@
+<!-- component: RatingPill -->
+<!-- The Practice rating in a pill with a hairline: the star in the accent and the rating, the review count with its source, and "Read all" to the review link. Nothing without a rating. -->
+{#let s = site.settings}
+{#if s.rating}
+<p class="inline-flex flex-wrap items-center gap-x-space-xs rounded-full border border-scheme-border bg-scheme-background px-space-md py-space-xs text-body-sm">
+  <Glyph name="star" cls="size-icon-sm text-scheme-accent" /><span class="font-medium tnum">{ s.rating }</span>
+  {#if s.review_count}<span class="text-scheme-muted">{ t('review_count', { n: s.review_count | number_with_delimiter, source: s.review_source }) }</span>{/if}
+  {#if s.review_url}<a class="text-link underline underline-offset-4" href="{ s.review_url }">{ t('read_all') }</a>{/if}
+</p>
+{/if}

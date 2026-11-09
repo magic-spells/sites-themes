@@ -1,0 +1,22 @@
+<!-- component: AppointmentFields -->
+<!-- A site form whole: its fields, the full-width button, and the sent and error states (?form=…&sent=1 / &error=1). The appointment form by default, the one the sheet, the Book page, the hero and the cta band share: the Practice confirm line under the button and the caution line under the note. compact shows the four fields that matter (reason, name, phone, time of day) and a link to the full form. handle names another form (contact) and plain drops both lines. prefix keeps the field ids apart when two forms share a page. -->
+{#let
+  s = site.settings
+  confirm = plain ? null : s.confirm_line
+}
+<Form handle={ handle || s.appointment_form } class="grid gap-space-md" id="form-{ prefix }">
+  {#if form.sent}
+    <div class="grid justify-items-start gap-space-sm" role="status">
+      <IconCircle icon="check" size="lg" />
+      <p class="font-heading text-h3">{ form.success_message || t('form_success') }</p>
+      {#if confirm}<p class="text-body text-scheme-muted">{ confirm }</p>{/if}
+    </div>
+  {:else}
+    {#if form.error}<p class="text-body-sm text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
+    <FormFields fields={ form.fields } prefix={ prefix } pick={ compact ? ['reason', 'name', 'phone', 'time'] : null } hint={ plain ? null : s.caution_line } />
+    <Button type="submit" wide>{ form.submit_label || s.ask_label }</Button>
+    {#if compact}<a class="justify-self-center text-body-sm font-medium text-link underline underline-offset-4" href="{ s.booking_path }" data-panel-open={ s.booking_url ? null : 'appointment' }>{ t('full_form') }</a>
+    {:else if confirm}<p class="text-center text-body-sm text-scheme-muted">{ confirm }</p>{/if}
+    <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+  {/if}
+</Form>

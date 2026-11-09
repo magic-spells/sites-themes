@@ -1,0 +1,7 @@
+<!-- component: Badge -->
+<!-- An accreditation logo from a badge block, greyscale at 70% on light bands, inverted on dark ones; a link when set. -->
+{#let
+  b = block.settings
+  img = image_tag(b.image, { alt: b.alt, class: 'h-control w-auto opacity-badge grayscale ' + (dark ? 'invert' : ''), sizes: '10rem' })
+}
+<li class="flex shrink-0 items-center justify-center" data-block={ editor_id }>{#if b.link}<a href="{ b.link }">{ img }</a>{:else}{ img }{/if}</li>

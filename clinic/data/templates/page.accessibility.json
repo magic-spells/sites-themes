@@ -1,0 +1,25 @@
+{
+  "label": "Accessibility",
+  "description": "How the offices and the site work for everyone.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_text",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {
+        "text": "<p>Both offices have step-free entrances. Oakfield has a hearing loop at the front desk, and we print every form in large type on request.</p><p>This site is built to work with a keyboard and a screen reader. If anything gets in your way, call us on (262) 555-0148 or email hello@oakfielddental.example and we'll help.</p>",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    }
+  ]
+}

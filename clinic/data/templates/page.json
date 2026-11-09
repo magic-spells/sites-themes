@@ -1,0 +1,24 @@
+{
+  "label": "Page",
+  "description": "A title and prose.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_text",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": []
+    }
+  ]
+}

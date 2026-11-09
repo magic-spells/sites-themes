@@ -1,0 +1,14 @@
+<!-- component: Questions -->
+<!-- Rows on hairlines that open and close, for the faq and the service page: the question in Card title with a chevron, the answer under it. items are blocks, each with settings.question and settings.answer. The first opens when first_open. Without JavaScript every row shows. -->
+<ul class="border-t border-scheme-border">
+  {#for item in items, i}
+    <li class="border-b border-scheme-border" data-block={ item.editor_id }>
+      <collapsible-component>
+        <h3><button class="group flex w-full items-center justify-between gap-space-md py-space-md text-left font-heading text-card" type="button">{ item.settings.question }<Glyph name="chevron-down" cls="size-icon transition-transform duration-fast group-aria-expanded:rotate-180" /></button></h3>
+        <collapsible-content open={ first_open && i == 0 }>
+          <div class="sites-prose max-w-reading pb-space-md text-body text-scheme-muted">{ item.settings.answer }</div>
+        </collapsible-content>
+      </collapsible-component>
+    </li>
+  {/for}
+</ul>

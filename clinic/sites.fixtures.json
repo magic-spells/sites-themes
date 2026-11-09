@@ -1,0 +1,3244 @@
+{
+ "site": {
+  "name": "Oakfield Family Dental",
+  "url": "https://oakfielddental.example",
+  "locale": "en",
+  "settings": {
+   "wordmark": "Oakfield Family Dental",
+   "tagline": "Gentle family dentistry in Oakfield and Pine Ridge since 2007.",
+   "currency_symbol": "$",
+   "reveal": true,
+   "heading_motion": false,
+   "phone": "(262) 555-0148",
+   "phone_line": "Same-day slots most weekdays",
+   "text_number": "(262) 555-0177",
+   "ask_label": "Book an appointment",
+   "booking_url": "",
+   "booking_path": "/book",
+   "appointment_form": "appointment",
+   "confirm_line": "We confirm by phone or text within one working day.",
+   "caution_line": "Please don't include medical details here. We'll talk those through by phone.",
+   "new_patients": "accepting",
+   "new_patients_line": "Accepting new patients",
+   "insurance_line": "In-network with most major plans; we file claims for you.",
+   "rating": "4.9",
+   "review_count": 318,
+   "review_source": "Google",
+   "review_url": "https://google.example/oakfielddental/reviews",
+   "since_year": "2007",
+   "registration_lines": "Dr Hannah Reyes, DDS · WI license 12345\nADA member",
+   "portal_url": "https://portal.example/oakfield",
+   "forms_url": "https://forms.example/oakfield",
+   "emergency_line": "Tooth pain? We keep same-day slots for emergencies.",
+   "emergency_phone": "(262) 555-0148",
+   "footer_note": "If this is a medical emergency, call 911.",
+   "telehealth_line": "",
+   "show_call_bar": true,
+   "email": "hello@oakfielddental.example",
+   "address": "22 Linden Avenue\nOakfield, WI 53000",
+   "contact_form": "contact",
+   "newsletter_form": "newsletter"
+  }
+ },
+ "menus": {
+  "main": {
+   "handle": "main",
+   "title": "Main menu",
+   "items": [
+    {
+     "id": "main0",
+     "label": "Services",
+     "target": {
+      "kind": "url",
+      "url": "/services"
+     },
+     "children": []
+    },
+    {
+     "id": "main1",
+     "label": "Concerns",
+     "target": {
+      "kind": "url",
+      "url": "/conditions"
+     },
+     "children": []
+    },
+    {
+     "id": "main2",
+     "label": "Our team",
+     "target": {
+      "kind": "url",
+      "url": "/team"
+     },
+     "children": []
+    },
+    {
+     "id": "main3",
+     "label": "New patients",
+     "target": {
+      "kind": "url",
+      "url": "/new-patients"
+     },
+     "children": []
+    },
+    {
+     "id": "main4",
+     "label": "Visit",
+     "target": {
+      "kind": "url",
+      "url": "/locations"
+     },
+     "children": []
+    },
+    {
+     "id": "main5",
+     "label": "About",
+     "target": {
+      "kind": "url",
+      "url": "/about"
+     },
+     "children": []
+    }
+   ]
+  },
+  "patients": {
+   "handle": "patients",
+   "title": "Patients",
+   "items": [
+    {
+     "id": "patients0",
+     "label": "New patients",
+     "target": {
+      "kind": "url",
+      "url": "/new-patients"
+     },
+     "children": []
+    },
+    {
+     "id": "patients1",
+     "label": "Insurance and fees",
+     "target": {
+      "kind": "url",
+      "url": "/fees"
+     },
+     "children": []
+    },
+    {
+     "id": "patients2",
+     "label": "Patient forms",
+     "target": {
+      "kind": "url",
+      "url": "https://forms.example/oakfield"
+     },
+     "children": []
+    },
+    {
+     "id": "patients3",
+     "label": "Patient portal",
+     "target": {
+      "kind": "url",
+      "url": "https://portal.example/oakfield"
+     },
+     "children": []
+    }
+   ]
+  },
+  "legal": {
+   "handle": "legal",
+   "title": "Legal",
+   "items": [
+    {
+     "id": "legal0",
+     "label": "Privacy",
+     "target": {
+      "kind": "url",
+      "url": "/privacy"
+     },
+     "children": []
+    },
+    {
+     "id": "legal1",
+     "label": "Terms",
+     "target": {
+      "kind": "url",
+      "url": "/terms"
+     },
+     "children": []
+    },
+    {
+     "id": "legal2",
+     "label": "Accessibility",
+     "target": {
+      "kind": "url",
+      "url": "/accessibility"
+     },
+     "children": []
+    }
+   ]
+  },
+  "social": {
+   "handle": "social",
+   "title": "Social",
+   "items": [
+    {
+     "id": "social0",
+     "label": "Facebook",
+     "target": {
+      "kind": "url",
+      "url": "https://facebook.example/oakfielddental"
+     },
+     "children": []
+    },
+    {
+     "id": "social1",
+     "label": "Instagram",
+     "target": {
+      "kind": "url",
+      "url": "https://instagram.example/oakfielddental"
+     },
+     "children": []
+    },
+    {
+     "id": "social2",
+     "label": "Google",
+     "target": {
+      "kind": "url",
+      "url": "https://google.example/oakfielddental"
+     },
+     "children": []
+    }
+   ]
+  }
+ },
+ "galleries": {},
+ "assets": {
+  "as_3x2_ice": {
+   "id": "as_3x2_ice",
+   "status": "ready",
+   "file_name": "3x2-ice.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/3x2-ice.svg",
+   "width": 1500,
+   "height": 1000,
+   "alt": "3:2 ice placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_3x2_cloud": {
+   "id": "as_3x2_cloud",
+   "status": "ready",
+   "file_name": "3x2-cloud.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/3x2-cloud.svg",
+   "width": 1500,
+   "height": 1000,
+   "alt": "3:2 cloud placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_3x2_mist": {
+   "id": "as_3x2_mist",
+   "status": "ready",
+   "file_name": "3x2-mist.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/3x2-mist.svg",
+   "width": 1500,
+   "height": 1000,
+   "alt": "3:2 mist placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_4x5_ice": {
+   "id": "as_4x5_ice",
+   "status": "ready",
+   "file_name": "4x5-ice.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/4x5-ice.svg",
+   "width": 1200,
+   "height": 1500,
+   "alt": "4:5 ice placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_4x5_cloud": {
+   "id": "as_4x5_cloud",
+   "status": "ready",
+   "file_name": "4x5-cloud.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/4x5-cloud.svg",
+   "width": 1200,
+   "height": 1500,
+   "alt": "4:5 cloud placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_4x5_mist": {
+   "id": "as_4x5_mist",
+   "status": "ready",
+   "file_name": "4x5-mist.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/4x5-mist.svg",
+   "width": 1200,
+   "height": 1500,
+   "alt": "4:5 mist placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_1x1_ice": {
+   "id": "as_1x1_ice",
+   "status": "ready",
+   "file_name": "1x1-ice.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/1x1-ice.svg",
+   "width": 1200,
+   "height": 1200,
+   "alt": "1:1 ice placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_1x1_cloud": {
+   "id": "as_1x1_cloud",
+   "status": "ready",
+   "file_name": "1x1-cloud.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/1x1-cloud.svg",
+   "width": 1200,
+   "height": 1200,
+   "alt": "1:1 cloud placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_1x1_mist": {
+   "id": "as_1x1_mist",
+   "status": "ready",
+   "file_name": "1x1-mist.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/1x1-mist.svg",
+   "width": 1200,
+   "height": 1200,
+   "alt": "1:1 mist placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_4x3_ice": {
+   "id": "as_4x3_ice",
+   "status": "ready",
+   "file_name": "4x3-ice.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/4x3-ice.svg",
+   "width": 1600,
+   "height": 1200,
+   "alt": "4:3 ice placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_4x3_cloud": {
+   "id": "as_4x3_cloud",
+   "status": "ready",
+   "file_name": "4x3-cloud.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/4x3-cloud.svg",
+   "width": 1600,
+   "height": 1200,
+   "alt": "4:3 cloud placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_4x3_mist": {
+   "id": "as_4x3_mist",
+   "status": "ready",
+   "file_name": "4x3-mist.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/4x3-mist.svg",
+   "width": 1600,
+   "height": 1200,
+   "alt": "4:3 mist placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_map": {
+   "id": "as_map",
+   "status": "ready",
+   "file_name": "map.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 600,
+   "url": "/_sites/theme/photos/map.svg",
+   "width": 1000,
+   "height": 1000,
+   "alt": "Map placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_logo_ada": {
+   "id": "as_logo_ada",
+   "status": "ready",
+   "file_name": "logo-ada.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 400,
+   "url": "/_sites/theme/photos/logo-ada.svg",
+   "width": 320,
+   "height": 80,
+   "alt": "ADA member logo",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_logo_wda": {
+   "id": "as_logo_wda",
+   "status": "ready",
+   "file_name": "logo-wda.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 400,
+   "url": "/_sites/theme/photos/logo-wda.svg",
+   "width": 320,
+   "height": 80,
+   "alt": "Wisconsin Dental Association logo",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_logo_aligner": {
+   "id": "as_logo_aligner",
+   "status": "ready",
+   "file_name": "logo-aligner.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 400,
+   "url": "/_sites/theme/photos/logo-aligner.svg",
+   "width": 320,
+   "height": 80,
+   "alt": "Invisalign provider logo",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_logo_fear_free": {
+   "id": "as_logo_fear_free",
+   "status": "ready",
+   "file_name": "logo-fear-free.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 400,
+   "url": "/_sites/theme/photos/logo-fear-free.svg",
+   "width": 320,
+   "height": 80,
+   "alt": "Fear Free certified logo",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_logo_chamber": {
+   "id": "as_logo_chamber",
+   "status": "ready",
+   "file_name": "logo-chamber.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 400,
+   "url": "/_sites/theme/photos/logo-chamber.svg",
+   "width": 320,
+   "height": 80,
+   "alt": "Oakfield Chamber of Commerce logo",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_logo_northstar": {
+   "id": "as_logo_northstar",
+   "status": "ready",
+   "file_name": "logo-northstar.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 400,
+   "url": "/_sites/theme/photos/logo-northstar.svg",
+   "width": 320,
+   "height": 80,
+   "alt": "Northstar Dental logo",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_logo_blue_meadow": {
+   "id": "as_logo_blue_meadow",
+   "status": "ready",
+   "file_name": "logo-blue-meadow.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 400,
+   "url": "/_sites/theme/photos/logo-blue-meadow.svg",
+   "width": 320,
+   "height": 80,
+   "alt": "Blue Meadow Health logo",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_logo_unity": {
+   "id": "as_logo_unity",
+   "status": "ready",
+   "file_name": "logo-unity.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 400,
+   "url": "/_sites/theme/photos/logo-unity.svg",
+   "width": 320,
+   "height": 80,
+   "alt": "Unity Benefits logo",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_logo_harbor": {
+   "id": "as_logo_harbor",
+   "status": "ready",
+   "file_name": "logo-harbor.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 400,
+   "url": "/_sites/theme/photos/logo-harbor.svg",
+   "width": 320,
+   "height": 80,
+   "alt": "Harbor Dental Plan logo",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_logo_great_lakes": {
+   "id": "as_logo_great_lakes",
+   "status": "ready",
+   "file_name": "logo-great-lakes.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 400,
+   "url": "/_sites/theme/photos/logo-great-lakes.svg",
+   "width": 320,
+   "height": 80,
+   "alt": "Great Lakes Mutual logo",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_logo_prairie": {
+   "id": "as_logo_prairie",
+   "status": "ready",
+   "file_name": "logo-prairie.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 400,
+   "url": "/_sites/theme/photos/logo-prairie.svg",
+   "width": 320,
+   "height": 80,
+   "alt": "Prairie Health logo",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_logo_summit": {
+   "id": "as_logo_summit",
+   "status": "ready",
+   "file_name": "logo-summit.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 400,
+   "url": "/_sites/theme/photos/logo-summit.svg",
+   "width": 320,
+   "height": 80,
+   "alt": "Summit Dental Network logo",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_logo_lakeshore": {
+   "id": "as_logo_lakeshore",
+   "status": "ready",
+   "file_name": "logo-lakeshore.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 400,
+   "url": "/_sites/theme/photos/logo-lakeshore.svg",
+   "width": 320,
+   "height": 80,
+   "alt": "Lakeshore Care logo",
+   "created_at": "2026-11-08T09:00:00Z"
+  }
+ },
+ "forms": {
+  "appointment": {
+   "handle": "appointment",
+   "name": "Appointment request",
+   "fields": [
+    {
+     "id": "reason",
+     "type": "select",
+     "label": "Reason for visit",
+     "required": true,
+     "options": [
+      "Exam and cleaning",
+      "New patient exam",
+      "Children's dentistry",
+      "Gum care",
+      "Fillings",
+      "Crowns and bridges",
+      "Root canal therapy",
+      "Dental implants",
+      "Dentures",
+      "Teeth whitening",
+      "Veneers",
+      "Clear aligners",
+      "Emergency care",
+      "Something else"
+     ]
+    },
+    {
+     "id": "clinician",
+     "type": "select",
+     "label": "Clinician",
+     "required": false,
+     "options": [
+      "Anyone available",
+      "Hannah Reyes",
+      "Samuel Okafor",
+      "Lena Marsh",
+      "Priya Nair",
+      "Tom Alvarez"
+     ]
+    },
+    {
+     "id": "returning",
+     "type": "select",
+     "label": "New or returning",
+     "required": false,
+     "options": [
+      "New patient",
+      "Returning patient"
+     ]
+    },
+    {
+     "id": "days",
+     "type": "text",
+     "label": "Preferred days",
+     "required": false,
+     "max_length": 200
+    },
+    {
+     "id": "time",
+     "type": "select",
+     "label": "Time of day",
+     "required": false,
+     "options": [
+      "Morning",
+      "Afternoon",
+      "Evening"
+     ]
+    },
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Name",
+     "required": true,
+     "max_length": 200
+    },
+    {
+     "id": "phone",
+     "type": "text",
+     "label": "Phone",
+     "required": true,
+     "max_length": 200
+    },
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email",
+     "required": false,
+     "max_length": 200
+    },
+    {
+     "id": "note",
+     "type": "textarea",
+     "label": "A note (optional)",
+     "required": false,
+     "max_length": 2000
+    }
+   ],
+   "success_message": "Thanks, we've got your request.",
+   "submit_label": "Book an appointment",
+   "redirect_path": ""
+  },
+  "contact": {
+   "handle": "contact",
+   "name": "Contact",
+   "fields": [
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Name",
+     "required": true,
+     "max_length": 200
+    },
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email",
+     "required": true,
+     "max_length": 200
+    },
+    {
+     "id": "subject",
+     "type": "select",
+     "label": "Subject",
+     "required": true,
+     "options": [
+      "Appointment",
+      "Insurance",
+      "Records",
+      "Other"
+     ]
+    },
+    {
+     "id": "message",
+     "type": "textarea",
+     "label": "Message",
+     "required": true,
+     "max_length": 2000
+    }
+   ],
+   "success_message": "Thanks. We answer within one working day.",
+   "submit_label": "Send",
+   "redirect_path": ""
+  },
+  "newsletter": {
+   "handle": "newsletter",
+   "name": "Newsletter",
+   "fields": [
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Your email",
+     "required": true,
+     "max_length": 200
+    }
+   ],
+   "success_message": "You're on the list.",
+   "submit_label": "Sign up",
+   "redirect_path": ""
+  }
+ },
+ "content": {
+  "categories": {
+   "name": "Categories",
+   "fields": [
+    {
+     "id": "description",
+     "type": "text",
+     "label": "Line (one line under the name)"
+    },
+    {
+     "id": "icon",
+     "type": "select",
+     "label": "Icon",
+     "options": [
+      "tooth",
+      "smile",
+      "sparkle",
+      "shield-plus",
+      "stethoscope",
+      "bone",
+      "spine",
+      "brain",
+      "hand",
+      "foot",
+      "paw",
+      "syringe",
+      "pill",
+      "microscope",
+      "baby",
+      "eye",
+      "heart",
+      "leaf"
+     ]
+    },
+    {
+     "id": "image",
+     "type": "image",
+     "label": "Image (3:2)"
+    },
+    {
+     "id": "image_alt",
+     "type": "text",
+     "label": "Image alt text"
+    },
+    {
+     "id": "note",
+     "type": "text",
+     "label": "Note"
+    },
+    {
+     "id": "order",
+     "type": "number",
+     "label": "Position"
+    }
+   ],
+   "entries": [
+    {
+     "id": "cat_preventive",
+     "handle": "preventive",
+     "title": "Preventive",
+     "fields": {
+      "description": "Cleanings, exams, X-rays and care for kids",
+      "icon": "shield-plus",
+      "image": "as_3x2_ice",
+      "image_alt": "Preventive care at Oakfield Family Dental",
+      "note": "Most plans cover these in full",
+      "order": 1
+     }
+    },
+    {
+     "id": "cat_restorative",
+     "handle": "restorative",
+     "title": "Restorative",
+     "fields": {
+      "description": "Fillings, crowns, root canals and implants",
+      "icon": "tooth",
+      "image": "as_3x2_cloud",
+      "image_alt": "Restorative care at Oakfield Family Dental",
+      "note": "We confirm the cost before treatment",
+      "order": 2
+     }
+    },
+    {
+     "id": "cat_cosmetic",
+     "handle": "cosmetic",
+     "title": "Cosmetic",
+     "fields": {
+      "description": "Whitening, veneers and clear aligners",
+      "icon": "sparkle",
+      "image": "as_3x2_mist",
+      "image_alt": "Cosmetic care at Oakfield Family Dental",
+      "note": "A free consultation first",
+      "order": 3
+     }
+    }
+   ]
+  },
+  "services": {
+   "name": "Services",
+   "fields": [
+    {
+     "id": "category",
+     "type": "entry",
+     "label": "Category",
+     "content_type": "categories"
+    },
+    {
+     "id": "summary",
+     "type": "text",
+     "label": "Summary"
+    },
+    {
+     "id": "description",
+     "type": "richtext",
+     "label": "Description"
+    },
+    {
+     "id": "duration_minutes",
+     "type": "number",
+     "label": "Duration (minutes)"
+    },
+    {
+     "id": "price",
+     "type": "number",
+     "label": "Price"
+    },
+    {
+     "id": "price_from",
+     "type": "checkbox",
+     "label": "Price is a starting price"
+    },
+    {
+     "id": "price_note",
+     "type": "text",
+     "label": "Price note (per tooth, after a free consultation)"
+    },
+    {
+     "id": "add_ons",
+     "type": "textarea",
+     "label": "Add-ons (unused here)"
+    },
+    {
+     "id": "includes",
+     "type": "textarea",
+     "label": "What the visit includes (one per line)"
+    },
+    {
+     "id": "team",
+     "type": "entry",
+     "label": "Who provides it",
+     "content_type": "team"
+    },
+    {
+     "id": "icon",
+     "type": "select",
+     "label": "Icon",
+     "options": [
+      "tooth",
+      "smile",
+      "sparkle",
+      "shield-plus",
+      "stethoscope",
+      "bone",
+      "spine",
+      "brain",
+      "hand",
+      "foot",
+      "paw",
+      "syringe",
+      "pill",
+      "microscope",
+      "baby",
+      "eye",
+      "heart",
+      "leaf"
+     ]
+    },
+    {
+     "id": "image",
+     "type": "image",
+     "label": "Image (3:2)"
+    },
+    {
+     "id": "image_alt",
+     "type": "text",
+     "label": "Image alt text"
+    },
+    {
+     "id": "featured",
+     "type": "checkbox",
+     "label": "Featured"
+    },
+    {
+     "id": "tag",
+     "type": "text",
+     "label": "Tag (New patients, Same-day)"
+    },
+    {
+     "id": "order",
+     "type": "number",
+     "label": "Position"
+    }
+   ],
+   "entries": [
+    {
+     "id": "svc_exam_and_cleaning",
+     "handle": "exam-and-cleaning",
+     "title": "Exam and cleaning",
+     "fields": {
+      "category": "cat_preventive",
+      "summary": "A check-up, a careful clean and advice you can use",
+      "description": "<p>A check-up, a careful clean and advice you can use. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+      "price": 120,
+      "price_from": false,
+      "price_note": "Most plans cover preventive care in full",
+      "add_ons": "",
+      "includes": "A full check of every tooth and your gums\nA careful clean and polish\nX-rays when they are due\nA written note of anything to watch",
+      "team": "team_hannah_reyes",
+      "icon": "shield-plus",
+      "image": "as_3x2_ice",
+      "image_alt": "Exam and cleaning at Oakfield Family Dental",
+      "featured": false,
+      "tag": "",
+      "order": 1,
+      "duration_minutes": 60
+     }
+    },
+    {
+     "id": "svc_new_patient_exam",
+     "handle": "new-patient-exam",
+     "title": "New patient exam",
+     "fields": {
+      "category": "cat_preventive",
+      "summary": "A full exam with X-rays and a written plan",
+      "description": "<p>A full exam with X-rays and a written plan. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+      "price": 189,
+      "price_from": false,
+      "price_note": "Includes X-rays",
+      "add_ons": "",
+      "includes": "Your history, taken without hurry\nA full set of X-rays\nAn exam of every tooth, your gums and your bite\nA written plan with the costs",
+      "team": "team_lena_marsh",
+      "icon": "stethoscope",
+      "image": "as_3x2_cloud",
+      "image_alt": "New patient exam at Oakfield Family Dental",
+      "featured": true,
+      "tag": "New patients",
+      "order": 2,
+      "duration_minutes": 90
+     }
+    },
+    {
+     "id": "svc_childrens_dentistry",
+     "handle": "childrens-dentistry",
+     "title": "Children's dentistry",
+     "fields": {
+      "category": "cat_preventive",
+      "summary": "Gentle first visits and check-ups for kids",
+      "description": "<p>Gentle first visits and check-ups for kids. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+      "price": 95,
+      "price_from": false,
+      "price_note": "",
+      "add_ons": "",
+      "includes": "A first visit that is mostly a ride in the chair\nA gentle check and clean\nFluoride and sealants when they help\nAdvice for parents",
+      "team": "team_lena_marsh",
+      "icon": "baby",
+      "image": "as_3x2_mist",
+      "image_alt": "Children's dentistry at Oakfield Family Dental",
+      "featured": false,
+      "tag": "",
+      "order": 3,
+      "duration_minutes": 45
+     }
+    },
+    {
+     "id": "svc_gum_care",
+     "handle": "gum-care",
+     "title": "Gum care",
+     "fields": {
+      "category": "cat_preventive",
+      "summary": "Deep cleaning and a plan for healthy gums",
+      "description": "<p>Deep cleaning and a plan for healthy gums. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+      "price": 240,
+      "price_from": true,
+      "price_note": "",
+      "add_ons": "",
+      "includes": "A gum check, measured and recorded\nA deep clean under the gumline\nA plan for home care\nA follow-up visit",
+      "team": "team_priya_nair",
+      "icon": "leaf",
+      "image": "as_3x2_ice",
+      "image_alt": "Gum care at Oakfield Family Dental",
+      "featured": false,
+      "tag": "",
+      "order": 4,
+      "duration_minutes": 60
+     }
+    },
+    {
+     "id": "svc_fillings",
+     "handle": "fillings",
+     "title": "Fillings",
+     "fields": {
+      "category": "cat_restorative",
+      "summary": "Tooth-coloured fillings, matched to your smile",
+      "description": "<p>Tooth-coloured fillings, matched to your smile. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+      "price": 180,
+      "price_from": true,
+      "price_note": "",
+      "add_ons": "",
+      "includes": "A numbing gel before any injection\nA tooth-coloured filling, shaped to your bite\nA bite check before you leave",
+      "team": "team_samuel_okafor",
+      "icon": "tooth",
+      "image": "as_3x2_cloud",
+      "image_alt": "Fillings at Oakfield Family Dental",
+      "featured": false,
+      "tag": "",
+      "order": 5,
+      "duration_minutes": 60
+     }
+    },
+    {
+     "id": "svc_crowns_and_bridges",
+     "handle": "crowns-and-bridges",
+     "title": "Crowns and bridges",
+     "fields": {
+      "category": "cat_restorative",
+      "summary": "Strong, natural-looking repairs for damaged teeth",
+      "description": "<p>Strong, natural-looking repairs for damaged teeth. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+      "price": 1150,
+      "price_from": true,
+      "price_note": "",
+      "add_ons": "",
+      "includes": "A scan, no messy impressions\nA temporary crown the same day\nThe final crown, matched to your teeth\nA follow-up visit",
+      "team": "team_hannah_reyes",
+      "icon": "tooth",
+      "image": "as_3x2_mist",
+      "image_alt": "Crowns and bridges at Oakfield Family Dental",
+      "featured": false,
+      "tag": "",
+      "order": 6
+     }
+    },
+    {
+     "id": "svc_root_canal_therapy",
+     "handle": "root-canal-therapy",
+     "title": "Root canal therapy",
+     "fields": {
+      "category": "cat_restorative",
+      "summary": "Relief from a painful tooth, usually in one visit",
+      "description": "<p>Relief from a painful tooth, usually in one visit. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+      "price": 900,
+      "price_from": true,
+      "price_note": "",
+      "add_ons": "",
+      "includes": "An X-ray and a clear answer\nThe treatment, usually in one visit\nA crown plan if the tooth needs one",
+      "team": "team_samuel_okafor",
+      "icon": "microscope",
+      "image": "as_3x2_ice",
+      "image_alt": "Root canal therapy at Oakfield Family Dental",
+      "featured": false,
+      "tag": "",
+      "order": 7,
+      "duration_minutes": 90
+     }
+    },
+    {
+     "id": "svc_dental_implants",
+     "handle": "dental-implants",
+     "title": "Dental implants",
+     "fields": {
+      "category": "cat_restorative",
+      "summary": "A permanent replacement for a missing tooth",
+      "description": "<p>An implant replaces the root of a missing tooth with a small titanium post, then carries a crown that looks and works like your own tooth.</p><p>It starts with a free consultation and a 3D scan, so you know whether an implant suits you and what it costs before you decide.</p><p>Most implants take three to six months from start to finish, with a temporary tooth in the meantime.</p>",
+      "price": 3200,
+      "price_from": true,
+      "price_note": "after a free consultation",
+      "add_ons": "",
+      "includes": "A free consultation and 3D scan\nThe implant and a temporary tooth\nThe final crown\nTwo follow-up visits",
+      "team": "team_samuel_okafor",
+      "icon": "tooth",
+      "image": "as_3x2_cloud",
+      "image_alt": "Dental implants at Oakfield Family Dental",
+      "featured": false,
+      "tag": "",
+      "order": 8
+     }
+    },
+    {
+     "id": "svc_dentures",
+     "handle": "dentures",
+     "title": "Dentures",
+     "fields": {
+      "category": "cat_restorative",
+      "summary": "Full and partial dentures, fitted to you",
+      "description": "<p>Full and partial dentures, fitted to you. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+      "price": 1600,
+      "price_from": true,
+      "price_note": "",
+      "add_ons": "",
+      "includes": "Impressions and a try-in\nThe finished dentures\nAdjustments for the first three months",
+      "team": "team_samuel_okafor",
+      "icon": "smile",
+      "image": "as_3x2_mist",
+      "image_alt": "Dentures at Oakfield Family Dental",
+      "featured": false,
+      "tag": "",
+      "order": 9
+     }
+    },
+    {
+     "id": "svc_teeth_whitening",
+     "handle": "teeth-whitening",
+     "title": "Teeth whitening",
+     "fields": {
+      "category": "cat_cosmetic",
+      "summary": "Brighter in one visit, or at home over two weeks",
+      "description": "<p>Brighter in one visit, or at home over two weeks. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+      "price": 350,
+      "price_from": false,
+      "price_note": "",
+      "add_ons": "",
+      "includes": "A shade check before and after\nWhitening in the chair, or custom trays for home\nA top-up gel",
+      "team": "team_hannah_reyes",
+      "icon": "sparkle",
+      "image": "as_3x2_ice",
+      "image_alt": "Teeth whitening at Oakfield Family Dental",
+      "featured": true,
+      "tag": "",
+      "order": 10,
+      "duration_minutes": 60
+     }
+    },
+    {
+     "id": "svc_veneers",
+     "handle": "veneers",
+     "title": "Veneers",
+     "fields": {
+      "category": "cat_cosmetic",
+      "summary": "Thin porcelain shells for chips, gaps and stains",
+      "description": "<p>Thin porcelain shells for chips, gaps and stains. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+      "price": 1100,
+      "price_from": true,
+      "price_note": "per tooth",
+      "add_ons": "",
+      "includes": "A smile consultation and photos\nA preview of the result\nThe veneers, fitted in two visits",
+      "team": "team_hannah_reyes",
+      "icon": "sparkle",
+      "image": "as_3x2_cloud",
+      "image_alt": "Veneers at Oakfield Family Dental",
+      "featured": false,
+      "tag": "",
+      "order": 11
+     }
+    },
+    {
+     "id": "svc_clear_aligners",
+     "handle": "clear-aligners",
+     "title": "Clear aligners",
+     "fields": {
+      "category": "cat_cosmetic",
+      "summary": "Straighter teeth without braces, for adults and teens",
+      "description": "<p>Straighter teeth without braces, for adults and teens. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+      "price": 3900,
+      "price_from": true,
+      "price_note": "",
+      "add_ons": "",
+      "includes": "A scan and a preview of your new smile\nEvery aligner you need\nCheck-ins every eight weeks\nRetainers at the end",
+      "team": "team_hannah_reyes",
+      "icon": "smile",
+      "image": "as_3x2_mist",
+      "image_alt": "Clear aligners at Oakfield Family Dental",
+      "featured": true,
+      "tag": "",
+      "order": 12
+     }
+    },
+    {
+     "id": "svc_emergency_care",
+     "handle": "emergency-care",
+     "title": "Emergency care",
+     "fields": {
+      "category": "cat_restorative",
+      "summary": "Same-day slots for pain, breaks and swelling",
+      "description": "<p>Same-day slots for pain, breaks and swelling. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+      "price": 95,
+      "price_from": false,
+      "price_note": "exam",
+      "add_ons": "",
+      "includes": "A same-day slot when you call before 10 am\nAn exam and X-ray\nRelief first, then a plan",
+      "team": "team_samuel_okafor",
+      "icon": "heart",
+      "image": "as_3x2_ice",
+      "image_alt": "Emergency care at Oakfield Family Dental",
+      "featured": true,
+      "tag": "Same-day",
+      "order": 13,
+      "duration_minutes": 30
+     }
+    }
+   ]
+  },
+  "conditions": {
+   "name": "Concerns",
+   "fields": [
+    {
+     "id": "summary",
+     "type": "text",
+     "label": "Summary"
+    },
+    {
+     "id": "body",
+     "type": "richtext",
+     "label": "Body"
+    },
+    {
+     "id": "service",
+     "type": "entry",
+     "label": "The treatment that usually helps",
+     "content_type": "services"
+    },
+    {
+     "id": "team",
+     "type": "entry",
+     "label": "Who to see",
+     "content_type": "team"
+    },
+    {
+     "id": "icon",
+     "type": "select",
+     "label": "Icon",
+     "options": [
+      "tooth",
+      "smile",
+      "sparkle",
+      "shield-plus",
+      "stethoscope",
+      "bone",
+      "spine",
+      "brain",
+      "hand",
+      "foot",
+      "paw",
+      "syringe",
+      "pill",
+      "microscope",
+      "baby",
+      "eye",
+      "heart",
+      "leaf"
+     ]
+    },
+    {
+     "id": "image",
+     "type": "image",
+     "label": "Image (3:2)"
+    },
+    {
+     "id": "image_alt",
+     "type": "text",
+     "label": "Image alt text"
+    },
+    {
+     "id": "featured",
+     "type": "checkbox",
+     "label": "Featured"
+    },
+    {
+     "id": "order",
+     "type": "number",
+     "label": "Position"
+    }
+   ],
+   "entries": [
+    {
+     "id": "cond_tooth_pain",
+     "handle": "tooth-pain",
+     "title": "Tooth pain",
+     "fields": {
+      "summary": "Same-day appointments for pain",
+      "body": "<p>A toothache that keeps you up, pain when you bite, or a swelling that came on fast: call us before 10 am and we'll see you today.</p><p>We keep same-day slots at Oakfield every weekday. We take an X-ray, find the cause and get you out of pain first; the rest of the plan can wait until you are ready.</p><p>If the pain comes with a fever or a swelling that spreads to your eye or neck, call us straight away, or call 911 out of hours.</p>",
+      "service": "svc_emergency_care",
+      "team": "team_samuel_okafor",
+      "icon": "tooth",
+      "image": "as_3x2_ice",
+      "image_alt": "Tooth pain treatment at Oakfield Family Dental",
+      "featured": true,
+      "order": 1
+     }
+    },
+    {
+     "id": "cond_bleeding_gums",
+     "handle": "bleeding-gums",
+     "title": "Bleeding gums",
+     "fields": {
+      "summary": "Often gum disease, and very treatable",
+      "body": "<p>Often gum disease, and very treatable. Tell us what you are feeling when you call and we will find the right appointment.</p><p>At the visit we look, explain what we see and talk through the options and their costs before anything starts.</p><p>Most people leave the first visit with a plan, and often with the problem already sorted.</p>",
+      "service": "svc_gum_care",
+      "team": "team_priya_nair",
+      "icon": "leaf",
+      "image": "as_3x2_cloud",
+      "image_alt": "Bleeding gums treatment at Oakfield Family Dental",
+      "featured": true,
+      "order": 2
+     }
+    },
+    {
+     "id": "cond_missing_teeth",
+     "handle": "missing-teeth",
+     "title": "Missing teeth",
+     "fields": {
+      "summary": "Implants, bridges or dentures",
+      "body": "<p>Implants, bridges or dentures. Tell us what you are feeling when you call and we will find the right appointment.</p><p>At the visit we look, explain what we see and talk through the options and their costs before anything starts.</p><p>Most people leave the first visit with a plan, and often with the problem already sorted.</p>",
+      "service": "svc_dental_implants",
+      "team": "team_samuel_okafor",
+      "icon": "smile",
+      "image": "as_3x2_mist",
+      "image_alt": "Missing teeth treatment at Oakfield Family Dental",
+      "featured": true,
+      "order": 3
+     }
+    },
+    {
+     "id": "cond_crooked_or_crowded_teeth",
+     "handle": "crooked-or-crowded-teeth",
+     "title": "Crooked or crowded teeth",
+     "fields": {
+      "summary": "Clear aligners for adults and teens",
+      "body": "<p>Clear aligners for adults and teens. Tell us what you are feeling when you call and we will find the right appointment.</p><p>At the visit we look, explain what we see and talk through the options and their costs before anything starts.</p><p>Most people leave the first visit with a plan, and often with the problem already sorted.</p>",
+      "service": "svc_clear_aligners",
+      "team": "team_hannah_reyes",
+      "icon": "smile",
+      "image": "as_3x2_ice",
+      "image_alt": "Crooked or crowded teeth treatment at Oakfield Family Dental",
+      "featured": true,
+      "order": 4
+     }
+    },
+    {
+     "id": "cond_stained_teeth",
+     "handle": "stained-teeth",
+     "title": "Stained teeth",
+     "fields": {
+      "summary": "Whitening in one visit or at home",
+      "body": "<p>Whitening in one visit or at home. Tell us what you are feeling when you call and we will find the right appointment.</p><p>At the visit we look, explain what we see and talk through the options and their costs before anything starts.</p><p>Most people leave the first visit with a plan, and often with the problem already sorted.</p>",
+      "service": "svc_teeth_whitening",
+      "team": "team_hannah_reyes",
+      "icon": "sparkle",
+      "image": "as_3x2_cloud",
+      "image_alt": "Stained teeth treatment at Oakfield Family Dental",
+      "featured": true,
+      "order": 5
+     }
+    },
+    {
+     "id": "cond_chipped_or_cracked_tooth",
+     "handle": "chipped-or-cracked-tooth",
+     "title": "Chipped or cracked tooth",
+     "fields": {
+      "summary": "Bonding, a veneer or a crown",
+      "body": "<p>Bonding, a veneer or a crown. Tell us what you are feeling when you call and we will find the right appointment.</p><p>At the visit we look, explain what we see and talk through the options and their costs before anything starts.</p><p>Most people leave the first visit with a plan, and often with the problem already sorted.</p>",
+      "service": "svc_crowns_and_bridges",
+      "team": "team_hannah_reyes",
+      "icon": "tooth",
+      "image": "as_3x2_mist",
+      "image_alt": "Chipped or cracked tooth treatment at Oakfield Family Dental",
+      "featured": true,
+      "order": 6
+     }
+    },
+    {
+     "id": "cond_jaw_pain_and_grinding",
+     "handle": "jaw-pain-and-grinding",
+     "title": "Jaw pain and grinding",
+     "fields": {
+      "summary": "Night guards and a bite check",
+      "body": "<p>Night guards and a bite check. Tell us what you are feeling when you call and we will find the right appointment.</p><p>At the visit we look, explain what we see and talk through the options and their costs before anything starts.</p><p>Most people leave the first visit with a plan, and often with the problem already sorted.</p>",
+      "service": "svc_exam_and_cleaning",
+      "team": "team_samuel_okafor",
+      "icon": "hand",
+      "image": "as_3x2_ice",
+      "image_alt": "Jaw pain and grinding treatment at Oakfield Family Dental",
+      "featured": false,
+      "order": 7
+     }
+    },
+    {
+     "id": "cond_dental_anxiety",
+     "handle": "dental-anxiety",
+     "title": "Dental anxiety",
+     "fields": {
+      "summary": "Slow, gentle visits; sedation on request",
+      "body": "<p>Slow, gentle visits; sedation on request. Tell us what you are feeling when you call and we will find the right appointment.</p><p>At the visit we look, explain what we see and talk through the options and their costs before anything starts.</p><p>Most people leave the first visit with a plan, and often with the problem already sorted.</p>",
+      "service": "svc_new_patient_exam",
+      "team": "team_lena_marsh",
+      "icon": "heart",
+      "image": "as_3x2_cloud",
+      "image_alt": "Dental anxiety treatment at Oakfield Family Dental",
+      "featured": false,
+      "order": 8
+     }
+    }
+   ]
+  },
+  "team": {
+   "name": "Team",
+   "fields": [
+    {
+     "id": "role",
+     "type": "text",
+     "label": "Role"
+    },
+    {
+     "id": "letters",
+     "type": "text",
+     "label": "Letters (DDS, PT, DPT)"
+    },
+    {
+     "id": "level",
+     "type": "text",
+     "label": "Level (unused here)"
+    },
+    {
+     "id": "specialties",
+     "type": "text",
+     "label": "Specialties (comma-separated)"
+    },
+    {
+     "id": "bio",
+     "type": "richtext",
+     "label": "Bio"
+    },
+    {
+     "id": "credentials",
+     "type": "textarea",
+     "label": "Credentials (one per line)"
+    },
+    {
+     "id": "location",
+     "type": "entry",
+     "label": "Location",
+     "content_type": "locations"
+    },
+    {
+     "id": "image",
+     "type": "image",
+     "label": "Portrait (4:5)"
+    },
+    {
+     "id": "image_alt",
+     "type": "text",
+     "label": "Portrait alt text"
+    },
+    {
+     "id": "link",
+     "type": "url",
+     "label": "Link"
+    },
+    {
+     "id": "featured",
+     "type": "checkbox",
+     "label": "Featured"
+    },
+    {
+     "id": "order",
+     "type": "number",
+     "label": "Position"
+    }
+   ],
+   "entries": [
+    {
+     "id": "team_hannah_reyes",
+     "handle": "hannah-reyes",
+     "title": "Hannah Reyes",
+     "fields": {
+      "role": "General dentist",
+      "letters": "DDS",
+      "level": "",
+      "specialties": "Clear aligners, cosmetic dentistry",
+      "bio": "<p>Dr Reyes opened the Oakfield office in 2007 and still sees patients four days a week. She trained at Marquette and has a soft spot for nervous patients and complicated bites.</p><p>Outside the office she coaches her daughter's soccer team and grows far too many tomatoes.</p>",
+      "credentials": "WI license 12345\nADA member",
+      "location": "loc_oakfield",
+      "image": "as_4x5_ice",
+      "image_alt": "Portrait of Hannah Reyes",
+      "link": "",
+      "featured": true,
+      "order": 1
+     }
+    },
+    {
+     "id": "team_samuel_okafor",
+     "handle": "samuel-okafor",
+     "title": "Samuel Okafor",
+     "fields": {
+      "role": "General dentist",
+      "letters": "DDS",
+      "level": "",
+      "specialties": "Implants, emergency care",
+      "bio": "<p>Dr Okafor places and restores implants at Oakfield and keeps the morning emergency slots. He joined the practice in 2012 after six years in hospital dentistry.</p><p>He explains every step before he starts, and stops whenever you ask.</p>",
+      "credentials": "WI license 23817\nADA member",
+      "location": "loc_oakfield",
+      "image": "as_4x5_cloud",
+      "image_alt": "Portrait of Samuel Okafor",
+      "link": "",
+      "featured": true,
+      "order": 2
+     }
+    },
+    {
+     "id": "team_lena_marsh",
+     "handle": "lena-marsh",
+     "title": "Lena Marsh",
+     "fields": {
+      "role": "General dentist",
+      "letters": "DMD",
+      "level": "",
+      "specialties": "Children, nervous patients",
+      "bio": "<p>Dr Marsh looks after most of our younger patients and anyone who would rather not be at the dentist. She joined us in 2021 and leads the Pine Ridge office.</p><p>Slow visits, plain answers and a break whenever you need one.</p>",
+      "credentials": "WI license 31102",
+      "location": "loc_pine-ridge",
+      "image": "as_4x5_mist",
+      "image_alt": "Portrait of Lena Marsh",
+      "link": "",
+      "featured": true,
+      "order": 3
+     }
+    },
+    {
+     "id": "team_priya_nair",
+     "handle": "priya-nair",
+     "title": "Priya Nair",
+     "fields": {
+      "role": "Dental hygienist",
+      "letters": "RDH",
+      "level": "",
+      "specialties": "Gum care, gentle cleanings",
+      "bio": "<p>Priya has been our lead hygienist since 2014. Patients ask for her by name, mostly because she is the gentlest cleaner in the county.</p>",
+      "credentials": "WI hygienist license 40518",
+      "location": "loc_oakfield",
+      "image": "as_4x5_ice",
+      "image_alt": "Portrait of Priya Nair",
+      "link": "",
+      "featured": true,
+      "order": 4
+     }
+    },
+    {
+     "id": "team_tom_alvarez",
+     "handle": "tom-alvarez",
+     "title": "Tom Alvarez",
+     "fields": {
+      "role": "Dental hygienist",
+      "letters": "RDH",
+      "level": "",
+      "specialties": "Children's cleanings",
+      "bio": "<p>Tom runs hygiene at Pine Ridge and is very good at talking small children through their first clean.</p>",
+      "credentials": "WI hygienist license 41277",
+      "location": "loc_pine-ridge",
+      "image": "as_4x5_cloud",
+      "image_alt": "Portrait of Tom Alvarez",
+      "link": "",
+      "featured": false,
+      "order": 5
+     }
+    },
+    {
+     "id": "team_megan_shaw",
+     "handle": "megan-shaw",
+     "title": "Megan Shaw",
+     "fields": {
+      "role": "Practice manager",
+      "letters": "",
+      "level": "",
+      "specialties": "",
+      "bio": "<p>Megan runs both offices: appointments, insurance and anything that is not teeth. If you have a question about a bill, she is the one to call.</p>",
+      "credentials": "",
+      "location": "loc_oakfield",
+      "image": "as_4x5_mist",
+      "image_alt": "Portrait of Megan Shaw",
+      "link": "",
+      "featured": false,
+      "order": 6
+     }
+    }
+   ]
+  },
+  "insurers": {
+   "name": "Insurers",
+   "fields": [
+    {
+     "id": "logo",
+     "type": "image",
+     "label": "Logo"
+    },
+    {
+     "id": "logo_alt",
+     "type": "text",
+     "label": "Logo alt text"
+    },
+    {
+     "id": "note",
+     "type": "text",
+     "label": "Note (In-network, Direct billing)"
+    },
+    {
+     "id": "link",
+     "type": "url",
+     "label": "Link"
+    },
+    {
+     "id": "order",
+     "type": "number",
+     "label": "Position"
+    }
+   ],
+   "entries": [
+    {
+     "id": "ins_northstar",
+     "handle": "northstar",
+     "title": "Northstar Dental",
+     "fields": {
+      "logo": "as_logo_northstar",
+      "logo_alt": "Northstar Dental",
+      "note": "In-network",
+      "link": "",
+      "order": 1
+     }
+    },
+    {
+     "id": "ins_blue_meadow",
+     "handle": "blue-meadow",
+     "title": "Blue Meadow Health",
+     "fields": {
+      "logo": "as_logo_blue_meadow",
+      "logo_alt": "Blue Meadow Health",
+      "note": "In-network",
+      "link": "",
+      "order": 2
+     }
+    },
+    {
+     "id": "ins_unity",
+     "handle": "unity",
+     "title": "Unity Benefits",
+     "fields": {
+      "logo": "as_logo_unity",
+      "logo_alt": "Unity Benefits",
+      "note": "In-network",
+      "link": "",
+      "order": 3
+     }
+    },
+    {
+     "id": "ins_harbor",
+     "handle": "harbor",
+     "title": "Harbor Dental Plan",
+     "fields": {
+      "logo": "as_logo_harbor",
+      "logo_alt": "Harbor Dental Plan",
+      "note": "In-network",
+      "link": "",
+      "order": 4
+     }
+    },
+    {
+     "id": "ins_great_lakes",
+     "handle": "great-lakes",
+     "title": "Great Lakes Mutual",
+     "fields": {
+      "logo": "as_logo_great_lakes",
+      "logo_alt": "Great Lakes Mutual",
+      "note": "Out-of-network; we file for you",
+      "link": "",
+      "order": 5
+     }
+    },
+    {
+     "id": "ins_prairie",
+     "handle": "prairie",
+     "title": "Prairie Health",
+     "fields": {
+      "logo": "as_logo_prairie",
+      "logo_alt": "Prairie Health",
+      "note": "In-network",
+      "link": "",
+      "order": 6
+     }
+    },
+    {
+     "id": "ins_summit",
+     "handle": "summit",
+     "title": "Summit Dental Network",
+     "fields": {
+      "logo": "as_logo_summit",
+      "logo_alt": "Summit Dental Network",
+      "note": "In-network",
+      "link": "",
+      "order": 7
+     }
+    },
+    {
+     "id": "ins_lakeshore",
+     "handle": "lakeshore",
+     "title": "Lakeshore Care",
+     "fields": {
+      "logo": "as_logo_lakeshore",
+      "logo_alt": "Lakeshore Care",
+      "note": "Out-of-network; we file for you",
+      "link": "",
+      "order": 8
+     }
+    }
+   ]
+  },
+  "plans": {
+   "name": "Plans",
+   "fields": [
+    {
+     "id": "price",
+     "type": "number",
+     "label": "Price"
+    },
+    {
+     "id": "period",
+     "type": "select",
+     "label": "Per",
+     "options": [
+      "month",
+      "year",
+      "visit"
+     ]
+    },
+    {
+     "id": "summary",
+     "type": "text",
+     "label": "Summary"
+    },
+    {
+     "id": "includes",
+     "type": "textarea",
+     "label": "Includes (one per line)"
+    },
+    {
+     "id": "note",
+     "type": "text",
+     "label": "Note"
+    },
+    {
+     "id": "link",
+     "type": "url",
+     "label": "Link (empty opens the appointment request)"
+    },
+    {
+     "id": "featured",
+     "type": "checkbox",
+     "label": "Featured"
+    },
+    {
+     "id": "order",
+     "type": "number",
+     "label": "Position"
+    }
+   ],
+   "entries": [
+    {
+     "id": "plan_individual",
+     "handle": "smile-plan-individual",
+     "title": "Smile Plan · Individual",
+     "fields": {
+      "price": 299,
+      "period": "year",
+      "summary": "Routine care for one adult, paid once a year.",
+      "includes": "Two cleanings a year\nTwo exams\nRoutine X-rays\n20% off other treatment",
+      "note": "Not a dental insurance plan. Unused services don't roll over.",
+      "link": "",
+      "featured": true,
+      "order": 1
+     }
+    },
+    {
+     "id": "plan_family",
+     "handle": "smile-plan-family",
+     "title": "Smile Plan · Family",
+     "fields": {
+      "price": 499,
+      "period": "year",
+      "summary": "Two adults and up to three children.",
+      "includes": "Two cleanings a year\nTwo exams\nRoutine X-rays\n20% off other treatment",
+      "note": "Not a dental insurance plan. Unused services don't roll over.",
+      "link": "",
+      "featured": false,
+      "order": 2
+     }
+    }
+   ]
+  },
+  "locations": {
+   "name": "Locations",
+   "fields": [
+    {
+     "id": "address",
+     "type": "textarea",
+     "label": "Address"
+    },
+    {
+     "id": "hours",
+     "type": "textarea",
+     "label": "Hours (one line per day or range: Mon–Thu 8:00–5:00)"
+    },
+    {
+     "id": "phone",
+     "type": "text",
+     "label": "Phone"
+    },
+    {
+     "id": "fax",
+     "type": "text",
+     "label": "Fax"
+    },
+    {
+     "id": "email",
+     "type": "text",
+     "label": "Email"
+    },
+    {
+     "id": "map_url",
+     "type": "url",
+     "label": "Map link"
+    },
+    {
+     "id": "map_embed_url",
+     "type": "url",
+     "label": "Map embed link"
+    },
+    {
+     "id": "map_image",
+     "type": "image",
+     "label": "Map image"
+    },
+    {
+     "id": "map_image_alt",
+     "type": "text",
+     "label": "Map image alt text"
+    },
+    {
+     "id": "image",
+     "type": "image",
+     "label": "Image (4:5)"
+    },
+    {
+     "id": "image_alt",
+     "type": "text",
+     "label": "Image alt text"
+    },
+    {
+     "id": "description",
+     "type": "text",
+     "label": "Description"
+    },
+    {
+     "id": "note",
+     "type": "text",
+     "label": "Note"
+    },
+    {
+     "id": "order",
+     "type": "number",
+     "label": "Position"
+    }
+   ],
+   "entries": [
+    {
+     "id": "loc_oakfield",
+     "handle": "oakfield",
+     "title": "Oakfield",
+     "fields": {
+      "address": "22 Linden Avenue\nOakfield, WI 53000",
+      "hours": "Mon–Thu 8:00–5:00\nFri 8:00–2:00\nSat–Sun Closed",
+      "phone": "(262) 555-0148",
+      "fax": "(262) 555-0149",
+      "email": "hello@oakfielddental.example",
+      "map_url": "https://maps.example/?q=22+Linden+Avenue+Oakfield,+WI+53000",
+      "map_embed_url": "",
+      "map_image": "as_map",
+      "map_image_alt": "Map of the Oakfield office",
+      "image": "as_4x5_ice",
+      "image_alt": "The Oakfield office",
+      "description": "The original office, with five chairs and evening hours on Thursdays.",
+      "note": "Free parking behind the building; step-free entrance.",
+      "order": 1
+     }
+    },
+    {
+     "id": "loc_pine-ridge",
+     "handle": "pine-ridge",
+     "title": "Pine Ridge",
+     "fields": {
+      "address": "410 Mill Road\nPine Ridge, WI 53001",
+      "hours": "Mon–Thu 8:00–5:00\nFri–Sun Closed",
+      "phone": "(262) 555-0190",
+      "fax": "",
+      "email": "hello@oakfielddental.example",
+      "map_url": "https://maps.example/?q=410+Mill+Road+Pine+Ridge,+WI+53001",
+      "map_embed_url": "",
+      "map_image": "as_map",
+      "map_image_alt": "Map of the Pine Ridge office",
+      "image": "as_4x5_cloud",
+      "image_alt": "The Pine Ridge office",
+      "description": "A small, calm office with two chairs, open since 2019.",
+      "note": "Street parking; a ramp at the side door.",
+      "order": 2
+     }
+    }
+   ]
+  },
+  "testimonials": {
+   "name": "Testimonials",
+   "fields": [
+    {
+     "id": "quote",
+     "type": "textarea",
+     "label": "Quote"
+    },
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Name"
+    },
+    {
+     "id": "line",
+     "type": "text",
+     "label": "Line (Patient since 2015, or the treatment)"
+    },
+    {
+     "id": "service",
+     "type": "entry",
+     "label": "Service",
+     "content_type": "services"
+    },
+    {
+     "id": "stars",
+     "type": "number",
+     "label": "Stars (1–5)"
+    },
+    {
+     "id": "date",
+     "type": "date",
+     "label": "Date"
+    },
+    {
+     "id": "source",
+     "type": "text",
+     "label": "Source"
+    },
+    {
+     "id": "team",
+     "type": "entry",
+     "label": "Seen by",
+     "content_type": "team"
+    },
+    {
+     "id": "image",
+     "type": "image",
+     "label": "Photo (1:1)"
+    },
+    {
+     "id": "image_alt",
+     "type": "text",
+     "label": "Photo alt text"
+    },
+    {
+     "id": "featured",
+     "type": "checkbox",
+     "label": "Featured"
+    },
+    {
+     "id": "order",
+     "type": "number",
+     "label": "Position"
+    }
+   ],
+   "entries": [
+    {
+     "id": "rev_1",
+     "handle": "review-1",
+     "title": "Greg B.",
+     "fields": {
+      "quote": "Nobody rushed me. They explained every option and the price before anything started.",
+      "name": "Greg B.",
+      "line": "Patient since 2015",
+      "stars": 5,
+      "date": "2026-10-28",
+      "source": "Google",
+      "featured": true,
+      "order": 1,
+      "team": "team_hannah_reyes"
+     }
+    },
+    {
+     "id": "rev_2",
+     "handle": "review-2",
+     "title": "Dana M.",
+     "fields": {
+      "quote": "I'd avoided the dentist for years. Dr Marsh made the first visit easy.",
+      "name": "Dana M.",
+      "line": "Dental anxiety",
+      "stars": 5,
+      "date": "2026-10-19",
+      "source": "Google",
+      "featured": true,
+      "order": 2,
+      "team": "team_lena_marsh",
+      "service": "svc_new_patient_exam",
+      "image": "as_1x1_cloud",
+      "image_alt": "Dana M."
+     }
+    },
+    {
+     "id": "rev_3",
+     "handle": "review-3",
+     "title": "Luis P.",
+     "fields": {
+      "quote": "Same-day appointment for a cracked tooth, fixed by lunchtime.",
+      "name": "Luis P.",
+      "line": "Emergency care",
+      "stars": 5,
+      "date": "2026-10-11",
+      "source": "Google",
+      "featured": true,
+      "order": 3,
+      "team": "team_samuel_okafor",
+      "service": "svc_emergency_care"
+     }
+    },
+    {
+     "id": "rev_4",
+     "handle": "review-4",
+     "title": "Sarah J.",
+     "fields": {
+      "quote": "Priya is the gentlest hygienist I've had.",
+      "name": "Sarah J.",
+      "line": "Patient since 2019",
+      "stars": 5,
+      "date": "2026-09-30",
+      "source": "",
+      "featured": true,
+      "order": 4,
+      "team": "team_priya_nair",
+      "service": "svc_exam_and_cleaning"
+     }
+    },
+    {
+     "id": "rev_5",
+     "handle": "review-5",
+     "title": "Omar K.",
+     "fields": {
+      "quote": "Clear aligners, eighteen months, no surprises on the bill.",
+      "name": "Omar K.",
+      "line": "Clear aligners",
+      "stars": 5,
+      "date": "2026-09-22",
+      "source": "Google",
+      "featured": true,
+      "order": 5,
+      "team": "team_hannah_reyes",
+      "service": "svc_clear_aligners",
+      "image": "as_1x1_cloud",
+      "image_alt": "Omar K."
+     }
+    },
+    {
+     "id": "rev_6",
+     "handle": "review-6",
+     "title": "Ellen R.",
+     "fields": {
+      "quote": "They take my kids on the same afternoon. That alone is worth it.",
+      "name": "Ellen R.",
+      "line": "Patient since 2021",
+      "stars": 5,
+      "date": "2026-09-09",
+      "source": "Google",
+      "featured": true,
+      "order": 6,
+      "service": "svc_childrens_dentistry"
+     }
+    },
+    {
+     "id": "rev_7",
+     "handle": "review-7",
+     "title": "Mark T.",
+     "fields": {
+      "quote": "Great implant work. The wait for the lab was longer than promised.",
+      "name": "Mark T.",
+      "line": "Dental implants",
+      "stars": 4,
+      "date": "2026-08-27",
+      "source": "Google",
+      "featured": true,
+      "order": 7,
+      "service": "svc_dental_implants"
+     }
+    },
+    {
+     "id": "rev_8",
+     "handle": "review-8",
+     "title": "Jen W.",
+     "fields": {
+      "quote": "Evening hours mean I don't take time off work.",
+      "name": "Jen W.",
+      "line": "Patient since 2017",
+      "stars": 5,
+      "date": "2026-08-14",
+      "source": "",
+      "featured": true,
+      "order": 8
+     }
+    },
+    {
+     "id": "rev_9",
+     "handle": "review-9",
+     "title": "Ravi S.",
+     "fields": {
+      "quote": "The Pine Ridge office is small and calm, and Tom is thorough.",
+      "name": "Ravi S.",
+      "line": "Patient since 2023",
+      "stars": 5,
+      "date": "2026-07-30",
+      "source": "Google",
+      "featured": false,
+      "order": 9
+     }
+    },
+    {
+     "id": "rev_10",
+     "handle": "review-10",
+     "title": "Carla D.",
+     "fields": {
+      "quote": "Good whitening results. Parking was tight on the day.",
+      "name": "Carla D.",
+      "line": "Teeth whitening",
+      "stars": 4,
+      "date": "2026-07-12",
+      "source": "",
+      "featured": false,
+      "order": 10,
+      "service": "svc_teeth_whitening"
+     }
+    },
+    {
+     "id": "rev_11",
+     "handle": "review-11",
+     "title": "Hank L.",
+     "fields": {
+      "quote": "They called the day after my extraction to check on me.",
+      "name": "Hank L.",
+      "line": "Patient since 2012",
+      "stars": 5,
+      "date": "2026-06-25",
+      "source": "",
+      "featured": false,
+      "order": 11
+     }
+    },
+    {
+     "id": "rev_12",
+     "handle": "review-12",
+     "title": "Mia F.",
+     "fields": {
+      "quote": "Honest about what I did and didn't need.",
+      "name": "Mia F.",
+      "line": "Patient since 2020",
+      "stars": 4,
+      "date": "2026-06-02",
+      "source": "Google",
+      "featured": false,
+      "order": 12
+     }
+    }
+   ]
+  },
+  "posts": {
+   "name": "Advice",
+   "fields": [
+    {
+     "id": "topic",
+     "type": "text",
+     "label": "Topic"
+    },
+    {
+     "id": "date",
+     "type": "date",
+     "label": "Date"
+    },
+    {
+     "id": "author",
+     "type": "text",
+     "label": "Author"
+    },
+    {
+     "id": "standfirst",
+     "type": "text",
+     "label": "Standfirst"
+    },
+    {
+     "id": "image",
+     "type": "image",
+     "label": "Image (3:2)"
+    },
+    {
+     "id": "image_alt",
+     "type": "text",
+     "label": "Image alt text"
+    },
+    {
+     "id": "body",
+     "type": "richtext",
+     "label": "Body"
+    }
+   ],
+   "entries": [
+    {
+     "id": "post_1",
+     "handle": "how-often-should-you-really-have-a-cleaning",
+     "title": "How often should you really have a cleaning?",
+     "fields": {
+      "topic": "Advice",
+      "date": "2026-10-14",
+      "author": "Dr Reyes",
+      "standfirst": "Twice a year suits most people. Here is who needs more, and who can wait.",
+      "image": "as_3x2_ice",
+      "image_alt": "How often should you really have a cleaning?",
+      "body": "<p>Twice a year suits most people. Here is who needs more, and who can wait.</p><p>Every mouth is different, so the honest answer starts with a look. At your next visit we will tell you what we see and how often we would like to see you.</p><h2>What to do now</h2><p>If anything hurts, bleeds or looks different, call us. Most questions take two minutes on the phone.</p>"
+     }
+    },
+    {
+     "id": "post_2",
+     "handle": "clear-aligners-what-the-first-month-is-like",
+     "title": "Clear aligners: what the first month is like",
+     "fields": {
+      "topic": "Advice",
+      "date": "2026-09-02",
+      "author": "Dr Reyes",
+      "standfirst": "A little pressure, a lot of water and a new habit of brushing after lunch.",
+      "image": "as_3x2_cloud",
+      "image_alt": "Clear aligners: what the first month is like",
+      "body": "<p>A little pressure, a lot of water and a new habit of brushing after lunch.</p><p>Every mouth is different, so the honest answer starts with a look. At your next visit we will tell you what we see and how often we would like to see you.</p><h2>What to do now</h2><p>If anything hurts, bleeds or looks different, call us. Most questions take two minutes on the phone.</p>"
+     }
+    },
+    {
+     "id": "post_3",
+     "handle": "helping-a-nervous-child-at-the-dentist",
+     "title": "Helping a nervous child at the dentist",
+     "fields": {
+      "topic": "Advice",
+      "date": "2026-07-20",
+      "author": "Dr Marsh",
+      "standfirst": "Small words, short visits and a parent in the room: what works for most children.",
+      "image": "as_3x2_mist",
+      "image_alt": "Helping a nervous child at the dentist",
+      "body": "<p>Small words, short visits and a parent in the room: what works for most children.</p><p>Every mouth is different, so the honest answer starts with a look. At your next visit we will tell you what we see and how often we would like to see you.</p><h2>What to do now</h2><p>If anything hurts, bleeds or looks different, call us. Most questions take two minutes on the phone.</p>"
+     }
+    },
+    {
+     "id": "post_4",
+     "handle": "pine-ridge-now-open-thursdays-until-7",
+     "title": "Pine Ridge now open Thursdays until 7",
+     "fields": {
+      "topic": "News",
+      "date": "2026-06-05",
+      "author": "Megan Shaw",
+      "standfirst": "Evening appointments at both offices, starting this month.",
+      "image": "as_3x2_ice",
+      "image_alt": "Pine Ridge now open Thursdays until 7",
+      "body": "<p>Evening appointments at both offices, starting this month.</p><p>Every mouth is different, so the honest answer starts with a look. At your next visit we will tell you what we see and how often we would like to see you.</p><h2>What to do now</h2><p>If anything hurts, bleeds or looks different, call us. Most questions take two minutes on the phone.</p>"
+     }
+    }
+   ]
+  }
+ },
+ "pages": {
+  "/": {
+   "id": "pg_home",
+   "template": "home",
+   "title": "Oakfield Family Dental",
+   "seo": {
+    "description": "Family dentistry in Oakfield and Pine Ridge, WI, since 2007. Two offices, six clinicians, evening hours on Thursdays and same-day emergency slots."
+   }
+  },
+  "/services": {
+   "id": "pg_services",
+   "template": "page.services",
+   "title": "Our services"
+  },
+  "/conditions": {
+   "id": "pg_conditions",
+   "template": "page.conditions",
+   "title": "Concerns we treat"
+  },
+  "/team": {
+   "id": "pg_team",
+   "template": "page.team",
+   "title": "Our team"
+  },
+  "/new-patients": {
+   "id": "pg_new_patients",
+   "template": "page.new-patients",
+   "title": "New patients"
+  },
+  "/fees": {
+   "id": "pg_fees",
+   "template": "page.fees",
+   "title": "Insurance and fees"
+  },
+  "/reviews": {
+   "id": "pg_reviews",
+   "template": "page.reviews",
+   "title": "Reviews"
+  },
+  "/locations": {
+   "id": "pg_locations",
+   "template": "page.locations",
+   "title": "Visit us"
+  },
+  "/about": {
+   "id": "pg_about",
+   "template": "page.about",
+   "title": "About"
+  },
+  "/book": {
+   "id": "pg_book",
+   "template": "page.book",
+   "title": "Book an appointment"
+  },
+  "/contact": {
+   "id": "pg_contact",
+   "template": "page.contact",
+   "title": "Contact"
+  },
+  "/advice": {
+   "id": "pg_advice",
+   "template": "page.advice",
+   "title": "Advice"
+  },
+  "/accessibility": {
+   "id": "pg_accessibility",
+   "template": "page.accessibility",
+   "title": "Accessibility"
+  },
+  "/privacy": {
+   "id": "pg_privacy",
+   "template": "page",
+   "title": "Privacy"
+  },
+  "/terms": {
+   "id": "pg_terms",
+   "template": "page",
+   "title": "Terms"
+  },
+  "/services/exam-and-cleaning": {
+   "id": "pg_service_exam_and_cleaning",
+   "template": "service",
+   "title": "Exam and cleaning",
+   "params": {
+    "service": "exam-and-cleaning"
+   },
+   "entry": {
+    "id": "svc_exam_and_cleaning",
+    "handle": "exam-and-cleaning",
+    "title": "Exam and cleaning",
+    "fields": {
+     "category": "cat_preventive",
+     "summary": "A check-up, a careful clean and advice you can use",
+     "description": "<p>A check-up, a careful clean and advice you can use. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+     "price": 120,
+     "price_from": false,
+     "price_note": "Most plans cover preventive care in full",
+     "add_ons": "",
+     "includes": "A full check of every tooth and your gums\nA careful clean and polish\nX-rays when they are due\nA written note of anything to watch",
+     "team": "team_hannah_reyes",
+     "icon": "shield-plus",
+     "image": "as_3x2_ice",
+     "image_alt": "Exam and cleaning at Oakfield Family Dental",
+     "featured": false,
+     "tag": "",
+     "order": 1,
+     "duration_minutes": 60
+    }
+   }
+  },
+  "/services/new-patient-exam": {
+   "id": "pg_service_new_patient_exam",
+   "template": "service",
+   "title": "New patient exam",
+   "params": {
+    "service": "new-patient-exam"
+   },
+   "entry": {
+    "id": "svc_new_patient_exam",
+    "handle": "new-patient-exam",
+    "title": "New patient exam",
+    "fields": {
+     "category": "cat_preventive",
+     "summary": "A full exam with X-rays and a written plan",
+     "description": "<p>A full exam with X-rays and a written plan. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+     "price": 189,
+     "price_from": false,
+     "price_note": "Includes X-rays",
+     "add_ons": "",
+     "includes": "Your history, taken without hurry\nA full set of X-rays\nAn exam of every tooth, your gums and your bite\nA written plan with the costs",
+     "team": "team_lena_marsh",
+     "icon": "stethoscope",
+     "image": "as_3x2_cloud",
+     "image_alt": "New patient exam at Oakfield Family Dental",
+     "featured": true,
+     "tag": "New patients",
+     "order": 2,
+     "duration_minutes": 90
+    }
+   }
+  },
+  "/services/childrens-dentistry": {
+   "id": "pg_service_childrens_dentistry",
+   "template": "service",
+   "title": "Children's dentistry",
+   "params": {
+    "service": "childrens-dentistry"
+   },
+   "entry": {
+    "id": "svc_childrens_dentistry",
+    "handle": "childrens-dentistry",
+    "title": "Children's dentistry",
+    "fields": {
+     "category": "cat_preventive",
+     "summary": "Gentle first visits and check-ups for kids",
+     "description": "<p>Gentle first visits and check-ups for kids. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+     "price": 95,
+     "price_from": false,
+     "price_note": "",
+     "add_ons": "",
+     "includes": "A first visit that is mostly a ride in the chair\nA gentle check and clean\nFluoride and sealants when they help\nAdvice for parents",
+     "team": "team_lena_marsh",
+     "icon": "baby",
+     "image": "as_3x2_mist",
+     "image_alt": "Children's dentistry at Oakfield Family Dental",
+     "featured": false,
+     "tag": "",
+     "order": 3,
+     "duration_minutes": 45
+    }
+   }
+  },
+  "/services/gum-care": {
+   "id": "pg_service_gum_care",
+   "template": "service",
+   "title": "Gum care",
+   "params": {
+    "service": "gum-care"
+   },
+   "entry": {
+    "id": "svc_gum_care",
+    "handle": "gum-care",
+    "title": "Gum care",
+    "fields": {
+     "category": "cat_preventive",
+     "summary": "Deep cleaning and a plan for healthy gums",
+     "description": "<p>Deep cleaning and a plan for healthy gums. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+     "price": 240,
+     "price_from": true,
+     "price_note": "",
+     "add_ons": "",
+     "includes": "A gum check, measured and recorded\nA deep clean under the gumline\nA plan for home care\nA follow-up visit",
+     "team": "team_priya_nair",
+     "icon": "leaf",
+     "image": "as_3x2_ice",
+     "image_alt": "Gum care at Oakfield Family Dental",
+     "featured": false,
+     "tag": "",
+     "order": 4,
+     "duration_minutes": 60
+    }
+   }
+  },
+  "/services/fillings": {
+   "id": "pg_service_fillings",
+   "template": "service",
+   "title": "Fillings",
+   "params": {
+    "service": "fillings"
+   },
+   "entry": {
+    "id": "svc_fillings",
+    "handle": "fillings",
+    "title": "Fillings",
+    "fields": {
+     "category": "cat_restorative",
+     "summary": "Tooth-coloured fillings, matched to your smile",
+     "description": "<p>Tooth-coloured fillings, matched to your smile. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+     "price": 180,
+     "price_from": true,
+     "price_note": "",
+     "add_ons": "",
+     "includes": "A numbing gel before any injection\nA tooth-coloured filling, shaped to your bite\nA bite check before you leave",
+     "team": "team_samuel_okafor",
+     "icon": "tooth",
+     "image": "as_3x2_cloud",
+     "image_alt": "Fillings at Oakfield Family Dental",
+     "featured": false,
+     "tag": "",
+     "order": 5,
+     "duration_minutes": 60
+    }
+   }
+  },
+  "/services/crowns-and-bridges": {
+   "id": "pg_service_crowns_and_bridges",
+   "template": "service",
+   "title": "Crowns and bridges",
+   "params": {
+    "service": "crowns-and-bridges"
+   },
+   "entry": {
+    "id": "svc_crowns_and_bridges",
+    "handle": "crowns-and-bridges",
+    "title": "Crowns and bridges",
+    "fields": {
+     "category": "cat_restorative",
+     "summary": "Strong, natural-looking repairs for damaged teeth",
+     "description": "<p>Strong, natural-looking repairs for damaged teeth. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+     "price": 1150,
+     "price_from": true,
+     "price_note": "",
+     "add_ons": "",
+     "includes": "A scan, no messy impressions\nA temporary crown the same day\nThe final crown, matched to your teeth\nA follow-up visit",
+     "team": "team_hannah_reyes",
+     "icon": "tooth",
+     "image": "as_3x2_mist",
+     "image_alt": "Crowns and bridges at Oakfield Family Dental",
+     "featured": false,
+     "tag": "",
+     "order": 6
+    }
+   }
+  },
+  "/services/root-canal-therapy": {
+   "id": "pg_service_root_canal_therapy",
+   "template": "service",
+   "title": "Root canal therapy",
+   "params": {
+    "service": "root-canal-therapy"
+   },
+   "entry": {
+    "id": "svc_root_canal_therapy",
+    "handle": "root-canal-therapy",
+    "title": "Root canal therapy",
+    "fields": {
+     "category": "cat_restorative",
+     "summary": "Relief from a painful tooth, usually in one visit",
+     "description": "<p>Relief from a painful tooth, usually in one visit. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+     "price": 900,
+     "price_from": true,
+     "price_note": "",
+     "add_ons": "",
+     "includes": "An X-ray and a clear answer\nThe treatment, usually in one visit\nA crown plan if the tooth needs one",
+     "team": "team_samuel_okafor",
+     "icon": "microscope",
+     "image": "as_3x2_ice",
+     "image_alt": "Root canal therapy at Oakfield Family Dental",
+     "featured": false,
+     "tag": "",
+     "order": 7,
+     "duration_minutes": 90
+    }
+   }
+  },
+  "/services/dental-implants": {
+   "id": "pg_service_dental_implants",
+   "template": "service",
+   "title": "Dental implants",
+   "params": {
+    "service": "dental-implants"
+   },
+   "entry": {
+    "id": "svc_dental_implants",
+    "handle": "dental-implants",
+    "title": "Dental implants",
+    "fields": {
+     "category": "cat_restorative",
+     "summary": "A permanent replacement for a missing tooth",
+     "description": "<p>An implant replaces the root of a missing tooth with a small titanium post, then carries a crown that looks and works like your own tooth.</p><p>It starts with a free consultation and a 3D scan, so you know whether an implant suits you and what it costs before you decide.</p><p>Most implants take three to six months from start to finish, with a temporary tooth in the meantime.</p>",
+     "price": 3200,
+     "price_from": true,
+     "price_note": "after a free consultation",
+     "add_ons": "",
+     "includes": "A free consultation and 3D scan\nThe implant and a temporary tooth\nThe final crown\nTwo follow-up visits",
+     "team": "team_samuel_okafor",
+     "icon": "tooth",
+     "image": "as_3x2_cloud",
+     "image_alt": "Dental implants at Oakfield Family Dental",
+     "featured": false,
+     "tag": "",
+     "order": 8
+    }
+   }
+  },
+  "/services/dentures": {
+   "id": "pg_service_dentures",
+   "template": "service",
+   "title": "Dentures",
+   "params": {
+    "service": "dentures"
+   },
+   "entry": {
+    "id": "svc_dentures",
+    "handle": "dentures",
+    "title": "Dentures",
+    "fields": {
+     "category": "cat_restorative",
+     "summary": "Full and partial dentures, fitted to you",
+     "description": "<p>Full and partial dentures, fitted to you. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+     "price": 1600,
+     "price_from": true,
+     "price_note": "",
+     "add_ons": "",
+     "includes": "Impressions and a try-in\nThe finished dentures\nAdjustments for the first three months",
+     "team": "team_samuel_okafor",
+     "icon": "smile",
+     "image": "as_3x2_mist",
+     "image_alt": "Dentures at Oakfield Family Dental",
+     "featured": false,
+     "tag": "",
+     "order": 9
+    }
+   }
+  },
+  "/services/teeth-whitening": {
+   "id": "pg_service_teeth_whitening",
+   "template": "service",
+   "title": "Teeth whitening",
+   "params": {
+    "service": "teeth-whitening"
+   },
+   "entry": {
+    "id": "svc_teeth_whitening",
+    "handle": "teeth-whitening",
+    "title": "Teeth whitening",
+    "fields": {
+     "category": "cat_cosmetic",
+     "summary": "Brighter in one visit, or at home over two weeks",
+     "description": "<p>Brighter in one visit, or at home over two weeks. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+     "price": 350,
+     "price_from": false,
+     "price_note": "",
+     "add_ons": "",
+     "includes": "A shade check before and after\nWhitening in the chair, or custom trays for home\nA top-up gel",
+     "team": "team_hannah_reyes",
+     "icon": "sparkle",
+     "image": "as_3x2_ice",
+     "image_alt": "Teeth whitening at Oakfield Family Dental",
+     "featured": true,
+     "tag": "",
+     "order": 10,
+     "duration_minutes": 60
+    }
+   }
+  },
+  "/services/veneers": {
+   "id": "pg_service_veneers",
+   "template": "service",
+   "title": "Veneers",
+   "params": {
+    "service": "veneers"
+   },
+   "entry": {
+    "id": "svc_veneers",
+    "handle": "veneers",
+    "title": "Veneers",
+    "fields": {
+     "category": "cat_cosmetic",
+     "summary": "Thin porcelain shells for chips, gaps and stains",
+     "description": "<p>Thin porcelain shells for chips, gaps and stains. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+     "price": 1100,
+     "price_from": true,
+     "price_note": "per tooth",
+     "add_ons": "",
+     "includes": "A smile consultation and photos\nA preview of the result\nThe veneers, fitted in two visits",
+     "team": "team_hannah_reyes",
+     "icon": "sparkle",
+     "image": "as_3x2_cloud",
+     "image_alt": "Veneers at Oakfield Family Dental",
+     "featured": false,
+     "tag": "",
+     "order": 11
+    }
+   }
+  },
+  "/services/clear-aligners": {
+   "id": "pg_service_clear_aligners",
+   "template": "service",
+   "title": "Clear aligners",
+   "params": {
+    "service": "clear-aligners"
+   },
+   "entry": {
+    "id": "svc_clear_aligners",
+    "handle": "clear-aligners",
+    "title": "Clear aligners",
+    "fields": {
+     "category": "cat_cosmetic",
+     "summary": "Straighter teeth without braces, for adults and teens",
+     "description": "<p>Straighter teeth without braces, for adults and teens. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+     "price": 3900,
+     "price_from": true,
+     "price_note": "",
+     "add_ons": "",
+     "includes": "A scan and a preview of your new smile\nEvery aligner you need\nCheck-ins every eight weeks\nRetainers at the end",
+     "team": "team_hannah_reyes",
+     "icon": "smile",
+     "image": "as_3x2_mist",
+     "image_alt": "Clear aligners at Oakfield Family Dental",
+     "featured": true,
+     "tag": "",
+     "order": 12
+    }
+   }
+  },
+  "/services/emergency-care": {
+   "id": "pg_service_emergency_care",
+   "template": "service",
+   "title": "Emergency care",
+   "params": {
+    "service": "emergency-care"
+   },
+   "entry": {
+    "id": "svc_emergency_care",
+    "handle": "emergency-care",
+    "title": "Emergency care",
+    "fields": {
+     "category": "cat_restorative",
+     "summary": "Same-day slots for pain, breaks and swelling",
+     "description": "<p>Same-day slots for pain, breaks and swelling. We explain what we see, show you the options and confirm the cost before anything starts.</p><p>Most visits run on time, and we book a little longer than most practices so nobody feels rushed. Ask us anything, before, during or after.</p>",
+     "price": 95,
+     "price_from": false,
+     "price_note": "exam",
+     "add_ons": "",
+     "includes": "A same-day slot when you call before 10 am\nAn exam and X-ray\nRelief first, then a plan",
+     "team": "team_samuel_okafor",
+     "icon": "heart",
+     "image": "as_3x2_ice",
+     "image_alt": "Emergency care at Oakfield Family Dental",
+     "featured": true,
+     "tag": "Same-day",
+     "order": 13,
+     "duration_minutes": 30
+    }
+   }
+  },
+  "/conditions/tooth-pain": {
+   "id": "pg_condition_tooth_pain",
+   "template": "condition",
+   "title": "Tooth pain",
+   "params": {
+    "condition": "tooth-pain"
+   },
+   "entry": {
+    "id": "cond_tooth_pain",
+    "handle": "tooth-pain",
+    "title": "Tooth pain",
+    "fields": {
+     "summary": "Same-day appointments for pain",
+     "body": "<p>A toothache that keeps you up, pain when you bite, or a swelling that came on fast: call us before 10 am and we'll see you today.</p><p>We keep same-day slots at Oakfield every weekday. We take an X-ray, find the cause and get you out of pain first; the rest of the plan can wait until you are ready.</p><p>If the pain comes with a fever or a swelling that spreads to your eye or neck, call us straight away, or call 911 out of hours.</p>",
+     "service": "svc_emergency_care",
+     "team": "team_samuel_okafor",
+     "icon": "tooth",
+     "image": "as_3x2_ice",
+     "image_alt": "Tooth pain treatment at Oakfield Family Dental",
+     "featured": true,
+     "order": 1
+    }
+   }
+  },
+  "/conditions/bleeding-gums": {
+   "id": "pg_condition_bleeding_gums",
+   "template": "condition",
+   "title": "Bleeding gums",
+   "params": {
+    "condition": "bleeding-gums"
+   },
+   "entry": {
+    "id": "cond_bleeding_gums",
+    "handle": "bleeding-gums",
+    "title": "Bleeding gums",
+    "fields": {
+     "summary": "Often gum disease, and very treatable",
+     "body": "<p>Often gum disease, and very treatable. Tell us what you are feeling when you call and we will find the right appointment.</p><p>At the visit we look, explain what we see and talk through the options and their costs before anything starts.</p><p>Most people leave the first visit with a plan, and often with the problem already sorted.</p>",
+     "service": "svc_gum_care",
+     "team": "team_priya_nair",
+     "icon": "leaf",
+     "image": "as_3x2_cloud",
+     "image_alt": "Bleeding gums treatment at Oakfield Family Dental",
+     "featured": true,
+     "order": 2
+    }
+   }
+  },
+  "/conditions/missing-teeth": {
+   "id": "pg_condition_missing_teeth",
+   "template": "condition",
+   "title": "Missing teeth",
+   "params": {
+    "condition": "missing-teeth"
+   },
+   "entry": {
+    "id": "cond_missing_teeth",
+    "handle": "missing-teeth",
+    "title": "Missing teeth",
+    "fields": {
+     "summary": "Implants, bridges or dentures",
+     "body": "<p>Implants, bridges or dentures. Tell us what you are feeling when you call and we will find the right appointment.</p><p>At the visit we look, explain what we see and talk through the options and their costs before anything starts.</p><p>Most people leave the first visit with a plan, and often with the problem already sorted.</p>",
+     "service": "svc_dental_implants",
+     "team": "team_samuel_okafor",
+     "icon": "smile",
+     "image": "as_3x2_mist",
+     "image_alt": "Missing teeth treatment at Oakfield Family Dental",
+     "featured": true,
+     "order": 3
+    }
+   }
+  },
+  "/conditions/crooked-or-crowded-teeth": {
+   "id": "pg_condition_crooked_or_crowded_teeth",
+   "template": "condition",
+   "title": "Crooked or crowded teeth",
+   "params": {
+    "condition": "crooked-or-crowded-teeth"
+   },
+   "entry": {
+    "id": "cond_crooked_or_crowded_teeth",
+    "handle": "crooked-or-crowded-teeth",
+    "title": "Crooked or crowded teeth",
+    "fields": {
+     "summary": "Clear aligners for adults and teens",
+     "body": "<p>Clear aligners for adults and teens. Tell us what you are feeling when you call and we will find the right appointment.</p><p>At the visit we look, explain what we see and talk through the options and their costs before anything starts.</p><p>Most people leave the first visit with a plan, and often with the problem already sorted.</p>",
+     "service": "svc_clear_aligners",
+     "team": "team_hannah_reyes",
+     "icon": "smile",
+     "image": "as_3x2_ice",
+     "image_alt": "Crooked or crowded teeth treatment at Oakfield Family Dental",
+     "featured": true,
+     "order": 4
+    }
+   }
+  },
+  "/conditions/stained-teeth": {
+   "id": "pg_condition_stained_teeth",
+   "template": "condition",
+   "title": "Stained teeth",
+   "params": {
+    "condition": "stained-teeth"
+   },
+   "entry": {
+    "id": "cond_stained_teeth",
+    "handle": "stained-teeth",
+    "title": "Stained teeth",
+    "fields": {
+     "summary": "Whitening in one visit or at home",
+     "body": "<p>Whitening in one visit or at home. Tell us what you are feeling when you call and we will find the right appointment.</p><p>At the visit we look, explain what we see and talk through the options and their costs before anything starts.</p><p>Most people leave the first visit with a plan, and often with the problem already sorted.</p>",
+     "service": "svc_teeth_whitening",
+     "team": "team_hannah_reyes",
+     "icon": "sparkle",
+     "image": "as_3x2_cloud",
+     "image_alt": "Stained teeth treatment at Oakfield Family Dental",
+     "featured": true,
+     "order": 5
+    }
+   }
+  },
+  "/conditions/chipped-or-cracked-tooth": {
+   "id": "pg_condition_chipped_or_cracked_tooth",
+   "template": "condition",
+   "title": "Chipped or cracked tooth",
+   "params": {
+    "condition": "chipped-or-cracked-tooth"
+   },
+   "entry": {
+    "id": "cond_chipped_or_cracked_tooth",
+    "handle": "chipped-or-cracked-tooth",
+    "title": "Chipped or cracked tooth",
+    "fields": {
+     "summary": "Bonding, a veneer or a crown",
+     "body": "<p>Bonding, a veneer or a crown. Tell us what you are feeling when you call and we will find the right appointment.</p><p>At the visit we look, explain what we see and talk through the options and their costs before anything starts.</p><p>Most people leave the first visit with a plan, and often with the problem already sorted.</p>",
+     "service": "svc_crowns_and_bridges",
+     "team": "team_hannah_reyes",
+     "icon": "tooth",
+     "image": "as_3x2_mist",
+     "image_alt": "Chipped or cracked tooth treatment at Oakfield Family Dental",
+     "featured": true,
+     "order": 6
+    }
+   }
+  },
+  "/conditions/jaw-pain-and-grinding": {
+   "id": "pg_condition_jaw_pain_and_grinding",
+   "template": "condition",
+   "title": "Jaw pain and grinding",
+   "params": {
+    "condition": "jaw-pain-and-grinding"
+   },
+   "entry": {
+    "id": "cond_jaw_pain_and_grinding",
+    "handle": "jaw-pain-and-grinding",
+    "title": "Jaw pain and grinding",
+    "fields": {
+     "summary": "Night guards and a bite check",
+     "body": "<p>Night guards and a bite check. Tell us what you are feeling when you call and we will find the right appointment.</p><p>At the visit we look, explain what we see and talk through the options and their costs before anything starts.</p><p>Most people leave the first visit with a plan, and often with the problem already sorted.</p>",
+     "service": "svc_exam_and_cleaning",
+     "team": "team_samuel_okafor",
+     "icon": "hand",
+     "image": "as_3x2_ice",
+     "image_alt": "Jaw pain and grinding treatment at Oakfield Family Dental",
+     "featured": false,
+     "order": 7
+    }
+   }
+  },
+  "/conditions/dental-anxiety": {
+   "id": "pg_condition_dental_anxiety",
+   "template": "condition",
+   "title": "Dental anxiety",
+   "params": {
+    "condition": "dental-anxiety"
+   },
+   "entry": {
+    "id": "cond_dental_anxiety",
+    "handle": "dental-anxiety",
+    "title": "Dental anxiety",
+    "fields": {
+     "summary": "Slow, gentle visits; sedation on request",
+     "body": "<p>Slow, gentle visits; sedation on request. Tell us what you are feeling when you call and we will find the right appointment.</p><p>At the visit we look, explain what we see and talk through the options and their costs before anything starts.</p><p>Most people leave the first visit with a plan, and often with the problem already sorted.</p>",
+     "service": "svc_new_patient_exam",
+     "team": "team_lena_marsh",
+     "icon": "heart",
+     "image": "as_3x2_cloud",
+     "image_alt": "Dental anxiety treatment at Oakfield Family Dental",
+     "featured": false,
+     "order": 8
+    }
+   }
+  },
+  "/team/hannah-reyes": {
+   "id": "pg_member_hannah_reyes",
+   "template": "member",
+   "title": "Hannah Reyes",
+   "params": {
+    "member": "hannah-reyes"
+   },
+   "entry": {
+    "id": "team_hannah_reyes",
+    "handle": "hannah-reyes",
+    "title": "Hannah Reyes",
+    "fields": {
+     "role": "General dentist",
+     "letters": "DDS",
+     "level": "",
+     "specialties": "Clear aligners, cosmetic dentistry",
+     "bio": "<p>Dr Reyes opened the Oakfield office in 2007 and still sees patients four days a week. She trained at Marquette and has a soft spot for nervous patients and complicated bites.</p><p>Outside the office she coaches her daughter's soccer team and grows far too many tomatoes.</p>",
+     "credentials": "WI license 12345\nADA member",
+     "location": "loc_oakfield",
+     "image": "as_4x5_ice",
+     "image_alt": "Portrait of Hannah Reyes",
+     "link": "",
+     "featured": true,
+     "order": 1
+    }
+   }
+  },
+  "/team/samuel-okafor": {
+   "id": "pg_member_samuel_okafor",
+   "template": "member",
+   "title": "Samuel Okafor",
+   "params": {
+    "member": "samuel-okafor"
+   },
+   "entry": {
+    "id": "team_samuel_okafor",
+    "handle": "samuel-okafor",
+    "title": "Samuel Okafor",
+    "fields": {
+     "role": "General dentist",
+     "letters": "DDS",
+     "level": "",
+     "specialties": "Implants, emergency care",
+     "bio": "<p>Dr Okafor places and restores implants at Oakfield and keeps the morning emergency slots. He joined the practice in 2012 after six years in hospital dentistry.</p><p>He explains every step before he starts, and stops whenever you ask.</p>",
+     "credentials": "WI license 23817\nADA member",
+     "location": "loc_oakfield",
+     "image": "as_4x5_cloud",
+     "image_alt": "Portrait of Samuel Okafor",
+     "link": "",
+     "featured": true,
+     "order": 2
+    }
+   }
+  },
+  "/team/lena-marsh": {
+   "id": "pg_member_lena_marsh",
+   "template": "member",
+   "title": "Lena Marsh",
+   "params": {
+    "member": "lena-marsh"
+   },
+   "entry": {
+    "id": "team_lena_marsh",
+    "handle": "lena-marsh",
+    "title": "Lena Marsh",
+    "fields": {
+     "role": "General dentist",
+     "letters": "DMD",
+     "level": "",
+     "specialties": "Children, nervous patients",
+     "bio": "<p>Dr Marsh looks after most of our younger patients and anyone who would rather not be at the dentist. She joined us in 2021 and leads the Pine Ridge office.</p><p>Slow visits, plain answers and a break whenever you need one.</p>",
+     "credentials": "WI license 31102",
+     "location": "loc_pine-ridge",
+     "image": "as_4x5_mist",
+     "image_alt": "Portrait of Lena Marsh",
+     "link": "",
+     "featured": true,
+     "order": 3
+    }
+   }
+  },
+  "/team/priya-nair": {
+   "id": "pg_member_priya_nair",
+   "template": "member",
+   "title": "Priya Nair",
+   "params": {
+    "member": "priya-nair"
+   },
+   "entry": {
+    "id": "team_priya_nair",
+    "handle": "priya-nair",
+    "title": "Priya Nair",
+    "fields": {
+     "role": "Dental hygienist",
+     "letters": "RDH",
+     "level": "",
+     "specialties": "Gum care, gentle cleanings",
+     "bio": "<p>Priya has been our lead hygienist since 2014. Patients ask for her by name, mostly because she is the gentlest cleaner in the county.</p>",
+     "credentials": "WI hygienist license 40518",
+     "location": "loc_oakfield",
+     "image": "as_4x5_ice",
+     "image_alt": "Portrait of Priya Nair",
+     "link": "",
+     "featured": true,
+     "order": 4
+    }
+   }
+  },
+  "/team/tom-alvarez": {
+   "id": "pg_member_tom_alvarez",
+   "template": "member",
+   "title": "Tom Alvarez",
+   "params": {
+    "member": "tom-alvarez"
+   },
+   "entry": {
+    "id": "team_tom_alvarez",
+    "handle": "tom-alvarez",
+    "title": "Tom Alvarez",
+    "fields": {
+     "role": "Dental hygienist",
+     "letters": "RDH",
+     "level": "",
+     "specialties": "Children's cleanings",
+     "bio": "<p>Tom runs hygiene at Pine Ridge and is very good at talking small children through their first clean.</p>",
+     "credentials": "WI hygienist license 41277",
+     "location": "loc_pine-ridge",
+     "image": "as_4x5_cloud",
+     "image_alt": "Portrait of Tom Alvarez",
+     "link": "",
+     "featured": false,
+     "order": 5
+    }
+   }
+  },
+  "/team/megan-shaw": {
+   "id": "pg_member_megan_shaw",
+   "template": "member",
+   "title": "Megan Shaw",
+   "params": {
+    "member": "megan-shaw"
+   },
+   "entry": {
+    "id": "team_megan_shaw",
+    "handle": "megan-shaw",
+    "title": "Megan Shaw",
+    "fields": {
+     "role": "Practice manager",
+     "letters": "",
+     "level": "",
+     "specialties": "",
+     "bio": "<p>Megan runs both offices: appointments, insurance and anything that is not teeth. If you have a question about a bill, she is the one to call.</p>",
+     "credentials": "",
+     "location": "loc_oakfield",
+     "image": "as_4x5_mist",
+     "image_alt": "Portrait of Megan Shaw",
+     "link": "",
+     "featured": false,
+     "order": 6
+    }
+   }
+  },
+  "/locations/oakfield": {
+   "id": "pg_location_oakfield",
+   "template": "location",
+   "title": "Oakfield",
+   "params": {
+    "location": "oakfield"
+   },
+   "entry": {
+    "id": "loc_oakfield",
+    "handle": "oakfield",
+    "title": "Oakfield",
+    "fields": {
+     "address": "22 Linden Avenue\nOakfield, WI 53000",
+     "hours": "Mon–Thu 8:00–5:00\nFri 8:00–2:00\nSat–Sun Closed",
+     "phone": "(262) 555-0148",
+     "fax": "(262) 555-0149",
+     "email": "hello@oakfielddental.example",
+     "map_url": "https://maps.example/?q=22+Linden+Avenue+Oakfield,+WI+53000",
+     "map_embed_url": "",
+     "map_image": "as_map",
+     "map_image_alt": "Map of the Oakfield office",
+     "image": "as_4x5_ice",
+     "image_alt": "The Oakfield office",
+     "description": "The original office, with five chairs and evening hours on Thursdays.",
+     "note": "Free parking behind the building; step-free entrance.",
+     "order": 1
+    }
+   }
+  },
+  "/locations/pine-ridge": {
+   "id": "pg_location_pine_ridge",
+   "template": "location",
+   "title": "Pine Ridge",
+   "params": {
+    "location": "pine-ridge"
+   },
+   "entry": {
+    "id": "loc_pine-ridge",
+    "handle": "pine-ridge",
+    "title": "Pine Ridge",
+    "fields": {
+     "address": "410 Mill Road\nPine Ridge, WI 53001",
+     "hours": "Mon–Thu 8:00–5:00\nFri–Sun Closed",
+     "phone": "(262) 555-0190",
+     "fax": "",
+     "email": "hello@oakfielddental.example",
+     "map_url": "https://maps.example/?q=410+Mill+Road+Pine+Ridge,+WI+53001",
+     "map_embed_url": "",
+     "map_image": "as_map",
+     "map_image_alt": "Map of the Pine Ridge office",
+     "image": "as_4x5_cloud",
+     "image_alt": "The Pine Ridge office",
+     "description": "A small, calm office with two chairs, open since 2019.",
+     "note": "Street parking; a ramp at the side door.",
+     "order": 2
+    }
+   }
+  },
+  "/advice/how-often-should-you-really-have-a-cleaning": {
+   "id": "pg_post_how_often_should_you_really_have_a_cleaning",
+   "template": "post",
+   "title": "How often should you really have a cleaning?",
+   "params": {
+    "post": "how-often-should-you-really-have-a-cleaning"
+   },
+   "entry": {
+    "id": "post_1",
+    "handle": "how-often-should-you-really-have-a-cleaning",
+    "title": "How often should you really have a cleaning?",
+    "fields": {
+     "topic": "Advice",
+     "date": "2026-10-14",
+     "author": "Dr Reyes",
+     "standfirst": "Twice a year suits most people. Here is who needs more, and who can wait.",
+     "image": "as_3x2_ice",
+     "image_alt": "How often should you really have a cleaning?",
+     "body": "<p>Twice a year suits most people. Here is who needs more, and who can wait.</p><p>Every mouth is different, so the honest answer starts with a look. At your next visit we will tell you what we see and how often we would like to see you.</p><h2>What to do now</h2><p>If anything hurts, bleeds or looks different, call us. Most questions take two minutes on the phone.</p>"
+    }
+   }
+  },
+  "/advice/clear-aligners-what-the-first-month-is-like": {
+   "id": "pg_post_clear_aligners_what_the_first_month_is_like",
+   "template": "post",
+   "title": "Clear aligners: what the first month is like",
+   "params": {
+    "post": "clear-aligners-what-the-first-month-is-like"
+   },
+   "entry": {
+    "id": "post_2",
+    "handle": "clear-aligners-what-the-first-month-is-like",
+    "title": "Clear aligners: what the first month is like",
+    "fields": {
+     "topic": "Advice",
+     "date": "2026-09-02",
+     "author": "Dr Reyes",
+     "standfirst": "A little pressure, a lot of water and a new habit of brushing after lunch.",
+     "image": "as_3x2_cloud",
+     "image_alt": "Clear aligners: what the first month is like",
+     "body": "<p>A little pressure, a lot of water and a new habit of brushing after lunch.</p><p>Every mouth is different, so the honest answer starts with a look. At your next visit we will tell you what we see and how often we would like to see you.</p><h2>What to do now</h2><p>If anything hurts, bleeds or looks different, call us. Most questions take two minutes on the phone.</p>"
+    }
+   }
+  },
+  "/advice/helping-a-nervous-child-at-the-dentist": {
+   "id": "pg_post_helping_a_nervous_child_at_the_dentist",
+   "template": "post",
+   "title": "Helping a nervous child at the dentist",
+   "params": {
+    "post": "helping-a-nervous-child-at-the-dentist"
+   },
+   "entry": {
+    "id": "post_3",
+    "handle": "helping-a-nervous-child-at-the-dentist",
+    "title": "Helping a nervous child at the dentist",
+    "fields": {
+     "topic": "Advice",
+     "date": "2026-07-20",
+     "author": "Dr Marsh",
+     "standfirst": "Small words, short visits and a parent in the room: what works for most children.",
+     "image": "as_3x2_mist",
+     "image_alt": "Helping a nervous child at the dentist",
+     "body": "<p>Small words, short visits and a parent in the room: what works for most children.</p><p>Every mouth is different, so the honest answer starts with a look. At your next visit we will tell you what we see and how often we would like to see you.</p><h2>What to do now</h2><p>If anything hurts, bleeds or looks different, call us. Most questions take two minutes on the phone.</p>"
+    }
+   }
+  },
+  "/advice/pine-ridge-now-open-thursdays-until-7": {
+   "id": "pg_post_pine_ridge_now_open_thursdays_until_7",
+   "template": "post",
+   "title": "Pine Ridge now open Thursdays until 7",
+   "params": {
+    "post": "pine-ridge-now-open-thursdays-until-7"
+   },
+   "entry": {
+    "id": "post_4",
+    "handle": "pine-ridge-now-open-thursdays-until-7",
+    "title": "Pine Ridge now open Thursdays until 7",
+    "fields": {
+     "topic": "News",
+     "date": "2026-06-05",
+     "author": "Megan Shaw",
+     "standfirst": "Evening appointments at both offices, starting this month.",
+     "image": "as_3x2_ice",
+     "image_alt": "Pine Ridge now open Thursdays until 7",
+     "body": "<p>Evening appointments at both offices, starting this month.</p><p>Every mouth is different, so the honest answer starts with a look. At your next visit we will tell you what we see and how often we would like to see you.</p><h2>What to do now</h2><p>If anything hurts, bleeds or looks different, call us. Most questions take two minutes on the phone.</p>"
+    }
+   }
+  }
+ }
+}

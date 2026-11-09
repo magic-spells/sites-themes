@@ -1,0 +1,50 @@
+{
+  "label": "Service",
+  "description": "A service's page, its reviews and the routes.",
+  "sections": [
+    {
+      "id": "s_detail",
+      "type": "service-detail",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do you take my insurance?",
+            "answer": "<p>We're in-network with most major plans and file claims for you. Call us with your plan name and we'll check before your visit.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "What if I'm nervous?",
+            "answer": "<p>Tell us. We book longer appointments, explain every step, and can offer sedation.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_reviews",
+      "type": "testimonials",
+      "preset": "Rows",
+      "settings": {
+        "layout": "rows",
+        "limit": 3,
+        "color_scheme": "cloud"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    }
+  ]
+}

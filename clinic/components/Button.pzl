@@ -1,0 +1,10 @@
+<!-- component: Button -->
+<!-- The button: sentence case, 600, 0.5rem corners. tone: solid (the scheme's button, the default) or outline (a hairline in the text colour). With type it is a <button> of that type. With ask it is the ask: a link to the Practice booking link when one is set, otherwise to the booking page, opening the appointment sheet instead (theme.ts); labelled with the Practice ask label unless the caller writes one. small is the 2.75rem height; wide fills the row; cls adds classes. -->
+{#let
+  s = site.settings
+  sheet = ask && !s.booking_url
+  url = ask ? (s.booking_url || s.booking_path) : href
+  look = tone == 'outline' ? 'border-scheme-foreground text-scheme-foreground hover:bg-scheme-surface-2' : 'border-scheme-button-background bg-scheme-button-background text-scheme-button-foreground hover:border-scheme-button-hover-background hover:bg-scheme-button-hover-background hover:text-scheme-button-hover-foreground'
+  all = 'inline-flex items-center justify-center gap-space-xs rounded-button border px-button-x text-button font-semibold whitespace-nowrap transition-colors duration-fast ' + (small ? 'min-h-tap ' : 'min-h-control ') + look + (wide ? ' w-full' : '') + (cls ? ' ' + cls : '')
+}
+{#if type}<button class="{ all }" type="{ type }"><Children/></button>{:else}<a class="{ all }" href="{ url }" data-panel-open={ sheet ? 'appointment' : null } aria-haspopup={ sheet ? 'dialog' : null }><Children>{ ask ? s.ask_label : '' }</Children></a>{/if}

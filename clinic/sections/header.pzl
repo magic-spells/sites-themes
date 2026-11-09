@@ -1,0 +1,71 @@
+<!-- The header: the wordmark left, the main menu, and the solid ask button right; never the phone. The menu item that points at the services page opens a dropdown-panel of every service under its category, three columns with the service icons, and "All services". From 48rem the ask button; below 64rem the 2.75rem menu icon. Sticky. Over the hero: transparent with light type over a page that opens with a cover hero (data-over-hero), its own scheme once the page scrolls. -->
+{#let
+  s = site.settings
+  services = content.services.entries | sort('fields.order')
+  categories = content.categories.entries | sort('fields.order') | slice(0, 4)
+}
+<sticky-header class="block" settle-overshoot="0" data-header-style={ settings.style }>
+  <header class="relative border-b border-scheme-border bg-scheme-background px-gutter text-scheme-foreground transition-colors duration-panel overlaid:border-transparent overlaid:bg-transparent overlaid:text-grey-extra-light">
+    <div class="mx-auto flex min-h-header max-w-column items-center justify-between gap-space-md">
+      <a class="font-heading text-h4 font-bold" href="/">{ s.wordmark || site.name }</a>
+      {#if settings.menu.items.length}
+        <nav class="hidden lg:block" aria-label="{ t('main_navigation') }">
+          <ul class="flex items-center text-body">
+            {#for item in settings.menu.items}
+              {#if item.href == settings.services_path && categories.length}
+                <li>
+                  <dropdown-component trigger="both" close-delay="150">
+                    <dropdown-trigger class="flex min-h-header cursor-pointer items-center gap-space-xs px-space-sm">{ item.label }<Glyph name="chevron-down" cls="size-icon-sm" /></dropdown-trigger>
+                    <dropdown-panel class="border-b border-scheme-border bg-scheme-background px-gutter py-space-2xl text-scheme-foreground" wide effect="fade">
+                      <div class="mx-auto grid max-w-column gap-space-lg">
+                        <div class="grid grid-cols-3 gap-space-xl">
+                          {#for category in categories}
+                            <div class="grid content-start gap-space-md">
+                              <p class="font-heading text-body font-semibold">{ category.title }</p>
+                              <ul class="grid gap-space-sm">
+                                {#for entry in services | where('fields.category.id', category.id) | slice(0, 8)}<li><a class="flex items-center gap-space-sm hover:underline hover:underline-offset-4" href="/services/{ entry.handle }"><Glyph name={ entry.fields.icon || 'tooth' } cls="size-icon text-link" />{ entry.title }</a></li>{/for}
+                              </ul>
+                            </div>
+                          {/for}
+                        </div>
+                        <a class="justify-self-end text-body text-link underline underline-offset-4" href="{ settings.services_path }">{ t('all_services') }</a>
+                      </div>
+                    </dropdown-panel>
+                  </dropdown-component>
+                </li>
+              {:else}
+                <li><a class="flex min-h-header items-center px-space-sm underline-offset-8 hover:underline current:underline" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>
+              {/if}
+            {/for}
+          </ul>
+        </nav>
+      {/if}
+      <div class="flex items-center gap-space-md">
+        <span class="hidden md:contents"><Button ask cls="overlaid:border-brand-accent overlaid:bg-brand-accent overlaid:text-brand-primary" /></span>
+        <button class="-me-space-xs flex size-tap items-center justify-center lg:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu"><Glyph name="menu" cls="size-glyph" /><span class="sr-only">{ t('menu') }</span></button>
+      </div>
+    </div>
+  </header>
+</sticky-header>
+
+<schema>
+{
+  "name": "Header",
+  "description": "The wordmark, the menu with a Services panel and the ask button; the menu icon on phones.",
+  "kind": "Header",
+  "icon": "panel-top",
+  "settings": [
+    { "type": "menu", "id": "menu", "label": "Menu" },
+    { "type": "select", "id": "style", "label": "Style", "default": "solid", "options": [
+      { "value": "solid", "label": "Solid" },
+      { "value": "over-hero", "label": "Over the hero" }
+    ], "info": "Over the hero: transparent at the top of a page that opens with a cover hero, solid once it scrolls." },
+    { "type": "url", "id": "services_path", "label": "Services page", "default": "/services", "info": "The menu item pointing here opens every service, grouped by category." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Solid", "settings": { "menu": "main", "style": "solid", "color_scheme": "white" } },
+    { "name": "Over the hero", "settings": { "menu": "main", "style": "over-hero", "color_scheme": "white" } }
+  ]
+}
+</schema>

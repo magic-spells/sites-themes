@@ -21,7 +21,7 @@ listings=$(git -C "$repo" show 1ca0fb7:catalog.json)
 call() {
   m=$1 u=$2
   shift 2
-  curl -sS -o "$tmp/body" -w '%{http_code}' -X "$m" -H "Authorization: Bearer $SITES_TOKEN" "$@" "$u$query"
+  curl -sS -o "$tmp/body" -w '%{http_code}' -X "$m" -H "Authorization: Bearer $SITES_TOKEN" "$@" "$u"
 }
 
 [ "$dry" = --dry-run ] || : "${SITES_TOKEN:?set SITES_TOKEN, or pass --dry-run}"
@@ -46,15 +46,17 @@ for tag in $(git -C "$repo" tag -l '*/v*' --sort=version:refname); do
     continue
   fi
 
-  if [ "$name" != "$current" ] && [ "$(call GET "$api/$name")" = 404 ]; then
-    echo "$listings" | jq --arg n "$name" '.themes[] | select(.name == $n) |
-      {name, listing: {label, description, category, vertical, license, publisher, screenshots}}' >"$tmp/package"
+  if [ "$name" != "$current" ] && [ "$(call GET "$api/$name$query")" = 404 ]; then
+    # Creation takes the workspace in the body; the other routes take it as a query.
+    echo "$listings" | jq --arg n "$name" --arg w "${SITES_WORKSPACE:-}" '.themes[] | select(.name == $n) |
+      {name, listing: {label, description, category, vertical, license, publisher, screenshots}} +
+      if $w == "" then {} else {workspace_id: $w} end' >"$tmp/package"
     status=$(call POST "$api" -H 'Content-Type: application/json' --data-binary "@$tmp/package")
     [ "$status" = 201 ] || { echo "$name: create failed ($status): $(cat "$tmp/body")" >&2; exit 1; }
   fi
   current=$name
 
-  release=$api/$name/releases/$version
+  release=$api/$name/releases/$version$query
   state=$( [ "$(call GET "$release")" = 200 ] && jq -r .status "$tmp/body" || echo none)
   case $state in
     published | yanked)
@@ -63,7 +65,7 @@ for tag in $(git -C "$repo" tag -l '*/v*' --sort=version:refname); do
       ;;
     pending) ;;
     *)
-      status=$(call POST "$api/$name/releases" -F "archive=@$tmp/$zip;type=application/zip" \
+      status=$(call POST "$api/$name/releases$query" -F "archive=@$tmp/$zip;type=application/zip" \
         --form-string "version=$version" --form-string "notes=$(cat "$tmp/notes")")
       [ "$status" = 202 ] || { echo "$tag: upload failed ($status): $(cat "$tmp/body")" >&2; exit 1; }
       ;;

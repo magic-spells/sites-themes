@@ -1,0 +1,116 @@
+{
+  "label": "Services",
+  "description": "Every service in two columns, why us, questions and the routes.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "From a dripping tap to a new bathroom, one call.",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_list",
+      "type": "services-list",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_props",
+      "type": "value-props",
+      "preset": "Row",
+      "settings": {
+        "layout": "row",
+        "heading": "",
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "shield-check",
+            "title": "Licensed & insured",
+            "text": "Every technician carries a state licence and we are insured to $5M."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "badge-check",
+            "title": "Upfront pricing",
+            "text": "A fixed price before we start, and the invoice matches it."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "clock",
+            "title": "Same-day callouts",
+            "text": "A real person answers, and a van is on its way within the hour."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "check",
+            "title": "12-month guarantee",
+            "text": "Every job guaranteed for a year, parts and labour."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do you charge a callout fee?",
+            "answer": "<p>No. You pay for the job at the price we agree before we start.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Are you insured?",
+            "answer": "<p>Yes, fully licensed and insured to $5M. We show the certificate on request.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "How fast can you come?",
+            "answer": "<p>For an emergency, usually within the hour. Everything else, the same or next day.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do you offer financing?",
+            "answer": "<p>Yes, on new boilers and bathrooms: spread the cost over 24 months, subject to credit approval.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Routes",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    }
+  ]
+}

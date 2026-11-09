@@ -1,0 +1,17 @@
+<!-- component: ReviewCard -->
+<!-- A review on a card with a hairline: the stars in the accent (the rating's filled), the quote, a rule, the name line in bold Meta ("Greg B. · Ashby · Boiler swap"), then the technician beside their 2rem photo or a tint circle, and the reviewer's square thumbnail at the right when it has one. -->
+{#let
+  f = entry.fields
+  tech = f.technician
+}
+<figure class="flex h-full flex-col gap-space-md rounded-card border border-scheme-border bg-scheme-card p-space-xl { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+  {#if f.stars}<p class="flex gap-space-2xs text-accent" role="img" aria-label="{ t('rating', { n: f.stars }) }">{#for n in [1, 2, 3, 4, 5]}<Glyph name={ n <= f.stars ? 'star-filled' : 'star' } cls="size-icon-sm" />{/for}</p>{/if}
+  <blockquote class="flex-1 text-body-lg text-pretty">“{ f.quote }”</blockquote>
+  <figcaption class="flex items-center gap-space-md border-t border-scheme-border pt-space-md">
+    <span class="grid flex-1 gap-space-xs text-body-sm">
+      <span class="font-semibold">{ [f.name, f.line] | compact | join(' · ') }</span>
+      {#if tech}<span class="flex items-center gap-space-xs text-scheme-muted">{#if tech.fields.image}<img class="size-circle-sm rounded-full object-cover" src="{ image_url(tech.fields.image, 64) }" alt="" loading="lazy" width="32" height="32" />{:else}<span class="size-circle-sm rounded-full bg-scheme-tint"></span>{/if}{ t('technician', { name: tech.title }) }</span>{/if}
+    </span>
+    {#if f.image}<span class="w-circle-md shrink-0"><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-square" width={ 112 } sizes="3.5rem" /></span>{/if}
+  </figcaption>
+</figure>

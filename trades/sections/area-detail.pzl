@@ -1,0 +1,41 @@
+<!-- TODO sync with Figma -->
+<!-- Stub (code B builds it): the town page: the pin line and the town, its paragraph beside the map, the services, the projects and the reviews in the town. -->
+{#let
+  entry = page.entry
+  f = entry.fields
+  services = content.services.entries | sort('fields.order') | slice(0, 6)
+  projects = content.projects.entries | sort('fields.order') | where('fields.area.id', entry.id) | slice(0, 3)
+}
+{#if entry}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-2xl">
+    <div class="grid items-start gap-space-xl md:grid-cols-text-picture">
+      <div class="grid gap-space-md">
+        <p class="flex items-center gap-space-xs text-body-sm text-scheme-muted"><Glyph name="pin" cls="size-icon text-accent" />{ f.description }</p>
+        <h1 class="font-heading text-h1 case-heading text-scheme-heading">{ entry.title }</h1>
+        {#if f.body}<div class="sites-prose max-w-reading text-body-lg">{ f.body }</div>{/if}
+        <Routes />
+      </div>
+      <Well asset={ f.map_image } alt={ f.map_image_alt } ratio="aspect-square" sizes="(min-width: 48rem) 40vw, 100vw" />
+    </div>
+    <ul class="grid gap-space-md md:grid-cols-2 lg:grid-cols-3">{#for svc in services}<li><ServiceCard entry={ svc } price /></li>{/for}</ul>
+    {#if projects.length}<ul class="grid gap-space-md md:grid-cols-3">{#for project in projects}<li><ProjectCard entry={ project } /></li>{/for}</ul>{/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Area detail",
+  "description": "A town's page from the areas collection: its paragraph and map, the services, the jobs and the reviews there.",
+  "kind": "Places",
+  "icon": "map",
+  "templates": ["area"],
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "paper" } }
+  ]
+}
+</schema>

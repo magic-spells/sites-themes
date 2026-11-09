@@ -1,0 +1,85 @@
+{
+  "label": "Careers",
+  "description": "Open roles beside the apply form.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_careers",
+      "type": "careers",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "type": "opening",
+          "settings": {
+            "title": "Heating engineer",
+            "line": "Full time · Gas Safe registered · from $62,000",
+            "text": "<p>Boiler installs, servicing and fault-finding across Ashby and the towns around it. Your own van and tools.</p>"
+          }
+        },
+        {
+          "type": "opening",
+          "settings": {
+            "title": "Apprentice plumber",
+            "line": "Full time · four-year apprenticeship",
+            "text": "<p>Learn the trade on real jobs beside Dan and Priya, with college one day a week paid.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_props",
+      "type": "value-props",
+      "preset": "Row",
+      "settings": {
+        "layout": "row",
+        "heading": "",
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "shield-check",
+            "title": "Licensed & insured",
+            "text": "Every technician carries a state licence and we are insured to $5M."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "badge-check",
+            "title": "Upfront pricing",
+            "text": "A fixed price before we start, and the invoice matches it."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "clock",
+            "title": "Same-day callouts",
+            "text": "A real person answers, and a van is on its way within the hour."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "check",
+            "title": "12-month guarantee",
+            "text": "Every job guaranteed for a year, parts and labour."
+          }
+        }
+      ]
+    }
+  ]
+}

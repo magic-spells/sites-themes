@@ -1,0 +1,22 @@
+<!-- component: ServiceCard -->
+<!-- A service, one link, on a card with 1rem corners and a hairline. photo: the square photo with a caption panel across its foot (name, summary, the arrow in a tint circle). Otherwise, or with no photo: the icon in a 4rem circle, the name, the summary, a rule, then the arrow left and the price line right (left out by price false). -->
+{#let
+  f = entry.fields
+  href = '/services/' + entry.handle
+}
+{#if photo && f.image}
+<a class="group flex h-full flex-col overflow-hidden rounded-card border border-scheme-border bg-scheme-card { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" href="{ href }">
+  <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-square" inset sizes="(min-width: 64rem) 26rem, (min-width: 48rem) 50vw, 100vw" zoom />
+  <span class="flex flex-1 items-center gap-space-md p-space-lg">
+    <span class="grid flex-1 gap-space-xs"><span class="text-h4 font-semibold group-hover:underline group-hover:underline-offset-4">{ entry.title }</span><span class="text-body-sm text-pretty text-scheme-muted">{ f.summary }</span></span>
+    <IconCircle icon="arrow-right" />
+  </span>
+</a>
+{:else}
+<a class="group flex h-full flex-col rounded-card border border-scheme-border bg-scheme-card p-space-xl { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" href="{ href }">
+  <IconCircle icon={ f.icon || 'wrench' } size="lg" />
+  <span class="mt-space-lg text-h4 font-semibold group-hover:underline group-hover:underline-offset-4">{ entry.title }</span>
+  <span class="mt-space-xs mb-space-lg max-w-summary text-body-sm text-pretty text-scheme-muted">{ f.summary }</span>
+  <span class="mt-auto flex min-h-control items-center justify-between gap-space-md border-t border-scheme-border pt-space-md"><Glyph name="arrow-right" cls="size-icon text-accent" />{#if price}<PriceLine entry={ entry } />{/if}</span>
+</a>
+{/if}

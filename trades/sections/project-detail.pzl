@@ -1,0 +1,39 @@
+<!-- TODO sync with Figma -->
+<!-- Stub (code B builds it): the photo, the service · town · date line, the title, the summary, the before and after, the description, the photos and more work like this. -->
+{#let
+  entry = page.entry
+  f = entry.fields
+  more = content.projects.entries | sort('fields.order') | where('fields.service.id', f.service.id) | reject('id', entry.id) | slice(0, 3)
+}
+{#if entry}
+<article class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-xl">
+    <Well asset={ f.image } alt={ f.image_alt } width={ 1600 } sizes="(min-width: 82.5rem) 82.5rem, 100vw" eager />
+    <header class="grid max-w-reading gap-space-sm">
+      <p class="text-body-sm text-scheme-muted">{ [f.service.title, f.area.title, f.date ? f.date | date : null] | compact | join(' · ') }</p>
+      <h1 class="font-heading text-h1 case-heading text-balance text-scheme-heading">{ entry.title }</h1>
+      {#if f.summary}<p class="text-body-lg text-scheme-muted">{ f.summary }</p>{/if}
+    </header>
+    <PairWell entry={ entry } />
+    {#if f.description}<div class="sites-prose max-w-reading text-body-lg">{ f.description }</div>{/if}
+    {#if f.photos.items.length}<ul class="grid grid-cols-2 gap-space-md md:grid-cols-3">{#for item in f.photos.items}<li><Well asset={ item.asset } alt={ item.alt } sizes="33vw" /></li>{/for}</ul>{/if}
+    {#if more.length}<ul class="grid gap-space-md md:grid-cols-3">{#for project in more}<li><ProjectCard entry={ project } /></li>{/for}</ul>{/if}
+  </div>
+</article>
+{/if}
+
+<schema>
+{
+  "name": "Project detail",
+  "description": "A job's page: the photo, before and after, the story, the photos and more like it.",
+  "kind": "Collections",
+  "icon": "file-text",
+  "templates": ["project"],
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "paper" } }
+  ]
+}
+</schema>

@@ -1,0 +1,66 @@
+{
+  "name": "Trades",
+  "version": "0.1.0",
+  "default_template": "page",
+  "not_found_template": "404",
+  "maintenance_template": "maintenance",
+  "query": ["service", "area", "tag"],
+  "groups": {
+    "header-group": { "label": "Header", "accepts": ["announcement-bar", "header"] },
+    "footer-group": { "label": "Footer", "accepts": ["footer"] },
+    "panel-group": { "label": "Panels", "accepts": ["mobile-menu", "estimate-panel", "call-bar", "cookie-notice"] }
+  },
+  "settings": [
+    {
+      "name": "Brand",
+      "settings": [
+        { "type": "text", "id": "wordmark", "label": "Wordmark", "default": "Hollis & Sons", "info": "Set in the heading face in the header, the menu and the footer. Leave empty to use the site name." },
+        { "type": "text", "id": "tagline", "label": "Tagline", "default": "Plumbing & Heating", "info": "The line under the wordmark in the header and the footer." },
+        { "type": "image", "id": "favicon", "label": "Favicon" },
+        { "type": "checkbox", "id": "reveal", "label": "Reveal on scroll", "default": true, "info": "Cards, stats and photos fade up as the page scrolls. Never the first screen." },
+        { "type": "select", "id": "heading_case", "label": "Heading case", "default": "upper", "options": [
+          { "value": "upper", "label": "Upper case" },
+          { "value": "sentence", "label": "Sentence case" }
+        ], "info": "The display line and the headings in capitals, or as typed." }
+      ]
+    },
+    {
+      "name": "Yard",
+      "settings": [
+        { "type": "text", "id": "phone", "label": "Phone", "default": "", "info": "Printed as typed; the call links drop the spaces." },
+        { "type": "text", "id": "phone_line", "label": "Phone line", "default": "24/7 live answering", "info": "The short promise under the phone number." },
+        { "type": "text", "id": "emergency_phone", "label": "Emergency phone", "default": "", "info": "A second number for out-of-hours calls. Leave empty to use the phone." },
+        { "type": "text", "id": "ask_label", "label": "Ask button label", "default": "Get a free estimate" },
+        { "type": "select", "id": "ask", "label": "Ask button", "default": "form", "options": [
+          { "value": "form", "label": "Opens the estimate form" },
+          { "value": "link", "label": "Follows the ask link" }
+        ], "info": "The theme takes requests, not bookings. Link sends every ask button to your own scheduling page." },
+        { "type": "url", "id": "ask_url", "label": "Ask link", "default": "/estimate", "info": "Where the ask button goes when it follows a link, and without JavaScript." },
+        { "type": "text", "id": "confirm_line", "label": "Confirm line", "default": "We call back within one business hour", "info": "Under every estimate button." },
+        { "type": "form", "id": "estimate_form", "label": "Estimate form", "default": "estimate" },
+        { "type": "text", "id": "rating", "label": "Rating", "default": "", "info": "Your average, typed as it should read: 4.9. Leave empty to hide the rating pill." },
+        { "type": "number", "id": "review_count", "label": "Review count" },
+        { "type": "text", "id": "review_source", "label": "Review source", "default": "Google" },
+        { "type": "url", "id": "review_url", "label": "Review link", "default": "", "info": "Where Read all goes: your reviews page or profile." },
+        { "type": "text", "id": "since_year", "label": "Since", "default": "", "info": "The year you started, typed: 1986." },
+        { "type": "textarea", "id": "licence_lines", "label": "Licence lines", "default": "", "info": "One licence or registration per line. Printed in the footer and the story." },
+        { "type": "text", "id": "insured_line", "label": "Insured line", "default": "Licensed & insured" },
+        { "type": "text", "id": "guarantee_line", "label": "Guarantee line", "default": "" },
+        { "type": "url", "id": "financing_url", "label": "Financing link", "default": "" },
+        { "type": "text", "id": "financing_line", "label": "Financing line", "default": "" },
+        { "type": "text", "id": "service_radius_line", "label": "Service area line", "default": "", "info": "Within 40 miles of Ashby." },
+        { "type": "checkbox", "id": "show_call_bar", "label": "Call bar on phones", "default": true, "info": "A bar fixed to the bottom of the screen on phones: Call and the ask button." }
+      ]
+    },
+    {
+      "name": "Contact",
+      "settings": [
+        { "type": "text", "id": "email", "label": "Email", "default": "" },
+        { "type": "textarea", "id": "address", "label": "Address", "default": "", "info": "Used when you have no location entry. One line per line." },
+        { "type": "text", "id": "hours_line", "label": "Hours line", "default": "", "info": "One line: Mon–Sat 7:00–18:00 · 24/7 emergency line." },
+        { "type": "form", "id": "contact_form", "label": "Contact form", "default": "contact" },
+        { "type": "form", "id": "newsletter_form", "label": "Newsletter form", "default": "newsletter" }
+      ]
+    }
+  ]
+}

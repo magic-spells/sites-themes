@@ -1,0 +1,46 @@
+<!-- TODO sync with Figma -->
+<!-- Stub (code B builds it): the heading, the standfirst, the routes and the proof row beside the photo. Cover and split put data-over-hero on the section so an over-hero header lies on it. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-over-hero={ settings.layout != 'form' ? true : null }>
+  <div class="mx-auto grid max-w-column items-center gap-space-xl pt-header md:grid-cols-text-picture">
+    <div class="grid gap-space-md">
+      <h1 class="font-heading text-display case-heading text-balance text-scheme-heading">{ settings.heading }{#if settings.accent_text} <span class="text-accent">{ settings.accent_text }</span>{/if}</h1>
+      {#if settings.text}<p class="max-w-reading text-body-lg text-scheme-muted">{ settings.text }</p>{/if}
+      <Routes />
+      {#if settings.show_proof_row}<ProofRow />{/if}
+    </div>
+    {#if settings.layout == 'form'}<div class="sites-scheme-chalk rounded-card bg-scheme-background p-space-xl text-scheme-foreground"><EstimateFields prefix="hero-{ section.id }" /></div>
+    {:else}<Well asset={ settings.image } alt={ settings.image_alt } ratio={ settings.layout == 'cover' ? 'aspect-photo' : 'aspect-portrait' } width={ 1200 } sizes="(min-width: 48rem) 40vw, 100vw" eager />{/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Hero",
+  "description": "The first screen: the promise, the two routes and the proof, over or beside a photo, or beside the estimate form.",
+  "kind": "Hero",
+  "icon": "image",
+  "settings": [
+    { "type": "select", "id": "layout", "label": "Layout", "default": "cover", "options": [
+      { "value": "cover", "label": "Cover: the photo behind the type" },
+      { "value": "split", "label": "Split: the photo beside the type" },
+      { "value": "form", "label": "Form: the estimate form beside the type" }
+    ] },
+    { "type": "select", "id": "height", "label": "Cover height", "default": "tall", "options": [
+      { "value": "tall", "label": "Tall" },
+      { "value": "full", "label": "The full screen" }
+    ] },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Ashby's most trusted plumbing & heating" },
+    { "type": "text", "id": "accent_text", "label": "Accent phrase", "default": "", "info": "Follows the heading, in the accent colour." },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "Family-run since 1986. A licensed plumber at your door, a fixed price before we start." },
+    { "type": "image", "id": "image", "label": "Image" },
+    { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "" },
+    { "type": "checkbox", "id": "show_proof_row", "label": "Proof row", "default": true, "info": "The rating, review count, insured line and since year from the theme settings." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "navy" }
+  ],
+  "presets": [
+    { "name": "Cover", "settings": { "layout": "cover", "color_scheme": "navy" } },
+    { "name": "Split", "settings": { "layout": "split", "color_scheme": "paper" } },
+    { "name": "Form", "settings": { "layout": "form", "color_scheme": "navy" } }
+  ]
+}
+</schema>

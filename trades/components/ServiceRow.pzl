@@ -1,0 +1,11 @@
+<!-- component: ServiceRow -->
+<!-- A service as one row, the whole row one link. The list's row, on a hairline: the icon in a 3rem circle, the name over the summary, the price line and a Details link at the right (under the name on phones). compact (the header's Services panel): the circle, the name and the price as one Meta line, no rule. -->
+{#let f = entry.fields}
+<li class="group relative flex items-center gap-x-space-md gap-y-space-xs { compact ? 'mb-space-md break-inside-avoid' : 'flex-wrap border-b border-scheme-border py-space-lg md:flex-nowrap' }">
+  <IconCircle icon={ f.icon || 'wrench' } />
+  <span class="grid min-w-0 flex-1 gap-space-2xs">
+    <a class="text-h4 font-semibold after:absolute after:inset-0 group-hover:underline group-hover:underline-offset-4" href="/services/{ entry.handle }">{ entry.title }</a>
+    {#if compact}<PriceLine entry={ entry } plain />{:else}<span class="text-body-sm text-pretty text-scheme-muted">{ f.summary }</span>{/if}
+  </span>
+  {#if !compact}<span class="flex items-center gap-space-lg max-md:w-full max-md:justify-between"><PriceLine entry={ entry } /><span class="ms-auto text-body-sm text-accent underline underline-offset-4" aria-hidden="true">{ t('details') }</span></span>{/if}
+</li>

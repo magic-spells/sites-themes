@@ -1,0 +1,69 @@
+<!-- TODO sync with Figma -->
+<!-- One location: the heading, the hours as a two-column table, the address, phone and note, Directions and Call; beside them the location's 3:2 photo, or its map (an image, or the embedded map when one is set and the setting asks). -->
+{#let
+  loc = settings.location || (content.locations.entries | sort('fields.order') | first)
+  f = loc.fields
+  embed = settings.map == 'embed' && f.map_embed_url
+}
+{#if loc}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-center gap-space-xl md:grid-cols-2 md:gap-space-3xl">
+    <div class="grid justify-items-start gap-space-lg">
+      <h2 class="font-heading text-h2 case-heading text-balance text-scheme-heading">{ settings.heading || loc.title }</h2>
+      {#if settings.show_hours && f.hours}
+        <table class="w-full max-w-text text-body tnum">
+          <caption class="sr-only">{ t('hours') }</caption>
+          <tbody>
+            {#for line in f.hours | split('\n')}
+              {#let
+                row = line | strip
+                times = row | split(' ') | last
+              }
+              {#if row}<tr class="border-b border-scheme-border"><th class="py-space-xs pe-space-md text-left font-normal text-scheme-muted" scope="row">{ row | replace(times, '') | strip }</th><td class="py-space-xs text-right">{ times }</td></tr>{/if}
+            {/for}
+          </tbody>
+        </table>
+      {/if}
+      <div class="grid gap-space-xs text-body">
+        {#if f.address}<p class="flex items-start gap-space-xs"><Glyph name="pin" cls="mt-space-2xs size-icon text-accent" /><span class="whitespace-pre-line">{ f.address }</span></p>{/if}
+        {#if f.phone}<p class="flex items-center gap-space-xs"><Glyph name="phone" cls="size-icon text-accent" /><a class="hover:underline hover:underline-offset-4" href="tel:{ f.phone | replace(' ', '') }">{ f.phone }</a></p>{/if}
+        {#if f.note}<p class="text-body-sm text-scheme-muted">{ f.note }</p>{/if}
+      </div>
+      <div class="flex flex-wrap gap-space-sm">
+        {#if f.map_url}<Button href={ f.map_url } tone="outline">{ t('directions') }</Button>{/if}
+        {#if f.phone}<Button href="tel:{ f.phone | replace(' ', '') }">{ t('call', { phone: f.phone }) }</Button>{/if}
+      </div>
+    </div>
+    {#if settings.show_map && embed}
+      <div class="aspect-photo overflow-hidden rounded-card bg-scheme-surface-2"><iframe class="size-full" src="{ f.map_embed_url }" title="{ loc.title }" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    {:else if settings.show_map && f.map_image}
+      <Well asset={ f.map_image } alt={ f.map_image_alt } ratio="aspect-photo" width={ 1200 } sizes="(min-width: 48rem) 50vw, 100vw" />
+    {:else}
+      <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-photo" width={ 1200 } sizes="(min-width: 48rem) 50vw, 100vw" />
+    {/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Hours and location",
+  "description": "One location's hours, address and phone, beside its photo or a map.",
+  "kind": "Contact",
+  "icon": "map-pin",
+  "settings": [
+    { "type": "entry", "id": "location", "label": "Location", "info": "Leave empty for the first location." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Visit the yard", "info": "Leave empty to use the location's name." },
+    { "type": "checkbox", "id": "show_hours", "label": "Hours", "default": true },
+    { "type": "checkbox", "id": "show_map", "label": "Map instead of the photo", "default": true },
+    { "type": "select", "id": "map", "label": "Map", "default": "image", "options": [
+      { "value": "image", "label": "The map image" },
+      { "value": "embed", "label": "The embedded map, when set" }
+    ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "chalk" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "chalk" } }
+  ]
+}
+</schema>

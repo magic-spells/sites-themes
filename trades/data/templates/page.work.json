@@ -1,0 +1,49 @@
+{
+  "label": "Our work",
+  "description": "Every project with service tabs, then reviews on a carousel.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_projects",
+      "type": "projects-grid",
+      "preset": "Work page",
+      "settings": {
+        "heading": "",
+        "source": "all",
+        "limit": 12,
+        "show_tabs": true,
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_reviews",
+      "type": "testimonials",
+      "preset": "Carousel",
+      "settings": {
+        "layout": "carousel",
+        "source": "all",
+        "limit": 12,
+        "color_scheme": "charcoal"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Routes",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    }
+  ]
+}

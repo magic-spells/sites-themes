@@ -1,0 +1,8 @@
+<!-- component: Stat -->
+<!-- A figure from a stats block on a surface-2 card: the numeral in Stat (tabular), the label in Card title, the line in Meta. -->
+{#let b = block.settings}
+<li class="grid content-start gap-space-xs rounded-card bg-scheme-surface-2 p-space-xl" data-block={ editor_id }>
+  <p class="font-heading text-display tnum">{ b.number }</p>
+  <h3 class="text-h4 font-semibold">{ b.label }</h3>
+  {#if b.text}<p class="text-body-sm text-scheme-muted">{ b.text }</p>{/if}
+</li>

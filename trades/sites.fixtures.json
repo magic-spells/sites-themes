@@ -1,0 +1,2964 @@
+{
+ "site": {
+  "name": "Hollis & Sons",
+  "url": "https://hollisandsons.example",
+  "locale": "en",
+  "settings": {
+   "wordmark": "Hollis & Sons",
+   "tagline": "Plumbing & Heating",
+   "reveal": true,
+   "heading_case": "upper",
+   "phone": "(802) 555-0164",
+   "phone_line": "24/7 live answering",
+   "emergency_phone": "(802) 555-0164",
+   "ask_label": "Get a free estimate",
+   "ask": "form",
+   "ask_url": "/estimate",
+   "confirm_line": "We call back within one business hour",
+   "estimate_form": "estimate",
+   "rating": "4.9",
+   "review_count": 612,
+   "review_source": "Google",
+   "review_url": "https://google.com/maps",
+   "since_year": "1986",
+   "licence_lines": "Gas Safe 512345 · Plumbing licence PL-0417 · Fully insured to $5M",
+   "insured_line": "Licensed & insured",
+   "guarantee_line": "Every job guaranteed for 12 months",
+   "financing_url": "https://lender.example/hollis",
+   "financing_line": "Spread a new boiler over 24 months",
+   "service_radius_line": "Within 40 miles of Ashby",
+   "show_call_bar": true,
+   "email": "hello@hollisandsons.example",
+   "address": "3 Mill Lane, Ashby",
+   "hours_line": "Mon–Sat 7:00–18:00 · 24/7 emergency",
+   "contact_form": "contact",
+   "newsletter_form": "newsletter"
+  }
+ },
+ "menus": {
+  "main": {
+   "handle": "main",
+   "title": "Main menu",
+   "items": [
+    {
+     "id": "main0",
+     "label": "Services",
+     "target": {
+      "kind": "url",
+      "url": "/services"
+     },
+     "children": []
+    },
+    {
+     "id": "main1",
+     "label": "Our work",
+     "target": {
+      "kind": "url",
+      "url": "/work"
+     },
+     "children": []
+    },
+    {
+     "id": "main2",
+     "label": "Areas",
+     "target": {
+      "kind": "url",
+      "url": "/areas"
+     },
+     "children": []
+    },
+    {
+     "id": "main3",
+     "label": "Reviews",
+     "target": {
+      "kind": "url",
+      "url": "/reviews"
+     },
+     "children": []
+    },
+    {
+     "id": "main4",
+     "label": "Specials",
+     "target": {
+      "kind": "url",
+      "url": "/specials"
+     },
+     "children": []
+    },
+    {
+     "id": "main5",
+     "label": "About",
+     "target": {
+      "kind": "url",
+      "url": "/about"
+     },
+     "children": []
+    }
+   ]
+  },
+  "legal": {
+   "handle": "legal",
+   "title": "Legal",
+   "items": [
+    {
+     "id": "legal0",
+     "label": "Privacy",
+     "target": {
+      "kind": "url",
+      "url": "/privacy"
+     },
+     "children": []
+    },
+    {
+     "id": "legal1",
+     "label": "Terms",
+     "target": {
+      "kind": "url",
+      "url": "/terms"
+     },
+     "children": []
+    }
+   ]
+  },
+  "social": {
+   "handle": "social",
+   "title": "Social",
+   "items": [
+    {
+     "id": "social0",
+     "label": "Facebook",
+     "target": {
+      "kind": "url",
+      "url": "https://facebook.com/"
+     },
+     "children": []
+    },
+    {
+     "id": "social1",
+     "label": "Instagram",
+     "target": {
+      "kind": "url",
+      "url": "https://instagram.com/"
+     },
+     "children": []
+    },
+    {
+     "id": "social2",
+     "label": "Google",
+     "target": {
+      "kind": "url",
+      "url": "https://google.com/maps"
+     },
+     "children": []
+    }
+   ]
+  }
+ },
+ "galleries": {
+  "job-photos": {
+   "handle": "job-photos",
+   "title": "Job photos",
+   "items": [
+    {
+     "asset_id": "as_3x2_clay",
+     "caption": "",
+     "alt": "On the job 1"
+    },
+    {
+     "asset_id": "as_3x2_sand",
+     "caption": "",
+     "alt": "On the job 2"
+    },
+    {
+     "asset_id": "as_3x2_sea",
+     "caption": "",
+     "alt": "On the job 3"
+    },
+    {
+     "asset_id": "as_3x2_clay",
+     "caption": "",
+     "alt": "On the job 4"
+    },
+    {
+     "asset_id": "as_3x2_sand",
+     "caption": "",
+     "alt": "On the job 5"
+    },
+    {
+     "asset_id": "as_3x2_sea",
+     "caption": "",
+     "alt": "On the job 6"
+    }
+   ]
+  }
+ },
+ "assets": {
+  "as_3x2_clay": {
+   "id": "as_3x2_clay",
+   "status": "ready",
+   "file_name": "3x2-clay.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 360,
+   "url": "/_sites/theme/photos/3x2-clay.svg",
+   "width": 1500,
+   "height": 1000,
+   "alt": "3:2 clay placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_3x2_sand": {
+   "id": "as_3x2_sand",
+   "status": "ready",
+   "file_name": "3x2-sand.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 360,
+   "url": "/_sites/theme/photos/3x2-sand.svg",
+   "width": 1500,
+   "height": 1000,
+   "alt": "3:2 sand placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_3x2_sea": {
+   "id": "as_3x2_sea",
+   "status": "ready",
+   "file_name": "3x2-sea.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 360,
+   "url": "/_sites/theme/photos/3x2-sea.svg",
+   "width": 1500,
+   "height": 1000,
+   "alt": "3:2 sea placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_4x5_clay": {
+   "id": "as_4x5_clay",
+   "status": "ready",
+   "file_name": "4x5-clay.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 360,
+   "url": "/_sites/theme/photos/4x5-clay.svg",
+   "width": 1200,
+   "height": 1500,
+   "alt": "4:5 clay placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_4x5_sand": {
+   "id": "as_4x5_sand",
+   "status": "ready",
+   "file_name": "4x5-sand.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 360,
+   "url": "/_sites/theme/photos/4x5-sand.svg",
+   "width": 1200,
+   "height": 1500,
+   "alt": "4:5 sand placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_4x5_sea": {
+   "id": "as_4x5_sea",
+   "status": "ready",
+   "file_name": "4x5-sea.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 360,
+   "url": "/_sites/theme/photos/4x5-sea.svg",
+   "width": 1200,
+   "height": 1500,
+   "alt": "4:5 sea placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_1x1_clay": {
+   "id": "as_1x1_clay",
+   "status": "ready",
+   "file_name": "1x1-clay.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 360,
+   "url": "/_sites/theme/photos/1x1-clay.svg",
+   "width": 1200,
+   "height": 1200,
+   "alt": "1:1 clay placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_1x1_sand": {
+   "id": "as_1x1_sand",
+   "status": "ready",
+   "file_name": "1x1-sand.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 360,
+   "url": "/_sites/theme/photos/1x1-sand.svg",
+   "width": 1200,
+   "height": 1200,
+   "alt": "1:1 sand placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_1x1_sea": {
+   "id": "as_1x1_sea",
+   "status": "ready",
+   "file_name": "1x1-sea.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 360,
+   "url": "/_sites/theme/photos/1x1-sea.svg",
+   "width": 1200,
+   "height": 1200,
+   "alt": "1:1 sea placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_map": {
+   "id": "as_map",
+   "status": "ready",
+   "file_name": "map.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 620,
+   "url": "/_sites/theme/photos/map.svg",
+   "width": 1000,
+   "height": 1000,
+   "alt": "Map placeholder",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_logo_halcyon": {
+   "id": "as_logo_halcyon",
+   "status": "ready",
+   "file_name": "logo-halcyon.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 500,
+   "url": "/_sites/theme/photos/logo-halcyon.svg",
+   "width": 320,
+   "height": 80,
+   "alt": "Placeholder logo",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_logo_quill": {
+   "id": "as_logo_quill",
+   "status": "ready",
+   "file_name": "logo-quill.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 500,
+   "url": "/_sites/theme/photos/logo-quill.svg",
+   "width": 320,
+   "height": 80,
+   "alt": "Placeholder logo",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_logo_northbank": {
+   "id": "as_logo_northbank",
+   "status": "ready",
+   "file_name": "logo-northbank.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 500,
+   "url": "/_sites/theme/photos/logo-northbank.svg",
+   "width": 320,
+   "height": 80,
+   "alt": "Placeholder logo",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_logo_verso": {
+   "id": "as_logo_verso",
+   "status": "ready",
+   "file_name": "logo-verso.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 500,
+   "url": "/_sites/theme/photos/logo-verso.svg",
+   "width": 320,
+   "height": 80,
+   "alt": "Placeholder logo",
+   "created_at": "2026-11-08T09:00:00Z"
+  },
+  "as_logo_foxglove": {
+   "id": "as_logo_foxglove",
+   "status": "ready",
+   "file_name": "logo-foxglove.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 500,
+   "url": "/_sites/theme/photos/logo-foxglove.svg",
+   "width": 320,
+   "height": 80,
+   "alt": "Placeholder logo",
+   "created_at": "2026-11-08T09:00:00Z"
+  }
+ },
+ "forms": {
+  "estimate": {
+   "handle": "estimate",
+   "name": "Free estimate",
+   "fields": [
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Full name",
+     "required": true,
+     "max_length": 200
+    },
+    {
+     "id": "phone",
+     "type": "text",
+     "label": "Phone number",
+     "required": true,
+     "max_length": 200
+    },
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email address",
+     "required": false,
+     "max_length": 200
+    },
+    {
+     "id": "service",
+     "type": "select",
+     "label": "Service needed",
+     "required": true,
+     "options": [
+      "Emergency repairs",
+      "Boiler service · $149",
+      "Boiler replacement · from $3,200",
+      "Bathroom renovations · from $8,500",
+      "Underfloor heating · from $1,900",
+      "Water heaters · from $1,250",
+      "Drains and blockages · $189",
+      "Gas safety certificate · $95"
+     ]
+    },
+    {
+     "id": "town",
+     "type": "text",
+     "label": "Town or postcode",
+     "required": true,
+     "max_length": 200
+    },
+    {
+     "id": "timing",
+     "type": "select",
+     "label": "Timing",
+     "required": false,
+     "options": [
+      "As soon as possible",
+      "This week",
+      "Within a month",
+      "Flexible"
+     ]
+    },
+    {
+     "id": "message",
+     "type": "textarea",
+     "label": "Describe the job",
+     "required": false,
+     "max_length": 2000
+    }
+   ],
+   "success_message": "Thanks, we have your request.",
+   "submit_label": "Get a free estimate",
+   "redirect_path": ""
+  },
+  "contact": {
+   "handle": "contact",
+   "name": "Contact",
+   "fields": [
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Full name",
+     "required": true,
+     "max_length": 200
+    },
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email address",
+     "required": true,
+     "max_length": 200
+    },
+    {
+     "id": "subject",
+     "type": "select",
+     "label": "Subject",
+     "required": true,
+     "options": [
+      "Estimate",
+      "Existing job",
+      "Billing",
+      "Careers",
+      "Other"
+     ]
+    },
+    {
+     "id": "message",
+     "type": "textarea",
+     "label": "Message",
+     "required": true,
+     "max_length": 2000
+    }
+   ],
+   "success_message": "Thanks. We answer within one business day.",
+   "submit_label": "Send",
+   "redirect_path": ""
+  },
+  "newsletter": {
+   "handle": "newsletter",
+   "name": "Newsletter",
+   "fields": [
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email address",
+     "required": true,
+     "max_length": 200
+    }
+   ],
+   "success_message": "You're on the list.",
+   "submit_label": "Sign up",
+   "redirect_path": ""
+  },
+  "apply": {
+   "handle": "apply",
+   "name": "Apply",
+   "fields": [
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Full name",
+     "required": true,
+     "max_length": 200
+    },
+    {
+     "id": "phone",
+     "type": "text",
+     "label": "Phone number",
+     "required": true,
+     "max_length": 200
+    },
+    {
+     "id": "trade",
+     "type": "text",
+     "label": "Your trade",
+     "required": true,
+     "max_length": 200
+    },
+    {
+     "id": "message",
+     "type": "textarea",
+     "label": "Tell us about your work",
+     "required": false,
+     "max_length": 2000
+    }
+   ],
+   "success_message": "Thanks. Sarah will call you this week.",
+   "submit_label": "Apply",
+   "redirect_path": ""
+  }
+ },
+ "content": {
+  "services": {
+   "name": "Services",
+   "fields": [
+    {
+     "id": "summary",
+     "type": "text",
+     "label": "Summary"
+    },
+    {
+     "id": "description",
+     "type": "richtext",
+     "label": "Description"
+    },
+    {
+     "id": "price",
+     "type": "number",
+     "label": "Price"
+    },
+    {
+     "id": "price_from",
+     "type": "checkbox",
+     "label": "Price is a starting price"
+    },
+    {
+     "id": "price_note",
+     "type": "text",
+     "label": "Price note (per hour, after a free survey)"
+    },
+    {
+     "id": "includes",
+     "type": "textarea",
+     "label": "What's included (one per line)"
+    },
+    {
+     "id": "icon",
+     "type": "select",
+     "label": "Icon",
+     "options": [
+      "wrench",
+      "droplets",
+      "flame",
+      "bath",
+      "shower-head",
+      "water-heater",
+      "thermometer",
+      "fan",
+      "snowflake",
+      "zap",
+      "house",
+      "hammer",
+      "paint-roller",
+      "leaf",
+      "truck",
+      "drill",
+      "shield-check",
+      "badge-check"
+     ]
+    },
+    {
+     "id": "image",
+     "type": "image",
+     "label": "Image (1:1)"
+    },
+    {
+     "id": "image_alt",
+     "type": "text",
+     "label": "Image alt text"
+    },
+    {
+     "id": "featured",
+     "type": "checkbox",
+     "label": "Featured"
+    },
+    {
+     "id": "tag",
+     "type": "text",
+     "label": "Tag (Emergency, Most booked)"
+    },
+    {
+     "id": "order",
+     "type": "number",
+     "label": "Position"
+    }
+   ],
+   "entries": [
+    {
+     "id": "svc_emergency_repairs",
+     "handle": "emergency-repairs",
+     "title": "Emergency repairs",
+     "fields": {
+      "summary": "Burst pipes, leaks and no-heat calls, day or night",
+      "description": "<p>Burst pipes, leaks and no-heat calls, day or night. A licensed Hollis &amp; Sons technician does the work, and the price is agreed before we start.</p><p>We tidy up after ourselves, explain what we found, and guarantee the job for twelve months, parts and labour.</p>",
+      "price_from": false,
+      "price_note": "Day or night",
+      "includes": "A real person answers, day or night\nA van on its way within the hour\nWater and gas made safe first\nA fixed price before the repair",
+      "icon": "wrench",
+      "image": "as_1x1_clay",
+      "image_alt": "Emergency repairs by Hollis & Sons",
+      "featured": true,
+      "tag": "Emergency",
+      "order": 1
+     }
+    },
+    {
+     "id": "svc_boiler_service",
+     "handle": "boiler-service",
+     "title": "Boiler service",
+     "fields": {
+      "summary": "A full annual service with a written report",
+      "description": "<p>A full annual service with a written report. A licensed Hollis &amp; Sons technician does the work, and the price is agreed before we start.</p><p>We tidy up after ourselves, explain what we found, and guarantee the job for twelve months, parts and labour.</p>",
+      "price": 149,
+      "price_from": false,
+      "price_note": "",
+      "includes": "Flue and combustion check\nPressure, valves and seals tested\nBurner and heat exchanger cleaned\nA written report for your records",
+      "icon": "flame",
+      "image": "as_1x1_sand",
+      "image_alt": "Boiler service by Hollis & Sons",
+      "featured": true,
+      "tag": "",
+      "order": 2
+     }
+    },
+    {
+     "id": "svc_boiler_replacement",
+     "handle": "boiler-replacement",
+     "title": "Boiler replacement",
+     "fields": {
+      "summary": "A new boiler sized to your home, fitted in a day",
+      "description": "<p>A new boiler sized to your home, fitted in a day. A licensed Hollis &amp; Sons technician does the work, and the price is agreed before we start.</p><p>We tidy up after ourselves, explain what we found, and guarantee the job for twelve months, parts and labour.</p>",
+      "price": 3200,
+      "price_from": true,
+      "price_note": "after a free survey",
+      "includes": "A free survey and a fixed quote\nThe old boiler removed and recycled\nFitted and commissioned in a day\nUp to ten years' manufacturer warranty",
+      "icon": "thermometer",
+      "image": "as_1x1_sea",
+      "image_alt": "Boiler replacement by Hollis & Sons",
+      "featured": true,
+      "tag": "",
+      "order": 3
+     }
+    },
+    {
+     "id": "svc_bathroom_renovations",
+     "handle": "bathroom-renovations",
+     "title": "Bathroom renovations",
+     "fields": {
+      "summary": "Design, plumbing, tiling and fitting, one crew",
+      "description": "<p>Design, plumbing, tiling and fitting, one crew. A licensed Hollis &amp; Sons technician does the work, and the price is agreed before we start.</p><p>We tidy up after ourselves, explain what we found, and guarantee the job for twelve months, parts and labour.</p>",
+      "price": 8500,
+      "price_from": true,
+      "price_note": "",
+      "includes": "A design visit and a fixed quote\nStrip-out and waste removal\nPlumbing, tiling and fitting by one crew\nA clean handover, snag list signed off",
+      "icon": "bath",
+      "image": "as_1x1_clay",
+      "image_alt": "Bathroom renovations by Hollis & Sons",
+      "featured": true,
+      "tag": "",
+      "order": 4
+     }
+    },
+    {
+     "id": "svc_underfloor_heating",
+     "handle": "underfloor-heating",
+     "title": "Underfloor heating",
+     "fields": {
+      "summary": "Warm floors for new builds and renovations",
+      "description": "<p>Warm floors for new builds and renovations. A licensed Hollis &amp; Sons technician does the work, and the price is agreed before we start.</p><p>We tidy up after ourselves, explain what we found, and guarantee the job for twelve months, parts and labour.</p>",
+      "price": 1900,
+      "price_from": true,
+      "price_note": "per room",
+      "includes": "Wet or electric systems\nRoom-by-room thermostats\nLaid before your floor goes down\nCommissioned and balanced",
+      "icon": "house",
+      "image": "as_1x1_sand",
+      "image_alt": "Underfloor heating by Hollis & Sons",
+      "featured": false,
+      "tag": "",
+      "order": 5
+     }
+    },
+    {
+     "id": "svc_water_heaters",
+     "handle": "water-heaters",
+     "title": "Water heaters",
+     "fields": {
+      "summary": "Tank and tankless, repaired or replaced",
+      "description": "<p>Tank and tankless, repaired or replaced. A licensed Hollis &amp; Sons technician does the work, and the price is agreed before we start.</p><p>We tidy up after ourselves, explain what we found, and guarantee the job for twelve months, parts and labour.</p>",
+      "price": 1250,
+      "price_from": true,
+      "price_note": "",
+      "includes": "Tank and tankless models\nSame-week replacement\nOld unit removed\nFlushed and tested on fitting",
+      "icon": "water-heater",
+      "image": "as_1x1_sea",
+      "image_alt": "Water heaters by Hollis & Sons",
+      "featured": false,
+      "tag": "",
+      "order": 6
+     }
+    },
+    {
+     "id": "svc_drains_and_blockages",
+     "handle": "drains-and-blockages",
+     "title": "Drains and blockages",
+     "fields": {
+      "summary": "Cleared the same day, with a camera check",
+      "description": "<p>A slow sink or a backed-up drain rarely fixes itself. We clear it the same day and show you what caused it.</p><p>Every visit starts with a camera inspection, so we see the blockage before we touch it. Most drains clear with a jet or an auger in under an hour.</p><p>If the pipe is cracked or sagging, we show you the footage and give you a fixed price for the repair. You decide, and the look costs nothing extra.</p>",
+      "price": 189,
+      "price_from": false,
+      "price_note": "same-day, with a camera check",
+      "includes": "Camera inspection\nClearing by jet or auger\nAdvice on the cause\nWritten report\n12-month guarantee",
+      "icon": "droplets",
+      "image": "as_1x1_clay",
+      "image_alt": "Drains and blockages by Hollis & Sons",
+      "featured": true,
+      "tag": "Most booked",
+      "order": 7
+     }
+    },
+    {
+     "id": "svc_gas_safety_certificate",
+     "handle": "gas-safety-certificate",
+     "title": "Gas safety certificate",
+     "fields": {
+      "summary": "For landlords, with reminders",
+      "description": "<p>For landlords, with reminders. A licensed Hollis &amp; Sons technician does the work, and the price is agreed before we start.</p><p>We tidy up after ourselves, explain what we found, and guarantee the job for twelve months, parts and labour.</p>",
+      "price": 95,
+      "price_from": false,
+      "price_note": "",
+      "includes": "Every gas appliance checked\nThe certificate the same day\nA reminder before it runs out\nTenant visits arranged for you",
+      "icon": "shield-check",
+      "image": "as_1x1_sand",
+      "image_alt": "Gas safety certificate by Hollis & Sons",
+      "featured": false,
+      "tag": "Landlords",
+      "order": 8
+     }
+    }
+   ]
+  },
+  "projects": {
+   "name": "Projects",
+   "fields": [
+    {
+     "id": "service",
+     "type": "entry",
+     "label": "Service",
+     "content_type": "services"
+    },
+    {
+     "id": "area",
+     "type": "entry",
+     "label": "Town",
+     "content_type": "areas"
+    },
+    {
+     "id": "date",
+     "type": "date",
+     "label": "Date"
+    },
+    {
+     "id": "summary",
+     "type": "text",
+     "label": "Summary"
+    },
+    {
+     "id": "description",
+     "type": "richtext",
+     "label": "Description"
+    },
+    {
+     "id": "image",
+     "type": "image",
+     "label": "Image (3:2)"
+    },
+    {
+     "id": "image_alt",
+     "type": "text",
+     "label": "Image alt text"
+    },
+    {
+     "id": "before",
+     "type": "image",
+     "label": "Before (3:2)"
+    },
+    {
+     "id": "before_alt",
+     "type": "text",
+     "label": "Before alt text"
+    },
+    {
+     "id": "after",
+     "type": "image",
+     "label": "After (3:2)"
+    },
+    {
+     "id": "after_alt",
+     "type": "text",
+     "label": "After alt text"
+    },
+    {
+     "id": "photos",
+     "type": "gallery",
+     "label": "Photos"
+    },
+    {
+     "id": "featured",
+     "type": "checkbox",
+     "label": "Featured"
+    },
+    {
+     "id": "order",
+     "type": "number",
+     "label": "Position"
+    }
+   ],
+   "entries": [
+    {
+     "id": "proj_clay_lane_bathroom",
+     "handle": "clay-lane-bathroom",
+     "title": "Clay Lane bathroom",
+     "fields": {
+      "area": "area_ashby",
+      "date": "2026-10-14",
+      "summary": "A full refit in Ashby, done to a fixed price.",
+      "description": "<p>The brief, the fixed quote and the finished job in Ashby. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+      "image": "as_3x2_clay",
+      "image_alt": "Clay Lane bathroom, finished",
+      "photos": "job-photos",
+      "featured": true,
+      "order": 1,
+      "service": "svc_bathroom_renovations",
+      "before": "as_3x2_sand",
+      "before_alt": "Clay Lane bathroom before",
+      "after": "as_3x2_clay",
+      "after_alt": "Clay Lane bathroom after"
+     }
+    },
+    {
+     "id": "proj_weald_farmhouse_boiler",
+     "handle": "weald-farmhouse-boiler",
+     "title": "Weald farmhouse boiler",
+     "fields": {
+      "area": "area_weald",
+      "date": "2026-09-22",
+      "summary": "A clean install in Weald, done to a fixed price.",
+      "description": "<p>The brief, the fixed quote and the finished job in Weald. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+      "image": "as_3x2_sand",
+      "image_alt": "Weald farmhouse boiler, finished",
+      "photos": "job-photos",
+      "featured": true,
+      "order": 2,
+      "service": "svc_boiler_replacement"
+     }
+    },
+    {
+     "id": "proj_the_old_bakery_kitchen",
+     "handle": "the-old-bakery-kitchen",
+     "title": "The Old Bakery kitchen",
+     "fields": {
+      "area": "area_marlow_green",
+      "date": "2026-08-18",
+      "summary": "A clean install in Marlow Green, done to a fixed price.",
+      "description": "<p>The brief, the fixed quote and the finished job in Marlow Green. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+      "image": "as_3x2_sea",
+      "image_alt": "The Old Bakery kitchen, finished",
+      "photos": "job-photos",
+      "featured": true,
+      "order": 3
+     }
+    },
+    {
+     "id": "proj_hatch_end_wet_room",
+     "handle": "hatch-end-wet-room",
+     "title": "Hatch End wet room",
+     "fields": {
+      "area": "area_hatch_end",
+      "date": "2026-07-09",
+      "summary": "A full refit in Hatch End, done to a fixed price.",
+      "description": "<p>The brief, the fixed quote and the finished job in Hatch End. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+      "image": "as_3x2_clay",
+      "image_alt": "Hatch End wet room, finished",
+      "photos": "job-photos",
+      "featured": true,
+      "order": 4,
+      "service": "svc_bathroom_renovations",
+      "before": "as_3x2_sand",
+      "before_alt": "Hatch End wet room before",
+      "after": "as_3x2_clay",
+      "after_alt": "Hatch End wet room after"
+     }
+    },
+    {
+     "id": "proj_kings_ferry_underfloor",
+     "handle": "kings-ferry-underfloor",
+     "title": "Kings Ferry underfloor",
+     "fields": {
+      "area": "area_kings_ferry",
+      "date": "2026-06-12",
+      "summary": "A clean install in Kings Ferry, done to a fixed price.",
+      "description": "<p>The brief, the fixed quote and the finished job in Kings Ferry. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+      "image": "as_3x2_sand",
+      "image_alt": "Kings Ferry underfloor, finished",
+      "photos": "job-photos",
+      "featured": true,
+      "order": 5,
+      "service": "svc_underfloor_heating"
+     }
+    },
+    {
+     "id": "proj_oakridge_en_suite",
+     "handle": "oakridge-en-suite",
+     "title": "Oakridge en-suite",
+     "fields": {
+      "area": "area_oakridge",
+      "date": "2026-05-20",
+      "summary": "A full refit in Oakridge, done to a fixed price.",
+      "description": "<p>The brief, the fixed quote and the finished job in Oakridge. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+      "image": "as_3x2_sea",
+      "image_alt": "Oakridge en-suite, finished",
+      "photos": "job-photos",
+      "featured": true,
+      "order": 6,
+      "service": "svc_bathroom_renovations",
+      "before": "as_3x2_clay",
+      "before_alt": "Oakridge en-suite before",
+      "after": "as_3x2_sea",
+      "after_alt": "Oakridge en-suite after"
+     }
+    },
+    {
+     "id": "proj_brimley_family_bathroom",
+     "handle": "brimley-family-bathroom",
+     "title": "Brimley family bathroom",
+     "fields": {
+      "area": "area_brimley",
+      "date": "2026-03-11",
+      "summary": "A full refit in Brimley, done to a fixed price.",
+      "description": "<p>The brief, the fixed quote and the finished job in Brimley. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+      "image": "as_3x2_clay",
+      "image_alt": "Brimley family bathroom, finished",
+      "photos": "job-photos",
+      "featured": false,
+      "order": 7,
+      "service": "svc_bathroom_renovations",
+      "before": "as_3x2_sand",
+      "before_alt": "Brimley family bathroom before",
+      "after": "as_3x2_clay",
+      "after_alt": "Brimley family bathroom after"
+     }
+    },
+    {
+     "id": "proj_stanton_system_boiler",
+     "handle": "stanton-system-boiler",
+     "title": "Stanton system boiler",
+     "fields": {
+      "area": "area_stanton",
+      "date": "2026-01-28",
+      "summary": "A clean install in Stanton, done to a fixed price.",
+      "description": "<p>The brief, the fixed quote and the finished job in Stanton. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+      "image": "as_3x2_sand",
+      "image_alt": "Stanton system boiler, finished",
+      "photos": "job-photos",
+      "featured": false,
+      "order": 8,
+      "service": "svc_boiler_replacement"
+     }
+    },
+    {
+     "id": "proj_ferris_cross_shower_room",
+     "handle": "ferris-cross-shower-room",
+     "title": "Ferris Cross shower room",
+     "fields": {
+      "area": "area_ferris_cross",
+      "date": "2025-12-03",
+      "summary": "A full refit in Ferris Cross, done to a fixed price.",
+      "description": "<p>The brief, the fixed quote and the finished job in Ferris Cross. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+      "image": "as_3x2_sea",
+      "image_alt": "Ferris Cross shower room, finished",
+      "photos": "job-photos",
+      "featured": false,
+      "order": 9,
+      "service": "svc_bathroom_renovations",
+      "before": "as_3x2_clay",
+      "before_alt": "Ferris Cross shower room before",
+      "after": "as_3x2_sea",
+      "after_alt": "Ferris Cross shower room after"
+     }
+    },
+    {
+     "id": "proj_lowick_extension_floor",
+     "handle": "lowick-extension-floor",
+     "title": "Lowick extension floor",
+     "fields": {
+      "area": "area_lowick",
+      "date": "2025-11-17",
+      "summary": "A clean install in Lowick, done to a fixed price.",
+      "description": "<p>The brief, the fixed quote and the finished job in Lowick. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+      "image": "as_3x2_clay",
+      "image_alt": "Lowick extension floor, finished",
+      "photos": "job-photos",
+      "featured": false,
+      "order": 10,
+      "service": "svc_underfloor_heating"
+     }
+    },
+    {
+     "id": "proj_ashby_combi_swap",
+     "handle": "ashby-combi-swap",
+     "title": "Ashby combi swap",
+     "fields": {
+      "area": "area_ashby",
+      "date": "2025-10-06",
+      "summary": "A clean install in Ashby, done to a fixed price.",
+      "description": "<p>The brief, the fixed quote and the finished job in Ashby. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+      "image": "as_3x2_sand",
+      "image_alt": "Ashby combi swap, finished",
+      "photos": "job-photos",
+      "featured": false,
+      "order": 11,
+      "service": "svc_boiler_replacement"
+     }
+    },
+    {
+     "id": "proj_weald_cottage_bathroom",
+     "handle": "weald-cottage-bathroom",
+     "title": "Weald cottage bathroom",
+     "fields": {
+      "area": "area_weald",
+      "date": "2025-09-15",
+      "summary": "A full refit in Weald, done to a fixed price.",
+      "description": "<p>The brief, the fixed quote and the finished job in Weald. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+      "image": "as_3x2_sea",
+      "image_alt": "Weald cottage bathroom, finished",
+      "photos": "job-photos",
+      "featured": false,
+      "order": 12,
+      "service": "svc_bathroom_renovations",
+      "before": "as_3x2_clay",
+      "before_alt": "Weald cottage bathroom before",
+      "after": "as_3x2_sea",
+      "after_alt": "Weald cottage bathroom after"
+     }
+    }
+   ]
+  },
+  "areas": {
+   "name": "Areas",
+   "fields": [
+    {
+     "id": "description",
+     "type": "text",
+     "label": "Line"
+    },
+    {
+     "id": "body",
+     "type": "richtext",
+     "label": "Town page paragraph"
+    },
+    {
+     "id": "map_embed_url",
+     "type": "url",
+     "label": "Map embed link"
+    },
+    {
+     "id": "map_image",
+     "type": "image",
+     "label": "Map image"
+    },
+    {
+     "id": "map_image_alt",
+     "type": "text",
+     "label": "Map image alt text"
+    },
+    {
+     "id": "featured",
+     "type": "checkbox",
+     "label": "Show on Home"
+    },
+    {
+     "id": "order",
+     "type": "number",
+     "label": "Position"
+    }
+   ],
+   "entries": [
+    {
+     "id": "area_ashby",
+     "handle": "ashby",
+     "title": "Ashby",
+     "fields": {
+      "description": "Our home town, same-day callouts",
+      "body": "<p>We have worked in Ashby for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Ashby gets the same fixed price before we start and the same twelve-month guarantee.</p>",
+      "map_embed_url": "",
+      "map_image": "as_map",
+      "map_image_alt": "Map of Ashby",
+      "featured": true,
+      "order": 1
+     }
+    },
+    {
+     "id": "area_weald",
+     "handle": "weald",
+     "title": "Weald",
+     "fields": {
+      "description": "12 min from the yard",
+      "body": "<p>We have worked in Weald for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Weald gets the same fixed price before we start and the same twelve-month guarantee.</p>",
+      "map_embed_url": "",
+      "map_image": "as_map",
+      "map_image_alt": "Map of Weald",
+      "featured": true,
+      "order": 2
+     }
+    },
+    {
+     "id": "area_marlow_green",
+     "handle": "marlow-green",
+     "title": "Marlow Green",
+     "fields": {
+      "description": "Boilers and bathrooms since 1990",
+      "body": "<p>We have worked in Marlow Green for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Marlow Green gets the same fixed price before we start and the same twelve-month guarantee.</p>",
+      "map_embed_url": "",
+      "map_image": "as_map",
+      "map_image_alt": "Map of Marlow Green",
+      "featured": true,
+      "order": 3
+     }
+    },
+    {
+     "id": "area_hatch_end",
+     "handle": "hatch-end",
+     "title": "Hatch End",
+     "fields": {
+      "description": "Same-day callouts",
+      "body": "<p>We have worked in Hatch End for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Hatch End gets the same fixed price before we start and the same twelve-month guarantee.</p>",
+      "map_embed_url": "",
+      "map_image": "as_map",
+      "map_image_alt": "Map of Hatch End",
+      "featured": true,
+      "order": 4
+     }
+    },
+    {
+     "id": "area_kings_ferry",
+     "handle": "kings-ferry",
+     "title": "Kings Ferry",
+     "fields": {
+      "description": "20 min from the yard",
+      "body": "<p>We have worked in Kings Ferry for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Kings Ferry gets the same fixed price before we start and the same twelve-month guarantee.</p>",
+      "map_embed_url": "",
+      "map_image": "as_map",
+      "map_image_alt": "Map of Kings Ferry",
+      "featured": false,
+      "order": 5
+     }
+    },
+    {
+     "id": "area_oakridge",
+     "handle": "oakridge",
+     "title": "Oakridge",
+     "fields": {
+      "description": "Same-day callouts most weekdays",
+      "body": "<p>We have worked in Oakridge for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Oakridge gets the same fixed price before we start and the same twelve-month guarantee.</p>",
+      "map_embed_url": "",
+      "map_image": "as_map",
+      "map_image_alt": "Map of Oakridge",
+      "featured": false,
+      "order": 6
+     }
+    },
+    {
+     "id": "area_brimley",
+     "handle": "brimley",
+     "title": "Brimley",
+     "fields": {
+      "description": "25 min from the yard",
+      "body": "<p>We have worked in Brimley for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Brimley gets the same fixed price before we start and the same twelve-month guarantee.</p>",
+      "map_embed_url": "",
+      "map_image": "as_map",
+      "map_image_alt": "Map of Brimley",
+      "featured": false,
+      "order": 7
+     }
+    },
+    {
+     "id": "area_stanton",
+     "handle": "stanton",
+     "title": "Stanton",
+     "fields": {
+      "description": "Next-day visits",
+      "body": "<p>We have worked in Stanton for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Stanton gets the same fixed price before we start and the same twelve-month guarantee.</p>",
+      "map_embed_url": "",
+      "map_image": "as_map",
+      "map_image_alt": "Map of Stanton",
+      "featured": false,
+      "order": 8
+     }
+    },
+    {
+     "id": "area_ferris_cross",
+     "handle": "ferris-cross",
+     "title": "Ferris Cross",
+     "fields": {
+      "description": "30 min from the yard",
+      "body": "<p>We have worked in Ferris Cross for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Ferris Cross gets the same fixed price before we start and the same twelve-month guarantee.</p>",
+      "map_embed_url": "",
+      "map_image": "as_map",
+      "map_image_alt": "Map of Ferris Cross",
+      "featured": false,
+      "order": 9
+     }
+    },
+    {
+     "id": "area_lowick",
+     "handle": "lowick",
+     "title": "Lowick",
+     "fields": {
+      "description": "Within 40 miles of Ashby",
+      "body": "<p>We have worked in Lowick for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Lowick gets the same fixed price before we start and the same twelve-month guarantee.</p>",
+      "map_embed_url": "",
+      "map_image": "as_map",
+      "map_image_alt": "Map of Lowick",
+      "featured": false,
+      "order": 10
+     }
+    }
+   ]
+  },
+  "offers": {
+   "name": "Offers",
+   "fields": [
+    {
+     "id": "amount",
+     "type": "text",
+     "label": "Amount ($50 OFF, FREE)"
+    },
+    {
+     "id": "summary",
+     "type": "text",
+     "label": "The job"
+    },
+    {
+     "id": "fine_print",
+     "type": "text",
+     "label": "Fine print"
+    },
+    {
+     "id": "expires",
+     "type": "date",
+     "label": "Expires"
+    },
+    {
+     "id": "service",
+     "type": "entry",
+     "label": "Service",
+     "content_type": "services"
+    },
+    {
+     "id": "link",
+     "type": "url",
+     "label": "Link (empty opens the estimate)"
+    },
+    {
+     "id": "featured",
+     "type": "checkbox",
+     "label": "Featured"
+    },
+    {
+     "id": "order",
+     "type": "number",
+     "label": "Position"
+    }
+   ],
+   "entries": [
+    {
+     "id": "offer_1",
+     "handle": "your-next-repair",
+     "title": "$50 OFF Your next repair",
+     "fields": {
+      "amount": "$50 OFF",
+      "summary": "Your next repair",
+      "fine_print": "One per household. Cannot be combined. Ends 31 Dec 2026.",
+      "link": "",
+      "featured": true,
+      "order": 1,
+      "expires": "2026-12-31"
+     }
+    },
+    {
+     "id": "offer_2",
+     "handle": "water-heater-flush",
+     "title": "FREE Water heater flush",
+     "fields": {
+      "amount": "FREE",
+      "summary": "Water heater flush",
+      "fine_print": "Tank heaters up to 75 gal. With any boiler service.",
+      "link": "",
+      "featured": true,
+      "order": 2
+     }
+    },
+    {
+     "id": "offer_3",
+     "handle": "boiler-service-this-month",
+     "title": "$149 Boiler service, this month",
+     "fields": {
+      "amount": "$149",
+      "summary": "Boiler service, this month",
+      "fine_print": "New customers. Book by 30 Nov 2026.",
+      "link": "",
+      "featured": false,
+      "order": 3,
+      "expires": "2026-11-30",
+      "service": "svc_boiler_service"
+     }
+    },
+    {
+     "id": "offer_4",
+     "handle": "landlord-certificates",
+     "title": "10% OFF Landlord certificates",
+     "fields": {
+      "amount": "10% OFF",
+      "summary": "Landlord certificates",
+      "fine_print": "Three or more certificates booked together.",
+      "link": "",
+      "featured": false,
+      "order": 4,
+      "service": "svc_gas_safety_certificate"
+     }
+    }
+   ]
+  },
+  "plans": {
+   "name": "Plans",
+   "fields": [
+    {
+     "id": "price",
+     "type": "number",
+     "label": "Price"
+    },
+    {
+     "id": "period",
+     "type": "select",
+     "label": "Per",
+     "options": [
+      "month",
+      "year",
+      "visit"
+     ]
+    },
+    {
+     "id": "summary",
+     "type": "text",
+     "label": "Summary"
+    },
+    {
+     "id": "includes",
+     "type": "textarea",
+     "label": "Includes (one per line)"
+    },
+    {
+     "id": "note",
+     "type": "text",
+     "label": "Note"
+    },
+    {
+     "id": "link",
+     "type": "url",
+     "label": "Link (empty opens the estimate)"
+    },
+    {
+     "id": "featured",
+     "type": "checkbox",
+     "label": "Featured"
+    },
+    {
+     "id": "order",
+     "type": "number",
+     "label": "Position"
+    }
+   ],
+   "entries": [
+    {
+     "id": "plan_home_care",
+     "handle": "home-care",
+     "title": "Home Care",
+     "fields": {
+      "price": 14,
+      "period": "month",
+      "summary": "Your boiler looked after, and you first in the queue.",
+      "includes": "Annual boiler service\n15% off repairs\nNo callout fee\nPriority booking",
+      "note": "Cancel any time",
+      "link": "",
+      "featured": true,
+      "order": 1
+     }
+    },
+    {
+     "id": "plan_landlord_cover",
+     "handle": "landlord-cover",
+     "title": "Landlord Cover",
+     "fields": {
+      "price": 29,
+      "period": "month",
+      "summary": "Certificates, servicing and tenant calls, handled.",
+      "includes": "Annual gas safety certificate\nAnnual boiler service\nTenant callouts handled\nReminders sent",
+      "note": "Per property",
+      "link": "",
+      "featured": false,
+      "order": 2
+     }
+    }
+   ]
+  },
+  "team": {
+   "name": "Team",
+   "fields": [
+    {
+     "id": "role",
+     "type": "text",
+     "label": "Role"
+    },
+    {
+     "id": "level",
+     "type": "text",
+     "label": "Level"
+    },
+    {
+     "id": "specialties",
+     "type": "text",
+     "label": "Specialties"
+    },
+    {
+     "id": "bio",
+     "type": "richtext",
+     "label": "Bio"
+    },
+    {
+     "id": "credentials",
+     "type": "textarea",
+     "label": "Credentials (one per line)"
+    },
+    {
+     "id": "image",
+     "type": "image",
+     "label": "Portrait (4:5)"
+    },
+    {
+     "id": "image_alt",
+     "type": "text",
+     "label": "Portrait alt text"
+    },
+    {
+     "id": "link",
+     "type": "url",
+     "label": "Link"
+    },
+    {
+     "id": "featured",
+     "type": "checkbox",
+     "label": "Featured"
+    },
+    {
+     "id": "order",
+     "type": "number",
+     "label": "Position"
+    }
+   ],
+   "entries": [
+    {
+     "id": "team_dan_hollis",
+     "handle": "dan-hollis",
+     "title": "Dan Hollis",
+     "fields": {
+      "role": "Owner, master plumber",
+      "bio": "<p>Dan has been with Hollis &amp; Sons for years and knows most of Ashby's boilers by sound.</p>",
+      "credentials": "Gas Safe 512345\nPlumbing licence PL-0417",
+      "image": "as_4x5_clay",
+      "image_alt": "Dan Hollis, owner, master plumber",
+      "featured": true,
+      "order": 1
+     }
+    },
+    {
+     "id": "team_ray_hollis",
+     "handle": "ray-hollis",
+     "title": "Ray Hollis",
+     "fields": {
+      "role": "Founder, semi-retired",
+      "bio": "<p>Ray has been with Hollis &amp; Sons for years and knows most of Ashby's boilers by sound.</p>",
+      "credentials": "",
+      "image": "as_4x5_sand",
+      "image_alt": "Ray Hollis, founder, semi-retired",
+      "featured": true,
+      "order": 2
+     }
+    },
+    {
+     "id": "team_priya_mistry",
+     "handle": "priya-mistry",
+     "title": "Priya Mistry",
+     "fields": {
+      "role": "Heating engineer",
+      "bio": "<p>Priya has been with Hollis &amp; Sons for years and knows most of Ashby's boilers by sound.</p>",
+      "credentials": "Gas Safe 518820",
+      "image": "as_4x5_sea",
+      "image_alt": "Priya Mistry, heating engineer",
+      "featured": true,
+      "order": 3
+     }
+    },
+    {
+     "id": "team_tom_okonkwo",
+     "handle": "tom-okonkwo",
+     "title": "Tom Okonkwo",
+     "fields": {
+      "role": "Apprentice",
+      "bio": "<p>Tom has been with Hollis &amp; Sons for years and knows most of Ashby's boilers by sound.</p>",
+      "credentials": "",
+      "image": "as_4x5_clay",
+      "image_alt": "Tom Okonkwo, apprentice",
+      "featured": true,
+      "order": 4
+     }
+    },
+    {
+     "id": "team_sarah_hollis",
+     "handle": "sarah-hollis",
+     "title": "Sarah Hollis",
+     "fields": {
+      "role": "Office manager",
+      "bio": "<p>Sarah has been with Hollis &amp; Sons for years and knows most of Ashby's boilers by sound.</p>",
+      "credentials": "",
+      "image": "as_4x5_sand",
+      "image_alt": "Sarah Hollis, office manager",
+      "featured": false,
+      "order": 5
+     }
+    }
+   ]
+  },
+  "testimonials": {
+   "name": "Testimonials",
+   "fields": [
+    {
+     "id": "quote",
+     "type": "textarea",
+     "label": "Quote"
+    },
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Name"
+    },
+    {
+     "id": "line",
+     "type": "text",
+     "label": "Line (town · job)"
+    },
+    {
+     "id": "stars",
+     "type": "number",
+     "label": "Stars (1–5)"
+    },
+    {
+     "id": "date",
+     "type": "date",
+     "label": "Date"
+    },
+    {
+     "id": "source",
+     "type": "text",
+     "label": "Source"
+    },
+    {
+     "id": "technician",
+     "type": "entry",
+     "label": "Technician",
+     "content_type": "team"
+    },
+    {
+     "id": "service",
+     "type": "entry",
+     "label": "Service",
+     "content_type": "services"
+    },
+    {
+     "id": "image",
+     "type": "image",
+     "label": "Photo (1:1)"
+    },
+    {
+     "id": "image_alt",
+     "type": "text",
+     "label": "Photo alt text"
+    },
+    {
+     "id": "featured",
+     "type": "checkbox",
+     "label": "Featured"
+    },
+    {
+     "id": "order",
+     "type": "number",
+     "label": "Position"
+    }
+   ],
+   "entries": [
+    {
+     "id": "rev_1",
+     "handle": "review-1",
+     "title": "Greg B.",
+     "fields": {
+      "quote": "Dan arrived on time, showed us what had failed and had the new boiler running by four. He even swept the basement.",
+      "name": "Greg B.",
+      "line": "Ashby · Boiler swap",
+      "stars": 5,
+      "date": "2026-10-02",
+      "source": "Google",
+      "service": "svc_boiler_replacement",
+      "featured": true,
+      "order": 1,
+      "technician": "team_dan_hollis"
+     }
+    },
+    {
+     "id": "rev_2",
+     "handle": "review-2",
+     "title": "Dana M.",
+     "fields": {
+      "quote": "Water through the ceiling at 11 at night. A real person answered and the van was outside in forty minutes.",
+      "name": "Dana M.",
+      "line": "Cedar Hill · Burst pipe",
+      "stars": 5,
+      "date": "2026-09-18",
+      "source": "Google",
+      "service": "svc_emergency_repairs",
+      "featured": true,
+      "order": 2,
+      "image": "as_1x1_sand",
+      "image_alt": "Dana M."
+     }
+    },
+    {
+     "id": "rev_3",
+     "handle": "review-3",
+     "title": "Luis P.",
+     "fields": {
+      "quote": "A clear quote, no upsell, and the invoice matched it to the dollar. We've booked the annual service.",
+      "name": "Luis P.",
+      "line": "Brookvale · Water heater",
+      "stars": 5,
+      "date": "2026-09-01",
+      "source": "Google",
+      "service": "svc_water_heaters",
+      "featured": true,
+      "order": 3,
+      "technician": "team_tom_okonkwo"
+     }
+    },
+    {
+     "id": "rev_4",
+     "handle": "review-4",
+     "title": "Sarah J.",
+     "fields": {
+      "quote": "They were here in forty minutes and the price was what they said on the phone.",
+      "name": "Sarah J.",
+      "line": "Ashby · Drain",
+      "stars": 5,
+      "date": "2026-08-21",
+      "source": "Google",
+      "service": "svc_drains_and_blockages",
+      "featured": true,
+      "order": 4
+     }
+    },
+    {
+     "id": "rev_5",
+     "handle": "review-5",
+     "title": "Omar K.",
+     "fields": {
+      "quote": "Priya found the fault two other firms missed.",
+      "name": "Omar K.",
+      "line": "Weald · Boiler repair",
+      "stars": 5,
+      "date": "2026-08-04",
+      "source": "Google",
+      "service": "svc_boiler_service",
+      "featured": true,
+      "order": 5,
+      "technician": "team_priya_mistry"
+     }
+    },
+    {
+     "id": "rev_6",
+     "handle": "review-6",
+     "title": "Ellen R.",
+     "fields": {
+      "quote": "Good work, a day later than promised.",
+      "name": "Ellen R.",
+      "line": "Marlow Green · Bathroom",
+      "stars": 4,
+      "date": "2026-07-15",
+      "source": "",
+      "service": "svc_bathroom_renovations",
+      "featured": true,
+      "order": 6
+     }
+    },
+    {
+     "id": "rev_7",
+     "handle": "review-7",
+     "title": "Hannah W.",
+     "fields": {
+      "quote": "The new bathroom is exactly the drawing, and the crew cleaned up every evening.",
+      "name": "Hannah W.",
+      "line": "Hatch End · Bathroom",
+      "stars": 5,
+      "date": "2026-06-30",
+      "source": "Google",
+      "service": "svc_bathroom_renovations",
+      "featured": true,
+      "order": 7,
+      "technician": "team_dan_hollis",
+      "image": "as_1x1_clay",
+      "image_alt": "Hannah W."
+     }
+    },
+    {
+     "id": "rev_8",
+     "handle": "review-8",
+     "title": "Marcus T.",
+     "fields": {
+      "quote": "Our certificates for four flats, done in one morning, reminders already set for next year.",
+      "name": "Marcus T.",
+      "line": "Kings Ferry · Gas certificates",
+      "stars": 5,
+      "date": "2026-06-02",
+      "source": "Google",
+      "service": "svc_gas_safety_certificate",
+      "featured": true,
+      "order": 8
+     }
+    },
+    {
+     "id": "rev_9",
+     "handle": "review-9",
+     "title": "Ivy L.",
+     "fields": {
+      "quote": "Warm floors at last. The quote was fair and the screed was down on the day they said.",
+      "name": "Ivy L.",
+      "line": "Oakridge · Underfloor heating",
+      "stars": 5,
+      "date": "2026-05-11",
+      "source": "",
+      "service": "svc_underfloor_heating",
+      "featured": false,
+      "order": 9,
+      "technician": "team_priya_mistry"
+     }
+    },
+    {
+     "id": "rev_10",
+     "handle": "review-10",
+     "title": "Peter D.",
+     "fields": {
+      "quote": "A little hard to book in spring, but the service itself was thorough and well explained.",
+      "name": "Peter D.",
+      "line": "Brimley · Boiler service",
+      "stars": 4,
+      "date": "2026-04-08",
+      "source": "",
+      "service": "svc_boiler_service",
+      "featured": false,
+      "order": 10
+     }
+    },
+    {
+     "id": "rev_11",
+     "handle": "review-11",
+     "title": "Rosa N.",
+     "fields": {
+      "quote": "Sunday morning, no hot water, and they had a part on the van. Kind and quick.",
+      "name": "Rosa N.",
+      "line": "Stanton · Water heater",
+      "stars": 5,
+      "date": "2026-03-14",
+      "source": "Google",
+      "service": "svc_water_heaters",
+      "featured": false,
+      "order": 11
+     }
+    },
+    {
+     "id": "rev_12",
+     "handle": "review-12",
+     "title": "George A.",
+     "fields": {
+      "quote": "Took longer than planned because of old pipework, but they kept us told at every step.",
+      "name": "George A.",
+      "line": "Lowick · Boiler replacement",
+      "stars": 4,
+      "date": "2026-02-20",
+      "source": "",
+      "service": "svc_boiler_replacement",
+      "featured": false,
+      "order": 12
+     }
+    }
+   ]
+  },
+  "locations": {
+   "name": "Locations",
+   "fields": [
+    {
+     "id": "address",
+     "type": "textarea",
+     "label": "Address"
+    },
+    {
+     "id": "hours",
+     "type": "textarea",
+     "label": "Hours (one line per day or range)"
+    },
+    {
+     "id": "phone",
+     "type": "text",
+     "label": "Phone"
+    },
+    {
+     "id": "email",
+     "type": "text",
+     "label": "Email"
+    },
+    {
+     "id": "map_url",
+     "type": "url",
+     "label": "Map link"
+    },
+    {
+     "id": "map_embed_url",
+     "type": "url",
+     "label": "Map embed link"
+    },
+    {
+     "id": "map_image",
+     "type": "image",
+     "label": "Map image"
+    },
+    {
+     "id": "map_image_alt",
+     "type": "text",
+     "label": "Map image alt text"
+    },
+    {
+     "id": "image",
+     "type": "image",
+     "label": "Image (3:2)"
+    },
+    {
+     "id": "image_alt",
+     "type": "text",
+     "label": "Image alt text"
+    },
+    {
+     "id": "description",
+     "type": "text",
+     "label": "Description"
+    },
+    {
+     "id": "note",
+     "type": "text",
+     "label": "Note"
+    },
+    {
+     "id": "order",
+     "type": "number",
+     "label": "Position"
+    }
+   ],
+   "entries": [
+    {
+     "id": "loc_mill_lane",
+     "handle": "mill-lane",
+     "title": "The yard",
+     "fields": {
+      "address": "3 Mill Lane\nAshby",
+      "hours": "Mon–Sat 7:00–18:00\nSun Emergency line",
+      "phone": "(802) 555-0164",
+      "email": "hello@hollisandsons.example",
+      "map_url": "https://maps.example/?q=3+Mill+Lane+Ashby",
+      "map_embed_url": "",
+      "map_image": "as_map",
+      "map_image_alt": "Map of 3 Mill Lane, Ashby",
+      "image": "as_3x2_sand",
+      "image_alt": "The Hollis & Sons yard on Mill Lane",
+      "description": "The yard and the office: vans, parts and the phone that rings day and night.",
+      "note": "Yard open for parts collection 7–4",
+      "order": 1
+     }
+    }
+   ]
+  },
+  "posts": {
+   "name": "Posts",
+   "fields": [
+    {
+     "id": "topic",
+     "type": "text",
+     "label": "Topic"
+    },
+    {
+     "id": "date",
+     "type": "date",
+     "label": "Date"
+    },
+    {
+     "id": "author",
+     "type": "text",
+     "label": "Author"
+    },
+    {
+     "id": "standfirst",
+     "type": "text",
+     "label": "Standfirst"
+    },
+    {
+     "id": "image",
+     "type": "image",
+     "label": "Image (3:2)"
+    },
+    {
+     "id": "image_alt",
+     "type": "text",
+     "label": "Image alt text"
+    },
+    {
+     "id": "body",
+     "type": "richtext",
+     "label": "Body"
+    }
+   ],
+   "entries": [
+    {
+     "id": "post_1",
+     "handle": "five-minutes-that-save-a-frozen-pipe",
+     "title": "Five minutes that save a frozen pipe",
+     "fields": {
+      "topic": "Winter",
+      "date": "2026-10-30",
+      "author": "Dan Hollis",
+      "standfirst": "Where the stopcock is, which pipes freeze first, and what to do the moment one bursts.",
+      "image": "as_3x2_clay",
+      "image_alt": "Five minutes that save a frozen pipe",
+      "body": "<p>Where the stopcock is, which pipes freeze first, and what to do the moment one bursts.</p><h2>Start here</h2><p>Most problems give a warning before they get expensive. Knowing what to look for, and who to call, is most of the job.</p><h2>Call us</h2><p>If you are not sure, ring the yard. A real person answers, day or night.</p>"
+     }
+    },
+    {
+     "id": "post_2",
+     "handle": "is-it-time-to-replace-your-boiler",
+     "title": "Is it time to replace your boiler?",
+     "fields": {
+      "topic": "Heating",
+      "date": "2026-10-08",
+      "author": "Dan Hollis",
+      "standfirst": "Age, repairs and the bill: three ways to tell, and when a service is enough.",
+      "image": "as_3x2_sand",
+      "image_alt": "Is it time to replace your boiler?",
+      "body": "<p>Age, repairs and the bill: three ways to tell, and when a service is enough.</p><h2>Start here</h2><p>Most problems give a warning before they get expensive. Knowing what to look for, and who to call, is most of the job.</p><h2>Call us</h2><p>If you are not sure, ring the yard. A real person answers, day or night.</p>"
+     }
+    },
+    {
+     "id": "post_3",
+     "handle": "what-a-gas-safety-certificate-covers",
+     "title": "What a gas safety certificate covers",
+     "fields": {
+      "topic": "Landlords",
+      "date": "2026-09-12",
+      "author": "Dan Hollis",
+      "standfirst": "Every appliance, the flue and the paperwork: what we check and how long it takes.",
+      "image": "as_3x2_sea",
+      "image_alt": "What a gas safety certificate covers",
+      "body": "<p>Every appliance, the flue and the paperwork: what we check and how long it takes.</p><h2>Start here</h2><p>Most problems give a warning before they get expensive. Knowing what to look for, and who to call, is most of the job.</p><h2>Call us</h2><p>If you are not sure, ring the yard. A real person answers, day or night.</p>"
+     }
+    },
+    {
+     "id": "post_4",
+     "handle": "planning-a-bathroom-without-surprises",
+     "title": "Planning a bathroom without surprises",
+     "fields": {
+      "topic": "Bathrooms",
+      "date": "2026-08-25",
+      "author": "Dan Hollis",
+      "standfirst": "The order of work, the decisions to make early, and what a fixed quote should include.",
+      "image": "as_3x2_clay",
+      "image_alt": "Planning a bathroom without surprises",
+      "body": "<p>The order of work, the decisions to make early, and what a fixed quote should include.</p><h2>Start here</h2><p>Most problems give a warning before they get expensive. Knowing what to look for, and who to call, is most of the job.</p><h2>Call us</h2><p>If you are not sure, ring the yard. A real person answers, day or night.</p>"
+     }
+    }
+   ]
+  }
+ },
+ "pages": {
+  "/": {
+   "id": "pg_home",
+   "template": "home",
+   "title": "Hollis & Sons",
+   "seo": {
+    "description": "Plumbing and heating in Ashby and ten towns around it, since 1986. A licensed plumber at your door, a fixed price before we start."
+   }
+  },
+  "/services": {
+   "id": "pg_services",
+   "template": "page.services",
+   "title": "Services"
+  },
+  "/work": {
+   "id": "pg_work",
+   "template": "page.work",
+   "title": "Our work"
+  },
+  "/areas": {
+   "id": "pg_areas",
+   "template": "page.areas",
+   "title": "Where we work"
+  },
+  "/reviews": {
+   "id": "pg_reviews",
+   "template": "page.reviews",
+   "title": "Reviews"
+  },
+  "/specials": {
+   "id": "pg_specials",
+   "template": "page.specials",
+   "title": "Specials"
+  },
+  "/about": {
+   "id": "pg_about",
+   "template": "page.about",
+   "title": "About"
+  },
+  "/estimate": {
+   "id": "pg_estimate",
+   "template": "page.estimate",
+   "title": "Get a free estimate"
+  },
+  "/contact": {
+   "id": "pg_contact",
+   "template": "page.contact",
+   "title": "Contact"
+  },
+  "/careers": {
+   "id": "pg_careers",
+   "template": "page.careers",
+   "title": "Join the crew"
+  },
+  "/journal": {
+   "id": "pg_journal",
+   "template": "page.journal",
+   "title": "Journal"
+  },
+  "/privacy": {
+   "id": "pg_privacy",
+   "template": "page",
+   "title": "Privacy"
+  },
+  "/terms": {
+   "id": "pg_terms",
+   "template": "page",
+   "title": "Terms"
+  },
+  "/services/emergency-repairs": {
+   "id": "pg_svc_emergency_repairs",
+   "template": "service",
+   "title": "Emergency repairs",
+   "params": {
+    "service": "emergency-repairs"
+   },
+   "entry": {
+    "id": "svc_emergency_repairs",
+    "handle": "emergency-repairs",
+    "title": "Emergency repairs",
+    "fields": {
+     "summary": "Burst pipes, leaks and no-heat calls, day or night",
+     "description": "<p>Burst pipes, leaks and no-heat calls, day or night. A licensed Hollis &amp; Sons technician does the work, and the price is agreed before we start.</p><p>We tidy up after ourselves, explain what we found, and guarantee the job for twelve months, parts and labour.</p>",
+     "price_from": false,
+     "price_note": "Day or night",
+     "includes": "A real person answers, day or night\nA van on its way within the hour\nWater and gas made safe first\nA fixed price before the repair",
+     "icon": "wrench",
+     "image": "as_1x1_clay",
+     "image_alt": "Emergency repairs by Hollis & Sons",
+     "featured": true,
+     "tag": "Emergency",
+     "order": 1
+    }
+   }
+  },
+  "/services/boiler-service": {
+   "id": "pg_svc_boiler_service",
+   "template": "service",
+   "title": "Boiler service",
+   "params": {
+    "service": "boiler-service"
+   },
+   "entry": {
+    "id": "svc_boiler_service",
+    "handle": "boiler-service",
+    "title": "Boiler service",
+    "fields": {
+     "summary": "A full annual service with a written report",
+     "description": "<p>A full annual service with a written report. A licensed Hollis &amp; Sons technician does the work, and the price is agreed before we start.</p><p>We tidy up after ourselves, explain what we found, and guarantee the job for twelve months, parts and labour.</p>",
+     "price": 149,
+     "price_from": false,
+     "price_note": "",
+     "includes": "Flue and combustion check\nPressure, valves and seals tested\nBurner and heat exchanger cleaned\nA written report for your records",
+     "icon": "flame",
+     "image": "as_1x1_sand",
+     "image_alt": "Boiler service by Hollis & Sons",
+     "featured": true,
+     "tag": "",
+     "order": 2
+    }
+   }
+  },
+  "/services/boiler-replacement": {
+   "id": "pg_svc_boiler_replacement",
+   "template": "service",
+   "title": "Boiler replacement",
+   "params": {
+    "service": "boiler-replacement"
+   },
+   "entry": {
+    "id": "svc_boiler_replacement",
+    "handle": "boiler-replacement",
+    "title": "Boiler replacement",
+    "fields": {
+     "summary": "A new boiler sized to your home, fitted in a day",
+     "description": "<p>A new boiler sized to your home, fitted in a day. A licensed Hollis &amp; Sons technician does the work, and the price is agreed before we start.</p><p>We tidy up after ourselves, explain what we found, and guarantee the job for twelve months, parts and labour.</p>",
+     "price": 3200,
+     "price_from": true,
+     "price_note": "after a free survey",
+     "includes": "A free survey and a fixed quote\nThe old boiler removed and recycled\nFitted and commissioned in a day\nUp to ten years' manufacturer warranty",
+     "icon": "thermometer",
+     "image": "as_1x1_sea",
+     "image_alt": "Boiler replacement by Hollis & Sons",
+     "featured": true,
+     "tag": "",
+     "order": 3
+    }
+   }
+  },
+  "/services/bathroom-renovations": {
+   "id": "pg_svc_bathroom_renovations",
+   "template": "service",
+   "title": "Bathroom renovations",
+   "params": {
+    "service": "bathroom-renovations"
+   },
+   "entry": {
+    "id": "svc_bathroom_renovations",
+    "handle": "bathroom-renovations",
+    "title": "Bathroom renovations",
+    "fields": {
+     "summary": "Design, plumbing, tiling and fitting, one crew",
+     "description": "<p>Design, plumbing, tiling and fitting, one crew. A licensed Hollis &amp; Sons technician does the work, and the price is agreed before we start.</p><p>We tidy up after ourselves, explain what we found, and guarantee the job for twelve months, parts and labour.</p>",
+     "price": 8500,
+     "price_from": true,
+     "price_note": "",
+     "includes": "A design visit and a fixed quote\nStrip-out and waste removal\nPlumbing, tiling and fitting by one crew\nA clean handover, snag list signed off",
+     "icon": "bath",
+     "image": "as_1x1_clay",
+     "image_alt": "Bathroom renovations by Hollis & Sons",
+     "featured": true,
+     "tag": "",
+     "order": 4
+    }
+   }
+  },
+  "/services/underfloor-heating": {
+   "id": "pg_svc_underfloor_heating",
+   "template": "service",
+   "title": "Underfloor heating",
+   "params": {
+    "service": "underfloor-heating"
+   },
+   "entry": {
+    "id": "svc_underfloor_heating",
+    "handle": "underfloor-heating",
+    "title": "Underfloor heating",
+    "fields": {
+     "summary": "Warm floors for new builds and renovations",
+     "description": "<p>Warm floors for new builds and renovations. A licensed Hollis &amp; Sons technician does the work, and the price is agreed before we start.</p><p>We tidy up after ourselves, explain what we found, and guarantee the job for twelve months, parts and labour.</p>",
+     "price": 1900,
+     "price_from": true,
+     "price_note": "per room",
+     "includes": "Wet or electric systems\nRoom-by-room thermostats\nLaid before your floor goes down\nCommissioned and balanced",
+     "icon": "house",
+     "image": "as_1x1_sand",
+     "image_alt": "Underfloor heating by Hollis & Sons",
+     "featured": false,
+     "tag": "",
+     "order": 5
+    }
+   }
+  },
+  "/services/water-heaters": {
+   "id": "pg_svc_water_heaters",
+   "template": "service",
+   "title": "Water heaters",
+   "params": {
+    "service": "water-heaters"
+   },
+   "entry": {
+    "id": "svc_water_heaters",
+    "handle": "water-heaters",
+    "title": "Water heaters",
+    "fields": {
+     "summary": "Tank and tankless, repaired or replaced",
+     "description": "<p>Tank and tankless, repaired or replaced. A licensed Hollis &amp; Sons technician does the work, and the price is agreed before we start.</p><p>We tidy up after ourselves, explain what we found, and guarantee the job for twelve months, parts and labour.</p>",
+     "price": 1250,
+     "price_from": true,
+     "price_note": "",
+     "includes": "Tank and tankless models\nSame-week replacement\nOld unit removed\nFlushed and tested on fitting",
+     "icon": "water-heater",
+     "image": "as_1x1_sea",
+     "image_alt": "Water heaters by Hollis & Sons",
+     "featured": false,
+     "tag": "",
+     "order": 6
+    }
+   }
+  },
+  "/services/drains-and-blockages": {
+   "id": "pg_svc_drains_and_blockages",
+   "template": "service",
+   "title": "Drains and blockages",
+   "params": {
+    "service": "drains-and-blockages"
+   },
+   "entry": {
+    "id": "svc_drains_and_blockages",
+    "handle": "drains-and-blockages",
+    "title": "Drains and blockages",
+    "fields": {
+     "summary": "Cleared the same day, with a camera check",
+     "description": "<p>A slow sink or a backed-up drain rarely fixes itself. We clear it the same day and show you what caused it.</p><p>Every visit starts with a camera inspection, so we see the blockage before we touch it. Most drains clear with a jet or an auger in under an hour.</p><p>If the pipe is cracked or sagging, we show you the footage and give you a fixed price for the repair. You decide, and the look costs nothing extra.</p>",
+     "price": 189,
+     "price_from": false,
+     "price_note": "same-day, with a camera check",
+     "includes": "Camera inspection\nClearing by jet or auger\nAdvice on the cause\nWritten report\n12-month guarantee",
+     "icon": "droplets",
+     "image": "as_1x1_clay",
+     "image_alt": "Drains and blockages by Hollis & Sons",
+     "featured": true,
+     "tag": "Most booked",
+     "order": 7
+    }
+   }
+  },
+  "/services/gas-safety-certificate": {
+   "id": "pg_svc_gas_safety_certificate",
+   "template": "service",
+   "title": "Gas safety certificate",
+   "params": {
+    "service": "gas-safety-certificate"
+   },
+   "entry": {
+    "id": "svc_gas_safety_certificate",
+    "handle": "gas-safety-certificate",
+    "title": "Gas safety certificate",
+    "fields": {
+     "summary": "For landlords, with reminders",
+     "description": "<p>For landlords, with reminders. A licensed Hollis &amp; Sons technician does the work, and the price is agreed before we start.</p><p>We tidy up after ourselves, explain what we found, and guarantee the job for twelve months, parts and labour.</p>",
+     "price": 95,
+     "price_from": false,
+     "price_note": "",
+     "includes": "Every gas appliance checked\nThe certificate the same day\nA reminder before it runs out\nTenant visits arranged for you",
+     "icon": "shield-check",
+     "image": "as_1x1_sand",
+     "image_alt": "Gas safety certificate by Hollis & Sons",
+     "featured": false,
+     "tag": "Landlords",
+     "order": 8
+    }
+   }
+  },
+  "/work/clay-lane-bathroom": {
+   "id": "pg_proj_clay_lane_bathroom",
+   "template": "project",
+   "title": "Clay Lane bathroom",
+   "params": {
+    "project": "clay-lane-bathroom"
+   },
+   "entry": {
+    "id": "proj_clay_lane_bathroom",
+    "handle": "clay-lane-bathroom",
+    "title": "Clay Lane bathroom",
+    "fields": {
+     "area": "area_ashby",
+     "date": "2026-10-14",
+     "summary": "A full refit in Ashby, done to a fixed price.",
+     "description": "<p>The brief, the fixed quote and the finished job in Ashby. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+     "image": "as_3x2_clay",
+     "image_alt": "Clay Lane bathroom, finished",
+     "photos": "job-photos",
+     "featured": true,
+     "order": 1,
+     "service": "svc_bathroom_renovations",
+     "before": "as_3x2_sand",
+     "before_alt": "Clay Lane bathroom before",
+     "after": "as_3x2_clay",
+     "after_alt": "Clay Lane bathroom after"
+    }
+   }
+  },
+  "/work/weald-farmhouse-boiler": {
+   "id": "pg_proj_weald_farmhouse_boiler",
+   "template": "project",
+   "title": "Weald farmhouse boiler",
+   "params": {
+    "project": "weald-farmhouse-boiler"
+   },
+   "entry": {
+    "id": "proj_weald_farmhouse_boiler",
+    "handle": "weald-farmhouse-boiler",
+    "title": "Weald farmhouse boiler",
+    "fields": {
+     "area": "area_weald",
+     "date": "2026-09-22",
+     "summary": "A clean install in Weald, done to a fixed price.",
+     "description": "<p>The brief, the fixed quote and the finished job in Weald. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+     "image": "as_3x2_sand",
+     "image_alt": "Weald farmhouse boiler, finished",
+     "photos": "job-photos",
+     "featured": true,
+     "order": 2,
+     "service": "svc_boiler_replacement"
+    }
+   }
+  },
+  "/work/the-old-bakery-kitchen": {
+   "id": "pg_proj_the_old_bakery_kitchen",
+   "template": "project",
+   "title": "The Old Bakery kitchen",
+   "params": {
+    "project": "the-old-bakery-kitchen"
+   },
+   "entry": {
+    "id": "proj_the_old_bakery_kitchen",
+    "handle": "the-old-bakery-kitchen",
+    "title": "The Old Bakery kitchen",
+    "fields": {
+     "area": "area_marlow_green",
+     "date": "2026-08-18",
+     "summary": "A clean install in Marlow Green, done to a fixed price.",
+     "description": "<p>The brief, the fixed quote and the finished job in Marlow Green. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+     "image": "as_3x2_sea",
+     "image_alt": "The Old Bakery kitchen, finished",
+     "photos": "job-photos",
+     "featured": true,
+     "order": 3
+    }
+   }
+  },
+  "/work/hatch-end-wet-room": {
+   "id": "pg_proj_hatch_end_wet_room",
+   "template": "project",
+   "title": "Hatch End wet room",
+   "params": {
+    "project": "hatch-end-wet-room"
+   },
+   "entry": {
+    "id": "proj_hatch_end_wet_room",
+    "handle": "hatch-end-wet-room",
+    "title": "Hatch End wet room",
+    "fields": {
+     "area": "area_hatch_end",
+     "date": "2026-07-09",
+     "summary": "A full refit in Hatch End, done to a fixed price.",
+     "description": "<p>The brief, the fixed quote and the finished job in Hatch End. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+     "image": "as_3x2_clay",
+     "image_alt": "Hatch End wet room, finished",
+     "photos": "job-photos",
+     "featured": true,
+     "order": 4,
+     "service": "svc_bathroom_renovations",
+     "before": "as_3x2_sand",
+     "before_alt": "Hatch End wet room before",
+     "after": "as_3x2_clay",
+     "after_alt": "Hatch End wet room after"
+    }
+   }
+  },
+  "/work/kings-ferry-underfloor": {
+   "id": "pg_proj_kings_ferry_underfloor",
+   "template": "project",
+   "title": "Kings Ferry underfloor",
+   "params": {
+    "project": "kings-ferry-underfloor"
+   },
+   "entry": {
+    "id": "proj_kings_ferry_underfloor",
+    "handle": "kings-ferry-underfloor",
+    "title": "Kings Ferry underfloor",
+    "fields": {
+     "area": "area_kings_ferry",
+     "date": "2026-06-12",
+     "summary": "A clean install in Kings Ferry, done to a fixed price.",
+     "description": "<p>The brief, the fixed quote and the finished job in Kings Ferry. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+     "image": "as_3x2_sand",
+     "image_alt": "Kings Ferry underfloor, finished",
+     "photos": "job-photos",
+     "featured": true,
+     "order": 5,
+     "service": "svc_underfloor_heating"
+    }
+   }
+  },
+  "/work/oakridge-en-suite": {
+   "id": "pg_proj_oakridge_en_suite",
+   "template": "project",
+   "title": "Oakridge en-suite",
+   "params": {
+    "project": "oakridge-en-suite"
+   },
+   "entry": {
+    "id": "proj_oakridge_en_suite",
+    "handle": "oakridge-en-suite",
+    "title": "Oakridge en-suite",
+    "fields": {
+     "area": "area_oakridge",
+     "date": "2026-05-20",
+     "summary": "A full refit in Oakridge, done to a fixed price.",
+     "description": "<p>The brief, the fixed quote and the finished job in Oakridge. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+     "image": "as_3x2_sea",
+     "image_alt": "Oakridge en-suite, finished",
+     "photos": "job-photos",
+     "featured": true,
+     "order": 6,
+     "service": "svc_bathroom_renovations",
+     "before": "as_3x2_clay",
+     "before_alt": "Oakridge en-suite before",
+     "after": "as_3x2_sea",
+     "after_alt": "Oakridge en-suite after"
+    }
+   }
+  },
+  "/work/brimley-family-bathroom": {
+   "id": "pg_proj_brimley_family_bathroom",
+   "template": "project",
+   "title": "Brimley family bathroom",
+   "params": {
+    "project": "brimley-family-bathroom"
+   },
+   "entry": {
+    "id": "proj_brimley_family_bathroom",
+    "handle": "brimley-family-bathroom",
+    "title": "Brimley family bathroom",
+    "fields": {
+     "area": "area_brimley",
+     "date": "2026-03-11",
+     "summary": "A full refit in Brimley, done to a fixed price.",
+     "description": "<p>The brief, the fixed quote and the finished job in Brimley. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+     "image": "as_3x2_clay",
+     "image_alt": "Brimley family bathroom, finished",
+     "photos": "job-photos",
+     "featured": false,
+     "order": 7,
+     "service": "svc_bathroom_renovations",
+     "before": "as_3x2_sand",
+     "before_alt": "Brimley family bathroom before",
+     "after": "as_3x2_clay",
+     "after_alt": "Brimley family bathroom after"
+    }
+   }
+  },
+  "/work/stanton-system-boiler": {
+   "id": "pg_proj_stanton_system_boiler",
+   "template": "project",
+   "title": "Stanton system boiler",
+   "params": {
+    "project": "stanton-system-boiler"
+   },
+   "entry": {
+    "id": "proj_stanton_system_boiler",
+    "handle": "stanton-system-boiler",
+    "title": "Stanton system boiler",
+    "fields": {
+     "area": "area_stanton",
+     "date": "2026-01-28",
+     "summary": "A clean install in Stanton, done to a fixed price.",
+     "description": "<p>The brief, the fixed quote and the finished job in Stanton. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+     "image": "as_3x2_sand",
+     "image_alt": "Stanton system boiler, finished",
+     "photos": "job-photos",
+     "featured": false,
+     "order": 8,
+     "service": "svc_boiler_replacement"
+    }
+   }
+  },
+  "/work/ferris-cross-shower-room": {
+   "id": "pg_proj_ferris_cross_shower_room",
+   "template": "project",
+   "title": "Ferris Cross shower room",
+   "params": {
+    "project": "ferris-cross-shower-room"
+   },
+   "entry": {
+    "id": "proj_ferris_cross_shower_room",
+    "handle": "ferris-cross-shower-room",
+    "title": "Ferris Cross shower room",
+    "fields": {
+     "area": "area_ferris_cross",
+     "date": "2025-12-03",
+     "summary": "A full refit in Ferris Cross, done to a fixed price.",
+     "description": "<p>The brief, the fixed quote and the finished job in Ferris Cross. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+     "image": "as_3x2_sea",
+     "image_alt": "Ferris Cross shower room, finished",
+     "photos": "job-photos",
+     "featured": false,
+     "order": 9,
+     "service": "svc_bathroom_renovations",
+     "before": "as_3x2_clay",
+     "before_alt": "Ferris Cross shower room before",
+     "after": "as_3x2_sea",
+     "after_alt": "Ferris Cross shower room after"
+    }
+   }
+  },
+  "/work/lowick-extension-floor": {
+   "id": "pg_proj_lowick_extension_floor",
+   "template": "project",
+   "title": "Lowick extension floor",
+   "params": {
+    "project": "lowick-extension-floor"
+   },
+   "entry": {
+    "id": "proj_lowick_extension_floor",
+    "handle": "lowick-extension-floor",
+    "title": "Lowick extension floor",
+    "fields": {
+     "area": "area_lowick",
+     "date": "2025-11-17",
+     "summary": "A clean install in Lowick, done to a fixed price.",
+     "description": "<p>The brief, the fixed quote and the finished job in Lowick. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+     "image": "as_3x2_clay",
+     "image_alt": "Lowick extension floor, finished",
+     "photos": "job-photos",
+     "featured": false,
+     "order": 10,
+     "service": "svc_underfloor_heating"
+    }
+   }
+  },
+  "/work/ashby-combi-swap": {
+   "id": "pg_proj_ashby_combi_swap",
+   "template": "project",
+   "title": "Ashby combi swap",
+   "params": {
+    "project": "ashby-combi-swap"
+   },
+   "entry": {
+    "id": "proj_ashby_combi_swap",
+    "handle": "ashby-combi-swap",
+    "title": "Ashby combi swap",
+    "fields": {
+     "area": "area_ashby",
+     "date": "2025-10-06",
+     "summary": "A clean install in Ashby, done to a fixed price.",
+     "description": "<p>The brief, the fixed quote and the finished job in Ashby. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+     "image": "as_3x2_sand",
+     "image_alt": "Ashby combi swap, finished",
+     "photos": "job-photos",
+     "featured": false,
+     "order": 11,
+     "service": "svc_boiler_replacement"
+    }
+   }
+  },
+  "/work/weald-cottage-bathroom": {
+   "id": "pg_proj_weald_cottage_bathroom",
+   "template": "project",
+   "title": "Weald cottage bathroom",
+   "params": {
+    "project": "weald-cottage-bathroom"
+   },
+   "entry": {
+    "id": "proj_weald_cottage_bathroom",
+    "handle": "weald-cottage-bathroom",
+    "title": "Weald cottage bathroom",
+    "fields": {
+     "area": "area_weald",
+     "date": "2025-09-15",
+     "summary": "A full refit in Weald, done to a fixed price.",
+     "description": "<p>The brief, the fixed quote and the finished job in Weald. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+     "image": "as_3x2_sea",
+     "image_alt": "Weald cottage bathroom, finished",
+     "photos": "job-photos",
+     "featured": false,
+     "order": 12,
+     "service": "svc_bathroom_renovations",
+     "before": "as_3x2_clay",
+     "before_alt": "Weald cottage bathroom before",
+     "after": "as_3x2_sea",
+     "after_alt": "Weald cottage bathroom after"
+    }
+   }
+  },
+  "/areas/ashby": {
+   "id": "pg_area_ashby",
+   "template": "area",
+   "title": "Ashby",
+   "params": {
+    "area": "ashby"
+   },
+   "entry": {
+    "id": "area_ashby",
+    "handle": "ashby",
+    "title": "Ashby",
+    "fields": {
+     "description": "Our home town, same-day callouts",
+     "body": "<p>We have worked in Ashby for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Ashby gets the same fixed price before we start and the same twelve-month guarantee.</p>",
+     "map_embed_url": "",
+     "map_image": "as_map",
+     "map_image_alt": "Map of Ashby",
+     "featured": true,
+     "order": 1
+    }
+   }
+  },
+  "/areas/weald": {
+   "id": "pg_area_weald",
+   "template": "area",
+   "title": "Weald",
+   "params": {
+    "area": "weald"
+   },
+   "entry": {
+    "id": "area_weald",
+    "handle": "weald",
+    "title": "Weald",
+    "fields": {
+     "description": "12 min from the yard",
+     "body": "<p>We have worked in Weald for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Weald gets the same fixed price before we start and the same twelve-month guarantee.</p>",
+     "map_embed_url": "",
+     "map_image": "as_map",
+     "map_image_alt": "Map of Weald",
+     "featured": true,
+     "order": 2
+    }
+   }
+  },
+  "/areas/marlow-green": {
+   "id": "pg_area_marlow_green",
+   "template": "area",
+   "title": "Marlow Green",
+   "params": {
+    "area": "marlow-green"
+   },
+   "entry": {
+    "id": "area_marlow_green",
+    "handle": "marlow-green",
+    "title": "Marlow Green",
+    "fields": {
+     "description": "Boilers and bathrooms since 1990",
+     "body": "<p>We have worked in Marlow Green for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Marlow Green gets the same fixed price before we start and the same twelve-month guarantee.</p>",
+     "map_embed_url": "",
+     "map_image": "as_map",
+     "map_image_alt": "Map of Marlow Green",
+     "featured": true,
+     "order": 3
+    }
+   }
+  },
+  "/areas/hatch-end": {
+   "id": "pg_area_hatch_end",
+   "template": "area",
+   "title": "Hatch End",
+   "params": {
+    "area": "hatch-end"
+   },
+   "entry": {
+    "id": "area_hatch_end",
+    "handle": "hatch-end",
+    "title": "Hatch End",
+    "fields": {
+     "description": "Same-day callouts",
+     "body": "<p>We have worked in Hatch End for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Hatch End gets the same fixed price before we start and the same twelve-month guarantee.</p>",
+     "map_embed_url": "",
+     "map_image": "as_map",
+     "map_image_alt": "Map of Hatch End",
+     "featured": true,
+     "order": 4
+    }
+   }
+  },
+  "/areas/kings-ferry": {
+   "id": "pg_area_kings_ferry",
+   "template": "area",
+   "title": "Kings Ferry",
+   "params": {
+    "area": "kings-ferry"
+   },
+   "entry": {
+    "id": "area_kings_ferry",
+    "handle": "kings-ferry",
+    "title": "Kings Ferry",
+    "fields": {
+     "description": "20 min from the yard",
+     "body": "<p>We have worked in Kings Ferry for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Kings Ferry gets the same fixed price before we start and the same twelve-month guarantee.</p>",
+     "map_embed_url": "",
+     "map_image": "as_map",
+     "map_image_alt": "Map of Kings Ferry",
+     "featured": false,
+     "order": 5
+    }
+   }
+  },
+  "/areas/oakridge": {
+   "id": "pg_area_oakridge",
+   "template": "area",
+   "title": "Oakridge",
+   "params": {
+    "area": "oakridge"
+   },
+   "entry": {
+    "id": "area_oakridge",
+    "handle": "oakridge",
+    "title": "Oakridge",
+    "fields": {
+     "description": "Same-day callouts most weekdays",
+     "body": "<p>We have worked in Oakridge for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Oakridge gets the same fixed price before we start and the same twelve-month guarantee.</p>",
+     "map_embed_url": "",
+     "map_image": "as_map",
+     "map_image_alt": "Map of Oakridge",
+     "featured": false,
+     "order": 6
+    }
+   }
+  },
+  "/areas/brimley": {
+   "id": "pg_area_brimley",
+   "template": "area",
+   "title": "Brimley",
+   "params": {
+    "area": "brimley"
+   },
+   "entry": {
+    "id": "area_brimley",
+    "handle": "brimley",
+    "title": "Brimley",
+    "fields": {
+     "description": "25 min from the yard",
+     "body": "<p>We have worked in Brimley for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Brimley gets the same fixed price before we start and the same twelve-month guarantee.</p>",
+     "map_embed_url": "",
+     "map_image": "as_map",
+     "map_image_alt": "Map of Brimley",
+     "featured": false,
+     "order": 7
+    }
+   }
+  },
+  "/areas/stanton": {
+   "id": "pg_area_stanton",
+   "template": "area",
+   "title": "Stanton",
+   "params": {
+    "area": "stanton"
+   },
+   "entry": {
+    "id": "area_stanton",
+    "handle": "stanton",
+    "title": "Stanton",
+    "fields": {
+     "description": "Next-day visits",
+     "body": "<p>We have worked in Stanton for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Stanton gets the same fixed price before we start and the same twelve-month guarantee.</p>",
+     "map_embed_url": "",
+     "map_image": "as_map",
+     "map_image_alt": "Map of Stanton",
+     "featured": false,
+     "order": 8
+    }
+   }
+  },
+  "/areas/ferris-cross": {
+   "id": "pg_area_ferris_cross",
+   "template": "area",
+   "title": "Ferris Cross",
+   "params": {
+    "area": "ferris-cross"
+   },
+   "entry": {
+    "id": "area_ferris_cross",
+    "handle": "ferris-cross",
+    "title": "Ferris Cross",
+    "fields": {
+     "description": "30 min from the yard",
+     "body": "<p>We have worked in Ferris Cross for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Ferris Cross gets the same fixed price before we start and the same twelve-month guarantee.</p>",
+     "map_embed_url": "",
+     "map_image": "as_map",
+     "map_image_alt": "Map of Ferris Cross",
+     "featured": false,
+     "order": 9
+    }
+   }
+  },
+  "/areas/lowick": {
+   "id": "pg_area_lowick",
+   "template": "area",
+   "title": "Lowick",
+   "params": {
+    "area": "lowick"
+   },
+   "entry": {
+    "id": "area_lowick",
+    "handle": "lowick",
+    "title": "Lowick",
+    "fields": {
+     "description": "Within 40 miles of Ashby",
+     "body": "<p>We have worked in Lowick for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Lowick gets the same fixed price before we start and the same twelve-month guarantee.</p>",
+     "map_embed_url": "",
+     "map_image": "as_map",
+     "map_image_alt": "Map of Lowick",
+     "featured": false,
+     "order": 10
+    }
+   }
+  },
+  "/journal/five-minutes-that-save-a-frozen-pipe": {
+   "id": "pg_post_1",
+   "template": "post",
+   "title": "Five minutes that save a frozen pipe",
+   "params": {
+    "post": "five-minutes-that-save-a-frozen-pipe"
+   },
+   "entry": {
+    "id": "post_1",
+    "handle": "five-minutes-that-save-a-frozen-pipe",
+    "title": "Five minutes that save a frozen pipe",
+    "fields": {
+     "topic": "Winter",
+     "date": "2026-10-30",
+     "author": "Dan Hollis",
+     "standfirst": "Where the stopcock is, which pipes freeze first, and what to do the moment one bursts.",
+     "image": "as_3x2_clay",
+     "image_alt": "Five minutes that save a frozen pipe",
+     "body": "<p>Where the stopcock is, which pipes freeze first, and what to do the moment one bursts.</p><h2>Start here</h2><p>Most problems give a warning before they get expensive. Knowing what to look for, and who to call, is most of the job.</p><h2>Call us</h2><p>If you are not sure, ring the yard. A real person answers, day or night.</p>"
+    }
+   }
+  },
+  "/journal/is-it-time-to-replace-your-boiler": {
+   "id": "pg_post_2",
+   "template": "post",
+   "title": "Is it time to replace your boiler?",
+   "params": {
+    "post": "is-it-time-to-replace-your-boiler"
+   },
+   "entry": {
+    "id": "post_2",
+    "handle": "is-it-time-to-replace-your-boiler",
+    "title": "Is it time to replace your boiler?",
+    "fields": {
+     "topic": "Heating",
+     "date": "2026-10-08",
+     "author": "Dan Hollis",
+     "standfirst": "Age, repairs and the bill: three ways to tell, and when a service is enough.",
+     "image": "as_3x2_sand",
+     "image_alt": "Is it time to replace your boiler?",
+     "body": "<p>Age, repairs and the bill: three ways to tell, and when a service is enough.</p><h2>Start here</h2><p>Most problems give a warning before they get expensive. Knowing what to look for, and who to call, is most of the job.</p><h2>Call us</h2><p>If you are not sure, ring the yard. A real person answers, day or night.</p>"
+    }
+   }
+  },
+  "/journal/what-a-gas-safety-certificate-covers": {
+   "id": "pg_post_3",
+   "template": "post",
+   "title": "What a gas safety certificate covers",
+   "params": {
+    "post": "what-a-gas-safety-certificate-covers"
+   },
+   "entry": {
+    "id": "post_3",
+    "handle": "what-a-gas-safety-certificate-covers",
+    "title": "What a gas safety certificate covers",
+    "fields": {
+     "topic": "Landlords",
+     "date": "2026-09-12",
+     "author": "Dan Hollis",
+     "standfirst": "Every appliance, the flue and the paperwork: what we check and how long it takes.",
+     "image": "as_3x2_sea",
+     "image_alt": "What a gas safety certificate covers",
+     "body": "<p>Every appliance, the flue and the paperwork: what we check and how long it takes.</p><h2>Start here</h2><p>Most problems give a warning before they get expensive. Knowing what to look for, and who to call, is most of the job.</p><h2>Call us</h2><p>If you are not sure, ring the yard. A real person answers, day or night.</p>"
+    }
+   }
+  },
+  "/journal/planning-a-bathroom-without-surprises": {
+   "id": "pg_post_4",
+   "template": "post",
+   "title": "Planning a bathroom without surprises",
+   "params": {
+    "post": "planning-a-bathroom-without-surprises"
+   },
+   "entry": {
+    "id": "post_4",
+    "handle": "planning-a-bathroom-without-surprises",
+    "title": "Planning a bathroom without surprises",
+    "fields": {
+     "topic": "Bathrooms",
+     "date": "2026-08-25",
+     "author": "Dan Hollis",
+     "standfirst": "The order of work, the decisions to make early, and what a fixed quote should include.",
+     "image": "as_3x2_clay",
+     "image_alt": "Planning a bathroom without surprises",
+     "body": "<p>The order of work, the decisions to make early, and what a fixed quote should include.</p><h2>Start here</h2><p>Most problems give a warning before they get expensive. Knowing what to look for, and who to call, is most of the job.</p><h2>Call us</h2><p>If you are not sure, ring the yard. A real person answers, day or night.</p>"
+    }
+   }
+  }
+ }
+}

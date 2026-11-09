@@ -1,0 +1,35 @@
+<!-- The estimate form on the page: the heading (its accent phrase in the accent), the standfirst and the four contact rows left; the form on a chalk card right, with the confirm line under the full-width button. Stacked on phones, the form after the rows. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-2 md:gap-space-3xl">
+    <div class="grid gap-space-lg">
+      <div class="grid gap-space-md">
+        <h2 class="font-heading text-h2 case-heading text-balance text-scheme-heading">{ settings.heading }{#if settings.accent_text} <span class="text-accent">{ settings.accent_text }</span>{/if}</h2>
+        {#if settings.text}<p class="max-w-reading text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+      </div>
+      {#if settings.show_contact_rows}<ContactRows />{/if}
+    </div>
+    <div class="sites-scheme-chalk rounded-card border border-scheme-border bg-scheme-background p-space-xl text-scheme-foreground">
+      <EstimateFields handle={ settings.form } prefix="page" />
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Estimate form",
+  "description": "The free-estimate form on a card beside the heading and the ways to reach you.",
+  "kind": "Contact",
+  "icon": "send",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Let's get your" },
+    { "type": "text", "id": "accent_text", "label": "Accent phrase", "default": "problem solved", "info": "Follows the heading, in the accent colour." },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "Whether it's an emergency or a planned job, tell us what's happening and we'll call back within the hour." },
+    { "type": "checkbox", "id": "show_contact_rows", "label": "Contact rows", "default": true, "info": "Email, phone, service area and hours from the theme settings." },
+    { "type": "form", "id": "form", "label": "Form", "info": "Leave empty to use the Yard estimate form." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "paper" } }
+  ]
+}
+</schema>

@@ -1,0 +1,7 @@
+<!-- component: Arrows -->
+<!-- A carousel's chrome under its track: bar (an id) holds tarot's progress hairline across the row, and the round previous and next buttons sit at its right end, hidden below 48rem. Tarot finds the buttons by their data-action attributes. -->
+<div class="mt-space-lg flex items-center justify-end gap-space-xs">
+  {#if bar}<div class="me-space-md flex-1" id="{ bar }"></div>{/if}
+  <button class="flex size-control max-md:hidden items-center justify-center rounded-full border border-scheme-foreground transition-colors duration-fast hover:bg-scheme-foreground hover:text-scheme-background disabled:pointer-events-none disabled:opacity-40" type="button" data-action-tarot-previous aria-label="{ t('previous') }"><Glyph name="arrow-left" /></button>
+  <button class="flex size-control max-md:hidden items-center justify-center rounded-full border border-scheme-foreground transition-colors duration-fast hover:bg-scheme-foreground hover:text-scheme-background disabled:pointer-events-none disabled:opacity-40" type="button" data-action-tarot-next aria-label="{ t('next') }"><Glyph name="arrow-right" /></button>
+</div>

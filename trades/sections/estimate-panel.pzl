@@ -1,0 +1,35 @@
+<!-- The estimate sheet behind every ask button: the estimate form in a bottom-sheet on a phone that becomes a centred 40rem dialog from 48rem (styles/theme.css). It hands focus back to the button that opened it. Sent and error states come back on the page as ?form=…&sent=1 or &error=1, and the sheet opens on its own there. With Yard ask set to link it never opens. -->
+<dialog-panel>
+  <dialog class="text-scheme-foreground" aria-labelledby="estimate-title">
+    <bottom-sheet id="estimate" data-centred>
+      <bottom-sheet-header class="flex items-start justify-between gap-space-md pt-space-md">
+        <div class="grid gap-space-sm">
+          <h2 class="font-heading text-h2 case-heading text-scheme-heading" id="estimate-title">{ settings.heading }</h2>
+          {#if settings.text}<p class="text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+        </div>
+        <button class="-m-space-xs flex size-tap shrink-0 items-center justify-center hover:text-accent" type="button" data-action-hide-dialog><Glyph name="close" cls="size-glyph" /><span class="sr-only">{ t('close') }</span></button>
+      </bottom-sheet-header>
+      <bottom-sheet-content>
+        <EstimateFields handle={ settings.form } prefix="sheet" />
+      </bottom-sheet-content>
+    </bottom-sheet>
+  </dialog>
+</dialog-panel>
+
+<schema>
+{
+  "name": "Estimate panel",
+  "description": "The free-estimate form behind every ask button: a sheet on phones, a dialog from tablets.",
+  "kind": "Panels",
+  "icon": "send",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Get a free estimate" },
+    { "type": "text", "id": "text", "label": "Text", "default": "Tell us what's happening and we'll call back within one business hour." },
+    { "type": "form", "id": "form", "label": "Form", "info": "Leave empty to use the Yard estimate form." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "chalk" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "chalk" } }
+  ]
+}
+</schema>

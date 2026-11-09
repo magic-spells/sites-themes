@@ -1,0 +1,47 @@
+<!-- TODO sync with Figma -->
+<!-- Stub (code B builds it): the section head, the ?service= tabs as plain links and the project cards. -->
+{#let
+  all = content.projects.entries | sort('fields.order')
+  picked = settings.source == 'featured' ? all | where('fields.featured') : all
+  current = request.query.service
+  shown = (settings.show_tabs && current ? picked | where('fields.service.handle', current) : picked) | slice(0, settings.limit)
+  services = content.services.entries | sort('fields.order')
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } />
+    {#if settings.show_tabs}
+      <ul class="mb-space-lg flex flex-wrap gap-space-xs text-body-sm">
+        <li><a class="block rounded-full border border-scheme-border px-space-md py-space-xs current:bg-scheme-foreground current:text-scheme-background" href="?" aria-current={ current ? null : 'page' }>{ t('all') }</a></li>
+        {#for svc in services}{#if picked | find('fields.service.handle', svc.handle)}<li><a class="block rounded-full border border-scheme-border px-space-md py-space-xs current:bg-scheme-foreground current:text-scheme-background" href="?service={ svc.handle }" aria-current={ current == svc.handle ? 'page' : null }>{ svc.title }</a></li>{/if}{/for}
+      </ul>
+    {/if}
+    <ul class="grid gap-x-space-md gap-y-space-xl md:grid-cols-2 lg:grid-cols-3">{#for entry in shown}<li><ProjectCard entry={ entry } /></li>{/for}</ul>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Projects grid",
+  "description": "Past jobs as cards, with service tabs on the work page.",
+  "kind": "Collections",
+  "icon": "layout-grid",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Recent work" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "text", "id": "link_label", "label": "Button label", "default": "All work" },
+    { "type": "url", "id": "link_href", "label": "Button link", "default": "/work" },
+    { "type": "select", "id": "source", "label": "Projects", "default": "featured", "options": [
+      { "value": "featured", "label": "Featured" },
+      { "value": "all", "label": "All" }
+    ] },
+    { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 6 },
+    { "type": "checkbox", "id": "show_tabs", "label": "Service tabs", "default": false, "info": "Links that show one service's projects (?service=)." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "chalk" }
+  ],
+  "presets": [
+    { "name": "Home", "settings": { "color_scheme": "chalk" } },
+    { "name": "Work page", "settings": { "heading": "", "source": "all", "limit": 12, "show_tabs": true, "color_scheme": "paper" } }
+  ]
+}
+</schema>

@@ -1,0 +1,230 @@
+{
+  "label": "Home",
+  "description": "The front page: the hero, the services, why us, the specials, recent work, reviews, the numbers, the towns, the plans and the estimate form.",
+  "sections": [
+    {
+      "id": "s_hero",
+      "type": "hero",
+      "preset": "Cover",
+      "settings": {
+        "layout": "cover",
+        "image": "as_3x2_clay",
+        "image_alt": "A Hollis & Sons van outside a house in Ashby",
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_services",
+      "type": "services-grid",
+      "preset": "Photo",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_props",
+      "type": "value-props",
+      "preset": "Cards",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": [
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "shield-check",
+            "title": "Licensed & insured",
+            "text": "Every technician carries a state licence and we are insured to $5M."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "badge-check",
+            "title": "Upfront pricing",
+            "text": "A fixed price before we start, and the invoice matches it."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "clock",
+            "title": "Same-day callouts",
+            "text": "A real person answers, and a van is on its way within the hour."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "check",
+            "title": "12-month guarantee",
+            "text": "Every job guaranteed for a year, parts and labour."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "house",
+            "title": "Family-run since 1986",
+            "text": "Second generation, same yard, same phone number."
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "icon": "star",
+            "title": "4.9 on Google",
+            "text": "612 reviews from your neighbours across ten towns."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_offers",
+      "type": "offers",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "brass"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_projects",
+      "type": "projects-grid",
+      "preset": "Home",
+      "settings": {
+        "color_scheme": "chalk"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_reviews",
+      "type": "testimonials",
+      "preset": "Rows",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_stats",
+      "type": "stats",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": [
+        {
+          "type": "stat",
+          "settings": {
+            "number": "38",
+            "label": "Years in business",
+            "text": "Second generation, same yard."
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "12,400+",
+            "label": "Jobs completed",
+            "text": "Across Ashby and ten towns."
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "12",
+            "label": "Month guarantee",
+            "text": "Parts and labour, every job."
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "4.9",
+            "label": "Google rating",
+            "text": "From 612 reviews."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_process",
+      "type": "process",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "title": "Call or book online",
+            "text": "Tell us what's wrong and when suits."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "A fixed price",
+            "text": "We quote before we start, no surprises."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "The work",
+            "text": "A licensed technician, on time, tidy."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Guaranteed",
+            "text": "Twelve months on parts and labour."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_areas",
+      "type": "areas",
+      "preset": "Default",
+      "settings": {
+        "source": "featured",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_plans",
+      "type": "plans",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "chalk"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_financing",
+      "type": "financing",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "chalk"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Inline",
+      "settings": {
+        "form": "inline",
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    }
+  ]
+}

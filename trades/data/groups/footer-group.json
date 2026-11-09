@@ -1,0 +1,16 @@
+{
+  "sections": [
+    {
+      "id": "sg_footer",
+      "type": "footer",
+      "preset": "Default",
+      "settings": {
+        "menu": "main",
+        "social_menu": "social",
+        "legal_menu": "legal",
+        "color_scheme": "charcoal"
+      },
+      "blocks": []
+    }
+  ]
+}

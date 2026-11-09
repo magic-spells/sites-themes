@@ -1,0 +1,13 @@
+<!-- component: PlanCard -->
+<!-- A plan on a card: the name, the price in Price with the period in Meta, the summary, the includes as check rows, the note in Meta, one button. The featured plan sits on navy. -->
+{#let f = entry.fields}
+<article class="flex h-full flex-col gap-space-md rounded-card border border-scheme-border p-space-xl { f.featured ? 'sites-scheme-navy bg-scheme-background text-scheme-foreground' : 'bg-scheme-card' }">
+  <h3 class="text-h4 font-semibold">{ entry.title }</h3>
+  <p class="flex items-baseline gap-space-xs"><span class="font-heading text-h2 tnum">{ f.price | currency('$', 0) }</span>{#if f.period}<span class="text-body-sm text-scheme-muted">/ { t('period.' + f.period) }</span>{/if}</p>
+  {#if f.summary}<p class="text-body-sm text-scheme-muted">{ f.summary }</p>{/if}
+  {#if f.includes}<ul class="grid gap-space-xs border-t border-scheme-border pt-space-md text-body-sm">{#for line in f.includes | split('\n')}{#if line | strip}<li class="flex gap-space-xs"><Glyph name="check" cls="size-icon text-accent" />{ line | strip }</li>{/if}{/for}</ul>{/if}
+  <div class="mt-auto grid gap-space-xs">
+    {#if f.link}<Button href={ f.link } wide>{ t('choose_plan') }</Button>{:else}<Button ask wide>{ t('choose_plan') }</Button>{/if}
+    {#if f.note}<p class="text-center text-body-sm text-scheme-muted">{ f.note }</p>{/if}
+  </div>
+</article>

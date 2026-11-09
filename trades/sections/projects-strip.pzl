@@ -1,0 +1,32 @@
+<!-- TODO sync with Figma -->
+<!-- Stub (code B builds it): the section head and the projects as a row. -->
+{#let projects = content.projects.entries | sort('fields.order') | where('fields.featured') | slice(0, 12)}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } link_label={ settings.link_label } link_href={ settings.link_href } />
+    <ul class="flex gap-space-md overflow-x-auto">{#for entry in projects}<li class="w-4/5 shrink-0 md:w-1/3"><ProjectCard entry={ entry } /></li>{/for}</ul>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Projects strip",
+  "description": "Featured jobs on a carousel of equal slides.",
+  "kind": "Collections",
+  "icon": "gallery-horizontal",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Recent work" },
+    { "type": "text", "id": "link_label", "label": "Button label", "default": "All work" },
+    { "type": "url", "id": "link_href", "label": "Button link", "default": "/work" },
+    { "type": "select", "id": "slide_ratio", "label": "Slide shape", "default": "photo", "options": [
+      { "value": "photo", "label": "3:2" },
+      { "value": "square", "label": "1:1" },
+      { "value": "portrait", "label": "4:5" }
+    ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "chalk" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "chalk" } }
+  ]
+}
+</schema>

@@ -1,0 +1,29 @@
+<!-- TODO sync with Figma -->
+<!-- The journal: the newest post as a feature beside the rest, then the others three across from 64rem; topic and date in Meta, no reading time. -->
+{#let posts = content.posts.entries | sort('fields.date') | reverse | slice(0, settings.limit)}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <ul class="grid gap-x-space-lg gap-y-space-xl md:grid-cols-2 lg:grid-cols-3">
+      {#for entry in posts, i}<li class="{ i == 0 ? 'md:col-span-2' : '' }"><PostCard entry={ entry } feature={ i == 0 } /></li>{/for}
+    </ul>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Journal list",
+  "description": "The newest post as a feature, then the rest.",
+  "kind": "Collections",
+  "icon": "newspaper",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 12 },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "paper" } }
+  ]
+}
+</schema>

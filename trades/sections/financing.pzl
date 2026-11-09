@@ -1,0 +1,39 @@
+<!-- TODO sync with Figma -->
+<!-- Stub (code B builds it): the heading, the Yard financing line, the lender button and the fine print. -->
+{#let s = site.settings}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto flex max-w-column flex-wrap items-center justify-between gap-space-lg">
+    <div class="grid gap-space-xs">
+      <h2 class="font-heading text-h2 case-heading text-scheme-heading">{ settings.heading }</h2>
+      {#if s.financing_line}<p class="text-body-lg text-scheme-muted">{ s.financing_line }</p>{/if}
+    </div>
+    <div class="grid gap-space-xs">
+      {#if s.financing_url}<Button href={ s.financing_url }>{ settings.button_label }</Button>{/if}
+      {#if settings.fine_print}<p class="text-body-sm text-scheme-muted">{ settings.fine_print }</p>{/if}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Financing",
+  "description": "Pay over time: the line, the lender button and the fine print.",
+  "kind": "Offers",
+  "icon": "receipt",
+  "settings": [
+    { "type": "select", "id": "layout", "label": "Layout", "default": "band", "options": [
+      { "value": "band", "label": "A band" },
+      { "value": "split", "label": "Beside a photo" }
+    ] },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Comfort now, pay over time." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "See financing" },
+    { "type": "text", "id": "fine_print", "label": "Fine print", "default": "Subject to credit approval" },
+    { "type": "image", "id": "image", "label": "Image (split)" },
+    { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "chalk" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "chalk" } }
+  ]
+}
+</schema>

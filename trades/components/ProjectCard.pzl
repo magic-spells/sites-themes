@@ -1,0 +1,11 @@
+<!-- component: ProjectCard -->
+<!-- A past job, one link: the 3:2 well, the title in Card title, then the town, the service and the date in Meta. -->
+{#let
+  f = entry.fields
+  meta = [f.area.title, f.service.title, f.date ? f.date | date : null] | compact | join(' · ')
+}
+<a class="group grid content-start gap-space-sm { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" href="/work/{ entry.handle }">
+  <Well asset={ f.image } alt={ f.image_alt } sizes="(min-width: 64rem) 26rem, (min-width: 48rem) 50vw, 100vw" zoom />
+  <h3 class="text-h4 font-semibold group-hover:underline group-hover:underline-offset-4">{ entry.title }</h3>
+  <p class="text-body-sm text-scheme-muted">{ meta }</p>
+</a>

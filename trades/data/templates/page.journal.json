@@ -1,0 +1,24 @@
+{
+  "label": "Journal",
+  "description": "Tips and seasonal reminders.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_list",
+      "type": "journal-list",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    }
+  ]
+}

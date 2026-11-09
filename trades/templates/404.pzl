@@ -1,0 +1,10 @@
+<!-- template: 404 -->
+<!-- layout: default -->
+<!-- A wrong path, on paper: the line, the routes, then the featured services as cards. -->
+{#let services = content.services.entries | sort('fields.order') | where('fields.featured') | slice(0, 3)}
+<Utility>
+  <h1 class="max-w-reading font-heading text-h1 case-heading text-balance text-scheme-heading">{ t('not_found_title') }</h1>
+  <p class="text-body-lg text-pretty text-scheme-muted">{ t('not_found_body') }</p>
+  <Routes />
+  {#if services.length}<ul class="mt-space-xl grid w-full gap-space-md md:grid-cols-3">{#for entry in services}<li><ServiceCard entry={ entry } price /></li>{/for}</ul>{/if}
+</Utility>

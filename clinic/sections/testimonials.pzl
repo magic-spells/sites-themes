@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- Patients' reviews. Rows: review cards 3 / 2 / 1. Carousel: the head centred, one quote at a time (the quote, the stars, the name line), the round arrows at the sides on hover from 48rem, dots under. Featured or all, up to the limit; on a service's or a clinician's page only the reviews that name them, when there are any. Nothing without reviews. -->
 {#let
   id = 'reviews-' + section.id
@@ -20,8 +19,8 @@
           {#for entry in reviews}
             {#let f = entry.fields}
             <tarot-slide>
-              <figure class="mx-auto grid max-w-reading justify-items-center gap-space-md text-center md:px-space-2xl">
-                <blockquote class="text-body-lg text-pretty">“{ f.quote }”</blockquote>
+              <figure class="mx-auto grid max-w-reading justify-items-center gap-space-md text-center">
+                <blockquote class="text-body-lg text-pretty">{ f.quote }</blockquote>
                 <Stars stars={ f.stars } />
                 <figcaption class="text-body-sm text-scheme-muted">{ [f.name, f.line] | compact | join(' · ') }</figcaption>
               </figure>
@@ -31,7 +30,7 @@
         <Arrows />
       </tarot-carousel>
     {:else}
-      <ul class="grid gap-space-lg md:grid-cols-2 lg:grid-cols-3">{#for entry in reviews}<li><ReviewCard entry={ entry } /></li>{/for}</ul>
+      <ul class="grid gap-space-sm md:grid-cols-2 md:gap-space-md lg:grid-cols-3 lg:gap-space-lg">{#for entry in reviews}<li class="md:max-lg:odd:last:col-span-2"><ReviewCard entry={ entry } /></li>{/for}</ul>
     {/if}
   </div>
 </section>

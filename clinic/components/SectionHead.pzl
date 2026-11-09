@@ -3,7 +3,7 @@
 {#let centre = center || settings.head_align == 'center'}
 {#if heading}
 <div class="mb-space-xl flex flex-wrap gap-x-space-lg gap-y-space-md { centre ? 'flex-col items-center text-center' : 'items-end justify-between' } { rule ? 'border-b border-scheme-border pb-space-md' : '' }">
-  <div class="grid max-w-reading gap-space-xs">
+  <div class="grid max-w-reading gap-space-sm">
     <h2 class="font-heading text-h2 text-balance">{ heading }</h2>
     {#if text}<p class="text-body-lg text-pretty text-scheme-muted">{ text }</p>{/if}
   </div>

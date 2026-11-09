@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- The band every page ends on, a hairline at its foot (the seam to the footer). None: the heading, the confirm line and the routes, centred. Inline: two halves from 48rem, the heading, the confirm line and the routes stacked left; the four-field request form on a white card right, with its link to the full form. -->
 {#let
   s = site.settings

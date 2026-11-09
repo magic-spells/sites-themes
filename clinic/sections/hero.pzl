@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- The first screen: the h1, the standfirst and two buttons (the ask, and an outline link left out when its label is empty), side by side from 30rem, in seven parts of twelve. Split: beside the 4:5 (or 3:2) photo, which comes first at 3:2 on phones. Panel: beside the four-field request form on a white card. Cover: over the photo filling the band (3:2 from 48rem, or the full screen), the band's colour fading from 80% on the type's side to 20%; inset rounds it inside the page margins. Only the cover carries data-over-hero, for the over-hero header. -->
 {#let
   layout = settings.layout

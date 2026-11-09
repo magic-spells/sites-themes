@@ -10,6 +10,7 @@ set -eu
 api=${SITES_API:-https://sites-api.magicspells.io}/v1/theme-packages
 query=${SITES_WORKSPACE:+?workspace_id=$SITES_WORKSPACE}
 dry=${1:-}
+semver='^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$'
 repo=$(cd "$(dirname "$0")/.." && pwd)
 tmp=$(mktemp -d)
 trap 'rm -rf "$tmp"' EXIT
@@ -30,7 +31,11 @@ for tag in $(git -C "$repo" tag -l '*/v*' --sort=version:refname); do
   name=${tag%/v*}
   version=${tag#*/v}
   [ "$name" = minimal ] && continue
+  echo "$name" | grep -Eq '^[a-z0-9][a-z0-9-]*$' && echo "$version" | grep -Eq "$semver" ||
+    { echo "$tag: not <name>/v<semver>" >&2; exit 1; }
+  # zip.sh names the zip after the version in the tag's theme.json.
   zip=$(cd "$tmp" && sh "$repo/scripts/zip.sh" "$name" "$tag")
+  [ "$zip" = "$name-v$version.zip" ] || { echo "$tag: its theme.json says $zip" >&2; exit 1; }
   git -C "$repo" show "$tag:$name/CHANGELOG.md" |
     awk -v v="$version" '/^## / { on = ($2 == v); next } on' >"$tmp/notes"
 
@@ -59,7 +64,7 @@ for tag in $(git -C "$repo" tag -l '*/v*' --sort=version:refname); do
     pending) ;;
     *)
       status=$(call POST "$api/$name/releases" -F "archive=@$tmp/$zip;type=application/zip" \
-        -F "version=$version" -F "notes=<$tmp/notes")
+        --form-string "version=$version" --form-string "notes=$(cat "$tmp/notes")")
       [ "$status" = 202 ] || { echo "$tag: upload failed ($status): $(cat "$tmp/body")" >&2; exit 1; }
       ;;
   esac

@@ -65,7 +65,8 @@ The tag is provenance. What the Sites theme store installs is the release publis
 registry, through the Publisher page or `scripts/publish-history.sh`, which publishes every
 tagged version not yet there. `scripts/zip.sh <name> [<ref>]` builds the same zip as the tag's
 release asset, byte for byte. `scripts/check-registry.sh` checks that each theme's version is
-published (skipped without `SITES_TOKEN`).
+published (skipped without `SITES_TOKEN`, which must be a read-only key for
+`GET /v1/themes/catalog`, never the publish key).
 
 A published zip never changes. A mistake is fixed with a new version.
 

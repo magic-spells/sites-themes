@@ -19,7 +19,7 @@ The base themes for Magic Spells Sites, one folder per theme. The repo is public
   Publisher page or `scripts/publish-history.sh`; listing copy lives on the package page in Sites.
   The tag is provenance: its zip and `.sha256`, which `scripts/zip.sh` rebuilds byte for byte.
   `sh scripts/check-registry.sh` checks each folder's version is published (skipped without
-  `SITES_TOKEN`), so after merging a bump, tag and publish it.
+  `SITES_TOKEN`, a read-only key for `GET /v1/themes/catalog`, never the publish key), so after merging a bump, tag and publish it.
 - **Tailwind first.** Every token reaches markup as a utility through `styles/theme.css`'s
   `@theme`. No arbitrary values (`p-[13px]`, `bg-[#070c16]`): add the token to `settings/design.json`
   first. No `<style>` in a `.pzl` file. Hand-written CSS only for what utilities cannot express.

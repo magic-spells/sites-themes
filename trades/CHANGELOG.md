@@ -30,3 +30,4 @@
   sets its list and questions on chalk between the paper bands, the areas page its list and
   the estimate page its questions, and the testimonials heading reads "What your neighbors
   say".
+- The badge row sits on navy by default, its logos inverted on the navy and charcoal bands.

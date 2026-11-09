@@ -3,7 +3,8 @@
 # the Sites registry, oldest version first per theme, and prints one line per
 # version. A package the registry does not have yet is created with the listing
 # copy from the last catalog.json. A version already published (or yanked) is
-# skipped, so a rerun picks up where a failure stopped it.
+# skipped. A failed version is recorded and the run goes on; the summary at the
+# end lists every version, and the exit is non-zero if any failed.
 # Usage: SITES_TOKEN=... [SITES_WORKSPACE=<uuid>] sh scripts/publish-history.sh [--dry-run]
 set -eu
 
@@ -22,6 +23,9 @@ call() {
   shift 2
   curl -sS -o "$tmp/body" -w '%{http_code}' -X "$m" -H "Authorization: Bearer $SITES_TOKEN" "$@" "$u"
 }
+
+# record <outcome> [<detail>]: prints the version's line and keeps it for the summary.
+record() { printf '%s\t%s\t%s\n' "$tag" "$1" "${2:-}" | tee -a "$tmp/summary"; }
 
 [ "$dry" = --dry-run ] || : "${SITES_TOKEN:?set SITES_TOKEN, or pass --dry-run}"
 
@@ -59,25 +63,39 @@ for tag in $(git -C "$repo" tag -l '*/v*' --sort=version:refname); do
   state=$( [ "$(call GET "$release")" = 200 ] && jq -r .status "$tmp/body" || echo none)
   case $state in
     published | yanked)
-      echo "$tag $state, skipped"
+      record skipped "$state"
       continue
       ;;
     pending) ;;
     *)
       status=$(call POST "$api/$name/releases" -F "archive=@$tmp/$zip;type=application/zip" \
         --form-string "version=$version" --form-string "notes=$(cat "$tmp/notes")")
-      [ "$status" = 202 ] || { echo "$tag: upload failed ($status): $(cat "$tmp/body")" >&2; exit 1; }
+      if [ "$status" != 202 ]; then
+        record failed "upload $status: $(tr -d '\n' <"$tmp/body")"
+        continue
+      fi
+      state=pending
       ;;
   esac
 
   # The worker validates and compiles the archive; wait up to five minutes.
   i=0
-  while [ "$state" != published ] && [ "$state" != failed ] && [ "$i" -lt 150 ]; do
+  while [ "$state" = pending ] && [ "$i" -lt 150 ]; do
     sleep 2
     call GET "$release" >/dev/null
     state=$(jq -r .status "$tmp/body")
     i=$((i + 1))
   done
-  echo "$tag $state"
-  [ "$state" = published ] || { jq -c .diagnostics "$tmp/body" >&2; exit 1; }
+  if [ "$state" = published ]; then
+    record published
+  else
+    # The first diagnostic, or the state a release still pending was left in.
+    record failed "$(jq -r '.diagnostics[0].message // .status' "$tmp/body")"
+  fi
 done
+
+# The summary, then a non-zero exit if any version failed.
+[ -f "$tmp/summary" ] || exit 0
+echo
+column -t -s '	' "$tmp/summary"
+! grep -q '	failed	' "$tmp/summary"

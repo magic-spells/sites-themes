@@ -1,6 +1,6 @@
 {
   "label": "Contact",
-  "description": "The contact form beside the hours, and every office.",
+  "description": "The contact form beside the hours cards.",
   "sections": [
     {
       "id": "s_header",
@@ -18,15 +18,6 @@
       "preset": "Default",
       "settings": {
         "color_scheme": "white"
-      },
-      "blocks": []
-    },
-    {
-      "id": "s_locations",
-      "type": "locations",
-      "preset": "Default",
-      "settings": {
-        "color_scheme": "cloud"
       },
       "blocks": []
     }

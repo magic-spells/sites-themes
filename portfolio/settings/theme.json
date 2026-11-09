@@ -1,6 +1,6 @@
 {
   "name": "Portfolio",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "default_template": "page",
   "not_found_template": "404",
   "maintenance_template": "maintenance",

@@ -3,7 +3,7 @@
     "brand": {
       "primary": "#1C1A17",
       "secondary": "#6A645A",
-      "accent": "#1F3FBF"
+      "accent": "#1C1A17"
     },
     "grey": {
       "extra_light": "#EFEBE3",
@@ -107,7 +107,7 @@
     "radius": "0.25rem",
     "text": "#1C1A17",
     "placeholder": "#6E685E",
-    "focus_ring": "#1F3FBF"
+    "focus_ring": "#1C1A17"
   },
   "button": {
     "radius": "0.25rem",
@@ -120,7 +120,7 @@
     "secondary_text": "#1C1A17"
   },
   "link": {
-    "color": "#1F3FBF",
+    "color": "#1C1A17",
     "hover_color": "#1C1A17",
     "underline": "always"
   },
@@ -206,7 +206,7 @@
       "chip_foreground": "#6A645A",
       "chip_border": "#DCD9D2",
       "icons": "#6E685E",
-      "links": "#1F3FBF",
+      "links": "$brand-accent",
       "button_background": "transparent",
       "button_foreground": "#1C1A17",
       "button_hover_background": "#EEECE7",
@@ -229,7 +229,7 @@
       "chip_foreground": "#5C5C5A",
       "chip_border": "#E4E4E1",
       "icons": "#686866",
-      "links": "#1F3FBF",
+      "links": "$brand-accent",
       "button_background": "transparent",
       "button_foreground": "#111214",
       "button_hover_background": "#F3F3F1",
@@ -252,7 +252,7 @@
       "chip_foreground": "#5E5951",
       "chip_border": "#D1CCC3",
       "icons": "#625D55",
-      "links": "#1A36A8",
+      "links": "$brand-accent",
       "button_background": "transparent",
       "button_foreground": "#1C1A17",
       "button_hover_background": "#E1DDD5",
@@ -275,7 +275,7 @@
       "chip_foreground": "#A09B93",
       "chip_border": "#2C3038",
       "icons": "#938E86",
-      "links": "#9DB2FF",
+      "links": "#EDEAE4",
       "button_background": "transparent",
       "button_foreground": "#EDEAE4",
       "button_hover_background": "#1E2126",

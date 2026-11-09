@@ -1,4 +1,4 @@
-<!-- The opening band, three ways. name: the role and location line, then after lg the name as the h1 at 110% width, blooming in word by word. statement: the two-tone statement at h1 size, the name kept as a hidden h1. picture: a photo (4:5 on a phone) with the name, a line and the buttons below it or above it, never on it; inset draws the photo inside the gutters, off bleeds it to the screen edges. -->
+<!-- The opening band, three ways. name: the role and location line, then after md the name as the h1 at 110% width, blooming in word by word. statement: the two-tone statement at h1 size, the name kept as a hidden h1. picture: a photo (4:5 on a phone) with the name, a line and the buttons below it or above it, never on it; inset draws the photo inside the gutters, off bleeds it to the screen edges. -->
 {#let
   s = site.settings
   name = settings.heading || s.wordmark || site.name
@@ -31,7 +31,7 @@
         </div>
       </div>
     {:else}
-      <div class="mx-auto grid max-w-column gap-space-lg">
+      <div class="mx-auto grid max-w-column gap-space-md">
         <p class="text-body-sm text-scheme-muted">{ line }</p>
         <h1 class="font-wide text-h1 text-balance">{#if bloom}<split-text effect="bloom" split="words" stagger="40">{ name }</split-text>{:else}{ name }{/if}</h1>
       </div>

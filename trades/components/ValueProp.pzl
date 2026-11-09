@@ -1,5 +1,5 @@
 <!-- component: ValueProp -->
-<!-- One reason to call, from a value-props block. card: a tall card on surface-2, the icon in an 8rem surface-2 circle, the title and line centred, the arrow bottom right. column: the icon in a 3rem circle top left, the title and line under it, one cell of the row of four on the band's background. -->
+<!-- One reason to call, from a value-props block. card: a card on surface-2, the icon in an 8rem circle, the title and line centred. column: the icon in a 3rem circle top left, the title and line under it, one cell of the row of four on the band's background. -->
 {#let b = block.settings}
 {#if layout == 'column'}
 <li class="grid content-start gap-space-sm bg-scheme-background p-space-xl" data-block={ editor_id }>
@@ -11,7 +11,6 @@
 <li class="flex flex-col items-center gap-space-md rounded-card bg-scheme-surface-2 p-space-xl text-center" data-block={ editor_id }>
   <IconCircle icon={ b.icon } size="xl" />
   <h3 class="text-h4 font-semibold">{ b.title }</h3>
-  <p class="mb-space-xl max-w-summary text-body-sm text-pretty text-scheme-muted">{ b.text }</p>
-  <Glyph name="arrow-right" cls="mt-auto size-glyph self-end text-accent" />
+  <p class="max-w-summary text-body-sm text-pretty text-scheme-muted">{ b.text }</p>
 </li>
 {/if}

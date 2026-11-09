@@ -1,5 +1,9 @@
 # Trades
 
+## 0.1.1
+
+- The value-prop cards lose their arrow.
+
 ## 0.1.0
 
 - 38 sections: the announcement bar (still or a ticker), the header (the ask

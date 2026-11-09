@@ -1,12 +1,17 @@
 {
   "label": "Careers",
-  "description": "Open roles beside the apply form.",
+  "description": "The split hero as the page head, then the openings beside the apply form and the four reasons.",
   "sections": [
     {
-      "id": "s_header",
-      "type": "page-header",
-      "preset": "Default",
+      "id": "s_hero",
+      "type": "hero",
+      "preset": "Split",
       "settings": {
+        "layout": "split",
+        "heading": "Join the crew",
+        "text": "Local work, a van of your own and a family firm that has been here since 1986.",
+        "image": "as_4x5_sand",
+        "image_alt": "Dan Hollis fitting a boiler in a kitchen in Ashby",
         "color_scheme": "paper"
       },
       "blocks": []
@@ -16,6 +21,7 @@
       "type": "careers",
       "preset": "Default",
       "settings": {
+        "heading": "",
         "color_scheme": "paper"
       },
       "blocks": [
@@ -23,16 +29,16 @@
           "type": "opening",
           "settings": {
             "title": "Heating engineer",
-            "line": "Full time · Gas Safe registered · from $62,000",
-            "text": "<p>Boiler installs, servicing and fault-finding across Ashby and the towns around it. Your own van and tools.</p>"
+            "line": "Full time · Ashby",
+            "text": "<p>Gas Safe registered, three years on boilers and heat pumps. Your own van, weekdays, one Saturday in four.</p>"
           }
         },
         {
           "type": "opening",
           "settings": {
             "title": "Apprentice plumber",
-            "line": "Full time · four-year apprenticeship",
-            "text": "<p>Learn the trade on real jobs beside Dan and Priya, with college one day a week paid.</p>"
+            "line": "Full time · Ashby · Paid training",
+            "text": "<p>No experience needed, a driving licence and an early start are. Four years with us and college one day a week.</p>"
           }
         }
       ]
@@ -58,9 +64,9 @@
         {
           "type": "prop",
           "settings": {
-            "icon": "badge-check",
+            "icon": "check",
             "title": "Upfront pricing",
-            "text": "A fixed price before we start, and the invoice matches it."
+            "text": "A fixed price before we start, never a meter running by the hour."
           }
         },
         {
@@ -68,32 +74,18 @@
           "settings": {
             "icon": "clock",
             "title": "Same-day callouts",
-            "text": "A real person answers, and a van is on its way within the hour."
+            "text": "Call before noon and a technician is at your door the same day."
           }
         },
         {
           "type": "prop",
           "settings": {
-            "icon": "check",
-            "title": "12-month guarantee",
-            "text": "Every job guaranteed for a year, parts and labour."
+            "icon": "badge-check",
+            "title": "Every job guaranteed",
+            "text": "Twelve months on parts and labour, written on every invoice."
           }
         }
       ]
-    },
-    {
-      "id": "s_hero",
-      "type": "hero",
-      "preset": "Split",
-      "settings": {
-        "layout": "split",
-        "heading": "Plumbing done right.",
-        "accent_text": "First time.",
-        "image": "as_4x5_sand",
-        "image_alt": "Dan Hollis fitting a boiler in a kitchen in Ashby",
-        "color_scheme": "paper"
-      },
-      "blocks": []
     }
   ]
 }

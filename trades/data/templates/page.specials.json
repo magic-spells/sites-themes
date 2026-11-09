@@ -16,7 +16,6 @@
       "type": "offers",
       "preset": "Default",
       "settings": {
-        "heading": "",
         "source": "all",
         "limit": 12,
         "link_label": "",

@@ -1,9 +1,8 @@
-<!-- TODO sync with Figma -->
-<!-- Prose in the 40rem reading column: an optional heading, then the editor's rich text. -->
+<!-- Prose in the 40rem reading column: an optional heading, then the editor's rich text, its first paragraph a size up. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-reading gap-space-md">
     {#if settings.heading}<h2 class="font-heading text-h2 case-heading text-balance text-scheme-heading">{ settings.heading }</h2>{/if}
-    <div class="sites-prose text-body-lg">{ settings.text }</div>
+    <div class="sites-prose text-body" data-lead>{ settings.text }</div>
   </div>
 </section>
 

@@ -1,7 +1,6 @@
-<!-- TODO sync with Figma -->
-<!-- A page's head: the h1 in capitals (the page title unless a heading is set), the standfirst under it, and the Yard rating pill when show rating is on (the Reviews page). Left or centred. -->
+<!-- A page's head: the h1 in capitals (the page title unless a heading is set), the standfirst under it, and the Yard rating pill when show rating is on (the Reviews page). Left or centred, over the section head's rule. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column gap-space-md { settings.align == 'center' ? 'justify-items-center text-center' : 'justify-items-start' }">
+  <div class="mx-auto grid max-w-column gap-space-md border-rule pb-space-lg { settings.align == 'center' ? 'justify-items-center text-center' : 'justify-items-start' }">
     <h1 class="max-w-reading font-heading text-h1 case-heading text-balance text-scheme-heading">{ settings.heading || page.title }</h1>
     {#if settings.text}<p class="max-w-reading text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
     {#if settings.show_rating}<RatingPill />{/if}

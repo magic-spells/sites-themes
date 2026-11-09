@@ -16,3 +16,7 @@
 - Five colour schemes (paper, chalk, brass, navy, charcoal) and four palettes; Barlow Condensed
   and Instrument Sans self-hosted; 37 Lucide glyphs and service icons in one sprite.
 - Town pages from the areas collection and `?service=` filter links on the work page.
+- The hero opens as Split on navy, and a navy or charcoal hero runs under the header. Careers
+  opens on a split hero, then the openings beside the apply form; Contact keeps its page header
+  over the contact form. A plan's button reads "Join <plan>"; the CTA band shows the confirm
+  line under its routes.

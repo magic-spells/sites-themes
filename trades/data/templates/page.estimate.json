@@ -17,6 +17,8 @@
       "type": "estimate-form",
       "preset": "Default",
       "settings": {
+        "heading": "Let's get your problem solved",
+        "accent_text": "",
         "color_scheme": "paper"
       },
       "blocks": []

@@ -42,9 +42,9 @@
         {
           "type": "prop",
           "settings": {
-            "icon": "badge-check",
+            "icon": "check",
             "title": "Upfront pricing",
-            "text": "A fixed price before we start, and the invoice matches it."
+            "text": "A fixed price before we start, never a meter running by the hour."
           }
         },
         {
@@ -52,15 +52,15 @@
           "settings": {
             "icon": "clock",
             "title": "Same-day callouts",
-            "text": "A real person answers, and a van is on its way within the hour."
+            "text": "Call before noon and a technician is at your door the same day."
           }
         },
         {
           "type": "prop",
           "settings": {
-            "icon": "check",
-            "title": "12-month guarantee",
-            "text": "Every job guaranteed for a year, parts and labour."
+            "icon": "badge-check",
+            "title": "Every job guaranteed",
+            "text": "Twelve months on parts and labour, written on every invoice."
           }
         }
       ]
@@ -99,6 +99,34 @@
           "settings": {
             "question": "Do you offer financing?",
             "answer": "<p>Yes, on new boilers and bathrooms: spread the cost over 24 months, subject to credit approval.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do you work weekends?",
+            "answer": "<p>Yes. We book work Monday to Saturday, 7:00 to 18:00, and the emergency line answers every day.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Is the estimate really free?",
+            "answer": "<p>Yes. We come out, look and give you a fixed price in writing. You owe nothing unless you go ahead.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "What areas do you cover?",
+            "answer": "<p>Ashby and ten towns within 40 miles of it. Every town is on our areas page.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Can offers be combined?",
+            "answer": "<p>One offer per job, and offers cannot be combined with a plan discount.</p>"
           }
         }
       ]

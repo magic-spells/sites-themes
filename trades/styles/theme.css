@@ -342,6 +342,7 @@ body:has([data-header-style="over-hero"]) main > [data-section]:first-child [dat
 		font-family: var(--font-heading);
 		font-weight: 700;
 		line-height: 1.1;
+		text-transform: var(--trades-heading-case, uppercase);
 		color: var(--sites-scheme-heading);
 	}
 

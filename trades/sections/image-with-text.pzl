@@ -1,13 +1,12 @@
-<!-- TODO sync with Figma -->
-<!-- A photo beside copy: the text in seven parts and the 4:5 photo in five from 48rem, the photo left or right; stacked on phones, the photo first. The heading, the rich text and one outlined button. -->
+<!-- A photo beside copy: the text and the 3:2 photo in halves from 48rem, the photo left or right; stacked on phones, the photo first. The heading, the rich text and one outlined button. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column items-center gap-space-xl md:gap-space-3xl { settings.image_side == 'left' ? 'md:grid-cols-picture-text' : 'md:grid-cols-text-picture' }">
+  <div class="mx-auto grid max-w-column items-center gap-space-xl md:grid-cols-2 md:gap-space-3xl">
     <div class="grid justify-items-start gap-space-md { settings.image_side == 'left' ? 'md:order-last' : '' }">
       <h2 class="font-heading text-h2 case-heading text-balance text-scheme-heading">{ settings.heading }</h2>
-      <div class="sites-prose max-w-reading text-body-lg text-scheme-muted">{ settings.text }</div>
+      <div class="sites-prose max-w-reading text-body-lg">{ settings.text }</div>
       {#if settings.link_label && settings.link}<Button href={ settings.link } tone="outline">{ settings.link_label }</Button>{/if}
     </div>
-    <div class="max-md:order-first"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" /></div>
+    <div class="max-md:order-first"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-photo" width={ 960 } sizes="(min-width: 48rem) 45vw, 100vw" /></div>
   </div>
 </section>
 

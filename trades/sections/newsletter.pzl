@@ -1,16 +1,15 @@
-<!-- TODO sync with Figma -->
 <!-- Tips by email: the heading and a line beside one field that carries its label as its placeholder (the label stays for screen readers) and the button. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column items-end gap-space-lg md:grid-cols-2">
+  <div class="mx-auto grid max-w-column items-center gap-space-lg md:grid-cols-2">
     <div class="grid gap-space-xs">
       <h2 class="font-heading text-h2 case-heading text-balance text-scheme-heading">{ settings.heading }</h2>
-      {#if settings.text}<p class="text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+      {#if settings.text}<p class="text-body-sm text-pretty text-scheme-muted">{ settings.text }</p>{/if}
     </div>
     <Form handle={ settings.form || site.settings.newsletter_form } class="grid gap-space-xs">
       {#if form.sent}
         <p class="text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
       {:else}
-        <div class="flex gap-space-xs">
+        <div class="flex gap-space-sm">
           {#for field in form.fields}
             <label class="sr-only" for="news-{ field.id }">{ field.label }</label>
             <input class="block min-h-control w-full min-w-0 rounded-input border bg-scheme-tint px-space-sm text-body placeholder:text-scheme-muted focus:outline-2 focus:outline-offset-2 focus:outline-accent { field.error ? 'border-scheme-error' : 'border-transparent' }" id="news-{ field.id }" name={ field.id } type={ field.type } placeholder={ field.label } autocomplete="email" maxlength={ field.max_length } required={ field.required } value={ field.value } aria-invalid={ field.error ? 'true' : 'false' } aria-describedby={ field.error ? 'news-error' : null } />

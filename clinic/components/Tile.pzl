@@ -1,7 +1,7 @@
 <!-- component: Tile -->
-<!-- A mosaic tile from a tile block: on its own scheme with 0.75rem corners, the heading in h3, the line and a text link; with an image, the photo well with the text under it, never on it. -->
+<!-- A mosaic tile from a tile block: on its own scheme with 0.75rem corners, the heading in h3, the line and a text link; with an image, the photo well with the text under it, never on it, and the tall slot from 48rem. -->
 {#let b = block.settings}
-<li class="grid content-start gap-space-sm bg-scheme-background text-scheme-foreground { b.image ? '' : 'rounded-card p-space-xl ' + (b.color_scheme | scheme_class) } { cls }" data-block={ editor_id }>
+<li class="grid content-start gap-space-sm bg-scheme-background text-scheme-foreground { b.image ? 'md:row-span-2' : 'rounded-card p-space-xl ' + (b.color_scheme | scheme_class) }" data-block={ editor_id }>
   {#if b.image}<Well asset={ b.image } alt={ b.image_alt } width={ 1200 } sizes="(min-width: 64rem) 40vw, 100vw" />{/if}
   <h3 class="font-heading text-h3">{ b.heading }</h3>
   {#if b.text}<p class="text-body text-pretty">{ b.text }</p>{/if}

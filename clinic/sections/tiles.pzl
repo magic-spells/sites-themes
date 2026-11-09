@@ -1,6 +1,6 @@
-<!-- The mosaic: the first tile tall beside the others stacked, two columns from 48rem, one on phones. Each tile sits on its own scheme; a photo tile shows its text under the photo, on the band. -->
+<!-- The mosaic: the photo tile tall beside the others stacked, two columns from 48rem, one on phones. Each tile sits on its own scheme; a photo tile shows its text under the photo, on the band. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <ul class="mx-auto grid max-w-column gap-space-sm md:grid-cols-2 md:gap-space-md lg:gap-space-lg">{#for block in blocks, i}<Tile block={ block } editor_id={ block.editor_id } cls={ i == 0 ? 'md:row-span-2' : '' } />{/for}</ul>
+  <ul class="mx-auto grid max-w-column gap-space-sm md:grid-cols-2 md:gap-space-md lg:gap-space-lg">{#for block in blocks}<Tile block={ block } editor_id={ block.editor_id } />{/for}</ul>
 </section>
 
 <schema>
@@ -28,7 +28,7 @@
     { "name": "Default", "settings": { "color_scheme": "white" }, "blocks": [
       { "type": "tile", "settings": { "heading": "Insurance and fees", "text": "Clear prices, and help with your plan.", "link_label": "See fees", "link": "/fees", "color_scheme": "navy" } },
       { "type": "tile", "settings": { "heading": "Meet the team", "text": "Six clinicians across two offices.", "link_label": "Our team", "link": "/team", "color_scheme": "white" } },
-      { "type": "tile", "settings": { "heading": "New patients", "text": "What to expect at your first visit.", "link_label": "Start here", "link": "/new-patients", "color_scheme": "sky" } }
+      { "type": "tile", "settings": { "heading": "New patients", "text": "What to expect at your first visit.", "link_label": "Start here", "link": "/new-patients", "color_scheme": "cloud" } }
     ] }
   ]
 }

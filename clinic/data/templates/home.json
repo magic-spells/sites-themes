@@ -96,7 +96,7 @@
         "layout": "rail",
         "image": "as_4x5_cloud",
         "image_alt": "The Oakfield waiting room",
-        "color_scheme": "ice"
+        "color_scheme": "cloud"
       },
       "blocks": [
         {
@@ -222,7 +222,7 @@
             "text": "What to expect at your first visit.",
             "link_label": "Start here",
             "link": "/new-patients",
-            "color_scheme": "ice"
+            "color_scheme": "cloud"
           }
         }
       ]

@@ -60,16 +60,12 @@
 }
 
 /* The colours without an engine slot, per scheme. Defaults are White and
-   Cloud's: the tint is Ice's background. Every error clears 4.5:1 on its band. */
+   Cloud's: the pale blue tint. Every error clears 4.5:1 on its band. */
 :root,
 [class*="sites-scheme-"] {
 	--clinic-tint: #DDEEF9;
 	--clinic-accent: var(--sites-color-brand-accent);
 	--clinic-error: var(--sites-color-error-fg);
-}
-.sites-scheme-ice {
-	--clinic-tint: #FFFFFF;
-	--clinic-error: #A31F14;
 }
 .sites-scheme-sky,
 .sites-scheme-honey {

@@ -4,7 +4,7 @@ A theme for a practice: a dentist, a physio or chiropractor, a therapist or coun
 It answers the four questions a new patient brings (what do you treat, who will I see, what does
 it cost, how do I book) and puts one ask button on every screen: it opens an appointment request
 (a sheet on a phone, a dialog from tablets) or links out to your online scheduler. Red Hat Display
-carries the headings and Red Hat Text the rest, on seven quiet schemes from white to navy.
+carries the headings and Red Hat Text the rest, on six quiet schemes from white to navy.
 
 The fixtures are an invented practice, **Oakfield Family Dental**, with two offices (Oakfield and
 Pine Ridge), so `sites dev` shows three categories, 13 services, eight concerns, six people, eight
@@ -13,7 +13,7 @@ placeholder text. The photographs are SVG placeholders; replace them before publ
 
 ```
 settings/theme.json template roles, 3 section groups, Brand, Practice and Contact settings
-settings/design.json every design token, the seven schemes (white, cloud, ice, sky, honey,
+settings/design.json every design token, the six schemes (white, cloud, sky, honey,
                     navy, slate) and the Calm and Plum palettes
 layouts/default.pzl the <html> document: SEO, Open Graph, the reveal pre-paint script, skip link, slots
 data/templates/     home, service, condition, member, location, post and page (+ about,
@@ -118,7 +118,7 @@ block:
 **Plum** (aubergine and rose) recolour the brand in one click: the navy, sky, honey and slate
 bands, the links, the accent and the buttons reference the palette. The surfaces inside a band
 (its chips, hairlines, hovers and the icon-circle tint) are Clinic blue's and stay as they are,
-as do the white page, Cloud and Ice: the admin paints a scheme value only when it is a plain
+as do the white page and Cloud: the admin paints a scheme value only when it is a plain
 colour or a palette reference, so none is derived with color-mix().
 
 | Palette | Navy | Sky (`info.bg`) | Honey (`accent`) |

@@ -1,0 +1,4 @@
+<!-- component: Phone -->
+<!-- The phone as a tel: link in the Price style: number, else the Practice phone; nothing without either. cls adds classes. -->
+{#let n = number || site.settings.phone}
+{#if n}<a class="font-heading text-h3 tnum hover:underline hover:underline-offset-4 { cls ?? '' }" href="tel:{ n | replace(' ', '') }">{ n }</a>{/if}

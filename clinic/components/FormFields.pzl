@@ -1,5 +1,5 @@
 <!-- component: FormFields -->
-<!-- A site form's fields. The engine's field types are text, textarea, email, checkbox and select, so the id picks the input: "phone" is a telephone field. Selects are select-dropdowns with their own markup; a select with one option is sent hidden. From 48rem name and phone sit side by side, and so do two selects in a row; every other field takes the full row. pick lists the ids to show (the four-field form); hint is printed under every textarea (the caution line). Placeholders are locale strings keyed by the field id. -->
+<!-- A site form's fields. The engine's field types are text, textarea, email, checkbox and select, so the id picks the input: "phone" is a telephone field. Selects are select-dropdowns with their own markup; a select with one option is sent hidden. From 48rem name and phone sit side by side, and so do two selects in a row; every other field takes the full row. pick lists the ids to show (the four-field form); hint is printed under every textarea (the caution line). Placeholders are locale strings keyed by the field id; an empty select reads Choose…, the time of day Any time. -->
 {#let paired = fields | find('id', 'phone')}
 <div class="grid gap-space-md md:grid-cols-2">
   {#for field in fields}
@@ -12,7 +12,7 @@
         <span class="mb-space-xs block text-body-sm font-medium" id="label-{ prefix }-{ field.id }">{ field.label }{#if field.required}<span aria-hidden="true"> *</span>{/if}</span>
         <select-dropdown class="text-body" aria-labelledby="label-{ prefix }-{ field.id }">
           <select-trigger class="flex min-h-control items-center justify-between gap-space-sm rounded-input border bg-input-background px-space-sm text-input-text { field.error ? 'border-scheme-error' : 'border-input-border' }" aria-describedby={ field.error ? 'error-' + prefix + '-' + field.id : null }>
-            <span class="select-label-text truncate { field.value ? '' : 'text-input-placeholder' }">{ field.value || t('choose') }</span>
+            <span class="select-label-text truncate { field.value ? '' : 'text-input-placeholder' }">{ field.value || t(field.id == 'time' ? 'placeholder.time' : 'choose') }</span>
             <Glyph name="chevron-down" />
           </select-trigger>
           <input type="hidden" name={ field.id } value={ field.value } />

@@ -1,4 +1,4 @@
-<!-- The band every page ends on, a hairline at its foot (the seam to the footer). None: the heading, the confirm line and the routes, centred. Inline: two halves from 48rem, the heading, the confirm line and the routes stacked left; the four-field request form on a white card right, with its link to the full form. -->
+<!-- The band every page ends on, a hairline at its foot (the seam to the footer). None: the heading, the confirm line and the routes, centred. Inline: two halves from 48rem, the heading, the confirm line and the phone stacked left (the card is the ask); the four-field request form on a white card right, with its link to the full form. -->
 {#let
   s = site.settings
   text = settings.text || s.confirm_line
@@ -9,7 +9,7 @@
     <div class="grid gap-space-lg">
       <h2 class="font-heading text-h2 text-balance">{ settings.heading }</h2>
       {#if text}<p class="text-body-lg text-pretty text-scheme-muted">{ text }</p>{/if}
-      <Routes stack />
+      <Phone cls="justify-self-start" />
     </div>
     <FormCard heading={ settings.form_heading }><AppointmentFields prefix="cta-{ section.id }" compact /></FormCard>
   </div>

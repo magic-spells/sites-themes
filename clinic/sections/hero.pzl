@@ -1,4 +1,4 @@
-<!-- The first screen: the h1, the standfirst and two buttons (the ask, and an outline link left out when its label is empty), side by side from 30rem, in seven parts of twelve. Split: beside the 4:5 (or 3:2) photo, which comes first at 3:2 on phones. Panel: beside the four-field request form on a white card. Cover: over the photo filling the band (3:2 from 48rem, or the full screen), the band's colour fading from 80% on the type's side to 20%; inset rounds it inside the page margins. Only the cover carries data-over-hero, for the over-hero header. -->
+<!-- The first screen: the h1, the standfirst and two buttons (the ask, and an outline link left out when its label is empty), side by side from 30rem, in seven parts of twelve. Split: beside the 4:5 (or 3:2) photo, which comes first at 3:2 on phones. Panel: no buttons (the card is the ask), beside the four-field request form on a white card. Cover: over the photo filling the band (3:2 from 48rem, or the full screen), the band's colour fading from 80% on the type's side to 20%; inset rounds it inside the page margins. Only the cover carries data-over-hero, for the over-hero header. -->
 {#let
   layout = settings.layout
   cover = layout == 'cover'
@@ -10,10 +10,10 @@
       <div class="grid gap-space-lg">
         <h1 class="font-heading text-h1 text-balance"><Rise text={ settings.heading } /></h1>
         {#if settings.text}<p class="max-w-reading text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
-        <div class="grid gap-space-sm xs:flex">
+        {#if layout != 'panel'}<div class="grid gap-space-sm xs:flex">
           <Button ask />
           {#if settings.secondary_label}<Button tone="outline" href={ settings.secondary_link }>{ settings.secondary_label }</Button>{/if}
-        </div>
+        </div>{/if}
       </div>
       {#if layout == 'panel'}
         <FormCard heading={ settings.form_heading }><AppointmentFields prefix="hero-{ section.id }" compact /></FormCard>
@@ -50,14 +50,14 @@
       { "value": "full", "label": "The full screen" }
     ], "info": "Type over a photo only." },
     { "type": "checkbox", "id": "inset", "label": "Inset", "default": false, "info": "Type over a photo only: the photo rounded inside the page margins." },
-    { "type": "text", "id": "secondary_label", "label": "Second button label", "default": "Our services", "info": "Leave empty to show the ask button alone." },
+    { "type": "text", "id": "secondary_label", "label": "Second button label", "default": "Our services", "info": "Leave empty to show the ask button alone. Not beside the request form." },
     { "type": "url", "id": "secondary_link", "label": "Second button link", "default": "/services" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
   ],
   "presets": [
     { "name": "Split", "settings": { "layout": "split", "color_scheme": "white" } },
     { "name": "Cover", "settings": { "layout": "cover", "color_scheme": "navy" } },
-    { "name": "Panel", "settings": { "layout": "panel", "color_scheme": "ice" } }
+    { "name": "Panel", "settings": { "layout": "panel", "color_scheme": "cloud" } }
   ]
 }
 </schema>

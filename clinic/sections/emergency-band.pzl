@@ -1,15 +1,10 @@
 <!-- One line for emergencies: the Practice emergency line in h3 left, the emergency phone (or the phone) in Price as a call link right; stacked on phones. Nothing while the emergency line is empty. -->
-{#let
-  s = site.settings
-  phone = s.emergency_phone || s.phone
-}
+{#let s = site.settings}
 {#if s.emergency_line}
 <section class="bg-scheme-background px-gutter py-space-2xl text-scheme-foreground">
   <div class="mx-auto flex max-w-column flex-col gap-space-xs md:flex-row md:items-center md:justify-between md:gap-space-xl">
-    <h2 class="max-w-reading font-heading text-h3">{ s.emergency_line }</h2>
-    {#if phone}
-    <a class="shrink-0 font-heading text-h3 tnum hover:underline hover:underline-offset-4" href="tel:{ phone | replace(' ', '') }">{ phone }</a>
-    {/if}
+    <h2 class="font-heading text-h3">{ s.emergency_line }</h2>
+    <Phone number={ s.emergency_phone } cls="shrink-0" />
   </div>
 </section>
 {/if}

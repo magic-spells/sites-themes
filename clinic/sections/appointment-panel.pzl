@@ -1,4 +1,4 @@
-<!-- The appointment request behind every ask button while Practice booking link is empty: the appointment form in a bottom-sheet on a phone that becomes a centred 40rem dialog from 48rem with the one soft shadow (styles/theme.css). It hands focus back to the button that opened it. Sent and error states come back on the page as ?form=…&sent=1 or &error=1, and the sheet opens on its own there. With a booking link set every ask is a plain link and this renders nothing. -->
+<!-- The appointment request behind every ask button while Practice booking link is empty: the appointment form in a bottom-sheet on a phone that becomes a centred 40rem dialog from 48rem with the one soft shadow (styles/theme.css), the phone alone at its foot. It hands focus back to the button that opened it. Sent and error states come back on the page as ?form=…&sent=1 or &error=1, and the sheet opens on its own there. With a booking link set every ask is a plain link and this renders nothing. -->
 {#if !site.settings.booking_url}
 <dialog-panel>
   <dialog class="text-scheme-foreground" aria-labelledby="appointment-title">
@@ -8,7 +8,7 @@
         <button class="-m-space-xs flex size-tap shrink-0 items-center justify-center hover:text-link" type="button" data-action-hide-dialog><Glyph name="close" cls="size-glyph" /><span class="sr-only">{ t('close') }</span></button>
       </bottom-sheet-header>
       <bottom-sheet-content>
-        <AppointmentFields handle={ settings.form } prefix="sheet" />
+        <AppointmentFields handle={ settings.form } prefix="sheet"><Phone cls="justify-self-center" /></AppointmentFields>
       </bottom-sheet-content>
     </bottom-sheet>
   </dialog>

@@ -7,7 +7,10 @@ off), a resume (the name, a line and the CV) or a collection of work (projects g
 category, a page each). The work is large and square-cornered; the words are small and sit
 below or above it, never on it. Mona Sans sets everything, on five schemes (paper, white,
 stone, ink, cobalt), and the one accent colour marks text links, the active filter and the
-status dot. A text link is underlined with a 1px rule; every button is outlined.
+status dot. It is the text colour by default, so the theme reads ink on paper; the accent
+option is cobalt: #1F3FBF under Design → Colors → Accent recolours paper, white and stone,
+and ink takes #9DB2FF as the links of a copy under Design → Schemes.
+A text link is underlined with a 1px rule; every button is outlined.
 
 The fixtures are an invented designer and illustrator, **Juno Reyes** in Lisbon, so
 `sites dev` shows four collections, twelve works with their galleries, twelve CV entries, six

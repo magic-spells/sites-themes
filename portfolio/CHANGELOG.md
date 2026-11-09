@@ -1,5 +1,10 @@
 # Portfolio
 
+## 0.1.1
+
+- Links, the filter rule and the status dot in the text colour by default; the accent colour is
+  a design setting.
+
 ## 0.1.0
 
 - The first release: a theme for one person's work, CV and writing, on Mona Sans and five

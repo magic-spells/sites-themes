@@ -38,7 +38,7 @@
 /* The scheme a section sits on. The engine has no muted, meta, border or
    surface-2 slot, so they ride on the chip and icon slots (settings/design.json
    says which). The link colour is the one accent: text links, the active
-   filter underline and the status dot. */
+   filter underline and the status dot; brand-accent, the text colour by default. */
 @theme inline {
 	--color-scheme-background: var(--sites-scheme-background);
 	--color-scheme-foreground: var(--sites-scheme-foreground);

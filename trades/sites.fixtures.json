@@ -1930,7 +1930,7 @@
      "title": "The yard",
      "fields": {
       "address": "3 Mill Lane\nAshby",
-      "hours": "Mon–Sat 7:00–18:00\nSun Emergency line",
+      "hours": "Mon–Sat 7:00–18:00\nSun Emergency",
       "phone": "(802) 555-0164",
       "email": "hello@hollisandsons.example",
       "map_url": "https://maps.example/?q=3+Mill+Lane+Ashby",

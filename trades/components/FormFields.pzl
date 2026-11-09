@@ -1,8 +1,9 @@
 <!-- component: FormFields -->
-<!-- A site form's fields. The engine's field types are text, textarea, email, checkbox and select, so the id picks the input: "phone" is a telephone field. Selects are select-dropdowns with their own markup; a select with one option is sent hidden. From 48rem name and phone sit side by side and every other field takes the full row. Placeholders are locale strings keyed by the field id. -->
+<!-- A site form's fields. The engine's field types are text, textarea, email, checkbox and select, so the id picks the input: "phone" is a telephone field. Selects are select-dropdowns with their own markup; a select with one option is sent hidden. From 48rem name and phone sit side by side when the form has both and every other field takes the full row. Placeholders are locale strings keyed by the field id. -->
+{#let paired = fields | find('id', 'phone')}
 <div class="grid gap-space-md md:grid-cols-2">
   {#for field in fields}
-    {#let half = field.id == 'name' || field.id == 'phone'}
+    {#let half = paired && (field.id == 'name' || field.id == 'phone')}
     {#if field.type == 'select' && field.options.length == 1}
       <input type="hidden" name={ field.id } value={ field.options[0] } />
     {:else if field.type == 'select'}

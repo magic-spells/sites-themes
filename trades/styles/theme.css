@@ -66,13 +66,10 @@
 	--color-scheme-surface-2: var(--sites-scheme-chip-background);
 	--color-scheme-card: var(--trades-card);
 	--color-scheme-tint: var(--sites-scheme-input-background);
-	--color-scheme-input-border: var(--sites-scheme-input-border);
 	--color-scheme-button-background: var(--sites-scheme-button-background);
 	--color-scheme-button-foreground: var(--sites-scheme-button-foreground);
 	--color-scheme-button-hover-background: var(--sites-scheme-button-hover-background);
 	--color-scheme-button-hover-foreground: var(--sites-scheme-button-hover-foreground);
-	--color-scheme-secondary-button-foreground: var(--sites-scheme-secondary-button-foreground);
-	--color-scheme-secondary-button-hover-background: var(--sites-scheme-secondary-button-hover-background);
 	--color-accent: var(--sites-scheme-links);
 	--color-scheme-error: var(--trades-error);
 	--color-backdrop: color-mix(in srgb, var(--sites-scheme-foreground) 50%, transparent);
@@ -159,7 +156,6 @@
 	--spacing-section: var(--trades-section);
 	--spacing-gutter: var(--trades-gutter);
 	--spacing-button-x: var(--sites-button-padding-x);
-	--spacing-button-y: var(--sites-button-padding-y);
 	--spacing-control: 3rem;
 	--spacing-tap: 2.75rem;
 	--spacing-icon-sm: 1rem;
@@ -477,7 +473,7 @@ dialog-panel:has(bottom-sheet) {
 	dialog-panel:has(bottom-sheet[data-centred]) > dialog {
 		inset: 0;
 		margin: auto;
-		width: min(90vw, 40rem);
+		width: min(90vw, var(--container-panel));
 		height: fit-content;
 		max-height: 90dvh;
 		border-radius: var(--sites-radius-md);

@@ -7,7 +7,7 @@
   <div class="mx-auto grid max-w-column gap-space-2xl">
     <div class="grid gap-space-xl md:grid-cols-2 lg:grid-cols-4">
       <div class="grid content-start gap-space-md">
-        <a class="grid justify-self-start leading-none" href="/"><span class="font-heading text-h3 font-extrabold case-heading">{ s.wordmark || site.name }</span>{#if s.tagline}<span class="mt-space-2xs text-body-sm text-scheme-muted">{ s.tagline }</span>{/if}</a>
+        <a class="grid justify-self-start leading-none" href="/"><span class="font-heading text-h4 font-extrabold case-heading">{ s.wordmark || site.name }</span>{#if s.tagline}<span class="mt-space-2xs text-body-sm text-scheme-muted">{ s.tagline }</span>{/if}</a>
         {#if settings.blurb}<p class="max-w-text text-body-sm text-pretty text-scheme-muted">{ settings.blurb }</p>{/if}
         {#if settings.social_menu.items.length}<ul class="flex flex-wrap gap-x-space-md gap-y-space-xs border-t border-scheme-border pt-space-md text-body-sm">{#for item in settings.social_menu.items}<li><a class="text-accent underline underline-offset-4 hover:text-scheme-foreground" href="{ item.href }">{ item.label }</a></li>{/for}</ul>{/if}
       </div>

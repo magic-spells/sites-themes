@@ -1,6 +1,6 @@
 {
   "label": "Services",
-  "description": "Every service in two columns, why us, questions and the routes.",
+  "description": "Every service in two columns, why us, questions and the ask button.",
   "sections": [
     {
       "id": "s_header",

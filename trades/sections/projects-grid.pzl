@@ -4,7 +4,7 @@
   picked = settings.source == 'featured' ? all | where('fields.featured') : all
   current = settings.show_tabs ? request.query.service : null
   shown = (current ? picked | where('fields.service.handle', current) : picked) | slice(0, settings.limit)
-  chip = 'flex min-h-tap items-center rounded-full bg-scheme-tint px-space-md text-body-sm transition-colors duration-fast hover:bg-scheme-surface-2 current:bg-scheme-foreground current:text-scheme-background'
+  chip = 'flex min-h-tap items-center rounded-full bg-scheme-surface-2 px-space-md text-body-sm transition-colors duration-fast hover:bg-scheme-border current:bg-scheme-foreground current:text-scheme-background'
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">

@@ -1,4 +1,4 @@
-<!-- The band every page ends on, with a hairline at its foot above the footer. None: the Display heading, the Yard confirm line and the routes centred, the proof row under a rule. Inline: five parts to seven from 48rem, the heading, the confirm line, the routes stacked and the licence lines left; the estimate form on a chalk card right. -->
+<!-- The band every page ends on, with a hairline at its foot above the footer. None: the Display heading, the Yard confirm line and the ask button centred, the proof row under a rule. Inline: five parts to seven from 48rem, the heading, the confirm line, the ask button and the licence lines left; the estimate form on a chalk card right. -->
 {#let
   s = site.settings
   inline = settings.form == 'inline'
@@ -8,7 +8,7 @@
     <div class="grid gap-space-lg { inline ? 'justify-items-start' : 'justify-items-center' }">
       <h2 class="font-heading text-display case-heading text-scheme-heading">{ settings.heading }</h2>
       {#if s.confirm_line}<p class="text-body-lg text-pretty text-scheme-muted">{ s.confirm_line }</p>{/if}
-      <Routes stack={ inline } />
+      <Button ask />
       {#if inline}<LicenceLines cls="text-body-sm text-scheme-muted" />{:else}<div class="grid w-full justify-items-center border-t border-scheme-border pt-space-lg"><ProofRow /></div>{/if}
     </div>
     {#if inline}<FormCard prefix="cta-{ section.id }" />{/if}
@@ -18,13 +18,13 @@
 <schema>
 {
   "name": "CTA band",
-  "description": "The band every page ends on: the heading, the routes and, inline, the estimate form.",
+  "description": "The band every page ends on: the heading, the ask button and, inline, the estimate form.",
   "kind": "Contact",
   "icon": "mouse-pointer-click",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Ready when you are." },
     { "type": "select", "id": "form", "label": "Form", "default": "none", "options": [
-      { "value": "none", "label": "None: the routes only" },
+      { "value": "none", "label": "None: the ask button only" },
       { "value": "inline", "label": "Inline: the estimate form beside" }
     ] },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "navy" }

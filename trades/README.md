@@ -2,7 +2,7 @@
 
 A theme for a home-services firm: a plumber, a heating engineer, an electrician, a roofer, a
 landscaper or a general contractor. The site has two jobs, "call us" and "get a free estimate",
-so both are on every screen: the phone and the ask button in the header, a call bar fixed to
+so both are on every screen: the ask button in the header, a call bar fixed to
 the foot of a phone, and the estimate form a tap away in a sheet. Barlow Condensed carries the
 headings in capitals and Instrument Sans the rest, on five schemes: paper, chalk, a brass band
 for the specials, navy and charcoal.
@@ -21,7 +21,7 @@ data/templates/     home, service, project, area, post and page (+ services, wor
 data/groups/        header-group.json, footer-group.json, panel-group.json
 templates/          404.pzl, password.pzl, maintenance.pzl
 sections/           38, each with a full <schema>
-components/         the shared pieces: the routes, the proof row, the cards, the form
+components/         the shared pieces: the proof row, the cards, the form
 styles/theme.css    Tailwind with every token in @theme
 scripts/theme.ts    the vendored components and the small behaviours they leave out
 assets/             Barlow Condensed and Instrument Sans (OFL), glyphs.svg, the favicon, the placeholders
@@ -46,7 +46,7 @@ assets/             Barlow Condensed and Instrument Sans (OFL), glyphs.svg, the 
 
 ## Yard settings
 
-The phone and its line, an emergency number, the ask label, `ask` (open the estimate sheet, or
+The phone, an emergency number, the ask label, `ask` (open the estimate sheet, or
 follow `ask_url`), the confirm line under every form, the estimate form, the rating with its
 count, source and link, the year the firm started, the licence lines, the insured and
 guarantee lines, the financing link and line, the service radius, and the call bar on phones.

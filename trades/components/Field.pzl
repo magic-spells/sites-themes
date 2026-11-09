@@ -1,9 +1,9 @@
 <!-- component: Field -->
-<!-- A labelled input: the label above, the box filled with the scheme's tint and no border at rest, ringed in the accent on focus; the placeholder in the muted colour; the error under it in the scheme's error colour, tied by aria-describedby. -->
+<!-- A labelled input: the label above, the box filled with surface-2 and no border at rest, ringed in the accent on focus; the placeholder in the muted colour; the error under it in the scheme's error colour, tied by aria-describedby. -->
 {#let
   id = 'field-' + prefix + '-' + name
   err = error ? 'error-' + prefix + '-' + name : null
-  box = 'block w-full rounded-input border bg-scheme-tint px-space-sm text-body text-scheme-foreground placeholder:text-scheme-muted focus:outline-2 focus:outline-offset-2 focus:outline-accent ' + (error ? 'border-scheme-error' : 'border-transparent')
+  box = 'block w-full rounded-input border bg-scheme-surface-2 px-space-sm text-body text-scheme-foreground placeholder:text-scheme-muted focus:outline-2 focus:outline-offset-2 focus:outline-accent ' + (error ? 'border-scheme-error' : 'border-transparent')
 }
 <div class={ wide ? 'md:col-span-2' : null }>
   <label class="mb-space-xs block text-body-sm font-medium" for="{ id }">{ label }{#if required}<span aria-hidden="true"> *</span>{/if}</label>

@@ -46,8 +46,8 @@
 	--color-error-on-dark: #F0A094;
 }
 
-/* The scheme a section sits on. The engine has no muted, border, surface-2
-   or tint slot, so they ride on the chip and input slots (settings/design.json
+/* The scheme a section sits on. The engine has no muted, border or surface-2
+   slot, so they ride on the chip and input slots (settings/design.json
    says which); the accent is the link colour. */
 @theme inline {
 	--color-scheme-background: var(--sites-scheme-background);
@@ -58,7 +58,6 @@
 	--color-scheme-border: var(--sites-scheme-chip-border);
 	--color-scheme-surface-2: var(--sites-scheme-chip-background);
 	--color-scheme-card: var(--trades-card);
-	--color-scheme-tint: var(--sites-scheme-input-background);
 	--color-scheme-button-background: var(--sites-scheme-button-background);
 	--color-scheme-button-foreground: var(--sites-scheme-button-foreground);
 	--color-scheme-button-hover-background: var(--sites-scheme-button-hover-background);
@@ -490,7 +489,7 @@ dialog-panel:has(bottom-sheet) {
 	}
 }
 
-/* The select lists: the field is the tint with no border, the panel the
+/* The select lists: the field is surface-2 (the input slot) with no border, the panel the
    scheme's background with a hairline. */
 select-dropdown {
 	--select-shadow: none;

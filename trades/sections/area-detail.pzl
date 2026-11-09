@@ -1,4 +1,4 @@
-<!-- A town's page from the areas collection: the pin line, the Brand tagline in the town as the title, the town's line; its paragraph beside its map at 4:5; then the featured services under a section head, the jobs in the town and the reviews that name it under h3-size headings; the routes centred to close. -->
+<!-- A town's page from the areas collection: the pin line, the Brand tagline in the town as the title, the town's line; its paragraph beside its map at 4:5; then the featured services under a section head, the jobs in the town and the reviews that name it under h3-size headings; the ask button centred to close. -->
 {#let
   entry = page.entry
   f = entry.fields
@@ -31,7 +31,7 @@
       <h2 class="font-heading text-h3 case-heading text-scheme-heading">{ t('town_says', { town: town }) }</h2>
       <ul class="grid gap-space-sm md:grid-cols-2 md:gap-space-lg lg:grid-cols-3">{#for review in reviews}{#if contains(review.fields.line, town)}<li><ReviewCard entry={ review } /></li>{/if}{/for}</ul>
     </div>{/if}
-    <div class="flex justify-center"><Routes /></div>
+    <Button ask cls="justify-self-center" />
   </div>
 </section>
 

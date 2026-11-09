@@ -28,7 +28,6 @@
       "name": "Yard",
       "settings": [
         { "type": "text", "id": "phone", "label": "Phone", "default": "", "info": "Printed as typed; the call links drop the spaces." },
-        { "type": "text", "id": "phone_line", "label": "Phone line", "default": "24/7 live answering", "info": "The short promise under the phone number." },
         { "type": "text", "id": "ask_label", "label": "Ask button label", "default": "Get a free estimate" },
         { "type": "select", "id": "ask", "label": "Ask button", "default": "form", "options": [
           { "value": "form", "label": "Opens the estimate form" },

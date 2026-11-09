@@ -12,7 +12,7 @@
         <div class="flex gap-space-sm">
           {#for field in form.fields}
             <label class="sr-only" for="news-{ field.id }">{ field.label }</label>
-            <input class="block min-h-control w-full min-w-0 rounded-input border bg-scheme-tint px-space-sm text-body placeholder:text-scheme-muted focus:outline-2 focus:outline-offset-2 focus:outline-accent { field.error ? 'border-scheme-error' : 'border-transparent' }" id="news-{ field.id }" name={ field.id } type={ field.type } placeholder={ field.label } autocomplete="email" maxlength={ field.max_length } required={ field.required } value={ field.value } aria-invalid={ field.error ? 'true' : 'false' } aria-describedby={ field.error ? 'news-error' : null } />
+            <input class="block min-h-control w-full min-w-0 rounded-input border bg-scheme-surface-2 px-space-sm text-body placeholder:text-scheme-muted focus:outline-2 focus:outline-offset-2 focus:outline-accent { field.error ? 'border-scheme-error' : 'border-transparent' }" id="news-{ field.id }" name={ field.id } type={ field.type } placeholder={ field.label } autocomplete="email" maxlength={ field.max_length } required={ field.required } value={ field.value } aria-invalid={ field.error ? 'true' : 'false' } aria-describedby={ field.error ? 'news-error' : null } />
           {/for}
           <Button type="submit">{ form.submit_label }</Button>
         </div>

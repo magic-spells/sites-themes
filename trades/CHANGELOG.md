@@ -2,7 +2,7 @@
 
 ## 0.1.0
 
-- 38 sections: the announcement bar (still or a ticker), the header (the phone and the ask
+- 38 sections: the announcement bar (still or a ticker), the header (the ask
   button, a Services panel of every service with its price, over the hero on Home), the menu
   drawer, the estimate sheet (a bottom sheet on phones, a dialog from tablets), the call bar on
   phones, the cookie notice and the footer with its contact rows and licence lines; the hero,
@@ -19,4 +19,7 @@
 - The hero opens as Split on navy, and a navy or charcoal hero runs under the header. Careers
   opens on a split hero, then the openings beside the apply form; Contact keeps its page header
   over the contact form. A plan's button reads "Join <plan>"; the CTA band shows the confirm
-  line under its routes.
+  line under its ask button.
+- The ask button stands alone wherever a page asks, with no phone number beside it; the split
+  hero's photo meets the copy without a fade; chips, fields, icon circles and carousel arrows sit
+  on surface-2, the neutral of the cards, in place of the rust tint.

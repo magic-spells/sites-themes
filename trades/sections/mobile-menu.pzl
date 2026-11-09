@@ -1,4 +1,4 @@
-<!-- The menu drawer: a dialog-panel from the right over the page dimmed by the text colour at 50%. It closes on the backdrop, Escape and its ×, and hands focus back to the menu icon. The main menu in Barlow Condensed capitals, the services folded under Services, a rule, the ask button, the phone with its line and the Yard hours line. -->
+<!-- The menu drawer: a dialog-panel from the right over the page dimmed by the text colour at 50%. It closes on the backdrop, Escape and its ×, and hands focus back to the menu icon. The main menu in Barlow Condensed capitals, the services folded under Services, a rule, the ask button full width and the Yard hours line. -->
 {#let
   s = site.settings
   services = content.services.entries | sort('fields.order') | slice(0, 12)
@@ -34,7 +34,7 @@
         </nav>
       {/if}
       <div class="grid gap-space-md border-t border-scheme-border pt-space-lg">
-        <Routes stack />
+        <Button ask wide />
         {#if s.hours_line}<p class="text-body-sm text-scheme-muted">{ s.hours_line }</p>{/if}
       </div>
     </div>

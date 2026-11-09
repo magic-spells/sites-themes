@@ -10,7 +10,7 @@
       <div class="md:col-span-2">
         <span class="mb-space-xs block text-body-sm font-medium" id="label-{ prefix }-{ field.id }">{ field.label }{#if field.required}<span aria-hidden="true"> *</span>{/if}</span>
         <select-dropdown class="text-body" aria-labelledby="label-{ prefix }-{ field.id }">
-          <select-trigger class="flex min-h-control items-center justify-between gap-space-sm rounded-input border bg-scheme-tint px-space-sm { field.error ? 'border-scheme-error' : 'border-transparent' }" aria-describedby={ field.error ? 'error-' + prefix + '-' + field.id : null }>
+          <select-trigger class="flex min-h-control items-center justify-between gap-space-sm rounded-input border bg-scheme-surface-2 px-space-sm { field.error ? 'border-scheme-error' : 'border-transparent' }" aria-describedby={ field.error ? 'error-' + prefix + '-' + field.id : null }>
             <span class="select-label-text truncate { field.value ? '' : 'text-scheme-muted' }">{ field.value || t('choose') }</span>
             <Glyph name="chevron-down" />
           </select-trigger>

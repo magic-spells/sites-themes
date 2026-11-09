@@ -1,4 +1,4 @@
-<!-- The header: the wordmark over the tagline left, the main menu, and at 64rem the phone with its line and the ask button right. The menu item that points at the services page opens a dropdown-panel of every service in two columns (icon, name, price) and "All services". Below 64rem: the wordmark, a round tel: button and the menu icon, both 2.75rem. Sticky. Over-hero: transparent with the navy hero's colours at the top of a page that opens with a hero marked data-over-hero, its own scheme once the page scrolls. -->
+<!-- The header: the wordmark over the tagline left, the main menu, and at 64rem the ask button right. The menu item that points at the services page opens a dropdown-panel of every service in two columns (icon, name, price) and "All services". Below 64rem: the wordmark, a round tel: button and the menu icon, both 2.75rem. Sticky. Over-hero: transparent with the navy hero's colours at the top of a page that opens with a hero marked data-over-hero, its own scheme once the page scrolls. -->
 {#let
   s = site.settings
   services = content.services.entries | sort('fields.order') | slice(0, 12)
@@ -38,11 +38,7 @@
       {/if}
       <div class="flex items-center gap-space-xs lg:gap-space-lg">
         {#if s.phone}
-          <a class="hidden gap-space-2xs lg:grid" href="tel:{ tel }">
-            <span class="flex items-center gap-space-xs font-heading text-h3 leading-none tnum"><Glyph name="phone" cls="size-glyph text-accent overlaid:text-brand-accent" />{ s.phone }</span>
-            {#if s.phone_line}<span class="flex items-center gap-space-xs ps-space-sm text-body-sm text-scheme-muted overlaid:text-grey-medium"><Glyph name="dot" cls="size-dot text-accent overlaid:text-brand-accent" />{ s.phone_line }</span>{/if}
-          </a>
-          <a class="flex size-tap items-center justify-center rounded-full bg-scheme-tint text-accent lg:hidden overlaid:bg-transparent overlaid:text-brand-accent" href="tel:{ tel }"><Glyph name="phone" /><span class="sr-only">{ t('call', { phone: s.phone }) }</span></a>
+          <a class="flex size-tap items-center justify-center rounded-full bg-scheme-surface-2 text-accent lg:hidden overlaid:bg-transparent overlaid:text-brand-accent" href="tel:{ tel }"><Glyph name="phone" /><span class="sr-only">{ t('call', { phone: s.phone }) }</span></a>
         {/if}
         <span class="hidden lg:contents"><Button ask cls="overlaid:border-brand-accent overlaid:bg-brand-accent overlaid:text-brand-primary" /></span>
         <button class="-me-space-xs flex size-tap items-center justify-center lg:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu"><Glyph name="menu" cls="size-glyph" /><span class="sr-only">{ t('menu') }</span></button>

@@ -1,5 +1,5 @@
 <!-- component: ServiceCard -->
-<!-- A service, one link, on a card with 1rem corners and a hairline. photo: the square photo with a caption panel across its foot (name, summary, the arrow in a tint circle). Otherwise, or with no photo: the icon in a 4rem circle, the name, the summary, a rule, then the arrow left and the price line right (left out by price false). -->
+<!-- A service, one link, on a card with 1rem corners and a hairline. photo: the square photo with a caption panel across its foot (name, summary, the arrow in a surface-2 circle). Otherwise, or with no photo: the icon in a 4rem circle, the name, the summary, a rule, then the arrow left and the price line right (left out by price false). -->
 {#let
   f = entry.fields
   href = '/services/' + entry.handle

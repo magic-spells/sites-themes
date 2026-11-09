@@ -1,5 +1,5 @@
 <!-- component: ValueProp -->
-<!-- One reason to call, from a value-props block. card: a tall card on surface-2, the icon in an 8rem tint circle, the title and line centred, the arrow bottom right. column: the icon in a 3rem circle top left, the title and line under it, one cell of the row of four on the band's background. -->
+<!-- One reason to call, from a value-props block. card: a tall card on surface-2, the icon in an 8rem surface-2 circle, the title and line centred, the arrow bottom right. column: the icon in a 3rem circle top left, the title and line under it, one cell of the row of four on the band's background. -->
 {#let b = block.settings}
 {#if layout == 'column'}
 <li class="grid content-start gap-space-sm bg-scheme-background p-space-xl" data-block={ editor_id }>

@@ -1,4 +1,4 @@
-<!-- A service's page: the name in h1, its tag in Meta, the price line with the price note, the summary and the two routes, beside the 3:2 photo (or the icon large in a tint well). Under it the description in the reading column, "What's included" as check rows, "Recent work" (up to three projects of this service, left out when it has none) and the questions in the blocks. -->
+<!-- A service's page: the name in h1, its tag in Meta, the price line with the price note, the summary and the ask button, beside the 3:2 photo (or the icon large in a surface-2 well). Under it the description in the reading column, "What's included" as check rows, "Recent work" (up to three projects of this service, left out when it has none) and the questions in the blocks. -->
 {#let
   entry = page.entry
   f = entry.fields
@@ -14,7 +14,7 @@
         {#if f.tag}<p class="text-body-sm text-scheme-muted">{ f.tag }</p>{/if}
         {#if f.price || f.price_note}<p class="flex flex-wrap items-baseline gap-x-space-sm"><PriceLine entry={ entry } />{#if f.price_note}<span class="text-body-sm text-scheme-muted">{ f.price_note }</span>{/if}</p>{/if}
         {#if f.summary}<p class="text-body-lg text-pretty text-scheme-muted">{ f.summary }</p>{/if}
-        <div class="mt-space-sm w-full"><Routes /></div>
+        <Button ask cls="mt-space-sm" />
       </div>
       {#if f.image}<Well asset={ f.image } alt={ f.image_alt } ratio="aspect-photo" width={ 1200 } sizes="(min-width: 48rem) 40vw, 100vw" eager />
       {:else}<div class="flex aspect-photo items-center justify-center rounded-card bg-scheme-surface-2"><IconCircle icon={ f.icon || 'wrench' } size="xl" /></div>{/if}
@@ -45,7 +45,7 @@
 <schema>
 {
   "name": "Service detail",
-  "description": "A service's page: the price, the routes, the photo, what's included, recent work and questions.",
+  "description": "A service's page: the price, the ask button, the photo, what's included, recent work and questions.",
   "kind": "Services",
   "icon": "file-text",
   "templates": ["service"],

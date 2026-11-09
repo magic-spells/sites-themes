@@ -1,6 +1,6 @@
 {
   "label": "Service",
-  "description": "A service's page: the price, the routes, what's included, recent work, questions and reviews.",
+  "description": "A service's page: the price, the ask button, what's included, recent work, questions and reviews.",
   "sections": [
     {
       "id": "s_detail",

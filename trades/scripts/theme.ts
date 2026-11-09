@@ -22,6 +22,10 @@ import Reveal from './vendor/reveal.js';
 
 const DISMISSED_PREFIX = 'sites:dismissed:';
 
+interface Carousel extends HTMLElement {
+	on(event: string, listener: () => void): void;
+}
+
 interface Panel extends HTMLElement {
 	show(trigger?: Element): unknown;
 	hide(): unknown;
@@ -128,6 +132,23 @@ document.addEventListener('click', (event) => {
 	const paused = button.getAttribute('aria-pressed') !== 'true';
 	button.setAttribute('aria-pressed', String(paused));
 	button.closest('[data-ticker]')?.querySelector('scrolling-content')?.toggleAttribute('paused', paused);
+});
+
+// A project's photos open the lightbox of a hidden carousel holding the
+// same photos (the plugin opens from a slide and has no public open(index)).
+// Each tile is a link to the full-size photo for a page without JavaScript.
+// Focus goes back to the tile when the lightbox closes.
+const tileFor = new Map<Element, HTMLElement>();
+document.addEventListener('click', (event) => {
+	const tile = closest(event, '[data-lightbox-open]');
+	if (!tile) return;
+	const carousel = document.getElementById(tile.getAttribute('data-lightbox-open') ?? '') as Carousel | null;
+	const slide = carousel?.querySelectorAll<HTMLElement>('tarot-slide')[Number(tile.getAttribute('data-index'))];
+	if (!carousel || !slide) return;
+	event.preventDefault();
+	if (!tileFor.has(carousel)) carousel.on('lightbox:closed', () => tileFor.get(carousel)?.focus());
+	tileFor.set(carousel, tile);
+	(slide.querySelector('img') ?? slide).click();
 });
 
 // Scroll reveals on cards and tiles only. They write `reveal reveal-fade-up`

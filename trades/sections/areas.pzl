@@ -1,16 +1,17 @@
 <!-- TODO sync with Figma -->
-<!-- Stub (code B builds it): the section head with the Yard service radius line, the towns as pin links beside the map. -->
+<!-- The towns served: the section head with the Yard service radius line, then the towns as pin links three, then two across beside the first location's map at 4:5 (its image, or its embedded map when set and chosen). On phones the map comes first at 3:2. -->
 {#let
   all = content.areas.entries | sort('fields.order')
   towns = (settings.source == 'featured' ? all | where('fields.featured') : all) | slice(0, 12)
-  loc = content.locations.entries | sort('fields.order') | first
+  map = (content.locations.entries | sort('fields.order') | first)?.fields
+  ratio = 'aspect-photo md:aspect-portrait'
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
-    <SectionHead heading={ settings.heading } text={ site.settings.service_radius_line } />
-    <div class="grid items-start gap-space-xl md:grid-cols-text-picture">
-      <ul class="grid gap-x-space-lg sm:grid-cols-2 lg:grid-cols-3">{#for entry in towns}<AreaLink entry={ entry } />{/for}</ul>
-      <Well asset={ loc.fields.map_image } alt={ loc.fields.map_image_alt } ratio="aspect-square" sizes="(min-width: 48rem) 40vw, 100vw" />
+    <SectionHead heading={ settings.heading } text={ site.settings.service_radius_line } link_label={ settings.link_label } link_href={ settings.link_href } />
+    <div class="grid items-start gap-space-3xl max-md:gap-space-xl md:grid-cols-text-picture">
+      <ul class="grid grid-cols-2 gap-x-space-lg lg:grid-cols-3">{#for entry in towns}<AreaLink entry={ entry } />{/for}</ul>
+      <div class="max-md:order-first">{#if settings.map == 'embed' && map.map_embed_url}<iframe class="w-full rounded-card bg-scheme-surface-2 { ratio }" src="{ map.map_embed_url }" title="{ map.map_image_alt }" loading="lazy"></iframe>{:else}<Well asset={ map.map_image } alt={ map.map_image_alt } ratio={ ratio } sizes="(min-width: 48rem) 40vw, 100vw" />{/if}</div>
     </div>
   </div>
 </section>
@@ -23,6 +24,8 @@
   "icon": "map-pin",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Where we work" },
+    { "type": "text", "id": "link_label", "label": "Button label", "default": "All areas" },
+    { "type": "url", "id": "link_href", "label": "Button link", "default": "/areas" },
     { "type": "select", "id": "source", "label": "Towns", "default": "all", "options": [
       { "value": "all", "label": "All" },
       { "value": "featured", "label": "Featured" }

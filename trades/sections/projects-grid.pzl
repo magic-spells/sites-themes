@@ -1,19 +1,18 @@
-<!-- TODO sync with Figma -->
-<!-- Stub (code B builds it): the section head, the ?service= tabs as plain links and the project cards. -->
+<!-- Past jobs as cards three, two, then one across, each linking to its page. With service tabs: All and one chip per service that has a job, plain links to ?service=, the current one marked; the list filters in memory. -->
 {#let
   all = content.projects.entries | sort('fields.order')
   picked = settings.source == 'featured' ? all | where('fields.featured') : all
-  current = request.query.service
-  shown = (settings.show_tabs && current ? picked | where('fields.service.handle', current) : picked) | slice(0, settings.limit)
-  services = content.services.entries | sort('fields.order')
+  current = settings.show_tabs ? request.query.service : null
+  shown = (current ? picked | where('fields.service.handle', current) : picked) | slice(0, settings.limit)
+  chip = 'flex min-h-tap items-center rounded-full bg-scheme-tint px-space-md text-body-sm transition-colors duration-fast hover:bg-scheme-surface-2 current:bg-scheme-foreground current:text-scheme-background'
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } />
     {#if settings.show_tabs}
-      <ul class="mb-space-lg flex flex-wrap gap-space-xs text-body-sm">
-        <li><a class="block rounded-full border border-scheme-border px-space-md py-space-xs current:bg-scheme-foreground current:text-scheme-background" href="?" aria-current={ current ? null : 'page' }>{ t('all') }</a></li>
-        {#for svc in services}{#if picked | find('fields.service.handle', svc.handle)}<li><a class="block rounded-full border border-scheme-border px-space-md py-space-xs current:bg-scheme-foreground current:text-scheme-background" href="?service={ svc.handle }" aria-current={ current == svc.handle ? 'page' : null }>{ svc.title }</a></li>{/if}{/for}
+      <ul class="mb-space-xl flex flex-wrap gap-space-xs">
+        <li><a class={ chip } href="?" aria-current={ current ? null : 'page' }>{ t('all') }</a></li>
+        {#for svc in content.services.entries | sort('fields.order')}{#if picked | find('fields.service.id', svc.id)}<li><a class={ chip } href="?service={ svc.handle }" aria-current={ current == svc.handle ? 'page' : null }>{ svc.title }</a></li>{/if}{/for}
       </ul>
     {/if}
     <ul class="grid gap-x-space-md gap-y-space-xl md:grid-cols-2 lg:grid-cols-3">{#for entry in shown}<li><ProjectCard entry={ entry } /></li>{/for}</ul>

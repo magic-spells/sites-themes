@@ -1,11 +1,19 @@
-<!-- TODO sync with Figma -->
-<!-- Stub (code B builds it): the section head and the projects as a row. -->
-{#let projects = content.projects.entries | sort('fields.order') | where('fields.featured') | slice(0, 12)}
-<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto max-w-column">
+<!-- Featured jobs on a tarot strip of equal slides at one shape, 1.25, 2.25 then 3.25 across; on phones the track runs off the right edge. From 48rem the progress hairline and the round arrows sit under it. -->
+{#let
+  id = 'strip-' + section.id
+  projects = content.projects.entries | sort('fields.order') | where('fields.featured') | slice(0, 12)
+  nav = { showButtons: true, showPagination: false }
+  options = { slidesPerView: 1.25, gap: '1rem', progressBar: { selector: '#bar-' + id }, navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { slidesPerView: 2.25, gap: '1.5rem', navigation: nav }, '1024': { slidesPerView: 3.25, gap: '1.5rem', navigation: nav } } }
+}
+<section class="overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <tarot-carousel class="mx-auto block max-w-column" id={ id }>
+    <script type="application/json" data-tarot-options>{ options | json }</script>
     <SectionHead heading={ settings.heading } link_label={ settings.link_label } link_href={ settings.link_href } />
-    <ul class="flex gap-space-md overflow-x-auto">{#for entry in projects}<li class="w-4/5 shrink-0 md:w-1/3"><ProjectCard entry={ entry } /></li>{/for}</ul>
-  </div>
+    <tarot-viewport class="max-md:-me-gutter"><tarot-track>
+      {#for entry in projects}<tarot-slide><ProjectCard entry={ entry } ratio="aspect-{ settings.slide_ratio }" /></tarot-slide>{/for}
+    </tarot-track></tarot-viewport>
+    <Arrows bar="bar-{ id }" />
+  </tarot-carousel>
 </section>
 
 <schema>

@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- Questions and answers: the heading centred, then the rows that open and close in the 40rem column, centred; the first open when set. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-reading">

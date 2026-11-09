@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- A page's head: the h1 (the page title unless a heading is set), the standfirst under it. Left or centred; no kicker. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column gap-space-md { settings.align == 'center' ? 'justify-items-center text-center' : 'justify-items-start' }">

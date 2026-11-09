@@ -1,5 +1,4 @@
-<!-- TODO sync with Figma -->
-<!-- The practice's story: the heading, the prose, the Practice registration lines in Meta and a text link in seven parts, beside the 4:5 photo in five, left or right; stacked on phones, the photo first. -->
+<!-- The practice's story: the heading, the prose, the Practice registration lines in Meta and a text link in seven parts, beside the 4:3 photo in five, left or right; stacked on phones, the text first. -->
 {#let
   s = site.settings
   left = settings.image_side == 'left'
@@ -12,7 +11,7 @@
       {#if settings.show_registration && s.registration_lines}<p class="grid text-body-sm text-scheme-muted">{#for line in s.registration_lines | split('\n')}<span>{ line }</span>{/for}</p>{/if}
       {#if settings.link_label && settings.link}<a class="text-body font-medium text-link underline underline-offset-4" href="{ settings.link }">{ settings.link_label }</a>{/if}
     </div>
-    <div class="max-md:order-first"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" /></div>
+    <Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-map" width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" />
   </div>
 </section>
 
@@ -28,7 +27,7 @@
     { "type": "checkbox", "id": "show_registration", "label": "Registration lines", "default": true, "info": "The Practice registration lines under the text." },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "Meet the team" },
     { "type": "url", "id": "link", "label": "Link", "default": "/team" },
-    { "type": "image", "id": "image", "label": "Image (4:5)" },
+    { "type": "image", "id": "image", "label": "Image (4:3)" },
     { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "" },
     { "type": "select", "id": "image_side", "label": "Image", "default": "right", "options": [
       { "value": "left", "label": "Left" },

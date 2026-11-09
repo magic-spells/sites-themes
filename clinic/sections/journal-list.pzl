@@ -1,17 +1,18 @@
-<!-- TODO sync with Figma -->
-<!-- Advice: the newest post as a feature across two columns, then the rest three across from 64rem; the 3:2 photo, topic and date in Meta, the title in Card title, the standfirst. No reading time. -->
+<!-- Advice: the newest post as a feature, its 3:2 photo in seven parts beside topic and date in Meta, the title in h3 size and the standfirst; then the rest two across from 48rem, each the 3:2 photo, topic and date, and the title in Card title. No reading time. -->
 {#let posts = content.posts.entries | sort('fields.date') | reverse | slice(0, settings.limit)}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } />
-    <ul class="grid gap-x-space-lg gap-y-space-xl md:grid-cols-2 lg:grid-cols-3">
+    <ul class="grid gap-x-space-lg gap-y-space-xl md:grid-cols-2">
       {#for entry in posts, i}
         {#let f = entry.fields}
-        <li class="group relative grid content-start gap-space-sm { i == 0 ? 'md:col-span-2' : '' }">
-          <Well asset={ f.image } alt={ f.image_alt } width={ i == 0 ? 1200 : 800 } sizes="(min-width: 64rem) { i == 0 ? '54rem' : '26rem' }, (min-width: 48rem) 50vw, 100vw" zoom />
-          <p class="mt-space-xs text-body-sm text-scheme-muted">{ [f.topic, f.date ? f.date | date : null] | compact | join(' · ') }</p>
-          <h3 class="font-heading text-balance { i == 0 ? 'text-h3' : 'text-card' }"><a class="after:absolute after:inset-0 group-hover:underline group-hover:underline-offset-4" href="/advice/{ entry.handle }">{ entry.title }</a></h3>
-          {#if f.standfirst}<p class="max-w-reading text-body-sm text-pretty text-scheme-muted">{ f.standfirst }</p>{/if}
+        <li class="group relative grid gap-space-md { i == 0 ? 'md:col-span-2 md:grid-cols-text-picture md:items-center md:gap-x-space-3xl' : 'content-start' }">
+          <Well asset={ f.image } alt={ f.image_alt } width={ i == 0 ? 1200 : 800 } sizes="(min-width: 48rem) { i == 0 ? '55vw' : '50vw' }, 100vw" zoom />
+          <div class="grid content-start gap-space-sm">
+            <p class="text-body-sm text-scheme-muted">{ [f.topic, f.date ? f.date | date : null] | compact | join(' · ') }</p>
+            <h3 class="font-heading text-balance { i == 0 ? 'text-h3' : 'text-card' }"><a class="after:absolute after:inset-0 group-hover:underline group-hover:underline-offset-4" href="/advice/{ entry.handle }">{ entry.title }</a></h3>
+            {#if i == 0 && f.standfirst}<p class="max-w-reading text-body-lg text-pretty text-scheme-muted">{ f.standfirst }</p>{/if}
+          </div>
         </li>
       {/for}
     </ul>

@@ -1,0 +1,50 @@
+{
+  "label": "CV",
+  "description": "The full CV, grouped, with the download.",
+  "sections": [
+    {
+      "id": "s_head",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "CV",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_statement",
+      "type": "statement",
+      "preset": "Large",
+      "settings": {
+        "text": "Ten years of work, in order.",
+        "text_muted": "Newest first.",
+        "size": "h2",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cv",
+      "type": "cv",
+      "preset": "Full",
+      "settings": {
+        "heading": "",
+        "limit": 0,
+        "download": true,
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_contact",
+      "type": "contact-band",
+      "preset": "Stone",
+      "settings": {
+        "social_menu": "social",
+        "color_scheme": "stone"
+      },
+      "blocks": []
+    }
+  ]
+}

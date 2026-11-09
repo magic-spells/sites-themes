@@ -1,0 +1,29 @@
+<!-- component: FormFields -->
+<!-- props: fields prefix -->
+<!-- A site form's fields, each labelled: a select is a select-dropdown (its own trigger, hidden input and panel), a checkbox a ticked line, a select with one option is sent hidden, the rest are Fields. Errors sit under their field, tied by aria-describedby. -->
+<div class="grid gap-space-md">
+  {#for field in fields}
+    {#if field.type == 'select' && field.options.length == 1}
+      <input type="hidden" name={ field.id } value={ field.options[0] } />
+    {:else if field.type == 'select'}
+      <div>
+        <span class="mb-space-2xs block text-body-sm font-medium" id="label-{ prefix }-{ field.id }">{ field.label }</span>
+        <select-dropdown class="text-body" aria-labelledby="label-{ prefix }-{ field.id }">
+          <select-trigger class="flex min-h-control items-center justify-between gap-space-sm rounded-input border bg-scheme-input-background px-space-sm text-scheme-input-foreground { field.error ? 'border-scheme-error' : 'border-scheme-input-border' }" aria-describedby={ field.error ? 'error-' + prefix + '-' + field.id : null }>
+            <span class="select-label-text truncate">{ field.value || t('choose') }</span>
+            <Glyph name="arrow-down" cls="size-icon text-scheme-meta" />
+          </select-trigger>
+          <input type="hidden" name={ field.id } value={ field.value } />
+          <select-panel>
+            {#for option in field.options}<select-option value={ option } selected={ field.value == option }>{ option }</select-option>{/for}
+          </select-panel>
+        </select-dropdown>
+        {#if field.error}<p class="mt-space-2xs text-body-sm text-scheme-error" id="error-{ prefix }-{ field.id }">{ t('form_field_' + field.error) }</p>{/if}
+      </div>
+    {:else if field.type == 'checkbox'}
+      <label class="flex items-start gap-space-xs text-body-sm"><input class="mt-space-2xs size-icon accent-link" type="checkbox" name={ field.id } value="on" checked={ field.value == 'on' } required={ field.required } />{ field.label }</label>
+    {:else}
+      <Field name={ field.id } label={ field.label } type={ field.type } required={ field.required } maxlength={ field.max_length } value={ field.value } error={ field.error } prefix={ prefix } />
+    {/if}
+  {/for}
+</div>

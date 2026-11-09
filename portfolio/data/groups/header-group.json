@@ -1,0 +1,27 @@
+{
+  "sections": [
+    {
+      "id": "sg_announcement",
+      "type": "announcement-bar",
+      "preset": "Ink",
+      "settings": {
+        "scroll": true,
+        "key": "",
+        "color_scheme": "ink"
+      },
+      "blocks": [],
+      "disabled": true
+    },
+    {
+      "id": "sg_header",
+      "type": "header",
+      "preset": "Default",
+      "settings": {
+        "menu": "main",
+        "sticky": true,
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    }
+  ]
+}

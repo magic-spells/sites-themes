@@ -1,0 +1,5 @@
+<!-- component: Button -->
+<!-- props: href type pill external cls -->
+<!-- The one button: outlined in the scheme's button colours (the text colour on a transparent fill, surface-2 on hover). pill rounds it fully, the "All …" view-all. With type it is a <button> of that type; external opens href in a new tab. cls adds classes. -->
+{#let classes = 'inline-flex min-h-tap items-center justify-center gap-space-xs border border-scheme-button-foreground bg-scheme-button-background px-button-x py-button-y text-button font-button whitespace-nowrap text-scheme-button-foreground transition-colors duration-fast hover:bg-scheme-button-hover-background hover:text-scheme-button-hover-foreground ' + (pill ? 'rounded-full' : 'rounded-button') + (cls ? ' ' + cls : '')}
+{#if type}<button class="{ classes }" type="{ type }"><Children/></button>{:else}<a class="{ classes }" href="{ href }" target={ external ? '_blank' : null } rel={ external ? 'noopener' : null }><Children/></a>{/if}

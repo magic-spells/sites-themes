@@ -1,0 +1,15 @@
+<!-- component: PostCard -->
+<!-- props: entry base_path layout -->
+<!-- A post, one link. list (the default): a row on a hairline, the title at h3 and the standfirst in muted, "Topic · Sep 14, 2026" in meta at the right edge from 48rem (under them below). card: the 3:2 picture, then the title, the meta line and the standfirst. Dates only, no reading time. -->
+{#let
+  f = entry.fields
+  meta = [f.topic || null, f.date ? f.date | date : null] | compact | join(' · ')
+  href = (base_path ?? '/writing') + '/' + entry.handle
+  card = layout == 'card'
+}
+<article class="group grid gap-space-xs { card ? 'content-start' : 'border-b border-scheme-border py-space-md md:grid-cols-row md:gap-x-space-lg' } { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+  {#if card}<a class="mb-space-xs block" href="{ href }" tabindex="-1" aria-hidden="true"><Picture asset={ f.image } alt="" ratio="aspect-photo" sizes="(min-width: 48rem) 50vw, 100vw" /></a>{/if}
+  <h3 class="text-h3"><a class="decoration-1 underline-offset-link hover:underline" href="{ href }">{ entry.title }</a></h3>
+  {#if f.standfirst}<p class="text-body text-scheme-muted md:col-start-1">{ f.standfirst }</p>{/if}
+  <p class="text-body-sm text-scheme-meta { card ? '' : 'md:col-start-2 md:row-start-1' }">{ meta }</p>
+</article>

@@ -1,0 +1,15 @@
+<!-- component: SectionHead -->
+<!-- props: heading text link_label link_href aside -->
+<!-- A section's head: the heading in h2, an optional standfirst under it in muted, and the outlined "All …" pill at the right from 48rem, under the standfirst below. Anything the section passes in sits beside the pill; aside says it passes something, so the head renders without a heading too. Nothing sits above the heading; the gap to the content is xl. -->
+{#if heading || aside}
+<div class="mb-space-xl flex flex-wrap items-end gap-x-space-lg gap-y-space-md">
+  {#if heading}
+    <div class="me-auto grid max-w-reading gap-space-xs max-md:w-full">
+      <h2 class="text-h2 text-balance text-scheme-heading">{ heading }</h2>
+      {#if text}<p class="text-body-lg text-pretty text-scheme-muted">{ text }</p>{/if}
+    </div>
+  {/if}
+  {#if link_label && link_href}<Button href={ link_href } pill={ true }>{ link_label }</Button>{/if}
+  <Children/>
+</div>
+{/if}

@@ -1,0 +1,406 @@
+@import "tailwindcss";
+@import "./vendor/collapsible-content.css" layer(components);
+@import "./vendor/dialog-panel.css" layer(components);
+@import "./vendor/lightbox.css" layer(components);
+@import "./vendor/progress-bar.css" layer(components);
+@import "./vendor/reveal.css";
+@import "./vendor/scrolling-content.css" layer(components);
+@import "./vendor/select-dropdown.css" layer(components);
+@import "./vendor/split-text.css" layer(components);
+@import "./vendor/sticky-header.css" layer(components);
+@import "./vendor/tarot.css" layer(components);
+
+@source "../layouts/**/*.pzl";
+@source "../templates/**/*.pzl";
+@source "../sections/**/*.pzl";
+@source "../components/**/*.pzl";
+
+/* The palette: site-wide values from settings/design.json. */
+@theme {
+	--color-brand-primary: var(--sites-color-brand-primary);
+	--color-brand-secondary: var(--sites-color-brand-secondary);
+	--color-brand-accent: var(--sites-color-brand-accent);
+	--color-grey-extra-light: var(--sites-color-grey-extra-light);
+	--color-grey-light: var(--sites-color-grey-light);
+	--color-grey-medium: var(--sites-color-grey-medium);
+	--color-grey-dark: var(--sites-color-grey-dark);
+	--color-grey-extra-dark: var(--sites-color-grey-extra-dark);
+	--color-info-bg: var(--sites-color-info-bg);
+	--color-info-fg: var(--sites-color-info-fg);
+	--color-success-bg: var(--sites-color-success-bg);
+	--color-success-fg: var(--sites-color-success-fg);
+	--color-warning-bg: var(--sites-color-warning-bg);
+	--color-warning-fg: var(--sites-color-warning-fg);
+	--color-error-bg: var(--sites-color-error-bg);
+	--color-error-fg: var(--sites-color-error-fg);
+}
+
+/* The scheme a section sits on. The engine has no muted, meta, border or
+   surface-2 slot, so they ride on the chip and icon slots (settings/design.json
+   says which). The link colour is the one accent: text links, the active
+   filter underline and the status dot. */
+@theme inline {
+	--color-scheme-background: var(--sites-scheme-background);
+	--color-scheme-foreground: var(--sites-scheme-foreground);
+	--color-scheme-heading: var(--sites-scheme-heading);
+	--color-scheme-muted: var(--sites-scheme-chip-foreground);
+	--color-scheme-meta: var(--sites-scheme-icons);
+	--color-scheme-border: var(--sites-scheme-chip-border);
+	--color-scheme-surface-2: var(--sites-scheme-chip-background);
+	--color-scheme-input-background: var(--sites-scheme-input-background);
+	--color-scheme-input-foreground: var(--sites-scheme-input-foreground);
+	--color-scheme-input-border: var(--sites-scheme-input-border);
+	--color-scheme-button-background: var(--sites-scheme-button-background);
+	--color-scheme-button-foreground: var(--sites-scheme-button-foreground);
+	--color-scheme-button-hover-background: var(--sites-scheme-button-hover-background);
+	--color-scheme-button-hover-foreground: var(--sites-scheme-button-hover-foreground);
+	--color-scheme-error: var(--portfolio-error);
+	--color-link: var(--sites-scheme-links);
+	--color-backdrop: color-mix(in srgb, var(--sites-scheme-foreground) 50%, transparent);
+}
+
+/* The error colour, per scheme (the engine has no slot for it). Every value
+   clears 4.5:1 on its background and its input background. */
+:root,
+[class*="sites-scheme-"] {
+	--portfolio-error: #B3261E;
+}
+.sites-scheme-stone {
+	--portfolio-error: #A8231C;
+}
+.sites-scheme-ink {
+	--portfolio-error: #F2A08F;
+}
+.sites-scheme-cobalt {
+	--portfolio-error: #FFD6CF;
+}
+
+@theme {
+	--font-heading: var(--sites-font-heading-family), ui-sans-serif, system-ui, sans-serif;
+	--font-body: var(--sites-font-body-family), ui-sans-serif, system-ui, sans-serif;
+	--radius-none: var(--sites-radius-none);
+	--radius-sm: var(--sites-radius-sm);
+	--radius-md: var(--sites-radius-md);
+	--radius-lg: var(--sites-radius-lg);
+	--radius-full: var(--sites-radius-full);
+	--radius-button: var(--sites-button-radius);
+	--radius-input: var(--sites-input-radius);
+	--font-weight-button: var(--sites-button-weight);
+
+	/* The type roles, each sized per breakpoint in :root below. */
+	--text-h1: var(--portfolio-h1);
+	--text-h1--line-height: 1;
+	--text-h1--letter-spacing: -0.02em;
+	--text-h1--font-weight: 500;
+	--text-h2: var(--portfolio-h2);
+	--text-h2--line-height: 1.05;
+	--text-h2--letter-spacing: -0.02em;
+	--text-h2--font-weight: 500;
+	--text-h3: var(--portfolio-h3);
+	--text-h3--line-height: 1.2;
+	--text-h3--font-weight: 500;
+	--text-h4: var(--portfolio-h4);
+	--text-h4--line-height: 1.25;
+	--text-h4--font-weight: 500;
+	--text-body-lg: var(--portfolio-body-lg);
+	--text-body-lg--line-height: 1.4;
+	--text-body: var(--portfolio-body);
+	--text-body--line-height: 1.55;
+	--text-body-sm: var(--portfolio-body-sm);
+	--text-body-sm--line-height: 1.45;
+	--text-xs: var(--sites-type-scale-xs);
+	--text-xs--line-height: 1.45;
+	--text-button: var(--portfolio-body-sm);
+	--text-button--line-height: 1;
+	/* Every text link: a 1px underline this far under the text. */
+	--text-underline-offset-link: 0.1875rem;
+
+	--spacing-space-2xs: 0.25rem;
+	--spacing-space-xs: var(--sites-spacing-xs);
+	--spacing-space-sm: var(--sites-spacing-sm);
+	--spacing-space-md: var(--sites-spacing-md);
+	--spacing-space-lg: var(--sites-spacing-lg);
+	--spacing-space-xl: var(--portfolio-xl);
+	--spacing-space-2xl: var(--portfolio-2xl);
+	--spacing-space-3xl: var(--portfolio-3xl);
+	--spacing-section: var(--portfolio-section);
+	--spacing-gutter: var(--portfolio-gutter);
+	/* The gap between tiles and cards: sm, md, then lg. */
+	--spacing-grid: var(--portfolio-grid);
+	--spacing-button-x: var(--sites-button-padding-x);
+	--spacing-button-y: var(--sites-button-padding-y);
+	--spacing-control: 3rem;
+	--spacing-tap: 2.75rem;
+	--spacing-icon: 1.25rem;
+	--spacing-glyph: 1.5rem;
+	--spacing-dot: 0.5rem;
+	--spacing-header: 3.75rem;
+	--spacing-thumb: 6rem;
+	--spacing-textarea: 8rem;
+	--container-column: 82.5rem;
+	--container-reading: 40rem;
+	--container-notice: 26rem;
+	--container-utility: 30rem;
+	--aspect-square: 1 / 1;
+	--aspect-portrait: 4 / 5;
+	--aspect-photo: 3 / 2;
+	--aspect-wide: 16 / 9;
+	/* A picture beside prose: seven parts and five, one 3xl gap between. */
+	--grid-template-columns-text-picture: 7fr 5fr;
+	--grid-template-columns-picture-text: 5fr 7fr;
+	/* A writing row: the title and standfirst, the meta at the right edge. */
+	--grid-template-columns-row: 1fr auto;
+	--transition-duration-fast: 150ms;
+	--reveal-distance: 1.5rem;
+	--reveal-perspective: 75rem;
+	--reveal-blur: 0;
+	/* The bloom on the name and the statements. */
+	--split-text-blur: 0.5rem;
+	--split-text-scale: 0.96;
+}
+
+/* Sizes per breakpoint (mobile, from 48rem, from 64rem): each role reads a
+   design token and scales it by the plan's ratio for that width, so a
+   workspace that changes the scale moves every breakpoint with it. */
+:root {
+	--portfolio-h1: calc(var(--sites-type-scale-5xl) * 40 / 72);
+	--portfolio-h2: calc(var(--sites-type-scale-3xl) * 28 / 40);
+	--portfolio-h3: calc(var(--sites-type-scale-2xl) * 22 / 28);
+	--portfolio-h4: calc(var(--sites-type-scale-xl) * 19 / 22);
+	--portfolio-body-lg: calc(var(--sites-type-scale-lg) * 18 / 20);
+	--portfolio-body: calc(var(--sites-type-scale-base) * 16 / 17);
+	--portfolio-body-sm: calc(var(--sites-type-scale-sm) * 14 / 15);
+	--portfolio-section: calc(var(--sites-spacing-xl) * 32 / 48);
+	--portfolio-gutter: var(--sites-spacing-sm);
+	--portfolio-grid: var(--sites-spacing-sm);
+	--portfolio-xl: calc(var(--sites-spacing-xl) * 32 / 48);
+	--portfolio-2xl: calc(var(--sites-spacing-2xl) * 48 / 72);
+	--portfolio-3xl: calc(var(--sites-spacing-2xl) * 64 / 72);
+}
+
+@media (min-width: 48rem) {
+	:root {
+		--portfolio-h1: calc(var(--sites-type-scale-5xl) * 56 / 72);
+		--portfolio-h2: calc(var(--sites-type-scale-3xl) * 34 / 40);
+		--portfolio-h3: calc(var(--sites-type-scale-2xl) * 24 / 28);
+		--portfolio-h4: calc(var(--sites-type-scale-xl) * 20 / 22);
+		--portfolio-body-lg: calc(var(--sites-type-scale-lg) * 19 / 20);
+		--portfolio-body: var(--sites-type-scale-base);
+		--portfolio-section: var(--sites-spacing-xl);
+		--portfolio-gutter: var(--sites-spacing-md);
+		--portfolio-grid: var(--sites-spacing-md);
+		--portfolio-xl: calc(var(--sites-spacing-xl) * 40 / 48);
+		--portfolio-2xl: calc(var(--sites-spacing-2xl) * 60 / 72);
+		--portfolio-3xl: calc(var(--sites-spacing-2xl) * 80 / 72);
+	}
+}
+
+@media (min-width: 64rem) {
+	:root {
+		--portfolio-h1: var(--sites-type-scale-5xl);
+		--portfolio-h2: var(--sites-type-scale-3xl);
+		--portfolio-h3: var(--sites-type-scale-2xl);
+		--portfolio-h4: var(--sites-type-scale-xl);
+		--portfolio-body-lg: var(--sites-type-scale-lg);
+		--portfolio-body-sm: var(--sites-type-scale-sm);
+		--portfolio-section: calc(var(--sites-spacing-xl) * 64 / 48);
+		--portfolio-gutter: calc(var(--sites-spacing-md) * 40 / 24);
+		--portfolio-grid: var(--sites-spacing-lg);
+		--portfolio-xl: var(--sites-spacing-xl);
+		--portfolio-2xl: var(--sites-spacing-2xl);
+		--portfolio-3xl: calc(var(--sites-spacing-2xl) * 96 / 72);
+	}
+}
+
+/* Every text link: the link colour, underlined 1px on the offset token. */
+@utility link {
+	@apply text-link underline decoration-1 underline-offset-link;
+}
+
+/* The name hero and page titles at 110% width. The engine declares each
+   weight of the variable file as its own face, without a stretch range, so
+   font-stretch cannot reach the axis; the variation setting can. */
+@utility font-wide {
+	font-variation-settings: "wdth" 110;
+}
+
+/* A chip or menu item the page marks as current. */
+@custom-variant current {
+	&[aria-current="true"],
+	&[aria-current="page"] {
+		@slot;
+	}
+}
+
+body:has([data-bare]) [data-group] { display: none; }
+
+/* The section after a page header starts at its standfirst, not a section gap below it. */
+[data-section="page-header"] + [data-section] > section { padding-top: 0; }
+
+html.reveal-off .reveal:not(.is-revealed) {
+	opacity: 1;
+	transform: none;
+	filter: none;
+}
+/* split-text hides its words until it upgrades; with no script to upgrade it, show them. */
+html.reveal-off split-text:not(:defined) {
+	visibility: visible;
+}
+
+:root {
+	font-size: var(--sites-type-base);
+	scrollbar-color: var(--sites-scheme-icons) transparent;
+}
+
+::selection {
+	background: var(--sites-scheme-foreground);
+	color: var(--sites-scheme-background);
+}
+
+:focus-visible {
+	outline: 2px solid var(--sites-scheme-foreground);
+	outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+@layer base {
+	dialog {
+		border: 0;
+		padding: 0;
+		color: inherit;
+	}
+
+	[id] {
+		scroll-margin-top: calc(var(--spacing-header) + 1rem);
+	}
+
+	/* Years, dates and facts line up in columns. */
+	time {
+		font-variant-numeric: tabular-nums;
+	}
+}
+
+/* Rich text from the editor carries no classes, so its rhythm is set here. */
+@layer components {
+	.sites-prose > * + * {
+		margin-top: var(--sites-spacing-sm);
+	}
+
+	.sites-prose :is(h2, h3, h4) {
+		font-weight: 500;
+		line-height: 1.2;
+		color: var(--sites-scheme-heading);
+	}
+
+	.sites-prose h2 {
+		font-size: var(--portfolio-h3);
+	}
+
+	.sites-prose :is(h3, h4) {
+		font-size: var(--portfolio-h4);
+	}
+
+	.sites-prose a {
+		@apply link;
+	}
+
+	.sites-prose :is(ul, ol) {
+		display: grid;
+		gap: var(--sites-spacing-xs);
+		padding-inline-start: 1.25em;
+	}
+
+	.sites-prose ul {
+		list-style: disc;
+	}
+}
+
+/* sticky-header pins the element it is, so the renderer's wrapper steps
+   out of the way. */
+[data-section="header"]:has(sticky-header) {
+	display: contents;
+}
+
+@layer components {
+	sticky-header[disabled] {
+		position: static;
+		transform: none;
+	}
+
+	sticky-header::before {
+		content: none;
+	}
+}
+
+/* The carousels: the progress bar a hairline in the border colour with a
+   fill in the text colour. Before tarot upgrades, or with no JavaScript, a
+   track lays its slides out as a row that scrolls. */
+tarot-carousel {
+	--tarot-progress-height: 1px;
+	--tarot-progress-margin: 0;
+	--tarot-progress-border-radius: 0;
+	--tarot-progress-bg: var(--sites-scheme-chip-border);
+	--tarot-progress-fill-bg: var(--sites-scheme-foreground);
+}
+tarot-carousel[data-track]:not(:defined) tarot-track {
+	display: flex;
+	gap: var(--sites-spacing-sm);
+	overflow-x: auto;
+}
+tarot-carousel[data-track]:not(:defined) tarot-slide {
+	flex: none;
+	width: 80%;
+	opacity: 1;
+	visibility: visible;
+}
+
+/* The lightbox: the ink scheme's background at 94%, the chrome in its text.
+   Set on the overlay itself, which declares its own defaults. */
+.tarot-lightbox {
+	--tarot-lightbox-backdrop: color-mix(in srgb, #15171B 94%, transparent);
+	--tarot-lightbox-chrome-color: #EDEAE4;
+	--tarot-lightbox-chrome-size: 2.75rem;
+	--tarot-lightbox-chrome-inset: 1rem;
+	--tarot-lightbox-image-height: calc(100dvh - 8rem);
+}
+.tarot-lightbox__counter {
+	font-family: var(--font-body);
+	font-size: var(--portfolio-body-sm);
+	font-variant-numeric: tabular-nums;
+	color: var(--tarot-lightbox-chrome-color);
+}
+
+select-dropdown {
+	--select-shadow: none;
+	--select-shadow-soft: none;
+	--select-color-text: var(--sites-scheme-input-foreground);
+	--select-color-background: var(--sites-scheme-input-background);
+	--select-color-border: var(--sites-scheme-input-border);
+	--select-color-border-hover: var(--sites-scheme-input-foreground);
+	--select-color-border-dark: var(--sites-scheme-input-foreground);
+	--select-color-primary: var(--sites-scheme-links);
+	--select-color-hover: var(--sites-scheme-chip-background);
+	--select-color-focus: var(--sites-scheme-chip-background);
+	--select-color-selected: var(--sites-scheme-chip-background);
+	display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
+	/* The ticker and the marquee stand still: one copy, cut with an ellipsis. */
+	[data-ticker] scrolling-content { mask-image: none; }
+	[data-ticker] scrolling-track { width: auto; transform: none !important; }
+	[data-ticker] scrolling-item[data-clone] { display: none; }
+	[data-ticker] scrolling-item { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+	.reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+}

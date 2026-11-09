@@ -1,9 +1,18 @@
 <!-- TODO sync with Figma -->
-<!-- Stub: code B replaces this body. -->
+<!-- The reasons to choose you: the section head over a hairline, then each reason's icon in a tint circle, its title in Card title and its line in Meta. Row: four across from 64rem, two by two below. Cards: on surface-2 cards with the larger circle, 4 / 2 / 1. -->
+{#let cards = settings.layout == 'cards'}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
-    <SectionHead heading={ settings.heading } />
-    <ul>{#for block in blocks}<li data-block={ block.editor_id }>{ block.settings.title }: { block.settings.text }</li>{/for}</ul>
+    <SectionHead heading={ settings.heading } rule={ !cards } />
+    <ul class="grid gap-space-lg lg:grid-cols-4 { cards ? 'md:grid-cols-2' : 'grid-cols-2 md:gap-space-xl' }">
+      {#for block in blocks}
+        <li class="grid content-start gap-space-sm { cards ? 'rounded-card bg-scheme-surface-2 p-space-xl' : '' } { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-block={ block.editor_id }>
+          <IconCircle icon={ block.settings.icon } size={ cards ? 'lg' : null } />
+          <h3 class="mt-space-xs font-heading text-card">{ block.settings.title }</h3>
+          {#if block.settings.text}<p class="text-body-sm text-pretty text-scheme-muted">{ block.settings.text }</p>{/if}
+        </li>
+      {/for}
+    </ul>
   </div>
 </section>
 

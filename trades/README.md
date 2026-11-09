@@ -40,7 +40,7 @@ assets/             Barlow Condensed and Instrument Sans (OFL), glyphs.svg, the 
   which shows the town's paragraph and map with the services and the jobs done there, so a
   firm with forty towns gets forty pages and writes one paragraph each.
 - **offers** (coupons), **plans** (memberships), **team**, **testimonials** (stars, the town
-  and job, the technician who came), **locations** and **posts**.
+  and job), **locations** and **posts**.
 - Forms are the workspace's: `estimate`, `contact`, `newsletter` and `apply`. Fields are text,
   textarea, email, select and checkbox; a select shows as a select list with its own markup.
 

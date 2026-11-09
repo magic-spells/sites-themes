@@ -21,11 +21,11 @@
       { "value": "center", "label": "Centred" }
     ] },
     { "type": "checkbox", "id": "show_rating", "label": "Rating", "default": false, "info": "The Yard rating, review count and link." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "navy" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "paper" } },
-    { "name": "Reviews", "settings": { "show_rating": true, "color_scheme": "paper" } }
+    { "name": "Default", "settings": { "color_scheme": "navy" } },
+    { "name": "Reviews", "settings": { "show_rating": true, "color_scheme": "navy" } }
   ]
 }
 </schema>

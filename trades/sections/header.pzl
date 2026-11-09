@@ -19,7 +19,7 @@
                 <li>
                   <dropdown-component trigger="both" close-delay="150">
                     <dropdown-trigger class="flex min-h-header cursor-pointer items-center gap-space-2xs px-space-sm">{ item.label }<Glyph name="chevron-down" cls="size-icon-sm" /></dropdown-trigger>
-                    <dropdown-panel class="border-b border-scheme-border bg-scheme-background px-gutter py-space-xl text-scheme-foreground" wide>
+                    <dropdown-panel class="border-y border-scheme-border bg-scheme-background px-gutter py-space-xl text-scheme-foreground" wide>
                       <div class="mx-auto grid max-w-column gap-space-md">
                         <ul class="columns-2 gap-space-3xl">
                           {#for entry in services}<ServiceRow entry={ entry } compact />{/for}
@@ -61,11 +61,11 @@
     ], "info": "Over the hero: transparent at the top of a page that opens with a hero, solid once it scrolls." },
     { "type": "checkbox", "id": "show_services", "label": "Services panel", "default": true, "info": "The menu item that points at the services page opens every service in two columns." },
     { "type": "url", "id": "services_path", "label": "Services page", "default": "/services" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "chalk" }
   ],
   "presets": [
-    { "name": "Solid", "settings": { "menu": "main", "style": "solid", "color_scheme": "paper" } },
-    { "name": "Over the hero", "settings": { "menu": "main", "style": "over-hero", "color_scheme": "paper" } }
+    { "name": "Solid", "settings": { "menu": "main", "style": "solid", "color_scheme": "chalk" } },
+    { "name": "Over the hero", "settings": { "menu": "main", "style": "over-hero", "color_scheme": "chalk" } }
   ]
 }
 </schema>

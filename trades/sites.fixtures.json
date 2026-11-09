@@ -878,16 +878,16 @@
      }
     },
     {
-     "id": "proj_weald_farmhouse_boiler",
-     "handle": "weald-farmhouse-boiler",
-     "title": "Weald farmhouse boiler",
+     "id": "proj_millbrook_farmhouse_boiler",
+     "handle": "millbrook-farmhouse-boiler",
+     "title": "Millbrook farmhouse boiler",
      "fields": {
-      "area": "area_weald",
+      "area": "area_millbrook",
       "date": "2026-09-22",
-      "summary": "A clean install in Weald, done to a fixed price.",
-      "description": "<p>The brief, the fixed quote and the finished job in Weald. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+      "summary": "A clean install in Millbrook, done to a fixed price.",
+      "description": "<p>The brief, the fixed quote and the finished job in Millbrook. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
       "image": "as_3x2_sand",
-      "image_alt": "Weald farmhouse boiler, finished",
+      "image_alt": "Millbrook farmhouse boiler, finished",
       "photos": "job-photos",
       "featured": true,
       "order": 2,
@@ -1063,24 +1063,24 @@
      }
     },
     {
-     "id": "proj_weald_cottage_bathroom",
-     "handle": "weald-cottage-bathroom",
-     "title": "Weald cottage bathroom",
+     "id": "proj_millbrook_cottage_bathroom",
+     "handle": "millbrook-cottage-bathroom",
+     "title": "Millbrook cottage bathroom",
      "fields": {
-      "area": "area_weald",
+      "area": "area_millbrook",
       "date": "2025-09-15",
-      "summary": "A full refit in Weald, done to a fixed price.",
-      "description": "<p>The brief, the fixed quote and the finished job in Weald. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+      "summary": "A full refit in Millbrook, done to a fixed price.",
+      "description": "<p>The brief, the fixed quote and the finished job in Millbrook. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
       "image": "as_3x2_sea",
-      "image_alt": "Weald cottage bathroom, finished",
+      "image_alt": "Millbrook cottage bathroom, finished",
       "photos": "job-photos",
       "featured": false,
       "order": 12,
       "service": "svc_bathroom_renovations",
       "before": "as_3x2_clay",
-      "before_alt": "Weald cottage bathroom before",
+      "before_alt": "Millbrook cottage bathroom before",
       "after": "as_3x2_sea",
-      "after_alt": "Weald cottage bathroom after"
+      "after_alt": "Millbrook cottage bathroom after"
      }
     }
    ]
@@ -1140,15 +1140,15 @@
      }
     },
     {
-     "id": "area_weald",
-     "handle": "weald",
-     "title": "Weald",
+     "id": "area_millbrook",
+     "handle": "millbrook",
+     "title": "Millbrook",
      "fields": {
       "description": "12 min from the yard",
-      "body": "<p>We have worked in Weald for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Weald gets the same fixed price before we start and the same twelve-month guarantee.</p>",
+      "body": "<p>We have worked in Millbrook for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Millbrook gets the same fixed price before we start and the same twelve-month guarantee.</p>",
       "map_embed_url": "",
       "map_image": "as_map",
-      "map_image_alt": "Map of Weald",
+      "map_image_alt": "Map of Millbrook",
       "featured": true,
       "order": 2
      }
@@ -1614,12 +1614,6 @@
      "label": "Source"
     },
     {
-     "id": "technician",
-     "type": "entry",
-     "label": "Technician",
-     "content_type": "team"
-    },
-    {
      "id": "service",
      "type": "entry",
      "label": "Service",
@@ -1660,8 +1654,7 @@
       "source": "Google",
       "service": "svc_boiler_replacement",
       "featured": true,
-      "order": 1,
-      "technician": "team_dan_hollis"
+      "order": 1
      }
     },
     {
@@ -1695,8 +1688,7 @@
       "source": "Google",
       "service": "svc_water_heaters",
       "featured": true,
-      "order": 3,
-      "technician": "team_tom_okonkwo"
+      "order": 3
      }
     },
     {
@@ -1722,14 +1714,13 @@
      "fields": {
       "quote": "Priya found the fault two other firms missed.",
       "name": "Omar K.",
-      "line": "Weald · Boiler repair",
+      "line": "Millbrook · Boiler repair",
       "stars": 5,
       "date": "2026-08-04",
       "source": "Google",
       "service": "svc_boiler_service",
       "featured": true,
-      "order": 5,
-      "technician": "team_priya_mistry"
+      "order": 5
      }
     },
     {
@@ -1762,7 +1753,6 @@
       "service": "svc_bathroom_renovations",
       "featured": true,
       "order": 7,
-      "technician": "team_dan_hollis",
       "image": "as_1x1_clay",
       "image_alt": "Hannah W."
      }
@@ -1796,8 +1786,7 @@
       "source": "",
       "service": "svc_underfloor_heating",
       "featured": false,
-      "order": 9,
-      "technician": "team_priya_mistry"
+      "order": 9
      }
     },
     {
@@ -2354,24 +2343,24 @@
     }
    }
   },
-  "/work/weald-farmhouse-boiler": {
-   "id": "pg_proj_weald_farmhouse_boiler",
+  "/work/millbrook-farmhouse-boiler": {
+   "id": "pg_proj_millbrook_farmhouse_boiler",
    "template": "project",
-   "title": "Weald farmhouse boiler",
+   "title": "Millbrook farmhouse boiler",
    "params": {
-    "project": "weald-farmhouse-boiler"
+    "project": "millbrook-farmhouse-boiler"
    },
    "entry": {
-    "id": "proj_weald_farmhouse_boiler",
-    "handle": "weald-farmhouse-boiler",
-    "title": "Weald farmhouse boiler",
+    "id": "proj_millbrook_farmhouse_boiler",
+    "handle": "millbrook-farmhouse-boiler",
+    "title": "Millbrook farmhouse boiler",
     "fields": {
-     "area": "area_weald",
+     "area": "area_millbrook",
      "date": "2026-09-22",
-     "summary": "A clean install in Weald, done to a fixed price.",
-     "description": "<p>The brief, the fixed quote and the finished job in Weald. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+     "summary": "A clean install in Millbrook, done to a fixed price.",
+     "description": "<p>The brief, the fixed quote and the finished job in Millbrook. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
      "image": "as_3x2_sand",
-     "image_alt": "Weald farmhouse boiler, finished",
+     "image_alt": "Millbrook farmhouse boiler, finished",
      "photos": "job-photos",
      "featured": true,
      "order": 2,
@@ -2619,32 +2608,32 @@
     }
    }
   },
-  "/work/weald-cottage-bathroom": {
-   "id": "pg_proj_weald_cottage_bathroom",
+  "/work/millbrook-cottage-bathroom": {
+   "id": "pg_proj_millbrook_cottage_bathroom",
    "template": "project",
-   "title": "Weald cottage bathroom",
+   "title": "Millbrook cottage bathroom",
    "params": {
-    "project": "weald-cottage-bathroom"
+    "project": "millbrook-cottage-bathroom"
    },
    "entry": {
-    "id": "proj_weald_cottage_bathroom",
-    "handle": "weald-cottage-bathroom",
-    "title": "Weald cottage bathroom",
+    "id": "proj_millbrook_cottage_bathroom",
+    "handle": "millbrook-cottage-bathroom",
+    "title": "Millbrook cottage bathroom",
     "fields": {
-     "area": "area_weald",
+     "area": "area_millbrook",
      "date": "2025-09-15",
-     "summary": "A full refit in Weald, done to a fixed price.",
-     "description": "<p>The brief, the fixed quote and the finished job in Weald. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
+     "summary": "A full refit in Millbrook, done to a fixed price.",
+     "description": "<p>The brief, the fixed quote and the finished job in Millbrook. We kept the house running while we worked and left it tidier than we found it.</p><p>Everything we fitted is guaranteed for twelve months, parts and labour.</p>",
      "image": "as_3x2_sea",
-     "image_alt": "Weald cottage bathroom, finished",
+     "image_alt": "Millbrook cottage bathroom, finished",
      "photos": "job-photos",
      "featured": false,
      "order": 12,
      "service": "svc_bathroom_renovations",
      "before": "as_3x2_clay",
-     "before_alt": "Weald cottage bathroom before",
+     "before_alt": "Millbrook cottage bathroom before",
      "after": "as_3x2_sea",
-     "after_alt": "Weald cottage bathroom after"
+     "after_alt": "Millbrook cottage bathroom after"
     }
    }
   },
@@ -2670,23 +2659,23 @@
     }
    }
   },
-  "/areas/weald": {
-   "id": "pg_area_weald",
+  "/areas/millbrook": {
+   "id": "pg_area_millbrook",
    "template": "area",
-   "title": "Weald",
+   "title": "Millbrook",
    "params": {
-    "area": "weald"
+    "area": "millbrook"
    },
    "entry": {
-    "id": "area_weald",
-    "handle": "weald",
-    "title": "Weald",
+    "id": "area_millbrook",
+    "handle": "millbrook",
+    "title": "Millbrook",
     "fields": {
      "description": "12 min from the yard",
-     "body": "<p>We have worked in Weald for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Weald gets the same fixed price before we start and the same twelve-month guarantee.</p>",
+     "body": "<p>We have worked in Millbrook for years: boilers, bathrooms, burst pipes and the odd frozen tap. Our vans pass through most days, so a callout here rarely waits.</p><p>Every job in Millbrook gets the same fixed price before we start and the same twelve-month guarantee.</p>",
      "map_embed_url": "",
      "map_image": "as_map",
-     "map_image_alt": "Map of Weald",
+     "map_image_alt": "Map of Millbrook",
      "featured": true,
      "order": 2
     }

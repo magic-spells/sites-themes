@@ -39,11 +39,12 @@
 	--color-grey-extra-light: var(--sites-color-grey-extra-light);
 	--color-grey-medium: var(--sites-color-grey-medium);
 	/* Fixed colours with no engine slot: the chalk card on paper, the
-	   lightbox's paper chrome, the error on brass and on the dark bands. */
+	   lightbox's paper chrome, the error on brass, on the dark bands and on rust. */
 	--color-chalk: #FAF7F1;
 	--color-paper: #F2EDE3;
 	--color-error-on-brass: #5C1A14;
 	--color-error-on-dark: #F0A094;
+	--color-error-on-rust: #FFD3C9;
 }
 
 /* The scheme a section sits on. The engine has no muted, border or surface-2
@@ -86,6 +87,10 @@
 .sites-scheme-navy,
 .sites-scheme-charcoal {
 	--trades-error: var(--color-error-on-dark);
+	--trades-rule: 2px;
+}
+.sites-scheme-rust {
+	--trades-error: var(--color-error-on-rust);
 	--trades-rule: 2px;
 }
 
@@ -256,7 +261,7 @@ html[data-heading-case="sentence"] {
 
 /* Two bands on the same light scheme in a row read as one: the second drops
    its top padding so the seam carries one section's space, not two. */
-main > :is(.sites-scheme-paper + .sites-scheme-paper, .sites-scheme-chalk + .sites-scheme-chalk, .sites-scheme-navy + .sites-scheme-navy) > section {
+main > :is(.sites-scheme-paper + .sites-scheme-paper, .sites-scheme-chalk + .sites-scheme-chalk, .sites-scheme-navy + .sites-scheme-navy, .sites-scheme-rust + .sites-scheme-rust) > section {
 	padding-top: 0;
 }
 

@@ -1,10 +1,9 @@
-<!-- A service's page: the name in h1, its tag in Meta, the price line with the price note, the summary and the two routes, beside the 3:2 photo (or the icon large in a tint well). Under it the description in the reading column, "What's included" as check rows, "Recent work" (three projects of this service, or the newest three when it has none) and the questions in the blocks. -->
+<!-- A service's page: the name in h1, its tag in Meta, the price line with the price note, the summary and the two routes, beside the 3:2 photo (or the icon large in a tint well). Under it the description in the reading column, "What's included" as check rows, "Recent work" (up to three projects of this service, left out when it has none) and the questions in the blocks. -->
 {#let
   entry = page.entry
   f = entry.fields
   projects = content.projects.entries | sort('fields.order')
-  same = projects | where('fields.service.id', entry.id)
-  recent = (same.length ? same : projects) | slice(0, 3)
+  recent = projects | where('fields.service.id', entry.id) | slice(0, 3)
 }
 {#if entry}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
@@ -13,7 +12,7 @@
       <div class="grid justify-items-start gap-space-md">
         <h1 class="font-heading text-h1 case-heading text-balance text-scheme-heading">{ entry.title }</h1>
         {#if f.tag}<p class="text-body-sm text-scheme-muted">{ f.tag }</p>{/if}
-        {#if f.price}<p class="flex flex-wrap items-baseline gap-x-space-sm"><PriceLine entry={ entry } />{#if f.price_note}<span class="text-body-sm text-scheme-muted">{ f.price_note }</span>{/if}</p>{/if}
+        {#if f.price || f.price_note}<p class="flex flex-wrap items-baseline gap-x-space-sm"><PriceLine entry={ entry } />{#if f.price_note}<span class="text-body-sm text-scheme-muted">{ f.price_note }</span>{/if}</p>{/if}
         {#if f.summary}<p class="text-body-lg text-pretty text-scheme-muted">{ f.summary }</p>{/if}
         <div class="mt-space-sm w-full"><Routes /></div>
       </div>
@@ -51,7 +50,7 @@
   "icon": "file-text",
   "templates": ["service"],
   "settings": [
-    { "type": "checkbox", "id": "show_projects", "label": "Recent work", "default": true, "info": "Three projects of this service, or the newest three when it has none." },
+    { "type": "checkbox", "id": "show_projects", "label": "Recent work", "default": true, "info": "Up to three projects of this service; left out when it has none." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
   ],
   "blocks": [

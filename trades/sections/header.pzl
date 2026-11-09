@@ -8,7 +8,7 @@
   <header class="relative border-b border-scheme-border bg-scheme-background px-gutter text-scheme-foreground transition-colors duration-panel overlaid:border-transparent overlaid:bg-transparent overlaid:text-grey-extra-light">
     <div class="mx-auto flex min-h-header max-w-column items-center justify-between gap-space-md">
       <a class="grid leading-none" href="/">
-        <span class="font-heading text-h4 font-extrabold case-heading">{ s.wordmark || site.name }</span>
+        <span class="font-heading text-h3 font-extrabold case-heading">{ s.wordmark || site.name }</span>
         {#if s.tagline}<span class="mt-space-2xs text-body-sm text-scheme-muted overlaid:text-grey-medium">{ s.tagline }</span>{/if}
       </a>
       {#if settings.menu.items.length}

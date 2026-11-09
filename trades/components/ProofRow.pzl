@@ -6,5 +6,5 @@
 }
 <ul class="flex flex-wrap items-center gap-x-space-sm gap-y-space-2xs text-body-sm text-scheme-muted">
   {#if s.rating}<li class="flex items-center gap-space-2xs"><Glyph name="star-filled" cls="size-icon-sm text-accent" /><span class="font-semibold text-scheme-foreground">{ s.rating }</span></li>{/if}
-  {#for item in items, i}<li class="flex items-center gap-space-sm">{#if i > 0 || s.rating}<Glyph name="dot" cls="size-1" />{/if}{ item }</li>{/for}
+  {#for item in items, i}<li class="flex items-center gap-space-sm">{#if i > 0 || s.rating}<Glyph name="dot" cls="size-dot" />{/if}{ item }</li>{/for}
 </ul>

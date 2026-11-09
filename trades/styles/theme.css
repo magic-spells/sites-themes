@@ -51,6 +51,12 @@
 	--color-warning-fg: var(--sites-color-warning-fg);
 	--color-error-bg: var(--sites-color-error-bg);
 	--color-error-fg: var(--sites-color-error-fg);
+	/* Fixed colours with no engine slot: the chalk card on paper, the
+	   lightbox's paper chrome, the error on brass and on the dark bands. */
+	--color-chalk: #FAF7F1;
+	--color-paper: #F2EDE3;
+	--color-error-on-brass: #5C1A14;
+	--color-error-on-dark: #F0A094;
 }
 
 /* The scheme a section sits on. The engine has no muted, border, surface-2
@@ -86,14 +92,14 @@
 /* Cards on paper are chalk, lighter than the band; elsewhere they are the
    band's surface-2. */
 .sites-scheme-paper {
-	--trades-card: #FAF7F1;
+	--trades-card: var(--color-chalk);
 }
 .sites-scheme-brass {
-	--trades-error: #5C1A14;
+	--trades-error: var(--color-error-on-brass);
 }
 .sites-scheme-navy,
 .sites-scheme-charcoal {
-	--trades-error: #F0A094;
+	--trades-error: var(--color-error-on-dark);
 	--trades-rule: 2px;
 }
 
@@ -268,7 +274,7 @@ html[data-heading-case="sentence"] {
 
 /* Two bands on the same light scheme in a row read as one: the second drops
    its top padding so the seam carries one section's space, not two. */
-main > :is(.sites-scheme-paper + .sites-scheme-paper, .sites-scheme-chalk + .sites-scheme-chalk) > section {
+main > :is(.sites-scheme-paper + .sites-scheme-paper, .sites-scheme-chalk + .sites-scheme-chalk, .sites-scheme-navy + .sites-scheme-navy) > section {
 	padding-top: 0;
 }
 
@@ -289,8 +295,9 @@ html.reveal-off .reveal:not(.is-revealed) {
 		@slot;
 	}
 }
-body:has([data-header-style="over-hero"]) main > [data-section]:first-child:has([data-over-hero]) {
-	margin-top: calc(var(--header-height, 5rem) * -1);
+body:has([data-header-style="over-hero"]) main > [data-section]:first-child [data-over-hero] {
+	margin-top: calc(var(--header-height, var(--spacing-header)) * -1);
+	padding-top: calc(var(--header-height, var(--spacing-header)) + var(--spacing-section));
 }
 
 /* The call bar clears the phone's home indicator. */
@@ -441,7 +448,7 @@ tarot-carousel:not(:defined) tarot-slide {
 /* The lightbox: charcoal at 92%, paper chrome, round buttons. */
 .tarot-lightbox {
 	--tarot-lightbox-backdrop: color-mix(in srgb, var(--sites-color-brand-secondary) 92%, transparent);
-	--tarot-lightbox-chrome-color: #F2EDE3;
+	--tarot-lightbox-chrome-color: var(--color-paper);
 	--tarot-lightbox-chrome-size: 2.75rem;
 	--tarot-lightbox-chrome-inset: 1rem;
 	--tarot-lightbox-image-height: calc(100dvh - 8rem);
@@ -468,7 +475,6 @@ dialog-panel:has(bottom-sheet) {
 	--bs-handle-width: 2.25rem;
 	--bs-handle-height: 0.25rem;
 	--bs-content-padding: var(--trades-gutter);
-	--bs-content-padding-block: 0 var(--sites-spacing-lg);
 	--bs-overlay-background: color-mix(in srgb, var(--sites-scheme-foreground) 50%, transparent);
 	--bs-overlay-blur: 0;
 }
@@ -489,14 +495,14 @@ dialog-panel:has(bottom-sheet) {
 	dialog-panel:is([state="hidden"], [state="showing"], [state="hiding"]):has(bottom-sheet[data-centred]) > dialog {
 		transform: scale(0.97);
 		opacity: 0;
-		transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+		transition: opacity var(--transition-duration-panel) ease-out, transform var(--transition-duration-panel) ease-out;
 	}
 	dialog-panel[state="shown"]:has(bottom-sheet[data-centred]) > dialog {
 		transform: none;
 		opacity: 1;
 	}
-	bottom-sheet[data-centred] bottom-sheet-handle {
-		display: none;
+	bottom-sheet[data-centred] bottom-sheet-header::before {
+		content: none;
 	}
 }
 

@@ -1324,7 +1324,7 @@
      "fields": {
       "amount": "$50 OFF",
       "summary": "Your next repair",
-      "fine_print": "One per household. Cannot be combined. Ends 31 Dec 2026.",
+      "fine_print": "One per household. Cannot be combined.",
       "link": "",
       "featured": true,
       "order": 1,
@@ -1351,7 +1351,7 @@
      "fields": {
       "amount": "$149",
       "summary": "Boiler service, this month",
-      "fine_print": "New customers. Book by 30 Nov 2026.",
+      "fine_print": "New customers.",
       "link": "",
       "featured": false,
       "order": 3,

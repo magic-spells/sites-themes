@@ -6,7 +6,7 @@
       {#if settings.motion == 'ticker'}
         <scrolling-content class="block" speed="30" fade>
           <scrolling-track>
-            <scrolling-item class="flex items-center">{#for n in [1, 2, 3]}<span class="whitespace-nowrap">{ settings.text }{#if settings.link_label} <span class="text-accent underline underline-offset-4">{ settings.link_label }</span>{/if}</span><Glyph name="dot" cls="mx-space-lg size-1 text-accent" />{/for}</scrolling-item>
+            <scrolling-item class="flex items-center">{#for n in [1, 2, 3]}<span class="whitespace-nowrap">{ settings.text }{#if settings.link_label} <span class="text-accent underline underline-offset-4">{ settings.link_label }</span>{/if}</span><Glyph name="dot" cls="mx-space-lg size-dot text-accent" />{/for}</scrolling-item>
           </scrolling-track>
         </scrolling-content>
       {:else}

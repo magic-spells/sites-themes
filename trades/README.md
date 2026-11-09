@@ -56,9 +56,10 @@ Nothing is counted or dated by the theme: the since year and the © line are typ
 
 The default pairs Barlow Condensed (600, 700, 800) for headings with Instrument Sans for the
 rest; Brand heading case sets the headings in capitals or as typed. For a softer look set the
-heading font to Instrument Sans as well and heading case to sentence. The palettes recolour
-the schemes through the brand colours: Foundry (navy, the default), Van (charcoal and rust),
-Earth (forest and ochre) and Brick (oxblood and gold). The accent text on light bands rides on
+heading font to Instrument Sans as well and heading case to sentence. A palette recolours
+the bands' backgrounds and buttons through the brand colours, but not their hovers, tints,
+borders or cards: Foundry (navy, the default), Van (charcoal and rust), Earth (forest and
+ochre) and Brick (oxblood and gold). The accent text on light bands rides on
 the warning colour.
 
 ## Develop

@@ -1,12 +1,38 @@
 <!-- TODO sync with Figma -->
-<!-- Stub: code B replaces this body. -->
-{#let reviews = content.testimonials.entries | sort('fields.order') | slice(0, settings.limit)}
+<!-- Patients' reviews, with the Practice rating pill in the section head. Rows: review cards 3 / 2 / 1. Carousel: the head centred, one quote at a time (the quote, the stars, the name line), the round arrows at the sides on hover from 48rem, dots under. Featured or all, up to the limit; on a service's or a clinician's page only the reviews that name them, when there are any. Nothing without reviews. -->
+{#let
+  id = 'reviews-' + section.id
+  all = content.testimonials.entries | sort('fields.order')
+  key = template.type == 'service' ? 'fields.service.id' : (template.type == 'member' ? 'fields.team.id' : null)
+  named = key ? all | where(key, page.entry.id) : []
+  reviews = (named.length ? named : (settings.source == 'featured' ? all | where('fields.featured') : all)) | slice(0, settings.limit)
+  carousel = settings.layout == 'carousel'
+  options = { slidesPerView: 1, gap: '1.5rem', loop: true, navigation: { showButtons: false, showPagination: true }, breakpoints: { '768': { navigation: { showButtons: true, showPagination: true } } } }
+}
 {#if reviews.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
-    <SectionHead heading={ settings.heading }>{#if settings.show_rating}<RatingPill />{/if}</SectionHead>
-    <ul class="grid gap-space-lg md:grid-cols-3">{#for entry in reviews}<li><ReviewCard entry={ entry } /></li>{/for}</ul>
-    {#if settings.layout == 'carousel'}<Arrows bar="reviews-bar" />{/if}
+    <SectionHead heading={ settings.heading } center={ carousel }>{#if settings.show_rating}<RatingPill />{/if}</SectionHead>
+    {#if carousel}
+      <tarot-carousel class="group relative block" id={ id }>
+        <script type="application/json" data-tarot-options>{ options | json }</script>
+        <tarot-viewport><tarot-track>
+          {#for entry in reviews}
+            {#let f = entry.fields}
+            <tarot-slide>
+              <figure class="mx-auto grid max-w-reading justify-items-center gap-space-md text-center md:px-space-2xl">
+                <blockquote class="text-body-lg text-pretty">“{ f.quote }”</blockquote>
+                {#if f.stars}<p class="flex gap-space-2xs text-scheme-accent" role="img" aria-label="{ t('rating', { n: f.stars }) }">{#for n in [1, 2, 3, 4, 5]}{#if n <= f.stars}<Glyph name="star" cls="size-icon-sm" />{/if}{/for}</p>{/if}
+                <figcaption class="text-body-sm text-scheme-muted">{ [f.name, f.line] | compact | join(' · ') }</figcaption>
+              </figure>
+            </tarot-slide>
+          {/for}
+        </tarot-track></tarot-viewport>
+        <Arrows />
+      </tarot-carousel>
+    {:else}
+      <ul class="grid gap-space-lg md:grid-cols-2 lg:grid-cols-3">{#for entry in reviews}<li><ReviewCard entry={ entry } /></li>{/for}</ul>
+    {/if}
   </div>
 </section>
 {/if}

@@ -1,10 +1,30 @@
 <!-- TODO sync with Figma -->
-<!-- Stub: code B replaces this body. -->
+<!-- The first visit: the section head with the duration line, then the steps down a vertical hairline beside a 4:5 photo (rail, seven parts to five from 48rem) or in a row (4 / 2 / 1, a hairline above each). Under the steps: what to bring as check rows, two columns from 48rem, then the forms button, the portal link and the parking line; the forms and portal go to the Practice links and hide without them. -->
+{#let
+  s = site.settings
+  rail = settings.layout == 'rail'
+  bring = blocks | where('type', 'bring')
+}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.duration_line } />
-    <ol>{#for block in blocks | where('type', 'step'), i}<Step block={ block } number={ settings.show_numbers ? i + 1 : null } editor_id={ block.editor_id } />{/for}</ol>
-    <ul>{#for block in blocks | where('type', 'bring')}<li data-block={ block.editor_id }>{ block.settings.text }</li>{/for}</ul>
+    <div class="grid gap-space-xl { rail ? 'md:grid-cols-text-picture md:gap-space-3xl' : '' }">
+      <div class="grid content-start gap-space-2xl">
+        <ol class="grid { rail ? '' : 'gap-space-lg md:grid-cols-2 lg:grid-cols-4' }">{#for block in blocks | where('type', 'step'), i}<Step block={ block } number={ settings.show_numbers ? i + 1 : null } rail={ rail } editor_id={ block.editor_id } />{/for}</ol>
+        {#if bring.length}
+        <div>
+          <h3 class="mb-space-md font-heading text-h4">{ settings.bring_heading }</h3>
+          <ul class="grid gap-x-space-lg gap-y-space-sm md:grid-cols-2">{#for block in bring}<li class="flex gap-space-xs text-body" data-block={ block.editor_id }><Glyph name="check" cls="mt-space-2xs size-icon text-link" />{ block.settings.text }</li>{/for}</ul>
+        </div>
+        {/if}
+        <div class="flex flex-wrap items-center gap-x-space-lg gap-y-space-sm">
+          {#if s.forms_url && settings.forms_label}<Button href={ s.forms_url }>{ settings.forms_label }</Button>{/if}
+          {#if s.portal_url && settings.portal_label}<a class="text-body font-medium text-link underline underline-offset-4" href="{ s.portal_url }">{ settings.portal_label }</a>{/if}
+          {#if settings.parking_line}<p class="w-full text-body-sm text-scheme-muted">{ settings.parking_line }</p>{/if}
+        </div>
+      </div>
+      {#if rail}<Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" width={ 1024 } sizes="(min-width: 48rem) 40vw, 100vw" />{/if}
+    </div>
   </div>
 </section>
 
@@ -28,7 +48,6 @@
     { "type": "text", "id": "forms_label", "label": "Forms button", "default": "Fill in your forms ahead", "info": "Goes to the Practice patient forms link; hidden without one." },
     { "type": "text", "id": "portal_label", "label": "Portal link", "default": "Patient portal", "info": "Goes to the Practice patient portal; hidden without one." },
     { "type": "text", "id": "parking_line", "label": "Parking line", "default": "Free parking behind the building; step-free entrance." },
-    { "type": "checkbox", "id": "show_ask", "label": "Ask button", "default": true },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "ice" }
   ],
   "blocks": [

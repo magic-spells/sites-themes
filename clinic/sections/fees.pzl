@@ -1,13 +1,30 @@
 <!-- TODO sync with Figma -->
-<!-- Stub: code B replaces this body. -->
-{#let services = content.services.entries | sort('fields.order') | reject('fields.price', null) | slice(0, 12)}
+<!-- The fee table: the section head with the disclaimer as its standfirst and "Check your coverage" (a link, or a call to the Practice phone); then, per category, an h4 over a 2px rule in the text colour and its priced services as fee rows on hairlines. All with a price, the featured ones, or one category; two tables side by side from 64rem with columns 2. -->
+{#let
+  s = site.settings
+  priced = content.services.entries | sort('fields.order') | reject('fields.price', null)
+  services = settings.source == 'featured' ? priced | where('fields.featured') : priced
+  groups = settings.source == 'category' && settings.category ? [settings.category] : content.categories.entries | sort('fields.order') | slice(0, 12)
+  cta = settings.cta_link || (s.phone ? 'tel:' + (s.phone | replace(' ', '')) : null)
+}
+{#if services.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
-    <SectionHead heading={ settings.heading } />
-    <ul>{#for entry in services}<FeeRow entry={ entry } duration={ settings.show_duration } />{/for}</ul>
-    {#if settings.disclaimer}<p class="text-body-sm text-scheme-muted">{ settings.disclaimer }</p>{/if}
+    <SectionHead heading={ settings.heading } text={ settings.disclaimer } link_label={ settings.cta_label } link_href={ cta } />
+    <div class="gap-x-space-2xl { settings.columns == '2' ? 'lg:columns-2' : '' }">
+      {#for category in groups}
+        {#let rows = services | where('fields.category.id', category.id) | slice(0, 12)}
+        {#if rows.length}
+        <div class="break-inside-avoid pb-space-2xl last:pb-0">
+          <h3 class="border-b-2 border-scheme-foreground pb-space-xs font-heading text-h4">{ category.title }</h3>
+          <ul>{#for entry in rows}<FeeRow entry={ entry } duration={ settings.show_duration } />{/for}</ul>
+        </div>
+        {/if}
+      {/for}
+    </div>
   </div>
 </section>
+{/if}
 
 <schema>
 {

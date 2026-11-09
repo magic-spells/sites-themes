@@ -1,12 +1,19 @@
 <!-- TODO sync with Figma -->
-<!-- Stub: code B replaces this body. -->
-{#let s = site.settings}
+<!-- One line for emergencies: the Practice emergency line in h3 left, the emergency phone (or the phone) in Price as a call link with the hours line under it right; stacked on phones. Nothing while the emergency line is empty. -->
+{#let
+  s = site.settings
+  phone = s.emergency_phone || s.phone
+}
 {#if s.emergency_line}
-<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column gap-space-xs">
-    <h2 class="font-heading text-h3">{ s.emergency_line }</h2>
-    <a class="font-heading text-h3 tnum" href="tel:{ (s.emergency_phone || s.phone) | replace(' ', '') }">{ s.emergency_phone || s.phone }</a>
-    {#if settings.hours_line}<p class="text-body-sm text-scheme-muted">{ settings.hours_line }</p>{/if}
+<section class="bg-scheme-background px-gutter py-space-2xl text-scheme-foreground">
+  <div class="mx-auto flex max-w-column flex-col gap-space-md md:flex-row md:items-center md:justify-between md:gap-space-xl">
+    <h2 class="max-w-reading font-heading text-h3 text-balance">{ s.emergency_line }</h2>
+    {#if phone}
+    <a class="grid shrink-0 gap-space-2xs hover:underline hover:underline-offset-4" href="tel:{ phone | replace(' ', '') }">
+      <span class="font-heading text-h3 tnum">{ phone }</span>
+      {#if settings.hours_line}<span class="text-body-sm text-scheme-muted">{ settings.hours_line }</span>{/if}
+    </a>
+    {/if}
   </div>
 </section>
 {/if}

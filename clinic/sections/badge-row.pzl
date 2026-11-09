@@ -1,9 +1,9 @@
 <!-- TODO sync with Figma -->
-<!-- Stub: code B replaces this body. -->
-<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+<!-- Accreditations: an optional heading centred, then the logos from the blocks, greyscale at the badge opacity (inverted on navy and slate); a centred wrapping row from 48rem, a row that scrolls past the right edge on phones. -->
+<section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter">
   <div class="mx-auto max-w-column">
-    <SectionHead heading={ settings.heading } />
-    <ul class="flex flex-wrap gap-space-xl">{#for block in blocks}<Badge block={ block } editor_id={ block.editor_id } dark={ settings.color_scheme == 'navy' || settings.color_scheme == 'slate' } />{/for}</ul>
+    {#if settings.heading}<h2 class="mb-space-lg px-gutter text-center font-heading text-card md:px-0">{ settings.heading }</h2>{/if}
+    <ul class="flex snap-x items-center gap-space-xl overflow-x-auto px-gutter md:flex-wrap md:justify-center md:overflow-visible md:px-0">{#for block in blocks}<Badge block={ block } editor_id={ block.editor_id } dark={ settings.color_scheme == 'navy' || settings.color_scheme == 'slate' } />{/for}</ul>
   </div>
 </section>
 

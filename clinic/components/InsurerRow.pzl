@@ -1,7 +1,14 @@
 <!-- component: InsurerRow -->
-<!-- An insurer on a hairline: the plan's name in Card title (or its logo with logo) and its note in Meta. -->
+<!-- An insurer: on a hairline, the plan's name in Card title and its note in Meta; with logo, a surface-2 tile with the logo greyscale at the badge opacity (the name in its place when it has none) and the note under it. -->
 {#let f = entry.fields}
-<li class="flex items-center justify-between gap-space-md border-b border-scheme-border py-space-md">
-  {#if logo && f.logo}<img class="h-control w-auto opacity-badge grayscale" src="{ image_url(f.logo, 320) }" alt="{ f.logo_alt || entry.title }" loading="lazy" width={ f.logo.width } height={ f.logo.height } />{:else}<span class="font-heading text-card">{ entry.title }</span>{/if}
+{#if logo}
+<li class="grid content-center justify-items-center gap-space-xs rounded-card bg-scheme-surface-2 p-space-md text-center">
+  {#if f.logo}{ image_tag(f.logo, { alt: f.logo_alt || entry.title, class: 'h-control w-auto opacity-badge grayscale', sizes: '10rem' }) }{:else}<span class="font-heading text-card">{ entry.title }</span>{/if}
+  {#if f.note}<span class="text-body-sm text-scheme-muted">{ f.note }</span>{/if}
+</li>
+{:else}
+<li class="flex items-baseline justify-between gap-space-md border-b border-scheme-border py-space-md">
+  <span class="font-heading text-card">{ entry.title }</span>
   {#if f.note}<span class="text-right text-body-sm text-scheme-muted">{ f.note }</span>{/if}
 </li>
+{/if}

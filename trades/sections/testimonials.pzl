@@ -31,7 +31,7 @@
   "kind": "Social proof",
   "icon": "message-square-quote",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Hear what your neighbors say" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What your neighbors say" },
     { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
     { "type": "checkbox", "id": "show_rating", "label": "Rating", "default": true, "info": "The Yard rating, review count and link at the right of the heading." },
     { "type": "select", "id": "layout", "label": "Layout", "default": "rows", "options": [

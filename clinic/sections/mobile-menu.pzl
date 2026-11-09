@@ -1,38 +1,26 @@
-<!-- TODO sync with Figma -->
-<!-- The menu drawer: a dialog-panel from the right over the page dimmed by the text colour at 50%. It closes on the backdrop, Escape and its ×, and hands focus back to the menu icon. The main menu in Card title, the services folded under Services by category, then the ask button and the phone. -->
-{#let
-  services = content.services.entries | sort('fields.order')
-  categories = content.categories.entries | sort('fields.order') | slice(0, 4)
-}
+<!-- The menu drawer: a dialog-panel from the right, leaving a 3xl strip of the page dimmed by the text colour at 50%. It closes on the backdrop, Escape and its ×, and hands focus back to the menu icon. The main menu in Card title with the categories folded under Services (each to its tab), a hairline, then the ask button and the phone. -->
+{#let categories = content.categories.entries | sort('fields.order') | slice(0, 4)}
 <dialog-panel id="mobile-menu" position="right">
   <dialog-backdrop class="bg-backdrop"></dialog-backdrop>
-  <dialog class="ms-auto h-dvh w-full max-w-drawer overflow-y-auto bg-scheme-background text-scheme-foreground" aria-label="{ t('menu') }">
+  <dialog class="start-space-3xl h-dvh w-auto overflow-y-auto bg-scheme-background text-scheme-foreground" aria-label="{ t('menu') }">
     <div class="grid gap-space-lg px-gutter pb-space-xl">
       <div class="flex min-h-header items-center justify-end">
         <button class="-me-space-xs flex size-tap items-center justify-center" type="button" data-action-hide-dialog><Glyph name="close" cls="size-glyph" /><span class="sr-only">{ t('close') }</span></button>
       </div>
       {#if settings.menu.items.length}
-        <nav aria-label="{ t('main_navigation') }">
-          <ul class="grid font-heading text-card">
+        <nav class="border-b border-scheme-border pb-space-lg" aria-label="{ t('main_navigation') }">
+          <ul class="grid gap-space-xs font-heading text-card">
             {#for item in settings.menu.items}
-              <li class="border-b border-scheme-border">
+              <li>
                 {#if item.href == settings.services_path && categories.length}
                   <collapsible-component>
-                    <button class="group flex min-h-control w-full items-center justify-between" type="button">{ item.label }<Glyph name="chevron-down" cls="size-icon transition-transform duration-fast group-aria-expanded:rotate-180" /></button>
+                    <button class="group flex items-center gap-space-xs py-space-2xs" type="button">{ item.label }<Glyph name="chevron-down" cls="size-icon transition-transform duration-fast group-aria-expanded:rotate-180" /></button>
                     <collapsible-content>
-                      <div class="grid gap-space-md pb-space-md font-body text-body font-normal">
-                        {#for category in categories}
-                          <div class="grid gap-space-xs">
-                            <p class="text-body-sm text-scheme-muted">{ category.title }</p>
-                            <ul class="grid gap-space-xs">{#for entry in services | where('fields.category.id', category.id) | slice(0, 8)}<li><a class="hover:underline hover:underline-offset-4" href="/services/{ entry.handle }">{ entry.title }</a></li>{/for}</ul>
-                          </div>
-                        {/for}
-                        <a class="text-link underline underline-offset-4" href="{ item.href }">{ t('all_services') }</a>
-                      </div>
+                      <ul class="grid gap-space-xs py-space-xs ps-space-md font-body text-body font-normal">{#for category in categories}<li><a class="hover:underline hover:underline-offset-4" href="{ item.href }?category={ category.handle }">{ category.title }</a></li>{/for}</ul>
                     </collapsible-content>
                   </collapsible-component>
                 {:else}
-                  <a class="flex min-h-control items-center current:text-link" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a>
+                  <a class="block py-space-2xs current:text-link" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a>
                 {/if}
               </li>
             {/for}
@@ -47,12 +35,12 @@
 <schema>
 {
   "name": "Mobile menu",
-  "description": "The menu drawer below 64rem: the menu, the services, the ask button and the phone.",
+  "description": "The menu drawer below 64rem: the menu, the categories, the ask button and the phone.",
   "kind": "Panels",
   "icon": "menu",
   "settings": [
     { "type": "menu", "id": "menu", "label": "Menu" },
-    { "type": "url", "id": "services_path", "label": "Services page", "default": "/services", "info": "The menu item pointing here folds the services under it, by category." },
+    { "type": "url", "id": "services_path", "label": "Services page", "default": "/services", "info": "The menu item pointing here folds the categories under it." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
   ],
   "presets": [

@@ -1,5 +1,4 @@
-<!-- TODO sync with Figma -->
-<!-- A concern's page: the title in h1, the summary as the standfirst, the body in seven parts beside the 3:2 photo in five; then the treatment that usually helps as one service card and who to see as one clinician card; then the two routes. -->
+<!-- A concern's page: the title in h1, the summary as the standfirst, the body in seven parts beside the 3:2 photo in five (the photo first on phones); then the treatment that usually helps as one service card, who to see as one clinician card, and the two routes. -->
 {#let
   entry = page.entry
   f = entry.fields
@@ -12,18 +11,12 @@
       {#if f.summary}<p class="text-body-lg text-pretty text-scheme-muted">{ f.summary }</p>{/if}
     </header>
     <div class="grid items-start gap-space-xl md:grid-cols-text-picture md:gap-space-3xl">
-      <div class="grid gap-space-xl">
-        {#if f.body}<div class="sites-prose max-w-reading text-body" data-lead>{ f.body }</div>{/if}
-        <Routes />
-      </div>
-      {#if f.image}<Well asset={ f.image } alt={ f.image_alt } width={ 1200 } sizes="(min-width: 48rem) 40vw, 100vw" eager />{/if}
+      {#if f.body}<div class="sites-prose text-body" data-lead>{ f.body }</div>{/if}
+      {#if f.image}<div class="max-md:order-first"><Well asset={ f.image } alt={ f.image_alt } width={ 1200 } sizes="(min-width: 48rem) 40vw, 100vw" eager /></div>{/if}
     </div>
-    {#if f.service || f.team}
-      <div class="grid gap-space-xl md:grid-cols-2 lg:grid-cols-3">
-        {#if f.service}<div class="grid content-start gap-space-md"><h2 class="font-heading text-card">{ t('treatment') }</h2><ServiceCard entry={ f.service } price /></div>{/if}
-        {#if f.team}<div class="grid content-start gap-space-md"><h2 class="font-heading text-card">{ t('who_to_see') }</h2><div class="max-w-text"><ClinicianCard entry={ f.team } /></div></div>{/if}
-      </div>
-    {/if}
+    {#if f.service}<div class="grid gap-space-md"><h2 class="font-heading text-h4">{ t('treatment') }</h2><div class="max-w-card"><ServiceCard entry={ f.service } price /></div></div>{/if}
+    {#if f.team}<div class="grid gap-space-md"><h2 class="font-heading text-h4">{ t('who_to_see') }</h2><div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6"><ClinicianCard entry={ f.team } /></div></div>{/if}
+    <Routes />
   </div>
 </section>
 {/if}

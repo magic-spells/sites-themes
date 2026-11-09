@@ -1,7 +1,6 @@
-<!-- TODO sync with Figma -->
 <!-- The mosaic: the first tile tall beside the others stacked, two columns from 48rem, one on phones. Each tile sits on its own scheme; a photo tile shows its text under the photo, on the band. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <ul class="mx-auto grid max-w-column gap-space-lg md:grid-cols-2">{#for block in blocks, i}<Tile block={ block } editor_id={ block.editor_id } cls={ i == 0 ? 'md:row-span-2' : '' } />{/for}</ul>
+  <ul class="mx-auto grid max-w-column gap-space-sm md:grid-cols-2 md:gap-space-md lg:gap-space-lg">{#for block in blocks, i}<Tile block={ block } editor_id={ block.editor_id } cls={ i == 0 ? 'md:row-span-2' : '' } />{/for}</ul>
 </section>
 
 <schema>

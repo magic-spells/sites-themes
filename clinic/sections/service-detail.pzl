@@ -1,5 +1,4 @@
-<!-- TODO sync with Figma -->
-<!-- A service's page: its category as the one overline, the name in h1, the summary once as a standfirst, then ONE decision row on a hairline (the duration and the price left, the ask button right). The description in seven parts beside the 3:2 photo (or the icon large on surface-2) in five. Under it: what the visit includes (a fold), the concerns it helps as chips, who provides it, and the questions in the blocks. -->
+<!-- A service's page: its category as the one overline, the name in h1, the summary once as a standfirst, then ONE decision row on a hairline (the duration and the price left, the ask button right). The description in seven parts beside the 3:2 photo (or the icon large on the tint) in five, the picture first on phones. Under the description: what the visit includes (a fold), the concerns it helps as chips, who provides it, and the questions in the blocks. -->
 {#let
   entry = page.entry
   f = entry.fields
@@ -11,7 +10,7 @@
   <div class="mx-auto grid max-w-column gap-space-2xl">
     <header class="grid gap-space-lg">
       <div class="grid max-w-reading gap-space-sm">
-        {#if f.category}<p class="text-body-sm font-semibold text-link"><a class="hover:underline hover:underline-offset-4" href="{ settings.services_path }?category={ f.category.handle }">{ f.category.title }</a></p>{/if}
+        {#if f.category}<p class="text-body-sm text-scheme-muted"><a class="hover:underline hover:underline-offset-4" href="{ settings.services_path }?category={ f.category.handle }">{ f.category.title }</a></p>{/if}
         <h1 class="font-heading text-h1 text-balance"><Rise text={ entry.title } /></h1>
         {#if f.summary}<p class="text-body-lg text-pretty text-scheme-muted">{ f.summary }</p>{/if}
       </div>
@@ -26,9 +25,9 @@
     </header>
     <div class="grid items-start gap-space-xl md:grid-cols-text-picture md:gap-space-3xl">
       <div class="grid gap-space-xl">
-        {#if f.description}<div class="sites-prose max-w-reading text-body" data-lead>{ f.description }</div>{/if}
+        {#if f.description}<div class="sites-prose text-body" data-lead>{ f.description }</div>{/if}
         {#if f.includes}
-          <collapsible-component class="block max-w-reading border-y border-scheme-border">
+          <collapsible-component class="block border-y border-scheme-border">
             <h2><button class="group flex w-full items-center justify-between gap-space-md py-space-md text-left font-heading text-card" type="button">{ t('includes') }<Glyph name="chevron-down" cls="size-icon transition-transform duration-fast group-aria-expanded:rotate-180" /></button></h2>
             <collapsible-content open>
               <ul class="grid gap-space-sm pb-space-md">{#for line in f.includes | split('\n')}{#if line | strip}<li class="flex gap-space-sm"><Glyph name="check" cls="mt-space-2xs size-icon text-link" />{ line | strip }</li>{/if}{/for}</ul>
@@ -38,28 +37,25 @@
         {#if concerns.length}
           <div class="grid gap-space-sm">
             <h2 class="font-heading text-card">{ t('concerns_helped') }</h2>
-            <ul class="flex flex-wrap gap-space-xs">{#for c in concerns}<li><a class="flex min-h-tap items-center rounded-full border border-scheme-border px-space-md text-body-sm hover:bg-scheme-surface-2" href="/conditions/{ c.handle }">{ c.title }</a></li>{/for}</ul>
+            <ul class="flex flex-wrap gap-space-xs">{#for c in concerns}<li><a class="flex min-h-tap items-center rounded-full bg-scheme-tint px-chip text-body-sm hover:bg-scheme-surface-2" href="/conditions/{ c.handle }">{ c.title }</a></li>{/for}</ul>
           </div>
         {/if}
         {#if who}
           <div class="grid gap-space-sm">
             <h2 class="font-heading text-card">{ t('who_provides') }</h2>
-            <a class="group flex items-center gap-space-md justify-self-start" href="/team/{ who.handle }">
-              <span class="w-circle-lg"><Well asset={ who.fields.image } alt={ who.fields.image_alt } ratio="aspect-square" card width={ 160 } sizes="3.5rem" /></span>
-              <span class="grid"><span class="font-heading text-card group-hover:underline group-hover:underline-offset-4">{ who.title }{#if who.fields.letters}<span class="ms-space-xs text-body-sm font-normal text-scheme-muted">{ who.fields.letters }</span>{/if}</span>{#if who.fields.role}<span class="text-body-sm text-scheme-muted">{ who.fields.role }</span>{/if}</span>
-            </a>
+            <div class="grid grid-cols-2 md:grid-cols-3"><ClinicianCard entry={ who } /></div>
+          </div>
+        {/if}
+        {#if blocks.length}
+          <div class="grid gap-space-md">
+            <h2 class="font-heading text-h3">{ settings.faq_heading }</h2>
+            <Questions items={ blocks } first_open />
           </div>
         {/if}
       </div>
-      {#if f.image}<Well asset={ f.image } alt={ f.image_alt } width={ 1200 } sizes="(min-width: 48rem) 40vw, 100vw" eager />
-      {:else}<div class="flex aspect-photo items-center justify-center rounded-photo bg-scheme-surface-2 text-link"><Glyph name={ f.icon || 'tooth' } cls="size-glyph-2xl" /></div>{/if}
+      <div class="max-md:order-first">{#if f.image}<Well asset={ f.image } alt={ f.image_alt } width={ 1200 } sizes="(min-width: 48rem) 40vw, 100vw" eager />
+      {:else}<span class="flex aspect-photo items-center justify-center rounded-photo bg-scheme-tint text-link"><Glyph name={ f.icon || 'tooth' } cls="size-glyph-2xl" /></span>{/if}</div>
     </div>
-    {#if blocks.length}
-      <div class="grid max-w-reading gap-space-md">
-        <h2 class="font-heading text-h3">{ settings.faq_heading }</h2>
-        <Questions items={ blocks } first_open />
-      </div>
-    {/if}
   </div>
 </section>
 {/if}

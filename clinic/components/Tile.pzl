@@ -5,5 +5,5 @@
   {#if b.image}<Well asset={ b.image } alt={ b.image_alt } width={ 1200 } sizes="(min-width: 64rem) 40vw, 100vw" />{/if}
   <h3 class="font-heading text-h3">{ b.heading }</h3>
   {#if b.text}<p class="text-body text-pretty">{ b.text }</p>{/if}
-  {#if b.link_label && b.link}<a class="justify-self-start text-body font-medium text-link underline underline-offset-4" href="{ b.link }">{ b.link_label }</a>{/if}
+  {#if b.link_label && b.link}<a class="justify-self-start text-body font-semibold text-link underline underline-offset-4" href="{ b.link }">{ b.link_label }</a>{/if}
 </li>

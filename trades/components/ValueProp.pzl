@@ -10,8 +10,8 @@
 {:else}
 <li class="flex flex-col items-center gap-space-md rounded-card bg-scheme-surface-2 p-space-xl text-center" data-block={ editor_id }>
   <IconCircle icon={ b.icon } size="xl" />
-  <h3 class="mt-space-md text-h4 font-semibold">{ b.title }</h3>
-  <p class="max-w-summary text-body-sm text-pretty text-scheme-muted">{ b.text }</p>
+  <h3 class="text-h4 font-semibold">{ b.title }</h3>
+  <p class="mb-space-xl max-w-summary text-body-sm text-pretty text-scheme-muted">{ b.text }</p>
   <Glyph name="arrow-right" cls="mt-auto size-glyph self-end text-accent" />
 </li>
 {/if}

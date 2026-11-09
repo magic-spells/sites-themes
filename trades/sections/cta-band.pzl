@@ -1,24 +1,18 @@
-<!-- TODO sync with Figma -->
-<!-- The band every page ends on, with a hairline at its foot above the footer. None: the Display heading, the Yard confirm line and the routes centred, the proof row under a rule. Inline: five parts to seven from 48rem, the heading, the routes stacked and the licence lines left; the estimate form on a chalk card right, the confirm line under its button. -->
-{#let s = site.settings}
+<!-- The band every page ends on, with a hairline at its foot above the footer. None: the Display heading, the Yard confirm line and the routes centred, the proof row under a rule. Inline: five parts to seven from 48rem, the heading, the confirm line, the routes stacked and the licence lines left; the estimate form on a chalk card right. -->
+{#let
+  s = site.settings
+  inline = settings.form == 'inline'
+}
 <section class="border-b border-scheme-border bg-scheme-background px-gutter py-section text-scheme-foreground">
-  {#if settings.form == 'inline'}
-  <div class="mx-auto grid max-w-column items-center gap-space-xl md:grid-cols-picture-text md:gap-space-3xl">
-    <div class="grid justify-items-start gap-space-lg">
-      <h2 class="font-heading text-display case-heading text-balance text-scheme-heading">{ settings.heading }</h2>
-      <Routes stack />
-      <LicenceLines cls="border-t border-scheme-border pt-space-md text-body-sm" />
+  <div class="mx-auto grid max-w-column gap-space-xl { inline ? 'items-start md:grid-cols-picture-text md:gap-space-3xl' : 'text-center' }">
+    <div class="grid gap-space-lg { inline ? 'justify-items-start' : 'justify-items-center' }">
+      <h2 class="font-heading text-display case-heading text-scheme-heading">{ settings.heading }</h2>
+      {#if s.confirm_line}<p class="text-body-lg text-pretty text-scheme-muted">{ s.confirm_line }</p>{/if}
+      <Routes stack={ inline } />
+      {#if inline}<LicenceLines cls="text-body-sm text-scheme-muted" />{:else}<div class="grid w-full justify-items-center border-t border-scheme-border pt-space-lg"><ProofRow /></div>{/if}
     </div>
-    <FormCard prefix="cta-{ section.id }" />
+    {#if inline}<FormCard prefix="cta-{ section.id }" />{/if}
   </div>
-  {:else}
-  <div class="mx-auto grid max-w-column justify-items-center gap-space-lg text-center">
-    <h2 class="font-heading text-display case-heading text-balance text-scheme-heading">{ settings.heading }</h2>
-    {#if s.confirm_line}<p class="text-body-lg text-pretty text-scheme-muted">{ s.confirm_line }</p>{/if}
-    <Routes />
-    <div class="grid w-full justify-items-center border-t border-scheme-border pt-space-lg"><ProofRow /></div>
-  </div>
-  {/if}
 </section>
 
 <schema>

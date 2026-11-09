@@ -1,17 +1,16 @@
-<!-- TODO sync with Figma -->
-<!-- The first screen: the Display heading (its accent phrase in the accent), the standfirst, the routes and, under a rule, the proof row. Cover: over the photo filling the band (80svh, or the full screen), the band's colour fading up over it, solid at the foot, the type low left. Split: seven parts to five, the 4:5 photo running off the right edge with the band's colour fading over its left third; on phones the photo follows at 3:2. Form: the split with the estimate form on a chalk card in the photo's place. The cover carries data-over-hero for the over-hero header. -->
+<!-- The first screen: the Display heading (its accent phrase in the accent), the standfirst, the routes and, under a rule, the proof row. Cover: over the photo filling the band (80svh, or the full screen), the band's colour fading up over it, solid at the foot, the type low left. Split: seven parts to five, the 4:5 photo running off the right edge with the band's colour fading over its left third; on phones the photo follows at 3:2. Form: the split with the estimate form on a chalk card in the photo's place. A navy or charcoal hero carries data-over-hero for the over-hero header, whose overlaid colours are light. -->
 {#let
   layout = settings.layout
   cover = layout == 'cover'
 }
-<section class="relative isolate overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground { cover ? (settings.height == 'full' ? 'flex min-h-svh items-end' : 'flex min-h-hero items-end') : '' }" data-over-hero={ cover || null }>
+<section class="relative isolate overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground { cover ? (settings.height == 'full' ? 'flex min-h-svh items-end' : 'flex min-h-hero items-end') : '' }" data-over-hero={ settings.color_scheme == 'navy' || settings.color_scheme == 'charcoal' || null }>
   {#if cover}
     <div class="absolute inset-0 -z-10"><Well asset={ settings.image } alt={ settings.image_alt } ratio="h-full" inset width={ 2000 } sizes="100vw" eager /></div>
     <span class="absolute inset-0 -z-10 bg-linear-to-t from-scheme-background via-scheme-background/70 to-scheme-background/60"></span>
   {/if}
   <div class="mx-auto grid w-full max-w-column items-center gap-space-xl { cover ? '' : 'md:grid-cols-text-picture md:gap-space-3xl' }">
     <div class="grid max-w-reading justify-items-start gap-space-lg { cover ? '' : 'md:max-w-none' }">
-      <h1 class="font-heading text-display case-heading text-balance text-scheme-heading">{ settings.heading }{#if settings.accent_text} <span class="text-accent">{ settings.accent_text }</span>{/if}</h1>
+      <h1 class="font-heading text-display case-heading text-scheme-heading">{ settings.heading }{#if settings.accent_text} <span class="text-accent">{ settings.accent_text }</span>{/if}</h1>
       {#if settings.text}<p class="max-w-reading text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
       <Routes />
       {#if settings.show_proof_row}<div class="w-full border-t border-scheme-border pt-space-md"><ProofRow /></div>{/if}
@@ -19,7 +18,7 @@
     {#if layout == 'form'}
       <FormCard prefix="hero-{ section.id }" />
     {:else if !cover}
-      <div class="relative md:-me-bleed"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-photo md:aspect-portrait" width={ 1200 } sizes="(min-width: 48rem) 45vw, 100vw" eager /><span class="absolute inset-y-0 start-0 w-1/3 bg-linear-to-r from-scheme-background max-md:hidden"></span></div>
+      <div class="relative md:-me-bleed"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-photo md:aspect-portrait md:rounded-none" width={ 1200 } sizes="(min-width: 48rem) 45vw, 100vw" eager /><span class="absolute inset-y-0 start-0 w-1/3 bg-linear-to-r from-scheme-background max-md:hidden"></span></div>
     {/if}
   </div>
 </section>
@@ -31,7 +30,7 @@
   "kind": "Hero",
   "icon": "image",
   "settings": [
-    { "type": "select", "id": "layout", "label": "Layout", "default": "cover", "options": [
+    { "type": "select", "id": "layout", "label": "Layout", "default": "split", "options": [
       { "value": "cover", "label": "Cover: the photo behind the type" },
       { "value": "split", "label": "Split: the photo beside the type" },
       { "value": "form", "label": "Form: the estimate form beside the type" }
@@ -49,8 +48,8 @@
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "navy" }
   ],
   "presets": [
+    { "name": "Split", "settings": { "layout": "split", "color_scheme": "navy" } },
     { "name": "Cover", "settings": { "layout": "cover", "color_scheme": "navy" } },
-    { "name": "Split", "settings": { "layout": "split", "color_scheme": "paper" } },
     { "name": "Form", "settings": { "layout": "form", "color_scheme": "navy" } }
   ]
 }

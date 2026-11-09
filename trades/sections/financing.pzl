@@ -1,4 +1,3 @@
-<!-- TODO sync with Figma -->
 <!-- Pay over time, from the Yard financing line and link; nothing when both are empty. Band: one row from 48rem, the heading, the line over the fine print, the lender button. Split: the same copy stacked, seven parts to five beside the photo. -->
 {#let
   s = site.settings

@@ -6,7 +6,7 @@
   "before": "Before",
   "call": "Call {phone}",
   "choose": "Select…",
-  "choose_plan": "Choose this plan",
+  "choose_plan": "Join {name}",
   "close": "Close",
   "contact": "Contact",
   "cookie_notice": "Cookie notice",

@@ -1,7 +1,7 @@
 <!-- component: Step -->
 <!-- A process step: its number in Stat small in the accent, the title, the line, a rule under. -->
 {#let b = block.settings}
-<li class="grid content-start gap-space-xs border-b border-scheme-border pb-space-lg" data-block={ editor_id }>
+<li class="grid content-start gap-space-sm border-b border-scheme-border pb-space-lg" data-block={ editor_id }>
   <p class="font-heading text-h2 tnum text-accent">{ number }</p>
   <h3 class="text-h4 font-semibold">{ b.title }</h3>
   <p class="text-body-sm text-scheme-muted">{ b.text }</p>

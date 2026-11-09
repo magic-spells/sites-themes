@@ -1,10 +1,9 @@
-<!-- TODO sync with Figma -->
 <!-- The numbers: the section head, then the figures as surface-2 cards in one row from 64rem (as many columns as figures), two across from 48rem, stacked on phones; typed strings, never counted up. -->
 {#let n = blocks.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } />
-    <ul class="grid gap-space-md md:grid-cols-2 { n == 3 ? 'lg:grid-cols-3' : (n > 3 ? 'lg:grid-cols-4' : '') } { settings.align == 'center' ? 'text-center' : '' }">{#for block in blocks | slice(0, 4)}<Stat block={ block } editor_id={ block.editor_id } />{/for}</ul>
+    <ul class="grid gap-space-sm md:grid-cols-2 md:gap-space-lg { n == 3 ? 'lg:grid-cols-3' : (n > 3 ? 'lg:grid-cols-4' : '') } { settings.align == 'center' ? 'text-center' : '' }">{#for block in blocks | slice(0, 4)}<Stat block={ block } editor_id={ block.editor_id } />{/for}</ul>
   </div>
 </section>
 

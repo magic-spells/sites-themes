@@ -180,7 +180,7 @@
 	--grid-template-columns-text-picture: 7fr 5fr;
 	--grid-template-columns-picture-text: 5fr 7fr;
 	/* A coupon: the amount's cell, then the job. */
-	--grid-template-columns-coupon: 9rem 1fr;
+	--grid-template-columns-coupon: 14rem 1fr;
 	--opacity-dots-inactive: 35%;
 	--transition-duration-fast: 150ms;
 	--transition-duration-panel: 250ms;

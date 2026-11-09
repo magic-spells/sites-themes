@@ -1,5 +1,10 @@
 # Portfolio
 
+## 0.1.2
+
+- Neutral greys in every scheme; the footer's ink is #171717.
+- The hero's name layout drops its status line, and the role line sits closer to the name.
+
 ## 0.1.1
 
 - Links, the filter rule and the status dot in the text colour by default; the accent colour is

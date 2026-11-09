@@ -1,0 +1,12 @@
+<!-- component: SectionHead -->
+<!-- A section's head: the heading in h2 capitals, an optional standfirst under it, and at the right the outlined "All …" button or whatever the section passes in (the rating pill); a rule under both, a hairline on light bands and 2px on dark ones. Stacks on phones. The gap to the content is xl. -->
+{#if heading}
+<div class="mb-space-xl flex flex-wrap items-end justify-between gap-x-space-lg gap-y-space-md border-rule pb-space-md">
+  <div class="grid max-w-reading gap-space-xs">
+    <h2 class="font-heading text-h2 case-heading text-balance text-scheme-heading">{ heading }</h2>
+    {#if text}<p class="text-body-lg text-pretty text-scheme-muted">{ text }</p>{/if}
+  </div>
+  {#if link_label && link_href}<Button href={ link_href } tone="outline">{ link_label }</Button>{/if}
+  <Children/>
+</div>
+{/if}

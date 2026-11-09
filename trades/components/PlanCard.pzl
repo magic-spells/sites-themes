@@ -1,0 +1,14 @@
+<!-- component: PlanCard -->
+<!-- A plan on a paper card with a hairline, at most 26.25rem wide: the name, the price in Stat small with the period in Meta, the summary, the includes as check rows and the note in Meta, each under a hairline, one full-width button. The featured plan carries the Most popular badge beside its name and a 2px accent stroke. -->
+{#let f = entry.fields}
+<article class="sites-scheme-paper flex h-full max-w-card flex-col gap-space-md rounded-card bg-scheme-background p-space-xl text-scheme-foreground { f.featured ? 'border-2 border-accent' : 'border border-scheme-border' }">
+  <div class="flex flex-wrap items-center justify-between gap-space-sm">
+    <h3 class="text-h4 font-semibold">{ entry.title }</h3>
+    {#if f.featured}<p class="rounded-full bg-accent px-space-sm py-space-2xs text-xs font-semibold text-scheme-background">{ t('most_popular') }</p>{/if}
+  </div>
+  <p class="flex items-baseline gap-space-xs"><span class="font-heading text-h2 tnum">{ f.price | currency('$', 0) }</span>{#if f.period}<span class="text-body-sm text-scheme-muted">/ { t('period.' + f.period) }</span>{/if}</p>
+  {#if f.summary}<p class="text-body-lg text-pretty text-scheme-muted">{ f.summary }</p>{/if}
+  {#if f.includes}<ul class="grid gap-space-sm border-t border-scheme-border pt-space-md">{#for line in f.includes | split('\n')}{#if line | strip}<li class="flex gap-space-xs"><Glyph name="check" cls="mt-space-2xs size-icon text-accent" />{ line | strip }</li>{/if}{/for}</ul>{/if}
+  {#if f.note}<p class="border-t border-scheme-border pt-space-md text-body-sm text-scheme-muted">{ f.note }</p>{/if}
+  <div class="mt-auto pt-space-xs">{#if f.link}<Button href={ f.link } wide>{ t('choose_plan', { name: entry.title }) }</Button>{:else}<Button ask wide>{ t('choose_plan', { name: entry.title }) }</Button>{/if}</div>
+</article>

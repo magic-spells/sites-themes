@@ -1,0 +1,4 @@
+<!-- component: LicenceLines -->
+<!-- The Yard licence lines in the Licence style, one to a line, blank lines left out; cls places them. -->
+{#let lines = site.settings.licence_lines}
+{#if lines}<p class="grid font-medium tnum { cls }">{#for line in lines | split('\n')}{#if line | strip}<span>{ line | strip }</span>{/if}{/for}</p>{/if}

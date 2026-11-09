@@ -129,6 +129,19 @@
       "zip": "https://github.com/magic-spells/sites-themes/releases/download/portfolio/v0.1.1/portfolio-v0.1.1.zip",
       "sha256": null,
       "screenshots": []
+    },
+    {
+      "name": "trades",
+      "label": "Trades",
+      "description": "A home-services firm: services with their prices, a free-estimate form a tap away, the phone on every screen, specials as coupons, past work, the towns you serve with a page each, reviews and the crew.",
+      "category": "content",
+      "vertical": "Home services",
+      "license": "MIT",
+      "publisher": "Magic Spells",
+      "version": "0.1.0",
+      "zip": "https://github.com/magic-spells/sites-themes/releases/download/trades/v0.1.0/trades-v0.1.0.zip",
+      "sha256": null,
+      "screenshots": []
     }
   ]
 }

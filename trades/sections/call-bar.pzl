@@ -1,0 +1,25 @@
+<!-- The call bar, phones only: fixed to the foot of the screen below 48rem while Yard show call bar is on, the phone as an outlined tel: button and the ask button side by side, safe-area padding under them. It steps aside while the sheet or the menu is open. -->
+{#let s = site.settings}
+{#if s.show_call_bar && s.phone}
+<div class="fixed inset-x-0 bottom-0 z-30 grid grid-cols-2 gap-space-sm bg-scheme-background px-gutter pt-space-sm pb-safe text-scheme-foreground md:hidden panel-open:hidden">
+  <a class="flex min-h-control items-center justify-center rounded-button border border-accent text-button font-medium text-accent tnum" href="tel:{ s.phone | replace(' ', '') }">{ s.phone }</a>
+  <Button ask>{ settings.ask_label || s.ask_label }</Button>
+</div>
+<div class="h-call-bar md:hidden" aria-hidden="true"></div>
+{/if}
+
+<schema>
+{
+  "name": "Call bar",
+  "description": "Phones only: the phone and the ask button fixed to the foot of the screen.",
+  "kind": "Panels",
+  "icon": "panel-bottom",
+  "settings": [
+    { "type": "text", "id": "ask_label", "label": "Button label", "default": "Free estimate", "info": "Short: the bar is half a phone wide. Leave empty for the Yard ask label." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "navy" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "navy" } }
+  ]
+}
+</schema>

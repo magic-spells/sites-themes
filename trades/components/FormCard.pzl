@@ -1,0 +1,3 @@
+<!-- component: FormCard -->
+<!-- A site form whole (EstimateFields, handle and prefix passed through) on a chalk card with 1rem corners and a hairline. -->
+<div class="sites-scheme-chalk rounded-card border border-scheme-border bg-scheme-background p-space-xl text-scheme-foreground lg:p-space-2xl"><EstimateFields handle={ handle } prefix={ prefix } /></div>

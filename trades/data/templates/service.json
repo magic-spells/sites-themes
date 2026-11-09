@@ -1,0 +1,55 @@
+{
+  "label": "Service",
+  "description": "A service's page: the price, the ask button, what's included, recent work, questions and reviews.",
+  "sections": [
+    {
+      "id": "s_detail",
+      "type": "service-detail",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do you charge a callout fee?",
+            "answer": "<p>No. The price covers the visit and the work. If we find more, you get a fixed price first.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "How fast can you come?",
+            "answer": "<p>Most days within the hour for emergencies, and the same or next day for everything else.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "What if the job is bigger than it looked?",
+            "answer": "<p>We stop, show you what we found and quote it before we go on. You decide.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_reviews",
+      "type": "testimonials",
+      "preset": "Rows",
+      "settings": {
+        "color_scheme": "chalk"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Routes",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    }
+  ]
+}

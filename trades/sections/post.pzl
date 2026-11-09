@@ -1,0 +1,35 @@
+<!-- A journal post in the centred reading column: the topic and date in Meta, the title in h1 as typed (a post title is prose), the standfirst, the 3:2 photo, the body and the author. -->
+{#let
+  entry = page.entry
+  f = entry.fields
+}
+{#if entry}
+<article class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-reading gap-space-xl">
+    <header class="grid gap-space-md">
+      <p class="text-body-sm text-scheme-muted">{ [f.topic, f.date ? f.date | date : null] | compact | join(' · ') }</p>
+      <h1 class="font-heading text-h1 text-balance text-scheme-heading">{ entry.title }</h1>
+      {#if f.standfirst}<p class="text-body-lg text-pretty text-scheme-muted">{ f.standfirst }</p>{/if}
+    </header>
+    <Well asset={ f.image } alt={ f.image_alt } width={ 1600 } sizes="(min-width: 48rem) 40rem, 100vw" eager />
+    <div class="sites-prose text-body">{ f.body }</div>
+    {#if f.author}<p class="text-body-sm text-scheme-muted">{ f.author }</p>{/if}
+  </div>
+</article>
+{/if}
+
+<schema>
+{
+  "name": "Post",
+  "description": "A journal post: the title, the photo and the body.",
+  "kind": "Content",
+  "icon": "file-text",
+  "templates": ["post"],
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "paper" } }
+  ]
+}
+</schema>

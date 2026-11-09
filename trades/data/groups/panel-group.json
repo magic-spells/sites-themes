@@ -1,0 +1,41 @@
+{
+  "sections": [
+    {
+      "id": "sg_mobile_menu",
+      "type": "mobile-menu",
+      "preset": "Default",
+      "settings": {
+        "menu": "main",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_estimate",
+      "type": "estimate-panel",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "chalk"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_call_bar",
+      "type": "call-bar",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_cookie",
+      "type": "cookie-notice",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "chalk"
+      },
+      "blocks": []
+    }
+  ]
+}

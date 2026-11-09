@@ -1,0 +1,154 @@
+{
+  "label": "About",
+  "description": "The story, the numbers, the crew, accreditations and reviews.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_story",
+      "type": "story",
+      "preset": "Default",
+      "settings": {
+        "image": "as_4x5_clay",
+        "image_alt": "Ray and Dan Hollis in the yard",
+        "color_scheme": "chalk"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_stats",
+      "type": "stats",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": [
+        {
+          "type": "stat",
+          "settings": {
+            "number": "38",
+            "label": "Years in business",
+            "text": "Second generation, same yard."
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "12,400+",
+            "label": "Jobs completed",
+            "text": "Across Ashby and ten towns."
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "12",
+            "label": "Month guarantee",
+            "text": "Parts and labour, every job."
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "4.9",
+            "label": "Google rating",
+            "text": "From 612 reviews."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_team",
+      "type": "team-grid",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_projects",
+      "type": "projects-strip",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "chalk"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_badges",
+      "type": "badge-row",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "type": "badge",
+          "settings": {
+            "logo": "as_logo_halcyon",
+            "alt": "Gas Safe Register (placeholder)",
+            "link": ""
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "logo": "as_logo_quill",
+            "alt": "Licensed plumber (placeholder)",
+            "link": ""
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "logo": "as_logo_northbank",
+            "alt": "Heat pump installer (placeholder)",
+            "link": ""
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "logo": "as_logo_verso",
+            "alt": "Trading Standards (placeholder)",
+            "link": ""
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "logo": "as_logo_foxglove",
+            "alt": "Chamber of Commerce (placeholder)",
+            "link": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_reviews",
+      "type": "testimonials",
+      "preset": "Rows",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Routes",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    }
+  ]
+}

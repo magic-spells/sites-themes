@@ -1,0 +1,35 @@
+<!-- How it works: the section head, then the steps numbered from the loop (01, 02 …) in a row from 64rem, two across from 48rem, stacked on phones, a rule under each. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <ol class="grid gap-x-space-2xl gap-y-space-xl md:grid-cols-2 lg:grid-cols-4">{#for block in blocks | slice(0, 6), i}<Step block={ block } editor_id={ block.editor_id } number={ '0' + (i + 1) } />{/for}</ol>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Process",
+  "description": "How it works, as numbered steps.",
+  "kind": "Content",
+  "icon": "list-ordered",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "How it works" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "navy" }
+  ],
+  "blocks": [
+    { "type": "step", "name": "Step", "settings": [
+      { "type": "text", "id": "title", "label": "Title" },
+      { "type": "text", "id": "text", "label": "Line" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "navy" }, "blocks": [
+      { "type": "step", "settings": { "title": "Call or book online", "text": "Tell us what's wrong and when suits." } },
+      { "type": "step", "settings": { "title": "A fixed price", "text": "We quote before we start, no surprises." } },
+      { "type": "step", "settings": { "title": "The work", "text": "A licensed technician, on time, tidy." } },
+      { "type": "step", "settings": { "title": "Guaranteed", "text": "Twelve months on parts and labour." } }
+    ] }
+  ]
+}
+</schema>

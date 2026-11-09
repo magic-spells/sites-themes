@@ -1,0 +1,60 @@
+<!-- The services as cards: three across at 64rem, two at 48rem, one on phones or a row that scrolls with the next card peeking in. Photo: each card the square photo with a caption panel; icons: the icon circle, the name, the summary and the price line. Featured, all, or the services named in the blocks, capped at the limit. -->
+{#let
+  all = content.services.entries | sort('fields.order')
+  picked = settings.source == 'featured' ? all | where('fields.featured') : all
+  row = settings.mobile == 'row'
+  cols = settings.columns == 2 ? 'lg:grid-cols-2' : (settings.columns == 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3')
+}
+<section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter">
+  <div class="mx-auto max-w-column px-gutter md:px-0">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } />
+  </div>
+  <ul class="mx-auto max-w-column gap-space-md px-gutter md:grid md:grid-cols-2 md:px-0 { cols } { row ? 'flex snap-x snap-mandatory scroll-px-gutter overflow-x-auto md:overflow-visible' : 'grid' }">
+    {#if settings.source == 'listed'}
+      {#for block in blocks | slice(0, settings.limit)}{#if block.settings.service}<li class="{ row ? 'w-4/5 shrink-0 snap-start md:w-auto' : '' }" data-block={ block.editor_id }><ServiceCard entry={ block.settings.service } photo={ settings.media == 'photo' } price={ settings.show_price } /></li>{/if}{/for}
+    {:else}
+      {#for entry in picked | slice(0, settings.limit)}<li class="{ row ? 'w-4/5 shrink-0 snap-start md:w-auto' : '' }"><ServiceCard entry={ entry } photo={ settings.media == 'photo' } price={ settings.show_price } /></li>{/for}
+    {/if}
+  </ul>
+</section>
+
+<schema>
+{
+  "name": "Services grid",
+  "description": "The services as cards, with a photo or an icon, the summary and the price.",
+  "kind": "Services",
+  "icon": "layout-grid",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Our services" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "From a dripping tap to a new bathroom, one call." },
+    { "type": "text", "id": "link_label", "label": "Button label", "default": "All services" },
+    { "type": "url", "id": "link_href", "label": "Button link", "default": "/services" },
+    { "type": "select", "id": "source", "label": "Services", "default": "featured", "options": [
+      { "value": "featured", "label": "Featured" },
+      { "value": "all", "label": "All" },
+      { "value": "listed", "label": "The ones in the blocks" }
+    ] },
+    { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 6 },
+    { "type": "range", "id": "columns", "label": "Columns from 64rem", "min": 2, "max": 4, "step": 1, "default": 3 },
+    { "type": "select", "id": "media", "label": "Cards", "default": "photo", "options": [
+      { "value": "photo", "label": "Photo" },
+      { "value": "icon", "label": "Icon" }
+    ], "info": "A service with no photo shows its icon." },
+    { "type": "checkbox", "id": "show_price", "label": "Price on icon cards", "default": true },
+    { "type": "select", "id": "mobile", "label": "On phones", "default": "stack", "options": [
+      { "value": "stack", "label": "A stack" },
+      { "value": "row", "label": "A row that scrolls" }
+    ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+  ],
+  "blocks": [
+    { "type": "service", "name": "Service", "settings": [
+      { "type": "entry", "id": "service", "label": "Service", "info": "Shown when Services is set to the ones in the blocks." }
+    ] }
+  ],
+  "presets": [
+    { "name": "Photo", "settings": { "media": "photo", "color_scheme": "paper" } },
+    { "name": "Icons", "settings": { "media": "icon", "color_scheme": "chalk" } }
+  ]
+}
+</schema>

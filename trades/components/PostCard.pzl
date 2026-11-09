@@ -1,0 +1,14 @@
+<!-- component: PostCard -->
+<!-- A journal post, one link: a 3:2 well, the title and the topic and date in Meta; feature sets the well beside them from 48rem, seven parts to five, and adds the standfirst. -->
+{#let
+  f = entry.fields
+  meta = [f.topic, f.date ? f.date | date : null] | compact | join(' · ')
+}
+<article class="group relative flex h-full flex-col gap-space-sm { feature ? 'md:grid md:grid-cols-text-picture md:items-center md:gap-space-xl' : '' } { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+  <Well asset={ f.image } alt={ f.image_alt } width={ feature ? 1200 : 800 } sizes="{ feature ? '(min-width: 48rem) 60vw, 100vw' : '(min-width: 48rem) 33vw, 100vw' }" zoom />
+  <div class="grid gap-space-xs">
+    <h3 class="text-h4 text-balance font-semibold"><a class="after:absolute after:inset-0 group-hover:underline group-hover:underline-offset-4" href="/journal/{ entry.handle }">{ entry.title }</a></h3>
+    <p class="text-body-sm text-scheme-muted">{ meta }</p>
+    {#if f.standfirst && feature}<p class="mt-space-sm text-body-lg text-pretty text-scheme-muted">{ f.standfirst }</p>{/if}
+  </div>
+</article>

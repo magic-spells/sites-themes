@@ -1,0 +1,56 @@
+<!-- The reasons to call. Cards: the section head, then tall surface-2 cards three across from 64rem, two from 48rem, stacked on phones, equal heights. Row: no head, one chalk card of four columns split by hairlines (two by two from 48rem, stacked on phones), for under a hero. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    {#if settings.layout == 'row'}
+      <ul class="sites-scheme-chalk grid gap-px overflow-hidden rounded-card border border-scheme-border bg-scheme-border text-scheme-foreground md:grid-cols-2 lg:grid-cols-4">{#for block in blocks | slice(0, 4)}<ValueProp block={ block } editor_id={ block.editor_id } layout="column" />{/for}</ul>
+    {:else}
+      <SectionHead heading={ settings.heading } text={ settings.text } />
+      <ul class="grid gap-space-sm md:grid-cols-2 md:gap-space-lg lg:grid-cols-3">{#for block in blocks | slice(0, 6)}<ValueProp block={ block } editor_id={ block.editor_id } layout="card" />{/for}</ul>
+    {/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Value props",
+  "description": "The reasons to call: tall cards with a big icon, or one row of four.",
+  "kind": "Content",
+  "icon": "badge-check",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Why Hollis & Sons" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "select", "id": "layout", "label": "Layout", "default": "cards", "options": [
+      { "value": "cards", "label": "Tall cards" },
+      { "value": "row", "label": "One row of four" }
+    ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "navy" }
+  ],
+  "blocks": [
+    { "type": "prop", "name": "Value prop", "settings": [
+      { "type": "select", "id": "icon", "label": "Icon", "default": "shield-check", "options": [
+        { "value": "shield-check", "label": "Shield" }, { "value": "badge-check", "label": "Badge" }, { "value": "clock", "label": "Clock" },
+        { "value": "check", "label": "Check" }, { "value": "house", "label": "House" }, { "value": "star", "label": "Star" },
+        { "value": "wrench", "label": "Wrench" }, { "value": "truck", "label": "Van" }, { "value": "phone", "label": "Phone" }, { "value": "pin", "label": "Pin" }
+      ] },
+      { "type": "text", "id": "title", "label": "Title" },
+      { "type": "text", "id": "text", "label": "Line" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Cards", "settings": { "layout": "cards", "color_scheme": "navy" }, "blocks": [
+      { "type": "prop", "settings": { "icon": "shield-check", "title": "Licensed & insured", "text": "Every technician carries a state licence and we are insured to $5M." } },
+      { "type": "prop", "settings": { "icon": "check", "title": "Upfront pricing", "text": "A fixed price before we start, never a meter running by the hour." } },
+      { "type": "prop", "settings": { "icon": "clock", "title": "Same-day callouts", "text": "Call before noon and a technician is at your door the same day." } },
+      { "type": "prop", "settings": { "icon": "badge-check", "title": "Every job guaranteed", "text": "Twelve months on parts and labour, written on every invoice." } },
+      { "type": "prop", "settings": { "icon": "phone", "title": "24/7 live answering", "text": "A real person picks up, day or night, and books the next slot." } },
+      { "type": "prop", "settings": { "icon": "pin", "title": "Local since 1986", "text": "Family-run, second generation, within 40 miles of Ashby." } }
+    ] },
+    { "name": "Row", "settings": { "layout": "row", "color_scheme": "paper" }, "blocks": [
+      { "type": "prop", "settings": { "icon": "shield-check", "title": "Licensed & insured", "text": "Every technician carries a state licence and we are insured to $5M." } },
+      { "type": "prop", "settings": { "icon": "badge-check", "title": "Upfront pricing", "text": "A fixed price before we start, and the invoice matches it." } },
+      { "type": "prop", "settings": { "icon": "clock", "title": "Same-day callouts", "text": "A real person answers, and a van is on its way within the hour." } },
+      { "type": "prop", "settings": { "icon": "badge-check", "title": "Every job guaranteed", "text": "Twelve months on parts and labour, written on every invoice." } }
+    ] }
+  ]
+}
+</schema>

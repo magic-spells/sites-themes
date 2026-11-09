@@ -1,0 +1,37 @@
+{
+  "label": "Contact",
+  "description": "The contact form beside the ways to reach you, then the yard.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_contact",
+      "type": "estimate-form",
+      "preset": "Default",
+      "settings": {
+        "heading": "Get in touch",
+        "accent_text": "",
+        "text": "Questions, existing jobs or billing. Send a note and the office will reply.",
+        "form": "contact",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_location",
+      "type": "hours-location",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "chalk"
+      },
+      "blocks": []
+    }
+  ]
+}

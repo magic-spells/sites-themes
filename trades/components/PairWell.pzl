@@ -1,0 +1,9 @@
+<!-- component: PairWell -->
+<!-- A project's before and after: two 3:2 wells side by side from 48rem, stacked on phones, each labelled in Meta. Nothing unless both are set. -->
+{#let f = entry.fields}
+{#if f.before && f.after}
+<div class="grid gap-space-md md:grid-cols-2">
+  <figure class="grid gap-space-xs"><Well asset={ f.before } alt={ f.before_alt } sizes="(min-width: 48rem) 50vw, 100vw" /><figcaption class="text-body-sm text-scheme-muted">{ t('before') }</figcaption></figure>
+  <figure class="grid gap-space-xs"><Well asset={ f.after } alt={ f.after_alt } sizes="(min-width: 48rem) 50vw, 100vw" /><figcaption class="text-body-sm text-scheme-muted">{ t('after') }</figcaption></figure>
+</div>
+{/if}

@@ -1,0 +1,65 @@
+{
+  "label": "Estimate",
+  "description": "The estimate form beside the ways to reach you, then questions.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Tell us what's happening and we'll call back within one business hour.",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_form",
+      "type": "estimate-form",
+      "preset": "Default",
+      "settings": {
+        "heading": "Let's get your problem solved",
+        "accent_text": "",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "chalk"
+      },
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "Is the estimate really free?",
+            "answer": "<p>Yes. We come out, look and give you a fixed price in writing. You owe nothing unless you go ahead.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do you charge a callout fee?",
+            "answer": "<p>No. You pay for the job at the price we agree before we start.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Are you insured?",
+            "answer": "<p>Yes, fully licensed and insured to $5M. We show the certificate on request.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "How fast can you come?",
+            "answer": "<p>For an emergency, usually within the hour. Everything else, the same or next day.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}

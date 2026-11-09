@@ -1,8 +1,8 @@
-<!-- One line on ice, the whole line one link: the notice, then the link label underlined in the link colour; a close button at the right that, with a key, hides it for good. Ticker: the line repeats on a marquee with a pause button; under reduced motion it stands still. -->
+<!-- One line on ice, the whole line one link: the notice, then the link label underlined in the link colour; a close button at the column's right edge that, with a key, hides it for good. Ticker: the line repeats on a marquee with a pause button; under reduced motion it stands still. -->
 {#if settings.text}
-<aside class="bg-scheme-background text-scheme-foreground" data-dismiss-key="{ settings.key }" aria-label="{ t('announcement') }" data-ticker={ settings.motion == 'ticker' ? true : null }>
-  <div class="flex items-center ps-tap">
-    <a class="block min-w-0 flex-1 py-space-sm text-body-sm" href={ settings.link || null }>
+<aside class="bg-scheme-background px-gutter text-scheme-foreground" data-dismiss-key="{ settings.key }" aria-label="{ t('announcement') }" data-ticker={ settings.motion == 'ticker' ? true : null }>
+  <div class="mx-auto flex min-h-control max-w-column items-center ps-tap">
+    <a class="block min-w-0 flex-1 py-space-xs text-body-sm" href={ settings.link || null }>
       {#if settings.motion == 'ticker'}
         <scrolling-content class="block" speed="30" fade>
           <scrolling-track>

@@ -7,7 +7,7 @@
 <sticky-header class="block" settle-overshoot="0" data-header-style={ settings.style }>
   <header class="relative border-b border-scheme-border bg-scheme-background px-gutter text-scheme-foreground transition-colors duration-panel overlaid:border-transparent overlaid:bg-transparent overlaid:text-grey-extra-light">
     <div class="mx-auto flex min-h-header max-w-column items-center justify-between gap-space-md">
-      <a class="font-heading text-h4 font-bold" href="/">{ s.wordmark || site.name }</a>
+      <a class="font-heading text-h3" href="/">{ s.wordmark || site.name }</a>
       {#if settings.menu.items.length}
         <nav class="hidden lg:block" aria-label="{ t('main_navigation') }">
           <ul class="flex items-center text-body">
@@ -16,11 +16,11 @@
                 <li>
                   <dropdown-component trigger="both" close-delay="150">
                     <dropdown-trigger class="flex min-h-header cursor-pointer items-center gap-space-xs px-space-sm">{ item.label }<Glyph name="chevron-down" cls="size-icon-sm" /></dropdown-trigger>
-                    <dropdown-panel class="border-b border-scheme-border bg-scheme-background px-gutter py-space-2xl text-scheme-foreground" wide>
+                    <dropdown-panel class="border-b border-scheme-border bg-scheme-background px-gutter py-space-xl text-scheme-foreground" wide>
                       <div class="mx-auto grid max-w-column gap-space-lg">
                         <div class="grid grid-cols-3 gap-space-xl">
                           {#for category in categories}
-                            <div class="grid content-start gap-space-md">
+                            <div class="grid content-start gap-space-sm">
                               <p class="font-heading text-body font-semibold">{ category.title }</p>
                               <ul class="grid gap-space-sm">
                                 {#for entry in services | where('fields.category.id', category.id) | slice(0, 8)}<li><a class="flex items-center gap-space-sm hover:underline hover:underline-offset-4" href="/services/{ entry.handle }"><Glyph name={ entry.fields.icon || 'tooth' } cls="size-icon text-link" />{ entry.title }</a></li>{/for}

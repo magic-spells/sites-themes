@@ -1,15 +1,15 @@
-<!-- The header: the wordmark left, the main menu, and the solid ask button right; never the phone. The menu item that points at the services page opens a dropdown-panel of every service under its category, three columns with the service icons, and "All services". From 48rem the ask button; below 64rem the 2.75rem menu icon. Sticky. Over the hero: transparent with light type over a page that opens with a cover hero (data-over-hero), its own scheme once the page scrolls. -->
+<!-- The header: the wordmark left, the main menu, and the solid ask button right; never the phone. The menu item that points at the services page opens a dropdown-panel of every service under its category, three columns with the service icons, and "All services". From 48rem the ask button; below 80rem the 2.75rem menu icon. Sticky. Over the hero: transparent with light type over a page that opens with a cover hero (data-over-hero), its own scheme once the page scrolls. -->
 {#let
   s = site.settings
   services = content.services.entries | sort('fields.order')
-  categories = content.categories.entries | sort('fields.order') | slice(0, 4)
+  categories = content.categories.entries | sort('fields.order') | slice(0, 6)
 }
 <sticky-header class="block" settle-overshoot="0" data-header-style={ settings.style }>
   <header class="relative border-b border-scheme-border bg-scheme-background px-gutter text-scheme-foreground transition-colors duration-panel overlaid:border-transparent overlaid:bg-transparent overlaid:text-grey-extra-light">
     <div class="mx-auto flex min-h-header max-w-column items-center justify-between gap-space-md">
       <a class="font-heading text-h3" href="/">{ s.wordmark || site.name }</a>
       {#if settings.menu.items.length}
-        <nav class="hidden lg:block" aria-label="{ t('main_navigation') }">
+        <nav class="hidden xl:block" aria-label="{ t('main_navigation') }">
           <ul class="flex items-center text-body">
             {#for item in settings.menu.items}
               {#if item.href == settings.services_path && categories.length}
@@ -42,7 +42,7 @@
       {/if}
       <div class="flex items-center gap-space-md">
         <span class="hidden md:contents"><Button ask cls="overlaid:border-brand-accent overlaid:bg-brand-accent overlaid:text-brand-primary" /></span>
-        <button class="-me-space-xs flex size-tap items-center justify-center lg:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu"><Glyph name="menu" cls="size-glyph" /><span class="sr-only">{ t('menu') }</span></button>
+        <button class="-me-space-xs flex size-tap items-center justify-center xl:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu"><Glyph name="menu" cls="size-glyph" /><span class="sr-only">{ t('menu') }</span></button>
       </div>
     </div>
   </header>

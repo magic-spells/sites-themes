@@ -1,5 +1,5 @@
 <!-- The menu drawer: a dialog-panel from the right, leaving a 3xl strip of the page dimmed by the text colour at 50%. It closes on the backdrop, Escape and its ×, and hands focus back to the menu icon. The main menu in Card title with the categories folded under Services (each to its tab), a hairline, then the ask button and the phone. -->
-{#let categories = content.categories.entries | sort('fields.order') | slice(0, 4)}
+{#let categories = content.categories.entries | sort('fields.order') | slice(0, 6)}
 <dialog-panel id="mobile-menu" position="right">
   <dialog-backdrop class="bg-backdrop"></dialog-backdrop>
   <dialog class="start-space-3xl h-dvh w-auto overflow-y-auto bg-scheme-background text-scheme-foreground" aria-label="{ t('menu') }">
@@ -35,7 +35,7 @@
 <schema>
 {
   "name": "Mobile menu",
-  "description": "The menu drawer below 64rem: the menu, the categories, the ask button and the phone.",
+  "description": "The menu drawer below 80rem: the menu, the categories, the ask button and the phone.",
   "kind": "Panels",
   "icon": "menu",
   "settings": [

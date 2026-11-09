@@ -19,13 +19,8 @@
 @theme {
 	--breakpoint-xs: 30rem;
 	--color-brand-primary: var(--sites-color-brand-primary);
-	--color-brand-secondary: var(--sites-color-brand-secondary);
 	--color-brand-accent: var(--sites-color-brand-accent);
 	--color-grey-extra-light: var(--sites-color-grey-extra-light);
-	--color-grey-light: var(--sites-color-grey-light);
-	--color-grey-medium: var(--sites-color-grey-medium);
-	--color-grey-dark: var(--sites-color-grey-dark);
-	--color-grey-extra-dark: var(--sites-color-grey-extra-dark);
 	/* Fields are white with a grey hairline on every band (a form on a dark
 	   band sits on a white card), so they read the site-wide input tokens. */
 	--color-input-background: var(--sites-input-background);
@@ -116,8 +111,6 @@
 	--text-body--line-height: 1.55;
 	--text-body-sm: var(--clinic-body-sm);
 	--text-body-sm--line-height: 1.5;
-	--text-body-xs: var(--clinic-body-xs);
-	--text-body-xs--line-height: 1.4;
 	--text-button: var(--clinic-button);
 	--text-button--line-height: 1;
 
@@ -180,7 +173,6 @@
 	--clinic-body-lg: calc(var(--sites-type-scale-lg) * 18 / 20);
 	--clinic-body: calc(var(--sites-type-scale-base) * 16 / 17);
 	--clinic-body-sm: calc(var(--sites-type-scale-sm) * 14 / 15);
-	--clinic-body-xs: calc(var(--sites-type-scale-xs) * 12 / 13);
 	--clinic-button: calc(var(--sites-type-scale-base) * 15 / 17);
 	--clinic-section: calc(var(--sites-spacing-2xl) * 40 / 80);
 	--clinic-gutter: calc(var(--sites-spacing-md) * 16 / 24);
@@ -197,7 +189,6 @@
 		--clinic-h4: calc(var(--sites-type-scale-xl) * 19 / 20);
 		--clinic-body-lg: calc(var(--sites-type-scale-lg) * 19 / 20);
 		--clinic-body: var(--sites-type-scale-base);
-		--clinic-body-xs: var(--sites-type-scale-xs);
 		--clinic-section: calc(var(--sites-spacing-2xl) * 56 / 80);
 		--clinic-gutter: var(--sites-spacing-md);
 		--clinic-xl: calc(var(--sites-spacing-xl) * 40 / 48);
@@ -269,12 +260,7 @@ body:has([data-header-style="over-hero"]) main > [data-section]:first-child:has(
 @custom-variant panel-open (body:has(dialog[open]) &);
 
 /* A link or tab the page marks as current. */
-@custom-variant current {
-	&[aria-current="true"],
-	&[aria-current="page"] {
-		@slot;
-	}
-}
+@custom-variant current (&[aria-current="page"]);
 
 :root {
 	font-size: var(--sites-type-base);
@@ -288,7 +274,7 @@ body:has([data-header-style="over-hero"]) main > [data-section]:first-child:has(
 
 :focus-visible {
 	outline: 2px solid var(--sites-scheme-links);
-	outline-offset: 3px;
+	outline-offset: 0.1875rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -410,7 +396,7 @@ dialog-panel:has(bottom-sheet) {
 	--bs-handle-width: 2.5rem;
 	--bs-handle-height: 0.25rem;
 	--bs-content-padding: var(--clinic-gutter);
-	--bs-overlay-background: color-mix(in srgb, var(--sites-scheme-foreground) 50%, transparent);
+	--bs-overlay-background: --theme(--color-backdrop inline);
 	--bs-overlay-blur: 0;
 }
 

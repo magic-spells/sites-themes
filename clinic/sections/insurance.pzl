@@ -1,9 +1,9 @@
-<!-- The plans you take: the section head with the Practice insurance line, then the insurers (up to 12) as names on hairlines in two columns from 48rem, or as logo tiles 2 / 3 / 4 across. Under them the button (a call to the Practice phone, or a link) and, when you have plans, the no-insurance line linking to them. -->
+<!-- The plans you take: the section head with the Practice insurance line, then the insurers (up to 12) as names on hairlines in two columns from 48rem, or as logo tiles 2 / 3 / 4 across. Under them the button (a link, or a call to the Practice phone) and, when you have plans, the no-insurance line linking to them. -->
 {#let
   s = site.settings
   insurers = content.insurers.entries | sort('fields.order') | slice(0, 12)
   logos = settings.layout == 'logos'
-  cta = settings.cta == 'link' ? settings.cta_link : (s.phone ? 'tel:' + (s.phone | replace(' ', '')) : null)
+  cta = settings.cta_link || (s.phone ? 'tel:' + (s.phone | replace(' ', '')) : null)
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
@@ -29,12 +29,8 @@
       { "value": "list", "label": "Names and notes" },
       { "value": "logos", "label": "Logos" }
     ] },
-    { "type": "select", "id": "cta", "label": "Button", "default": "call", "options": [
-      { "value": "call", "label": "Call the Practice phone" },
-      { "value": "link", "label": "A link" }
-    ] },
     { "type": "text", "id": "cta_label", "label": "Button label", "default": "Call us to check your cover" },
-    { "type": "url", "id": "cta_link", "label": "Button link", "default": "", "info": "A link only." },
+    { "type": "url", "id": "cta_link", "label": "Button link", "default": "", "info": "Leave empty to call the Practice phone." },
     { "type": "text", "id": "no_insurance_line", "label": "No insurance line", "default": "No insurance? Our Smile Plan covers the basics for $299 a year.", "info": "Shown when you have plans." },
     { "type": "url", "id": "plans_link", "label": "Plans link", "default": "/fees" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }

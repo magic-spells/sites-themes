@@ -285,66 +285,6 @@
    "alt": "A blank 1:1 placeholder",
    "created_at": "2026-11-08T09:00:00Z"
   },
-  "as_1x1_cloud": {
-   "id": "as_1x1_cloud",
-   "status": "ready",
-   "file_name": "1x1-cloud.svg",
-   "mime": "image/svg+xml",
-   "byte_size": 420,
-   "url": "/_sites/theme/photos/1x1-cloud.svg",
-   "width": 1200,
-   "height": 1200,
-   "alt": "1:1 cloud placeholder",
-   "created_at": "2026-11-08T09:00:00Z"
-  },
-  "as_1x1_mist": {
-   "id": "as_1x1_mist",
-   "status": "ready",
-   "file_name": "1x1-mist.svg",
-   "mime": "image/svg+xml",
-   "byte_size": 420,
-   "url": "/_sites/theme/photos/1x1-mist.svg",
-   "width": 1200,
-   "height": 1200,
-   "alt": "1:1 mist placeholder",
-   "created_at": "2026-11-08T09:00:00Z"
-  },
-  "as_4x3_ice": {
-   "id": "as_4x3_ice",
-   "status": "ready",
-   "file_name": "4x3-ice.svg",
-   "mime": "image/svg+xml",
-   "byte_size": 420,
-   "url": "/_sites/theme/photos/4x3-ice.svg",
-   "width": 1600,
-   "height": 1200,
-   "alt": "4:3 ice placeholder",
-   "created_at": "2026-11-08T09:00:00Z"
-  },
-  "as_4x3_cloud": {
-   "id": "as_4x3_cloud",
-   "status": "ready",
-   "file_name": "4x3-cloud.svg",
-   "mime": "image/svg+xml",
-   "byte_size": 420,
-   "url": "/_sites/theme/photos/4x3-cloud.svg",
-   "width": 1600,
-   "height": 1200,
-   "alt": "4:3 cloud placeholder",
-   "created_at": "2026-11-08T09:00:00Z"
-  },
-  "as_4x3_mist": {
-   "id": "as_4x3_mist",
-   "status": "ready",
-   "file_name": "4x3-mist.svg",
-   "mime": "image/svg+xml",
-   "byte_size": 420,
-   "url": "/_sites/theme/photos/4x3-mist.svg",
-   "width": 1600,
-   "height": 1200,
-   "alt": "4:3 mist placeholder",
-   "created_at": "2026-11-08T09:00:00Z"
-  },
   "as_map": {
    "id": "as_map",
    "status": "ready",
@@ -2314,7 +2254,6 @@
      "image": "as_3x2_ice",
      "image_alt": "Exam and cleaning at Oakfield Family Dental",
      "featured": false,
-     "tag": "",
      "order": 1,
      "duration_minutes": 60
     }
@@ -2345,7 +2284,6 @@
      "image": "as_3x2_cloud",
      "image_alt": "New patient exam at Oakfield Family Dental",
      "featured": true,
-     "tag": "New patients",
      "order": 2,
      "duration_minutes": 90
     }
@@ -2376,7 +2314,6 @@
      "image": "as_3x2_mist",
      "image_alt": "Children's dentistry at Oakfield Family Dental",
      "featured": false,
-     "tag": "",
      "order": 3,
      "duration_minutes": 45
     }
@@ -2407,7 +2344,6 @@
      "image": "as_3x2_ice",
      "image_alt": "Gum care at Oakfield Family Dental",
      "featured": false,
-     "tag": "",
      "order": 4,
      "duration_minutes": 60
     }
@@ -2438,7 +2374,6 @@
      "image": "as_3x2_cloud",
      "image_alt": "Fillings at Oakfield Family Dental",
      "featured": false,
-     "tag": "",
      "order": 5,
      "duration_minutes": 60
     }
@@ -2469,7 +2404,6 @@
      "image": "as_3x2_mist",
      "image_alt": "Crowns and bridges at Oakfield Family Dental",
      "featured": false,
-     "tag": "",
      "order": 6
     }
    }
@@ -2499,7 +2433,6 @@
      "image": "as_3x2_ice",
      "image_alt": "Root canal therapy at Oakfield Family Dental",
      "featured": false,
-     "tag": "",
      "order": 7,
      "duration_minutes": 90
     }
@@ -2530,7 +2463,6 @@
      "image": "as_3x2_cloud",
      "image_alt": "Dental implants at Oakfield Family Dental",
      "featured": false,
-     "tag": "",
      "order": 8
     }
    }
@@ -2560,7 +2492,6 @@
      "image": "as_3x2_mist",
      "image_alt": "Dentures at Oakfield Family Dental",
      "featured": false,
-     "tag": "",
      "order": 9
     }
    }
@@ -2590,7 +2521,6 @@
      "image": "as_3x2_ice",
      "image_alt": "Teeth whitening at Oakfield Family Dental",
      "featured": true,
-     "tag": "",
      "order": 10,
      "duration_minutes": 60
     }
@@ -2621,7 +2551,6 @@
      "image": "as_3x2_cloud",
      "image_alt": "Veneers at Oakfield Family Dental",
      "featured": false,
-     "tag": "",
      "order": 11
     }
    }
@@ -2651,7 +2580,6 @@
      "image": "as_3x2_mist",
      "image_alt": "Clear aligners at Oakfield Family Dental",
      "featured": true,
-     "tag": "",
      "order": 12
     }
    }
@@ -2681,7 +2609,6 @@
      "image": "as_3x2_ice",
      "image_alt": "Emergency care at Oakfield Family Dental",
      "featured": true,
-     "tag": "Same-day",
      "order": 13,
      "duration_minutes": 30
     }

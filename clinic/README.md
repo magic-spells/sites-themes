@@ -22,10 +22,10 @@ data/templates/     home, service, condition, member, location, post and page (+
 data/groups/        header-group.json, footer-group.json, panel-group.json
 templates/          404.pzl, password.pzl, maintenance.pzl
 sections/           40, each with a full <schema>
-components/         the shared shapes: Button, Routes, SectionHead, Well, Glyph, IconCircle,
-                    ChooserTile, ServiceCard, ServiceRow, FeeRow, Price, ClinicianCard,
-                    HoursCard, ReviewCard, Stars, PlanCard, Tile, Step, ResourceRow,
-                    InsurerRow, Badge, Arrows, Questions, FormCard, the form parts
+components/         the shared shapes: Button, Routes, Phone, SectionHead, Rise, Well, Glyph,
+                    IconCircle, ChooserTile, ServiceCard, ServiceRow, FeeRow, Price, ClinicianCard,
+                    HoursCard, ReviewCard, Stars, PlanCard, Tile, Step, ResourceRow, InsurerRow,
+                    Badge, Arrows, Questions, Utility, AppointmentFields, FormCard, the form parts
 styles/theme.css    the Tailwind entry: @theme maps the --sites-* tokens and Clinic's role sizes,
                     and the few rules utilities cannot express
 scripts/theme.ts    the browser JavaScript: component registration, the appointment and menu
@@ -41,7 +41,7 @@ sites.fixtures.json Oakfield Family Dental: pages, menus, forms and every conten
 ## Content
 
 - **categories**: three to five groups (Preventive, Restorative, Cosmetic; Treatments and
-  Classes; Dogs, Cats and Small pets), each with an icon, one line, a photo and a note.
+  Classes; Dogs, Cats and Small pets), each with an icon and one line.
 - **services**: category, summary, description, duration, price and whether it is a starting
   price ("from"), a price note ("per tooth", "Most plans cover this in full"), what the visit
   includes (one per line), who provides it, an icon, a photo, featured and a position.
@@ -50,7 +50,7 @@ sites.fixtures.json Oakfield Family Dental: pages, menus, forms and every conten
   type empty and its sections hide.
 - **team**: role, letters (DDS, PT, DPT, LCSW), specialties (comma-separated), bio,
   credentials (one per line), location, a 4:5 portrait, featured and a position.
-- **insurers**, **plans**, **locations**, **testimonials** (stars, date, the
+- **insurers**, **plans**, **locations**, **testimonials** (stars, the
   service and clinician they name, an optional square photo) and **posts** as their sections describe.
 
 ## Practice settings
@@ -72,8 +72,8 @@ taking new patients says so in the announcement bar.
 
 ## Section heads
 
-Every section with a head and a list under it has Heading: Left (the "All …" button right of
-the heading) or Centred (the heading centred, the button centred under the list).
+A head over a list has Heading: Left (the "All …" button right of it) or Centred (the button
+centred under the list); value props, the Services and Concerns pages and Locations stay left.
 
 ## Booking
 

@@ -16,10 +16,7 @@
           <ul class="grid gap-x-space-lg gap-y-space-sm md:grid-cols-2">{#for block in bring}<li class="flex gap-space-sm text-body" data-block={ block.editor_id }><Glyph name="check" cls="mt-space-2xs size-icon text-link" />{ block.settings.text }</li>{/for}</ul>
         </div>
         {/if}
-        <div class="flex flex-wrap items-center gap-x-space-lg gap-y-space-sm">
-          {#if s.forms_url && settings.forms_label}<Button href={ s.forms_url }>{ settings.forms_label }</Button>{/if}
-          {#if s.portal_url && settings.portal_label}<a class="text-body font-medium text-link underline underline-offset-4" href="{ s.portal_url }">{ settings.portal_label }</a>{/if}
-        </div>
+        <div class="flex flex-wrap items-center gap-x-space-lg gap-y-space-sm empty:hidden">{#if s.forms_url && settings.forms_label}<Button href={ s.forms_url }>{ settings.forms_label }</Button>{/if}{#if s.portal_url && settings.portal_label}<a class="text-body font-medium text-link underline underline-offset-4" href="{ s.portal_url }">{ settings.portal_label }</a>{/if}</div>
       </div>
       {#if rail}<Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" width={ 1024 } sizes="(min-width: 48rem) 40vw, 100vw" />{/if}
     </div>

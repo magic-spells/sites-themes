@@ -1,5 +1,15 @@
 # Portfolio
 
+## 0.2.0
+
+- The panel group is labelled Panel.
+- A section whose color scheme defaulted to the first scheme now has no default and follows the
+  site's base scheme; sections that default to another scheme keep it: the contact band, call to
+  action, newsletter and statement keep `stone`, and the announcement bar and footer `ink`.
+- The starter templates, section groups and presets no longer store the first scheme, so a new
+  site's sections follow its base scheme too. A stored `paper` that overrides its section's own
+  default (the statement's Centred preset, and the statement on About and CV) keeps its value.
+
 ## 0.1.2
 
 - Neutral greys in every scheme; the footer's ink is #171717.

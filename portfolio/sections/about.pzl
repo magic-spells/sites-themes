@@ -48,11 +48,11 @@
     ], "info": "Beside the text." },
     { "type": "checkbox", "id": "show_contact", "label": "Contact links", "default": true, "info": "The email from Person and the social menu, under the text." },
     { "type": "menu", "id": "social_menu", "label": "Social menu" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Full", "settings": { "social_menu": "social", "color_scheme": "paper" } },
-    { "name": "Short", "settings": { "short": true, "show_contact": false, "social_menu": "social", "color_scheme": "paper" } }
+    { "name": "Full", "settings": { "social_menu": "social" } },
+    { "name": "Short", "settings": { "short": true, "show_contact": false, "social_menu": "social" } }
   ]
 }
 </schema>

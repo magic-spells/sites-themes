@@ -6,9 +6,7 @@
       "id": "s_post",
       "type": "post",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "paper"
-      },
+      "settings": {},
       "blocks": []
     },
     {

@@ -8,8 +8,7 @@
       "preset": "Default",
       "settings": {
         "heading": "Contact",
-        "text": "For commissions, talks and anything else.",
-        "color_scheme": "paper"
+        "text": "For commissions, talks and anything else."
       },
       "blocks": []
     },
@@ -18,8 +17,7 @@
       "type": "contact",
       "preset": "Default",
       "settings": {
-        "social_menu": "social",
-        "color_scheme": "paper"
+        "social_menu": "social"
       },
       "blocks": []
     }

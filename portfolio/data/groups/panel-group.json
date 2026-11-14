@@ -6,8 +6,7 @@
       "preset": "Default",
       "settings": {
         "menu": "main",
-        "social_menu": "social",
-        "color_scheme": "paper"
+        "social_menu": "social"
       },
       "blocks": []
     },
@@ -16,8 +15,7 @@
       "type": "cookie-notice",
       "preset": "Default",
       "settings": {
-        "key": "portfolio-notice-2026-11",
-        "color_scheme": "paper"
+        "key": "portfolio-notice-2026-11"
       },
       "blocks": []
     }

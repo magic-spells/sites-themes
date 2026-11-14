@@ -44,10 +44,10 @@
     { "type": "checkbox", "id": "download", "label": "Download button", "default": true, "info": "The CV download from Person, at the head's right." },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "" },
     { "type": "url", "id": "link_href", "label": "Link", "default": "" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Full", "settings": { "color_scheme": "paper" } },
+    { "name": "Full", "settings": {} },
     { "name": "Experience", "settings": { "heading": "Experience", "groups": "experience", "limit": 4, "download": false, "link_label": "Full CV", "link_href": "/cv", "color_scheme": "stone" } }
   ]
 }

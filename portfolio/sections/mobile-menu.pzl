@@ -25,10 +25,10 @@
   "settings": [
     { "type": "menu", "id": "menu", "label": "Menu" },
     { "type": "menu", "id": "social_menu", "label": "Social menu", "info": "Shown as text links under the email from Person." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "menu": "main", "social_menu": "social", "color_scheme": "paper" } }
+    { "name": "Default", "settings": { "menu": "main", "social_menu": "social" } }
   ]
 }
 </schema>

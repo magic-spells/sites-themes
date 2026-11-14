@@ -18,8 +18,7 @@
       "preset": "Default",
       "settings": {
         "menu": "main",
-        "sticky": true,
-        "color_scheme": "paper"
+        "sticky": true
       },
       "blocks": []
     }

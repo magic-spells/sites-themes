@@ -6,9 +6,7 @@
       "id": "s_work",
       "type": "work-detail",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "paper"
-      },
+      "settings": {},
       "blocks": []
     },
     {
@@ -20,8 +18,7 @@
         "link_label": "",
         "source": "featured",
         "limit": 3,
-        "filters": false,
-        "color_scheme": "paper"
+        "filters": false
       },
       "blocks": []
     },

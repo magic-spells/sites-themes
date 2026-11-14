@@ -76,12 +76,12 @@
     { "type": "text", "id": "link_label", "label": "Button label", "default": "Selected work" },
     { "type": "url", "id": "link_href", "label": "Button link", "default": "/work" },
     { "type": "checkbox", "id": "show_cv", "label": "CV button", "default": true, "info": "The CV download from Person." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Name", "settings": { "layout": "name", "color_scheme": "paper" } },
-    { "name": "Statement", "settings": { "layout": "statement", "color_scheme": "paper" } },
-    { "name": "Picture", "settings": { "layout": "picture", "color_scheme": "paper" } }
+    { "name": "Name", "settings": { "layout": "name" } },
+    { "name": "Statement", "settings": { "layout": "statement" } },
+    { "name": "Picture", "settings": { "layout": "picture" } }
   ]
 }
 </schema>

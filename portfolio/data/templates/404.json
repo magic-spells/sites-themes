@@ -8,8 +8,7 @@
       "preset": "Default",
       "settings": {
         "heading": "Page not found",
-        "text": "The link may be old. The work is still here.",
-        "color_scheme": "paper"
+        "text": "The link may be old. The work is still here."
       },
       "blocks": []
     },
@@ -20,8 +19,7 @@
       "settings": {
         "source": "featured",
         "limit": 3,
-        "filters": false,
-        "color_scheme": "paper"
+        "filters": false
       },
       "blocks": []
     }

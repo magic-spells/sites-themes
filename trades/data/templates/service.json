@@ -6,9 +6,7 @@
       "id": "s_detail",
       "type": "service-detail",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "paper"
-      },
+      "settings": {},
       "blocks": [
         {
           "type": "question",

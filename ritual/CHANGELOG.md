@@ -1,5 +1,16 @@
 # Ritual
 
+## 0.2.0
+
+- The panel group is labelled Panel.
+- A section whose color scheme defaulted to the first scheme now has no default and follows the
+  site's base scheme; sections that default to another scheme keep it: the first visit, footer,
+  page header, products, service categories, social and story keep `sand`; the announcement bar,
+  newsletter and testimonials `fern`; the booking band `clay`; and the call to action `celadon`.
+- The starter templates, section groups and presets no longer store the first scheme, so a new
+  site's sections follow its base scheme too. A stored `linen` that overrides its section's own
+  default (the social section on Home, About and Contact) keeps its value.
+
 ## 0.1.0
 
 - The Book page puts the house's phone, address and hours in three cards beside the request form; the booking form section's Aside setting chooses them or a photo.

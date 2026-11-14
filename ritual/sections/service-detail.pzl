@@ -64,10 +64,10 @@
     ] },
     { "type": "text", "id": "action_label", "label": "Action label", "default": "", "info": "Leave empty to use the House setting." },
     { "type": "url", "id": "team_path", "label": "Team page path", "default": "/team", "info": "Offered by links to this path plus the person's handle." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "linen" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

@@ -16,9 +16,7 @@
       "id": "s_list",
       "type": "services-list",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "white"
-      },
+      "settings": {},
       "blocks": []
     },
     {
@@ -68,9 +66,7 @@
       "id": "s_faq",
       "type": "faq",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "white"
-      },
+      "settings": {},
       "blocks": [
         {
           "type": "question",

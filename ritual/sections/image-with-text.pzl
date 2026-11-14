@@ -23,7 +23,7 @@
     { "type": "richtext", "id": "body", "label": "Body", "default": "<p>Every treatment room has its own door, its own playlist and a chair to sit in afterwards.</p>" },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "" },
     { "type": "url", "id": "link_href", "label": "Link", "default": "" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "blocks": [
     { "type": "media", "name": "Media", "settings": [
@@ -34,8 +34,8 @@
   ],
   "max_blocks": 3,
   "presets": [
-    { "name": "Default", "settings": { "layout": "single", "color_scheme": "linen" } },
-    { "name": "Capsules", "settings": { "layout": "capsules", "color_scheme": "linen" } }
+    { "name": "Default", "settings": { "layout": "single" } },
+    { "name": "Capsules", "settings": { "layout": "capsules" } }
   ]
 }
 </schema>

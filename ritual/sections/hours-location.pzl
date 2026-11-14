@@ -46,10 +46,10 @@
       { "value": "map", "label": "The map image" },
       { "value": "embed", "label": "An embedded map" }
     ], "info": "An embedded map uses the location's embed link and falls back to the photo without one." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "linen" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

@@ -10,8 +10,7 @@
         "layout": "arch",
         "image": "as_4x5_clay",
         "image_alt": "The front room at Juniper House",
-        "text": "Massage, facials, hair, nails and makeup, with a quiet studio upstairs. On Alder Street since 2014.",
-        "color_scheme": "linen"
+        "text": "Massage, facials, hair, nails and makeup, with a quiet studio upstairs. On Alder Street since 2014."
       },
       "blocks": []
     },
@@ -33,8 +32,7 @@
         "image": "as_4x5_sand",
         "image_alt": "A treatment room with a window",
         "link_label": "About the house",
-        "link_href": "/about",
-        "color_scheme": "linen"
+        "link_href": "/about"
       },
       "blocks": []
     },
@@ -44,8 +42,7 @@
       "preset": "Most booked",
       "settings": {
         "source": "featured",
-        "limit": 6,
-        "color_scheme": "linen"
+        "limit": 6
       },
       "blocks": []
     },
@@ -65,8 +62,7 @@
       "preset": "Default",
       "settings": {
         "source": "featured",
-        "limit": 3,
-        "color_scheme": "linen"
+        "limit": 3
       },
       "blocks": []
     },
@@ -119,8 +115,7 @@
       "preset": "Bundle",
       "settings": {
         "layout": "bundle",
-        "gallery": "home-strip",
-        "color_scheme": "linen"
+        "gallery": "home-strip"
       },
       "blocks": []
     },
@@ -144,8 +139,7 @@
       "preset": "Default",
       "settings": {
         "heading": "Visit *us*",
-        "map": "map",
-        "color_scheme": "linen"
+        "map": "map"
       },
       "blocks": []
     },

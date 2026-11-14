@@ -46,11 +46,11 @@
     { "type": "checkbox", "id": "picture", "label": "Picture", "default": false, "info": "On: a photo beside the form instead of the address and map." },
     { "type": "image", "id": "image", "label": "Photo", "info": "4:3." },
     { "type": "text", "id": "image_alt", "label": "Photo alt text", "default": "" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "form": "contact", "color_scheme": "paper" } },
-    { "name": "Picture", "settings": { "form": "contact", "picture": true, "color_scheme": "paper" } }
+    { "name": "Default", "settings": { "form": "contact" } },
+    { "name": "Picture", "settings": { "form": "contact", "picture": true } }
   ]
 }
 </schema>

@@ -1,5 +1,18 @@
 # Clinic
 
+## 0.2.0
+
+- The panel group is labelled Panel.
+- A section whose color scheme defaulted to the first scheme now has no default and follows the
+  site's base scheme; sections that default to another scheme keep it: the announcement bar,
+  badge row, concerns grid, fees, first visit, locations, newsletter, page header, plans and
+  story keep `cloud`; the call bar, call to action and value props `navy`; the emergency band
+  `sky`; and the footer `slate`.
+- The starter templates, section groups and presets no longer store the first scheme, so a new
+  site's sections follow its base scheme too. A stored `white` that overrides its section's own
+  default (the story on About and Our team, the plans on Insurance and fees, the first visit on
+  New patients) keeps its value, as does the white tile in the tiles' preset and on Home.
+
 ## 0.1.0
 
 - 40 sections: the announcement bar (still or a ticker), the header (the wordmark, a Services

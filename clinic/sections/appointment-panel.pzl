@@ -25,10 +25,10 @@
     { "type": "paragraph", "content": "Shown while the Practice booking link is empty. Set a booking link and every ask button goes there instead." },
     { "type": "text", "id": "heading", "label": "Heading", "default": "", "info": "Leave empty to use the Practice ask label." },
     { "type": "form", "id": "form", "label": "Form", "info": "Leave empty to use the Practice appointment form." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "white" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

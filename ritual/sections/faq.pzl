@@ -15,7 +15,7 @@
       { "value": "flat", "label": "Flat" },
       { "value": "dome", "label": "Dome" }
     ] },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "blocks": [
     { "type": "item", "name": "Question", "settings": [

@@ -9,8 +9,7 @@
       "settings": {
         "layout": "split",
         "image": "as_4x5_ice",
-        "image_alt": "The Oakfield treatment room",
-        "color_scheme": "white"
+        "image_alt": "The Oakfield treatment room"
       },
       "blocks": []
     },
@@ -18,9 +17,7 @@
       "id": "s_categories",
       "type": "service-categories",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "white"
-      },
+      "settings": {},
       "blocks": []
     },
     {
@@ -83,8 +80,7 @@
       "preset": "Default",
       "settings": {
         "source": "featured",
-        "limit": 4,
-        "color_scheme": "white"
+        "limit": 4
       },
       "blocks": []
     },
@@ -159,8 +155,7 @@
       "preset": "Rows",
       "settings": {
         "layout": "rows",
-        "limit": 3,
-        "color_scheme": "white"
+        "limit": 3
       },
       "blocks": []
     },
@@ -190,9 +185,7 @@
       "id": "s_tiles",
       "type": "tiles",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "white"
-      },
+      "settings": {},
       "blocks": [
         {
           "type": "tile",

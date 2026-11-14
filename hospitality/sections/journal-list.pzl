@@ -40,11 +40,11 @@
     { "type": "text", "id": "link_label", "label": "Link label", "default": "All posts" },
     { "type": "url", "id": "link_href", "label": "Link", "default": "/journal" },
     { "type": "url", "id": "base_path", "label": "Post page path", "default": "/journal" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Feature", "settings": { "view": "feature", "color_scheme": "paper" } },
-    { "name": "Grid", "settings": { "view": "grid", "color_scheme": "paper" } }
+    { "name": "Feature", "settings": { "view": "feature" } },
+    { "name": "Grid", "settings": { "view": "grid" } }
   ]
 }
 </schema>

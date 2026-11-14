@@ -23,10 +23,10 @@
   "icon": "file-text",
   "templates": ["post"],
   "settings": [
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "paper" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

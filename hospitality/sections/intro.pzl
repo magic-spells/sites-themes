@@ -25,10 +25,10 @@
     { "type": "text", "id": "image_alt", "label": "Picture alt text", "default": "" },
     { "type": "text", "id": "caption", "label": "Caption title", "default": "", "info": "A paper card over the picture's corner." },
     { "type": "text", "id": "caption_meta", "label": "Caption line", "default": "" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "paper" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

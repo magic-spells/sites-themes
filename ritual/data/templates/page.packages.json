@@ -17,8 +17,7 @@
       "type": "packages",
       "preset": "Default",
       "settings": {
-        "heading": "",
-        "color_scheme": "linen"
+        "heading": ""
       },
       "blocks": []
     },

@@ -30,10 +30,10 @@
     { "type": "select", "id": "head_align", "label": "Heading", "default": "left", "options": [{ "value": "left", "label": "Left" }, { "value": "center", "label": "Centred" }] },
     { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
     { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 12 },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "white" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

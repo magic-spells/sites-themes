@@ -41,10 +41,10 @@
     { "type": "text", "id": "text", "label": "Text", "default": "Tell us what you would like and when suits you." },
     { "type": "form", "id": "form", "label": "Form", "info": "Leave empty to use the House booking form." },
     { "type": "text", "id": "confirm", "label": "Confirm line", "default": "", "info": "Leave empty to use the House confirm line." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "linen" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

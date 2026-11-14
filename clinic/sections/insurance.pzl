@@ -33,11 +33,11 @@
     { "type": "url", "id": "cta_link", "label": "Button link", "default": "", "info": "Leave empty to call the Practice phone." },
     { "type": "text", "id": "no_insurance_line", "label": "No insurance line", "default": "No insurance? Our Smile Plan covers the basics for $299 a year.", "info": "Shown when you have plans." },
     { "type": "url", "id": "plans_link", "label": "Plans link", "default": "/fees" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "List", "settings": { "layout": "list", "color_scheme": "white" } },
-    { "name": "Logos", "settings": { "layout": "logos", "color_scheme": "white" } }
+    { "name": "List", "settings": { "layout": "list" } },
+    { "name": "Logos", "settings": { "layout": "logos" } }
   ]
 }
 </schema>

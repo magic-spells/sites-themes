@@ -17,9 +17,7 @@
       "id": "s_list",
       "type": "conditions-list",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "white"
-      },
+      "settings": {},
       "blocks": []
     },
     {

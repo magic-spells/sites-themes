@@ -34,11 +34,11 @@
       { "value": "row", "label": "Row" },
       { "value": "marquee", "label": "Marquee" }
     ], "info": "Marquee scrolls the names, with a pause button." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Row", "settings": { "color_scheme": "paper" } },
-    { "name": "Marquee", "settings": { "layout": "marquee", "color_scheme": "paper" } }
+    { "name": "Row", "settings": {} },
+    { "name": "Marquee", "settings": { "layout": "marquee" } }
   ]
 }
 </schema>

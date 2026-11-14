@@ -34,10 +34,10 @@
     { "type": "text", "id": "note", "label": "Line beside the form", "default": "I answer within a few days." },
     { "type": "menu", "id": "social_menu", "label": "Social menu" },
     { "type": "paragraph", "content": "The form is the Contact form in Theme settings → Person, and the email is Person's." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "social_menu": "social", "color_scheme": "paper" } }
+    { "name": "Default", "settings": { "social_menu": "social" } }
   ]
 }
 </schema>

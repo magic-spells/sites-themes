@@ -16,9 +16,7 @@
       "id": "s_menu",
       "type": "service-menu",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "linen"
-      },
+      "settings": {},
       "blocks": []
     },
     {
@@ -68,9 +66,7 @@
       "id": "s_faq",
       "type": "faq",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "linen"
-      },
+      "settings": {},
       "blocks": [
         {
           "id": "s_faq_b1",

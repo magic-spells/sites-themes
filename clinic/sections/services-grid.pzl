@@ -37,10 +37,10 @@
     ] },
     { "type": "checkbox", "id": "show_image", "label": "Photos", "default": false, "info": "The service's 3:2 photo instead of its icon." },
     { "type": "checkbox", "id": "show_price", "label": "Prices", "default": true },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "white" } },
+    { "name": "Default", "settings": {} },
     { "name": "Photos", "settings": { "show_image": true, "color_scheme": "cloud" } }
   ]
 }

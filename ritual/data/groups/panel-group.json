@@ -5,8 +5,7 @@
       "type": "mobile-menu",
       "preset": "Default",
       "settings": {
-        "menu": "main",
-        "color_scheme": "linen"
+        "menu": "main"
       },
       "blocks": []
     },
@@ -14,9 +13,7 @@
       "id": "sg_booking",
       "type": "booking-panel",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "linen"
-      },
+      "settings": {},
       "blocks": []
     },
     {
@@ -24,8 +21,7 @@
       "type": "cookie-notice",
       "preset": "Default",
       "settings": {
-        "key": "ritual-notice-2026-11",
-        "color_scheme": "linen"
+        "key": "ritual-notice-2026-11"
       },
       "blocks": []
     }

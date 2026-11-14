@@ -18,8 +18,7 @@
       "type": "insurance",
       "preset": "Logos",
       "settings": {
-        "layout": "logos",
-        "color_scheme": "white"
+        "layout": "logos"
       },
       "blocks": []
     },

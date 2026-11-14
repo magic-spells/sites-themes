@@ -35,10 +35,10 @@
     ], "info": "Photo: the title sits over the photo. Pair it with a dark scheme such as Night." },
     { "type": "image", "id": "image", "label": "Photo", "info": "16:9 or wider." },
     { "type": "text", "id": "image_alt", "label": "Photo alt text", "default": "" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "paper" } },
+    { "name": "Default", "settings": {} },
     { "name": "Photo", "settings": { "media": "photo", "color_scheme": "night" } }
   ]
 }

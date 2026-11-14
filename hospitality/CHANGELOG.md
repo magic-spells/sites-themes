@@ -1,5 +1,20 @@
 # Hospitality
 
+## 0.2.0
+
+- The panel group is labelled Panel.
+- A section whose color scheme defaulted to the first scheme now has no default and follows the
+  site's base scheme; sections that default to another scheme keep it: the booking band, gallery
+  grid, gallery strip, stay detail and stays grid keep `white`; the announcement bar, footer and
+  hero `night`; the call to action and explore grid `lake`; the newsletter and reviews `forest`;
+  and the gallery collage `brick`.
+- The starter templates, section groups and presets no longer store the first scheme, so a new
+  site's sections follow its base scheme too. A stored `paper` that overrides its section's own
+  default keeps its value: the hero's Inset and Centred, the newsletter's Paper, the explore
+  grid's All, the stays grid's All stays and the gallery collage's Stagger presets, and the
+  explore grid on Things to do and the experience pages, the stays grid on Stays and the gallery
+  collage on Gallery.
+
 ## 0.1.0
 
 - 32 sections: the header (transparent over the cover hero, solid on scroll, the booking pill

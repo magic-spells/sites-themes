@@ -15,8 +15,7 @@
       "preset": "Solid",
       "settings": {
         "menu": "main",
-        "style": "solid",
-        "color_scheme": "white"
+        "style": "solid"
       },
       "blocks": []
     }

@@ -8,8 +8,7 @@
       "preset": "Default",
       "settings": {
         "heading": "Writing",
-        "text": "Notes on process, type and the studio.",
-        "color_scheme": "paper"
+        "text": "Notes on process, type and the studio."
       },
       "blocks": []
     },
@@ -20,8 +19,7 @@
       "settings": {
         "heading": "",
         "link_label": "",
-        "limit": 12,
-        "color_scheme": "paper"
+        "limit": 12
       },
       "blocks": []
     }

@@ -6,18 +6,14 @@
       "id": "s_head",
       "type": "page-header",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "paper"
-      },
+      "settings": {},
       "blocks": []
     },
     {
       "id": "s_body",
       "type": "rich-text",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "paper"
-      },
+      "settings": {},
       "blocks": []
     }
   ]

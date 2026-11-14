@@ -19,7 +19,7 @@
     { "type": "text", "id": "heading", "label": "Heading", "default": "Questions we hear a lot" },
     { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
     { "type": "checkbox", "id": "first_open", "label": "First one open", "default": true },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "blocks": [
     { "type": "question", "name": "Question", "settings": [
@@ -28,7 +28,7 @@
     ] }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "paper" }, "blocks": [
+    { "name": "Default", "settings": {}, "blocks": [
       { "type": "question", "settings": { "question": "Do you charge a callout fee?", "answer": "<p>No. You pay for the job at the price we agree before we start.</p>" } },
       { "type": "question", "settings": { "question": "Are you insured?", "answer": "<p>Yes, fully licensed and insured to $5M. We show the certificate on request.</p>" } },
       { "type": "question", "settings": { "question": "How fast can you come?", "answer": "<p>For an emergency, usually within the hour. Everything else, the same or next day.</p>" } },

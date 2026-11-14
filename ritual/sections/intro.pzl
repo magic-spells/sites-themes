@@ -39,12 +39,12 @@
     { "type": "image", "id": "image_2", "label": "Second image", "info": "Collage only: 3:2, laid over the first." },
     { "type": "text", "id": "image_2_alt", "label": "Second image alt text", "default": "" },
     { "type": "checkbox", "id": "tilt", "label": "Tilt the second image", "default": true },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Portal", "settings": { "layout": "portal", "color_scheme": "linen" } },
-    { "name": "Collage", "settings": { "layout": "collage", "color_scheme": "linen" } },
-    { "name": "Text", "settings": { "layout": "text", "color_scheme": "linen" } }
+    { "name": "Portal", "settings": { "layout": "portal" } },
+    { "name": "Collage", "settings": { "layout": "collage" } },
+    { "name": "Text", "settings": { "layout": "text" } }
   ]
 }
 </schema>

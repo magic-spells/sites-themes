@@ -17,8 +17,7 @@
       "preset": "Over the hero",
       "settings": {
         "style": "over-hero",
-        "menu": "main",
-        "color_scheme": "paper"
+        "menu": "main"
       },
       "blocks": []
     }

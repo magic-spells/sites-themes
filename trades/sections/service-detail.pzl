@@ -51,7 +51,7 @@
   "templates": ["service"],
   "settings": [
     { "type": "checkbox", "id": "show_projects", "label": "Recent work", "default": true, "info": "Up to three projects of this service; left out when it has none." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "blocks": [
     { "type": "question", "name": "Question", "settings": [
@@ -60,7 +60,7 @@
     ] }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "paper" }, "blocks": [
+    { "name": "Default", "settings": {}, "blocks": [
       { "type": "question", "settings": { "question": "Do you charge a callout fee?", "answer": "<p>No. The price covers the visit and the work. If we find more, you get a fixed price first.</p>" } },
       { "type": "question", "settings": { "question": "How fast can you come?", "answer": "<p>Most days within the hour for emergencies, and the same or next day for everything else.</p>" } },
       { "type": "question", "settings": { "question": "What if the job is bigger than it looked?", "answer": "<p>We stop, show you what we found and quote it before we go on. You decide.</p>" } }

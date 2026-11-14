@@ -24,10 +24,10 @@
   "settings": [
     { "type": "menu", "id": "menu", "label": "Menu", "info": "Three to five links. The Brand wordmark sits at the left." },
     { "type": "checkbox", "id": "sticky", "label": "Sticky", "default": true, "info": "Hides as the page scrolls down and returns on the way up." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "menu": "main", "color_scheme": "paper" } }
+    { "name": "Default", "settings": { "menu": "main" } }
   ]
 }
 </schema>

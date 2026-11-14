@@ -43,10 +43,10 @@
       { "value": "all", "label": "All" }
     ] },
     { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 3 },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Rows", "settings": { "layout": "rows", "color_scheme": "paper" } },
+    { "name": "Rows", "settings": { "layout": "rows" } },
     { "name": "Carousel", "settings": { "layout": "carousel", "source": "all", "limit": 12, "color_scheme": "charcoal" } }
   ]
 }

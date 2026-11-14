@@ -7,8 +7,7 @@
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "heading": "CV",
-        "color_scheme": "paper"
+        "heading": "CV"
       },
       "blocks": []
     },
@@ -31,8 +30,7 @@
       "settings": {
         "heading": "",
         "limit": 0,
-        "download": true,
-        "color_scheme": "paper"
+        "download": true
       },
       "blocks": []
     },

@@ -70,7 +70,7 @@
   "settings": [
     { "type": "url", "id": "services_path", "label": "Services page", "default": "/services", "info": "The category above the title links to its tab here." },
     { "type": "text", "id": "faq_heading", "label": "Questions heading", "default": "Questions" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "blocks": [
     { "type": "question", "name": "Question", "settings": [
@@ -79,7 +79,7 @@
     ] }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "white" }, "blocks": [
+    { "name": "Default", "settings": {}, "blocks": [
       { "type": "question", "settings": { "question": "Will my insurance cover it?", "answer": "<p>Call us with your plan name and we'll check before your visit. We file the claim for you.</p>" } },
       { "type": "question", "settings": { "question": "Does it hurt?", "answer": "<p>We numb the area first and check in as we go. Tell us and we stop.</p>" } }
     ] }

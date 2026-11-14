@@ -68,9 +68,7 @@
       "id": "s_team",
       "type": "team-grid",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "paper"
-      },
+      "settings": {},
       "blocks": []
     },
     {
@@ -136,9 +134,7 @@
       "id": "s_reviews",
       "type": "testimonials",
       "preset": "Rows",
-      "settings": {
-        "color_scheme": "paper"
-      },
+      "settings": {},
       "blocks": []
     },
     {

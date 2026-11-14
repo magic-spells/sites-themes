@@ -19,8 +19,7 @@
         "layout": "rows",
         "source": "all",
         "limit": 12,
-        "heading": "",
-        "color_scheme": "white"
+        "heading": ""
       },
       "blocks": []
     },

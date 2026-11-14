@@ -20,7 +20,7 @@
     { "type": "text", "id": "heading", "label": "Heading", "default": "What's here" },
     { "type": "text", "id": "text", "label": "Standfirst", "default": "Shared by every cabin and room." },
     { "type": "checkbox", "id": "lines", "label": "Lines under the labels", "default": true },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "blocks": [
     { "type": "amenity", "name": "Amenity", "settings": [

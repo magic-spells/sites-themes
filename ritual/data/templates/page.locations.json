@@ -15,9 +15,7 @@
       "id": "s_locations",
       "type": "locations",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "linen"
-      },
+      "settings": {},
       "blocks": []
     },
     {
@@ -25,8 +23,7 @@
       "type": "faq",
       "preset": "Default",
       "settings": {
-        "heading": "Parking and *access*",
-        "color_scheme": "linen"
+        "heading": "Parking and *access*"
       },
       "blocks": [
         {

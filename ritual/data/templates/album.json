@@ -7,8 +7,7 @@
       "type": "gallery-grid",
       "preset": "Album photos",
       "settings": {
-        "mode": "photos",
-        "color_scheme": "linen"
+        "mode": "photos"
       },
       "blocks": []
     },
@@ -20,8 +19,7 @@
         "mode": "albums",
         "heading": "More *albums*",
         "link_label": "All photos",
-        "limit": 3,
-        "color_scheme": "linen"
+        "limit": 3
       },
       "blocks": []
     }

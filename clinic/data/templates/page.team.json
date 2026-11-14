@@ -21,8 +21,7 @@
         "group": "dentist",
         "match": "has",
         "heading": "Dentists",
-        "link_label": "",
-        "color_scheme": "white"
+        "link_label": ""
       },
       "blocks": []
     },

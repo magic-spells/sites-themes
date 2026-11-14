@@ -93,10 +93,10 @@
     { "type": "text", "id": "link_label", "label": "Link button label", "default": "Visit", "info": "Shown when the work has a link." },
     { "type": "checkbox", "id": "show_foot", "label": "Previous and next", "default": true, "info": "Previous, All work and Next under the gallery, by order." },
     { "type": "url", "id": "base_path", "label": "Work page path", "default": "/work" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "paper" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

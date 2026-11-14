@@ -30,8 +30,7 @@
       "settings": {
         "location": "loc_oakfield",
         "map": "embed",
-        "show_hours": false,
-        "color_scheme": "white"
+        "show_hours": false
       },
       "blocks": []
     },
@@ -42,8 +41,7 @@
       "settings": {
         "location": "loc_pine-ridge",
         "map": "embed",
-        "show_hours": false,
-        "color_scheme": "white"
+        "show_hours": false
       },
       "blocks": []
     },

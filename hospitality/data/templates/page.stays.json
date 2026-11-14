@@ -34,9 +34,7 @@
       "id": "s_amenities",
       "type": "amenities",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "paper"
-      },
+      "settings": {},
       "blocks": [
         {
           "id": "s_amenities_b1",

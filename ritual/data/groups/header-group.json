@@ -6,8 +6,7 @@
       "preset": "Solid",
       "settings": {
         "style": "solid",
-        "menu": "main",
-        "color_scheme": "linen"
+        "menu": "main"
       },
       "blocks": []
     },

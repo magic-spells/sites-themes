@@ -7,8 +7,7 @@
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "heading": "Policies",
-        "color_scheme": "paper"
+        "heading": "Policies"
       },
       "blocks": []
     },
@@ -16,9 +15,7 @@
       "id": "s_policies",
       "type": "policies",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "paper"
-      },
+      "settings": {},
       "blocks": [
         {
           "id": "s_policies_b1",

@@ -16,8 +16,7 @@
       "type": "contact",
       "preset": "Default",
       "settings": {
-        "form": "contact",
-        "color_scheme": "linen"
+        "form": "contact"
       },
       "blocks": []
     },

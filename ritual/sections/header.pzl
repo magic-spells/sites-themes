@@ -66,11 +66,11 @@
     { "type": "url", "id": "services_path", "label": "Services page", "default": "/services" },
     { "type": "checkbox", "id": "show_action", "label": "Show Book", "default": true },
     { "type": "text", "id": "action_label", "label": "Action label", "default": "", "info": "Leave empty to use the House setting." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Solid", "settings": { "style": "solid", "menu": "main", "color_scheme": "linen" } },
-    { "name": "Over the hero", "settings": { "style": "over-hero", "menu": "main", "color_scheme": "linen" } }
+    { "name": "Solid", "settings": { "style": "solid", "menu": "main" } },
+    { "name": "Over the hero", "settings": { "style": "over-hero", "menu": "main" } }
   ]
 }
 </schema>

@@ -45,10 +45,10 @@
     { "type": "text", "id": "heading", "label": "Heading", "default": "Write to *us*", "info": "Wrap one word in asterisks to set it in the accent." },
     { "type": "text", "id": "text", "label": "Text", "default": "For appointments, Book is quicker. For anything else, here." },
     { "type": "form", "id": "form", "label": "Form" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "form": "contact", "color_scheme": "linen" } }
+    { "name": "Default", "settings": { "form": "contact" } }
   ]
 }
 </schema>

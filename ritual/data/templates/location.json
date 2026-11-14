@@ -6,9 +6,7 @@
       "id": "s_detail",
       "type": "location-detail",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "linen"
-      },
+      "settings": {},
       "blocks": []
     }
   ]

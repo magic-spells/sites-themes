@@ -37,10 +37,10 @@
   "settings": [
     { "type": "text", "id": "signup_label", "label": "Sign-up label", "default": "Save a place" },
     { "type": "url", "id": "team_path", "label": "Team page path", "default": "/team" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "linen" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

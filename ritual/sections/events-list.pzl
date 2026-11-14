@@ -31,11 +31,11 @@
     { "type": "text", "id": "link_label", "label": "Link label", "default": "" },
     { "type": "url", "id": "link_href", "label": "Link", "default": "/events" },
     { "type": "url", "id": "base_path", "label": "Event page path", "default": "/events" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Rows", "settings": { "layout": "rows", "color_scheme": "linen" } },
-    { "name": "More events", "settings": { "layout": "cards", "limit": 3, "heading": "More *events*", "link_label": "All events", "color_scheme": "linen" } }
+    { "name": "Rows", "settings": { "layout": "rows" } },
+    { "name": "More events", "settings": { "layout": "cards", "limit": 3, "heading": "More *events*", "link_label": "All events" } }
   ]
 }
 </schema>

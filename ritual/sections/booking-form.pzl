@@ -67,11 +67,11 @@
     ] },
     { "type": "image", "id": "image", "label": "Image", "info": "4:5, beside the form when Aside is Photo." },
     { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "linen" } },
-    { "name": "Details", "settings": { "aside": "details", "color_scheme": "linen" } }
+    { "name": "Default", "settings": {} },
+    { "name": "Details", "settings": { "aside": "details" } }
   ]
 }
 </schema>

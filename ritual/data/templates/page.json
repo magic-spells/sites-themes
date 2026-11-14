@@ -15,9 +15,7 @@
       "id": "s_body",
       "type": "rich-text",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "linen"
-      },
+      "settings": {},
       "blocks": []
     }
   ]

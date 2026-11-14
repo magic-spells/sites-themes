@@ -109,7 +109,7 @@
       { "value": "natural", "label": "Natural" },
       { "value": "grain", "label": "Grain" }
     ], "info": "Cover only: a fine grain over the photo while House texture is on." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "blocks": [
     { "type": "image", "name": "Image", "settings": [
@@ -119,11 +119,11 @@
   ],
   "max_blocks": 5,
   "presets": [
-    { "name": "Arch", "settings": { "layout": "arch", "color_scheme": "linen" } },
+    { "name": "Arch", "settings": { "layout": "arch" } },
     { "name": "Cover", "settings": { "layout": "cover", "treatment": "grain", "color_scheme": "fern" } },
-    { "name": "Quiet", "settings": { "layout": "quiet", "color_scheme": "linen" } },
-    { "name": "Dome", "settings": { "layout": "dome", "color_scheme": "linen" } },
-    { "name": "Capsules", "settings": { "layout": "capsules", "color_scheme": "linen" } }
+    { "name": "Quiet", "settings": { "layout": "quiet" } },
+    { "name": "Dome", "settings": { "layout": "dome" } },
+    { "name": "Capsules", "settings": { "layout": "capsules" } }
   ]
 }
 </schema>

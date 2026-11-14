@@ -17,8 +17,7 @@
       "type": "events-list",
       "preset": "Rows",
       "settings": {
-        "layout": "rows",
-        "color_scheme": "linen"
+        "layout": "rows"
       },
       "blocks": []
     },

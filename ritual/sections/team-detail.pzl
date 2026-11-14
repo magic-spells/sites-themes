@@ -45,10 +45,10 @@
     { "type": "text", "id": "link_label", "label": "Link label", "default": "Instagram", "info": "For the person's own link, when they have one." },
     { "type": "checkbox", "id": "show_services", "label": "Show their treatments", "default": true, "info": "The services that name this person under Offered by." },
     { "type": "url", "id": "services_path", "label": "Service page path", "default": "/services" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "linen" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

@@ -49,10 +49,10 @@
   "settings": [
     { "type": "checkbox", "id": "show_events", "label": "Show events here", "default": true },
     { "type": "url", "id": "events_path", "label": "Event page path", "default": "/events" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "linen" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

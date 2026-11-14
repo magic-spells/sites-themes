@@ -73,12 +73,12 @@
     { "type": "text", "id": "text", "label": "Text", "default": "" },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "All photos" },
     { "type": "url", "id": "link_href", "label": "Link", "default": "/gallery" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Bundle", "settings": { "layout": "bundle", "color_scheme": "linen" } },
-    { "name": "Strip", "settings": { "layout": "strip", "color_scheme": "linen" } },
-    { "name": "Capsules", "settings": { "layout": "capsules", "color_scheme": "linen" } }
+    { "name": "Bundle", "settings": { "layout": "bundle" } },
+    { "name": "Strip", "settings": { "layout": "strip" } },
+    { "name": "Capsules", "settings": { "layout": "capsules" } }
   ]
 }
 </schema>

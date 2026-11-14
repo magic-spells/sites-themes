@@ -19,8 +19,7 @@
       "preset": "Default",
       "settings": {
         "aside": "details",
-        "heading": "Tell us what you would *like*",
-        "color_scheme": "linen"
+        "heading": "Tell us what you would *like*"
       },
       "blocks": []
     },

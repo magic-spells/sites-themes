@@ -23,10 +23,10 @@
     { "type": "text", "id": "link_label", "label": "Link label", "default": "Privacy" },
     { "type": "url", "id": "link_href", "label": "Link", "default": "/privacy" },
     { "type": "text", "id": "key", "label": "Key", "default": "ritual-notice", "info": "Change the key to show the notice again to everyone." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "linen" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

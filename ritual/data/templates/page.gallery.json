@@ -16,8 +16,7 @@
       "type": "gallery-grid",
       "preset": "Albums",
       "settings": {
-        "mode": "albums",
-        "color_scheme": "linen"
+        "mode": "albums"
       },
       "blocks": []
     },
@@ -29,8 +28,7 @@
         "layout": "capsules",
         "gallery": "the-rooms",
         "heading": "Latest *photos*",
-        "link_label": "",
-        "color_scheme": "linen"
+        "link_label": ""
       },
       "blocks": []
     }

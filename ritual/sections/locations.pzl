@@ -23,10 +23,10 @@
     { "type": "checkbox", "id": "show_hours", "label": "Show hours", "default": true },
     { "type": "checkbox", "id": "show_map", "label": "Show the photo", "default": true },
     { "type": "url", "id": "base_path", "label": "Location page path", "default": "/locations" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "linen" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

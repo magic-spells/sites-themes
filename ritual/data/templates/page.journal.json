@@ -15,9 +15,7 @@
       "id": "s_posts",
       "type": "journal-list",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "linen"
-      },
+      "settings": {},
       "blocks": []
     },
     {

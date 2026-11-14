@@ -71,10 +71,10 @@
     { "type": "url", "id": "base_path", "label": "Service page path", "default": "/services", "info": "Each line links to this path plus the service handle." },
     { "type": "checkbox", "id": "show_action", "label": "Show Book", "default": true },
     { "type": "text", "id": "action_label", "label": "Action label", "default": "Book a treatment" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "linen" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "linen" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

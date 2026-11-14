@@ -8,8 +8,7 @@
       "preset": "Default",
       "settings": {
         "heading": "Journal",
-        "text": "Notes from the lake, the orchard and the trails.",
-        "color_scheme": "paper"
+        "text": "Notes from the lake, the orchard and the trails."
       },
       "blocks": []
     },
@@ -21,8 +20,7 @@
         "view": "feature",
         "heading": "",
         "limit": 12,
-        "link_label": "",
-        "color_scheme": "paper"
+        "link_label": ""
       },
       "blocks": []
     },

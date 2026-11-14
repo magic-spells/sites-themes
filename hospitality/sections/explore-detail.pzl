@@ -31,10 +31,10 @@
     { "type": "text", "id": "link_label", "label": "Operator button label", "default": "Book with the operator", "info": "Shown when the experience has a link." },
     { "type": "text", "id": "back_label", "label": "Back link label", "default": "Back to things to do" },
     { "type": "url", "id": "back_href", "label": "Back link", "default": "/explore" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "paper" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

@@ -32,11 +32,11 @@
     ], "info": "Over the hero: transparent with paper type on a page that opens with a cover hero, solid once the page scrolls. Solid everywhere else." },
     { "type": "checkbox", "id": "sticky", "label": "Sticky", "default": true },
     { "type": "checkbox", "id": "show_booking", "label": "Booking button", "default": true, "info": "Labelled and linked by the Place booking settings." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Over the hero", "settings": { "style": "over-hero", "menu": "main", "color_scheme": "paper" } },
-    { "name": "Solid", "settings": { "style": "solid", "menu": "main", "color_scheme": "paper" } }
+    { "name": "Over the hero", "settings": { "style": "over-hero", "menu": "main" } },
+    { "name": "Solid", "settings": { "style": "solid", "menu": "main" } }
   ]
 }
 </schema>

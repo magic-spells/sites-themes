@@ -5,8 +5,7 @@
       "type": "mobile-menu",
       "preset": "Default",
       "settings": {
-        "menu": "main",
-        "color_scheme": "paper"
+        "menu": "main"
       },
       "blocks": []
     },
@@ -15,8 +14,7 @@
       "type": "cookie-notice",
       "preset": "Default",
       "settings": {
-        "key": "hospitality-notice-2026-11",
-        "color_scheme": "paper"
+        "key": "hospitality-notice-2026-11"
       },
       "blocks": []
     }

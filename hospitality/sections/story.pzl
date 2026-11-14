@@ -50,7 +50,7 @@
     { "type": "text", "id": "caption_meta", "label": "Caption line", "default": "" },
     { "type": "text", "id": "link_label", "label": "Button label", "default": "" },
     { "type": "url", "id": "link_href", "label": "Button link", "default": "/about" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "blocks": [
     { "type": "chapter", "name": "Chapter", "settings": [
@@ -63,11 +63,11 @@
   ],
   "max_blocks": 12,
   "presets": [
-    { "name": "Full", "settings": { "layout": "full", "color_scheme": "paper" }, "blocks": [
+    { "name": "Full", "settings": { "layout": "full" }, "blocks": [
       { "type": "chapter", "settings": { "year": "2009", "title": "One cabin", "text": "Alder went up in a summer, mostly by hand." } },
       { "type": "chapter", "settings": { "year": "2013", "title": "Birch and Cedar", "text": "Two more cabins and the first season we sold out." } }
     ] },
-    { "name": "Short", "settings": { "layout": "short", "link_label": "Our story", "color_scheme": "paper" } }
+    { "name": "Short", "settings": { "layout": "short", "link_label": "Our story" } }
   ]
 }
 </schema>

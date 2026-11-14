@@ -27,10 +27,10 @@
   "icon": "menu",
   "settings": [
     { "type": "menu", "id": "menu", "label": "Menu" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "menu": "main", "color_scheme": "paper" } }
+    { "name": "Default", "settings": { "menu": "main" } }
   ]
 }
 </schema>

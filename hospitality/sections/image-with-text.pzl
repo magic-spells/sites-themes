@@ -37,10 +37,10 @@
     { "type": "richtext", "id": "body", "label": "Text", "default": "<p>A wood-fired cedar sauna on the dock, with the lake three steps away. Book an hour for two or bring the whole cabin.</p>" },
     { "type": "text", "id": "link_label", "label": "Button label", "default": "Things to do" },
     { "type": "url", "id": "link_href", "label": "Button link", "default": "/explore" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "paper" } },
+    { "name": "Default", "settings": {} },
     { "name": "Slant", "settings": { "edge": "slant", "caption_card": true, "color_scheme": "forest" } }
   ]
 }

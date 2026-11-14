@@ -19,7 +19,7 @@
     { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
     { "type": "checkbox", "id": "first_open", "label": "First answer open", "default": false },
     { "type": "checkbox", "id": "columns", "label": "Two columns on desktop", "default": true },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "blocks": [
     { "type": "item", "name": "Question", "settings": [

@@ -8,8 +8,7 @@
       "preset": "Default",
       "settings": {
         "heading": "Contact",
-        "text": "Write, call, or just turn up.",
-        "color_scheme": "paper"
+        "text": "Write, call, or just turn up."
       },
       "blocks": []
     },
@@ -18,8 +17,7 @@
       "type": "contact",
       "preset": "Default",
       "settings": {
-        "form": "contact",
-        "color_scheme": "paper"
+        "form": "contact"
       },
       "blocks": []
     },
@@ -27,9 +25,7 @@
       "id": "s_facts",
       "type": "facts",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "paper"
-      },
+      "settings": {},
       "blocks": []
     }
   ]

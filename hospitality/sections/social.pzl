@@ -29,7 +29,7 @@
     { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
     { "type": "text", "id": "handle", "label": "Handle", "default": "@fernhollow", "info": "The tiles are photos you upload, each linking to its post: a live feed would need the engine to fetch it, which sections cannot." },
     { "type": "url", "id": "url", "label": "Profile link", "default": "https://www.instagram.com/fernhollow" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "blocks": [
     { "type": "tile", "name": "Tile", "settings": [
@@ -40,7 +40,7 @@
   ],
   "max_blocks": 6,
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "paper" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

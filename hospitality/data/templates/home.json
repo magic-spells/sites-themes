@@ -24,8 +24,7 @@
         "image_alt": "The dock at Fern Hollow",
         "caption": "The dock",
         "caption_meta": "Early June",
-        "facts": "Check-in 3 pm\nCheck-out 11 am\nOpen May–October\nDogs welcome",
-        "color_scheme": "paper"
+        "facts": "Check-in 3 pm\nCheck-out 11 am\nOpen May–October\nDogs welcome"
       },
       "blocks": []
     },
@@ -57,9 +56,7 @@
       "id": "s_featured",
       "type": "stays-featured",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "paper"
-      },
+      "settings": {},
       "blocks": [
         {
           "id": "s_featured_b1",
@@ -105,7 +102,6 @@
         "image": "as_4x5_forest",
         "image_alt": "Ingrid and Hanne on the porch",
         "link_label": "Our story",
-        "color_scheme": "paper",
         "caption": "The first summer",
         "caption_meta": "2009",
         "body": "<p>Alder went up first, a single cabin on the east shore with a woodstove, two bunks and a rowboat tied to the dock. We built most of it by hand over one long summer, and the first guests were friends who didn't mind the outhouse.</p><p>Birch and Cedar followed, then the farmhouse, where we still live upstairs. We keep it small on purpose: five cabins, a sauna on the water and the same rowboat, repainted most springs. Most of what we know about the lake, we learned from the people who stay.</p>"
@@ -129,8 +125,7 @@
       "preset": "Feature",
       "settings": {
         "view": "feature",
-        "limit": 3,
-        "color_scheme": "paper"
+        "limit": 3
       },
       "blocks": []
     },

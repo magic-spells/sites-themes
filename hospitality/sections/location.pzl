@@ -28,10 +28,10 @@
     { "type": "image", "id": "image", "label": "Photo", "info": "4:3." },
     { "type": "text", "id": "image_alt", "label": "Photo alt text", "default": "" },
     { "type": "paragraph", "content": "The address, directions, times and the map come from the Place settings." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "paper" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

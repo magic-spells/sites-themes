@@ -36,7 +36,7 @@
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "" },
     { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "blocks": [
     { "type": "tile", "name": "Tile", "settings": [
@@ -52,7 +52,7 @@
   ],
   "max_blocks": 2,
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "paper" }, "blocks": [
+    { "name": "Default", "settings": {}, "blocks": [
       { "type": "tile", "settings": { "title": "The lake cabins", "text": "Five cedar cabins on the water.", "link_label": "See the cabins", "link_href": "/stays?type=Cabin" } },
       { "type": "tile", "settings": { "title": "The farmhouse", "text": "Two rooms upstairs, breakfast included.", "link_label": "See the rooms", "link_href": "/stays?type=Farmhouse+room" } }
     ] }

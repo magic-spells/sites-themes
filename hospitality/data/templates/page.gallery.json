@@ -7,8 +7,7 @@
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "heading": "Gallery",
-        "color_scheme": "paper"
+        "heading": "Gallery"
       },
       "blocks": []
     },

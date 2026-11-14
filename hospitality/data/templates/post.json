@@ -6,9 +6,7 @@
       "id": "s_post",
       "type": "post",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "paper"
-      },
+      "settings": {},
       "blocks": []
     },
     {
@@ -18,8 +16,7 @@
       "settings": {
         "view": "grid",
         "heading": "More from the journal",
-        "limit": 3,
-        "color_scheme": "paper"
+        "limit": 3
       },
       "blocks": []
     },

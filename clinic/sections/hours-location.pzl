@@ -39,10 +39,10 @@
       { "value": "image", "label": "The map image" },
       { "value": "embed", "label": "The embedded map, when the location has one" }
     ] },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "white" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

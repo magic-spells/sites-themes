@@ -54,11 +54,11 @@
       { "value": "grid", "label": "Two across" },
       { "value": "row", "label": "One row that swipes" }
     ] },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "white" } },
-    { "name": "Group", "settings": { "source": "group", "group": "dentist", "heading": "Dentists", "link_label": "", "color_scheme": "white" } }
+    { "name": "Default", "settings": {} },
+    { "name": "Group", "settings": { "source": "group", "group": "dentist", "heading": "Dentists", "link_label": "" } }
   ]
 }
 </schema>

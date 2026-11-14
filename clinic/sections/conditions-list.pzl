@@ -20,10 +20,10 @@
       { "value": "condition", "label": "The concern's page" },
       { "value": "service", "label": "The treatment that usually helps" }
     ] },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "white" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

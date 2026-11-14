@@ -17,8 +17,7 @@
       "preset": "Default",
       "settings": {
         "map": "embed",
-        "heading": "Hours and directions",
-        "color_scheme": "white"
+        "heading": "Hours and directions"
       },
       "blocks": []
     },

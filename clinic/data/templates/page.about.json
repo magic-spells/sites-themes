@@ -72,8 +72,7 @@
       "preset": "Default",
       "settings": {
         "source": "all",
-        "limit": 12,
-        "color_scheme": "white"
+        "limit": 12
       },
       "blocks": []
     },
@@ -133,8 +132,7 @@
       "preset": "Rows",
       "settings": {
         "layout": "rows",
-        "limit": 3,
-        "color_scheme": "white"
+        "limit": 3
       },
       "blocks": []
     },

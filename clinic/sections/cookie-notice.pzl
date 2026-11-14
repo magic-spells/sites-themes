@@ -19,10 +19,10 @@
     { "type": "text", "id": "accept_label", "label": "Accept label", "default": "Accept" },
     { "type": "text", "id": "decline_label", "label": "Decline label", "default": "Decline" },
     { "type": "text", "id": "key", "label": "Key", "default": "clinic-notice", "info": "Change it to show the notice again to everyone." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "white" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

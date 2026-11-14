@@ -52,10 +52,10 @@
     { "type": "checkbox", "id": "inset", "label": "Inset", "default": false, "info": "Type over a photo only: the photo rounded inside the page margins." },
     { "type": "text", "id": "secondary_label", "label": "Second button label", "default": "Our services", "info": "Leave empty to show the ask button alone. Not beside the request form." },
     { "type": "url", "id": "secondary_link", "label": "Second button link", "default": "/services" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Split", "settings": { "layout": "split", "color_scheme": "white" } },
+    { "name": "Split", "settings": { "layout": "split" } },
     { "name": "Cover", "settings": { "layout": "cover", "color_scheme": "navy" } },
     { "name": "Panel", "settings": { "layout": "panel", "color_scheme": "cloud" } }
   ]

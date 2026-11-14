@@ -10,7 +10,7 @@
   "kind": "Content",
   "icon": "layout-dashboard",
   "settings": [
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "blocks": [
     { "type": "tile", "name": "Tile", "limit": 4, "settings": [
@@ -25,7 +25,7 @@
   ],
   "max_blocks": 4,
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "white" }, "blocks": [
+    { "name": "Default", "settings": {}, "blocks": [
       { "type": "tile", "settings": { "heading": "Insurance and fees", "text": "Clear prices, and help with your plan.", "link_label": "See fees", "link": "/fees", "color_scheme": "navy" } },
       { "type": "tile", "settings": { "heading": "Meet the team", "text": "Six clinicians across two offices.", "link_label": "Our team", "link": "/team", "color_scheme": "white" } },
       { "type": "tile", "settings": { "heading": "New patients", "text": "What to expect at your first visit.", "link_label": "Start here", "link": "/new-patients", "color_scheme": "cloud" } }

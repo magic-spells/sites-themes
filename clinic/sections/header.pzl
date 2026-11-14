@@ -61,11 +61,11 @@
       { "value": "over-hero", "label": "Over the hero" }
     ], "info": "Over the hero: transparent at the top of a page that opens with a cover hero, solid once it scrolls." },
     { "type": "url", "id": "services_path", "label": "Services page", "default": "/services", "info": "The menu item pointing here opens every service, grouped by category." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Solid", "settings": { "menu": "main", "style": "solid", "color_scheme": "white" } },
-    { "name": "Over the hero", "settings": { "menu": "main", "style": "over-hero", "color_scheme": "white" } }
+    { "name": "Solid", "settings": { "menu": "main", "style": "solid" } },
+    { "name": "Over the hero", "settings": { "menu": "main", "style": "over-hero" } }
   ]
 }
 </schema>

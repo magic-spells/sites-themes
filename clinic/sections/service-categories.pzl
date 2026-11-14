@@ -37,10 +37,10 @@
       { "value": "open", "label": "Open, under a rule" },
       { "value": "cards", "label": "Cards" }
     ] },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "white" } },
+    { "name": "Default", "settings": {} },
     { "name": "Cards", "settings": { "layout": "cards", "color_scheme": "cloud" } }
   ]
 }

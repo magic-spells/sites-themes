@@ -15,9 +15,7 @@
       "id": "s_text",
       "type": "rich-text",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "white"
-      },
+      "settings": {},
       "blocks": []
     }
   ]

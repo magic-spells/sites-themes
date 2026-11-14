@@ -21,7 +21,7 @@
     { "type": "select", "id": "head_align", "label": "Heading", "default": "left", "options": [{ "value": "left", "label": "Left" }, { "value": "center", "label": "Centred" }] },
     { "type": "text", "id": "portal_label", "label": "Portal label", "default": "Patient portal" },
     { "type": "text", "id": "portal_note", "label": "Portal note", "default": "Appointments, forms and statements", "info": "The Practice patient portal leads the list when set." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "blocks": [
     { "type": "resource", "name": "Resource", "settings": [
@@ -36,7 +36,7 @@
     ] }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "white" }, "blocks": [
+    { "name": "Default", "settings": {}, "blocks": [
       { "type": "resource", "settings": { "label": "New patient forms", "note": "Fill in before your first visit", "link": "/new-patients", "kind": "pdf" } },
       { "type": "resource", "settings": { "label": "Privacy notice", "note": "How we handle your information", "link": "/privacy", "kind": "pdf" } },
       { "type": "resource", "settings": { "label": "After an extraction", "note": "Aftercare for the first 48 hours", "link": "/advice", "kind": "pdf" } },

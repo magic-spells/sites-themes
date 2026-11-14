@@ -26,10 +26,10 @@
     ] },
     { "type": "image", "id": "image", "label": "Photo (4:5)" },
     { "type": "text", "id": "image_alt", "label": "Photo alt text", "default": "" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "white" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

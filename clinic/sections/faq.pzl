@@ -17,7 +17,7 @@
     { "type": "select", "id": "head_align", "label": "Heading", "default": "center", "options": [{ "value": "left", "label": "Left" }, { "value": "center", "label": "Centred" }] },
     { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
     { "type": "checkbox", "id": "first_open", "label": "First one open", "default": true },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "blocks": [
     { "type": "question", "name": "Question", "settings": [
@@ -26,7 +26,7 @@
     ] }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "white" }, "blocks": [
+    { "name": "Default", "settings": {}, "blocks": [
       { "type": "question", "settings": { "question": "Do you take my insurance?", "answer": "<p>We're in-network with most major plans and file claims for you. Call us with your plan name and we'll check before your visit.</p>" } },
       { "type": "question", "settings": { "question": "What happens at a first visit?", "answer": "<p>Forms, X-rays, a full exam and a plan, in about an hour and a half.</p>" } },
       { "type": "question", "settings": { "question": "Do you see children?", "answer": "<p>Yes, from their first tooth. Dr Marsh looks after most of our younger patients.</p>" } },

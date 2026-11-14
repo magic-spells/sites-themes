@@ -18,8 +18,7 @@
       "type": "appointment-form",
       "preset": "Default",
       "settings": {
-        "aside": "locations",
-        "color_scheme": "white"
+        "aside": "locations"
       },
       "blocks": []
     },

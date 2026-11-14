@@ -41,11 +41,11 @@
     { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Tell us before you come in. We book longer appointments, explain every step and stop whenever you ask.</p>" },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "How we help" },
     { "type": "url", "id": "link", "label": "Link", "default": "/about" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "white" } },
-    { "name": "Two photos", "settings": { "layout": "duo", "color_scheme": "white" } }
+    { "name": "Default", "settings": {} },
+    { "name": "Two photos", "settings": { "layout": "duo" } }
   ]
 }
 </schema>

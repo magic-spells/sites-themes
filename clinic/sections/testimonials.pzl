@@ -54,10 +54,10 @@
       { "value": "all", "label": "All" }
     ], "info": "On a service's or a clinician's page, the reviews that name them come first when there are any." },
     { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 3 },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Rows", "settings": { "layout": "rows", "color_scheme": "white" } },
+    { "name": "Rows", "settings": { "layout": "rows" } },
     { "name": "Carousel", "settings": { "layout": "carousel", "limit": 8, "color_scheme": "cloud" } }
   ]
 }

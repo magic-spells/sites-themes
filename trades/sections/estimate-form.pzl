@@ -24,10 +24,10 @@
     { "type": "textarea", "id": "text", "label": "Standfirst", "default": "Whether it's an emergency or a planned job, tell us what's happening and we'll call back within the hour." },
     { "type": "checkbox", "id": "show_contact_rows", "label": "Contact rows", "default": true, "info": "Email, phone, service area and hours from the theme settings." },
     { "type": "form", "id": "form", "label": "Form", "info": "Leave empty to use the Yard estimate form." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "paper" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

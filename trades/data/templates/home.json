@@ -18,9 +18,7 @@
       "id": "s_services",
       "type": "services-grid",
       "preset": "Photo",
-      "settings": {
-        "color_scheme": "paper"
-      },
+      "settings": {},
       "blocks": []
     },
     {
@@ -103,9 +101,7 @@
       "id": "s_reviews",
       "type": "testimonials",
       "preset": "Rows",
-      "settings": {
-        "color_scheme": "paper"
-      },
+      "settings": {},
       "blocks": []
     },
     {
@@ -192,9 +188,7 @@
       "id": "s_areas",
       "type": "areas",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "paper"
-      },
+      "settings": {},
       "blocks": []
     },
     {

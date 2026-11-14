@@ -84,9 +84,7 @@
       "id": "s_faq",
       "type": "faq",
       "preset": "Default",
-      "settings": {
-        "color_scheme": "paper"
-      },
+      "settings": {},
       "blocks": [
         {
           "type": "question",

@@ -45,7 +45,7 @@
       { "value": "stack", "label": "A stack" },
       { "value": "row", "label": "A row that scrolls" }
     ] },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "blocks": [
     { "type": "service", "name": "Service", "settings": [
@@ -53,7 +53,7 @@
     ] }
   ],
   "presets": [
-    { "name": "Photo", "settings": { "media": "photo", "color_scheme": "paper" } },
+    { "name": "Photo", "settings": { "media": "photo" } },
     { "name": "Icons", "settings": { "media": "icon", "color_scheme": "chalk" } }
   ]
 }

@@ -50,10 +50,10 @@
   "settings": [
     { "type": "menu", "id": "menu", "label": "Menu" },
     { "type": "url", "id": "services_path", "label": "Services page", "default": "/services", "info": "The menu item pointing here folds the services under it." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "paper" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "menu": "main", "color_scheme": "paper" } }
+    { "name": "Default", "settings": { "menu": "main" } }
   ]
 }
 </schema>

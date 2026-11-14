@@ -1,5 +1,20 @@
 # Trades
 
+## 0.2.0
+
+- The panel group is labelled Panel.
+- A section whose color scheme defaulted to the first scheme now has no default and follows the
+  site's base scheme; sections that default to another scheme keep it: the cookie notice,
+  estimate panel, financing, header, hours and location, newsletter, plans, projects grid,
+  projects strip and story keep `chalk`; the announcement bar, badge row, call bar, CTA band,
+  hero, page header, process, stats and value props `navy`; the footer `charcoal`; and the
+  offers `brass`.
+- The starter templates, section groups and presets no longer store the first scheme, so a new
+  site's sections follow its base scheme too. A stored `paper` that overrides its section's own
+  default keeps its value: the value props' Row and the projects grid's Work page presets, the
+  hero and value props on Join the crew, the value props on Services and the projects grid on
+  Our work.
+
 ## 0.1.1
 
 - The value-prop cards lose their arrow.

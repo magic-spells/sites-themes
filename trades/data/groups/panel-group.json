@@ -5,8 +5,7 @@
       "type": "mobile-menu",
       "preset": "Default",
       "settings": {
-        "menu": "main",
-        "color_scheme": "paper"
+        "menu": "main"
       },
       "blocks": []
     },

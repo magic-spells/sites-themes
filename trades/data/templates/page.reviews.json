@@ -18,8 +18,7 @@
       "settings": {
         "show_rating": true,
         "source": "all",
-        "limit": 12,
-        "color_scheme": "paper"
+        "limit": 12
       },
       "blocks": []
     },

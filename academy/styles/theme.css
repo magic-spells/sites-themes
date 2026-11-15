@@ -114,6 +114,12 @@
 	--spacing-icon: 1.25rem;
 	--spacing-dot: 0.375rem;
 	--spacing-swatch: 0.875rem;
+	/* The timetable's time and part-of-day column. */
+	--spacing-time: 7.5rem;
+	/* How far a class card's label rides up over its photo. */
+	--spacing-overlap: 2.75rem;
+	/* The hero's cover layout, at least this tall. */
+	--spacing-cover: 70svh;
 	--spacing-avatar: 4.5rem;
 	--spacing-textarea: 8rem;
 	--container-column: 78rem;
@@ -125,6 +131,7 @@
 	--aspect-photo: 3 / 2;
 	--aspect-picture: 4 / 3;
 	--aspect-portrait: 4 / 5;
+	--aspect-cover: 3 / 4;
 	/* A picture beside text: seven parts to five. */
 	--grid-template-columns-wide-narrow: 7fr 5fr;
 	--grid-template-columns-narrow-wide: 5fr 7fr;
@@ -132,6 +139,8 @@
 	--grid-template-columns-month: 3fr 9fr;
 	/* A date row: the day or range, the title, the time, the note. */
 	--grid-template-columns-date: 11rem minmax(0, 1fr) 8.5rem minmax(0, 1fr);
+	/* The timetable key: a short name beside what it stands for. */
+	--grid-template-columns-key: auto minmax(0, 1fr);
 	--transition-duration-fast: 150ms;
 	--transition-duration-panel: 250ms;
 	--ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
@@ -201,6 +210,10 @@ html.reveal-off split-text:not(:defined) {
 [data-session][data-dim] {
 	opacity: 0.28;
 	color: var(--sites-scheme-chip-foreground);
+}
+/* A part of the day with no session on the days shown is left out. */
+[data-part]:not(:has([data-session])) {
+	display: none;
 }
 
 :root {
@@ -314,6 +327,8 @@ tarot-carousel {
 	--tarot-progress-border-radius: 0;
 	--tarot-progress-bg: var(--sites-scheme-chip-border);
 	--tarot-progress-fill-bg: var(--sites-scheme-foreground);
+	--color-pagination-dot: var(--sites-scheme-chip-border);
+	--color-pagination-dot-active: var(--sites-scheme-foreground);
 }
 tarot-carousel:not(:defined) tarot-track {
 	display: flex;

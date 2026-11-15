@@ -1,8 +1,8 @@
 <!-- component: DateRange -->
-<!-- A day or a run of days, day first, in tabular figures: "4 Jan", "15 – 19 Feb", "4 Jan – 26 Mar"; long spells the months out ("4 January"). The engine prints no weekday, so none is shown. -->
+<!-- A day or a run of days, day first, in tabular figures: "4 Jan", "15 – 19 Feb", "4 Jan – 26 Mar"; long spells the months out ("4 January"); year adds the year ("10 Nov 2026"). The engine prints no weekday, so none is shown. -->
 {#let
   a = from | date(long ? 'long' : 'medium') | split(' ')
   b = to && to != from ? (to | date(long ? 'long' : 'medium') | split(' ')) : null
   apart = b && (from | slice(0, 7)) != (to | slice(0, 7))
 }
-<span class="tabular-nums">{ a[1] | replace(',', '') }{#if !b || apart} { a[0] }{/if}{#if b} – { b[1] | replace(',', '') } { b[0] }{/if}</span>
+<span class="tabular-nums">{ a[1] | replace(',', '') }{#if !b || apart} { a[0] }{/if}{#if b} – { b[1] | replace(',', '') } { b[0] }{/if}{#if year} { (b || a)[2] }{/if}</span>

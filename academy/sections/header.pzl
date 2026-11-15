@@ -18,7 +18,7 @@
                       <dropdown-trigger class="flex min-h-header cursor-pointer items-center gap-space-2xs px-cell">{ item.label }<Icon name="chevron-down" cls="size-icon-sm" /></dropdown-trigger>
                       <dropdown-panel class="w-max rounded-md border border-scheme-rule bg-scheme-background p-space-xs text-scheme-foreground shadow-panel">
                         <ul class="grid">
-                          {#for subject in subjects}<li><a class="flex items-center gap-space-sm rounded-sm px-cell py-space-xs hover:bg-scheme-surface-2" href="{ settings.classes_path }?subject={ encodeURIComponent(subject) }"><Swatch subject={ subject } />{ subject }</a></li>{/for}
+                          {#for subject in subjects}<li><a class="flex items-center gap-space-sm rounded-sm px-cell py-space-xs hover:bg-scheme-surface-2" href="{ settings.classes_path }?subject={ encodeURIComponent(subject) }"><Swatch subject={ subject } subjects={ subjects } />{ subject }</a></li>{/for}
                           <li class="mt-space-2xs border-t border-scheme-rule pt-space-2xs"><a class="block rounded-sm px-cell py-space-xs text-label hover:bg-scheme-surface-2" href="{ settings.classes_path }">{ t('all_classes') }</a></li>
                         </ul>
                       </dropdown-panel>

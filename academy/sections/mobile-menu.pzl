@@ -20,7 +20,7 @@
                     <button class="group flex w-full items-center justify-between gap-space-xs" type="button">{ item.label }<Icon name="chevron-down" cls="size-icon transition-transform duration-fast group-aria-expanded:rotate-180" /></button>
                     <collapsible-content>
                       <ul class="grid gap-space-sm py-space-sm ps-space-md font-body text-body">
-                        {#for subject in subjects}<li><a class="flex items-center gap-space-sm hover:underline hover:underline-offset-4" href="{ item.href }?subject={ encodeURIComponent(subject) }"><Swatch subject={ subject } />{ subject }</a></li>{/for}
+                        {#for subject in subjects}<li><a class="flex items-center gap-space-sm hover:underline hover:underline-offset-4" href="{ item.href }?subject={ encodeURIComponent(subject) }"><Swatch subject={ subject } subjects={ subjects } />{ subject }</a></li>{/for}
                         <li><a class="hover:underline hover:underline-offset-4" href="{ item.href }">{ t('all_classes') }</a></li>
                       </ul>
                     </collapsible-content>

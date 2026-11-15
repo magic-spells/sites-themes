@@ -1,7 +1,8 @@
-<!-- Featured classes as cards (photo, name, ages and level, price): three across from 64rem, two from 48rem; on phones a row that scrolls with the next card showing. -->
+<!-- Featured classes as cards, each on its subject's cover by default (or plain): three across from 64rem, two from 48rem, the cards in a row as tall as the tallest; on phones a row that scrolls edge to edge with the next card showing. -->
 {#let
   all = content.classes.entries | sort('fields.order')
   classes = (settings.featured_only ? all | where('fields.featured') : all) | slice(0, settings.limit)
+  subjects = all | map('fields.subject') | uniq | compact
 }
 {#if classes.length}
 <section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter">
@@ -9,7 +10,7 @@
     <SectionHead heading={ settings.heading } text={ settings.text } view_all_label={ settings.view_all_label } view_all_href={ settings.view_all_href } />
   </div>
   <ul class="mx-auto flex max-w-column snap-x snap-mandatory scroll-px-gutter gap-space-lg overflow-x-auto px-gutter md:grid md:snap-none md:grid-cols-2 md:gap-y-space-xl md:overflow-visible md:px-0 lg:grid-cols-3">
-    {#for entry in classes}<li class="w-4/5 shrink-0 snap-start md:w-auto"><ClassCard entry={ entry } /></li>{/for}
+    {#for entry in classes}<li class="w-4/5 shrink-0 snap-start md:w-auto"><ClassCard entry={ entry } subjects={ subjects } plain={ settings.style == 'plain' } /></li>{/for}
   </ul>
 </section>
 {/if}
@@ -25,6 +26,10 @@
     { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
     { "type": "checkbox", "id": "featured_only", "label": "Featured only", "default": true },
     { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 6 },
+    { "type": "select", "id": "style", "label": "Cards", "default": "cover", "options": [
+      { "value": "cover", "label": "On the subject's cover" },
+      { "value": "plain", "label": "Plain" }
+    ], "info": "A subject's cover colour comes from its place among the subjects, in class order." },
     { "type": "text", "id": "view_all_label", "label": "View all label", "default": "All classes" },
     { "type": "url", "id": "view_all_href", "label": "View all link", "default": "/classes" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }

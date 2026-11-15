@@ -1,16 +1,19 @@
-<!-- What families say, featured first or all, capped at the limit. Rows: up to three across from 64rem, one below, each the thumbnail beside the quote in the heading face and the name line. Carousel: one centred quote at a time in the h3 size with its name line, on a tarot track with page dots. -->
+<!-- What families say, featured first or all, capped at the limit. Rows: up to three across from 64rem, one below, each the thumbnail beside the quote in the heading face and the name line. Carousel: one centred quote at a time in the h3 size with its name line, on a tarot track with page dots under it; from 64rem round arrows at the sides show while the pointer is over it (or one has focus), none on phones. -->
 {#let
   all = content.testimonials.entries | sort('fields.order')
   quotes = (settings.featured_only ? all | where('fields.featured') : all) | slice(0, settings.limit)
-  options = { slidesPerView: 1, gap: '1.5rem', navigation: { showButtons: false, showPagination: true } }
+  options = { slidesPerView: 1, gap: '1.5rem', navigation: { showButtons: true, showPagination: true } }
+  arrow = 'absolute top-1/2 hidden size-control -translate-y-1/2 items-center justify-center rounded-full bg-scheme-surface-2 opacity-0 transition-opacity duration-fast group-hover:opacity-100 focus-visible:opacity-100 disabled:opacity-0 lg:flex'
 }
 {#if quotes.length}
 <section class="overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } />
     {#if settings.layout == 'carousel'}
-      <tarot-carousel class="block">
+      <tarot-carousel class="group relative block">
         <script type="application/json" data-tarot-options>{ options | json }</script>
+        <button class="{ arrow } left-0" type="button" data-action-tarot-previous aria-label="{ t('previous') }"><Icon name="arrow-left" /></button>
+        <button class="{ arrow } right-0" type="button" data-action-tarot-next aria-label="{ t('next') }"><Icon name="arrow-right" /></button>
         <tarot-viewport><tarot-track>
           {#for entry in quotes}
             <tarot-slide>

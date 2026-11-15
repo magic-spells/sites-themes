@@ -1,12 +1,12 @@
 <!-- component: ClassRow -->
-<!-- A class in the prospectus, one link on a rule. From 64rem two columns: the name in Card title over the ages and level in small muted; then on one baseline when it runs, a dotted leader and the price. Below that the when line and the price share the last line, apart. -->
+<!-- A class in the prospectus, one link on a rule. From 48rem two columns: the name in Card title over the ages and level in small muted; then on the name's baseline when it runs, a dotted leader and the price. On phones the when line and the price share the last line, apart. -->
 {#let f = entry.fields}
 <li class="border-b border-scheme-rule">
-  <a class="group grid gap-space-2xs py-space-md lg:grid-cols-2 lg:items-baseline lg:gap-space-lg" href="/classes/{ entry.handle }">
+  <a class="group grid gap-space-xs py-space-md md:grid-cols-2 md:items-baseline md:gap-space-lg" href="/classes/{ entry.handle }">
     <span class="grid gap-space-2xs">
       <span class="font-heading text-h4 group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{ entry.title }</span>
       <span class="text-small text-scheme-muted">{ [f.ages, f.level] | compact | join(' · ') }</span>
     </span>
-    <span class="flex items-baseline justify-between gap-space-sm text-small"><When entry={ entry } /><Leader cls="hidden lg:block" /><span class="text-label"><Price entry={ entry } /></span></span>
+    <span class="flex items-baseline justify-between gap-space-sm text-small"><When entry={ entry } /><Leader cls="hidden md:block" /><span class="text-label"><Price entry={ entry } /></span></span>
   </a>
 </li>

@@ -42,6 +42,7 @@
       "type": "team-grid",
       "preset": "Default",
       "settings": {
+        "limit": 4,
         "color_scheme": "white"
       },
       "blocks": []

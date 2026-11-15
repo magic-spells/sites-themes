@@ -12,9 +12,9 @@
         {#let month = entry.fields.date | slice(0, 7)}
         {#if i == 0 || (list[i - 1].fields.date | slice(0, 7)) != month}
           {#let words = entry.fields.date | date('long') | split(' ')}
-          <div class="grid gap-space-xs lg:grid-cols-month lg:gap-space-2xl { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+          <div class="grid gap-space-xs lg:grid-cols-month lg:items-baseline lg:gap-space-2xl">
             <h3 class="font-heading text-h3">{ words | first } { words | last }</h3>
-            <ul class="border-t border-scheme-rule">{#for item in list}{#if (item.fields.date | slice(0, 7)) == month}<DateRow entry={ item } />{/if}{/for}</ul>
+            <ul class="@container border-t border-scheme-rule">{#for item in list}{#if (item.fields.date | slice(0, 7)) == month}<DateRow entry={ item } />{/if}{/for}</ul>
           </div>
         {/if}
       {/for}

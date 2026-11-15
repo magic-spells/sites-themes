@@ -15,7 +15,9 @@
       "id": "s_list",
       "type": "class-list",
       "preset": "Default",
-      "settings": {},
+      "settings": {
+        "heading": ""
+      },
       "blocks": []
     },
     {

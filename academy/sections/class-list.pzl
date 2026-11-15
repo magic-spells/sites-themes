@@ -1,35 +1,47 @@
-<!-- The prospectus: subject chips that link to this page on one subject (?subject=, read in memory; an unknown one shows every subject), then every class under its subject as rows on feint rules: the name, a dotted leader and the price, and the ages, level and when it runs under it. -->
+<!-- The prospectus. Tabs (All, then each subject in class order) link to this page on one subject (?subject=, no script); the current one is underlined 2px in the text colour, and the row scrolls sideways on phones. Then a group per subject shown: its swatch and name, then its classes as rows. A subject with no classes (an old link) says so and links back to all of them. -->
 {#let
   classes = content.classes.entries | sort('fields.order')
   subjects = classes | map('fields.subject') | uniq | compact
   wanted = request.query.subject
-  picked = wanted && contains(subjects, wanted)
-  shown = picked ? [wanted] : subjects
+  tab = 'shrink-0 border-b-2 border-transparent py-space-sm text-label whitespace-nowrap text-scheme-muted transition-colors duration-fast hover:text-scheme-foreground current:border-scheme-foreground current:text-scheme-foreground'
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column gap-space-xl">
-    {#if subjects.length > 1}
-      <nav class="-mx-gutter flex gap-space-xs overflow-x-auto px-gutter md:mx-0 md:flex-wrap md:px-0" aria-label="{ site.settings.subject_label }">
-        <Chip href={ request.path } label={ t('all') } current={ !picked } />
-        {#for subject in subjects}<Chip href="{ request.path }?subject={ encodeURIComponent(subject) }" label={ subject } current={ picked && wanted == subject } />{/for}
-      </nav>
-    {/if}
-    {#for subject in shown}
-      <div class="grid gap-space-md md:grid-cols-narrow-wide md:gap-space-2xl">
-        <h2 class="flex items-center gap-space-xs self-start font-heading text-h3"><Swatch subject={ subject } />{ subject }</h2>
-        <ul class="border-t border-scheme-rule">{#for entry in classes | where('fields.subject', subject)}<ClassRow entry={ entry } />{/for}</ul>
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    {#if settings.show_tabs && subjects.length > 1}
+      <div class="mb-space-xl border-b border-scheme-rule">
+        <nav class="-mx-gutter -mb-px flex gap-space-lg overflow-x-auto px-gutter md:mx-0 md:px-0" aria-label="{ site.settings.subject_label }">
+          <a class="{ tab }" href="{ request.path }" aria-current={ wanted ? null : 'page' }>{ t('all') }</a>
+          {#for subject in subjects}<a class="{ tab }" href="{ request.path }?subject={ encodeURIComponent(subject) }" aria-current={ wanted == subject ? 'page' : null }>{ subject }</a>{/for}
+        </nav>
       </div>
-    {/for}
+    {/if}
+    <div class="grid gap-space-2xl">
+      {#for subject in (wanted ? [wanted] : subjects)}
+        {#let rows = classes | where('fields.subject', subject)}
+        {#if rows.length}
+          <div class="grid gap-space-xs">
+            <h2 class="flex items-center gap-space-xs font-heading text-h3"><Swatch subject={ subject } subjects={ subjects } />{ subject }</h2>
+            <ul>{#for entry in rows}<ClassRow entry={ entry } />{/for}</ul>
+          </div>
+        {:else}
+          <p class="text-lead">{ t('no_classes_in', { subject }) } <a class="underline decoration-1 underline-offset-4 hover:decoration-2" href="{ request.path }">{ t('all_classes') }</a></p>
+        {/if}
+      {/for}
+    </div>
   </div>
 </section>
 
 <schema>
 {
   "name": "Class list",
-  "description": "Every class under its subject, with its ages, when it runs and its price; subject chips narrow the list.",
+  "description": "Every class under its subject, with its ages, when it runs and its price; subject tabs narrow the list.",
   "kind": "Collections",
   "icon": "list",
   "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Our classes" },
+    { "type": "text", "id": "text", "label": "Text", "default": "" },
+    { "type": "checkbox", "id": "show_tabs", "label": "Subject tabs", "default": true, "info": "All, then one tab per subject; each shows that subject alone." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [

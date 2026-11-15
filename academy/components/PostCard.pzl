@@ -1,14 +1,11 @@
 <!-- component: PostCard -->
 <!-- A journal post, one link: a 3:2 well, the title and the topic and date in small muted; feature sets the well beside them from 48rem, seven parts to five, and adds the standfirst. -->
-{#let
-  f = entry.fields
-  meta = [f.topic, f.date ? f.date | date : null] | compact | join(' · ')
-}
+{#let f = entry.fields}
 <article class="group relative flex h-full flex-col gap-space-sm { feature ? 'md:grid md:grid-cols-wide-narrow md:items-center md:gap-space-xl' : '' } { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
   <Well asset={ f.image } alt={ f.image_alt } width={ feature ? 1200 : 800 } sizes="{ feature ? '(min-width: 48rem) 60vw, 100vw' : '(min-width: 48rem) 50vw, 100vw' }" zoom />
   <div class="grid gap-space-xs">
     <h3 class="font-heading text-h4 text-balance"><a class="after:absolute after:inset-0 group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4" href="/journal/{ entry.handle }">{ entry.title }</a></h3>
-    <p class="text-small text-scheme-muted">{ meta }</p>
+    <p class="text-small text-scheme-muted">{ f.topic }{#if f.date}{#if f.topic} · {/if}<DateRange from={ f.date } year />{/if}</p>
     {#if f.standfirst && feature}<p class="mt-space-xs text-lead text-pretty text-scheme-muted">{ f.standfirst }</p>{/if}
   </div>
 </article>

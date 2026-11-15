@@ -1,4 +1,4 @@
-<!-- The fees as a real table from the classes, one body per subject in class order: the subject with its swatch, then each class with its ages under it in small muted, a dotted leader and the price. From 64rem the table takes seven parts and the extra lines (blocks: registration, a sibling discount) five, on the same leaders, with one note under them. -->
+<!-- The fees as a real table from the classes, one body per subject in class order: the subject with its swatch, then each class with its ages under it in small muted, a dotted leader and the price, the prices in one column as wide as the longest so every leader meets its price. From 64rem the table takes seven parts and the extra lines (blocks: registration, a sibling discount) five, on the same leaders, with one note under them. -->
 {#let
   classes = content.classes.entries | sort('fields.order')
   subjects = classes | map('fields.subject') | uniq | compact
@@ -9,14 +9,14 @@
     <div class="grid items-start gap-space-xl lg:grid-cols-wide-narrow lg:gap-space-2xl">
       <table class="w-full text-left">
         <caption class="sr-only">{ settings.heading || t('fees') }</caption>
-        <thead><tr class="border-b border-scheme-rule text-small text-scheme-muted"><th class="pb-space-xs font-normal" scope="col">{ t('class') }</th><th class="pb-space-xs text-right font-normal" scope="col">{ t('price') }</th></tr></thead>
+        <thead><tr class="border-b border-scheme-rule text-small text-scheme-muted"><th class="pb-space-xs font-normal" scope="col">{ t('class') }</th><th class="pb-space-xs font-normal" scope="col">{ t('price') }</th></tr></thead>
         {#for subject in subjects}
           <tbody>
-            <tr><th class="pt-space-lg pb-space-xs" colspan="2" scope="colgroup"><span class="flex items-center gap-space-xs font-heading text-h4"><Swatch subject={ subject } />{ subject }</span></th></tr>
+            <tr><th class="pt-space-lg pb-space-xs" colspan="2" scope="colgroup"><span class="flex items-center gap-space-xs font-heading text-h4"><Swatch subject={ subject } subjects={ subjects } />{ subject }</span></th></tr>
             {#for entry in classes | where('fields.subject', subject)}
-              <tr class="border-b border-scheme-rule">
+              <tr class="border-b border-scheme-rule align-baseline">
                 <th class="py-cell font-normal" scope="row"><span class="flex items-baseline gap-space-sm"><a class="hover:underline hover:decoration-1 hover:underline-offset-4" href="/classes/{ entry.handle }">{ entry.title }</a><Leader /></span>{#if entry.fields.ages}<span class="block text-small text-scheme-muted">{ entry.fields.ages }</span>{/if}</th>
-                <td class="py-cell ps-space-sm text-right align-top text-label">{#if entry.fields.price}<Price entry={ entry } />{:else}{ t('ask') }{/if}</td>
+                <td class="w-0 py-cell ps-space-sm text-label whitespace-nowrap">{#if entry.fields.price}<Price entry={ entry } />{:else}{ t('ask') }{/if}</td>
               </tr>
             {/for}
           </tbody>

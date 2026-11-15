@@ -1,3 +1,3 @@
 <!-- component: Label -->
-<!-- The exercise book's label: a white panel with md corners and the one shadow, set on a cover or a photo, at most 19rem, holding a name and one line (its children). -->
-<div class="sites-scheme-white grid max-w-label gap-space-2xs justify-self-start rounded-md bg-scheme-background px-label-x py-chip text-scheme-foreground shadow-panel"><Children/></div>
+<!-- The exercise book's label: a white panel with md corners and the one shadow, set on a cover or a photo, as wide as its text up to 19rem, holding a name and one line (its children). It paints over the photo it overlaps. -->
+<div class="sites-scheme-white relative grid w-fit max-w-label gap-space-2xs rounded-md bg-scheme-background px-label-x py-chip text-scheme-foreground shadow-panel"><Children/></div>

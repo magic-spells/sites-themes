@@ -1,12 +1,12 @@
-<!-- The school's story: the text in seven parts beside the 4:5 photo in five from 64rem, the photo right or left. The heading, the prose and the School accreditation lines as a small ruled list. The photo after the text on phones. -->
+<!-- The school's story: the text in seven parts beside the 4:5 photo in five from 64rem, the photo right or left. The heading, the prose and the School accreditation lines as a small ruled list. From 64rem the photo takes no height of its own: the row is the text's height plus 3rem above and below, and the photo is 4:5 up to that height (about 1.3 times a short text), cropped to it past that. The photo after the text on phones. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column items-center gap-space-xl lg:gap-space-2xl { settings.image_side == 'left' ? 'lg:grid-cols-narrow-wide' : 'lg:grid-cols-wide-narrow' }">
-    <div class="grid gap-space-md { settings.image_side == 'left' ? 'lg:order-last' : '' }">
+    <div class="grid gap-space-md lg:py-space-xl { settings.image_side == 'left' ? 'lg:order-last' : '' }">
       <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Rise text={ settings.heading } /></h2>
       <div class="sites-prose max-w-prose">{ settings.text }</div>
       {#if settings.show_accreditation}<Lines cls="max-w-prose text-scheme-muted" ruled />{/if}
     </div>
-    <Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" width={ 960 } sizes="(min-width: 64rem) 30rem, 100vw" />
+    <div class="lg:relative lg:self-stretch"><div class="lg:absolute lg:inset-0 lg:flex lg:items-center"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait w-full max-h-full" width={ 960 } sizes="(min-width: 64rem) 30rem, 100vw" /></div></div>
   </div>
 </section>
 

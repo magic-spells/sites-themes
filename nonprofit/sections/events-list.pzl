@@ -1,0 +1,57 @@
+<!-- Events by date. On an event's page it leaves that event out; past events are the workspace's to unpublish, so nothing here reads today's date. Row: cards, three across from 48rem; past three, a carousel with the progress bar and the arrows under it; on phones a row that swipes, the next card peeking. List (the Events page): rows under a heading for each month. With no events, the empty line stands in for them. -->
+{#let
+  events = content.events.entries | sort('fields.date') | reject('id', page.entry.id) | slice(0, settings.limit)
+  more = events.length > 3
+  options = { slidesPerView: 1.15, gap: '1rem', progressBar: more && { selector: '#bar-' + section.id }, navigation: { showButtons: more, showPagination: false }, breakpoints: { '768': { slidesPerView: 3, gap: '1.5rem' } } }
+}
+<section class="overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-page">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link }>
+      {#if !events.length}
+        <p class="text-scheme-muted">{ settings.empty_text }</p>
+      {:else if settings.layout == 'list'}
+        <div>
+          {#for entry in events, i}
+            {#if i == 0 || (events[i - 1].fields.date | slice(0, 7)) != (entry.fields.date | slice(0, 7))}<h2 class="border-b border-scheme-border pt-space-xl pb-space-sm font-heading text-h4 text-scheme-heading first:pt-0"><Day value={ entry.fields.date } view="month" /></h2>{/if}
+            <EventCard entry={ entry } href="{ settings.base_path }/{ entry.handle }" row />
+          {/for}
+        </div>
+      {:else}
+        <tarot-carousel class="block">
+          <script type="application/json" data-tarot-options>{ options | json }</script>
+          <tarot-viewport class="max-md:overflow-visible"><tarot-track>
+            {#for entry in events}<tarot-slide><EventCard entry={ entry } href="{ settings.base_path }/{ entry.handle }" /></tarot-slide>{/for}
+          </tarot-track></tarot-viewport>
+          {#if more}<Arrows />{/if}
+        </tarot-carousel>
+      {/if}
+    </SectionHead>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Events list",
+  "description": "Coming events by date: cards in a row, or rows under each month.",
+  "kind": "Events",
+  "icon": "calendar",
+  "settings": [
+    { "type": "select", "id": "layout", "label": "Layout", "default": "row", "options": [
+      { "value": "row", "label": "Cards in a row" },
+      { "value": "list", "label": "Rows by month" }
+    ], "info": "Past three cards, the row becomes a carousel." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Events" },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 3 },
+    { "type": "text", "id": "link_label", "label": "Button label", "default": "All events" },
+    { "type": "url", "id": "link", "label": "Button link", "default": "/events" },
+    { "type": "url", "id": "base_path", "label": "Event pages", "default": "/events", "info": "Each event links to this path and its handle." },
+    { "type": "textarea", "id": "empty_text", "label": "With no events", "default": "No events are planned right now. Join the newsletter to hear first." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Row", "settings": { "layout": "row" } },
+    { "name": "List", "settings": { "layout": "list", "heading": "", "limit": 12, "link_label": "" } }
+  ]
+}
+</schema>

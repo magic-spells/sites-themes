@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1
+
+- The 404 page follow the site's base scheme instead of naming the first scheme, so a change of base scheme in the Panel reaches it too.
+
 ## 0.2.0
 
 - The theme keeps `theme.json` and `design.json` in `settings/` and its templates and section

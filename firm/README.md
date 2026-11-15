@@ -57,8 +57,8 @@ licences beside them in `assets/fonts/`. Public Sans's italic is a second file, 
 `legal_line`. A `Button` with no link is the ask: with `ask_url` set it links there (a
 scheduler, say), otherwise it opens the ask panel. A section's button left without a link is the
 ask too, labelled with `ask_label` when its own label is blank. On a practice area's page the
-form's practice select starts on that practice. `form_note` sits above every submit button and
-`legal_line` closes every page.
+form's practice select starts on that practice. `form_note` sits above the submit button of the ask
+panel and the contact form, and `legal_line` closes every page.
 
 A form select with three options or fewer is a radio group; a longer one is a select list.
 

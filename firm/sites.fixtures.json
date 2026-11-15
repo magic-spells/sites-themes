@@ -1043,12 +1043,14 @@
     "/privacy": {
       "id": "pg_privacy",
       "template": "page.privacy",
-      "title": "Privacy"
+      "title": "Privacy",
+      "content": "<p>We keep what you send us only to answer you and to do the work you ask of us. We never sell it, and we share it only where the work or the law requires.</p><h2>What we keep</h2><p>Your name and contact details, what you tell us about your matter, and the records our profession asks us to keep.</p><h2>Your choices</h2><p>Ask us at any time to see what we hold about you, to correct it or, where the law allows, to delete it.</p>"
     },
     "/disclaimer": {
       "id": "pg_disclaimer",
       "template": "page.disclaimer",
-      "title": "Disclaimer"
+      "title": "Disclaimer",
+      "content": "<p>This site is attorney advertising. It gives general information, not legal advice, and reading it or writing to us does not make us your lawyers.</p><h2>When we act for you</h2><p>We are your lawyers once we have both signed an engagement letter that sets out the work.</p><h2>Results</h2><p>Prior results do not guarantee a similar outcome.</p>"
     },
     "/practice-areas/estate-planning": {
       "id": "pg_svc_estate_planning",

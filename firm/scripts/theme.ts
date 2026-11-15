@@ -82,4 +82,4 @@ const returned = new URLSearchParams(location.search).get('form');
 const sent = returned ? document.querySelector(`form[action$="/${returned}"]`) : null;
 const sheet = sent?.closest('sheet-panel') as Panel | null | undefined;
 if (sheet) sheet.show();
-else sent?.scrollIntoView({ block: 'center' });
+else sent?.scrollIntoView();

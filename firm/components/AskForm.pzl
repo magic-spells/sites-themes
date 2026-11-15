@@ -1,5 +1,5 @@
 <!-- A site form whole, as the ask panel and the contact section show it: the Firm ask_form unless handle names another. The fields (Field), the Firm form_note above the submit, the submit with the form's label (or the ask label), and a line for visitors without JavaScript; once sent, the form's thank-you. The form-level error sits above the fields. pair sets short fields two to a row from 48rem. prefix keeps the ids apart when two forms share a page. -->
-<Form handle={ handle || site.settings.ask_form } class="grid gap-space-sm { pair ? 'md:grid-cols-2 md:gap-x-space-md' : '' }">
+<Form handle={ handle || site.settings.ask_form } class="grid scroll-mt-space-3xl gap-space-sm { pair ? 'md:grid-cols-2 md:gap-x-space-md' : '' }">
   {#if form.sent}
     <p class="col-span-full font-heading text-h3 text-balance text-scheme-heading" role="status">{ form.success_message || t('form_success') }</p>
   {:else}

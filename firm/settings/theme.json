@@ -33,7 +33,7 @@
         { "type": "text", "id": "ask_label", "label": "Ask label", "default": "Request a consultation", "info": "The one call to action: the header button, the menu, the ask panel, and every section button left without a link." },
         { "type": "url", "id": "ask_url", "label": "Ask link", "default": "", "info": "Leave empty to open the ask panel. A link here, such as a scheduler, is followed instead." },
         { "type": "form", "id": "ask_form", "label": "Ask form", "default": "consultation" },
-        { "type": "textarea", "id": "form_note", "label": "Form note", "default": "", "info": "Printed above every submit button: sending a form does not make someone a client." },
+        { "type": "textarea", "id": "form_note", "label": "Form note", "default": "", "info": "Printed above the submit button of the ask panel and the contact form: sending a form does not make someone a client." },
         { "type": "textarea", "id": "legal_line", "label": "Legal line", "default": "", "info": "Closes every page under the footer: the advertising, registration or responsible-person line your profession asks for, and the copyright. One paragraph per line." }
       ]
     }

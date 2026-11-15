@@ -1,5 +1,5 @@
-<!-- A section's head: the h2 (with the accent phrase after it in the scheme's accent), the outlined "All …" pill level with it at the right when both pill and href are set, and the standfirst under both. center stacks and centres it, with no pill. Children follow the standfirst. It sets no margin of its own. -->
-<div class="grid gap-x-space-md gap-y-inset { center ? 'justify-items-center text-center' : 'grid-cols-head items-center' }">
+<!-- A section's head: the h2 (with the accent phrase after it in the scheme's accent), the outlined "All …" pill level with it at the right when both pill and href are set, and the standfirst under both. center stacks and centres it, with no pill. Children follow the standfirst. It sets no margin of its own, and with nothing in it takes no room. -->
+<div class="grid gap-x-space-md gap-y-inset empty:hidden { center ? 'justify-items-center text-center' : 'grid-cols-head items-center' }">
   {#if heading}<h2 class="font-heading text-h2 text-balance text-scheme-heading">{ heading }{#if accent} <span class="text-accent">{ accent }</span>{/if}</h2>{/if}
   {#if pill && href && !center}<Button href={ href } label={ pill } tone="outline" pill />{/if}
   {#if text}<p class="col-span-full max-w-reading text-lead text-pretty">{ text }</p>{/if}

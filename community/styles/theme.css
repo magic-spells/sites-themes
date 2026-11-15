@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import "tailwindcss" source(none);
 @import "./vendor/collapsible-content.css" layer(components);
 @import "./vendor/dialog-panel.css" layer(components);
 @import "./vendor/dropdown-panel.css" layer(components);
@@ -31,6 +31,10 @@
 	--color-scheme-button-foreground: var(--sites-scheme-button-foreground);
 	--color-scheme-button-hover-background: var(--sites-scheme-button-hover-background);
 	--color-scheme-button-hover-foreground: var(--sites-scheme-button-hover-foreground);
+	--color-scheme-secondary-button-background: var(--sites-scheme-secondary-button-background);
+	--color-scheme-secondary-button-foreground: var(--sites-scheme-secondary-button-foreground);
+	--color-scheme-secondary-button-hover-background: var(--sites-scheme-secondary-button-hover-background);
+	--color-scheme-secondary-button-hover-foreground: var(--sites-scheme-secondary-button-hover-foreground);
 	--color-scheme-input-background: var(--sites-scheme-input-background);
 	--color-scheme-input-foreground: var(--sites-scheme-input-foreground);
 	--color-scheme-input-border: var(--sites-scheme-input-border);
@@ -94,6 +98,7 @@
 	--spacing-section-loose: var(--community-section-loose);
 	--spacing-gutter: var(--community-gutter);
 	--spacing-button-x: var(--sites-button-padding-x);
+	--spacing-button-y: var(--sites-button-padding-y);
 	--spacing-pill-x: 1.125rem;
 	--spacing-control: 2.75rem;
 	--spacing-pill: 2.5rem;
@@ -249,12 +254,6 @@ html.reveal-off split-text:not(:defined) {
 }
 
 @layer base {
-	dialog {
-		border: 0;
-		padding: 0;
-		color: inherit;
-	}
-
 	[id] {
 		scroll-margin-top: 6rem;
 	}
@@ -334,13 +333,9 @@ select-dropdown {
 	--select-color-text: var(--sites-scheme-input-foreground);
 	--select-color-background: var(--sites-scheme-input-background);
 	--select-color-border: var(--sites-scheme-input-border);
-	--select-color-border-hover: var(--sites-scheme-input-foreground);
-	--select-color-border-dark: var(--sites-scheme-input-foreground);
-	--select-color-primary: var(--sites-scheme-input-foreground);
 	--select-color-hover: var(--sites-scheme-chip-background);
 	--select-color-focus: var(--sites-scheme-chip-background);
 	--select-color-selected: var(--sites-scheme-chip-background);
-	display: block;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -348,7 +343,6 @@ select-dropdown {
 		animation-duration: 0.001ms !important;
 		animation-iteration-count: 1 !important;
 		transition-duration: 0.001ms !important;
-		scroll-behavior: auto !important;
 	}
 	/* The ticker stands still: one copy, cut with an ellipsis. */
 	[data-ticker] scrolling-content { mask-image: none; }

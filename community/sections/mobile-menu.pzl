@@ -2,7 +2,7 @@
 {#let s = site.settings}
 <dialog-panel id="mobile-menu" position="right">
   <dialog-backdrop class="bg-backdrop backdrop-blur-sm"></dialog-backdrop>
-  <dialog class="ms-auto h-dvh w-full max-w-sign overflow-y-auto bg-scheme-background text-scheme-foreground" aria-label="{ t('menu') }">
+  <dialog class="w-full max-w-sign overflow-y-auto bg-scheme-background text-scheme-foreground" aria-label="{ t('menu') }">
     <div class="grid gap-space-xl px-gutter pb-space-xl">
       <div class="flex min-h-control items-center justify-end pt-space-sm">
         <button class="-me-space-sm flex size-control items-center justify-center" type="button" data-action-hide-dialog><Glyph name="close" /><span class="sr-only">{ t('close') }</span></button>
@@ -19,7 +19,7 @@
           </ul>
         </nav>
       {/if}
-      {#if s.ask_label && s.ask_url}<Button ask wide />{/if}
+      {#if s.ask_label && s.ask_url}<Button href={ s.ask_url } wide>{ s.ask_label }</Button>{/if}
       <div class="grid gap-space-md"><Hours size="sm" /><Address /></div>
     </div>
   </dialog>

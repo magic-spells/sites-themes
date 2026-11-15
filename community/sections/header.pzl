@@ -4,7 +4,7 @@
   name = s.name || site.name
   link = 'underline-offset-8 decoration-1 hover:underline current:underline'
 }
-<sticky-header class="block" settle-overshoot="0" disabled={ !settings.sticky }>
+<sticky-header settle-overshoot="0" disabled={ !settings.sticky }>
   <header class="border-b border-transparent bg-scheme-background px-gutter py-space-sm text-scheme-foreground transition-all duration-fast lg:py-space-lg scrolled:border-scheme-border scrolled:py-space-xs">
     <div class="mx-auto flex max-w-column items-center gap-space-xl">
       <a class="me-auto line-clamp-2 max-w-sign font-heading text-balance text-scheme-heading { name.length > 32 ? 'text-h4' : 'text-h4 md:text-h3' }" href="/">{#if s.logo}<img class="block h-auto max-w-full" src="{ image_url(s.logo, 480) }" alt="{ name }" width={ s.logo_width * 16 } height={ (s.logo_width * 16 * s.logo.height / s.logo.width) | round } />{:else}{ name }{/if}</a>
@@ -28,7 +28,7 @@
           </ul>
         </nav>
       {/if}
-      {#if s.ask_label && s.ask_url}<Button ask cls="max-lg:hidden" />{/if}
+      {#if s.ask_label && s.ask_url}<Button href={ s.ask_url } cls="max-lg:hidden">{ s.ask_label }</Button>{/if}
       <button class="-me-space-sm flex size-control items-center justify-center lg:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu"><Glyph name="menu" /><span class="sr-only">{ t('menu') }</span></button>
     </div>
   </header>

@@ -13,8 +13,8 @@ text. The photographs are SVG placeholders; replace them before publishing.
 
 ```
 settings/theme.json template roles, 3 section groups, Brand, House and Contact settings
-settings/design.json every design token, the six schemes (paper, mist, cream, blue, moss,
-                    umber) and the Hall Paint and Tea Room palettes
+settings/design.json every design token and the six schemes (paper, mist, cream, blue, moss,
+                    umber)
 layouts/default.pzl the <html> document: SEO, Open Graph, the reveal pre-paint script, skip link, slots
 data/templates/     home, group, event, album, post and page (+ about, contact, groups, hire,
                     news, photos, privacy, visit, whats-on) as JSON
@@ -60,8 +60,6 @@ Closed`. Nothing reads a clock, so no day is ever marked open or closed.
 The theme declares `query: ["kind", "topic"]`: the groups' kinds and the posts' topics are plain
 `?kind=` and `?topic=` links with `aria-current` on the one showing.
 
-## Palettes
+## Palette
 
-**Stencil** (municipal blue, moss and umber on warm paper) is the default. **Hall Paint** and
-**Tea Room** are the alternatives as suggested palettes; a switch is a values edit of the
-schemes in `settings/design.json`, never markup.
+**Stencil**: municipal blue, moss and umber on warm paper.

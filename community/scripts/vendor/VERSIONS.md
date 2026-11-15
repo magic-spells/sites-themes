@@ -16,6 +16,6 @@ them is an npm dependency of the theme; the build resolves only these relative i
 | reveal.js, ../styles/vendor/reveal.css | @magic-spells/reveal | 0.1.1 | npm |
 | split-text.esm.js, ../styles/vendor/split-text.css | @magic-spells/split-text | 0.2.0 | npm (the headings that rise in) |
 
-All copied from the Clinic, Ritual and Circuit themes' vendored copies. Tarot and its lightbox are unpublished and intentionally absent from package.json. All runtime builds here are imported by theme.ts; all vendor stylesheets except reveal's are imported into the components layer. CSS lengths other than borders and shadows are rem; JavaScript builds are unchanged.
+All copied from the Clinic, Ritual and Circuit themes' vendored copies. Tarot and its lightbox are unpublished and intentionally absent from package.json. All runtime builds here are imported by theme.ts; all vendor stylesheets except reveal's are imported into the components layer. CSS lengths other than borders and shadows are rem, except reveal.css's own px defaults; JavaScript builds are unchanged.
 
 The adjacent tarot.esm.d.ts and tsconfig exclusion mirror the other themes: TypeScript 7 rejects the valid static private access through this.constructor in the runtime build. The declaration covers the registration-only theme import.

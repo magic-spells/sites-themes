@@ -11,5 +11,5 @@
   contact and the page header.
 - Home, group, event, album, post and page templates, with groups, what's on, photos, news,
   visit, about, hire, contact and privacy pages; the 404, password and maintenance pages.
-- Six colour schemes (paper, mist, cream, blue, moss, umber) and three palettes (Stencil, Hall
-  Paint, Tea Room); Averia Serif Libre and Radio Canada self-hosted; Lucide glyphs in one sprite.
+- Six colour schemes (paper, mist, cream, blue, moss, umber) on the Stencil palette; Averia Serif
+  Libre and Radio Canada self-hosted; Lucide glyphs in one sprite.

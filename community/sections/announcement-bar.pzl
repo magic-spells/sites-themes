@@ -5,9 +5,9 @@
   <div class="mx-auto flex min-h-control max-w-column items-center text-label { marquee ? '' : 'ps-control' }">
     <a class="block min-w-0 flex-1 py-space-xs decoration-1 underline-offset-4 hover:underline" href={ settings.link || null }>
       {#if marquee}
-        <scrolling-content class="block" speed="30" fade>
+        <scrolling-content speed="30" fade>
           <scrolling-track>
-            <scrolling-item class="flex">{#for n in [1, 2, 3]}<span class="pe-space-3xl whitespace-nowrap">{ settings.text }</span>{/for}</scrolling-item>
+            <scrolling-item>{#for n in [1, 2, 3]}<span class="pe-space-3xl whitespace-nowrap">{ settings.text }</span>{/for}</scrolling-item>
           </scrolling-track>
         </scrolling-content>
       {:else}

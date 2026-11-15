@@ -1,0 +1,39 @@
+<!-- component: FormFields -->
+<!-- A site form whole, for the contact and volunteer forms: its fields in two columns from 48rem (text, email and select fields take half a row, the message and checkboxes the full row), the submit button, and the sent and error states (?form=…&sent=1 / &error=1). The engine's field types are text, textarea, email, checkbox and select: a field with the id phone is a telephone field, and a select is a select-dropdown. prefix keeps the field ids apart when two forms share a page. -->
+<Form handle={ handle } class="grid gap-space-md md:grid-cols-2" id="form-{ prefix }">
+  {#if form.sent}
+    <p class="font-heading text-h3 md:col-span-2" role="status">{ form.success_message || t('form_success') }</p>
+  {:else}
+    {#if form.error}<p class="text-small text-scheme-error md:col-span-2" role="alert">{ t('form_error') }</p>{/if}
+    {#for field in form.fields}
+      {#let err = field.error ? 'error-' + prefix + '-' + field.id : null}
+      {#if field.type == 'select'}
+        <div>
+          <span class="mb-space-xs block text-label" id="label-{ prefix }-{ field.id }">{ field.label }{#if field.required}<span aria-hidden="true"> *</span>{/if}</span>
+          <select-dropdown class="text-body" aria-labelledby="label-{ prefix }-{ field.id }">
+            <select-trigger class="flex min-h-control items-center justify-between gap-space-sm rounded-field border bg-scheme-input px-field-x text-scheme-input-text { field.error ? 'border-scheme-error' : 'border-scheme-field' }" aria-describedby={ err }>
+              <span class="select-label-text truncate { field.value ? '' : 'text-scheme-muted' }">{ field.value || t('choose') }</span>
+              <Glyph name="chevron-down" />
+            </select-trigger>
+            <input type="hidden" name={ field.id } value={ field.value } />
+            <select-panel>
+              {#for option in field.options}<select-option value={ option } selected={ field.value == option }>{ option }</select-option>{/for}
+            </select-panel>
+          </select-dropdown>
+          {#if err}<p class="mt-space-xs text-small text-scheme-error" id="{ err }">{ t('form_field_' + field.error) }</p>{/if}
+        </div>
+      {:else if field.type == 'checkbox'}
+        <div class="md:col-span-2">
+          <label class="flex items-start gap-space-sm text-body"><input class="mt-space-2xs size-icon shrink-0 accent-scheme-foreground" type="checkbox" name={ field.id } value="on" checked={ field.value == 'on' } required={ field.required } aria-invalid={ field.error ? 'true' : 'false' } aria-describedby={ err } />{ field.label }</label>
+          {#if err}<p class="mt-space-xs text-small text-scheme-error" id="{ err }">{ t('form_field_' + field.error) }</p>{/if}
+        </div>
+      {:else}
+        <Field name={ field.id } label={ field.label } type={ field.id == 'phone' ? 'tel' : field.type } placeholder={ t('placeholder.' + field.id) } required={ field.required } maxlength={ field.max_length } value={ field.value } error={ field.error } prefix={ prefix } wide={ field.type == 'textarea' } />
+      {/if}
+    {/for}
+    <div class="grid justify-items-start gap-space-sm md:col-span-2">
+      <Button type="submit" cls="max-md:w-full">{ form.submit_label || t('send') }</Button>
+      <noscript><p class="text-small text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+    </div>
+  {/if}
+</Form>

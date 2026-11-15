@@ -1,0 +1,9 @@
+<!-- component: Button -->
+<!-- The button: a pill in the label size and the button weight, sentence case. tone: solid (the scheme's button, 86% into the ground on hover; the default) or outline (a hairline in the text colour, the text at 8% on hover). With type it is a <button> of that type. ask is the header ask: the Organisation label and link, or the giving page when the link is empty; give links to the giving page. Either renders nothing while its link is empty. small is the 2.5rem pill for "All …"; editor_id marks a block's button for the editor; cls adds classes. -->
+{#let
+  s = site.settings
+  url = ask ? (s.ask_url || s.give_url) : (give ? s.give_url : href)
+  look = tone == 'outline' ? 'border-scheme-foreground text-scheme-foreground hover:bg-scheme-outline-hover' : 'border-scheme-button bg-scheme-button text-scheme-button-label hover:border-scheme-button-hover hover:bg-scheme-button-hover'
+  all = 'inline-flex items-center justify-center gap-space-xs rounded-button border text-label font-button whitespace-nowrap transition-colors duration-150 ease-out ' + (small ? 'min-h-control-sm px-button-x-sm ' : 'min-h-control px-button-x ') + look + (cls ? ' ' + cls : '')
+}
+{#if type}<button class="{ all }" type="{ type }" data-block={ editor_id }><Children/></button>{:else if url}<a class="{ all }" href="{ url }" data-block={ editor_id }><Children>{ ask ? s.ask_label : '' }</Children></a>{/if}

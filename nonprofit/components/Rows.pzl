@@ -1,0 +1,17 @@
+<!-- component: Rows -->
+<!-- Rows over hairlines that open and close: the title in the label weight with a plus that turns to a cross, the body under it, and its link when the row has one. items are blocks, each with settings.title and settings.body (rich text), and optionally settings.link_label and settings.link. The first opens when first_open. Without JavaScript every row shows. -->
+<ul class="border-t border-scheme-border">
+  {#for item in items, i}
+    <li class="border-b border-scheme-border" data-block={ item.editor_id }>
+      <collapsible-component>
+        <h3><button class="group flex w-full items-center justify-between gap-space-md py-space-md text-left text-label" type="button">{ item.settings.title }<Glyph name="plus" cls="size-icon transition-transform duration-150 ease-out group-aria-expanded:rotate-45" /></button></h3>
+        <collapsible-content open={ first_open && i == 0 }>
+          <div class="grid max-w-reading gap-space-sm pb-space-md">
+            <div class="prose text-body">{ item.settings.body }</div>
+            {#if item.settings.link_label && item.settings.link}<p><a class="text-link underline decoration-1 underline-offset-4 hover:decoration-2" href="{ item.settings.link }">{ item.settings.link_label }</a></p>{/if}
+          </div>
+        </collapsible-content>
+      </collapsible-component>
+    </li>
+  {/for}
+</ul>

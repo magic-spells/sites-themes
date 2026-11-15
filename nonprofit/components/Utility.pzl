@@ -1,0 +1,5 @@
+<!-- component: Utility -->
+<!-- The utility pages' band (404, password, maintenance): their content centred in the page column on the base scheme, which they follow because they pin none. bare hides the header, footer and panel groups (styles/theme.css). -->
+<section class="flex flex-1 items-center px-gutter py-section" data-bare={ bare ? true : null }>
+  <div class="mx-auto grid w-full max-w-page justify-items-center gap-space-md text-center"><Children/></div>
+</section>

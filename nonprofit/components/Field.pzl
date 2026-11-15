@@ -1,0 +1,16 @@
+<!-- component: Field -->
+<!-- A labelled input: the label above in the label size, the box on the band's ground with its field border, the text colour on focus, the placeholder in the muted colour, and the error under it, tied by aria-describedby. bare keeps the label for screen readers only (the newsletter's one field). wide takes the full row of a two-column form; cls sets the wrapper's classes otherwise. -->
+{#let
+  id = 'field-' + prefix + '-' + name
+  err = error ? 'error-' + prefix + '-' + name : null
+  box = 'block w-full rounded-field border bg-scheme-input px-field-x py-field-y text-body text-scheme-input-text placeholder:text-scheme-muted focus:border-scheme-foreground ' + (error ? 'border-scheme-error' : 'border-scheme-field')
+}
+<div class={ wide ? 'md:col-span-2' : (cls ?? null) }>
+  <label class="{ bare ? 'sr-only' : 'mb-space-xs block text-label' }" for="{ id }">{ label }{#if required && !bare}<span aria-hidden="true"> *</span>{/if}</label>
+  {#if type == 'textarea'}
+    <textarea class="{ box } min-h-textarea resize-y" id="{ id }" name={ name } placeholder={ placeholder } maxlength={ maxlength } required={ required } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ err }>{ value }</textarea>
+  {:else}
+    <input class="{ box } min-h-control" id="{ id }" name={ name } type={ type ?? 'text' } placeholder={ placeholder } autocomplete={ autocomplete ?? (type == 'email' ? 'email' : (type == 'tel' ? 'tel' : (name == 'name' ? 'name' : 'off'))) } maxlength={ maxlength } required={ required } value={ value } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ err } />
+  {/if}
+  {#if error}<p class="mt-space-xs text-small text-scheme-error" id="{ err }">{ t('form_field_' + error) }</p>{/if}
+</div>

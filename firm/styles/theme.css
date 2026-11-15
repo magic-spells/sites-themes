@@ -177,6 +177,12 @@ main > :is(
 	padding-top: 0;
 }
 
+/* The dark schemes draw native controls dark: a radio's or a checkbox's box
+   (Field fills it with the scheme's button colour). */
+:is(.sites-scheme-graphite, .sites-scheme-navy, .sites-scheme-brown, .sites-scheme-midnight) {
+	color-scheme: dark;
+}
+
 /* The password and maintenance pages stand alone. */
 body:has([data-bare]) [data-group] {
 	display: none;

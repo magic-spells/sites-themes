@@ -9,12 +9,12 @@ them is an npm dependency of the theme; the build resolves only these relative i
 | ../styles/vendor/dialog-panel.css | @magic-spells/dialog-panel | 2.0.3 | npm (the stylesheet only; the script is inside sheet.min.js) |
 | sticky-header.js, ../styles/vendor/sticky-header.css | @magic-spells/sticky-header | 0.2.0 | npm |
 | scrolling-content.js, ../styles/vendor/scrolling-content.css | @magic-spells/scrolling-content | 2.1.1 | npm (the announcement marquee) |
-| select-dropdown.js, ../styles/vendor/select-dropdown.css | @magic-spells/select-dropdown | 0.3.0 | npm (a form select of four options or more) |
+| select-dropdown.js, ../styles/vendor/select-dropdown.css | @magic-spells/select-dropdown | 0.3.1 | npm (a form select of four options or more; 0.3.1 keeps a long list inside the ask drawer and blocks an empty required select) |
 | collapsible-content.js, ../styles/vendor/collapsible-content.css | @magic-spells/collapsible-content | 1.2.0 | npm |
 | tarot.esm.js, ../styles/vendor/tarot.css | @magic-spells/tarot | 0.1.0 (unpublished) | tarot monorepo packages/tarot/dist, built 2026-10-31 |
 
-dialog-panel, sticky-header and scrolling-content came from the Clinic theme's vendored copies; select-dropdown,
-collapsible-content and tarot from the Community theme's, all byte for byte. Each runtime build is imported by theme.ts,
+dialog-panel, sticky-header and scrolling-content came from the Clinic theme's vendored copies; collapsible-content
+and tarot from the Community theme's; select-dropdown 0.3.1 from the Academy theme's, all byte for byte. Each runtime build is imported by theme.ts,
 and each stylesheet into the components layer. CSS lengths other than borders and shadows are rem (sheet.min.css's
 twelve px tokens converted at 16:1; Sheet probes every length token, so rem reaches its geometry unchanged);
 JavaScript builds are unchanged.

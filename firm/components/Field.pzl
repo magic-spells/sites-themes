@@ -10,15 +10,15 @@
 }
 <div class={ cls ?? (short ? null : 'col-span-full') }>
   {#if field.type == 'checkbox'}
-    <label class="flex items-start gap-space-xs text-small"><input class="size-icon shrink-0 accent-scheme-foreground" id="{ id }" type="checkbox" name={ field.id } value="on" checked={ field.value == 'on' } required={ field.required } aria-invalid={ bad } aria-describedby={ err } />{ field.label }</label>
+    <label class="flex items-start gap-space-xs text-small"><input class="size-icon shrink-0 accent-scheme-button" id="{ id }" type="checkbox" name={ field.id } value="on" checked={ field.value == 'on' } required={ field.required } aria-invalid={ bad } aria-describedby={ err } />{ field.label }</label>
   {:else if field.type == 'select' && field.options.length <= 3}
     <fieldset class="grid gap-inset md:grid-cols-2" aria-describedby={ err }>
       <legend class="mb-inset text-label">{ field.label }</legend>
-      {#for option in field.options}<label class="flex items-start gap-space-xs text-small"><input class="size-icon shrink-0 accent-scheme-foreground" type="radio" name={ field.id } value={ option } checked={ chosen == option } required={ field.required } aria-invalid={ bad } />{ option }</label>{/for}
+      {#for option in field.options}<label class="flex items-start gap-space-xs text-small"><input class="size-icon shrink-0 accent-scheme-button" type="radio" name={ field.id } value={ option } checked={ chosen == option } required={ field.required } aria-invalid={ bad } />{ option }</label>{/for}
     </fieldset>
   {:else if field.type == 'select'}
     <span class="mb-space-xs block text-label" id="{ id }-label">{ field.label }</span>
-    <select-dropdown class="text-body">
+    <select-dropdown class="text-body" required={ field.required }>
       <select-trigger class="{ box } flex min-h-control items-center justify-between gap-space-sm py-0" aria-labelledby="{ id }-label { id }-value" aria-invalid={ bad } aria-describedby={ err }>
         <span class="select-label-text truncate" id="{ id }-value">{ chosen || t('choose') }</span>
         <Glyph name="chevron-down" />

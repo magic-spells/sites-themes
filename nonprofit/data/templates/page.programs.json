@@ -7,7 +7,29 @@
       "type": "page-header",
       "preset": "Default",
       "settings": {
+        "heading": "Our programmes",
         "text": "Twelve ways we feed Larkfield, all free."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_programs",
+      "type": "programs-grid",
+      "preset": "All",
+      "settings": {
+        "heading": "",
+        "link_label": ""
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Default",
+      "settings": {
+        "heading": "Newsletter",
+        "text": "One email a month with what we cooked, who helped and what the pantry needs.",
+        "color_scheme": "chalk"
       },
       "blocks": []
     }

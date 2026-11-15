@@ -1,13 +1,23 @@
 {
   "label": "Post",
-  "description": "A post.",
+  "description": "A post and the newest after it.",
   "sections": [
     {
-      "id": "s_header",
-      "type": "page-header",
+      "id": "s_post",
+      "type": "post",
       "preset": "Default",
+      "settings": {},
+      "blocks": []
+    },
+    {
+      "id": "s_posts",
+      "type": "journal-list",
+      "preset": "Grid",
       "settings": {
-        "text": ""
+        "view": "grid",
+        "heading": "More news",
+        "limit": 3,
+        "color_scheme": "chalk"
       },
       "blocks": []
     }

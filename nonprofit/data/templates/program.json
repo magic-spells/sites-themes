@@ -1,13 +1,25 @@
 {
   "label": "Programme",
-  "description": "A programme's page.",
+  "description": "A programme's page and what is coming up.",
   "sections": [
     {
-      "id": "s_header",
-      "type": "page-header",
+      "id": "s_program",
+      "type": "program-detail",
       "preset": "Default",
       "settings": {
-        "text": ""
+        "link_label": "Sign up"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_events",
+      "type": "events-list",
+      "preset": "Row",
+      "settings": {
+        "layout": "row",
+        "heading": "Coming up",
+        "limit": 3,
+        "color_scheme": "chalk"
       },
       "blocks": []
     }

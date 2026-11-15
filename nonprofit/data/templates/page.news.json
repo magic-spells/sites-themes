@@ -1,13 +1,27 @@
 {
   "label": "News",
-  "description": "Stories, news and recipes.",
+  "description": "Stories, news and recipes, by topic.",
   "sections": [
     {
       "id": "s_header",
       "type": "page-header",
       "preset": "Default",
       "settings": {
+        "heading": "News",
         "text": "Stories from the kitchen, news from the pantry and the recipes we cook most."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_posts",
+      "type": "journal-list",
+      "preset": "News page",
+      "settings": {
+        "view": "grid",
+        "heading": "",
+        "limit": 12,
+        "topics": true,
+        "link_label": ""
       },
       "blocks": []
     }

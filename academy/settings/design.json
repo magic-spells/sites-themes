@@ -31,13 +31,13 @@
   },
   "fonts": {
     "heading": {
-      "family": "Libre Baskerville",
+      "family": "Academy Serif",
       "weights": [
         500,
         600
       ],
       "source": "self-hosted",
-      "url": "/_sites/theme/fonts/libre-baskerville-wght-normal.woff2"
+      "url": "/_sites/theme/fonts/academy-serif-latin-wght-normal.woff2"
     },
     "body": {
       "family": "Radio Canada",

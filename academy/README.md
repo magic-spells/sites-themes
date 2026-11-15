@@ -5,9 +5,10 @@ tutoring, swimming. The site is the school's paperwork, typeset properly, so a p
 the week, the fees and the term dates on a phone without opening a PDF. The world is the
 exercise book: coloured covers for the subjects, a white label on a cover or a photo, feint
 rules under every row of the timetable, the class list, the fees and the dates, and dotted
-leaders from a name to its price or time. Libre Baskerville carries the headings and Radio
+leaders from a name to its price or time. Academy Serif carries the headings and Radio
 Canada the rest, on eight schemes: feint, white, manila, light blue, ink, blue, burgundy and
-brick.
+brick. Academy Serif is Libre Baskerville cut to the latin characters and the weights 500 to
+600, and renamed because the font's licence reserves its name for the original.
 
 The fixtures are an invented school, **Larkfield Academy** in the Old Corn Exchange, so `sites dev`
 shows five subjects, fourteen classes, twenty-two weekly sessions, twelve dates, six teachers,
@@ -26,7 +27,7 @@ sections/           32, each with a full <schema>
 components/         the shared pieces: the cards and rows, the label, the leader, the form
 styles/theme.css    Tailwind with every token in @theme
 scripts/theme.ts    the vendored components and the small behaviours they leave out
-assets/             Libre Baskerville and Radio Canada (OFL), glyphs.svg, the favicon, the placeholders
+assets/             Academy Serif and Radio Canada (OFL), glyphs.svg, the favicon, the placeholders
 ```
 
 ## Content

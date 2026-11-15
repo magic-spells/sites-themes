@@ -15,5 +15,6 @@
   short names.
 - Subject covers: each subject takes a cover colour from its place in class order (blue,
   brick, burgundy, ink, light blue), on its swatch, its exercise-book cover and its class cards.
-- Eight schemes (feint, white, manila, light blue, ink, blue, burgundy, brick), Libre
-  Baskerville and Radio Canada, and fixtures for Larkfield Academy.
+- Eight schemes (feint, white, manila, light blue, ink, blue, burgundy, brick), Academy
+  Serif and Radio Canada, and fixtures for Larkfield Academy. Academy Serif is a latin subset
+  of Libre Baskerville at weights 500 to 600, renamed per its Reserved Font Name.

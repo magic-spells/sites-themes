@@ -1,3 +1,5 @@
+academy-serif-latin-wght-normal.woff2 is a subset of Libre Baskerville (latin, weights 500 to 600), renamed Academy Serif per the Reserved Font Name.
+
 Copyright 2012 The Libre Baskerville Project Authors (https://github.com/impallari/Libre-Baskerville) with Reserved Font Name Libre Baskerville.
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.

@@ -2,7 +2,7 @@
 
 ## 0.2.1
 
-- The 404 page follow the site's base scheme instead of naming the first scheme, so a change of base scheme in the Panel reaches it too.
+- The 404 page follows the site's base scheme instead of naming the first scheme, so a change of base scheme in the Panel reaches it too.
 
 ## 0.2.0
 

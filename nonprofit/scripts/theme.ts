@@ -20,10 +20,6 @@ import Reveal from './vendor/reveal.js';
 
 const DISMISSED_PREFIX = 'sites:dismissed:';
 
-interface Panel extends HTMLElement {
-	show(trigger?: Element): unknown;
-}
-
 /** localStorage is unavailable in some privacy modes; both sides of the
  * remembering are guarded. */
 function dismissed(key: string): boolean {
@@ -46,21 +42,13 @@ function closest(event: Event, selector: string): HTMLElement | null {
 	return ((event.target as Element | null)?.closest?.(selector) as HTMLElement | null) ?? null;
 }
 
-// A button names the panel it opens (the menu drawer). Focus goes back to it
-// when the panel would otherwise drop it on <body>.
+// A button names the panel it opens (the menu drawer); the panel hands focus
+// back to it on close.
 document.addEventListener('click', (event) => {
 	const opener = closest(event, '[data-panel-open]');
-	const panel = document.getElementById(opener?.getAttribute('data-panel-open') ?? '') as Panel | null;
-	if (!opener || typeof panel?.show !== 'function') return;
-	event.preventDefault();
+	const panel = opener && (document.getElementById(opener.getAttribute('data-panel-open') ?? '') as (HTMLElement & { show(trigger: Element): void }) | null);
+	if (!opener || !panel?.show) return;
 	panel.show(opener);
-	panel.addEventListener(
-		'hidden',
-		() => {
-			if (document.activeElement === document.body || !document.activeElement) opener.focus();
-		},
-		{ once: true },
-	);
 });
 
 // The cookie notice shows once per visitor and key; either button hides it

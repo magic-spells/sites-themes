@@ -10,10 +10,10 @@
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column gap-space-xl">
     <header class="grid max-w-hero gap-space-sm">
-      <h1 class="font-heading text-h1 text-balance"><Rise text={ album.title } /></h1>
+      <h1 class="font-heading text-h1 text-balance text-scheme-heading"><Rise text={ album.title } /></h1>
       {#if f.date}<p class="text-label text-scheme-muted tnum">{ f.date | date('long') }</p>{/if}
       {#if f.description}<p class="max-w-reading pt-space-xs text-lead text-pretty">{ f.description }</p>{/if}
-      {#if f.event}<p><span class="text-scheme-muted">{ t('from_the_event') }</span> <a class="underline decoration-1 underline-offset-4 hover:decoration-2" href="/whats-on/{ f.event.handle }">{ f.event.title }</a></p>{/if}
+      {#if f.event}<p><span class="text-scheme-muted">{ t('from_the_event') }</span> <a class="text-scheme-link underline decoration-1 underline-offset-4 hover:decoration-2" href="/whats-on/{ f.event.handle }">{ f.event.title }</a></p>{/if}
     </header>
     {#if items.length}
       <LightboxCompanion items={ items } id={ id }><script type="application/json" data-tarot-options>{ lb | json }</script></LightboxCompanion>

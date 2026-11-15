@@ -13,7 +13,7 @@
     <div class="grid items-start gap-space-xl { f.image ? 'lg:grid-cols-seven-five lg:gap-space-2xl' : 'max-w-reading' }">
       <div class="grid gap-space-lg">
         <header class="grid gap-space-md">
-          <h1 class="font-heading text-h1 text-balance"><Rise text={ entry.title } /></h1>
+          <h1 class="font-heading text-h1 text-balance text-scheme-heading"><Rise text={ entry.title } /></h1>
           {#if f.summary}<p class="max-w-reading text-lead text-pretty">{ f.summary }</p>{/if}
         </header>
         <div class="flex flex-wrap items-center justify-between gap-space-md border-b border-scheme-border pb-space-md">

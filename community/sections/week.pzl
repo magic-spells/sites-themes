@@ -9,7 +9,7 @@
     <div class="{ 'paper' | scheme_class } rounded-paper bg-scheme-background px-space-lg py-space-xs text-scheme-foreground tnum md:px-space-xl md:py-space-sm">
       {#for d in days, i}
         <div class="grid gap-y-space-2xs border-t border-scheme-border py-space-md first:border-t-0 md:flex md:items-baseline md:gap-x-space-xl { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-delay={ site.settings.reveal ? i * 60 : null }>
-          <h3 class="shrink-0 font-heading text-h4 md:w-day">{ t('day.' + d) }</h3>
+          <h3 class="shrink-0 font-heading text-h4 text-scheme-heading md:w-day">{ t('day.' + d) }</h3>
           <ul class="grid min-w-0 gap-space-2xs">
             {#for g in groups}
               {#if contains(g.fields.days | downcase, d)}

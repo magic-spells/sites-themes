@@ -7,7 +7,7 @@
   <div class="mx-auto grid max-w-column items-center gap-space-xl md:gap-space-2xl { settings.image ? (right ? 'md:grid-cols-five-seven' : 'md:grid-cols-seven-five') : '' }">
     {#if settings.image}<div class="{ right ? 'md:order-last' : '' }"><Well asset={ settings.image } ratio="aspect-wide" width={ 1200 } sizes="(min-width: 48rem) 55vw, 100vw" /></div>{/if}
     <div class="grid max-w-reading justify-items-start gap-space-md">
-      {#if settings.heading}<h2 class="font-heading text-h2 text-balance"><Rise text={ settings.heading } /></h2>{/if}
+      {#if settings.heading}<h2 class="font-heading text-h2 text-balance text-scheme-heading"><Rise text={ settings.heading } /></h2>{/if}
       {#if settings.text}<div class="sites-prose text-pretty">{ settings.text }</div>{/if}
       {#if link?.href && link?.label}<Button href={ link.href } tone="secondary" cls="mt-space-xs">{ link.label }</Button>{/if}
     </div>

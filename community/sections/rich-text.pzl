@@ -5,7 +5,7 @@
 }
 <section class="bg-scheme-background px-gutter text-scheme-foreground { who ? 'py-section-loose' : 'py-section' }">
   <div class="mx-auto grid max-w-reading gap-space-lg { centre ? 'justify-items-center text-center' : '' }">
-    {#if settings.heading}<h2 class="font-heading text-h2 text-balance"><Rise text={ settings.heading } /></h2>{/if}
+    {#if settings.heading}<h2 class="font-heading text-h2 text-balance text-scheme-heading"><Rise text={ settings.heading } /></h2>{/if}
     <div class="sites-prose text-pretty { who ? 'text-lead' : '' }">{#if settings.body}{ settings.body }{:else}{ page.content }{/if}</div>
     {#if who}<PersonLine person={ who } />{/if}
   </div>

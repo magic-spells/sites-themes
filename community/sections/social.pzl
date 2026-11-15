@@ -3,7 +3,7 @@
 {#if tiles.length}
 <section class="bg-scheme-background px-gutter py-space-lg text-scheme-foreground md:py-space-xl">
   <div class="mx-auto grid max-w-column gap-space-md md:flex md:items-center md:gap-space-2xl">
-    {#if settings.handle}<h2 class="font-heading text-h4"><a class="decoration-1 underline-offset-4 hover:underline" href="{ settings.url }">{ settings.handle }</a></h2>{/if}
+    {#if settings.handle}<h2 class="font-heading text-h4 text-scheme-heading"><a class="decoration-1 underline-offset-4 hover:underline" href="{ settings.url }">{ settings.handle }</a></h2>{/if}
     <ul class="grid grid-cols-3 gap-space-xs md:flex-1 md:grid-cols-6">
       {#for block in tiles}
         {#let b = block.settings}

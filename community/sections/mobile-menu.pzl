@@ -12,7 +12,7 @@
           <ul class="border-b border-scheme-border">
             {#for item in menus.main.items}
               <li class="border-t border-scheme-border py-space-sm">
-                <a class="block py-space-2xs font-heading text-h4 current:underline" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a>
+                <a class="block py-space-2xs font-heading text-h4 text-scheme-heading current:underline" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a>
                 {#if item.children.length}<ul class="grid gap-space-2xs pb-space-2xs">{#for child in item.children}<li><a class="block py-space-2xs text-scheme-muted hover:text-scheme-foreground current:text-scheme-foreground" href="{ child.href }" aria-current={ child.active ? 'page' : null }>{ child.label }</a></li>{/for}</ul>{/if}
               </li>
             {/for}

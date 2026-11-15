@@ -3,7 +3,7 @@
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground" id="newsletter">
   <div class="mx-auto grid max-w-reading justify-items-center gap-space-lg text-center">
     <div class="grid gap-space-sm">
-      <h2 class="font-heading text-h2 text-balance"><Rise text={ settings.heading } /></h2>
+      <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Rise text={ settings.heading } /></h2>
       {#if settings.text}<p class="text-pretty">{ settings.text }</p>{/if}
     </div>
     <Form handle={ site.settings.newsletter_form } class="w-full" id={ id }>

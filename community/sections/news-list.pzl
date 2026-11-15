@@ -20,7 +20,7 @@
       <a class="group mb-space-2xl grid items-center gap-space-lg md:grid-cols-seven-five md:gap-space-2xl" href="/news/{ lead.handle }">
         <Well asset={ lead.fields.image } alt="" ratio="aspect-wide" width={ 1200 } sizes="(min-width: 48rem) 55vw, 100vw" />
         <span class="grid gap-space-sm">
-          <span class="font-heading text-h3 text-balance group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{ lead.title }</span>
+          <span class="font-heading text-h3 text-balance text-scheme-heading group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{ lead.title }</span>
           {#if lead.fields.standfirst}<span class="text-pretty">{ lead.fields.standfirst }</span>{/if}
           <span class="text-label text-scheme-muted tnum">{ lead.fields.date | date('long') }</span>
         </span>
@@ -32,7 +32,7 @@
           <li class="{ site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-delay={ site.settings.reveal ? (i % 2) * 60 : null }>
             <a class="group grid content-start gap-space-sm" href="/news/{ entry.handle }">
               <Well asset={ entry.fields.image } alt="" ratio="aspect-wide" width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" />
-              <span class="font-heading text-h4 text-balance group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{ entry.title }</span>
+              <span class="font-heading text-h4 text-balance text-scheme-heading group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{ entry.title }</span>
               <span class="text-label text-scheme-muted tnum">{ entry.fields.date | date('long') }</span>
             </a>
           </li>

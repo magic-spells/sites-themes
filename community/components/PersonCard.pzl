@@ -5,6 +5,6 @@
   {#if f.image}<Well asset={ f.image } alt="" ratio="aspect-portrait" width={ 640 } sizes="(min-width: 64rem) 18rem, (min-width: 48rem) 30vw, 45vw" />{:else}<Monogram name={ entry.title } ratio="aspect-portrait" />{/if}
   <figcaption class="grid gap-space-3xs">
     {#if f.role}<span class="line-clamp-1 text-label text-scheme-muted">{ f.role }</span>{/if}
-    <span class="font-heading text-h4">{ entry.title }</span>
+    <span class="font-heading text-h4 text-scheme-heading">{ entry.title }</span>
   </figcaption>
 </figure>

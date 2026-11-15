@@ -1,3 +1,3 @@
 <!-- component: Monogram -->
 <!-- For a group or a person with no photo: the first letter of the name in the heading face on surface-2, never a grey box. ratio as Well (square by default); cls sets the letter's size (text-h3 by default). -->
-<span class="grid place-items-center rounded-photo bg-scheme-surface-2 font-heading text-scheme-foreground outline outline-scheme-border -outline-offset-1 { ratio ?? 'aspect-square' } { cls ?? 'text-h3' }" aria-hidden="true">{ name | slice(0, 1) }</span>
+<span class="grid place-items-center rounded-photo bg-scheme-surface-2 font-heading text-scheme-heading outline outline-scheme-border -outline-offset-1 { ratio ?? 'aspect-square' } { cls ?? 'text-h3' }" aria-hidden="true">{ name | slice(0, 1) }</span>

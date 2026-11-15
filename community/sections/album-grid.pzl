@@ -13,7 +13,7 @@
           <a class="group grid content-start gap-space-sm" href="/photos/{ entry.handle }">
             <Well asset={ entry.fields.cover } alt="" ratio="aspect-photo" width={ 640 } sizes="(min-width: 48rem) 30vw, 50vw" />
             <span class="grid gap-space-3xs">
-              <h3 class="font-heading text-h4 text-balance group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{ entry.title }</h3>
+              <h3 class="font-heading text-h4 text-balance text-scheme-heading group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{ entry.title }</h3>
               <span class="text-label text-scheme-muted tnum">{ entry.fields.date | date('long') }</span>
             </span>
           </a>

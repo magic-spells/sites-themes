@@ -11,7 +11,7 @@
       {#for entry in events, i}
         {#let month = entry.fields.date | date('long') | split(' ')}
         <li class="{ site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-delay={ site.settings.reveal ? (i % 6) * 60 : null }>
-          {#if (entry.fields.date | slice(0, 7)) != (events[i - 1].fields.date | slice(0, 7))}<h3 class="pb-space-md font-heading text-h3 { i ? 'pt-space-xl' : '' }">{ month[0] } { month[2] }</h3>{/if}
+          {#if (entry.fields.date | slice(0, 7)) != (events[i - 1].fields.date | slice(0, 7))}<h3 class="pb-space-md font-heading text-h3 text-scheme-heading { i ? 'pt-space-xl' : '' }">{ month[0] } { month[2] }</h3>{/if}
           <EventRow entry={ entry } />
         </li>
       {/for}

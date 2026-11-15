@@ -1,7 +1,7 @@
 <!-- A page's head: the H1 (the page title unless a heading is set; its words rise in) and the standfirst under it, left, at reading width. No image, no kicker. -->
 <section class="bg-scheme-background px-gutter pt-section pb-space-xl text-scheme-foreground">
   <div class="mx-auto grid max-w-column justify-items-start gap-space-md">
-    <h1 class="max-w-hero font-heading text-h1 text-balance"><Rise text={ settings.heading || page.title } /></h1>
+    <h1 class="max-w-hero font-heading text-h1 text-balance text-scheme-heading"><Rise text={ settings.heading || page.title } /></h1>
     {#if settings.text}<p class="max-w-reading text-lead text-pretty">{ settings.text }</p>{/if}
   </div>
 </section>

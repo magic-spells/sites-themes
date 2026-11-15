@@ -2,10 +2,10 @@
 <!-- The door plate on paper, from the House and Contact settings: the opening hours under their H4 and a hairline, the address with Get directions, with access the access note in small muted, then the phone and email as text links. cls adds classes. -->
 {#let
   s = site.settings
-  link = 'justify-self-start underline decoration-1 underline-offset-4 hover:decoration-2'
+  link = 'justify-self-start text-scheme-link underline decoration-1 underline-offset-4 hover:decoration-2'
 }
 <div class="{ 'paper' | scheme_class } grid content-start gap-space-md rounded-paper bg-scheme-background p-space-lg text-scheme-foreground md:p-space-xl { cls }">
-  {#if s.hours}<h3 class="font-heading text-h4">{ t('opening_hours') }</h3><Hours /><hr class="border-scheme-border" />{/if}
+  {#if s.hours}<h3 class="font-heading text-h4 text-scheme-heading">{ t('opening_hours') }</h3><Hours /><hr class="border-scheme-border" />{/if}
   <Address />
   {#if access && s.access}<p class="text-small text-pretty text-scheme-muted">{ s.access }</p>{/if}
   {#if s.phone || s.email}

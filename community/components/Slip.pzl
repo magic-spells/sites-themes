@@ -4,11 +4,11 @@
 <li class="{ 'paper' | scheme_class } grid gap-space-xs rounded-paper bg-scheme-background p-slip text-scheme-foreground { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-delay={ site.settings.reveal ? (i % 3) * 60 : null } data-block={ editor_id }>
   {#if entry}
     <time class="text-label tnum" datetime="{ f.date }">{ f.date | date('medium') | split(',') | first }</time>
-    <h3 class="font-heading text-h4 text-balance"><a class="hover:underline hover:decoration-1 hover:underline-offset-4" href="/whats-on/{ entry.handle }">{ entry.title }</a></h3>
+    <h3 class="font-heading text-h4 text-balance text-scheme-heading"><a class="hover:underline hover:decoration-1 hover:underline-offset-4" href="/whats-on/{ entry.handle }">{ entry.title }</a></h3>
     {#if f.time || f.place}<p class="text-small text-scheme-muted tnum">{ f.time }{#if f.time && f.place} · {/if}{ f.place }</p>{/if}
     {#if f.summary}<p class="text-small text-pretty">{ f.summary }</p>{/if}
   {:else}
     <p class="whitespace-pre-line text-pretty">{ text }</p>
-    {#if link?.href}<a class="justify-self-start text-small underline decoration-1 underline-offset-4 hover:decoration-2" href="{ link.href }">{ link.label }</a>{/if}
+    {#if link?.href}<a class="justify-self-start text-small text-scheme-link underline decoration-1 underline-offset-4 hover:decoration-2" href="{ link.href }">{ link.label }</a>{/if}
   {/if}
 </li>

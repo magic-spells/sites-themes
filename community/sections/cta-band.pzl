@@ -5,7 +5,7 @@
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-reading justify-items-center gap-space-md text-center">
-    <h2 class="font-heading text-h2 text-balance"><Rise text={ settings.heading } /></h2>
+    <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Rise text={ settings.heading } /></h2>
     {#if settings.text}<p class="text-pretty">{ settings.text }</p>{/if}
     {#if one?.href || two?.href}
       <div class="flex flex-wrap justify-center gap-space-sm pt-space-xs">

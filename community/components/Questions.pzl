@@ -4,7 +4,7 @@
   {#for item in items, i}
     <li class="border-t border-scheme-border" data-block={ item.editor_id }>
       <collapsible-component>
-        <h3><button class="group flex w-full items-center justify-between gap-space-md py-space-md text-left text-h4 font-medium" type="button">{ item.settings.question }<Glyph name="plus" cls="size-icon-sm group-aria-expanded:hidden" /><Glyph name="minus" cls="hidden size-icon-sm group-aria-expanded:block" /></button></h3>
+        <h3 class="text-scheme-heading"><button class="group flex w-full items-center justify-between gap-space-md py-space-md text-left text-h4 font-medium" type="button">{ item.settings.question }<Glyph name="plus" cls="size-icon-sm group-aria-expanded:hidden" /><Glyph name="minus" cls="hidden size-icon-sm group-aria-expanded:block" /></button></h3>
         <collapsible-content open={ i == 0 }>
           <div class="sites-prose max-w-reading pb-space-lg">{ item.settings.answer }</div>
         </collapsible-content>

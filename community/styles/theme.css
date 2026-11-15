@@ -17,7 +17,8 @@
 
 /* The scheme a section sits on. The engine has no muted, hairline or
    surface-2 slot, so they ride on the chip slots (settings/design.json).
-   Links take the text colour: the accent is off. */
+   Headings and text links take the heading and link slots, which equal
+   the text colour: the accent is off. */
 @theme inline {
 	--color-scheme-background: var(--sites-scheme-background);
 	--color-scheme-foreground: var(--sites-scheme-foreground);

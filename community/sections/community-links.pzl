@@ -9,7 +9,7 @@
         <li class="border-t border-scheme-border" data-block={ block.editor_id }>
           <a class="group flex items-center justify-between gap-space-md py-space-md" href="{ b.link }">
             <span class="grid gap-space-3xs">
-              <span class="font-heading text-h4 group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{ b.label }</span>
+              <span class="font-heading text-h4 text-scheme-heading group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{ b.label }</span>
               {#if b.text}<span class="text-pretty text-scheme-muted">{ b.text }</span>{/if}
             </span>
             <Glyph name="arrow" cls="size-icon transition-transform duration-fast group-hover:translate-x-space-2xs" />

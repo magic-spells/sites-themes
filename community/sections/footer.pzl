@@ -7,7 +7,7 @@
   <div class="mx-auto grid max-w-column gap-space-2xl">
     <div class="grid gap-space-2xl md:grid-cols-five-seven">
       <div class="grid max-w-sign content-start gap-space-md">
-        <p class="font-heading text-h3 text-balance">{ s.name || site.name }</p>
+        <p class="font-heading text-h3 text-balance text-scheme-heading">{ s.name || site.name }</p>
         <Hours size="sm" />
         <Address />
         {#if s.access}<p class="text-small text-pretty text-scheme-muted">{ s.access }</p>{/if}

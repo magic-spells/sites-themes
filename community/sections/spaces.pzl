@@ -8,7 +8,7 @@
           <li class="grid grid-cols-room items-start gap-x-space-md gap-y-space-2xs border-t border-scheme-border py-space-md md:grid-cols-room-md md:gap-x-space-xl { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-delay={ site.settings.reveal ? (i % 6) * 60 : null } data-block={ block.editor_id }>
             <Well asset={ block.settings.image } ratio="aspect-photo" width={ 480 } sizes="12rem" />
             <div class="grid gap-space-3xs">
-              <h3 class="font-heading text-h4 text-balance">{ block.settings.name }</h3>
+              <h3 class="font-heading text-h4 text-balance text-scheme-heading">{ block.settings.name }</h3>
               {#if block.settings.text}<p class="text-pretty text-scheme-muted">{ block.settings.text }</p>{/if}
             </div>
             {#if block.settings.price}<p class="col-start-2 tnum md:col-start-3 md:text-right">{ block.settings.price }</p>{/if}

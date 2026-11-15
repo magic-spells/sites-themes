@@ -36,23 +36,10 @@ function remember(key: string): void {
 }
 
 document.addEventListener('click', (event) => {
-	const target = event.target as Element;
-
 	// The menu button and every ask button name the sheet they open (its
 	// sheet-panel's id); the sheet hands focus back to the opener.
-	const opener = target.closest('[data-panel-open]');
-	if (opener) {
-		(document.getElementById(opener.getAttribute('data-panel-open') ?? '') as Panel | null)?.show(opener);
-		return;
-	}
-
-	// The marquee's pause button (WCAG 2.2.2) sets the marquee's own paused attribute.
-	const toggle = target.closest('[data-ticker-toggle]');
-	if (toggle) {
-		const paused = toggle.getAttribute('aria-pressed') !== 'true';
-		toggle.setAttribute('aria-pressed', String(paused));
-		toggle.parentElement?.querySelector('scrolling-content')?.toggleAttribute('paused', paused);
-	}
+	const opener = (event.target as Element).closest('[data-panel-open]');
+	if (opener) (document.getElementById(opener.getAttribute('data-panel-open') ?? '') as Panel | null)?.show(opener);
 });
 
 // A notice (the announcement, the cookie notice) is keyed by its text. Once one

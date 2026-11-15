@@ -24,7 +24,7 @@ components/         Button (and the ask), Field, AskForm, SectionHead, PersonCar
 styles/theme.css    the Tailwind entry: @theme maps the --sites-* tokens and Firm's role sizes,
                     and the few rules utilities cannot express
 scripts/theme.ts    the browser JavaScript: component registration, opening the sheets, the
-                    marquee's pause button, the notices, a sent form shown where it was
+                    notices, a sent form shown where it was
 scripts/vendor/     the Magic Spells components, copied in (see vendor/VERSIONS.md)
 styles/vendor/      the same components' stylesheets
 assets/             the fonts and their licences, the favicon, the glyph sprite, the placeholders

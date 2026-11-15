@@ -1,8 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg">
-<!-- Firm glyphs: 24 by 24, a 1.5 stroke in the current colour; pause is Lucide (ISC). components/Glyph.pzl draws one by id. -->
+<!-- Firm glyphs: 24 by 24, a 1.5 stroke in the current colour. components/Glyph.pzl draws one by id. -->
 <symbol id="menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3.5 7h17M3.5 12h17M3.5 17h17"/></symbol>
 <symbol id="close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
-<symbol id="pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/></symbol>
 <symbol id="chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 9.5l6 6 6-6"/></symbol>
 <symbol id="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14.5 6l-6 6 6 6"/></symbol>
 <symbol id="chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M9.5 6l6 6-6 6"/></symbol>

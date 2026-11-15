@@ -71,7 +71,7 @@
 	--spacing-disc: clamp(2.5rem, 7vw, 6.5rem);
 	--spacing-disc-full: calc(var(--spacing-disc) * 2);
 
-	--container-column: 73rem;
+	--container-column: 82.5rem;
 	--container-band: 52rem;
 	--container-reading: 40rem;
 	--container-narrow: 34rem;
@@ -301,9 +301,10 @@ select-dropdown {
 		animation-iteration-count: 1 !important;
 		transition-duration: 0.001ms !important;
 	}
-	/* The marquee stands still: one copy, cut at the column. */
+	/* The marquee stands still: one copy from the gutter, cut at the close button. */
 	scrolling-content {
 		mask-image: none;
+		padding-inline-start: var(--spacing-gutter);
 	}
 	scrolling-track {
 		width: auto;

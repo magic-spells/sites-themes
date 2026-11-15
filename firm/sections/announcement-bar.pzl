@@ -1,22 +1,19 @@
-<!-- The notices above the header, one per line of the text, running on a slow marquee with a pause button; it stands still for visitors who ask for less motion. The close button hides it for that visitor until the text changes. -->
+<!-- The notices above the header, one per line of the text, running edge to edge on a slow marquee; it stands still for visitors who ask for less motion. The close button hides it for that visitor until the text changes. -->
 {#if settings.text}
-<aside class="bg-scheme-background px-gutter text-scheme-foreground" data-notice="{ settings.text }" aria-label="{ t('announcement') }">
-  <div class="mx-auto flex min-h-control max-w-column items-center gap-space-xs">
-    <scrolling-content class="min-w-0 flex-1 text-small" speed="30" fade>
-      <scrolling-track>
-        <scrolling-item>{#for line in settings.text | split('\n')}<span class="whitespace-nowrap">{ line }</span><span class="mx-space-lg size-space-2xs shrink-0 rounded-full bg-current" aria-hidden="true"></span>{/for}</scrolling-item>
-      </scrolling-track>
-    </scrolling-content>
-    <button class="flex size-control shrink-0 items-center justify-center" type="button" data-ticker-toggle aria-pressed="false"><Glyph name="pause" /><span class="sr-only">{ t('pause') }</span></button>
-    <button class="-me-space-xs flex size-control shrink-0 items-center justify-center" type="button" data-dismiss><Glyph name="close" /><span class="sr-only">{ t('dismiss') }</span></button>
-  </div>
+<aside class="flex min-h-control items-center gap-space-xs bg-scheme-background pe-gutter text-scheme-foreground" data-notice="{ settings.text }" aria-label="{ t('announcement') }">
+  <scrolling-content class="min-w-0 flex-1 text-small" speed="30" fade>
+    <scrolling-track>
+      <scrolling-item>{#for line in settings.text | split('\n')}<span class="whitespace-nowrap">{ line }</span><span class="mx-space-lg size-space-2xs shrink-0 rounded-full bg-current" aria-hidden="true"></span>{/for}</scrolling-item>
+    </scrolling-track>
+  </scrolling-content>
+  <button class="-me-space-xs flex size-control shrink-0 items-center justify-center" type="button" data-dismiss><Glyph name="close" /><span class="sr-only">{ t('dismiss') }</span></button>
 </aside>
 {/if}
 
 <schema>
 {
   "name": "Announcement bar",
-  "description": "Notices above the header on a slow marquee, with pause and close buttons.",
+  "description": "Notices above the header on a slow marquee across the full width, with a close button.",
   "kind": "Header",
   "icon": "megaphone",
   "settings": [

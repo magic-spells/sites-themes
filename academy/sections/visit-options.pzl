@@ -1,9 +1,9 @@
-<!-- Ways to visit before joining: two or three equal white panels with md corners and a rule hairline, each a heading, a line, an optional date line in small muted and a button at the foot: outlined to its link, or the ask when ask is ticked. Three across from 64rem, two from 48rem. -->
+<!-- Ways to visit before joining: two or three equal white panels with md corners and a rule hairline, each a heading, a line, an optional date line in small muted and a button at the foot: outlined to its link, or the ask when ask is ticked. All in one row from 48rem. -->
 {#if blocks.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } />
-    <ul class="grid gap-space-md md:grid-cols-2 lg:grid-cols-3">
+    <ul class="grid gap-space-md md:auto-cols-fr md:grid-flow-col">
       {#for block in blocks}
         {#let b = block.settings}
         <li class="sites-scheme-white grid content-between justify-items-start gap-space-md rounded-md border border-scheme-rule bg-scheme-background p-space-md text-scheme-foreground { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-block={ block.editor_id }>

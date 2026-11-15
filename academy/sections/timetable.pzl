@@ -51,7 +51,7 @@
       {/for}
     </tab-group>
     {#if settings.show_key && taught.length}
-      <div class="mt-space-xl grid gap-space-lg md:grid-cols-2 lg:grid-cols-4">
+      <div class="mt-space-xl grid gap-space-lg md:grid-cols-2 lg:auto-cols-fr lg:grid-flow-col">
         {#for subject in taught}
           <div class="grid content-start gap-space-xs">
             <p class="flex items-center gap-space-xs text-label"><Swatch subject={ subject } subjects={ subjects } />{ subject }</p>

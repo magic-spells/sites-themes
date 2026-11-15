@@ -308,11 +308,12 @@ html.reveal-off split-text:not(:defined) {
 	sticky-header::before {
 		content: none;
 	}
+}
 
-	/* The rule under the header shows once the page scrolls. */
-	body[data-state="scrolling"] sticky-header > header {
-		border-bottom-color: var(--sites-scheme-chip-border);
-	}
+/* The rule under the header shows once the page scrolls; unlayered, so it
+   beats the header's border-transparent utility. */
+body[data-state="scrolling"] sticky-header > header {
+	border-bottom-color: var(--sites-scheme-chip-border);
 }
 
 dropdown-component:not(:defined) dropdown-panel {

@@ -1,4 +1,4 @@
-<!-- The teachers: 4:5 photos, each with the role over the name, one link to their page unless linking is off. Four across from 64rem, three from 48rem; on phones a row that scrolls with the next teacher showing. -->
+<!-- The teachers: 4:5 photos, each with the role over the name, one link to their page unless linking is off. Four across from 64rem, two from 48rem; on phones a row that scrolls with the next teacher showing. -->
 {#let
   team = content.coaches.entries | sort('fields.order')
   people = (settings.featured_only ? team | where('fields.featured') : team) | slice(0, settings.limit)
@@ -8,7 +8,7 @@
   <div class="mx-auto max-w-column px-gutter md:px-0">
     <SectionHead heading={ settings.heading } text={ settings.text } view_all_label={ settings.view_all_label } view_all_href={ settings.view_all_href } />
   </div>
-  <ul class="mx-auto flex max-w-column snap-x snap-mandatory scroll-px-gutter gap-x-space-lg gap-y-space-xl overflow-x-auto px-gutter md:grid md:snap-none md:grid-cols-3 md:overflow-visible md:px-0 lg:grid-cols-4">
+  <ul class="mx-auto flex max-w-column snap-x snap-mandatory scroll-px-gutter gap-x-space-lg gap-y-space-xl overflow-x-auto px-gutter md:grid md:snap-none md:grid-cols-2 md:overflow-visible md:px-0 lg:grid-cols-4">
     {#for entry in people}<li class="w-3/4 shrink-0 snap-start md:w-auto"><TeacherCard entry={ entry } plain={ !settings.link_to_detail } sub={ settings.heading } /></li>{/for}
   </ul>
 </section>

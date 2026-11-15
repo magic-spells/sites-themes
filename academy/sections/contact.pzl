@@ -1,32 +1,20 @@
-<!-- The contact page: the heading, the standfirst and the Contact email and phone as text links over the contact form on a white card, seven parts; the first location's address (with the pin), hours and note in five. -->
-{#let loc = content.locations.entries | sort('fields.order') | first}
+<!-- The contact page: the heading, the standfirst and the Contact email and phone as text links in five parts, the contact form on a white card in seven, from 64rem; stacked below. The address and hours follow in their own band (hours-location). -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-wide-narrow md:gap-space-2xl">
-    <div class="grid gap-space-lg">
-      <div class="grid justify-items-start gap-space-xs">
-        <h2 class="font-heading text-h2 text-balance text-scheme-heading">{ settings.heading }</h2>
-        {#if settings.text}<p class="max-w-prose text-lead text-pretty text-scheme-muted">{ settings.text }</p>{/if}
-        {#if site.settings.email}<a class="text-body font-medium underline decoration-1 underline-offset-4" href="mailto:{ site.settings.email }">{ site.settings.email }</a>{/if}
-        {#if site.settings.phone}<a class="text-body font-medium underline decoration-1 underline-offset-4" href="tel:{ site.settings.phone | replace(' ', '') }">{ site.settings.phone }</a>{/if}
-      </div>
-      <div class="sites-scheme-white rounded-lg border border-scheme-rule bg-scheme-background p-space-lg text-scheme-foreground lg:p-space-xl"><AskFields handle={ settings.form } prefix={ section.id } /></div>
+  <div class="mx-auto grid max-w-column items-start gap-space-xl lg:grid-cols-narrow-wide lg:gap-space-2xl">
+    <div class="grid justify-items-start gap-space-xs">
+      <h2 class="font-heading text-h2 text-balance text-scheme-heading">{ settings.heading }</h2>
+      {#if settings.text}<p class="max-w-prose text-lead text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+      {#if site.settings.email}<a class="text-body font-medium underline decoration-1 underline-offset-4" href="mailto:{ site.settings.email }">{ site.settings.email }</a>{/if}
+      {#if site.settings.phone}<a class="text-body font-medium underline decoration-1 underline-offset-4" href="tel:{ site.settings.phone | replace(' ', '') }">{ site.settings.phone }</a>{/if}
     </div>
-    {#if loc}
-      <div class="grid gap-space-sm">
-        <h3 class="font-heading text-h3">{ loc.title }</h3>
-        {#if loc.fields.address}<p class="flex gap-space-xs"><Icon name="pin" cls="mt-space-2xs size-icon" /><span class="whitespace-pre-line">{ loc.fields.address }</span></p>{/if}
-        {#if loc.fields.hours}<p class="whitespace-pre-line text-small text-scheme-muted">{ loc.fields.hours }</p>{/if}
-        {#if loc.fields.note}<p class="text-small text-scheme-muted">{ loc.fields.note }</p>{/if}
-        {#if loc.fields.map_url}<Button href={ loc.fields.map_url } tone="text">{ t('directions') }</Button>{/if}
-      </div>
-    {/if}
+    <div class="sites-scheme-white rounded-lg border border-scheme-rule bg-scheme-background p-space-lg text-scheme-foreground lg:p-space-xl"><AskFields handle={ settings.form } prefix={ section.id } /></div>
   </div>
 </section>
 
 <schema>
 {
   "name": "Contact",
-  "description": "A contact form on a card beside the school's address and hours.",
+  "description": "The office's email and phone beside a contact form on a card.",
   "kind": "Contact",
   "icon": "mail",
   "settings": [

@@ -1,4 +1,4 @@
-<!-- A teacher's page: the 4:5 photo beside a seven-part column with the name in h1, the role as a standfirst, the bio, the credentials one per line and the specialties; then the classes they teach as prospectus rows. -->
+<!-- A teacher's page, five parts to seven from 64rem: the 4:5 photo, held in view as the page scrolls; beside it the name in h1, the role as a standfirst, the bio, the credentials on rules, then the classes they teach as prospectus rows. With no photo the text keeps its column. -->
 {#let
   entry = page.entry
   f = entry.fields
@@ -6,16 +6,15 @@
 }
 {#if entry}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-narrow-wide md:gap-space-2xl">
-    <Well asset={ f.image } ratio="aspect-portrait" width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" eager />
-    <div class="grid gap-space-md">
+  <div class="mx-auto grid max-w-column items-start gap-space-xl lg:grid-cols-narrow-wide lg:gap-space-2xl">
+    <Well asset={ f.image } ratio="aspect-portrait" width={ 960 } sizes="(min-width: 64rem) 40vw, 100vw" eager cls="lg:sticky lg:top-header" />
+    <div class="grid gap-space-md lg:col-start-2">
       <h1 class="font-heading text-h1 text-balance text-scheme-heading"><Rise text={ entry.title } /></h1>
       {#if f.role}<p class="text-lead text-pretty text-scheme-muted">{ f.role }</p>{/if}
       {#if f.bio}<div class="sites-prose max-w-prose">{ f.bio }</div>{/if}
-      {#if f.credentials}<ul class="grid gap-space-2xs text-small">{#for line in f.credentials | split('\n')}{#if line | strip}<li>{ line | strip }</li>{/if}{/for}</ul>{/if}
-      {#if f.specialties}<p class="text-small text-scheme-muted">{ f.specialties | replace(', ', ' · ') }</p>{/if}
+      {#if f.credentials}<ul class="border-t border-scheme-rule text-small">{#for line in f.credentials | split('\n')}{#if line | strip}<li class="border-b border-scheme-rule py-space-xs">{ line | strip }</li>{/if}{/for}</ul>{/if}
       {#if theirs.length}
-        <h2 class="mt-space-lg font-heading text-h3">{ t('classes_with', { name: (entry.title | split(' ') | first) }) }</h2>
+        <h2 class="mt-space-lg font-heading text-h3">{ t('classes') }</h2>
         <ul class="border-t border-scheme-rule">{#for klass in theirs}<ClassRow entry={ klass } />{/for}</ul>
       {/if}
     </div>

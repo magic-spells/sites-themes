@@ -1,12 +1,12 @@
-<!-- One line above the header in the Label type, 2.5rem high, the whole line a link when it has one. Ticker: the line repeats on a marquee; under reduced motion it stands still. A close button (the way to stop it) at the right that, with a key, hides it for good. -->
+<!-- One line above the header in the Label type, 2.5rem high, the whole line a link when it has one. Ticker: the line and a dot repeat on a marquee (scrolling-content fills the row with hidden copies); under reduced motion one line stands still. A close button (the way to stop it) at the right that, with a key, hides it for good. -->
 {#if settings.text}
 <aside class="bg-scheme-background text-scheme-foreground" data-dismiss-key="{ settings.key }" aria-label="{ t('announcement') }" data-ticker={ settings.motion == 'ticker' ? true : null }>
   <div class="flex min-h-bar items-center ps-control-sm">
     <a class="block min-w-0 flex-1 text-label" href={ settings.link || null }>
       {#if settings.motion == 'ticker'}
         <scrolling-content class="block" speed="30" fade>
-          <scrolling-track>
-            <scrolling-item class="flex items-center">{#for n in [1, 2, 3]}<span class="whitespace-nowrap">{ settings.text }</span><Icon name="dot" cls="mx-space-lg size-dot" />{/for}</scrolling-item>
+          <scrolling-track class="gap-space-lg">
+            <scrolling-item class="flex items-center"><span class="whitespace-nowrap">{ settings.text }</span><Icon name="dot" cls="ms-space-lg size-dot motion-reduce:hidden" /></scrolling-item>
           </scrolling-track>
         </scrolling-content>
       {:else}

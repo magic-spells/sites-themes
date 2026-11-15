@@ -1,5 +1,10 @@
 # Ritual
 
+## 0.2.2
+
+- The password and maintenance pages, and the 404 page's service cards, follow the site's base scheme instead of naming the
+  first scheme, so a change of base scheme in the Panel reaches them too.
+
 ## 0.2.1
 
 - The gallery lightbox shows its photos again: it opened with the counter and the caption but no picture.

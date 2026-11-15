@@ -10,7 +10,7 @@
   </div>
 </section>
 {#if services.length}
-<section class="sites-scheme-linen bg-scheme-background px-gutter py-section text-scheme-foreground">
+<section class="{ site.settings.base_scheme | scheme_class } bg-scheme-background px-gutter py-section text-scheme-foreground">
   <ul class="mx-auto grid max-w-column gap-space-md md:grid-cols-2 lg:grid-cols-3">
     {#for entry in services}<li><ServiceCard entry={ entry } base_path="/services" /></li>{/for}
   </ul>

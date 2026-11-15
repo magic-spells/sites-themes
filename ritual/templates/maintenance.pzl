@@ -1,7 +1,7 @@
 <!-- template: Maintenance -->
 <!-- layout: default -->
-<!-- A short pause on linen: the wordmark, the line and the phone and email meanwhile. data-bare hides the groups (styles/theme.css). -->
-<section class="sites-scheme-linen grid min-h-dvh flex-1 place-items-center bg-scheme-background px-gutter py-section text-scheme-foreground" data-bare>
+<!-- A short pause on the base scheme: the wordmark, the line and the phone and email meanwhile. data-bare hides the groups (styles/theme.css). -->
+<section class="{ site.settings.base_scheme | scheme_class } grid min-h-dvh flex-1 place-items-center bg-scheme-background px-gutter py-section text-scheme-foreground" data-bare>
   <div class="grid w-full max-w-reading justify-items-center gap-space-md text-center">
     <p class="font-heading text-h4 text-scheme-heading">{ site.settings.wordmark || site.name }</p>
     <h1 class="font-heading text-h1 text-balance text-scheme-heading"><Accent text={ t('maintenance_title') } /></h1>

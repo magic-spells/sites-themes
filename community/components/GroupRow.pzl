@@ -3,7 +3,7 @@
 {#let f = entry.fields}
 <li class="border-t border-scheme-border { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-group="groups:60">
   <a class="group grid grid-cols-row items-center gap-x-space-md gap-y-space-2xs py-space-md md:grid-cols-row-md md:gap-x-space-xl" href="/groups/{ entry.handle }">
-    {#if f.image}<Well asset={ f.image } alt="" width={ 160 } sizes="5rem" />{:else}<Monogram name={ entry.title } />{/if}
+    <Well asset={ f.image } name={ entry.title } alt="" width={ 160 } sizes="5rem" />
     <span class="grid gap-space-3xs">
       <h3 class="font-heading text-h4 text-balance text-scheme-heading group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{ entry.title }</h3>
       {#if f.summary}<span class="line-clamp-2 text-pretty text-scheme-muted">{ f.summary }</span>{/if}

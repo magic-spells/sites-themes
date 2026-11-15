@@ -1,15 +1,36 @@
 {
   "label": "Home",
-  "description": "The front page, top to bottom as the plan orders it; code B adds the hero, practice cards, people, quotes and questions.",
+  "description": "The front page, the demo of the theme: dark bands as accents, each followed by a light one.",
   "sections": [
     {
       "id": "s_hero",
-      "type": "page-header",
+      "type": "hero",
       "preset": "Default",
       "settings": {
-        "heading": "Estate planning, probate and small-business law",
+        "layout": "split",
+        "image": "as_entrance",
+        "heading": "Estate planning, probate and",
+        "accent": "small-business law",
         "text": "A six-person practice in Portland, Oregon, with a meeting room in Vancouver, Washington, by appointment.",
+        "button_label": "",
+        "button_link": "",
+        "button2_label": "Practice areas",
+        "button2_link": "/practice-areas",
         "color_scheme": "navy"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_practices",
+      "type": "practice-cards",
+      "preset": "Default",
+      "settings": {
+        "heading": "Practice areas",
+        "text": "",
+        "limit": 12,
+        "pill_label": "All practice areas",
+        "pill_link": "/practice-areas",
+        "color_scheme": "paper"
       },
       "blocks": []
     },
@@ -28,6 +49,120 @@
         "color_scheme": "graphite"
       },
       "blocks": []
+    },
+    {
+      "id": "s_people",
+      "type": "people",
+      "preset": "Default",
+      "settings": {
+        "group": "professionals",
+        "heading": "Our people",
+        "text": "",
+        "limit": 4,
+        "pill_label": "All people",
+        "pill_link": "/people",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_business",
+      "type": "image-with-text",
+      "preset": "Default",
+      "settings": {
+        "style": "overlap",
+        "image": "as_office",
+        "heading": "Small-business law from formation to sale",
+        "accent": "",
+        "text": "Chidi Abara forms the company, writes its contracts and, when the day comes, acts on its sale.",
+        "button_label": "Business formation",
+        "button_link": "/practice-areas/business-formation",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_values",
+      "type": "values",
+      "preset": "Default",
+      "settings": {
+        "heading": "How we",
+        "accent": "work",
+        "text": "What every client can count on, from the first meeting to the signing.",
+        "button_label": "About the firm",
+        "button_link": "/about",
+        "image": "as_room",
+        "color_scheme": "navy"
+      },
+      "blocks": [
+        { "id": "b_quotes", "type": "value", "settings": { "title": "Clear quotes", "text": "Every matter is quoted after the first meeting, in writing, before we start." } },
+        { "id": "b_one", "type": "value", "settings": { "title": "One lawyer start to finish", "text": "The lawyer you meet first handles your matter through to the signing." } },
+        { "id": "b_plain", "type": "value", "settings": { "title": "Plain answers", "text": "We explain each document in plain terms before you sign it." } }
+      ]
+    },
+    {
+      "id": "s_quotes",
+      "type": "quotes",
+      "preset": "Default",
+      "settings": {
+        "heading": "What clients say",
+        "text": "",
+        "button_label": "",
+        "button_link": "",
+        "note": "Prior results do not guarantee a similar outcome.",
+        "color_scheme": "cream"
+      },
+      "blocks": [
+        { "id": "b_dana", "type": "quote", "settings": { "quote": "Chidi explained the operating agreement line by line before we signed it.", "name": "Dana K.", "line": "Business owner, Vancouver" } },
+        { "id": "b_margaret", "type": "quote", "settings": { "quote": "Ruth set out our whole plan, and what it would cost, at the first meeting.", "name": "Margaret L.", "line": "Client since 2019, Portland" } },
+        { "id": "b_sam", "type": "quote", "settings": { "quote": "Lena took my mother’s estate through probate without one surprise.", "name": "Sam O.", "line": "Executor, Portland" } },
+        { "id": "b_priya", "type": "quote", "settings": { "quote": "Tomas found the tax side of our sale before the buyer’s lawyers did.", "name": "Priya N.", "line": "Sold a family business, Vancouver" } }
+      ]
+    },
+    {
+      "id": "s_gallery",
+      "type": "gallery",
+      "preset": "Default",
+      "settings": {
+        "heading": "The office",
+        "text": "",
+        "gallery": "office",
+        "limit": 6,
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_insights",
+      "type": "insights-list",
+      "preset": "Default",
+      "settings": {
+        "heading": "Insights",
+        "text": "",
+        "limit": 3,
+        "topics": false,
+        "pill_label": "All insights",
+        "pill_link": "/insights",
+        "color_scheme": "brown"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "heading": "Questions",
+        "text": "Plain answers about the first meeting, our fees and how we work.",
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        { "id": "b_cost", "type": "question", "settings": { "question": "What does the first meeting cost?", "answer": "<p>$150 for 30 minutes by video, credited to your plan if you go ahead.</p>" } },
+        { "id": "b_video", "type": "question", "settings": { "question": "Do you meet by video?", "answer": "<p>Yes. The first meeting is by video, and later meetings can be by video, at our Portland office or, by appointment, in Vancouver.</p>" } },
+        { "id": "b_charge", "type": "question", "settings": { "question": "How do you charge?", "answer": "<p>Every matter is quoted on its own after the first meeting, and the quote is set out in an engagement letter before we start.</p>" } },
+        { "id": "b_wa", "type": "question", "settings": { "question": "Do you handle probate in Washington?", "answer": "<p>Yes. Ruth Thorne is admitted in Washington as well as Oregon, and we meet Washington clients in Vancouver.</p>" } },
+        { "id": "b_lawyers", "type": "question", "settings": { "question": "Does sending the form make you my lawyers?", "answer": "<p>No. We are your lawyers once we have both signed an engagement letter.</p>" } }
+      ]
     },
     {
       "id": "s_ask",

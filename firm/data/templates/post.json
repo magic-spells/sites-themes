@@ -1,12 +1,14 @@
 {
   "label": "Post",
-  "description": "One post; code B adds the body and its author.",
+  "description": "One post and its author.",
   "sections": [
     {
-      "id": "s_header",
-      "type": "page-header",
+      "id": "s_post",
+      "type": "post",
       "preset": "Default",
-      "settings": {},
+      "settings": {
+        "color_scheme": "paper"
+      },
       "blocks": []
     }
   ]

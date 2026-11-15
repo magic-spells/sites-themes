@@ -6,7 +6,9 @@
       "id": "s_header",
       "type": "page-header",
       "preset": "Default",
-      "settings": {},
+      "settings": {
+        "color_scheme": "paper"
+      },
       "blocks": []
     },
     {
@@ -17,7 +19,8 @@
         "align": "left",
         "heading": "",
         "accent": "",
-        "body": "<p>We advise people and businesses on the decisions that matter most to them.</p>"
+        "body": "<p>We advise people and businesses on the decisions that matter most to them.</p>",
+        "color_scheme": "paper"
       },
       "blocks": []
     }

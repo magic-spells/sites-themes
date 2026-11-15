@@ -1,15 +1,51 @@
 {
   "label": "Contact",
-  "description": "The consultation form beside the contact details; code B adds the offices.",
+  "description": "The consultation form beside the contact details, then the offices.",
   "sections": [
     {
       "id": "s_contact",
       "type": "contact",
       "preset": "Default",
       "settings": {
-        "text": "Thirty minutes by video for $150, credited to your plan if you go ahead."
+        "text": "Thirty minutes by video for $150, credited to your plan if you go ahead.",
+        "color_scheme": "paper"
       },
       "blocks": []
+    },
+    {
+      "id": "s_offices",
+      "type": "offices",
+      "preset": "Default",
+      "settings": {
+        "heading": "Offices",
+        "text": "",
+        "image": "as_map",
+        "color_scheme": "white"
+      },
+      "blocks": [
+        {
+          "id": "b_portland",
+          "type": "office",
+          "settings": {
+            "name": "Portland",
+            "address": "2140 SE Division Street\nPortland, OR 97202",
+            "hours": "Monday to Thursday 9–5\nFriday 9–1",
+            "note": "",
+            "map_link": "https://www.openstreetmap.org/search?query=2140%20SE%20Division%20Street%2C%20Portland%2C%20OR"
+          }
+        },
+        {
+          "id": "b_vancouver",
+          "type": "office",
+          "settings": {
+            "name": "Vancouver, Washington",
+            "address": "",
+            "hours": "",
+            "note": "Meeting room by appointment",
+            "map_link": ""
+          }
+        }
+      ]
     }
   ]
 }

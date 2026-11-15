@@ -167,6 +167,13 @@
           "max_length": 200
         },
         {
+          "id": "others",
+          "type": "text",
+          "label": "Others involved",
+          "required": false,
+          "max_length": 200
+        },
+        {
           "id": "matter",
           "type": "select",
           "label": "What it’s about",
@@ -193,13 +200,6 @@
             "My family",
             "My business"
           ]
-        },
-        {
-          "id": "others",
-          "type": "text",
-          "label": "Others involved",
-          "required": false,
-          "max_length": 200
         },
         {
           "id": "message",
@@ -235,6 +235,32 @@
       "success_message": "You’re on the list.",
       "submit_label": "Sign up",
       "redirect_path": ""
+    }
+  },
+  "galleries": {
+    "office": {
+      "handle": "office",
+      "title": "The office",
+      "items": [
+        {
+          "asset_id": "as_reception"
+        },
+        {
+          "asset_id": "as_meeting_room"
+        },
+        {
+          "asset_id": "as_vancouver_room"
+        },
+        {
+          "asset_id": "as_library"
+        },
+        {
+          "asset_id": "as_partners_at_work"
+        },
+        {
+          "asset_id": "as_street_door"
+        }
+      ]
     }
   },
   "assets": {
@@ -512,6 +538,90 @@
       "width": 1600,
       "height": 1200,
       "alt": "Map: the Portland office south of the river, the Vancouver meeting room north of it",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_entrance": {
+      "id": "as_entrance",
+      "status": "ready",
+      "file_name": "4x5.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 262,
+      "url": "/_sites/theme/photos/4x5.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "The Portland office on SE Division Street",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_reception": {
+      "id": "as_reception",
+      "status": "ready",
+      "file_name": "4x3.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/4x3.svg",
+      "width": 1600,
+      "height": 1200,
+      "alt": "The reception desk in the Portland office",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_meeting_room": {
+      "id": "as_meeting_room",
+      "status": "ready",
+      "file_name": "4x3.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/4x3.svg",
+      "width": 1600,
+      "height": 1200,
+      "alt": "The meeting room, set for a signing",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_vancouver_room": {
+      "id": "as_vancouver_room",
+      "status": "ready",
+      "file_name": "4x3.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/4x3.svg",
+      "width": 1600,
+      "height": 1200,
+      "alt": "The Vancouver meeting room",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_library": {
+      "id": "as_library",
+      "status": "ready",
+      "file_name": "4x3.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/4x3.svg",
+      "width": 1600,
+      "height": 1200,
+      "alt": "The library of statutes and case reports",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_partners_at_work": {
+      "id": "as_partners_at_work",
+      "status": "ready",
+      "file_name": "4x3.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/4x3.svg",
+      "width": 1600,
+      "height": 1200,
+      "alt": "Ruth Thorne and Chidi Abara at work",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_street_door": {
+      "id": "as_street_door",
+      "status": "ready",
+      "file_name": "4x3.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/4x3.svg",
+      "width": 1600,
+      "height": 1200,
+      "alt": "The street door on SE Division Street",
       "created_at": "2026-11-15T09:00:00Z"
     }
   },
@@ -1342,14 +1452,6 @@
           "body": "<p>Giving part of a company away before a sale can save tax, if the timing is right.</p><p>This is general information, not legal advice. Every family and every business is different, so ask us before you act on it.</p>",
           "team": "team_tomas_reyes"
         }
-      }
-    },
-    "/specimen": {
-      "id": "pg_specimen",
-      "template": "specimen",
-      "title": "Specimen",
-      "seo": {
-        "noindex": true
       }
     }
   }

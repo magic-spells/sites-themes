@@ -6,7 +6,9 @@
       "id": "s_header",
       "type": "page-header",
       "preset": "Default",
-      "settings": {},
+      "settings": {
+        "color_scheme": "paper"
+      },
       "blocks": []
     },
     {
@@ -17,7 +19,8 @@
         "align": "left",
         "heading": "",
         "accent": "",
-        "body": "<p>This site is attorney advertising. It gives general information, not legal advice, and reading it or writing to us does not make us your lawyers.</p><h2>When we act for you</h2><p>We are your lawyers once we have both signed an engagement letter that sets out the work.</p><h2>Results</h2><p>Prior results do not guarantee a similar outcome.</p>"
+        "body": "<p>This site is attorney advertising. It gives general information, not legal advice, and reading it or writing to us does not make us your lawyers.</p><h2>When we act for you</h2><p>We are your lawyers once we have both signed an engagement letter that sets out the work.</p><h2>Results</h2><p>Prior results do not guarantee a similar outcome.</p>",
+        "color_scheme": "paper"
       },
       "blocks": []
     }

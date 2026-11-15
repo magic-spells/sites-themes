@@ -1,13 +1,21 @@
 {
   "label": "About",
-  "description": "The firm; code B adds the hero, values and the principal’s letter.",
+  "description": "The firm: how it works, the office and the founding letter.",
   "sections": [
     {
-      "id": "s_header",
-      "type": "page-header",
+      "id": "s_hero",
+      "type": "hero",
       "preset": "Default",
       "settings": {
-        "text": "Founded in Portland in 2015. Six people, and a meeting room in Vancouver by appointment."
+        "layout": "text",
+        "heading": "About",
+        "accent": "the firm",
+        "text": "Founded in Portland in 2015. Six people, and a meeting room in Vancouver by appointment.",
+        "button_label": "",
+        "button_link": "",
+        "button2_label": "Our people",
+        "button2_link": "/people",
+        "color_scheme": "paper"
       },
       "blocks": []
     },
@@ -21,8 +29,74 @@
         "heading": "Estate plans for Oregon and Washington families",
         "accent": "",
         "text": "Ruth Thorne has drafted wills and trusts on both sides of the river since 2007.",
-        "button_label": "Our people",
-        "button_link": "/people"
+        "button_label": "Practice areas",
+        "button_link": "/practice-areas",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_values",
+      "type": "values",
+      "preset": "Default",
+      "settings": {
+        "heading": "How we",
+        "accent": "work",
+        "text": "What every client can count on, from the first meeting to the signing.",
+        "button_label": "",
+        "button_link": "",
+        "image": "as_room",
+        "color_scheme": "navy"
+      },
+      "blocks": [
+        {
+          "id": "b_quotes",
+          "type": "value",
+          "settings": {
+            "title": "Clear quotes",
+            "text": "Every matter is quoted after the first meeting, in writing, before we start."
+          }
+        },
+        {
+          "id": "b_one",
+          "type": "value",
+          "settings": {
+            "title": "One lawyer start to finish",
+            "text": "The lawyer you meet first handles your matter through to the signing."
+          }
+        },
+        {
+          "id": "b_plain",
+          "type": "value",
+          "settings": {
+            "title": "Plain answers",
+            "text": "We explain each document in plain terms before you sign it."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_gallery",
+      "type": "gallery",
+      "preset": "Default",
+      "settings": {
+        "heading": "The office",
+        "text": "",
+        "gallery": "office",
+        "limit": 6,
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_letter",
+      "type": "principal-letter",
+      "preset": "Default",
+      "settings": {
+        "heading": "Our story",
+        "person": "team_ruth_thorne",
+        "body": "<p>Chidi Abara and I started Thorne &amp; Abara in 2015 to do three kinds of work well: estate planning, probate and trust administration, and the law a small business needs. There are six of us now, in Portland, with a meeting room across the river in Vancouver.</p><p>You will know who is handling your matter, and what it costs, before you sign anything. The first meeting is 30 minutes by video and costs $150, credited to your plan if you go ahead.</p>",
+        "color_scheme": "cream"
       },
       "blocks": []
     }

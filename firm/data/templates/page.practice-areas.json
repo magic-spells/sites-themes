@@ -1,13 +1,25 @@
 {
   "label": "Practice areas",
-  "description": "Every practice area; code B adds the ruled index.",
+  "description": "Every practice area as a ruled index, then the first meeting.",
   "sections": [
     {
       "id": "s_header",
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "text": "Who handles each kind of matter."
+        "text": "Who handles each kind of matter.",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_index",
+      "type": "practice-index",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "text": "",
+        "color_scheme": "paper"
       },
       "blocks": []
     },

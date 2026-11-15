@@ -1,13 +1,29 @@
 {
   "label": "Insights",
-  "description": "Every post; code B adds the list.",
+  "description": "Every post, newest first, with links by topic.",
   "sections": [
     {
       "id": "s_header",
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "text": "Plain explanations of the law we practise."
+        "text": "Plain explanations of the law we practise.",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_posts",
+      "type": "insights-list",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "text": "",
+        "limit": 12,
+        "topics": true,
+        "pill_label": "",
+        "pill_link": "",
+        "color_scheme": "paper"
       },
       "blocks": []
     }

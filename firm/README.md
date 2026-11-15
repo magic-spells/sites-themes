@@ -6,9 +6,8 @@ rises from the foot of a phone and slides in from the right from 48rem.
 
 The fixtures are **Thorne & Abara LLP**, a six-person estate planning, probate and
 small-business practice in Portland, Oregon: seven practice areas, six people, six posts with
-authors, four menus and the consultation and newsletter forms. `/specimen` shows the shared
-elements together for review. The photographs are SVG placeholders at 3:4, 4:5, 16:10, 1:1 and
-3:2, and a drawn map.
+authors, a gallery of six office photographs, four menus and the consultation and newsletter
+forms. The photographs are SVG placeholders at 3:4, 4:5, 16:10, 1:1, 3:2 and 4:3, and a drawn map.
 
 ```
 settings/theme.json the template roles, the three section groups, Brand, Contact and Firm settings
@@ -16,15 +15,17 @@ settings/design.json every design token and the nine schemes
 layouts/default.pzl the <html> document: SEO, Open Graph, the skip link, the slots
 data/templates/     the page stacks as JSON
 data/groups/        header-group.json, footer-group.json, panel-group.json
-templates/          404.pzl, password.pzl, maintenance.pzl, specimen.pzl
+templates/          404.pzl, password.pzl, maintenance.pzl
 sections/           announcement-bar, header, mobile-menu, ask-panel, cookie-notice, footer,
-                    page-header, rich-text, image-with-text, newsletter, contact
+                    page-header, hero, rich-text, image-with-text, practice-cards,
+                    practice-index, practice-detail, people, person-detail, principal-letter,
+                    values, quotes, faq, offices, insights-list, post, gallery, newsletter, contact
 components/         Button (and the ask), Field, AskForm, SectionHead, PersonCard, PostCard,
-                    Well, Address, Glyph, Utility
+                    Disclosure, Quote, Well, Address, Glyph, Utility
 styles/theme.css    the Tailwind entry: @theme maps the --sites-* tokens and Firm's role sizes,
                     and the few rules utilities cannot express
 scripts/theme.ts    the browser JavaScript: component registration, opening the sheets, the
-                    notices, a sent form shown where it was
+                    gallery's lightbox, the notices, a sent form shown where it was
 scripts/vendor/     the Magic Spells components, copied in (see vendor/VERSIONS.md)
 styles/vendor/      the same components' stylesheets
 assets/             the fonts and their licences, the favicon, the glyph sprite, the placeholders
@@ -66,7 +67,11 @@ A form select with three options or fewer is a radio group; a longer one is a se
 `services` (practice areas: summary, description, team as the lead, image, order), `team`
 (people: role, letters, group professionals or staff, bio, credentials, image, email, order) and
 `posts` (insights: topic, date, standfirst, image, body, team as the author). Their pages live
-at `/practice-areas/:service`, `/people/:person` and `/insights/:post`.
+at `/practice-areas/:service`, `/people/:person` and `/insights/:post`. A practice area's page names its lead; a person's page
+lists the practice areas they lead and the posts they wrote. The insights list can show its
+topics as links that filter it (`?topic=`).
+
+The gallery section opens each photo in a lightbox at that photo, its alt text as the caption.
 
 The announcement bar takes one notice per line; its close button hides it for that visitor
 until the text changes, and so do the cookie notice's buttons.

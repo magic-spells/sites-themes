@@ -1,12 +1,29 @@
 {
   "label": "Person",
-  "description": "A person’s page; code B adds the dossier.",
+  "description": "A person’s page: the dossier, then what they wrote.",
   "sections": [
     {
-      "id": "s_header",
-      "type": "page-header",
+      "id": "s_person",
+      "type": "person-detail",
       "preset": "Default",
-      "settings": {},
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_writing",
+      "type": "insights-list",
+      "preset": "Default",
+      "settings": {
+        "heading": "Writing",
+        "text": "",
+        "limit": 3,
+        "topics": false,
+        "pill_label": "",
+        "pill_link": "",
+        "color_scheme": "white"
+      },
       "blocks": []
     }
   ]

@@ -11,7 +11,7 @@ them is an npm dependency of the theme; the build resolves only these relative i
 | sheet.min.js, ../styles/vendor/sheet.css | @magic-spells/sheet | 0.2.0 | npm (the ask sheet; the UMD build, which carries dialog-panel 2.0.2, physics-engine, frame-engine and morph-engine 0.1.2, so it is the page's one dialog-panel, the menu drawer's too. Its ESM imports those four by bare name, which the theme build cannot resolve; the ESM plus vendored engines built to the same gzip size) |
 | ../styles/vendor/dialog-panel.css | @magic-spells/dialog-panel | 2.0.3 | npm (the stylesheet only, unchanged since 2.0.2; the script is inside sheet.min.js) |
 | dropdown-panel.js, ../styles/vendor/dropdown-panel.css | @magic-spells/dropdown-panel | 2.1.1 | npm |
-| select-dropdown.js, ../styles/vendor/select-dropdown.css | @magic-spells/select-dropdown | 0.3.0 | npm |
+| select-dropdown.js, ../styles/vendor/select-dropdown.css | @magic-spells/select-dropdown | 0.3.1 | npm |
 | collapsible-content.js, ../styles/vendor/collapsible-content.css | @magic-spells/collapsible-content | 1.2.0 | npm |
 | sticky-header.js, ../styles/vendor/sticky-header.css | @magic-spells/sticky-header | 0.2.0 | npm (copied from Folio's vendored copy) |
 | scrolling-content.js, ../styles/vendor/scrolling-content.css | @magic-spells/scrolling-content | 2.1.1 | npm (the announcement ticker; copied from Nomad's vendored copy) |

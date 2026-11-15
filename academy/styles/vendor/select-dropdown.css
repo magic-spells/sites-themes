@@ -30,6 +30,11 @@ select-dropdown * {
 	box-sizing: border-box;
 }
 
+/* a list never opened adds no scroll space; from the first open the inline size wins */
+select-dropdown:not([visible]) select-panel {
+	max-height: 0;
+}
+
 /* panel shown state */
 select-dropdown[visible] select-panel {
 	opacity: 1;

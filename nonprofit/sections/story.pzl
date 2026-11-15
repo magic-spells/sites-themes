@@ -1,0 +1,71 @@
+<!-- One story. Post: the chosen post, or the newest, its picture in seven parts of twelve beside the topic and date on one line, the title at H2, the standfirst and the button to read it, stacked on phones, the picture first. Quotes: under a centred head, one quote centred with its round portrait thumbnail and one line, the name · the role; two or more take turns on a tarot one-up, page dots under the attribution, and from 64rem round arrows at the sides on hover or keyboard focus. -->
+{#let
+  quotes = settings.source == 'quotes'
+  entry = settings.post || (content.posts.entries | sort('fields.date') | last)
+  f = entry.fields
+  options = { slidesPerView: 1, gap: '1.5rem', loop: true, navigation: { showButtons: true, showPagination: true } }
+}
+{#if quotes ? blocks.length : entry}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-page">
+    {#if !quotes}
+      <div class="grid items-center gap-space-xl lg:grid-cols-12">
+        <div class="lg:col-span-7"><Well asset={ f.image } width={ 1200 } sizes="(min-width: 64rem) 45vw, 100vw" /></div>
+        <div class="grid justify-items-start gap-space-md lg:col-span-5">
+          <p class="text-small text-scheme-muted">{#if f.topic}{ f.topic } · {/if}<Day value={ f.date } /></p>
+          <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Rise text={ entry.title } /></h2>
+          {#if f.standfirst}<p class="text-lede text-pretty">{ f.standfirst }</p>{/if}
+          <Button href="/news/{ entry.handle }" tone="outline">{ settings.link_label }</Button>
+        </div>
+      </div>
+    {:else if blocks.length > 1}
+      <tarot-carousel class="block" id="quotes-{ section.id }">
+        <script type="application/json" data-tarot-options>{ options | json }</script>
+        <SectionHead heading={ settings.heading } centred />
+        <div class="group relative">
+          <tarot-viewport><tarot-track>
+            {#for block in blocks}<tarot-slide><Quote q={ block.settings } editor_id={ block.editor_id } /></tarot-slide>{/for}
+          </tarot-track></tarot-viewport>
+          <Arrows sides />
+        </div>
+      </tarot-carousel>
+    {:else}
+      <SectionHead heading={ settings.heading } centred><Quote q={ blocks[0].settings } editor_id={ blocks[0].editor_id } /></SectionHead>
+    {/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Story",
+  "description": "One story: a post beside its picture, or a quote, several taking turns.",
+  "kind": "Content",
+  "icon": "quote",
+  "settings": [
+    { "type": "select", "id": "source", "label": "Show", "default": "post", "options": [
+      { "value": "post", "label": "A post" },
+      { "value": "quotes", "label": "Quotes" }
+    ] },
+    { "type": "entry", "id": "post", "label": "Post", "info": "Leave empty to show the newest post." },
+    { "type": "text", "id": "link_label", "label": "Button label", "default": "Read the story" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Stories", "info": "Heads the quotes." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "cream" }
+  ],
+  "blocks": [
+    { "type": "quote", "name": "Quote", "limit": 6, "settings": [
+      { "type": "textarea", "id": "quote", "label": "Quote", "default": "" },
+      { "type": "text", "id": "name", "label": "Name", "default": "" },
+      { "type": "text", "id": "role", "label": "Role", "default": "", "info": "Volunteer cook, Pantry visitor." },
+      { "type": "image", "id": "portrait", "label": "Portrait", "info": "A small round thumbnail." }
+    ] }
+  ],
+  "presets": [
+    { "name": "Post", "settings": {} },
+    { "name": "Quotes", "settings": { "source": "quotes" }, "blocks": [
+      { "type": "quote", "settings": { "quote": "I came to the pantry the winter I lost my job. Now I cook the Thursday lunch, and half my street comes to eat.", "name": "Dana", "role": "Volunteer cook" } },
+      { "type": "quote", "settings": { "quote": "The boxes come on Friday with a chat at the door. Some weeks that is the only visit I get.", "name": "Ruth", "role": "Delivery neighbour" } }
+    ] }
+  ]
+}
+</schema>

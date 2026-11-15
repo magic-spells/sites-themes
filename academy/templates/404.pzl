@@ -1,0 +1,8 @@
+<!-- template: 404 -->
+<!-- layout: default -->
+<!-- A wrong path, on feint: the line, then the ask and All classes, stacked full width on phones. -->
+<Utility>
+  <h1 class="max-w-prose font-heading text-h1 text-balance">{ t('not_found_title') }</h1>
+  <p class="max-w-prose text-lead text-pretty text-scheme-muted">{ t('not_found_body') }</p>
+  <p class="grid w-full gap-space-sm pt-space-xs md:flex md:w-auto"><Button ask /><Button tone="outline" href="/classes">{ t('all_classes') }</Button></p>
+</Utility>

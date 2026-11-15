@@ -1,0 +1,17 @@
+{
+  "sections": [
+    {
+      "id": "sg_footer",
+      "type": "footer",
+      "preset": "Default",
+      "settings": {
+        "tagline": "Free meals, a choice pantry and a warm room on Ferry Lane since 2009.",
+        "menu": "footer",
+        "legal_menu": "legal",
+        "social_menu": "social",
+        "color_scheme": "night"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "label": "Group",
+  "description": "A group's page.",
+  "sections": [
+    {
+      "id": "s_group",
+      "type": "group-detail",
+      "preset": "Default",
+      "settings": {},
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "heading": "Not sure? Come and say hello",
+        "text": "The kettle is on Monday to Saturday.",
+        "link": {
+          "href": "/visit",
+          "label": "Visit us"
+        },
+        "color_scheme": "blue"
+      },
+      "blocks": []
+    }
+  ]
+}

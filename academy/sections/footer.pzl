@@ -1,0 +1,55 @@
+<!-- The colophon. From 64rem seven parts to five: the wordmark over the tagline, the School accreditation lines, and the first location's address and hours with the Contact email and phone; then the main menu in two columns. Under a rule, "© <name>" and the legal links left, the social links as text right. One column on phones, in the same order. No year: sections have no clock. -->
+{#let
+  s = site.settings
+  loc = content.locations.entries | sort('fields.order') | first
+  link = 'underline-offset-4 hover:underline hover:decoration-1'
+}
+<footer class="bg-scheme-background px-gutter pt-section pb-space-xl text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-xl">
+    <div class="grid gap-space-xl lg:grid-cols-wide-narrow lg:gap-space-2xl">
+      <div class="grid content-start justify-items-start gap-space-md">
+        <a class="font-heading text-h3" href="/">{#if s.logo}<img class="h-control w-auto" src="{ image_url(s.logo, 320) }" alt="{ s.wordmark || site.name }" width={ s.logo.width } height={ s.logo.height } />{:else}{ s.wordmark || site.name }{/if}</a>
+        {#if s.tagline}<p class="text-body">{ s.tagline }</p>{/if}
+        {#if settings.show_accreditation}<Lines cls="text-scheme-muted" />{/if}
+        {#if settings.show_address}
+          <div class="grid justify-items-start gap-space-2xs text-small">
+            {#if loc.fields.address}<p class="whitespace-pre-line">{ [loc.title, loc.fields.address] | compact | join('\n') }</p>{/if}
+            {#if loc.fields.hours}<p class="whitespace-pre-line text-scheme-muted">{ loc.fields.hours }</p>{/if}
+            {#if s.email}<a class="underline decoration-1 underline-offset-4" href="mailto:{ s.email }">{ s.email }</a>{/if}
+            {#if s.phone}<a class="underline decoration-1 underline-offset-4" href="tel:{ s.phone | replace(' ', '') }">{ s.phone }</a>{/if}
+          </div>
+        {/if}
+      </div>
+      {#if settings.menu.items.length}
+        <nav aria-label="{ t('the_school') }"><ul class="grid grid-cols-2 gap-x-space-lg gap-y-space-sm">{#for item in settings.menu.items}<li><a class="{ link }" href="{ item.href }">{ item.label }</a></li>{/for}</ul></nav>
+      {/if}
+    </div>
+    <div class="flex flex-wrap items-baseline justify-between gap-x-space-lg gap-y-space-sm border-t border-scheme-rule pt-space-lg text-small">
+      <div class="flex flex-wrap gap-x-space-md gap-y-space-xs">
+        <p>© { site.name }</p>
+        {#for item in settings.legal_menu.items}<a class="{ link }" href="{ item.href }">{ item.label }</a>{/for}
+      </div>
+      {#if settings.social_menu.items.length}<ul class="flex flex-wrap gap-x-space-md" aria-label="{ t('follow') }">{#for item in settings.social_menu.items}<li><a class="{ link }" href="{ item.href }">{ item.label }</a></li>{/for}</ul>{/if}
+    </div>
+  </div>
+</footer>
+
+<schema>
+{
+  "name": "Footer",
+  "description": "The wordmark, tagline, accreditation lines, address and hours beside the menu; then the name, the legal links and the social links.",
+  "kind": "Footer",
+  "icon": "panel-bottom",
+  "settings": [
+    { "type": "menu", "id": "menu", "label": "Menu" },
+    { "type": "menu", "id": "social_menu", "label": "Social links" },
+    { "type": "menu", "id": "legal_menu", "label": "Legal links" },
+    { "type": "checkbox", "id": "show_accreditation", "label": "Accreditation lines", "default": true },
+    { "type": "checkbox", "id": "show_address", "label": "Address and hours", "default": true, "info": "The first location's address and hours, with the Contact email and phone." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "ink" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "menu": "main", "social_menu": "social", "legal_menu": "legal", "color_scheme": "ink" } }
+  ]
+}
+</schema>

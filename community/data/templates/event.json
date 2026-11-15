@@ -1,0 +1,23 @@
+{
+  "label": "Event",
+  "description": "An event's page, then more coming up.",
+  "sections": [
+    {
+      "id": "s_event",
+      "type": "event-detail",
+      "preset": "Default",
+      "settings": {},
+      "blocks": []
+    },
+    {
+      "id": "s_events",
+      "type": "events-list",
+      "preset": "Default",
+      "settings": {
+        "heading": "More coming up",
+        "limit": 3
+      },
+      "blocks": []
+    }
+  ]
+}

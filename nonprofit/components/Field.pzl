@@ -1,0 +1,31 @@
+<!-- component: Field -->
+<!-- One form field of any of the engine's types (text, email, textarea, select, checkbox), field being the form's field: the label above in the label size with a * when required, the box on the band's ground with its field border, the text colour on focus, and the error under it, tied by aria-describedby. A field with the id phone is a telephone field. A select is a select-dropdown whose trigger is named by the label, then its value; a checkbox sits before its label and posts "on". bare keeps a text field's label for screen readers only and shows it as the placeholder (the newsletter's one field). The message and checkboxes take the full row of a two-column form; cls sets the wrapper's classes instead. prefix keeps the ids apart when two forms share a page. -->
+{#let
+  type = field.id == 'phone' ? 'tel' : field.type
+  check = type == 'checkbox'
+  hide = bare && !check
+  key = prefix + '-' + field.id
+  id = 'field-' + key
+  err = field.error ? 'error-' + key : null
+  box = 'rounded-field border bg-scheme-input px-field-x text-body text-scheme-input-text ' + (err ? 'border-scheme-error' : 'border-scheme-field')
+}
+<div class={ cls ?? (check || type == 'textarea' ? 'md:col-span-2' : null) }>
+  <label class="{ hide ? 'sr-only' : (check ? 'flex items-start gap-space-sm text-body' : 'mb-space-xs block text-label') }" id="label-{ key }" for={ type == 'select' ? null : id }>{#if check}<input class="mt-space-2xs size-icon shrink-0 accent-scheme-foreground" id="{ id }" type="checkbox" name={ field.id } value="on" checked={ field.value == 'on' } required={ field.required } aria-invalid={ err && 'true' } aria-describedby={ err } />{/if}<span>{ field.label }{#if field.required && !hide}<span aria-hidden="true"> *</span>{/if}</span></label>
+  {#if type == 'select'}
+    <select-dropdown class="text-body">
+      <select-trigger class="flex min-h-control items-center justify-between gap-space-sm py-0 { box }" id="{ id }" aria-labelledby="label-{ key } { id }" aria-invalid={ err && 'true' } aria-describedby={ err }>
+        <span class="select-label-text truncate">{ field.value || t('choose') }</span>
+        <Glyph name="chevron-down" />
+      </select-trigger>
+      <input type="hidden" name={ field.id } value={ field.value } />
+      <select-panel>
+        {#for option in field.options}<select-option value={ option } selected={ field.value == option }>{ option }</select-option>{/for}
+      </select-panel>
+    </select-dropdown>
+  {:else if type == 'textarea'}
+    <textarea class="block min-h-textarea w-full resize-y py-field-y focus:border-scheme-foreground { box }" id="{ id }" name={ field.id } maxlength={ field.max_length } required={ field.required } aria-invalid={ err && 'true' } aria-describedby={ err }>{ field.value }</textarea>
+  {:else if !check}
+    <input class="block min-h-control w-full placeholder:text-scheme-muted focus:border-scheme-foreground { box }" id="{ id }" name={ field.id } type={ type } placeholder={ hide ? field.label : null } autocomplete={ autocomplete ?? (type == 'email' ? 'email' : (type == 'tel' ? 'tel' : (field.id == 'name' ? 'name' : 'off'))) } maxlength={ field.max_length } required={ field.required } value={ field.value } aria-invalid={ err && 'true' } aria-describedby={ err } />
+  {/if}
+  {#if err}<p class="mt-space-xs text-small text-scheme-error" id="{ err }">{ t('form_field_' + field.error) }</p>{/if}
+</div>

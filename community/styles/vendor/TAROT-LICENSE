@@ -1,0 +1,108 @@
+# Tarot Carousel License
+
+Version 1.0 — August 2026
+Copyright 2026 Magic Spells LLC. All rights reserved.
+
+Tarot Carousel ("the Software") is **Fair Source**: the source code is public —
+free to read, run, evaluate, and learn from — and every release becomes true
+open source over time (see "Future MIT Release" below). It is not open source
+today: some uses require a paid license.
+
+The plain-English summary (the numbered terms below are what governs):
+
+- **One developer building with Tarot pays nothing** — personal projects,
+  open-source projects, and paid client work included.
+- **A team of two or more developers needs one Team License** (covers up to
+  25 developers).
+- **Shipping Tarot inside a product you sell** — a theme, plugin, template,
+  or SaaS — **needs a Commercial License, per product.**
+- Two years after a version is published, that version becomes MIT.
+
+Licenses are sold at https://www.magicspells.io/tarot
+
+## 1. Definitions
+
+- "Software" means Tarot Carousel and its first-party plugins, in source or
+  built form, including modifications you make to them.
+- "Developer" means a person who writes, edits, or builds code that uses the
+  Software. People who merely view or manage the resulting work (designers,
+  PMs, clients, content editors) are not Developers.
+- "End Product" means a website or application that uses the Software and is
+  delivered to a specific client or operated by you, as opposed to a Product.
+- "Product" means anything incorporating the Software that is sold, licensed,
+  or distributed to more than one customer — including themes, templates,
+  plugins, app builders, and SaaS platforms whose customers' sites or apps
+  incorporate the Software.
+
+## 2. Individual License (free)
+
+Magic Spells LLC grants any single Developer a free, perpetual, worldwide,
+non-exclusive license to use, modify, and build with the Software, provided:
+
+a. No more than one Developer builds with the Software within the same
+   organization or on the same End Product at the same time.
+b. The Software is used only in End Products — personal, open-source,
+   internal, or client work, paid or unpaid, on unlimited sites.
+c. The Software is not incorporated into a Product (see Commercial License).
+
+No attribution is required.
+
+## 3. Team License (paid)
+
+A Team License is required when two or more Developers in an organization
+build with the Software. One Team License covers up to 25 Developers in the
+organization, unlimited End Products, and delivery of End Products to clients
+(the client's own later maintenance of a delivered End Product requires no
+further license unless the client's team independently builds new work with
+the Software). Organizations with more than 25 Developers building with the
+Software purchase one Team License per team of up to 25, or may contact
+Magic Spells LLC for custom terms.
+
+## 4. Commercial License (paid, per Product)
+
+A Commercial License is required to incorporate the Software into a Product,
+and covers one Product with unlimited end customers. Each additional Product
+requires its own Commercial License. A Commercial License includes the rights
+of a Team License for the team building that Product.
+
+## 5. Restrictions (all tiers)
+
+a. The Software may not be redistributed on its own, or in any form whose
+   primary purpose is to give others the Software itself rather than an End
+   Product or licensed Product built with it.
+b. Products and End Products must have substantially different functionality
+   than, and must not compete directly with, the Software.
+c. Copyright and license notices in the Software must be preserved.
+
+## 6. Future MIT Release
+
+Each version of the Software becomes available under the MIT License two
+years after its first publication by Magic Spells LLC. Until then, this
+license governs. This grant is irrevocable for versions already published.
+
+## 7. Updates
+
+Paid licenses are perpetual and include all updates and new versions of the
+Software for as long as Magic Spells LLC publishes them.
+
+## 8. Termination
+
+This license terminates if you materially breach it and do not cure the
+breach within 30 days of written notice. Upon termination you must cease use
+and distribution of the Software; End Products already delivered to clients
+are unaffected.
+
+## 9. Disclaimer of Warranty
+
+THE SOFTWARE IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING
+FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.
+
+---
+
+Questions and licensing inquiries: contact@magicspells.io
+Licenses and pricing: https://www.magicspells.io/tarot

@@ -1,0 +1,43 @@
+<!-- The albums, newest first: the first photo in a 4:3 well, the title in H4 and the date in the label in muted, two across, three from 48rem. On an album's page it leaves that album out. Nothing renders when there is no album. -->
+{#let
+  all = content.albums.entries | sort('fields.date') | reverse
+  albums = all | reject('id', page.entry.id) | slice(0, settings.limit)
+}
+{#if albums.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ t('all_photos') } link_href="/photos" />
+    <ul class="grid grid-cols-2 gap-x-space-md gap-y-space-xl md:grid-cols-3 md:gap-x-space-lg">
+      {#for entry in albums}
+        <li class="{ site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-group="albums:60">
+          <a class="group grid content-start gap-space-sm" href="/photos/{ entry.handle }">
+            <Well asset={ entry.fields.photos.items[0].asset } alt="" ratio="aspect-photo" width={ 640 } sizes="(min-width: 48rem) 30vw, 50vw" />
+            <span class="grid gap-space-3xs">
+              <h3 class="font-heading text-h4 text-balance text-scheme-heading group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{ entry.title }</h3>
+              <span class="text-label text-scheme-muted tnum">{ entry.fields.date | date('long') }</span>
+            </span>
+          </a>
+        </li>
+      {/for}
+    </ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Albums",
+  "description": "Photo albums as cover tiles, newest first.",
+  "kind": "Collections",
+  "icon": "images",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Albums" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "range", "id": "limit", "label": "Limit", "min": 1, "max": 24, "step": 1, "default": 24 },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

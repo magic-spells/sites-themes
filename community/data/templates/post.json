@@ -1,0 +1,22 @@
+{
+  "label": "Post",
+  "description": "A post, then more news.",
+  "sections": [
+    {
+      "id": "s_post",
+      "type": "post",
+      "preset": "Default",
+      "settings": {},
+      "blocks": []
+    },
+    {
+      "id": "s_news",
+      "type": "news-list",
+      "preset": "Default",
+      "settings": {
+        "heading": "More news"
+      },
+      "blocks": []
+    }
+  ]
+}

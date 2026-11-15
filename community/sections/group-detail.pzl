@@ -1,0 +1,63 @@
+<!-- A group's page: the H1, its line, when and where with its link, the description; from 64rem the 3:2 photo and the host at the right (with no photo the host follows the text); then up to three more groups, of its kind when there are any. -->
+{#let
+  entry = page.entry
+  f = entry.fields
+  others = content.groups.entries | sort('title') | sort('fields.order') | reject('id', entry.id)
+  same = f.kind ? (others | where('fields.kind', f.kind)) : []
+  more = (same.length ? same : others) | slice(0, 3)
+  host = f.host
+}
+{#if entry}
+<article class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-2xl">
+    <div class="grid items-start gap-space-xl { f.image ? 'lg:grid-cols-seven-five lg:gap-space-2xl' : 'max-w-reading' }">
+      <div class="grid gap-space-lg">
+        <header class="grid gap-space-md">
+          <h1 class="font-heading text-h1 text-balance text-scheme-heading"><Rise text={ entry.title } /></h1>
+          {#if f.summary}<p class="max-w-reading text-lead text-pretty">{ f.summary }</p>{/if}
+        </header>
+        <div class="flex flex-wrap items-center justify-between gap-space-md border-b border-scheme-border pb-space-md">
+          <p class="tnum"><When entry={ entry } /> · { f.place || t('at_the_house') }</p>
+          {#if f.link}<Button href={ f.link }>{ f.link_label || t('find_out_more') }</Button>{/if}
+        </div>
+        {#if f.description}<div class="sites-prose max-w-reading text-pretty">{ f.description }</div>{/if}
+      </div>
+      {#if f.image || host}
+        <aside class="grid gap-space-lg">
+          {#if f.image}<Well asset={ f.image } ratio="aspect-wide" width={ 1024 } sizes="(min-width: 64rem) 34rem, 100vw" eager />{/if}
+          {#if host}
+            <div class="grid gap-space-xs">
+              <p class="text-label text-scheme-muted">{ t('hosted_by') }</p>
+              <PersonLine person={ host } />
+            </div>
+          {/if}
+        </aside>
+      {/if}
+    </div>
+    {#if more.length}
+      <div>
+        <SectionHead heading={ t('more_groups') } link_label={ t('all_groups') } link_href="/groups" />
+        <ul class="border-b border-scheme-border">
+          {#for g in more}<GroupRow entry={ g } />{/for}
+        </ul>
+      </div>
+    {/if}
+  </div>
+</article>
+{/if}
+
+<schema>
+{
+  "name": "Group",
+  "description": "A group's page: when and where it meets, what it is, who hosts it and more like it.",
+  "kind": "Content",
+  "icon": "users",
+  "templates": ["group"],
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

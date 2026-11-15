@@ -1,0 +1,134 @@
+{
+  "label": "Home",
+  "description": "The front page: the hero, featured classes, the week, a feature, the teachers, what parents say, the ask, the dates and questions.",
+  "sections": [
+    {
+      "id": "s_hero",
+      "type": "hero",
+      "preset": "Split",
+      "settings": {
+        "image": "as_4x3_blue",
+        "event": "ev_1"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_classes",
+      "type": "class-grid",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_week",
+      "type": "timetable",
+      "preset": "Week",
+      "settings": {},
+      "blocks": []
+    },
+    {
+      "id": "s_feature",
+      "type": "image-with-text",
+      "preset": "Default",
+      "settings": {
+        "image": "as_4x3_manila",
+        "color_scheme": "blue"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_teachers",
+      "type": "team-grid",
+      "preset": "Default",
+      "settings": {
+        "limit": 4,
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_quotes",
+      "type": "testimonials",
+      "preset": "Rows",
+      "settings": {
+        "color_scheme": "manila"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_ask",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "brick"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_dates",
+      "type": "dates",
+      "preset": "Everything",
+      "settings": {
+        "show_classes": false,
+        "limit": 6,
+        "view_all_label": "All dates",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "light-blue"
+      },
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "Can my child try a class first?",
+            "answer": "<p>Yes. The first group class is a free trial. Book a trial lesson and we will offer a date.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "What if a class is full?",
+            "answer": "<p>We keep a waiting list for every class and offer places in the order we hear from you.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do you teach adults?",
+            "answer": "<p>Yes. Adult Choir and Adult Tap run on weekday evenings, and every one-to-one lesson is open to adults.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "How do fees work?",
+            "answer": "<p>Every class is paid by the term, before the first class. One-to-one lessons come ten to a term.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "What happens at half term?",
+            "answer": "<p>The school is closed for half term. Term fees already leave that week out.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do pupils take exams?",
+            "answer": "<p>Only if they want to. Teachers enter pupils for graded exams when they are ready.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}

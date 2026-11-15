@@ -1,0 +1,3 @@
+<!-- component: Heading -->
+<!-- A list's own heading (a card's name, a month): an h3 under its section's head, an h2 when sub is empty because the section shows none, so a page never steps from its h1 to an h3. -->
+{#if sub}<h3 class={ cls }><Children/></h3>{:else}<h2 class={ cls }><Children/></h2>{/if}

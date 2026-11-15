@@ -1,0 +1,3 @@
+<!-- component: Rise -->
+<!-- A heading's text. Its words rise in through split-text while Brand reveal on scroll is on. -->
+{#if site.settings.reveal}<split-text split="words">{ text }</split-text>{:else}{ text }{/if}

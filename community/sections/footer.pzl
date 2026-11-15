@@ -1,0 +1,44 @@
+<!-- The door plate repeated: in five parts the name in the heading face, the hours, the address and the access line; in seven, the main menu (each item's children in its place) and the social links as two plain lists, the support link first when set, side by side on phones. A hairline, then © and the name, and the legal links. -->
+{#let
+  s = site.settings
+  name = s.name || site.name
+  link = 'decoration-1 underline-offset-4 hover:underline'
+}
+<footer class="bg-scheme-background px-gutter pt-section-loose pb-space-xl text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-2xl">
+    <div class="grid gap-space-2xl md:grid-cols-five-seven">
+      <div class="grid max-w-sign content-start gap-space-md">
+        <p class="font-heading text-h3 text-balance text-scheme-heading">{ name }</p>
+        <Hours size="sm" />
+        <Address />
+        {#if s.access}<p class="text-small text-pretty text-scheme-muted">{ s.access }</p>{/if}
+      </div>
+      <nav class="grid grid-cols-2 content-start gap-space-lg leading-loose md:justify-self-end md:gap-space-3xl" aria-label="{ t('footer_navigation') }">
+        <ul>{#for item in menus.main.items}{#if item.children.length}{#for child in item.children}<li><a class="{ link }" href="{ child.href }">{ child.label }</a></li>{/for}{:else}<li><a class="{ link }" href="{ item.href }">{ item.label }</a></li>{/if}{/for}</ul>
+        <ul>
+          {#if s.give_url}<li><a class="{ link }" href="{ s.give_url }">{ t('support') }</a></li>{/if}
+          {#for item in menus.social.items}<li><a class="{ link }" href="{ item.href }">{ item.label }</a></li>{/for}
+        </ul>
+      </nav>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-x-space-lg gap-y-space-xs border-t border-scheme-border pt-space-lg text-small text-scheme-muted">
+      <p>© { name }</p>
+      {#if menus.legal.items.length}<p class="flex gap-space-md">{#for item in menus.legal.items}<a class="{ link }" href="{ item.href }">{ item.label }</a>{/for}</p>{/if}
+    </div>
+  </div>
+</footer>
+
+<schema>
+{
+  "name": "Footer",
+  "description": "The name, hours and address, the main and social menus, then © the name and the legal links.",
+  "kind": "Footer",
+  "icon": "panel-bottom",
+  "settings": [
+    { "type": "paragraph", "content": "The name, hours, address and access come from the Brand and House settings; the links from the main, social and legal menus." },    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "umber" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "umber" } }
+  ]
+}
+</schema>

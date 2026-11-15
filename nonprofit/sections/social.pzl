@@ -1,0 +1,45 @@
+<!-- The workspace's social profile as photos it uploads (no live feed): up to six square tiles, each with the platform's glyph in a round badge at its corner, linking to its post or to the profile. The head's pill is the handle. Six across from 64rem, three from 48rem; on phones a row that swipes and bleeds to the right. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-page">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.handle } link_href={ settings.url }>
+      <ul class="-me-gutter flex snap-x snap-mandatory gap-space-sm overflow-x-auto pe-gutter md:me-0 md:grid md:grid-cols-3 md:gap-space-md md:overflow-visible md:pe-0 lg:grid-cols-6">
+        {#for block in blocks | slice(0, 6)}
+          <li class="w-2/5 shrink-0 snap-start md:w-auto { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-block={ block.editor_id }>
+            <a class="block" href={ block.settings.link || settings.url || null }><Well asset={ block.settings.image } ratio="aspect-square" width={ 640 } sizes="(min-width: 64rem) 12rem, (min-width: 48rem) 33vw, 40vw"><span class="absolute end-space-xs bottom-space-xs flex size-control-sm items-center justify-center rounded-full bg-scheme-background"><Glyph name={ settings.platform } /></span></Well></a>
+          </li>
+        {/for}
+      </ul>
+    </SectionHead>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Social",
+  "description": "Photos from your social profile, uploaded here, each linking to its post.",
+  "kind": "Content",
+  "icon": "images",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Follow along" },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "text", "id": "handle", "label": "Handle", "default": "", "info": "The pill at the right of the heading, linking to the profile." },
+    { "type": "url", "id": "url", "label": "Profile link", "default": "" },
+    { "type": "select", "id": "platform", "label": "Platform", "default": "instagram", "options": [
+      { "value": "instagram", "label": "Instagram" },
+      { "value": "facebook", "label": "Facebook" },
+      { "value": "linkedin", "label": "LinkedIn" },
+      { "value": "youtube", "label": "YouTube" }
+    ], "info": "Its glyph sits on each tile." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "blocks": [
+    { "type": "tile", "name": "Tile", "limit": 6, "settings": [
+      { "type": "image", "id": "image", "label": "Photo", "info": "Square crops best. The alt text is the photo's own." },
+      { "type": "url", "id": "link", "label": "Post link", "default": "", "info": "Leave empty to link to the profile." }
+    ] }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

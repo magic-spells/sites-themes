@@ -1,0 +1,24 @@
+<!-- component: AskFields -->
+<!-- A site form whole: the School ask form by default, the one the sheet and the ask page share; handle names another (contact), which asks with Send unless the form names its button. With heading, the h2 (id <prefix>-title) leads, the School confirm line under it; once sent it reads "Thank you", and close adds a button that closes the panel. Without heading a sent form shows its success message. The error line sits above the button. On a class page the form's class select starts on that class. prefix keeps the field ids apart when two forms share a page. -->
+{#let
+  s = site.settings
+  h = handle || s.ask_form
+  ask = h == s.ask_form
+}
+<Form handle={ h } class="grid gap-space-md" id="form-{ prefix }">
+  {#if heading}
+    <div class="grid gap-space-xs" role={ form.sent ? 'status' : null }>
+      <h2 class="font-heading text-h2 text-balance text-scheme-heading" id="{ prefix }-title">{ form.sent ? t('thank_you') : heading }</h2>
+      {#if ask && s.confirm_line}<p class="text-small text-scheme-muted">{ s.confirm_line }</p>{/if}
+    </div>
+  {/if}
+  {#if form.sent}
+    {#if !heading}<p class="font-heading text-h3" role="status">{ form.success_message || t('form_success') }</p>{/if}
+    {#if close}<div><Button type="button" tone="outline" close>{ t('close') }</Button></div>{/if}
+  {:else}
+    <FormFields fields={ form.fields } prefix={ prefix } preset={ page.entry.title } />
+    {#if form.error}<p class="text-small text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
+    <Button type="submit" wide>{ form.submit_label || (ask ? s.ask_label : t('send')) }</Button>
+    <noscript><p class="text-small text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+  {/if}
+</Form>

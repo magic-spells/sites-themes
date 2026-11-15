@@ -6,7 +6,7 @@
 }
 <!-- The 404 page as the design draws it: a page header (kicker, headline,
      dek, 3px rule), then the five newest headlines on Slate. -->
-<section class="sites-scheme-paper bg-scheme-background px-gutter py-section text-scheme-foreground">
+<section class="{ site.settings.base_scheme | scheme_class } bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column border-b-3 border-scheme-rule-strong pb-step-md">
     <header class="grid max-w-reading gap-step-sm">
       <p class="font-body text-kicker font-semibold text-scheme-links uppercase">404</p>

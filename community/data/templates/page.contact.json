@@ -1,0 +1,60 @@
+{
+  "label": "Contact",
+  "description": "The contact form and where the house talks.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Write, call or drop in. Someone is at the desk Monday to Saturday."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_contact",
+      "type": "contact",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "text": ""
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_links",
+      "type": "community-links",
+      "preset": "Default",
+      "settings": {},
+      "blocks": [
+        {
+          "id": "b_chat",
+          "type": "link",
+          "settings": {
+            "label": "Join the group chat",
+            "text": "Lifts, lost property and who is bringing cake.",
+            "link": "https://chat.whatsapp.com/"
+          }
+        },
+        {
+          "id": "b_list",
+          "type": "link",
+          "settings": {
+            "label": "Get the newsletter",
+            "text": "One email a month with what's on and photos from last time.",
+            "link": "/#newsletter"
+          }
+        },
+        {
+          "id": "b_facebook",
+          "type": "link",
+          "settings": {
+            "label": "Facebook",
+            "text": "Photos and notices, as they happen.",
+            "link": "https://www.facebook.com/"
+          }
+        }
+      ]
+    }
+  ]
+}

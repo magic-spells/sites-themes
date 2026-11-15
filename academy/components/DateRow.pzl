@@ -1,0 +1,11 @@
+<!-- component: DateRow -->
+<!-- A dated thing on a rule. In a list at least 42rem wide (the list is the @container), four columns on one baseline: the day or range, the title, the time and the note in small muted. Narrower (phones, the class page's side column), the date, the title, then the time and the note joined by " · ". The title links to the event's link, or a dated class to its page (not from that page). -->
+{#let
+  f = entry.fields
+  href = f.link || (f.class && f.class.handle != page.entry.handle ? '/classes/' + f.class.handle : '')
+}
+<li class="grid gap-space-2xs border-b border-scheme-rule py-space-md @2xl:grid-cols-date @2xl:items-baseline @2xl:gap-space-lg">
+  <span class="font-medium"><DateRange from={ f.date } to={ f.end_date } /></span>
+  {#if href}<a class="font-medium underline-offset-4 hover:underline hover:decoration-1" href="{ href }">{ entry.title }</a>{:else}<span class="font-medium">{ entry.title }</span>{/if}
+  <span class="text-small @2xl:contents"><span class="tabular-nums">{ f.time }</span>{#if f.time && f.note}<span class="text-scheme-muted @2xl:hidden"> · </span>{/if}<span class="text-scheme-muted">{ f.note }</span></span>
+</li>

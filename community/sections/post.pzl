@@ -1,0 +1,34 @@
+<!-- A post's page: the H1, the date and topic in the label in muted, the standfirst, the 3:2 picture across the column, then the body at reading width. -->
+{#let
+  post = page.entry
+  f = post.fields
+}
+{#if post}
+<article class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-xl">
+    <header class="grid max-w-hero gap-space-sm">
+      <h1 class="font-heading text-h1 text-balance text-scheme-heading"><Rise text={ post.title } /></h1>
+      <p class="text-label text-scheme-muted tnum">{ f.date | date('long') }{#if f.topic} · { f.topic }{/if}</p>
+      {#if f.standfirst}<p class="max-w-reading pt-space-xs text-lead text-pretty">{ f.standfirst }</p>{/if}
+    </header>
+    {#if f.image}<Well asset={ f.image } ratio="aspect-wide" width={ 1600 } sizes="(min-width: 82.5rem) 82.5rem, 100vw" eager />{/if}
+    <div class="sites-prose max-w-reading text-pretty">{ f.body }</div>
+  </div>
+</article>
+{/if}
+
+<schema>
+{
+  "name": "Post",
+  "description": "A post's title, date, picture and body.",
+  "kind": "Content",
+  "icon": "file-text",
+  "templates": ["post"],
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

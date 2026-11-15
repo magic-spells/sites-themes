@@ -1,0 +1,14 @@
+<!-- component: Questions -->
+<!-- Rows on feint rules that open and close: the question one weight heavier than the answer, with a plus whose vertical line shrinks to nothing as the row opens; the answer under it in the 42rem reading width. items are blocks, each with settings.question and settings.answer. The first opens when first_open. Without JavaScript every row shows. -->
+<ul class="border-t border-scheme-rule">
+  {#for item in items, i}
+    <li class="border-b border-scheme-rule" data-block={ item.editor_id }>
+      <collapsible-component>
+        <h3><button class="group flex w-full items-center justify-between gap-space-md py-space-md text-left text-lead font-medium" type="button">{ item.settings.question }<svg class="size-icon shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path class="origin-center transition-transform duration-fast group-aria-expanded:scale-y-0" d="M12 5v14"/></svg></button></h3>
+        <collapsible-content open={ first_open && i == 0 }>
+          <div class="sites-prose max-w-prose pb-space-md text-body">{ item.settings.answer }</div>
+        </collapsible-content>
+      </collapsible-component>
+    </li>
+  {/for}
+</ul>

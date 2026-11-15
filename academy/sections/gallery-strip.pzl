@@ -1,0 +1,60 @@
+<!-- A strip of photographs (shows, recitals, the studios) from image blocks: a tarot track of equal-width slides cropped to one ratio with lg corners, and the progress hairline and round arrows under it. On a phone the track runs edge to edge, the first slide inset by the gutter and the next one cut at the right; two across from 48rem, three from 64rem. Each photo opens the lightbox. -->
+{#let
+  items = blocks | slice(0, 12)
+  id = 'strip-' + section.id
+  ratio = settings.slide_ratio == '4:5' ? 'aspect-portrait' : (settings.slide_ratio == '3:2' ? 'aspect-photo' : 'aspect-square')
+  options = { lightbox: true, progressBar: { selector: '#bar-' + id }, slidesPerView: 1.2, gap: '1rem', paddingLeft: '1rem', navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { slidesPerView: 2, gap: '1.5rem', paddingLeft: 0, navigation: { showButtons: true } }, '1024': { slidesPerView: 3, gap: '1.5rem', paddingLeft: 0, navigation: { showButtons: true } } } }
+}
+{#if items.length}
+<section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter">
+  <tarot-carousel class="mx-auto block max-w-column" id={ id }>
+    <script type="application/json" data-tarot-options>{ options | json }</script>
+    <div class="px-gutter md:px-0"><SectionHead heading={ settings.heading } text={ settings.text } /></div>
+    <tarot-viewport>
+      <tarot-track>
+        {#for block in items, i}
+          {#let b = block.settings}
+          <tarot-slide data-block={ block.editor_id }>
+            {#if b.image}
+              <a class="block cursor-zoom-in" href="{ image_url(b.image, 2560) }" data-tarot-lightbox aria-label="{ t('open_photo', { index: i + 1 }) }"><img class="w-full rounded-lg bg-scheme-surface-2 object-cover { ratio }" src="{ image_url(b.image, 1024) }" srcset="{ image_srcset(b.image, [480, 768, 1024]) }" sizes="(min-width: 64rem) 25rem, (min-width: 48rem) 45vw, 80vw" data-tarot-lightbox-src="{ image_url(b.image, 2560) }" alt="{ b.image.alt }" loading="lazy" width={ b.image.width } height={ b.image.height } /></a>
+            {:else}
+              <span class="block rounded-lg bg-scheme-surface-2 { ratio }"></span>
+            {/if}
+            {#if b.caption}<p class="mt-space-xs text-small text-scheme-muted" data-tarot-lightbox-fade>{ b.caption }</p>{/if}
+          </tarot-slide>
+        {/for}
+      </tarot-track>
+    </tarot-viewport>
+    <div class="px-gutter md:px-0"><Arrows bar="bar-{ id }" /></div>
+  </tarot-carousel>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Gallery strip",
+  "description": "A strip of photos that scrolls sideways, each opening a lightbox.",
+  "kind": "Gallery",
+  "icon": "gallery-horizontal",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Photos" },
+    { "type": "text", "id": "text", "label": "Text", "default": "" },
+    { "type": "select", "id": "slide_ratio", "label": "Slide shape", "default": "1:1", "options": [
+      { "value": "1:1", "label": "Square" },
+      { "value": "4:5", "label": "Portrait 4:5" },
+      { "value": "3:2", "label": "Landscape 3:2" }
+    ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "blocks": [
+    { "type": "image", "name": "Photo", "settings": [
+      { "type": "image", "id": "image", "label": "Image" },
+      { "type": "text", "id": "caption", "label": "Caption", "default": "" }
+    ] }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" } }
+  ]
+}
+</schema>

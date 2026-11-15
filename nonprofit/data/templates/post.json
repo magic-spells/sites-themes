@@ -1,0 +1,25 @@
+{
+  "label": "Post",
+  "description": "A post and the newest after it.",
+  "sections": [
+    {
+      "id": "s_post",
+      "type": "post",
+      "preset": "Default",
+      "settings": {},
+      "blocks": []
+    },
+    {
+      "id": "s_posts",
+      "type": "journal-list",
+      "preset": "Grid",
+      "settings": {
+        "view": "grid",
+        "heading": "More news",
+        "limit": 3,
+        "color_scheme": "chalk"
+      },
+      "blocks": []
+    }
+  ]
+}

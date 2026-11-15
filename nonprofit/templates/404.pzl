@@ -1,0 +1,8 @@
+<!-- template: 404 -->
+<!-- layout: default -->
+<!-- A wrong path, on the base scheme: the line, then the home page and the contact page, stacked full width on phones. -->
+<Utility>
+  <h1 class="max-w-reading font-heading text-h1 text-balance text-scheme-heading">{ t('not_found_title') }</h1>
+  <p class="max-w-reading text-lede text-pretty">{ t('not_found_body') }</p>
+  <p class="mt-space-md flex w-full flex-col gap-space-sm md:w-auto md:flex-row"><Button href="/">{ t('home') }</Button><Button href="/contact" tone="outline">{ t('contact') }</Button></p>
+</Utility>

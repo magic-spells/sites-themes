@@ -1,0 +1,39 @@
+<!-- The subjects as a row of exercise books: one 3:4 cover per subject in its cover colour, a label near the top with the subject and its classes' short names, each linking to the class list on that subject. Five across from 64rem, three from 48rem; on phones a row that scrolls edge to edge with the next cover showing. The subjects come from the classes, in class order; there is nothing to enter. -->
+{#let
+  classes = content.classes.entries | where('fields.subject') | sort('fields.order')
+  subjects = classes | map('fields.subject') | uniq
+}
+{#if subjects.length}
+<section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter">
+  <div class="mx-auto max-w-column px-gutter md:px-0">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+  </div>
+  <ul class="mx-auto flex max-w-column snap-x snap-mandatory scroll-px-gutter gap-space-md overflow-x-auto px-gutter md:grid md:snap-none md:grid-cols-3 md:overflow-visible md:px-0 lg:grid-cols-5">
+    {#for subject in subjects}
+      <li class="w-3/5 shrink-0 snap-start md:w-auto { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+        <a class="group block" href="{ settings.base_path }?subject={ encodeURIComponent(subject) }"><Swatch subject={ subject } subjects={ subjects } cls="aspect-cover rounded-lg p-space-sm">
+          <Label><Heading sub={ settings.heading } cls="font-heading text-h4 group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{ subject }</Heading><p class="text-small text-scheme-muted">{ classes | where('fields.subject', subject) | where('fields.short_name') | map('fields.short_name') | join(' · ') }</p></Label>
+        </Swatch></a>
+      </li>
+    {/for}
+  </ul>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Subjects",
+  "description": "Every subject as an exercise-book cover linking to its classes.",
+  "kind": "Collections",
+  "icon": "book-open",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Our classes" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "url", "id": "base_path", "label": "Class list page", "default": "/classes" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" } }
+  ]
+}
+</schema>

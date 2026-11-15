@@ -1,0 +1,22 @@
+<!-- A programme's page: its title, its summary as the standfirst and a button to its link, beside its picture; the description below in the reading column. -->
+<Detail>
+  {#if page.entry.fields.summary}<p class="text-lede text-pretty">{ page.entry.fields.summary }</p>{/if}
+</Detail>
+
+<schema>
+{
+  "name": "Programme",
+  "description": "A programme's title, summary, sign-up button, picture and description.",
+  "kind": "Content",
+  "icon": "file-text",
+  "templates": ["program"],
+  "settings": [
+    { "type": "paragraph", "content": "Everything here comes from the programme. The button shows when the programme has a link." },
+    { "type": "text", "id": "link_label", "label": "Button label", "default": "Sign up" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

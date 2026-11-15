@@ -12,7 +12,7 @@
   </header>
 </section>
 {#if posts.length}
-<section class="sites-scheme-paper bg-scheme-background px-gutter py-section text-scheme-foreground">
+<section class="{ site.settings.base_scheme | scheme_class } bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column gap-step-md">
     <h2 class="font-mono text-meta font-medium tracking-meta text-scheme-meta uppercase">{ t('recent_posts') }</h2>
     <ul class="border-t border-scheme-rule">

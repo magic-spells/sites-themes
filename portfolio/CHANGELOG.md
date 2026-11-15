@@ -1,5 +1,9 @@
 # Portfolio
 
+## 0.2.1
+
+- The password and maintenance pages follow the site's base scheme instead of naming the first scheme, so a change of base scheme in the Panel reaches them too.
+
 ## 0.2.0
 
 - The panel group is labelled Panel.

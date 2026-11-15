@@ -1,0 +1,12 @@
+<!-- component: EventRow -->
+<!-- One event as a row above a hairline: the day of the month large in the heading face over the month in the label, tabular, in a 4rem column; the title in H4 linked to its page, the time and place in muted, its line; from 48rem its photo at 4:3 on the right when it has one. -->
+{#let f = entry.fields}
+<article class="grid grid-cols-date gap-x-space-md border-t border-scheme-border py-space-md md:grid-cols-date-md md:gap-x-space-xl">
+  <time class="grid content-start justify-items-center tnum" datetime="{ f.date }"><span class="font-heading text-h3 text-scheme-heading">{ parseInt(f.date | slice(8, 2)) }</span><span class="text-label">{ f.date | date('medium') | slice(0, 3) }</span></time>
+  <div class="grid content-start gap-space-3xs">
+    <h4 class="font-heading text-h4 text-balance text-scheme-heading"><a class="hover:underline hover:decoration-1 hover:underline-offset-4" href="/whats-on/{ entry.handle }">{ entry.title }</a></h4>
+    {#if f.time || f.place}<p class="text-scheme-muted tnum">{ f.time }{#if f.time && f.place} · {/if}{ f.place }</p>{/if}
+    {#if f.summary}<p class="pt-space-2xs text-pretty">{ f.summary }</p>{/if}
+  </div>
+  {#if f.image}<div class="hidden md:block"><Well asset={ f.image } alt="" ratio="aspect-photo" width={ 320 } sizes="7rem" /></div>{/if}
+</article>

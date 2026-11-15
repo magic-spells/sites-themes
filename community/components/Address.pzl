@@ -1,0 +1,9 @@
+<!-- component: Address -->
+<!-- The House address after a pin, then Get directions to the directions link when there is one. -->
+{#let s = site.settings}
+{#if s.address}
+<div class="grid justify-items-start gap-space-2xs">
+  <p class="flex items-start gap-space-xs"><Glyph name="pin" cls="mt-space-2xs size-icon-sm" /><span class="whitespace-pre-line">{ s.address }</span></p>
+  {#if s.map_url}<a class="ms-space-lg text-scheme-link underline decoration-1 underline-offset-4 hover:decoration-2" href="{ s.map_url }">{ t('get_directions') }</a>{/if}
+</div>
+{/if}

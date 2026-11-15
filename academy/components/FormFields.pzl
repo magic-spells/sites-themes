@@ -1,0 +1,19 @@
+<!-- component: FormFields -->
+<!-- A site form's fields, each labelled above. The engine's field types are text, textarea, email, checkbox and select, so the id picks the input: "phone" is a telephone field. Selects are select-dropdowns (Select); a select with one option is sent hidden. From 48rem, when the form has a phone, its short fields pair up two to a row; selects, checkboxes and the message take the full row. -->
+{#let paired = fields | find('id', 'phone')}
+<div class="grid gap-space-md md:grid-cols-2">
+  {#for field in fields}
+    {#if field.type == 'select' && field.options.length == 1}
+      <input type="hidden" name={ field.id } value={ field.options[0] } />
+    {:else if field.type == 'select'}
+      <Select field={ field } prefix={ prefix } preset={ preset } />
+    {:else if field.type == 'checkbox'}
+      <div class="md:col-span-2">
+        <label class="flex items-start gap-space-xs text-small"><input class="mt-space-2xs size-icon accent-scheme-foreground" type="checkbox" name={ field.id } value="on" checked={ field.value == 'on' } required={ field.required } aria-describedby={ field.error ? 'error-' + prefix + '-' + field.id : null } />{ field.label }</label>
+        {#if field.error}<FieldError id="error-{ prefix }-{ field.id }" error={ field.error } />{/if}
+      </div>
+    {:else}
+      <Field name={ field.id } label={ field.label } type={ field.id == 'phone' ? 'tel' : field.type } required={ field.required } maxlength={ field.max_length } value={ field.value } error={ field.error } prefix={ prefix } wide={ !paired || field.type == 'textarea' } />
+    {/if}
+  {/for}
+</div>

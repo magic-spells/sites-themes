@@ -1,0 +1,3 @@
+<!-- component: Place -->
+<!-- A place in the muted colour: the map pin, then the text (an event's location, or its time and location). -->
+{#if text}<p class="flex gap-space-xs text-scheme-muted tnum"><Glyph name="pin" cls="mt-space-2xs size-icon" />{ text }</p>{/if}

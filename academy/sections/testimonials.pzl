@@ -1,0 +1,57 @@
+<!-- What families say, featured first or all, capped at the limit. Rows: up to three across from 64rem, one below, each the thumbnail beside the quote in the heading face and the name line. Carousel: one centred quote at a time in the h3 size with its name line, on a tarot track with page dots under it; from 64rem round arrows at the sides show while the pointer is over it (or one has focus), none on phones. -->
+{#let
+  all = content.testimonials.entries | sort('fields.order')
+  quotes = (settings.featured_only ? all | where('fields.featured') : all) | slice(0, settings.limit)
+  options = { gap: '1.5rem' }
+  arrow = 'absolute top-1/2 hidden size-control -translate-y-1/2 items-center justify-center rounded-full bg-scheme-surface-2 opacity-0 transition-opacity duration-fast group-hover:opacity-100 focus-visible:opacity-100 disabled:opacity-0 lg:flex'
+}
+{#if quotes.length}
+<section class="overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    {#if settings.layout == 'carousel'}
+      <tarot-carousel class="group relative block">
+        <script type="application/json" data-tarot-options>{ options | json }</script>
+        <button class="{ arrow } left-0" type="button" data-action-tarot-previous aria-label="{ t('previous') }"><Icon name="arrow-left" /></button>
+        <button class="{ arrow } right-0" type="button" data-action-tarot-next aria-label="{ t('next') }"><Icon name="arrow-right" /></button>
+        <tarot-viewport><tarot-track>
+          {#for entry in quotes}
+            <tarot-slide>
+              <figure class="mx-auto grid max-w-prose gap-space-md text-center">
+                <blockquote class="font-heading text-h3 text-balance">{ entry.fields.quote }</blockquote>
+                <figcaption class="text-small text-scheme-muted">{ entry.fields.name }{#if entry.fields.name && entry.fields.line} · {/if}{ entry.fields.line }</figcaption>
+              </figure>
+            </tarot-slide>
+          {/for}
+        </tarot-track></tarot-viewport>
+      </tarot-carousel>
+    {:else}
+      <ul class="grid gap-space-xl lg:grid-cols-3 lg:gap-space-lg">{#for entry in quotes}<li><QuoteCard entry={ entry } /></li>{/for}</ul>
+    {/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Testimonials",
+  "description": "What families and pupils say, in rows or one at a time.",
+  "kind": "Social proof",
+  "icon": "message-square-quote",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What parents say" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "select", "id": "layout", "label": "Layout", "default": "rows", "options": [
+      { "value": "rows", "label": "Rows" },
+      { "value": "carousel", "label": "One at a time" }
+    ] },
+    { "type": "checkbox", "id": "featured_only", "label": "Featured only", "default": true },
+    { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 3 },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "manila" }
+  ],
+  "presets": [
+    { "name": "Rows", "settings": { "color_scheme": "manila" } },
+    { "name": "Carousel", "settings": { "layout": "carousel", "limit": 6, "color_scheme": "manila" } }
+  ]
+}
+</schema>

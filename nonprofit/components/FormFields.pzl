@@ -1,0 +1,14 @@
+<!-- component: FormFields -->
+<!-- A site form whole, for the contact and volunteer forms: its fields (Field) in two columns from 48rem, the submit button, and the sent and error states (?form=…&sent=1 / &error=1). prefix keeps the field ids apart when two forms share a page. -->
+<Form handle={ handle } class="grid gap-space-md md:grid-cols-2" id="form-{ prefix }">
+  {#if form.sent}
+    <p class="font-heading text-h3 md:col-span-2" role="status">{ form.success_message || t('form_success') }</p>
+  {:else}
+    {#if form.error}<p class="text-small text-scheme-error md:col-span-2" role="alert">{ t('form_error') }</p>{/if}
+    {#for field in form.fields}<Field field={ field } prefix={ prefix } />{/for}
+    <div class="grid justify-items-start gap-space-sm md:col-span-2">
+      <Button type="submit" cls="max-md:w-full">{ form.submit_label || t('send') }</Button>
+      <noscript><p class="text-small text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+    </div>
+  {/if}
+</Form>

@@ -1,0 +1,31 @@
+<!-- The notices above the header, on Moss: one per line of the text, running on a slow marquee with a pause button; for visitors who ask for less motion it stands still, wrapped and centred, with no pause button. With dismissable, a close button hides it for that visitor until the text changes; a line of script after the button reads that memory as the bar is parsed, so a closed bar never paints. -->
+{#if settings.text}
+<aside class="bg-scheme-background px-gutter text-scheme-foreground" data-ticker data-dismiss-key={ settings.dismissable ? settings.text : null } aria-label="{ t('announcement') }">
+  <div class="mx-auto flex min-h-control max-w-page items-center gap-space-xs">
+    <scrolling-content class="block min-w-0 flex-1 text-small" speed="30" fade>
+      <scrolling-track>
+        <scrolling-item class="flex items-center">{#for line in settings.text | split('\n')}<span>{ line }</span><Glyph name="dot" cls="mx-space-lg size-space-2xs" />{/for}</scrolling-item>
+      </scrolling-track>
+    </scrolling-content>
+    <button class="-me-space-xs flex size-tap shrink-0 items-center justify-center rounded-full hover:bg-scheme-outline-hover motion-reduce:hidden" type="button" data-ticker-toggle aria-pressed="false"><Glyph name="pause" cls="size-icon-sm" /><span class="sr-only">{ t('pause') }</span></button>
+    {#if settings.dismissable}<button class="-me-space-xs flex size-tap shrink-0 items-center justify-center rounded-full hover:bg-scheme-outline-hover" type="button" data-dismiss><Glyph name="close" cls="size-icon-sm" /><span class="sr-only">{ t('dismiss') }</span></button><script>{#raw}try{var b=document.currentScript.closest('aside');b.hidden=localStorage.getItem('sites:dismissed:'+b.dataset.dismissKey)=='1'}catch(e){}{/raw}</script>{/if}
+  </div>
+</aside>
+{/if}
+
+<schema>
+{
+  "name": "Announcement bar",
+  "description": "Notices above the header on a slow marquee, with a pause button.",
+  "kind": "Header",
+  "icon": "megaphone",
+  "settings": [
+    { "type": "textarea", "id": "text", "label": "Notices", "default": "", "info": "One notice per line: a closure, a drive, an event. Leave empty to hide the bar." },
+    { "type": "checkbox", "id": "dismissable", "label": "Visitors can close it", "default": false, "info": "A closed bar stays closed for that visitor until the notices change." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "deep" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

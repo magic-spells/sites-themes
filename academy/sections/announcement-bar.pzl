@@ -1,4 +1,4 @@
-<!-- One line above the header in the Label type, 2.5rem high, the whole line a link when it has one. Ticker: the line repeats on a marquee with a pause button; under reduced motion it stands still. A close button at the right that, with a key, hides it for good. -->
+<!-- One line above the header in the Label type, 2.5rem high, the whole line a link when it has one. Ticker: the line repeats on a marquee; under reduced motion it stands still. A close button (the way to stop it) at the right that, with a key, hides it for good. -->
 {#if settings.text}
 <aside class="bg-scheme-background text-scheme-foreground" data-dismiss-key="{ settings.key }" aria-label="{ t('announcement') }" data-ticker={ settings.motion == 'ticker' ? true : null }>
   <div class="flex min-h-bar items-center ps-control-sm">
@@ -13,7 +13,6 @@
         <span class="block text-center text-pretty">{ settings.text }</span>
       {/if}
     </a>
-    {#if settings.motion == 'ticker'}<button class="flex size-control-sm shrink-0 items-center justify-center text-scheme-muted hover:text-scheme-foreground" type="button" data-ticker-toggle aria-pressed="false"><Icon name="pause" cls="size-icon-sm" /><span class="sr-only">{ t('pause') }</span></button>{/if}
     <button class="flex size-control-sm shrink-0 items-center justify-center text-scheme-muted hover:text-scheme-foreground" type="button" data-dismiss><Icon name="close" cls="size-icon-sm" /><span class="sr-only">{ t('dismiss') }</span></button>
   </div>
 </aside>

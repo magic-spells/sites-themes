@@ -81,21 +81,11 @@ function filterSubject(chip: HTMLElement): void {
 	}
 }
 
-// The ticker's pause button (WCAG 2.2.2) sets the marquee's own paused
-// attribute.
-function toggleTicker(button: HTMLElement): void {
-	const paused = button.getAttribute('aria-pressed') !== 'true';
-	button.setAttribute('aria-pressed', String(paused));
-	button.closest('[data-ticker]')?.querySelector('scrolling-content')?.toggleAttribute('paused', paused);
-}
-
-// One listener for the three: a panel opener, a subject chip and the
-// ticker's pause.
+// One listener for both: a panel opener and a subject chip.
 document.addEventListener('click', (event) => {
-	const el = (event.target as Element | null)?.closest?.<HTMLElement>('[data-panel-open], [data-subject-filter], [data-ticker-toggle]');
+	const el = (event.target as Element | null)?.closest?.<HTMLElement>('[data-panel-open], [data-subject-filter]');
 	if (el?.hasAttribute('data-panel-open')) openPanel(el, event);
-	else if (el?.hasAttribute('data-subject-filter')) filterSubject(el);
-	else if (el) toggleTicker(el);
+	else if (el) filterSubject(el);
 });
 
 // A request comes back to the page it was sent from (?form=…&sent=1 or

@@ -1,0 +1,46 @@
+<!-- What the firm stands by, between two hairlines across the column: the h2 with its accent phrase, the standfirst and an outlined button (a blank link is the ask), then the values as a ruled list in seven parts beside a square picture in five, the picture under the list on phones. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-xl border-y border-scheme-border py-section">
+    <div class="grid max-w-reading justify-items-start gap-space-md">
+      <SectionHead heading={ settings.heading } accent={ settings.accent } text={ settings.text } />
+      <Button href={ settings.button_link } label={ settings.button_label } tone="outline" />
+    </div>
+    <div class="grid items-center gap-space-xl md:grid-cols-text-picture">
+      <ul>
+        {#for block in blocks}<li class="grid gap-space-xs border-b border-scheme-border py-space-md first:pt-0" data-block={ block.editor_id }><h3 class="font-heading text-h3 text-balance text-scheme-heading">{ block.settings.title }</h3><p class="max-w-reading text-pretty">{ block.settings.text }</p></li>{/for}
+      </ul>
+      <Well asset={ settings.image } cls="aspect-square rounded-card" sizes="(min-width: 48rem) 40vw, 100vw" />
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Values",
+  "description": "What every client can count on, as a ruled list beside a square picture.",
+  "kind": "Content",
+  "icon": "list-checks",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "How we" },
+    { "type": "text", "id": "accent", "label": "Accent words", "default": "work", "info": "Set after the heading in the accent colour." },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "", "info": "Outlined. Leave the label and link empty for the ask." },
+    { "type": "url", "id": "button_link", "label": "Button link", "default": "" },
+    { "type": "image", "id": "image", "label": "Image (1:1)" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "navy" }
+  ],
+  "blocks": [
+    { "type": "value", "name": "Value", "settings": [
+      { "type": "text", "id": "title", "label": "Title" },
+      { "type": "textarea", "id": "text", "label": "Text" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "navy" }, "blocks": [
+      { "type": "value", "settings": { "title": "Clear quotes", "text": "Every matter is quoted after the first meeting, in writing, before we start." } },
+      { "type": "value", "settings": { "title": "One person start to finish", "text": "The person you meet first handles your matter through to the end." } },
+      { "type": "value", "settings": { "title": "Plain answers", "text": "We explain each document in plain terms before you sign it." } }
+    ] }
+  ]
+}
+</schema>

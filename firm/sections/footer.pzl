@@ -1,0 +1,34 @@
+<!-- The colophon: the name, the email, phone and places in five parts; the main, clients, legal and social menus at the right in seven, each only when it has links; under a rule, the Firm legal_line closes the page, one paragraph per line. -->
+{#let s = site.settings}
+<footer class="bg-scheme-background px-gutter pt-section pb-space-xl text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-xl">
+    <div class="grid gap-space-xl md:grid-cols-picture-text">
+      <div class="grid content-start justify-items-start gap-space-md">
+        <a class="font-heading text-wordmark text-scheme-heading" href="/">{ s.wordmark || site.name }</a>
+        <Address cls="text-small" />
+      </div>
+      <div class="grid grid-cols-menus content-start gap-space-md text-small">
+        {#for menu in [menus.main, menus.clients, menus.legal, menus.social]}
+          {#if menu.items.length}<nav aria-label="{ menu.title }"><ul class="grid gap-space-xs">{#for item in menu.items}<li><a class="hover:underline" href="{ item.href }">{ item.label }</a></li>{/for}</ul></nav>{/if}
+        {/for}
+      </div>
+    </div>
+    {#if s.legal_line}<div class="grid gap-inset border-t border-scheme-border pt-space-md text-small text-pretty text-scheme-muted">{#for line in s.legal_line | split('\n')}<p class="max-w-band">{ line }</p>{/for}</div>{/if}
+  </div>
+</footer>
+
+<schema>
+{
+  "name": "Footer",
+  "description": "The name and contact details, four menus, then the legal line.",
+  "kind": "Footer",
+  "icon": "panel-bottom",
+  "settings": [
+    { "type": "paragraph", "content": "The contact details and the legal line come from the Contact and Firm settings; the menus are main, clients, legal and social." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "midnight" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "midnight" } }
+  ]
+}
+</schema>

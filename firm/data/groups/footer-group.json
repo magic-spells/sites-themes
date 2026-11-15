@@ -1,0 +1,13 @@
+{
+  "sections": [
+    {
+      "id": "sg_footer",
+      "type": "footer",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "midnight"
+      },
+      "blocks": []
+    }
+  ]
+}

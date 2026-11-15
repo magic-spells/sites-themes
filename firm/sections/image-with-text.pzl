@@ -1,0 +1,50 @@
+<!-- A picture and text, three looks; the picture first on phones. beside: the text in seven parts and a 4:5 picture in five, the picture left or right. disc: the 4:5 picture in five at the left with a solid accent half-disc behind its left edge, the text in seven. overlap: a 16:10 picture over columns 1 to 8 and the text over 7 to 12, half on the picture, with an outlined button. The h2 with its accent phrase, the standfirst, any rich text and one button (a blank link is the ask). -->
+{#let
+  disc = settings.style == 'disc'
+  over = settings.style == 'overlap'
+  left = disc || settings.side == 'left'
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-center gap-space-lg md:gap-x-space-xl { over ? 'md:grid-cols-12' : left ? 'md:grid-cols-picture-text' : 'md:grid-cols-text-picture' }">
+    <div class="{ over ? 'md:col-start-1 md:col-end-9 md:row-start-1' : left ? '' : 'md:order-last' } { disc ? 'relative isolate ps-disc' : '' }">
+      {#if disc}<span class="absolute start-0 top-1/2 -z-1 size-disc-full -translate-y-1/2 rounded-full bg-accent"></span>{/if}
+      <Well asset={ settings.image } cls="{ over ? 'aspect-wide' : 'aspect-portrait' } rounded-card" sizes="(min-width: 48rem) { over ? '66vw' : '40vw' }, 100vw" />
+    </div>
+    <div class="relative grid justify-items-start gap-space-md { over ? 'md:col-start-7 md:col-end-13 md:row-start-1' : '' }">
+      <SectionHead heading={ settings.heading } accent={ settings.accent } text={ settings.text } />
+      {#if settings.body}<div class="sites-prose">{ settings.body }</div>{/if}
+      <Button href={ settings.button_link } label={ settings.button_label } tone={ over ? 'outline' : null } />
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Image with text",
+  "description": "A picture beside text, behind a half-disc, or under overlapping text.",
+  "kind": "Content",
+  "icon": "columns-2",
+  "settings": [
+    { "type": "select", "id": "style", "label": "Look", "default": "beside", "options": [
+      { "value": "beside", "label": "Beside" },
+      { "value": "disc", "label": "Half-disc" },
+      { "value": "overlap", "label": "Overlap" }
+    ] },
+    { "type": "image", "id": "image", "label": "Image (4:5; 16:10 for overlap)" },
+    { "type": "select", "id": "side", "label": "Picture", "default": "right", "info": "Beside only.", "options": [
+      { "value": "left", "label": "Left" },
+      { "value": "right", "label": "Right" }
+    ] },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "About" },
+    { "type": "text", "id": "accent", "label": "Accent words", "default": "the firm", "info": "Set after the heading in the accent colour." },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "richtext", "id": "body", "label": "Text", "default": "" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "", "info": "Leave the label and link empty for the ask." },
+    { "type": "url", "id": "button_link", "label": "Button link", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

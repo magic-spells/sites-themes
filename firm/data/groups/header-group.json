@@ -1,0 +1,23 @@
+{
+  "sections": [
+    {
+      "id": "sg_announcement",
+      "type": "announcement-bar",
+      "preset": "Default",
+      "settings": {
+        "text": "Estate plan reviews for 2027 are booking from 5 January.",
+        "color_scheme": "midnight"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_header",
+      "type": "header",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "navy"
+      },
+      "blocks": []
+    }
+  ]
+}

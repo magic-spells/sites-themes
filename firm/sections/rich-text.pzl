@@ -1,0 +1,37 @@
+<!-- Two looks. align center is the band: the h2 with its accent phrase, the standfirst, any rich text and one button, centred (a blank link is the ask). align left is prose in the reading column for the legal pages: the heading and standfirst when set, then the rich text, no button. The rich text is the page's own body unless this section sets one. -->
+{#let
+  center = settings.align != 'left'
+  body = settings.body || page.content
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid gap-space-md { center ? 'max-w-band justify-items-center text-center' : 'max-w-reading' }">
+    <SectionHead heading={ settings.heading } accent={ settings.accent } text={ settings.text } center={ center } />
+    {#if body}<div class="sites-prose">{ body }</div>{/if}
+    {#if center}<Button href={ settings.button_link } label={ settings.button_label } cls="mt-space-xs" />{/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Rich text",
+  "description": "A centred band with one button, or prose in a reading column.",
+  "kind": "Content",
+  "icon": "text-align-start",
+  "settings": [
+    { "type": "select", "id": "align", "label": "Layout", "default": "center", "options": [
+      { "value": "center", "label": "Centred band, one button" },
+      { "value": "left", "label": "Prose, left" }
+    ] },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Plain answers" },
+    { "type": "text", "id": "accent", "label": "Accent words", "default": "from the first meeting", "info": "Set after the heading in the accent colour." },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "richtext", "id": "body", "label": "Text", "default": "", "info": "Leave it empty for the page's own text." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "", "info": "Centred band only. Leave the label and link empty for the ask." },
+    { "type": "url", "id": "button_link", "label": "Button link", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

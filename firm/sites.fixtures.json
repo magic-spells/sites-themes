@@ -1,0 +1,1460 @@
+{
+  "site": {
+    "name": "Thorne & Abara LLP",
+    "url": "https://thorneabara.example",
+    "locale": "en",
+    "settings": {
+      "wordmark": "Thorne & Abara",
+      "email": "office@thorneabara.com",
+      "phone": "(503) 555-0142",
+      "address": "2140 SE Division Street\nPortland, OR 97202\n\nVancouver, Washington\nby appointment",
+      "ask_label": "Request a consultation",
+      "ask_url": "",
+      "ask_form": "consultation",
+      "form_note": "Sending this form does not make us your lawyers. Please don’t include confidential details until we have agreed to work together.",
+      "legal_line": "Attorney advertising. General information, not legal advice. Thorne & Abara LLP, 2140 SE Division Street, Portland, OR 97202. Responsible attorney: Ruth Thorne.\n© 2026 Thorne & Abara LLP"
+    }
+  },
+  "menus": {
+    "main": {
+      "handle": "main",
+      "title": "Main menu",
+      "items": [
+        {
+          "id": "main0",
+          "label": "Practice areas",
+          "target": {
+            "kind": "url",
+            "url": "/practice-areas"
+          },
+          "children": []
+        },
+        {
+          "id": "main1",
+          "label": "People",
+          "target": {
+            "kind": "url",
+            "url": "/people"
+          },
+          "children": []
+        },
+        {
+          "id": "main2",
+          "label": "Insights",
+          "target": {
+            "kind": "url",
+            "url": "/insights"
+          },
+          "children": []
+        },
+        {
+          "id": "main3",
+          "label": "About",
+          "target": {
+            "kind": "url",
+            "url": "/about"
+          },
+          "children": []
+        },
+        {
+          "id": "main4",
+          "label": "Contact",
+          "target": {
+            "kind": "url",
+            "url": "/contact"
+          },
+          "children": []
+        }
+      ]
+    },
+    "clients": {
+      "handle": "clients",
+      "title": "Clients",
+      "items": [
+        {
+          "id": "clients0",
+          "label": "Client portal",
+          "target": {
+            "kind": "url",
+            "url": "https://portal.example/thorneabara"
+          },
+          "children": []
+        },
+        {
+          "id": "clients1",
+          "label": "Pay an invoice",
+          "target": {
+            "kind": "url",
+            "url": "https://pay.example/thorneabara/invoice"
+          },
+          "children": []
+        },
+        {
+          "id": "clients2",
+          "label": "Pay into trust",
+          "target": {
+            "kind": "url",
+            "url": "https://pay.example/thorneabara/trust"
+          },
+          "children": []
+        }
+      ]
+    },
+    "legal": {
+      "handle": "legal",
+      "title": "Legal",
+      "items": [
+        {
+          "id": "legal0",
+          "label": "Disclaimer",
+          "target": {
+            "kind": "url",
+            "url": "/disclaimer"
+          },
+          "children": []
+        },
+        {
+          "id": "legal1",
+          "label": "Privacy",
+          "target": {
+            "kind": "url",
+            "url": "/privacy"
+          },
+          "children": []
+        }
+      ]
+    },
+    "social": {
+      "handle": "social",
+      "title": "Social",
+      "items": [
+        {
+          "id": "social0",
+          "label": "LinkedIn",
+          "target": {
+            "kind": "url",
+            "url": "https://linkedin.example/thorneabara"
+          },
+          "children": []
+        }
+      ]
+    }
+  },
+  "forms": {
+    "consultation": {
+      "handle": "consultation",
+      "name": "Consultation",
+      "fields": [
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Name",
+          "required": true,
+          "max_length": 200
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 200
+        },
+        {
+          "id": "phone",
+          "type": "text",
+          "label": "Phone",
+          "required": false,
+          "max_length": 200
+        },
+        {
+          "id": "others",
+          "type": "text",
+          "label": "Others involved",
+          "required": false,
+          "max_length": 200
+        },
+        {
+          "id": "matter",
+          "type": "select",
+          "label": "What it’s about",
+          "required": false,
+          "max_length": 200,
+          "options": [
+            "Estate planning",
+            "Trusts and powers of attorney",
+            "Probate and trust administration",
+            "Business formation",
+            "Contracts and leases",
+            "Buying or selling a business",
+            "Tax planning"
+          ]
+        },
+        {
+          "id": "who",
+          "type": "select",
+          "label": "Who is this for",
+          "required": false,
+          "max_length": 200,
+          "options": [
+            "Me",
+            "My family",
+            "My business"
+          ]
+        },
+        {
+          "id": "message",
+          "type": "textarea",
+          "label": "How can we help",
+          "required": true,
+          "max_length": 1000
+        },
+        {
+          "id": "acknowledge",
+          "type": "checkbox",
+          "label": "I understand this does not make me a client",
+          "required": true,
+          "max_length": 200
+        }
+      ],
+      "success_message": "Thank you. We reply within one working day with who would handle it and when we can meet.",
+      "submit_label": "Send request",
+      "redirect_path": ""
+    },
+    "newsletter": {
+      "handle": "newsletter",
+      "name": "Newsletter",
+      "fields": [
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Your email",
+          "required": true,
+          "max_length": 200
+        }
+      ],
+      "success_message": "You’re on the list.",
+      "submit_label": "Sign up",
+      "redirect_path": ""
+    }
+  },
+  "galleries": {
+    "office": {
+      "handle": "office",
+      "title": "The office",
+      "items": [
+        {
+          "asset_id": "as_reception"
+        },
+        {
+          "asset_id": "as_meeting_room"
+        },
+        {
+          "asset_id": "as_vancouver_room"
+        },
+        {
+          "asset_id": "as_library"
+        },
+        {
+          "asset_id": "as_partners_at_work"
+        },
+        {
+          "asset_id": "as_street_door"
+        }
+      ]
+    }
+  },
+  "assets": {
+    "as_ruth_thorne": {
+      "id": "as_ruth_thorne",
+      "status": "ready",
+      "file_name": "4x5.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 262,
+      "url": "/_sites/theme/photos/4x5.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "Portrait of Ruth Thorne",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_chidi_abara": {
+      "id": "as_chidi_abara",
+      "status": "ready",
+      "file_name": "4x5.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 262,
+      "url": "/_sites/theme/photos/4x5.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "Portrait of Chidi Abara",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_lena_marsh": {
+      "id": "as_lena_marsh",
+      "status": "ready",
+      "file_name": "4x5.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 262,
+      "url": "/_sites/theme/photos/4x5.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "Portrait of Lena Marsh",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_tomas_reyes": {
+      "id": "as_tomas_reyes",
+      "status": "ready",
+      "file_name": "4x5.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 262,
+      "url": "/_sites/theme/photos/4x5.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "Portrait of Tomas Reyes",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_hana_ito": {
+      "id": "as_hana_ito",
+      "status": "ready",
+      "file_name": "4x5.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 262,
+      "url": "/_sites/theme/photos/4x5.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "Portrait of Hana Ito",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_greta_olsen": {
+      "id": "as_greta_olsen",
+      "status": "ready",
+      "file_name": "4x5.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 262,
+      "url": "/_sites/theme/photos/4x5.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "Portrait of Greta Olsen",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_estate_planning": {
+      "id": "as_estate_planning",
+      "status": "ready",
+      "file_name": "3x4.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/3x4.svg",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Photograph for Estate planning",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_trusts_and_powers_of_attorney": {
+      "id": "as_trusts_and_powers_of_attorney",
+      "status": "ready",
+      "file_name": "3x4.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/3x4.svg",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Photograph for Trusts and powers of attorney",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_probate_and_trust_administration": {
+      "id": "as_probate_and_trust_administration",
+      "status": "ready",
+      "file_name": "3x4.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/3x4.svg",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Photograph for Probate and trust administration",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_business_formation": {
+      "id": "as_business_formation",
+      "status": "ready",
+      "file_name": "3x4.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/3x4.svg",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Photograph for Business formation",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_contracts_and_leases": {
+      "id": "as_contracts_and_leases",
+      "status": "ready",
+      "file_name": "3x4.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/3x4.svg",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Photograph for Contracts and leases",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_buying_or_selling_a_business": {
+      "id": "as_buying_or_selling_a_business",
+      "status": "ready",
+      "file_name": "3x4.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/3x4.svg",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Photograph for Buying or selling a business",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_tax_planning": {
+      "id": "as_tax_planning",
+      "status": "ready",
+      "file_name": "3x4.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/3x4.svg",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Photograph for Tax planning",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_post_what_a_pour_over_will_does": {
+      "id": "as_post_what_a_pour_over_will_does",
+      "status": "ready",
+      "file_name": "3x2.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/3x2.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "Photograph for What a pour-over will does",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_post_oregons_small_estate_affidavit_i": {
+      "id": "as_post_oregons_small_estate_affidavit_i",
+      "status": "ready",
+      "file_name": "3x2.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/3x2.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "Photograph for Oregon's small estate affidavit, in plain terms",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_post_does_a_one_person_llc_need_an_op": {
+      "id": "as_post_does_a_one_person_llc_need_an_op",
+      "status": "ready",
+      "file_name": "3x2.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/3x2.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "Photograph for Does a one-person LLC need an operating agreement?",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_post_when_to_update_your_trust": {
+      "id": "as_post_when_to_update_your_trust",
+      "status": "ready",
+      "file_name": "3x2.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/3x2.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "Photograph for When to update your trust",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_post_probate_on_both_sides_of_the_riv": {
+      "id": "as_post_probate_on_both_sides_of_the_riv",
+      "status": "ready",
+      "file_name": "3x2.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/3x2.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "Photograph for Probate on both sides of the river",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_post_gifting_shares_before_you_sell_a": {
+      "id": "as_post_gifting_shares_before_you_sell_a",
+      "status": "ready",
+      "file_name": "3x2.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/3x2.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "Photograph for Gifting shares before you sell a business",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_office": {
+      "id": "as_office",
+      "status": "ready",
+      "file_name": "16x10.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 409,
+      "url": "/_sites/theme/photos/16x10.svg",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Photograph of the Portland office",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_partners": {
+      "id": "as_partners",
+      "status": "ready",
+      "file_name": "4x5.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 262,
+      "url": "/_sites/theme/photos/4x5.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "Photograph of the partners",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_room": {
+      "id": "as_room",
+      "status": "ready",
+      "file_name": "1x1.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 262,
+      "url": "/_sites/theme/photos/1x1.svg",
+      "width": 1200,
+      "height": 1200,
+      "alt": "Photograph of the meeting room",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_map": {
+      "id": "as_map",
+      "status": "ready",
+      "file_name": "map.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 879,
+      "url": "/_sites/theme/photos/map.svg",
+      "width": 1600,
+      "height": 1200,
+      "alt": "Map: the Portland office south of the river, the Vancouver meeting room north of it",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_entrance": {
+      "id": "as_entrance",
+      "status": "ready",
+      "file_name": "4x5.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 262,
+      "url": "/_sites/theme/photos/4x5.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "The Portland office on SE Division Street",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_reception": {
+      "id": "as_reception",
+      "status": "ready",
+      "file_name": "4x3.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/4x3.svg",
+      "width": 1600,
+      "height": 1200,
+      "alt": "The reception desk in the Portland office",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_meeting_room": {
+      "id": "as_meeting_room",
+      "status": "ready",
+      "file_name": "4x3.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/4x3.svg",
+      "width": 1600,
+      "height": 1200,
+      "alt": "The meeting room, set for a signing",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_vancouver_room": {
+      "id": "as_vancouver_room",
+      "status": "ready",
+      "file_name": "4x3.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/4x3.svg",
+      "width": 1600,
+      "height": 1200,
+      "alt": "The Vancouver meeting room",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_library": {
+      "id": "as_library",
+      "status": "ready",
+      "file_name": "4x3.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/4x3.svg",
+      "width": 1600,
+      "height": 1200,
+      "alt": "The library of statutes and case reports",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_partners_at_work": {
+      "id": "as_partners_at_work",
+      "status": "ready",
+      "file_name": "4x3.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/4x3.svg",
+      "width": 1600,
+      "height": 1200,
+      "alt": "Ruth Thorne and Chidi Abara at work",
+      "created_at": "2026-11-15T09:00:00Z"
+    },
+    "as_street_door": {
+      "id": "as_street_door",
+      "status": "ready",
+      "file_name": "4x3.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 407,
+      "url": "/_sites/theme/photos/4x3.svg",
+      "width": 1600,
+      "height": 1200,
+      "alt": "The street door on SE Division Street",
+      "created_at": "2026-11-15T09:00:00Z"
+    }
+  },
+  "content": {
+    "services": {
+      "name": "Practice areas",
+      "fields": [
+        {
+          "id": "summary",
+          "type": "text",
+          "label": "Summary (one line)"
+        },
+        {
+          "id": "description",
+          "type": "richtext",
+          "label": "Description"
+        },
+        {
+          "id": "team",
+          "type": "entry",
+          "label": "Lead",
+          "content_type": "team"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image (3:4)"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "svc_estate_planning",
+          "handle": "estate-planning",
+          "title": "Estate planning",
+          "fields": {
+            "summary": "Wills and trusts for single people and couples.",
+            "description": "<p>A plan sets out who receives what you own, who looks after your children, and who decides for you if you cannot. Most plans are a will or a revocable living trust, with a durable power of attorney and a health care directive beside it.</p><p>We meet first by video for 30 minutes, then send an engagement letter that sets out the work before anything is drafted.</p>",
+            "team": "team_ruth_thorne",
+            "image": "as_estate_planning",
+            "order": 1
+          }
+        },
+        {
+          "id": "svc_trusts_and_powers_of_attorney",
+          "handle": "trusts-and-powers-of-attorney",
+          "title": "Trusts and powers of attorney",
+          "fields": {
+            "summary": "Powers of attorney, health care directives and trust amendments.",
+            "description": "<p>A durable power of attorney and a health care directive name the people who act for you while you are alive. An amendment keeps an existing trust in step with a marriage, a birth or a move.</p>",
+            "team": "team_ruth_thorne",
+            "image": "as_trusts_and_powers_of_attorney",
+            "order": 2
+          }
+        },
+        {
+          "id": "svc_probate_and_trust_administration",
+          "handle": "probate-and-trust-administration",
+          "title": "Probate and trust administration",
+          "fields": {
+            "summary": "Small estate affidavits, probate and trust administration.",
+            "description": "<p>When someone dies, their estate is gathered, their debts are paid and what remains is passed on. We handle Oregon probate, small estate affidavits and the administration of trusts, and we work with Washington counsel when property sits across the river.</p>",
+            "team": "team_lena_marsh",
+            "image": "as_probate_and_trust_administration",
+            "order": 3
+          }
+        },
+        {
+          "id": "svc_business_formation",
+          "handle": "business-formation",
+          "title": "Business formation",
+          "fields": {
+            "summary": "LLC formation and operating agreements.",
+            "description": "<p>We form limited liability companies and corporations, write the operating agreement or bylaws, and set out who owns what and who decides.</p>",
+            "team": "team_chidi_abara",
+            "image": "as_business_formation",
+            "order": 4
+          }
+        },
+        {
+          "id": "svc_contracts_and_leases",
+          "handle": "contracts-and-leases",
+          "title": "Contracts and leases",
+          "fields": {
+            "summary": "Contract and lease review for small businesses.",
+            "description": "<p>Before you sign a commercial lease, a supplier contract or a services agreement, we read it line by line and tell you what it commits you to.</p>",
+            "team": "team_chidi_abara",
+            "image": "as_contracts_and_leases",
+            "order": 5
+          }
+        },
+        {
+          "id": "svc_buying_or_selling_a_business",
+          "handle": "buying-or-selling-a-business",
+          "title": "Buying or selling a business",
+          "fields": {
+            "summary": "For the owner on either side of the sale.",
+            "description": "<p>We act for the buyer or the seller of a small business: the letter of intent, due diligence, the purchase agreement and the closing.</p>",
+            "team": "team_chidi_abara",
+            "image": "as_buying_or_selling_a_business",
+            "order": 6
+          }
+        },
+        {
+          "id": "svc_tax_planning",
+          "handle": "tax-planning",
+          "title": "Tax planning",
+          "fields": {
+            "summary": "Tax planning for estates and businesses.",
+            "description": "<p>Estate and gift tax, the tax side of a business sale, and the choice of entity for a new company, planned by a lawyer who is also a CPA.</p>",
+            "team": "team_tomas_reyes",
+            "image": "as_tax_planning",
+            "order": 7
+          }
+        }
+      ]
+    },
+    "team": {
+      "name": "People",
+      "fields": [
+        {
+          "id": "role",
+          "type": "text",
+          "label": "Role"
+        },
+        {
+          "id": "letters",
+          "type": "text",
+          "label": "Letters (JD, LL.M., CPA)"
+        },
+        {
+          "id": "group",
+          "type": "select",
+          "label": "Group",
+          "options": [
+            "professionals",
+            "staff"
+          ]
+        },
+        {
+          "id": "bio",
+          "type": "richtext",
+          "label": "Bio"
+        },
+        {
+          "id": "credentials",
+          "type": "textarea",
+          "label": "Credentials (one per line)"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image (4:5)"
+        },
+        {
+          "id": "email",
+          "type": "text",
+          "label": "Email"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "team_ruth_thorne",
+          "handle": "ruth-thorne",
+          "title": "Ruth Thorne",
+          "fields": {
+            "role": "Partner",
+            "letters": "JD",
+            "group": "professionals",
+            "bio": "<p>Ruth founded the firm with Chidi Abara in 2015 and leads its estate planning. She has drafted wills and trusts for Oregon and Washington families since 2007, and she explains every document in plain terms before anyone signs it.</p>",
+            "credentials": "Admitted in Oregon, 2007\nAdmitted in Washington, 2010\nOregon State Bar Estate Planning Section",
+            "image": "as_ruth_thorne",
+            "email": "ruth@thorneabara.com",
+            "order": 1
+          }
+        },
+        {
+          "id": "team_chidi_abara",
+          "handle": "chidi-abara",
+          "title": "Chidi Abara",
+          "fields": {
+            "role": "Partner",
+            "letters": "JD",
+            "group": "professionals",
+            "bio": "<p>Chidi leads the business practice: forming companies, writing operating agreements, reviewing contracts and leases, and seeing owners through the sale of a business.</p>",
+            "credentials": "Admitted in Oregon, 2013",
+            "image": "as_chidi_abara",
+            "email": "chidi@thorneabara.com",
+            "order": 2
+          }
+        },
+        {
+          "id": "team_lena_marsh",
+          "handle": "lena-marsh",
+          "title": "Lena Marsh",
+          "fields": {
+            "role": "Associate",
+            "letters": "JD",
+            "group": "professionals",
+            "bio": "<p>Lena handles probate and trust administration, from small estate affidavits to estates with property on both sides of the river. She gives every family a timeline at the first meeting.</p>",
+            "credentials": "Admitted in Oregon, 2020",
+            "image": "as_lena_marsh",
+            "email": "lena@thorneabara.com",
+            "order": 3
+          }
+        },
+        {
+          "id": "team_tomas_reyes",
+          "handle": "tomas-reyes",
+          "title": "Tomas Reyes",
+          "fields": {
+            "role": "Of counsel",
+            "letters": "JD, LL.M., CPA",
+            "group": "professionals",
+            "bio": "<p>Tomas leads tax planning for estates and businesses. He holds a JD and an LL.M. and is a licensed CPA, so the legal work and the tax work on a plan or a sale sit with one person.</p>",
+            "credentials": "Juris Doctor (JD)\nMaster of Laws (LL.M.)\nCertified Public Accountant (CPA)",
+            "image": "as_tomas_reyes",
+            "email": "tomas@thorneabara.com",
+            "order": 4
+          }
+        },
+        {
+          "id": "team_hana_ito",
+          "handle": "hana-ito",
+          "title": "Hana Ito",
+          "fields": {
+            "role": "Paralegal",
+            "letters": "",
+            "group": "staff",
+            "bio": "<p>Hana prepares the documents for every signing and keeps each matter on its timeline.</p>",
+            "credentials": "",
+            "image": "as_hana_ito",
+            "email": "",
+            "order": 5
+          }
+        },
+        {
+          "id": "team_greta_olsen",
+          "handle": "greta-olsen",
+          "title": "Greta Olsen",
+          "fields": {
+            "role": "Office manager",
+            "letters": "",
+            "group": "staff",
+            "bio": "<p>Greta runs the office, the calendar and the billing, and is usually the first voice you hear when you call.</p>",
+            "credentials": "",
+            "image": "as_greta_olsen",
+            "email": "office@thorneabara.com",
+            "order": 6
+          }
+        }
+      ]
+    },
+    "posts": {
+      "name": "Insights",
+      "fields": [
+        {
+          "id": "topic",
+          "type": "text",
+          "label": "Topic"
+        },
+        {
+          "id": "date",
+          "type": "date",
+          "label": "Date"
+        },
+        {
+          "id": "standfirst",
+          "type": "text",
+          "label": "Standfirst"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image (3:2)"
+        },
+        {
+          "id": "body",
+          "type": "richtext",
+          "label": "Body"
+        },
+        {
+          "id": "team",
+          "type": "entry",
+          "label": "Author",
+          "content_type": "team"
+        }
+      ],
+      "entries": [
+        {
+          "id": "post_what_a_pour_over_will_does",
+          "handle": "what-a-pour-over-will-does",
+          "title": "What a pour-over will does",
+          "fields": {
+            "topic": "Estate planning",
+            "date": "2026-10-12",
+            "standfirst": "A short will that moves anything left outside your trust into it.",
+            "image": "as_post_what_a_pour_over_will_does",
+            "body": "<p>A revocable living trust only controls what you put into it. Most people sign the trust, move the house and the main accounts into it, then open a new account or inherit something years later and never move it in. A pour-over will catches those things.</p><h2>How it works</h2><p>The will names your trust as the one who inherits. Anything still in your own name when you die passes to the trust, and your trustee shares it out on the trust’s terms with everything else. Beside the trust, the will:</p><ul><li>names a personal representative to gather what was left outside;</li><li>names a guardian for young children, which a trust cannot;</li><li>keeps one set of instructions for everything you own.</li></ul><p>It does not keep what it catches out of probate. If a lot is left outside the trust, that part may still go through the court, so we check how your property is held when you sign your <a href=\"/practice-areas/estate-planning\">estate plan</a>, and again at each review.</p><p>This is general information, not legal advice. Every family and every business is different, so ask us before you act on it.</p>",
+            "team": "team_ruth_thorne"
+          }
+        },
+        {
+          "id": "post_oregons_small_estate_affidavit_in_plain_",
+          "handle": "oregons-small-estate-affidavit-in-plain-terms",
+          "title": "Oregon's small estate affidavit, in plain terms",
+          "fields": {
+            "topic": "Probate",
+            "date": "2026-09-28",
+            "standfirst": "When an estate can skip probate, and what the affidavit asks of you.",
+            "image": "as_post_oregons_small_estate_affidavit_i",
+            "body": "<p>When someone dies in Oregon with a modest estate, a full probate is often not needed. A small estate affidavit lets an heir collect what the person owned and pass it on, with one filing and no court hearing.</p><h2>Who can use it</h2><p>The estate has to be under the value limits Oregon law sets, one for personal property such as bank accounts and cars, and one for real property such as a house. Property that already passes outside the estate, such as a joint account or a retirement plan with a named beneficiary, does not count.</p><ul><li>Wait at least 30 days after the death before you file.</li><li>List every asset with its value, and every debt you know of.</li><li>Send a copy to the heirs, the creditors and, in some cases, the state.</li></ul><p>The person who signs the affidavit becomes responsible for paying the debts and passing the property to the right people, so the list has to be complete. If the estate is over the limits, or someone disputes the will, <a href=\"/practice-areas/probate-and-trust-administration\">a full probate</a> is the safer path.</p><p>This is general information, not legal advice. Every family and every business is different, so ask us before you act on it.</p>",
+            "team": "team_lena_marsh"
+          }
+        },
+        {
+          "id": "post_does_a_one_person_llc_need_an_operating_",
+          "handle": "does-a-one-person-llc-need-an-operating-agreement",
+          "title": "Does a one-person LLC need an operating agreement?",
+          "fields": {
+            "topic": "Business",
+            "date": "2026-09-03",
+            "standfirst": "Yes, and the reasons have little to do with the state.",
+            "image": "as_post_does_a_one_person_llc_need_an_op",
+            "body": "<p>Oregon does not require a one-person LLC to have a written operating agreement, and the state never asks to see one. Many owners who form an LLC on their own skip it. We think that is a mistake, for reasons that have more to do with banks, courts and your family than with the state.</p><h2>What it does for you</h2><ul><li>It shows the company is separate from you, which helps keep your personal savings out of reach if the business is sued.</li><li>It answers the questions a bank or a landlord asks before opening an account or signing a lease.</li><li>It says who runs the company if you die or cannot act, so the business does not stall while your family waits for a court.</li></ul><p>It also makes the next step easier. When you take on a partner or sell part of the company, you change an agreement you already have instead of writing one in a hurry.</p><p>A short agreement does all of this. We draft one with every <a href=\"/practice-areas/business-formation\">business we form</a>, and we can write one for an LLC you formed yourself.</p><p>This is general information, not legal advice. Every family and every business is different, so ask us before you act on it.</p>",
+            "team": "team_chidi_abara"
+          }
+        },
+        {
+          "id": "post_when_to_update_your_trust",
+          "handle": "when-to-update-your-trust",
+          "title": "When to update your trust",
+          "fields": {
+            "topic": "Estate planning",
+            "date": "2026-08-14",
+            "standfirst": "A marriage, a divorce, a birth or a move: the four moments to look again.",
+            "image": "as_post_when_to_update_your_trust",
+            "body": "<p>A trust is written for the family you have on the day you sign it. Families change, and a trust that no longer fits can send property to the wrong person or leave someone out.</p><h2>Four moments to look again</h2><ul><li>A marriage, so your spouse is provided for the way you both intend.</li><li>A divorce, so a former spouse is no longer your trustee or a beneficiary, unless you want them to be.</li><li>A birth or an adoption, so the new child shares in the trust as you intend.</li><li>A move to another state, so the trust and the papers beside it still work under that state’s law.</li></ul><p>Look again every few years even when nothing has happened. The people you named as trustee get older too, and one of them may no longer be the right choice.</p><p>Most changes take an amendment of a page or two, not a new trust. Bring your documents to a review and we will tell you which parts still work. Read more about <a href=\"/practice-areas/trusts-and-powers-of-attorney\">trusts and powers of attorney</a>.</p><p>This is general information, not legal advice. Every family and every business is different, so ask us before you act on it.</p>",
+            "team": "team_ruth_thorne"
+          }
+        },
+        {
+          "id": "post_probate_on_both_sides_of_the_river",
+          "handle": "probate-on-both-sides-of-the-river",
+          "title": "Probate on both sides of the river",
+          "fields": {
+            "topic": "Probate",
+            "date": "2026-07-22",
+            "standfirst": "An Oregon estate with a house in Washington needs two court cases, not one.",
+            "image": "as_post_probate_on_both_sides_of_the_riv",
+            "body": "<p>Many Portland families own a house, a cabin or land across the Columbia in Washington. When someone who lived in Oregon dies owning real property in Washington, the Oregon probate cannot pass that property on. It needs a second, smaller case in the Washington county where the property sits.</p><h2>What the second case asks for</h2><ul><li>A personal representative appointed by the Washington court, often the same person as in Oregon.</li><li>A copy of the will and of the Oregon order that admitted it.</li><li>Notice to the heirs and the creditors under Washington’s rules.</li></ul><p>Two cases take longer than one, and the Washington property waits until its own case is done. You can spare your family the second case by putting the Washington property into a revocable trust while you are alive.</p><p>If the second case is already needed, we run both together from Portland, with the meeting room in Vancouver for the Washington side. Read more about <a href=\"/practice-areas/probate-and-trust-administration\">probate and trust administration</a>.</p><p>This is general information, not legal advice. Every family and every business is different, so ask us before you act on it.</p>",
+            "team": "team_lena_marsh"
+          }
+        },
+        {
+          "id": "post_gifting_shares_before_you_sell_a_busines",
+          "handle": "gifting-shares-before-you-sell-a-business",
+          "title": "Gifting shares before you sell a business",
+          "fields": {
+            "topic": "Tax planning",
+            "date": "2026-06-30",
+            "standfirst": "Giving part of a company away before a sale can save tax, if the timing is right.",
+            "image": "as_post_gifting_shares_before_you_sell_a",
+            "body": "<p>Owners who plan to sell often want part of the proceeds to go to their children. Giving them shares before the sale, rather than cash after it, can take the growth on those shares out of your estate, and the gain is then taxed to whoever sells them.</p><h2>Why the timing matters</h2><p>If the gift comes too late, when a buyer and a price are all but settled, the tax law can treat the sale as yours and tax you on the whole gain anyway. A gift made early, before talks with a buyer begin, is far more likely to hold.</p><ul><li>Have the shares valued by an appraiser as of the day of the gift.</li><li>File a gift tax return, even when no tax is due.</li><li>Check the company’s agreements for limits on who may own shares.</li></ul><p>We plan these gifts with your accountant, as part of the <a href=\"/practice-areas/tax-planning\">tax planning</a> for the sale.</p><p>This is general information, not legal advice. Every family and every business is different, so ask us before you act on it.</p>",
+            "team": "team_tomas_reyes"
+          }
+        }
+      ]
+    }
+  },
+  "pages": {
+    "/": {
+      "id": "pg_home",
+      "template": "home",
+      "title": "Home",
+      "seo": {
+        "description": "Estate planning, probate and small-business law in Portland, Oregon, with a meeting room in Vancouver, Washington, by appointment."
+      }
+    },
+    "/practice-areas": {
+      "id": "pg_practice_areas",
+      "template": "page.practice-areas",
+      "title": "Practice areas"
+    },
+    "/people": {
+      "id": "pg_people",
+      "template": "page.people",
+      "title": "People"
+    },
+    "/insights": {
+      "id": "pg_insights",
+      "template": "page.insights",
+      "title": "Insights"
+    },
+    "/about": {
+      "id": "pg_about",
+      "template": "page.about",
+      "title": "About"
+    },
+    "/faq": {
+      "id": "pg_faq",
+      "template": "page.faq",
+      "title": "Questions"
+    },
+    "/contact": {
+      "id": "pg_contact",
+      "template": "page.contact",
+      "title": "Contact"
+    },
+    "/privacy": {
+      "id": "pg_privacy",
+      "template": "page.privacy",
+      "title": "Privacy",
+      "content": "<p>We keep what you send us only to answer you and to do the work you ask of us. We never sell it, and we share it only where the work or the law requires.</p><h2>What we keep</h2><p>Your name and contact details, what you tell us about your matter, and the records our profession asks us to keep.</p><h2>Your choices</h2><p>Ask us at any time to see what we hold about you, to correct it or, where the law allows, to delete it.</p>"
+    },
+    "/disclaimer": {
+      "id": "pg_disclaimer",
+      "template": "page.disclaimer",
+      "title": "Disclaimer",
+      "content": "<p>This site is attorney advertising. It gives general information, not legal advice, and reading it or writing to us does not make us your lawyers.</p><h2>When we act for you</h2><p>We are your lawyers once we have both signed an engagement letter that sets out the work.</p><h2>Results</h2><p>Prior results do not guarantee a similar outcome.</p>"
+    },
+    "/practice-areas/estate-planning": {
+      "id": "pg_svc_estate_planning",
+      "template": "service",
+      "title": "Estate planning",
+      "params": {
+        "service": "estate-planning"
+      },
+      "entry": {
+        "id": "svc_estate_planning",
+        "handle": "estate-planning",
+        "title": "Estate planning",
+        "fields": {
+          "summary": "Wills and trusts for single people and couples.",
+          "description": "<p>A plan sets out who receives what you own, who looks after your children, and who decides for you if you cannot. Most plans are a will or a revocable living trust, with a durable power of attorney and a health care directive beside it.</p><p>We meet first by video for 30 minutes, then send an engagement letter that sets out the work before anything is drafted.</p>",
+          "team": "team_ruth_thorne",
+          "image": "as_estate_planning",
+          "order": 1
+        }
+      }
+    },
+    "/practice-areas/trusts-and-powers-of-attorney": {
+      "id": "pg_svc_trusts_and_powers_of_attorney",
+      "template": "service",
+      "title": "Trusts and powers of attorney",
+      "params": {
+        "service": "trusts-and-powers-of-attorney"
+      },
+      "entry": {
+        "id": "svc_trusts_and_powers_of_attorney",
+        "handle": "trusts-and-powers-of-attorney",
+        "title": "Trusts and powers of attorney",
+        "fields": {
+          "summary": "Powers of attorney, health care directives and trust amendments.",
+          "description": "<p>A durable power of attorney and a health care directive name the people who act for you while you are alive. An amendment keeps an existing trust in step with a marriage, a birth or a move.</p>",
+          "team": "team_ruth_thorne",
+          "image": "as_trusts_and_powers_of_attorney",
+          "order": 2
+        }
+      }
+    },
+    "/practice-areas/probate-and-trust-administration": {
+      "id": "pg_svc_probate_and_trust_administration",
+      "template": "service",
+      "title": "Probate and trust administration",
+      "params": {
+        "service": "probate-and-trust-administration"
+      },
+      "entry": {
+        "id": "svc_probate_and_trust_administration",
+        "handle": "probate-and-trust-administration",
+        "title": "Probate and trust administration",
+        "fields": {
+          "summary": "Small estate affidavits, probate and trust administration.",
+          "description": "<p>When someone dies, their estate is gathered, their debts are paid and what remains is passed on. We handle Oregon probate, small estate affidavits and the administration of trusts, and we work with Washington counsel when property sits across the river.</p>",
+          "team": "team_lena_marsh",
+          "image": "as_probate_and_trust_administration",
+          "order": 3
+        }
+      }
+    },
+    "/practice-areas/business-formation": {
+      "id": "pg_svc_business_formation",
+      "template": "service",
+      "title": "Business formation",
+      "params": {
+        "service": "business-formation"
+      },
+      "entry": {
+        "id": "svc_business_formation",
+        "handle": "business-formation",
+        "title": "Business formation",
+        "fields": {
+          "summary": "LLC formation and operating agreements.",
+          "description": "<p>We form limited liability companies and corporations, write the operating agreement or bylaws, and set out who owns what and who decides.</p>",
+          "team": "team_chidi_abara",
+          "image": "as_business_formation",
+          "order": 4
+        }
+      }
+    },
+    "/practice-areas/contracts-and-leases": {
+      "id": "pg_svc_contracts_and_leases",
+      "template": "service",
+      "title": "Contracts and leases",
+      "params": {
+        "service": "contracts-and-leases"
+      },
+      "entry": {
+        "id": "svc_contracts_and_leases",
+        "handle": "contracts-and-leases",
+        "title": "Contracts and leases",
+        "fields": {
+          "summary": "Contract and lease review for small businesses.",
+          "description": "<p>Before you sign a commercial lease, a supplier contract or a services agreement, we read it line by line and tell you what it commits you to.</p>",
+          "team": "team_chidi_abara",
+          "image": "as_contracts_and_leases",
+          "order": 5
+        }
+      }
+    },
+    "/practice-areas/buying-or-selling-a-business": {
+      "id": "pg_svc_buying_or_selling_a_business",
+      "template": "service",
+      "title": "Buying or selling a business",
+      "params": {
+        "service": "buying-or-selling-a-business"
+      },
+      "entry": {
+        "id": "svc_buying_or_selling_a_business",
+        "handle": "buying-or-selling-a-business",
+        "title": "Buying or selling a business",
+        "fields": {
+          "summary": "For the owner on either side of the sale.",
+          "description": "<p>We act for the buyer or the seller of a small business: the letter of intent, due diligence, the purchase agreement and the closing.</p>",
+          "team": "team_chidi_abara",
+          "image": "as_buying_or_selling_a_business",
+          "order": 6
+        }
+      }
+    },
+    "/practice-areas/tax-planning": {
+      "id": "pg_svc_tax_planning",
+      "template": "service",
+      "title": "Tax planning",
+      "params": {
+        "service": "tax-planning"
+      },
+      "entry": {
+        "id": "svc_tax_planning",
+        "handle": "tax-planning",
+        "title": "Tax planning",
+        "fields": {
+          "summary": "Tax planning for estates and businesses.",
+          "description": "<p>Estate and gift tax, the tax side of a business sale, and the choice of entity for a new company, planned by a lawyer who is also a CPA.</p>",
+          "team": "team_tomas_reyes",
+          "image": "as_tax_planning",
+          "order": 7
+        }
+      }
+    },
+    "/people/ruth-thorne": {
+      "id": "pg_team_ruth_thorne",
+      "template": "person",
+      "title": "Ruth Thorne",
+      "params": {
+        "person": "ruth-thorne"
+      },
+      "entry": {
+        "id": "team_ruth_thorne",
+        "handle": "ruth-thorne",
+        "title": "Ruth Thorne",
+        "fields": {
+          "role": "Partner",
+          "letters": "JD",
+          "group": "professionals",
+          "bio": "<p>Ruth founded the firm with Chidi Abara in 2015 and leads its estate planning. She has drafted wills and trusts for Oregon and Washington families since 2007, and she explains every document in plain terms before anyone signs it.</p>",
+          "credentials": "Admitted in Oregon, 2007\nAdmitted in Washington, 2010\nOregon State Bar Estate Planning Section",
+          "image": "as_ruth_thorne",
+          "email": "ruth@thorneabara.com",
+          "order": 1
+        }
+      }
+    },
+    "/people/chidi-abara": {
+      "id": "pg_team_chidi_abara",
+      "template": "person",
+      "title": "Chidi Abara",
+      "params": {
+        "person": "chidi-abara"
+      },
+      "entry": {
+        "id": "team_chidi_abara",
+        "handle": "chidi-abara",
+        "title": "Chidi Abara",
+        "fields": {
+          "role": "Partner",
+          "letters": "JD",
+          "group": "professionals",
+          "bio": "<p>Chidi leads the business practice: forming companies, writing operating agreements, reviewing contracts and leases, and seeing owners through the sale of a business.</p>",
+          "credentials": "Admitted in Oregon, 2013",
+          "image": "as_chidi_abara",
+          "email": "chidi@thorneabara.com",
+          "order": 2
+        }
+      }
+    },
+    "/people/lena-marsh": {
+      "id": "pg_team_lena_marsh",
+      "template": "person",
+      "title": "Lena Marsh",
+      "params": {
+        "person": "lena-marsh"
+      },
+      "entry": {
+        "id": "team_lena_marsh",
+        "handle": "lena-marsh",
+        "title": "Lena Marsh",
+        "fields": {
+          "role": "Associate",
+          "letters": "JD",
+          "group": "professionals",
+          "bio": "<p>Lena handles probate and trust administration, from small estate affidavits to estates with property on both sides of the river. She gives every family a timeline at the first meeting.</p>",
+          "credentials": "Admitted in Oregon, 2020",
+          "image": "as_lena_marsh",
+          "email": "lena@thorneabara.com",
+          "order": 3
+        }
+      }
+    },
+    "/people/tomas-reyes": {
+      "id": "pg_team_tomas_reyes",
+      "template": "person",
+      "title": "Tomas Reyes",
+      "params": {
+        "person": "tomas-reyes"
+      },
+      "entry": {
+        "id": "team_tomas_reyes",
+        "handle": "tomas-reyes",
+        "title": "Tomas Reyes",
+        "fields": {
+          "role": "Of counsel",
+          "letters": "JD, LL.M., CPA",
+          "group": "professionals",
+          "bio": "<p>Tomas leads tax planning for estates and businesses. He holds a JD and an LL.M. and is a licensed CPA, so the legal work and the tax work on a plan or a sale sit with one person.</p>",
+          "credentials": "Juris Doctor (JD)\nMaster of Laws (LL.M.)\nCertified Public Accountant (CPA)",
+          "image": "as_tomas_reyes",
+          "email": "tomas@thorneabara.com",
+          "order": 4
+        }
+      }
+    },
+    "/people/hana-ito": {
+      "id": "pg_team_hana_ito",
+      "template": "person",
+      "title": "Hana Ito",
+      "params": {
+        "person": "hana-ito"
+      },
+      "entry": {
+        "id": "team_hana_ito",
+        "handle": "hana-ito",
+        "title": "Hana Ito",
+        "fields": {
+          "role": "Paralegal",
+          "letters": "",
+          "group": "staff",
+          "bio": "<p>Hana prepares the documents for every signing and keeps each matter on its timeline.</p>",
+          "credentials": "",
+          "image": "as_hana_ito",
+          "email": "",
+          "order": 5
+        }
+      }
+    },
+    "/people/greta-olsen": {
+      "id": "pg_team_greta_olsen",
+      "template": "person",
+      "title": "Greta Olsen",
+      "params": {
+        "person": "greta-olsen"
+      },
+      "entry": {
+        "id": "team_greta_olsen",
+        "handle": "greta-olsen",
+        "title": "Greta Olsen",
+        "fields": {
+          "role": "Office manager",
+          "letters": "",
+          "group": "staff",
+          "bio": "<p>Greta runs the office, the calendar and the billing, and is usually the first voice you hear when you call.</p>",
+          "credentials": "",
+          "image": "as_greta_olsen",
+          "email": "office@thorneabara.com",
+          "order": 6
+        }
+      }
+    },
+    "/insights/what-a-pour-over-will-does": {
+      "id": "pg_post_what_a_pour_over_will_does",
+      "template": "post",
+      "title": "What a pour-over will does",
+      "params": {
+        "post": "what-a-pour-over-will-does"
+      },
+      "entry": {
+        "id": "post_what_a_pour_over_will_does",
+        "handle": "what-a-pour-over-will-does",
+        "title": "What a pour-over will does",
+        "fields": {
+          "topic": "Estate planning",
+          "date": "2026-10-12",
+          "standfirst": "A short will that moves anything left outside your trust into it.",
+          "image": "as_post_what_a_pour_over_will_does",
+          "body": "<p>A revocable living trust only controls what you put into it. Most people sign the trust, move the house and the main accounts into it, then open a new account or inherit something years later and never move it in. A pour-over will catches those things.</p><h2>How it works</h2><p>The will names your trust as the one who inherits. Anything still in your own name when you die passes to the trust, and your trustee shares it out on the trust’s terms with everything else. Beside the trust, the will:</p><ul><li>names a personal representative to gather what was left outside;</li><li>names a guardian for young children, which a trust cannot;</li><li>keeps one set of instructions for everything you own.</li></ul><p>It does not keep what it catches out of probate. If a lot is left outside the trust, that part may still go through the court, so we check how your property is held when you sign your <a href=\"/practice-areas/estate-planning\">estate plan</a>, and again at each review.</p><p>This is general information, not legal advice. Every family and every business is different, so ask us before you act on it.</p>",
+          "team": "team_ruth_thorne"
+        }
+      }
+    },
+    "/insights/oregons-small-estate-affidavit-in-plain-terms": {
+      "id": "pg_post_oregons_small_estate_affidavit_in_plain_",
+      "template": "post",
+      "title": "Oregon's small estate affidavit, in plain terms",
+      "params": {
+        "post": "oregons-small-estate-affidavit-in-plain-terms"
+      },
+      "entry": {
+        "id": "post_oregons_small_estate_affidavit_in_plain_",
+        "handle": "oregons-small-estate-affidavit-in-plain-terms",
+        "title": "Oregon's small estate affidavit, in plain terms",
+        "fields": {
+          "topic": "Probate",
+          "date": "2026-09-28",
+          "standfirst": "When an estate can skip probate, and what the affidavit asks of you.",
+          "image": "as_post_oregons_small_estate_affidavit_i",
+          "body": "<p>When someone dies in Oregon with a modest estate, a full probate is often not needed. A small estate affidavit lets an heir collect what the person owned and pass it on, with one filing and no court hearing.</p><h2>Who can use it</h2><p>The estate has to be under the value limits Oregon law sets, one for personal property such as bank accounts and cars, and one for real property such as a house. Property that already passes outside the estate, such as a joint account or a retirement plan with a named beneficiary, does not count.</p><ul><li>Wait at least 30 days after the death before you file.</li><li>List every asset with its value, and every debt you know of.</li><li>Send a copy to the heirs, the creditors and, in some cases, the state.</li></ul><p>The person who signs the affidavit becomes responsible for paying the debts and passing the property to the right people, so the list has to be complete. If the estate is over the limits, or someone disputes the will, <a href=\"/practice-areas/probate-and-trust-administration\">a full probate</a> is the safer path.</p><p>This is general information, not legal advice. Every family and every business is different, so ask us before you act on it.</p>",
+          "team": "team_lena_marsh"
+        }
+      }
+    },
+    "/insights/does-a-one-person-llc-need-an-operating-agreement": {
+      "id": "pg_post_does_a_one_person_llc_need_an_operating_",
+      "template": "post",
+      "title": "Does a one-person LLC need an operating agreement?",
+      "params": {
+        "post": "does-a-one-person-llc-need-an-operating-agreement"
+      },
+      "entry": {
+        "id": "post_does_a_one_person_llc_need_an_operating_",
+        "handle": "does-a-one-person-llc-need-an-operating-agreement",
+        "title": "Does a one-person LLC need an operating agreement?",
+        "fields": {
+          "topic": "Business",
+          "date": "2026-09-03",
+          "standfirst": "Yes, and the reasons have little to do with the state.",
+          "image": "as_post_does_a_one_person_llc_need_an_op",
+          "body": "<p>Oregon does not require a one-person LLC to have a written operating agreement, and the state never asks to see one. Many owners who form an LLC on their own skip it. We think that is a mistake, for reasons that have more to do with banks, courts and your family than with the state.</p><h2>What it does for you</h2><ul><li>It shows the company is separate from you, which helps keep your personal savings out of reach if the business is sued.</li><li>It answers the questions a bank or a landlord asks before opening an account or signing a lease.</li><li>It says who runs the company if you die or cannot act, so the business does not stall while your family waits for a court.</li></ul><p>It also makes the next step easier. When you take on a partner or sell part of the company, you change an agreement you already have instead of writing one in a hurry.</p><p>A short agreement does all of this. We draft one with every <a href=\"/practice-areas/business-formation\">business we form</a>, and we can write one for an LLC you formed yourself.</p><p>This is general information, not legal advice. Every family and every business is different, so ask us before you act on it.</p>",
+          "team": "team_chidi_abara"
+        }
+      }
+    },
+    "/insights/when-to-update-your-trust": {
+      "id": "pg_post_when_to_update_your_trust",
+      "template": "post",
+      "title": "When to update your trust",
+      "params": {
+        "post": "when-to-update-your-trust"
+      },
+      "entry": {
+        "id": "post_when_to_update_your_trust",
+        "handle": "when-to-update-your-trust",
+        "title": "When to update your trust",
+        "fields": {
+          "topic": "Estate planning",
+          "date": "2026-08-14",
+          "standfirst": "A marriage, a divorce, a birth or a move: the four moments to look again.",
+          "image": "as_post_when_to_update_your_trust",
+          "body": "<p>A trust is written for the family you have on the day you sign it. Families change, and a trust that no longer fits can send property to the wrong person or leave someone out.</p><h2>Four moments to look again</h2><ul><li>A marriage, so your spouse is provided for the way you both intend.</li><li>A divorce, so a former spouse is no longer your trustee or a beneficiary, unless you want them to be.</li><li>A birth or an adoption, so the new child shares in the trust as you intend.</li><li>A move to another state, so the trust and the papers beside it still work under that state’s law.</li></ul><p>Look again every few years even when nothing has happened. The people you named as trustee get older too, and one of them may no longer be the right choice.</p><p>Most changes take an amendment of a page or two, not a new trust. Bring your documents to a review and we will tell you which parts still work. Read more about <a href=\"/practice-areas/trusts-and-powers-of-attorney\">trusts and powers of attorney</a>.</p><p>This is general information, not legal advice. Every family and every business is different, so ask us before you act on it.</p>",
+          "team": "team_ruth_thorne"
+        }
+      }
+    },
+    "/insights/probate-on-both-sides-of-the-river": {
+      "id": "pg_post_probate_on_both_sides_of_the_river",
+      "template": "post",
+      "title": "Probate on both sides of the river",
+      "params": {
+        "post": "probate-on-both-sides-of-the-river"
+      },
+      "entry": {
+        "id": "post_probate_on_both_sides_of_the_river",
+        "handle": "probate-on-both-sides-of-the-river",
+        "title": "Probate on both sides of the river",
+        "fields": {
+          "topic": "Probate",
+          "date": "2026-07-22",
+          "standfirst": "An Oregon estate with a house in Washington needs two court cases, not one.",
+          "image": "as_post_probate_on_both_sides_of_the_riv",
+          "body": "<p>Many Portland families own a house, a cabin or land across the Columbia in Washington. When someone who lived in Oregon dies owning real property in Washington, the Oregon probate cannot pass that property on. It needs a second, smaller case in the Washington county where the property sits.</p><h2>What the second case asks for</h2><ul><li>A personal representative appointed by the Washington court, often the same person as in Oregon.</li><li>A copy of the will and of the Oregon order that admitted it.</li><li>Notice to the heirs and the creditors under Washington’s rules.</li></ul><p>Two cases take longer than one, and the Washington property waits until its own case is done. You can spare your family the second case by putting the Washington property into a revocable trust while you are alive.</p><p>If the second case is already needed, we run both together from Portland, with the meeting room in Vancouver for the Washington side. Read more about <a href=\"/practice-areas/probate-and-trust-administration\">probate and trust administration</a>.</p><p>This is general information, not legal advice. Every family and every business is different, so ask us before you act on it.</p>",
+          "team": "team_lena_marsh"
+        }
+      }
+    },
+    "/insights/gifting-shares-before-you-sell-a-business": {
+      "id": "pg_post_gifting_shares_before_you_sell_a_busines",
+      "template": "post",
+      "title": "Gifting shares before you sell a business",
+      "params": {
+        "post": "gifting-shares-before-you-sell-a-business"
+      },
+      "entry": {
+        "id": "post_gifting_shares_before_you_sell_a_busines",
+        "handle": "gifting-shares-before-you-sell-a-business",
+        "title": "Gifting shares before you sell a business",
+        "fields": {
+          "topic": "Tax planning",
+          "date": "2026-06-30",
+          "standfirst": "Giving part of a company away before a sale can save tax, if the timing is right.",
+          "image": "as_post_gifting_shares_before_you_sell_a",
+          "body": "<p>Owners who plan to sell often want part of the proceeds to go to their children. Giving them shares before the sale, rather than cash after it, can take the growth on those shares out of your estate, and the gain is then taxed to whoever sells them.</p><h2>Why the timing matters</h2><p>If the gift comes too late, when a buyer and a price are all but settled, the tax law can treat the sale as yours and tax you on the whole gain anyway. A gift made early, before talks with a buyer begin, is far more likely to hold.</p><ul><li>Have the shares valued by an appraiser as of the day of the gift.</li><li>File a gift tax return, even when no tax is due.</li><li>Check the company’s agreements for limits on who may own shares.</li></ul><p>We plan these gifts with your accountant, as part of the <a href=\"/practice-areas/tax-planning\">tax planning</a> for the sale.</p><p>This is general information, not legal advice. Every family and every business is different, so ask us before you act on it.</p>",
+          "team": "team_tomas_reyes"
+        }
+      }
+    }
+  }
+}

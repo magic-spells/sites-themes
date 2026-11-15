@@ -1,0 +1,15 @@
+{
+  "label": "Person",
+  "description": "A person’s page: the dossier.",
+  "sections": [
+    {
+      "id": "s_person",
+      "type": "person-detail",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    }
+  ]
+}

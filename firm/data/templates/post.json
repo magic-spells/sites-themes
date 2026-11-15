@@ -1,0 +1,15 @@
+{
+  "label": "Post",
+  "description": "One post and its author.",
+  "sections": [
+    {
+      "id": "s_post",
+      "type": "post",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    }
+  ]
+}

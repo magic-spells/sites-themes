@@ -1,0 +1,39 @@
+{
+  "label": "People",
+  "description": "The lawyers, then the staff.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Six people in Portland, with a meeting room in Vancouver by appointment.",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_lawyers",
+      "type": "people",
+      "preset": "Default",
+      "settings": {
+        "heading": "Lawyers",
+        "pill_link": "",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_staff",
+      "type": "people",
+      "preset": "Default",
+      "settings": {
+        "group": "staff",
+        "heading": "Staff",
+        "pill_link": "",
+        "color_scheme": "stone"
+      },
+      "blocks": []
+    }
+  ]
+}

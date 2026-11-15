@@ -1,0 +1,5 @@
+<!-- One row that opens and closes over a hairline, for the questions and the dossier's rows: the title one weight above the text with a plus that turns to a minus, the children under it. open starts it open; editor is a block's editor id. Without JavaScript every row shows. -->
+<collapsible-component class="border-b border-scheme-border" data-block={ editor }>
+  <button class="group flex items-center justify-between gap-space-md py-space-sm font-semibold" type="button">{ title }<Glyph name="plus" cls="size-icon group-aria-expanded:hidden" /><Glyph name="minus" cls="hidden size-icon group-aria-expanded:block" /></button>
+  <collapsible-content open={ open }><div class="pb-space-md"><Children/></div></collapsible-content>
+</collapsible-component>

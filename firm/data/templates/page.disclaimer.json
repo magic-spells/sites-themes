@@ -1,0 +1,27 @@
+{
+  "label": "Disclaimer",
+  "description": "The disclaimer: a title and prose.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_text",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {
+        "align": "left",
+        "heading": "",
+        "accent": "",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+<!-- The ask panel behind every ask button: the Firm ask_form in a sheet, a bottom sheet on phones and a square drawer from the right from 48rem. The heading (the ask label unless one is set here) and the close button lead; the standfirst and the form follow, the form note above the submit. On a practice page the practice select starts on that practice. It hands focus back to the button that opened it, and opens on its own when the form comes back sent or with an error. With a Firm ask_url set it is not drawn. -->
+{#if !site.settings.ask_url}
+<dialog-panel>
+  <dialog class="text-scheme-foreground md:rounded-none" aria-labelledby="ask-panel-title">
+    <sheet-panel id="ask-panel" snap-points="92dvh" desktop-position="right" desktop-mode="edge">
+      <sheet-header class="flex items-center justify-between gap-space-sm">
+        <h2 class="font-heading text-h3 text-balance text-scheme-heading" id="ask-panel-title">{ settings.heading || site.settings.ask_label }</h2>
+        <button class="flex size-control shrink-0 items-center justify-center rounded-full bg-scheme-surface-2" type="button" data-action-hide-dialog><Glyph name="close" /><span class="sr-only">{ t('close') }</span></button>
+      </sheet-header>
+      <sheet-content class="grid content-start gap-space-md">
+        {#if settings.text}<p class="text-pretty">{ settings.text }</p>{/if}
+        <AskForm prefix="ask" />
+      </sheet-content>
+    </sheet-panel>
+  </dialog>
+</dialog-panel>
+{/if}
+
+<schema>
+{
+  "name": "Ask panel",
+  "description": "The consultation form behind every ask button: a sheet on phones, a drawer from tablets.",
+  "kind": "Panels",
+  "icon": "send",
+  "settings": [
+    { "type": "paragraph", "content": "The form, its note and the button label come from the Firm settings." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "", "info": "Leave empty to use the ask label." },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" } }
+  ]
+}
+</schema>

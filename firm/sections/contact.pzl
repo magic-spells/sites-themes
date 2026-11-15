@@ -1,0 +1,29 @@
+<!-- The contact band: the heading (the ask label unless one is set), the standfirst and the Contact settings as rows with line glyphs in five parts; the form in seven, short fields two to a row from 48rem, the form note above the submit. On a practice page the practice select starts on that practice. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-picture-text">
+    <div class="grid content-start gap-space-lg">
+      <SectionHead heading={ settings.heading || site.settings.ask_label } text={ settings.text } />
+      <Address icons />
+    </div>
+    <AskForm handle={ settings.form } prefix="contact" pair />
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Contact",
+  "description": "The consultation form beside the firm's email, phone and places.",
+  "kind": "Contact",
+  "icon": "mail",
+  "settings": [
+    { "type": "paragraph", "content": "The email, phone and address come from the Contact settings; the form note from the Firm settings." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "", "info": "Leave empty to use the ask label." },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "form", "id": "form", "label": "Form", "default": "", "info": "Leave empty to use the ask form." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

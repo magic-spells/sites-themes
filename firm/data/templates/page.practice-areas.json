@@ -1,0 +1,37 @@
+{
+  "label": "Practice areas",
+  "description": "Every practice area as a ruled index, then the first meeting.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Who handles each kind of matter.",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_index",
+      "type": "practice-index",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_ask",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "gold",
+        "heading": "The first meeting",
+        "accent": "",
+        "text": "Thirty minutes by video for $150, credited to your plan if you go ahead."
+      },
+      "blocks": []
+    }
+  ]
+}

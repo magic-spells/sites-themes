@@ -1,0 +1,55 @@
+<!-- Posts, newest first, as cards three across from 48rem, up to the limit: the 3:2 photo with its date on a tag at the top left, the title in H4, the author in small muted type, the card the link. With topic links on, the topics sit under the head as links that filter the list (?topic=), All first. The "All …" pill sits level with the heading. A list with nothing to show prints one plain line. -->
+{#let
+  all = content.posts.entries
+  topic = request.query.topic
+  posts = (topic ? all | where('fields.topic', topic) : all) | sort('fields.date') | reverse | slice(0, settings.limit)
+  topics = all | map('fields.topic') | compact | uniq
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-xl">
+    <SectionHead heading={ settings.heading } text={ settings.text } pill={ settings.pill_label } href={ settings.pill_link }>
+      {#if settings.topics && topics.length > 1}
+        <nav class="col-span-full" aria-label="{ t('topics') }">
+          <ul class="flex flex-wrap gap-x-space-md gap-y-space-xs">
+            <li><a class="hover:underline current:underline" href="{ request.path }" aria-current={ topic ? null : 'page' }>{ t('all_topics') }</a></li>
+            {#for name in topics}<li><a class="hover:underline current:underline" href="?topic={ encodeURIComponent(name) }" aria-current={ name == topic ? 'page' : null }>{ name }</a></li>{/for}
+          </ul>
+        </nav>
+      {/if}
+    </SectionHead>
+    {#if posts.length}
+      <ul class="grid gap-x-space-lg gap-y-space-xl md:grid-cols-3">{#for post in posts}{#let f = post.fields}<li><a class="group grid content-start gap-space-2xs" href="/insights/{ post.handle }">
+        <span class="relative mb-inset">
+          <Well asset={ f.image } sizes="(min-width: 48rem) 33vw, 100vw" />
+          {#if f.date}<time class="absolute start-inset top-inset rounded-box bg-scheme-background px-space-xs py-space-2xs text-small tabular-nums" datetime="{ f.date }">{ date(f.date) }</time>{/if}
+        </span>
+        <span class="text-h4 text-balance text-scheme-heading group-hover:underline">{ post.title }</span>
+        {#if f.team}<span class="text-small text-scheme-muted">{ f.team.title }</span>{/if}
+      </a></li>{/for}</ul>
+    {:else}
+      <p class="text-scheme-muted">{ t('no_posts') }</p>
+    {/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Insights",
+  "description": "Posts as cards, newest first.",
+  "kind": "Collections",
+  "icon": "newspaper",
+  "settings": [
+    { "type": "paragraph", "content": "The posts, newest first." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Insights" },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 3 },
+    { "type": "checkbox", "id": "topics", "label": "Topic links", "default": false, "info": "Links under the heading that show one topic's posts." },
+    { "type": "text", "id": "pill_label", "label": "Pill label", "default": "", "info": "The outlined link beside the heading, such as All insights. Leave it empty for none." },
+    { "type": "url", "id": "pill_link", "label": "Pill link", "default": "/insights" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

@@ -1,0 +1,7 @@
+<!-- layout: default -->
+<!-- The site paused, with no header or footer: the name, "Back soon." and, with an email set, where to write meanwhile. -->
+<Utility bare>
+  <p class="font-heading text-h3 text-scheme-heading">{ site.settings.wordmark || site.name }</p>
+  <h1 class="font-heading text-h2 text-balance text-scheme-heading">{ t('maintenance_title') }</h1>
+  {#if site.settings.email}<p class="text-lead text-pretty">{ t('maintenance_body', { email: site.settings.email }) }</p>{/if}
+</Utility>

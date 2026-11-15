@@ -1,0 +1,9 @@
+<!-- The button, in sentence case: solid (the scheme's button) or, with tone="outline", the scheme's secondary button, a hairline in its text colour; pill is the 2.25rem round "All …" link. With type it is a <button> of that type. Otherwise it links to href, and with no href it is the ask (plan decision 10): a link to the Firm ask_url when one is set, else a button that opens the ask panel. label falls back to the Firm ask_label. cls adds classes. -->
+{#let
+  s = site.settings
+  to = type ? null : href || s.ask_url
+  look = tone == 'outline' ? 'border-current bg-scheme-outline text-scheme-outline-text hover:bg-scheme-outline-hover hover:text-scheme-outline-hover-text' : 'border-transparent bg-scheme-button text-scheme-button-text hover:bg-scheme-button-hover hover:text-scheme-button-hover-text'
+  all = 'inline-flex items-center justify-center border text-label whitespace-nowrap transition-colors duration-fast ease-standard ' + (pill ? 'min-h-pill rounded-full px-space-sm ' : 'min-h-control rounded-button px-button-x ') + look + (cls ? ' ' + cls : '')
+}
+{#if to}<a class="{ all }" href="{ to }">{ label || s.ask_label }</a>
+{:else}<button class="{ all }" type="{ type || 'button' }" data-panel-open={ type ? null : 'ask-panel' } aria-haspopup={ type ? null : 'dialog' }>{ label || s.ask_label }</button>{/if}

@@ -1,0 +1,61 @@
+{
+  "label": "Practice area",
+  "description": "A practice area’s page: who leads it, the ask, the questions, then the first meeting.",
+  "sections": [
+    {
+      "id": "s_practice",
+      "type": "practice-detail",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": [
+        {
+          "id": "b_cost",
+          "type": "question",
+          "settings": {
+            "question": "What does the first meeting cost?",
+            "answer": "<p>$150 for 30 minutes by video, credited to your plan if you go ahead.</p>"
+          }
+        },
+        {
+          "id": "b_charge",
+          "type": "question",
+          "settings": {
+            "question": "How do you charge?",
+            "answer": "<p>Every matter is quoted on its own after the first meeting, and the quote is set out in an engagement letter before we start.</p>"
+          }
+        },
+        {
+          "id": "b_bring",
+          "type": "question",
+          "settings": {
+            "question": "What should I bring?",
+            "answer": "<p>A list of what you own and owe, and any will, trust or agreement you already have.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_ask",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "gold",
+        "heading": "The first meeting",
+        "accent": "",
+        "text": "Thirty minutes by video for $150, credited to your plan if you go ahead."
+      },
+      "blocks": []
+    }
+  ]
+}

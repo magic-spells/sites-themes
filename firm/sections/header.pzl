@@ -1,0 +1,35 @@
+<!-- The header: the logo or the name in the heading face at the left, the main menu from 64rem, the ask (Button with no link) from 48rem, and below 64rem the menu button, a circle on the second surface, which opens the menu sheet. A rule under it, inside the column. Sticky; never the phone. -->
+{#let
+  s = site.settings
+  name = s.wordmark || site.name
+}
+<sticky-header settle-overshoot="0">
+  <header class="bg-scheme-background px-gutter text-scheme-foreground">
+    <div class="mx-auto flex max-w-column items-center gap-space-lg border-b border-scheme-border py-space-sm">
+      <a class="me-auto font-heading text-wordmark text-scheme-heading" href="/">{#if s.logo}<img class="h-control w-auto" src="{ image_url(s.logo, 320) }" alt="{ s.logo.alt || name }" width={ s.logo.width } height={ s.logo.height } />{:else}{ name }{/if}</a>
+      {#if menus.main.items.length}
+        <nav class="shrink-0 max-lg:hidden" aria-label="{ t('main_navigation') }">
+          <ul class="flex gap-space-lg">{#for item in menus.main.items}<li><a class="hover:underline current:underline" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>{/for}</ul>
+        </nav>
+      {/if}
+      <Button cls="max-md:hidden" />
+      <button class="flex size-control shrink-0 items-center justify-center rounded-full bg-scheme-surface-2 lg:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog"><Glyph name="menu" /><span class="sr-only">{ t('menu') }</span></button>
+    </div>
+  </header>
+</sticky-header>
+
+<schema>
+{
+  "name": "Header",
+  "description": "The logo or name, the main menu and the ask; the menu button on phones and tablets.",
+  "kind": "Header",
+  "icon": "panel-top",
+  "settings": [
+    { "type": "paragraph", "content": "The menu is the main menu; the button is the ask, from the Firm settings." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "navy" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "navy" } }
+  ]
+}
+</schema>

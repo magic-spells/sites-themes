@@ -1,0 +1,194 @@
+{
+  "label": "Questions",
+  "description": "Questions by topic with jump links, then the first meeting.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Plain answers about the first meeting, our fees and how we work.",
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "color_scheme": "paper"
+      },
+      "blocks": [
+        {
+          "id": "b_t1",
+          "type": "topic",
+          "settings": {
+            "title": "First meeting"
+          }
+        },
+        {
+          "id": "b_q11",
+          "type": "question",
+          "settings": {
+            "question": "What does the first meeting cost?",
+            "answer": "<p>$150 for 30 minutes by video, credited to your plan if you go ahead.</p>"
+          }
+        },
+        {
+          "id": "b_q12",
+          "type": "question",
+          "settings": {
+            "question": "Do you meet by video?",
+            "answer": "<p>Yes. The first meeting is by video, and later meetings can be by video, at our Portland office or, by appointment, in Vancouver.</p>"
+          }
+        },
+        {
+          "id": "b_q13",
+          "type": "question",
+          "settings": {
+            "question": "What should I bring?",
+            "answer": "<p>A list of what you own and owe, and any will or trust you already have.</p>"
+          }
+        },
+        {
+          "id": "b_t2",
+          "type": "topic",
+          "settings": {
+            "title": "Fees and billing"
+          }
+        },
+        {
+          "id": "b_q21",
+          "type": "question",
+          "settings": {
+            "question": "How do you charge?",
+            "answer": "<p>Every matter is quoted on its own after the first meeting, and the quote is set out in an engagement letter before we start.</p>"
+          }
+        },
+        {
+          "id": "b_q22",
+          "type": "question",
+          "settings": {
+            "question": "What is not in the quote?",
+            "answer": "<p>Court costs and state filing fees, which we pass on at cost and name in the engagement letter.</p>"
+          }
+        },
+        {
+          "id": "b_q23",
+          "type": "question",
+          "settings": {
+            "question": "Can I pay online?",
+            "answer": "<p>Yes. Use Pay an invoice, or Pay into trust for money we hold for your matter.</p>"
+          }
+        },
+        {
+          "id": "b_t3",
+          "type": "topic",
+          "settings": {
+            "title": "Estate planning"
+          }
+        },
+        {
+          "id": "b_q31",
+          "type": "question",
+          "settings": {
+            "question": "Do I need a will or a trust?",
+            "answer": "<p>A will suits most simple estates; a trust keeps your estate out of probate. Ruth Thorne will say which fits at the first meeting.</p>"
+          }
+        },
+        {
+          "id": "b_q32",
+          "type": "question",
+          "settings": {
+            "question": "What does a will package include?",
+            "answer": "<p>A will, a durable power of attorney, a health care directive and a signing meeting.</p>"
+          }
+        },
+        {
+          "id": "b_q33",
+          "type": "question",
+          "settings": {
+            "question": "When should I update my plan?",
+            "answer": "<p>After a marriage, a divorce, a birth or a move to another state.</p>"
+          }
+        },
+        {
+          "id": "b_t4",
+          "type": "topic",
+          "settings": {
+            "title": "Probate"
+          }
+        },
+        {
+          "id": "b_q41",
+          "type": "question",
+          "settings": {
+            "question": "Do you handle probate in Washington?",
+            "answer": "<p>Yes. Ruth Thorne is admitted in Washington as well as Oregon, and we meet Washington clients in Vancouver.</p>"
+          }
+        },
+        {
+          "id": "b_q42",
+          "type": "question",
+          "settings": {
+            "question": "What is a small estate affidavit?",
+            "answer": "<p>A shorter process for estates that qualify under Oregon law.</p>"
+          }
+        },
+        {
+          "id": "b_q43",
+          "type": "question",
+          "settings": {
+            "question": "How long does probate take?",
+            "answer": "<p>Most Oregon probates take six to twelve months. Lena Marsh gives you a timeline at the first meeting.</p>"
+          }
+        },
+        {
+          "id": "b_t5",
+          "type": "topic",
+          "settings": {
+            "title": "Working with us"
+          }
+        },
+        {
+          "id": "b_q51",
+          "type": "question",
+          "settings": {
+            "question": "Who will handle my matter?",
+            "answer": "<p>The lawyer you meet first handles it through to the signing.</p>"
+          }
+        },
+        {
+          "id": "b_q52",
+          "type": "question",
+          "settings": {
+            "question": "Where do we meet?",
+            "answer": "<p>By video, at the Portland office, or in Vancouver by appointment.</p>"
+          }
+        },
+        {
+          "id": "b_q53",
+          "type": "question",
+          "settings": {
+            "question": "Does sending the form make you my lawyers?",
+            "answer": "<p>No. We are your lawyers once we have both signed an engagement letter.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_ask",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "gold",
+        "heading": "The first meeting",
+        "accent": "",
+        "text": "Thirty minutes by video for $150, credited to your plan if you go ahead."
+      },
+      "blocks": []
+    }
+  ]
+}

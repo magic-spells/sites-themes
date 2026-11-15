@@ -1,0 +1,27 @@
+<!-- The notices above the header, one per line of the text, running edge to edge on a slow marquee; it stands still for visitors who ask for less motion. The close button hides it for that visitor until the text changes. -->
+{#if settings.text}
+<aside class="flex min-h-control items-center gap-space-xs bg-scheme-background pe-gutter text-scheme-foreground" data-notice="{ settings.text }" aria-label="{ t('announcement') }">
+  <scrolling-content class="min-w-0 flex-1 text-small" speed="30" fade>
+    <scrolling-track>
+      <scrolling-item>{#for line in settings.text | split('\n')}<span class="whitespace-nowrap">{ line }</span><span class="mx-space-lg size-space-2xs shrink-0 rounded-full bg-current" aria-hidden="true"></span>{/for}</scrolling-item>
+    </scrolling-track>
+  </scrolling-content>
+  <button class="-me-space-xs flex size-control shrink-0 items-center justify-center" type="button" data-dismiss><Glyph name="close" /><span class="sr-only">{ t('dismiss') }</span></button>
+</aside>
+{/if}
+
+<schema>
+{
+  "name": "Announcement bar",
+  "description": "Notices above the header on a slow marquee across the full width, with a close button.",
+  "kind": "Header",
+  "icon": "megaphone",
+  "settings": [
+    { "type": "textarea", "id": "text", "label": "Notices", "default": "Now taking new clients", "info": "One notice per line: new hours, a holiday closure, a move. Leave empty to hide the bar." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "midnight" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "midnight" } }
+  ]
+}
+</schema>

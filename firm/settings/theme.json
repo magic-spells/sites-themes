@@ -1,0 +1,41 @@
+{
+  "name": "Firm",
+  "version": "0.1.0",
+  "default_template": "page",
+  "not_found_template": "404",
+  "maintenance_template": "maintenance",
+  "query": ["topic"],
+  "groups": {
+    "header-group": { "label": "Header", "accepts": ["announcement-bar", "header"] },
+    "footer-group": { "label": "Footer", "accepts": ["footer"] },
+    "panel-group": { "label": "Panel", "accepts": ["mobile-menu", "ask-panel", "cookie-notice"] }
+  },
+  "settings": [
+    {
+      "name": "Brand",
+      "settings": [
+        { "type": "image", "id": "favicon", "label": "Favicon" },
+        { "type": "image", "id": "logo", "label": "Logo", "info": "Shown in place of the name in the header when set." },
+        { "type": "text", "id": "wordmark", "label": "Name", "default": "", "info": "Set in the heading face in the header and the footer. Leave empty to use the site name." }
+      ]
+    },
+    {
+      "name": "Contact",
+      "settings": [
+        { "type": "text", "id": "email", "label": "Email", "default": "" },
+        { "type": "text", "id": "phone", "label": "Phone", "default": "", "info": "Printed as typed; the call link drops the spaces." },
+        { "type": "textarea", "id": "address", "label": "Address", "default": "", "info": "One line per line of the address; an empty line starts a second place." }
+      ]
+    },
+    {
+      "name": "Firm",
+      "settings": [
+        { "type": "text", "id": "ask_label", "label": "Ask label", "default": "Request a consultation", "info": "The one call to action: the header button, the menu, the ask panel, and every section button left without a link." },
+        { "type": "url", "id": "ask_url", "label": "Ask link", "default": "", "info": "Leave empty to open the ask panel. A link here, such as a scheduler, is followed instead." },
+        { "type": "form", "id": "ask_form", "label": "Ask form", "default": "consultation" },
+        { "type": "textarea", "id": "form_note", "label": "Form note", "default": "", "info": "Printed above the submit button of the ask panel and the contact form: sending a form does not make someone a client." },
+        { "type": "textarea", "id": "legal_line", "label": "Legal line", "default": "", "info": "Closes every page under the footer: the advertising, registration or responsible-person line your profession asks for, and the copyright. One paragraph per line." }
+      ]
+    }
+  ]
+}

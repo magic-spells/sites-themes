@@ -1,0 +1,365 @@
+@import "tailwindcss" source(none);
+@import "./vendor/collapsible-content.css" layer(components);
+@import "./vendor/dialog-panel.css" layer(components);
+@import "./vendor/lightbox.css" layer(components);
+@import "./vendor/progress-bar.css" layer(components);
+@import "./vendor/scrolling-content.css" layer(components);
+@import "./vendor/select-dropdown.css" layer(components);
+@import "./vendor/sheet.min.css" layer(components);
+@import "./vendor/sticky-header.css" layer(components);
+@import "./vendor/tarot.css" layer(components);
+
+@source "../layouts/**/*.pzl";
+@source "../templates/**/*.pzl";
+@source "../sections/**/*.pzl";
+@source "../components/**/*.pzl";
+@source not inline("outline inline columns-2");
+
+/* Every colour and family lives in settings/design.json; this file maps the
+   --sites-* properties the head carries onto utilities. */
+@theme {
+	--font-heading: var(--sites-font-heading-family), Georgia, serif;
+	--font-body: var(--sites-font-body-family), system-ui, sans-serif;
+
+	--radius-box: var(--sites-radius-sm);
+	--radius-button: var(--sites-button-radius);
+	--radius-input: var(--sites-input-radius);
+	--radius-card: var(--sites-radius-lg);
+
+	/* The type roles, each sized per breakpoint in :root below. H1 to H3 in
+	   the display face at its one weight; H4, names and card titles in the
+	   body face at 600. The scale tops out at H1. */
+	--text-h1: var(--firm-h1);
+	--text-h1--line-height: 1.05;
+	--text-h1--font-weight: 400;
+	--text-h2: var(--firm-h2);
+	--text-h2--line-height: var(--sites-type-leading-tight);
+	--text-h2--font-weight: 400;
+	--text-h3: var(--firm-h3);
+	--text-h3--line-height: 1.15;
+	--text-h3--font-weight: 400;
+	--text-h4: var(--firm-h4);
+	--text-h4--line-height: 1.3;
+	--text-h4--font-weight: 600;
+	--text-lead: var(--firm-lead);
+	--text-lead--line-height: var(--sites-type-leading-normal);
+	--text-body: var(--sites-type-scale-base);
+	--text-body--line-height: var(--sites-type-leading-relaxed);
+	--text-small: var(--sites-type-scale-sm);
+	--text-small--line-height: 1.45;
+	--text-label: calc(var(--sites-type-scale-base) * 15 / 17);
+	--text-label--line-height: 1.2;
+	--text-label--letter-spacing: 0.01em;
+	--text-label--font-weight: var(--sites-button-weight);
+	--text-wordmark: calc(var(--sites-type-scale-xl) * 1.1);
+	--text-wordmark--line-height: 1.1;
+
+	--spacing-space-2xs: 0.25rem;
+	--spacing-space-xs: var(--sites-spacing-xs);
+	--spacing-space-sm: var(--sites-spacing-sm);
+	--spacing-space-md: var(--sites-spacing-md);
+	--spacing-space-lg: var(--sites-spacing-lg);
+	--spacing-space-xl: var(--sites-spacing-xl);
+	--spacing-space-3xl: calc(var(--sites-spacing-2xl) * 4 / 3);
+	--spacing-section: var(--firm-section);
+	--spacing-hero: calc(var(--firm-section) * 1.5);
+	--spacing-gutter: var(--firm-gutter);
+	--spacing-button-x: var(--sites-button-padding-x);
+	--spacing-inset: 0.75rem;
+	--spacing-control: 2.75rem;
+	--spacing-pill: 2.25rem;
+	--spacing-icon: 1.125rem;
+	--spacing-textarea: 6.5rem;
+	/* The about band's half-disc: its radius, and its width. */
+	--spacing-disc: clamp(2.5rem, 7vw, 6.5rem);
+	--spacing-disc-full: calc(var(--spacing-disc) * 2);
+
+	--container-column: 82.5rem;
+	--container-band: 52rem;
+	--container-reading: 40rem;
+	--container-narrow: 34rem;
+	--container-letter: 60ch;
+
+	/* Practice cards 3:4, people 4:5, the overlap picture 16:10, posts 3:2,
+	   the gallery and the map 4:3. */
+	--aspect-card: 3 / 4;
+	--aspect-portrait: 4 / 5;
+	--aspect-wide: 16 / 10;
+	--aspect-photo: 3 / 2;
+	--aspect-landscape: 4 / 3;
+
+	/* A picture beside text: seven parts to five; a head beside its pill. */
+	--grid-template-columns-text-picture: minmax(0, 7fr) minmax(0, 5fr);
+	--grid-template-columns-picture-text: minmax(0, 5fr) minmax(0, 7fr);
+	--grid-template-columns-head: minmax(0, 1fr) auto;
+	--grid-template-columns-menus: repeat(auto-fit, minmax(9rem, 1fr));
+
+	--transition-duration-fast: 150ms;
+	--ease-standard: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* The scheme a section sits on. The engine has no muted, rule, second
+   surface or accent slot, so they ride on the chip slots and the icons slot
+   (settings/design.json). Links are the text colour: the accent is off. */
+@theme inline {
+	--color-scheme-background: var(--sites-scheme-background);
+	--color-scheme-foreground: var(--sites-scheme-foreground);
+	--color-scheme-heading: var(--sites-scheme-heading);
+	--color-scheme-muted: var(--sites-scheme-chip-foreground);
+	--color-scheme-border: var(--sites-scheme-chip-border);
+	--color-scheme-surface-2: var(--sites-scheme-chip-background);
+	--color-scheme-input: var(--sites-scheme-input-background);
+	--color-scheme-input-border: var(--sites-scheme-input-border);
+	--color-scheme-button: var(--sites-scheme-button-background);
+	--color-scheme-button-text: var(--sites-scheme-button-foreground);
+	--color-scheme-button-hover: var(--sites-scheme-button-hover-background);
+	--color-scheme-button-hover-text: var(--sites-scheme-button-hover-foreground);
+	--color-scheme-outline: var(--sites-scheme-secondary-button-background);
+	--color-scheme-outline-text: var(--sites-scheme-secondary-button-foreground);
+	--color-scheme-outline-hover: var(--sites-scheme-secondary-button-hover-background);
+	--color-scheme-outline-hover-text: var(--sites-scheme-secondary-button-hover-foreground);
+	--color-accent: var(--sites-scheme-icons);
+}
+
+/* Sizes per breakpoint (phones, from 48rem, from 64rem): each role reads a
+   design token, so a workspace that changes the scale moves every step. */
+:root {
+	--firm-h1: calc(var(--sites-type-scale-4xl) * 2 / 3);
+	--firm-h2: calc(var(--sites-type-scale-3xl) * 17 / 24);
+	--firm-h3: calc(var(--sites-type-scale-2xl) * 13 / 16);
+	--firm-h4: calc(var(--sites-type-scale-xl) * 0.9);
+	--firm-lead: calc(var(--sites-type-scale-lg) * 0.95);
+	--firm-section: calc(var(--sites-spacing-2xl) * 0.5);
+	--firm-gutter: var(--sites-spacing-sm);
+}
+
+@media (min-width: 48rem) {
+	:root {
+		--firm-h1: calc(var(--sites-type-scale-4xl) * 0.8);
+		--firm-h2: calc(var(--sites-type-scale-3xl) * 0.85);
+		--firm-h3: calc(var(--sites-type-scale-2xl) * 0.9);
+		--firm-h4: var(--sites-type-scale-xl);
+		--firm-lead: var(--sites-type-scale-lg);
+		--firm-section: calc(var(--sites-spacing-2xl) * 0.7);
+		--firm-gutter: var(--sites-spacing-md);
+	}
+}
+
+@media (min-width: 64rem) {
+	:root {
+		--firm-h1: var(--sites-type-scale-4xl);
+		--firm-h2: var(--sites-type-scale-3xl);
+		--firm-h3: var(--sites-type-scale-2xl);
+		--firm-section: var(--sites-spacing-2xl);
+		--firm-gutter: calc(var(--sites-spacing-lg) * 1.25);
+	}
+}
+
+/* Public Sans's italic: the font contract binds the roman file only. */
+@font-face {
+	font-family: "Public Sans";
+	font-style: italic;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url("/_sites/theme/fonts/public-sans-latin-wght-italic.woff2") format("woff2");
+}
+
+/* A link or menu item the page marks as current. */
+@custom-variant current (&[aria-current="page"]);
+
+/* Two bands on the same scheme in a row read as one: the second drops its top
+   padding so the seam carries one section's space, not two. */
+main > :is(
+	.sites-scheme-paper + .sites-scheme-paper,
+	.sites-scheme-white + .sites-scheme-white,
+	.sites-scheme-cream + .sites-scheme-cream,
+	.sites-scheme-gold + .sites-scheme-gold,
+	.sites-scheme-stone + .sites-scheme-stone,
+	.sites-scheme-graphite + .sites-scheme-graphite,
+	.sites-scheme-navy + .sites-scheme-navy,
+	.sites-scheme-brown + .sites-scheme-brown,
+	.sites-scheme-midnight + .sites-scheme-midnight
+) > section {
+	padding-top: 0;
+}
+
+/* The dark schemes draw native controls dark: a radio's or a checkbox's box
+   (Field fills it with the scheme's button colour). */
+:is(.sites-scheme-graphite, .sites-scheme-navy, .sites-scheme-brown, .sites-scheme-midnight) {
+	color-scheme: dark;
+}
+
+/* The password and maintenance pages stand alone. */
+body:has([data-bare]) [data-group] {
+	display: none;
+}
+
+/* sticky-header pins the element it is, so the renderer's wrapper steps out
+   of the way. */
+[data-section="header"]:has(sticky-header) {
+	display: contents;
+}
+
+/* Both panels are sheets on the panel's scheme, over the page dimmed to
+   half: the bottom sheet's top corners round, the drawers are 30rem wide
+   and square (the dialog's own rounded-none). */
+dialog-panel:has(sheet-panel) {
+	--sheet-panel-background: var(--sites-scheme-background);
+	--sheet-panel-border-radius: var(--sites-radius-lg);
+	--sheet-panel-box-shadow: var(--sites-shadow-lg);
+	--sheet-handle-color: var(--sites-scheme-chip-foreground);
+	--sheet-handle-width: 2.5rem;
+	--sheet-handle-height: 0.25rem;
+	--sheet-content-padding: var(--firm-gutter);
+	--sheet-overlay-background: rgb(10 13 20 / 0.5);
+	--sheet-overlay-blur: 0;
+	--sheet-active-size: min(30rem, 90vw);
+}
+
+/* The select lists: the field's colours (the trigger is a Field box), the open
+   list with the rule as its hairline, the hovered or chosen option on surface-2. */
+select-dropdown {
+	--select-color-text: var(--sites-scheme-input-foreground);
+	--select-color-background: var(--sites-scheme-input-background);
+	--select-color-border: var(--sites-scheme-chip-border);
+	--select-color-primary: var(--sites-scheme-foreground);
+	--select-color-hover: var(--sites-scheme-chip-background);
+	--select-color-focus: var(--sites-scheme-chip-background);
+	--select-color-selected: var(--sites-scheme-chip-background);
+	--select-shadow: var(--sites-shadow-md);
+	--select-shadow-soft: none;
+}
+
+/* The carousels: never wider than their column (tarot sizes the track from
+   the carousel, so a grid or flex item left at its content width grows without
+   end); the progress a hairline in the rule colour filled in the text; the
+   page dots (the quotes', and the practice cards' on phones) under the track
+   at its left, the current one in the text, the rest at 55%, their centres
+   more than a 24px target apart. Before tarot upgrades, or with no
+   JavaScript, a track lays its slides out as a row that scrolls. */
+tarot-carousel {
+	min-width: 0;
+	--tarot-progress-height: 0.125rem;
+	--tarot-progress-margin: 0;
+	--tarot-progress-border-radius: 0;
+	--tarot-progress-bg: var(--sites-scheme-chip-border);
+	--tarot-progress-fill-bg: var(--sites-scheme-foreground);
+	--color-pagination-dot: color-mix(in srgb, var(--sites-scheme-foreground) 55%, transparent);
+	--color-pagination-dot-active: var(--sites-scheme-foreground);
+}
+
+tarot-carousel > .tarot-dots-list {
+	gap: var(--sites-spacing-sm);
+	margin: var(--sites-spacing-md) 0 0;
+}
+
+tarot-carousel:not(:defined) tarot-track {
+	display: flex;
+	gap: var(--sites-spacing-sm);
+	overflow-x: auto;
+}
+
+tarot-carousel:not(:defined) tarot-slide {
+	flex: none;
+	width: 80%;
+	opacity: 1;
+	visibility: visible;
+}
+
+:root {
+	font-size: var(--sites-type-base);
+	font-synthesis: none;
+	scrollbar-color: var(--sites-scheme-chip-foreground) transparent;
+}
+
+::selection {
+	background: var(--sites-scheme-foreground);
+	color: var(--sites-scheme-background);
+}
+
+:focus-visible {
+	outline: 2px solid var(--sites-scheme-foreground);
+	outline-offset: 2px;
+}
+
+/* On the lightbox's dark backdrop the ring takes the chrome's white. */
+.tarot-lightbox :focus-visible {
+	outline-color: var(--tarot-lightbox-chrome-color);
+}
+
+/* An underline, wherever a utility turns one on, is a 1px rule. */
+@layer base {
+	* {
+		text-decoration-thickness: 1px;
+		text-underline-offset: 0.2em;
+	}
+}
+
+/* Rich text from the editor carries no classes, so its rhythm is set here. */
+@layer components {
+	.sites-prose > * + * {
+		margin-top: 1em;
+	}
+
+	.sites-prose :is(h2, h3, h4) {
+		margin-top: var(--sites-spacing-xl);
+		font-family: var(--font-heading);
+		font-weight: 400;
+		line-height: 1.15;
+		color: var(--sites-scheme-heading);
+		text-wrap: balance;
+	}
+
+	.sites-prose h2 {
+		font-size: var(--firm-h3);
+	}
+
+	.sites-prose :is(h3, h4) {
+		font-size: var(--firm-h4);
+	}
+
+	.sites-prose a {
+		color: var(--sites-scheme-links);
+		text-decoration-line: underline;
+	}
+
+	.sites-prose :is(ul, ol) {
+		display: grid;
+		gap: var(--sites-spacing-xs);
+		padding-inline-start: 1.25em;
+	}
+
+	.sites-prose ul {
+		list-style: disc;
+	}
+
+	.sites-prose ol {
+		list-style: decimal;
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+	}
+	/* The marquee stands still: one copy from the gutter, cut at the close button. */
+	scrolling-content {
+		mask-image: none;
+		padding-inline-start: var(--spacing-gutter);
+	}
+	scrolling-track {
+		width: auto;
+		transform: none !important;
+	}
+	scrolling-item[data-clone] {
+		display: none;
+	}
+}

@@ -1,0 +1,12 @@
+<!-- A site form whole, as the ask panel and the contact section show it: the Firm ask_form unless handle names another. The fields (Field), the Firm form_note above the submit, the submit with the form's label (or the ask label), and a line for visitors without JavaScript; once sent, the form's thank-you. The form-level error sits above the fields. pair sets short fields two to a row from 48rem. prefix keeps the ids apart when two forms share a page. -->
+<Form handle={ handle || site.settings.ask_form } class="grid scroll-mt-space-3xl gap-space-sm { pair ? 'md:grid-cols-2 md:gap-x-space-md' : '' }">
+  {#if form.sent}
+    <p class="col-span-full font-heading text-h3 text-balance text-scheme-heading" role="status">{ form.success_message || t('form_success') }</p>
+  {:else}
+    {#if form.error}<p class="col-span-full flex items-start gap-space-xs text-small" role="alert"><Glyph name="alert" cls="mt-space-2xs size-icon" />{ t('form_error') }</p>{/if}
+    {#for field in form.fields}<Field field={ field } prefix={ prefix } />{/for}
+    {#if site.settings.form_note}<p class="col-span-full max-w-narrow text-small text-pretty text-scheme-muted">{ site.settings.form_note }</p>{/if}
+    <Button type="submit" label={ form.submit_label } cls="col-span-full justify-self-start" />
+    <noscript><p class="text-small text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+  {/if}
+</Form>

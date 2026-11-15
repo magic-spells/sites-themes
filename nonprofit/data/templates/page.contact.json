@@ -34,20 +34,20 @@
           "type": "location",
           "settings": {
             "name": "Mill Hall",
-            "address": "14 Ferry Lane\nLarkfield",
+            "address": "14 Ferry Lane\nWenlow",
             "hours": "Pantry: Mon, Wed, Fri 10:00–14:00\nLunch: Tue, Thu 12:00–14:00\nBenefits desk: Tue, Thu 9:30–12:00\nBreakfast: Sat 9:00–11:00\nOffice: Mon to Fri 9:00–17:00",
             "note": "The step-free door is on the garden side.",
-            "map_link": "https://maps.example/?q=14+Ferry+Lane+Larkfield"
+            "map_link": "https://maps.example/?q=14+Ferry+Lane+Wenlow"
           }
         },
         {
           "type": "location",
           "settings": {
             "name": "Riverside Pantry",
-            "address": "St Anne's Hall\n3 Water Street\nLarkfield",
+            "address": "St Anne's Hall\n3 Water Street\nWenlow",
             "hours": "Pantry: Tue 16:00–19:00\nPantry: Sat 10:00–13:00\nBaby shelf: Tue, Sat 10:00–13:00\nCook-together night: first Thu 18:00–20:30",
             "note": "Use the side door on Water Street.",
-            "map_link": "https://maps.example/?q=3+Water+Street+Larkfield"
+            "map_link": "https://maps.example/?q=3+Water+Street+Wenlow"
           }
         }
       ]

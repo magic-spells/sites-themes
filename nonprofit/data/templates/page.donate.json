@@ -134,7 +134,7 @@
             "title": "Give monthly",
             "body": "<p>A monthly gift lets us order food weeks ahead and pay the fridge bill without worry. Change or stop it at any time.</p>",
             "link_label": "Set up a monthly gift",
-            "link": "https://give.example/larkfieldkitchen",
+            "link": "https://give.example/wenlowkitchen",
             "anchor": "monthly"
           }
         },
@@ -194,7 +194,7 @@
             "title": "Give in memory",
             "body": "<p>We send a card to the family to say a gift was made, with or without the amount.</p>",
             "link_label": "Give in memory",
-            "link": "https://give.example/larkfieldkitchen",
+            "link": "https://give.example/wenlowkitchen",
             "anchor": "memory"
           }
         }

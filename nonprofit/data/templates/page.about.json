@@ -8,7 +8,7 @@
       "preset": "Default",
       "settings": {
         "heading": "About us",
-        "text": "Neighbours feeding neighbours in Larkfield since 2009."
+        "text": "Neighbours feeding neighbours in Wenlow since 2009."
       },
       "blocks": []
     },
@@ -23,7 +23,7 @@
         "image_2": "as_3x5_oat",
         "image_3": "as_3x5_clay",
         "heading": "How we started",
-        "text": "<p>Larkfield Community Kitchen started in a church hall in 2009 with one soup pot and six volunteers. Today we run a choice pantry, cook a free lunch twice a week and deliver groceries to neighbours who can't get out.</p><p>Anyone who lives in Larkfield or the river villages is welcome. There are no forms, and nobody asks why you came.</p>",
+        "text": "<p>Wenlow Community Kitchen started in a church hall in 2009 with one soup pot and six volunteers. Today we run a choice pantry, cook a free lunch twice a week and deliver groceries to neighbours who can't get out.</p><p>Anyone who lives in Wenlow or the river villages is welcome. There are no forms, and nobody asks why you came.</p>",
         "link_label": "",
         "link": ""
       },
@@ -65,7 +65,7 @@
           "settings": {
             "title": "Annual report",
             "year": "2025",
-            "link": "https://larkfieldkitchen.example/files/annual-report-2025.pdf"
+            "link": "https://wenlowkitchen.example/files/annual-report-2025.pdf"
           }
         },
         {
@@ -73,7 +73,7 @@
           "settings": {
             "title": "Financial statements",
             "year": "2025",
-            "link": "https://larkfieldkitchen.example/files/financial-statements-2025.pdf"
+            "link": "https://wenlowkitchen.example/files/financial-statements-2025.pdf"
           }
         },
         {
@@ -81,7 +81,7 @@
           "settings": {
             "title": "Annual report",
             "year": "2024",
-            "link": "https://larkfieldkitchen.example/files/annual-report-2024.pdf"
+            "link": "https://wenlowkitchen.example/files/annual-report-2024.pdf"
           }
         },
         {
@@ -89,7 +89,7 @@
           "settings": {
             "title": "Safeguarding policy",
             "year": "2026",
-            "link": "https://larkfieldkitchen.example/files/safeguarding-policy-2026.pdf"
+            "link": "https://wenlowkitchen.example/files/safeguarding-policy-2026.pdf"
           }
         }
       ]

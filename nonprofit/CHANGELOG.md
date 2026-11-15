@@ -12,7 +12,7 @@
   and the contact form.
 - Forms render the workspace's fields with errors tied to each field; the volunteer, contact
   and newsletter forms ship as fixtures.
-- Fixtures for Larkfield Community Kitchen: programmes, events, posts, the team and the pages
+- Fixtures for Wenlow Community Kitchen: programmes, events, posts, the team and the pages
   that show them.
 - The lists and their pages: programmes (a grid, and each programme's page); events (cards,
   a carousel past three, or rows under each month, and each event's page); news (a feature,

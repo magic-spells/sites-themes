@@ -1,23 +1,23 @@
 {
  "site": {
-  "name": "Larkfield Community Kitchen",
-  "url": "https://larkfieldkitchen.example",
+  "name": "Wenlow Community Kitchen",
+  "url": "https://wenlowkitchen.example",
   "locale": "en",
   "settings": {
-   "wordmark": "Larkfield Community Kitchen",
+   "wordmark": "Wenlow Community Kitchen",
    "reveal": true,
-   "give_url": "https://give.example/larkfieldkitchen",
+   "give_url": "https://give.example/wenlowkitchen",
    "ask_label": "Donate",
    "ask_url": "",
    "help_label": "Get help",
    "help_url": "/get-help",
-   "legal_line": "© 2026 Larkfield Community Kitchen\nRegistered charity 81234 5678 RR0001",
+   "legal_line": "© 2026 Wenlow Community Kitchen\nRegistered charity 81234 5678 RR0001",
    "tax_line": "We send a tax receipt for every gift of $20 or more.",
    "volunteer_form": "volunteer",
    "newsletter_form": "newsletter",
-   "email": "hello@larkfieldkitchen.example",
+   "email": "hello@wenlowkitchen.example",
    "phone": "(705) 555-0142",
-   "address": "Mill Hall\n14 Ferry Lane\nLarkfield"
+   "address": "Mill Hall\n14 Ferry Lane\nWenlow"
   }
  },
  "menus": {
@@ -192,7 +192,7 @@
      "label": "Instagram",
      "target": {
       "kind": "url",
-      "url": "https://instagram.example/larkfieldkitchen"
+      "url": "https://instagram.example/wenlowkitchen"
      },
      "children": []
     },
@@ -201,7 +201,7 @@
      "label": "Facebook",
      "target": {
       "kind": "url",
-      "url": "https://facebook.example/larkfieldkitchen"
+      "url": "https://facebook.example/wenlowkitchen"
      },
      "children": []
     }
@@ -624,7 +624,7 @@
      "title": "Seed library",
      "fields": {
       "summary": "Borrow seeds in spring, bring some back in the autumn.",
-      "description": "<p>The seed library lives in a card cabinet at Larkfield Library. Take the seeds you want to grow, and save a few from your harvest to return.</p><p>Our garden crew runs a seed swap every March.</p>",
+      "description": "<p>The seed library lives in a card cabinet at Wenlow Public Library. Take the seeds you want to grow, and save a few from your harvest to return.</p><p>Our garden crew runs a seed swap every March.</p>",
       "image": "as_4x3_oat",
       "link": "",
       "featured": false,
@@ -663,7 +663,7 @@
      "title": "Tax clinic",
      "fields": {
       "summary": "Free tax returns, prepared by trained volunteers.",
-      "description": "<p>From late February to April, trained volunteers prepare simple tax returns for free at Larkfield Library.</p><p>Bring your slips and last year's notice. Most returns take under an hour.</p>",
+      "description": "<p>From late February to April, trained volunteers prepare simple tax returns for free at Wenlow Public Library.</p><p>Bring your slips and last year's notice. Most returns take under an hour.</p>",
       "image": "as_4x3_clay",
       "link": "",
       "featured": false,
@@ -841,7 +841,7 @@
      "fields": {
       "date": "2027-02-23",
       "time": "10:00–16:00",
-      "location": "Larkfield Library, 2 Market Square",
+      "location": "Wenlow Public Library, 2 Market Square",
       "description": "<p>Our free tax clinic opens for the season. Bring your slips and last year's notice of assessment.</p>",
       "image": "as_4x3_lake",
       "link": "",
@@ -855,7 +855,7 @@
      "fields": {
       "date": "2027-03-20",
       "time": "10:00–12:00",
-      "location": "Larkfield Library, 2 Market Square",
+      "location": "Wenlow Public Library, 2 Market Square",
       "description": "<p>Bring seeds you saved, take seeds you want to grow. The garden crew will be there to answer questions.</p>",
       "image": "as_4x3_clay",
       "link": "",
@@ -951,7 +951,7 @@
      "fields": {
       "topic": "News",
       "date": "2026-10-08",
-      "standfirst": "Schools, churches and shops in Larkfield gave four tonnes of food in October.",
+      "standfirst": "Schools, churches and shops in Wenlow gave four tonnes of food in October.",
       "image": "as_4x3_moss",
       "body": "<p>Eleven schools, six churches and the shops on Market Square filled the collection boxes through October. The volunteers sorted every tin by hand, and the shelves are full going into winter.</p><p>Thank you to everyone who gave, carried and stacked.</p>"
      }
@@ -1037,7 +1037,7 @@
       "date": "2026-06-11",
       "standfirst": "A retired nurse on the people she visits with the grocery boxes.",
       "image": "as_4x3_oat",
-      "body": "<p>Marta spent thirty years on the wards of the town hospital. Now she drives the Friday round, eleven stops between Larkfield and the river villages.</p><p>The groceries are the reason for the visit, she says, but the cup of tea at each door is what people remember.</p>"
+      "body": "<p>Marta spent thirty years on the wards of the town hospital. Now she drives the Friday round, eleven stops between Wenlow and the river villages.</p><p>The groceries are the reason for the visit, she says, but the cup of tea at each door is what people remember.</p>"
      }
     },
     {
@@ -1049,7 +1049,7 @@
       "date": "2026-05-14",
       "standfirst": "What we did together last year, what it cost, and where the money came from.",
       "image": "as_4x3_moss",
-      "body": "<p>Our report for 2025 is on the About page. It lists every meal, every pantry visit and every dollar, and what each one cost.</p><p>Most of our money came from people in Larkfield giving small amounts each month. Thank you.</p>"
+      "body": "<p>Our report for 2025 is on the About page. It lists every meal, every pantry visit and every dollar, and what each one cost.</p><p>Most of our money came from people in Wenlow giving small amounts each month. Thank you.</p>"
      }
     }
    ]
@@ -1168,7 +1168,7 @@
      "fields": {
       "role": "Treasurer",
       "group": "Board",
-      "bio": "<p>Samuel is an accountant in Larkfield and keeps the books honest.</p>",
+      "bio": "<p>Samuel is an accountant in Wenlow and keeps the books honest.</p>",
       "image": "as_4x5_lake",
       "order": 7
      }
@@ -1204,7 +1204,7 @@
      "fields": {
       "role": "Board member",
       "group": "Board",
-      "bio": "<p>Ruth is a nurse at Larkfield General.</p>",
+      "bio": "<p>Ruth is a nurse at Wenlow General.</p>",
       "image": "as_4x5_moss",
       "order": 10
      }
@@ -1240,9 +1240,9 @@
   "/": {
    "id": "pg_home",
    "template": "home",
-   "title": "Larkfield Community Kitchen",
+   "title": "Wenlow Community Kitchen",
    "seo": {
-    "description": "Free community meals, a choice pantry and a warm room on Ferry Lane in Larkfield, five days a week."
+    "description": "Free community meals, a choice pantry and a warm room on Ferry Lane in Wenlow, five days a week."
    }
   },
   "/about": {
@@ -1395,7 +1395,7 @@
     "title": "Seed library",
     "fields": {
      "summary": "Borrow seeds in spring, bring some back in the autumn.",
-     "description": "<p>The seed library lives in a card cabinet at Larkfield Library. Take the seeds you want to grow, and save a few from your harvest to return.</p><p>Our garden crew runs a seed swap every March.</p>",
+     "description": "<p>The seed library lives in a card cabinet at Wenlow Public Library. Take the seeds you want to grow, and save a few from your harvest to return.</p><p>Our garden crew runs a seed swap every March.</p>",
      "image": "as_4x3_oat",
      "link": "",
      "featured": false,
@@ -1458,7 +1458,7 @@
     "title": "Tax clinic",
     "fields": {
      "summary": "Free tax returns, prepared by trained volunteers.",
-     "description": "<p>From late February to April, trained volunteers prepare simple tax returns for free at Larkfield Library.</p><p>Bring your slips and last year's notice. Most returns take under an hour.</p>",
+     "description": "<p>From late February to April, trained volunteers prepare simple tax returns for free at Wenlow Public Library.</p><p>Bring your slips and last year's notice. Most returns take under an hour.</p>",
      "image": "as_4x3_clay",
      "link": "",
      "featured": false,
@@ -1674,7 +1674,7 @@
     "fields": {
      "date": "2027-02-23",
      "time": "10:00–16:00",
-     "location": "Larkfield Library, 2 Market Square",
+     "location": "Wenlow Public Library, 2 Market Square",
      "description": "<p>Our free tax clinic opens for the season. Bring your slips and last year's notice of assessment.</p>",
      "image": "as_4x3_lake",
      "link": "",
@@ -1696,7 +1696,7 @@
     "fields": {
      "date": "2027-03-20",
      "time": "10:00–12:00",
-     "location": "Larkfield Library, 2 Market Square",
+     "location": "Wenlow Public Library, 2 Market Square",
      "description": "<p>Bring seeds you saved, take seeds you want to grow. The garden crew will be there to answer questions.</p>",
      "image": "as_4x3_clay",
      "link": "",
@@ -1800,7 +1800,7 @@
     "fields": {
      "topic": "News",
      "date": "2026-10-08",
-     "standfirst": "Schools, churches and shops in Larkfield gave four tonnes of food in October.",
+     "standfirst": "Schools, churches and shops in Wenlow gave four tonnes of food in October.",
      "image": "as_4x3_moss",
      "body": "<p>Eleven schools, six churches and the shops on Market Square filled the collection boxes through October. The volunteers sorted every tin by hand, and the shelves are full going into winter.</p><p>Thank you to everyone who gave, carried and stacked.</p>"
     }
@@ -1942,7 +1942,7 @@
      "date": "2026-06-11",
      "standfirst": "A retired nurse on the people she visits with the grocery boxes.",
      "image": "as_4x3_oat",
-     "body": "<p>Marta spent thirty years on the wards of the town hospital. Now she drives the Friday round, eleven stops between Larkfield and the river villages.</p><p>The groceries are the reason for the visit, she says, but the cup of tea at each door is what people remember.</p>"
+     "body": "<p>Marta spent thirty years on the wards of the town hospital. Now she drives the Friday round, eleven stops between Wenlow and the river villages.</p><p>The groceries are the reason for the visit, she says, but the cup of tea at each door is what people remember.</p>"
     }
    }
   },
@@ -1962,7 +1962,7 @@
      "date": "2026-05-14",
      "standfirst": "What we did together last year, what it cost, and where the money came from.",
      "image": "as_4x3_moss",
-     "body": "<p>Our report for 2025 is on the About page. It lists every meal, every pantry visit and every dollar, and what each one cost.</p><p>Most of our money came from people in Larkfield giving small amounts each month. Thank you.</p>"
+     "body": "<p>Our report for 2025 is on the About page. It lists every meal, every pantry visit and every dollar, and what each one cost.</p><p>Most of our money came from people in Wenlow giving small amounts each month. Thank you.</p>"
     }
    }
   }

@@ -6,7 +6,7 @@ button sits in the header on every screen, the help link beside it, and the volu
 one tap from any band. Parkinsans carries the headings and Atkinson Hyperlegible Next the rest,
 on seven schemes: paper, chalk, oat, a clay band for the ask, moss, lake and night.
 
-The fixtures are an invented charity, **Larkfield Community Kitchen**, so `sites dev` shows
+The fixtures are an invented charity, **Wenlow Community Kitchen**, so `sites dev` shows
 programmes, events, posts, the team and three forms instead of placeholder text. The
 photographs are SVG placeholders; replace them before publishing.
 

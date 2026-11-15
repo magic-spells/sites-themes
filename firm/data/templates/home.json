@@ -1,0 +1,44 @@
+{
+  "label": "Home",
+  "description": "The front page: a stand-in until the plan sets Home.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "Clear advice, plainly given",
+        "text": "A small firm for people and businesses who want to know where they stand, what it will cost and what happens next."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_intro",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {
+        "heading": "Our firm"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_approach",
+      "type": "image-with-text",
+      "preset": "Default",
+      "settings": {
+        "image": "as_4x3"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Default",
+      "settings": {
+        "text": "A short letter each month on what has changed and what it means for you.",
+        "color_scheme": "cream"
+      },
+      "blocks": []
+    }
+  ]
+}

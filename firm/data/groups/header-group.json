@@ -1,0 +1,25 @@
+{
+  "sections": [
+    {
+      "id": "sg_announcement",
+      "type": "announcement-bar",
+      "preset": "Default",
+      "settings": {
+        "text": "Now taking new clients for the spring\nOur office is open late on Thursdays",
+        "color_scheme": "ink"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_header",
+      "type": "header",
+      "preset": "Default",
+      "settings": {
+        "menu": "main",
+        "ask_label": "Book a consultation",
+        "ask_link": "/contact"
+      },
+      "blocks": []
+    }
+  ]
+}

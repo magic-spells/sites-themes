@@ -1,0 +1,24 @@
+{
+  "label": "Contact",
+  "description": "The contact form beside the address, phone and email.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Tell us a little about what you need. We answer every message within one working day."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_contact",
+      "type": "contact",
+      "preset": "Default",
+      "settings": {
+        "form_note": "Writing to us does not make you a client. Please keep confidential details for our first call."
+      },
+      "blocks": []
+    }
+  ]
+}

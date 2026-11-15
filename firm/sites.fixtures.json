@@ -1,0 +1,200 @@
+{
+  "site": {
+    "name": "Firm sample",
+    "url": "https://firmsample.example",
+    "locale": "en",
+    "settings": {
+      "wordmark": "Firm sample",
+      "email": "hello@firmsample.example",
+      "phone": "(312) 555-0190",
+      "address": "120 Market Street, Suite 400\nSpringfield, IL 62701"
+    }
+  },
+  "menus": {
+    "main": {
+      "handle": "main",
+      "title": "Main menu",
+      "items": [
+        {
+          "id": "main0",
+          "label": "About",
+          "target": {
+            "kind": "url",
+            "url": "/about"
+          },
+          "children": []
+        },
+        {
+          "id": "main1",
+          "label": "Contact",
+          "target": {
+            "kind": "url",
+            "url": "/contact"
+          },
+          "children": []
+        }
+      ]
+    },
+    "legal": {
+      "handle": "legal",
+      "title": "Legal",
+      "items": [
+        {
+          "id": "legal0",
+          "label": "Privacy",
+          "target": {
+            "kind": "url",
+            "url": "/privacy"
+          },
+          "children": []
+        }
+      ]
+    },
+    "social": {
+      "handle": "social",
+      "title": "Social",
+      "items": [
+        {
+          "id": "social0",
+          "label": "LinkedIn",
+          "target": {
+            "kind": "url",
+            "url": "https://linkedin.example/firmsample"
+          },
+          "children": []
+        }
+      ]
+    }
+  },
+  "forms": {
+    "contact": {
+      "handle": "contact",
+      "name": "Contact",
+      "fields": [
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Name",
+          "required": true,
+          "max_length": 200
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 200
+        },
+        {
+          "id": "phone",
+          "type": "text",
+          "label": "Phone",
+          "required": false,
+          "max_length": 200
+        },
+        {
+          "id": "message",
+          "type": "textarea",
+          "label": "How can we help?",
+          "required": true,
+          "max_length": 4000
+        }
+      ],
+      "success_message": "Thank you. We answer within one working day.",
+      "submit_label": "Send",
+      "redirect_path": ""
+    },
+    "newsletter": {
+      "handle": "newsletter",
+      "name": "Newsletter",
+      "fields": [
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Your email",
+          "required": true,
+          "max_length": 200
+        }
+      ],
+      "success_message": "You're on the list.",
+      "submit_label": "Sign up",
+      "redirect_path": ""
+    }
+  },
+  "assets": {
+    "as_4x5": {
+      "id": "as_4x5",
+      "status": "ready",
+      "file_name": "4x5.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 343,
+      "url": "/_sites/theme/photos/4x5.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "4:5 placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_1x1": {
+      "id": "as_1x1",
+      "status": "ready",
+      "file_name": "1x1.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 343,
+      "url": "/_sites/theme/photos/1x1.svg",
+      "width": 1200,
+      "height": 1200,
+      "alt": "1:1 placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_4x3": {
+      "id": "as_4x3",
+      "status": "ready",
+      "file_name": "4x3.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 343,
+      "url": "/_sites/theme/photos/4x3.svg",
+      "width": 1600,
+      "height": 1200,
+      "alt": "4:3 placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_3x2": {
+      "id": "as_3x2",
+      "status": "ready",
+      "file_name": "3x2.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 342,
+      "url": "/_sites/theme/photos/3x2.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "3:2 placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    }
+  },
+  "content": {},
+  "pages": {
+    "/": {
+      "id": "pg_home",
+      "template": "home",
+      "title": "Firm sample",
+      "seo": {
+        "description": "A placeholder workspace for the Firm theme: a small firm of advisers."
+      }
+    },
+    "/about": {
+      "id": "pg_about",
+      "template": "page",
+      "title": "About"
+    },
+    "/contact": {
+      "id": "pg_contact",
+      "template": "page.contact",
+      "title": "Contact"
+    },
+    "/privacy": {
+      "id": "pg_privacy",
+      "template": "page.privacy",
+      "title": "Privacy"
+    }
+  }
+}

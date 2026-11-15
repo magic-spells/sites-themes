@@ -1,0 +1,17 @@
+{
+  "sections": [
+    {
+      "id": "sg_footer",
+      "type": "footer",
+      "preset": "Default",
+      "settings": {
+        "menu": "main",
+        "social_menu": "social",
+        "legal_menu": "legal",
+        "legal_line": "© 2026 Firm sample LLP",
+        "color_scheme": "ink"
+      },
+      "blocks": []
+    }
+  ]
+}

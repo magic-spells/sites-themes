@@ -1,9 +1,33 @@
-<!-- Stub (code B builds the map and plate): the section head, the hours and the address. -->
+<!-- The door plate beside the map, seven parts to five: the map embed when its link is set, else the map image, in a 4:3 well; the plate on paper with the opening hours, a hairline, the address and Get directions, the access note in small muted, then the phone and email. Below 64rem the plate comes first. With no map the plate stands alone at five parts, left. Everything comes from the House and Contact settings. -->
+{#let
+  s = site.settings
+  map = s.map_embed_url || s.map_image
+}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } />
-    <Hours />
-    <Address />
+    <div class="grid items-start gap-space-xl lg:gap-space-2xl { map ? 'lg:grid-cols-seven-five' : 'lg:grid-cols-five-seven' }">
+      <div class="{ 'paper' | scheme_class } grid content-start gap-space-md rounded-paper bg-scheme-background p-space-lg text-scheme-foreground md:p-space-xl">
+        {#if s.hours}
+          <h3 class="font-heading text-h4">{ t('opening_hours') }</h3>
+          <Hours />
+          <hr class="border-scheme-border" />
+        {/if}
+        <Address />
+        {#if s.access}<p class="text-small text-pretty text-scheme-muted">{ s.access }</p>{/if}
+        {#if s.phone || s.email}
+          <p class="grid justify-items-start gap-space-2xs">
+            {#if s.phone}<a class="tnum underline decoration-1 underline-offset-4 hover:decoration-2" href="tel:{ s.phone | replace(' ', '') }">{ s.phone }</a>{/if}
+            {#if s.email}<a class="underline decoration-1 underline-offset-4 hover:decoration-2" href="mailto:{ s.email }">{ s.email }</a>{/if}
+          </p>
+        {/if}
+      </div>
+      {#if s.map_embed_url}
+        <iframe class="aspect-photo w-full rounded-photo bg-scheme-surface-2 outline outline-scheme-border -outline-offset-1 lg:order-first" src="{ s.map_embed_url }" title="{ t('map') }" loading="lazy"></iframe>
+      {:else if s.map_image}
+        <div class="lg:order-first"><Well asset={ s.map_image } alt={ s.map_image_alt } ratio="aspect-photo" width={ 1280 } sizes="(min-width: 64rem) 46rem, 100vw" /></div>
+      {/if}
+    </div>
   </div>
 </section>
 

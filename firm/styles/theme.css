@@ -13,6 +13,7 @@
 @source "../templates/**/*.pzl";
 @source "../sections/**/*.pzl";
 @source "../components/**/*.pzl";
+@source not inline("outline inline columns-2");
 
 /* Every colour and family lives in settings/design.json; this file maps the
    --sites-* properties the head carries onto utilities. */
@@ -194,13 +195,9 @@ body:has([data-bare]) [data-group] {
 }
 
 /* sticky-header pins the element it is, so the renderer's wrapper steps out
-   of the way; the strip it paints above itself is not needed here. */
+   of the way. */
 [data-section="header"]:has(sticky-header) {
 	display: contents;
-}
-
-sticky-header::before {
-	content: none;
 }
 
 /* Both panels are sheets on the panel's scheme, over the page dimmed to

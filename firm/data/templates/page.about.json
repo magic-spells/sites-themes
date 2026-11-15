@@ -7,12 +7,9 @@
       "type": "hero",
       "preset": "Default",
       "settings": {
-        "layout": "text",
         "heading": "About",
         "accent": "the firm",
         "text": "Founded in Portland in 2015. Six people, and a meeting room in Vancouver by appointment.",
-        "button_label": "",
-        "button_link": "",
         "button2_label": "Our people",
         "button2_link": "/people",
         "color_scheme": "paper"
@@ -40,11 +37,7 @@
       "type": "values",
       "preset": "Default",
       "settings": {
-        "heading": "How we",
-        "accent": "work",
         "text": "What every client can count on, from the first meeting to the signing.",
-        "button_label": "",
-        "button_link": "",
         "image": "as_room",
         "color_scheme": "navy"
       },
@@ -80,10 +73,7 @@
       "type": "gallery",
       "preset": "Default",
       "settings": {
-        "heading": "The office",
-        "text": "",
         "gallery": "office",
-        "limit": 6,
         "color_scheme": "white"
       },
       "blocks": []
@@ -93,7 +83,6 @@
       "type": "principal-letter",
       "preset": "Default",
       "settings": {
-        "heading": "Our story",
         "person": "team_ruth_thorne",
         "body": "<p>Chidi Abara and I started Thorne &amp; Abara in 2015 to do three kinds of work well: estate planning, probate and trust administration, and the law a small business needs. There are six of us now, in Portland, with a meeting room across the river in Vancouver.</p><p>You will know who is handling your matter, and what it costs, before you sign anything. The first meeting is 30 minutes by video and costs $150, credited to your plan if you go ahead.</p>",
         "color_scheme": "cream"

@@ -20,8 +20,8 @@ sections/           announcement-bar, header, mobile-menu, ask-panel, cookie-not
                     page-header, hero, rich-text, image-with-text, practice-cards,
                     practice-index, practice-detail, people, person-detail, principal-letter,
                     values, quotes, faq, offices, insights-list, post, gallery, newsletter, contact
-components/         Button (and the ask), Field, AskForm, SectionHead, PersonCard, PostCard,
-                    Disclosure, Quote, Well, Address, Glyph, Utility
+components/         Button (and the ask), Field, AskForm, SectionHead, PersonCard, Disclosure,
+                    Quote, Well, Address, Glyph, Utility
 styles/theme.css    the Tailwind entry: @theme maps the --sites-* tokens and Firm's role sizes,
                     and the few rules utilities cannot express
 scripts/theme.ts    the browser JavaScript: component registration, opening the sheets, the

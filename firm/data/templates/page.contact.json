@@ -26,8 +26,6 @@
       "type": "offices",
       "preset": "Default",
       "settings": {
-        "heading": "Offices",
-        "text": "",
         "image": "as_map",
         "color_scheme": "white"
       },

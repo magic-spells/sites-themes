@@ -1,7 +1,7 @@
 <!-- What clients say, split: the heading and the ask in five parts; the quote in seven with its meta line, and with more than one quote a tarot track of one at a time with its page dots under it; the note (no guarantee of a similar result) closes it. Nothing without quotes. -->
 {#let
   id = 'quotes-' + section.id
-  options = { slidesPerView: 1, loop: true, navigation: { showButtons: false, showPagination: true } }
+  options = { loop: true, navigation: { showButtons: false } }
 }
 {#if blocks.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">

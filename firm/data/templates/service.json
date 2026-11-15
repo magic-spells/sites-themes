@@ -16,8 +16,6 @@
       "type": "faq",
       "preset": "Default",
       "settings": {
-        "heading": "Questions",
-        "text": "",
         "color_scheme": "white"
       },
       "blocks": [
@@ -52,7 +50,6 @@
       "type": "rich-text",
       "preset": "Default",
       "settings": {
-        "align": "center",
         "color_scheme": "gold",
         "heading": "The first meeting",
         "accent": "",

@@ -18,10 +18,6 @@ interface Panel extends HTMLElement {
 	show(trigger?: Element): unknown;
 }
 
-interface Carousel extends HTMLElement {
-	on(event: string, listener: () => void): void;
-}
-
 const DISMISSED = 'sites:dismissed:';
 
 /** localStorage is unavailable in some privacy modes, so both sides of the
@@ -42,7 +38,6 @@ function remember(key: string): void {
 	}
 }
 
-const lightboxOpener = new Map<Element, HTMLElement>();
 document.addEventListener('click', (event) => {
 	const target = event.target as Element;
 	// The menu button and every ask button name the sheet they open (its
@@ -50,15 +45,13 @@ document.addEventListener('click', (event) => {
 	const opener = target.closest('[data-panel-open]');
 	if (opener) (document.getElementById(opener.getAttribute('data-panel-open') ?? '') as Panel | null)?.show(opener);
 	// A gallery photo opens the lightbox of its section's hidden carousel at
-	// its own slide (the plugin opens from a slide and has no open(index));
-	// focus goes back to the photo when the lightbox closes.
+	// its own slide (the plugin opens from a slide and has no open(index)).
+	// The plugin hands focus back to what had it, so the photo takes it first.
 	const tile = target.closest<HTMLElement>('[data-lightbox-open]');
-	const carousel = tile && (document.getElementById(tile.dataset.lightboxOpen ?? '') as Carousel | null);
-	const slide = carousel?.querySelectorAll<HTMLElement>('tarot-slide')[Number(tile?.dataset.index)];
-	if (!tile || !carousel || !slide) return;
+	const slide = tile && document.getElementById(tile.dataset.lightboxOpen ?? '')?.querySelectorAll<HTMLElement>('tarot-slide')[Number(tile.dataset.index)];
+	if (!tile || !slide) return;
 	event.preventDefault();
-	if (!lightboxOpener.has(carousel)) carousel.on('lightbox:closed', () => lightboxOpener.get(carousel)?.focus());
-	lightboxOpener.set(carousel, tile);
+	tile.focus();
 	(slide.querySelector('img') ?? slide).click();
 });
 

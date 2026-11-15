@@ -17,8 +17,6 @@
       "type": "practice-index",
       "preset": "Default",
       "settings": {
-        "heading": "",
-        "text": "",
         "color_scheme": "paper"
       },
       "blocks": []
@@ -28,7 +26,6 @@
       "type": "rich-text",
       "preset": "Default",
       "settings": {
-        "align": "center",
         "color_scheme": "gold",
         "heading": "The first meeting",
         "accent": "",

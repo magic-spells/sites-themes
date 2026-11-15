@@ -18,10 +18,8 @@
       "preset": "Default",
       "settings": {
         "heading": "",
-        "text": "",
         "limit": 12,
         "topics": true,
-        "pill_label": "",
         "pill_link": "",
         "color_scheme": "paper"
       },

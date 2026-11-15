@@ -12,10 +12,6 @@
         "heading": "Estate planning, probate and",
         "accent": "small-business law",
         "text": "A six-person practice in Portland, Oregon, with a meeting room in Vancouver, Washington, by appointment.",
-        "button_label": "",
-        "button_link": "",
-        "button2_label": "Practice areas",
-        "button2_link": "/practice-areas",
         "color_scheme": "navy"
       },
       "blocks": []
@@ -25,11 +21,6 @@
       "type": "practice-cards",
       "preset": "Default",
       "settings": {
-        "heading": "Practice areas",
-        "text": "",
-        "limit": 12,
-        "pill_label": "All practice areas",
-        "pill_link": "/practice-areas",
         "color_scheme": "paper"
       },
       "blocks": []
@@ -41,8 +32,6 @@
       "settings": {
         "style": "disc",
         "image": "as_partners",
-        "heading": "About",
-        "accent": "the firm",
         "body": "<p>Ruth Thorne and Chidi Abara founded the firm in Portland in 2015. Six people now handle estate planning, probate and trust administration, and the law a small business needs, with a meeting room in Vancouver by appointment.</p>",
         "button_label": "Our people",
         "button_link": "/people",
@@ -55,12 +44,8 @@
       "type": "people",
       "preset": "Default",
       "settings": {
-        "group": "professionals",
-        "heading": "Our people",
-        "text": "",
         "limit": 4,
         "pill_label": "All people",
-        "pill_link": "/people",
         "color_scheme": "white"
       },
       "blocks": []
@@ -86,8 +71,6 @@
       "type": "values",
       "preset": "Default",
       "settings": {
-        "heading": "How we",
-        "accent": "work",
         "text": "What every client can count on, from the first meeting to the signing.",
         "button_label": "About the firm",
         "button_link": "/about",
@@ -105,11 +88,6 @@
       "type": "quotes",
       "preset": "Default",
       "settings": {
-        "heading": "What clients say",
-        "text": "",
-        "button_label": "",
-        "button_link": "",
-        "note": "Prior results do not guarantee a similar outcome.",
         "color_scheme": "cream"
       },
       "blocks": [
@@ -124,10 +102,7 @@
       "type": "gallery",
       "preset": "Default",
       "settings": {
-        "heading": "The office",
-        "text": "",
         "gallery": "office",
-        "limit": 6,
         "color_scheme": "white"
       },
       "blocks": []
@@ -137,12 +112,7 @@
       "type": "insights-list",
       "preset": "Default",
       "settings": {
-        "heading": "Insights",
-        "text": "",
-        "limit": 3,
-        "topics": false,
         "pill_label": "All insights",
-        "pill_link": "/insights",
         "color_scheme": "brown"
       },
       "blocks": []
@@ -152,7 +122,6 @@
       "type": "faq",
       "preset": "Default",
       "settings": {
-        "heading": "Questions",
         "text": "Plain answers about the first meeting, our fees and how we work.",
         "color_scheme": "paper"
       },
@@ -169,10 +138,7 @@
       "type": "rich-text",
       "preset": "Default",
       "settings": {
-        "align": "center",
         "color_scheme": "gold",
-        "heading": "Plain answers",
-        "accent": "from the first meeting",
         "text": "Tell us what you need in a sentence or two. We reply within one working day with who would handle it and when we can meet."
       },
       "blocks": []

@@ -17,11 +17,7 @@
       "type": "people",
       "preset": "Default",
       "settings": {
-        "group": "professionals",
         "heading": "Lawyers",
-        "text": "",
-        "limit": 12,
-        "pill_label": "",
         "pill_link": "",
         "color_scheme": "white"
       },
@@ -34,9 +30,6 @@
       "settings": {
         "group": "staff",
         "heading": "Staff",
-        "text": "",
-        "limit": 12,
-        "pill_label": "",
         "pill_link": "",
         "color_scheme": "stone"
       },

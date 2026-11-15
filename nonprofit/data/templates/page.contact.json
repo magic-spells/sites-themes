@@ -1,0 +1,25 @@
+{
+  "label": "Contact",
+  "description": "How to reach us and the contact form.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Write, call or come by. We answer within two working days."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_contact",
+      "type": "contact",
+      "preset": "Default",
+      "settings": {
+        "heading": "Write to us",
+        "form": "contact"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "label": "News",
+  "description": "Stories, news and recipes.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Stories from the kitchen, news from the pantry and the recipes we cook most."
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "label": "Home",
+  "description": "The first screen, what we do and the newsletter.",
+  "sections": [
+    {
+      "id": "s_hero",
+      "type": "hero",
+      "preset": "Panel",
+      "settings": {
+        "layout": "panel",
+        "heading": "Good food for every neighbour",
+        "text": "Free community meals, a pantry you choose from yourself and a warm room on Ferry Lane, five days a week.",
+        "image": "as_4x5_moss",
+        "color_scheme": "cream"
+      },
+      "blocks": [
+        {
+          "type": "give",
+          "settings": {
+            "label": "Donate"
+          }
+        },
+        {
+          "type": "link",
+          "settings": {
+            "label": "Get involved",
+            "link": "/get-involved"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_mission",
+      "type": "image-with-text",
+      "preset": "Picture",
+      "settings": {
+        "layout": "picture",
+        "image_side": "left",
+        "image": "as_4x3_oat",
+        "heading": "What we do",
+        "text": "<p>Larkfield Community Kitchen started in a church hall in 2009 with one soup pot and six volunteers. Today we run a choice pantry, cook a free lunch twice a week and deliver groceries to neighbours who can't get out.</p><p>Anyone who lives in Larkfield or the river villages is welcome. There are no forms, and nobody asks why you came.</p>",
+        "link_label": "About us",
+        "link": "/about"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Default",
+      "settings": {
+        "heading": "Newsletter",
+        "text": "One email a month with what we cooked, who helped and what the pantry needs.",
+        "color_scheme": "chalk"
+      },
+      "blocks": []
+    }
+  ]
+}

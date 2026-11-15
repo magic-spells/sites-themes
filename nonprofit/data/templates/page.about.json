@@ -1,0 +1,32 @@
+{
+  "label": "About",
+  "description": "Who we are and how we started.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Neighbours feeding neighbours in Larkfield since 2009."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_story",
+      "type": "image-with-text",
+      "preset": "Capsules",
+      "settings": {
+        "layout": "capsules",
+        "image_side": "left",
+        "image": "as_3x5_moss",
+        "image_2": "as_3x5_oat",
+        "image_3": "as_3x5_clay",
+        "heading": "How we started",
+        "text": "<p>Larkfield Community Kitchen started in a church hall in 2009 with one soup pot and six volunteers. Today we run a choice pantry, cook a free lunch twice a week and deliver groceries to neighbours who can't get out.</p><p>Anyone who lives in Larkfield or the river villages is welcome. There are no forms, and nobody asks why you came.</p>",
+        "link_label": "",
+        "link": ""
+      },
+      "blocks": []
+    }
+  ]
+}

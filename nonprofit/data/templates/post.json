@@ -1,0 +1,15 @@
+{
+  "label": "Post",
+  "description": "A post.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": ""
+      },
+      "blocks": []
+    }
+  ]
+}

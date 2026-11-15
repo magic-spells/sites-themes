@@ -1,0 +1,15 @@
+{
+  "label": "Events",
+  "description": "What is coming up.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Meals, swaps and classes in Larkfield. Everything is free unless it says so."
+      },
+      "blocks": []
+    }
+  ]
+}

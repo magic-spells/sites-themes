@@ -1,0 +1,55 @@
+{
+  "label": "Donate",
+  "description": "The giving page and the questions donors ask.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Every gift goes into food, fuel for the van and keeping Mill Hall warm."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "heading": "Questions about giving",
+        "link_label": "Ask us something else",
+        "link": "/contact"
+      },
+      "blocks": [
+        {
+          "type": "row",
+          "settings": {
+            "title": "Is my gift tax-deductible?",
+            "body": "<p>Yes. We send a tax receipt by email for every gift of $20 or more, within a week.</p>"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "title": "Can I change or stop a monthly gift?",
+            "body": "<p>Any time, from the link in your receipt. Or write to us and we will do it for you.</p>"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "title": "How is my gift spent?",
+            "body": "<p>On food, the van's fuel and keeping the hall warm. Our yearly report lists every line.</p>"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "title": "Can I give food instead?",
+            "body": "<p>Yes. We take tins, dry goods, toiletries and warm coats at Mill Hall on any pantry day.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}

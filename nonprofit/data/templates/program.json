@@ -1,0 +1,15 @@
+{
+  "label": "Programme",
+  "description": "A programme's page.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": ""
+      },
+      "blocks": []
+    }
+  ]
+}

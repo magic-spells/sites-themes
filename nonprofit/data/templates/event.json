@@ -1,0 +1,15 @@
+{
+  "label": "Event",
+  "description": "An event's page.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": ""
+      },
+      "blocks": []
+    }
+  ]
+}

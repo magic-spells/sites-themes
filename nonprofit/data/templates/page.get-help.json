@@ -1,0 +1,22 @@
+{
+  "label": "Get help",
+  "description": "For the people we serve: what we offer and where.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Free food and a warm welcome. You do not need a referral."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_text",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {},
+      "blocks": []
+    }
+  ]
+}

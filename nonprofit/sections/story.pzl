@@ -40,7 +40,7 @@
 {
   "name": "Story",
   "description": "One story: a post beside its picture, or a quote, several taking turns.",
-  "kind": "Text",
+  "kind": "Content",
   "icon": "quote",
   "settings": [
     { "type": "select", "id": "source", "label": "Show", "default": "post", "options": [

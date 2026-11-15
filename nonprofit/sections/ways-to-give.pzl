@@ -19,7 +19,7 @@
 {
   "name": "Ways to give",
   "description": "Every other way to give, as rows that open and close.",
-  "kind": "Text",
+  "kind": "Content",
   "icon": "list",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Other ways to give" },

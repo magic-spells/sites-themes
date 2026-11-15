@@ -13,7 +13,7 @@
 {
   "name": "Embed",
   "description": "Another service's page in a frame: a giving form, a shift calendar, a feed.",
-  "kind": "Media",
+  "kind": "Content",
   "icon": "frame",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "" },

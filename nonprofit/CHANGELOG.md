@@ -7,7 +7,7 @@
   (Commons, Bluebell and Paper).
 - Sections: the announcement bar (a ticker with a pause button, dismissable), the header (the
   ask button, the help link, a hamburger below 80rem), the menu drawer, the cookie notice and
-  the footer; the hero (an inset panel, a split band or the picture behind the type), the page
+  the footer; the hero (an inset panel, a band or the picture behind the type), the page
   header, rich text, image with text (one picture or three capsules), the FAQ, the newsletter
   and the contact form.
 - Forms render the workspace's fields with errors tied to each field; the volunteer, contact

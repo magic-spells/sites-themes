@@ -39,7 +39,7 @@
 {
   "name": "Giving band",
   "description": "A calm ask: what a gift does, the Donate button and more ways to give.",
-  "kind": "Call to action",
+  "kind": "Content",
   "icon": "mouse-pointer-click",
   "settings": [
     { "type": "select", "id": "layout", "label": "Layout", "default": "panel", "options": [

@@ -33,7 +33,7 @@
       { "value": "picture", "label": "One picture (4:3)" },
       { "value": "capsules", "label": "Three capsules (3:5)" }
     ] },
-    { "type": "select", "id": "image_side", "label": "Picture", "default": "left", "options": [
+    { "type": "select", "id": "image_side", "label": "Picture side", "default": "left", "options": [
       { "value": "left", "label": "Left" },
       { "value": "right", "label": "Right" }
     ] },

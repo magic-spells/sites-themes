@@ -22,7 +22,7 @@
 {
   "name": "Hours and location",
   "description": "Each place you work from, with its address, hours and directions.",
-  "kind": "Location",
+  "kind": "Contact",
   "icon": "map-pin",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Visit us" },

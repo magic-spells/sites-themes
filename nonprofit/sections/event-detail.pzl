@@ -9,7 +9,7 @@
 {
   "name": "Event",
   "description": "An event's title, day and time, place, sign-up button, picture and description.",
-  "kind": "Events",
+  "kind": "Content",
   "icon": "calendar-days",
   "templates": ["event"],
   "settings": [

@@ -27,7 +27,7 @@
 {
   "name": "News list",
   "description": "Posts, newest first: a grid, a feature then a grid, or a list, with topic links.",
-  "kind": "Blog",
+  "kind": "Collections",
   "icon": "newspaper",
   "settings": [
     { "type": "select", "id": "view", "label": "View", "default": "grid", "options": [

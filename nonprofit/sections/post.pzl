@@ -16,7 +16,7 @@
 {
   "name": "Post",
   "description": "A post's title, topic and date, standfirst, picture and body.",
-  "kind": "Blog",
+  "kind": "Content",
   "icon": "file-text",
   "templates": ["post"],
   "settings": [

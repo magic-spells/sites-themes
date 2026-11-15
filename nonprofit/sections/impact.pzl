@@ -39,13 +39,13 @@
 {
   "name": "Impact",
   "description": "Dated figures for the year, and where a gift goes.",
-  "kind": "Text",
+  "kind": "Content",
   "icon": "hash",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Our impact" },
     { "type": "textarea", "id": "text", "label": "Standfirst", "default": "", "info": "Name the period the figures cover: Between July 2025 and June 2026." },
-    { "type": "text", "id": "link_label", "label": "Link label", "default": "", "info": "A pill beside the heading: Annual report." },
-    { "type": "url", "id": "link", "label": "Link", "default": "" },
+    { "type": "text", "id": "link_label", "label": "Button label", "default": "", "info": "A pill beside the heading: Annual report." },
+    { "type": "url", "id": "link", "label": "Button link", "default": "" },
     { "type": "text", "id": "split_heading", "label": "Split heading", "default": "Where a gift goes", "info": "Heads the split rows. Leave empty to hide the split." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],

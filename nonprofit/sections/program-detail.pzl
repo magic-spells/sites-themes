@@ -7,7 +7,7 @@
 {
   "name": "Programme",
   "description": "A programme's title, summary, sign-up button, picture and description.",
-  "kind": "Text",
+  "kind": "Content",
   "icon": "file-text",
   "templates": ["program"],
   "settings": [

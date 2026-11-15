@@ -17,8 +17,8 @@
     { "type": "text", "id": "heading", "label": "Heading", "default": "Questions" },
     { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
     { "type": "checkbox", "id": "first_open", "label": "First one open", "default": false },
-    { "type": "text", "id": "link_label", "label": "Link label", "default": "", "info": "A pill under the questions: Ask us something else." },
-    { "type": "url", "id": "link", "label": "Link", "default": "/contact" },
+    { "type": "text", "id": "link_label", "label": "Button label", "default": "", "info": "A pill under the questions: Ask us something else." },
+    { "type": "url", "id": "link", "label": "Button link", "default": "/contact" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "blocks": [

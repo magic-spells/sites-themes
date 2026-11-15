@@ -17,7 +17,7 @@
 {
   "name": "Social",
   "description": "Photos from your social profile, uploaded here, each linking to its post.",
-  "kind": "Media",
+  "kind": "Content",
   "icon": "images",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Follow along" },

@@ -1,14 +1,14 @@
-<!-- The first screen: the h1, the standfirst and up to two buttons (a Donate button to the giving page, or a link; the first solid, the second outline), in seven parts of twelve beside the picture in five from 64rem; the picture comes after the type on phones, 4:3, then 4:5. Panel: the inset rounded panel on its scheme, the page ground around it. Split: the same on a full-width band. Cover: the picture fills the panel behind the type under a wash of the panel's ground. align centres the type. -->
+<!-- The first screen: the h1, the standfirst and up to two buttons (a Donate button to the giving page, or a link; the first solid, the second outline), in seven parts of twelve beside the picture in five from 64rem; the picture comes after the type on phones, 4:3, then 4:5. Panel: the inset rounded panel on its scheme, the page ground around it. Band: the same on a full-width band. Cover: the picture fills the panel behind the type under a wash of the panel's ground. align centres the type. -->
 {#let
   layout = settings.layout
-  split = layout == 'split'
+  band = layout == 'band'
   cover = layout == 'cover'
   centre = settings.align == 'center'
   side = settings.image && !cover
 }
-<section class="px-gutter { split ? 'bg-scheme-background py-section text-scheme-foreground' : 'pt-space-sm pb-gutter md:pt-space-md' }">
+<section class="px-gutter { band ? 'bg-scheme-background py-section text-scheme-foreground' : 'pt-space-sm pb-gutter md:pt-space-md' }">
   <div class="mx-auto max-w-page">
-    <Panel bare={ split } cls="grid items-center gap-space-xl lg:grid-cols-12 { cover ? 'relative isolate overflow-hidden md:min-h-cover' : '' }">
+    <Panel bare={ band } cls="grid items-center gap-space-xl lg:grid-cols-12 { cover ? 'relative isolate overflow-hidden md:min-h-cover' : '' }">
       {#if cover && settings.image}{ image_tag(settings.image, { class: 'absolute inset-0 -z-10 size-full object-cover', sizes: '(min-width: 80rem) 75rem, 100vw', loading: 'eager', fetchpriority: 'high' }) }<span class="absolute inset-0 -z-10 { centre ? 'bg-scheme-background/75' : 'bg-linear-to-r from-scheme-background/90 via-scheme-background/70 to-scheme-background/10' }"></span>{/if}
       <div class="grid gap-space-md { side || !centre ? 'lg:col-span-7' : 'lg:col-span-12' } { centre ? 'justify-items-center text-center' : 'justify-items-start' }">
         <h1 class="max-w-reading font-heading text-h1 text-balance text-scheme-heading"><Rise text={ settings.heading } /></h1>
@@ -36,7 +36,7 @@
   "settings": [
     { "type": "select", "id": "layout", "label": "Layout", "default": "panel", "options": [
       { "value": "panel", "label": "Inset panel" },
-      { "value": "split", "label": "Band" },
+      { "value": "band", "label": "Band" },
       { "value": "cover", "label": "Picture behind the type" }
     ] },
     { "type": "select", "id": "align", "label": "Alignment", "default": "left", "options": [
@@ -64,7 +64,7 @@
       { "type": "give", "settings": { "label": "Donate" } },
       { "type": "link", "settings": { "label": "Get involved", "link": "/get-involved" } }
     ] },
-    { "name": "Band", "settings": { "layout": "split", "color_scheme": "cream" }, "blocks": [
+    { "name": "Band", "settings": { "layout": "band", "color_scheme": "cream" }, "blocks": [
       { "type": "give", "settings": { "label": "Donate" } }
     ] }
   ]

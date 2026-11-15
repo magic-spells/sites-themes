@@ -1,0 +1,20 @@
+{
+  "label": "Page",
+  "description": "A page of prose.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {},
+      "blocks": []
+    },
+    {
+      "id": "s_text",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {},
+      "blocks": []
+    }
+  ]
+}

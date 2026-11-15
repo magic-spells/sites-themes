@@ -1,0 +1,33 @@
+{
+  "label": "Contact",
+  "description": "The contact form, then the address and hours.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "The office answers on weekday afternoons and Saturday mornings."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_contact",
+      "type": "contact",
+      "preset": "Default",
+      "settings": {
+        "heading": "Write to the office"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_hours",
+      "type": "hours-location",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": []
+    }
+  ]
+}

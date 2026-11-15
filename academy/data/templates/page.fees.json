@@ -1,0 +1,99 @@
+{
+  "label": "Fees",
+  "description": "Every class price by subject, the extra lines, then questions.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Group classes are paid by the term, one-to-one lessons by the lesson."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_fees",
+      "type": "fees",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "color_scheme": "white"
+      },
+      "blocks": [
+        {
+          "type": "line",
+          "settings": {
+            "label": "Registration, once per family",
+            "amount": "£20"
+          }
+        },
+        {
+          "type": "line",
+          "settings": {
+            "label": "Exam entry, per exam",
+            "amount": "At cost"
+          }
+        },
+        {
+          "type": "line",
+          "settings": {
+            "label": "Second child in the family",
+            "amount": "10% off"
+          }
+        },
+        {
+          "type": "line",
+          "settings": {
+            "label": "Ballet uniform, from the office",
+            "amount": "£32"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "How do fees work?",
+            "answer": "<p>Group classes are paid by the term. One-to-one lessons are paid by the lesson, booked in blocks of ten.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "What happens at half term?",
+            "answer": "<p>The school is closed for half term. Term fees already leave that week out.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do pupils take exams?",
+            "answer": "<p>Only if they want to. Teachers enter pupils for graded exams when they are ready.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Can my child try a class first?",
+            "answer": "<p>Yes. The first group class is a free trial. Ask about a class and we will offer a date.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "What if a class is full?",
+            "answer": "<p>We keep a waiting list for every class and offer places in the order we hear from you.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}

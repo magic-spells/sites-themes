@@ -1,0 +1,13 @@
+{
+  "label": "Teacher",
+  "description": "A teacher's page: their photo, bio, credentials and the classes they teach.",
+  "sections": [
+    {
+      "id": "s_detail",
+      "type": "team-detail",
+      "preset": "Default",
+      "settings": {},
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "label": "Ask",
+  "description": "The ask form beside the address, then the ways to visit first.",
+  "sections": [
+    {
+      "id": "s_form",
+      "type": "ask-form",
+      "preset": "Default",
+      "settings": {},
+      "blocks": []
+    },
+    {
+      "id": "s_visit",
+      "type": "visit-options",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "light-blue"
+      },
+      "blocks": [
+        {
+          "type": "option",
+          "settings": {
+            "heading": "Open morning",
+            "text": "Watch classes, meet the teachers and try an instrument. No need to book.",
+            "button_label": "See the date",
+            "link": "/dates"
+          }
+        },
+        {
+          "type": "option",
+          "settings": {
+            "heading": "Trial class",
+            "text": "The first group class is free. We hold a place for you that week.",
+            "button_label": "Ask for a trial",
+            "link": ""
+          }
+        },
+        {
+          "type": "option",
+          "settings": {
+            "heading": "A look round",
+            "text": "Any weekday afternoon, by arrangement with the office.",
+            "button_label": "Ask for a visit",
+            "link": ""
+          }
+        }
+      ]
+    }
+  ]
+}

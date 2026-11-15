@@ -1,0 +1,22 @@
+{
+  "label": "Class",
+  "description": "A class's page: its price and the ask, the description, the facts, its week and its dates.",
+  "sections": [
+    {
+      "id": "s_detail",
+      "type": "class-detail",
+      "preset": "Default",
+      "settings": {},
+      "blocks": []
+    },
+    {
+      "id": "s_quotes",
+      "type": "testimonials",
+      "preset": "Rows",
+      "settings": {
+        "color_scheme": "manila"
+      },
+      "blocks": []
+    }
+  ]
+}

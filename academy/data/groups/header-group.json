@@ -1,0 +1,23 @@
+{
+  "sections": [
+    {
+      "id": "sg_announcement",
+      "type": "announcement-bar",
+      "preset": "Default",
+      "settings": {
+        "key": "autumn-2026",
+        "color_scheme": "ink"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_header",
+      "type": "header",
+      "preset": "Default",
+      "settings": {
+        "menu": "main"
+      },
+      "blocks": []
+    }
+  ]
+}

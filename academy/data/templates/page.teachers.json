@@ -1,0 +1,26 @@
+{
+  "label": "Teachers",
+  "description": "Every teacher, with their role.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Every teacher performs as well as teaches, and every one holds an enhanced safeguarding check."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_team",
+      "type": "team-grid",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "link_label": "",
+        "mobile": "stack"
+      },
+      "blocks": []
+    }
+  ]
+}

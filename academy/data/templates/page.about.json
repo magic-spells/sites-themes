@@ -1,0 +1,109 @@
+{
+  "label": "About",
+  "description": "The story, the teachers, what families say, the stage and the feed.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "A school of music and dance in Marlowe Cross since 1986."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_story",
+      "type": "story",
+      "preset": "Default",
+      "settings": {
+        "image": "as_3x2_rose",
+        "image_alt": "The front of Larkfield House on Market Street",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_team",
+      "type": "team-grid",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_quotes",
+      "type": "testimonials",
+      "preset": "Carousel",
+      "settings": {
+        "color_scheme": "manila"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_gallery",
+      "type": "gallery-strip",
+      "preset": "Default",
+      "settings": {
+        "gallery": "on-stage"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_social",
+      "type": "social",
+      "preset": "Default",
+      "settings": {},
+      "blocks": [
+        {
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_blue",
+            "image_alt": "Pre-ballet on a Saturday morning",
+            "link": ""
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_manila",
+            "image_alt": "A cello lesson in Room 3",
+            "link": ""
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_rose",
+            "image_alt": "Tap shoes lined up for the show",
+            "link": ""
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_blue",
+            "image_alt": "Youth Choir in the spring concert",
+            "link": ""
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_manila",
+            "image_alt": "Piano practice before an exam",
+            "link": ""
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_rose",
+            "image_alt": "Bows at the summer show",
+            "link": ""
+          }
+        }
+      ]
+    }
+  ]
+}

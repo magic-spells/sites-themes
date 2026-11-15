@@ -1,0 +1,35 @@
+{
+  "label": "Timetable",
+  "description": "The week, then the term dates and closures.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Every weekly class, Monday to Saturday. One-to-one lessons are arranged with the teacher."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_week",
+      "type": "timetable",
+      "preset": "Week",
+      "settings": {
+        "heading": ""
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_terms",
+      "type": "dates",
+      "preset": "Term dates",
+      "settings": {
+        "heading": "Term dates",
+        "kinds": "terms",
+        "color_scheme": "white"
+      },
+      "blocks": []
+    }
+  ]
+}

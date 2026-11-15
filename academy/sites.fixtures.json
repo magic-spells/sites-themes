@@ -1,0 +1,2791 @@
+{
+  "site": {
+    "name": "Larkfield Academy",
+    "url": "https://larkfield.example",
+    "locale": "en",
+    "settings": {
+      "wordmark": "Larkfield Academy",
+      "tagline": "Music and dance in Marlowe Cross",
+      "currency_symbol": "£",
+      "reveal": true,
+      "ask_label": "Ask about a class",
+      "ask": "form",
+      "ask_url": "/ask",
+      "ask_form": "ask",
+      "confirm_line": "We reply within two working days.",
+      "portal_label": "Parent portal",
+      "portal_url": "https://portal.example/larkfield",
+      "accreditation_lines": "Member of the national music teachers’ association\nRegistered centre for graded music and dance exams\nEnhanced safeguarding checks for every teacher",
+      "subject_label": "Subject",
+      "email": "office@larkfield.example",
+      "phone": "01632 960 418"
+    }
+  },
+  "menus": {
+    "main": {
+      "handle": "main",
+      "title": "Main menu",
+      "items": [
+        {
+          "id": "main0",
+          "label": "Classes",
+          "target": {
+            "kind": "url",
+            "url": "/classes"
+          },
+          "children": []
+        },
+        {
+          "id": "main1",
+          "label": "Timetable",
+          "target": {
+            "kind": "url",
+            "url": "/timetable"
+          },
+          "children": []
+        },
+        {
+          "id": "main2",
+          "label": "Dates",
+          "target": {
+            "kind": "url",
+            "url": "/dates"
+          },
+          "children": []
+        },
+        {
+          "id": "main3",
+          "label": "Fees",
+          "target": {
+            "kind": "url",
+            "url": "/fees"
+          },
+          "children": []
+        },
+        {
+          "id": "main4",
+          "label": "Teachers",
+          "target": {
+            "kind": "url",
+            "url": "/teachers"
+          },
+          "children": []
+        },
+        {
+          "id": "main5",
+          "label": "About",
+          "target": {
+            "kind": "url",
+            "url": "/about"
+          },
+          "children": []
+        }
+      ]
+    },
+    "legal": {
+      "handle": "legal",
+      "title": "Legal",
+      "items": [
+        {
+          "id": "legal0",
+          "label": "Privacy",
+          "target": {
+            "kind": "url",
+            "url": "/privacy"
+          },
+          "children": []
+        },
+        {
+          "id": "legal1",
+          "label": "Terms",
+          "target": {
+            "kind": "url",
+            "url": "/terms"
+          },
+          "children": []
+        },
+        {
+          "id": "legal2",
+          "label": "Contact",
+          "target": {
+            "kind": "url",
+            "url": "/contact"
+          },
+          "children": []
+        }
+      ]
+    },
+    "social": {
+      "handle": "social",
+      "title": "Social",
+      "items": [
+        {
+          "id": "social0",
+          "label": "Instagram",
+          "target": {
+            "kind": "url",
+            "url": "https://instagram.com/"
+          },
+          "children": []
+        },
+        {
+          "id": "social1",
+          "label": "Facebook",
+          "target": {
+            "kind": "url",
+            "url": "https://facebook.com/"
+          },
+          "children": []
+        },
+        {
+          "id": "social2",
+          "label": "YouTube",
+          "target": {
+            "kind": "url",
+            "url": "https://youtube.com/"
+          },
+          "children": []
+        }
+      ]
+    }
+  },
+  "galleries": {
+    "on-stage": {
+      "handle": "on-stage",
+      "title": "On stage",
+      "items": [
+        {
+          "asset_id": "as_3x2_blue",
+          "caption": "Ballet 2 at the summer show",
+          "alt": "Ballet 2 at the summer show"
+        },
+        {
+          "asset_id": "as_3x2_manila",
+          "caption": "Youth Choir at the spring concert",
+          "alt": "Youth Choir at the spring concert"
+        },
+        {
+          "asset_id": "as_3x2_rose",
+          "caption": "Junior Tap, first number",
+          "alt": "Junior Tap, first number"
+        },
+        {
+          "asset_id": "as_3x2_blue",
+          "caption": "Junior Strings tuning up",
+          "alt": "Junior Strings tuning up"
+        },
+        {
+          "asset_id": "as_3x2_manila",
+          "caption": "Adult Choir at the Corn Exchange",
+          "alt": "Adult Choir at the Corn Exchange"
+        },
+        {
+          "asset_id": "as_3x2_rose",
+          "caption": "The final bow",
+          "alt": "The final bow"
+        }
+      ]
+    }
+  },
+  "assets": {
+    "as_3x2_blue": {
+      "id": "as_3x2_blue",
+      "status": "ready",
+      "file_name": "3x2-blue.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/3x2-blue.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "3:2 blue placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_3x2_manila": {
+      "id": "as_3x2_manila",
+      "status": "ready",
+      "file_name": "3x2-manila.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 362,
+      "url": "/_sites/theme/photos/3x2-manila.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "3:2 manila placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_3x2_rose": {
+      "id": "as_3x2_rose",
+      "status": "ready",
+      "file_name": "3x2-rose.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 360,
+      "url": "/_sites/theme/photos/3x2-rose.svg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "3:2 rose placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_4x5_blue": {
+      "id": "as_4x5_blue",
+      "status": "ready",
+      "file_name": "4x5-blue.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 361,
+      "url": "/_sites/theme/photos/4x5-blue.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "4:5 blue placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_4x5_manila": {
+      "id": "as_4x5_manila",
+      "status": "ready",
+      "file_name": "4x5-manila.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 363,
+      "url": "/_sites/theme/photos/4x5-manila.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "4:5 manila placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_4x5_rose": {
+      "id": "as_4x5_rose",
+      "status": "ready",
+      "file_name": "4x5-rose.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 361,
+      "url": "/_sites/theme/photos/4x5-rose.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "4:5 rose placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_1x1_blue": {
+      "id": "as_1x1_blue",
+      "status": "ready",
+      "file_name": "1x1-blue.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 361,
+      "url": "/_sites/theme/photos/1x1-blue.svg",
+      "width": 1200,
+      "height": 1200,
+      "alt": "1:1 blue placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_1x1_manila": {
+      "id": "as_1x1_manila",
+      "status": "ready",
+      "file_name": "1x1-manila.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 363,
+      "url": "/_sites/theme/photos/1x1-manila.svg",
+      "width": 1200,
+      "height": 1200,
+      "alt": "1:1 manila placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_1x1_rose": {
+      "id": "as_1x1_rose",
+      "status": "ready",
+      "file_name": "1x1-rose.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 361,
+      "url": "/_sites/theme/photos/1x1-rose.svg",
+      "width": 1200,
+      "height": 1200,
+      "alt": "1:1 rose placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    }
+  },
+  "forms": {
+    "ask": {
+      "handle": "ask",
+      "name": "Ask about a class",
+      "fields": [
+        {
+          "id": "class",
+          "type": "select",
+          "label": "Class",
+          "required": true,
+          "options": [
+            "Piano lessons",
+            "Violin lessons",
+            "Cello lessons",
+            "Junior Strings",
+            "Singing lessons",
+            "Youth Choir",
+            "Adult Choir",
+            "Pre-school Ballet",
+            "Ballet 1",
+            "Ballet 2",
+            "Junior Tap",
+            "Adult Tap",
+            "Easter Strings Workshop",
+            "Summer Dance Week",
+            "Not sure yet"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Your name",
+          "required": true,
+          "max_length": 200
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 200
+        },
+        {
+          "id": "phone",
+          "type": "text",
+          "label": "Phone",
+          "required": false,
+          "max_length": 200
+        },
+        {
+          "id": "days",
+          "type": "text",
+          "label": "Days that suit",
+          "required": false,
+          "max_length": 200
+        },
+        {
+          "id": "message",
+          "type": "textarea",
+          "label": "Who the lessons are for",
+          "required": false,
+          "max_length": 2000
+        }
+      ],
+      "success_message": "Thank you. We have your question.",
+      "submit_label": "Ask about a class",
+      "redirect_path": ""
+    },
+    "contact": {
+      "handle": "contact",
+      "name": "Contact",
+      "fields": [
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Your name",
+          "required": true,
+          "max_length": 200
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 200
+        },
+        {
+          "id": "subject",
+          "type": "select",
+          "label": "About",
+          "required": true,
+          "options": [
+            "A class",
+            "Fees",
+            "Exams",
+            "Something else"
+          ]
+        },
+        {
+          "id": "message",
+          "type": "textarea",
+          "label": "Message",
+          "required": true,
+          "max_length": 2000
+        }
+      ],
+      "success_message": "Thank you. The office will reply soon.",
+      "submit_label": "Send",
+      "redirect_path": ""
+    },
+    "newsletter": {
+      "handle": "newsletter",
+      "name": "Newsletter",
+      "fields": [
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email address",
+          "required": true,
+          "max_length": 200
+        }
+      ],
+      "success_message": "You are on the list.",
+      "submit_label": "Sign up",
+      "redirect_path": ""
+    }
+  },
+  "content": {
+    "classes": {
+      "name": "Classes",
+      "fields": [
+        {
+          "id": "short_name",
+          "type": "text",
+          "label": "Short name (the timetable)"
+        },
+        {
+          "id": "subject",
+          "type": "text",
+          "label": "Subject"
+        },
+        {
+          "id": "ages",
+          "type": "text",
+          "label": "Ages (Ages 5–7)"
+        },
+        {
+          "id": "level",
+          "type": "text",
+          "label": "Level"
+        },
+        {
+          "id": "summary",
+          "type": "text",
+          "label": "Summary"
+        },
+        {
+          "id": "description",
+          "type": "richtext",
+          "label": "Description"
+        },
+        {
+          "id": "duration_minutes",
+          "type": "number",
+          "label": "Length in minutes"
+        },
+        {
+          "id": "price",
+          "type": "number",
+          "label": "Price"
+        },
+        {
+          "id": "price_from",
+          "type": "checkbox",
+          "label": "Price is a starting price"
+        },
+        {
+          "id": "period",
+          "type": "text",
+          "label": "Per (term, lesson, course)"
+        },
+        {
+          "id": "coach",
+          "type": "entry",
+          "label": "Teacher",
+          "content_type": "coaches"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image (3:2)"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "what_to_bring",
+          "type": "textarea",
+          "label": "What to bring (one per line)"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "id": "featured",
+          "type": "checkbox",
+          "label": "Featured"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "cls_piano_lessons",
+          "handle": "piano-lessons",
+          "title": "Piano lessons",
+          "fields": {
+            "short_name": "Piano",
+            "subject": "Piano",
+            "ages": "Ages 6 to adult",
+            "level": "All levels",
+            "summary": "One-to-one lessons, from first notes to Grade 8.",
+            "description": "<p>One-to-one lessons, from first notes to Grade 8. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+            "duration_minutes": 30,
+            "price": 22,
+            "price_from": true,
+            "period": "lesson",
+            "coach": "coach_grace_okafor",
+            "image": "as_3x2_blue",
+            "image_alt": "Piano lessons at Larkfield Academy",
+            "what_to_bring": "Your music and a pencil\nA notebook for practice notes",
+            "link": "",
+            "featured": true,
+            "order": 1
+          }
+        },
+        {
+          "id": "cls_violin_lessons",
+          "handle": "violin-lessons",
+          "title": "Violin lessons",
+          "fields": {
+            "short_name": "Violin",
+            "subject": "Strings",
+            "ages": "Ages 5 to adult",
+            "level": "All levels",
+            "summary": "One-to-one violin, with a place in Junior Strings when you are ready.",
+            "description": "<p>One-to-one violin, with a place in Junior Strings when you are ready. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+            "duration_minutes": 30,
+            "price": 23,
+            "price_from": true,
+            "period": "lesson",
+            "coach": "coach_tomas_reyes",
+            "image": "as_3x2_manila",
+            "image_alt": "Violin lessons at Larkfield Academy",
+            "what_to_bring": "Your music and a pencil\nA notebook for practice notes",
+            "link": "",
+            "featured": false,
+            "order": 2
+          }
+        },
+        {
+          "id": "cls_cello_lessons",
+          "handle": "cello-lessons",
+          "title": "Cello lessons",
+          "fields": {
+            "short_name": "Cello",
+            "subject": "Strings",
+            "ages": "Ages 7 to adult",
+            "level": "All levels",
+            "summary": "One-to-one cello on a school instrument for the first term.",
+            "description": "<p>One-to-one cello on a school instrument for the first term. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+            "duration_minutes": 30,
+            "price": 23,
+            "price_from": true,
+            "period": "lesson",
+            "coach": "coach_ruth_adair",
+            "image": "as_3x2_rose",
+            "image_alt": "Cello lessons at Larkfield Academy",
+            "what_to_bring": "Your music and a pencil\nA notebook for practice notes",
+            "link": "",
+            "featured": false,
+            "order": 3
+          }
+        },
+        {
+          "id": "cls_junior_strings",
+          "handle": "junior-strings",
+          "title": "Junior Strings",
+          "fields": {
+            "short_name": "Jr Strings",
+            "subject": "Strings",
+            "ages": "Ages 7–11",
+            "level": "Grade 1 and up",
+            "summary": "The first ensemble: violins, violas and cellos playing together.",
+            "description": "<p>The first ensemble: violins, violas and cellos playing together. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+            "duration_minutes": 60,
+            "price": 96,
+            "price_from": false,
+            "period": "term",
+            "coach": "coach_tomas_reyes",
+            "image": "as_3x2_blue",
+            "image_alt": "Junior Strings at Larkfield Academy",
+            "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
+            "link": "",
+            "featured": true,
+            "order": 4
+          }
+        },
+        {
+          "id": "cls_singing_lessons",
+          "handle": "singing-lessons",
+          "title": "Singing lessons",
+          "fields": {
+            "short_name": "Singing",
+            "subject": "Voice",
+            "ages": "Ages 9 to adult",
+            "level": "All levels",
+            "summary": "One-to-one singing for exams, auditions or the joy of it.",
+            "description": "<p>One-to-one singing for exams, auditions or the joy of it. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+            "duration_minutes": 30,
+            "price": 24,
+            "price_from": true,
+            "period": "lesson",
+            "coach": "coach_hannah_blythe",
+            "image": "as_3x2_manila",
+            "image_alt": "Singing lessons at Larkfield Academy",
+            "what_to_bring": "Your music and a pencil\nA notebook for practice notes",
+            "link": "",
+            "featured": false,
+            "order": 5
+          }
+        },
+        {
+          "id": "cls_youth_choir",
+          "handle": "youth-choir",
+          "title": "Youth Choir",
+          "fields": {
+            "short_name": "Youth Choir",
+            "subject": "Voice",
+            "ages": "Ages 8–16",
+            "level": "No audition",
+            "summary": "Two-part and three-part songs, sung at the concert and the show.",
+            "description": "<p>Two-part and three-part songs, sung at the concert and the show. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+            "duration_minutes": 75,
+            "price": 78,
+            "price_from": false,
+            "period": "term",
+            "coach": "coach_hannah_blythe",
+            "image": "as_3x2_rose",
+            "image_alt": "Youth Choir at Larkfield Academy",
+            "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
+            "link": "",
+            "featured": true,
+            "order": 6
+          }
+        },
+        {
+          "id": "cls_adult_choir",
+          "handle": "adult-choir",
+          "title": "Adult Choir",
+          "fields": {
+            "short_name": "Adult Choir",
+            "subject": "Voice",
+            "ages": "Adults",
+            "level": "No audition",
+            "summary": "An evening choir for anyone who likes to sing. No reading music needed.",
+            "description": "<p>An evening choir for anyone who likes to sing. No reading music needed. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+            "duration_minutes": 90,
+            "price": 85,
+            "price_from": false,
+            "period": "term",
+            "coach": "coach_hannah_blythe",
+            "image": "as_3x2_blue",
+            "image_alt": "Adult Choir at Larkfield Academy",
+            "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
+            "link": "",
+            "featured": false,
+            "order": 7
+          }
+        },
+        {
+          "id": "cls_pre_school_ballet",
+          "handle": "pre-school-ballet",
+          "title": "Pre-school Ballet",
+          "fields": {
+            "short_name": "Pre-ballet",
+            "subject": "Ballet",
+            "ages": "Ages 3–4",
+            "level": "Beginner",
+            "summary": "Music, movement and first ballet steps, with a grown-up close by.",
+            "description": "<p>Music, movement and first ballet steps, with a grown-up close by. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+            "duration_minutes": 30,
+            "price": 72,
+            "price_from": false,
+            "period": "term",
+            "coach": "coach_priya_nair",
+            "image": "as_3x2_manila",
+            "image_alt": "Pre-school Ballet at Larkfield Academy",
+            "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
+            "link": "",
+            "featured": true,
+            "order": 8
+          }
+        },
+        {
+          "id": "cls_ballet_1",
+          "handle": "ballet-1",
+          "title": "Ballet 1",
+          "fields": {
+            "short_name": "Ballet 1",
+            "subject": "Ballet",
+            "ages": "Ages 5–7",
+            "level": "Beginner",
+            "summary": "The first graded class: posture, positions and simple dances.",
+            "description": "<p>The first graded class: posture, positions and simple dances. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+            "duration_minutes": 45,
+            "price": 88.5,
+            "price_from": false,
+            "period": "term",
+            "coach": "coach_priya_nair",
+            "image": "as_3x2_rose",
+            "image_alt": "Ballet 1 at Larkfield Academy",
+            "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
+            "link": "",
+            "featured": true,
+            "order": 9
+          }
+        },
+        {
+          "id": "cls_ballet_2",
+          "handle": "ballet-2",
+          "title": "Ballet 2",
+          "fields": {
+            "short_name": "Ballet 2",
+            "subject": "Ballet",
+            "ages": "Ages 8–11",
+            "level": "Improver",
+            "summary": "Barre and centre work towards the first exams.",
+            "description": "<p>Barre and centre work towards the first exams. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+            "duration_minutes": 60,
+            "price": 102,
+            "price_from": false,
+            "period": "term",
+            "coach": "coach_priya_nair",
+            "image": "as_3x2_blue",
+            "image_alt": "Ballet 2 at Larkfield Academy",
+            "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
+            "link": "",
+            "featured": false,
+            "order": 10
+          }
+        },
+        {
+          "id": "cls_junior_tap",
+          "handle": "junior-tap",
+          "title": "Junior Tap",
+          "fields": {
+            "short_name": "Jr Tap",
+            "subject": "Tap",
+            "ages": "Ages 6–10",
+            "level": "Beginner",
+            "summary": "Rhythm, shuffles and a routine for the summer show.",
+            "description": "<p>Rhythm, shuffles and a routine for the summer show. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+            "duration_minutes": 45,
+            "price": 84,
+            "price_from": false,
+            "period": "term",
+            "coach": "coach_daniel_marsh",
+            "image": "as_3x2_manila",
+            "image_alt": "Junior Tap at Larkfield Academy",
+            "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
+            "link": "",
+            "featured": true,
+            "order": 11
+          }
+        },
+        {
+          "id": "cls_adult_tap",
+          "handle": "adult-tap",
+          "title": "Adult Tap",
+          "fields": {
+            "short_name": "Adult Tap",
+            "subject": "Tap",
+            "ages": "Adults",
+            "level": "Beginner and improver",
+            "summary": "An hour of tap after work. Shoes to borrow for the first month.",
+            "description": "<p>An hour of tap after work. Shoes to borrow for the first month. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+            "duration_minutes": 60,
+            "price": 96,
+            "price_from": false,
+            "period": "term",
+            "coach": "coach_daniel_marsh",
+            "image": "as_3x2_rose",
+            "image_alt": "Adult Tap at Larkfield Academy",
+            "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
+            "link": "",
+            "featured": false,
+            "order": 12
+          }
+        },
+        {
+          "id": "cls_easter_strings_workshop",
+          "handle": "easter-strings-workshop",
+          "title": "Easter Strings Workshop",
+          "fields": {
+            "short_name": "Strings Week",
+            "subject": "Strings",
+            "ages": "Ages 8–14",
+            "level": "Grade 2 and up",
+            "summary": "Three days of ensemble playing in the Easter holiday, ending in a short concert.",
+            "description": "<p>Three days of ensemble playing in the Easter holiday, ending in a short concert. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+            "duration_minutes": 300,
+            "price": 145,
+            "price_from": false,
+            "period": "course",
+            "coach": "coach_ruth_adair",
+            "image": "as_3x2_blue",
+            "image_alt": "Easter Strings Workshop at Larkfield Academy",
+            "what_to_bring": "A packed lunch and a water bottle\nYour instrument or dance shoes",
+            "link": "",
+            "featured": false,
+            "order": 13
+          }
+        },
+        {
+          "id": "cls_summer_dance_week",
+          "handle": "summer-dance-week",
+          "title": "Summer Dance Week",
+          "fields": {
+            "short_name": "Dance Week",
+            "subject": "Ballet",
+            "ages": "Ages 6–12",
+            "level": "All levels",
+            "summary": "Five days of ballet, tap and a little jazz, ending in a show for families.",
+            "description": "<p>Five days of ballet, tap and a little jazz, ending in a show for families. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+            "duration_minutes": 300,
+            "price": 175,
+            "price_from": false,
+            "period": "course",
+            "coach": "coach_priya_nair",
+            "image": "as_3x2_manila",
+            "image_alt": "Summer Dance Week at Larkfield Academy",
+            "what_to_bring": "A packed lunch and a water bottle\nYour instrument or dance shoes",
+            "link": "",
+            "featured": false,
+            "order": 14
+          }
+        }
+      ]
+    },
+    "sessions": {
+      "name": "Sessions",
+      "fields": [
+        {
+          "id": "class",
+          "type": "entry",
+          "label": "Class",
+          "content_type": "classes"
+        },
+        {
+          "id": "day",
+          "type": "text",
+          "label": "Day (mon, tue, wed, thu, fri, sat, sun)"
+        },
+        {
+          "id": "start",
+          "type": "text",
+          "label": "Start (16:30)"
+        },
+        {
+          "id": "end",
+          "type": "text",
+          "label": "End (17:15)"
+        },
+        {
+          "id": "coach",
+          "type": "entry",
+          "label": "Teacher (overrides the class teacher)",
+          "content_type": "coaches"
+        },
+        {
+          "id": "location",
+          "type": "entry",
+          "label": "Location",
+          "content_type": "locations"
+        },
+        {
+          "id": "note",
+          "type": "text",
+          "label": "Note (the room)"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ses_1",
+          "handle": "junior-strings-mon-1700",
+          "title": "Junior Strings, mon 17:00",
+          "fields": {
+            "class": "cls_junior_strings",
+            "day": "mon",
+            "start": "17:00",
+            "end": "18:00",
+            "coach": "",
+            "location": "loc_larkfield_house",
+            "note": "Room 3"
+          }
+        },
+        {
+          "id": "ses_2",
+          "handle": "junior-strings-wed-1700",
+          "title": "Junior Strings, wed 17:00",
+          "fields": {
+            "class": "cls_junior_strings",
+            "day": "wed",
+            "start": "17:00",
+            "end": "18:00",
+            "coach": "",
+            "location": "loc_larkfield_house",
+            "note": "Room 3"
+          }
+        },
+        {
+          "id": "ses_3",
+          "handle": "junior-strings-sat-1000",
+          "title": "Junior Strings, sat 10:00",
+          "fields": {
+            "class": "cls_junior_strings",
+            "day": "sat",
+            "start": "10:00",
+            "end": "11:00",
+            "coach": "",
+            "location": "loc_larkfield_house",
+            "note": "Room 3"
+          }
+        },
+        {
+          "id": "ses_4",
+          "handle": "youth-choir-tue-1730",
+          "title": "Youth Choir, tue 17:30",
+          "fields": {
+            "class": "cls_youth_choir",
+            "day": "tue",
+            "start": "17:30",
+            "end": "18:45",
+            "coach": "",
+            "location": "loc_larkfield_house",
+            "note": "Studio 2"
+          }
+        },
+        {
+          "id": "ses_5",
+          "handle": "youth-choir-thu-1730",
+          "title": "Youth Choir, thu 17:30",
+          "fields": {
+            "class": "cls_youth_choir",
+            "day": "thu",
+            "start": "17:30",
+            "end": "18:45",
+            "coach": "",
+            "location": "loc_larkfield_house",
+            "note": "Studio 2"
+          }
+        },
+        {
+          "id": "ses_6",
+          "handle": "youth-choir-sat-1115",
+          "title": "Youth Choir, sat 11:15",
+          "fields": {
+            "class": "cls_youth_choir",
+            "day": "sat",
+            "start": "11:15",
+            "end": "12:30",
+            "coach": "",
+            "location": "loc_larkfield_house",
+            "note": "Studio 2"
+          }
+        },
+        {
+          "id": "ses_7",
+          "handle": "adult-choir-wed-1930",
+          "title": "Adult Choir, wed 19:30",
+          "fields": {
+            "class": "cls_adult_choir",
+            "day": "wed",
+            "start": "19:30",
+            "end": "21:00",
+            "coach": "",
+            "location": "loc_larkfield_house",
+            "note": "Studio 2"
+          }
+        },
+        {
+          "id": "ses_8",
+          "handle": "pre-school-ballet-wed-1000",
+          "title": "Pre-school Ballet, wed 10:00",
+          "fields": {
+            "class": "cls_pre_school_ballet",
+            "day": "wed",
+            "start": "10:00",
+            "end": "10:30",
+            "coach": "",
+            "location": "loc_larkfield_house",
+            "note": "Studio 1"
+          }
+        },
+        {
+          "id": "ses_9",
+          "handle": "pre-school-ballet-fri-1000",
+          "title": "Pre-school Ballet, fri 10:00",
+          "fields": {
+            "class": "cls_pre_school_ballet",
+            "day": "fri",
+            "start": "10:00",
+            "end": "10:30",
+            "coach": "",
+            "location": "loc_larkfield_house",
+            "note": "Studio 1"
+          }
+        },
+        {
+          "id": "ses_10",
+          "handle": "pre-school-ballet-sat-0900",
+          "title": "Pre-school Ballet, sat 09:00",
+          "fields": {
+            "class": "cls_pre_school_ballet",
+            "day": "sat",
+            "start": "09:00",
+            "end": "09:30",
+            "coach": "",
+            "location": "loc_larkfield_house",
+            "note": "Studio 1"
+          }
+        },
+        {
+          "id": "ses_11",
+          "handle": "ballet-1-mon-1615",
+          "title": "Ballet 1, mon 16:15",
+          "fields": {
+            "class": "cls_ballet_1",
+            "day": "mon",
+            "start": "16:15",
+            "end": "17:00",
+            "coach": "",
+            "location": "loc_larkfield_house",
+            "note": "Studio 1"
+          }
+        },
+        {
+          "id": "ses_12",
+          "handle": "ballet-1-thu-1615",
+          "title": "Ballet 1, thu 16:15",
+          "fields": {
+            "class": "cls_ballet_1",
+            "day": "thu",
+            "start": "16:15",
+            "end": "17:00",
+            "coach": "",
+            "location": "loc_larkfield_house",
+            "note": "Studio 1"
+          }
+        },
+        {
+          "id": "ses_13",
+          "handle": "ballet-1-sat-0945",
+          "title": "Ballet 1, sat 09:45",
+          "fields": {
+            "class": "cls_ballet_1",
+            "day": "sat",
+            "start": "09:45",
+            "end": "10:30",
+            "coach": "",
+            "location": "loc_larkfield_house",
+            "note": "Studio 1"
+          }
+        },
+        {
+          "id": "ses_14",
+          "handle": "ballet-2-mon-1715",
+          "title": "Ballet 2, mon 17:15",
+          "fields": {
+            "class": "cls_ballet_2",
+            "day": "mon",
+            "start": "17:15",
+            "end": "18:15",
+            "coach": "",
+            "location": "loc_larkfield_house",
+            "note": "Studio 1"
+          }
+        },
+        {
+          "id": "ses_15",
+          "handle": "ballet-2-thu-1715",
+          "title": "Ballet 2, thu 17:15",
+          "fields": {
+            "class": "cls_ballet_2",
+            "day": "thu",
+            "start": "17:15",
+            "end": "18:15",
+            "coach": "",
+            "location": "loc_larkfield_house",
+            "note": "Studio 1"
+          }
+        },
+        {
+          "id": "ses_16",
+          "handle": "ballet-2-sat-1045",
+          "title": "Ballet 2, sat 10:45",
+          "fields": {
+            "class": "cls_ballet_2",
+            "day": "sat",
+            "start": "10:45",
+            "end": "11:45",
+            "coach": "",
+            "location": "loc_larkfield_house",
+            "note": "Studio 1"
+          }
+        },
+        {
+          "id": "ses_17",
+          "handle": "junior-tap-tue-1630",
+          "title": "Junior Tap, tue 16:30",
+          "fields": {
+            "class": "cls_junior_tap",
+            "day": "tue",
+            "start": "16:30",
+            "end": "17:15",
+            "coach": "",
+            "location": "loc_larkfield_house",
+            "note": "Studio 1"
+          }
+        },
+        {
+          "id": "ses_18",
+          "handle": "junior-tap-fri-1630",
+          "title": "Junior Tap, fri 16:30",
+          "fields": {
+            "class": "cls_junior_tap",
+            "day": "fri",
+            "start": "16:30",
+            "end": "17:15",
+            "coach": "",
+            "location": "loc_larkfield_house",
+            "note": "Studio 1"
+          }
+        },
+        {
+          "id": "ses_19",
+          "handle": "junior-tap-sat-1200",
+          "title": "Junior Tap, sat 12:00",
+          "fields": {
+            "class": "cls_junior_tap",
+            "day": "sat",
+            "start": "12:00",
+            "end": "12:45",
+            "coach": "",
+            "location": "loc_larkfield_house",
+            "note": "Studio 1"
+          }
+        },
+        {
+          "id": "ses_20",
+          "handle": "adult-tap-tue-1930",
+          "title": "Adult Tap, tue 19:30",
+          "fields": {
+            "class": "cls_adult_tap",
+            "day": "tue",
+            "start": "19:30",
+            "end": "20:30",
+            "coach": "",
+            "location": "loc_larkfield_house",
+            "note": "Studio 1"
+          }
+        },
+        {
+          "id": "ses_21",
+          "handle": "adult-tap-fri-1830",
+          "title": "Adult Tap, fri 18:30",
+          "fields": {
+            "class": "cls_adult_tap",
+            "day": "fri",
+            "start": "18:30",
+            "end": "19:30",
+            "coach": "",
+            "location": "loc_larkfield_house",
+            "note": "Studio 1"
+          }
+        },
+        {
+          "id": "ses_22",
+          "handle": "adult-tap-sat-1300",
+          "title": "Adult Tap, sat 13:00",
+          "fields": {
+            "class": "cls_adult_tap",
+            "day": "sat",
+            "start": "13:00",
+            "end": "14:00",
+            "coach": "",
+            "location": "loc_larkfield_house",
+            "note": "Studio 1"
+          }
+        }
+      ]
+    },
+    "events": {
+      "name": "Events",
+      "fields": [
+        {
+          "id": "date",
+          "type": "date",
+          "label": "Date"
+        },
+        {
+          "id": "end_date",
+          "type": "date",
+          "label": "End date"
+        },
+        {
+          "id": "time",
+          "type": "text",
+          "label": "Time"
+        },
+        {
+          "id": "kind",
+          "type": "text",
+          "label": "Kind (term, closed, event, class)"
+        },
+        {
+          "id": "class",
+          "type": "entry",
+          "label": "Class (for a dated class)",
+          "content_type": "classes"
+        },
+        {
+          "id": "location",
+          "type": "entry",
+          "label": "Location",
+          "content_type": "locations"
+        },
+        {
+          "id": "description",
+          "type": "richtext",
+          "label": "Description"
+        },
+        {
+          "id": "note",
+          "type": "text",
+          "label": "Note"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image (3:2)"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ev_1",
+          "handle": "autumn-term",
+          "title": "Autumn term",
+          "fields": {
+            "date": "2026-09-07",
+            "end_date": "2026-12-12",
+            "time": "",
+            "kind": "term",
+            "class": "",
+            "location": "loc_larkfield_house",
+            "description": "",
+            "note": "Fourteen weeks, with half term from 26 October.",
+            "image": "",
+            "image_alt": "",
+            "link": "",
+            "order": 1
+          }
+        },
+        {
+          "id": "ev_2",
+          "handle": "autumn-half-term",
+          "title": "Autumn half term",
+          "fields": {
+            "date": "2026-10-26",
+            "end_date": "2026-10-31",
+            "time": "",
+            "kind": "closed",
+            "class": "",
+            "location": "loc_larkfield_house",
+            "description": "",
+            "note": "No classes or lessons.",
+            "image": "",
+            "image_alt": "",
+            "link": "",
+            "order": 2
+          }
+        },
+        {
+          "id": "ev_3",
+          "handle": "open-morning",
+          "title": "Open morning",
+          "fields": {
+            "date": "2026-09-19",
+            "end_date": "",
+            "time": "10:00–12:30",
+            "kind": "event",
+            "class": "",
+            "location": "loc_larkfield_house",
+            "description": "",
+            "note": "Watch classes and try an instrument. No need to book.",
+            "image": "",
+            "image_alt": "",
+            "link": "",
+            "order": 3
+          }
+        },
+        {
+          "id": "ev_4",
+          "handle": "spring-term",
+          "title": "Spring term",
+          "fields": {
+            "date": "2027-01-11",
+            "end_date": "2027-03-27",
+            "time": "",
+            "kind": "term",
+            "class": "",
+            "location": "loc_larkfield_house",
+            "description": "",
+            "note": "Eleven weeks, with half term from 15 February.",
+            "image": "",
+            "image_alt": "",
+            "link": "",
+            "order": 4
+          }
+        },
+        {
+          "id": "ev_5",
+          "handle": "spring-half-term",
+          "title": "Spring half term",
+          "fields": {
+            "date": "2027-02-15",
+            "end_date": "2027-02-20",
+            "time": "",
+            "kind": "closed",
+            "class": "",
+            "location": "loc_larkfield_house",
+            "description": "",
+            "note": "No classes or lessons.",
+            "image": "",
+            "image_alt": "",
+            "link": "",
+            "order": 5
+          }
+        },
+        {
+          "id": "ev_6",
+          "handle": "grade-exam-days",
+          "title": "Grade exam days",
+          "fields": {
+            "date": "2027-03-08",
+            "end_date": "2027-03-10",
+            "time": "",
+            "kind": "event",
+            "class": "",
+            "location": "loc_larkfield_house",
+            "description": "",
+            "note": "Each pupil’s time comes by email a week before.",
+            "image": "",
+            "image_alt": "",
+            "link": "",
+            "order": 6
+          }
+        },
+        {
+          "id": "ev_7",
+          "handle": "spring-concert",
+          "title": "Spring concert",
+          "fields": {
+            "date": "2027-03-20",
+            "end_date": "",
+            "time": "15:00",
+            "kind": "event",
+            "class": "",
+            "location": "loc_larkfield_house",
+            "description": "",
+            "note": "St Anne’s Hall. Free, with a collection for the bursary fund.",
+            "image": "",
+            "image_alt": "",
+            "link": "",
+            "order": 7
+          }
+        },
+        {
+          "id": "ev_8",
+          "handle": "easter-strings-workshop",
+          "title": "Easter strings workshop",
+          "fields": {
+            "date": "2027-04-06",
+            "end_date": "2027-04-08",
+            "time": "10:00–15:00",
+            "kind": "class",
+            "class": "cls_easter_strings_workshop",
+            "location": "loc_larkfield_house",
+            "description": "",
+            "note": "Two places left.",
+            "image": "",
+            "image_alt": "",
+            "link": "/classes/easter-strings-workshop",
+            "order": 8
+          }
+        },
+        {
+          "id": "ev_9",
+          "handle": "summer-term",
+          "title": "Summer term",
+          "fields": {
+            "date": "2027-04-19",
+            "end_date": "2027-07-17",
+            "time": "",
+            "kind": "term",
+            "class": "",
+            "location": "loc_larkfield_house",
+            "description": "",
+            "note": "Thirteen weeks, with half term from 31 May.",
+            "image": "",
+            "image_alt": "",
+            "link": "",
+            "order": 9
+          }
+        },
+        {
+          "id": "ev_10",
+          "handle": "summer-half-term",
+          "title": "Summer half term",
+          "fields": {
+            "date": "2027-05-31",
+            "end_date": "2027-06-05",
+            "time": "",
+            "kind": "closed",
+            "class": "",
+            "location": "loc_larkfield_house",
+            "description": "",
+            "note": "No classes or lessons.",
+            "image": "",
+            "image_alt": "",
+            "link": "",
+            "order": 10
+          }
+        },
+        {
+          "id": "ev_11",
+          "handle": "summer-show",
+          "title": "Summer show",
+          "fields": {
+            "date": "2027-07-10",
+            "end_date": "",
+            "time": "14:00 and 18:00",
+            "kind": "event",
+            "class": "",
+            "location": "loc_larkfield_house",
+            "description": "",
+            "note": "Every dance class and both choirs, at the Corn Exchange.",
+            "image": "",
+            "image_alt": "",
+            "link": "",
+            "order": 11
+          }
+        },
+        {
+          "id": "ev_12",
+          "handle": "summer-dance-week",
+          "title": "Summer dance week",
+          "fields": {
+            "date": "2027-07-26",
+            "end_date": "2027-07-30",
+            "time": "10:00–15:00",
+            "kind": "class",
+            "class": "cls_summer_dance_week",
+            "location": "loc_larkfield_house",
+            "description": "",
+            "note": "Open to pupils and friends.",
+            "image": "",
+            "image_alt": "",
+            "link": "/classes/summer-dance-week",
+            "order": 12
+          }
+        }
+      ]
+    },
+    "coaches": {
+      "name": "Teachers",
+      "fields": [
+        {
+          "id": "role",
+          "type": "text",
+          "label": "Role"
+        },
+        {
+          "id": "specialties",
+          "type": "text",
+          "label": "Specialties (comma-separated)"
+        },
+        {
+          "id": "bio",
+          "type": "richtext",
+          "label": "Bio"
+        },
+        {
+          "id": "credentials",
+          "type": "textarea",
+          "label": "Credentials (one per line)"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Portrait (4:5)"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Portrait alt text"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "id": "featured",
+          "type": "checkbox",
+          "label": "Featured"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "coach_grace_okafor",
+          "handle": "grace-okafor",
+          "title": "Grace Okafor",
+          "fields": {
+            "role": "Head of piano",
+            "specialties": "Piano, theory, exam preparation",
+            "bio": "<p>Grace studied at a conservatoire in London and has taught piano at Larkfield for fifteen years. She still plays chamber music most weekends.</p>",
+            "credentials": "Performance diploma, piano\nQualified music teacher\nExaminer for graded piano exams",
+            "image": "as_4x5_blue",
+            "image_alt": "Grace Okafor, head of piano",
+            "link": "",
+            "featured": true,
+            "order": 1
+          }
+        },
+        {
+          "id": "coach_tomas_reyes",
+          "handle": "tomas-reyes",
+          "title": "Tomas Reyes",
+          "fields": {
+            "role": "Violin and Junior Strings",
+            "specialties": "Violin, viola, ensemble playing",
+            "bio": "<p>Tomas plays in the county orchestra and leads Junior Strings. He came to Larkfield as a pupil at nine.</p>",
+            "credentials": "Teaching diploma, violin\nCounty orchestra, first violins",
+            "image": "as_4x5_manila",
+            "image_alt": "Tomas Reyes, violin and junior strings",
+            "link": "",
+            "featured": true,
+            "order": 2
+          }
+        },
+        {
+          "id": "coach_ruth_adair",
+          "handle": "ruth-adair",
+          "title": "Ruth Adair",
+          "fields": {
+            "role": "Cello teacher",
+            "specialties": "Cello, chamber music",
+            "bio": "<p>Ruth teaches cello to children and adults and runs the Easter strings workshop every year.</p>",
+            "credentials": "Performance degree, cello\nChamber music coach",
+            "image": "as_4x5_rose",
+            "image_alt": "Ruth Adair, cello teacher",
+            "link": "",
+            "featured": true,
+            "order": 3
+          }
+        },
+        {
+          "id": "coach_hannah_blythe",
+          "handle": "hannah-blythe",
+          "title": "Hannah Blythe",
+          "fields": {
+            "role": "Choir director",
+            "specialties": "Singing, choirs, musical theatre",
+            "bio": "<p>Hannah directs both choirs and teaches singing one-to-one. Her choirs sing at the spring concert and the summer show.</p>",
+            "credentials": "Teaching diploma, voice\nChoral conducting certificate",
+            "image": "as_4x5_blue",
+            "image_alt": "Hannah Blythe, choir director",
+            "link": "",
+            "featured": true,
+            "order": 4
+          }
+        },
+        {
+          "id": "coach_priya_nair",
+          "handle": "priya-nair",
+          "title": "Priya Nair",
+          "fields": {
+            "role": "Head of ballet",
+            "specialties": "Classical ballet, pre-school dance",
+            "bio": "<p>Priya danced with a touring company before she began teaching. She choreographs the summer show.</p>",
+            "credentials": "Registered ballet teacher\nDance teaching diploma",
+            "image": "as_4x5_manila",
+            "image_alt": "Priya Nair, head of ballet",
+            "link": "",
+            "featured": true,
+            "order": 5
+          }
+        },
+        {
+          "id": "coach_daniel_marsh",
+          "handle": "daniel-marsh",
+          "title": "Daniel Marsh",
+          "fields": {
+            "role": "Tap teacher",
+            "specialties": "Tap, jazz, adult beginners",
+            "bio": "<p>Daniel teaches every tap class at Larkfield, from six-year-olds to the Friday-evening adults.</p>",
+            "credentials": "Registered tap teacher\nMusical theatre performer",
+            "image": "as_4x5_rose",
+            "image_alt": "Daniel Marsh, tap teacher",
+            "link": "",
+            "featured": true,
+            "order": 6
+          }
+        }
+      ]
+    },
+    "testimonials": {
+      "name": "Testimonials",
+      "fields": [
+        {
+          "id": "quote",
+          "type": "textarea",
+          "label": "Quote"
+        },
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Name"
+        },
+        {
+          "id": "line",
+          "type": "text",
+          "label": "Line (Parent, Ballet 1)"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Thumbnail (1:1)"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Thumbnail alt text"
+        },
+        {
+          "id": "featured",
+          "type": "checkbox",
+          "label": "Featured"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "tst_1",
+          "handle": "quote-1",
+          "title": "Sophie Hart",
+          "fields": {
+            "quote": "Ella started Pre-ballet at three and now counts down to Saturday all week.",
+            "name": "Sophie Hart",
+            "line": "Parent, Ballet 1",
+            "image": "as_1x1_blue",
+            "image_alt": "Sophie Hart",
+            "featured": true,
+            "order": 1
+          }
+        },
+        {
+          "id": "tst_2",
+          "handle": "quote-2",
+          "title": "Martin Doyle",
+          "fields": {
+            "quote": "I joined Adult Tap at fifty-two having never danced. It is the best hour of my week.",
+            "name": "Martin Doyle",
+            "line": "Adult Tap",
+            "image": "as_1x1_manila",
+            "image_alt": "Martin Doyle",
+            "featured": true,
+            "order": 2
+          }
+        },
+        {
+          "id": "tst_3",
+          "handle": "quote-3",
+          "title": "Amira Shah",
+          "fields": {
+            "quote": "Grace got our son through Grade 5 without a single tearful practice.",
+            "name": "Amira Shah",
+            "line": "Parent, piano lessons",
+            "image": "as_1x1_rose",
+            "image_alt": "Amira Shah",
+            "featured": true,
+            "order": 3
+          }
+        },
+        {
+          "id": "tst_4",
+          "handle": "quote-4",
+          "title": "Kate Lowe",
+          "fields": {
+            "quote": "Junior Strings is where Leo found his friends. The concert made us all cry.",
+            "name": "Kate Lowe",
+            "line": "Parent, Junior Strings",
+            "image": "as_1x1_blue",
+            "image_alt": "Kate Lowe",
+            "featured": false,
+            "order": 4
+          }
+        },
+        {
+          "id": "tst_5",
+          "handle": "quote-5",
+          "title": "Pauline Grey",
+          "fields": {
+            "quote": "The Adult Choir asks for nothing but turning up. We sang at the Corn Exchange in July.",
+            "name": "Pauline Grey",
+            "line": "Adult Choir",
+            "image": "as_1x1_manila",
+            "image_alt": "Pauline Grey",
+            "featured": false,
+            "order": 5
+          }
+        },
+        {
+          "id": "tst_6",
+          "handle": "quote-6",
+          "title": "Ben Okoro",
+          "fields": {
+            "quote": "Clear fees, term dates a year ahead and teachers who answer emails. Rare.",
+            "name": "Ben Okoro",
+            "line": "Parent of two",
+            "image": "as_1x1_rose",
+            "image_alt": "Ben Okoro",
+            "featured": false,
+            "order": 6
+          }
+        }
+      ]
+    },
+    "locations": {
+      "name": "Locations",
+      "fields": [
+        {
+          "id": "address",
+          "type": "textarea",
+          "label": "Address"
+        },
+        {
+          "id": "hours",
+          "type": "textarea",
+          "label": "Hours (one line per day or range: Saturday 08:45–14:00)"
+        },
+        {
+          "id": "phone",
+          "type": "text",
+          "label": "Phone"
+        },
+        {
+          "id": "email",
+          "type": "text",
+          "label": "Email"
+        },
+        {
+          "id": "map_url",
+          "type": "url",
+          "label": "Map link"
+        },
+        {
+          "id": "map_embed_url",
+          "type": "url",
+          "label": "Map embed link"
+        },
+        {
+          "id": "map_image",
+          "type": "image",
+          "label": "Map image"
+        },
+        {
+          "id": "map_image_alt",
+          "type": "text",
+          "label": "Map image alt text"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image (3:2)"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "description",
+          "type": "text",
+          "label": "Description"
+        },
+        {
+          "id": "note",
+          "type": "text",
+          "label": "Note"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "loc_larkfield_house",
+          "handle": "larkfield-house",
+          "title": "Larkfield House",
+          "fields": {
+            "address": "14 Market Street\nMarlowe Cross\nMX4 2LP",
+            "hours": "Monday to Friday 09:30–21:00\nSaturday 08:45–14:00",
+            "phone": "01632 960 418",
+            "email": "office@larkfield.example",
+            "map_url": "https://maps.example/?q=14+Market+Street+Marlowe+Cross",
+            "map_embed_url": "",
+            "map_image": "as_3x2_manila",
+            "map_image_alt": "Map of Market Street",
+            "image": "as_3x2_rose",
+            "image_alt": "Larkfield House from Market Street",
+            "description": "Two studios and four teaching rooms over three floors.",
+            "note": "Step-free entrance on Corn Lane. Families wait in the café on the ground floor.",
+            "order": 1
+          }
+        }
+      ]
+    },
+    "posts": {
+      "name": "Posts",
+      "fields": [
+        {
+          "id": "topic",
+          "type": "text",
+          "label": "Topic"
+        },
+        {
+          "id": "date",
+          "type": "date",
+          "label": "Date"
+        },
+        {
+          "id": "author",
+          "type": "text",
+          "label": "Author"
+        },
+        {
+          "id": "standfirst",
+          "type": "text",
+          "label": "Standfirst"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Image (3:2)"
+        },
+        {
+          "id": "image_alt",
+          "type": "text",
+          "label": "Image alt text"
+        },
+        {
+          "id": "body",
+          "type": "richtext",
+          "label": "Body"
+        }
+      ],
+      "entries": [
+        {
+          "id": "post_1",
+          "handle": "spring-concert-the-programme",
+          "title": "Spring concert: the programme",
+          "fields": {
+            "topic": "Concerts",
+            "date": "2026-11-10",
+            "author": "Hannah Blythe",
+            "standfirst": "Both choirs, Junior Strings and four soloists, in St Anne’s Hall on 20 March.",
+            "image": "as_3x2_blue",
+            "image_alt": "Spring concert: the programme",
+            "body": "<p>Both choirs, Junior Strings and four soloists, in St Anne’s Hall on 20 March.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
+          }
+        },
+        {
+          "id": "post_2",
+          "handle": "grade-exam-results",
+          "title": "Grade exam results",
+          "fields": {
+            "topic": "Exams",
+            "date": "2026-10-28",
+            "author": "Grace Okafor",
+            "standfirst": "Thirty-one pupils took graded exams this summer. Here is how they did.",
+            "image": "as_3x2_manila",
+            "image_alt": "Grade exam results",
+            "body": "<p>Thirty-one pupils took graded exams this summer. Here is how they did.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
+          }
+        },
+        {
+          "id": "post_3",
+          "handle": "a-new-cello-for-the-school",
+          "title": "A new cello for the school",
+          "fields": {
+            "topic": "News",
+            "date": "2026-10-12",
+            "author": "Ruth Adair",
+            "standfirst": "The bursary fund bought a three-quarter cello for pupils to borrow.",
+            "image": "as_3x2_rose",
+            "image_alt": "A new cello for the school",
+            "body": "<p>The bursary fund bought a three-quarter cello for pupils to borrow.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
+          }
+        },
+        {
+          "id": "post_4",
+          "handle": "what-to-wear-for-pre-ballet",
+          "title": "What to wear for Pre-ballet",
+          "fields": {
+            "topic": "Ballet",
+            "date": "2026-09-20",
+            "author": "Priya Nair",
+            "standfirst": "Uniform, shoes and hair, and what can wait until Ballet 1.",
+            "image": "as_3x2_blue",
+            "image_alt": "What to wear for Pre-ballet",
+            "body": "<p>Uniform, shoes and hair, and what can wait until Ballet 1.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
+          }
+        },
+        {
+          "id": "post_5",
+          "handle": "practising-little-and-often",
+          "title": "Practising little and often",
+          "fields": {
+            "topic": "Music",
+            "date": "2026-09-08",
+            "author": "Tomas Reyes",
+            "standfirst": "Ten minutes a day beats an hour on Sunday. A plan that works.",
+            "image": "as_3x2_manila",
+            "image_alt": "Practising little and often",
+            "body": "<p>Ten minutes a day beats an hour on Sunday. A plan that works.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
+          }
+        },
+        {
+          "id": "post_6",
+          "handle": "summer-show-photographs",
+          "title": "Summer show photographs",
+          "fields": {
+            "topic": "Shows",
+            "date": "2026-07-20",
+            "author": "Daniel Marsh",
+            "standfirst": "Two performances, ninety dancers and one very long bow.",
+            "image": "as_3x2_rose",
+            "image_alt": "Summer show photographs",
+            "body": "<p>Two performances, ninety dancers and one very long bow.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
+          }
+        }
+      ]
+    }
+  },
+  "pages": {
+    "/": {
+      "id": "pg_home",
+      "template": "home",
+      "title": "Larkfield Academy",
+      "seo": {
+        "description": "Music and dance lessons for every age in Marlowe Cross: piano, strings, singing, ballet and tap."
+      }
+    },
+    "/classes": {
+      "id": "pg_classes",
+      "template": "page.classes",
+      "title": "Classes"
+    },
+    "/timetable": {
+      "id": "pg_timetable",
+      "template": "page.timetable",
+      "title": "Timetable"
+    },
+    "/dates": {
+      "id": "pg_dates",
+      "template": "page.dates",
+      "title": "Dates"
+    },
+    "/teachers": {
+      "id": "pg_teachers",
+      "template": "page.teachers",
+      "title": "Teachers"
+    },
+    "/fees": {
+      "id": "pg_fees",
+      "template": "page.fees",
+      "title": "Fees"
+    },
+    "/about": {
+      "id": "pg_about",
+      "template": "page.about",
+      "title": "About"
+    },
+    "/ask": {
+      "id": "pg_ask",
+      "template": "page.ask",
+      "title": "Ask about a class"
+    },
+    "/contact": {
+      "id": "pg_contact",
+      "template": "page.contact",
+      "title": "Contact"
+    },
+    "/journal": {
+      "id": "pg_journal",
+      "template": "page.journal",
+      "title": "Journal"
+    },
+    "/privacy": {
+      "id": "pg_privacy",
+      "template": "page",
+      "title": "Privacy",
+      "content": "<p>We keep what you tell us to answer you and to run your child’s classes. We never sell it, and we delete it a year after the last lesson.</p><h2>What we keep</h2><p>Names, contact details, the classes taken and any medical notes you give us.</p><h2>Asking for it</h2><p>Write to the office to see, correct or delete what we hold.</p>"
+    },
+    "/terms": {
+      "id": "pg_terms",
+      "template": "page",
+      "title": "Terms",
+      "content": "<p>Term fees are due in the first week of term. Half a term’s notice ends a place in a group class.</p><h2>Missed lessons</h2><p>One-to-one lessons cancelled with a day’s notice are moved, not charged.</p>"
+    },
+    "/classes/piano-lessons": {
+      "id": "pg_cls_piano_lessons",
+      "template": "class",
+      "title": "Piano lessons",
+      "params": {
+        "class": "piano-lessons"
+      },
+      "entry": {
+        "id": "cls_piano_lessons",
+        "handle": "piano-lessons",
+        "title": "Piano lessons",
+        "fields": {
+          "short_name": "Piano",
+          "subject": "Piano",
+          "ages": "Ages 6 to adult",
+          "level": "All levels",
+          "summary": "One-to-one lessons, from first notes to Grade 8.",
+          "description": "<p>One-to-one lessons, from first notes to Grade 8. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+          "duration_minutes": 30,
+          "price": 22,
+          "price_from": true,
+          "period": "lesson",
+          "coach": "coach_grace_okafor",
+          "image": "as_3x2_blue",
+          "image_alt": "Piano lessons at Larkfield Academy",
+          "what_to_bring": "Your music and a pencil\nA notebook for practice notes",
+          "link": "",
+          "featured": true,
+          "order": 1
+        }
+      }
+    },
+    "/classes/violin-lessons": {
+      "id": "pg_cls_violin_lessons",
+      "template": "class",
+      "title": "Violin lessons",
+      "params": {
+        "class": "violin-lessons"
+      },
+      "entry": {
+        "id": "cls_violin_lessons",
+        "handle": "violin-lessons",
+        "title": "Violin lessons",
+        "fields": {
+          "short_name": "Violin",
+          "subject": "Strings",
+          "ages": "Ages 5 to adult",
+          "level": "All levels",
+          "summary": "One-to-one violin, with a place in Junior Strings when you are ready.",
+          "description": "<p>One-to-one violin, with a place in Junior Strings when you are ready. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+          "duration_minutes": 30,
+          "price": 23,
+          "price_from": true,
+          "period": "lesson",
+          "coach": "coach_tomas_reyes",
+          "image": "as_3x2_manila",
+          "image_alt": "Violin lessons at Larkfield Academy",
+          "what_to_bring": "Your music and a pencil\nA notebook for practice notes",
+          "link": "",
+          "featured": false,
+          "order": 2
+        }
+      }
+    },
+    "/classes/cello-lessons": {
+      "id": "pg_cls_cello_lessons",
+      "template": "class",
+      "title": "Cello lessons",
+      "params": {
+        "class": "cello-lessons"
+      },
+      "entry": {
+        "id": "cls_cello_lessons",
+        "handle": "cello-lessons",
+        "title": "Cello lessons",
+        "fields": {
+          "short_name": "Cello",
+          "subject": "Strings",
+          "ages": "Ages 7 to adult",
+          "level": "All levels",
+          "summary": "One-to-one cello on a school instrument for the first term.",
+          "description": "<p>One-to-one cello on a school instrument for the first term. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+          "duration_minutes": 30,
+          "price": 23,
+          "price_from": true,
+          "period": "lesson",
+          "coach": "coach_ruth_adair",
+          "image": "as_3x2_rose",
+          "image_alt": "Cello lessons at Larkfield Academy",
+          "what_to_bring": "Your music and a pencil\nA notebook for practice notes",
+          "link": "",
+          "featured": false,
+          "order": 3
+        }
+      }
+    },
+    "/classes/junior-strings": {
+      "id": "pg_cls_junior_strings",
+      "template": "class",
+      "title": "Junior Strings",
+      "params": {
+        "class": "junior-strings"
+      },
+      "entry": {
+        "id": "cls_junior_strings",
+        "handle": "junior-strings",
+        "title": "Junior Strings",
+        "fields": {
+          "short_name": "Jr Strings",
+          "subject": "Strings",
+          "ages": "Ages 7–11",
+          "level": "Grade 1 and up",
+          "summary": "The first ensemble: violins, violas and cellos playing together.",
+          "description": "<p>The first ensemble: violins, violas and cellos playing together. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+          "duration_minutes": 60,
+          "price": 96,
+          "price_from": false,
+          "period": "term",
+          "coach": "coach_tomas_reyes",
+          "image": "as_3x2_blue",
+          "image_alt": "Junior Strings at Larkfield Academy",
+          "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
+          "link": "",
+          "featured": true,
+          "order": 4
+        }
+      }
+    },
+    "/classes/singing-lessons": {
+      "id": "pg_cls_singing_lessons",
+      "template": "class",
+      "title": "Singing lessons",
+      "params": {
+        "class": "singing-lessons"
+      },
+      "entry": {
+        "id": "cls_singing_lessons",
+        "handle": "singing-lessons",
+        "title": "Singing lessons",
+        "fields": {
+          "short_name": "Singing",
+          "subject": "Voice",
+          "ages": "Ages 9 to adult",
+          "level": "All levels",
+          "summary": "One-to-one singing for exams, auditions or the joy of it.",
+          "description": "<p>One-to-one singing for exams, auditions or the joy of it. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+          "duration_minutes": 30,
+          "price": 24,
+          "price_from": true,
+          "period": "lesson",
+          "coach": "coach_hannah_blythe",
+          "image": "as_3x2_manila",
+          "image_alt": "Singing lessons at Larkfield Academy",
+          "what_to_bring": "Your music and a pencil\nA notebook for practice notes",
+          "link": "",
+          "featured": false,
+          "order": 5
+        }
+      }
+    },
+    "/classes/youth-choir": {
+      "id": "pg_cls_youth_choir",
+      "template": "class",
+      "title": "Youth Choir",
+      "params": {
+        "class": "youth-choir"
+      },
+      "entry": {
+        "id": "cls_youth_choir",
+        "handle": "youth-choir",
+        "title": "Youth Choir",
+        "fields": {
+          "short_name": "Youth Choir",
+          "subject": "Voice",
+          "ages": "Ages 8–16",
+          "level": "No audition",
+          "summary": "Two-part and three-part songs, sung at the concert and the show.",
+          "description": "<p>Two-part and three-part songs, sung at the concert and the show. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+          "duration_minutes": 75,
+          "price": 78,
+          "price_from": false,
+          "period": "term",
+          "coach": "coach_hannah_blythe",
+          "image": "as_3x2_rose",
+          "image_alt": "Youth Choir at Larkfield Academy",
+          "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
+          "link": "",
+          "featured": true,
+          "order": 6
+        }
+      }
+    },
+    "/classes/adult-choir": {
+      "id": "pg_cls_adult_choir",
+      "template": "class",
+      "title": "Adult Choir",
+      "params": {
+        "class": "adult-choir"
+      },
+      "entry": {
+        "id": "cls_adult_choir",
+        "handle": "adult-choir",
+        "title": "Adult Choir",
+        "fields": {
+          "short_name": "Adult Choir",
+          "subject": "Voice",
+          "ages": "Adults",
+          "level": "No audition",
+          "summary": "An evening choir for anyone who likes to sing. No reading music needed.",
+          "description": "<p>An evening choir for anyone who likes to sing. No reading music needed. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+          "duration_minutes": 90,
+          "price": 85,
+          "price_from": false,
+          "period": "term",
+          "coach": "coach_hannah_blythe",
+          "image": "as_3x2_blue",
+          "image_alt": "Adult Choir at Larkfield Academy",
+          "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
+          "link": "",
+          "featured": false,
+          "order": 7
+        }
+      }
+    },
+    "/classes/pre-school-ballet": {
+      "id": "pg_cls_pre_school_ballet",
+      "template": "class",
+      "title": "Pre-school Ballet",
+      "params": {
+        "class": "pre-school-ballet"
+      },
+      "entry": {
+        "id": "cls_pre_school_ballet",
+        "handle": "pre-school-ballet",
+        "title": "Pre-school Ballet",
+        "fields": {
+          "short_name": "Pre-ballet",
+          "subject": "Ballet",
+          "ages": "Ages 3–4",
+          "level": "Beginner",
+          "summary": "Music, movement and first ballet steps, with a grown-up close by.",
+          "description": "<p>Music, movement and first ballet steps, with a grown-up close by. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+          "duration_minutes": 30,
+          "price": 72,
+          "price_from": false,
+          "period": "term",
+          "coach": "coach_priya_nair",
+          "image": "as_3x2_manila",
+          "image_alt": "Pre-school Ballet at Larkfield Academy",
+          "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
+          "link": "",
+          "featured": true,
+          "order": 8
+        }
+      }
+    },
+    "/classes/ballet-1": {
+      "id": "pg_cls_ballet_1",
+      "template": "class",
+      "title": "Ballet 1",
+      "params": {
+        "class": "ballet-1"
+      },
+      "entry": {
+        "id": "cls_ballet_1",
+        "handle": "ballet-1",
+        "title": "Ballet 1",
+        "fields": {
+          "short_name": "Ballet 1",
+          "subject": "Ballet",
+          "ages": "Ages 5–7",
+          "level": "Beginner",
+          "summary": "The first graded class: posture, positions and simple dances.",
+          "description": "<p>The first graded class: posture, positions and simple dances. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+          "duration_minutes": 45,
+          "price": 88.5,
+          "price_from": false,
+          "period": "term",
+          "coach": "coach_priya_nair",
+          "image": "as_3x2_rose",
+          "image_alt": "Ballet 1 at Larkfield Academy",
+          "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
+          "link": "",
+          "featured": true,
+          "order": 9
+        }
+      }
+    },
+    "/classes/ballet-2": {
+      "id": "pg_cls_ballet_2",
+      "template": "class",
+      "title": "Ballet 2",
+      "params": {
+        "class": "ballet-2"
+      },
+      "entry": {
+        "id": "cls_ballet_2",
+        "handle": "ballet-2",
+        "title": "Ballet 2",
+        "fields": {
+          "short_name": "Ballet 2",
+          "subject": "Ballet",
+          "ages": "Ages 8–11",
+          "level": "Improver",
+          "summary": "Barre and centre work towards the first exams.",
+          "description": "<p>Barre and centre work towards the first exams. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+          "duration_minutes": 60,
+          "price": 102,
+          "price_from": false,
+          "period": "term",
+          "coach": "coach_priya_nair",
+          "image": "as_3x2_blue",
+          "image_alt": "Ballet 2 at Larkfield Academy",
+          "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
+          "link": "",
+          "featured": false,
+          "order": 10
+        }
+      }
+    },
+    "/classes/junior-tap": {
+      "id": "pg_cls_junior_tap",
+      "template": "class",
+      "title": "Junior Tap",
+      "params": {
+        "class": "junior-tap"
+      },
+      "entry": {
+        "id": "cls_junior_tap",
+        "handle": "junior-tap",
+        "title": "Junior Tap",
+        "fields": {
+          "short_name": "Jr Tap",
+          "subject": "Tap",
+          "ages": "Ages 6–10",
+          "level": "Beginner",
+          "summary": "Rhythm, shuffles and a routine for the summer show.",
+          "description": "<p>Rhythm, shuffles and a routine for the summer show. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+          "duration_minutes": 45,
+          "price": 84,
+          "price_from": false,
+          "period": "term",
+          "coach": "coach_daniel_marsh",
+          "image": "as_3x2_manila",
+          "image_alt": "Junior Tap at Larkfield Academy",
+          "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
+          "link": "",
+          "featured": true,
+          "order": 11
+        }
+      }
+    },
+    "/classes/adult-tap": {
+      "id": "pg_cls_adult_tap",
+      "template": "class",
+      "title": "Adult Tap",
+      "params": {
+        "class": "adult-tap"
+      },
+      "entry": {
+        "id": "cls_adult_tap",
+        "handle": "adult-tap",
+        "title": "Adult Tap",
+        "fields": {
+          "short_name": "Adult Tap",
+          "subject": "Tap",
+          "ages": "Adults",
+          "level": "Beginner and improver",
+          "summary": "An hour of tap after work. Shoes to borrow for the first month.",
+          "description": "<p>An hour of tap after work. Shoes to borrow for the first month. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+          "duration_minutes": 60,
+          "price": 96,
+          "price_from": false,
+          "period": "term",
+          "coach": "coach_daniel_marsh",
+          "image": "as_3x2_rose",
+          "image_alt": "Adult Tap at Larkfield Academy",
+          "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
+          "link": "",
+          "featured": false,
+          "order": 12
+        }
+      }
+    },
+    "/classes/easter-strings-workshop": {
+      "id": "pg_cls_easter_strings_workshop",
+      "template": "class",
+      "title": "Easter Strings Workshop",
+      "params": {
+        "class": "easter-strings-workshop"
+      },
+      "entry": {
+        "id": "cls_easter_strings_workshop",
+        "handle": "easter-strings-workshop",
+        "title": "Easter Strings Workshop",
+        "fields": {
+          "short_name": "Strings Week",
+          "subject": "Strings",
+          "ages": "Ages 8–14",
+          "level": "Grade 2 and up",
+          "summary": "Three days of ensemble playing in the Easter holiday, ending in a short concert.",
+          "description": "<p>Three days of ensemble playing in the Easter holiday, ending in a short concert. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+          "duration_minutes": 300,
+          "price": 145,
+          "price_from": false,
+          "period": "course",
+          "coach": "coach_ruth_adair",
+          "image": "as_3x2_blue",
+          "image_alt": "Easter Strings Workshop at Larkfield Academy",
+          "what_to_bring": "A packed lunch and a water bottle\nYour instrument or dance shoes",
+          "link": "",
+          "featured": false,
+          "order": 13
+        }
+      }
+    },
+    "/classes/summer-dance-week": {
+      "id": "pg_cls_summer_dance_week",
+      "template": "class",
+      "title": "Summer Dance Week",
+      "params": {
+        "class": "summer-dance-week"
+      },
+      "entry": {
+        "id": "cls_summer_dance_week",
+        "handle": "summer-dance-week",
+        "title": "Summer Dance Week",
+        "fields": {
+          "short_name": "Dance Week",
+          "subject": "Ballet",
+          "ages": "Ages 6–12",
+          "level": "All levels",
+          "summary": "Five days of ballet, tap and a little jazz, ending in a show for families.",
+          "description": "<p>Five days of ballet, tap and a little jazz, ending in a show for families. Classes stay small, so every pupil is seen and heard each week.</p><p>The last lesson of each term is open for parents and families to watch.</p>",
+          "duration_minutes": 300,
+          "price": 175,
+          "price_from": false,
+          "period": "course",
+          "coach": "coach_priya_nair",
+          "image": "as_3x2_manila",
+          "image_alt": "Summer Dance Week at Larkfield Academy",
+          "what_to_bring": "A packed lunch and a water bottle\nYour instrument or dance shoes",
+          "link": "",
+          "featured": false,
+          "order": 14
+        }
+      }
+    },
+    "/teachers/grace-okafor": {
+      "id": "pg_coach_grace_okafor",
+      "template": "teacher",
+      "title": "Grace Okafor",
+      "params": {
+        "teacher": "grace-okafor"
+      },
+      "entry": {
+        "id": "coach_grace_okafor",
+        "handle": "grace-okafor",
+        "title": "Grace Okafor",
+        "fields": {
+          "role": "Head of piano",
+          "specialties": "Piano, theory, exam preparation",
+          "bio": "<p>Grace studied at a conservatoire in London and has taught piano at Larkfield for fifteen years. She still plays chamber music most weekends.</p>",
+          "credentials": "Performance diploma, piano\nQualified music teacher\nExaminer for graded piano exams",
+          "image": "as_4x5_blue",
+          "image_alt": "Grace Okafor, head of piano",
+          "link": "",
+          "featured": true,
+          "order": 1
+        }
+      }
+    },
+    "/teachers/tomas-reyes": {
+      "id": "pg_coach_tomas_reyes",
+      "template": "teacher",
+      "title": "Tomas Reyes",
+      "params": {
+        "teacher": "tomas-reyes"
+      },
+      "entry": {
+        "id": "coach_tomas_reyes",
+        "handle": "tomas-reyes",
+        "title": "Tomas Reyes",
+        "fields": {
+          "role": "Violin and Junior Strings",
+          "specialties": "Violin, viola, ensemble playing",
+          "bio": "<p>Tomas plays in the county orchestra and leads Junior Strings. He came to Larkfield as a pupil at nine.</p>",
+          "credentials": "Teaching diploma, violin\nCounty orchestra, first violins",
+          "image": "as_4x5_manila",
+          "image_alt": "Tomas Reyes, violin and junior strings",
+          "link": "",
+          "featured": true,
+          "order": 2
+        }
+      }
+    },
+    "/teachers/ruth-adair": {
+      "id": "pg_coach_ruth_adair",
+      "template": "teacher",
+      "title": "Ruth Adair",
+      "params": {
+        "teacher": "ruth-adair"
+      },
+      "entry": {
+        "id": "coach_ruth_adair",
+        "handle": "ruth-adair",
+        "title": "Ruth Adair",
+        "fields": {
+          "role": "Cello teacher",
+          "specialties": "Cello, chamber music",
+          "bio": "<p>Ruth teaches cello to children and adults and runs the Easter strings workshop every year.</p>",
+          "credentials": "Performance degree, cello\nChamber music coach",
+          "image": "as_4x5_rose",
+          "image_alt": "Ruth Adair, cello teacher",
+          "link": "",
+          "featured": true,
+          "order": 3
+        }
+      }
+    },
+    "/teachers/hannah-blythe": {
+      "id": "pg_coach_hannah_blythe",
+      "template": "teacher",
+      "title": "Hannah Blythe",
+      "params": {
+        "teacher": "hannah-blythe"
+      },
+      "entry": {
+        "id": "coach_hannah_blythe",
+        "handle": "hannah-blythe",
+        "title": "Hannah Blythe",
+        "fields": {
+          "role": "Choir director",
+          "specialties": "Singing, choirs, musical theatre",
+          "bio": "<p>Hannah directs both choirs and teaches singing one-to-one. Her choirs sing at the spring concert and the summer show.</p>",
+          "credentials": "Teaching diploma, voice\nChoral conducting certificate",
+          "image": "as_4x5_blue",
+          "image_alt": "Hannah Blythe, choir director",
+          "link": "",
+          "featured": true,
+          "order": 4
+        }
+      }
+    },
+    "/teachers/priya-nair": {
+      "id": "pg_coach_priya_nair",
+      "template": "teacher",
+      "title": "Priya Nair",
+      "params": {
+        "teacher": "priya-nair"
+      },
+      "entry": {
+        "id": "coach_priya_nair",
+        "handle": "priya-nair",
+        "title": "Priya Nair",
+        "fields": {
+          "role": "Head of ballet",
+          "specialties": "Classical ballet, pre-school dance",
+          "bio": "<p>Priya danced with a touring company before she began teaching. She choreographs the summer show.</p>",
+          "credentials": "Registered ballet teacher\nDance teaching diploma",
+          "image": "as_4x5_manila",
+          "image_alt": "Priya Nair, head of ballet",
+          "link": "",
+          "featured": true,
+          "order": 5
+        }
+      }
+    },
+    "/teachers/daniel-marsh": {
+      "id": "pg_coach_daniel_marsh",
+      "template": "teacher",
+      "title": "Daniel Marsh",
+      "params": {
+        "teacher": "daniel-marsh"
+      },
+      "entry": {
+        "id": "coach_daniel_marsh",
+        "handle": "daniel-marsh",
+        "title": "Daniel Marsh",
+        "fields": {
+          "role": "Tap teacher",
+          "specialties": "Tap, jazz, adult beginners",
+          "bio": "<p>Daniel teaches every tap class at Larkfield, from six-year-olds to the Friday-evening adults.</p>",
+          "credentials": "Registered tap teacher\nMusical theatre performer",
+          "image": "as_4x5_rose",
+          "image_alt": "Daniel Marsh, tap teacher",
+          "link": "",
+          "featured": true,
+          "order": 6
+        }
+      }
+    },
+    "/journal/spring-concert-the-programme": {
+      "id": "pg_post_1",
+      "template": "post",
+      "title": "Spring concert: the programme",
+      "params": {
+        "post": "spring-concert-the-programme"
+      },
+      "entry": {
+        "id": "post_1",
+        "handle": "spring-concert-the-programme",
+        "title": "Spring concert: the programme",
+        "fields": {
+          "topic": "Concerts",
+          "date": "2026-11-10",
+          "author": "Hannah Blythe",
+          "standfirst": "Both choirs, Junior Strings and four soloists, in St Anne’s Hall on 20 March.",
+          "image": "as_3x2_blue",
+          "image_alt": "Spring concert: the programme",
+          "body": "<p>Both choirs, Junior Strings and four soloists, in St Anne’s Hall on 20 March.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
+        }
+      }
+    },
+    "/journal/grade-exam-results": {
+      "id": "pg_post_2",
+      "template": "post",
+      "title": "Grade exam results",
+      "params": {
+        "post": "grade-exam-results"
+      },
+      "entry": {
+        "id": "post_2",
+        "handle": "grade-exam-results",
+        "title": "Grade exam results",
+        "fields": {
+          "topic": "Exams",
+          "date": "2026-10-28",
+          "author": "Grace Okafor",
+          "standfirst": "Thirty-one pupils took graded exams this summer. Here is how they did.",
+          "image": "as_3x2_manila",
+          "image_alt": "Grade exam results",
+          "body": "<p>Thirty-one pupils took graded exams this summer. Here is how they did.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
+        }
+      }
+    },
+    "/journal/a-new-cello-for-the-school": {
+      "id": "pg_post_3",
+      "template": "post",
+      "title": "A new cello for the school",
+      "params": {
+        "post": "a-new-cello-for-the-school"
+      },
+      "entry": {
+        "id": "post_3",
+        "handle": "a-new-cello-for-the-school",
+        "title": "A new cello for the school",
+        "fields": {
+          "topic": "News",
+          "date": "2026-10-12",
+          "author": "Ruth Adair",
+          "standfirst": "The bursary fund bought a three-quarter cello for pupils to borrow.",
+          "image": "as_3x2_rose",
+          "image_alt": "A new cello for the school",
+          "body": "<p>The bursary fund bought a three-quarter cello for pupils to borrow.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
+        }
+      }
+    },
+    "/journal/what-to-wear-for-pre-ballet": {
+      "id": "pg_post_4",
+      "template": "post",
+      "title": "What to wear for Pre-ballet",
+      "params": {
+        "post": "what-to-wear-for-pre-ballet"
+      },
+      "entry": {
+        "id": "post_4",
+        "handle": "what-to-wear-for-pre-ballet",
+        "title": "What to wear for Pre-ballet",
+        "fields": {
+          "topic": "Ballet",
+          "date": "2026-09-20",
+          "author": "Priya Nair",
+          "standfirst": "Uniform, shoes and hair, and what can wait until Ballet 1.",
+          "image": "as_3x2_blue",
+          "image_alt": "What to wear for Pre-ballet",
+          "body": "<p>Uniform, shoes and hair, and what can wait until Ballet 1.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
+        }
+      }
+    },
+    "/journal/practising-little-and-often": {
+      "id": "pg_post_5",
+      "template": "post",
+      "title": "Practising little and often",
+      "params": {
+        "post": "practising-little-and-often"
+      },
+      "entry": {
+        "id": "post_5",
+        "handle": "practising-little-and-often",
+        "title": "Practising little and often",
+        "fields": {
+          "topic": "Music",
+          "date": "2026-09-08",
+          "author": "Tomas Reyes",
+          "standfirst": "Ten minutes a day beats an hour on Sunday. A plan that works.",
+          "image": "as_3x2_manila",
+          "image_alt": "Practising little and often",
+          "body": "<p>Ten minutes a day beats an hour on Sunday. A plan that works.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
+        }
+      }
+    },
+    "/journal/summer-show-photographs": {
+      "id": "pg_post_6",
+      "template": "post",
+      "title": "Summer show photographs",
+      "params": {
+        "post": "summer-show-photographs"
+      },
+      "entry": {
+        "id": "post_6",
+        "handle": "summer-show-photographs",
+        "title": "Summer show photographs",
+        "fields": {
+          "topic": "Shows",
+          "date": "2026-07-20",
+          "author": "Daniel Marsh",
+          "standfirst": "Two performances, ninety dancers and one very long bow.",
+          "image": "as_3x2_rose",
+          "image_alt": "Summer show photographs",
+          "body": "<p>Two performances, ninety dancers and one very long bow.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
+        }
+      }
+    }
+  }
+}

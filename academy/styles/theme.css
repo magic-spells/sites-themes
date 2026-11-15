@@ -1,0 +1,409 @@
+@import "tailwindcss";
+@import "./vendor/bottom-sheet.css" layer(components);
+@import "./vendor/collapsible-content.css" layer(components);
+@import "./vendor/dialog-panel.css" layer(components);
+@import "./vendor/dropdown-panel.css" layer(components);
+@import "./vendor/lightbox.css" layer(components);
+@import "./vendor/progress-bar.css" layer(components);
+@import "./vendor/reveal.css";
+@import "./vendor/scrolling-content.css" layer(components);
+@import "./vendor/select-dropdown.css" layer(components);
+@import "./vendor/split-text.css" layer(components);
+@import "./vendor/sticky-header.css" layer(components);
+@import "./vendor/tab-group.css" layer(components);
+@import "./vendor/tarot.css" layer(components);
+
+@source "../layouts/**/*.pzl";
+@source "../templates/**/*.pzl";
+@source "../sections/**/*.pzl";
+@source "../components/**/*.pzl";
+
+/* The body role binds Radio Canada's roman file; its italic is a second file. */
+@font-face {
+	font-family: "Radio Canada";
+	src: url("/_sites/theme/fonts/radio-canada-latin-wght-italic.woff2") format("woff2");
+	font-style: italic;
+	font-weight: 300 700;
+	font-display: swap;
+}
+
+/* The scheme a section sits on. The engine has no muted, rule or surface-2
+   slot, so they ride on the chip slots (settings/design.json says which);
+   links take the text colour. */
+@theme inline {
+	--color-scheme-background: var(--sites-scheme-background);
+	--color-scheme-foreground: var(--sites-scheme-foreground);
+	--color-scheme-heading: var(--sites-scheme-heading);
+	--color-scheme-muted: var(--sites-scheme-chip-foreground);
+	--color-scheme-rule: var(--sites-scheme-chip-border);
+	--color-scheme-surface-2: var(--sites-scheme-chip-background);
+	--color-scheme-input: var(--sites-scheme-input-background);
+	--color-scheme-input-border: var(--sites-scheme-input-border);
+	--color-scheme-button-background: var(--sites-scheme-button-background);
+	--color-scheme-button-foreground: var(--sites-scheme-button-foreground);
+	--color-scheme-button-hover-background: var(--sites-scheme-button-hover-background);
+	--color-scheme-button-hover-foreground: var(--sites-scheme-button-hover-foreground);
+	--color-scheme-link: var(--sites-scheme-links);
+	--color-scheme-error: var(--academy-error);
+	--color-backdrop: color-mix(in srgb, var(--sites-color-grey-extra-dark) 50%, transparent);
+}
+
+@theme {
+	/* The error on the deep schemes (the engine has no slot for it). */
+	--color-error-on-dark: #FFC2B5;
+
+	--font-heading: var(--sites-font-heading-family), ui-serif, Georgia, serif;
+	--font-body: var(--sites-font-body-family), ui-sans-serif, system-ui, sans-serif;
+
+	/* The type roles. Each runs from its phone size at 23.4375rem to the
+	   design token at 90rem; a workspace that changes the scale moves both ends. */
+	--text-h1: clamp(calc(var(--sites-type-scale-4xl) * 0.625), calc(var(--sites-type-scale-4xl) * 0.493 + 2.254vw), var(--sites-type-scale-4xl));
+	--text-h1--line-height: var(--sites-type-leading-tight);
+	--text-h1--letter-spacing: -0.01em;
+	--text-h1--font-weight: 500;
+	--text-h2: clamp(calc(var(--sites-type-scale-3xl) * 0.682), calc(var(--sites-type-scale-3xl) * 0.57 + 1.315vw), var(--sites-type-scale-3xl));
+	--text-h2--line-height: 1.1;
+	--text-h2--font-weight: 500;
+	--text-h3: clamp(calc(var(--sites-type-scale-2xl) * 0.786), calc(var(--sites-type-scale-2xl) * 0.71 + 0.563vw), var(--sites-type-scale-2xl));
+	--text-h3--line-height: 1.2;
+	--text-h3--font-weight: 500;
+	--text-h4: var(--sites-type-scale-xl);
+	--text-h4--line-height: 1.25;
+	--text-h4--font-weight: 600;
+	--text-lead: clamp(calc(var(--sites-type-scale-lg) * 0.9), calc(var(--sites-type-scale-lg) * 0.865 + 0.188vw), var(--sites-type-scale-lg));
+	--text-lead--line-height: 1.5;
+	--text-body: clamp(calc(var(--sites-type-scale-base) * 0.941), calc(var(--sites-type-scale-base) * 0.92 + 0.094vw), var(--sites-type-scale-base));
+	--text-body--line-height: var(--sites-type-leading-normal);
+	--text-small: var(--sites-type-scale-sm);
+	--text-small--line-height: 1.45;
+	--text-label: var(--sites-type-scale-xs);
+	--text-label--line-height: 1.2;
+	--text-label--letter-spacing: 0.02em;
+	--text-label--font-weight: 600;
+
+	--radius-sm: var(--sites-radius-sm);
+	--radius-md: var(--sites-radius-md);
+	--radius-lg: var(--sites-radius-lg);
+	--radius-full: var(--sites-radius-full);
+	--radius-button: var(--sites-button-radius);
+	--radius-input: var(--sites-input-radius);
+	--shadow-panel: var(--sites-shadow-lg);
+
+	--spacing-space-2xs: 0.25rem;
+	--spacing-space-xs: var(--sites-spacing-xs);
+	--spacing-cell: 0.75rem;
+	--spacing-space-sm: var(--sites-spacing-sm);
+	--spacing-space-md: var(--sites-spacing-md);
+	--spacing-space-lg: var(--sites-spacing-lg);
+	--spacing-space-xl: var(--sites-spacing-xl);
+	--spacing-space-2xl: calc(var(--sites-spacing-2xl) * 0.8);
+	--spacing-space-3xl: calc(var(--sites-spacing-2xl) * 1.2);
+	--spacing-section: var(--academy-section);
+	--spacing-gutter: var(--academy-gutter);
+	--spacing-button-x: var(--sites-button-padding-x);
+	--spacing-control: 2.75rem;
+	--spacing-control-sm: 2.25rem;
+	--spacing-header: 4.5rem;
+	--spacing-icon-sm: 1rem;
+	--spacing-icon: 1.25rem;
+	--spacing-dot: 0.375rem;
+	--spacing-avatar: 3.5rem;
+	--spacing-textarea: 8rem;
+	--container-column: 78rem;
+	--container-prose: 42rem;
+	--container-text: 30rem;
+	--container-card: 26.25rem;
+	--container-drawer: 23.4375rem;
+	--container-panel: 40rem;
+	--aspect-photo: 3 / 2;
+	--aspect-portrait: 4 / 5;
+	/* A picture beside text: seven parts to five. */
+	--grid-template-columns-wide-narrow: 7fr 5fr;
+	--grid-template-columns-narrow-wide: 5fr 7fr;
+	/* A date row: the day or range, the title, the time. */
+	--grid-template-columns-date: 10rem 1fr auto;
+	--transition-duration-fast: 150ms;
+	--transition-duration-panel: 250ms;
+	--ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Section padding and gutters, stepped at 48rem and 64rem from the tokens. */
+:root {
+	--academy-section: calc(var(--sites-spacing-2xl) * 0.5);
+	--academy-gutter: var(--sites-spacing-sm);
+}
+@media (min-width: 48rem) {
+	:root {
+		--academy-section: calc(var(--sites-spacing-2xl) * 0.7);
+		--academy-gutter: var(--sites-spacing-md);
+	}
+}
+@media (min-width: 64rem) {
+	:root {
+		--academy-section: var(--sites-spacing-2xl);
+		--academy-gutter: calc(var(--sites-spacing-sm) * 2.5);
+	}
+}
+
+/* Every value clears 4.5:1 on its scheme's background and surface-2. */
+:root,
+[class*="sites-scheme-"] {
+	--academy-error: var(--sites-color-error-fg);
+}
+:is(.sites-scheme-ink, .sites-scheme-blue, .sites-scheme-burgundy, .sites-scheme-brick) {
+	--academy-error: var(--color-error-on-dark);
+}
+
+/* A chip, tab or link the page marks as current. */
+@custom-variant current {
+	&[aria-current="page"],
+	&[aria-pressed="true"],
+	&[aria-selected="true"] {
+		@slot;
+	}
+}
+
+/* Two bands on one scheme in a row read as one: the second drops its top
+   padding so the seam carries one section's space, not two. */
+main > :is(.sites-scheme-feint + .sites-scheme-feint, .sites-scheme-white + .sites-scheme-white, .sites-scheme-manila + .sites-scheme-manila, .sites-scheme-light-blue + .sites-scheme-light-blue, .sites-scheme-ink + .sites-scheme-ink, .sites-scheme-blue + .sites-scheme-blue, .sites-scheme-burgundy + .sites-scheme-burgundy, .sites-scheme-brick + .sites-scheme-brick) > section {
+	padding-top: 0;
+}
+
+body:has([data-bare]) [data-group] {
+	display: none;
+}
+
+html.reveal-off .reveal:not(.is-revealed) {
+	opacity: 1;
+	transform: none;
+	filter: none;
+}
+/* split-text hides a heading until it upgrades; with no script to upgrade it, show it. */
+html.reveal-off split-text:not(:defined) {
+	visibility: visible;
+}
+
+/* The timetable's subject chips dim the sessions of every other subject
+   (theme.ts writes data-dim); nothing moves. */
+[data-session] {
+	transition: opacity var(--transition-duration-fast) ease-out, color var(--transition-duration-fast) ease-out;
+}
+[data-session][data-dim] {
+	opacity: 0.35;
+}
+
+:root {
+	font-size: var(--sites-type-base);
+	scrollbar-color: var(--sites-scheme-icons) transparent;
+}
+
+::selection {
+	background: var(--sites-scheme-foreground);
+	color: var(--sites-scheme-background);
+}
+
+:focus-visible {
+	outline: 2px solid var(--sites-scheme-foreground);
+	outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+@layer base {
+	dialog {
+		border: 0;
+		padding: 0;
+		color: inherit;
+	}
+
+	[id] {
+		scroll-margin-top: calc(var(--spacing-header) + 1rem);
+	}
+}
+
+/* Rich text from the editor carries no classes, so its rhythm is set here. */
+@layer components {
+	.sites-prose > * + * {
+		margin-top: var(--sites-spacing-sm);
+	}
+
+	.sites-prose :is(h2, h3, h4) {
+		font-family: var(--font-heading);
+		font-weight: 500;
+		line-height: 1.2;
+		color: var(--sites-scheme-heading);
+	}
+
+	.sites-prose h2 {
+		font-size: var(--text-h3);
+	}
+
+	.sites-prose :is(h3, h4) {
+		font-size: var(--text-h4);
+	}
+
+	.sites-prose a {
+		color: var(--sites-scheme-links);
+		text-decoration-line: underline;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 0.2em;
+	}
+
+	.sites-prose :is(ul, ol) {
+		display: grid;
+		gap: var(--sites-spacing-xs);
+		padding-inline-start: 1.25em;
+	}
+
+	.sites-prose ul {
+		list-style: disc;
+	}
+
+	.sites-prose ol {
+		list-style: decimal;
+	}
+}
+
+/* sticky-header pins the element it is, so the renderer's wrapper steps
+   out of the way. */
+[data-section="header"]:has(sticky-header) {
+	display: contents;
+}
+
+@layer components {
+	sticky-header[disabled] {
+		position: static;
+		transform: none;
+	}
+
+	sticky-header::before {
+		content: none;
+	}
+
+	/* The one shadow: under the header once the page scrolls. */
+	body[data-state="scrolling"] sticky-header > header {
+		box-shadow: var(--sites-shadow-lg);
+	}
+}
+
+dropdown-component:not(:defined) dropdown-panel {
+	display: none;
+}
+
+/* The carousels: a hairline progress bar in the rule colour with a fill in
+   the text colour. Before tarot upgrades, a track lays its slides out as a
+   row that scrolls. */
+tarot-carousel {
+	--tarot-progress-height: 1px;
+	--tarot-progress-margin: 0;
+	--tarot-progress-border-radius: 0;
+	--tarot-progress-bg: var(--sites-scheme-chip-border);
+	--tarot-progress-fill-bg: var(--sites-scheme-foreground);
+}
+tarot-carousel:not(:defined) tarot-track {
+	display: flex;
+	gap: var(--sites-spacing-sm);
+	overflow-x: auto;
+}
+tarot-carousel:not(:defined) tarot-slide {
+	flex: none;
+	width: 80%;
+	opacity: 1;
+	visibility: visible;
+}
+
+/* The lightbox: ink at 92%, feint chrome, round buttons. */
+.tarot-lightbox {
+	--tarot-lightbox-backdrop: color-mix(in srgb, var(--sites-color-grey-extra-dark) 92%, transparent);
+	--tarot-lightbox-chrome-color: var(--sites-color-grey-extra-light);
+	--tarot-lightbox-chrome-size: 2.75rem;
+	--tarot-lightbox-chrome-inset: 1rem;
+	--tarot-lightbox-image-height: calc(100dvh - 8rem);
+}
+.tarot-lightbox__counter {
+	font-family: var(--font-body);
+	font-size: var(--text-small);
+	color: var(--tarot-lightbox-chrome-color);
+}
+.tarot-lightbox__close,
+.tarot-lightbox .tarot-button {
+	background: color-mix(in srgb, var(--tarot-lightbox-chrome-color) 8%, transparent);
+	border-radius: var(--sites-radius-full);
+}
+
+/* The ask sheet and the cookie notice: the scheme's background over the
+   backdrop, lg-rounded top, the one shadow. */
+dialog-panel:has(bottom-sheet) {
+	--bs-panel-background: var(--sites-scheme-background);
+	--bs-panel-border-radius: var(--sites-radius-lg);
+	--bs-panel-box-shadow: var(--sites-shadow-lg);
+	--bs-handle-color: var(--sites-scheme-chip-border);
+	--bs-handle-width: 2.25rem;
+	--bs-handle-height: 0.25rem;
+	--bs-content-padding: var(--academy-gutter);
+	--bs-overlay-background: var(--color-backdrop);
+	--bs-overlay-blur: 0;
+}
+
+/* The ask panel is a sheet on a phone and a centred dialog from 48rem: the
+   same markup, the sheet's slide replaced by a fade. */
+@media (min-width: 48rem) {
+	dialog-panel:has(bottom-sheet[data-centred]) > dialog {
+		inset: 0;
+		margin: auto;
+		width: min(90vw, var(--container-panel));
+		height: fit-content;
+		max-height: 90dvh;
+		border-radius: var(--sites-radius-lg);
+		box-shadow: var(--sites-shadow-lg);
+		overflow-y: auto;
+	}
+	dialog-panel:is([state="hidden"], [state="showing"], [state="hiding"]):has(bottom-sheet[data-centred]) > dialog {
+		transform: scale(0.97);
+		opacity: 0;
+		transition: opacity var(--transition-duration-panel) ease-out, transform var(--transition-duration-panel) ease-out;
+	}
+	dialog-panel[state="shown"]:has(bottom-sheet[data-centred]) > dialog {
+		transform: none;
+		opacity: 1;
+	}
+	bottom-sheet[data-centred] bottom-sheet-header::before {
+		content: none;
+	}
+}
+
+/* The select lists: the field on the input colour in a muted hairline, the
+   text colour on focus; the panel the same with a surface-2 highlight. */
+select-dropdown {
+	--select-shadow: none;
+	--select-shadow-soft: var(--sites-shadow-lg);
+	--select-color-text: var(--sites-scheme-input-foreground);
+	--select-color-background: var(--sites-scheme-input-background);
+	--select-color-border: var(--sites-scheme-input-border);
+	--select-color-border-hover: var(--sites-scheme-input-foreground);
+	--select-color-border-dark: var(--sites-scheme-input-foreground);
+	--select-color-primary: var(--sites-scheme-input-foreground);
+	--select-color-hover: var(--sites-scheme-chip-background);
+	--select-color-focus: var(--sites-scheme-chip-background);
+	--select-color-selected: var(--sites-scheme-chip-background);
+	display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
+	/* The ticker stands still: one copy, cut with an ellipsis. */
+	[data-ticker] scrolling-content { mask-image: none; }
+	[data-ticker] scrolling-track { width: auto; transform: none !important; }
+	[data-ticker] scrolling-item[data-clone] { display: none; }
+	[data-ticker] scrolling-item { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+	.reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+}

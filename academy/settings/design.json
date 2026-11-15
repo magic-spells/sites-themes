@@ -1,0 +1,315 @@
+{
+  "colors": {
+    "brand": {
+      "primary": "#141A27",
+      "secondary": "#20408F",
+      "accent": "#23439A"
+    },
+    "grey": {
+      "extra_light": "#F3F5F8",
+      "light": "#D5DBE5",
+      "medium": "#9AA2B3",
+      "dark": "#5B6375",
+      "extra_dark": "#141A27"
+    },
+    "info": {
+      "bg": "#E1E8F5",
+      "fg": "#20408F"
+    },
+    "success": {
+      "bg": "#DFEBE2",
+      "fg": "#2D5A3A"
+    },
+    "warning": {
+      "bg": "#F5ECD6",
+      "fg": "#7A5512"
+    },
+    "error": {
+      "bg": "#F6E1DC",
+      "fg": "#8E2118"
+    }
+  },
+  "fonts": {
+    "heading": {
+      "family": "Libre Baskerville",
+      "weights": [
+        500,
+        600
+      ],
+      "source": "self-hosted",
+      "url": "/_sites/theme/fonts/libre-baskerville-wght-normal.woff2"
+    },
+    "body": {
+      "family": "Radio Canada",
+      "weights": [
+        400,
+        500,
+        600
+      ],
+      "source": "self-hosted",
+      "url": "/_sites/theme/fonts/radio-canada-latin-wght-normal.woff2"
+    },
+    "mono": {
+      "family": "Radio Canada",
+      "weights": [
+        400,
+        500,
+        600
+      ],
+      "source": "self-hosted",
+      "url": "/_sites/theme/fonts/radio-canada-latin-wght-normal.woff2"
+    }
+  },
+  "type": {
+    "base": "1rem",
+    "scale": {
+      "xs": "0.8125rem",
+      "sm": "0.875rem",
+      "base": "1.0625rem",
+      "lg": "1.25rem",
+      "xl": "1.25rem",
+      "2xl": "1.75rem",
+      "3xl": "2.75rem",
+      "4xl": "4rem",
+      "5xl": "4rem"
+    },
+    "leading": {
+      "tight": "1.05",
+      "normal": "1.6",
+      "relaxed": "1.75"
+    }
+  },
+  "spacing": {
+    "xs": "0.5rem",
+    "sm": "1rem",
+    "md": "1.5rem",
+    "lg": "2rem",
+    "xl": "3rem",
+    "2xl": "5rem"
+  },
+  "radius": {
+    "none": "0",
+    "sm": "0.25rem",
+    "md": "0.5rem",
+    "lg": "0.875rem",
+    "full": "9999rem"
+  },
+  "shadow": {
+    "sm": "none",
+    "md": "none",
+    "lg": "0 0.75rem 2rem -0.5rem rgb(20 26 39 / 0.18)"
+  },
+  "border": {
+    "width": "1px",
+    "color": "#D5DBE5"
+  },
+  "input": {
+    "background": "#FFFFFF",
+    "border": "#5B6375",
+    "radius": "0.5rem",
+    "text": "#141A27",
+    "placeholder": "#5B6375",
+    "focus_ring": "#141A27"
+  },
+  "button": {
+    "radius": "0.5rem",
+    "padding_x": "1.25rem",
+    "padding_y": "0.75rem",
+    "weight": "600",
+    "primary_bg": "#141A27",
+    "primary_text": "#F3F5F8",
+    "secondary_bg": "transparent",
+    "secondary_text": "#141A27"
+  },
+  "link": {
+    "color": "#141A27",
+    "hover_color": "#141A27",
+    "underline": "always"
+  },
+  "schemes": [
+    {
+      "handle": "feint",
+      "name": "Feint",
+      "background": "#F3F5F8",
+      "foreground": "#141A27",
+      "heading": "#141A27",
+      "input_background": "#FFFFFF",
+      "input_foreground": "#141A27",
+      "input_border": "#5B6375",
+      "chip_background": "#E7EBF1",
+      "chip_foreground": "#5B6375",
+      "chip_border": "#D5DBE5",
+      "icons": "#5B6375",
+      "links": "#141A27",
+      "button_background": "#141A27",
+      "button_foreground": "#F3F5F8",
+      "button_hover_background": "#2A3447",
+      "button_hover_foreground": "#F3F5F8",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#141A27",
+      "secondary_button_hover_background": "#E7EBF1",
+      "secondary_button_hover_foreground": "#141A27"
+    },
+    {
+      "handle": "white",
+      "name": "White",
+      "background": "#FFFFFF",
+      "foreground": "#141A27",
+      "heading": "#141A27",
+      "input_background": "#FFFFFF",
+      "input_foreground": "#141A27",
+      "input_border": "#5F6676",
+      "chip_background": "#F0F2F6",
+      "chip_foreground": "#5F6676",
+      "chip_border": "#E0E4EB",
+      "icons": "#5F6676",
+      "links": "#141A27",
+      "button_background": "#141A27",
+      "button_foreground": "#FFFFFF",
+      "button_hover_background": "#2A3447",
+      "button_hover_foreground": "#FFFFFF",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#141A27",
+      "secondary_button_hover_background": "#F0F2F6",
+      "secondary_button_hover_foreground": "#141A27"
+    },
+    {
+      "handle": "manila",
+      "name": "Manila",
+      "background": "#F5EFE2",
+      "foreground": "#1F1A14",
+      "heading": "#1F1A14",
+      "input_background": "#FFFFFF",
+      "input_foreground": "#1F1A14",
+      "input_border": "#665C4E",
+      "chip_background": "#EBE3D2",
+      "chip_foreground": "#665C4E",
+      "chip_border": "#DCD2BE",
+      "icons": "#665C4E",
+      "links": "#1F1A14",
+      "button_background": "#141A27",
+      "button_foreground": "#F5EFE2",
+      "button_hover_background": "#2A3447",
+      "button_hover_foreground": "#F5EFE2",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#1F1A14",
+      "secondary_button_hover_background": "#EBE3D2",
+      "secondary_button_hover_foreground": "#1F1A14"
+    },
+    {
+      "handle": "light-blue",
+      "name": "Light blue",
+      "background": "#C6D7F3",
+      "foreground": "#141A27",
+      "heading": "#141A27",
+      "input_background": "#FFFFFF",
+      "input_foreground": "#141A27",
+      "input_border": "#3B4660",
+      "chip_background": "#B5C9EC",
+      "chip_foreground": "#3B4660",
+      "chip_border": "#A5B9DF",
+      "icons": "#3B4660",
+      "links": "#141A27",
+      "button_background": "#141A27",
+      "button_foreground": "#C6D7F3",
+      "button_hover_background": "#2A3447",
+      "button_hover_foreground": "#C6D7F3",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#141A27",
+      "secondary_button_hover_background": "#B5C9EC",
+      "secondary_button_hover_foreground": "#141A27"
+    },
+    {
+      "handle": "ink",
+      "name": "Ink",
+      "background": "#131A29",
+      "foreground": "#F1F3F7",
+      "heading": "#F1F3F7",
+      "input_background": "#1C2536",
+      "input_foreground": "#F1F3F7",
+      "input_border": "#9AA2B3",
+      "chip_background": "#1C2536",
+      "chip_foreground": "#9AA2B3",
+      "chip_border": "#2A3447",
+      "icons": "#9AA2B3",
+      "links": "#F1F3F7",
+      "button_background": "#F1F3F7",
+      "button_foreground": "#131A29",
+      "button_hover_background": "#D5DBE5",
+      "button_hover_foreground": "#131A29",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#F1F3F7",
+      "secondary_button_hover_background": "#1C2536",
+      "secondary_button_hover_foreground": "#F1F3F7"
+    },
+    {
+      "handle": "blue",
+      "name": "Blue",
+      "background": "#20408F",
+      "foreground": "#F3F5FB",
+      "heading": "#F3F5FB",
+      "input_background": "#1A367C",
+      "input_foreground": "#F3F5FB",
+      "input_border": "#C1CCE9",
+      "chip_background": "#1A367C",
+      "chip_foreground": "#C1CCE9",
+      "chip_border": "#3A58A3",
+      "icons": "#C1CCE9",
+      "links": "#F3F5FB",
+      "button_background": "#F3F5FB",
+      "button_foreground": "#20408F",
+      "button_hover_background": "#C1CCE9",
+      "button_hover_foreground": "#20408F",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#F3F5FB",
+      "secondary_button_hover_background": "#1A367C",
+      "secondary_button_hover_foreground": "#F3F5FB"
+    },
+    {
+      "handle": "burgundy",
+      "name": "Burgundy",
+      "background": "#6B2337",
+      "foreground": "#FAF0F2",
+      "heading": "#FAF0F2",
+      "input_background": "#5D1D2F",
+      "input_foreground": "#FAF0F2",
+      "input_border": "#E6C3CB",
+      "chip_background": "#5D1D2F",
+      "chip_foreground": "#E6C3CB",
+      "chip_border": "#80384B",
+      "icons": "#E6C3CB",
+      "links": "#FAF0F2",
+      "button_background": "#FAF0F2",
+      "button_foreground": "#6B2337",
+      "button_hover_background": "#E6C3CB",
+      "button_hover_foreground": "#6B2337",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#FAF0F2",
+      "secondary_button_hover_background": "#5D1D2F",
+      "secondary_button_hover_foreground": "#FAF0F2"
+    },
+    {
+      "handle": "brick",
+      "name": "Brick",
+      "background": "#8C3424",
+      "foreground": "#FBF1EC",
+      "heading": "#FBF1EC",
+      "input_background": "#7B2C1E",
+      "input_foreground": "#FBF1EC",
+      "input_border": "#F0CFC4",
+      "chip_background": "#7B2C1E",
+      "chip_foreground": "#F0CFC4",
+      "chip_border": "#A04A39",
+      "icons": "#F0CFC4",
+      "links": "#FBF1EC",
+      "button_background": "#FBF1EC",
+      "button_foreground": "#8C3424",
+      "button_hover_background": "#F0CFC4",
+      "button_hover_foreground": "#8C3424",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#FBF1EC",
+      "secondary_button_hover_background": "#7B2C1E",
+      "secondary_button_hover_foreground": "#FBF1EC"
+    }
+  ]
+}

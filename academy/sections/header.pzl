@@ -1,4 +1,4 @@
-<!-- The header: the wordmark (or the Brand logo) left; from 64rem the main menu, the School portal link as plain text and the ask button right. The menu item that points at the classes page opens a dropdown-panel listing every subject as a link to the class list on it, then All classes. The portal link waits for 80rem. Below 64rem: the wordmark and one round menu button on surface-2. Sticky unless turned off, with a rule under it once the page scrolls. No phone. -->
+<!-- The header: the wordmark (or the Brand logo) left; from 64rem the main menu and the ask button right. The menu item that points at the classes page opens a dropdown-panel listing every subject as a link to the class list on it, then All classes. Below 64rem: the wordmark and one round menu button on surface-2. Sticky unless turned off, with a rule under it once the page scrolls. No phone. -->
 {#let
   s = site.settings
   subjects = content.classes.entries | sort('fields.order') | map('fields.subject') | uniq | compact
@@ -31,7 +31,6 @@
             </ul>
           </nav>
         {/if}
-        {#if s.portal_url}<a class="hidden text-label whitespace-nowrap underline-offset-4 hover:underline xl:inline" href="{ s.portal_url }">{ s.portal_label }</a>{/if}
         <span class="hidden lg:contents"><Button ask /></span>
         <button class="flex size-control items-center justify-center rounded-full bg-scheme-surface-2 transition-colors duration-fast hover:bg-scheme-rule lg:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu"><Icon name="menu" /><span class="sr-only">{ t('menu') }</span></button>
       </div>
@@ -42,7 +41,7 @@
 <schema>
 {
   "name": "Header",
-  "description": "The wordmark, the menu with a Classes panel of every subject, the portal link and the ask button; the menu button on phones and tablets.",
+  "description": "The wordmark, the menu with a Classes panel of every subject and the ask button; the menu button on phones and tablets.",
   "kind": "Header",
   "icon": "panel-top",
   "settings": [

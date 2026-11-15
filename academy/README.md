@@ -53,7 +53,7 @@ assets/             Libre Baskerville and Radio Canada (OFL), glyphs.svg, the fa
 ## School settings
 
 The ask label, `ask` (open the ask sheet, or follow `ask_url` to the school's own enrolment
-page), the ask form, the confirm line under the ask, the parent portal link, the
+page), the ask form, the confirm line under the ask, the
 accreditation lines and what the school calls a subject.
 
 ## Develop

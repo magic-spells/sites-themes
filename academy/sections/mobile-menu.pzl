@@ -1,6 +1,5 @@
-<!-- The menu drawer below 64rem: a dialog-panel from the right, full height and at most 24rem, over the page dimmed to 50% with a small blur. It closes on the backdrop, Escape and its ×, and hands focus back to the menu button. The main menu in the heading face, the subjects folded under Classes, the School portal link, and the ask button full width at the foot. -->
+<!-- The menu drawer below 64rem: a dialog-panel from the right, full height and at most 24rem, over the page dimmed to 50% with a small blur. It closes on the backdrop, Escape and its ×, and hands focus back to the menu button. The main menu in the heading face, the subjects folded under Classes, and the ask button full width at the foot. -->
 {#let
-  s = site.settings
   subjects = content.classes.entries | sort('fields.order') | map('fields.subject') | uniq | compact
 }
 <dialog-panel id="mobile-menu" position="right">
@@ -33,7 +32,6 @@
           </ul>
         </nav>
       {/if}
-      {#if s.portal_url}<a class="justify-self-start text-label underline decoration-1 underline-offset-4" href="{ s.portal_url }">{ s.portal_label }</a>{/if}
       <div class="mt-auto"><Button ask wide /></div>
     </div>
   </dialog>
@@ -42,7 +40,7 @@
 <schema>
 {
   "name": "Mobile menu",
-  "description": "The menu drawer below 64rem: the menu, the subjects under Classes, the ask button and the portal link.",
+  "description": "The menu drawer below 64rem: the menu, the subjects under Classes and the ask button.",
   "kind": "Panels",
   "icon": "menu",
   "settings": [

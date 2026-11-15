@@ -33,8 +33,6 @@
         { "type": "url", "id": "ask_url", "label": "Ask link", "default": "/ask", "info": "Where the ask button goes when it follows a link, and without JavaScript." },
         { "type": "form", "id": "ask_form", "label": "Ask form", "default": "trial" },
         { "type": "text", "id": "confirm_line", "label": "Confirm line", "default": "We reply within two working days", "info": "Under the ask in the sheet, the ask page and the closing band." },
-        { "type": "text", "id": "portal_label", "label": "Portal label", "default": "Parent login" },
-        { "type": "url", "id": "portal_url", "label": "Portal link", "default": "", "info": "Your own parent or student portal. Leave empty to hide the link." },
         { "type": "textarea", "id": "accreditation_lines", "label": "Accreditation lines", "default": "", "info": "One registration or membership per line. Printed in the footer and the story." },
         { "type": "text", "id": "subject_label", "label": "Subject label", "default": "Subject", "info": "What the school calls the way it groups classes: Subject, Style, Department." }
       ]

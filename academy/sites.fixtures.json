@@ -13,8 +13,6 @@
       "ask_url": "/ask",
       "ask_form": "trial",
       "confirm_line": "We reply within two working days",
-      "portal_label": "Parent login",
-      "portal_url": "https://portal.example/larkfield",
       "accreditation_lines": "A registered centre for graded music and dance exams\nEvery teacher is DBS checked",
       "subject_label": "Subject",
       "email": "office@larkfield.example",

@@ -3,7 +3,7 @@
 ## 0.1.0
 
 - 32 sections: the announcement bar (still or a ticker), the header (a Classes panel of every
-  subject, the portal link and the ask button), the menu drawer, the ask sheet (a bottom sheet
+  subject and the ask button), the menu drawer, the ask sheet (a bottom sheet
   on phones, a drawer from tablets), the cookie notice and the footer; the hero beside a photo
   with a dated label or over a full-width photo, subjects, the class grid, the class list
   (subject tabs), the class page, the timetable, the dates, the fees, visit options, the ask

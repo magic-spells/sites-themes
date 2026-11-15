@@ -424,7 +424,8 @@
      "required": false,
      "options": [
       "Email",
-      "Phone"
+      "Phone",
+      "Text"
      ]
     },
     {
@@ -433,11 +434,11 @@
      "label": "Role I'm interested in",
      "required": false,
      "options": [
-      "Kitchen",
-      "Pantry",
-      "Delivery driver",
+      "Pantry shifts",
+      "Breakfast kitchen",
+      "Delivery drivers",
       "Garden crew",
-      "Events and office"
+      "Front desk"
      ]
     },
     {
@@ -446,10 +447,9 @@
      "label": "When I'm free",
      "required": false,
      "options": [
-      "Weekday mornings",
-      "Weekday afternoons",
-      "Evenings",
-      "Weekends"
+      "Weekdays",
+      "Weekends",
+      "Evenings"
      ]
     },
     {

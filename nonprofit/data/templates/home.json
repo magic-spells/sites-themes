@@ -1,6 +1,6 @@
 {
   "label": "Home",
-  "description": "The first screen, what we do and the newsletter.",
+  "description": "The first screen, our impact, what we do, a story, the ask, ways to help and the newsletter.",
   "sections": [
     {
       "id": "s_hero",
@@ -30,6 +30,41 @@
       ]
     },
     {
+      "id": "s_impact",
+      "type": "impact",
+      "preset": "Figures",
+      "settings": {
+        "heading": "Our impact",
+        "text": "Between July 2025 and June 2026.",
+        "link_label": "Annual report",
+        "link": "/about",
+        "split_heading": ""
+      },
+      "blocks": [
+        {
+          "type": "figure",
+          "settings": {
+            "figure": "41,200",
+            "label": "meals served"
+          }
+        },
+        {
+          "type": "figure",
+          "settings": {
+            "figure": "3,150",
+            "label": "households at the pantry"
+          }
+        },
+        {
+          "type": "figure",
+          "settings": {
+            "figure": "620",
+            "label": "volunteers"
+          }
+        }
+      ]
+    },
+    {
       "id": "s_mission",
       "type": "image-with-text",
       "preset": "Picture",
@@ -43,6 +78,108 @@
         "link": "/about"
       },
       "blocks": []
+    },
+    {
+      "id": "s_story",
+      "type": "story",
+      "preset": "Post",
+      "settings": {
+        "source": "post",
+        "post": "post_ten_years_of_the_thursday_lunch",
+        "link_label": "Read the story",
+        "color_scheme": "cream"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_giving",
+      "type": "giving-band",
+      "preset": "Panel",
+      "settings": {
+        "layout": "panel",
+        "heading": "Support our work",
+        "text": "Every gift goes into food, fuel for the van and keeping Mill Hall warm.",
+        "donate_label": "Donate",
+        "more_label": "More ways to give",
+        "more_link": "/donate",
+        "image": "as_4x5_oat",
+        "color_scheme": "ask"
+      },
+      "blocks": [
+        {
+          "type": "equivalence",
+          "settings": {
+            "amount": "$25",
+            "text": "feeds a family for a week"
+          }
+        },
+        {
+          "type": "equivalence",
+          "settings": {
+            "amount": "$60",
+            "text": "cooks a Thursday lunch for thirty"
+          }
+        },
+        {
+          "type": "equivalence",
+          "settings": {
+            "amount": "$150",
+            "text": "keeps the walk-in fridge running for a month"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_ways",
+      "type": "ways-to-help",
+      "preset": "Default",
+      "settings": {
+        "heading": "Ways to help",
+        "text": "Time, food, a fundraiser or a gift: each one keeps the doors open.",
+        "color_scheme": "chalk"
+      },
+      "blocks": [
+        {
+          "type": "way",
+          "settings": {
+            "title": "Volunteer",
+            "text": "Cook, stock shelves or drive the van.",
+            "image": "as_4x3_moss",
+            "image_alt": "",
+            "link": "/get-involved"
+          }
+        },
+        {
+          "type": "way",
+          "settings": {
+            "title": "Donate food",
+            "text": "Bring tins and dry goods to Mill Hall.",
+            "image": "as_4x3_oat",
+            "image_alt": "",
+            "link": "/donate#food"
+          }
+        },
+        {
+          "type": "way",
+          "settings": {
+            "title": "Fundraise",
+            "text": "Run, bake or host a supper for us.",
+            "image": "as_4x3_lake",
+            "image_alt": "",
+            "link": "/donate#fundraise"
+          }
+        },
+        {
+          "type": "way",
+          "settings": {
+            "title": "Give money",
+            "text": "Once or monthly, through our giving page.",
+            "image": "as_4x3_clay",
+            "image_alt": "",
+            "link": "https://give.example/larkfieldkitchen"
+          }
+        }
+      ]
     },
     {
       "id": "s_newsletter",

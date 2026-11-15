@@ -1,6 +1,6 @@
 {
   "label": "Get involved",
-  "description": "Volunteer roles and the volunteer form.",
+  "description": "Volunteer roles beside the volunteer form, the other ways to help, questions and the newsletter.",
   "sections": [
     {
       "id": "s_header",
@@ -8,6 +8,146 @@
       "preset": "Default",
       "settings": {
         "text": "Most shifts are two to four hours. Come once a month or every week."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_volunteer",
+      "type": "get-involved",
+      "preset": "Default",
+      "settings": {
+        "heading": "Volunteering",
+        "text": "No experience needed. Pick a role, tell us when you are free, and Luc will write within a week.",
+        "form_heading": "Sign up to volunteer"
+      },
+      "blocks": [
+        {
+          "type": "role",
+          "settings": {
+            "title": "Pantry shifts",
+            "body": "<p>Stock the shelves, weigh deliveries and help neighbours shop. Shifts run from 9:30 to 13:00 or 13:00 to 16:30, Monday to Saturday.</p>"
+          }
+        },
+        {
+          "type": "role",
+          "settings": {
+            "title": "Breakfast kitchen",
+            "body": "<p>Cook and serve the community breakfast on Tuesday and Thursday, from 7:00 to 10:00. Food hygiene training is free and takes an afternoon.</p>"
+          }
+        },
+        {
+          "type": "role",
+          "settings": {
+            "title": "Delivery drivers",
+            "body": "<p>Take grocery boxes to neighbours who can't get out, on Friday mornings. You need a licence; we have the van.</p>"
+          }
+        },
+        {
+          "type": "role",
+          "settings": {
+            "title": "Garden crew",
+            "body": "<p>Weed, water and harvest the beds behind Mill Hall, April to October. Saturday mornings, gloves provided.</p>"
+          }
+        },
+        {
+          "type": "role",
+          "settings": {
+            "title": "Front desk",
+            "body": "<p>Welcome people as they arrive, answer the phone and keep the kettle on. Weekday shifts of three hours.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_ways",
+      "type": "ways-to-help",
+      "preset": "Default",
+      "settings": {
+        "heading": "Other ways to help",
+        "text": "Not free for a shift? There is more than one way in.",
+        "color_scheme": "chalk"
+      },
+      "blocks": [
+        {
+          "type": "way",
+          "settings": {
+            "title": "Donate food",
+            "text": "Bring tins and dry goods to Mill Hall.",
+            "image": "as_4x3_oat",
+            "image_alt": "",
+            "link": "/donate#food"
+          }
+        },
+        {
+          "type": "way",
+          "settings": {
+            "title": "Fundraise",
+            "text": "Run, bake or host a supper for us.",
+            "image": "as_4x3_lake",
+            "image_alt": "",
+            "link": "/donate#fundraise"
+          }
+        },
+        {
+          "type": "way",
+          "settings": {
+            "title": "Give money",
+            "text": "Once or monthly, through our giving page.",
+            "image": "as_4x3_clay",
+            "image_alt": "",
+            "link": "https://give.example/larkfieldkitchen"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "heading": "Questions about volunteering",
+        "link_label": "Ask us something else",
+        "link": "/contact"
+      },
+      "blocks": [
+        {
+          "type": "row",
+          "settings": {
+            "title": "How old do I need to be?",
+            "body": "<p>Eighteen for kitchen and delivery shifts. From fourteen you can join the garden crew or a pantry shift with a parent or guardian.</p>"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "title": "Do you need a background check?",
+            "body": "<p>Only for delivery drivers and anyone working with the kids' lunch club. We arrange it and pay for it.</p>"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "title": "Do I need experience?",
+            "body": "<p>No. Every first shift is next to someone who has done it before, and the kitchen roles start with a free food hygiene course.</p>"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "title": "Can our group volunteer together?",
+            "body": "<p>Yes. Workplaces, schools and faith groups of up to eight join a pantry or garden shift. Write to us with a few dates.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Default",
+      "settings": {
+        "heading": "Newsletter",
+        "text": "One email a month with what we cooked, who helped and what the pantry needs.",
+        "color_scheme": "chalk"
       },
       "blocks": []
     }

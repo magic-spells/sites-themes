@@ -1,6 +1,6 @@
 {
   "label": "Donate",
-  "description": "The giving page and the questions donors ask.",
+  "description": "The giving page: the ask, where a gift goes, every other way to give and the questions donors ask.",
   "sections": [
     {
       "id": "s_header",
@@ -10,6 +10,195 @@
         "text": "Every gift goes into food, fuel for the van and keeping Mill Hall warm."
       },
       "blocks": []
+    },
+    {
+      "id": "s_giving",
+      "type": "giving-band",
+      "preset": "Band",
+      "settings": {
+        "layout": "band",
+        "heading": "Give once or every month",
+        "text": "Our giving page takes cards, bank transfers and digital wallets, and emails your receipt.",
+        "donate_label": "Donate",
+        "more_label": "",
+        "more_link": "",
+        "color_scheme": "ask"
+      },
+      "blocks": [
+        {
+          "type": "equivalence",
+          "settings": {
+            "amount": "$25",
+            "text": "feeds a family for a week"
+          }
+        },
+        {
+          "type": "equivalence",
+          "settings": {
+            "amount": "$60",
+            "text": "cooks a Thursday lunch for thirty"
+          }
+        },
+        {
+          "type": "equivalence",
+          "settings": {
+            "amount": "$150",
+            "text": "keeps the walk-in fridge running for a month"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_embed",
+      "type": "embed",
+      "preset": "Default",
+      "settings": {},
+      "blocks": []
+    },
+    {
+      "id": "s_impact",
+      "type": "impact",
+      "preset": "Figures and split",
+      "settings": {
+        "heading": "Our impact",
+        "text": "Between July 2025 and June 2026.",
+        "link_label": "Annual report",
+        "link": "/about",
+        "split_heading": "Where a gift goes"
+      },
+      "blocks": [
+        {
+          "type": "figure",
+          "settings": {
+            "figure": "41,200",
+            "label": "meals served"
+          }
+        },
+        {
+          "type": "figure",
+          "settings": {
+            "figure": "3,150",
+            "label": "households at the pantry"
+          }
+        },
+        {
+          "type": "figure",
+          "settings": {
+            "figure": "620",
+            "label": "volunteers"
+          }
+        },
+        {
+          "type": "split",
+          "settings": {
+            "label": "Food and meals",
+            "percent": 78
+          }
+        },
+        {
+          "type": "split",
+          "settings": {
+            "label": "Running the kitchen",
+            "percent": 13
+          }
+        },
+        {
+          "type": "split",
+          "settings": {
+            "label": "Fundraising",
+            "percent": 6
+          }
+        },
+        {
+          "type": "split",
+          "settings": {
+            "label": "Office",
+            "percent": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_ways",
+      "type": "ways-to-give",
+      "preset": "Default",
+      "settings": {
+        "heading": "Other ways to give",
+        "text": "Gifts by card go through our giving page. For anything else, here is how.",
+        "color_scheme": "chalk"
+      },
+      "blocks": [
+        {
+          "type": "way",
+          "settings": {
+            "title": "Give monthly",
+            "body": "<p>A monthly gift lets us order food weeks ahead and pay the fridge bill without worry. Change or stop it at any time.</p>",
+            "link_label": "Set up a monthly gift",
+            "link": "https://give.example/larkfieldkitchen",
+            "anchor": "monthly"
+          }
+        },
+        {
+          "type": "way",
+          "settings": {
+            "title": "Donate food",
+            "body": "<p>We take tins, dry goods, toiletries and warm coats at Mill Hall on any pantry day. Fresh food from gardens and allotments is welcome on Tuesday and Thursday mornings.</p>",
+            "link_label": "See what the pantry needs",
+            "link": "/news",
+            "anchor": "food"
+          }
+        },
+        {
+          "type": "way",
+          "settings": {
+            "title": "Fundraise for us",
+            "body": "<p>Run a race, hold a bake sale or host a supper. We send posters, a collection tin and a thank-you letter for everyone who gave.</p>",
+            "link_label": "Write to us about a fundraiser",
+            "link": "/contact",
+            "anchor": "fundraise"
+          }
+        },
+        {
+          "type": "way",
+          "settings": {
+            "title": "Ask your employer to match",
+            "body": "<p>Many employers match what their staff give. Send us their form and we will fill in our part.</p>",
+            "link_label": "",
+            "link": "",
+            "anchor": ""
+          }
+        },
+        {
+          "type": "way",
+          "settings": {
+            "title": "Gifts of stock",
+            "body": "<p>You can transfer shares to us directly. Our treasurer will send the account details.</p>",
+            "link_label": "Contact the treasurer",
+            "link": "/contact",
+            "anchor": ""
+          }
+        },
+        {
+          "type": "way",
+          "settings": {
+            "title": "Leave a gift in your will",
+            "body": "<p>A gift in your will keeps the kitchen cooking for the next generation. Our registration number is in the footer.</p>",
+            "link_label": "",
+            "link": "",
+            "anchor": "will"
+          }
+        },
+        {
+          "type": "way",
+          "settings": {
+            "title": "Give in memory",
+            "body": "<p>We send a card to the family to say a gift was made, with or without the amount.</p>",
+            "link_label": "Give in memory",
+            "link": "https://give.example/larkfieldkitchen",
+            "anchor": "memory"
+          }
+        }
+      ]
     },
     {
       "id": "s_faq",
@@ -24,8 +213,8 @@
         {
           "type": "row",
           "settings": {
-            "title": "Is my gift tax-deductible?",
-            "body": "<p>Yes. We send a tax receipt by email for every gift of $20 or more, within a week.</p>"
+            "title": "Will I get a tax receipt?",
+            "body": "<p>Yes. We email a receipt for every gift of $20 or more within a week, and one summary for monthly gifts each February.</p>"
           }
         },
         {
@@ -38,15 +227,15 @@
         {
           "type": "row",
           "settings": {
-            "title": "How is my gift spent?",
-            "body": "<p>On food, the van's fuel and keeping the hall warm. Our yearly report lists every line.</p>"
+            "title": "Where do food donations go?",
+            "body": "<p>Onto the pantry shelves at Mill Hall and St Anne's Hall, usually within the week. Fresh food goes into the Tuesday and Thursday lunch.</p>"
           }
         },
         {
           "type": "row",
           "settings": {
-            "title": "Can I give food instead?",
-            "body": "<p>Yes. We take tins, dry goods, toiletries and warm coats at Mill Hall on any pantry day.</p>"
+            "title": "Can you claim Gift Aid on my gift?",
+            "body": "<p>No. We are not registered for Gift Aid, so we cannot add it. Your receipt still counts toward your tax return in the usual way.</p>"
           }
         }
       ]

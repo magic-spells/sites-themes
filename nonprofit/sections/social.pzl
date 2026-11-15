@@ -38,7 +38,6 @@
       { "type": "url", "id": "link", "label": "Post link", "default": "", "info": "Leave empty to link to the profile." }
     ] }
   ],
-  "max_blocks": 6,
   "presets": [
     { "name": "Default", "settings": {} }
   ]

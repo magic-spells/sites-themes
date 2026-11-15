@@ -60,11 +60,11 @@
   ],
   "max_blocks": 2,
   "presets": [
-    { "name": "Panel", "settings": { "layout": "panel", "color_scheme": "cream" }, "blocks": [
+    { "name": "Panel", "settings": {}, "blocks": [
       { "type": "give", "settings": { "label": "Donate" } },
       { "type": "link", "settings": { "label": "Get involved", "link": "/get-involved" } }
     ] },
-    { "name": "Band", "settings": { "layout": "band", "color_scheme": "cream" }, "blocks": [
+    { "name": "Band", "settings": { "layout": "band" }, "blocks": [
       { "type": "give", "settings": { "label": "Donate" } }
     ] }
   ]

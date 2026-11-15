@@ -58,14 +58,13 @@
       { "type": "text", "id": "text", "label": "Line", "default": "feeds a family for a week" }
     ] }
   ],
-  "max_blocks": 3,
   "presets": [
-    { "name": "Panel", "settings": { "layout": "panel", "color_scheme": "ask" }, "blocks": [
+    { "name": "Panel", "settings": {}, "blocks": [
       { "type": "equivalence", "settings": { "amount": "$25", "text": "feeds a family for a week" } },
       { "type": "equivalence", "settings": { "amount": "$60", "text": "cooks a Thursday lunch for thirty" } },
       { "type": "equivalence", "settings": { "amount": "$150", "text": "keeps the walk-in fridge running for a month" } }
     ] },
-    { "name": "Band", "settings": { "layout": "band", "color_scheme": "ask" }, "blocks": [
+    { "name": "Band", "settings": { "layout": "band" }, "blocks": [
       { "type": "equivalence", "settings": { "amount": "$25", "text": "feeds a family for a week" } },
       { "type": "equivalence", "settings": { "amount": "$60", "text": "cooks a Thursday lunch for thirty" } },
       { "type": "equivalence", "settings": { "amount": "$150", "text": "keeps the walk-in fridge running for a month" } }

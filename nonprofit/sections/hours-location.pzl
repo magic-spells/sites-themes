@@ -38,9 +38,8 @@
       { "type": "url", "id": "map_link", "label": "Map link", "default": "", "info": "A Directions link shows when it is set." }
     ] }
   ],
-  "max_blocks": 4,
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "chalk" } }
+    { "name": "Default", "settings": {} }
   ]
 }
 </schema>

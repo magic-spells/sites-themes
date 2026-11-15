@@ -31,7 +31,6 @@
       { "type": "text", "id": "anchor", "label": "Anchor", "default": "", "info": "One lowercase word, so a link to /donate#food opens this row." }
     ] }
   ],
-  "max_blocks": 10,
   "presets": [
     { "name": "Default", "settings": {}, "blocks": [
       { "type": "way", "settings": { "title": "Give monthly", "body": "<p>A monthly gift lets us order food weeks ahead. Change or stop it at any time.</p>", "anchor": "monthly" } },

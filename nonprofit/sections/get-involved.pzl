@@ -30,7 +30,6 @@
       { "type": "richtext", "id": "body", "label": "What it involves", "default": "" }
     ] }
   ],
-  "max_blocks": 8,
   "presets": [
     { "name": "Default", "settings": {}, "blocks": [
       { "type": "role", "settings": { "title": "Pantry shifts", "body": "<p>Stock the shelves and help neighbours shop. Morning and afternoon shifts, Monday to Saturday.</p>" } },

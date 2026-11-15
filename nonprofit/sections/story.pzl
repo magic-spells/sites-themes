@@ -60,10 +60,9 @@
       { "type": "image", "id": "portrait", "label": "Portrait", "info": "A small round thumbnail." }
     ] }
   ],
-  "max_blocks": 6,
   "presets": [
-    { "name": "Post", "settings": { "source": "post", "color_scheme": "cream" } },
-    { "name": "Quotes", "settings": { "source": "quotes", "color_scheme": "cream" }, "blocks": [
+    { "name": "Post", "settings": {} },
+    { "name": "Quotes", "settings": { "source": "quotes" }, "blocks": [
       { "type": "quote", "settings": { "quote": "I came to the pantry the winter I lost my job. Now I cook the Thursday lunch, and half my street comes to eat.", "name": "Dana", "role": "Volunteer cook" } },
       { "type": "quote", "settings": { "quote": "The boxes come on Friday with a chat at the door. Some weeks that is the only visit I get.", "name": "Ruth", "role": "Delivery neighbour" } }
     ] }

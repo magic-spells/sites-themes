@@ -31,7 +31,6 @@
       { "type": "url", "id": "link", "label": "File", "default": "", "info": "The link to the PDF or document, uploaded to your files or hosted elsewhere." }
     ] }
   ],
-  "max_blocks": 12,
   "presets": [
     { "name": "Default", "settings": {} }
   ]

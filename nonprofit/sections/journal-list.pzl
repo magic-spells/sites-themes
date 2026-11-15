@@ -45,8 +45,8 @@
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [
-    { "name": "Grid", "settings": { "view": "grid" } },
-    { "name": "News page", "settings": { "view": "grid", "heading": "", "limit": 12, "topics": true, "link_label": "" } }
+    { "name": "Grid", "settings": {} },
+    { "name": "News page", "settings": { "heading": "", "limit": 12, "topics": true, "link_label": "" } }
   ]
 }
 </schema>

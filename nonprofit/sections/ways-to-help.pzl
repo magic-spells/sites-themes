@@ -40,9 +40,8 @@
       { "type": "url", "id": "link", "label": "Link", "default": "/get-involved" }
     ] }
   ],
-  "max_blocks": 4,
   "presets": [
-    { "name": "Default", "settings": { "color_scheme": "chalk" }, "blocks": [
+    { "name": "Default", "settings": {}, "blocks": [
       { "type": "way", "settings": { "title": "Volunteer", "text": "Cook, stock shelves or drive the van.", "link": "/get-involved" } },
       { "type": "way", "settings": { "title": "Donate food", "text": "Bring tins and dry goods to Mill Hall.", "link": "/donate#food" } },
       { "type": "way", "settings": { "title": "Fundraise", "text": "Run, bake or host a supper for us.", "link": "/donate#fundraise" } },

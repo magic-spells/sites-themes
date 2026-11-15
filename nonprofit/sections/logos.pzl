@@ -46,9 +46,8 @@
       { "type": "url", "id": "link", "label": "Link", "default": "" }
     ] }
   ],
-  "max_blocks": 12,
   "presets": [
-    { "name": "Grid", "settings": { "layout": "grid" } },
+    { "name": "Grid", "settings": {} },
     { "name": "Marquee", "settings": { "layout": "marquee" } }
   ]
 }

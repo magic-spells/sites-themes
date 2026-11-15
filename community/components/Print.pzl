@@ -1,0 +1,8 @@
+<!-- component: Print -->
+<!-- One print on the photo wall: a gallery item's photo (photo, with its alt; ratio, inner corners) in a paper mount, 0.5rem round it and a 2.25rem strip under it holding the caption on one line, the one shadow under it, never a tilt. The whole print links to href; with open it also names the lightbox carousel it opens at index (href is then the large photo, for a page without JavaScript). -->
+<a class="block h-full" href="{ href }" data-lightbox-open={ open } data-index={ open ? index : null }>
+  <figure class="{ 'paper' | scheme_class } flex h-full flex-col rounded-paper bg-scheme-background px-space-xs pt-space-xs text-scheme-foreground shadow-print">
+    <Well asset={ photo.asset } alt={ photo.alt } ratio={ ratio } inner width={ 800 } sizes="(min-width: 48rem) 40vw, 65vw" />
+    <figcaption class="truncate px-space-3xs text-small leading-caption">{ caption }</figcaption>
+  </figure>
+</a>

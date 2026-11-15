@@ -1,0 +1,87 @@
+@layer scrolling-content {
+/* Hide the host until customElements.define runs, so the un-wrapped, un-cloned
+   markup never flashes as a plain stack of divs. Markup that already carries a
+   <scrolling-track> is exempt: the rules below lay it out correctly before
+   upgrade, so hiding it would only cost a prerendered page its first paint. It
+   shows as one static, un-cloned row until the script arrives.
+
+   Written as hide-then-unhide rather than one :not(:has(…)) selector so the
+   :has() dependency is confined to the exemption. A browser without :has()
+   drops only the second rule and keeps the 2.0.0 behavior — hidden until
+   defined — instead of dropping the whole thing and flashing raw markup. */
+scrolling-content:not(:defined) {
+	visibility: hidden;
+}
+
+scrolling-content:not(:defined):has(scrolling-track) {
+	visibility: visible;
+}
+
+scrolling-content {
+	/* Presence sentinel. The component reads this custom property off the host
+	   and skips its <style> injection when it resolves to 1 — that is how
+	   linking `@magic-spells/scrolling-content/css` avoids a second copy of
+	   these same rules. Don't rename it without updating injectStyles(). */
+	--scrolling-content-styles: 1;
+	display: block;
+	overflow: hidden;
+}
+
+/* Opt-in edge fade. Items dissolve at the boundaries instead of being cut off
+   square by `overflow: hidden`, which is what sells the "endless" illusion. The
+   width comes from --scrolling-content-fade; the `fade` attribute can set it
+   per element. */
+scrolling-content[fade] {
+	--_fade: var(--scrolling-content-fade, 4rem);
+	-webkit-mask-image: linear-gradient(
+		90deg,
+		transparent,
+		#000 var(--_fade),
+		#000 calc(100% - var(--_fade)),
+		transparent
+	);
+	mask-image: linear-gradient(
+		90deg,
+		transparent,
+		#000 var(--_fade),
+		#000 calc(100% - var(--_fade)),
+		transparent
+	);
+}
+
+scrolling-track {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	gap: var(--scrolling-content-gap, 1rem);
+	/* Without max-content the flex line shrinks to the host and every item
+	   compresses instead of overflowing, which breaks the width measurement
+	   the clone count is derived from. */
+	width: max-content;
+	will-change: transform;
+	/* The browser owns vertical panning; horizontal gestures reach our pointer
+	   handlers. This is what replaces manual touch-axis detection. */
+	touch-action: pan-y;
+	cursor: grab;
+}
+
+scrolling-content[drag='false'] scrolling-track {
+	cursor: auto;
+	touch-action: auto;
+}
+
+scrolling-content[dragging] scrolling-track {
+	cursor: grabbing;
+	/* A drag is a scrub, not a click — don't let it select the text it passes over. */
+	user-select: none;
+}
+
+scrolling-item {
+	display: flex;
+	align-items: center;
+	gap: var(--scrolling-content-gap, 1rem);
+	padding: var(--scrolling-content-item-padding, 0);
+	flex: 0 0 auto;
+}
+
+}

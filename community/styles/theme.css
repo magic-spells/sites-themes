@@ -1,0 +1,352 @@
+@import "tailwindcss" source(none);
+@import "./vendor/collapsible-content.css" layer(components);
+@import "./vendor/dialog-panel.css" layer(components);
+@import "./vendor/dropdown-panel.css" layer(components);
+@import "./vendor/lightbox.css" layer(components);
+@import "./vendor/reveal.css";
+@import "./vendor/scrolling-content.css" layer(components);
+@import "./vendor/select-dropdown.css" layer(components);
+@import "./vendor/split-text.css" layer(components);
+@import "./vendor/sticky-header.css" layer(components);
+@import "./vendor/tarot.css" layer(components);
+
+@source "../layouts/**/*.pzl";
+@source "../templates/**/*.pzl";
+@source "../sections/**/*.pzl";
+@source "../components/**/*.pzl";
+
+/* The scheme a section sits on. The engine has no muted, hairline or
+   surface-2 slot, so they ride on the chip slots (settings/design.json).
+   Headings and text links take the heading and link slots, which equal
+   the text colour: the accent is off. */
+@theme inline {
+	--color-scheme-background: var(--sites-scheme-background);
+	--color-scheme-foreground: var(--sites-scheme-foreground);
+	--color-scheme-heading: var(--sites-scheme-heading);
+	--color-scheme-muted: var(--sites-scheme-chip-foreground);
+	--color-scheme-border: var(--sites-scheme-chip-border);
+	--color-scheme-surface-2: var(--sites-scheme-chip-background);
+	--color-scheme-link: var(--sites-scheme-links);
+	--color-scheme-button-background: var(--sites-scheme-button-background);
+	--color-scheme-button-foreground: var(--sites-scheme-button-foreground);
+	--color-scheme-button-hover-background: var(--sites-scheme-button-hover-background);
+	--color-scheme-button-hover-foreground: var(--sites-scheme-button-hover-foreground);
+	--color-scheme-secondary-button-background: var(--sites-scheme-secondary-button-background);
+	--color-scheme-secondary-button-foreground: var(--sites-scheme-secondary-button-foreground);
+	--color-scheme-secondary-button-hover-background: var(--sites-scheme-secondary-button-hover-background);
+	--color-scheme-secondary-button-hover-foreground: var(--sites-scheme-secondary-button-hover-foreground);
+	--color-scheme-input-background: var(--sites-scheme-input-background);
+	--color-scheme-input-foreground: var(--sites-scheme-input-foreground);
+	--color-scheme-input-border: var(--sites-scheme-input-border);
+	--color-scheme-error: var(--community-error);
+	--color-backdrop: color-mix(in srgb, var(--sites-scheme-foreground) 50%, transparent);
+}
+
+/* The form error has no scheme slot: the palette's on the light schemes,
+   a pale one on the deep ones. Both clear 5:1. */
+:root,
+[class*="sites-scheme-"] {
+	--community-error: var(--sites-color-error-fg);
+}
+.sites-scheme-blue,
+.sites-scheme-moss,
+.sites-scheme-umber {
+	--community-error: #F2B8AC;
+}
+
+@theme {
+	--font-heading: var(--sites-font-heading-family), Georgia, serif;
+	--font-body: var(--sites-font-body-family), system-ui, sans-serif;
+
+	/* The type roles, each sized per breakpoint in :root below. Headings in
+	   the heading face at its one weight; everything else, every hour, date
+	   and label included, in the body face. Sentence case throughout. */
+	--text-h1: var(--community-h1);
+	--text-h1--line-height: var(--sites-type-leading-tight);
+	--text-h2: var(--community-h2);
+	--text-h2--line-height: 1.15;
+	--text-h3: var(--community-h3);
+	--text-h3--line-height: 1.2;
+	--text-h4: var(--community-h4);
+	--text-h4--line-height: 1.3;
+	--text-lead: var(--community-h4);
+	--text-lead--line-height: var(--sites-type-leading-normal);
+	--text-body: var(--community-body);
+	--text-body--line-height: var(--sites-type-leading-normal);
+	--text-small: var(--sites-type-scale-sm);
+	--text-small--line-height: 1.5;
+	--text-label: var(--community-label);
+	--text-label--line-height: 1.3;
+	--text-label--letter-spacing: 0.01em;
+	--text-label--font-weight: 500;
+	--text-button: calc(var(--sites-type-scale-base) * 16 / 17);
+	--text-button--line-height: 1;
+	--text-button--letter-spacing: 0.01em;
+	--text-button--font-weight: var(--sites-button-weight);
+
+	--spacing-space-3xs: 0.125rem;
+	--spacing-space-2xs: 0.25rem;
+	--spacing-space-xs: var(--sites-spacing-xs);
+	--spacing-space-sm: var(--sites-spacing-sm);
+	--spacing-space-md: var(--sites-spacing-md);
+	--spacing-space-lg: var(--sites-spacing-lg);
+	--spacing-space-xl: var(--sites-spacing-xl);
+	--spacing-space-2xl: var(--sites-spacing-2xl);
+	--spacing-space-3xl: 4rem;
+	--spacing-section: var(--community-section);
+	--spacing-section-tight: var(--community-section-tight);
+	--spacing-section-loose: var(--community-section-loose);
+	--spacing-gutter: var(--community-gutter);
+	--spacing-button-x: var(--sites-button-padding-x);
+	--spacing-button-y: var(--sites-button-padding-y);
+	--spacing-pill-x: 1.125rem;
+	--spacing-control: 2.75rem;
+	--spacing-pill: 2.5rem;
+	--spacing-icon-sm: 1rem;
+	--spacing-icon: 1.25rem;
+	--spacing-textarea: 7rem;
+
+	--container-column: 82.5rem;
+	--container-reading: 40rem;
+	--container-hero: 48rem;
+	--container-sign: 28rem;
+
+	/* Paper (sheet, slips, plate, cards) and photo wells; buttons and chips
+	   fully round. */
+	--radius-paper: var(--sites-radius-md);
+	--radius-photo: var(--sites-radius-lg);
+	--radius-inner: var(--sites-radius-sm);
+	--radius-input: var(--sites-input-radius);
+	--radius-button: var(--sites-button-radius);
+	--radius-full: var(--sites-radius-full);
+
+	/* The one shadow, under the photo wall's prints. */
+	--shadow-print: var(--sites-shadow-lg);
+
+	/* The fixed crops: people and the hero strip; album covers and the map;
+	   event, group and post pages. Group thumbnails are aspect-square. */
+	--aspect-portrait: 4 / 5;
+	--aspect-photo: 4 / 3;
+	--aspect-wide: 3 / 2;
+
+	/* A picture beside text: seven parts to five. */
+	--grid-template-columns-seven-five: 7fr 5fr;
+	--grid-template-columns-five-seven: 5fr 7fr;
+
+	/* Rows, slips and cards fade up half a rem, once (reveal); prints settle. */
+	--reveal-duration: 400ms;
+	--reveal-distance: 0.5rem;
+	--reveal-easing: cubic-bezier(0, 0, 0.2, 1);
+	--transition-duration-fast: 150ms;
+
+	/* The week's day and time columns; a slip's inset; a print's caption
+	   strip under its photo. */
+	--spacing-day: 10rem;
+	--spacing-time: 6.5rem;
+	--spacing-slip: 1.25rem;
+	--leading-caption: 2.25rem;
+
+	/* Rows: a thumbnail, the text, and (from 48rem) a right-hand column
+	   for when a group meets, a room's price or an event's photo. */
+	--grid-template-columns-row: 4.5rem minmax(0, 1fr);
+	--grid-template-columns-row-md: 5rem minmax(0, 1fr) 14rem;
+	--grid-template-columns-room: 9rem minmax(0, 1fr);
+	--grid-template-columns-room-md: 12rem minmax(0, 1fr) auto;
+	--grid-template-columns-date: 4rem minmax(0, 1fr);
+	--grid-template-columns-date-md: 4rem minmax(0, 1fr) 7rem;
+}
+
+/* Sizes per breakpoint (phone, then from 48rem): each role reads a design
+   token, so a workspace that changes the scale moves both. */
+:root {
+	--community-h1: calc(var(--sites-type-scale-3xl) * 36 / 56);
+	--community-h2: calc(var(--sites-type-scale-2xl) * 28 / 40);
+	--community-h3: calc(var(--sites-type-scale-xl) * 22 / 28);
+	--community-h4: calc(var(--sites-type-scale-lg) * 18 / 20);
+	--community-body: calc(var(--sites-type-scale-base) * 16 / 17);
+	--community-label: var(--sites-type-scale-xs);
+	--community-section: calc(var(--sites-spacing-xl) * 5 / 4);
+	--community-section-tight: var(--sites-spacing-xl);
+	--community-section-loose: calc(var(--sites-spacing-2xl) * 4 / 3);
+	--community-gutter: var(--sites-spacing-md);
+}
+
+@media (min-width: 48rem) {
+	:root {
+		--community-h1: var(--sites-type-scale-3xl);
+		--community-h2: var(--sites-type-scale-2xl);
+		--community-h3: var(--sites-type-scale-xl);
+		--community-h4: var(--sites-type-scale-lg);
+		--community-body: var(--sites-type-scale-base);
+		--community-label: var(--sites-type-scale-sm);
+		--community-section: var(--sites-spacing-2xl);
+		--community-section-tight: calc(var(--sites-spacing-xl) * 5 / 4);
+		--community-section-loose: calc(var(--sites-spacing-2xl) * 2);
+		--community-gutter: var(--sites-spacing-lg);
+	}
+}
+
+@media (min-width: 64rem) {
+	:root {
+		--community-section: calc(var(--sites-spacing-2xl) * 4 / 3);
+		--community-section-tight: var(--sites-spacing-2xl);
+		--community-gutter: var(--sites-spacing-xl);
+	}
+}
+
+/* Radio Canada's italic: the engine binds the roman file only. */
+@font-face {
+	font-family: "Radio Canada";
+	font-style: italic;
+	font-weight: 300 700;
+	font-display: swap;
+	src: url("/_sites/theme/fonts/radio-canada-latin-wght-italic.woff2") format("woff2");
+}
+
+/* Hours, dates and times line up in columns. */
+@utility tnum {
+	font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* The photo wall's prints settle in: a touch smaller, then their size. */
+@utility reveal-settle {
+	&:not(.is-revealed) {
+		transform: scale(0.97);
+	}
+}
+
+/* The header shrinks to a bar once the page scrolls (sticky-header writes
+   data-state on <body>). */
+@custom-variant scrolled (body[data-state="scrolling"] &);
+
+/* A link the page marks as current. */
+@custom-variant current (&[aria-current="page"]);
+
+/* Utility pages hide the header, footer and panel groups. */
+body:has([data-bare]) [data-group] {
+	display: none;
+}
+
+/* split-text hides a heading until it upgrades; with no script to upgrade it, show it. */
+html.reveal-off split-text:not(:defined) {
+	visibility: visible;
+}
+
+:root {
+	font-size: var(--sites-type-base);
+	scrollbar-color: var(--sites-scheme-chip-foreground) transparent;
+}
+
+::selection {
+	background: var(--sites-scheme-foreground);
+	color: var(--sites-scheme-background);
+}
+
+:focus-visible {
+	outline: 2px solid var(--sites-scheme-foreground);
+	outline-offset: 0.125rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+@layer base {
+	[id] {
+		scroll-margin-top: 6rem;
+	}
+}
+
+/* Rich text from the editor carries no classes, so its rhythm is set here. */
+@layer components {
+	.sites-prose > * + * {
+		margin-top: var(--sites-spacing-md);
+	}
+
+	.sites-prose :is(h2, h3, h4) {
+		margin-top: var(--sites-spacing-xl);
+		font-family: var(--font-heading);
+		font-weight: 400;
+		line-height: 1.2;
+		color: var(--sites-scheme-heading);
+		text-wrap: balance;
+	}
+
+	.sites-prose h2 {
+		font-size: var(--community-h3);
+	}
+
+	.sites-prose :is(h3, h4) {
+		font-size: var(--community-h4);
+	}
+
+	.sites-prose a {
+		color: var(--sites-scheme-links);
+		text-decoration-line: underline;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 0.2em;
+	}
+
+	.sites-prose :is(ul, ol) {
+		display: grid;
+		gap: var(--sites-spacing-xs);
+		padding-inline-start: 1.25em;
+	}
+
+	.sites-prose ul {
+		list-style: disc;
+	}
+
+	.sites-prose ol {
+		list-style: decimal;
+	}
+}
+
+/* sticky-header pins the element it is, so the renderer's wrapper steps
+   out of the way. */
+[data-section="header"]:has(sticky-header) {
+	display: contents;
+}
+
+@layer components {
+	sticky-header[disabled] {
+		position: static;
+		transform: none;
+	}
+
+	sticky-header::before {
+		content: none;
+	}
+}
+
+dropdown-component:not(:defined) dropdown-panel {
+	display: none;
+}
+
+/* The select lists: the field on the band with the muted hairline, the
+   hovered option on surface-2. */
+select-dropdown {
+	--select-shadow: none;
+	--select-shadow-soft: none;
+	--select-color-text: var(--sites-scheme-input-foreground);
+	--select-color-background: var(--sites-scheme-input-background);
+	--select-color-border: var(--sites-scheme-input-border);
+	--select-color-hover: var(--sites-scheme-chip-background);
+	--select-color-focus: var(--sites-scheme-chip-background);
+	--select-color-selected: var(--sites-scheme-chip-background);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+	}
+	/* The ticker stands still: one copy, cut with an ellipsis. */
+	[data-ticker] scrolling-content { mask-image: none; }
+	[data-ticker] scrolling-track { width: auto; transform: none !important; }
+	[data-ticker] scrolling-item[data-clone] { display: none; }
+	[data-ticker] scrolling-item { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+}

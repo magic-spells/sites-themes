@@ -1,0 +1,35 @@
+{
+  "label": "Groups",
+  "description": "Every group: the week on one sheet, then the groups with their kinds.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Regular groups for all ages, most of them free. Just turn up unless a group says otherwise."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_week",
+      "type": "week",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "mist"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_groups",
+      "type": "groups-index",
+      "preset": "Default",
+      "settings": {
+        "heading": "All groups",
+        "text": "",
+        "show_kinds": true
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,2298 @@
+{
+  "site": {
+    "name": "Larch Street Community House",
+    "url": "https://larchstreet.example",
+    "locale": "en",
+    "settings": {
+      "name": "Larch Street Community House",
+      "logo": "",
+      "favicon": "",
+      "address": "41 Larch Street, Elmbridge EB4 2LS",
+      "hours": "Monday to Friday 9:00–16:00\nSaturday 10:00–13:00\nSunday Closed",
+      "access": "Step-free entrance on Larch Street. Hearing loop in the main hall. Accessible toilet on the ground floor.",
+      "map_image": "as_map",
+      "map_url": "https://www.openstreetmap.org/",
+      "map_embed_url": "/_sites/theme/map-embed.html",
+      "ask_label": "Join in",
+      "ask_url": "/visit",
+      "give_url": "/about",
+      "logo_width": 10,
+      "reveal": true,
+      "heading_motion": true,
+      "contact_form": "contact",
+      "newsletter_form": "newsletter",
+      "phone": "01632 960 418",
+      "email": "hello@larchstreet.example"
+    }
+  },
+  "menus": {
+    "main": {
+      "handle": "main",
+      "title": "Main menu",
+      "items": [
+        {
+          "id": "m_groups",
+          "label": "Groups",
+          "target": {
+            "kind": "url",
+            "url": "/groups"
+          },
+          "children": []
+        },
+        {
+          "id": "m_whats_on",
+          "label": "What's on",
+          "target": {
+            "kind": "url",
+            "url": "/whats-on"
+          },
+          "children": []
+        },
+        {
+          "id": "m_photos",
+          "label": "Photos",
+          "target": {
+            "kind": "url",
+            "url": "/photos"
+          },
+          "children": []
+        },
+        {
+          "id": "m_visit",
+          "label": "Visit",
+          "target": {
+            "kind": "url",
+            "url": "/visit"
+          },
+          "children": []
+        },
+        {
+          "id": "m_about",
+          "label": "About",
+          "target": {
+            "kind": "url",
+            "url": "/about"
+          },
+          "children": [
+            {
+              "id": "m_about_house",
+              "label": "About the house",
+              "target": {
+                "kind": "url",
+                "url": "/about"
+              },
+              "children": []
+            },
+            {
+              "id": "m_news",
+              "label": "News",
+              "target": {
+                "kind": "url",
+                "url": "/news"
+              },
+              "children": []
+            },
+            {
+              "id": "m_hire",
+              "label": "Hire a room",
+              "target": {
+                "kind": "url",
+                "url": "/hire"
+              },
+              "children": []
+            },
+            {
+              "id": "m_contact",
+              "label": "Contact",
+              "target": {
+                "kind": "url",
+                "url": "/contact"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    "legal": {
+      "handle": "legal",
+      "title": "Legal",
+      "items": [
+        {
+          "id": "l_privacy",
+          "label": "Privacy",
+          "target": {
+            "kind": "url",
+            "url": "/privacy"
+          },
+          "children": []
+        },
+        {
+          "id": "l_cookies",
+          "label": "Cookies",
+          "target": {
+            "kind": "url",
+            "url": "/cookies"
+          },
+          "children": []
+        }
+      ]
+    },
+    "social": {
+      "handle": "social",
+      "title": "Social",
+      "items": [
+        {
+          "id": "s_facebook",
+          "label": "Facebook",
+          "target": {
+            "kind": "url",
+            "url": "https://www.facebook.com/"
+          },
+          "children": []
+        },
+        {
+          "id": "s_instagram",
+          "label": "Instagram",
+          "target": {
+            "kind": "url",
+            "url": "https://www.instagram.com/"
+          },
+          "children": []
+        }
+      ]
+    }
+  },
+  "galleries": {
+    "street-party": {
+      "handle": "street-party",
+      "title": "Street party",
+      "items": [
+        {
+          "asset_id": "as_4x3_mist",
+          "caption": "Street party, 1",
+          "alt": "Street party, photo 1"
+        },
+        {
+          "asset_id": "as_4x5_cream",
+          "caption": "",
+          "alt": "Street party, photo 2"
+        },
+        {
+          "asset_id": "as_3x2_stone",
+          "caption": "",
+          "alt": "Street party, photo 3"
+        },
+        {
+          "asset_id": "as_1x1_mist",
+          "caption": "Street party, 4",
+          "alt": "Street party, photo 4"
+        },
+        {
+          "asset_id": "as_4x3_cream",
+          "caption": "",
+          "alt": "Street party, photo 5"
+        },
+        {
+          "asset_id": "as_4x5_stone",
+          "caption": "",
+          "alt": "Street party, photo 6"
+        },
+        {
+          "asset_id": "as_3x2_mist",
+          "caption": "Street party, 7",
+          "alt": "Street party, photo 7"
+        },
+        {
+          "asset_id": "as_1x1_cream",
+          "caption": "",
+          "alt": "Street party, photo 8"
+        },
+        {
+          "asset_id": "as_4x3_stone",
+          "caption": "",
+          "alt": "Street party, photo 9"
+        },
+        {
+          "asset_id": "as_4x3_mist",
+          "caption": "Street party, 10",
+          "alt": "Street party, photo 10"
+        },
+        {
+          "asset_id": "as_4x5_cream",
+          "caption": "",
+          "alt": "Street party, photo 11"
+        },
+        {
+          "asset_id": "as_3x2_stone",
+          "caption": "",
+          "alt": "Street party, photo 12"
+        }
+      ]
+    },
+    "summer-concert": {
+      "handle": "summer-concert",
+      "title": "Summer concert",
+      "items": [
+        {
+          "asset_id": "as_4x5_cream",
+          "caption": "Summer concert, 1",
+          "alt": "Summer concert, photo 1"
+        },
+        {
+          "asset_id": "as_3x2_stone",
+          "caption": "",
+          "alt": "Summer concert, photo 2"
+        },
+        {
+          "asset_id": "as_1x1_mist",
+          "caption": "",
+          "alt": "Summer concert, photo 3"
+        },
+        {
+          "asset_id": "as_4x3_cream",
+          "caption": "Summer concert, 4",
+          "alt": "Summer concert, photo 4"
+        },
+        {
+          "asset_id": "as_4x5_stone",
+          "caption": "",
+          "alt": "Summer concert, photo 5"
+        },
+        {
+          "asset_id": "as_3x2_mist",
+          "caption": "",
+          "alt": "Summer concert, photo 6"
+        }
+      ]
+    },
+    "harvest-supper": {
+      "handle": "harvest-supper",
+      "title": "Harvest supper",
+      "items": [
+        {
+          "asset_id": "as_3x2_stone",
+          "caption": "Harvest supper, 1",
+          "alt": "Harvest supper, photo 1"
+        },
+        {
+          "asset_id": "as_1x1_mist",
+          "caption": "",
+          "alt": "Harvest supper, photo 2"
+        },
+        {
+          "asset_id": "as_4x3_cream",
+          "caption": "",
+          "alt": "Harvest supper, photo 3"
+        },
+        {
+          "asset_id": "as_4x5_stone",
+          "caption": "Harvest supper, 4",
+          "alt": "Harvest supper, photo 4"
+        },
+        {
+          "asset_id": "as_3x2_mist",
+          "caption": "",
+          "alt": "Harvest supper, photo 5"
+        },
+        {
+          "asset_id": "as_1x1_cream",
+          "caption": "",
+          "alt": "Harvest supper, photo 6"
+        },
+        {
+          "asset_id": "as_4x3_stone",
+          "caption": "Harvest supper, 7",
+          "alt": "Harvest supper, photo 7"
+        }
+      ]
+    },
+    "garden-open-day": {
+      "handle": "garden-open-day",
+      "title": "Garden open day",
+      "items": [
+        {
+          "asset_id": "as_1x1_mist",
+          "caption": "Garden open day, 1",
+          "alt": "Garden open day, photo 1"
+        },
+        {
+          "asset_id": "as_4x3_cream",
+          "caption": "",
+          "alt": "Garden open day, photo 2"
+        },
+        {
+          "asset_id": "as_4x5_stone",
+          "caption": "",
+          "alt": "Garden open day, photo 3"
+        },
+        {
+          "asset_id": "as_3x2_mist",
+          "caption": "Garden open day, 4",
+          "alt": "Garden open day, photo 4"
+        },
+        {
+          "asset_id": "as_1x1_cream",
+          "caption": "",
+          "alt": "Garden open day, photo 5"
+        },
+        {
+          "asset_id": "as_4x3_stone",
+          "caption": "",
+          "alt": "Garden open day, photo 6"
+        }
+      ]
+    },
+    "repair-table": {
+      "handle": "repair-table",
+      "title": "Repair Table",
+      "items": [
+        {
+          "asset_id": "as_4x3_cream",
+          "caption": "Repair Table, 1",
+          "alt": "Repair Table, photo 1"
+        },
+        {
+          "asset_id": "as_4x5_stone",
+          "caption": "",
+          "alt": "Repair Table, photo 2"
+        },
+        {
+          "asset_id": "as_3x2_mist",
+          "caption": "",
+          "alt": "Repair Table, photo 3"
+        },
+        {
+          "asset_id": "as_1x1_cream",
+          "caption": "Repair Table, 4",
+          "alt": "Repair Table, photo 4"
+        },
+        {
+          "asset_id": "as_4x3_stone",
+          "caption": "",
+          "alt": "Repair Table, photo 5"
+        },
+        {
+          "asset_id": "as_4x3_mist",
+          "caption": "",
+          "alt": "Repair Table, photo 6"
+        }
+      ]
+    },
+    "lantern-walk-2025": {
+      "handle": "lantern-walk-2025",
+      "title": "Lantern walk 2025",
+      "items": [
+        {
+          "asset_id": "as_4x5_stone",
+          "caption": "Lantern walk 2025, 1",
+          "alt": "Lantern walk 2025, photo 1"
+        },
+        {
+          "asset_id": "as_3x2_mist",
+          "caption": "",
+          "alt": "Lantern walk 2025, photo 2"
+        },
+        {
+          "asset_id": "as_1x1_cream",
+          "caption": "",
+          "alt": "Lantern walk 2025, photo 3"
+        },
+        {
+          "asset_id": "as_4x3_stone",
+          "caption": "Lantern walk 2025, 4",
+          "alt": "Lantern walk 2025, photo 4"
+        },
+        {
+          "asset_id": "as_4x3_mist",
+          "caption": "",
+          "alt": "Lantern walk 2025, photo 5"
+        },
+        {
+          "asset_id": "as_4x5_cream",
+          "caption": "",
+          "alt": "Lantern walk 2025, photo 6"
+        },
+        {
+          "asset_id": "as_3x2_stone",
+          "caption": "Lantern walk 2025, 7",
+          "alt": "Lantern walk 2025, photo 7"
+        },
+        {
+          "asset_id": "as_1x1_mist",
+          "caption": "",
+          "alt": "Lantern walk 2025, photo 8"
+        }
+      ]
+    },
+    "hero-strip": {
+      "handle": "hero-strip",
+      "title": "At the house",
+      "items": [
+        {
+          "asset_id": "as_4x5_mist",
+          "caption": "",
+          "alt": "Little Feet in the main hall"
+        },
+        {
+          "asset_id": "as_4x5_cream",
+          "caption": "",
+          "alt": "Knit & Natter"
+        },
+        {
+          "asset_id": "as_4x5_stone",
+          "caption": "",
+          "alt": "The garden crew"
+        },
+        {
+          "asset_id": "as_4x5_mist",
+          "caption": "",
+          "alt": "Friday supper"
+        }
+      ]
+    }
+  },
+  "assets": {
+    "as_4x5_mist": {
+      "id": "as_4x5_mist",
+      "status": "ready",
+      "file_name": "4x5-mist.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 400,
+      "url": "/_sites/theme/photos/4x5-mist.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "4:5 mist placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_4x5_cream": {
+      "id": "as_4x5_cream",
+      "status": "ready",
+      "file_name": "4x5-cream.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 400,
+      "url": "/_sites/theme/photos/4x5-cream.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "4:5 cream placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_4x5_stone": {
+      "id": "as_4x5_stone",
+      "status": "ready",
+      "file_name": "4x5-stone.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 400,
+      "url": "/_sites/theme/photos/4x5-stone.svg",
+      "width": 1200,
+      "height": 1500,
+      "alt": "4:5 stone placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_1x1_mist": {
+      "id": "as_1x1_mist",
+      "status": "ready",
+      "file_name": "1x1-mist.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 400,
+      "url": "/_sites/theme/photos/1x1-mist.svg",
+      "width": 1200,
+      "height": 1200,
+      "alt": "1:1 mist placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_1x1_cream": {
+      "id": "as_1x1_cream",
+      "status": "ready",
+      "file_name": "1x1-cream.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 400,
+      "url": "/_sites/theme/photos/1x1-cream.svg",
+      "width": 1200,
+      "height": 1200,
+      "alt": "1:1 cream placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_1x1_stone": {
+      "id": "as_1x1_stone",
+      "status": "ready",
+      "file_name": "1x1-stone.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 400,
+      "url": "/_sites/theme/photos/1x1-stone.svg",
+      "width": 1200,
+      "height": 1200,
+      "alt": "1:1 stone placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_4x3_mist": {
+      "id": "as_4x3_mist",
+      "status": "ready",
+      "file_name": "4x3-mist.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 400,
+      "url": "/_sites/theme/photos/4x3-mist.svg",
+      "width": 1600,
+      "height": 1200,
+      "alt": "4:3 mist placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_4x3_cream": {
+      "id": "as_4x3_cream",
+      "status": "ready",
+      "file_name": "4x3-cream.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 400,
+      "url": "/_sites/theme/photos/4x3-cream.svg",
+      "width": 1600,
+      "height": 1200,
+      "alt": "4:3 cream placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_4x3_stone": {
+      "id": "as_4x3_stone",
+      "status": "ready",
+      "file_name": "4x3-stone.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 400,
+      "url": "/_sites/theme/photos/4x3-stone.svg",
+      "width": 1600,
+      "height": 1200,
+      "alt": "4:3 stone placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_3x2_mist": {
+      "id": "as_3x2_mist",
+      "status": "ready",
+      "file_name": "3x2-mist.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 400,
+      "url": "/_sites/theme/photos/3x2-mist.svg",
+      "width": 1800,
+      "height": 1200,
+      "alt": "3:2 mist placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_3x2_cream": {
+      "id": "as_3x2_cream",
+      "status": "ready",
+      "file_name": "3x2-cream.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 400,
+      "url": "/_sites/theme/photos/3x2-cream.svg",
+      "width": 1800,
+      "height": 1200,
+      "alt": "3:2 cream placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_3x2_stone": {
+      "id": "as_3x2_stone",
+      "status": "ready",
+      "file_name": "3x2-stone.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 400,
+      "url": "/_sites/theme/photos/3x2-stone.svg",
+      "width": 1800,
+      "height": 1200,
+      "alt": "3:2 stone placeholder",
+      "created_at": "2026-11-14T09:00:00Z"
+    },
+    "as_map": {
+      "id": "as_map",
+      "status": "ready",
+      "file_name": "map.svg",
+      "mime": "image/svg+xml",
+      "byte_size": 900,
+      "url": "/_sites/theme/photos/map.svg",
+      "width": 1600,
+      "height": 1200,
+      "alt": "Map of Larch Street",
+      "created_at": "2026-11-14T09:00:00Z"
+    }
+  },
+  "forms": {
+    "contact": {
+      "handle": "contact",
+      "name": "Contact",
+      "fields": [
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Your name",
+          "required": true,
+          "max_length": 120
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "required": true,
+          "max_length": 250
+        },
+        {
+          "id": "message",
+          "type": "textarea",
+          "label": "Message",
+          "required": true,
+          "max_length": 4000
+        }
+      ],
+      "success_message": "Thank you. We reply within two working days.",
+      "submit_label": "Send",
+      "redirect_path": ""
+    },
+    "newsletter": {
+      "handle": "newsletter",
+      "name": "Newsletter",
+      "fields": [
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email address",
+          "required": true,
+          "max_length": 250
+        }
+      ],
+      "success_message": "Thank you. The next one comes at the start of the month.",
+      "submit_label": "Sign up",
+      "redirect_path": ""
+    }
+  },
+  "content": {
+    "groups": {
+      "name": "Groups",
+      "fields": [
+        {
+          "id": "summary",
+          "type": "text",
+          "label": "One line"
+        },
+        {
+          "id": "description",
+          "type": "richtext",
+          "label": "Description"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Photo (1:1)"
+        },
+        {
+          "id": "days",
+          "type": "text",
+          "label": "Days (mon, tue, wed, thu, fri, sat, sun; comma-separated)"
+        },
+        {
+          "id": "start",
+          "type": "text",
+          "label": "Starts (two-digit 24-hour time: 09:30)"
+        },
+        {
+          "id": "end",
+          "type": "text",
+          "label": "Ends (two-digit 24-hour time: 11:30)"
+        },
+        {
+          "id": "frequency",
+          "type": "text",
+          "label": "How often (blank is every week: 1st Wednesday, Term time)"
+        },
+        {
+          "id": "place",
+          "type": "text",
+          "label": "Where (blank is the house: Small room, Back garden)"
+        },
+        {
+          "id": "host",
+          "type": "entry",
+          "label": "Host",
+          "content_type": "people"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Link (a sign-up or a group page elsewhere)"
+        },
+        {
+          "id": "link_label",
+          "type": "text",
+          "label": "Link label"
+        },
+        {
+          "id": "kind",
+          "type": "text",
+          "label": "Kind (for the filter: Food, Music, Outdoors)"
+        },
+        {
+          "id": "featured",
+          "type": "checkbox",
+          "label": "Featured"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        }
+      ],
+      "entries": [
+        {
+          "id": "gr_little_feet_playgroup",
+          "handle": "little-feet-playgroup",
+          "title": "Little Feet playgroup",
+          "fields": {
+            "summary": "Songs, toys and a cup of tea for under-fives and their grown-ups.",
+            "description": "<p>Songs, toys and a cup of tea for under-fives and their grown-ups. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+            "days": "mon",
+            "start": "09:30",
+            "end": "11:30",
+            "frequency": "",
+            "place": "Main hall",
+            "host": "pp_femi_adeyemi",
+            "link": "",
+            "link_label": "",
+            "kind": "Families",
+            "featured": true,
+            "order": 1,
+            "image": "as_1x1_mist"
+          }
+        },
+        {
+          "id": "gr_knit_and_natter",
+          "handle": "knit-and-natter",
+          "title": "Knit & Natter",
+          "fields": {
+            "summary": "Bring a project or learn from scratch. Needles to lend.",
+            "description": "<p>Bring a project or learn from scratch. Needles to lend. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+            "days": "mon",
+            "start": "13:30",
+            "end": "15:30",
+            "frequency": "",
+            "place": "Small room",
+            "host": "pp_ana_ruiz",
+            "link": "",
+            "link_label": "",
+            "kind": "Crafts",
+            "featured": true,
+            "order": 2,
+            "image": "as_1x1_cream"
+          }
+        },
+        {
+          "id": "gr_larch_street_singers",
+          "handle": "larch-street-singers",
+          "title": "Larch Street Singers",
+          "fields": {
+            "summary": "A friendly choir. No auditions and no need to read music.",
+            "description": "<p>A friendly choir. No auditions and no need to read music. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+            "days": "tue, thu",
+            "start": "19:00",
+            "end": "20:30",
+            "frequency": "",
+            "place": "Main hall",
+            "host": "pp_owen_price",
+            "link": "https://larchstreet.example/singers",
+            "link_label": "Hear the choir",
+            "kind": "Music",
+            "featured": true,
+            "order": 3,
+            "image": "as_1x1_stone"
+          }
+        },
+        {
+          "id": "gr_english_conversation",
+          "handle": "english-conversation",
+          "title": "English conversation",
+          "fields": {
+            "summary": "Practise everyday English with volunteers over tea.",
+            "description": "<p>Practise everyday English with volunteers over tea. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+            "days": "tue",
+            "start": "10:00",
+            "end": "11:30",
+            "frequency": "",
+            "place": "Small room",
+            "host": "pp_ana_ruiz",
+            "link": "",
+            "link_label": "",
+            "kind": "Learning",
+            "featured": true,
+            "order": 4,
+            "image": "as_1x1_mist"
+          }
+        },
+        {
+          "id": "gr_repair_table",
+          "handle": "repair-table",
+          "title": "Repair Table",
+          "fields": {
+            "summary": "Bring something broken and we will try to fix it with you.",
+            "description": "<p>Bring something broken and we will try to fix it with you. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+            "days": "wed",
+            "start": "18:00",
+            "end": "20:00",
+            "frequency": "1st Wednesday",
+            "place": "Small room",
+            "host": "pp_femi_adeyemi",
+            "link": "",
+            "link_label": "",
+            "kind": "Making",
+            "featured": true,
+            "order": 5
+          }
+        },
+        {
+          "id": "gr_lunch_club",
+          "handle": "lunch-club",
+          "title": "Lunch Club",
+          "fields": {
+            "summary": "Two courses, cooked in the house kitchen and eaten together.",
+            "description": "<p>Two courses, cooked in the house kitchen and eaten together. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+            "days": "wed",
+            "start": "12:00",
+            "end": "13:30",
+            "frequency": "",
+            "place": "Main hall",
+            "host": "pp_rosa_lindqvist",
+            "link": "",
+            "link_label": "",
+            "kind": "Food",
+            "featured": true,
+            "order": 6,
+            "image": "as_1x1_cream"
+          }
+        },
+        {
+          "id": "gr_garden_crew",
+          "handle": "garden-crew",
+          "title": "Garden crew",
+          "fields": {
+            "summary": "Weeding, planting and a long tea break in the back garden.",
+            "description": "<p>Weeding, planting and a long tea break in the back garden. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+            "days": "thu",
+            "start": "09:00",
+            "end": "11:00",
+            "frequency": "",
+            "place": "Back garden",
+            "host": "pp_priya_shah",
+            "link": "",
+            "link_label": "",
+            "kind": "Outdoors",
+            "featured": false,
+            "order": 7,
+            "image": "as_1x1_stone"
+          }
+        },
+        {
+          "id": "gr_homework_club",
+          "handle": "homework-club",
+          "title": "Homework club",
+          "fields": {
+            "summary": "A quiet table, a snack and a hand with homework for ages 8 to 14.",
+            "description": "<p>A quiet table, a snack and a hand with homework for ages 8 to 14. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+            "days": "thu",
+            "start": "15:30",
+            "end": "17:00",
+            "frequency": "Thursdays in term time",
+            "place": "Small room",
+            "host": "pp_sam_kellett",
+            "link": "",
+            "link_label": "",
+            "kind": "Learning",
+            "featured": false,
+            "order": 8
+          }
+        },
+        {
+          "id": "gr_chair_yoga",
+          "handle": "chair-yoga",
+          "title": "Chair yoga",
+          "fields": {
+            "summary": "Gentle stretching for every body, sitting or standing.",
+            "description": "<p>Gentle stretching for every body, sitting or standing. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+            "days": "fri",
+            "start": "10:00",
+            "end": "11:00",
+            "frequency": "",
+            "place": "Main hall",
+            "host": "pp_ana_ruiz",
+            "link": "",
+            "link_label": "",
+            "kind": "Wellbeing",
+            "featured": false,
+            "order": 9,
+            "image": "as_1x1_mist"
+          }
+        },
+        {
+          "id": "gr_friday_supper",
+          "handle": "friday-supper",
+          "title": "Friday supper",
+          "fields": {
+            "summary": "A hot meal on a pay-what-you-can basis. Everyone welcome.",
+            "description": "<p>A hot meal on a pay-what-you-can basis. Everyone welcome. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+            "days": "fri",
+            "start": "18:00",
+            "end": "20:00",
+            "frequency": "",
+            "place": "Main hall",
+            "host": "pp_rosa_lindqvist",
+            "link": "",
+            "link_label": "",
+            "kind": "Food",
+            "featured": false,
+            "order": 10,
+            "image": "as_1x1_cream"
+          }
+        },
+        {
+          "id": "gr_parkside_walk",
+          "handle": "parkside-walk",
+          "title": "Parkside walk",
+          "fields": {
+            "summary": "An easy hour round the park and back for a cup of tea.",
+            "description": "<p>An easy hour round the park and back for a cup of tea. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+            "days": "sat",
+            "start": "08:30",
+            "end": "",
+            "frequency": "",
+            "place": "Meet at the park gates",
+            "host": "pp_priya_shah",
+            "link": "",
+            "link_label": "",
+            "kind": "Outdoors",
+            "featured": false,
+            "order": 11,
+            "image": "as_1x1_stone"
+          }
+        },
+        {
+          "id": "gr_sunday_breakfast",
+          "handle": "sunday-breakfast",
+          "title": "Sunday breakfast",
+          "fields": {
+            "summary": "Bacon rolls, porridge and the papers, from half past nine.",
+            "description": "<p>Bacon rolls, porridge and the papers, from half past nine. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+            "days": "sun",
+            "start": "09:30",
+            "end": "11:00",
+            "frequency": "",
+            "place": "Main hall",
+            "host": "pp_margaret_doyle",
+            "link": "",
+            "link_label": "",
+            "kind": "Food",
+            "featured": false,
+            "order": 12
+          }
+        }
+      ]
+    },
+    "events": {
+      "name": "Events",
+      "fields": [
+        {
+          "id": "date",
+          "type": "date",
+          "label": "Date"
+        },
+        {
+          "id": "time",
+          "type": "text",
+          "label": "Time (10:00–14:00)"
+        },
+        {
+          "id": "place",
+          "type": "text",
+          "label": "Where"
+        },
+        {
+          "id": "summary",
+          "type": "text",
+          "label": "One line"
+        },
+        {
+          "id": "description",
+          "type": "richtext",
+          "label": "Description"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Photo (3:2)"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "id": "link_label",
+          "type": "text",
+          "label": "Link label"
+        },
+        {
+          "id": "album",
+          "type": "entry",
+          "label": "Photos from last time",
+          "content_type": "albums"
+        },
+        {
+          "id": "group",
+          "type": "entry",
+          "label": "Group",
+          "content_type": "groups"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ev_open_day",
+          "handle": "open-day",
+          "title": "Open day",
+          "fields": {
+            "date": "2026-11-21",
+            "time": "10:00–14:00",
+            "place": "Whole house",
+            "summary": "Look round, meet the groups and stay for lunch.",
+            "description": "<p>Look round, meet the groups and stay for lunch.</p><p>No need to book. If you have a question, ask at the desk or send us a message.</p>",
+            "link": "",
+            "link_label": "",
+            "image": "as_3x2_mist",
+            "album": "al_garden_open_day"
+          }
+        },
+        {
+          "id": "ev_annual_general_meeting",
+          "handle": "annual-general-meeting",
+          "title": "Annual general meeting",
+          "fields": {
+            "date": "2026-11-24",
+            "time": "19:00–20:30",
+            "place": "Main hall",
+            "summary": "The accounts, the year ahead and electing the committee. Everyone who uses the house is welcome.",
+            "description": "<p>The accounts, the year ahead and electing the committee. Everyone who uses the house is welcome.</p><p>No need to book. If you have a question, ask at the desk or send us a message.</p>",
+            "link": "https://larchstreet.example/agm",
+            "link_label": "Read the agenda"
+          }
+        },
+        {
+          "id": "ev_clothes_swap",
+          "handle": "clothes-swap",
+          "title": "Clothes swap",
+          "fields": {
+            "date": "2026-11-28",
+            "time": "11:00–13:00",
+            "place": "Main hall",
+            "summary": "Bring up to ten clean things and take home what you like.",
+            "description": "<p>Bring up to ten clean things and take home what you like.</p><p>No need to book. If you have a question, ask at the desk or send us a message.</p>",
+            "link": "",
+            "link_label": "",
+            "image": "as_3x2_cream"
+          }
+        },
+        {
+          "id": "ev_seed_swap",
+          "handle": "seed-swap",
+          "title": "Seed swap",
+          "fields": {
+            "date": "2026-11-29",
+            "time": "10:00–12:00",
+            "place": "Back garden",
+            "summary": "Bring seeds you saved this year, take some home, and ask the garden crew anything.",
+            "description": "<p>Bring seeds you saved this year, take some home, and ask the garden crew anything.</p><p>No need to book. If you have a question, ask at the desk or send us a message.</p>",
+            "link": "",
+            "link_label": "",
+            "group": "gr_garden_crew"
+          }
+        },
+        {
+          "id": "ev_lantern_walk",
+          "handle": "lantern-walk",
+          "title": "Lantern walk",
+          "fields": {
+            "date": "2026-12-05",
+            "time": "16:30",
+            "place": "Meet at the park gates",
+            "summary": "Make a lantern at the house from two, then walk round the park at dusk.",
+            "description": "<p>Make a lantern at the house from two, then walk round the park at dusk.</p><p>No need to book. If you have a question, ask at the desk or send us a message.</p>",
+            "link": "",
+            "link_label": "",
+            "image": "as_3x2_stone",
+            "album": "al_lantern_walk_2025"
+          }
+        },
+        {
+          "id": "ev_winter_fair",
+          "handle": "winter-fair",
+          "title": "Winter fair",
+          "fields": {
+            "date": "2026-12-12",
+            "time": "11:00–15:00",
+            "place": "Whole house",
+            "summary": "Stalls, hot apple juice and the Larch Street Singers at 14:00.",
+            "description": "<p>Stalls, hot apple juice and the Larch Street Singers at 14:00.</p><p>No need to book. If you have a question, ask at the desk or send us a message.</p>",
+            "link": "",
+            "link_label": "",
+            "image": "as_3x2_mist",
+            "group": "gr_larch_street_singers"
+          }
+        },
+        {
+          "id": "ev_film_night",
+          "handle": "film-night",
+          "title": "Film night",
+          "fields": {
+            "date": "2026-12-18",
+            "time": "19:00–21:00",
+            "place": "Main hall",
+            "summary": "A family film, popcorn and blankets. Free, with a pot for donations.",
+            "description": "<p>A family film, popcorn and blankets. Free, with a pot for donations.</p><p>No need to book. If you have a question, ask at the desk or send us a message.</p>",
+            "link": "",
+            "link_label": ""
+          }
+        },
+        {
+          "id": "ev_new_year_potluck",
+          "handle": "new-year-potluck",
+          "title": "New Year potluck",
+          "fields": {
+            "date": "2027-01-02",
+            "time": "12:00–15:00",
+            "place": "Main hall",
+            "summary": "Bring a dish to share and meet the neighbours.",
+            "description": "<p>Bring a dish to share and meet the neighbours.</p><p>No need to book. If you have a question, ask at the desk or send us a message.</p>",
+            "link": "",
+            "link_label": ""
+          }
+        }
+      ]
+    },
+    "albums": {
+      "name": "Albums",
+      "fields": [
+        {
+          "id": "date",
+          "type": "date",
+          "label": "Date"
+        },
+        {
+          "id": "photos",
+          "type": "gallery",
+          "label": "Photos"
+        },
+        {
+          "id": "description",
+          "type": "text",
+          "label": "Description"
+        },
+        {
+          "id": "event",
+          "type": "entry",
+          "label": "Event",
+          "content_type": "events"
+        }
+      ],
+      "entries": [
+        {
+          "id": "al_street_party",
+          "handle": "street-party",
+          "title": "Street party",
+          "fields": {
+            "date": "2026-07-11",
+            "photos": "street-party",
+            "description": "The road closed, forty tables and a brass band."
+          }
+        },
+        {
+          "id": "al_summer_concert",
+          "handle": "summer-concert",
+          "title": "Summer concert",
+          "fields": {
+            "date": "2026-07-25",
+            "photos": "summer-concert",
+            "description": "The Larch Street Singers in the back garden."
+          }
+        },
+        {
+          "id": "al_harvest_supper",
+          "handle": "harvest-supper",
+          "title": "Harvest supper",
+          "fields": {
+            "date": "2026-10-03",
+            "photos": "harvest-supper",
+            "description": "Soup from the garden for sixty neighbours."
+          }
+        },
+        {
+          "id": "al_garden_open_day",
+          "handle": "garden-open-day",
+          "title": "Garden open day",
+          "fields": {
+            "date": "2026-06-13",
+            "photos": "garden-open-day",
+            "description": "Beds, bees and the new pond."
+          }
+        },
+        {
+          "id": "al_repair_table",
+          "handle": "repair-table",
+          "title": "Repair Table",
+          "fields": {
+            "date": "2026-09-02",
+            "photos": "repair-table",
+            "description": "Toasters, lamps, a bike and a very old radio."
+          }
+        },
+        {
+          "id": "al_lantern_walk_2025",
+          "handle": "lantern-walk-2025",
+          "title": "Lantern walk 2025",
+          "fields": {
+            "date": "2025-12-06",
+            "photos": "lantern-walk-2025",
+            "description": "Paper lanterns round the park at dusk.",
+            "event": "ev_lantern_walk"
+          }
+        }
+      ]
+    },
+    "people": {
+      "name": "People",
+      "fields": [
+        {
+          "id": "role",
+          "type": "text",
+          "label": "Role"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Portrait (4:5)"
+        },
+        {
+          "id": "order",
+          "type": "number",
+          "label": "Position"
+        },
+        {
+          "id": "team",
+          "type": "select",
+          "label": "Team",
+          "options": [
+            "staff",
+            "committee",
+            "volunteers"
+          ]
+        }
+      ],
+      "entries": [
+        {
+          "id": "pp_ana_ruiz",
+          "handle": "ana-ruiz",
+          "title": "Ana Ruiz",
+          "fields": {
+            "role": "Coordinator",
+            "order": 1,
+            "team": "staff",
+            "image": "as_4x5_mist"
+          }
+        },
+        {
+          "id": "pp_femi_adeyemi",
+          "handle": "femi-adeyemi",
+          "title": "Femi Adeyemi",
+          "fields": {
+            "role": "Volunteer lead",
+            "order": 2,
+            "team": "staff",
+            "image": "as_4x5_cream"
+          }
+        },
+        {
+          "id": "pp_margaret_doyle",
+          "handle": "margaret-doyle",
+          "title": "Margaret Doyle",
+          "fields": {
+            "role": "Chair",
+            "order": 3,
+            "team": "committee",
+            "image": "as_4x5_stone"
+          }
+        },
+        {
+          "id": "pp_david_hale",
+          "handle": "david-hale",
+          "title": "David Hale",
+          "fields": {
+            "role": "Treasurer",
+            "order": 4,
+            "team": "committee"
+          }
+        },
+        {
+          "id": "pp_priya_shah",
+          "handle": "priya-shah",
+          "title": "Priya Shah",
+          "fields": {
+            "role": "Garden lead",
+            "order": 5,
+            "team": "volunteers",
+            "image": "as_4x5_stone"
+          }
+        },
+        {
+          "id": "pp_owen_price",
+          "handle": "owen-price",
+          "title": "Owen Price",
+          "fields": {
+            "role": "Choir leader",
+            "order": 6,
+            "team": "volunteers",
+            "image": "as_4x5_mist"
+          }
+        },
+        {
+          "id": "pp_rosa_lindqvist",
+          "handle": "rosa-lindqvist",
+          "title": "Rosa Lindqvist",
+          "fields": {
+            "role": "Supper cook",
+            "order": 7,
+            "team": "volunteers"
+          }
+        },
+        {
+          "id": "pp_sam_kellett",
+          "handle": "sam-kellett",
+          "title": "Sam Kellett",
+          "fields": {
+            "role": "Youth worker",
+            "order": 8,
+            "team": "staff",
+            "image": "as_4x5_cream"
+          }
+        }
+      ]
+    },
+    "posts": {
+      "name": "Posts",
+      "fields": [
+        {
+          "id": "standfirst",
+          "type": "text",
+          "label": "Standfirst"
+        },
+        {
+          "id": "body",
+          "type": "richtext",
+          "label": "Body"
+        },
+        {
+          "id": "date",
+          "type": "date",
+          "label": "Date"
+        },
+        {
+          "id": "image",
+          "type": "image",
+          "label": "Photo (3:2)"
+        },
+        {
+          "id": "topic",
+          "type": "text",
+          "label": "Topic (News, Newsletter)"
+        }
+      ],
+      "entries": [
+        {
+          "id": "po_the_hall_floor_is_being_sanded",
+          "handle": "the-hall-floor-is-being-sanded",
+          "title": "The hall floor is being sanded",
+          "fields": {
+            "standfirst": "The main hall closes on Monday 30 November for two days while the floor is sanded and sealed.",
+            "body": "<p>Groups that meet in the main hall that week move to the small room or the garden. Little Feet and Chair yoga take the week off.</p><p>The floor was last done in 2009. Thank you to everyone who gave to the floor fund.</p>",
+            "date": "2026-11-10",
+            "topic": "News",
+            "image": "as_3x2_mist"
+          }
+        },
+        {
+          "id": "po_november_newsletter",
+          "handle": "november-newsletter",
+          "title": "November newsletter",
+          "fields": {
+            "standfirst": "The AGM, the winter fair and a new Saturday walk.",
+            "body": "<p>This month the AGM is on Tuesday 24 November, and the winter fair is on Saturday 12 December.</p><p>The Parkside walk now meets every Saturday at half past eight at the park gates.</p>",
+            "date": "2026-11-01",
+            "topic": "Newsletter",
+            "image": "as_3x2_cream"
+          }
+        },
+        {
+          "id": "po_thank_you_volunteers",
+          "handle": "thank-you-volunteers",
+          "title": "Thank you, volunteers",
+          "fields": {
+            "standfirst": "Sixty-two neighbours gave 4,300 hours to the house this year.",
+            "body": "<p>From the Friday supper rota to the garden crew, the house runs on volunteers.</p><p>Come to the open day on 21 November to find out how to join them.</p>",
+            "date": "2026-10-20",
+            "topic": "News",
+            "image": "as_3x2_stone"
+          }
+        },
+        {
+          "id": "po_october_newsletter",
+          "handle": "october-newsletter",
+          "title": "October newsletter",
+          "fields": {
+            "standfirst": "The harvest supper, half term and the Repair Table.",
+            "body": "<p>The harvest supper is on Saturday 3 October.</p><p>Homework club takes a break over half term and returns on 2 November.</p>",
+            "date": "2026-10-01",
+            "topic": "Newsletter",
+            "image": "as_3x2_mist"
+          }
+        },
+        {
+          "id": "po_september_newsletter",
+          "handle": "september-newsletter",
+          "title": "September newsletter",
+          "fields": {
+            "standfirst": "Back to school, and the groups back after summer.",
+            "body": "<p>Every group is back from the first week of September.</p><p>We are looking for two volunteers for the Lunch Club kitchen.</p>",
+            "date": "2026-09-01",
+            "topic": "Newsletter"
+          }
+        },
+        {
+          "id": "po_august_newsletter",
+          "handle": "august-newsletter",
+          "title": "August newsletter",
+          "fields": {
+            "standfirst": "Photos from the street party and the summer concert.",
+            "body": "<p>Thank you to everyone who came to the street party.</p><p>The house is open as usual through August.</p>",
+            "date": "2026-08-01",
+            "topic": "Newsletter",
+            "image": "as_3x2_cream"
+          }
+        }
+      ]
+    }
+  },
+  "pages": {
+    "/": {
+      "id": "pg_home",
+      "template": "home",
+      "title": "Larch Street Community House",
+      "seo": {
+        "description": "A community house on Larch Street, Elmbridge: groups, meals and classes most days of the week, run by neighbours."
+      }
+    },
+    "/groups": {
+      "id": "pg_groups",
+      "template": "page.groups",
+      "title": "Groups"
+    },
+    "/whats-on": {
+      "id": "pg_whats_on",
+      "template": "page.whats-on",
+      "title": "What's on"
+    },
+    "/photos": {
+      "id": "pg_photos",
+      "template": "page.photos",
+      "title": "Photos"
+    },
+    "/news": {
+      "id": "pg_news",
+      "template": "page.news",
+      "title": "News"
+    },
+    "/visit": {
+      "id": "pg_visit",
+      "template": "page.visit",
+      "title": "Visit us"
+    },
+    "/about": {
+      "id": "pg_about",
+      "template": "page.about",
+      "title": "About the house"
+    },
+    "/hire": {
+      "id": "pg_hire",
+      "template": "page.hire",
+      "title": "Hire a room"
+    },
+    "/contact": {
+      "id": "pg_contact",
+      "template": "page.contact",
+      "title": "Contact"
+    },
+    "/privacy": {
+      "id": "pg_privacy",
+      "template": "page.privacy",
+      "title": "Privacy",
+      "content": "<p>Larch Street Community House keeps the details you send through our forms to reply to you, and the newsletter list to send the newsletter. We never sell or share them.</p><h2>What we keep</h2><p>Your name, your email and what you wrote. Newsletter addresses stay until you unsubscribe.</p><h2>Asking us</h2><p>Write to hello@larchstreet.example to see or delete what we hold about you.</p>"
+    },
+    "/cookies": {
+      "id": "pg_cookies",
+      "template": "page",
+      "title": "Cookies",
+      "content": "<p>The site sets one cookie to remember that you closed the cookie notice, and nothing else. There is no tracking and no advertising.</p>"
+    },
+    "/groups/little-feet-playgroup": {
+      "id": "pg_group_little_feet_playgroup",
+      "template": "group",
+      "title": "Little Feet playgroup",
+      "params": {
+        "group": "little-feet-playgroup"
+      },
+      "entry": {
+        "id": "gr_little_feet_playgroup",
+        "handle": "little-feet-playgroup",
+        "title": "Little Feet playgroup",
+        "fields": {
+          "summary": "Songs, toys and a cup of tea for under-fives and their grown-ups.",
+          "description": "<p>Songs, toys and a cup of tea for under-fives and their grown-ups. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+          "days": "mon",
+          "start": "09:30",
+          "end": "11:30",
+          "frequency": "",
+          "place": "Main hall",
+          "host": "pp_femi_adeyemi",
+          "link": "",
+          "link_label": "",
+          "kind": "Families",
+          "featured": true,
+          "order": 1,
+          "image": "as_1x1_mist"
+        }
+      }
+    },
+    "/groups/knit-and-natter": {
+      "id": "pg_group_knit_and_natter",
+      "template": "group",
+      "title": "Knit & Natter",
+      "params": {
+        "group": "knit-and-natter"
+      },
+      "entry": {
+        "id": "gr_knit_and_natter",
+        "handle": "knit-and-natter",
+        "title": "Knit & Natter",
+        "fields": {
+          "summary": "Bring a project or learn from scratch. Needles to lend.",
+          "description": "<p>Bring a project or learn from scratch. Needles to lend. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+          "days": "mon",
+          "start": "13:30",
+          "end": "15:30",
+          "frequency": "",
+          "place": "Small room",
+          "host": "pp_ana_ruiz",
+          "link": "",
+          "link_label": "",
+          "kind": "Crafts",
+          "featured": true,
+          "order": 2,
+          "image": "as_1x1_cream"
+        }
+      }
+    },
+    "/groups/larch-street-singers": {
+      "id": "pg_group_larch_street_singers",
+      "template": "group",
+      "title": "Larch Street Singers",
+      "params": {
+        "group": "larch-street-singers"
+      },
+      "entry": {
+        "id": "gr_larch_street_singers",
+        "handle": "larch-street-singers",
+        "title": "Larch Street Singers",
+        "fields": {
+          "summary": "A friendly choir. No auditions and no need to read music.",
+          "description": "<p>A friendly choir. No auditions and no need to read music. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+          "days": "tue, thu",
+          "start": "19:00",
+          "end": "20:30",
+          "frequency": "",
+          "place": "Main hall",
+          "host": "pp_owen_price",
+          "link": "https://larchstreet.example/singers",
+          "link_label": "Hear the choir",
+          "kind": "Music",
+          "featured": true,
+          "order": 3,
+          "image": "as_1x1_stone"
+        }
+      }
+    },
+    "/groups/english-conversation": {
+      "id": "pg_group_english_conversation",
+      "template": "group",
+      "title": "English conversation",
+      "params": {
+        "group": "english-conversation"
+      },
+      "entry": {
+        "id": "gr_english_conversation",
+        "handle": "english-conversation",
+        "title": "English conversation",
+        "fields": {
+          "summary": "Practise everyday English with volunteers over tea.",
+          "description": "<p>Practise everyday English with volunteers over tea. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+          "days": "tue",
+          "start": "10:00",
+          "end": "11:30",
+          "frequency": "",
+          "place": "Small room",
+          "host": "pp_ana_ruiz",
+          "link": "",
+          "link_label": "",
+          "kind": "Learning",
+          "featured": true,
+          "order": 4,
+          "image": "as_1x1_mist"
+        }
+      }
+    },
+    "/groups/repair-table": {
+      "id": "pg_group_repair_table",
+      "template": "group",
+      "title": "Repair Table",
+      "params": {
+        "group": "repair-table"
+      },
+      "entry": {
+        "id": "gr_repair_table",
+        "handle": "repair-table",
+        "title": "Repair Table",
+        "fields": {
+          "summary": "Bring something broken and we will try to fix it with you.",
+          "description": "<p>Bring something broken and we will try to fix it with you. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+          "days": "wed",
+          "start": "18:00",
+          "end": "20:00",
+          "frequency": "1st Wednesday",
+          "place": "Small room",
+          "host": "pp_femi_adeyemi",
+          "link": "",
+          "link_label": "",
+          "kind": "Making",
+          "featured": true,
+          "order": 5
+        }
+      }
+    },
+    "/groups/lunch-club": {
+      "id": "pg_group_lunch_club",
+      "template": "group",
+      "title": "Lunch Club",
+      "params": {
+        "group": "lunch-club"
+      },
+      "entry": {
+        "id": "gr_lunch_club",
+        "handle": "lunch-club",
+        "title": "Lunch Club",
+        "fields": {
+          "summary": "Two courses, cooked in the house kitchen and eaten together.",
+          "description": "<p>Two courses, cooked in the house kitchen and eaten together. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+          "days": "wed",
+          "start": "12:00",
+          "end": "13:30",
+          "frequency": "",
+          "place": "Main hall",
+          "host": "pp_rosa_lindqvist",
+          "link": "",
+          "link_label": "",
+          "kind": "Food",
+          "featured": true,
+          "order": 6,
+          "image": "as_1x1_cream"
+        }
+      }
+    },
+    "/groups/garden-crew": {
+      "id": "pg_group_garden_crew",
+      "template": "group",
+      "title": "Garden crew",
+      "params": {
+        "group": "garden-crew"
+      },
+      "entry": {
+        "id": "gr_garden_crew",
+        "handle": "garden-crew",
+        "title": "Garden crew",
+        "fields": {
+          "summary": "Weeding, planting and a long tea break in the back garden.",
+          "description": "<p>Weeding, planting and a long tea break in the back garden. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+          "days": "thu",
+          "start": "09:00",
+          "end": "11:00",
+          "frequency": "",
+          "place": "Back garden",
+          "host": "pp_priya_shah",
+          "link": "",
+          "link_label": "",
+          "kind": "Outdoors",
+          "featured": false,
+          "order": 7,
+          "image": "as_1x1_stone"
+        }
+      }
+    },
+    "/groups/homework-club": {
+      "id": "pg_group_homework_club",
+      "template": "group",
+      "title": "Homework club",
+      "params": {
+        "group": "homework-club"
+      },
+      "entry": {
+        "id": "gr_homework_club",
+        "handle": "homework-club",
+        "title": "Homework club",
+        "fields": {
+          "summary": "A quiet table, a snack and a hand with homework for ages 8 to 14.",
+          "description": "<p>A quiet table, a snack and a hand with homework for ages 8 to 14. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+          "days": "thu",
+          "start": "15:30",
+          "end": "17:00",
+          "frequency": "Thursdays in term time",
+          "place": "Small room",
+          "host": "pp_sam_kellett",
+          "link": "",
+          "link_label": "",
+          "kind": "Learning",
+          "featured": false,
+          "order": 8
+        }
+      }
+    },
+    "/groups/chair-yoga": {
+      "id": "pg_group_chair_yoga",
+      "template": "group",
+      "title": "Chair yoga",
+      "params": {
+        "group": "chair-yoga"
+      },
+      "entry": {
+        "id": "gr_chair_yoga",
+        "handle": "chair-yoga",
+        "title": "Chair yoga",
+        "fields": {
+          "summary": "Gentle stretching for every body, sitting or standing.",
+          "description": "<p>Gentle stretching for every body, sitting or standing. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+          "days": "fri",
+          "start": "10:00",
+          "end": "11:00",
+          "frequency": "",
+          "place": "Main hall",
+          "host": "pp_ana_ruiz",
+          "link": "",
+          "link_label": "",
+          "kind": "Wellbeing",
+          "featured": false,
+          "order": 9,
+          "image": "as_1x1_mist"
+        }
+      }
+    },
+    "/groups/friday-supper": {
+      "id": "pg_group_friday_supper",
+      "template": "group",
+      "title": "Friday supper",
+      "params": {
+        "group": "friday-supper"
+      },
+      "entry": {
+        "id": "gr_friday_supper",
+        "handle": "friday-supper",
+        "title": "Friday supper",
+        "fields": {
+          "summary": "A hot meal on a pay-what-you-can basis. Everyone welcome.",
+          "description": "<p>A hot meal on a pay-what-you-can basis. Everyone welcome. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+          "days": "fri",
+          "start": "18:00",
+          "end": "20:00",
+          "frequency": "",
+          "place": "Main hall",
+          "host": "pp_rosa_lindqvist",
+          "link": "",
+          "link_label": "",
+          "kind": "Food",
+          "featured": false,
+          "order": 10,
+          "image": "as_1x1_cream"
+        }
+      }
+    },
+    "/groups/parkside-walk": {
+      "id": "pg_group_parkside_walk",
+      "template": "group",
+      "title": "Parkside walk",
+      "params": {
+        "group": "parkside-walk"
+      },
+      "entry": {
+        "id": "gr_parkside_walk",
+        "handle": "parkside-walk",
+        "title": "Parkside walk",
+        "fields": {
+          "summary": "An easy hour round the park and back for a cup of tea.",
+          "description": "<p>An easy hour round the park and back for a cup of tea. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+          "days": "sat",
+          "start": "08:30",
+          "end": "",
+          "frequency": "",
+          "place": "Meet at the park gates",
+          "host": "pp_priya_shah",
+          "link": "",
+          "link_label": "",
+          "kind": "Outdoors",
+          "featured": false,
+          "order": 11,
+          "image": "as_1x1_stone"
+        }
+      }
+    },
+    "/groups/sunday-breakfast": {
+      "id": "pg_group_sunday_breakfast",
+      "template": "group",
+      "title": "Sunday breakfast",
+      "params": {
+        "group": "sunday-breakfast"
+      },
+      "entry": {
+        "id": "gr_sunday_breakfast",
+        "handle": "sunday-breakfast",
+        "title": "Sunday breakfast",
+        "fields": {
+          "summary": "Bacon rolls, porridge and the papers, from half past nine.",
+          "description": "<p>Bacon rolls, porridge and the papers, from half past nine. Just turn up: there is no need to book, and your first time is free.</p><p>If you have a question before you come, ask at the desk or send us a message.</p>",
+          "days": "sun",
+          "start": "09:30",
+          "end": "11:00",
+          "frequency": "",
+          "place": "Main hall",
+          "host": "pp_margaret_doyle",
+          "link": "",
+          "link_label": "",
+          "kind": "Food",
+          "featured": false,
+          "order": 12
+        }
+      }
+    },
+    "/whats-on/open-day": {
+      "id": "pg_event_open_day",
+      "template": "event",
+      "title": "Open day",
+      "params": {
+        "event": "open-day"
+      },
+      "entry": {
+        "id": "ev_open_day",
+        "handle": "open-day",
+        "title": "Open day",
+        "fields": {
+          "date": "2026-11-21",
+          "time": "10:00–14:00",
+          "place": "Whole house",
+          "summary": "Look round, meet the groups and stay for lunch.",
+          "description": "<p>Look round, meet the groups and stay for lunch.</p><p>No need to book. If you have a question, ask at the desk or send us a message.</p>",
+          "link": "",
+          "link_label": "",
+          "image": "as_3x2_mist",
+          "album": "al_garden_open_day"
+        }
+      }
+    },
+    "/whats-on/annual-general-meeting": {
+      "id": "pg_event_annual_general_meeting",
+      "template": "event",
+      "title": "Annual general meeting",
+      "params": {
+        "event": "annual-general-meeting"
+      },
+      "entry": {
+        "id": "ev_annual_general_meeting",
+        "handle": "annual-general-meeting",
+        "title": "Annual general meeting",
+        "fields": {
+          "date": "2026-11-24",
+          "time": "19:00–20:30",
+          "place": "Main hall",
+          "summary": "The accounts, the year ahead and electing the committee. Everyone who uses the house is welcome.",
+          "description": "<p>The accounts, the year ahead and electing the committee. Everyone who uses the house is welcome.</p><p>No need to book. If you have a question, ask at the desk or send us a message.</p>",
+          "link": "https://larchstreet.example/agm",
+          "link_label": "Read the agenda"
+        }
+      }
+    },
+    "/whats-on/clothes-swap": {
+      "id": "pg_event_clothes_swap",
+      "template": "event",
+      "title": "Clothes swap",
+      "params": {
+        "event": "clothes-swap"
+      },
+      "entry": {
+        "id": "ev_clothes_swap",
+        "handle": "clothes-swap",
+        "title": "Clothes swap",
+        "fields": {
+          "date": "2026-11-28",
+          "time": "11:00–13:00",
+          "place": "Main hall",
+          "summary": "Bring up to ten clean things and take home what you like.",
+          "description": "<p>Bring up to ten clean things and take home what you like.</p><p>No need to book. If you have a question, ask at the desk or send us a message.</p>",
+          "link": "",
+          "link_label": "",
+          "image": "as_3x2_cream"
+        }
+      }
+    },
+    "/whats-on/seed-swap": {
+      "id": "pg_event_seed_swap",
+      "template": "event",
+      "title": "Seed swap",
+      "params": {
+        "event": "seed-swap"
+      },
+      "entry": {
+        "id": "ev_seed_swap",
+        "handle": "seed-swap",
+        "title": "Seed swap",
+        "fields": {
+          "date": "2026-11-29",
+          "time": "10:00–12:00",
+          "place": "Back garden",
+          "summary": "Bring seeds you saved this year, take some home, and ask the garden crew anything.",
+          "description": "<p>Bring seeds you saved this year, take some home, and ask the garden crew anything.</p><p>No need to book. If you have a question, ask at the desk or send us a message.</p>",
+          "link": "",
+          "link_label": "",
+          "group": "gr_garden_crew"
+        }
+      }
+    },
+    "/whats-on/lantern-walk": {
+      "id": "pg_event_lantern_walk",
+      "template": "event",
+      "title": "Lantern walk",
+      "params": {
+        "event": "lantern-walk"
+      },
+      "entry": {
+        "id": "ev_lantern_walk",
+        "handle": "lantern-walk",
+        "title": "Lantern walk",
+        "fields": {
+          "date": "2026-12-05",
+          "time": "16:30",
+          "place": "Meet at the park gates",
+          "summary": "Make a lantern at the house from two, then walk round the park at dusk.",
+          "description": "<p>Make a lantern at the house from two, then walk round the park at dusk.</p><p>No need to book. If you have a question, ask at the desk or send us a message.</p>",
+          "link": "",
+          "link_label": "",
+          "image": "as_3x2_stone",
+          "album": "al_lantern_walk_2025"
+        }
+      }
+    },
+    "/whats-on/winter-fair": {
+      "id": "pg_event_winter_fair",
+      "template": "event",
+      "title": "Winter fair",
+      "params": {
+        "event": "winter-fair"
+      },
+      "entry": {
+        "id": "ev_winter_fair",
+        "handle": "winter-fair",
+        "title": "Winter fair",
+        "fields": {
+          "date": "2026-12-12",
+          "time": "11:00–15:00",
+          "place": "Whole house",
+          "summary": "Stalls, hot apple juice and the Larch Street Singers at 14:00.",
+          "description": "<p>Stalls, hot apple juice and the Larch Street Singers at 14:00.</p><p>No need to book. If you have a question, ask at the desk or send us a message.</p>",
+          "link": "",
+          "link_label": "",
+          "image": "as_3x2_mist",
+          "group": "gr_larch_street_singers"
+        }
+      }
+    },
+    "/whats-on/film-night": {
+      "id": "pg_event_film_night",
+      "template": "event",
+      "title": "Film night",
+      "params": {
+        "event": "film-night"
+      },
+      "entry": {
+        "id": "ev_film_night",
+        "handle": "film-night",
+        "title": "Film night",
+        "fields": {
+          "date": "2026-12-18",
+          "time": "19:00–21:00",
+          "place": "Main hall",
+          "summary": "A family film, popcorn and blankets. Free, with a pot for donations.",
+          "description": "<p>A family film, popcorn and blankets. Free, with a pot for donations.</p><p>No need to book. If you have a question, ask at the desk or send us a message.</p>",
+          "link": "",
+          "link_label": ""
+        }
+      }
+    },
+    "/whats-on/new-year-potluck": {
+      "id": "pg_event_new_year_potluck",
+      "template": "event",
+      "title": "New Year potluck",
+      "params": {
+        "event": "new-year-potluck"
+      },
+      "entry": {
+        "id": "ev_new_year_potluck",
+        "handle": "new-year-potluck",
+        "title": "New Year potluck",
+        "fields": {
+          "date": "2027-01-02",
+          "time": "12:00–15:00",
+          "place": "Main hall",
+          "summary": "Bring a dish to share and meet the neighbours.",
+          "description": "<p>Bring a dish to share and meet the neighbours.</p><p>No need to book. If you have a question, ask at the desk or send us a message.</p>",
+          "link": "",
+          "link_label": ""
+        }
+      }
+    },
+    "/photos/street-party": {
+      "id": "pg_album_street_party",
+      "template": "album",
+      "title": "Street party",
+      "params": {
+        "album": "street-party"
+      },
+      "entry": {
+        "id": "al_street_party",
+        "handle": "street-party",
+        "title": "Street party",
+        "fields": {
+          "date": "2026-07-11",
+          "photos": "street-party",
+          "description": "The road closed, forty tables and a brass band."
+        }
+      }
+    },
+    "/photos/summer-concert": {
+      "id": "pg_album_summer_concert",
+      "template": "album",
+      "title": "Summer concert",
+      "params": {
+        "album": "summer-concert"
+      },
+      "entry": {
+        "id": "al_summer_concert",
+        "handle": "summer-concert",
+        "title": "Summer concert",
+        "fields": {
+          "date": "2026-07-25",
+          "photos": "summer-concert",
+          "description": "The Larch Street Singers in the back garden."
+        }
+      }
+    },
+    "/photos/harvest-supper": {
+      "id": "pg_album_harvest_supper",
+      "template": "album",
+      "title": "Harvest supper",
+      "params": {
+        "album": "harvest-supper"
+      },
+      "entry": {
+        "id": "al_harvest_supper",
+        "handle": "harvest-supper",
+        "title": "Harvest supper",
+        "fields": {
+          "date": "2026-10-03",
+          "photos": "harvest-supper",
+          "description": "Soup from the garden for sixty neighbours."
+        }
+      }
+    },
+    "/photos/garden-open-day": {
+      "id": "pg_album_garden_open_day",
+      "template": "album",
+      "title": "Garden open day",
+      "params": {
+        "album": "garden-open-day"
+      },
+      "entry": {
+        "id": "al_garden_open_day",
+        "handle": "garden-open-day",
+        "title": "Garden open day",
+        "fields": {
+          "date": "2026-06-13",
+          "photos": "garden-open-day",
+          "description": "Beds, bees and the new pond."
+        }
+      }
+    },
+    "/photos/repair-table": {
+      "id": "pg_album_repair_table",
+      "template": "album",
+      "title": "Repair Table",
+      "params": {
+        "album": "repair-table"
+      },
+      "entry": {
+        "id": "al_repair_table",
+        "handle": "repair-table",
+        "title": "Repair Table",
+        "fields": {
+          "date": "2026-09-02",
+          "photos": "repair-table",
+          "description": "Toasters, lamps, a bike and a very old radio."
+        }
+      }
+    },
+    "/photos/lantern-walk-2025": {
+      "id": "pg_album_lantern_walk_2025",
+      "template": "album",
+      "title": "Lantern walk 2025",
+      "params": {
+        "album": "lantern-walk-2025"
+      },
+      "entry": {
+        "id": "al_lantern_walk_2025",
+        "handle": "lantern-walk-2025",
+        "title": "Lantern walk 2025",
+        "fields": {
+          "date": "2025-12-06",
+          "photos": "lantern-walk-2025",
+          "description": "Paper lanterns round the park at dusk.",
+          "event": "ev_lantern_walk"
+        }
+      }
+    },
+    "/news/the-hall-floor-is-being-sanded": {
+      "id": "pg_post_the_hall_floor_is_being_sanded",
+      "template": "post",
+      "title": "The hall floor is being sanded",
+      "params": {
+        "post": "the-hall-floor-is-being-sanded"
+      },
+      "entry": {
+        "id": "po_the_hall_floor_is_being_sanded",
+        "handle": "the-hall-floor-is-being-sanded",
+        "title": "The hall floor is being sanded",
+        "fields": {
+          "standfirst": "The main hall closes on Monday 30 November for two days while the floor is sanded and sealed.",
+          "body": "<p>Groups that meet in the main hall that week move to the small room or the garden. Little Feet and Chair yoga take the week off.</p><p>The floor was last done in 2009. Thank you to everyone who gave to the floor fund.</p>",
+          "date": "2026-11-10",
+          "topic": "News",
+          "image": "as_3x2_mist"
+        }
+      }
+    },
+    "/news/november-newsletter": {
+      "id": "pg_post_november_newsletter",
+      "template": "post",
+      "title": "November newsletter",
+      "params": {
+        "post": "november-newsletter"
+      },
+      "entry": {
+        "id": "po_november_newsletter",
+        "handle": "november-newsletter",
+        "title": "November newsletter",
+        "fields": {
+          "standfirst": "The AGM, the winter fair and a new Saturday walk.",
+          "body": "<p>This month the AGM is on Tuesday 24 November, and the winter fair is on Saturday 12 December.</p><p>The Parkside walk now meets every Saturday at half past eight at the park gates.</p>",
+          "date": "2026-11-01",
+          "topic": "Newsletter",
+          "image": "as_3x2_cream"
+        }
+      }
+    },
+    "/news/thank-you-volunteers": {
+      "id": "pg_post_thank_you_volunteers",
+      "template": "post",
+      "title": "Thank you, volunteers",
+      "params": {
+        "post": "thank-you-volunteers"
+      },
+      "entry": {
+        "id": "po_thank_you_volunteers",
+        "handle": "thank-you-volunteers",
+        "title": "Thank you, volunteers",
+        "fields": {
+          "standfirst": "Sixty-two neighbours gave 4,300 hours to the house this year.",
+          "body": "<p>From the Friday supper rota to the garden crew, the house runs on volunteers.</p><p>Come to the open day on 21 November to find out how to join them.</p>",
+          "date": "2026-10-20",
+          "topic": "News",
+          "image": "as_3x2_stone"
+        }
+      }
+    },
+    "/news/october-newsletter": {
+      "id": "pg_post_october_newsletter",
+      "template": "post",
+      "title": "October newsletter",
+      "params": {
+        "post": "october-newsletter"
+      },
+      "entry": {
+        "id": "po_october_newsletter",
+        "handle": "october-newsletter",
+        "title": "October newsletter",
+        "fields": {
+          "standfirst": "The harvest supper, half term and the Repair Table.",
+          "body": "<p>The harvest supper is on Saturday 3 October.</p><p>Homework club takes a break over half term and returns on 2 November.</p>",
+          "date": "2026-10-01",
+          "topic": "Newsletter",
+          "image": "as_3x2_mist"
+        }
+      }
+    },
+    "/news/september-newsletter": {
+      "id": "pg_post_september_newsletter",
+      "template": "post",
+      "title": "September newsletter",
+      "params": {
+        "post": "september-newsletter"
+      },
+      "entry": {
+        "id": "po_september_newsletter",
+        "handle": "september-newsletter",
+        "title": "September newsletter",
+        "fields": {
+          "standfirst": "Back to school, and the groups back after summer.",
+          "body": "<p>Every group is back from the first week of September.</p><p>We are looking for two volunteers for the Lunch Club kitchen.</p>",
+          "date": "2026-09-01",
+          "topic": "Newsletter"
+        }
+      }
+    },
+    "/news/august-newsletter": {
+      "id": "pg_post_august_newsletter",
+      "template": "post",
+      "title": "August newsletter",
+      "params": {
+        "post": "august-newsletter"
+      },
+      "entry": {
+        "id": "po_august_newsletter",
+        "handle": "august-newsletter",
+        "title": "August newsletter",
+        "fields": {
+          "standfirst": "Photos from the street party and the summer concert.",
+          "body": "<p>Thank you to everyone who came to the street party.</p><p>The house is open as usual through August.</p>",
+          "date": "2026-08-01",
+          "topic": "Newsletter",
+          "image": "as_3x2_cream"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+<!-- component: FormFields -->
+<!-- A site form's fields. Text and email fields sit two across from 48rem; selects, checkboxes and the message take the row. A select is a select-dropdown (an empty one reads Choose…); a select with one option is sent hidden. Placeholders are locale strings keyed by the field id. -->
+<div class="grid gap-space-md md:grid-cols-2">
+  {#for field in fields}
+    {#if field.type == 'select' && field.options.length == 1}
+      <input type="hidden" name={ field.id } value={ field.options[0] } />
+    {:else if field.type == 'select'}
+      <div class="md:col-span-2">
+        <span class="mb-space-xs block text-label" id="label-{ prefix }-{ field.id }">{ field.label }{#if field.required}<span aria-hidden="true"> *</span>{/if}</span>
+        <select-dropdown class="text-body" aria-labelledby="label-{ prefix }-{ field.id }">
+          <select-trigger class="flex min-h-control items-center justify-between gap-space-sm rounded-input border bg-scheme-input-background px-space-sm text-scheme-input-foreground { field.error ? 'border-scheme-error' : 'border-scheme-input-border' }" aria-describedby={ field.error ? 'error-' + prefix + '-' + field.id : null }>
+            <span class="select-label-text truncate { field.value ? '' : 'text-scheme-muted' }">{ field.value || t('choose') }</span>
+            <Glyph name="chevron-down" />
+          </select-trigger>
+          <input type="hidden" name={ field.id } value={ field.value } />
+          <select-panel>
+            {#for option in field.options}<select-option value={ option } selected={ field.value == option }>{ option }</select-option>{/for}
+          </select-panel>
+        </select-dropdown>
+        {#if field.error}<p class="mt-space-xs text-small text-scheme-error" id="error-{ prefix }-{ field.id }">{ t('form_field_' + field.error) }</p>{/if}
+      </div>
+    {:else if field.type == 'checkbox'}
+      <label class="flex items-start gap-space-xs text-small md:col-span-2"><input class="mt-space-3xs size-icon-sm accent-scheme-foreground" type="checkbox" name={ field.id } value="on" checked={ field.value == 'on' } required={ field.required } />{ field.label }</label>
+    {:else}
+      <Field name={ field.id } label={ field.label } type={ field.type } placeholder={ t('placeholder.' + field.id) } required={ field.required } maxlength={ field.max_length } value={ field.value } error={ field.error } prefix={ prefix } wide={ field.type == 'textarea' } />
+    {/if}
+  {/for}
+</div>

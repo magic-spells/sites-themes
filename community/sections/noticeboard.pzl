@@ -1,0 +1,48 @@
+<!-- Paper slips on the band (Slip), each its own height: the ragged board. The events by date (Events, 0 for none), then the notices. From 64rem the events take three columns and the notices stack in the fourth (either takes the whole board when the other is empty); from 48rem each two across, notices under events; on phones one column. With nothing pinned up, one slip says so and links /#newsletter when the site has a newsletter form. -->
+{#let
+  events = content.events.entries | sort('fields.date') | slice(0, settings.limit)
+  notices = blocks | slice(0, 6)
+}
+<section class="bg-scheme-background px-gutter py-section-tight text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ t('all_events') } link_href="/whats-on" />
+    <div class="grid gap-space-md lg:grid-cols-4 lg:items-start">
+      {#if events.length}
+        <ul class="grid items-start gap-space-md md:grid-cols-2 { notices.length ? 'lg:col-span-3 lg:grid-cols-3' : 'lg:col-span-4 lg:grid-cols-4' }">
+          {#for entry in events}<Slip entry={ entry } />{/for}
+        </ul>
+      {/if}
+      {#if notices.length || !events.length}
+        <ul class="grid items-start gap-space-md md:grid-cols-2 { events.length ? 'lg:grid-cols-1' : 'lg:col-span-4 lg:grid-cols-4' }">
+          {#for block in notices}<Slip text={ block.settings.text } link={ block.settings.link } editor_id={ block.editor_id } />{/for}
+          {#if !notices.length}<Slip text={ t('nothing_pinned') } link={ site.settings.newsletter_form ? { href: '/#newsletter', label: t('get_newsletter') } : null } />{/if}
+        </ul>
+      {/if}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Noticeboard",
+  "description": "Paper slips on a board: events by date, then notices from the house.",
+  "kind": "Collections",
+  "icon": "sticky-note",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Noticeboard" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "One-off events and news from the house." },
+    { "type": "range", "id": "limit", "label": "Events", "min": 0, "max": 9, "step": 1, "default": 6, "info": "Events by date, earliest first. The site cannot tell when one is over, so delete it then. 0 shows the notices alone." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "blue" }
+  ],
+  "blocks": [
+    { "type": "notice", "name": "Notice", "settings": [
+      { "type": "textarea", "id": "text", "label": "Text", "default": "Volunteers wanted for the Friday supper rota, one evening a month." },
+      { "type": "link", "id": "link", "label": "Link" }
+    ] }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "blue" } }
+  ]
+}
+</schema>

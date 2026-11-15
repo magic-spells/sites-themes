@@ -1,0 +1,128 @@
+{
+  "label": "Visit",
+  "description": "How to find the house, what to expect and how to ask.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Monday to Saturday on Larch Street, five minutes from the park gates."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_visit",
+      "type": "visit",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "color_scheme": "mist"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_first",
+      "type": "first-time",
+      "preset": "Default",
+      "settings": {},
+      "blocks": [
+        {
+          "id": "b_q1",
+          "type": "question",
+          "settings": {
+            "question": "What time should I arrive?",
+            "answer": "<p>Any time during a session is fine. Most people arrive in the first ten minutes.</p>"
+          }
+        },
+        {
+          "id": "b_q2",
+          "type": "question",
+          "settings": {
+            "question": "Does it cost anything?",
+            "answer": "<p>Most groups are free. Where there is a charge, the group's page says so and you pay on the day.</p>"
+          }
+        },
+        {
+          "id": "b_q3",
+          "type": "question",
+          "settings": {
+            "question": "What should I bring?",
+            "answer": "<p>Nothing, unless the group says so. There is always tea.</p>"
+          }
+        },
+        {
+          "id": "b_q4",
+          "type": "question",
+          "settings": {
+            "question": "Can I bring children?",
+            "answer": "<p>Yes. Little Feet is for under-fives with a grown-up, and Homework club runs in term time.</p>"
+          }
+        },
+        {
+          "id": "b_q5",
+          "type": "question",
+          "settings": {
+            "question": "Is the building accessible?",
+            "answer": "<p>There is a step-free entrance on Larch Street, a hearing loop in the main hall and an accessible toilet on the ground floor.</p>"
+          }
+        },
+        {
+          "id": "b_q6",
+          "type": "question",
+          "settings": {
+            "question": "Who do I ask when I get there?",
+            "answer": "<p>Whoever is at the desk by the door. They will introduce you to the group and find you a name sticker.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {},
+      "blocks": [
+        {
+          "id": "b_f1",
+          "type": "question",
+          "settings": {
+            "question": "Do I need to book?",
+            "answer": "<p>Not for the groups: just turn up. Events say on their page when they need a place.</p>"
+          }
+        },
+        {
+          "id": "b_f2",
+          "type": "question",
+          "settings": {
+            "question": "Is there parking?",
+            "answer": "<p>There are four spaces behind the house, one of them wide, and free parking on Larch Street after six.</p>"
+          }
+        },
+        {
+          "id": "b_f3",
+          "type": "question",
+          "settings": {
+            "question": "Can I volunteer?",
+            "answer": "<p>Yes, for an hour a month or every week. Ask at the desk or write to us and Femi will find you something.</p>"
+          }
+        },
+        {
+          "id": "b_f4",
+          "type": "question",
+          "settings": {
+            "question": "Can I hire a room?",
+            "answer": "<p>The main hall, the small room and the kitchen are for hire by the hour. See Hire a room.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_contact",
+      "type": "contact",
+      "preset": "Default",
+      "settings": {},
+      "blocks": []
+    }
+  ]
+}

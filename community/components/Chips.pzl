@@ -1,0 +1,7 @@
+<!-- component: Chips -->
+<!-- The filter links: All, then each of names as ?<param>=<name> on this page, plain outlined chips with the one showing (current) filled in the text colour. label names the row; cls replaces its display (flex). -->
+{#let chip = 'inline-flex min-h-pill items-center rounded-full border border-scheme-muted px-space-md text-label current:border-scheme-foreground current:bg-scheme-foreground current:text-scheme-background'}
+<nav class="mb-space-xl flex-wrap gap-space-xs { cls ?? 'flex' }" aria-label="{ label }">
+  <a class="{ chip }" href="{ page.path }" aria-current={ current ? null : 'page' }>{ t('all') }</a>
+  {#for name in names}<a class="{ chip }" href="{ page.path }?{ param }={ encodeURIComponent(name) }" aria-current={ current == name ? 'page' : null }>{ name }</a>{/for}
+</nav>

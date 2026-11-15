@@ -1,0 +1,55 @@
+{
+  "label": "What's on",
+  "description": "The noticeboard, then every event by date.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "One-off events at the house and around the street. The regular groups are on the week."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_notice",
+      "type": "noticeboard",
+      "preset": "Default",
+      "settings": {
+        "heading": "Notices",
+        "text": "",
+        "limit": 0,
+        "color_scheme": "blue"
+      },
+      "blocks": [
+        {
+          "id": "b_raincoat",
+          "type": "notice",
+          "settings": {
+            "text": "Found after Little Feet: a child's blue raincoat. It is on the hook by the desk."
+          }
+        },
+        {
+          "id": "b_rota",
+          "type": "notice",
+          "settings": {
+            "text": "Volunteers wanted for the Friday supper rota, one evening a month.",
+            "link": {
+              "href": "/contact",
+              "label": "Say hello"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_events",
+      "type": "events-list",
+      "preset": "Default",
+      "settings": {
+        "heading": "Coming up"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "label": "Photos",
+  "description": "Every album.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "From the street party to the Repair Table, taken by whoever had a phone."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_albums",
+      "type": "album-grid",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "text": ""
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+<!-- The opener, left-aligned: the H1 across up to seven columns (its words rise in), the standfirst at reading width and up to two buttons (primary, then secondary). Under them four photos in a row across the whole column, four across at every width, 4:5 on phones and 3:2 from 48rem; fewer than four and the strip hides. No overlay and no text on photos. -->
+{#let
+  photos = settings.photos.items | slice(0, 4)
+  one = settings.link
+  two = settings.link_2
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column justify-items-start gap-space-lg">
+    <h1 class="max-w-hero font-heading text-h1 text-balance text-scheme-heading"><Rise text={ settings.heading } /></h1>
+    {#if settings.text}<p class="max-w-reading text-pretty">{ settings.text }</p>{/if}
+    {#if one.href || two.href}
+      <div class="flex flex-wrap gap-space-sm pt-space-xs">
+        {#if one.href}<Button href={ one.href }>{ one.label }</Button>{/if}
+        {#if two.href}<Button href={ two.href } tone="secondary">{ two.label }</Button>{/if}
+      </div>
+    {/if}
+    {#if photos.length == 4}
+      <ul class="mt-space-md grid w-full grid-cols-4 gap-space-sm md:gap-space-md">
+        {#for item in photos}<li><Well asset={ item.asset } alt={ item.alt } ratio="aspect-portrait md:aspect-wide" width={ 640 } sizes="(min-width: 82.5rem) 20rem, 25vw" eager /></li>{/for}
+      </ul>
+    {/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Hero",
+  "description": "The opener: a heading, a line, two buttons and an optional strip of four photos.",
+  "kind": "Hero",
+  "icon": "image",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "A house in the neighbourhood, open to everyone", "info": "One line about the house, about 40 characters." },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "Groups, meals and classes most days of the week, run by neighbours. Come along to anything on the sheet, or drop in for a cup of tea." },
+    { "type": "link", "id": "link", "label": "Button" },
+    { "type": "link", "id": "link_2", "label": "Second button" },
+    { "type": "gallery", "id": "photos", "label": "Photo strip", "info": "Four photos in a row under the text: 4:5 on phones, 3:2 on wider screens. With fewer than four the strip hides." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "link": { "href": "/groups", "label": "See the week" }, "link_2": { "href": "/visit", "label": "Visit us" } } }
+  ]
+}
+</schema>

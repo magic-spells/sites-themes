@@ -1,0 +1,40 @@
+<!-- The colophon: the name and the Contact settings left, the main and social menus at the right; under a rule, the legal line and the legal links, spread across from 48rem. -->
+<footer class="bg-scheme-background px-gutter pt-section pb-space-xl text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-2xl">
+    <div class="grid gap-space-xl md:grid-cols-text-picture">
+      <div class="grid content-start justify-items-start gap-space-md">
+        <a class="font-heading text-h3 text-scheme-heading" href="/">{ site.settings.wordmark || site.name }</a>
+        <Address cls="text-body-sm text-scheme-muted" />
+      </div>
+      <div class="flex gap-space-2xl md:justify-end">
+        {#for menu in [settings.menu, settings.social_menu]}
+          {#if menu.items.length}<nav aria-label="{ menu.title }"><ul class="grid gap-space-sm">{#for item in menu.items}<li><a class="hover:underline" href="{ item.href }">{ item.label }</a></li>{/for}</ul></nav>{/if}
+        {/for}
+      </div>
+    </div>
+    <div class="flex flex-col gap-space-sm border-t border-scheme-border pt-space-lg text-body-sm text-scheme-muted md:flex-row md:justify-between">
+      {#if settings.legal_line}<p class="whitespace-pre-line">{ settings.legal_line }</p>{/if}
+      {#if settings.legal_menu.items.length}<ul class="flex flex-wrap gap-x-space-md">{#for item in settings.legal_menu.items}<li><a class="hover:underline" href="{ item.href }">{ item.label }</a></li>{/for}</ul>{/if}
+    </div>
+  </div>
+</footer>
+
+<schema>
+{
+  "name": "Footer",
+  "description": "The name and contact details, two menus, then the legal line and legal links.",
+  "kind": "Footer",
+  "icon": "panel-bottom",
+  "settings": [
+    { "type": "paragraph", "content": "The address, phone and email come from the Contact settings." },
+    { "type": "menu", "id": "menu", "label": "Menu" },
+    { "type": "menu", "id": "social_menu", "label": "Social links" },
+    { "type": "menu", "id": "legal_menu", "label": "Legal links" },
+    { "type": "textarea", "id": "legal_line", "label": "Legal line", "default": "", "info": "The copyright and any registration or regulatory line your profession asks for, one per line." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "ink" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "menu": "main", "social_menu": "social", "legal_menu": "legal", "color_scheme": "ink" } }
+  ]
+}
+</schema>

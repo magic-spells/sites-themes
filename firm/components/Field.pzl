@@ -1,0 +1,27 @@
+<!-- One site form field, labelled: text, email, the phone (a text field with the id phone), textarea, select and checkbox, plus the password field of the password page. The box is white with a grey hairline and the focus ring on focus; an error outlines it and is read out under it. inline hides the label for screen readers only and shows it as the placeholder (the newsletter); cls sets the wrapper's classes. -->
+{#let
+  id = prefix + '-' + field.id
+  err = field.error ? id + '-error' : null
+  auto = { name: 'name', email: 'email', phone: 'tel', company: 'organization', password: 'current-password' }
+  box = 'block w-full rounded-input border bg-input-background px-space-sm text-body text-input-text placeholder:text-input-placeholder focus:border-input-active focus:outline-2 focus:outline-offset-1 focus:outline-input-active ' + (field.error ? 'border-error' : 'border-input-border')
+}
+<div class={ cls }>
+  {#if field.type == 'checkbox'}
+    <label class="flex items-start gap-space-xs text-body-sm"><input class="mt-space-2xs size-icon shrink-0 accent-input-active" id="{ id }" type="checkbox" name={ field.id } value="on" checked={ field.value == 'on' } required={ field.required } aria-invalid={ field.error ? 'true' : null } aria-describedby={ err } />{ field.label }</label>
+  {:else}
+    <label class="{ inline ? 'sr-only' : 'mb-space-xs block text-body-sm font-medium' }" for="{ id }">{ field.label }{#if field.required && !inline}<span aria-hidden="true"> *</span>{/if}</label>
+    {#case field.type}
+      {:when 'textarea'}<textarea class="{ box } min-h-textarea resize-y py-space-sm" id="{ id }" name={ field.id } maxlength={ field.max_length } required={ field.required } aria-invalid={ field.error ? 'true' : null } aria-describedby={ err }>{ field.value }</textarea>
+      {:when 'select'}
+        <span class="grid items-center">
+          <select class="{ box } min-h-control col-start-1 row-start-1 appearance-none pe-space-2xl" id="{ id }" name={ field.id } required={ field.required } aria-invalid={ field.error ? 'true' : null } aria-describedby={ err }>
+            <option value="">{ t('choose') }</option>
+            {#for option in field.options}<option selected={ field.value == option }>{ option }</option>{/for}
+          </select>
+          <Glyph name="chevron-down" cls="pointer-events-none col-start-1 row-start-1 me-space-sm size-icon justify-self-end" />
+        </span>
+      {:else}<input class="{ box } min-h-control" id="{ id }" name={ field.id } type={ field.id == 'phone' ? 'tel' : field.type } placeholder={ inline ? field.label : null } autocomplete={ auto[field.id] ?? 'off' } maxlength={ field.max_length } required={ field.required } value={ field.value } aria-invalid={ field.error ? 'true' : null } aria-describedby={ err } />
+    {/case}
+  {/if}
+  {#if field.error}<p class="mt-space-xs text-body-sm" id="{ err }">{ t('form_field_' + field.error) }</p>{/if}
+</div>

@@ -1,0 +1,7 @@
+<!-- layout: default -->
+<!-- A wrong path: the line, one more, and the way home. -->
+<Utility>
+  <h1 class="max-w-reading font-heading text-h1 text-balance text-scheme-heading">{ t('not_found_title') }</h1>
+  <p class="text-body-lg text-pretty text-scheme-muted">{ t('not_found_body') }</p>
+  <Button href="/">{ t('not_found_link') }</Button>
+</Utility>

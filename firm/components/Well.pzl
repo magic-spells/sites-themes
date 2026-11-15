@@ -1,0 +1,4 @@
+<!-- A photo well: a frame on the second surface that clips its photo, with the photo radius. ratio is the aspect utility (aspect-photo by default; aspect-portrait, aspect-square, aspect-landscape); sizes is the image's sizes. The photo carries its own alt. -->
+{#if asset}
+<span class="block overflow-hidden rounded-photo bg-scheme-surface-2 { ratio ?? 'aspect-photo' }">{ image_tag(asset, { sizes: sizes, class: 'size-full object-cover' }) }</span>
+{/if}

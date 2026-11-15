@@ -1,0 +1,40 @@
+<!-- The contact page: the heading and standfirst over the contact form in seven parts, the form note under its fields; the Contact settings in five. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-text-picture md:gap-space-3xl">
+    <div class="grid gap-space-lg">
+      <SectionHead heading={ settings.heading } text={ settings.text } />
+      <Form handle={ settings.form } class="grid max-w-reading gap-space-md">
+        {#if form.sent}
+          <p class="font-heading text-h3 text-scheme-heading" role="status">{ form.success_message || t('form_success') }</p>
+        {:else}
+          {#if form.error}<p class="rounded-input bg-error-surface px-space-sm py-space-xs text-body-sm text-error" role="alert">{ t('form_error') }</p>{/if}
+          {#for field in form.fields}<Field field={ field } prefix="contact" />{/for}
+          {#if settings.form_note}<p class="text-body-sm text-pretty text-scheme-muted">{ settings.form_note }</p>{/if}
+          <Button type="submit" cls="justify-self-start">{ form.submit_label }</Button>
+          <noscript><p class="text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+        {/if}
+      </Form>
+    </div>
+    <Address cls="text-body-lg" />
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Contact",
+  "description": "A contact form beside the firm's address, phone and email.",
+  "kind": "Contact",
+  "icon": "mail",
+  "settings": [
+    { "type": "paragraph", "content": "The address, phone and email come from the Contact settings." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Write to us" },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "form", "id": "form", "label": "Form", "default": "contact" },
+    { "type": "text", "id": "form_note", "label": "Form note", "default": "", "info": "One line under the fields, for a disclaimer: writing to us does not make you a client." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

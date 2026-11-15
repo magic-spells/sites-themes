@@ -1,0 +1,9 @@
+<!-- The firm's Contact settings: the address (one line per line), the phone as a call link and the email as a mail link, each only when set. cls sets the type. -->
+{#let s = site.settings}
+{#if s.address || s.phone || s.email}
+<address class="grid gap-space-2xs not-italic { cls ?? '' }">
+  {#if s.address}<span class="mb-space-xs whitespace-pre-line">{ s.address }</span>{/if}
+  {#if s.phone}<a class="justify-self-start hover:underline" href="tel:{ s.phone | replace(' ', '') }">{ s.phone }</a>{/if}
+  {#if s.email}<a class="justify-self-start hover:underline" href="mailto:{ s.email }">{ s.email }</a>{/if}
+</address>
+{/if}

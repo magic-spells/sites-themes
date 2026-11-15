@@ -1,0 +1,4 @@
+<!-- The utility pages' band: their own content (the children) centred in the column on the base scheme. bare hides the header, footer and panel groups (styles/theme.css). -->
+<section class="flex flex-1 items-center bg-scheme-background px-gutter py-section text-scheme-foreground" data-bare={ bare }>
+  <div class="mx-auto grid w-full max-w-column justify-items-center gap-space-md text-center"><Children/></div>
+</section>

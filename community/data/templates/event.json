@@ -15,8 +15,7 @@
       "preset": "Default",
       "settings": {
         "heading": "More coming up",
-        "limit": 3,
-        "exclude_current": true
+        "limit": 3
       },
       "blocks": []
     }

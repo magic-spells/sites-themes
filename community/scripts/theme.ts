@@ -56,35 +56,18 @@ function closest(event: Event, selector: string): HTMLElement | null {
 document.addEventListener('click', (event) => {
 	const opener = closest(event, '[data-panel-open]');
 	const panel = opener && (document.getElementById(opener.getAttribute('data-panel-open') ?? '') as Panel | null);
-	if (!opener || !panel || typeof panel.show !== 'function') return;
+	if (!opener || !panel) return;
 	panel.show(opener);
 });
 
-// The cookie notice shows once per visitor and key; either button hides it
-// for good.
-for (const notice of document.querySelectorAll<HTMLElement>('[data-notice]')) {
-	const key = notice.getAttribute('data-notice') || notice.id;
-	if (dismissed(key)) continue;
-	notice.hidden = false;
-	for (const button of notice.querySelectorAll('button')) {
-		button.addEventListener('click', () => {
-			remember(key);
-			notice.hidden = true;
-		});
-	}
-}
-
-// The announcement is keyed by its own text: a closed line stays closed
-// until the text changes.
-for (const bar of document.querySelectorAll<HTMLElement>('[data-dismiss-key]')) {
-	const key = bar.getAttribute('data-dismiss-key') ?? '';
-	if (dismissed(key)) {
-		bar.hidden = true;
-		continue;
-	}
-	bar.querySelector('[data-dismiss]')?.addEventListener('click', () => {
-		bar.hidden = true;
+// The announcement and the cookie notice are keyed by their text: once
+// closed, each stays closed until the text changes.
+for (const box of document.querySelectorAll<HTMLElement>('[data-dismiss-key]')) {
+	const key = box.dataset.dismissKey ?? '';
+	box.hidden = dismissed(key);
+	box.querySelector('[data-dismiss]')?.addEventListener('click', () => {
 		remember(key);
+		box.hidden = true;
 	});
 }
 
@@ -122,4 +105,4 @@ document.addEventListener('select-dropdown:change', (event) => {
 
 // Rows, slips and cards fade up once as the page scrolls, while the Brand
 // setting writes their reveal classes.
-if (document.querySelector('.reveal')) Reveal.init({ offset: 0, duration: 400, once: true });
+if (document.querySelector('.reveal')) Reveal.init({ offset: 0 });

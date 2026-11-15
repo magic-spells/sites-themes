@@ -9,13 +9,13 @@
     <div class="grid gap-space-md lg:grid-cols-4 lg:items-start">
       {#if events.length}
         <ul class="grid items-start gap-space-md md:grid-cols-2 { notices.length ? 'lg:col-span-3 lg:grid-cols-3' : 'lg:col-span-4 lg:grid-cols-4' }">
-          {#for entry in events, i}<Slip entry={ entry } i={ i } />{/for}
+          {#for entry in events}<Slip entry={ entry } />{/for}
         </ul>
       {/if}
       {#if notices.length || !events.length}
         <ul class="grid items-start gap-space-md md:grid-cols-2 { events.length ? 'lg:grid-cols-1' : 'lg:col-span-4 lg:grid-cols-4' }">
-          {#for block in notices, i}<Slip text={ block.settings.text } link={ block.settings.link } editor_id={ block.editor_id } i={ i } />{/for}
-          {#if !notices.length}<Slip text={ t('nothing_pinned') } link={ settings.newsletter_link ? { href: settings.newsletter_link, label: t('get_newsletter') } : null } i={ 0 } />{/if}
+          {#for block in notices}<Slip text={ block.settings.text } link={ block.settings.link } editor_id={ block.editor_id } />{/for}
+          {#if !notices.length}<Slip text={ t('nothing_pinned') } link={ settings.newsletter_link ? { href: settings.newsletter_link, label: t('get_newsletter') } : null } />{/if}
         </ul>
       {/if}
     </div>

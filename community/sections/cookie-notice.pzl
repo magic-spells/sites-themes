@@ -1,8 +1,8 @@
 <!-- The cookie notice: a paper card fixed to the foot of the screen, the line, then Accept and Decline and the legal links; either button hides it for that visitor until the text changes. Hidden until the script shows it, so it never shows without JavaScript. -->
-<aside class="fixed inset-x-0 bottom-0 z-40 p-gutter md:max-w-reading" data-notice="{ settings.text }" aria-label="{ t('cookie_notice') }" hidden>
+<aside class="fixed inset-x-0 bottom-0 z-40 p-gutter md:max-w-reading" data-dismiss-key="{ settings.text }" aria-label="{ t('cookie_notice') }" hidden>
   <div class="grid gap-space-md rounded-paper border border-scheme-border bg-scheme-background p-space-lg text-scheme-foreground">
     <p class="text-small text-pretty">{ settings.text }</p>
-    <div class="flex flex-wrap items-center gap-x-space-md gap-y-space-sm"><Button type="button" size="sm">{ t('accept') }</Button><Button type="button" tone="secondary" size="sm">{ t('decline') }</Button>{#for item in menus.legal.items}<a class="text-small text-scheme-link underline decoration-1 underline-offset-4" href="{ item.href }">{ item.label }</a>{/for}</div>
+    <div class="flex flex-wrap items-center gap-x-space-md gap-y-space-sm"><span class="contents" data-dismiss><Button type="button" size="sm">{ t('accept') }</Button><Button type="button" tone="secondary" size="sm">{ t('decline') }</Button></span>{#for item in menus.legal.items}<a class="text-small text-scheme-link underline decoration-1 underline-offset-4" href="{ item.href }">{ item.label }</a>{/for}</div>
   </div>
 </aside>
 

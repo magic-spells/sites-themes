@@ -1,6 +1,6 @@
 <!-- template: 404 -->
 <!-- layout: default -->
-<!-- A wrong path, on paper: the line, then the week and Visit us. -->
+<!-- A wrong path, on the base scheme: the line, then the groups and Visit us. -->
 <Utility>
   <h1 class="max-w-hero font-heading text-h1 text-balance text-scheme-heading">{ t('not_found_title') }</h1>
   <p class="text-pretty">{ t('not_found_body') }</p>

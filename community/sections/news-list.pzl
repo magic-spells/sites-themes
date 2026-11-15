@@ -1,18 +1,18 @@
-<!-- News and newsletter issues, newest first: the first large (a 3:2 picture in seven parts, its H3, standfirst and date in five), then two to a row (picture, H4, date). With topic links on, plain chips filter by ?topic=. On a post's page: the next two others, no lead. Date only: no reading time, no author. -->
+<!-- News and newsletter issues, newest first: the first large (a 3:2 picture in seven parts, its H3, standfirst and date in five), then two to a row (picture, H4, date). With topic links on, plain chips filter by ?topic=. On a post's page: the two newest others, no lead. Date only: no reading time, no author. -->
 {#let
   topic = request.query.topic
   all = content.posts.entries | sort('fields.date') | reverse
-  others = page.entry ? (all | reject('id', page.entry.id)) : all
+  others = all | reject('id', page.entry.id)
   picked = topic ? (others | where('fields.topic', topic)) : others
   posts = picked | slice(0, page.entry ? 2 : 13)
   lead = page.entry ? null : (posts | first)
-  rest = lead ? (posts | slice(1, 12)) : posts
-  topics = all | map('fields.topic') | compact | uniq
+  rest = lead ? (posts | slice(1)) : posts
+  topics = all | where('fields.topic') | map('fields.topic') | uniq
 }
-{#if posts.length}
+{#if others.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
-    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ page.entry ? t('all_news') : '' } link_href="/news" />
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ t('all_news') } link_href="/news" />
     {#if settings.topic_links && !page.entry && topics.length > 1}
       <Chips names={ topics } current={ topic } param="topic" label={ t('topics') } />
     {/if}
@@ -28,8 +28,8 @@
     {/if}
     {#if rest.length}
       <ul class="grid gap-x-space-xl gap-y-space-2xl md:grid-cols-2">
-        {#for entry in rest, i}
-          <li class="{ site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-delay={ site.settings.reveal ? (i % 2) * 60 : null }>
+        {#for entry in rest}
+          <li class="{ site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-group="news:60">
             <a class="group grid content-start gap-space-sm" href="/news/{ entry.handle }">
               <Well asset={ entry.fields.image } alt="" ratio="aspect-wide" width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" />
               <span class="font-heading text-h4 text-balance text-scheme-heading group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{ entry.title }</span>

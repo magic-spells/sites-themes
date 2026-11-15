@@ -1,7 +1,7 @@
 <!-- component: GroupRow -->
-<!-- One group as a row, the whole row its link: the 1:1 photo (the initial when there is none), the name in H4 over its line in muted, clamped to two lines, and when it meets: under the line on phones, at the right in two lines from 48rem. i staggers the reveal. -->
+<!-- One group as a row, the whole row its link: the 1:1 photo (the initial when there is none), the name in H4 over its line in muted, clamped to two lines, and when it meets: under the line on phones, at the right in two lines from 48rem. -->
 {#let f = entry.fields}
-<li class="border-t border-scheme-border { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-delay={ site.settings.reveal ? (i % 6) * 60 : null }>
+<li class="border-t border-scheme-border { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-group="groups:60">
   <a class="group grid grid-cols-row items-center gap-x-space-md gap-y-space-2xs py-space-md md:grid-cols-row-md md:gap-x-space-xl" href="/groups/{ entry.handle }">
     {#if f.image}<Well asset={ f.image } alt="" width={ 160 } sizes="5rem" />{:else}<Monogram name={ entry.title } />{/if}
     <span class="grid gap-space-3xs">

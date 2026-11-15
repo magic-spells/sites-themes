@@ -38,7 +38,7 @@
       <div>
         <SectionHead heading={ t('more_groups') } link_label={ t('all_groups') } link_href="/groups" />
         <ul class="border-b border-scheme-border">
-          {#for g in more, i}<GroupRow entry={ g } i={ i } />{/for}
+          {#for g in more}<GroupRow entry={ g } />{/for}
         </ul>
       </div>
     {/if}

@@ -9,7 +9,7 @@
   <div class="mx-auto max-w-column">
     <div class="px-gutter md:px-0"><SectionHead heading={ settings.heading } text={ settings.text } /></div>
     <ul class="flex snap-x snap-mandatory scroll-px-gutter gap-space-md overflow-x-auto px-gutter md:grid md:grid-cols-3 md:gap-x-space-lg md:gap-y-space-xl md:px-0 lg:grid-cols-4">
-      {#for entry in people, i}<li class="w-3/7 shrink-0 snap-start md:w-auto { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-delay={ site.settings.reveal ? (i % 4) * 60 : null }><PersonCard entry={ entry } /></li>{/for}
+      {#for entry in people}<li class="w-3/7 shrink-0 snap-start md:w-auto { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-group="people:60"><PersonCard entry={ entry } /></li>{/for}
     </ul>
   </div>
 </section>

@@ -40,7 +40,7 @@
   {#if !albums}<LightboxCompanion items={ items } id={ id }><script type="application/json" data-tarot-options>{ lb | json }</script></LightboxCompanion>{/if}
   <ul class="{ stage }">
     {#for item in items, i}
-      <li class="{ mosaic ? (i ? '' : 'col-span-2 md:row-span-2') : 'absolute w-220/343 ' + phone[i][1] + ' ' + wide[i][1] } { settle }" data-reveal-delay={ settle ? i * 60 : null }>
+      <li class="{ mosaic ? (i ? '' : 'col-span-2 md:row-span-2') : 'absolute w-220/343 ' + phone[i][1] + ' ' + wide[i][1] } { settle }" data-reveal-group="prints:60">
         <Print asset={ albums ? item.fields.photos.items[0].asset : item.asset } caption={ albums ? item.title : item.alt } href={ albums ? '/photos/' + item.handle : image_url(item.asset, 2560) } open={ albums ? null : id } index={ i } ratio={ mosaic ? (i ? 'aspect-square' : 'aspect-photo md:aspect-auto md:flex-1 md:contain-size') : phone[i][0] + ' ' + wide[i][0] } />
       </li>
     {/for}

@@ -1,7 +1,7 @@
 <!-- component: Slip -->
-<!-- One slip on the noticeboard, on paper. An event (entry): its date as "Nov 21" in the label, its title in H4 linked to its page, the time and place in small muted, its line in small. A notice: its text (text) and an optional text link (link). Its own height, never a colour, tilt, pin or tape. i staggers the reveal. -->
+<!-- One slip on the noticeboard, on paper. An event (entry): its date as "Nov 21" in the label, its title in H4 linked to its page, the time and place in small muted, its line in small. A notice: its text (text) and an optional text link (link). Its own height, never a colour, tilt, pin or tape. -->
 {#let f = entry?.fields}
-<li class="{ 'paper' | scheme_class } grid gap-space-xs rounded-paper bg-scheme-background p-slip text-scheme-foreground { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-delay={ site.settings.reveal ? (i % 3) * 60 : null } data-block={ editor_id }>
+<li class="{ 'paper' | scheme_class } grid gap-space-xs rounded-paper bg-scheme-background p-slip text-scheme-foreground { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-group="slips:60" data-block={ editor_id }>
   {#if entry}
     <time class="text-label tnum" datetime="{ f.date }">{ f.date | date('medium') | split(',') | first }</time>
     <h3 class="font-heading text-h4 text-balance text-scheme-heading"><a class="hover:underline hover:decoration-1 hover:underline-offset-4" href="/whats-on/{ entry.handle }">{ entry.title }</a></h3>

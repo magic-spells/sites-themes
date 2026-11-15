@@ -1,4 +1,4 @@
-<!-- One line above the header in the label size, centred, the whole line a link when one is set, and a close button that hides it for that visitor until the text changes. Marquee: the line repeats on a slow ticker with a pause button; under reduced motion it stands still. -->
+<!-- One line above the header in the label size, centred, the whole line a link when one is set, and a close button that hides it for that visitor until the text changes; its inline script hides a closed one before it paints. Marquee: the line repeats on a slow ticker with a pause button; under reduced motion it stands still. -->
 {#let marquee = settings.motion == 'marquee'}
 {#if settings.text}
 <aside class="bg-scheme-background px-gutter text-scheme-foreground" data-dismiss-key="{ settings.text }" data-ticker={ marquee ? true : null } aria-label="{ t('announcement') }">
@@ -17,6 +17,7 @@
     {#if marquee}<button class="flex size-control shrink-0 items-center justify-center" type="button" data-ticker-toggle aria-pressed="false"><Glyph name="pause" cls="size-icon-sm" /><span class="sr-only">{ t('pause') }</span></button>{/if}
     <button class="-me-space-sm flex size-control shrink-0 items-center justify-center" type="button" data-dismiss><Glyph name="close" cls="size-icon-sm" /><span class="sr-only">{ t('dismiss') }</span></button>
   </div>
+  <script>{#raw}try{var a=document.currentScript.parentNode;a.hidden=localStorage.getItem('sites:dismissed:'+a.dataset.dismissKey)=='1'}catch(e){}{/raw}</script>
 </aside>
 {/if}
 

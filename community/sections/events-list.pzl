@@ -1,7 +1,7 @@
-<!-- Every event by date as rows (EventRow) under month headings, a heading wherever the month changes. On an event's page it can leave that event out. Nothing renders when there is no event. -->
+<!-- Every event by date as rows (EventRow) under month headings, a heading wherever the month changes. On an event's page it leaves that event out. Nothing renders when there is no event. -->
 {#let
   all = content.events.entries | sort('fields.date')
-  events = (page.entry && settings.exclude_current ? (all | reject('id', page.entry.id)) : all) | slice(0, settings.limit)
+  events = all | reject('id', page.entry.id) | slice(0, settings.limit)
 }
 {#if events.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
@@ -10,7 +10,7 @@
     <ul class="border-b border-scheme-border">
       {#for entry in events, i}
         {#let month = entry.fields.date | date('long') | split(' ')}
-        <li class="{ site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-delay={ site.settings.reveal ? (i % 6) * 60 : null }>
+        <li class="{ site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-group="events:60">
           {#if (entry.fields.date | slice(0, 7)) != (events[i - 1].fields.date | slice(0, 7))}<h3 class="pb-space-md font-heading text-h3 text-scheme-heading { i ? 'pt-space-xl' : '' }">{ month[0] } { month[2] }</h3>{/if}
           <EventRow entry={ entry } />
         </li>
@@ -30,7 +30,6 @@
     { "type": "text", "id": "heading", "label": "Heading", "default": "Events" },
     { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
     { "type": "range", "id": "limit", "label": "Limit", "min": 1, "max": 24, "step": 1, "default": 24 },
-    { "type": "checkbox", "id": "exclude_current", "label": "Leave out the event on show", "default": true },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [

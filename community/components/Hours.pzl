@@ -1,10 +1,10 @@
 <!-- component: Hours -->
-<!-- The opening hours from the House setting, one row per line: the day left in muted, the time right, tabular. The time is a line's last word and the day the rest; a one-word line prints in the time column alone. size sm is the footer's and the menu's. No day is marked open: there is no clock. -->
+<!-- The opening hours from the House setting, one row per line: the day left in muted, the time right, tabular. The time is a line's last word (a spaced dash closes up) and the day the rest; a one-word line prints in the time column alone. size sm is the footer's and the menu's. No day is marked open: there is no clock. -->
 {#if site.settings.hours}
 <dl class="grid tnum { size == 'sm' ? 'text-small' : '' }">
   {#for line in site.settings.hours | split('\n')}
     {#let
-      row = line | strip
+      row = line | strip | replace(' - ', '–') | replace(' – ', '–')
       time = row | split(' ') | last
     }
     {#if row}<div class="flex justify-between gap-space-md py-space-2xs"><dt class="text-scheme-muted">{ row | replace(time, '') | strip }</dt><dd class="text-right">{ time }</dd></div>{/if}

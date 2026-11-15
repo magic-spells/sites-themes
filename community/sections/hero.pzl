@@ -16,7 +16,7 @@
     {/if}
     {#if photos.length == 4}
       <ul class="mt-space-md grid w-full grid-cols-4 gap-space-sm md:gap-space-md">
-        {#for item in photos}<li><Well asset={ item.asset } alt={ item.alt } ratio="aspect-portrait" width={ 640 } sizes="(min-width: 82.5rem) 20rem, 25vw" eager /></li>{/for}
+        {#for item in photos}<li><Well asset={ item.asset } alt={ item.alt } ratio="aspect-portrait md:aspect-wide" width={ 640 } sizes="(min-width: 82.5rem) 20rem, 25vw" eager /></li>{/for}
       </ul>
     {/if}
   </div>

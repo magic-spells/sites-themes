@@ -1,6 +1,6 @@
 {
   "label": "Contact",
-  "description": "The contact form, where to find the house and where it talks.",
+  "description": "The contact form and where the house talks.",
   "sections": [
     {
       "id": "s_header",
@@ -18,15 +18,6 @@
       "settings": {
         "heading": "",
         "text": ""
-      },
-      "blocks": []
-    },
-    {
-      "id": "s_visit",
-      "type": "visit",
-      "preset": "Default",
-      "settings": {
-        "color_scheme": "mist"
       },
       "blocks": []
     },

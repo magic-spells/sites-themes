@@ -7,7 +7,7 @@
       <p class="text-scheme-muted tnum">{#if f.topic}{ f.topic } · {/if}<Day value={ f.date } /></p>
       {#if f.standfirst}<p class="text-lede text-pretty">{ f.standfirst }</p>{/if}
     </div>
-    <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-landscape md:aspect-video" width={ 1600 } sizes="(min-width: 80rem) 75rem, 100vw" eager />
+    <Well asset={ f.image } ratio="aspect-landscape md:aspect-video" width={ 1600 } sizes="(min-width: 80rem) 75rem, 100vw" eager />
     <div class="prose max-w-reading text-body">{ f.body }</div>
   </div>
 </article>

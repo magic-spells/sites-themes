@@ -2,7 +2,7 @@
 <!-- A programme, one link to its page: the 4:3 well, the title in h4 and the summary in the muted colour. -->
 {#let f = entry.fields}
 <article class="group relative grid content-start gap-space-sm { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
-  <Well asset={ f.image } alt={ f.image_alt } width={ 800 } sizes="(min-width: 64rem) 24rem, (min-width: 48rem) 50vw, 100vw" />
+  <Well asset={ f.image } width={ 800 } sizes="(min-width: 64rem) 24rem, (min-width: 48rem) 50vw, 100vw" />
   <div class="grid gap-space-2xs">
     <h3 class="font-heading text-h4 text-balance text-scheme-heading"><a class="link-quiet after:absolute after:inset-0" href="{ href }">{ entry.title }</a></h3>
     {#if f.summary}<p class="text-pretty text-scheme-muted">{ f.summary }</p>{/if}

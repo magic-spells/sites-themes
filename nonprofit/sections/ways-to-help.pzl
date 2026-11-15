@@ -8,7 +8,7 @@
           {#let b = block.settings}
           <li class="{ reveal }" data-block={ block.editor_id }>
             <a class="group flex items-center gap-space-sm md:flex-col md:items-stretch" href="{ b.link }">
-              <Well asset={ b.image } alt={ b.image_alt } ratio="aspect-square md:aspect-landscape" cls="w-thumb shrink-0 md:w-full" sizes="(min-width: 64rem) 18rem, (min-width: 48rem) 45vw, 5rem" />
+              <Well asset={ b.image } ratio="aspect-square md:aspect-landscape" cls="w-thumb shrink-0 md:w-full" sizes="(min-width: 64rem) 18rem, (min-width: 48rem) 45vw, 5rem" />
               <div class="grid gap-space-2xs">
                 <h3 class="font-heading text-h4 text-balance text-scheme-heading decoration-1 underline-offset-4 group-hover:underline">{ b.title }</h3>
                 {#if b.text}<p class="text-scheme-muted">{ b.text }</p>{/if}
@@ -37,7 +37,6 @@
       { "type": "text", "id": "title", "label": "Title", "default": "Volunteer" },
       { "type": "text", "id": "text", "label": "Line", "default": "" },
       { "type": "image", "id": "image", "label": "Picture", "info": "Square on phones, 4:3 from tablets." },
-      { "type": "text", "id": "image_alt", "label": "Picture alt text", "default": "" },
       { "type": "url", "id": "link", "label": "Link", "default": "/get-involved" }
     ] }
   ],

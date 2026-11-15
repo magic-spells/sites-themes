@@ -74,7 +74,6 @@
             "title": "Donate food",
             "text": "Bring tins and dry goods to Mill Hall.",
             "image": "as_4x3_oat",
-            "image_alt": "",
             "link": "/donate#food"
           }
         },
@@ -84,7 +83,6 @@
             "title": "Fundraise",
             "text": "Run, bake or host a supper for us.",
             "image": "as_4x3_lake",
-            "image_alt": "",
             "link": "/donate#fundraise"
           }
         },
@@ -94,7 +92,6 @@
             "title": "Give money",
             "text": "Once or monthly, through our giving page.",
             "image": "as_4x3_clay",
-            "image_alt": "",
             "link": "https://give.example/larkfieldkitchen"
           }
         }

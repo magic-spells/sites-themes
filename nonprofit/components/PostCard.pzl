@@ -8,7 +8,7 @@
 </article>
 {:else}
 <article class="group relative grid content-start gap-space-sm { feature ? 'items-center lg:grid-cols-12 lg:gap-x-space-xl' : '' } { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
-  <Well asset={ f.image } alt={ f.image_alt } cls={ feature ? 'lg:col-span-7' : null } width={ feature ? 1200 : 800 } sizes={ feature ? '(min-width: 64rem) 45rem, 100vw' : '(min-width: 64rem) 24rem, (min-width: 48rem) 50vw, 100vw' }><Day value={ f.date } view="stamp" /></Well>
+  <Well asset={ f.image } cls={ feature ? 'lg:col-span-7' : null } width={ feature ? 1200 : 800 } sizes={ feature ? '(min-width: 64rem) 45rem, 100vw' : '(min-width: 64rem) 24rem, (min-width: 48rem) 50vw, 100vw' }><Day value={ f.date } view="stamp" /></Well>
   <div class="grid gap-space-sm { feature ? 'lg:col-span-5' : '' }">
     <h3 class="font-heading text-balance text-scheme-heading { feature ? 'text-h3' : 'text-h4' }"><a class="link-quiet after:absolute after:inset-0" href="{ href }">{ entry.title }</a></h3>
     {#if feature && f.standfirst}<p class="text-lede text-pretty">{ f.standfirst }</p>{/if}

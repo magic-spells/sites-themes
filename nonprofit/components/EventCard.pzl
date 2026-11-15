@@ -12,7 +12,7 @@
 </article>
 {:else}
 <article class="group relative grid content-start gap-space-sm { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
-  <Well asset={ f.image } alt={ f.image_alt } ratio="aspect-3/2" width={ 800 } sizes="(min-width: 48rem) 24rem, 85vw"><Day value={ f.date } view="stamp" /></Well>
+  <Well asset={ f.image } ratio="aspect-3/2" width={ 800 } sizes="(min-width: 48rem) 24rem, 85vw"><Day value={ f.date } view="stamp" /></Well>
   <div class="grid gap-space-2xs">
     <h3 class="font-heading text-h4 text-balance text-scheme-heading"><a class="link-quiet after:absolute after:inset-0" href="{ href }">{ entry.title }</a></h3>
     <Place text={ f.location } />

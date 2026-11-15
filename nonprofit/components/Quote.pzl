@@ -1,7 +1,7 @@
 <!-- component: Quote -->
 <!-- One story quote, centred in the reading column: the round portrait thumbnail when there is one, the quote in the heading face at H3, and one line, the name · the role. q is a quote block's settings; editor_id marks the block for the editor. -->
 <figure class="mx-auto grid max-w-reading justify-items-center gap-space-md text-center" data-block={ editor_id }>
-  {#if q.portrait}<Well asset={ q.portrait } alt={ q.portrait_alt } ratio="aspect-square" cls="w-thumb" round width={ 160 } sizes="5rem" />{/if}
+  {#if q.portrait}<Well asset={ q.portrait } ratio="aspect-square" cls="w-thumb" round width={ 160 } sizes="5rem" />{/if}
   <blockquote class="font-heading text-h3 text-balance text-scheme-heading">“{ q.quote }”</blockquote>
   <figcaption class="text-small">{ q.name }{#if q.role} · { q.role }{/if}</figcaption>
 </figure>

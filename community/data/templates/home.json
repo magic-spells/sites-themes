@@ -111,48 +111,42 @@
           "id": "b_tile_1",
           "type": "tile",
           "settings": {
-            "image": "as_1x1_mist",
-            "image_alt": "Little Feet in the main hall"
+            "image": "as_1x1_mist"
           }
         },
         {
           "id": "b_tile_2",
           "type": "tile",
           "settings": {
-            "image": "as_1x1_cream",
-            "image_alt": "Lunch Club"
+            "image": "as_1x1_cream"
           }
         },
         {
           "id": "b_tile_3",
           "type": "tile",
           "settings": {
-            "image": "as_1x1_stone",
-            "image_alt": "The garden crew"
+            "image": "as_1x1_stone"
           }
         },
         {
           "id": "b_tile_4",
           "type": "tile",
           "settings": {
-            "image": "as_1x1_cream",
-            "image_alt": "Knit & Natter"
+            "image": "as_1x1_cream"
           }
         },
         {
           "id": "b_tile_5",
           "type": "tile",
           "settings": {
-            "image": "as_1x1_stone",
-            "image_alt": "The Repair Table"
+            "image": "as_1x1_stone"
           }
         },
         {
           "id": "b_tile_6",
           "type": "tile",
           "settings": {
-            "image": "as_1x1_mist",
-            "image_alt": "Friday supper"
+            "image": "as_1x1_mist"
           }
         }
       ]

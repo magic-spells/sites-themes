@@ -24,7 +24,7 @@
       </div>
       {#if f.image || host}
         <aside class="grid gap-space-lg">
-          {#if f.image}<Well asset={ f.image } alt={ f.image_alt } ratio="aspect-wide" width={ 1024 } sizes="(min-width: 64rem) 34rem, 100vw" eager />{/if}
+          {#if f.image}<Well asset={ f.image } ratio="aspect-wide" width={ 1024 } sizes="(min-width: 64rem) 34rem, 100vw" eager />{/if}
           {#if host}
             <div class="grid gap-space-xs">
               <p class="text-label text-scheme-muted">{ t('hosted_by') }</p>

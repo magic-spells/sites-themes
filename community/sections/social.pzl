@@ -7,7 +7,7 @@
     <ul class="grid grid-cols-3 gap-space-xs md:flex-1 md:grid-cols-6">
       {#for block in tiles}
         {#let b = block.settings}
-        <li data-block={ block.editor_id }><a class="block" href="{ b.link || settings.url }" target="_blank" rel="noopener"><Well asset={ b.image } alt={ b.image_alt || t('social_post') } width={ 480 } sizes="(min-width: 48rem) 12rem, 33vw" /></a></li>
+        <li data-block={ block.editor_id }><a class="block" href="{ b.link || settings.url }" target="_blank" rel="noopener"><Well asset={ b.image } alt={ b.image?.alt || t('social_post') } width={ 480 } sizes="(min-width: 48rem) 12rem, 33vw" /></a></li>
       {/for}
     </ul>
   </div>
@@ -28,7 +28,6 @@
   "blocks": [
     { "type": "tile", "name": "Tile", "settings": [
       { "type": "image", "id": "image", "label": "Image", "info": "Square crops best." },
-      { "type": "text", "id": "image_alt", "label": "Alt text", "default": "" },
       { "type": "url", "id": "link", "label": "Post link", "default": "", "info": "Leave empty to link to the profile." }
     ] }
   ],

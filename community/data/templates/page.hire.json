@@ -29,7 +29,6 @@
           "type": "room",
           "settings": {
             "image": "as_4x3_mist",
-            "image_alt": "Main hall",
             "name": "Main hall",
             "text": "Seats 80, or 120 standing. A stage, a piano and a hearing loop. Parties, classes and meetings.",
             "price": "£25 an hour"
@@ -40,7 +39,6 @@
           "type": "room",
           "settings": {
             "image": "as_4x3_cream",
-            "image_alt": "Small room",
             "name": "Small room",
             "text": "Sixteen round one table, with a screen and a whiteboard. Meetings and workshops.",
             "price": "£12 an hour"
@@ -51,7 +49,6 @@
           "type": "room",
           "settings": {
             "image": "as_4x3_stone",
-            "image_alt": "Kitchen",
             "name": "Kitchen",
             "text": "A six-ring cooker, two ovens and a dishwasher. For caterers and supper clubs, with the hall or alone.",
             "price": "£15 an hour"

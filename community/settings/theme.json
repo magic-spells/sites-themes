@@ -29,7 +29,6 @@
         {"type": "textarea", "id": "hours", "label": "Opening hours", "default": "", "info": "One line per day or range, the time last: Monday to Friday 9:00–16:00, Sunday Closed."},
         {"type": "textarea", "id": "access", "label": "Access", "default": "", "info": "Step-free entrance, hearing loop, toilets, parking."},
         {"type": "image", "id": "map_image", "label": "Map image", "info": "A map or a photo of the door, 4:3."},
-        {"type": "text", "id": "map_image_alt", "label": "Map image alt text", "default": ""},
         {"type": "url", "id": "map_url", "label": "Directions link", "default": "", "info": "Get directions links here."},
         {"type": "url", "id": "map_embed_url", "label": "Map embed link", "default": "", "info": "A map's embed address. Set, it replaces the map image on Visit."},
         {"type": "text", "id": "ask_label", "label": "Header button label", "default": "Join in"},

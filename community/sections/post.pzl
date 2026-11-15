@@ -11,7 +11,7 @@
       <p class="text-label text-scheme-muted tnum">{ f.date | date('long') }{#if f.topic} · { f.topic }{/if}</p>
       {#if f.standfirst}<p class="max-w-reading pt-space-xs text-lead text-pretty">{ f.standfirst }</p>{/if}
     </header>
-    {#if f.image}<Well asset={ f.image } alt={ f.image_alt } ratio="aspect-wide" width={ 1600 } sizes="(min-width: 82.5rem) 82.5rem, 100vw" eager />{/if}
+    {#if f.image}<Well asset={ f.image } ratio="aspect-wide" width={ 1600 } sizes="(min-width: 82.5rem) 82.5rem, 100vw" eager />{/if}
     <div class="sites-prose max-w-reading text-pretty">{ f.body }</div>
   </div>
 </article>

@@ -11,7 +11,6 @@
       "hours": "Monday to Friday 9:00–16:00\nSaturday 10:00–13:00\nSunday Closed",
       "access": "Step-free entrance on Larch Street. Hearing loop in the main hall. Accessible toilet on the ground floor.",
       "map_image": "as_map",
-      "map_image_alt": "Map of Larch Street, with the house marked",
       "map_url": "https://www.openstreetmap.org/",
       "map_embed_url": "/_sites/theme/map-embed.html",
       "ask_label": "Join in",
@@ -679,11 +678,6 @@
           "label": "Photo (1:1)"
         },
         {
-          "id": "image_alt",
-          "type": "text",
-          "label": "Photo alt text"
-        },
-        {
           "id": "days",
           "type": "text",
           "label": "Days (mon, tue, wed, thu, fri, sat, sun; comma-separated)"
@@ -759,8 +753,7 @@
             "kind": "Families",
             "featured": true,
             "order": 1,
-            "image": "as_1x1_mist",
-            "image_alt": "Little Feet playgroup"
+            "image": "as_1x1_mist"
           }
         },
         {
@@ -781,8 +774,7 @@
             "kind": "Crafts",
             "featured": true,
             "order": 2,
-            "image": "as_1x1_cream",
-            "image_alt": "Knit & Natter"
+            "image": "as_1x1_cream"
           }
         },
         {
@@ -803,8 +795,7 @@
             "kind": "Music",
             "featured": true,
             "order": 3,
-            "image": "as_1x1_stone",
-            "image_alt": "Larch Street Singers"
+            "image": "as_1x1_stone"
           }
         },
         {
@@ -825,8 +816,7 @@
             "kind": "Learning",
             "featured": true,
             "order": 4,
-            "image": "as_1x1_mist",
-            "image_alt": "English conversation"
+            "image": "as_1x1_mist"
           }
         },
         {
@@ -867,8 +857,7 @@
             "kind": "Food",
             "featured": true,
             "order": 6,
-            "image": "as_1x1_cream",
-            "image_alt": "Lunch Club"
+            "image": "as_1x1_cream"
           }
         },
         {
@@ -889,8 +878,7 @@
             "kind": "Outdoors",
             "featured": false,
             "order": 7,
-            "image": "as_1x1_stone",
-            "image_alt": "Garden crew"
+            "image": "as_1x1_stone"
           }
         },
         {
@@ -931,8 +919,7 @@
             "kind": "Wellbeing",
             "featured": false,
             "order": 9,
-            "image": "as_1x1_mist",
-            "image_alt": "Chair yoga"
+            "image": "as_1x1_mist"
           }
         },
         {
@@ -953,8 +940,7 @@
             "kind": "Food",
             "featured": false,
             "order": 10,
-            "image": "as_1x1_cream",
-            "image_alt": "Friday supper"
+            "image": "as_1x1_cream"
           }
         },
         {
@@ -975,8 +961,7 @@
             "kind": "Outdoors",
             "featured": false,
             "order": 11,
-            "image": "as_1x1_stone",
-            "image_alt": "Parkside walk"
+            "image": "as_1x1_stone"
           }
         },
         {
@@ -1035,11 +1020,6 @@
           "label": "Photo (3:2)"
         },
         {
-          "id": "image_alt",
-          "type": "text",
-          "label": "Photo alt text"
-        },
-        {
           "id": "link",
           "type": "url",
           "label": "Link"
@@ -1076,7 +1056,6 @@
             "link": "",
             "link_label": "",
             "image": "as_3x2_mist",
-            "image_alt": "Open day",
             "album": "al_garden_open_day"
           }
         },
@@ -1106,8 +1085,7 @@
             "description": "<p>Bring up to ten clean things and take home what you like.</p><p>No need to book. If you have a question, ask at the desk or send us a message.</p>",
             "link": "",
             "link_label": "",
-            "image": "as_3x2_cream",
-            "image_alt": "Clothes swap"
+            "image": "as_3x2_cream"
           }
         },
         {
@@ -1138,7 +1116,6 @@
             "link": "",
             "link_label": "",
             "image": "as_3x2_stone",
-            "image_alt": "Lantern walk",
             "album": "al_lantern_walk_2025"
           }
         },
@@ -1155,7 +1132,6 @@
             "link": "",
             "link_label": "",
             "image": "as_3x2_mist",
-            "image_alt": "Winter fair",
             "group": "gr_larch_street_singers"
           }
         },
@@ -1203,11 +1179,6 @@
           "label": "Cover (4:3)"
         },
         {
-          "id": "cover_alt",
-          "type": "text",
-          "label": "Cover alt text"
-        },
-        {
           "id": "photos",
           "type": "gallery",
           "label": "Photos"
@@ -1232,7 +1203,6 @@
           "fields": {
             "date": "2026-07-11",
             "cover": "as_4x3_cream",
-            "cover_alt": "Street party",
             "photos": "street-party",
             "description": "The road closed, forty tables and a brass band."
           }
@@ -1244,7 +1214,6 @@
           "fields": {
             "date": "2026-07-25",
             "cover": "as_4x3_mist",
-            "cover_alt": "Summer concert",
             "photos": "summer-concert",
             "description": "The Larch Street Singers in the back garden."
           }
@@ -1256,7 +1225,6 @@
           "fields": {
             "date": "2026-10-03",
             "cover": "as_4x3_stone",
-            "cover_alt": "Harvest supper",
             "photos": "harvest-supper",
             "description": "Soup from the garden for sixty neighbours."
           }
@@ -1268,7 +1236,6 @@
           "fields": {
             "date": "2026-06-13",
             "cover": "as_4x3_stone",
-            "cover_alt": "Garden open day",
             "photos": "garden-open-day",
             "description": "Beds, bees and the new pond."
           }
@@ -1280,7 +1247,6 @@
           "fields": {
             "date": "2026-09-02",
             "cover": "as_4x3_mist",
-            "cover_alt": "Repair Table",
             "photos": "repair-table",
             "description": "Toasters, lamps, a bike and a very old radio."
           }
@@ -1292,7 +1258,6 @@
           "fields": {
             "date": "2025-12-06",
             "cover": "as_4x3_cream",
-            "cover_alt": "Lantern walk 2025",
             "photos": "lantern-walk-2025",
             "description": "Paper lanterns round the park at dusk.",
             "event": "ev_lantern_walk"
@@ -1312,11 +1277,6 @@
           "id": "image",
           "type": "image",
           "label": "Portrait (4:5)"
-        },
-        {
-          "id": "image_alt",
-          "type": "text",
-          "label": "Portrait alt text"
         },
         {
           "id": "bio",
@@ -1349,8 +1309,7 @@
             "bio": "<p>Ana runs the house day to day: the room bookings, the rota and the kettle. Find her at the desk by the door most mornings.</p>",
             "order": 1,
             "team": "staff",
-            "image": "as_4x5_mist",
-            "image_alt": "Ana Ruiz, coordinator"
+            "image": "as_4x5_mist"
           }
         },
         {
@@ -1362,8 +1321,7 @@
             "bio": "<p>Femi looks after the sixty-odd volunteers who keep the groups going, and finds a job for anyone who asks.</p>",
             "order": 2,
             "team": "staff",
-            "image": "as_4x5_cream",
-            "image_alt": "Femi Adeyemi, volunteer lead"
+            "image": "as_4x5_cream"
           }
         },
         {
@@ -1375,8 +1333,7 @@
             "bio": "<p>Margaret has chaired the committee since 2019 and has lived on Larch Street for forty years.</p>",
             "order": 3,
             "team": "committee",
-            "image": "as_4x5_stone",
-            "image_alt": "Margaret Doyle, chair"
+            "image": "as_4x5_stone"
           }
         },
         {
@@ -1399,8 +1356,7 @@
             "bio": "<p>Priya leads the Thursday garden crew and the spring seed swap.</p>",
             "order": 5,
             "team": "volunteers",
-            "image": "as_4x5_stone",
-            "image_alt": "Priya Shah, garden lead"
+            "image": "as_4x5_stone"
           }
         },
         {
@@ -1412,8 +1368,7 @@
             "bio": "<p>Owen leads the Larch Street Singers. No auditions, and no need to read music.</p>",
             "order": 6,
             "team": "volunteers",
-            "image": "as_4x5_mist",
-            "image_alt": "Owen Price, choir leader"
+            "image": "as_4x5_mist"
           }
         },
         {
@@ -1436,8 +1391,7 @@
             "bio": "<p>Sam runs Homework club in term time and the summer holiday days.</p>",
             "order": 8,
             "team": "staff",
-            "image": "as_4x5_cream",
-            "image_alt": "Sam Kellett, youth worker"
+            "image": "as_4x5_cream"
           }
         }
       ]
@@ -1466,11 +1420,6 @@
           "label": "Photo (3:2)"
         },
         {
-          "id": "image_alt",
-          "type": "text",
-          "label": "Photo alt text"
-        },
-        {
           "id": "topic",
           "type": "text",
           "label": "Topic (News, Newsletter)"
@@ -1486,8 +1435,7 @@
             "body": "<p>Groups that meet in the main hall that week move to the small room or the garden. Little Feet and Chair yoga take the week off.</p><p>The floor was last done in 2009. Thank you to everyone who gave to the floor fund.</p>",
             "date": "2026-11-10",
             "topic": "News",
-            "image": "as_3x2_mist",
-            "image_alt": "The hall floor is being sanded"
+            "image": "as_3x2_mist"
           }
         },
         {
@@ -1499,8 +1447,7 @@
             "body": "<p>This month the AGM is on Tuesday 24 November, and the winter fair is on Saturday 12 December.</p><p>The Parkside walk now meets every Saturday at half past eight at the park gates.</p>",
             "date": "2026-11-01",
             "topic": "Newsletter",
-            "image": "as_3x2_cream",
-            "image_alt": "November newsletter"
+            "image": "as_3x2_cream"
           }
         },
         {
@@ -1512,8 +1459,7 @@
             "body": "<p>From the Friday supper rota to the garden crew, the house runs on volunteers.</p><p>Come to the open day on 21 November to find out how to join them.</p>",
             "date": "2026-10-20",
             "topic": "News",
-            "image": "as_3x2_stone",
-            "image_alt": "Thank you, volunteers"
+            "image": "as_3x2_stone"
           }
         },
         {
@@ -1525,8 +1471,7 @@
             "body": "<p>The harvest supper is on Saturday 3 October.</p><p>Homework club takes a break over half term and returns on 2 November.</p>",
             "date": "2026-10-01",
             "topic": "Newsletter",
-            "image": "as_3x2_mist",
-            "image_alt": "October newsletter"
+            "image": "as_3x2_mist"
           }
         },
         {
@@ -1549,8 +1494,7 @@
             "body": "<p>Thank you to everyone who came to the street party.</p><p>The house is open as usual through August.</p>",
             "date": "2026-08-01",
             "topic": "Newsletter",
-            "image": "as_3x2_cream",
-            "image_alt": "August newsletter"
+            "image": "as_3x2_cream"
           }
         }
       ]
@@ -1642,8 +1586,7 @@
           "kind": "Families",
           "featured": true,
           "order": 1,
-          "image": "as_1x1_mist",
-          "image_alt": "Little Feet playgroup"
+          "image": "as_1x1_mist"
         }
       }
     },
@@ -1672,8 +1615,7 @@
           "kind": "Crafts",
           "featured": true,
           "order": 2,
-          "image": "as_1x1_cream",
-          "image_alt": "Knit & Natter"
+          "image": "as_1x1_cream"
         }
       }
     },
@@ -1702,8 +1644,7 @@
           "kind": "Music",
           "featured": true,
           "order": 3,
-          "image": "as_1x1_stone",
-          "image_alt": "Larch Street Singers"
+          "image": "as_1x1_stone"
         }
       }
     },
@@ -1732,8 +1673,7 @@
           "kind": "Learning",
           "featured": true,
           "order": 4,
-          "image": "as_1x1_mist",
-          "image_alt": "English conversation"
+          "image": "as_1x1_mist"
         }
       }
     },
@@ -1790,8 +1730,7 @@
           "kind": "Food",
           "featured": true,
           "order": 6,
-          "image": "as_1x1_cream",
-          "image_alt": "Lunch Club"
+          "image": "as_1x1_cream"
         }
       }
     },
@@ -1820,8 +1759,7 @@
           "kind": "Outdoors",
           "featured": false,
           "order": 7,
-          "image": "as_1x1_stone",
-          "image_alt": "Garden crew"
+          "image": "as_1x1_stone"
         }
       }
     },
@@ -1878,8 +1816,7 @@
           "kind": "Wellbeing",
           "featured": false,
           "order": 9,
-          "image": "as_1x1_mist",
-          "image_alt": "Chair yoga"
+          "image": "as_1x1_mist"
         }
       }
     },
@@ -1908,8 +1845,7 @@
           "kind": "Food",
           "featured": false,
           "order": 10,
-          "image": "as_1x1_cream",
-          "image_alt": "Friday supper"
+          "image": "as_1x1_cream"
         }
       }
     },
@@ -1938,8 +1874,7 @@
           "kind": "Outdoors",
           "featured": false,
           "order": 11,
-          "image": "as_1x1_stone",
-          "image_alt": "Parkside walk"
+          "image": "as_1x1_stone"
         }
       }
     },
@@ -1991,7 +1926,6 @@
           "link": "",
           "link_label": "",
           "image": "as_3x2_mist",
-          "image_alt": "Open day",
           "album": "al_garden_open_day"
         }
       }
@@ -2037,8 +1971,7 @@
           "description": "<p>Bring up to ten clean things and take home what you like.</p><p>No need to book. If you have a question, ask at the desk or send us a message.</p>",
           "link": "",
           "link_label": "",
-          "image": "as_3x2_cream",
-          "image_alt": "Clothes swap"
+          "image": "as_3x2_cream"
         }
       }
     },
@@ -2085,7 +2018,6 @@
           "link": "",
           "link_label": "",
           "image": "as_3x2_stone",
-          "image_alt": "Lantern walk",
           "album": "al_lantern_walk_2025"
         }
       }
@@ -2110,7 +2042,6 @@
           "link": "",
           "link_label": "",
           "image": "as_3x2_mist",
-          "image_alt": "Winter fair",
           "group": "gr_larch_street_singers"
         }
       }
@@ -2173,7 +2104,6 @@
         "fields": {
           "date": "2026-07-11",
           "cover": "as_4x3_cream",
-          "cover_alt": "Street party",
           "photos": "street-party",
           "description": "The road closed, forty tables and a brass band."
         }
@@ -2193,7 +2123,6 @@
         "fields": {
           "date": "2026-07-25",
           "cover": "as_4x3_mist",
-          "cover_alt": "Summer concert",
           "photos": "summer-concert",
           "description": "The Larch Street Singers in the back garden."
         }
@@ -2213,7 +2142,6 @@
         "fields": {
           "date": "2026-10-03",
           "cover": "as_4x3_stone",
-          "cover_alt": "Harvest supper",
           "photos": "harvest-supper",
           "description": "Soup from the garden for sixty neighbours."
         }
@@ -2233,7 +2161,6 @@
         "fields": {
           "date": "2026-06-13",
           "cover": "as_4x3_stone",
-          "cover_alt": "Garden open day",
           "photos": "garden-open-day",
           "description": "Beds, bees and the new pond."
         }
@@ -2253,7 +2180,6 @@
         "fields": {
           "date": "2026-09-02",
           "cover": "as_4x3_mist",
-          "cover_alt": "Repair Table",
           "photos": "repair-table",
           "description": "Toasters, lamps, a bike and a very old radio."
         }
@@ -2273,7 +2199,6 @@
         "fields": {
           "date": "2025-12-06",
           "cover": "as_4x3_cream",
-          "cover_alt": "Lantern walk 2025",
           "photos": "lantern-walk-2025",
           "description": "Paper lanterns round the park at dusk.",
           "event": "ev_lantern_walk"
@@ -2296,8 +2221,7 @@
           "body": "<p>Groups that meet in the main hall that week move to the small room or the garden. Little Feet and Chair yoga take the week off.</p><p>The floor was last done in 2009. Thank you to everyone who gave to the floor fund.</p>",
           "date": "2026-11-10",
           "topic": "News",
-          "image": "as_3x2_mist",
-          "image_alt": "The hall floor is being sanded"
+          "image": "as_3x2_mist"
         }
       }
     },
@@ -2317,8 +2241,7 @@
           "body": "<p>This month the AGM is on Tuesday 24 November, and the winter fair is on Saturday 12 December.</p><p>The Parkside walk now meets every Saturday at half past eight at the park gates.</p>",
           "date": "2026-11-01",
           "topic": "Newsletter",
-          "image": "as_3x2_cream",
-          "image_alt": "November newsletter"
+          "image": "as_3x2_cream"
         }
       }
     },
@@ -2338,8 +2261,7 @@
           "body": "<p>From the Friday supper rota to the garden crew, the house runs on volunteers.</p><p>Come to the open day on 21 November to find out how to join them.</p>",
           "date": "2026-10-20",
           "topic": "News",
-          "image": "as_3x2_stone",
-          "image_alt": "Thank you, volunteers"
+          "image": "as_3x2_stone"
         }
       }
     },
@@ -2359,8 +2281,7 @@
           "body": "<p>The harvest supper is on Saturday 3 October.</p><p>Homework club takes a break over half term and returns on 2 November.</p>",
           "date": "2026-10-01",
           "topic": "Newsletter",
-          "image": "as_3x2_mist",
-          "image_alt": "October newsletter"
+          "image": "as_3x2_mist"
         }
       }
     },
@@ -2399,8 +2320,7 @@
           "body": "<p>Thank you to everyone who came to the street party.</p><p>The house is open as usual through August.</p>",
           "date": "2026-08-01",
           "topic": "Newsletter",
-          "image": "as_3x2_cream",
-          "image_alt": "August newsletter"
+          "image": "as_3x2_cream"
         }
       }
     }

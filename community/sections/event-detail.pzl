@@ -15,7 +15,7 @@
         {#if f.link}<Button href={ f.link }>{ f.link_label || t('find_out_more') }</Button>{/if}
       </div>
     </header>
-    {#if f.image}<div class="max-w-hero"><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-wide" width={ 1600 } sizes="(min-width: 48rem) 48rem, 100vw" eager /></div>{/if}
+    {#if f.image}<div class="max-w-hero"><Well asset={ f.image } ratio="aspect-wide" width={ 1600 } sizes="(min-width: 48rem) 48rem, 100vw" eager /></div>{/if}
     {#if f.description}<div class="sites-prose max-w-reading text-pretty">{ f.description }</div>{/if}
     {#if f.group}<p><span class="text-scheme-muted">{ t('part_of') }</span> <a class="underline decoration-1 underline-offset-4 hover:decoration-2" href="/groups/{ f.group.handle }">{ f.group.title }</a></p>{/if}
     {#if photos.length}

@@ -1,5 +1,5 @@
 <!-- component: Well -->
-<!-- A photo well: the frame that cuts a photo to its fixed crop (ratio, aspect-square by default) over surface-2, with a hairline and 0.5rem corners (inner: the 0.125rem corners of a photo in a print's mount). With no asset it holds a quiet placeholder glyph. -->
+<!-- A photo well: the frame that cuts a photo to its fixed crop (ratio, aspect-square by default) over surface-2, with a hairline and 0.5rem corners (inner: the 0.125rem corners of a photo in a print's mount). With no asset it holds a quiet placeholder glyph. The alt text is the asset's own; alt="" leaves unlabelled a photo whose title or caption already names it. -->
 <span class="grid place-items-center overflow-hidden bg-scheme-surface-2 outline outline-scheme-border -outline-offset-1 { inner ? 'rounded-inner' : 'rounded-photo' } { ratio ?? 'aspect-square' }">
   {#if asset}<img class="size-full object-cover" src="{ image_url(asset, width ?? 800) }" srcset="{ image_srcset(asset, [480, 768, 1024, 1600]) }" sizes="{ sizes ?? '100vw' }" alt="{ alt ?? asset.alt }" loading="{ eager ? 'eager' : 'lazy' }" fetchpriority={ eager ? 'high' : null } width={ asset.width } height={ asset.height } />{:else}<Glyph name="image" cls="size-icon text-scheme-muted" />{/if}
 </span>

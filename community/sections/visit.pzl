@@ -25,7 +25,7 @@
       {#if s.map_embed_url}
         <iframe class="aspect-photo w-full rounded-photo bg-scheme-surface-2 outline outline-scheme-border -outline-offset-1 lg:order-first" src="{ s.map_embed_url }" title="{ t('map') }" loading="lazy"></iframe>
       {:else if s.map_image}
-        <div class="lg:order-first"><Well asset={ s.map_image } alt={ s.map_image_alt } ratio="aspect-photo" width={ 1280 } sizes="(min-width: 64rem) 46rem, 100vw" /></div>
+        <div class="lg:order-first"><Well asset={ s.map_image } ratio="aspect-photo" width={ 1280 } sizes="(min-width: 64rem) 46rem, 100vw" /></div>
       {/if}
     </div>
   </div>

@@ -10,7 +10,7 @@
         {#if settings.button2_label}<Button href={ settings.button2_link } label={ settings.button2_label } tone="outline" />{/if}
       </div>
     </div>
-    {#if split}<Well asset={ settings.image } cls="aspect-portrait rounded-card" sizes="(min-width: 48rem) 40vw, 100vw" />{/if}
+    {#if split}<Well asset={ settings.image } cls="aspect-portrait rounded-card" sizes="(min-width: 48rem) 40vw, 100vw" eager />{/if}
   </div>
 </section>
 

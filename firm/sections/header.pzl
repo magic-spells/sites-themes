@@ -8,12 +8,12 @@
     <div class="mx-auto flex max-w-column items-center gap-space-lg border-b border-scheme-border py-space-sm">
       <a class="me-auto font-heading text-wordmark text-scheme-heading" href="/">{#if s.logo}<img class="h-control w-auto" src="{ image_url(s.logo, 320) }" alt="{ s.logo.alt || name }" width={ s.logo.width } height={ s.logo.height } />{:else}{ name }{/if}</a>
       {#if menus.main.items.length}
-        <nav class="max-lg:hidden" aria-label="{ t('main_navigation') }">
+        <nav class="shrink-0 max-lg:hidden" aria-label="{ t('main_navigation') }">
           <ul class="flex gap-space-lg">{#for item in menus.main.items}<li><a class="hover:underline current:underline" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>{/for}</ul>
         </nav>
       {/if}
       <Button cls="max-md:hidden" />
-      <button class="flex size-control items-center justify-center rounded-full bg-scheme-surface-2 lg:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog"><Glyph name="menu" /><span class="sr-only">{ t('menu') }</span></button>
+      <button class="flex size-control shrink-0 items-center justify-center rounded-full bg-scheme-surface-2 lg:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog"><Glyph name="menu" /><span class="sr-only">{ t('menu') }</span></button>
     </div>
   </header>
 </sticky-header>

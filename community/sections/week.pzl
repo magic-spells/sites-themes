@@ -15,7 +15,7 @@
               {#if contains(g.fields.days | downcase, d)}
                 <li class="flex gap-x-space-sm">
                   <span class="shrink-0 md:w-time">{ g.fields.start }{#if g.fields.end}–{ g.fields.end }{/if}</span>
-                  <span class="min-w-0 text-pretty"><a class="font-medium hover:underline hover:decoration-1 hover:underline-offset-4" href="/groups/{ g.handle }">{ g.title }</a>{#if g.fields.place}<span class="text-scheme-muted"> · { g.fields.place }</span>{/if}{#if g.fields.frequency}<span class="text-scheme-muted"> · { g.fields.frequency }</span>{/if}</span>
+                  <span class="min-w-0 text-pretty"><a class="font-medium hover:underline hover:decoration-1 hover:underline-offset-4" href="/groups/{ g.handle }">{ g.title }</a>{#if g.fields.place}<span class="text-scheme-muted"> · { g.fields.place }</span>{/if}{#if g.fields.frequency}<span class="text-scheme-muted"> · { g.fields.frequency }</span>{/if}</span>
                 </li>
               {/if}
             {/for}

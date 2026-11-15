@@ -5,7 +5,7 @@
   {#if entry}
     <time class="text-label tnum" datetime="{ f.date }">{ f.date | date('medium') | split(',') | first }</time>
     <h3 class="font-heading text-h4 text-balance text-scheme-heading"><a class="hover:underline hover:decoration-1 hover:underline-offset-4" href="/whats-on/{ entry.handle }">{ entry.title }</a></h3>
-    {#if f.time || f.place}<p class="text-small text-scheme-muted tnum">{ f.time }{#if f.time && f.place} · {/if}{ f.place }</p>{/if}
+    {#if f.time || f.place}<p class="text-small text-scheme-muted tnum">{ f.time }{#if f.time && f.place} · {/if}{ f.place }</p>{/if}
     {#if f.summary}<p class="text-small text-pretty">{ f.summary }</p>{/if}
   {:else}
     <p class="whitespace-pre-line text-pretty">{ text }</p>

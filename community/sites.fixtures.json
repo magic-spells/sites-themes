@@ -685,12 +685,12 @@
         {
           "id": "start",
           "type": "text",
-          "label": "Starts (10:00)"
+          "label": "Starts (two-digit 24-hour time: 09:30)"
         },
         {
           "id": "end",
           "type": "text",
-          "label": "Ends (11:30)"
+          "label": "Ends (two-digit 24-hour time: 11:30)"
         },
         {
           "id": "frequency",

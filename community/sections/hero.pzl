@@ -1,4 +1,4 @@
-<!-- The opener, left-aligned: the H1 across up to seven columns (its words rise in), the standfirst at reading width and up to two buttons (primary, then secondary). Under them four 4:5 photos in a row across the whole column, four across at every width; fewer than four and the strip hides. No overlay and no text on photos. -->
+<!-- The opener, left-aligned: the H1 across up to seven columns (its words rise in), the standfirst at reading width and up to two buttons (primary, then secondary). Under them four photos in a row across the whole column, four across at every width, 4:5 on phones and 3:2 from 48rem; fewer than four and the strip hides. No overlay and no text on photos. -->
 {#let
   photos = settings.photos ? (settings.photos.items | slice(0, 4)) : []
   one = settings.link
@@ -33,7 +33,7 @@
     { "type": "textarea", "id": "text", "label": "Standfirst", "default": "Groups, meals and classes most days of the week, run by neighbours. Come along to anything on the sheet, or drop in for a cup of tea." },
     { "type": "link", "id": "link", "label": "Button" },
     { "type": "link", "id": "link_2", "label": "Second button" },
-    { "type": "gallery", "id": "photos", "label": "Photo strip", "info": "Four photos, 4:5, in a row under the text. With fewer than four the strip hides." },
+    { "type": "gallery", "id": "photos", "label": "Photo strip", "info": "Four photos in a row under the text: 4:5 on phones, 3:2 on wider screens. With fewer than four the strip hides." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [

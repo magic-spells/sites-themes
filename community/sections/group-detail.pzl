@@ -17,7 +17,7 @@
           {#if f.summary}<p class="max-w-reading text-lead text-pretty">{ f.summary }</p>{/if}
         </header>
         <div class="flex flex-wrap items-center justify-between gap-space-md border-b border-scheme-border pb-space-md">
-          <p class="tnum"><When entry={ entry } /> · { f.place || t('at_the_house') }</p>
+          <p class="tnum"><When entry={ entry } /> · { f.place || t('at_the_house') }</p>
           {#if f.link}<Button href={ f.link }>{ f.link_label || t('find_out_more') }</Button>{/if}
         </div>
         {#if f.description}<div class="sites-prose max-w-reading text-pretty">{ f.description }</div>{/if}

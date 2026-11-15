@@ -11,7 +11,7 @@
     <header class="grid max-w-hero gap-space-lg">
       <h1 class="font-heading text-h1 text-balance text-scheme-heading"><Rise text={ entry.title } /></h1>
       <div class="flex flex-wrap items-center justify-between gap-space-md border-b border-scheme-border pb-space-md">
-        <p class="tnum"><time datetime="{ f.date }">{ f.date | date('long') }</time>{#if f.time} · { f.time }{/if}{#if f.place} · { f.place }{/if}</p>
+        <p class="tnum"><time datetime="{ f.date }">{ f.date | date('long') }</time>{#if f.time} · { f.time }{/if}{#if f.place} · { f.place }{/if}</p>
         {#if f.link}<Button href={ f.link }>{ f.link_label || t('find_out_more') }</Button>{/if}
       </div>
     </header>

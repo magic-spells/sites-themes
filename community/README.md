@@ -37,9 +37,10 @@ sites.fixtures.json Larch Street Community House: pages, menus, forms and every 
 ## Content
 
 - **groups**: the regular week. A summary, a description, a 1:1 photo, the days ("tue, thu"),
-  start and end ("10:00"), how often in words (blank is every week: "1st Wednesday", "Term
-  time"), where (blank is the house), the host, a link, a kind for the filter, featured and a
-  position. A group that meets at two different times is two entries.
+  start and end as two-digit 24-hour times ("09:30": the week sorts by them), how often in
+  words (blank is every week: "1st Wednesday", "Term time"), where (blank is the house), the
+  host, a link, a kind for the filter, featured and a position. A group that meets at two
+  different times is two entries.
 - **events**: dated one-offs only. The date, the time in words, the place, one line, a
   description, a 3:2 photo, a link, the album from last time and the group it belongs to.
 - **albums**, **people** (role, a 4:5 portrait, a bio, the team: staff, committee or

@@ -18,6 +18,7 @@
           <Button type="submit">{ form.submit_label || t('sign_up') }</Button>
         </div>
         {#if form.error}<p class="mt-space-xs text-small text-scheme-error" id="{ id }-error" role="alert">{ t('form_error') }</p>{/if}
+        <noscript><p class="mt-space-xs text-small text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
       {/if}
     </Form>
   </div>

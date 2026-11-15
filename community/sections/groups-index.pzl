@@ -46,7 +46,7 @@
       { "value": "all", "label": "All" },
       { "value": "featured", "label": "Featured" }
     ] },
-    { "type": "range", "id": "limit", "label": "Limit", "min": 1, "max": 12, "step": 1, "default": 12 },
+    { "type": "range", "id": "limit", "label": "Limit", "min": 1, "max": 24, "step": 1, "default": 24 },
     { "type": "checkbox", "id": "show_kinds", "label": "Kind links", "default": false, "info": "A row of the groups' kinds above the list, each showing only its groups." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],

@@ -1,4 +1,4 @@
-<!-- Prints (Print) across the band, wider than the column: the albums' covers, newest first, each captioned with its album's title and linked to it; or one gallery's photos, captioned with their alt text, each opening the lightbox. collage: each print at its box in a stage of fixed ratio (left, top and width as fractions of the stage); five prints in a stepped row, or seven in two rows from seven photos; phones show a stepped column of five. Where two prints overlap, the one that ends higher lies on top, so no print covers another's caption; overlaps stay near a tenth of a print. mosaic: one large print and four small. Under three photos the wall hides. The prints settle in, in order. -->
+<!-- Prints (Print) across the band, wider than the column: the albums' covers, newest first, each captioned with its album's title and linked to it; or one gallery's photos, captioned with their alt text, each opening the lightbox. collage: each print at its box in a stage of fixed ratio (left, top and width as fractions of the stage); five prints in a stepped row, or seven in two rows from seven photos; phones show a stepped column of five. Where two prints overlap, the one that ends higher lies on top, so no print covers another's caption; overlaps stay near a tenth of a print. mosaic: one large print and four small. Under five photos the wall hides. The prints settle in, in order. -->
 {#let
   albums = settings.source != 'gallery'
   all = albums ? (content.albums.entries | sort('fields.date') | reverse) : (settings.gallery ? settings.gallery.items : [])
@@ -34,7 +34,7 @@
   settle = site.settings.reveal ? 'reveal reveal-settle reveal-duration-500' : ''
   lb = { lightbox: { showCounter: false }, navigation: { showButtons: false, showPagination: false } }
 }
-{#if items.length > 2}
+{#if items.length > 4}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column"><SectionHead heading={ settings.heading } text={ settings.text } link_label={ t('all_photos') } link_href="/photos" /></div>
   {#if !albums}<LightboxCompanion items={ items } id={ id }><script type="application/json" data-tarot-options>{ lb | json }</script></LightboxCompanion>{/if}

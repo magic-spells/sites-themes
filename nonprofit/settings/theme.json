@@ -29,7 +29,6 @@
         { "type": "url", "id": "help_url", "label": "Second route link", "default": "" },
         { "type": "textarea", "id": "legal_line", "label": "Legal line", "default": "", "info": "Your registration or tax line as you word it, one line each. Printed in the footer." },
         { "type": "text", "id": "tax_line", "label": "Tax line", "default": "", "info": "One line under the giving buttons: Gifts are tax-deductible. Leave empty to hide it." },
-        { "type": "form", "id": "volunteer_form", "label": "Volunteer form", "default": "volunteer" },
         { "type": "form", "id": "newsletter_form", "label": "Newsletter form", "default": "newsletter" }
       ]
     },

@@ -40,7 +40,7 @@ assets/             Parkinsans and Atkinson Hyperlegible Next (OFL), glyphs.svg,
 
 The give link (the donation platform's page), the ask label and an optional ask link that
 overrides it, the help label and link, the legal line (one line each, for the © and the
-registration number), the tax line under gifts, and the volunteer and newsletter forms.
+registration number), the tax line under gifts, and the newsletter form.
 Nothing is counted or dated by the theme: the © line is typed.
 
 ## Fonts and palettes

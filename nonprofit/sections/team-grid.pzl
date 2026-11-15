@@ -1,17 +1,27 @@
-<!-- The people in their order, all or one group (the entry's group field), as portrait cards: two across on phones, three from 48rem, four from 64rem. -->
+<!-- The people in their order, all or one group (the entry's group field), as portrait cards: the 4:5 portrait, then the role in small type over the name; nothing else, and not a link. Two across on phones, three from 48rem, four from 64rem. With none to show, the section shows nothing. -->
 {#let
   all = content.team.entries | sort('fields.order')
   people = (settings.group == 'all' ? all : all | where('fields.group', settings.group)) | slice(0, settings.limit)
 }
+{#if people.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-page">
     <SectionHead heading={ settings.heading } text={ settings.text }>
       <ul class="grid grid-cols-2 gap-x-space-sm gap-y-space-xl md:grid-cols-3 md:gap-x-space-md lg:grid-cols-4">
-        {#for entry in people}<li><TeamCard entry={ entry } /></li>{/for}
+        {#for entry in people}
+          <li class="grid content-start gap-space-sm { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+            <Well asset={ entry.fields.image } ratio="aspect-portrait" width={ 640 } sizes="(min-width: 64rem) 18rem, (min-width: 48rem) 33vw, 50vw" />
+            <div class="grid gap-space-2xs">
+              {#if entry.fields.role}<p class="text-small text-scheme-muted">{ entry.fields.role }</p>{/if}
+              <h3 class="font-heading text-h4 text-balance text-scheme-heading">{ entry.title }</h3>
+            </div>
+          </li>
+        {/for}
       </ul>
     </SectionHead>
   </div>
 </section>
+{/if}
 
 <schema>
 {

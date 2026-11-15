@@ -104,3 +104,6 @@ document.addEventListener('click', (event) => {
 // Scroll reveals on cards and figures only. They write `reveal
 // reveal-fade-up` only while Brand motion is on.
 if (document.querySelector('.reveal')) Reveal.init({ offset: 0, duration: 400, once: true });
+
+// A link to a row's anchor (/donate#food) opens the row it lands on.
+document.getElementById(location.hash.slice(1))?.querySelector('collapsible-content')?.setAttribute('open', '');

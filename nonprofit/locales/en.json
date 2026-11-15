@@ -33,5 +33,6 @@
   "send": "Send",
   "sign_up": "Sign up",
   "skip_to_content": "Skip to content",
-  "visit": "Visit"
+  "visit": "Visit",
+  "ways_to_give.cheques": "Cheques by post to {address}."
 }

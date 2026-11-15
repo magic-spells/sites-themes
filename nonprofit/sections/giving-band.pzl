@@ -1,0 +1,78 @@
+<!-- The calm ask: the heading and standfirst, up to three gift equivalences, the Donate button (to the Organisation giving page, left out while it is empty) and the link to more ways to give, then the tax line. No goal, total or bar. Equivalences are hairline rows on phones, the amount left in tabular figures, and three across from 48rem. Panel: the inset rounded panel, the page ground around it; from 64rem the text in seven parts beside the picture in five, or across the panel without one. Band: the same on a full-width band. -->
+{#let
+  band = settings.layout == 'band'
+  image = settings.image
+  tax = site.settings.tax_line
+}
+<section class="px-gutter py-section { band ? 'bg-scheme-background text-scheme-foreground' : '' }">
+  <div class="mx-auto max-w-page">
+    <Panel bare={ band } cls="grid items-center gap-space-xl lg:grid-cols-12">
+      <div class="grid gap-space-lg { image ? 'lg:col-span-7' : 'lg:col-span-12' }">
+        <div class="grid max-w-reading gap-space-sm">
+          <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Rise text={ settings.heading } /></h2>
+          {#if settings.text}<p class="text-lede text-pretty">{ settings.text }</p>{/if}
+        </div>
+        {#if blocks.length}
+          <ul class="divide-y divide-scheme-border border-t border-scheme-border md:grid md:grid-cols-3 md:gap-space-lg md:divide-y-0 md:border-0">
+            {#for block in blocks}
+              <li class="flex items-baseline gap-space-sm py-space-sm md:grid md:content-start md:gap-space-2xs md:py-0" data-block={ block.editor_id }>
+                <span class="w-amount shrink-0 text-h3 tnum md:w-auto">{ block.settings.amount }</span>
+                <span>{ block.settings.text }</span>
+              </li>
+            {/for}
+          </ul>
+        {/if}
+        <div class="grid gap-space-sm">
+          <div class="flex flex-col gap-space-sm md:flex-row">
+            <Button give>{ settings.donate_label }</Button>
+            <Button href={ settings.more_link } tone="outline">{ settings.more_label }</Button>
+          </div>
+          {#if tax}<p class="text-small text-scheme-muted">{ tax }</p>{/if}
+        </div>
+      </div>
+      {#if image}<div class="lg:col-span-5"><Well asset={ image } alt={ settings.image_alt } ratio="aspect-landscape lg:aspect-portrait" width={ 1200 } sizes="(min-width: 64rem) 30rem, 100vw" /></div>{/if}
+    </Panel>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Giving band",
+  "description": "A calm ask: what a gift does, the Donate button and more ways to give.",
+  "kind": "Call to action",
+  "icon": "heart-handshake",
+  "settings": [
+    { "type": "select", "id": "layout", "label": "Layout", "default": "panel", "options": [
+      { "value": "panel", "label": "Inset panel" },
+      { "value": "band", "label": "Band" }
+    ] },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Support our work" },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "text", "id": "donate_label", "label": "Donate label", "default": "Donate", "info": "Links to the Organisation giving page, and hides while it is empty. The Organisation tax line sits under the buttons." },
+    { "type": "text", "id": "more_label", "label": "Second button label", "default": "More ways to give" },
+    { "type": "url", "id": "more_link", "label": "Second button link", "default": "/donate", "info": "Leave empty to hide the second button." },
+    { "type": "image", "id": "image", "label": "Picture", "info": "Optional. 4:5 beside the text from 64rem, 4:3 under it on smaller screens." },
+    { "type": "text", "id": "image_alt", "label": "Picture alt text", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "ask" }
+  ],
+  "blocks": [
+    { "type": "equivalence", "name": "What a gift does", "limit": 3, "settings": [
+      { "type": "text", "id": "amount", "label": "Amount", "default": "$25" },
+      { "type": "text", "id": "text", "label": "Line", "default": "feeds a family for a week" }
+    ] }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    { "name": "Panel", "settings": { "layout": "panel", "color_scheme": "ask" }, "blocks": [
+      { "type": "equivalence", "settings": { "amount": "$25", "text": "feeds a family for a week" } },
+      { "type": "equivalence", "settings": { "amount": "$60", "text": "cooks a Thursday lunch for thirty" } },
+      { "type": "equivalence", "settings": { "amount": "$150", "text": "keeps the walk-in fridge running for a month" } }
+    ] },
+    { "name": "Band", "settings": { "layout": "band", "color_scheme": "ask" }, "blocks": [
+      { "type": "equivalence", "settings": { "amount": "$25", "text": "feeds a family for a week" } },
+      { "type": "equivalence", "settings": { "amount": "$60", "text": "cooks a Thursday lunch for thirty" } },
+      { "type": "equivalence", "settings": { "amount": "$150", "text": "keeps the walk-in fridge running for a month" } }
+    ] }
+  ]
+}
+</schema>

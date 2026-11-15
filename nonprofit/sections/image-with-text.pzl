@@ -8,7 +8,7 @@
     <div class="lg:col-span-7 { left ? '' : 'lg:order-last' }">
       {#if capsules}
         <div class="grid grid-cols-3 items-start gap-space-sm md:gap-space-md">
-          {#for image in [settings.image, settings.image_2, settings.image_3], i}<Well asset={ image } ratio="aspect-capsule" cls="rounded-full{ i == 1 ? ' mt-space-xl' : '' }" width={ 600 } sizes="(min-width: 64rem) 18vw, 30vw" />{/for}
+          {#for image in [settings.image, settings.image_2, settings.image_3], i}<Well asset={ image } ratio="aspect-capsule" cls={ i == 1 ? 'mt-space-xl' : null } round width={ 600 } sizes="(min-width: 64rem) 18vw, 30vw" />{/for}
         </div>
       {:else}
         <Well asset={ settings.image } width={ 1200 } sizes="(min-width: 64rem) 45vw, 100vw" />

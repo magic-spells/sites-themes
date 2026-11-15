@@ -1,0 +1,30 @@
+<!-- A titled slot for another service's page: a giving form, a shift calendar, an animal feed. The head, then the page in a frame at the set height, rounded with a hairline edge. Nothing renders until it has both an address and a title (the frame's name for screen readers). -->
+{#if settings.url && settings.title}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-page">
+    <SectionHead heading={ settings.heading } text={ settings.text }>
+      <iframe class="block w-full rounded-well border border-scheme-border" src="{ settings.url }" title="{ settings.title }" style="height: { settings.height }rem" loading="lazy" allow="payment"></iframe>
+    </SectionHead>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Embed",
+  "description": "Another service's page in a frame: a giving form, a shift calendar, a feed.",
+  "kind": "Media",
+  "icon": "code",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "" },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "url", "id": "url", "label": "Address", "default": "", "info": "The embed link your provider gives you (https://…). Leave empty to hide the section." },
+    { "type": "text", "id": "title", "label": "Frame title", "default": "", "info": "What the frame holds, for screen readers: Donation form. Required." },
+    { "type": "range", "id": "height", "label": "Height", "min": 20, "max": 60, "step": 2, "unit": "rem", "default": 40 },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

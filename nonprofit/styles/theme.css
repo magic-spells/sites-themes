@@ -179,8 +179,10 @@
 }
 
 /* Two bands on the same light scheme in a row read as one: the second drops
-   its top padding so the seam carries one section's space, not two. */
-main > :is(.sites-scheme-paper + .sites-scheme-paper, .sites-scheme-chalk + .sites-scheme-chalk, .sites-scheme-cream + .sites-scheme-cream) > section {
+   its top padding so the seam carries one section's space, not two. A section
+   that renders nothing (an embed with no address) leaves an empty wrapper,
+   which is no band. */
+main > :is(.sites-scheme-paper:not(:empty) + .sites-scheme-paper, .sites-scheme-chalk:not(:empty) + .sites-scheme-chalk, .sites-scheme-cream:not(:empty) + .sites-scheme-cream) > section {
 	padding-top: 0;
 }
 
@@ -355,4 +357,29 @@ select-dropdown {
 	[data-ticker] scrolling-item[data-clone] { display: none; }
 	[data-ticker] scrolling-item { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
 	.reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+}
+
+/* builder B */
+/* The ways-to-help thumbnail on phones and the quote portrait; the amount
+   column of the giving band's rows on phones. */
+@theme {
+	--spacing-thumb: 5rem;
+	--spacing-amount: 5rem;
+}
+
+/* The impact split: each <meter> is its own hairline track (utilities), and
+   its share fills in the text colour, so no bar needs an inline width. */
+meter::-webkit-meter-bar {
+	height: 100%;
+	border: 0;
+	border-radius: inherit;
+	background: none;
+}
+meter::-webkit-meter-optimum-value {
+	border-radius: inherit;
+	background: currentColor;
+}
+meter::-moz-meter-bar {
+	border-radius: inherit;
+	background: currentColor;
 }

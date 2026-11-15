@@ -3,7 +3,7 @@
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-page gap-space-xl lg:grid-cols-12">
     <div class="grid content-start justify-items-start gap-space-md lg:col-span-5">
-      <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Rise text={ settings.heading } /></h2>
+      {#if settings.heading}<h2 class="font-heading text-h2 text-balance text-scheme-heading"><Rise text={ settings.heading } /></h2>{/if}
       {#if settings.text}<p class="max-w-reading text-lede text-pretty">{ settings.text }</p>{/if}
       {#if s.email}<a class="inline-flex items-center gap-space-sm text-link link" href="mailto:{ s.email }"><Glyph name="mail" />{ s.email }</a>{/if}
       {#if s.phone}<a class="inline-flex items-center gap-space-sm tnum text-link link" href="tel:{ s.phone | replace(' ', '') }"><Glyph name="phone" />{ s.phone }</a>{/if}

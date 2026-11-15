@@ -7,28 +7,26 @@
 <section class="px-gutter py-section { band ? 'bg-scheme-background text-scheme-foreground' : '' }">
   <div class="mx-auto max-w-page">
     <Panel bare={ band } cls="grid items-center gap-space-xl lg:grid-cols-12">
-      <div class="grid gap-space-lg { image ? 'lg:col-span-7' : 'lg:col-span-12' }">
-        <div class="grid max-w-reading gap-space-sm">
-          <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Rise text={ settings.heading } /></h2>
-          {#if settings.text}<p class="text-lede text-pretty">{ settings.text }</p>{/if}
-        </div>
-        {#if blocks.length}
-          <ul class="divide-y divide-scheme-border border-t border-scheme-border md:grid md:grid-cols-3 md:gap-space-lg md:divide-y-0 md:border-0">
-            {#for block in blocks}
-              <li class="flex items-baseline gap-space-sm py-space-sm md:grid md:content-start md:gap-space-2xs md:py-0" data-block={ block.editor_id }>
-                <span class="w-amount shrink-0 text-h3 tnum md:w-auto">{ block.settings.amount }</span>
-                <span>{ block.settings.text }</span>
-              </li>
-            {/for}
-          </ul>
-        {/if}
-        <div class="grid gap-space-sm">
-          <div class="flex flex-col gap-space-sm md:flex-row">
-            <Button give>{ settings.donate_label }</Button>
-            <Button href={ settings.more_link } tone="outline">{ settings.more_label }</Button>
+      <div class="{ image ? 'lg:col-span-7' : 'lg:col-span-12' }">
+        <SectionHead heading={ settings.heading } text={ settings.text }>
+          {#if blocks.length}
+            <ul class="mb-space-lg divide-y divide-scheme-border border-t border-scheme-border md:grid md:grid-cols-3 md:gap-space-lg md:divide-y-0 md:border-0">
+              {#for block in blocks}
+                <li class="flex items-baseline gap-space-sm py-space-sm md:grid md:content-start md:gap-space-2xs md:py-0" data-block={ block.editor_id }>
+                  <span class="w-amount shrink-0 text-h3 tnum md:w-auto">{ block.settings.amount }</span>
+                  <span>{ block.settings.text }</span>
+                </li>
+              {/for}
+            </ul>
+          {/if}
+          <div class="grid gap-space-sm">
+            <div class="flex flex-col gap-space-sm md:flex-row">
+              <Button give>{ settings.donate_label }</Button>
+              <Button href={ settings.more_link } tone="outline">{ settings.more_label }</Button>
+            </div>
+            {#if tax}<p class="text-small text-scheme-muted">{ tax }</p>{/if}
           </div>
-          {#if tax}<p class="text-small text-scheme-muted">{ tax }</p>{/if}
-        </div>
+        </SectionHead>
       </div>
       {#if image}<div class="lg:col-span-5"><Well asset={ image } ratio="aspect-landscape lg:aspect-portrait" width={ 1200 } sizes="(min-width: 64rem) 30rem, 100vw" /></div>{/if}
     </Panel>

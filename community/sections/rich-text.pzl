@@ -29,7 +29,7 @@
   ],
   "presets": [
     { "name": "Default", "settings": {} },
-    { "name": "Signed note", "settings": { "body": "<p>Larch Street is a small house with a lot going on. Almost all of it is run by neighbours who came along once for a cup of tea and stayed.</p>" } }
+    { "name": "Signed note", "settings": { "body": "<p>We are a small house with a lot going on. Almost all of it is run by neighbours who came along once for a cup of tea and stayed.</p>" } }
   ]
 }
 </schema>

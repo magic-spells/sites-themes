@@ -1,0 +1,284 @@
+@import "tailwindcss";
+@import "./vendor/dialog-panel.css" layer(components);
+@import "./vendor/scrolling-content.css" layer(components);
+@import "./vendor/sticky-header.css" layer(components);
+
+@source "../layouts/**/*.pzl";
+@source "../templates/**/*.pzl";
+@source "../sections/**/*.pzl";
+@source "../components/**/*.pzl";
+
+/* Every colour and every family lives in settings/design.json; this file maps
+   the --sites-* properties the head carries onto utilities. Fields are the
+   site-wide input tokens on every band, white with a grey hairline. */
+@theme {
+	--color-input-background: var(--sites-input-background);
+	--color-input-border: var(--sites-input-border);
+	--color-input-text: var(--sites-input-text);
+	--color-input-placeholder: var(--sites-input-placeholder);
+	--color-input-active: var(--sites-input-focus-ring);
+	--color-error: var(--sites-color-error-fg);
+	--color-error-surface: var(--sites-color-error-bg);
+
+	--font-heading: var(--sites-font-heading-family);
+	--font-body: var(--sites-font-body-family);
+
+	--radius-button: var(--sites-button-radius);
+	--radius-input: var(--sites-input-radius);
+	--radius-card: var(--sites-radius-md);
+	--radius-photo: var(--sites-radius-lg);
+
+	/* The type roles, each sized per breakpoint in :root below; the scale
+	   tops out at H1. Headings in the heading face, the rest in the body face. */
+	--text-h1: var(--firm-h1);
+	--text-h1--line-height: var(--sites-type-leading-tight);
+	--text-h1--letter-spacing: -0.01em;
+	--text-h1--font-weight: 400;
+	--text-h2: var(--firm-h2);
+	--text-h2--line-height: var(--sites-type-leading-tight);
+	--text-h2--letter-spacing: -0.01em;
+	--text-h2--font-weight: 400;
+	--text-h3: var(--firm-h3);
+	--text-h3--line-height: var(--sites-type-leading-tight);
+	--text-h3--font-weight: 400;
+	--text-h4: var(--firm-h4);
+	--text-h4--line-height: var(--sites-type-leading-tight);
+	--text-h4--font-weight: 400;
+	--text-body-lg: var(--firm-body-lg);
+	--text-body-lg--line-height: var(--sites-type-leading-normal);
+	--text-body: var(--firm-body);
+	--text-body--line-height: var(--sites-type-leading-normal);
+	--text-body-sm: var(--sites-type-scale-sm);
+	--text-body-sm--line-height: var(--sites-type-leading-normal);
+	--text-button: var(--firm-button);
+	--text-button--line-height: 1;
+	--text-button--font-weight: var(--sites-button-weight);
+
+	--spacing-space-2xs: 0.25rem;
+	--spacing-space-xs: var(--sites-spacing-xs);
+	--spacing-space-sm: var(--sites-spacing-sm);
+	--spacing-space-md: var(--sites-spacing-md);
+	--spacing-space-lg: var(--sites-spacing-lg);
+	--spacing-space-xl: var(--firm-xl);
+	--spacing-space-2xl: var(--firm-2xl);
+	--spacing-space-3xl: var(--firm-3xl);
+	--spacing-section: var(--firm-section);
+	--spacing-gutter: var(--firm-gutter);
+	--spacing-button-x: var(--sites-button-padding-x);
+	--spacing-control: 3rem;
+	--spacing-tap: 2.75rem;
+	--spacing-icon-sm: 1rem;
+	--spacing-icon: 1.25rem;
+	--spacing-glyph: 1.5rem;
+	--spacing-header: 4.5rem;
+	--spacing-textarea: 8rem;
+
+	--container-column: 80rem;
+	--container-reading: 40rem;
+	--container-narrow: 28rem;
+
+	--aspect-portrait: 4 / 5;
+	--aspect-landscape: 4 / 3;
+	--aspect-photo: 3 / 2;
+
+	/* A picture beside text: the text takes seven parts, the picture five. */
+	--grid-template-columns-text-picture: 7fr 5fr;
+	--grid-template-columns-picture-text: 5fr 7fr;
+
+	--transition-duration-fast: 150ms;
+	--transition-duration-panel: 250ms;
+	--ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* The scheme a section sits on. The engine has no muted, border or second
+   surface slot, so they ride on the chip slots; the outline button is the
+   secondary button. */
+@theme inline {
+	--color-scheme-background: var(--sites-scheme-background);
+	--color-scheme-foreground: var(--sites-scheme-foreground);
+	--color-scheme-heading: var(--sites-scheme-heading);
+	--color-scheme-muted: var(--sites-scheme-chip-foreground);
+	--color-scheme-border: var(--sites-scheme-chip-border);
+	--color-scheme-surface-2: var(--sites-scheme-chip-background);
+	--color-scheme-button: var(--sites-scheme-button-background);
+	--color-scheme-button-text: var(--sites-scheme-button-foreground);
+	--color-scheme-button-hover: var(--sites-scheme-button-hover-background);
+	--color-scheme-button-hover-text: var(--sites-scheme-button-hover-foreground);
+	--color-scheme-outline: var(--sites-scheme-secondary-button-background);
+	--color-scheme-outline-text: var(--sites-scheme-secondary-button-foreground);
+	--color-scheme-outline-hover: var(--sites-scheme-secondary-button-hover-background);
+	--color-scheme-outline-hover-text: var(--sites-scheme-secondary-button-hover-foreground);
+	--color-link: var(--sites-scheme-links);
+	--color-backdrop: color-mix(in srgb, var(--sites-scheme-foreground) 50%, transparent);
+}
+
+/* Sizes per breakpoint (phones, from 48rem, from 64rem): each role reads a
+   design token and scales it for that width, so a workspace that changes the
+   scale moves every breakpoint with it. */
+:root {
+	--firm-h1: calc(var(--sites-type-scale-4xl) * 0.64);
+	--firm-h2: calc(var(--sites-type-scale-3xl) * 0.72);
+	--firm-h3: calc(var(--sites-type-scale-2xl) * 0.82);
+	--firm-h4: calc(var(--sites-type-scale-xl) * 0.9);
+	--firm-body-lg: calc(var(--sites-type-scale-lg) * 0.9);
+	--firm-body: calc(var(--sites-type-scale-base) * 0.94);
+	--firm-button: calc(var(--sites-type-scale-base) * 0.94);
+	--firm-section: calc(var(--sites-spacing-2xl) * 0.6);
+	--firm-gutter: calc(var(--sites-spacing-md) * 0.67);
+	--firm-xl: calc(var(--sites-spacing-xl) * 0.67);
+	--firm-2xl: calc(var(--sites-spacing-2xl) * 0.6);
+	--firm-3xl: calc(var(--sites-spacing-2xl) * 0.8);
+}
+
+@media (min-width: 48rem) {
+	:root {
+		--firm-h1: calc(var(--sites-type-scale-4xl) * 0.82);
+		--firm-h2: calc(var(--sites-type-scale-3xl) * 0.86);
+		--firm-h3: calc(var(--sites-type-scale-2xl) * 0.9);
+		--firm-h4: calc(var(--sites-type-scale-xl) * 0.95);
+		--firm-body-lg: calc(var(--sites-type-scale-lg) * 0.95);
+		--firm-body: var(--sites-type-scale-base);
+		--firm-section: calc(var(--sites-spacing-2xl) * 0.8);
+		--firm-gutter: var(--sites-spacing-md);
+		--firm-xl: calc(var(--sites-spacing-xl) * 0.83);
+		--firm-2xl: calc(var(--sites-spacing-2xl) * 0.8);
+		--firm-3xl: var(--sites-spacing-2xl);
+	}
+}
+
+@media (min-width: 64rem) {
+	:root {
+		--firm-h1: var(--sites-type-scale-4xl);
+		--firm-h2: var(--sites-type-scale-3xl);
+		--firm-h3: var(--sites-type-scale-2xl);
+		--firm-h4: var(--sites-type-scale-xl);
+		--firm-body-lg: var(--sites-type-scale-lg);
+		--firm-button: var(--sites-type-scale-base);
+		--firm-section: var(--sites-spacing-2xl);
+		--firm-gutter: calc(var(--sites-spacing-md) * 1.67);
+		--firm-xl: var(--sites-spacing-xl);
+		--firm-2xl: var(--sites-spacing-2xl);
+		--firm-3xl: calc(var(--sites-spacing-2xl) * 1.2);
+	}
+}
+
+/* A link or menu item the page marks as current. */
+@custom-variant current (&[aria-current="page"]);
+
+/* Two bands on the same scheme in a row read as one: the second drops its top
+   padding so the seam carries one section's space, not two. */
+main > :is(
+	.sites-scheme-paper + .sites-scheme-paper,
+	.sites-scheme-white + .sites-scheme-white,
+	.sites-scheme-cream + .sites-scheme-cream,
+	.sites-scheme-ink + .sites-scheme-ink,
+	.sites-scheme-deep-a + .sites-scheme-deep-a,
+	.sites-scheme-deep-b + .sites-scheme-deep-b
+) > section {
+	padding-top: 0;
+}
+
+/* The password and maintenance pages stand alone. */
+body:has([data-bare]) [data-group] {
+	display: none;
+}
+
+/* sticky-header pins the element it is, so the renderer's wrapper steps out
+   of the way; the strip it paints above itself is not needed here. */
+[data-section="header"]:has(sticky-header) {
+	display: contents;
+}
+
+sticky-header::before {
+	content: none;
+}
+
+:root {
+	font-size: var(--sites-type-base);
+	scrollbar-color: var(--sites-scheme-chip-foreground) transparent;
+}
+
+::selection {
+	background: var(--sites-scheme-foreground);
+	color: var(--sites-scheme-background);
+}
+
+:focus-visible {
+	outline: 2px solid var(--sites-scheme-links);
+	outline-offset: 0.1875rem;
+}
+
+/* A link is underlined with a 1px rule wherever a utility turns the line on. */
+@layer base {
+	a {
+		text-decoration-thickness: 1px;
+		text-underline-offset: 0.2em;
+	}
+}
+
+/* Rich text from the editor carries no classes, so its rhythm is set here. */
+@layer components {
+	.sites-prose > * + * {
+		margin-top: var(--sites-spacing-sm);
+	}
+
+	.sites-prose :is(h2, h3, h4) {
+		margin-top: var(--sites-spacing-lg);
+		font-family: var(--font-heading);
+		font-weight: 400;
+		line-height: var(--sites-type-leading-tight);
+		color: var(--sites-scheme-heading);
+	}
+
+	.sites-prose h2 {
+		font-size: var(--firm-h3);
+	}
+
+	.sites-prose :is(h3, h4) {
+		font-size: var(--firm-h4);
+	}
+
+	.sites-prose a {
+		color: var(--sites-scheme-links);
+		text-decoration-line: underline;
+	}
+
+	.sites-prose :is(ul, ol) {
+		display: grid;
+		gap: var(--sites-spacing-xs);
+		padding-inline-start: 1.25em;
+	}
+
+	.sites-prose ul {
+		list-style: disc;
+	}
+
+	.sites-prose ol {
+		list-style: decimal;
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+	}
+	/* The marquee stands still: one copy, cut at the column. */
+	scrolling-content {
+		mask-image: none;
+	}
+	scrolling-track {
+		width: auto;
+		transform: none !important;
+	}
+	scrolling-item[data-clone] {
+		display: none;
+	}
+}

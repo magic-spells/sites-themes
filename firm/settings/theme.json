@@ -1,0 +1,34 @@
+{
+  "name": "Firm",
+  "version": "0.1.0",
+  "default_template": "page",
+  "not_found_template": "404",
+  "maintenance_template": "maintenance",
+  "groups": {
+    "header-group": { "label": "Header", "accepts": ["announcement-bar", "header"] },
+    "footer-group": { "label": "Footer", "accepts": ["footer"] },
+    "panel-group": { "label": "Panel", "accepts": ["mobile-menu", "cookie-notice"] }
+  },
+  "settings": [
+    {
+      "name": "Brand",
+      "settings": [
+        { "type": "image", "id": "favicon", "label": "Favicon" },
+        { "type": "image", "id": "logo", "label": "Logo", "info": "Shown in place of the name in the header when set." },
+        { "type": "text", "id": "wordmark", "label": "Name", "default": "", "info": "Set in the heading face in the header and the footer. Leave empty to use the site name." }
+      ]
+    },
+    {
+      "name": "Contact",
+      "settings": [
+        { "type": "text", "id": "email", "label": "Email", "default": "" },
+        { "type": "text", "id": "phone", "label": "Phone", "default": "", "info": "Printed as typed; the call link drops the spaces." },
+        { "type": "textarea", "id": "address", "label": "Address", "default": "", "info": "One line per line of the address." }
+      ]
+    },
+    {
+      "name": "Firm",
+      "settings": []
+    }
+  ]
+}

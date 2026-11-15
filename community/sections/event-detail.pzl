@@ -1,12 +1,34 @@
-<!-- Stub (code B builds the page): the event's title, date, time and place. -->
-{#let entry = page.entry}
+<!-- An event's page, in a 48rem column: the H1, then one row saying when and where (the long date, the time, the place) with its link as a button at the right and a hairline under it; the 3:2 photo; the description at reading width; Part of its group, linked; and, when it names an album, Photos from last time: four of its photos and a link to the album. -->
+{#let
+  entry = page.entry
+  f = entry?.fields
+  album = f?.album
+  photos = album?.fields.photos ? (album.fields.photos.items | slice(0, 4)) : []
+}
 {#if entry}
-<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column gap-space-md">
-    <h1 class="font-heading text-h1 text-balance">{ entry.title }</h1>
-    <p class="tnum">{ entry.fields.date | date('long') } · { entry.fields.time } · { entry.fields.place }</p>
+<article class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-xl">
+    <header class="grid max-w-hero gap-space-lg">
+      <h1 class="font-heading text-h1 text-balance"><Rise text={ entry.title } /></h1>
+      <div class="flex flex-wrap items-center justify-between gap-space-md border-b border-scheme-border pb-space-md">
+        <p class="tnum"><time datetime="{ f.date }">{ f.date | date('long') }</time>{#if f.time} · { f.time }{/if}{#if f.place} · { f.place }{/if}</p>
+        {#if f.link}<Button href={ f.link }>{ f.link_label || t('find_out_more') }</Button>{/if}
+      </div>
+    </header>
+    {#if f.image}<div class="max-w-hero"><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-wide" width={ 1600 } sizes="(min-width: 48rem) 48rem, 100vw" eager /></div>{/if}
+    {#if f.description}<div class="sites-prose max-w-reading text-pretty">{ f.description }</div>{/if}
+    {#if f.group}<p><span class="text-scheme-muted">{ t('part_of') }</span> <a class="underline decoration-1 underline-offset-4 hover:decoration-2" href="/groups/{ f.group.handle }">{ f.group.title }</a></p>{/if}
+    {#if photos.length}
+      <section class="grid max-w-hero gap-space-md">
+        <h2 class="font-heading text-h3">{ t('photos_from_last_time') }</h2>
+        <ul class="grid grid-cols-4 gap-space-xs md:gap-space-sm">
+          {#for item in photos}<li><Well asset={ item.asset } alt={ item.alt } width={ 320 } sizes="(min-width: 48rem) 11rem, 22vw" /></li>{/for}
+        </ul>
+        <a class="justify-self-start underline decoration-1 underline-offset-4 hover:decoration-2" href="/photos/{ album.handle }">{ t('see_the_album') }</a>
+      </section>
+    {/if}
   </div>
-</section>
+</article>
 {/if}
 
 <schema>

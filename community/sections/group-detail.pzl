@@ -1,12 +1,52 @@
-<!-- Stub (code B builds the page): the group's title and summary. -->
-{#let entry = page.entry}
+<!-- A group's page. Seven parts to five from 64rem: the H1, its line as the standfirst, one row saying when and where (When, then the place or At the house) with the group's link as a button at its right and a hairline under it, then the description at reading width; at the right the 3:2 photo and under it who hosts it, their portrait or initial at 3rem beside the role over the name. With no photo the text runs at reading width and the host follows it. Then up to three more groups as rows: the same kind, else the first by Position. -->
+{#let
+  entry = page.entry
+  f = entry?.fields
+  others = content.groups.entries | sort('title') | sort('fields.order') | reject('id', entry?.id)
+  same = f?.kind ? (others | where('fields.kind', f.kind)) : []
+  more = (same.length ? same : others) | slice(0, 3)
+  host = f?.host
+}
 {#if entry}
-<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column gap-space-md">
-    <h1 class="font-heading text-h1 text-balance">{ entry.title }</h1>
-    <p>{ entry.fields.summary }</p>
+<article class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-2xl">
+    <div class="grid items-start gap-space-xl { f.image ? 'lg:grid-cols-seven-five lg:gap-space-2xl' : 'max-w-reading' }">
+      <div class="grid gap-space-lg">
+        <header class="grid gap-space-md">
+          <h1 class="font-heading text-h1 text-balance"><Rise text={ entry.title } /></h1>
+          {#if f.summary}<p class="max-w-reading text-lead text-pretty">{ f.summary }</p>{/if}
+        </header>
+        <div class="flex flex-wrap items-center justify-between gap-space-md border-b border-scheme-border pb-space-md">
+          <p class="tnum"><When entry={ entry } /> · { f.place || t('at_the_house') }</p>
+          {#if f.link}<Button href={ f.link }>{ f.link_label || t('find_out_more') }</Button>{/if}
+        </div>
+        {#if f.description}<div class="sites-prose max-w-reading text-pretty">{ f.description }</div>{/if}
+      </div>
+      {#if f.image || host}
+        <aside class="grid gap-space-lg">
+          {#if f.image}<Well asset={ f.image } alt={ f.image_alt } ratio="aspect-wide" width={ 1024 } sizes="(min-width: 64rem) 34rem, 100vw" eager />{/if}
+          {#if host}
+            <div class="grid gap-space-xs">
+              <p class="text-label text-scheme-muted">{ t('hosted_by') }</p>
+              <p class="flex items-center gap-space-sm">
+                <span class="w-space-2xl shrink-0">{#if host.fields.image}<Well asset={ host.fields.image } alt="" width={ 160 } sizes="3rem" />{:else}<Monogram name={ host.title } cls="text-h4" />{/if}</span>
+                <span class="grid">{#if host.fields.role}<span class="text-label text-scheme-muted">{ host.fields.role }</span>{/if}<span class="font-heading text-h4">{ host.title }</span></span>
+              </p>
+            </div>
+          {/if}
+        </aside>
+      {/if}
+    </div>
+    {#if more.length}
+      <div>
+        <SectionHead heading={ t('more_groups') } link_label={ t('all_groups') } link_href="/groups" />
+        <ul class="border-b border-scheme-border">
+          {#for g in more, i}<GroupRow entry={ g } i={ i } />{/for}
+        </ul>
+      </div>
+    {/if}
   </div>
-</section>
+</article>
 {/if}
 
 <schema>

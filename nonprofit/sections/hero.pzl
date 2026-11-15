@@ -16,8 +16,7 @@
         {#if blocks.length}
           <div class="flex flex-wrap gap-space-sm pt-space-xs">
             {#for block in blocks | slice(0, 2), i}
-              {#if block.type == 'give'}<Button give tone={ i ? 'outline' : null } editor_id={ block.editor_id }>{ block.settings.label }</Button>
-              {:else}<Button href={ block.settings.link } tone={ i ? 'outline' : null } editor_id={ block.editor_id }>{ block.settings.label }</Button>{/if}
+              <Button give={ block.type == 'give' } href={ block.settings.link } tone={ i ? 'outline' : null } editor_id={ block.editor_id }>{ block.settings.label }</Button>
             {/for}
           </div>
         {/if}

@@ -1,98 +1,100 @@
-@import "tailwindcss";
+@import "tailwindcss" source(none);
+@import "./vendor/collapsible-content.css" layer(components);
 @import "./vendor/dialog-panel.css" layer(components);
 @import "./vendor/scrolling-content.css" layer(components);
+@import "./vendor/select-dropdown.css" layer(components);
+@import "./vendor/sheet.min.css" layer(components);
 @import "./vendor/sticky-header.css" layer(components);
+@import "./vendor/tarot.css" layer(components);
 
 @source "../layouts/**/*.pzl";
 @source "../templates/**/*.pzl";
 @source "../sections/**/*.pzl";
 @source "../components/**/*.pzl";
 
-/* Every colour and every family lives in settings/design.json; this file maps
-   the --sites-* properties the head carries onto utilities. Fields are the
-   site-wide input tokens on every band, white with a grey hairline. */
+/* Every colour and family lives in settings/design.json; this file maps the
+   --sites-* properties the head carries onto utilities. */
 @theme {
-	--color-input-background: var(--sites-input-background);
-	--color-input-border: var(--sites-input-border);
-	--color-input-text: var(--sites-input-text);
-	--color-input-placeholder: var(--sites-input-placeholder);
-	--color-input-active: var(--sites-input-focus-ring);
-	--color-error: var(--sites-color-error-fg);
-	--color-error-surface: var(--sites-color-error-bg);
+	--font-heading: var(--sites-font-heading-family), Georgia, serif;
+	--font-body: var(--sites-font-body-family), system-ui, sans-serif;
 
-	--font-heading: var(--sites-font-heading-family);
-	--font-body: var(--sites-font-body-family);
-
+	--radius-box: var(--sites-radius-sm);
 	--radius-button: var(--sites-button-radius);
 	--radius-input: var(--sites-input-radius);
-	--radius-card: var(--sites-radius-md);
-	--radius-photo: var(--sites-radius-lg);
+	--radius-card: var(--sites-radius-lg);
 
-	/* The type roles, each sized per breakpoint in :root below; the scale
-	   tops out at H1. Headings in the heading face, the rest in the body face. */
+	/* The type roles, each sized per breakpoint in :root below. H1 to H3 in
+	   the display face at its one weight; H4, names and card titles in the
+	   body face at 600. The scale tops out at H1. */
 	--text-h1: var(--firm-h1);
-	--text-h1--line-height: var(--sites-type-leading-tight);
-	--text-h1--letter-spacing: -0.01em;
+	--text-h1--line-height: 1.05;
 	--text-h1--font-weight: 400;
 	--text-h2: var(--firm-h2);
 	--text-h2--line-height: var(--sites-type-leading-tight);
-	--text-h2--letter-spacing: -0.01em;
 	--text-h2--font-weight: 400;
 	--text-h3: var(--firm-h3);
-	--text-h3--line-height: var(--sites-type-leading-tight);
+	--text-h3--line-height: 1.15;
 	--text-h3--font-weight: 400;
 	--text-h4: var(--firm-h4);
-	--text-h4--line-height: var(--sites-type-leading-tight);
-	--text-h4--font-weight: 400;
-	--text-body-lg: var(--firm-body-lg);
-	--text-body-lg--line-height: var(--sites-type-leading-normal);
-	--text-body: var(--firm-body);
-	--text-body--line-height: var(--sites-type-leading-normal);
-	--text-body-sm: var(--sites-type-scale-sm);
-	--text-body-sm--line-height: var(--sites-type-leading-normal);
-	--text-button: var(--firm-button);
-	--text-button--line-height: 1;
-	--text-button--font-weight: var(--sites-button-weight);
+	--text-h4--line-height: 1.3;
+	--text-h4--font-weight: 600;
+	--text-lead: var(--firm-lead);
+	--text-lead--line-height: var(--sites-type-leading-normal);
+	--text-body: var(--sites-type-scale-base);
+	--text-body--line-height: var(--sites-type-leading-relaxed);
+	--text-small: var(--sites-type-scale-sm);
+	--text-small--line-height: 1.45;
+	--text-label: calc(var(--sites-type-scale-base) * 15 / 17);
+	--text-label--line-height: 1.2;
+	--text-label--letter-spacing: 0.01em;
+	--text-label--font-weight: var(--sites-button-weight);
+	--text-wordmark: calc(var(--sites-type-scale-xl) * 1.1);
+	--text-wordmark--line-height: 1.1;
 
 	--spacing-space-2xs: 0.25rem;
 	--spacing-space-xs: var(--sites-spacing-xs);
 	--spacing-space-sm: var(--sites-spacing-sm);
 	--spacing-space-md: var(--sites-spacing-md);
 	--spacing-space-lg: var(--sites-spacing-lg);
-	--spacing-space-xl: var(--firm-xl);
-	--spacing-space-2xl: var(--firm-2xl);
-	--spacing-space-3xl: var(--firm-3xl);
+	--spacing-space-xl: var(--sites-spacing-xl);
+	--spacing-space-2xl: var(--sites-spacing-2xl);
+	--spacing-space-3xl: calc(var(--sites-spacing-2xl) * 4 / 3);
 	--spacing-section: var(--firm-section);
 	--spacing-gutter: var(--firm-gutter);
 	--spacing-button-x: var(--sites-button-padding-x);
-	--spacing-control: 3rem;
-	--spacing-tap: 2.75rem;
-	--spacing-icon-sm: 1rem;
-	--spacing-icon: 1.25rem;
-	--spacing-glyph: 1.5rem;
-	--spacing-header: 4.5rem;
-	--spacing-textarea: 8rem;
+	--spacing-inset: 0.75rem;
+	--spacing-control: 2.75rem;
+	--spacing-pill: 2.25rem;
+	--spacing-icon: 1.125rem;
+	--spacing-textarea: 6.5rem;
+	/* The about band's half-disc: its radius, and its width. */
+	--spacing-disc: clamp(2.5rem, 7vw, 6.5rem);
+	--spacing-disc-full: calc(var(--spacing-disc) * 2);
 
-	--container-column: 80rem;
+	--container-column: 73rem;
+	--container-band: 52rem;
 	--container-reading: 40rem;
-	--container-narrow: 28rem;
+	--container-narrow: 34rem;
 
+	/* Practice cards 3:4, people 4:5, the overlap picture 16:10, posts 3:2. */
+	--aspect-card: 3 / 4;
 	--aspect-portrait: 4 / 5;
-	--aspect-landscape: 4 / 3;
+	--aspect-wide: 16 / 10;
 	--aspect-photo: 3 / 2;
 
-	/* A picture beside text: the text takes seven parts, the picture five. */
+	/* A picture beside text: seven parts to five; a head beside its pill. */
 	--grid-template-columns-text-picture: 7fr 5fr;
 	--grid-template-columns-picture-text: 5fr 7fr;
+	--grid-template-columns-head: minmax(0, 1fr) auto;
+	--grid-template-columns-menus: repeat(auto-fit, minmax(9rem, 1fr));
 
 	--transition-duration-fast: 150ms;
-	--transition-duration-panel: 250ms;
-	--ease-standard: cubic-bezier(0.2, 0, 0, 1);
+	--ease-standard: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
-/* The scheme a section sits on. The engine has no muted, border or second
-   surface slot, so they ride on the chip slots; the outline button is the
-   secondary button. */
+/* The scheme a section sits on. The engine has no muted, rule, second
+   surface or accent slot, so they ride on the chip slots and the icons slot
+   (settings/design.json). Links are the text colour: the accent is off. */
 @theme inline {
 	--color-scheme-background: var(--sites-scheme-background);
 	--color-scheme-foreground: var(--sites-scheme-foreground);
@@ -100,6 +102,8 @@
 	--color-scheme-muted: var(--sites-scheme-chip-foreground);
 	--color-scheme-border: var(--sites-scheme-chip-border);
 	--color-scheme-surface-2: var(--sites-scheme-chip-background);
+	--color-scheme-input: var(--sites-scheme-input-background);
+	--color-scheme-input-border: var(--sites-scheme-input-border);
 	--color-scheme-button: var(--sites-scheme-button-background);
 	--color-scheme-button-text: var(--sites-scheme-button-foreground);
 	--color-scheme-button-hover: var(--sites-scheme-button-hover-background);
@@ -108,41 +112,30 @@
 	--color-scheme-outline-text: var(--sites-scheme-secondary-button-foreground);
 	--color-scheme-outline-hover: var(--sites-scheme-secondary-button-hover-background);
 	--color-scheme-outline-hover-text: var(--sites-scheme-secondary-button-hover-foreground);
-	--color-link: var(--sites-scheme-links);
-	--color-backdrop: color-mix(in srgb, var(--sites-scheme-foreground) 50%, transparent);
+	--color-accent: var(--sites-scheme-icons);
 }
 
 /* Sizes per breakpoint (phones, from 48rem, from 64rem): each role reads a
-   design token and scales it for that width, so a workspace that changes the
-   scale moves every breakpoint with it. */
+   design token, so a workspace that changes the scale moves every step. */
 :root {
-	--firm-h1: calc(var(--sites-type-scale-4xl) * 0.64);
-	--firm-h2: calc(var(--sites-type-scale-3xl) * 0.72);
-	--firm-h3: calc(var(--sites-type-scale-2xl) * 0.82);
+	--firm-h1: calc(var(--sites-type-scale-4xl) * 2 / 3);
+	--firm-h2: calc(var(--sites-type-scale-3xl) * 17 / 24);
+	--firm-h3: calc(var(--sites-type-scale-2xl) * 13 / 16);
 	--firm-h4: calc(var(--sites-type-scale-xl) * 0.9);
-	--firm-body-lg: calc(var(--sites-type-scale-lg) * 0.9);
-	--firm-body: calc(var(--sites-type-scale-base) * 0.94);
-	--firm-button: calc(var(--sites-type-scale-base) * 0.94);
-	--firm-section: calc(var(--sites-spacing-2xl) * 0.6);
-	--firm-gutter: calc(var(--sites-spacing-md) * 0.67);
-	--firm-xl: calc(var(--sites-spacing-xl) * 0.67);
-	--firm-2xl: calc(var(--sites-spacing-2xl) * 0.6);
-	--firm-3xl: calc(var(--sites-spacing-2xl) * 0.8);
+	--firm-lead: calc(var(--sites-type-scale-lg) * 0.95);
+	--firm-section: calc(var(--sites-spacing-2xl) * 0.5);
+	--firm-gutter: var(--sites-spacing-sm);
 }
 
 @media (min-width: 48rem) {
 	:root {
-		--firm-h1: calc(var(--sites-type-scale-4xl) * 0.82);
-		--firm-h2: calc(var(--sites-type-scale-3xl) * 0.86);
+		--firm-h1: calc(var(--sites-type-scale-4xl) * 0.8);
+		--firm-h2: calc(var(--sites-type-scale-3xl) * 0.85);
 		--firm-h3: calc(var(--sites-type-scale-2xl) * 0.9);
-		--firm-h4: calc(var(--sites-type-scale-xl) * 0.95);
-		--firm-body-lg: calc(var(--sites-type-scale-lg) * 0.95);
-		--firm-body: var(--sites-type-scale-base);
-		--firm-section: calc(var(--sites-spacing-2xl) * 0.8);
+		--firm-h4: var(--sites-type-scale-xl);
+		--firm-lead: var(--sites-type-scale-lg);
+		--firm-section: calc(var(--sites-spacing-2xl) * 0.7);
 		--firm-gutter: var(--sites-spacing-md);
-		--firm-xl: calc(var(--sites-spacing-xl) * 0.83);
-		--firm-2xl: calc(var(--sites-spacing-2xl) * 0.8);
-		--firm-3xl: var(--sites-spacing-2xl);
 	}
 }
 
@@ -151,15 +144,18 @@
 		--firm-h1: var(--sites-type-scale-4xl);
 		--firm-h2: var(--sites-type-scale-3xl);
 		--firm-h3: var(--sites-type-scale-2xl);
-		--firm-h4: var(--sites-type-scale-xl);
-		--firm-body-lg: var(--sites-type-scale-lg);
-		--firm-button: var(--sites-type-scale-base);
 		--firm-section: var(--sites-spacing-2xl);
-		--firm-gutter: calc(var(--sites-spacing-md) * 1.67);
-		--firm-xl: var(--sites-spacing-xl);
-		--firm-2xl: var(--sites-spacing-2xl);
-		--firm-3xl: calc(var(--sites-spacing-2xl) * 1.2);
+		--firm-gutter: calc(var(--sites-spacing-lg) * 1.25);
 	}
+}
+
+/* Public Sans's italic: the font contract binds the roman file only. */
+@font-face {
+	font-family: "Public Sans";
+	font-style: italic;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url("/_sites/theme/fonts/public-sans-latin-wght-italic.woff2") format("woff2");
 }
 
 /* A link or menu item the page marks as current. */
@@ -171,9 +167,12 @@ main > :is(
 	.sites-scheme-paper + .sites-scheme-paper,
 	.sites-scheme-white + .sites-scheme-white,
 	.sites-scheme-cream + .sites-scheme-cream,
-	.sites-scheme-ink + .sites-scheme-ink,
-	.sites-scheme-deep-a + .sites-scheme-deep-a,
-	.sites-scheme-deep-b + .sites-scheme-deep-b
+	.sites-scheme-gold + .sites-scheme-gold,
+	.sites-scheme-stone + .sites-scheme-stone,
+	.sites-scheme-graphite + .sites-scheme-graphite,
+	.sites-scheme-navy + .sites-scheme-navy,
+	.sites-scheme-brown + .sites-scheme-brown,
+	.sites-scheme-midnight + .sites-scheme-midnight
 ) > section {
 	padding-top: 0;
 }
@@ -193,8 +192,39 @@ sticky-header::before {
 	content: none;
 }
 
+/* Both panels are sheets on the panel's scheme, over the page dimmed to
+   half: the bottom sheet's top corners round, the drawers are 30rem wide
+   and square (the dialog's own rounded-none). */
+dialog-panel:has(sheet-panel) {
+	--sheet-panel-background: var(--sites-scheme-background);
+	--sheet-panel-border-radius: var(--sites-radius-lg);
+	--sheet-panel-box-shadow: var(--sites-shadow-lg);
+	--sheet-handle-color: var(--sites-scheme-chip-foreground);
+	--sheet-handle-width: 2.5rem;
+	--sheet-handle-height: 0.25rem;
+	--sheet-content-padding: var(--firm-gutter);
+	--sheet-overlay-background: rgb(10 13 20 / 0.5);
+	--sheet-overlay-blur: 0;
+	--sheet-active-size: min(30rem, 90vw);
+}
+
+/* The select lists: the field's colours (the trigger is a Field box), the open
+   list with the rule as its hairline, the hovered or chosen option on surface-2. */
+select-dropdown {
+	--select-color-text: var(--sites-scheme-input-foreground);
+	--select-color-background: var(--sites-scheme-input-background);
+	--select-color-border: var(--sites-scheme-chip-border);
+	--select-color-primary: var(--sites-scheme-foreground);
+	--select-color-hover: var(--sites-scheme-chip-background);
+	--select-color-focus: var(--sites-scheme-chip-background);
+	--select-color-selected: var(--sites-scheme-chip-background);
+	--select-shadow: var(--sites-shadow-md);
+	--select-shadow-soft: none;
+}
+
 :root {
 	font-size: var(--sites-type-base);
+	font-synthesis: none;
 	scrollbar-color: var(--sites-scheme-chip-foreground) transparent;
 }
 
@@ -204,13 +234,13 @@ sticky-header::before {
 }
 
 :focus-visible {
-	outline: 2px solid var(--sites-scheme-links);
-	outline-offset: 0.1875rem;
+	outline: 2px solid var(--sites-scheme-foreground);
+	outline-offset: 2px;
 }
 
-/* A link is underlined with a 1px rule wherever a utility turns the line on. */
+/* An underline, wherever a utility turns one on, is a 1px rule. */
 @layer base {
-	a {
+	* {
 		text-decoration-thickness: 1px;
 		text-underline-offset: 0.2em;
 	}
@@ -219,15 +249,16 @@ sticky-header::before {
 /* Rich text from the editor carries no classes, so its rhythm is set here. */
 @layer components {
 	.sites-prose > * + * {
-		margin-top: var(--sites-spacing-sm);
+		margin-top: 1em;
 	}
 
 	.sites-prose :is(h2, h3, h4) {
-		margin-top: var(--sites-spacing-lg);
+		margin-top: var(--sites-spacing-xl);
 		font-family: var(--font-heading);
 		font-weight: 400;
-		line-height: var(--sites-type-leading-tight);
+		line-height: 1.15;
 		color: var(--sites-scheme-heading);
+		text-wrap: balance;
 	}
 
 	.sites-prose h2 {

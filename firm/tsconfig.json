@@ -17,5 +17,8 @@
   },
   "include": [
     "scripts"
+  ],
+  "exclude": [
+    "scripts/vendor/tarot.esm.js"
   ]
 }

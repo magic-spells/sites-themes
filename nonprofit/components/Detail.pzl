@@ -1,0 +1,16 @@
+<!-- component: Detail -->
+<!-- A programme's or an event's page: the h1 (the entry's title), the lines the section passes, and a button to the entry's link labelled by the section's link_label (left out while the link is empty), in five parts of twelve beside the 4:3 picture in seven from 64rem; left puts the picture on the left. The entry's body (the description) follows in the reading column. On phones the type comes first. -->
+{#let f = page.entry.fields}
+<article class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-page gap-space-xl">
+    <div class="grid items-center gap-space-xl lg:grid-cols-12">
+      <div class="grid justify-items-start gap-space-md lg:col-span-5">
+        <h1 class="font-heading text-h1 text-balance text-scheme-heading"><Rise text={ page.entry.title } /></h1>
+        <Children/>
+        <Button href={ f.link } cls="mt-space-xs">{ settings.link_label }</Button>
+      </div>
+      <Well asset={ f.image } alt={ f.image_alt } cls="lg:col-span-7 { left ? 'lg:order-first' : '' }" width={ 1200 } sizes="(min-width: 64rem) 45rem, 100vw" eager />
+    </div>
+    {#if body}<div class="prose max-w-reading text-body">{ body }</div>{/if}
+  </div>
+</article>

@@ -8,7 +8,7 @@
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column gap-space-xl">
     <SectionHead heading={ settings.heading } text={ settings.text } />
-    <tarot-carousel class="sr-only" id={ id } aria-hidden="true">
+    <tarot-carousel class="sr-only" id={ id } inert>
       <script type="application/json" data-tarot-options>{ options | json }</script>
       <tarot-viewport><tarot-track>
         {#for item in items}<tarot-slide><img class="size-0" src="{ image_url(item.asset, 480) }" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } />{#if item.alt}<p class="p-space-sm text-white" data-caption data-tarot-lightbox-fade>{ item.alt }</p>{/if}</tarot-slide>{/for}

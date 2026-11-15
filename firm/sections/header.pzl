@@ -6,7 +6,7 @@
 <sticky-header class="block" settle-overshoot="0">
   <header class="bg-scheme-background px-gutter text-scheme-foreground">
     <div class="mx-auto flex max-w-column items-center gap-space-lg border-b border-scheme-border py-space-sm">
-      <a class="me-auto font-heading text-wordmark whitespace-nowrap text-scheme-heading" href="/">{#if s.logo}<img class="h-control w-auto" src="{ image_url(s.logo, 320) }" alt="{ s.logo.alt || name }" width={ s.logo.width } height={ s.logo.height } />{:else}{ name }{/if}</a>
+      <a class="me-auto font-heading text-wordmark text-scheme-heading" href="/">{#if s.logo}<img class="h-control w-auto" src="{ image_url(s.logo, 320) }" alt="{ s.logo.alt || name }" width={ s.logo.width } height={ s.logo.height } />{:else}{ name }{/if}</a>
       {#if menus.main.items.length}
         <nav class="max-lg:hidden" aria-label="{ t('main_navigation') }">
           <ul class="flex gap-space-lg">{#for item in menus.main.items}<li><a class="hover:underline current:underline" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>{/for}</ul>

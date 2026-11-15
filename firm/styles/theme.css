@@ -238,7 +238,7 @@ select-dropdown {
    the carousel, so a grid or flex item left at its content width grows without
    end); the progress a hairline in the rule colour filled in the text; the
    quotes' page dots under the quote at its left, the current one in the text,
-   the rest at 35%. Before tarot upgrades, or with no JavaScript, a track lays
+   the rest at 50%. Before tarot upgrades, or with no JavaScript, a track lays
    its slides out as a row that scrolls. */
 tarot-carousel {
 	min-width: 0;
@@ -247,7 +247,7 @@ tarot-carousel {
 	--tarot-progress-border-radius: 0;
 	--tarot-progress-bg: var(--sites-scheme-chip-border);
 	--tarot-progress-fill-bg: var(--sites-scheme-foreground);
-	--color-pagination-dot: color-mix(in srgb, var(--sites-scheme-foreground) 35%, transparent);
+	--color-pagination-dot: color-mix(in srgb, var(--sites-scheme-foreground) 50%, transparent);
 	--color-pagination-dot-active: var(--sites-scheme-foreground);
 }
 

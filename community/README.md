@@ -21,8 +21,9 @@ data/templates/     home, group, event, album, post and page (+ about, contact, 
 data/groups/        header-group.json, footer-group.json, panel-group.json
 templates/          404.pzl, password.pzl, maintenance.pzl
 sections/           30, each with a full <schema>
-components/         Button, SectionHead, Rise, Well, Monogram, PersonCard, Hours, Address,
-                    Glyph, Questions, Utility, LightboxCompanion and the form parts
+components/         Button, SectionHead, Rise, Well, Monogram, Glyph, Utility; PersonCard,
+                    PersonLine, GroupRow, EventRow, Slip, Print, When; Hours, Address, Plate;
+                    Chips, Questions, LightboxCompanion and the form parts (Field, FormFields)
 styles/theme.css    the Tailwind entry: @theme maps the --sites-* tokens and Community's role
                     sizes, and the few rules utilities cannot express
 scripts/theme.ts    the browser JavaScript: component registration, the menu drawer, the

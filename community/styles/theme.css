@@ -31,8 +31,6 @@
 	--color-scheme-button-foreground: var(--sites-scheme-button-foreground);
 	--color-scheme-button-hover-background: var(--sites-scheme-button-hover-background);
 	--color-scheme-button-hover-foreground: var(--sites-scheme-button-hover-foreground);
-	--color-scheme-secondary-foreground: var(--sites-scheme-secondary-button-foreground);
-	--color-scheme-secondary-hover: var(--sites-scheme-secondary-button-hover-background);
 	--color-scheme-input-background: var(--sites-scheme-input-background);
 	--color-scheme-input-foreground: var(--sites-scheme-input-foreground);
 	--color-scheme-input-border: var(--sites-scheme-input-border);
@@ -135,8 +133,6 @@
 	--reveal-distance: 0.5rem;
 	--reveal-easing: cubic-bezier(0, 0, 0.2, 1);
 	--transition-duration-fast: 150ms;
-	--transition-duration-settle: 500ms;
-	--ease-settle: cubic-bezier(0.2, 0.7, 0.2, 1);
 
 	/* The week's day and time columns; a slip's inset; a print's caption
 	   strip under its photo. */
@@ -224,11 +220,6 @@
 /* Utility pages hide the header, footer and panel groups. */
 body:has([data-bare]) [data-group] {
 	display: none;
-}
-
-html.reveal-off .reveal:not(.is-revealed) {
-	opacity: 1;
-	transform: none;
 }
 
 /* split-text hides a heading until it upgrades; with no script to upgrade it, show it. */
@@ -335,27 +326,6 @@ dropdown-component:not(:defined) dropdown-panel {
 	display: none;
 }
 
-/* The carousels: dots in the text colour at a third, the current one whole.
-   Before tarot upgrades, a track lays its slides out as a row that scrolls. */
-tarot-carousel {
-	--color-pagination-dot: color-mix(in srgb, var(--sites-scheme-foreground) 35%, transparent);
-	--color-pagination-dot-active: var(--sites-scheme-foreground);
-}
-tarot-carousel > .tarot-dots-list {
-	margin-top: var(--sites-spacing-lg);
-}
-tarot-carousel:not(:defined) tarot-track {
-	display: flex;
-	gap: var(--sites-spacing-md);
-	overflow-x: auto;
-}
-tarot-carousel:not(:defined) tarot-slide {
-	flex: none;
-	width: 75%;
-	opacity: 1;
-	visibility: visible;
-}
-
 /* The select lists: the field on the band with the muted hairline, the
    hovered option on surface-2. */
 select-dropdown {
@@ -385,5 +355,4 @@ select-dropdown {
 	[data-ticker] scrolling-track { width: auto; transform: none !important; }
 	[data-ticker] scrolling-item[data-clone] { display: none; }
 	[data-ticker] scrolling-item { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
-	.reveal { opacity: 1 !important; transform: none !important; }
 }

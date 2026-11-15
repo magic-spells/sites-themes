@@ -1,7 +1,7 @@
-// The whole of Community's browser JavaScript. The carousels and the
-// lightbox, the menu drawer, the header dropdown, the select lists, the
-// collapsible rows, the sticky header, the ticker, the rising headings and
-// the scroll reveals are Magic Spells web components, vendored under
+// The whole of Community's browser JavaScript. The lightbox and the
+// carousel it opens from, the menu drawer, the header dropdown, the select
+// lists, the collapsible rows, the sticky header, the ticker, the rising
+// headings and the scroll reveals are Magic Spells web components, vendored under
 // ./vendor (see vendor/VERSIONS.md); importing them registers the elements.
 // This file adds the small behaviours they do not cover.
 //
@@ -51,17 +51,13 @@ function closest(event: Event, selector: string): HTMLElement | null {
 	return ((event.target as Element | null)?.closest?.(selector) as HTMLElement | null) ?? null;
 }
 
-// The menu icon opens the drawer it names. Focus goes back to the icon when
-// the drawer would otherwise drop it on <body>.
+// The menu icon opens the drawer it names; dialog-panel gives focus back to
+// the icon when the drawer closes.
 document.addEventListener('click', (event) => {
 	const opener = closest(event, '[data-panel-open]');
 	const panel = opener && (document.getElementById(opener.getAttribute('data-panel-open') ?? '') as Panel | null);
 	if (!opener || !panel || typeof panel.show !== 'function') return;
-	event.preventDefault();
 	panel.show(opener);
-	panel.addEventListener('hidden', () => {
-		if (document.activeElement === document.body || !document.activeElement) opener.focus();
-	}, { once: true });
 });
 
 // The cookie notice shows once per visitor and key; either button hides it

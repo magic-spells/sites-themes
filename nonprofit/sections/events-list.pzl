@@ -9,7 +9,7 @@
   <div class="mx-auto max-w-page">
     <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link }>
       {#if !events.length}
-        <p class="text-scheme-muted">{ settings.empty_text }</p>
+        <p class="text-scheme-muted">{ t('events_list.empty') }</p>
       {:else if settings.layout == 'list'}
         <div>
           {#for entry in events, i}
@@ -48,7 +48,6 @@
     { "type": "text", "id": "link_label", "label": "Button label", "default": "All events" },
     { "type": "url", "id": "link", "label": "Button link", "default": "/events" },
     { "type": "url", "id": "base_path", "label": "Event pages", "default": "/events", "info": "Each event links to this path and its handle." },
-    { "type": "textarea", "id": "empty_text", "label": "With no events", "default": "No events are planned right now. Join the newsletter to hear first." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [

@@ -51,10 +51,10 @@ document.addEventListener('click', (event) => {
 	panel.show(opener);
 });
 
-// The cookie notice shows once per visitor and key; either button hides it
-// for good.
+// The cookie notice shows once per visitor until its text changes (its key);
+// either button hides it.
 for (const notice of document.querySelectorAll<HTMLElement>('[data-notice]')) {
-	const key = notice.getAttribute('data-notice') || notice.id;
+	const key = notice.dataset.notice ?? '';
 	if (dismissed(key)) continue;
 	notice.hidden = false;
 	for (const button of notice.querySelectorAll('button')) {

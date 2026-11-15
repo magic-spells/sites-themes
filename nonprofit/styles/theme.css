@@ -354,11 +354,11 @@ select-dropdown {
 		transition-duration: 0.001ms !important;
 		scroll-behavior: auto !important;
 	}
-	/* The marquee stands still: one copy, cut with an ellipsis. */
+	/* The marquee stands still: one copy, wrapped and centred, with no dot after its last notice. */
 	[data-ticker] scrolling-content { mask-image: none; }
 	[data-ticker] scrolling-track { width: auto; transform: none !important; }
-	[data-ticker] scrolling-item[data-clone] { display: none; }
-	[data-ticker] scrolling-item { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+	[data-ticker] :is(scrolling-item[data-clone], scrolling-item > svg:last-child) { display: none; }
+	[data-ticker] scrolling-item { flex: auto; flex-wrap: wrap; justify-content: center; }
 	.reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
 }
 

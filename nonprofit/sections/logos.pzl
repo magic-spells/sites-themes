@@ -1,4 +1,4 @@
-<!-- Partners and funders under a centred head, each a logo at the size's height or its name in the heading face. Grid: hairline tiles two across, three from 48rem, four from 64rem. Marquee: one row on a slow marquee that holds still under the pointer and while focus is inside it, and stands still for visitors who ask for less motion. -->
+<!-- Partners and funders under a centred head, each a logo at the size's height or its name in the heading face. Grid: hairline tiles two across, three from 48rem, four from 64rem. Marquee: one row on a slow marquee that holds still under the pointer and while focus is inside it, and stands still, wrapped and centred, for visitors who ask for less motion. -->
 {#let
   marquee = settings.layout == 'marquee'
   large = settings.size == 'large'
@@ -9,7 +9,7 @@
       {#if marquee}
         <scrolling-content class="block" speed="30" fade>
           <scrolling-track class="gap-space-xl">
-            <scrolling-item class="gap-space-xl whitespace-nowrap">{#for block in blocks}<Logo logo={ block.settings } editor_id={ block.editor_id } large={ large } />{/for}</scrolling-item>
+            <scrolling-item class="gap-space-xl">{#for block in blocks}<Logo logo={ block.settings } editor_id={ block.editor_id } large={ large } />{/for}</scrolling-item>
           </scrolling-track>
         </scrolling-content>
       {:else}

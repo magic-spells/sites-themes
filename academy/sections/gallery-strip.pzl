@@ -15,9 +15,11 @@
         {#for block in items, i}
           {#let b = block.settings}
           <tarot-slide data-block={ block.editor_id }>
-            <a class="block cursor-zoom-in" href="{ image_url(b.image, 2560) }" data-tarot-lightbox aria-label="{ t('open_photo', { index: i + 1 }) }">
-              <span class="relative block overflow-hidden rounded-lg bg-scheme-surface-2 { ratio }">{#if b.image}<img class="absolute inset-0 size-full object-cover" src="{ image_url(b.image, 1024) }" srcset="{ image_srcset(b.image, [480, 768, 1024]) }" sizes="(min-width: 64rem) 25rem, (min-width: 48rem) 45vw, 80vw" data-tarot-lightbox-src="{ image_url(b.image, 2560) }" alt="{ b.alt }" loading="lazy" width={ b.image.width } height={ b.image.height } />{/if}</span>
-            </a>
+            {#if b.image}
+              <a class="block cursor-zoom-in" href="{ image_url(b.image, 2560) }" data-tarot-lightbox aria-label="{ t('open_photo', { index: i + 1 }) }"><img class="w-full rounded-lg bg-scheme-surface-2 object-cover { ratio }" src="{ image_url(b.image, 1024) }" srcset="{ image_srcset(b.image, [480, 768, 1024]) }" sizes="(min-width: 64rem) 25rem, (min-width: 48rem) 45vw, 80vw" data-tarot-lightbox-src="{ image_url(b.image, 2560) }" alt="{ b.alt }" loading="lazy" width={ b.image.width } height={ b.image.height } /></a>
+            {:else}
+              <span class="block rounded-lg bg-scheme-surface-2 { ratio }"></span>
+            {/if}
             {#if b.caption}<p class="mt-space-xs text-small text-scheme-muted" data-tarot-lightbox-fade>{ b.caption }</p>{/if}
           </tarot-slide>
         {/for}

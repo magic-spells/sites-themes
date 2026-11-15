@@ -342,15 +342,18 @@ tarot-carousel:not(:defined) tarot-slide {
 	visibility: visible;
 }
 
-/* The lightbox: ink at 92%, feint chrome, round buttons. */
+/* The lightbox: the photo on ink, fitted to the screen's width and to its
+   height less 8rem for the chrome and the caption; feint chrome, round
+   buttons. The fit needs the ratio the plugin writes on each image. */
 .tarot-lightbox {
-	--tarot-lightbox-backdrop: color-mix(in srgb, var(--sites-color-grey-extra-dark) 92%, transparent);
+	--tarot-lightbox-backdrop: var(--sites-color-grey-extra-dark);
 	--tarot-lightbox-chrome-color: var(--sites-color-grey-extra-light);
-	--tarot-lightbox-chrome-size: 2.75rem;
-	--tarot-lightbox-chrome-inset: 1rem;
-	--tarot-lightbox-image-height: calc(100dvh - 8rem);
 }
-.tarot-lightbox__counter {
+.tarot-lightbox-content img {
+	--tarot-lightbox-image-height: min(100dvh - 8rem, 100vw / var(--tarot-lightbox-image-ratio));
+}
+.tarot-lightbox__counter,
+.tarot-lightbox [data-tarot-lightbox-fade] {
 	font-family: var(--font-body);
 	font-size: var(--text-small);
 	color: var(--tarot-lightbox-chrome-color);

@@ -1,0 +1,5 @@
+<!-- component: Utility -->
+<!-- The utility pages' band (404, password, maintenance): their content centred in the page column on the base scheme, whose class it carries so the colours keyed to a scheme (the error) follow it. bare hides the header, footer and panel groups (styles/theme.css). -->
+<section class="{ site.settings.base_scheme | scheme_class } flex flex-1 items-center px-gutter py-section" data-bare={ bare ? true : null }>
+  <div class="mx-auto grid w-full max-w-page justify-items-center gap-space-md text-center"><Children/></div>
+</section>

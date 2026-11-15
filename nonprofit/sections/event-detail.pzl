@@ -1,0 +1,24 @@
+<!-- An event's page: its picture, then its title, the day and time on one line, the place with its pin and a button to its sign-up link; the description below in the reading column. -->
+{#let f = page.entry.fields}
+<Detail left>
+  <p class="text-lede tnum"><Day value={ f.date } />{#if f.time} · <span class="whitespace-nowrap">{ f.time }</span>{/if}</p>
+  <Place text={ f.location } />
+</Detail>
+
+<schema>
+{
+  "name": "Event",
+  "description": "An event's title, day and time, place, sign-up button, picture and description.",
+  "kind": "Content",
+  "icon": "calendar-days",
+  "templates": ["event"],
+  "settings": [
+    { "type": "paragraph", "content": "Everything here comes from the event. The button shows when the event has a sign-up link." },
+    { "type": "text", "id": "link_label", "label": "Button label", "default": "Register" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

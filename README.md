@@ -10,6 +10,7 @@ complete theme: the same files a site's draft theme starts from.
 | [`folio/`](folio/) | A journal for one writer: posts in a list or a grid, an about page, a contact page and a privacy page. |
 | [`ledger/`](ledger/) | A news site: lead story, latest list, story grids, topic blocks, and articles with key facts and author cards. |
 | [`darkroom/`](darkroom/) | A photographer's portfolio on a near-black ground: series of photographs, carousels, grids and a lightbox, services, prints and packages, and a contact form. |
+| [`nonprofit/`](nonprofit/) | A community charity: the Donate button in every header, programmes, events, news, impact figures, ways to give and to help, the volunteer and contact forms, and partners. |
 
 Each theme's own README explains its files, sections, styling and scripts.
 

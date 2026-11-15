@@ -1,0 +1,1883 @@
+{
+ "site": {
+  "name": "Wenlow Community Kitchen",
+  "url": "https://wenlowkitchen.example",
+  "locale": "en",
+  "settings": {
+   "wordmark": "Wenlow Community Kitchen",
+   "reveal": true,
+   "give_url": "https://give.example/wenlowkitchen",
+   "ask_label": "Donate",
+   "ask_url": "",
+   "help_label": "Get help",
+   "help_url": "/get-help",
+   "legal_line": "© 2026 Wenlow Community Kitchen\nRegistered charity 81234 5678 RR0001",
+   "tax_line": "We send a tax receipt for every gift of $20 or more.",
+   "newsletter_form": "newsletter",
+   "email": "hello@wenlowkitchen.example",
+   "phone": "(705) 555-0142",
+   "address": "Mill Hall\n14 Ferry Lane\nWenlow"
+  }
+ },
+ "menus": {
+  "main": {
+   "handle": "main",
+   "title": "Main menu",
+   "items": [
+    {
+     "id": "main0",
+     "label": "About",
+     "target": {
+      "kind": "url",
+      "url": "/about"
+     },
+     "children": []
+    },
+    {
+     "id": "main1",
+     "label": "Programmes",
+     "target": {
+      "kind": "url",
+      "url": "/programmes"
+     },
+     "children": []
+    },
+    {
+     "id": "main2",
+     "label": "Events",
+     "target": {
+      "kind": "url",
+      "url": "/events"
+     },
+     "children": []
+    },
+    {
+     "id": "main3",
+     "label": "News",
+     "target": {
+      "kind": "url",
+      "url": "/news"
+     },
+     "children": []
+    },
+    {
+     "id": "main4",
+     "label": "Get involved",
+     "target": {
+      "kind": "url",
+      "url": "/get-involved"
+     },
+     "children": []
+    }
+   ]
+  },
+  "footer": {
+   "handle": "footer",
+   "title": "Footer menu",
+   "items": [
+    {
+     "id": "footer0",
+     "label": "About",
+     "target": {
+      "kind": "url",
+      "url": "/about"
+     },
+     "children": []
+    },
+    {
+     "id": "footer1",
+     "label": "Get help",
+     "target": {
+      "kind": "url",
+      "url": "/get-help"
+     },
+     "children": []
+    },
+    {
+     "id": "footer2",
+     "label": "Programmes",
+     "target": {
+      "kind": "url",
+      "url": "/programmes"
+     },
+     "children": []
+    },
+    {
+     "id": "footer3",
+     "label": "Events",
+     "target": {
+      "kind": "url",
+      "url": "/events"
+     },
+     "children": []
+    },
+    {
+     "id": "footer4",
+     "label": "News",
+     "target": {
+      "kind": "url",
+      "url": "/news"
+     },
+     "children": []
+    },
+    {
+     "id": "footer5",
+     "label": "Get involved",
+     "target": {
+      "kind": "url",
+      "url": "/get-involved"
+     },
+     "children": []
+    },
+    {
+     "id": "footer6",
+     "label": "Donate",
+     "target": {
+      "kind": "url",
+      "url": "/donate"
+     },
+     "children": []
+    },
+    {
+     "id": "footer7",
+     "label": "Contact",
+     "target": {
+      "kind": "url",
+      "url": "/contact"
+     },
+     "children": []
+    }
+   ]
+  },
+  "legal": {
+   "handle": "legal",
+   "title": "Legal links",
+   "items": [
+    {
+     "id": "legal0",
+     "label": "Contact",
+     "target": {
+      "kind": "url",
+      "url": "/contact"
+     },
+     "children": []
+    },
+    {
+     "id": "legal1",
+     "label": "Accessibility",
+     "target": {
+      "kind": "url",
+      "url": "/accessibility"
+     },
+     "children": []
+    },
+    {
+     "id": "legal2",
+     "label": "Privacy",
+     "target": {
+      "kind": "url",
+      "url": "/privacy"
+     },
+     "children": []
+    }
+   ]
+  },
+  "social": {
+   "handle": "social",
+   "title": "Social links",
+   "items": [
+    {
+     "id": "social0",
+     "label": "Instagram",
+     "target": {
+      "kind": "url",
+      "url": "https://instagram.example/wenlowkitchen"
+     },
+     "children": []
+    },
+    {
+     "id": "social1",
+     "label": "Facebook",
+     "target": {
+      "kind": "url",
+      "url": "https://facebook.example/wenlowkitchen"
+     },
+     "children": []
+    }
+   ]
+  }
+ },
+ "galleries": {},
+ "assets": {
+  "as_4x3_oat": {
+   "id": "as_4x3_oat",
+   "status": "ready",
+   "file_name": "4x3-oat.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/4x3-oat.svg",
+   "width": 1600,
+   "height": 1200,
+   "alt": "4:3 oat placeholder",
+   "created_at": "2026-11-14T09:00:00Z"
+  },
+  "as_4x3_moss": {
+   "id": "as_4x3_moss",
+   "status": "ready",
+   "file_name": "4x3-moss.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/4x3-moss.svg",
+   "width": 1600,
+   "height": 1200,
+   "alt": "4:3 moss placeholder",
+   "created_at": "2026-11-14T09:00:00Z"
+  },
+  "as_4x3_lake": {
+   "id": "as_4x3_lake",
+   "status": "ready",
+   "file_name": "4x3-lake.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/4x3-lake.svg",
+   "width": 1600,
+   "height": 1200,
+   "alt": "4:3 lake placeholder",
+   "created_at": "2026-11-14T09:00:00Z"
+  },
+  "as_4x3_clay": {
+   "id": "as_4x3_clay",
+   "status": "ready",
+   "file_name": "4x3-clay.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/4x3-clay.svg",
+   "width": 1600,
+   "height": 1200,
+   "alt": "4:3 clay placeholder",
+   "created_at": "2026-11-14T09:00:00Z"
+  },
+  "as_4x5_oat": {
+   "id": "as_4x5_oat",
+   "status": "ready",
+   "file_name": "4x5-oat.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/4x5-oat.svg",
+   "width": 1200,
+   "height": 1500,
+   "alt": "4:5 oat placeholder",
+   "created_at": "2026-11-14T09:00:00Z"
+  },
+  "as_4x5_moss": {
+   "id": "as_4x5_moss",
+   "status": "ready",
+   "file_name": "4x5-moss.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/4x5-moss.svg",
+   "width": 1200,
+   "height": 1500,
+   "alt": "4:5 moss placeholder",
+   "created_at": "2026-11-14T09:00:00Z"
+  },
+  "as_4x5_lake": {
+   "id": "as_4x5_lake",
+   "status": "ready",
+   "file_name": "4x5-lake.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/4x5-lake.svg",
+   "width": 1200,
+   "height": 1500,
+   "alt": "4:5 lake placeholder",
+   "created_at": "2026-11-14T09:00:00Z"
+  },
+  "as_4x5_clay": {
+   "id": "as_4x5_clay",
+   "status": "ready",
+   "file_name": "4x5-clay.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/4x5-clay.svg",
+   "width": 1200,
+   "height": 1500,
+   "alt": "4:5 clay placeholder",
+   "created_at": "2026-11-14T09:00:00Z"
+  },
+  "as_3x5_oat": {
+   "id": "as_3x5_oat",
+   "status": "ready",
+   "file_name": "3x5-oat.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/3x5-oat.svg",
+   "width": 900,
+   "height": 1500,
+   "alt": "3:5 oat placeholder",
+   "created_at": "2026-11-14T09:00:00Z"
+  },
+  "as_3x5_moss": {
+   "id": "as_3x5_moss",
+   "status": "ready",
+   "file_name": "3x5-moss.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/3x5-moss.svg",
+   "width": 900,
+   "height": 1500,
+   "alt": "3:5 moss placeholder",
+   "created_at": "2026-11-14T09:00:00Z"
+  },
+  "as_3x5_clay": {
+   "id": "as_3x5_clay",
+   "status": "ready",
+   "file_name": "3x5-clay.svg",
+   "mime": "image/svg+xml",
+   "byte_size": 420,
+   "url": "/_sites/theme/photos/3x5-clay.svg",
+   "width": 900,
+   "height": 1500,
+   "alt": "3:5 clay placeholder",
+   "created_at": "2026-11-14T09:00:00Z"
+  }
+ },
+ "forms": {
+  "volunteer": {
+   "handle": "volunteer",
+   "name": "Volunteer",
+   "fields": [
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Name",
+     "required": true,
+     "max_length": 200
+    },
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email",
+     "required": true,
+     "max_length": 200
+    },
+    {
+     "id": "phone",
+     "type": "text",
+     "label": "Phone (optional)",
+     "required": false,
+     "max_length": 40
+    },
+    {
+     "id": "contact_by",
+     "type": "select",
+     "label": "Preferred contact",
+     "required": false,
+     "options": [
+      "Email",
+      "Phone",
+      "Text"
+     ]
+    },
+    {
+     "id": "role",
+     "type": "select",
+     "label": "Role I'm interested in",
+     "required": false,
+     "options": [
+      "Pantry shifts",
+      "Breakfast kitchen",
+      "Delivery drivers",
+      "Garden crew",
+      "Front desk"
+     ]
+    },
+    {
+     "id": "availability",
+     "type": "select",
+     "label": "When I'm free",
+     "required": false,
+     "options": [
+      "Weekdays",
+      "Weekends",
+      "Evenings"
+     ]
+    },
+    {
+     "id": "over_18",
+     "type": "checkbox",
+     "label": "I am 18 or older",
+     "required": true
+    },
+    {
+     "id": "message",
+     "type": "textarea",
+     "label": "Anything else we should know",
+     "required": false,
+     "max_length": 2000
+    }
+   ],
+   "success_message": "Thank you. Luc will write within a week to talk about a first shift.",
+   "submit_label": "Send",
+   "redirect_path": ""
+  },
+  "contact": {
+   "handle": "contact",
+   "name": "Contact",
+   "fields": [
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Name",
+     "required": true,
+     "max_length": 200
+    },
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email",
+     "required": true,
+     "max_length": 200
+    },
+    {
+     "id": "subject",
+     "type": "select",
+     "label": "Subject",
+     "required": true,
+     "options": [
+      "A question",
+      "Getting help",
+      "Volunteering",
+      "Giving",
+      "Press"
+     ]
+    },
+    {
+     "id": "message",
+     "type": "textarea",
+     "label": "Message",
+     "required": true,
+     "max_length": 2000
+    }
+   ],
+   "success_message": "Thank you. We answer within two working days.",
+   "submit_label": "Send",
+   "redirect_path": ""
+  },
+  "newsletter": {
+   "handle": "newsletter",
+   "name": "Newsletter",
+   "fields": [
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email address",
+     "required": true,
+     "max_length": 200
+    }
+   ],
+   "success_message": "You're on the list. The next letter comes at the start of the month.",
+   "submit_label": "Sign up",
+   "redirect_path": ""
+  }
+ },
+ "content": {
+  "programs": {
+   "name": "Programmes",
+   "fields": [
+    {
+     "id": "summary",
+     "type": "text",
+     "label": "Summary"
+    },
+    {
+     "id": "description",
+     "type": "richtext",
+     "label": "Description"
+    },
+    {
+     "id": "image",
+     "type": "image",
+     "label": "Picture (4:3)"
+    },
+    {
+     "id": "link",
+     "type": "url",
+     "label": "Link"
+    },
+    {
+     "id": "featured",
+     "type": "checkbox",
+     "label": "Featured"
+    },
+    {
+     "id": "order",
+     "type": "number",
+     "label": "Position"
+    }
+   ],
+   "entries": [
+    {
+     "id": "prog_choice_pantry",
+     "handle": "choice-pantry",
+     "title": "Choice pantry",
+     "fields": {
+      "summary": "Fresh and dry food you choose yourself, three days a week.",
+      "description": "<p>The pantry at Mill Hall is set out like a small shop. You take a basket and choose what your household will eat: fresh vegetables, bread, eggs, tins, rice and pasta.</p><p>Come on Monday, Wednesday or Friday between 10:00 and 14:00. You do not need a referral, and nobody asks why you came.</p>",
+      "image": "as_4x3_oat",
+      "link": "",
+      "featured": true,
+      "order": 1
+     }
+    },
+    {
+     "id": "prog_community_breakfast",
+     "handle": "community-breakfast",
+     "title": "Community breakfast",
+     "fields": {
+      "summary": "Porridge, eggs and coffee on Saturday mornings.",
+      "description": "<p>Every Saturday from 9:00 to 11:00 we cook breakfast for whoever comes through the door. Sit with neighbours or take a plate to go.</p><p>Volunteers from the river villages run the kitchen, and the coffee is always on.</p>",
+      "image": "as_4x3_moss",
+      "link": "",
+      "featured": true,
+      "order": 2
+     }
+    },
+    {
+     "id": "prog_kids_lunch_club",
+     "handle": "kids-lunch-club",
+     "title": "Kids' lunch club",
+     "fields": {
+      "summary": "A hot lunch and games for children in the school holidays.",
+      "description": "<p>When school is out, children up to 12 can come for lunch, a game and a story at Mill Hall. Parents and carers eat with us too.</p><p>The club runs on weekdays in the summer, winter and spring holidays, from 11:30 to 13:30.</p>",
+      "image": "as_4x3_lake",
+      "link": "",
+      "featured": true,
+      "order": 3
+     }
+    },
+    {
+     "id": "prog_cook_together_nights",
+     "handle": "cook-together-nights",
+     "title": "Cook-together nights",
+     "fields": {
+      "summary": "Cook a meal with neighbours, then sit down and eat it.",
+      "description": "<p>On the first Thursday of each month a volunteer chef leads a group of up to twelve through one simple dinner.</p><p>Everyone cooks, everyone eats, and everyone takes the recipe home. Families are welcome.</p>",
+      "image": "as_4x3_clay",
+      "link": "",
+      "featured": true,
+      "order": 4
+     }
+    },
+    {
+     "id": "prog_seed_library",
+     "handle": "seed-library",
+     "title": "Seed library",
+     "fields": {
+      "summary": "Borrow seeds in spring, bring some back in the autumn.",
+      "description": "<p>The seed library lives in a card cabinet at Wenlow Public Library. Take the seeds you want to grow, and save a few from your harvest to return.</p><p>Our garden crew runs a seed swap every March.</p>",
+      "image": "as_4x3_oat",
+      "link": "",
+      "featured": false,
+      "order": 5
+     }
+    },
+    {
+     "id": "prog_garden_plots",
+     "handle": "garden-plots",
+     "title": "Garden plots",
+     "fields": {
+      "summary": "Raised beds behind Mill Hall for anyone who wants to grow.",
+      "description": "<p>Twenty raised beds sit behind Mill Hall. Most are tended by neighbours; four grow vegetables for the pantry.</p><p>Plots are free. The waiting list opens each January.</p>",
+      "image": "as_4x3_moss",
+      "link": "",
+      "featured": false,
+      "order": 6
+     }
+    },
+    {
+     "id": "prog_benefits_desk",
+     "handle": "benefits-desk",
+     "title": "Benefits desk",
+     "fields": {
+      "summary": "Help with forms for income support, housing and childcare.",
+      "description": "<p>Our benefits adviser can help you check what you are entitled to and fill in the forms with you.</p><p>The desk is open on Tuesday and Thursday mornings at Mill Hall, or by phone.</p>",
+      "image": "as_4x3_lake",
+      "link": "",
+      "featured": true,
+      "order": 7
+     }
+    },
+    {
+     "id": "prog_tax_clinic",
+     "handle": "tax-clinic",
+     "title": "Tax clinic",
+     "fields": {
+      "summary": "Free tax returns, prepared by trained volunteers.",
+      "description": "<p>From late February to April, trained volunteers prepare simple tax returns for free at Wenlow Public Library.</p><p>Bring your slips and last year's notice. Most returns take under an hour.</p>",
+      "image": "as_4x3_clay",
+      "link": "",
+      "featured": false,
+      "order": 8
+     }
+    },
+    {
+     "id": "prog_seniors_delivery",
+     "handle": "seniors-delivery",
+     "title": "Seniors' delivery",
+     "fields": {
+      "summary": "Weekly groceries brought to neighbours who can't get out.",
+      "description": "<p>Every Friday our drivers take grocery boxes to neighbours who are unwell, recovering or no longer drive.</p><p>Call us to sign up for yourself or for someone you look after.</p>",
+      "image": "as_4x3_oat",
+      "link": "",
+      "featured": true,
+      "order": 9
+     }
+    },
+    {
+     "id": "prog_baby_shelf",
+     "handle": "baby-shelf",
+     "title": "Baby shelf",
+     "fields": {
+      "summary": "Diapers, formula and baby food, no questions asked.",
+      "description": "<p>The baby shelf at the pantry holds diapers in every size, formula, wipes and baby food.</p><p>Take what you need on any pantry day.</p>",
+      "image": "as_4x3_moss",
+      "link": "",
+      "featured": false,
+      "order": 10
+     }
+    },
+    {
+     "id": "prog_holiday_hampers",
+     "handle": "holiday-hampers",
+     "title": "Holiday hampers",
+     "fields": {
+      "summary": "A full holiday meal for families in December.",
+      "description": "<p>In the week before the holidays we pack hampers with everything for a festive meal, and a little extra.</p><p>Sign up at the pantry or by phone from 1 November.</p>",
+      "image": "as_4x3_lake",
+      "link": "",
+      "featured": false,
+      "order": 11
+     }
+    },
+    {
+     "id": "prog_food_skills_course",
+     "handle": "food-skills-course",
+     "title": "Food skills course",
+     "fields": {
+      "summary": "Six weeks of budget cooking, with a meal each week.",
+      "description": "<p>A six-week course on planning, shopping and cooking on a tight budget, run twice a year.</p><p>Each session ends with a shared meal, and you leave with a bag of the week's ingredients.</p>",
+      "image": "as_4x3_clay",
+      "link": "",
+      "featured": false,
+      "order": 12
+     }
+    }
+   ]
+  },
+  "events": {
+   "name": "Events",
+   "fields": [
+    {
+     "id": "date",
+     "type": "date",
+     "label": "Date"
+    },
+    {
+     "id": "time",
+     "type": "text",
+     "label": "Time"
+    },
+    {
+     "id": "location",
+     "type": "text",
+     "label": "Place (name and address)"
+    },
+    {
+     "id": "description",
+     "type": "richtext",
+     "label": "Description"
+    },
+    {
+     "id": "image",
+     "type": "image",
+     "label": "Picture (4:3)"
+    },
+    {
+     "id": "link",
+     "type": "url",
+     "label": "Sign-up link"
+    }
+   ],
+   "entries": [
+    {
+     "id": "ev_winter_coat_swap",
+     "handle": "winter-coat-swap",
+     "title": "Winter coat swap",
+     "fields": {
+      "date": "2026-12-05",
+      "time": "10:00–13:00",
+      "location": "Mill Hall, 14 Ferry Lane",
+      "description": "<p>Bring a coat you no longer wear and take one that fits. Children's sizes, boots and hats too. Everything left over goes to the shelter on Bridge Street.</p>",
+      "image": "as_4x3_moss",
+      "link": ""
+     }
+    },
+    {
+     "id": "ev_holiday_community_lunch",
+     "handle": "holiday-community-lunch",
+     "title": "Holiday community lunch",
+     "fields": {
+      "date": "2026-12-17",
+      "time": "12:00–14:00",
+      "location": "Mill Hall, 14 Ferry Lane",
+      "description": "<p>A three-course holiday lunch cooked by our volunteers. Everyone is welcome, and there is no charge.</p>",
+      "image": "as_4x3_lake",
+      "link": ""
+     }
+    },
+    {
+     "id": "ev_hamper_packing_day",
+     "handle": "hamper-packing-day",
+     "title": "Hamper packing day",
+     "fields": {
+      "date": "2026-12-19",
+      "time": "9:00–15:00",
+      "location": "Mill Hall, 14 Ferry Lane",
+      "description": "<p>Help us pack 300 holiday hampers. Come for an hour or the whole day; lunch is on us.</p>",
+      "image": "as_4x3_clay",
+      "link": ""
+     }
+    },
+    {
+     "id": "ev_family_cooking_class",
+     "handle": "family-cooking-class",
+     "title": "Family cooking class",
+     "fields": {
+      "date": "2027-01-13",
+      "time": "17:30–19:30",
+      "location": "St Anne's Hall, 3 Water Street",
+      "description": "<p>Cook a warming one-pot dinner together with your children, then eat it. For families with children aged 6 and over.</p>",
+      "image": "as_4x3_oat",
+      "link": ""
+     }
+    },
+    {
+     "id": "ev_volunteer_welcome_evening",
+     "handle": "volunteer-welcome-evening",
+     "title": "Volunteer welcome evening",
+     "fields": {
+      "date": "2027-01-21",
+      "time": "18:00–19:30",
+      "location": "Mill Hall, 14 Ferry Lane",
+      "description": "<p>Meet the team, see the kitchen and the pantry, and find a shift that suits you. No experience needed.</p>",
+      "image": "as_4x3_moss",
+      "link": ""
+     }
+    },
+    {
+     "id": "ev_tax_clinic_opens",
+     "handle": "tax-clinic-opens",
+     "title": "Tax clinic opens",
+     "fields": {
+      "date": "2027-02-23",
+      "time": "10:00–16:00",
+      "location": "Wenlow Public Library, 2 Market Square",
+      "description": "<p>Our free tax clinic opens for the season. Bring your slips and last year's notice of assessment.</p>",
+      "image": "as_4x3_lake",
+      "link": ""
+     }
+    },
+    {
+     "id": "ev_seed_swap",
+     "handle": "seed-swap",
+     "title": "Seed swap",
+     "fields": {
+      "date": "2027-03-20",
+      "time": "10:00–12:00",
+      "location": "Wenlow Public Library, 2 Market Square",
+      "description": "<p>Bring seeds you saved, take seeds you want to grow. The garden crew will be there to answer questions.</p>",
+      "image": "as_4x3_clay",
+      "link": ""
+     }
+    },
+    {
+     "id": "ev_garden_opening_day",
+     "handle": "garden-opening-day",
+     "title": "Garden opening day",
+     "fields": {
+      "date": "2027-04-24",
+      "time": "10:00–14:00",
+      "location": "Mill Hall garden, 14 Ferry Lane",
+      "description": "<p>The beds open for the season. Meet your plot neighbours, collect your seedlings and stay for soup.</p>",
+      "image": "as_4x3_oat",
+      "link": ""
+     }
+    }
+   ]
+  },
+  "posts": {
+   "name": "Posts",
+   "fields": [
+    {
+     "id": "topic",
+     "type": "text",
+     "label": "Topic"
+    },
+    {
+     "id": "date",
+     "type": "date",
+     "label": "Date"
+    },
+    {
+     "id": "standfirst",
+     "type": "text",
+     "label": "Standfirst"
+    },
+    {
+     "id": "image",
+     "type": "image",
+     "label": "Picture (4:3)"
+    },
+    {
+     "id": "body",
+     "type": "richtext",
+     "label": "Body"
+    }
+   ],
+   "entries": [
+    {
+     "id": "post_riverside_pantry_now_open_on_tuesdays",
+     "handle": "riverside-pantry-now-open-on-tuesdays",
+     "title": "Riverside Pantry now open on Tuesdays",
+     "fields": {
+      "topic": "News",
+      "date": "2026-11-05",
+      "standfirst": "The pantry at St Anne's Hall adds a Tuesday evening, from 16:00 to 19:00.",
+      "image": "as_4x3_lake",
+      "body": "<p>From the first Tuesday of December, the Riverside Pantry opens in the evening as well as on Saturday mornings. It is set out the same way as Mill Hall: take a basket and choose what your household needs.</p><p>The baby shelf comes too. Use the side door on Water Street; the hall is step-free from there.</p>"
+     }
+    },
+    {
+     "id": "post_ten_years_of_the_thursday_lunch",
+     "handle": "ten-years-of-the-thursday-lunch",
+     "title": "Ten years of the Thursday lunch",
+     "fields": {
+      "topic": "Stories",
+      "date": "2026-10-29",
+      "standfirst": "How one soup pot for twelve became a meal for eighty, and the volunteers who cook it.",
+      "image": "as_4x3_clay",
+      "body": "<p>The first Thursday lunch was soup and bread for twelve people in the back room of Mill Hall. Ten years on, the volunteers set out eighty places and the soup pot has three cousins.</p><p>Most of the cooks started as guests. Ask any of them and they will tell you the same thing: the meal is the reason to come, and the company is the reason to stay.</p>"
+     }
+    },
+    {
+     "id": "post_lentil_soup_for_a_crowd",
+     "handle": "lentil-soup-for-a-crowd",
+     "title": "Lentil soup for a crowd",
+     "fields": {
+      "topic": "Recipes",
+      "date": "2026-10-22",
+      "standfirst": "The soup we cook most weeks: cheap, filling and easy to double.",
+      "image": "as_4x3_oat",
+      "body": "<p>Soften two chopped onions, two carrots and a stick of celery in oil. Add a kilo of red lentils, a tin of tomatoes, a spoon of cumin and four litres of stock, and simmer for forty minutes, stirring now and then.</p><p>Season with salt and a squeeze of lemon. It feeds twenty, freezes well and tastes better the next day.</p>"
+     }
+    },
+    {
+     "id": "post_thank_you_for_the_autumn_food_drive",
+     "handle": "thank-you-for-the-autumn-food-drive",
+     "title": "Thank you for the autumn food drive",
+     "fields": {
+      "topic": "News",
+      "date": "2026-10-08",
+      "standfirst": "Schools, churches and shops in Wenlow gave four tonnes of food in October.",
+      "image": "as_4x3_moss",
+      "body": "<p>Eleven schools, six churches and the shops on Market Square filled the collection boxes through October. The volunteers sorted every tin by hand, and the shelves are full going into winter.</p><p>Thank you to everyone who gave, carried and stacked.</p>"
+     }
+    },
+    {
+     "id": "post_three_dinners_from_one_squash",
+     "handle": "three-dinners-from-one-squash",
+     "title": "Three dinners from one squash",
+     "fields": {
+      "topic": "Recipes",
+      "date": "2026-09-24",
+      "standfirst": "Roast it, soup it, bake it: one squash, three evenings.",
+      "image": "as_4x3_lake",
+      "body": "<p>On the first night, roast half the squash in wedges with garlic and serve it with rice. On the second, simmer the rest with an onion and stock and blend it into soup.</p><p>On the third, stir the leftover soup through pasta, top it with breadcrumbs and bake it until golden.</p>"
+     }
+    },
+    {
+     "id": "post_the_van_that_keeps_the_pantry_full",
+     "handle": "the-van-that-keeps-the-pantry-full",
+     "title": "The van that keeps the pantry full",
+     "fields": {
+      "topic": "Stories",
+      "date": "2026-09-17",
+      "standfirst": "Our delivery van covers 200 kilometres a week. Here is where it goes.",
+      "image": "as_4x3_clay",
+      "body": "<p>Every weekday morning the van leaves Mill Hall for the bakeries, the grocers and the two farms that give us what they cannot sell. By lunchtime it is back, and the shelves are stocked for the afternoon.</p><p>On Fridays it carries the grocery boxes for the seniors' delivery round instead.</p>"
+     }
+    },
+    {
+     "id": "post_oat_and_apple_bake",
+     "handle": "oat-and-apple-bake",
+     "title": "Oat and apple bake",
+     "fields": {
+      "topic": "Recipes",
+      "date": "2026-08-27",
+      "standfirst": "A breakfast that uses up the apples from the garden.",
+      "image": "as_4x3_oat",
+      "body": "<p>Mix four cups of oats with a spoon of cinnamon, a pinch of salt and two cups of milk. Fold in three chopped apples and pour it into a greased dish.</p><p>Bake for thirty-five minutes until it sets. Cut it into squares; it keeps for three days.</p>"
+     }
+    },
+    {
+     "id": "post_from_the_seed_library_to_the_shelves",
+     "handle": "from-the-seed-library-to-the-shelves",
+     "title": "From the seed library to the shelves",
+     "fields": {
+      "topic": "Stories",
+      "date": "2026-08-06",
+      "standfirst": "How a drawer of borrowed seeds grew into a quarter of the pantry's summer vegetables.",
+      "image": "as_4x3_moss",
+      "body": "<p>The seed library began as one drawer at the library on Market Square. Neighbours borrowed seeds in spring and brought some back each autumn, and the drawer became a cabinet.</p><p>This summer the four pantry beds behind Mill Hall grew beans, squash and greens from those seeds, enough for a quarter of what the pantry gave out.</p>"
+     }
+    },
+    {
+     "id": "post_pantry_chilli",
+     "handle": "pantry-chilli",
+     "title": "Pantry chilli",
+     "fields": {
+      "topic": "Recipes",
+      "date": "2026-07-23",
+      "standfirst": "Made from what is on the shelves most weeks: tins, rice and a few spices.",
+      "image": "as_4x3_lake",
+      "body": "<p>Fry an onion with a spoon of chilli powder and a spoon of cumin. Add two tins of beans, a tin of tomatoes and a tin of sweetcorn, and simmer for twenty minutes.</p><p>Serve it over rice. It feeds six, and you can swap any bean for another.</p>"
+     }
+    },
+    {
+     "id": "post_new_hours_for_the_benefits_desk",
+     "handle": "new-hours-for-the-benefits-desk",
+     "title": "New hours for the benefits desk",
+     "fields": {
+      "topic": "News",
+      "date": "2026-07-02",
+      "standfirst": "The benefits desk now opens on Thursday mornings as well as Tuesdays.",
+      "image": "as_4x3_clay",
+      "body": "<p>Our benefits adviser is now at Mill Hall on Thursday mornings too, from 9:30 to 12:00. You can still call on Tuesday and Thursday if you cannot come in.</p><p>Bring any letters you have received, and we will go through them with you.</p>"
+     }
+    },
+    {
+     "id": "post_why_marta_drives_on_fridays",
+     "handle": "why-marta-drives-on-fridays",
+     "title": "Why Marta drives on Fridays",
+     "fields": {
+      "topic": "Stories",
+      "date": "2026-06-11",
+      "standfirst": "A retired nurse on the people she visits with the grocery boxes.",
+      "image": "as_4x3_oat",
+      "body": "<p>Marta spent thirty years on the wards of the town hospital. Now she drives the Friday round, eleven stops between Wenlow and the river villages.</p><p>The groceries are the reason for the visit, she says, but the cup of tea at each door is what people remember.</p>"
+     }
+    },
+    {
+     "id": "post_our_2025_report_is_here",
+     "handle": "our-2025-report-is-here",
+     "title": "Our 2025 report is here",
+     "fields": {
+      "topic": "News",
+      "date": "2026-05-14",
+      "standfirst": "What we did together last year, what it cost, and where the money came from.",
+      "image": "as_4x3_moss",
+      "body": "<p>Our report for 2025 is on the About page. It lists every meal, every pantry visit and every dollar, and what each one cost.</p><p>Most of our money came from people in Wenlow giving small amounts each month. Thank you.</p>"
+     }
+    }
+   ]
+  },
+  "team": {
+   "name": "Team",
+   "fields": [
+    {
+     "id": "role",
+     "type": "text",
+     "label": "Role"
+    },
+    {
+     "id": "group",
+     "type": "select",
+     "label": "Group",
+     "options": [
+      "Staff",
+      "Board",
+      "Volunteers"
+     ]
+    },
+    {
+     "id": "image",
+     "type": "image",
+     "label": "Portrait (4:5)"
+    },
+    {
+     "id": "order",
+     "type": "number",
+     "label": "Position"
+    }
+   ],
+   "entries": [
+    {
+     "id": "team_anna_lindqvist",
+     "handle": "anna-lindqvist",
+     "title": "Anna Lindqvist",
+     "fields": {
+      "role": "Executive director",
+      "group": "Staff",
+      "image": "as_4x5_oat",
+      "order": 1
+     }
+    },
+    {
+     "id": "team_joseph_mensah",
+     "handle": "joseph-mensah",
+     "title": "Joseph Mensah",
+     "fields": {
+      "role": "Kitchen manager",
+      "group": "Staff",
+      "image": "as_4x5_moss",
+      "order": 2
+     }
+    },
+    {
+     "id": "team_priya_raman",
+     "handle": "priya-raman",
+     "title": "Priya Raman",
+     "fields": {
+      "role": "Pantry coordinator",
+      "group": "Staff",
+      "image": "as_4x5_lake",
+      "order": 3
+     }
+    },
+    {
+     "id": "team_luc_tremblay",
+     "handle": "luc-tremblay",
+     "title": "Luc Tremblay",
+     "fields": {
+      "role": "Volunteer coordinator",
+      "group": "Staff",
+      "image": "as_4x5_clay",
+      "order": 4
+     }
+    },
+    {
+     "id": "team_grace_whitfield",
+     "handle": "grace-whitfield",
+     "title": "Grace Whitfield",
+     "fields": {
+      "role": "Benefits adviser",
+      "group": "Staff",
+      "image": "as_4x5_oat",
+      "order": 5
+     }
+    },
+    {
+     "id": "team_helen_achterberg",
+     "handle": "helen-achterberg",
+     "title": "Helen Achterberg",
+     "fields": {
+      "role": "Chair",
+      "group": "Board",
+      "image": "as_4x5_moss",
+      "order": 6
+     }
+    },
+    {
+     "id": "team_samuel_okoro",
+     "handle": "samuel-okoro",
+     "title": "Samuel Okoro",
+     "fields": {
+      "role": "Treasurer",
+      "group": "Board",
+      "image": "as_4x5_lake",
+      "order": 7
+     }
+    },
+    {
+     "id": "team_marie_claire_dubois",
+     "handle": "marie-claire-dubois",
+     "title": "Marie-Claire Dubois",
+     "fields": {
+      "role": "Secretary",
+      "group": "Board",
+      "image": "as_4x5_clay",
+      "order": 8
+     }
+    },
+    {
+     "id": "team_tom_bellamy",
+     "handle": "tom-bellamy",
+     "title": "Tom Bellamy",
+     "fields": {
+      "role": "Board member",
+      "group": "Board",
+      "image": "as_4x5_oat",
+      "order": 9
+     }
+    },
+    {
+     "id": "team_ruth_kowalski",
+     "handle": "ruth-kowalski",
+     "title": "Ruth Kowalski",
+     "fields": {
+      "role": "Board member",
+      "group": "Board",
+      "image": "as_4x5_moss",
+      "order": 10
+     }
+    },
+    {
+     "id": "team_daniel_fraser",
+     "handle": "daniel-fraser",
+     "title": "Daniel Fraser",
+     "fields": {
+      "role": "Board member",
+      "group": "Board",
+      "image": "as_4x5_lake",
+      "order": 11
+     }
+    },
+    {
+     "id": "team_aisha_siddiqui",
+     "handle": "aisha-siddiqui",
+     "title": "Aisha Siddiqui",
+     "fields": {
+      "role": "Board member",
+      "group": "Board",
+      "image": "as_4x5_clay",
+      "order": 12
+     }
+    }
+   ]
+  }
+ },
+ "pages": {
+  "/": {
+   "id": "pg_home",
+   "template": "home",
+   "title": "Wenlow Community Kitchen",
+   "seo": {
+    "description": "Free community meals, a choice pantry and a warm room on Ferry Lane in Wenlow, five days a week."
+   }
+  },
+  "/about": {
+   "id": "pg_about",
+   "template": "page.about",
+   "title": "About us"
+  },
+  "/programmes": {
+   "id": "pg_programs",
+   "template": "page.programs",
+   "title": "Programmes"
+  },
+  "/get-involved": {
+   "id": "pg_get_involved",
+   "template": "page.get-involved",
+   "title": "Get involved"
+  },
+  "/donate": {
+   "id": "pg_donate",
+   "template": "page.donate",
+   "title": "Donate"
+  },
+  "/events": {
+   "id": "pg_events",
+   "template": "page.events",
+   "title": "Events"
+  },
+  "/news": {
+   "id": "pg_news",
+   "template": "page.news",
+   "title": "News"
+  },
+  "/contact": {
+   "id": "pg_contact",
+   "template": "page.contact",
+   "title": "Contact"
+  },
+  "/get-help": {
+   "id": "pg_get_help",
+   "template": "page.get-help",
+   "title": "Get help",
+   "content": "<p>Everything we offer is free, and you do not need a referral. Come to the pantry on any open day, or call us and we will talk it through.</p><p>If you cannot get to us, we deliver groceries on Fridays to neighbours who are unwell or no longer drive.</p><p>Our benefits adviser can help with forms for income support, housing and childcare on Tuesday and Thursday mornings.</p><h2>What to bring</h2><p>Nothing. There are no forms to fill in, and nobody asks why you came. Bring a bag if you have one; we have boxes if you do not.</p>"
+  },
+  "/accessibility": {
+   "id": "pg_accessibility",
+   "template": "page.accessibility",
+   "title": "Accessibility",
+   "content": "<p>We want everyone to be able to use this site and to visit us.</p><h2>The site</h2><p>The site is built to work with a keyboard and with screen readers, and every colour pair meets WCAG 2.2 AA contrast. If something does not work for you, write to us and we will fix it.</p><h2>Mill Hall</h2><p>Mill Hall has step-free access from Ferry Lane, an accessible toilet and a hearing loop at the front desk. St Anne's Hall has a ramp at the side door.</p>"
+  },
+  "/privacy": {
+   "id": "pg_privacy",
+   "template": "page.privacy",
+   "title": "Privacy",
+   "content": "<p>We collect only what we need to answer you, to send the newsletter you asked for and to receipt your gifts.</p><h2>What we keep</h2><p>Your name and how to reach you, and the details of any gift. We never sell or share them.</p><h2>Your choices</h2><p>Ask us to see, change or delete what we hold about you at any time.</p>"
+  },
+  "/programmes/choice-pantry": {
+   "id": "pg_program_choice_pantry",
+   "template": "program",
+   "title": "Choice pantry",
+   "params": {
+    "program": "choice-pantry"
+   },
+   "entry": {
+    "id": "prog_choice_pantry",
+    "handle": "choice-pantry",
+    "title": "Choice pantry",
+    "fields": {
+     "summary": "Fresh and dry food you choose yourself, three days a week.",
+     "description": "<p>The pantry at Mill Hall is set out like a small shop. You take a basket and choose what your household will eat: fresh vegetables, bread, eggs, tins, rice and pasta.</p><p>Come on Monday, Wednesday or Friday between 10:00 and 14:00. You do not need a referral, and nobody asks why you came.</p>",
+     "image": "as_4x3_oat",
+     "link": "",
+     "featured": true,
+     "order": 1
+    }
+   }
+  },
+  "/programmes/community-breakfast": {
+   "id": "pg_program_community_breakfast",
+   "template": "program",
+   "title": "Community breakfast",
+   "params": {
+    "program": "community-breakfast"
+   },
+   "entry": {
+    "id": "prog_community_breakfast",
+    "handle": "community-breakfast",
+    "title": "Community breakfast",
+    "fields": {
+     "summary": "Porridge, eggs and coffee on Saturday mornings.",
+     "description": "<p>Every Saturday from 9:00 to 11:00 we cook breakfast for whoever comes through the door. Sit with neighbours or take a plate to go.</p><p>Volunteers from the river villages run the kitchen, and the coffee is always on.</p>",
+     "image": "as_4x3_moss",
+     "link": "",
+     "featured": true,
+     "order": 2
+    }
+   }
+  },
+  "/programmes/kids-lunch-club": {
+   "id": "pg_program_kids_lunch_club",
+   "template": "program",
+   "title": "Kids' lunch club",
+   "params": {
+    "program": "kids-lunch-club"
+   },
+   "entry": {
+    "id": "prog_kids_lunch_club",
+    "handle": "kids-lunch-club",
+    "title": "Kids' lunch club",
+    "fields": {
+     "summary": "A hot lunch and games for children in the school holidays.",
+     "description": "<p>When school is out, children up to 12 can come for lunch, a game and a story at Mill Hall. Parents and carers eat with us too.</p><p>The club runs on weekdays in the summer, winter and spring holidays, from 11:30 to 13:30.</p>",
+     "image": "as_4x3_lake",
+     "link": "",
+     "featured": true,
+     "order": 3
+    }
+   }
+  },
+  "/programmes/cook-together-nights": {
+   "id": "pg_program_cook_together_nights",
+   "template": "program",
+   "title": "Cook-together nights",
+   "params": {
+    "program": "cook-together-nights"
+   },
+   "entry": {
+    "id": "prog_cook_together_nights",
+    "handle": "cook-together-nights",
+    "title": "Cook-together nights",
+    "fields": {
+     "summary": "Cook a meal with neighbours, then sit down and eat it.",
+     "description": "<p>On the first Thursday of each month a volunteer chef leads a group of up to twelve through one simple dinner.</p><p>Everyone cooks, everyone eats, and everyone takes the recipe home. Families are welcome.</p>",
+     "image": "as_4x3_clay",
+     "link": "",
+     "featured": true,
+     "order": 4
+    }
+   }
+  },
+  "/programmes/seed-library": {
+   "id": "pg_program_seed_library",
+   "template": "program",
+   "title": "Seed library",
+   "params": {
+    "program": "seed-library"
+   },
+   "entry": {
+    "id": "prog_seed_library",
+    "handle": "seed-library",
+    "title": "Seed library",
+    "fields": {
+     "summary": "Borrow seeds in spring, bring some back in the autumn.",
+     "description": "<p>The seed library lives in a card cabinet at Wenlow Public Library. Take the seeds you want to grow, and save a few from your harvest to return.</p><p>Our garden crew runs a seed swap every March.</p>",
+     "image": "as_4x3_oat",
+     "link": "",
+     "featured": false,
+     "order": 5
+    }
+   }
+  },
+  "/programmes/garden-plots": {
+   "id": "pg_program_garden_plots",
+   "template": "program",
+   "title": "Garden plots",
+   "params": {
+    "program": "garden-plots"
+   },
+   "entry": {
+    "id": "prog_garden_plots",
+    "handle": "garden-plots",
+    "title": "Garden plots",
+    "fields": {
+     "summary": "Raised beds behind Mill Hall for anyone who wants to grow.",
+     "description": "<p>Twenty raised beds sit behind Mill Hall. Most are tended by neighbours; four grow vegetables for the pantry.</p><p>Plots are free. The waiting list opens each January.</p>",
+     "image": "as_4x3_moss",
+     "link": "",
+     "featured": false,
+     "order": 6
+    }
+   }
+  },
+  "/programmes/benefits-desk": {
+   "id": "pg_program_benefits_desk",
+   "template": "program",
+   "title": "Benefits desk",
+   "params": {
+    "program": "benefits-desk"
+   },
+   "entry": {
+    "id": "prog_benefits_desk",
+    "handle": "benefits-desk",
+    "title": "Benefits desk",
+    "fields": {
+     "summary": "Help with forms for income support, housing and childcare.",
+     "description": "<p>Our benefits adviser can help you check what you are entitled to and fill in the forms with you.</p><p>The desk is open on Tuesday and Thursday mornings at Mill Hall, or by phone.</p>",
+     "image": "as_4x3_lake",
+     "link": "",
+     "featured": true,
+     "order": 7
+    }
+   }
+  },
+  "/programmes/tax-clinic": {
+   "id": "pg_program_tax_clinic",
+   "template": "program",
+   "title": "Tax clinic",
+   "params": {
+    "program": "tax-clinic"
+   },
+   "entry": {
+    "id": "prog_tax_clinic",
+    "handle": "tax-clinic",
+    "title": "Tax clinic",
+    "fields": {
+     "summary": "Free tax returns, prepared by trained volunteers.",
+     "description": "<p>From late February to April, trained volunteers prepare simple tax returns for free at Wenlow Public Library.</p><p>Bring your slips and last year's notice. Most returns take under an hour.</p>",
+     "image": "as_4x3_clay",
+     "link": "",
+     "featured": false,
+     "order": 8
+    }
+   }
+  },
+  "/programmes/seniors-delivery": {
+   "id": "pg_program_seniors_delivery",
+   "template": "program",
+   "title": "Seniors' delivery",
+   "params": {
+    "program": "seniors-delivery"
+   },
+   "entry": {
+    "id": "prog_seniors_delivery",
+    "handle": "seniors-delivery",
+    "title": "Seniors' delivery",
+    "fields": {
+     "summary": "Weekly groceries brought to neighbours who can't get out.",
+     "description": "<p>Every Friday our drivers take grocery boxes to neighbours who are unwell, recovering or no longer drive.</p><p>Call us to sign up for yourself or for someone you look after.</p>",
+     "image": "as_4x3_oat",
+     "link": "",
+     "featured": true,
+     "order": 9
+    }
+   }
+  },
+  "/programmes/baby-shelf": {
+   "id": "pg_program_baby_shelf",
+   "template": "program",
+   "title": "Baby shelf",
+   "params": {
+    "program": "baby-shelf"
+   },
+   "entry": {
+    "id": "prog_baby_shelf",
+    "handle": "baby-shelf",
+    "title": "Baby shelf",
+    "fields": {
+     "summary": "Diapers, formula and baby food, no questions asked.",
+     "description": "<p>The baby shelf at the pantry holds diapers in every size, formula, wipes and baby food.</p><p>Take what you need on any pantry day.</p>",
+     "image": "as_4x3_moss",
+     "link": "",
+     "featured": false,
+     "order": 10
+    }
+   }
+  },
+  "/programmes/holiday-hampers": {
+   "id": "pg_program_holiday_hampers",
+   "template": "program",
+   "title": "Holiday hampers",
+   "params": {
+    "program": "holiday-hampers"
+   },
+   "entry": {
+    "id": "prog_holiday_hampers",
+    "handle": "holiday-hampers",
+    "title": "Holiday hampers",
+    "fields": {
+     "summary": "A full holiday meal for families in December.",
+     "description": "<p>In the week before the holidays we pack hampers with everything for a festive meal, and a little extra.</p><p>Sign up at the pantry or by phone from 1 November.</p>",
+     "image": "as_4x3_lake",
+     "link": "",
+     "featured": false,
+     "order": 11
+    }
+   }
+  },
+  "/programmes/food-skills-course": {
+   "id": "pg_program_food_skills_course",
+   "template": "program",
+   "title": "Food skills course",
+   "params": {
+    "program": "food-skills-course"
+   },
+   "entry": {
+    "id": "prog_food_skills_course",
+    "handle": "food-skills-course",
+    "title": "Food skills course",
+    "fields": {
+     "summary": "Six weeks of budget cooking, with a meal each week.",
+     "description": "<p>A six-week course on planning, shopping and cooking on a tight budget, run twice a year.</p><p>Each session ends with a shared meal, and you leave with a bag of the week's ingredients.</p>",
+     "image": "as_4x3_clay",
+     "link": "",
+     "featured": false,
+     "order": 12
+    }
+   }
+  },
+  "/events/winter-coat-swap": {
+   "id": "pg_event_winter_coat_swap",
+   "template": "event",
+   "title": "Winter coat swap",
+   "params": {
+    "event": "winter-coat-swap"
+   },
+   "entry": {
+    "id": "ev_winter_coat_swap",
+    "handle": "winter-coat-swap",
+    "title": "Winter coat swap",
+    "fields": {
+     "date": "2026-12-05",
+     "time": "10:00–13:00",
+     "location": "Mill Hall, 14 Ferry Lane",
+     "description": "<p>Bring a coat you no longer wear and take one that fits. Children's sizes, boots and hats too. Everything left over goes to the shelter on Bridge Street.</p>",
+     "image": "as_4x3_moss",
+     "link": ""
+    }
+   }
+  },
+  "/events/holiday-community-lunch": {
+   "id": "pg_event_holiday_community_lunch",
+   "template": "event",
+   "title": "Holiday community lunch",
+   "params": {
+    "event": "holiday-community-lunch"
+   },
+   "entry": {
+    "id": "ev_holiday_community_lunch",
+    "handle": "holiday-community-lunch",
+    "title": "Holiday community lunch",
+    "fields": {
+     "date": "2026-12-17",
+     "time": "12:00–14:00",
+     "location": "Mill Hall, 14 Ferry Lane",
+     "description": "<p>A three-course holiday lunch cooked by our volunteers. Everyone is welcome, and there is no charge.</p>",
+     "image": "as_4x3_lake",
+     "link": ""
+    }
+   }
+  },
+  "/events/hamper-packing-day": {
+   "id": "pg_event_hamper_packing_day",
+   "template": "event",
+   "title": "Hamper packing day",
+   "params": {
+    "event": "hamper-packing-day"
+   },
+   "entry": {
+    "id": "ev_hamper_packing_day",
+    "handle": "hamper-packing-day",
+    "title": "Hamper packing day",
+    "fields": {
+     "date": "2026-12-19",
+     "time": "9:00–15:00",
+     "location": "Mill Hall, 14 Ferry Lane",
+     "description": "<p>Help us pack 300 holiday hampers. Come for an hour or the whole day; lunch is on us.</p>",
+     "image": "as_4x3_clay",
+     "link": ""
+    }
+   }
+  },
+  "/events/family-cooking-class": {
+   "id": "pg_event_family_cooking_class",
+   "template": "event",
+   "title": "Family cooking class",
+   "params": {
+    "event": "family-cooking-class"
+   },
+   "entry": {
+    "id": "ev_family_cooking_class",
+    "handle": "family-cooking-class",
+    "title": "Family cooking class",
+    "fields": {
+     "date": "2027-01-13",
+     "time": "17:30–19:30",
+     "location": "St Anne's Hall, 3 Water Street",
+     "description": "<p>Cook a warming one-pot dinner together with your children, then eat it. For families with children aged 6 and over.</p>",
+     "image": "as_4x3_oat",
+     "link": ""
+    }
+   }
+  },
+  "/events/volunteer-welcome-evening": {
+   "id": "pg_event_volunteer_welcome_evening",
+   "template": "event",
+   "title": "Volunteer welcome evening",
+   "params": {
+    "event": "volunteer-welcome-evening"
+   },
+   "entry": {
+    "id": "ev_volunteer_welcome_evening",
+    "handle": "volunteer-welcome-evening",
+    "title": "Volunteer welcome evening",
+    "fields": {
+     "date": "2027-01-21",
+     "time": "18:00–19:30",
+     "location": "Mill Hall, 14 Ferry Lane",
+     "description": "<p>Meet the team, see the kitchen and the pantry, and find a shift that suits you. No experience needed.</p>",
+     "image": "as_4x3_moss",
+     "link": ""
+    }
+   }
+  },
+  "/events/tax-clinic-opens": {
+   "id": "pg_event_tax_clinic_opens",
+   "template": "event",
+   "title": "Tax clinic opens",
+   "params": {
+    "event": "tax-clinic-opens"
+   },
+   "entry": {
+    "id": "ev_tax_clinic_opens",
+    "handle": "tax-clinic-opens",
+    "title": "Tax clinic opens",
+    "fields": {
+     "date": "2027-02-23",
+     "time": "10:00–16:00",
+     "location": "Wenlow Public Library, 2 Market Square",
+     "description": "<p>Our free tax clinic opens for the season. Bring your slips and last year's notice of assessment.</p>",
+     "image": "as_4x3_lake",
+     "link": ""
+    }
+   }
+  },
+  "/events/seed-swap": {
+   "id": "pg_event_seed_swap",
+   "template": "event",
+   "title": "Seed swap",
+   "params": {
+    "event": "seed-swap"
+   },
+   "entry": {
+    "id": "ev_seed_swap",
+    "handle": "seed-swap",
+    "title": "Seed swap",
+    "fields": {
+     "date": "2027-03-20",
+     "time": "10:00–12:00",
+     "location": "Wenlow Public Library, 2 Market Square",
+     "description": "<p>Bring seeds you saved, take seeds you want to grow. The garden crew will be there to answer questions.</p>",
+     "image": "as_4x3_clay",
+     "link": ""
+    }
+   }
+  },
+  "/events/garden-opening-day": {
+   "id": "pg_event_garden_opening_day",
+   "template": "event",
+   "title": "Garden opening day",
+   "params": {
+    "event": "garden-opening-day"
+   },
+   "entry": {
+    "id": "ev_garden_opening_day",
+    "handle": "garden-opening-day",
+    "title": "Garden opening day",
+    "fields": {
+     "date": "2027-04-24",
+     "time": "10:00–14:00",
+     "location": "Mill Hall garden, 14 Ferry Lane",
+     "description": "<p>The beds open for the season. Meet your plot neighbours, collect your seedlings and stay for soup.</p>",
+     "image": "as_4x3_oat",
+     "link": ""
+    }
+   }
+  },
+  "/news/riverside-pantry-now-open-on-tuesdays": {
+   "id": "pg_post_riverside_pantry_now_open_on_tuesdays",
+   "template": "post",
+   "title": "Riverside Pantry now open on Tuesdays",
+   "params": {
+    "post": "riverside-pantry-now-open-on-tuesdays"
+   },
+   "entry": {
+    "id": "post_riverside_pantry_now_open_on_tuesdays",
+    "handle": "riverside-pantry-now-open-on-tuesdays",
+    "title": "Riverside Pantry now open on Tuesdays",
+    "fields": {
+     "topic": "News",
+     "date": "2026-11-05",
+     "standfirst": "The pantry at St Anne's Hall adds a Tuesday evening, from 16:00 to 19:00.",
+     "image": "as_4x3_lake",
+     "body": "<p>From the first Tuesday of December, the Riverside Pantry opens in the evening as well as on Saturday mornings. It is set out the same way as Mill Hall: take a basket and choose what your household needs.</p><p>The baby shelf comes too. Use the side door on Water Street; the hall is step-free from there.</p>"
+    }
+   }
+  },
+  "/news/ten-years-of-the-thursday-lunch": {
+   "id": "pg_post_ten_years_of_the_thursday_lunch",
+   "template": "post",
+   "title": "Ten years of the Thursday lunch",
+   "params": {
+    "post": "ten-years-of-the-thursday-lunch"
+   },
+   "entry": {
+    "id": "post_ten_years_of_the_thursday_lunch",
+    "handle": "ten-years-of-the-thursday-lunch",
+    "title": "Ten years of the Thursday lunch",
+    "fields": {
+     "topic": "Stories",
+     "date": "2026-10-29",
+     "standfirst": "How one soup pot for twelve became a meal for eighty, and the volunteers who cook it.",
+     "image": "as_4x3_clay",
+     "body": "<p>The first Thursday lunch was soup and bread for twelve people in the back room of Mill Hall. Ten years on, the volunteers set out eighty places and the soup pot has three cousins.</p><p>Most of the cooks started as guests. Ask any of them and they will tell you the same thing: the meal is the reason to come, and the company is the reason to stay.</p>"
+    }
+   }
+  },
+  "/news/lentil-soup-for-a-crowd": {
+   "id": "pg_post_lentil_soup_for_a_crowd",
+   "template": "post",
+   "title": "Lentil soup for a crowd",
+   "params": {
+    "post": "lentil-soup-for-a-crowd"
+   },
+   "entry": {
+    "id": "post_lentil_soup_for_a_crowd",
+    "handle": "lentil-soup-for-a-crowd",
+    "title": "Lentil soup for a crowd",
+    "fields": {
+     "topic": "Recipes",
+     "date": "2026-10-22",
+     "standfirst": "The soup we cook most weeks: cheap, filling and easy to double.",
+     "image": "as_4x3_oat",
+     "body": "<p>Soften two chopped onions, two carrots and a stick of celery in oil. Add a kilo of red lentils, a tin of tomatoes, a spoon of cumin and four litres of stock, and simmer for forty minutes, stirring now and then.</p><p>Season with salt and a squeeze of lemon. It feeds twenty, freezes well and tastes better the next day.</p>"
+    }
+   }
+  },
+  "/news/thank-you-for-the-autumn-food-drive": {
+   "id": "pg_post_thank_you_for_the_autumn_food_drive",
+   "template": "post",
+   "title": "Thank you for the autumn food drive",
+   "params": {
+    "post": "thank-you-for-the-autumn-food-drive"
+   },
+   "entry": {
+    "id": "post_thank_you_for_the_autumn_food_drive",
+    "handle": "thank-you-for-the-autumn-food-drive",
+    "title": "Thank you for the autumn food drive",
+    "fields": {
+     "topic": "News",
+     "date": "2026-10-08",
+     "standfirst": "Schools, churches and shops in Wenlow gave four tonnes of food in October.",
+     "image": "as_4x3_moss",
+     "body": "<p>Eleven schools, six churches and the shops on Market Square filled the collection boxes through October. The volunteers sorted every tin by hand, and the shelves are full going into winter.</p><p>Thank you to everyone who gave, carried and stacked.</p>"
+    }
+   }
+  },
+  "/news/three-dinners-from-one-squash": {
+   "id": "pg_post_three_dinners_from_one_squash",
+   "template": "post",
+   "title": "Three dinners from one squash",
+   "params": {
+    "post": "three-dinners-from-one-squash"
+   },
+   "entry": {
+    "id": "post_three_dinners_from_one_squash",
+    "handle": "three-dinners-from-one-squash",
+    "title": "Three dinners from one squash",
+    "fields": {
+     "topic": "Recipes",
+     "date": "2026-09-24",
+     "standfirst": "Roast it, soup it, bake it: one squash, three evenings.",
+     "image": "as_4x3_lake",
+     "body": "<p>On the first night, roast half the squash in wedges with garlic and serve it with rice. On the second, simmer the rest with an onion and stock and blend it into soup.</p><p>On the third, stir the leftover soup through pasta, top it with breadcrumbs and bake it until golden.</p>"
+    }
+   }
+  },
+  "/news/the-van-that-keeps-the-pantry-full": {
+   "id": "pg_post_the_van_that_keeps_the_pantry_full",
+   "template": "post",
+   "title": "The van that keeps the pantry full",
+   "params": {
+    "post": "the-van-that-keeps-the-pantry-full"
+   },
+   "entry": {
+    "id": "post_the_van_that_keeps_the_pantry_full",
+    "handle": "the-van-that-keeps-the-pantry-full",
+    "title": "The van that keeps the pantry full",
+    "fields": {
+     "topic": "Stories",
+     "date": "2026-09-17",
+     "standfirst": "Our delivery van covers 200 kilometres a week. Here is where it goes.",
+     "image": "as_4x3_clay",
+     "body": "<p>Every weekday morning the van leaves Mill Hall for the bakeries, the grocers and the two farms that give us what they cannot sell. By lunchtime it is back, and the shelves are stocked for the afternoon.</p><p>On Fridays it carries the grocery boxes for the seniors' delivery round instead.</p>"
+    }
+   }
+  },
+  "/news/oat-and-apple-bake": {
+   "id": "pg_post_oat_and_apple_bake",
+   "template": "post",
+   "title": "Oat and apple bake",
+   "params": {
+    "post": "oat-and-apple-bake"
+   },
+   "entry": {
+    "id": "post_oat_and_apple_bake",
+    "handle": "oat-and-apple-bake",
+    "title": "Oat and apple bake",
+    "fields": {
+     "topic": "Recipes",
+     "date": "2026-08-27",
+     "standfirst": "A breakfast that uses up the apples from the garden.",
+     "image": "as_4x3_oat",
+     "body": "<p>Mix four cups of oats with a spoon of cinnamon, a pinch of salt and two cups of milk. Fold in three chopped apples and pour it into a greased dish.</p><p>Bake for thirty-five minutes until it sets. Cut it into squares; it keeps for three days.</p>"
+    }
+   }
+  },
+  "/news/from-the-seed-library-to-the-shelves": {
+   "id": "pg_post_from_the_seed_library_to_the_shelves",
+   "template": "post",
+   "title": "From the seed library to the shelves",
+   "params": {
+    "post": "from-the-seed-library-to-the-shelves"
+   },
+   "entry": {
+    "id": "post_from_the_seed_library_to_the_shelves",
+    "handle": "from-the-seed-library-to-the-shelves",
+    "title": "From the seed library to the shelves",
+    "fields": {
+     "topic": "Stories",
+     "date": "2026-08-06",
+     "standfirst": "How a drawer of borrowed seeds grew into a quarter of the pantry's summer vegetables.",
+     "image": "as_4x3_moss",
+     "body": "<p>The seed library began as one drawer at the library on Market Square. Neighbours borrowed seeds in spring and brought some back each autumn, and the drawer became a cabinet.</p><p>This summer the four pantry beds behind Mill Hall grew beans, squash and greens from those seeds, enough for a quarter of what the pantry gave out.</p>"
+    }
+   }
+  },
+  "/news/pantry-chilli": {
+   "id": "pg_post_pantry_chilli",
+   "template": "post",
+   "title": "Pantry chilli",
+   "params": {
+    "post": "pantry-chilli"
+   },
+   "entry": {
+    "id": "post_pantry_chilli",
+    "handle": "pantry-chilli",
+    "title": "Pantry chilli",
+    "fields": {
+     "topic": "Recipes",
+     "date": "2026-07-23",
+     "standfirst": "Made from what is on the shelves most weeks: tins, rice and a few spices.",
+     "image": "as_4x3_lake",
+     "body": "<p>Fry an onion with a spoon of chilli powder and a spoon of cumin. Add two tins of beans, a tin of tomatoes and a tin of sweetcorn, and simmer for twenty minutes.</p><p>Serve it over rice. It feeds six, and you can swap any bean for another.</p>"
+    }
+   }
+  },
+  "/news/new-hours-for-the-benefits-desk": {
+   "id": "pg_post_new_hours_for_the_benefits_desk",
+   "template": "post",
+   "title": "New hours for the benefits desk",
+   "params": {
+    "post": "new-hours-for-the-benefits-desk"
+   },
+   "entry": {
+    "id": "post_new_hours_for_the_benefits_desk",
+    "handle": "new-hours-for-the-benefits-desk",
+    "title": "New hours for the benefits desk",
+    "fields": {
+     "topic": "News",
+     "date": "2026-07-02",
+     "standfirst": "The benefits desk now opens on Thursday mornings as well as Tuesdays.",
+     "image": "as_4x3_clay",
+     "body": "<p>Our benefits adviser is now at Mill Hall on Thursday mornings too, from 9:30 to 12:00. You can still call on Tuesday and Thursday if you cannot come in.</p><p>Bring any letters you have received, and we will go through them with you.</p>"
+    }
+   }
+  },
+  "/news/why-marta-drives-on-fridays": {
+   "id": "pg_post_why_marta_drives_on_fridays",
+   "template": "post",
+   "title": "Why Marta drives on Fridays",
+   "params": {
+    "post": "why-marta-drives-on-fridays"
+   },
+   "entry": {
+    "id": "post_why_marta_drives_on_fridays",
+    "handle": "why-marta-drives-on-fridays",
+    "title": "Why Marta drives on Fridays",
+    "fields": {
+     "topic": "Stories",
+     "date": "2026-06-11",
+     "standfirst": "A retired nurse on the people she visits with the grocery boxes.",
+     "image": "as_4x3_oat",
+     "body": "<p>Marta spent thirty years on the wards of the town hospital. Now she drives the Friday round, eleven stops between Wenlow and the river villages.</p><p>The groceries are the reason for the visit, she says, but the cup of tea at each door is what people remember.</p>"
+    }
+   }
+  },
+  "/news/our-2025-report-is-here": {
+   "id": "pg_post_our_2025_report_is_here",
+   "template": "post",
+   "title": "Our 2025 report is here",
+   "params": {
+    "post": "our-2025-report-is-here"
+   },
+   "entry": {
+    "id": "post_our_2025_report_is_here",
+    "handle": "our-2025-report-is-here",
+    "title": "Our 2025 report is here",
+    "fields": {
+     "topic": "News",
+     "date": "2026-05-14",
+     "standfirst": "What we did together last year, what it cost, and where the money came from.",
+     "image": "as_4x3_moss",
+     "body": "<p>Our report for 2025 is on the About page. It lists every meal, every pantry visit and every dollar, and what each one cost.</p><p>Most of our money came from people in Wenlow giving small amounts each month. Thank you.</p>"
+    }
+   }
+  }
+ }
+}

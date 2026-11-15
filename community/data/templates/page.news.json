@@ -1,0 +1,24 @@
+{
+  "label": "News",
+  "description": "News from the house and every newsletter.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "News from the house, and every issue of the newsletter."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_news",
+      "type": "news-list",
+      "preset": "Default",
+      "settings": {
+        "heading": ""
+      },
+      "blocks": []
+    }
+  ]
+}

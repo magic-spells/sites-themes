@@ -1,0 +1,56 @@
+<!-- The groups as rows between hairlines (GroupRow), by Position then name: all of them or the featured ones, up to the limit. With kind links on, a row of ?kind= links above them, All first and the current one filled; on phones the same links as a select. Nothing renders when there is no group (or no featured one). -->
+{#let
+  kind = settings.show_kinds ? request.query.kind : null
+  all = content.groups.entries | sort('title') | sort('fields.order')
+  pool = settings.source == 'featured' ? (all | where('fields.featured')) : all
+  kinds = pool | where('fields.kind') | map('fields.kind') | uniq
+  groups = (kind ? (pool | where('fields.kind', kind)) : pool) | slice(0, settings.limit)
+}
+{#if pool.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ t('all_groups') } link_href="/groups" />
+    {#if settings.show_kinds && kinds.length > 1}
+      <Chips names={ kinds } current={ kind } param="kind" label={ t('kinds') } cls="hidden md:flex" />
+      <div class="mb-space-xl md:hidden">
+        <select-dropdown class="text-body" data-links>
+          <select-trigger class="flex min-h-control items-center justify-between gap-space-sm rounded-input border border-scheme-input-border bg-scheme-input-background px-space-sm text-scheme-input-foreground" aria-label="{ t('kinds') }">
+            <span class="select-label-text truncate">{ kind || t('all') }</span>
+            <Glyph name="chevron-down" />
+          </select-trigger>
+          <select-panel>
+            <select-option value="{ page.path }" selected={ !kind }>{ t('all') }</select-option>
+            {#for name in kinds}<select-option value="{ page.path }?kind={ encodeURIComponent(name) }" selected={ kind == name }>{ name }</select-option>{/for}
+          </select-panel>
+        </select-dropdown>
+      </div>
+    {/if}
+    <ul class="border-b border-scheme-border">
+      {#for entry in groups}<GroupRow entry={ entry } />{/for}
+    </ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Groups",
+  "description": "The regular groups as rows: a photo or initial, the name, one line and when it meets.",
+  "kind": "Collections",
+  "icon": "layout-list",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Groups" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "Regular groups for all ages, run by volunteers." },
+    { "type": "select", "id": "source", "label": "Groups", "default": "all", "options": [
+      { "value": "all", "label": "All" },
+      { "value": "featured", "label": "Featured" }
+    ] },
+    { "type": "range", "id": "limit", "label": "Limit", "min": 1, "max": 24, "step": 1, "default": 24 },
+    { "type": "checkbox", "id": "show_kinds", "label": "Kind links", "default": false, "info": "A row of the groups' kinds above the list, each showing only its groups." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

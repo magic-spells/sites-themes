@@ -1,0 +1,287 @@
+{
+  "label": "Home",
+  "description": "The first screen, our impact, what we do, programmes, a story, events, the ask, ways to help, partners and the newsletter.",
+  "sections": [
+    {
+      "id": "s_hero",
+      "type": "hero",
+      "preset": "Panel",
+      "settings": {
+        "layout": "panel",
+        "heading": "Good food for every neighbour",
+        "text": "Free community meals, a pantry you choose from yourself and a warm room on Ferry Lane, five days a week.",
+        "image": "as_4x5_moss",
+        "color_scheme": "cream"
+      },
+      "blocks": [
+        {
+          "type": "give",
+          "settings": {
+            "label": "Donate"
+          }
+        },
+        {
+          "type": "link",
+          "settings": {
+            "label": "Get involved",
+            "link": "/get-involved"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_impact",
+      "type": "impact",
+      "preset": "Figures",
+      "settings": {
+        "heading": "Our impact",
+        "text": "Between July 2025 and June 2026.",
+        "link_label": "Annual report",
+        "link": "/about",
+        "split_heading": ""
+      },
+      "blocks": [
+        {
+          "type": "figure",
+          "settings": {
+            "figure": "41,200",
+            "label": "meals served"
+          }
+        },
+        {
+          "type": "figure",
+          "settings": {
+            "figure": "3,150",
+            "label": "households at the pantry"
+          }
+        },
+        {
+          "type": "figure",
+          "settings": {
+            "figure": "620",
+            "label": "volunteers"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_mission",
+      "type": "image-with-text",
+      "preset": "Picture",
+      "settings": {
+        "layout": "picture",
+        "image_side": "left",
+        "image": "as_4x3_oat",
+        "heading": "What we do",
+        "text": "<p>Wenlow Community Kitchen started in a church hall in 2009 with one soup pot and six volunteers. Today we run a choice pantry, cook a free lunch twice a week and deliver groceries to neighbours who can't get out.</p><p>Anyone who lives in Wenlow or the river villages is welcome. There are no forms, and nobody asks why you came.</p>",
+        "link_label": "About us",
+        "link": "/about"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_programs",
+      "type": "programs-grid",
+      "preset": "Featured",
+      "settings": {
+        "heading": "Our programmes",
+        "featured": true,
+        "limit": 3,
+        "link_label": "All programmes",
+        "link": "/programmes",
+        "color_scheme": "chalk"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_story",
+      "type": "story",
+      "preset": "Post",
+      "settings": {
+        "source": "post",
+        "post": "post_ten_years_of_the_thursday_lunch",
+        "link_label": "Read the story",
+        "color_scheme": "cream"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_events",
+      "type": "events-list",
+      "preset": "Row",
+      "settings": {
+        "layout": "row",
+        "heading": "Events",
+        "limit": 3,
+        "link_label": "All events",
+        "link": "/events"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_giving",
+      "type": "giving-band",
+      "preset": "Panel",
+      "settings": {
+        "layout": "panel",
+        "heading": "Support our work",
+        "text": "Every gift goes into food, fuel for the van and keeping Mill Hall warm.",
+        "donate_label": "Donate",
+        "more_label": "More ways to give",
+        "more_link": "/donate",
+        "image": "as_4x5_oat",
+        "color_scheme": "ask"
+      },
+      "blocks": [
+        {
+          "type": "equivalence",
+          "settings": {
+            "amount": "$25",
+            "text": "feeds a family for a week"
+          }
+        },
+        {
+          "type": "equivalence",
+          "settings": {
+            "amount": "$60",
+            "text": "cooks a Thursday lunch for thirty"
+          }
+        },
+        {
+          "type": "equivalence",
+          "settings": {
+            "amount": "$150",
+            "text": "keeps the walk-in fridge running for a month"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_ways",
+      "type": "ways-to-help",
+      "preset": "Default",
+      "settings": {
+        "heading": "Ways to help",
+        "text": "Time, food, a fundraiser or a gift: each one keeps the doors open.",
+        "color_scheme": "chalk"
+      },
+      "blocks": [
+        {
+          "type": "way",
+          "settings": {
+            "title": "Volunteer",
+            "text": "Cook, stock shelves or drive the van.",
+            "image": "as_4x3_moss",
+            "link": "/get-involved"
+          }
+        },
+        {
+          "type": "way",
+          "settings": {
+            "title": "Donate food",
+            "text": "Bring tins and dry goods to Mill Hall.",
+            "image": "as_4x3_oat",
+            "link": "/donate#food"
+          }
+        },
+        {
+          "type": "way",
+          "settings": {
+            "title": "Fundraise",
+            "text": "Run, bake or host a supper for us.",
+            "image": "as_4x3_lake",
+            "link": "/donate#fundraise"
+          }
+        },
+        {
+          "type": "way",
+          "settings": {
+            "title": "Give money",
+            "text": "Once or monthly, through our giving page.",
+            "image": "as_4x3_clay",
+            "link": "/donate"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_partners",
+      "type": "logos",
+      "preset": "Marquee",
+      "settings": {
+        "heading": "Our partners",
+        "layout": "marquee",
+        "size": "large"
+      },
+      "blocks": [
+        {
+          "type": "logo",
+          "settings": {
+            "name": "Pellow's Corner Grocer",
+            "link": ""
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "name": "Fennel & Rye Bakery",
+            "link": ""
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "name": "Wenlow Valley Credit Union",
+            "link": ""
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "name": "Wenlow Public Library",
+            "link": ""
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "name": "Cotter's Hollow Farm",
+            "link": ""
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "name": "Tanner's Mead Farm",
+            "link": ""
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "name": "St Anne's Hall",
+            "link": ""
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "name": "Wenlow River Trust",
+            "link": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Default",
+      "settings": {
+        "heading": "Newsletter",
+        "text": "One email a month with what we cooked, who helped and what the pantry needs.",
+        "color_scheme": "chalk"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+<!-- component: Panel -->
+<!-- The inset rounded panel, the theme's signature: the section's scheme ground with 2rem corners and the panel padding (1.5rem, 4rem from 48rem), the type in the scheme's text. The section around it paints nothing, so the page's base ground shows at its edges. bare drops the panel and keeps the content (the hero on a band); cls adds classes (the grid it holds). -->
+<div class="{ bare ? '' : 'rounded-panel bg-scheme-background p-panel text-scheme-foreground' } { cls ?? '' }"><Children/></div>

@@ -1,0 +1,38 @@
+<!-- The door plate beside the map, seven parts to five: the map embed when its link is set, else the map image, in a 4:3 well; the plate on paper with the opening hours, a hairline, the address and Get directions, the access note in small muted, then the phone and email. Below 64rem the plate comes first. With no map the plate stands alone at five parts, left; with neither, nothing renders. Everything comes from the House and Contact settings. -->
+{#let
+  s = site.settings
+  map = s.map_embed_url || s.map_image
+}
+{#if map || s.hours || s.address || s.phone || s.email}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <div class="grid items-start gap-space-xl lg:gap-space-2xl { map ? 'lg:grid-cols-seven-five' : 'lg:grid-cols-five-seven' }">
+      <Plate access />
+      {#if s.map_embed_url}
+        <iframe class="aspect-photo w-full rounded-photo bg-scheme-surface-2 outline outline-scheme-border -outline-offset-1 lg:order-first" src="{ s.map_embed_url }" title="{ t('map') }" loading="lazy"></iframe>
+      {:else if s.map_image}
+        <div class="lg:order-first"><Well asset={ s.map_image } ratio="aspect-photo" width={ 1280 } sizes="(min-width: 64rem) 46rem, 100vw" /></div>
+      {/if}
+    </div>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Visit us",
+  "description": "The door plate (hours, address, access, phone and email) beside the map.",
+  "kind": "Contact",
+  "icon": "map-pin",
+  "settings": [
+    { "type": "paragraph", "content": "Everything here comes from the House and Contact settings." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Visit us" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "mist" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "mist" } }
+  ]
+}
+</schema>

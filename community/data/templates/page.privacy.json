@@ -1,0 +1,20 @@
+{
+  "label": "Privacy",
+  "description": "The privacy page: a title and its text.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {},
+      "blocks": []
+    },
+    {
+      "id": "s_text",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {},
+      "blocks": []
+    }
+  ]
+}

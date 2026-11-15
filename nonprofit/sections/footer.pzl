@@ -1,0 +1,59 @@
+<!-- The footer on Night: the wordmark and the tagline; Visit (the Contact address); Contact (the email and phone); the menu in two columns. Under a hairline, the legal lines (Organisation legal line, one per line), the legal links and the social links as round icon buttons, each named by its label. Twelve columns from 64rem (4, 2, 3, 3), two from 48rem, one on phones. -->
+{#let s = site.settings}
+<footer class="bg-scheme-background px-gutter pt-section pb-space-xl text-scheme-foreground">
+  <div class="mx-auto grid max-w-page gap-space-xl">
+    <div class="grid gap-space-xl md:grid-cols-2 lg:grid-cols-12">
+      <div class="grid content-start gap-space-sm lg:col-span-4">
+        <a class="justify-self-start font-heading text-h4" href="/">{ s.wordmark || site.name }</a>
+        {#if settings.tagline}<p class="max-w-tagline text-pretty text-scheme-muted">{ settings.tagline }</p>{/if}
+      </div>
+      {#if s.address}
+        <div class="grid content-start gap-space-xs lg:col-span-2">
+          <h2 class="text-label">{ t('visit') }</h2>
+          <address class="whitespace-pre-line text-scheme-muted not-italic">{ s.address }</address>
+        </div>
+      {/if}
+      {#if s.email || s.phone}
+        <div class="grid content-start justify-items-start gap-space-xs lg:col-span-3">
+          <h2 class="text-label">{ t('contact') }</h2>
+          {#if s.email}<a class="wrap-anywhere text-scheme-muted link-quiet" href="mailto:{ s.email }">{ s.email }</a>{/if}
+          {#if s.phone}<a class="tnum text-scheme-muted link-quiet" href="tel:{ s.phone | replace(' ', '') }">{ s.phone }</a>{/if}
+        </div>
+      {/if}
+      {#if settings.menu.items.length}
+        <nav class="lg:col-span-3" aria-label="{ settings.menu.title }">
+          <ul class="grid grid-cols-2 gap-x-space-md gap-y-space-xs">{#for item in settings.menu.items}<li><a class="link-quiet" href="{ item.href }">{ item.label }</a></li>{/for}</ul>
+        </nav>
+      {/if}
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-space-md border-t border-scheme-border pt-space-md text-small text-scheme-muted">
+      <div class="grid gap-space-2xs">
+        {#if s.legal_line}<p>{#for line in s.legal_line | split('\n'), i}{#if i}<span aria-hidden="true"> · </span>{/if}{ line }{/for}</p>{/if}
+        {#if settings.legal_menu.items.length}<p>{#for item in settings.legal_menu.items, i}{#if i}<span aria-hidden="true"> · </span>{/if}<a class="link-quiet" href="{ item.href }">{ item.label }</a>{/for}</p>{/if}
+      </div>
+      {#if settings.social_menu.items.length}
+        <ul class="-me-space-xs flex gap-space-2xs text-scheme-foreground">{#for item in settings.social_menu.items}<li><a class="flex size-tap items-center justify-center rounded-full hover:bg-scheme-outline-hover" href="{ item.href }"><Glyph name={ item.label | downcase } /><span class="sr-only">{ item.label }</span></a></li>{/for}</ul>
+      {/if}
+    </div>
+  </div>
+</footer>
+
+<schema>
+{
+  "name": "Footer",
+  "description": "The wordmark and tagline, where to find you, the menu, then the legal lines and social links.",
+  "kind": "Footer",
+  "icon": "panel-bottom",
+  "settings": [
+    { "type": "paragraph", "content": "The address, email, phone and legal line come from the Contact and Organisation settings." },
+    { "type": "textarea", "id": "tagline", "label": "Tagline", "default": "" },
+    { "type": "menu", "id": "menu", "label": "Menu" },
+    { "type": "menu", "id": "legal_menu", "label": "Legal links" },
+    { "type": "menu", "id": "social_menu", "label": "Social links", "info": "Labelled Instagram, Facebook, LinkedIn or YouTube, each shows its icon." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "night" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "menu": "footer", "legal_menu": "legal", "social_menu": "social" } }
+  ]
+}
+</schema>

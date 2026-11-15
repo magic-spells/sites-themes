@@ -1,0 +1,49 @@
+<!-- The rooms for hire as rows between hairlines, like the groups: a 4:3 photo (9rem, 12rem from 48rem), the name in H4 over its line in muted, and the price as typed: under the line on phones, at the right from 48rem. One enquiry button under the list. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    {#if blocks.length}
+      <ul class="border-b border-scheme-border">
+        {#for block in blocks}
+          <li class="grid grid-cols-room items-start gap-x-space-md gap-y-space-2xs border-t border-scheme-border py-space-md md:grid-cols-room-md md:gap-x-space-xl { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-group="rooms:60" data-block={ block.editor_id }>
+            <Well asset={ block.settings.image } ratio="aspect-photo" width={ 480 } sizes="12rem" />
+            <div class="grid gap-space-3xs">
+              <h3 class="font-heading text-h4 text-balance text-scheme-heading">{ block.settings.name }</h3>
+              {#if block.settings.text}<p class="text-pretty text-scheme-muted">{ block.settings.text }</p>{/if}
+            </div>
+            {#if block.settings.price}<p class="col-start-2 tnum md:col-start-3 md:text-right">{ block.settings.price }</p>{/if}
+          </li>
+        {/for}
+      </ul>
+    {/if}
+    {#if settings.link.href}<Button href={ settings.link.href } cls="mt-space-xl">{ settings.link.label }</Button>{/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Rooms for hire",
+  "description": "The rooms for hire as rows, each with a photo, a line and a price, and one enquiry button.",
+  "kind": "Content",
+  "icon": "layout-list",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Hire a room" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "For parties, classes and meetings, by the hour." },
+    { "type": "link", "id": "link", "label": "Enquiry button" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "blocks": [
+    { "type": "room", "name": "Room", "settings": [
+      { "type": "image", "id": "image", "label": "Photo", "info": "4:3 crops best." },
+      { "type": "text", "id": "name", "label": "Name", "default": "Main hall" },
+      { "type": "text", "id": "text", "label": "Line", "default": "Seats 80, or 120 standing. A stage, a piano and a hearing loop." },
+      { "type": "text", "id": "price", "label": "Price", "default": "£25 an hour" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "link": { "href": "/contact", "label": "Ask about a booking" } }, "blocks": [
+      { "type": "room", "settings": { "name": "Main hall", "text": "Seats 80, or 120 standing. A stage, a piano and a hearing loop.", "price": "£25 an hour" } }
+    ] }
+  ]
+}
+</schema>

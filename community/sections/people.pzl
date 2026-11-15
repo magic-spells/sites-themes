@@ -1,0 +1,40 @@
+<!-- The people who run the house: portrait cards (role over name, initials when there is no photo), four across from 64rem, three from 48rem; on phones a strip that scrolls sideways, a little over two cards wide. One team or everyone, by Position. No bios. Hides when nobody matches. -->
+{#let
+  all = content.people.entries | sort('fields.order')
+  team = settings.team == 'all' ? all : (all | where('fields.team', settings.team))
+  people = team | slice(0, settings.limit)
+}
+{#if people.length}
+<section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter">
+  <div class="mx-auto max-w-column">
+    <div class="px-gutter md:px-0"><SectionHead heading={ settings.heading } text={ settings.text } /></div>
+    <ul class="flex snap-x snap-mandatory scroll-px-gutter gap-space-md overflow-x-auto px-gutter md:grid md:grid-cols-3 md:gap-x-space-lg md:gap-y-space-xl md:px-0 lg:grid-cols-4">
+      {#for entry in people}<li class="w-3/7 shrink-0 snap-start md:w-auto { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-group="people:60"><PersonCard entry={ entry } /></li>{/for}
+    </ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "People",
+  "description": "The people who run the house, as portrait cards.",
+  "kind": "Collections",
+  "icon": "users",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Our people" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "select", "id": "team", "label": "Team", "default": "all", "options": [
+      { "value": "all", "label": "Everyone" },
+      { "value": "staff", "label": "Staff" },
+      { "value": "committee", "label": "Committee" },
+      { "value": "volunteers", "label": "Volunteers" }
+    ] },
+    { "type": "range", "id": "limit", "label": "Limit", "min": 1, "max": 12, "step": 1, "default": 12 },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

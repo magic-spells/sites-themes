@@ -1,0 +1,27 @@
+{
+  "label": "Event",
+  "description": "An event's page and the ones after it.",
+  "sections": [
+    {
+      "id": "s_event",
+      "type": "event-detail",
+      "preset": "Default",
+      "settings": {
+        "link_label": "Register"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_events",
+      "type": "events-list",
+      "preset": "Row",
+      "settings": {
+        "layout": "row",
+        "heading": "More events",
+        "limit": 3,
+        "color_scheme": "chalk"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-<!-- A gallery's photos in an even 4:3 grid, three across from 48rem and two on phones, up to the limit. Each photo opens the lightbox at itself, its own alt as the caption (and links the large photo for a page without JavaScript): the lightbox opens from a slide, so the photos sit again in a visually hidden tarot carousel whose pictures take no box. Nothing without photos. -->
+<!-- A gallery's photos in an even 4:3 grid, three across from 48rem and two on phones, up to the limit. Each photo opens the lightbox at itself, its own alt as the caption in white on the dark backdrop (and links the large photo for a page without JavaScript): the lightbox opens from a slide, so the photos sit again in a visually hidden tarot carousel whose pictures take no box. Nothing without photos. -->
 {#let
   items = settings.gallery.items | slice(0, settings.limit)
   id = 'gallery-' + section.id
@@ -11,7 +11,7 @@
     <tarot-carousel class="sr-only" id={ id } aria-hidden="true">
       <script type="application/json" data-tarot-options>{ options | json }</script>
       <tarot-viewport><tarot-track>
-        {#for item in items}<tarot-slide><img class="size-0" src="{ image_url(item.asset, 480) }" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } />{#if item.alt}<p data-caption data-tarot-lightbox-fade>{ item.alt }</p>{/if}</tarot-slide>{/for}
+        {#for item in items}<tarot-slide><img class="size-0" src="{ image_url(item.asset, 480) }" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } />{#if item.alt}<p class="p-space-sm text-white" data-caption data-tarot-lightbox-fade>{ item.alt }</p>{/if}</tarot-slide>{/for}
       </tarot-track></tarot-viewport>
     </tarot-carousel>
     <ul class="grid grid-cols-2 gap-space-sm md:grid-cols-3 md:gap-space-md">

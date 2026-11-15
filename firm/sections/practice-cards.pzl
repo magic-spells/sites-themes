@@ -1,9 +1,9 @@
-<!-- The practice areas in their order as 3:4 photo cards on a tarot track, each card the link to its page, its title in white over a dark foot. Four whole cards from 64rem, three from 48rem; on phones a card and a quarter, the next running past the right gutter to the edge. From 48rem tarot's progress hairline and the round arrows sit under the track. The "All …" pill sits level with the heading. -->
+<!-- The practice areas in their order as 3:4 photo cards on a tarot track, each card the link to its page, its title in white over a dark scrim that starts above its first line, underlined on hover and focus. Four whole cards from 64rem, three from 48rem; on phones a card and a quarter, the next running past the right gutter to the edge. Under the track, tarot's page dots on phones; from 48rem its progress hairline and the round arrows. The "All …" pill sits level with the heading. -->
 {#let
   id = 'cards-' + section.id
   practices = content.services.entries | sort('fields.order') | slice(0, settings.limit)
-  nav = { showButtons: true, showPagination: false }
-  options = { slidesPerView: 1.25, gap: '1rem', progressBar: { selector: '#bar-' + id }, navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { slidesPerView: 3, gap: '1.5rem', navigation: nav }, '1024': { slidesPerView: 4, gap: '1.5rem', navigation: nav } } }
+  nav = { showPagination: false }
+  options = { slidesPerView: 1.25, gap: '1rem', progressBar: { selector: '#bar-' + id }, breakpoints: { '768': { slidesPerView: 3, gap: '1.5rem', navigation: nav }, '1024': { slidesPerView: 4, gap: '1.5rem', navigation: nav } } }
   arrow = 'flex size-control items-center justify-center rounded-full border border-current transition-colors duration-fast hover:bg-scheme-surface-2 disabled:pointer-events-none'
 }
 {#if practices.length}
@@ -16,8 +16,7 @@
         <tarot-slide>
           <a class="group relative block overflow-hidden rounded-card" href="/practice-areas/{ practice.handle }">
             <Well asset={ practice.fields.image } cls="aspect-card" sizes="(min-width: 64rem) 20rem, (min-width: 48rem) 33vw, 80vw" />
-            <span class="absolute inset-x-0 bottom-0 h-3/5 bg-linear-to-b from-transparent to-black/80"></span>
-            <span class="absolute inset-x-0 bottom-0 p-space-md font-heading text-h3 text-balance text-white group-hover:underline">{ practice.title }</span>
+            <span class="absolute inset-x-0 bottom-0 bg-linear-to-b from-transparent to-black/80 p-space-md pt-space-3xl font-heading text-h3 text-balance text-white group-hover:underline group-focus-visible:underline">{ practice.title }</span>
           </a>
         </tarot-slide>
       {/for}

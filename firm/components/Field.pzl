@@ -1,4 +1,4 @@
-<!-- One site form field, labelled, for all five types: text and email (the id phone is a telephone field), textarea, checkbox, and select, which with three options or fewer is a radio group (two columns from 48rem) and longer a select-dropdown. The box fills with the scheme's input colour in a muted hairline; an error doubles the hairline in the text colour and is read out under it with the alert glyph. A select starts on the option equal to the page's entry title (a practice page), unless the visitor chose one. Short fields (text, email) leave the row to pair up when the form is a two-column grid; everything else spans it. inline hides the label for screen readers only and shows it as the placeholder (the newsletter); cls replaces the wrapper's classes. -->
+<!-- One site form field, labelled, for all five types: text and email (the id phone is a telephone field), textarea, checkbox, and select, which with three options or fewer is a radio group (two columns from 48rem) and longer a select-dropdown. The box fills with the scheme's input colour in a muted hairline; an error doubles the hairline in the text colour and is read out under it with the alert glyph. A select starts on the option equal to the page's entry title (a practice page), unless the visitor chose one. Short fields (text, email) leave the row to pair up when the form is a two-column grid; everything else spans it. A required field's label ends in an asterisk, hidden from screen readers, which hear the control's required. inline hides the label for screen readers only and shows it as the placeholder (the newsletter); cls replaces the wrapper's classes. -->
 {#let
   id = prefix + '-' + field.id
   err = field.error ? id + '-error' : null
@@ -10,14 +10,14 @@
 }
 <div class={ cls ?? (short ? null : 'col-span-full') }>
   {#if field.type == 'checkbox'}
-    <label class="flex items-start gap-space-xs text-small"><input class="size-icon shrink-0 accent-scheme-button" id="{ id }" type="checkbox" name={ field.id } value="on" checked={ field.value == 'on' } required={ field.required } aria-invalid={ bad } aria-describedby={ err } />{ field.label }</label>
+    <label class="flex items-start gap-space-xs text-small"><input class="size-icon shrink-0 accent-scheme-button" id="{ id }" type="checkbox" name={ field.id } value="on" checked={ field.value == 'on' } required={ field.required } aria-invalid={ bad } aria-describedby={ err } />{ field.label }{#if field.required}<span aria-hidden="true"> *</span>{/if}</label>
   {:else if field.type == 'select' && field.options.length <= 3}
     <fieldset class="grid gap-inset md:grid-cols-2" aria-describedby={ err }>
-      <legend class="mb-inset text-label">{ field.label }</legend>
+      <legend class="mb-inset text-label">{ field.label }{#if field.required}<span aria-hidden="true"> *</span>{/if}</legend>
       {#for option in field.options}<label class="flex items-start gap-space-xs text-small"><input class="size-icon shrink-0 accent-scheme-button" type="radio" name={ field.id } value={ option } checked={ chosen == option } required={ field.required } aria-invalid={ bad } />{ option }</label>{/for}
     </fieldset>
   {:else if field.type == 'select'}
-    <span class="mb-space-xs block text-label" id="{ id }-label">{ field.label }</span>
+    <span class="mb-space-xs block text-label" id="{ id }-label">{ field.label }{#if field.required}<span aria-hidden="true"> *</span>{/if}</span>
     <select-dropdown class="text-body" required={ field.required }>
       <select-trigger class="{ box } flex min-h-control items-center justify-between gap-space-sm py-0" aria-labelledby="{ id }-label { id }-value" aria-invalid={ bad } aria-describedby={ err }>
         <span class="select-label-text truncate" id="{ id }-value">{ chosen || t('choose') }</span>
@@ -27,7 +27,7 @@
       <select-panel class="mt-space-2xs p-space-2xs">{#for option in field.options}<select-option class="rounded-box px-inset py-space-xs" value={ option } selected={ chosen == option }>{ option }</select-option>{/for}</select-panel>
     </select-dropdown>
   {:else}
-    <label class="{ inline ? 'sr-only' : 'mb-space-xs block text-label' }" for="{ id }">{ field.label }</label>
+    <label class="{ inline ? 'sr-only' : 'mb-space-xs block text-label' }" for="{ id }">{ field.label }{#if field.required}<span aria-hidden="true"> *</span>{/if}</label>
     {#if field.type == 'textarea'}<textarea class="{ box } block min-h-textarea resize-y py-space-xs" id="{ id }" name={ field.id } maxlength={ field.max_length } required={ field.required } aria-invalid={ bad } aria-describedby={ err }>{ field.value }</textarea>
     {:else}<input class="{ box } block min-h-control" id="{ id }" name={ field.id } type={ field.id == 'phone' ? 'tel' : field.type } placeholder={ inline ? field.label : null } autocomplete={ auto[field.id] ?? 'off' } maxlength={ field.max_length } required={ field.required } value={ field.value } aria-invalid={ bad } aria-describedby={ err } />{/if}
   {/if}

@@ -236,9 +236,10 @@ select-dropdown {
 /* The carousels: never wider than their column (tarot sizes the track from
    the carousel, so a grid or flex item left at its content width grows without
    end); the progress a hairline in the rule colour filled in the text; the
-   quotes' page dots under the quote at its left, the current one in the text,
-   the rest at 50%. Before tarot upgrades, or with no JavaScript, a track lays
-   its slides out as a row that scrolls. */
+   page dots (the quotes', and the practice cards' on phones) under the track
+   at its left, the current one in the text, the rest at 55%, their centres
+   more than a 24px target apart. Before tarot upgrades, or with no
+   JavaScript, a track lays its slides out as a row that scrolls. */
 tarot-carousel {
 	min-width: 0;
 	--tarot-progress-height: 0.125rem;
@@ -246,11 +247,12 @@ tarot-carousel {
 	--tarot-progress-border-radius: 0;
 	--tarot-progress-bg: var(--sites-scheme-chip-border);
 	--tarot-progress-fill-bg: var(--sites-scheme-foreground);
-	--color-pagination-dot: color-mix(in srgb, var(--sites-scheme-foreground) 50%, transparent);
+	--color-pagination-dot: color-mix(in srgb, var(--sites-scheme-foreground) 55%, transparent);
 	--color-pagination-dot-active: var(--sites-scheme-foreground);
 }
 
 tarot-carousel > .tarot-dots-list {
+	gap: var(--sites-spacing-sm);
 	margin: var(--sites-spacing-md) 0 0;
 }
 
@@ -281,6 +283,11 @@ tarot-carousel:not(:defined) tarot-slide {
 :focus-visible {
 	outline: 2px solid var(--sites-scheme-foreground);
 	outline-offset: 2px;
+}
+
+/* On the lightbox's dark backdrop the ring takes the chrome's white. */
+.tarot-lightbox :focus-visible {
+	outline-color: var(--tarot-lightbox-chrome-color);
 }
 
 /* An underline, wherever a utility turns one on, is a 1px rule. */

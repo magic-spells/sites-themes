@@ -76,10 +76,11 @@ for (const notice of document.querySelectorAll<HTMLElement>('[data-notice]')) {
 }
 
 // A form comes back to the page it was sent from (?form=…&sent=1 or &error=1),
-// at the top. The answer is shown where the form was: the ask sheet opens on
-// its own when the form lives there, the page scrolls to it otherwise.
+// at the top. The answer is shown where the form was: the page scrolls to the
+// page's own copy (the panels come first, so it is the last), and the ask sheet
+// opens on its own when the form lives only there.
 const returned = new URLSearchParams(location.search).get('form');
-const sent = returned ? document.querySelector(`form[action$="/${returned}"]`) : null;
+const sent = returned ? [...document.querySelectorAll(`form[action$="/${returned}"]`)].pop() : null;
 const sheet = sent?.closest('sheet-panel') as Panel | null | undefined;
 if (sheet) sheet.show();
 else sent?.scrollIntoView();

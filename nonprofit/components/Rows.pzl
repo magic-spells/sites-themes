@@ -8,7 +8,7 @@
         <collapsible-content open={ first_open && i == 0 }>
           <div class="grid max-w-reading gap-space-sm pb-space-md">
             <div class="prose text-body">{ item.settings.body }</div>
-            {#if item.settings.link_label && item.settings.link}<p><a class="text-link underline decoration-1 underline-offset-4 hover:decoration-2" href="{ item.settings.link }">{ item.settings.link_label }</a></p>{/if}
+            {#if item.settings.link_label && item.settings.link}<p><a class="text-link link" href="{ item.settings.link }">{ item.settings.link_label }</a></p>{/if}
           </div>
         </collapsible-content>
       </collapsible-component>

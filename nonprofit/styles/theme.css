@@ -114,6 +114,11 @@
 	--spacing-header: 4.5rem;
 	--spacing-textarea: 8rem;
 	--spacing-cover: 40rem;
+	--spacing-thumb: 5rem;
+	--spacing-thumb-lg: 8rem;
+	--spacing-amount: 5rem;
+	--spacing-logo: 2.5rem;
+	--spacing-logo-lg: 4rem;
 	--container-page: 75rem;
 	--container-reading: 40rem;
 	--container-form: 32rem;
@@ -186,9 +191,6 @@
 main > :is(.sites-scheme-paper:has(> .bg-scheme-background) + .sites-scheme-paper, .sites-scheme-chalk:has(> .bg-scheme-background) + .sites-scheme-chalk, .sites-scheme-cream:has(> .bg-scheme-background) + .sites-scheme-cream) > .bg-scheme-background {
 	padding-top: 0;
 }
-
-/* A link or menu item the page marks as current. */
-@custom-variant current (&[aria-current="page"]);
 
 body:has([data-bare]) [data-group] { display: none; }
 
@@ -345,14 +347,6 @@ select-dropdown {
 	display: block;
 }
 
-/* builder C */
-/* The events list's thumbnails, and the partners' logos at their two sizes. */
-@theme {
-	--spacing-thumb-lg: 8rem;
-	--spacing-logo: 2.5rem;
-	--spacing-logo-lg: 4rem;
-}
-
 @media (prefers-reduced-motion: reduce) {
 	*, *::before, *::after {
 		animation-duration: 0.001ms !important;
@@ -366,14 +360,6 @@ select-dropdown {
 	[data-ticker] scrolling-item[data-clone] { display: none; }
 	[data-ticker] scrolling-item { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
 	.reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
-}
-
-/* builder B */
-/* The ways-to-help thumbnail on phones and the quote portrait; the amount
-   column of the giving band's rows on phones. */
-@theme {
-	--spacing-thumb: 5rem;
-	--spacing-amount: 5rem;
 }
 
 /* The impact split: each <meter> is its own hairline track (utilities), and

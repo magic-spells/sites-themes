@@ -1,6 +1,6 @@
 {
   "label": "Person",
-  "description": "A person’s page: the dossier, then what they wrote.",
+  "description": "A person’s page: the dossier.",
   "sections": [
     {
       "id": "s_person",
@@ -8,21 +8,6 @@
       "preset": "Default",
       "settings": {
         "color_scheme": "paper"
-      },
-      "blocks": []
-    },
-    {
-      "id": "s_writing",
-      "type": "insights-list",
-      "preset": "Default",
-      "settings": {
-        "heading": "Writing",
-        "text": "",
-        "limit": 3,
-        "topics": false,
-        "pill_label": "",
-        "pill_link": "",
-        "color_scheme": "white"
       },
       "blocks": []
     }

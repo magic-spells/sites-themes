@@ -3,6 +3,15 @@
   "description": "The consultation form beside the contact details, then the offices.",
   "sections": [
     {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "paper"
+      },
+      "blocks": []
+    },
+    {
       "id": "s_contact",
       "type": "contact",
       "preset": "Default",

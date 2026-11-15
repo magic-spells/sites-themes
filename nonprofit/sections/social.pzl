@@ -5,7 +5,7 @@
       <ul class="-me-gutter flex snap-x snap-mandatory gap-space-sm overflow-x-auto pe-gutter md:me-0 md:grid md:grid-cols-3 md:gap-space-md md:overflow-visible md:pe-0 lg:grid-cols-6">
         {#for block in blocks | slice(0, 6)}
           <li class="w-2/5 shrink-0 snap-start md:w-auto { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-block={ block.editor_id }>
-            <a class="block" href="{ block.settings.link || settings.url }"><Well asset={ block.settings.image } ratio="aspect-square" width={ 640 } sizes="(min-width: 64rem) 12rem, (min-width: 48rem) 33vw, 40vw"><span class="absolute end-space-xs bottom-space-xs flex size-control-sm items-center justify-center rounded-full bg-scheme-background"><Glyph name={ settings.platform } /></span></Well></a>
+            <a class="block" href={ block.settings.link || settings.url || null }><Well asset={ block.settings.image } ratio="aspect-square" width={ 640 } sizes="(min-width: 64rem) 12rem, (min-width: 48rem) 33vw, 40vw"><span class="absolute end-space-xs bottom-space-xs flex size-control-sm items-center justify-center rounded-full bg-scheme-background"><Glyph name={ settings.platform } /></span></Well></a>
           </li>
         {/for}
       </ul>

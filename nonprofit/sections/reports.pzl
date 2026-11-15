@@ -5,7 +5,7 @@
       <ul class="max-w-reading border-t border-scheme-border">
         {#for block in blocks}
           <li class="border-b border-scheme-border" data-block={ block.editor_id }>
-            <a class="flex items-center gap-space-md py-space-md link-quiet" href="{ block.settings.link }"><span class="flex-1 text-label">{ block.settings.title }</span><span class="text-scheme-muted tnum">{ block.settings.year }</span><Glyph name="download" /></a>
+            <a class="flex items-center gap-space-md py-space-md link-quiet" href={ block.settings.link || null }><span class="flex-1 text-label">{ block.settings.title }</span><span class="text-scheme-muted tnum">{ block.settings.year }</span><Glyph name="download" /></a>
           </li>
         {/for}
       </ul>

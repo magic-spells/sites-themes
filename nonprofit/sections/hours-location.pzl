@@ -8,7 +8,7 @@
           <div class="grid content-start justify-items-start gap-space-md" data-block={ block.editor_id }>
             <h3 class="flex items-center gap-space-sm font-heading text-h4 text-scheme-heading"><Glyph name="pin" />{ b.name }</h3>
             {#if b.address}<p class="whitespace-pre-line">{ b.address }</p>{/if}
-            {#if b.hours}<ul class="w-full border-t border-scheme-border tnum">{#for line in b.hours | strip | split('\n')}<li class="border-b border-scheme-border py-space-xs">{ line }</li>{/for}</ul>{/if}
+            {#if b.hours}<ul class="w-full border-t border-scheme-border tnum">{#for line in b.hours | strip | split('\n')}<li class="border-b border-scheme-border py-space-xs empty:hidden">{ line }</li>{/for}</ul>{/if}
             {#if b.note}<p class="text-small text-pretty text-scheme-muted">{ b.note }</p>{/if}
             {#if b.map_link}<a class="text-link link" href="{ b.map_link }">{ t('hours_location.directions') }</a>{/if}
           </div>

@@ -12,7 +12,7 @@
       {#if settings.topics}
         <nav class="mb-space-xl flex flex-wrap gap-x-space-md gap-y-space-xs text-label" aria-label="{ t('journal_list.topics') }">
           <a class="link-quiet" href="{ page.path }" aria-current={ topic ? null : 'page' }>{ t('journal_list.all') }</a>
-          {#for name in all | map('fields.topic') | compact | uniq | sort}<a class="link-quiet" href="{ page.path }?topic={ encodeURIComponent(name) }" aria-current={ topic == name ? 'page' : null }>{ name }</a>{/for}
+          {#for name in all | where('fields.topic') | map('fields.topic') | uniq | sort}<a class="link-quiet" href="{ page.path }?topic={ encodeURIComponent(name) }" aria-current={ topic == name ? 'page' : null }>{ name }</a>{/for}
         </nav>
       {/if}
       <ul class="{ view == 'list' ? 'border-t border-scheme-border' : 'grid gap-x-space-md gap-y-space-xl md:grid-cols-2' } { view == 'grid' ? 'lg:grid-cols-3' : '' }">

@@ -1,0 +1,17 @@
+<!-- component: PostCard -->
+<!-- A post, one link to its page. Card: the 4:3 well with the day stamped at its top left, then the title in h4; no author, reading time or excerpt. feature: the well in seven parts of twelve beside the title in h3 and the standfirst from 64rem. row: the topic and the date over the title, on a hairline. -->
+{#let f = entry.fields}
+{#if row}
+<article class="group relative grid gap-space-2xs border-b border-scheme-border py-space-md">
+  <p class="text-small text-scheme-muted tnum">{#if f.topic}{ f.topic } · {/if}<Day value={ f.date } /></p>
+  <h3 class="font-heading text-h4 text-balance text-scheme-heading"><a class="link-quiet after:absolute after:inset-0" href="{ href }">{ entry.title }</a></h3>
+</article>
+{:else}
+<article class="group relative grid content-start gap-space-sm { feature ? 'items-center lg:grid-cols-12 lg:gap-x-space-xl' : '' } { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+  <Well asset={ f.image } cls={ feature ? 'lg:col-span-7' : null } width={ feature ? 1200 : 800 } sizes={ feature ? '(min-width: 64rem) 45rem, 100vw' : '(min-width: 64rem) 24rem, (min-width: 48rem) 50vw, 100vw' }><Day value={ f.date } view="stamp" /></Well>
+  <div class="grid gap-space-sm { feature ? 'lg:col-span-5' : '' }">
+    <h3 class="font-heading text-balance text-scheme-heading { feature ? 'text-h3' : 'text-h4' }"><a class="link-quiet after:absolute after:inset-0" href="{ href }">{ entry.title }</a></h3>
+    {#if feature && f.standfirst}<p class="text-lede text-pretty">{ f.standfirst }</p>{/if}
+  </div>
+</article>
+{/if}

@@ -1,0 +1,22 @@
+{
+  "label": "Accessibility",
+  "description": "The accessibility statement.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": ""
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_text",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {},
+      "blocks": []
+    }
+  ]
+}

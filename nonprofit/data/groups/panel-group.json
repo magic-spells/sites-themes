@@ -1,0 +1,21 @@
+{
+  "sections": [
+    {
+      "id": "sg_mobile_menu",
+      "type": "mobile-menu",
+      "preset": "Default",
+      "settings": {
+        "menu": "main",
+        "menu_secondary": "legal"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_cookie",
+      "type": "cookie-notice",
+      "preset": "Default",
+      "settings": {},
+      "blocks": []
+    }
+  ]
+}

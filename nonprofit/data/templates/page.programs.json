@@ -1,0 +1,37 @@
+{
+  "label": "Programmes",
+  "description": "Every programme.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "heading": "Our programmes",
+        "text": "Food, cooking, growing and advice, all free."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_programs",
+      "type": "programs-grid",
+      "preset": "All",
+      "settings": {
+        "heading": "",
+        "link_label": ""
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Default",
+      "settings": {
+        "heading": "Newsletter",
+        "text": "One email a month with what we cooked, who helped and what the pantry needs.",
+        "color_scheme": "chalk"
+      },
+      "blocks": []
+    }
+  ]
+}

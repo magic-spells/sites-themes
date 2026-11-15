@@ -1,0 +1,47 @@
+<!-- The programmes in their order, each a card that is one link to its page: the 4:3 well, the title in h4 and the summary in the muted colour. One column on phones, two from 48rem, three from 64rem. Featured only narrows them to the ones marked featured; with none to show, the section shows nothing. -->
+{#let
+  all = content.programs.entries | sort('fields.order')
+  programs = (settings.featured ? all | where('fields.featured') : all) | slice(0, settings.limit)
+}
+{#if programs.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-page">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link }>
+      <ul class="grid gap-x-space-md gap-y-space-xl md:grid-cols-2 lg:grid-cols-3">
+        {#for entry in programs}
+          <li class="relative grid content-start gap-space-sm { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+            <Well asset={ entry.fields.image } width={ 800 } sizes="(min-width: 64rem) 24rem, (min-width: 48rem) 50vw, 100vw" />
+            <div class="grid gap-space-2xs">
+              <h3 class="font-heading text-h4 text-balance text-scheme-heading"><a class="link-quiet after:absolute after:inset-0" href="{ settings.base_path }/{ entry.handle }">{ entry.title }</a></h3>
+              {#if entry.fields.summary}<p class="text-pretty text-scheme-muted">{ entry.fields.summary }</p>{/if}
+            </div>
+          </li>
+        {/for}
+      </ul>
+    </SectionHead>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Programmes",
+  "description": "Your programmes as cards, all of them or the featured ones.",
+  "kind": "Collections",
+  "icon": "layout-grid",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Our programmes" },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "checkbox", "id": "featured", "label": "Featured only", "default": false },
+    { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 12 },
+    { "type": "text", "id": "link_label", "label": "Button label", "default": "All programmes" },
+    { "type": "url", "id": "link", "label": "Button link", "default": "/programmes" },
+    { "type": "url", "id": "base_path", "label": "Programme pages", "default": "/programmes", "info": "Each programme links to this path and its handle." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Featured", "settings": { "featured": true, "limit": 3 } },
+    { "name": "All", "settings": { "heading": "", "link_label": "" } }
+  ]
+}
+</schema>

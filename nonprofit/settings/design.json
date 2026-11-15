@@ -1,0 +1,393 @@
+{
+  "colors": {
+    "brand": {
+      "primary": "#1F2530",
+      "secondary": "#4A5733",
+      "accent": "#1E2228"
+    },
+    "grey": {
+      "extra_light": "#F6F1E7",
+      "light": "#FCFAF5",
+      "medium": "#867E70",
+      "dark": "#5E584F",
+      "extra_dark": "#1E2228"
+    },
+    "info": {
+      "bg": "#8A4B38",
+      "fg": "#FBF5EE"
+    },
+    "success": {
+      "bg": "#2F5566",
+      "fg": "#F3F6F6"
+    },
+    "warning": {
+      "bg": "#EDE5D4",
+      "fg": "#1E2228"
+    },
+    "error": {
+      "bg": "#F6E0DA",
+      "fg": "#A8291F"
+    }
+  },
+  "fonts": {
+    "heading": {
+      "family": "Parkinsans",
+      "weights": [
+        500,
+        600
+      ],
+      "source": "self-hosted",
+      "url": "/_sites/theme/fonts/parkinsans-latin-wght-normal.woff2"
+    },
+    "body": {
+      "family": "Atkinson Hyperlegible Next",
+      "weights": [
+        400,
+        500,
+        600
+      ],
+      "source": "self-hosted",
+      "url": "/_sites/theme/fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2"
+    },
+    "mono": {
+      "family": "Atkinson Hyperlegible Next",
+      "weights": [
+        400,
+        500,
+        600
+      ],
+      "source": "self-hosted",
+      "url": "/_sites/theme/fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2"
+    }
+  },
+  "type": {
+    "base": "1rem",
+    "scale": {
+      "xs": "0.8125rem",
+      "sm": "0.9375rem",
+      "base": "1.0625rem",
+      "lg": "1.375rem",
+      "xl": "1.25rem",
+      "2xl": "1.75rem",
+      "3xl": "2.75rem",
+      "4xl": "3.75rem",
+      "5xl": "3.75rem"
+    },
+    "leading": {
+      "tight": "1.05",
+      "normal": "1.6",
+      "relaxed": "1.7"
+    }
+  },
+  "spacing": {
+    "xs": "0.5rem",
+    "sm": "1rem",
+    "md": "1.5rem",
+    "lg": "2rem",
+    "xl": "3rem",
+    "2xl": "6rem"
+  },
+  "radius": {
+    "none": "0",
+    "sm": "0.5rem",
+    "md": "0.75rem",
+    "lg": "1rem",
+    "full": "9999rem"
+  },
+  "shadow": {
+    "sm": "none",
+    "md": "none",
+    "lg": "0 24px 48px -16px rgb(30 34 40 / 0.22)"
+  },
+  "border": {
+    "width": "1px",
+    "color": "#D3D0C8"
+  },
+  "input": {
+    "background": "#F6F1E7",
+    "border": "#867E70",
+    "radius": "0.75rem",
+    "text": "#1E2228",
+    "placeholder": "#5E584F",
+    "focus_ring": "#1E2228"
+  },
+  "button": {
+    "radius": "9999rem",
+    "padding_x": "1.5rem",
+    "padding_y": "0.75rem",
+    "weight": "500",
+    "primary_bg": "#1F2530",
+    "primary_text": "#F6F1E7",
+    "secondary_bg": "transparent",
+    "secondary_text": "#1E2228"
+  },
+  "link": {
+    "color": "#1E2228",
+    "hover_color": "#1E2228",
+    "underline": "always"
+  },
+  "suggested_palettes": [
+    {
+      "name": "Commons",
+      "colors": {
+        "brand": {
+          "primary": "#1F2530",
+          "secondary": "#4A5733",
+          "accent": "#1E2228"
+        },
+        "grey": {
+          "extra_light": "#F6F1E7",
+          "light": "#FCFAF5",
+          "medium": "#867E70",
+          "dark": "#5E584F",
+          "extra_dark": "#1E2228"
+        },
+        "info": {
+          "bg": "#8A4B38",
+          "fg": "#FBF5EE"
+        },
+        "success": {
+          "bg": "#2F5566",
+          "fg": "#F3F6F6"
+        },
+        "warning": {
+          "bg": "#EDE5D4",
+          "fg": "#1E2228"
+        },
+        "error": {
+          "bg": "#F6E0DA",
+          "fg": "#A8291F"
+        }
+      }
+    },
+    {
+      "name": "Bluebell",
+      "colors": {
+        "brand": {
+          "primary": "#2B57A0",
+          "secondary": "#2B57A0",
+          "accent": "#17223A"
+        },
+        "grey": {
+          "extra_light": "#FFFFFF",
+          "light": "#F2F5F9",
+          "medium": "#7C859D",
+          "dark": "#545F77",
+          "extra_dark": "#17223A"
+        },
+        "info": {
+          "bg": "#A9C1EC",
+          "fg": "#17223A"
+        },
+        "success": {
+          "bg": "#8A4B38",
+          "fg": "#FBF5EE"
+        },
+        "warning": {
+          "bg": "#F4EFE4",
+          "fg": "#17223A"
+        },
+        "error": {
+          "bg": "#FBE3E1",
+          "fg": "#B3261E"
+        }
+      }
+    },
+    {
+      "name": "Paper",
+      "colors": {
+        "brand": {
+          "primary": "#1A1C20",
+          "secondary": "#3A4552",
+          "accent": "#1A1C20"
+        },
+        "grey": {
+          "extra_light": "#FFFFFF",
+          "light": "#F5F5F2",
+          "medium": "#7E8085",
+          "dark": "#5F6167",
+          "extra_dark": "#1A1C20"
+        },
+        "info": {
+          "bg": "#F4CD6C",
+          "fg": "#1A1C20"
+        },
+        "success": {
+          "bg": "#1F4D3C",
+          "fg": "#F2F5F0"
+        },
+        "warning": {
+          "bg": "#E9E8E3",
+          "fg": "#1A1C20"
+        },
+        "error": {
+          "bg": "#FBE3E1",
+          "fg": "#B3261E"
+        }
+      }
+    }
+  ],
+  "schemes": [
+    {
+      "handle": "paper",
+      "name": "Paper",
+      "background": "$grey-extra-light",
+      "foreground": "$grey-extra-dark",
+      "heading": "$grey-extra-dark",
+      "input_background": "$grey-extra-light",
+      "input_foreground": "$grey-extra-dark",
+      "input_border": "$grey-medium",
+      "chip_background": "$warning-bg",
+      "chip_foreground": "$grey-dark",
+      "chip_border": "#D3D0C8",
+      "icons": "$grey-extra-dark",
+      "links": "$brand-accent",
+      "button_background": "$brand-primary",
+      "button_foreground": "$grey-extra-light",
+      "button_hover_background": "#3D424A",
+      "button_hover_foreground": "$grey-extra-light",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "$grey-extra-dark",
+      "secondary_button_hover_background": "#E5E0D8",
+      "secondary_button_hover_foreground": "$grey-extra-dark"
+    },
+    {
+      "handle": "chalk",
+      "name": "Chalk",
+      "background": "$grey-light",
+      "foreground": "$grey-extra-dark",
+      "heading": "$grey-extra-dark",
+      "input_background": "$grey-light",
+      "input_foreground": "$grey-extra-dark",
+      "input_border": "$grey-medium",
+      "chip_background": "$grey-extra-light",
+      "chip_foreground": "$grey-dark",
+      "chip_border": "#D8D7D4",
+      "icons": "$grey-extra-dark",
+      "links": "$brand-accent",
+      "button_background": "$brand-primary",
+      "button_foreground": "$grey-light",
+      "button_hover_background": "#3E434C",
+      "button_hover_foreground": "$grey-light",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "$grey-extra-dark",
+      "secondary_button_hover_background": "#EAE9E5",
+      "secondary_button_hover_foreground": "$grey-extra-dark"
+    },
+    {
+      "handle": "cream",
+      "name": "Oat",
+      "background": "$warning-bg",
+      "foreground": "$warning-fg",
+      "heading": "$warning-fg",
+      "input_background": "$warning-bg",
+      "input_foreground": "$warning-fg",
+      "input_border": "$grey-medium",
+      "chip_background": "$grey-extra-light",
+      "chip_foreground": "$grey-dark",
+      "chip_border": "#CCC6B8",
+      "icons": "$warning-fg",
+      "links": "$brand-accent",
+      "button_background": "$brand-primary",
+      "button_foreground": "$warning-bg",
+      "button_hover_background": "#3C4047",
+      "button_hover_foreground": "$warning-bg",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "$warning-fg",
+      "secondary_button_hover_background": "#DCD5C6",
+      "secondary_button_hover_foreground": "$warning-fg"
+    },
+    {
+      "handle": "ask",
+      "name": "Clay",
+      "background": "$info-bg",
+      "foreground": "$info-fg",
+      "heading": "$info-fg",
+      "input_background": "$info-bg",
+      "input_foreground": "$info-fg",
+      "input_border": "$info-fg",
+      "chip_background": "$info-bg",
+      "chip_foreground": "$info-fg",
+      "chip_border": "#9C6655",
+      "icons": "$info-fg",
+      "links": "$info-fg",
+      "button_background": "$info-fg",
+      "button_foreground": "$info-bg",
+      "button_hover_background": "#EBDDD5",
+      "button_hover_foreground": "$info-bg",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "$info-fg",
+      "secondary_button_hover_background": "#935947",
+      "secondary_button_hover_foreground": "$info-fg"
+    },
+    {
+      "handle": "deep",
+      "name": "Moss",
+      "background": "$brand-secondary",
+      "foreground": "#F6F5EC",
+      "heading": "#F6F5EC",
+      "input_background": "$brand-secondary",
+      "input_foreground": "#F6F5EC",
+      "input_border": "$grey-extra-light",
+      "chip_background": "$brand-secondary",
+      "chip_foreground": "$grey-extra-light",
+      "chip_border": "#667051",
+      "icons": "#F6F5EC",
+      "links": "#F6F5EC",
+      "button_background": "#F6F5EC",
+      "button_foreground": "$brand-secondary",
+      "button_hover_background": "#DEDFD2",
+      "button_hover_foreground": "$brand-secondary",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#F6F5EC",
+      "secondary_button_hover_background": "#586442",
+      "secondary_button_hover_foreground": "#F6F5EC"
+    },
+    {
+      "handle": "deep-alt",
+      "name": "Lake",
+      "background": "$success-bg",
+      "foreground": "$success-fg",
+      "heading": "$success-fg",
+      "input_background": "$success-bg",
+      "input_foreground": "$success-fg",
+      "input_border": "$success-fg",
+      "chip_background": "$success-bg",
+      "chip_foreground": "$success-fg",
+      "chip_border": "#4E6F7D",
+      "icons": "$success-fg",
+      "links": "$success-fg",
+      "button_background": "$success-fg",
+      "button_foreground": "$success-bg",
+      "button_hover_background": "#D8DFE2",
+      "button_hover_foreground": "$success-bg",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "$success-fg",
+      "secondary_button_hover_background": "#3F6272",
+      "secondary_button_hover_foreground": "$success-fg"
+    },
+    {
+      "handle": "night",
+      "name": "Night",
+      "background": "#1B2029",
+      "foreground": "#F3EFE7",
+      "heading": "#F3EFE7",
+      "input_background": "#1B2029",
+      "input_foreground": "#F3EFE7",
+      "input_border": "#6F727A",
+      "chip_background": "#232935",
+      "chip_foreground": "#999CA3",
+      "chip_border": "#3E4147",
+      "icons": "#F3EFE7",
+      "links": "#F3EFE7",
+      "button_background": "$grey-extra-light",
+      "button_foreground": "#1B2029",
+      "button_hover_background": "#D7D4CC",
+      "button_hover_foreground": "#1B2029",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#F3EFE7",
+      "secondary_button_hover_background": "#2C3138",
+      "secondary_button_hover_foreground": "#F3EFE7"
+    }
+  ]
+}

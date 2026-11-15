@@ -1,0 +1,38 @@
+<!-- Reports and documents as rows on hairlines in the reading column: the title at the left, the year (tabular) and a download glyph at the right; the whole row is the link. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-page">
+    <SectionHead heading={ settings.heading } text={ settings.text }>
+      <ul class="max-w-reading border-t border-scheme-border">
+        {#for block in blocks}
+          <li class="border-b border-scheme-border" data-block={ block.editor_id }>
+            <a class="flex items-center gap-space-md py-space-md link-quiet" href={ block.settings.link || null }><span class="flex-1 text-label">{ block.settings.title }</span><span class="text-scheme-muted tnum">{ block.settings.year }</span><Glyph name="download" /></a>
+          </li>
+        {/for}
+      </ul>
+    </SectionHead>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Reports",
+  "description": "Annual reports and documents to download, one row each.",
+  "kind": "Content",
+  "icon": "scroll-text",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Reports" },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "blocks": [
+    { "type": "report", "name": "Report", "limit": 12, "settings": [
+      { "type": "text", "id": "title", "label": "Title", "default": "Annual report" },
+      { "type": "text", "id": "year", "label": "Year", "default": "" },
+      { "type": "url", "id": "link", "label": "File", "default": "", "info": "The link to the PDF or document, uploaded to your files or hosted elsewhere." }
+    ] }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

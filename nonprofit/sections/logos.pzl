@@ -1,0 +1,54 @@
+<!-- Partners and funders under a centred head, each a logo at the size's height or its name in the heading face. Grid: hairline tiles two across, three from 48rem, four from 64rem. Marquee: one row on a slow marquee that holds still under the pointer and while focus is inside it, and stands still, wrapped and centred, for visitors who ask for less motion. -->
+{#let
+  marquee = settings.layout == 'marquee'
+  large = settings.size == 'large'
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-ticker={ marquee }>
+  <div class="mx-auto max-w-page">
+    <SectionHead heading={ settings.heading } centred>
+      {#if marquee}
+        <scrolling-content class="block" speed="30" fade>
+          <scrolling-track class="gap-space-xl">
+            <scrolling-item class="gap-space-xl">{#for block in blocks}<Logo logo={ block.settings } editor_id={ block.editor_id } large={ large } />{/for}</scrolling-item>
+          </scrolling-track>
+        </scrolling-content>
+      {:else}
+        <ul class="grid grid-cols-2 gap-space-sm md:grid-cols-3 md:gap-space-md lg:grid-cols-4">
+          {#for block in blocks}<li class="flex items-center justify-center rounded-well border border-scheme-border p-space-md md:p-space-lg"><Logo logo={ block.settings } editor_id={ block.editor_id } large={ large } /></li>{/for}
+        </ul>
+      {/if}
+    </SectionHead>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Partners",
+  "description": "The logos of your partners and funders, as a grid or a slow marquee.",
+  "kind": "Collections",
+  "icon": "award",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Our partners" },
+    { "type": "select", "id": "layout", "label": "Layout", "default": "grid", "options": [
+      { "value": "grid", "label": "Grid" },
+      { "value": "marquee", "label": "Marquee" }
+    ] },
+    { "type": "select", "id": "size", "label": "Logo size", "default": "regular", "options": [
+      { "value": "regular", "label": "Regular" },
+      { "value": "large", "label": "Large" }
+    ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "blocks": [
+    { "type": "logo", "name": "Logo", "limit": 12, "settings": [
+      { "type": "image", "id": "image", "label": "Logo", "info": "Shown at the logo size's height. Without one, the name is set in the heading face." },
+      { "type": "text", "id": "name", "label": "Name", "default": "Partner", "info": "Names the logo when its picture has no alt text." },
+      { "type": "url", "id": "link", "label": "Link", "default": "" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Grid", "settings": {} },
+    { "name": "Marquee", "settings": { "layout": "marquee" } }
+  ]
+}
+</schema>

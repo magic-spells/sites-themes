@@ -4,7 +4,7 @@
   practices = content.services.entries | sort('fields.order') | slice(0, settings.limit)
   nav = { showButtons: true, showPagination: false }
   options = { slidesPerView: 1.25, gap: '1rem', progressBar: { selector: '#bar-' + id }, navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { slidesPerView: 3, gap: '1.5rem', navigation: nav }, '1024': { slidesPerView: 4, gap: '1.5rem', navigation: nav } } }
-  arrow = 'flex size-control items-center justify-center rounded-full border border-current transition-colors duration-fast hover:bg-scheme-surface-2 disabled:pointer-events-none disabled:opacity-40'
+  arrow = 'flex size-control items-center justify-center rounded-full border border-current transition-colors duration-fast hover:bg-scheme-surface-2 disabled:pointer-events-none'
 }
 {#if practices.length}
 <section class="overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground">

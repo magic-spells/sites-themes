@@ -59,7 +59,6 @@
 	--spacing-space-md: var(--sites-spacing-md);
 	--spacing-space-lg: var(--sites-spacing-lg);
 	--spacing-space-xl: var(--sites-spacing-xl);
-	--spacing-space-2xl: var(--sites-spacing-2xl);
 	--spacing-space-3xl: calc(var(--sites-spacing-2xl) * 4 / 3);
 	--spacing-section: var(--firm-section);
 	--spacing-hero: calc(var(--firm-section) * 1.5);

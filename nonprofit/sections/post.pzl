@@ -1,4 +1,4 @@
-<!-- A post's page: the h1, one line with the topic and the date, the standfirst in the lede size, the picture across the page column (4:3, 16:9 from 48rem), then the body in the reading column. No author line, no reading time. -->
+<!-- A post's page: the h1, one line with the topic and the date, the standfirst in the lede size, the picture across the page column (4:3, 16:9 from 48rem) when it has one, then the body in the reading column. No author line, no reading time. -->
 {#let f = page.entry.fields}
 <article class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-page gap-space-xl">
@@ -7,7 +7,7 @@
       <p class="text-scheme-muted tnum">{#if f.topic}{ f.topic } · {/if}<Day value={ f.date } /></p>
       {#if f.standfirst}<p class="text-lede text-pretty">{ f.standfirst }</p>{/if}
     </div>
-    <Well asset={ f.image } ratio="aspect-landscape md:aspect-video" width={ 1600 } sizes="(min-width: 80rem) 75rem, 100vw" eager />
+    {#if f.image}<Well asset={ f.image } ratio="aspect-landscape md:aspect-video" width={ 1600 } sizes="(min-width: 80rem) 75rem, 100vw" eager />{/if}
     <div class="prose max-w-reading text-body">{ f.body }</div>
   </div>
 </article>

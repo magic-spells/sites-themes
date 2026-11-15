@@ -1,5 +1,5 @@
 <!-- A programme's page: its title, its summary as the standfirst and a button to its link, beside its picture; the description below in the reading column. -->
-<Detail body={ page.entry.fields.description }>
+<Detail>
   {#if page.entry.fields.summary}<p class="text-lede text-pretty">{ page.entry.fields.summary }</p>{/if}
 </Detail>
 

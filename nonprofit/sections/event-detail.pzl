@@ -1,6 +1,6 @@
 <!-- An event's page: its picture, then its title, the day and time on one line, the place with its pin and a button to its sign-up link; the description below in the reading column. -->
 {#let f = page.entry.fields}
-<Detail body={ f.description } left>
+<Detail left>
   <p class="text-lede tnum"><Day value={ f.date } />{#if f.time} · <span class="whitespace-nowrap">{ f.time }</span>{/if}</p>
   <Place text={ f.location } />
 </Detail>

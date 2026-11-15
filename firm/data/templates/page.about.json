@@ -1,0 +1,30 @@
+{
+  "label": "About",
+  "description": "The firm; code B adds the hero, values and the principal’s letter.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Founded in Portland in 2015. Six people, and a meeting room in Vancouver by appointment."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_office",
+      "type": "image-with-text",
+      "preset": "Default",
+      "settings": {
+        "style": "overlap",
+        "image": "as_office",
+        "heading": "Estate plans for Oregon and Washington families",
+        "accent": "",
+        "text": "Ruth Thorne has drafted wills and trusts on both sides of the river since 2007.",
+        "button_label": "Our people",
+        "button_link": "/people"
+      },
+      "blocks": []
+    }
+  ]
+}

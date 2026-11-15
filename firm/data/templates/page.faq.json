@@ -1,0 +1,28 @@
+{
+  "label": "Questions",
+  "description": "Questions by topic; code B adds them.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Plain answers about the first meeting, our fees and how we work."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_ask",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {
+        "align": "center",
+        "color_scheme": "gold",
+        "heading": "The first meeting",
+        "accent": "",
+        "text": "Thirty minutes by video for $150, credited to your plan if you go ahead."
+      },
+      "blocks": []
+    }
+  ]
+}

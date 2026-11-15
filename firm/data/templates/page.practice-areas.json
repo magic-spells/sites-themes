@@ -1,0 +1,28 @@
+{
+  "label": "Practice areas",
+  "description": "Every practice area; code B adds the ruled index.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Who handles each kind of matter."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_ask",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {
+        "align": "center",
+        "color_scheme": "gold",
+        "heading": "The first meeting",
+        "accent": "",
+        "text": "Thirty minutes by video for $150, credited to your plan if you go ahead."
+      },
+      "blocks": []
+    }
+  ]
+}

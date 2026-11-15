@@ -1,0 +1,15 @@
+{
+  "label": "People",
+  "description": "The professionals and the staff; code B adds the circles.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Six people in Portland, with a meeting room in Vancouver by appointment."
+      },
+      "blocks": []
+    }
+  ]
+}

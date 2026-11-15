@@ -5,8 +5,8 @@
       "type": "announcement-bar",
       "preset": "Default",
       "settings": {
-        "text": "Now taking new clients for the spring\nOur office is open late on Thursdays",
-        "color_scheme": "ink"
+        "text": "Estate plan reviews for 2027 are booking from 5 January.",
+        "color_scheme": "midnight"
       },
       "blocks": []
     },
@@ -15,9 +15,7 @@
       "type": "header",
       "preset": "Default",
       "settings": {
-        "menu": "main",
-        "ask_label": "Book a consultation",
-        "ask_link": "/contact"
+        "color_scheme": "navy"
       },
       "blocks": []
     }

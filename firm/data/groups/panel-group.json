@@ -5,7 +5,17 @@
       "type": "mobile-menu",
       "preset": "Default",
       "settings": {
-        "menu": "main"
+        "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_ask_panel",
+      "type": "ask-panel",
+      "preset": "Default",
+      "settings": {
+        "text": "The first meeting is 30 minutes by video and costs $150, credited to your plan.",
+        "color_scheme": "white"
       },
       "blocks": []
     },

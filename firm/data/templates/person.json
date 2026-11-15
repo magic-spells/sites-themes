@@ -1,0 +1,13 @@
+{
+  "label": "Person",
+  "description": "A person’s page; code B adds the dossier.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {},
+      "blocks": []
+    }
+  ]
+}

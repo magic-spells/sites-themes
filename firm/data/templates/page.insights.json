@@ -1,0 +1,15 @@
+{
+  "label": "Insights",
+  "description": "Every post; code B adds the list.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Plain explanations of the law we practise."
+      },
+      "blocks": []
+    }
+  ]
+}

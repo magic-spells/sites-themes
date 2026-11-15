@@ -1,0 +1,13 @@
+{
+  "label": "Post",
+  "description": "One post; code B adds the body and its author.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {},
+      "blocks": []
+    }
+  ]
+}

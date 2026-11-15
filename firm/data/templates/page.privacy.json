@@ -1,6 +1,6 @@
 {
   "label": "Privacy",
-  "description": "The privacy notice: a title and prose.",
+  "description": "The privacy: a title and prose.",
   "sections": [
     {
       "id": "s_header",
@@ -14,7 +14,10 @@
       "type": "rich-text",
       "preset": "Default",
       "settings": {
-        "text": "<p>We keep what you send us only to answer you and to do the work you ask of us. We never sell it, and we share it only where the work or the law requires.</p><h2>What we keep</h2><p>Your name and contact details, what you tell us about your matter, and the records our profession asks us to keep.</p><h2>Your choices</h2><p>Ask us at any time to see what we hold about you, to correct it or, where the law allows, to delete it.</p>"
+        "align": "left",
+        "heading": "",
+        "accent": "",
+        "body": "<p>We keep what you send us only to answer you and to do the work you ask of us. We never sell it, and we share it only where the work or the law requires.</p><h2>What we keep</h2><p>Your name and contact details, what you tell us about your matter, and the records our profession asks us to keep.</p><h2>Your choices</h2><p>Ask us at any time to see what we hold about you, to correct it or, where the law allows, to delete it.</p>"
       },
       "blocks": []
     }

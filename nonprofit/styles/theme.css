@@ -1,0 +1,358 @@
+@import "tailwindcss";
+@import "./vendor/collapsible-content.css" layer(components);
+@import "./vendor/dialog-panel.css" layer(components);
+@import "./vendor/progress-bar.css" layer(components);
+@import "./vendor/reveal.css";
+@import "./vendor/scrolling-content.css" layer(components);
+@import "./vendor/select-dropdown.css" layer(components);
+@import "./vendor/split-text.css" layer(components);
+@import "./vendor/sticky-header.css" layer(components);
+@import "./vendor/tarot.css" layer(components);
+
+@source "../layouts/**/*.pzl";
+@source "../templates/**/*.pzl";
+@source "../sections/**/*.pzl";
+@source "../components/**/*.pzl";
+
+/* The scheme a section sits on. The engine has no muted or surface slot, so
+   they ride on the chip slots (settings/design.json). The hairline and the
+   hovers are mixed here from the scheme's own colours, so they follow any
+   palette: the text 16% into the ground, the solid button 86% into the
+   ground, the outline the text at 8%. The error has no slot and is set per
+   scheme below. */
+@theme inline {
+	--color-scheme-background: var(--sites-scheme-background);
+	--color-scheme-foreground: var(--sites-scheme-foreground);
+	--color-scheme-heading: var(--sites-scheme-heading);
+	--color-scheme-muted: var(--sites-scheme-chip-foreground);
+	--color-scheme-surface: var(--sites-scheme-chip-background);
+	--color-scheme-border: color-mix(in oklab, var(--sites-scheme-foreground) 16%, var(--sites-scheme-background));
+	--color-scheme-input: var(--sites-scheme-input-background);
+	--color-scheme-input-text: var(--sites-scheme-input-foreground);
+	--color-scheme-field: var(--sites-scheme-input-border);
+	--color-scheme-button: var(--sites-scheme-button-background);
+	--color-scheme-button-label: var(--sites-scheme-button-foreground);
+	--color-scheme-button-hover: color-mix(in oklab, var(--sites-scheme-button-background) 86%, var(--sites-scheme-background));
+	--color-scheme-outline-hover: color-mix(in oklab, var(--sites-scheme-foreground) 8%, transparent);
+	--color-link: var(--sites-scheme-links);
+	--color-scheme-error: var(--np-error);
+	--color-backdrop: color-mix(in oklab, var(--sites-color-grey-extra-dark) 50%, transparent);
+}
+
+/* The error on each band: the palette's error on the light grounds, the
+   band's own text on the coloured ones (the message and the field's border
+   carry it), a soft red on Night. Each clears 4.5:1 on its ground. */
+:root,
+[class*="sites-scheme-"] {
+	--np-error: var(--sites-color-error-fg);
+}
+.sites-scheme-ask,
+.sites-scheme-deep,
+.sites-scheme-deep-alt { --np-error: var(--sites-scheme-foreground); }
+.sites-scheme-night { --np-error: #FF9B8F; }
+
+@theme {
+	--font-heading: var(--sites-font-heading-family), ui-sans-serif, system-ui, sans-serif;
+	--font-body: var(--sites-font-body-family), ui-sans-serif, system-ui, sans-serif;
+	--font-weight-button: var(--sites-button-weight);
+
+	/* The type roles, each sized per breakpoint in :root below. Parkinsans for
+	   h1–h4 and the wordmark, Atkinson Hyperlegible Next for the rest and for
+	   every figure; sentence case throughout. */
+	--text-h1: var(--np-h1);
+	--text-h1--line-height: var(--sites-type-leading-tight);
+	--text-h1--letter-spacing: -0.012em;
+	--text-h1--font-weight: 600;
+	--text-h2: var(--np-h2);
+	--text-h2--line-height: 1.1;
+	--text-h2--letter-spacing: -0.012em;
+	--text-h2--font-weight: 600;
+	--text-h3: var(--np-h3);
+	--text-h3--line-height: 1.2;
+	--text-h3--letter-spacing: -0.012em;
+	--text-h3--font-weight: 500;
+	--text-h4: var(--np-h4);
+	--text-h4--line-height: 1.3;
+	--text-h4--letter-spacing: -0.012em;
+	--text-h4--font-weight: 500;
+	--text-lede: var(--np-lede);
+	--text-lede--line-height: 1.45;
+	--text-body: var(--sites-type-scale-base);
+	--text-body--line-height: var(--sites-type-leading-normal);
+	--text-small: var(--sites-type-scale-sm);
+	--text-small--line-height: 1.5;
+	--text-label: var(--np-label);
+	--text-label--line-height: 1.25;
+	--text-label--font-weight: 500;
+
+	--radius-sm: var(--sites-radius-sm);
+	--radius-field: var(--sites-input-radius);
+	--radius-well: var(--sites-radius-lg);
+	--radius-panel: calc(var(--sites-radius-lg) * 2);
+	--radius-button: var(--sites-button-radius);
+	--shadow-lg: var(--sites-shadow-lg);
+
+	--spacing-space-2xs: 0.25rem;
+	--spacing-space-xs: var(--sites-spacing-xs);
+	--spacing-space-sm: var(--sites-spacing-sm);
+	--spacing-space-md: var(--sites-spacing-md);
+	--spacing-space-lg: var(--sites-spacing-lg);
+	--spacing-space-xl: var(--sites-spacing-xl);
+	--spacing-section: var(--np-section);
+	--spacing-gutter: var(--np-gutter);
+	--spacing-panel: var(--np-panel);
+	--spacing-button-x: var(--sites-button-padding-x);
+	--spacing-button-x-sm: 1.125rem;
+	--spacing-field-x: 1rem;
+	--spacing-field-y: 0.6875rem;
+	--spacing-control: 3rem;
+	--spacing-control-sm: 2.5rem;
+	--spacing-tap: 2.75rem;
+	--spacing-icon-sm: 1rem;
+	--spacing-icon: 1.25rem;
+	--spacing-glyph: 1.5rem;
+	--spacing-header: 4.5rem;
+	--spacing-textarea: 8rem;
+	--spacing-cover: 40rem;
+	--container-page: 75rem;
+	--container-reading: 40rem;
+	--container-form: 32rem;
+	--aspect-landscape: 4 / 3;
+	--aspect-portrait: 4 / 5;
+	--aspect-capsule: 3 / 5;
+	--ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+	--opacity-dots-inactive: 35%;
+}
+
+/* Sizes per breakpoint (phones, from 48rem): each role reads a design token
+   and scales it by the design's ratio for that width, so a workspace that
+   changes the scale moves both widths with it. */
+:root {
+	--np-h1: calc(var(--sites-type-scale-4xl) * 40 / 60);
+	--np-h2: calc(var(--sites-type-scale-3xl) * 30 / 44);
+	--np-h3: calc(var(--sites-type-scale-2xl) * 22 / 28);
+	--np-h4: calc(var(--sites-type-scale-xl) * 18 / 20);
+	--np-lede: calc(var(--sites-type-scale-lg) * 19 / 22);
+	--np-label: calc(var(--sites-type-scale-base) * 16 / 17);
+	--np-section: calc(var(--sites-spacing-2xl) * 3.5 / 6);
+	--np-gutter: calc(var(--sites-spacing-md) * 1.25 / 1.5);
+	--np-panel: var(--sites-spacing-md);
+}
+
+@media (min-width: 48rem) {
+	:root {
+		--np-h1: var(--sites-type-scale-4xl);
+		--np-h2: var(--sites-type-scale-3xl);
+		--np-h3: var(--sites-type-scale-2xl);
+		--np-h4: var(--sites-type-scale-xl);
+		--np-lede: var(--sites-type-scale-lg);
+		--np-section: var(--sites-spacing-2xl);
+		--np-gutter: calc(var(--sites-spacing-md) * 2.5 / 1.5);
+		--np-panel: calc(var(--sites-spacing-lg) * 2);
+	}
+}
+
+/* Dates, amounts and figures line up in columns, in the text face. */
+@utility tnum {
+	font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* The theme's underline: 1px at 0.2em under the text, 2px on hover. link
+   always shows it (text links); link-quiet only on hover and on the current
+   page (menus). */
+@utility link {
+	text-decoration-line: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.2em;
+	&:hover {
+		text-decoration-thickness: 2px;
+	}
+}
+
+@utility link-quiet {
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.2em;
+	&:hover,
+	&[aria-current="page"] {
+		text-decoration-line: underline;
+	}
+}
+
+/* Two bands on the same light scheme in a row read as one: the second drops
+   its top padding so the seam carries one section's space, not two. */
+main > :is(.sites-scheme-paper + .sites-scheme-paper, .sites-scheme-chalk + .sites-scheme-chalk, .sites-scheme-cream + .sites-scheme-cream) > section {
+	padding-top: 0;
+}
+
+/* A link or menu item the page marks as current. */
+@custom-variant current (&[aria-current="page"]);
+
+body:has([data-bare]) [data-group] { display: none; }
+
+html.reveal-off .reveal:not(.is-revealed) {
+	opacity: 1;
+	transform: none;
+	filter: none;
+}
+
+/* split-text hides a heading until it upgrades; with no script to upgrade it, show it. */
+html.reveal-off split-text:not(:defined) {
+	visibility: visible;
+}
+
+:root {
+	font-size: var(--sites-type-base);
+	scrollbar-color: var(--sites-scheme-chip-foreground) transparent;
+}
+
+::selection {
+	background: var(--sites-scheme-foreground);
+	color: var(--sites-scheme-background);
+}
+
+:focus-visible {
+	outline: 2px solid var(--sites-scheme-foreground);
+	outline-offset: 0.1875rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+@layer base {
+	dialog {
+		border: 0;
+		padding: 0;
+		color: inherit;
+	}
+
+	[id] {
+		scroll-margin-top: calc(var(--spacing-header) + 1rem);
+	}
+}
+
+/* Rich text from the editor carries no classes, so its rhythm is set here. */
+@layer components {
+	.prose > * + * {
+		margin-top: var(--sites-spacing-sm);
+	}
+
+	.prose :is(h2, h3, h4) {
+		margin-top: var(--sites-spacing-lg);
+		font-family: var(--font-heading);
+		font-weight: 500;
+		letter-spacing: -0.012em;
+		line-height: 1.2;
+		color: var(--sites-scheme-heading);
+	}
+
+	.prose h2 {
+		font-size: var(--np-h3);
+	}
+
+	.prose :is(h3, h4) {
+		font-size: var(--np-h4);
+	}
+
+	.prose a {
+		@apply link;
+		color: var(--sites-scheme-links);
+	}
+
+	.prose :is(ul, ol) {
+		display: grid;
+		gap: var(--sites-spacing-xs);
+		padding-inline-start: 1.25em;
+	}
+
+	.prose ul {
+		list-style: disc;
+	}
+
+	.prose ol {
+		list-style: decimal;
+	}
+
+	.prose strong {
+		font-weight: 600;
+	}
+}
+
+/* sticky-header pins the element it is, so the renderer's wrapper steps
+   out of the way. */
+[data-section="header"]:has(sticky-header) {
+	display: contents;
+}
+
+@layer components {
+	sticky-header[disabled] {
+		position: static;
+		transform: none;
+	}
+
+	sticky-header::before {
+		content: none;
+	}
+}
+
+/* The carousels: dots in the scheme's text at 35%, the current one in the
+   text; the progress bar a hairline with a fill in the text colour. Before
+   tarot upgrades, or with no JavaScript, a track lays its slides out as a row
+   that scrolls. */
+tarot-carousel {
+	--color-pagination-dot: color-mix(in oklab, var(--sites-scheme-foreground) var(--opacity-dots-inactive), transparent);
+	--color-pagination-dot-active: var(--sites-scheme-foreground);
+	--tarot-progress-height: 0.125rem;
+	--tarot-progress-margin: 0;
+	--tarot-progress-border-radius: var(--sites-radius-full);
+	--tarot-progress-bg: color-mix(in oklab, var(--sites-scheme-foreground) 16%, var(--sites-scheme-background));
+	--tarot-progress-fill-bg: var(--sites-scheme-foreground);
+}
+tarot-carousel > .tarot-dots-list {
+	margin-top: var(--sites-spacing-md);
+}
+tarot-carousel:not(:defined) tarot-track {
+	display: flex;
+	gap: var(--sites-spacing-sm);
+	overflow-x: auto;
+}
+tarot-carousel:not(:defined) tarot-slide {
+	flex: none;
+	width: 80%;
+	opacity: 1;
+	visibility: visible;
+}
+
+/* The select lists: the field on the band's ground with its border, the
+   panel the same, the hovered option on the surface. */
+select-dropdown {
+	--select-shadow: none;
+	--select-shadow-soft: none;
+	--select-color-text: var(--sites-scheme-input-foreground);
+	--select-color-background: var(--sites-scheme-input-background);
+	--select-color-border: var(--sites-scheme-input-border);
+	--select-color-border-hover: var(--sites-scheme-foreground);
+	--select-color-border-dark: var(--sites-scheme-foreground);
+	--select-color-primary: var(--sites-scheme-foreground);
+	--select-color-hover: var(--sites-scheme-chip-background);
+	--select-color-focus: var(--sites-scheme-chip-background);
+	--select-color-selected: var(--sites-scheme-chip-background);
+	display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
+	/* The marquee stands still: one copy, cut with an ellipsis. */
+	[data-ticker] scrolling-content { mask-image: none; }
+	[data-ticker] scrolling-track { width: auto; transform: none !important; }
+	[data-ticker] scrolling-item[data-clone] { display: none; }
+	[data-ticker] scrolling-item { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+	.reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+}

@@ -7,8 +7,7 @@
       "type": "contact",
       "preset": "Default",
       "settings": {
-        "text": "Thirty minutes by video for $150, credited to your plan if you go ahead.",
-        "color_scheme": "navy"
+        "text": "Thirty minutes by video for $150, credited to your plan if you go ahead."
       },
       "blocks": []
     }

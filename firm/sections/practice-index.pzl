@@ -1,0 +1,37 @@
+<!-- The practice areas in their order as a ruled index, each row the link to its page: the practice set as an H3, its summary, and from 64rem its lead's round thumbnail and name in the last three of twelve parts (a practice with no lead leaves them out). Below 64rem the summary sits under the practice. -->
+{#let practices = content.services.entries | sort('fields.order')}
+{#if practices.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-lg">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <ul class="border-t border-scheme-border">
+      {#for practice in practices}
+        {#let lead = practice.fields.team}
+        <li><a class="group grid gap-x-space-lg gap-y-space-2xs border-b border-scheme-border py-space-md lg:grid-cols-12 lg:items-center" href="/practice-areas/{ practice.handle }">
+          <span class="font-heading text-h3 text-balance text-scheme-heading group-hover:underline lg:col-span-4">{ practice.title }</span>
+          <span class="text-pretty text-scheme-muted lg:col-span-5">{ practice.fields.summary }</span>
+          {#if lead}<span class="flex items-center gap-inset text-small max-lg:hidden lg:col-span-3"><Well asset={ lead.fields.image } cls="size-space-lg shrink-0 rounded-full" sizes="2rem" />{ lead.title }</span>{/if}
+        </a></li>
+      {/for}
+    </ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Practice index",
+  "description": "Every practice area as a ruled row: the practice, its summary and who leads it.",
+  "kind": "Collections",
+  "icon": "layout-list",
+  "settings": [
+    { "type": "paragraph", "content": "The practice areas, in their order, with each one's lead." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "" },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

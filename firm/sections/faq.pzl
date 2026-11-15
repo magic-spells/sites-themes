@@ -1,0 +1,53 @@
+<!-- Questions and answers in rows that open and close, the question one weight above the answer, grouped under topic heads set as H3s. The heading and standfirst sit in four parts at the left, sticky from 48rem, with the topics under them as jump links when there are two or more; the questions take eight. The first question under each topic starts open, and the first of all when there are no topics. -->
+{#let
+  id = 'faq-' + section.id
+  toc = size(blocks | where('type', 'topic')) > 1
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-12">
+    <div class="grid gap-space-lg md:sticky md:top-space-lg md:col-span-4">
+      <SectionHead heading={ settings.heading } text={ settings.text } />
+      {#if toc}
+        <nav class="max-md:hidden" aria-label="{ t('topics') }">
+          <ul class="border-t border-scheme-border">{#for block in blocks, i}{#if block.type == 'topic'}<li><a class="block border-b border-scheme-border py-inset hover:underline" href="#{ id }-{ i }">{ block.settings.title }</a></li>{/if}{/for}</ul>
+        </nav>
+      {/if}
+    </div>
+    <div class="md:col-span-8 md:col-start-5">
+      {#for block in blocks, i}
+        {#if block.type == 'topic'}<h2 class="scroll-mt-space-3xl border-b border-scheme-border pb-inset font-heading text-h3 text-balance text-scheme-heading not-first:pt-space-xl" id="{ id }-{ i }" data-block={ block.editor_id }>{ block.settings.title }</h2>
+        {:else}<Disclosure title={ block.settings.question } open={ i == 0 || blocks[i - 1].type == 'topic' } editor={ block.editor_id }><div class="sites-prose max-w-reading">{ block.settings.answer }</div></Disclosure>{/if}
+      {/for}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "FAQ",
+  "description": "Questions and answers that open and close, under topics with jump links.",
+  "kind": "Content",
+  "icon": "circle-help",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Questions" },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "blocks": [
+    { "type": "topic", "name": "Topic", "settings": [
+      { "type": "text", "id": "title", "label": "Topic", "info": "The questions after it, up to the next topic, sit under it. With two topics or more, they list beside the questions as jump links." }
+    ] },
+    { "type": "question", "name": "Question", "settings": [
+      { "type": "text", "id": "question", "label": "Question" },
+      { "type": "richtext", "id": "answer", "label": "Answer" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {}, "blocks": [
+      { "type": "question", "settings": { "question": "What does the first meeting cost?", "answer": "<p>Tell visitors what the first meeting costs, and whether it counts toward the work.</p>" } },
+      { "type": "question", "settings": { "question": "How do you charge?", "answer": "<p>Every matter is quoted on its own after the first meeting, in writing, before we start.</p>" } },
+      { "type": "question", "settings": { "question": "Does sending the form make you my adviser?", "answer": "<p>No. We act for you once we have both signed an engagement letter.</p>" } }
+    ] }
+  ]
+}
+</schema>

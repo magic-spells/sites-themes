@@ -1,0 +1,51 @@
+<!-- A person's page, the dossier: the 4:5 portrait in five parts (the initial when there is none), in seven the role as the one overline, the name and letters as the h1, the decision row over a hairline (the email at the left when set, the ask at the right), the bio, then rows that open: Credentials (one per line), Practice areas (those they lead) and Writing (their posts, newest first), each only when it has something. -->
+{#let
+  person = page.entry
+  f = person.fields
+  credentials = f.credentials | split('\n')
+  practices = content.services.entries | where('fields.team.id', person.id) | sort('fields.order')
+  posts = content.posts.entries | where('fields.team.id', person.id) | sort('fields.date') | reverse
+  link = 'underline hover:decoration-2'
+}
+{#if person}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-picture-text">
+    <Well asset={ f.image } name={ person.title } cls="aspect-portrait rounded-card" sizes="(min-width: 48rem) 40vw, 100vw" />
+    <div class="grid gap-space-md">
+      <div class="grid gap-space-xs">
+        {#if f.role}<p class="text-small text-scheme-muted">{ f.role }</p>{/if}
+        <h1 class="font-heading text-h1 text-balance text-scheme-heading">{ person.title }{#if f.letters}, { f.letters }{/if}</h1>
+      </div>
+      <div class="flex flex-wrap items-center justify-between gap-space-sm border-b border-scheme-border pt-space-xs pb-space-md">
+        {#if f.email}<a class="{ link }" href="mailto:{ f.email }">{ f.email }</a>{/if}
+        <Button />
+      </div>
+      {#if f.bio}<div class="sites-prose max-w-reading pt-space-xs">{ f.bio }</div>{/if}
+      {#if credentials.length || practices.length || posts.length}
+        <div class="mt-space-xs border-t border-scheme-border">
+          {#if credentials.length}<Disclosure title={ t('credentials') }><ul class="grid gap-space-2xs">{#for line in credentials}<li>{ line }</li>{/for}</ul></Disclosure>{/if}
+          {#if practices.length}<Disclosure title={ t('practice_areas') }><ul class="grid gap-space-2xs">{#for practice in practices}<li><a class="{ link }" href="/practice-areas/{ practice.handle }">{ practice.title }</a></li>{/for}</ul></Disclosure>{/if}
+          {#if posts.length}<Disclosure title={ t('writing') }><ul class="grid gap-space-2xs">{#for post in posts}<li><a class="{ link }" href="/insights/{ post.handle }">{ post.title }</a></li>{/for}</ul></Disclosure>{/if}
+        </div>
+      {/if}
+    </div>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Person",
+  "description": "A person's page: the portrait, the name and letters, the ask, the bio and their credentials, practice areas and writing.",
+  "kind": "Content",
+  "icon": "user",
+  "templates": ["person"],
+  "settings": [
+    { "type": "paragraph", "content": "Reads the person this page shows, the practice areas they lead and the posts they wrote; the button is the ask, from the Firm settings." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

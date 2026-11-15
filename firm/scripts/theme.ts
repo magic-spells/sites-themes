@@ -1,10 +1,13 @@
 // The whole of Firm's browser JavaScript. The two sheets (the menu and the
-// ask), the sticky header, the marquee, the select lists, the collapsible rows
-// and the carousels are Magic Spells web components, vendored under ./vendor
-// (see vendor/VERSIONS.md); importing them registers the elements. This file
-// adds the few behaviours they leave to the theme.
+// ask), the sticky header, the marquee, the select lists, the collapsible rows,
+// the carousels with their progress bar and the gallery's lightbox are Magic
+// Spells web components, vendored under ./vendor (see vendor/VERSIONS.md);
+// importing them registers the elements. This file adds the few behaviours
+// they leave to the theme.
 
 import './vendor/collapsible-content.js';
+import './vendor/lightbox.min.js';
+import './vendor/progress-bar.esm.js';
 import './vendor/scrolling-content.js';
 import './vendor/select-dropdown.js';
 import './vendor/sheet.min.js';
@@ -13,6 +16,10 @@ import './vendor/tarot.esm.js';
 
 interface Panel extends HTMLElement {
 	show(trigger?: Element): unknown;
+}
+
+interface Carousel extends HTMLElement {
+	on(event: string, listener: () => void): void;
 }
 
 const DISMISSED = 'sites:dismissed:';
@@ -35,11 +42,24 @@ function remember(key: string): void {
 	}
 }
 
+const lightboxOpener = new Map<Element, HTMLElement>();
 document.addEventListener('click', (event) => {
+	const target = event.target as Element;
 	// The menu button and every ask button name the sheet they open (its
 	// sheet-panel's id); the sheet hands focus back to the opener.
-	const opener = (event.target as Element).closest('[data-panel-open]');
+	const opener = target.closest('[data-panel-open]');
 	if (opener) (document.getElementById(opener.getAttribute('data-panel-open') ?? '') as Panel | null)?.show(opener);
+	// A gallery photo opens the lightbox of its section's hidden carousel at
+	// its own slide (the plugin opens from a slide and has no open(index));
+	// focus goes back to the photo when the lightbox closes.
+	const tile = target.closest<HTMLElement>('[data-lightbox-open]');
+	const carousel = tile && (document.getElementById(tile.dataset.lightboxOpen ?? '') as Carousel | null);
+	const slide = carousel?.querySelectorAll<HTMLElement>('tarot-slide')[Number(tile?.dataset.index)];
+	if (!tile || !carousel || !slide) return;
+	event.preventDefault();
+	if (!lightboxOpener.has(carousel)) carousel.on('lightbox:closed', () => lightboxOpener.get(carousel)?.focus());
+	lightboxOpener.set(carousel, tile);
+	(slide.querySelector('img') ?? slide).click();
 });
 
 // A notice (the announcement, the cookie notice) is keyed by its text. Once one

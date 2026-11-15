@@ -1,0 +1,39 @@
+<!-- A practice area's page, in seven parts: the title as the h1, its summary as the standfirst, the decision row over a hairline (its lead's name, letters and role linking to their page at the left, the ask at the right, the ask's practice select starting on this practice), then the description. Its lead's person card sits in the five parts beside, under the text on phones. A practice with no lead shows the ask alone. -->
+{#let
+  practice = page.entry
+  f = practice.fields
+  lead = f.team
+}
+{#if practice}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-text-picture">
+    <div class="grid gap-space-md">
+      <h1 class="font-heading text-h1 text-balance text-scheme-heading">{ practice.title }</h1>
+      {#if f.summary}<p class="max-w-reading text-lead text-pretty">{ f.summary }</p>{/if}
+      <div class="flex flex-wrap items-center justify-between gap-space-sm border-b border-scheme-border pt-space-xs pb-space-md">
+        {#if lead}<a class="group grid" href="/people/{ lead.handle }"><span class="font-semibold group-hover:underline">{ lead.title }{#if lead.fields.letters}, { lead.fields.letters }{/if}</span><span class="text-small text-scheme-muted">{ lead.fields.role }</span></a>{/if}
+        <Button />
+      </div>
+      {#if f.description}<div class="sites-prose max-w-reading pt-space-xs">{ f.description }</div>{/if}
+    </div>
+    {#if lead}<PersonCard person={ lead } />{/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Practice area",
+  "description": "A practice area's page: its title, who leads it, the ask and the description.",
+  "kind": "Content",
+  "icon": "briefcase",
+  "templates": ["service"],
+  "settings": [
+    { "type": "paragraph", "content": "Reads the practice area this page shows; the button is the ask, from the Firm settings." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

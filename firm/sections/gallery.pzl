@@ -1,0 +1,41 @@
+<!-- A gallery's photos in an even 4:3 grid, three across from 48rem and two on phones, up to the limit. Each photo opens the lightbox at itself, its own alt as the caption (and links the large photo for a page without JavaScript): the lightbox opens from a slide, so the photos sit again in a visually hidden tarot carousel whose pictures take no box. Nothing without photos. -->
+{#let
+  items = settings.gallery.items | slice(0, settings.limit)
+  id = 'gallery-' + section.id
+  options = { lightbox: { showCounter: false }, navigation: { showButtons: false, showPagination: false } }
+}
+{#if items.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-xl">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <tarot-carousel class="sr-only" id={ id } aria-hidden="true">
+      <script type="application/json" data-tarot-options>{ options | json }</script>
+      <tarot-viewport><tarot-track>
+        {#for item in items}<tarot-slide><img class="size-0" src="{ image_url(item.asset, 480) }" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } />{#if item.alt}<p data-caption data-tarot-lightbox-fade>{ item.alt }</p>{/if}</tarot-slide>{/for}
+      </tarot-track></tarot-viewport>
+    </tarot-carousel>
+    <ul class="grid grid-cols-2 gap-space-sm md:grid-cols-3 md:gap-space-md">
+      {#for item in items, i}<li><a class="block cursor-zoom-in" href="{ image_url(item.asset, 2560) }" data-lightbox-open={ id } data-index={ i }><Well asset={ item.asset } cls="aspect-landscape rounded-card" sizes="(min-width: 48rem) 33vw, 50vw" /></a></li>{/for}
+    </ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Gallery",
+  "description": "A gallery's photos in an even grid, each opening larger.",
+  "kind": "Content",
+  "icon": "images",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "The office" },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "gallery", "id": "gallery", "label": "Gallery", "info": "Each photo opens larger, with its alt text as the caption." },
+    { "type": "range", "id": "limit", "label": "Most to show", "min": 2, "max": 12, "step": 1, "default": 6 },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" } }
+  ]
+}
+</schema>

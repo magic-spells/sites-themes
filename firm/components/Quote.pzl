@@ -1,0 +1,5 @@
+<!-- One client's words, as the quotes section shows them: the quote in the heading face, then one meta line, the name in the label weight and the line after it in muted. quote is a quote block's settings. -->
+<figure class="grid gap-space-sm">
+  <blockquote class="font-heading text-h3 leading-snug text-pretty text-scheme-heading">{ quote.quote }</blockquote>
+  <figcaption class="text-small">{#if quote.name}<span class="font-semibold">{ quote.name }</span>{/if}{#if quote.name && quote.line} · {/if}{#if quote.line}<span class="text-scheme-muted">{ quote.line }</span>{/if}</figcaption>
+</figure>

@@ -1,0 +1,51 @@
+<!-- Posts, newest first, as post cards three across from 48rem, up to the limit; on a person's page only the posts they wrote, and nothing when they wrote none. With topic links on, the topics sit under the head as links that filter the list (?topic=), All first. The "All …" pill sits level with the heading. A list with nothing to show prints one plain line. -->
+{#let
+  author = template.type == 'person' ? page.entry : null
+  mine = author ? content.posts.entries | where('fields.team.id', author.id) : content.posts.entries
+  topic = request.query.topic
+  posts = (topic ? mine | where('fields.topic', topic) : mine) | sort('fields.date') | reverse | slice(0, settings.limit)
+  topics = mine | map('fields.topic') | compact | uniq
+}
+{#if !author || mine.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-xl">
+    <SectionHead heading={ settings.heading } text={ settings.text } pill={ settings.pill_label } href={ settings.pill_link }>
+      {#if settings.topics && topics.length > 1}
+        <nav class="col-span-full" aria-label="{ t('topics') }">
+          <ul class="flex flex-wrap gap-x-space-md gap-y-space-xs">
+            <li><a class="hover:underline current:underline" href="{ request.path }" aria-current={ topic ? null : 'page' }>{ t('all_topics') }</a></li>
+            {#for name in topics}<li><a class="hover:underline current:underline" href="?topic={ encodeURIComponent(name) }" aria-current={ name == topic ? 'page' : null }>{ name }</a></li>{/for}
+          </ul>
+        </nav>
+      {/if}
+    </SectionHead>
+    {#if posts.length}
+      <ul class="grid gap-x-space-lg gap-y-space-xl md:grid-cols-3">{#for post in posts}<li><PostCard post={ post } /></li>{/for}</ul>
+    {:else}
+      <p class="text-scheme-muted">{ t('no_posts') }</p>
+    {/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Insights",
+  "description": "Posts as cards, newest first; on a person's page, the posts they wrote.",
+  "kind": "Collections",
+  "icon": "newspaper",
+  "settings": [
+    { "type": "paragraph", "content": "The posts, newest first. On a person's page only the posts they wrote." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Insights" },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 3 },
+    { "type": "checkbox", "id": "topics", "label": "Topic links", "default": false, "info": "Links under the heading that show one topic's posts." },
+    { "type": "text", "id": "pill_label", "label": "Pill label", "default": "", "info": "The outlined link beside the heading, such as All insights. Leave it empty for none." },
+    { "type": "url", "id": "pill_link", "label": "Pill link", "default": "/insights" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

@@ -12,13 +12,16 @@ them is an npm dependency of the theme; the build resolves only these relative i
 | select-dropdown.js, ../styles/vendor/select-dropdown.css | @magic-spells/select-dropdown | 0.3.1 | npm (a form select of four options or more; 0.3.1 keeps a long list inside the ask drawer and blocks an empty required select) |
 | collapsible-content.js, ../styles/vendor/collapsible-content.css | @magic-spells/collapsible-content | 1.2.0 | npm |
 | tarot.esm.js, ../styles/vendor/tarot.css | @magic-spells/tarot | 0.1.0 (unpublished) | tarot monorepo packages/tarot/dist, built 2026-10-31 |
+| lightbox.min.js, ../styles/vendor/lightbox.css | @magic-spells/tarot-plugins | 0.1.0 (unpublished) | packages/tarot-plugins/dist (the gallery's lightbox; the UMD build carries morph-engine 0.4.2) |
+| progress-bar.esm.js, ../styles/vendor/progress-bar.css | @magic-spells/tarot-plugins | 0.1.0 (unpublished) | packages/tarot-plugins/dist and dist/css (the practice cards' progress bar) |
 
-dialog-panel, sticky-header and scrolling-content came from the Clinic theme's vendored copies; collapsible-content
-and tarot from the Community theme's; select-dropdown 0.3.1 from the Academy theme's, all byte for byte. Each runtime build is imported by theme.ts,
+dialog-panel, sticky-header and scrolling-content came from the Clinic theme's vendored copies; collapsible-content,
+tarot and the lightbox from the Community theme's; the progress bar from the Trades theme's; select-dropdown 0.3.1 from
+the Academy theme's, all byte for byte. Each runtime build is imported by theme.ts,
 and each stylesheet into the components layer. CSS lengths other than borders and shadows are rem (sheet.min.css's
 twelve px tokens converted at 16:1; Sheet probes every length token, so rem reaches its geometry unchanged);
 JavaScript builds are unchanged.
 
-Tarot is unpublished and intentionally absent from package.json. TypeScript 7 rejects one valid line of its runtime
+Tarot and tarot-plugins are unpublished and intentionally absent from package.json. TypeScript 7 rejects one valid line of its runtime
 build (a static private field read through `this.constructor`), so tsconfig excludes it and the adjacent
 tarot.esm.d.ts types the registration-only import.

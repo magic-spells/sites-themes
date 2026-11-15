@@ -1,0 +1,53 @@
+<!-- The practice areas in their order as 3:4 photo cards on a tarot track, each card the link to its page, its title in white over a dark foot. Four whole cards from 64rem, three from 48rem; on phones a card and a quarter, the next running past the right gutter to the edge. From 48rem tarot's progress hairline and the round arrows sit under the track. The "All …" pill sits level with the heading. -->
+{#let
+  id = 'cards-' + section.id
+  practices = content.services.entries | sort('fields.order') | slice(0, settings.limit)
+  nav = { showButtons: true, showPagination: false }
+  options = { slidesPerView: 1.25, gap: '1rem', progressBar: { selector: '#bar-' + id }, navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { slidesPerView: 3, gap: '1.5rem', navigation: nav }, '1024': { slidesPerView: 4, gap: '1.5rem', navigation: nav } } }
+  arrow = 'flex size-control items-center justify-center rounded-full border border-current transition-colors duration-fast hover:bg-scheme-surface-2 disabled:pointer-events-none disabled:opacity-40'
+}
+{#if practices.length}
+<section class="overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <tarot-carousel class="mx-auto max-w-column" id={ id }>
+    <script type="application/json" data-tarot-options>{ options | json }</script>
+    <SectionHead heading={ settings.heading } text={ settings.text } pill={ settings.pill_label } href={ settings.pill_link } />
+    <tarot-viewport class="mt-space-lg max-md:overflow-visible"><tarot-track>
+      {#for practice in practices}
+        <tarot-slide>
+          <a class="group relative block overflow-hidden rounded-card" href="/practice-areas/{ practice.handle }">
+            <Well asset={ practice.fields.image } cls="aspect-card" sizes="(min-width: 64rem) 20rem, (min-width: 48rem) 33vw, 80vw" />
+            <span class="absolute inset-x-0 bottom-0 h-3/5 bg-linear-to-b from-transparent to-black/80"></span>
+            <span class="absolute inset-x-0 bottom-0 p-space-md font-heading text-h3 text-balance text-white group-hover:underline">{ practice.title }</span>
+          </a>
+        </tarot-slide>
+      {/for}
+    </tarot-track></tarot-viewport>
+    <div class="mt-space-lg flex items-center gap-space-xs max-md:hidden">
+      <div class="me-space-md flex-1" id="bar-{ id }"></div>
+      <button class="{ arrow }" type="button" data-action-tarot-previous><Glyph name="chevron-left" /><span class="sr-only">{ t('previous') }</span></button>
+      <button class="{ arrow }" type="button" data-action-tarot-next><Glyph name="chevron-right" /><span class="sr-only">{ t('next') }</span></button>
+    </div>
+  </tarot-carousel>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Practice cards",
+  "description": "The practice areas as photo cards on a track, each linking to its page.",
+  "kind": "Collections",
+  "icon": "gallery-horizontal",
+  "settings": [
+    { "type": "paragraph", "content": "The practice areas, in their order, with their 3:4 images." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Practice areas" },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "range", "id": "limit", "label": "Most to show", "min": 2, "max": 12, "step": 1, "default": 12 },
+    { "type": "text", "id": "pill_label", "label": "Pill label", "default": "All practice areas", "info": "The outlined link beside the heading. Leave it empty for none." },
+    { "type": "url", "id": "pill_link", "label": "Pill link", "default": "/practice-areas" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

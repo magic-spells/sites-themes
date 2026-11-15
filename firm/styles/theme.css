@@ -1,6 +1,8 @@
 @import "tailwindcss" source(none);
 @import "./vendor/collapsible-content.css" layer(components);
 @import "./vendor/dialog-panel.css" layer(components);
+@import "./vendor/lightbox.css" layer(components);
+@import "./vendor/progress-bar.css" layer(components);
 @import "./vendor/scrolling-content.css" layer(components);
 @import "./vendor/select-dropdown.css" layer(components);
 @import "./vendor/sheet.min.css" layer(components);
@@ -60,6 +62,7 @@
 	--spacing-space-2xl: var(--sites-spacing-2xl);
 	--spacing-space-3xl: calc(var(--sites-spacing-2xl) * 4 / 3);
 	--spacing-section: var(--firm-section);
+	--spacing-hero: calc(var(--firm-section) * 1.5);
 	--spacing-gutter: var(--firm-gutter);
 	--spacing-button-x: var(--sites-button-padding-x);
 	--spacing-inset: 0.75rem;
@@ -75,16 +78,19 @@
 	--container-band: 52rem;
 	--container-reading: 40rem;
 	--container-narrow: 34rem;
+	--container-letter: 60ch;
 
-	/* Practice cards 3:4, people 4:5, the overlap picture 16:10, posts 3:2. */
+	/* Practice cards 3:4, people 4:5, the overlap picture 16:10, posts 3:2,
+	   the gallery and the map 4:3. */
 	--aspect-card: 3 / 4;
 	--aspect-portrait: 4 / 5;
 	--aspect-wide: 16 / 10;
 	--aspect-photo: 3 / 2;
+	--aspect-landscape: 4 / 3;
 
 	/* A picture beside text: seven parts to five; a head beside its pill. */
-	--grid-template-columns-text-picture: 7fr 5fr;
-	--grid-template-columns-picture-text: 5fr 7fr;
+	--grid-template-columns-text-picture: minmax(0, 7fr) minmax(0, 5fr);
+	--grid-template-columns-picture-text: minmax(0, 5fr) minmax(0, 7fr);
 	--grid-template-columns-head: minmax(0, 1fr) auto;
 	--grid-template-columns-menus: repeat(auto-fit, minmax(9rem, 1fr));
 
@@ -226,6 +232,40 @@ select-dropdown {
 	--select-color-selected: var(--sites-scheme-chip-background);
 	--select-shadow: var(--sites-shadow-md);
 	--select-shadow-soft: none;
+}
+
+/* The carousels: never wider than their column (tarot sizes the track from
+   the carousel, so a grid or flex item left at its content width grows without
+   end); the progress a hairline in the rule colour filled in the text; the
+   quotes' page dots under the quote at its left, the current one in the text,
+   the rest at 35%. Before tarot upgrades, or with no JavaScript, a track lays
+   its slides out as a row that scrolls. */
+tarot-carousel {
+	min-width: 0;
+	--tarot-progress-height: 0.125rem;
+	--tarot-progress-margin: 0;
+	--tarot-progress-border-radius: 0;
+	--tarot-progress-bg: var(--sites-scheme-chip-border);
+	--tarot-progress-fill-bg: var(--sites-scheme-foreground);
+	--color-pagination-dot: color-mix(in srgb, var(--sites-scheme-foreground) 35%, transparent);
+	--color-pagination-dot-active: var(--sites-scheme-foreground);
+}
+
+tarot-carousel > .tarot-dots-list {
+	margin: var(--sites-spacing-md) 0 0;
+}
+
+tarot-carousel:not(:defined) tarot-track {
+	display: flex;
+	gap: var(--sites-spacing-sm);
+	overflow-x: auto;
+}
+
+tarot-carousel:not(:defined) tarot-slide {
+	flex: none;
+	width: 80%;
+	opacity: 1;
+	visibility: visible;
 }
 
 :root {

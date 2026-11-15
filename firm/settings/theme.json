@@ -4,6 +4,7 @@
   "default_template": "page",
   "not_found_template": "404",
   "maintenance_template": "maintenance",
+  "query": ["topic"],
   "groups": {
     "header-group": { "label": "Header", "accepts": ["announcement-bar", "header"] },
     "footer-group": { "label": "Footer", "accepts": ["footer"] },

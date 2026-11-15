@@ -9,8 +9,8 @@
       {#if form.sent}
         <p class="text-lede" role="status">{ form.success_message || t('form_success') }</p>
       {:else}
-        <div class="flex flex-col gap-space-sm text-left md:flex-row">
-          {#for field in form.fields}<Field name={ field.id } label={ field.label } type={ field.type } placeholder={ field.label } required={ field.required } maxlength={ field.max_length } value={ field.value } error={ field.error } prefix="news-{ section.id }" cls="min-w-0 flex-1" bare />{/for}
+        <div class="flex flex-col gap-space-sm text-left md:flex-row md:items-start">
+          {#for field in form.fields}<Field field={ field } prefix="news-{ section.id }" cls="min-w-0 flex-1" bare />{/for}
           <Button type="submit">{ form.submit_label || t('sign_up') }</Button>
         </div>
         {#if form.error}<p class="text-small text-scheme-error" role="alert">{ t('form_error') }</p>{/if}

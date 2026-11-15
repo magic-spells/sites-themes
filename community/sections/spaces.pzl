@@ -16,7 +16,7 @@
         {/for}
       </ul>
     {/if}
-    {#if settings.link?.href}<Button href={ settings.link.href } cls="mt-space-xl">{ settings.link.label }</Button>{/if}
+    {#if settings.link.href}<Button href={ settings.link.href } cls="mt-space-xl">{ settings.link.label }</Button>{/if}
   </div>
 </section>
 

@@ -1,9 +1,9 @@
 <!-- An event's page, in a 48rem column: the H1, then one row saying when and where (the long date, the time, the place) with its link as a button at the right and a hairline under it; the 3:2 photo; the description at reading width; Part of its group, linked; and, when it names an album, Photos from last time: four of its photos and a link to the album. -->
 {#let
   entry = page.entry
-  f = entry?.fields
-  album = f?.album
-  photos = album?.fields.photos ? (album.fields.photos.items | slice(0, 4)) : []
+  f = entry.fields
+  album = f.album
+  photos = album.fields.photos.items | slice(0, 4)
 }
 {#if entry}
 <article class="bg-scheme-background px-gutter py-section text-scheme-foreground">

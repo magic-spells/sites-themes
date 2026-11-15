@@ -1,4 +1,4 @@
-<!-- Prints (Print) across the band, wider than the column: the albums' covers, newest first, each captioned with its album's title and linked to it; or one gallery's photos, captioned with their alt text, each opening the lightbox. collage: each print at its box in a stage of fixed ratio (left, top and width as fractions of the stage); five prints in a stepped row, or seven in two rows from seven photos; phones show a stepped column of five. Where two prints overlap, the one that ends higher lies on top, so no print covers another's caption; overlaps stay near a tenth of a print. mosaic: one large print and four small. Under five photos the wall hides. The prints settle in, in order. -->
+<!-- Prints (Print) wider than the column: a gallery's photos opening the lightbox, else each album's first photo linking to it, in a collage of five or seven (boxes as fractions of the stage; the print ending higher lies on top) or a mosaic of five. Hides under five. -->
 {#let
   albums = !settings.gallery
   all = albums ? (content.albums.entries | sort('fields.date') | reverse) : settings.gallery.items

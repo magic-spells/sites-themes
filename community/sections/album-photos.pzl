@@ -1,8 +1,8 @@
 <!-- An album's page: the H1, the date, the description and, when it names one, the event it came from; then every photo as a square well, two, three then four across, each opening the lightbox (and linking the large photo for a page without JavaScript). -->
 {#let
   album = page.entry
-  f = album?.fields
-  items = f?.photos ? f.photos.items : []
+  f = album.fields
+  items = f.photos.items
   id = 'album-' + section.id
   lb = { lightbox: { showCounter: false }, navigation: { showButtons: false, showPagination: false } }
 }

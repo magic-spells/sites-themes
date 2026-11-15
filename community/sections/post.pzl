@@ -1,7 +1,7 @@
 <!-- A post's page: the H1, the date and topic in the label in muted, the standfirst, the 3:2 picture across the column, then the body at reading width. -->
 {#let
   post = page.entry
-  f = post ? post.fields : null
+  f = post.fields
 }
 {#if post}
 <article class="bg-scheme-background px-gutter py-section text-scheme-foreground">

@@ -1,6 +1,6 @@
 <!-- component: Slip -->
 <!-- One slip on the noticeboard, on paper. An event (entry): its date as "Nov 21" in the label, its title in H4 linked to its page, the time and place in small muted, its line in small. A notice: its text (text) and an optional text link (link). Its own height, never a colour, tilt, pin or tape. -->
-{#let f = entry?.fields}
+{#let f = entry.fields}
 <li class="{ 'paper' | scheme_class } grid gap-space-xs rounded-paper bg-scheme-background p-slip text-scheme-foreground { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-group="slips:60" data-block={ editor_id }>
   {#if entry}
     <time class="text-label tnum" datetime="{ f.date }">{ f.date | date('medium') | split(',') | first }</time>
@@ -9,6 +9,6 @@
     {#if f.summary}<p class="text-small text-pretty">{ f.summary }</p>{/if}
   {:else}
     <p class="whitespace-pre-line text-pretty">{ text }</p>
-    {#if link?.href}<a class="justify-self-start text-small text-scheme-link underline decoration-1 underline-offset-4 hover:decoration-2" href="{ link.href }">{ link.label }</a>{/if}
+    {#if link.href}<a class="justify-self-start text-small text-scheme-link underline decoration-1 underline-offset-4 hover:decoration-2" href="{ link.href }">{ link.label }</a>{/if}
   {/if}
 </li>

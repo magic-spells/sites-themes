@@ -1,6 +1,6 @@
 <!-- The opener, left-aligned: the H1 across up to seven columns (its words rise in), the standfirst at reading width and up to two buttons (primary, then secondary). Under them four photos in a row across the whole column, four across at every width, 4:5 on phones and 3:2 from 48rem; fewer than four and the strip hides. No overlay and no text on photos. -->
 {#let
-  photos = settings.photos ? (settings.photos.items | slice(0, 4)) : []
+  photos = settings.photos.items | slice(0, 4)
   one = settings.link
   two = settings.link_2
 }
@@ -8,10 +8,10 @@
   <div class="mx-auto grid max-w-column justify-items-start gap-space-lg">
     <h1 class="max-w-hero font-heading text-h1 text-balance text-scheme-heading"><Rise text={ settings.heading } /></h1>
     {#if settings.text}<p class="max-w-reading text-pretty">{ settings.text }</p>{/if}
-    {#if one?.href || two?.href}
+    {#if one.href || two.href}
       <div class="flex flex-wrap gap-space-sm pt-space-xs">
-        {#if one?.href}<Button href={ one.href }>{ one.label }</Button>{/if}
-        {#if two?.href}<Button href={ two.href } tone="secondary">{ two.label }</Button>{/if}
+        {#if one.href}<Button href={ one.href }>{ one.label }</Button>{/if}
+        {#if two.href}<Button href={ two.href } tone="secondary">{ two.label }</Button>{/if}
       </div>
     {/if}
     {#if photos.length == 4}

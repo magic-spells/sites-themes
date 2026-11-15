@@ -7,7 +7,7 @@
     <ul class="grid grid-cols-3 gap-space-xs md:flex-1 md:grid-cols-6">
       {#for block in tiles}
         {#let b = block.settings}
-        <li data-block={ block.editor_id }><a class="block" href="{ b.link || settings.url }" target="_blank" rel="noopener"><Well asset={ b.image } alt={ b.image?.alt || t('social_post') } width={ 480 } sizes="(min-width: 48rem) 12rem, 33vw" /></a></li>
+        <li data-block={ block.editor_id }><a class="block" href="{ b.link || settings.url }" target="_blank" rel="noopener"><Well asset={ b.image } alt={ b.image.alt || t('social_post') } width={ 480 } sizes="(min-width: 48rem) 12rem, 33vw" /></a></li>
       {/for}
     </ul>
   </div>

@@ -1,11 +1,11 @@
-<!-- A group's page. Seven parts to five from 64rem: the H1, its line as the standfirst, one row saying when and where (When, then the place or At the house) with the group's link as a button at its right and a hairline under it, then the description at reading width; at the right the 3:2 photo and under it who hosts it, their portrait or initial at 3rem beside the role over the name. With no photo the text runs at reading width and the host follows it. Then up to three more groups as rows: the same kind, else the first by Position. -->
+<!-- A group's page: the H1, its line, when and where with its link, the description; from 64rem the 3:2 photo and the host at the right (with no photo the host follows the text); then up to three more groups, of its kind when there are any. -->
 {#let
   entry = page.entry
-  f = entry?.fields
-  others = content.groups.entries | sort('title') | sort('fields.order') | reject('id', entry?.id)
-  same = f?.kind ? (others | where('fields.kind', f.kind)) : []
+  f = entry.fields
+  others = content.groups.entries | sort('title') | sort('fields.order') | reject('id', entry.id)
+  same = f.kind ? (others | where('fields.kind', f.kind)) : []
   more = (same.length ? same : others) | slice(0, 3)
-  host = f?.host
+  host = f.host
 }
 {#if entry}
 <article class="bg-scheme-background px-gutter py-section text-scheme-foreground">

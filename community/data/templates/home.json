@@ -56,7 +56,6 @@
       "type": "noticeboard",
       "preset": "Default",
       "settings": {
-        "newsletter_link": "#newsletter",
         "color_scheme": "blue"
       },
       "blocks": [

@@ -1,11 +1,9 @@
-<!-- The contact page: the heading, the standfirst and the Contact email and phone as text links in five parts, the contact form on a white card in seven, from 64rem; stacked below. The address and hours follow in their own band (hours-location). -->
+<!-- The contact page: the heading and the standfirst in five parts, the contact form on a white card in seven, from 64rem; stacked below. The address, phone, email and hours follow in their own band (hours-location). -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column items-start gap-space-xl lg:grid-cols-narrow-wide lg:gap-space-2xl">
-    <div class="grid justify-items-start gap-space-xs">
+    <div class="grid gap-space-xs">
       <h2 class="font-heading text-h2 text-balance text-scheme-heading">{ settings.heading }</h2>
       {#if settings.text}<p class="max-w-prose text-lead text-pretty text-scheme-muted">{ settings.text }</p>{/if}
-      {#if site.settings.email}<a class="text-body font-medium underline decoration-1 underline-offset-4" href="mailto:{ site.settings.email }">{ site.settings.email }</a>{/if}
-      {#if site.settings.phone}<a class="text-body font-medium underline decoration-1 underline-offset-4" href="tel:{ site.settings.phone | replace(' ', '') }">{ site.settings.phone }</a>{/if}
     </div>
     <div class="sites-scheme-white rounded-lg border border-scheme-rule bg-scheme-background p-space-lg text-scheme-foreground lg:p-space-xl"><AskFields handle={ settings.form } prefix={ section.id } /></div>
   </div>
@@ -14,7 +12,7 @@
 <schema>
 {
   "name": "Contact",
-  "description": "The office's email and phone beside a contact form on a card.",
+  "description": "A contact form on a card beside its heading.",
   "kind": "Contact",
   "icon": "mail",
   "settings": [

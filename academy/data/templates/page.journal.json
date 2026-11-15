@@ -15,9 +15,7 @@
       "id": "s_posts",
       "type": "journal-list",
       "preset": "Default",
-      "settings": {
-        "limit": 5
-      },
+      "settings": {},
       "blocks": []
     },
     {

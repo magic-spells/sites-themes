@@ -17,4 +17,10 @@
 - The lists and their pages: programmes (a grid, and each programme's page); events (cards,
   a carousel past three, or rows under each month, and each event's page); news (a feature,
   a grid or a list, with topic links, and each post's page); the team; visit us (each
-  location's address and hours); reports; partners (a grid or a marquee); and social tiles.
+  location's address and hours); reports; partners (a grid or a marquee, at a regular or a
+  large logo size); and social tiles.
+- The asks: the giving band (an inset panel or a band, with what a gift does), impact (dated
+  figures and where a gift goes), ways to help, ways to give, the volunteer form beside its
+  roles, a story (a post, or quotes taking turns) and an embed for a provider's form.
+- Every scheme reads at 4.5:1 for text and 3:1 for field borders under all three palettes.
+  Pictures carry their asset's own alt text.

@@ -1,0 +1,111 @@
+{
+  "label": "Ask",
+  "description": "The ask form beside the address, then the ways to visit first, then questions.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Tell us the class and the days that suit, and we will find a place."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_form",
+      "type": "ask-form",
+      "preset": "Default",
+      "settings": {
+        "heading": "About the student"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_visit",
+      "type": "visit-options",
+      "preset": "Default",
+      "settings": {},
+      "blocks": [
+        {
+          "type": "option",
+          "settings": {
+            "heading": "Open morning",
+            "text": "Come and watch any Saturday class and meet the teachers.",
+            "date_line": "Saturday 24 April · 10:00–12:00",
+            "button_label": "Term dates",
+            "button_href": "/dates"
+          }
+        },
+        {
+          "type": "option",
+          "settings": {
+            "heading": "Trial lesson",
+            "text": "The first group class is free. We hold a place for you that week.",
+            "ask": true
+          }
+        },
+        {
+          "type": "option",
+          "settings": {
+            "heading": "A look round",
+            "text": "Any weekday afternoon, by arrangement with the office.",
+            "button_label": "Contact the office",
+            "button_href": "/contact"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "light-blue"
+      },
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "Can my child try a class first?",
+            "answer": "<p>Yes. The first group class is a free trial. Book a trial lesson and we will offer a date.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "What if a class is full?",
+            "answer": "<p>We keep a waiting list for every class and offer places in the order we hear from you.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do you teach adults?",
+            "answer": "<p>Yes. Adult Choir and Adult Tap run on weekday evenings, and every one-to-one lesson is open to adults.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "How do fees work?",
+            "answer": "<p>Every class is paid by the term, before the first class. One-to-one lessons come ten to a term.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "What happens at half term?",
+            "answer": "<p>The school is closed for half term. Term fees already leave that week out.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do pupils take exams?",
+            "answer": "<p>Only if they want to. Teachers enter pupils for graded exams when they are ready.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}

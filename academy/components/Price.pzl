@@ -1,0 +1,4 @@
+<!-- component: Price -->
+<!-- A class's price in the Brand currency, then its period in muted: "£132 a term", "From £22 a lesson"; pence only when the price has them; tabular figures. Nothing without a price. -->
+{#let f = entry.fields}
+{#if f.price}<span class="whitespace-nowrap tabular-nums">{#if f.price_from}{ t('from') } {/if}{ f.price | currency(site.settings.currency_symbol, f.price % 1 ? 2 : 0) }{#if f.period} <span class="font-normal text-scheme-muted">{ f.period }</span>{/if}</span>{/if}

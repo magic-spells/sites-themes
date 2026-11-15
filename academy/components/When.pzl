@@ -1,0 +1,8 @@
+<!-- component: When -->
+<!-- When a class runs, as text: one weekly session gives its day and start ("Tue 17:30"); several give their days in week order ("Mon, Wed, Fri"; the timetable has the times); none, its first dated run from events of kind class ("30 Mar – 1 Apr"); else "By arrangement". -->
+{#let
+  weekly = content.sessions.entries | where('fields.class.handle', entry.handle)
+  days = [(weekly | find('fields.day', 'mon')), (weekly | find('fields.day', 'tue')), (weekly | find('fields.day', 'wed')), (weekly | find('fields.day', 'thu')), (weekly | find('fields.day', 'fri')), (weekly | find('fields.day', 'sat')), (weekly | find('fields.day', 'sun'))] | compact
+  run = content.events.entries | where('fields.kind', 'class') | where('fields.class.handle', entry.handle) | sort('fields.date') | first
+}
+<span class="tabular-nums">{#if weekly.length == 1 && days.length}{ t('day.' + days[0].fields.day) } { days[0].fields.start }{:else if days.length}{#for s in days, i}{ i ? ', ' : '' }{ t('day.' + s.fields.day) }{/for}{:else if run}<DateRange from={ run.fields.date } to={ run.fields.end_date } />{:else}{ t('by_arrangement') }{/if}</span>

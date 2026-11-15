@@ -1,0 +1,24 @@
+<!-- Prose in the 42rem reading column: an optional heading, then the text, or the page's own body when the text is empty (the privacy and terms pages). -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-prose gap-space-md">
+    {#if settings.heading}<h2 class="font-heading text-h2 text-balance text-scheme-heading">{ settings.heading }</h2>{/if}
+    <div class="sites-prose text-body">{#if settings.text}{ settings.text }{:else}{ page.content }{/if}</div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Rich text",
+  "description": "A heading and prose in a reading column.",
+  "kind": "Content",
+  "icon": "text-align-start",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "", "info": "Leave empty to show the page's own text." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

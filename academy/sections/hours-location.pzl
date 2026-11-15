@@ -1,0 +1,68 @@
+<!-- One location: the heading, the address with the pin, the phone and email as text links, the hours as a two-column table, the note, Directions; beside them the location's 3:2 photo, or its map (an image, or the embedded map when one is set and the setting asks). -->
+{#let
+  loc = settings.location || (content.locations.entries | sort('fields.order') | first)
+  f = loc.fields
+  embed = settings.map == 'embed' && f.map_embed_url
+}
+{#if loc}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-center gap-space-xl md:grid-cols-2 md:gap-space-2xl">
+    <div class="grid justify-items-start gap-space-lg">
+      <div class="grid gap-space-sm">
+        <h2 class="font-heading text-h2 text-balance text-scheme-heading">{ settings.heading || loc.title }</h2>
+        {#if f.address}<p class="flex gap-space-xs text-lead"><Icon name="pin" cls="mt-space-2xs size-icon" /><span class="whitespace-pre-line">{ f.address }</span></p>{/if}
+      </div>
+      {#if f.phone || f.email}<p class="grid gap-space-2xs">
+        {#if f.phone}<a class="justify-self-start underline decoration-1 underline-offset-4" href="tel:{ f.phone | replace(' ', '') }">{ f.phone }</a>{/if}
+        {#if f.email}<a class="justify-self-start underline decoration-1 underline-offset-4" href="mailto:{ f.email }">{ f.email }</a>{/if}
+      </p>{/if}
+      {#if settings.show_hours && f.hours}
+        <table class="w-full max-w-text text-small">
+          <caption class="sr-only">{ t('hours') }</caption>
+          <tbody>
+            {#for line in f.hours | split('\n')}
+              {#let
+                row = line | strip
+                times = row | split(' ') | last
+              }
+              {#if row}<tr class="border-b border-scheme-rule"><th class="w-1/2 py-space-xs pe-space-md text-left font-normal text-scheme-muted" scope="row">{ row | replace(times, '') | strip }</th><td class="py-space-xs">{ times }</td></tr>{/if}
+            {/for}
+          </tbody>
+        </table>
+      {/if}
+      {#if f.note}<p class="text-small text-scheme-muted">{ f.note }</p>{/if}
+      {#if f.map_url}<Button href={ f.map_url } tone="outline">{ t('directions') }</Button>{/if}
+    </div>
+    {#if settings.show_map && embed}
+      <div class="aspect-photo overflow-hidden rounded-lg bg-scheme-surface-2"><iframe class="size-full" src="{ f.map_embed_url }" title="{ loc.title }" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    {:else if settings.show_map && f.map_image}
+      <Well asset={ f.map_image } width={ 1200 } sizes="(min-width: 48rem) 50vw, 100vw" />
+    {:else}
+      <Well asset={ f.image } width={ 1200 } sizes="(min-width: 48rem) 50vw, 100vw" />
+    {/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Hours and location",
+  "description": "The school's hours, address and phone, beside its photo or a map.",
+  "kind": "Contact",
+  "icon": "map-pin",
+  "settings": [
+    { "type": "entry", "id": "location", "label": "Location", "info": "Leave empty for the first location." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "", "info": "Leave empty to use the location's name." },
+    { "type": "checkbox", "id": "show_hours", "label": "Hours", "default": true },
+    { "type": "checkbox", "id": "show_map", "label": "Map instead of the photo", "default": false },
+    { "type": "select", "id": "map", "label": "Map", "default": "image", "options": [
+      { "value": "image", "label": "The map image" },
+      { "value": "embed", "label": "The embedded map, when set" }
+    ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" } }
+  ]
+}
+</schema>

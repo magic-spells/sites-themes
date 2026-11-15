@@ -1,0 +1,101 @@
+{
+  "label": "Fees",
+  "description": "Every class price by subject beside the extra lines, questions, then the ask.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Paid by the term, before the first class."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_fees",
+      "type": "fees",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "text": ""
+      },
+      "blocks": [
+        {
+          "type": "line",
+          "settings": {
+            "label": "Registration",
+            "value": "£25 a year, per family"
+          }
+        },
+        {
+          "type": "line",
+          "settings": {
+            "label": "Second child",
+            "value": "10% off"
+          }
+        },
+        {
+          "type": "line",
+          "settings": {
+            "label": "Exam entry",
+            "value": "at the board’s rate"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_faq",
+      "type": "faq",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "white"
+      },
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "How do fees work?",
+            "answer": "<p>Every class is paid by the term, before the first class. One-to-one lessons come ten to a term.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "What happens at half term?",
+            "answer": "<p>The school is closed for half term. Term fees already leave that week out.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do pupils take exams?",
+            "answer": "<p>Only if they want to. Teachers enter pupils for graded exams when they are ready.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Can my child try a class first?",
+            "answer": "<p>Yes. The first group class is a free trial. Book a trial lesson and we will offer a date.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "What if a class is full?",
+            "answer": "<p>We keep a waiting list for every class and offer places in the order we hear from you.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_ask",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "brick"
+      },
+      "blocks": []
+    }
+  ]
+}

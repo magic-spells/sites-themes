@@ -1,0 +1,62 @@
+<!-- The fees as a real table from the classes, one body per subject in class order: the subject with its swatch, then each class with its ages under it in small muted, a dotted leader and the price, the prices in one column as wide as the longest so every leader meets its price. From 64rem the table takes seven parts and the extra lines (blocks: registration, a sibling discount) five, on the same leaders, with one note under them. -->
+{#let
+  classes = content.classes.entries | where('fields.subject') | sort('fields.order')
+  subjects = classes | map('fields.subject') | uniq
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <div class="grid items-start gap-space-xl lg:grid-cols-wide-narrow lg:gap-space-2xl">
+      <table class="w-full text-left">
+        <caption class="sr-only">{ settings.heading || t('fees') }</caption>
+        <thead><tr class="border-b border-scheme-rule text-small text-scheme-muted"><th class="pb-space-xs font-normal" scope="col">{ t('class') }</th><th class="pb-space-xs font-normal" scope="col">{ t('price') }</th></tr></thead>
+        {#for subject in subjects}
+          <tbody>
+            <tr><th class="pt-space-lg pb-space-xs" colspan="2" scope="colgroup"><span class="flex items-center gap-space-xs font-heading text-h4"><Swatch subject={ subject } subjects={ subjects } />{ subject }</span></th></tr>
+            {#for entry in classes | where('fields.subject', subject)}
+              <tr class="border-b border-scheme-rule align-baseline">
+                <th class="py-cell font-normal" scope="row"><span class="flex items-baseline gap-space-sm"><a class="hover:underline hover:decoration-1 hover:underline-offset-4" href="/classes/{ entry.handle }">{ entry.title }</a><Leader /></span>{#if entry.fields.ages}<span class="block text-small text-scheme-muted">{ entry.fields.ages }</span>{/if}</th>
+                <td class="w-0 py-cell ps-space-sm text-label whitespace-nowrap">{#if entry.fields.price}<Price entry={ entry } />{:else}{ t('ask') }{/if}</td>
+              </tr>
+            {/for}
+          </tbody>
+        {/for}
+      </table>
+      {#if blocks.length || settings.note}
+        <div class="grid gap-space-md">
+          {#if blocks.length}<ul class="border-t border-scheme-rule">{#for block in blocks}<li class="flex items-baseline gap-space-sm border-b border-scheme-rule py-cell" data-block={ block.editor_id }><span>{ block.settings.label }</span><Leader /><span class="text-label whitespace-nowrap">{ block.settings.value }</span></li>{/for}</ul>{/if}
+          {#if settings.note}<p class="text-small text-scheme-muted">{ settings.note }</p>{/if}
+        </div>
+      {/if}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Fees",
+  "description": "Every class's price by subject in one table, beside the extra lines and a note.",
+  "kind": "Collections",
+  "icon": "receipt",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Fees" },
+    { "type": "text", "id": "text", "label": "Text", "default": "Paid by the term, before the first class." },
+    { "type": "textarea", "id": "note", "label": "Note", "default": "Ask us about paying monthly." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "blocks": [
+    { "type": "line", "name": "Line", "settings": [
+      { "type": "text", "id": "label", "label": "Label", "default": "Registration" },
+      { "type": "text", "id": "value", "label": "Value", "default": "£25 a year, per family", "info": "Typed as it should read: £25 a year, 10% off." }
+    ] }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    { "name": "Default", "settings": {}, "blocks": [
+      { "type": "line", "settings": { "label": "Registration", "value": "£25 a year, per family" } },
+      { "type": "line", "settings": { "label": "Second child", "value": "10% off" } },
+      { "type": "line", "settings": { "label": "Exam entry", "value": "at the board’s rate" } }
+    ] }
+  ]
+}
+</schema>

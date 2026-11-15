@@ -1,0 +1,22 @@
+<!-- component: ClassCard -->
+<!-- A class, one link to its page, as tall as its row with the price at the foot. On its subject's cover (the default): the 3:2 photo with md corners inside the cover, a label riding up over the photo's lower-left corner with the name and "Ages 8–11 · Grades 1–3", then the price and when it runs in the cover's colours. plain drops the cover: the photo, the name, the ages and level, the price, on the section's own colours. The name's level follows sub, as Heading. -->
+{#let
+  f = entry.fields
+  sizes = '(min-width: 64rem) 25rem, (min-width: 48rem) 50vw, 85vw'
+  name = 'font-heading text-h4 text-balance group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4'
+  meta = f.ages && f.level ? f.ages + ' · ' + f.level : f.ages || f.level
+}
+<a class="group flex h-full flex-col { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" href="/classes/{ entry.handle }">
+  {#if plain}
+    <Well asset={ f.image } alt="" width={ 800 } sizes={ sizes } zoom />
+    <Heading sub={ sub } cls="mt-space-sm { name }">{ entry.title }</Heading>
+    <p class="mt-space-2xs text-small text-scheme-muted">{ meta }</p>
+    <p class="mt-auto pt-space-sm text-label"><Price entry={ entry } /></p>
+  {:else}
+    <Swatch subject={ f.subject } subjects={ subjects } cls="flex flex-1 flex-col rounded-lg p-chip">
+      <Well asset={ f.image } alt="" round="rounded-md" width={ 800 } sizes={ sizes } zoom />
+      <div class="px-space-sm { f.image ? '-mt-overlap' : '' }"><Label><Heading sub={ sub } cls={ name }>{ entry.title }</Heading><p class="text-small text-scheme-muted">{ meta }</p></Label></div>
+      <p class="mt-auto flex flex-wrap items-baseline justify-between gap-x-space-sm gap-y-space-2xs px-space-2xs pt-space-md text-small"><span class="text-label"><Price entry={ entry } /></span><When entry={ entry } /></p>
+    </Swatch>
+  {/if}
+</a>

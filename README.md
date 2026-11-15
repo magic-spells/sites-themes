@@ -11,6 +11,7 @@ complete theme: the same files a site's draft theme starts from.
 | [`ledger/`](ledger/) | A news site: lead story, latest list, story grids, topic blocks, and articles with key facts and author cards. |
 | [`darkroom/`](darkroom/) | A photographer's portfolio on a near-black ground: series of photographs, carousels, grids and a lightbox, services, prints and packages, and a contact form. |
 | [`nonprofit/`](nonprofit/) | A community charity: the Donate button in every header, programmes, events, news, impact figures, ways to give and to help, the volunteer and contact forms, and partners. |
+| [`academy/`](academy/) | A school that teaches in classes: subjects, the class list and fees, the weekly timetable, term dates, teachers, and the ask for a trial lesson from every page. |
 
 Each theme's own README explains its files, sections, styling and scripts.
 

@@ -1,0 +1,34 @@
+{
+  "label": "Dates",
+  "description": "Every term, closure, event and dated class in one list, then the newsletter.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "Terms, half terms, concerts, exams and holiday courses for the year."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_dates",
+      "type": "dates",
+      "preset": "Everything",
+      "settings": {
+        "heading": "",
+        "color_scheme": "feint"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_news",
+      "type": "newsletter",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "light-blue"
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+<!-- A class's page. The head, seven parts to five from 64rem: the title in h1, the summary as the standfirst and the decision row (the price at h3 size in the text face, the ask with this class chosen or the class's own link under the ask label, a rule under), beside the 3:2 photo. The body, seven to five: the description and what to bring, beside the facts on rules (ages, level, length, teacher, where) and When: the weekly sessions in day order, else its dated runs, else "By arrangement" and the ask. Then up to four more classes in the subject. On phones the facts and When come before the description. -->
+{#let
+  entry = page.entry
+  f = entry.fields
+  weekly = content.sessions.entries | where('fields.class.handle', entry.handle) | sort('fields.start')
+  runs = content.events.entries | where('fields.kind', 'class') | where('fields.class.handle', entry.handle) | sort('fields.date')
+  more = content.classes.entries | sort('fields.order') | where('fields.subject', f.subject) | reject('handle', entry.handle) | slice(0, 4)
+  where_at = (weekly.length ? weekly : runs) | map('fields.location.title') | uniq | compact | join(', ')
+  fact = 'flex items-baseline justify-between gap-space-md border-b border-scheme-rule py-cell'
+}
+{#if entry}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-2xl">
+    <div class="grid items-center gap-space-xl lg:grid-cols-wide-narrow lg:gap-space-2xl">
+      <div class="grid gap-space-md">
+        <h1 class="font-heading text-h1 text-balance text-scheme-heading"><Rise text={ entry.title } /></h1>
+        {#if f.summary}<p class="max-w-prose text-lead text-pretty text-scheme-muted">{ f.summary }</p>{/if}
+        <div class="mt-space-xs flex flex-wrap items-center justify-between gap-space-md border-b border-scheme-rule pb-space-md">
+          <p class="text-h3"><Price entry={ entry } /></p>
+          {#if f.link}<Button href={ f.link }>{ site.settings.ask_label }</Button>{:else}<Button ask />{/if}
+        </div>
+      </div>
+      <Well asset={ f.image } width={ 960 } sizes="(min-width: 64rem) 30rem, 100vw" eager />
+    </div>
+    <div class="grid items-start gap-space-xl lg:grid-cols-wide-narrow lg:gap-space-2xl">
+      <div class="grid gap-space-lg">
+        {#if f.description}<div class="sites-prose max-w-prose">{ f.description }</div>{/if}
+        {#if f.what_to_bring}
+          <div class="grid gap-space-sm">
+            <h2 class="font-heading text-h3">{ t('what_to_bring') }</h2>
+            <ul class="grid list-disc gap-space-2xs ps-space-md">{#for line in f.what_to_bring | split('\n')}{#if line | strip}<li>{ line | strip }</li>{/if}{/for}</ul>
+          </div>
+        {/if}
+      </div>
+      <div class="grid gap-space-xl max-lg:order-first">
+        <dl class="border-t border-scheme-rule text-small">
+          {#if f.ages}<div class="{ fact }"><dt class="text-scheme-muted">{ t('ages') }</dt><dd>{ f.ages }</dd></div>{/if}
+          {#if f.level}<div class="{ fact }"><dt class="text-scheme-muted">{ t('level') }</dt><dd>{ f.level }</dd></div>{/if}
+          {#if f.duration_minutes}<div class="{ fact }"><dt class="text-scheme-muted">{ t('length') }</dt><dd>{ t('minutes', { n: f.duration_minutes }) }</dd></div>{/if}
+          {#if f.coach}<div class="{ fact }"><dt class="text-scheme-muted">{ t('teacher') }</dt><dd><a class="underline decoration-1 underline-offset-4 hover:decoration-2" href="/teachers/{ f.coach.handle }">{ f.coach.title }</a></dd></div>{/if}
+          {#if where_at}<div class="{ fact }"><dt class="text-scheme-muted">{ t('where') }</dt><dd>{ where_at }</dd></div>{/if}
+        </dl>
+        <div class="grid justify-items-start gap-space-sm">
+          <h2 class="font-heading text-h3">{ t('when') }</h2>
+          {#if weekly.length}
+            <ul class="w-full border-t border-scheme-rule">
+              {#for d in ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']}{#for slot in weekly | where('fields.day', d)}<li class="border-b border-scheme-rule py-cell"><span class="font-medium">{ t('day_long.' + d) }</span> <span class="tabular-nums">{ slot.fields.start }{#if slot.fields.end}–{ slot.fields.end }{/if}</span>{#if slot.fields.note} · { slot.fields.note }{/if}</li>{/for}{/for}
+            </ul>
+          {:else if runs.length}
+            <ul class="@container w-full border-t border-scheme-rule">{#for run in runs}<DateRow entry={ run } />{/for}</ul>
+          {:else}
+            <p class="max-w-prose">{ t('by_arrangement_line') }</p>
+            <Button ask tone="outline" small />
+          {/if}
+        </div>
+      </div>
+    </div>
+    {#if settings.show_related && more.length}
+      <div class="grid gap-space-sm">
+        <h2 class="font-heading text-h3">{ t('more_classes', { subject: f.subject }) }</h2>
+        <ul class="border-t border-scheme-rule">{#for klass in more}<ClassRow entry={ klass } />{/for}</ul>
+      </div>
+    {/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Class detail",
+  "description": "A class's page: its price and the ask, the description, the facts, when it runs and more classes in the subject.",
+  "kind": "Collections",
+  "icon": "file-text",
+  "templates": ["class"],
+  "settings": [
+    { "type": "checkbox", "id": "show_related", "label": "More classes in the subject", "default": true, "info": "Up to four, in class order." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

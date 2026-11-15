@@ -1,0 +1,3 @@
+<!-- component: Leader -->
+<!-- The dotted leader that joins a name to its price or time in a row: 2px dots in the muted colour mixed 55% into the background, on the row's baseline (the row is a baseline flex). cls adds classes (md:block to show it from 48rem only). -->
+<span class="min-w-space-lg flex-1 border-b-2 border-dotted border-scheme-muted/55 { cls }" aria-hidden="true"></span>

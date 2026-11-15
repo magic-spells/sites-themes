@@ -1,0 +1,32 @@
+collapsible-group,
+collapsible-component {
+	display: block;
+}
+
+collapsible-component button {
+	width: 100%;
+	text-align: left;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+collapsible-component button:focus-visible {
+	outline: 0.125rem solid currentColor;
+	outline-offset: 0.125rem;
+}
+
+collapsible-content {
+	--collapsible-duration: 0.35s;
+	--collapsible-easing: ease;
+
+	display: block;
+	overflow: hidden;
+	transition: height var(--collapsible-duration) var(--collapsible-easing);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	collapsible-content {
+		transition: none;
+	}
+}

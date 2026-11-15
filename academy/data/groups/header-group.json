@@ -1,0 +1,24 @@
+{
+  "sections": [
+    {
+      "id": "sg_announcement",
+      "type": "announcement-bar",
+      "preset": "Default",
+      "settings": {
+        "link": "/dates",
+        "key": "spring-2027",
+        "color_scheme": "ink"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_header",
+      "type": "header",
+      "preset": "Default",
+      "settings": {
+        "menu": "main"
+      },
+      "blocks": []
+    }
+  ]
+}

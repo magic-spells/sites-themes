@@ -1,0 +1,31 @@
+{
+  "label": "Class",
+  "description": "A class's page: its price and the ask, the description, the facts, its week or its dates, then what parents say.",
+  "sections": [
+    {
+      "id": "s_detail",
+      "type": "class-detail",
+      "preset": "Default",
+      "settings": {},
+      "blocks": []
+    },
+    {
+      "id": "s_quotes",
+      "type": "testimonials",
+      "preset": "Rows",
+      "settings": {
+        "color_scheme": "manila"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_ask",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "brick"
+      },
+      "blocks": []
+    }
+  ]
+}

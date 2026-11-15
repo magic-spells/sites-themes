@@ -707,11 +707,6 @@
      "id": "link",
      "type": "url",
      "label": "Sign-up link"
-    },
-    {
-     "id": "order",
-     "type": "number",
-     "label": "Position"
     }
    ],
    "entries": [
@@ -725,8 +720,7 @@
       "location": "Mill Hall, 14 Ferry Lane",
       "description": "<p>Bring a coat you no longer wear and take one that fits. Children's sizes, boots and hats too. Everything left over goes to the shelter on Bridge Street.</p>",
       "image": "as_4x3_moss",
-      "link": "",
-      "order": 1
+      "link": ""
      }
     },
     {
@@ -739,8 +733,7 @@
       "location": "Mill Hall, 14 Ferry Lane",
       "description": "<p>A three-course holiday lunch cooked by our volunteers. Everyone is welcome, and there is no charge.</p>",
       "image": "as_4x3_lake",
-      "link": "",
-      "order": 2
+      "link": ""
      }
     },
     {
@@ -753,8 +746,7 @@
       "location": "Mill Hall, 14 Ferry Lane",
       "description": "<p>Help us pack 300 holiday hampers. Come for an hour or the whole day; lunch is on us.</p>",
       "image": "as_4x3_clay",
-      "link": "",
-      "order": 3
+      "link": ""
      }
     },
     {
@@ -767,8 +759,7 @@
       "location": "St Anne's Hall, 3 Water Street",
       "description": "<p>Cook a warming one-pot dinner together with your children, then eat it. For families with children aged 6 and over.</p>",
       "image": "as_4x3_oat",
-      "link": "",
-      "order": 4
+      "link": ""
      }
     },
     {
@@ -781,8 +772,7 @@
       "location": "Mill Hall, 14 Ferry Lane",
       "description": "<p>Meet the team, see the kitchen and the pantry, and find a shift that suits you. No experience needed.</p>",
       "image": "as_4x3_moss",
-      "link": "",
-      "order": 5
+      "link": ""
      }
     },
     {
@@ -795,8 +785,7 @@
       "location": "Wenlow Public Library, 2 Market Square",
       "description": "<p>Our free tax clinic opens for the season. Bring your slips and last year's notice of assessment.</p>",
       "image": "as_4x3_lake",
-      "link": "",
-      "order": 6
+      "link": ""
      }
     },
     {
@@ -809,8 +798,7 @@
       "location": "Wenlow Public Library, 2 Market Square",
       "description": "<p>Bring seeds you saved, take seeds you want to grow. The garden crew will be there to answer questions.</p>",
       "image": "as_4x3_clay",
-      "link": "",
-      "order": 7
+      "link": ""
      }
     },
     {
@@ -823,8 +811,7 @@
       "location": "Mill Hall garden, 14 Ferry Lane",
       "description": "<p>The beds open for the season. Meet your plot neighbours, collect your seedlings and stay for soup.</p>",
       "image": "as_4x3_oat",
-      "link": "",
-      "order": 8
+      "link": ""
      }
     }
    ]
@@ -1024,11 +1011,6 @@
      ]
     },
     {
-     "id": "bio",
-     "type": "richtext",
-     "label": "Bio"
-    },
-    {
      "id": "image",
      "type": "image",
      "label": "Portrait (4:5)"
@@ -1047,7 +1029,6 @@
      "fields": {
       "role": "Executive director",
       "group": "Staff",
-      "bio": "<p>Anna joined as a volunteer in 2011 and has led the kitchen since 2018.</p>",
       "image": "as_4x5_oat",
       "order": 1
      }
@@ -1059,7 +1040,6 @@
      "fields": {
       "role": "Kitchen manager",
       "group": "Staff",
-      "bio": "<p>Joseph runs the kitchen and plans every community meal.</p>",
       "image": "as_4x5_moss",
       "order": 2
      }
@@ -1071,7 +1051,6 @@
      "fields": {
       "role": "Pantry coordinator",
       "group": "Staff",
-      "bio": "<p>Priya orders, sorts and stocks the pantry with a team of forty volunteers.</p>",
       "image": "as_4x5_lake",
       "order": 3
      }
@@ -1083,7 +1062,6 @@
      "fields": {
       "role": "Volunteer coordinator",
       "group": "Staff",
-      "bio": "<p>Luc welcomes new volunteers and finds each one a shift that suits them.</p>",
       "image": "as_4x5_clay",
       "order": 4
      }
@@ -1095,7 +1073,6 @@
      "fields": {
       "role": "Benefits adviser",
       "group": "Staff",
-      "bio": "<p>Grace helps neighbours with forms for income support, housing and childcare.</p>",
       "image": "as_4x5_oat",
       "order": 5
      }
@@ -1107,7 +1084,6 @@
      "fields": {
       "role": "Chair",
       "group": "Board",
-      "bio": "<p>Helen is a retired school principal and has chaired the board since 2021.</p>",
       "image": "as_4x5_moss",
       "order": 6
      }
@@ -1119,7 +1095,6 @@
      "fields": {
       "role": "Treasurer",
       "group": "Board",
-      "bio": "<p>Samuel is an accountant in Wenlow and keeps the books honest.</p>",
       "image": "as_4x5_lake",
       "order": 7
      }
@@ -1131,7 +1106,6 @@
      "fields": {
       "role": "Secretary",
       "group": "Board",
-      "bio": "<p>Marie-Claire works at the regional library and keeps the board's records.</p>",
       "image": "as_4x5_clay",
       "order": 8
      }
@@ -1143,7 +1117,6 @@
      "fields": {
       "role": "Board member",
       "group": "Board",
-      "bio": "<p>Tom farms on the river road and gives the pantry its eggs.</p>",
       "image": "as_4x5_oat",
       "order": 9
      }
@@ -1155,7 +1128,6 @@
      "fields": {
       "role": "Board member",
       "group": "Board",
-      "bio": "<p>Ruth is a nurse at Wenlow General.</p>",
       "image": "as_4x5_moss",
       "order": 10
      }
@@ -1167,7 +1139,6 @@
      "fields": {
       "role": "Board member",
       "group": "Board",
-      "bio": "<p>Daniel runs the hardware store on Market Square.</p>",
       "image": "as_4x5_lake",
       "order": 11
      }
@@ -1179,7 +1150,6 @@
      "fields": {
       "role": "Board member",
       "group": "Board",
-      "bio": "<p>Aisha first came to the pantry in 2015 and now helps steer it.</p>",
       "image": "as_4x5_clay",
       "order": 12
      }
@@ -1518,8 +1488,7 @@
      "location": "Mill Hall, 14 Ferry Lane",
      "description": "<p>Bring a coat you no longer wear and take one that fits. Children's sizes, boots and hats too. Everything left over goes to the shelter on Bridge Street.</p>",
      "image": "as_4x3_moss",
-     "link": "",
-     "order": 1
+     "link": ""
     }
    }
   },
@@ -1540,8 +1509,7 @@
      "location": "Mill Hall, 14 Ferry Lane",
      "description": "<p>A three-course holiday lunch cooked by our volunteers. Everyone is welcome, and there is no charge.</p>",
      "image": "as_4x3_lake",
-     "link": "",
-     "order": 2
+     "link": ""
     }
    }
   },
@@ -1562,8 +1530,7 @@
      "location": "Mill Hall, 14 Ferry Lane",
      "description": "<p>Help us pack 300 holiday hampers. Come for an hour or the whole day; lunch is on us.</p>",
      "image": "as_4x3_clay",
-     "link": "",
-     "order": 3
+     "link": ""
     }
    }
   },
@@ -1584,8 +1551,7 @@
      "location": "St Anne's Hall, 3 Water Street",
      "description": "<p>Cook a warming one-pot dinner together with your children, then eat it. For families with children aged 6 and over.</p>",
      "image": "as_4x3_oat",
-     "link": "",
-     "order": 4
+     "link": ""
     }
    }
   },
@@ -1606,8 +1572,7 @@
      "location": "Mill Hall, 14 Ferry Lane",
      "description": "<p>Meet the team, see the kitchen and the pantry, and find a shift that suits you. No experience needed.</p>",
      "image": "as_4x3_moss",
-     "link": "",
-     "order": 5
+     "link": ""
     }
    }
   },
@@ -1628,8 +1593,7 @@
      "location": "Wenlow Public Library, 2 Market Square",
      "description": "<p>Our free tax clinic opens for the season. Bring your slips and last year's notice of assessment.</p>",
      "image": "as_4x3_lake",
-     "link": "",
-     "order": 6
+     "link": ""
     }
    }
   },
@@ -1650,8 +1614,7 @@
      "location": "Wenlow Public Library, 2 Market Square",
      "description": "<p>Bring seeds you saved, take seeds you want to grow. The garden crew will be there to answer questions.</p>",
      "image": "as_4x3_clay",
-     "link": "",
-     "order": 7
+     "link": ""
     }
    }
   },
@@ -1672,8 +1635,7 @@
      "location": "Mill Hall garden, 14 Ferry Lane",
      "description": "<p>The beds open for the season. Meet your plot neighbours, collect your seedlings and stay for soup.</p>",
      "image": "as_4x3_oat",
-     "link": "",
-     "order": 8
+     "link": ""
     }
    }
   },

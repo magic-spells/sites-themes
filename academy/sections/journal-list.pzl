@@ -5,7 +5,7 @@
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } />
     <ul class="grid gap-space-xl md:grid-cols-2">
-      {#for entry in posts, i}<li class="{ i == 0 ? 'md:col-span-2' : '' }"><PostCard entry={ entry } feature={ i == 0 } /></li>{/for}
+      {#for entry in posts, i}<li class="{ i == 0 ? 'md:col-span-2' : '' }"><PostCard entry={ entry } feature={ i == 0 } sub={ settings.heading } /></li>{/for}
     </ul>
   </div>
 </section>

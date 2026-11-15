@@ -9,7 +9,7 @@
     <SectionHead heading={ settings.heading } text={ settings.text } view_all_label={ settings.view_all_label } view_all_href={ settings.view_all_href } />
   </div>
   <ul class="mx-auto flex max-w-column snap-x snap-mandatory scroll-px-gutter gap-x-space-lg gap-y-space-xl overflow-x-auto px-gutter md:grid md:snap-none md:grid-cols-3 md:overflow-visible md:px-0 lg:grid-cols-4">
-    {#for entry in people}<li class="w-3/4 shrink-0 snap-start md:w-auto"><TeacherCard entry={ entry } plain={ !settings.link_to_detail } /></li>{/for}
+    {#for entry in people}<li class="w-3/4 shrink-0 snap-start md:w-auto"><TeacherCard entry={ entry } plain={ !settings.link_to_detail } sub={ settings.heading } /></li>{/for}
   </ul>
 </section>
 {/if}

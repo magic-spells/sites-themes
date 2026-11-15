@@ -1,7 +1,7 @@
 <!-- The header: the wordmark (or the Brand logo) left; from 64rem the main menu and the ask button right. The menu item that points at the classes page opens a dropdown-panel listing every subject as a link to the class list on it, then All classes. Below 64rem: the wordmark and one round menu button on surface-2. Sticky unless turned off, with a rule under it once the page scrolls. No phone. -->
 {#let
   s = site.settings
-  subjects = content.classes.entries | sort('fields.order') | map('fields.subject') | uniq | compact
+  subjects = content.classes.entries | where('fields.subject') | sort('fields.order') | map('fields.subject') | uniq
 }
 <sticky-header class="block" settle-overshoot="0" disabled={ settings.sticky ? null : true }>
   <header class="relative border-b border-transparent bg-scheme-background px-gutter text-scheme-foreground transition-colors duration-fast">

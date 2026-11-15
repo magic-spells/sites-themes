@@ -1,13 +1,13 @@
-<!-- The week, Academy's signature. From 64rem a real <table>: the days across, the parts of the day down (Morning before 12:00, Afternoon to 17:59, Evening from 18:00; a part with no session on the days shown is left out, theme.css), each cell its sessions by start time: the time, the subject's swatch and the short name, the room. Below 64rem, day tabs (tab-group) over one day's ruled list: the time in its own column beside the class and the room. Above both, one chip per subject on the week: while any is pressed, the sessions of every other subject dim in the browser (theme.ts); nothing moves. Under both, the key: per subject, each short name and what it stands for. The sessions are filtered to the days shown and grouped by day once, below, and every part reads those lists. No day or hour is marked as current: there is no clock. -->
+<!-- The week, Academy's signature. From 64rem a real <table>: the days across, the parts of the day down (Morning before 12:00, Afternoon to 17:59, Evening from 18:00; a part with no session on the days shown is left out, theme.css), each cell its sessions by start time: the time, the subject's swatch and the short name, the room. Below 64rem, day tabs (tab-group) over one day's ruled list: the time in its own column beside the class and the room. Above both, one chip per subject on the week: while any is pressed, the sessions of every other subject dim in the browser (theme.ts); nothing moves. Under both, the key: per subject, each short name and what it stands for. The sessions with a class, on the days shown, are sorted by start once, below, and each cell and tab reads that pool by its day. No day or hour is marked as current: there is no clock. -->
 {#let
-  classes = content.classes.entries | sort('fields.order')
-  pool = content.sessions.entries | reject('fields.day', settings.days < 7 ? 'sun' : '-') | reject('fields.day', settings.days < 6 ? 'sat' : '-') | sort('fields.start')
+  classes = content.classes.entries | where('fields.subject') | sort('fields.order')
+  pool = content.sessions.entries | where('fields.class') | reject('fields.day', settings.days < 7 ? 'sun' : '-') | reject('fields.day', settings.days < 6 ? 'sat' : '-') | sort('fields.start')
   days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'] | slice(0, parseInt(settings.days))
-  by = { mon: pool | where('fields.day', 'mon'), tue: pool | where('fields.day', 'tue'), wed: pool | where('fields.day', 'wed'), thu: pool | where('fields.day', 'thu'), fri: pool | where('fields.day', 'fri'), sat: pool | where('fields.day', 'sat'), sun: pool | where('fields.day', 'sun') }
   parts = [{ id: 'morning', from: '', to: '12:00' }, { id: 'afternoon', from: '12:00', to: '18:00' }, { id: 'evening', from: '18:00', to: '24:00' }]
-  subjects = classes | map('fields.subject') | uniq | compact
+  subjects = classes | map('fields.subject') | uniq
   on_week = pool | map('fields.class.handle') | uniq
-  taught = pool | sort('fields.class.fields.order') | map('fields.class.fields.subject') | uniq | compact
+  on_days = pool | map('fields.day') | uniq
+  taught = pool | where('fields.class.fields.subject') | sort('fields.class.fields.order') | map('fields.class.fields.subject') | uniq
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-timetable>
   <div class="mx-auto max-w-column">
@@ -29,7 +29,7 @@
             {#for d in days}
               <td class="py-space-md pe-space-sm align-top">
                 <ul class="grid gap-chip">
-                  {#for slot in by[d]}{#if slot.fields.start >= p.from && slot.fields.start < p.to}{#let c = slot.fields.class}<li><a class="group grid gap-space-2xs" href="{ settings.base_path }/{ c.handle }" data-session data-subject={ c.fields.subject }><span class="text-label tabular-nums">{ slot.fields.start }{#if slot.fields.end}–{ slot.fields.end }{/if}</span><span class="flex items-center gap-space-xs font-medium group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4"><Swatch subject={ c.fields.subject } subjects={ subjects } />{ c.fields.short_name || c.title }</span><span class="text-small text-scheme-muted">{ slot.fields.note || slot.fields.location.title }</span></a></li>{/if}{/for}
+                  {#for slot in pool}{#if slot.fields.day == d && slot.fields.start >= p.from && slot.fields.start < p.to}{#let c = slot.fields.class}<li><a class="group grid gap-space-2xs" href="/classes/{ c.handle }" data-session data-subject={ c.fields.subject }><span class="text-label tabular-nums">{ slot.fields.start }{#if slot.fields.end}–{ slot.fields.end }{/if}</span><span class="flex items-center gap-space-xs font-medium group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4"><Swatch subject={ c.fields.subject } subjects={ subjects } />{ c.fields.short_name || c.title }</span><span class="text-small text-scheme-muted">{ slot.fields.note || slot.fields.location.title }</span></a></li>{/if}{/for}
                 </ul>
               </td>
             {/for}
@@ -44,8 +44,8 @@
       {#for d in days}
         <tab-panel class="block">
           <ul>
-            {#for slot in by[d]}{#let c = slot.fields.class}<li class="border-b border-scheme-rule"><a class="group flex items-baseline py-cell" href="{ settings.base_path }/{ c.handle }" data-session data-subject={ c.fields.subject }><span class="w-time shrink-0 text-label tabular-nums">{ slot.fields.start }{#if slot.fields.end}–{ slot.fields.end }{/if}</span><span class="grid gap-space-2xs"><span class="flex items-center gap-space-xs font-medium group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4"><Swatch subject={ c.fields.subject } subjects={ subjects } />{ c.title }</span><span class="text-small text-scheme-muted">{ slot.fields.note || slot.fields.location.title }</span></span></a></li>{/for}
-            {#if !by[d].length}<li class="border-b border-scheme-rule py-cell text-small text-scheme-muted">{ t('no_classes') }</li>{/if}
+            {#for slot in pool}{#if slot.fields.day == d}{#let c = slot.fields.class}<li class="border-b border-scheme-rule"><a class="group flex items-baseline py-cell" href="/classes/{ c.handle }" data-session data-subject={ c.fields.subject }><span class="w-time shrink-0 text-label tabular-nums">{ slot.fields.start }{#if slot.fields.end}–{ slot.fields.end }{/if}</span><span class="grid gap-space-2xs"><span class="flex items-center gap-space-xs font-medium group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4"><Swatch subject={ c.fields.subject } subjects={ subjects } />{ c.title }</span><span class="text-small text-scheme-muted">{ slot.fields.note || slot.fields.location.title }</span></span></a></li>{/if}{/for}
+            {#if !contains(on_days, d)}<li class="border-b border-scheme-rule py-cell text-small text-scheme-muted">{ t('no_classes') }</li>{/if}
           </ul>
         </tab-panel>
       {/for}
@@ -81,7 +81,6 @@
     ] },
     { "type": "checkbox", "id": "show_filter", "label": "Subject chips", "default": true, "info": "One chip per subject on the week; pressed chips dim every other subject." },
     { "type": "checkbox", "id": "show_key", "label": "Key", "default": true, "info": "Under the week, per subject: each short name and the class it stands for, with its ages." },
-    { "type": "url", "id": "base_path", "label": "Class page path", "default": "/classes" },
     { "type": "text", "id": "view_all_label", "label": "View all label", "default": "All classes" },
     { "type": "url", "id": "view_all_href", "label": "View all link", "default": "/classes" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }

@@ -19,7 +19,7 @@
             <tarot-slide>
               <figure class="mx-auto grid max-w-prose gap-space-md text-center">
                 <blockquote class="font-heading text-h3 text-balance">{ entry.fields.quote }</blockquote>
-                <figcaption class="text-small text-scheme-muted">{ [entry.fields.name, entry.fields.line] | compact | join(' · ') }</figcaption>
+                <figcaption class="text-small text-scheme-muted">{ entry.fields.name }{#if entry.fields.name && entry.fields.line} · {/if}{ entry.fields.line }</figcaption>
               </figure>
             </tarot-slide>
           {/for}

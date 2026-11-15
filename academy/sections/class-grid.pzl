@@ -1,8 +1,8 @@
 <!-- Featured classes as cards, each on its subject's cover by default (or plain): three across from 64rem, two from 48rem, the cards in a row as tall as the tallest; on phones a row that scrolls edge to edge with the next card showing. -->
 {#let
-  all = content.classes.entries | sort('fields.order')
+  all = content.classes.entries | where('fields.subject') | sort('fields.order')
   classes = (settings.featured_only ? all | where('fields.featured') : all) | slice(0, settings.limit)
-  subjects = all | map('fields.subject') | uniq | compact
+  subjects = all | map('fields.subject') | uniq
 }
 {#if classes.length}
 <section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter">
@@ -10,7 +10,7 @@
     <SectionHead heading={ settings.heading } text={ settings.text } view_all_label={ settings.view_all_label } view_all_href={ settings.view_all_href } />
   </div>
   <ul class="mx-auto flex max-w-column snap-x snap-mandatory scroll-px-gutter gap-space-lg overflow-x-auto px-gutter md:grid md:snap-none md:grid-cols-2 md:gap-y-space-xl md:overflow-visible md:px-0 lg:grid-cols-3">
-    {#for entry in classes}<li class="w-4/5 shrink-0 snap-start md:w-auto"><ClassCard entry={ entry } subjects={ subjects } plain={ settings.style == 'plain' } /></li>{/for}
+    {#for entry in classes}<li class="w-4/5 shrink-0 snap-start md:w-auto"><ClassCard entry={ entry } subjects={ subjects } plain={ settings.style == 'plain' } sub={ settings.heading } /></li>{/for}
   </ul>
 </section>
 {/if}

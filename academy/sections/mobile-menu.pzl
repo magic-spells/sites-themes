@@ -1,6 +1,6 @@
 <!-- The menu drawer below 64rem: a dialog-panel from the right, full height and at most 24rem, over the page dimmed to 50% with a small blur. It closes on the backdrop, Escape and its ×, and hands focus back to the menu button. The main menu in the heading face, the subjects folded under Classes, and the ask button full width at the foot. -->
 {#let
-  subjects = content.classes.entries | sort('fields.order') | map('fields.subject') | uniq | compact
+  subjects = content.classes.entries | where('fields.subject') | sort('fields.order') | map('fields.subject') | uniq
 }
 <dialog-panel id="mobile-menu" position="right">
   <dialog-backdrop class="bg-backdrop backdrop-blur-xs"></dialog-backdrop>

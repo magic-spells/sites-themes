@@ -8,7 +8,7 @@
         {#let b = block.settings}
         <li class="sites-scheme-white grid content-between justify-items-start gap-space-md rounded-md border border-scheme-rule bg-scheme-background p-space-md text-scheme-foreground { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-block={ block.editor_id }>
           <div class="grid gap-space-xs">
-            <h3 class="font-heading text-h3">{ b.heading }</h3>
+            <Heading sub={ settings.heading } cls="font-heading text-h3">{ b.heading }</Heading>
             {#if b.text}<p class="text-body text-pretty">{ b.text }</p>{/if}
             {#if b.date_line}<p class="text-small text-scheme-muted">{ b.date_line }</p>{/if}
           </div>

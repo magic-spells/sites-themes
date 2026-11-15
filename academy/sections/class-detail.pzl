@@ -5,7 +5,7 @@
   weekly = content.sessions.entries | where('fields.class.handle', entry.handle) | sort('fields.start')
   runs = content.events.entries | where('fields.kind', 'class') | where('fields.class.handle', entry.handle) | sort('fields.date')
   more = content.classes.entries | sort('fields.order') | where('fields.subject', f.subject) | reject('handle', entry.handle) | slice(0, 4)
-  where_at = weekly | map('fields.location.title') | uniq | compact | join(', ')
+  where_at = (weekly.length ? weekly : runs) | map('fields.location.title') | uniq | compact | join(', ')
   fact = 'flex items-baseline justify-between gap-space-md border-b border-scheme-rule py-cell'
 }
 {#if entry}
@@ -37,7 +37,7 @@
           {#if f.ages}<div class="{ fact }"><dt class="text-scheme-muted">{ t('ages') }</dt><dd>{ f.ages }</dd></div>{/if}
           {#if f.level}<div class="{ fact }"><dt class="text-scheme-muted">{ t('level') }</dt><dd>{ f.level }</dd></div>{/if}
           {#if f.duration_minutes}<div class="{ fact }"><dt class="text-scheme-muted">{ t('length') }</dt><dd>{ t('minutes', { n: f.duration_minutes }) }</dd></div>{/if}
-          {#if f.coach}<div class="{ fact }"><dt class="text-scheme-muted">{ t('teacher') }</dt><dd><a class="underline decoration-1 underline-offset-4 hover:decoration-2" href="{ settings.teachers_path }/{ f.coach.handle }">{ f.coach.title }</a></dd></div>{/if}
+          {#if f.coach}<div class="{ fact }"><dt class="text-scheme-muted">{ t('teacher') }</dt><dd><a class="underline decoration-1 underline-offset-4 hover:decoration-2" href="/teachers/{ f.coach.handle }">{ f.coach.title }</a></dd></div>{/if}
           {#if where_at}<div class="{ fact }"><dt class="text-scheme-muted">{ t('where') }</dt><dd>{ where_at }</dd></div>{/if}
         </dl>
         <div class="grid justify-items-start gap-space-sm">
@@ -74,7 +74,6 @@
   "templates": ["class"],
   "settings": [
     { "type": "checkbox", "id": "show_related", "label": "More classes in the subject", "default": true, "info": "Up to four, in class order." },
-    { "type": "url", "id": "teachers_path", "label": "Teacher page path", "default": "/teachers" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [

@@ -1,7 +1,7 @@
 <!-- The fees as a real table from the classes, one body per subject in class order: the subject with its swatch, then each class with its ages under it in small muted, a dotted leader and the price, the prices in one column as wide as the longest so every leader meets its price. From 64rem the table takes seven parts and the extra lines (blocks: registration, a sibling discount) five, on the same leaders, with one note under them. -->
 {#let
-  classes = content.classes.entries | sort('fields.order')
-  subjects = classes | map('fields.subject') | uniq | compact
+  classes = content.classes.entries | where('fields.subject') | sort('fields.order')
+  subjects = classes | map('fields.subject') | uniq
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">

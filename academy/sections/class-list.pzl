@@ -1,7 +1,7 @@
 <!-- The prospectus. Tabs (All, then each subject in class order) link to this page on one subject (?subject=, no script); the current one is underlined 2px in the text colour, and the row scrolls sideways on phones. Then a group per subject shown: its swatch and name, then its classes as rows. A subject with no classes (an old link) says so and links back to all of them. -->
 {#let
-  classes = content.classes.entries | sort('fields.order')
-  subjects = classes | map('fields.subject') | uniq | compact
+  classes = content.classes.entries | where('fields.subject') | sort('fields.order')
+  subjects = classes | map('fields.subject') | uniq
   wanted = request.query.subject
   tab = 'shrink-0 border-b-2 border-transparent py-space-sm text-label whitespace-nowrap text-scheme-muted transition-colors duration-fast hover:text-scheme-foreground current:border-scheme-foreground current:text-scheme-foreground'
 }

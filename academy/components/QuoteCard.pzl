@@ -5,6 +5,6 @@
   {#if f.image}<span class="w-avatar shrink-0"><Well asset={ f.image } ratio="aspect-square" round="rounded-md" width={ 144 } sizes="4.5rem" /></span>{/if}
   <div class="grid gap-space-sm">
     <blockquote class="font-heading text-large text-pretty">{ f.quote }</blockquote>
-    <figcaption class="text-small text-scheme-muted">{ [f.name, f.line] | compact | join(' · ') }</figcaption>
+    <figcaption class="text-small text-scheme-muted">{ f.name }{#if f.name && f.line} · {/if}{ f.line }</figcaption>
   </div>
 </figure>

@@ -1,7 +1,7 @@
-<!-- One dated list from events, sorted from the first date, of the kinds ticked (terms, closures, events, dated classes), up to the limit (an unticked kind is rejected; a ticked one rejects the '-' no entry has), grouped by the month each starts in: from 64rem the month in three parts of twelve beside its rows in nine. Nothing says upcoming: there is no clock, so past dates are removed by hand. -->
+<!-- One dated list from events, sorted from the first date, of the kinds ticked (terms, closures, events, dated classes), up to the limit (an unticked kind is rejected; a ticked one rejects the '-' no entry has; an event with no date is left out), grouped by the month each starts in: from 64rem the month in three parts of twelve beside its rows in nine. The month is an h2 when the section shows no heading (Heading). Nothing says upcoming: there is no clock, so past dates are removed by hand. -->
 {#let
   s = settings
-  list = content.events.entries | sort('fields.date') | reject('fields.kind', s.show_terms ? '-' : 'term') | reject('fields.kind', s.show_closures ? '-' : 'closed') | reject('fields.kind', s.show_events ? '-' : 'event') | reject('fields.kind', s.show_classes ? '-' : 'class') | slice(0, s.limit)
+  list = content.events.entries | where('fields.date') | sort('fields.date') | reject('fields.kind', s.show_terms ? '-' : 'term') | reject('fields.kind', s.show_closures ? '-' : 'closed') | reject('fields.kind', s.show_events ? '-' : 'event') | reject('fields.kind', s.show_classes ? '-' : 'class') | slice(0, s.limit)
 }
 {#if list.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
@@ -13,7 +13,7 @@
         {#if i == 0 || (list[i - 1].fields.date | slice(0, 7)) != month}
           {#let words = entry.fields.date | date('long') | split(' ')}
           <div class="grid gap-space-xs lg:grid-cols-month lg:items-baseline lg:gap-space-2xl">
-            <h3 class="font-heading text-h3">{ words | first } { words | last }</h3>
+            <Heading sub={ s.heading } cls="font-heading text-h3">{ words | first } { words | last }</Heading>
             <ul class="@container border-t border-scheme-rule">{#for item in list}{#if (item.fields.date | slice(0, 7)) == month}<DateRow entry={ item } />{/if}{/for}</ul>
           </div>
         {/if}

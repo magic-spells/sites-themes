@@ -3,13 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{ page.seo.title || page.title } — { site.name }</title>
+    {#let title = page.seo.title || page.title}
+    <title>{ title && title != site.name ? title + ' — ' + site.name : site.name }</title>
     {#if page.seo.description}<meta name="description" content="{ page.seo.description }" />{/if}
     {#if page.seo.noindex}<meta name="robots" content="noindex, nofollow" />{/if}
     <link rel="canonical" href="{ url(page.path) }" />
     <meta property="og:type" content="{ page.entry ? 'article' : 'website' }" />
     <meta property="og:site_name" content="{ site.name }" />
-    <meta property="og:title" content="{ page.seo.title || page.title }" />
+    <meta property="og:title" content="{ title }" />
     <meta property="og:url" content="{ url(page.path) }" />
     {#if page.seo.description}<meta property="og:description" content="{ page.seo.description }" />{/if}
     {#if page.seo.image}<meta property="og:image" content="{ url(image_url(page.seo.image, 1280)) }" />

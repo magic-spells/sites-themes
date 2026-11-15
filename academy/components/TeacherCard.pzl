@@ -1,7 +1,7 @@
 <!-- component: TeacherCard -->
-<!-- A teacher: the 4:5 photo, the role in small muted, then the name in Card title (first in the markup, so it leads the link's name). The whole card links to their page unless plain. -->
+<!-- A teacher: the 4:5 photo, the role in small muted, then the name in Card title (first in the markup, so it leads the link's name; its level follows sub, as Heading). The whole card links to their page unless plain. -->
 <a class="group flex h-full flex-col gap-space-2xs { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" href={ plain ? null : '/teachers/' + entry.handle }>
   <Well asset={ entry.fields.image } alt="" ratio="aspect-portrait" width={ 640 } sizes="(min-width: 64rem) 18rem, (min-width: 48rem) 33vw, 70vw" zoom={ !plain } />
-  <h3 class="order-last font-heading text-h4 { plain ? '' : 'group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4' }">{ entry.title }</h3>
+  <Heading sub={ sub } cls="order-last font-heading text-h4 { plain ? '' : 'group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4' }">{ entry.title }</Heading>
   <p class="pt-space-xs text-small text-scheme-muted">{ entry.fields.role }</p>
 </a>

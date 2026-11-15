@@ -40,7 +40,7 @@
   "name": "Impact",
   "description": "Dated figures for the year, and where a gift goes.",
   "kind": "Text",
-  "icon": "chart-no-axes-column",
+  "icon": "hash",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Our impact" },
     { "type": "textarea", "id": "text", "label": "Standfirst", "default": "", "info": "Name the period the figures cover: Between July 2025 and June 2026." },

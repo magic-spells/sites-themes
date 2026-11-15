@@ -36,7 +36,7 @@
   "name": "Events list",
   "description": "Coming events by date: cards in a row, or rows under each month.",
   "kind": "Events",
-  "icon": "calendar",
+  "icon": "calendar-days",
   "settings": [
     { "type": "select", "id": "layout", "label": "Layout", "default": "row", "options": [
       { "value": "row", "label": "Cards in a row" },

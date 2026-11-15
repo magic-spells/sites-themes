@@ -16,7 +16,7 @@
   "name": "Get involved",
   "description": "Volunteer roles that open and close, beside the volunteer form.",
   "kind": "Forms",
-  "icon": "users-round",
+  "icon": "user-round",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Get involved" },
     { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },

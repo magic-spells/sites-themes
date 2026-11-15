@@ -18,7 +18,7 @@
   "name": "Reports",
   "description": "Annual reports and documents to download, one row each.",
   "kind": "Text",
-  "icon": "file-down",
+  "icon": "scroll-text",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Reports" },
     { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },

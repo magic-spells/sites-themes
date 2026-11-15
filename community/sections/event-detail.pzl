@@ -1,0 +1,26 @@
+<!-- Stub (code B builds the page): the event's title, date, time and place. -->
+{#let entry = page.entry}
+{#if entry}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-md">
+    <h1 class="font-heading text-h1 text-balance">{ entry.title }</h1>
+    <p class="tnum">{ entry.fields.date | date('long') } · { entry.fields.time } · { entry.fields.place }</p>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Event",
+  "description": "An event's page: when and where, a picture, the details and photos from last time.",
+  "kind": "Content",
+  "icon": "ticket",
+  "templates": ["event"],
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

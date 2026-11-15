@@ -1,0 +1,36 @@
+<!-- Stub (code B builds the rows): the section head and the rooms as a plain list. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <ul>{#for block in blocks}<li data-block={ block.editor_id }>{ block.settings.name } · { block.settings.text } · { block.settings.price }</li>{/for}</ul>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Rooms for hire",
+  "description": "The rooms for hire as rows, each with a photo, a line and a price, and one enquiry button.",
+  "kind": "Content",
+  "icon": "layout-list",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Hire a room" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "For parties, classes and meetings, by the hour." },
+    { "type": "link", "id": "link", "label": "Enquiry button" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "blocks": [
+    { "type": "room", "name": "Room", "settings": [
+      { "type": "image", "id": "image", "label": "Photo", "info": "4:3 crops best." },
+      { "type": "text", "id": "image_alt", "label": "Photo alt text", "default": "" },
+      { "type": "text", "id": "name", "label": "Name", "default": "Main hall" },
+      { "type": "text", "id": "text", "label": "Line", "default": "Seats 80, or 120 standing. A stage, a piano and a hearing loop." },
+      { "type": "text", "id": "price", "label": "Price", "default": "£25 an hour" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "link": { "href": "/contact", "label": "Ask about a booking" } }, "blocks": [
+      { "type": "room", "settings": { "name": "Main hall", "text": "Seats 80, or 120 standing. A stage, a piano and a hearing loop.", "price": "£25 an hour" } }
+    ] }
+  ]
+}
+</schema>

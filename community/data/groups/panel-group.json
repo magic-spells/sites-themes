@@ -1,0 +1,18 @@
+{
+  "sections": [
+    {
+      "id": "sg_mobile_menu",
+      "type": "mobile-menu",
+      "preset": "Default",
+      "settings": {},
+      "blocks": []
+    },
+    {
+      "id": "sg_cookie",
+      "type": "cookie-notice",
+      "preset": "Default",
+      "settings": {},
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+<!-- template: 404 -->
+<!-- layout: default -->
+<!-- A wrong path, on paper: the line, then the week and Visit us. -->
+<Utility>
+  <h1 class="max-w-hero font-heading text-h1 text-balance">{ t('not_found_title') }</h1>
+  <p class="text-pretty">{ t('not_found_body') }</p>
+  <p class="flex flex-wrap justify-center gap-space-sm pt-space-xs"><Button href="/groups">{ t('all_groups') }</Button><Button href="/visit" tone="secondary">{ t('visit_us') }</Button></p>
+</Utility>

@@ -1,0 +1,33 @@
+<!-- Questions and answers as rows that open, at reading width under the section head. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <div class="max-w-reading"><Questions items={ blocks } /></div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "FAQ",
+  "description": "Questions and answers as rows that open.",
+  "kind": "Content",
+  "icon": "circle-help",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Questions" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "blocks": [
+    { "type": "question", "name": "Question", "settings": [
+      { "type": "text", "id": "question", "label": "Question", "default": "Do I need to book?" },
+      { "type": "richtext", "id": "answer", "label": "Answer", "default": "<p>Not for the groups: just turn up. Events say on their page when they need a place.</p>" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {}, "blocks": [
+      { "type": "question", "settings": { "question": "Do I need to book?", "answer": "<p>Not for the groups: just turn up. Events say on their page when they need a place.</p>" } },
+      { "type": "question", "settings": { "question": "Can I hire a room?", "answer": "<p>Yes. The main hall, the small room and the kitchen are for hire by the hour.</p>" } }
+    ] }
+  ]
+}
+</schema>

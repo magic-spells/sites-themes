@@ -1,0 +1,40 @@
+<!-- A tight strip: the social handle in the heading face, linking to the profile, beside up to six square photos the workspace uploads (no live feed), each linking to its post or the profile; three across on phones, six from 48rem. Hides without tiles. -->
+{#let tiles = blocks | slice(0, 6)}
+{#if tiles.length}
+<section class="bg-scheme-background px-gutter py-space-lg text-scheme-foreground md:py-space-xl">
+  <div class="mx-auto grid max-w-column gap-space-md md:flex md:items-center md:gap-space-2xl">
+    {#if settings.handle}<h2 class="font-heading text-h4"><a class="decoration-1 underline-offset-4 hover:underline" href="{ settings.url }">{ settings.handle }</a></h2>{/if}
+    <ul class="grid grid-cols-3 gap-space-xs md:flex-1 md:grid-cols-6">
+      {#for block in tiles}
+        {#let b = block.settings}
+        <li data-block={ block.editor_id }><a class="block" href="{ b.link || settings.url }" target="_blank" rel="noopener"><Well asset={ b.image } alt={ b.image_alt || t('social_post') } width={ 480 } sizes="(min-width: 48rem) 12rem, 33vw" /></a></li>
+      {/for}
+    </ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Social",
+  "description": "Photos from the house's social profile beside its handle, each linking to its post.",
+  "kind": "Content",
+  "icon": "camera",
+  "settings": [
+    { "type": "text", "id": "handle", "label": "Handle", "default": "@larchstreethouse", "info": "The tiles are photos you upload: a live feed would need the engine to fetch it, which sections cannot." },
+    { "type": "url", "id": "url", "label": "Profile link", "default": "https://www.instagram.com/" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "blocks": [
+    { "type": "tile", "name": "Tile", "settings": [
+      { "type": "image", "id": "image", "label": "Image", "info": "Square crops best." },
+      { "type": "text", "id": "image_alt", "label": "Alt text", "default": "" },
+      { "type": "url", "id": "link", "label": "Post link", "default": "", "info": "Leave empty to link to the profile." }
+    ] }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

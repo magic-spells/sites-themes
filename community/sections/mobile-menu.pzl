@@ -1,0 +1,41 @@
+<!-- The menu drawer below 64rem: a dialog-panel from the right over the page dimmed by the text colour at 50% with a small blur. It closes on the backdrop, Escape and its ×, and hands focus back to the menu icon. The main menu as large rows with each item's children under it, the ask, then the hours and the address at the foot. -->
+{#let s = site.settings}
+<dialog-panel id="mobile-menu" position="right">
+  <dialog-backdrop class="bg-backdrop backdrop-blur-sm"></dialog-backdrop>
+  <dialog class="ms-auto h-dvh w-full max-w-sign overflow-y-auto bg-scheme-background text-scheme-foreground" aria-label="{ t('menu') }">
+    <div class="grid gap-space-xl px-gutter pb-space-xl">
+      <div class="flex min-h-control items-center justify-end pt-space-sm">
+        <button class="-me-space-sm flex size-control items-center justify-center" type="button" data-action-hide-dialog><Glyph name="close" /><span class="sr-only">{ t('close') }</span></button>
+      </div>
+      {#if menus.main.items.length}
+        <nav aria-label="{ t('main_navigation') }">
+          <ul class="border-b border-scheme-border">
+            {#for item in menus.main.items}
+              <li class="border-t border-scheme-border py-space-sm">
+                <a class="block py-space-2xs font-heading text-h4 current:underline" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a>
+                {#if item.children.length}<ul class="grid gap-space-2xs pb-space-2xs">{#for child in item.children}<li><a class="block py-space-2xs text-scheme-muted hover:text-scheme-foreground current:text-scheme-foreground" href="{ child.href }" aria-current={ child.active ? 'page' : null }>{ child.label }</a></li>{/for}</ul>{/if}
+              </li>
+            {/for}
+          </ul>
+        </nav>
+      {/if}
+      {#if s.ask_label && s.ask_url}<Button ask wide />{/if}
+      <div class="grid gap-space-md"><Hours size="sm" /><Address /></div>
+    </div>
+  </dialog>
+</dialog-panel>
+
+<schema>
+{
+  "name": "Mobile menu",
+  "description": "The menu drawer below 64rem: the main menu, the ask, the hours and the address.",
+  "kind": "Panels",
+  "icon": "menu",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

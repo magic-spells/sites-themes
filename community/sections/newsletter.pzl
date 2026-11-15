@@ -1,0 +1,41 @@
+<!-- The newsletter, centred at reading width: the H2 and standfirst over one field whose label is its placeholder (the label stays for screen readers) beside Sign up, stacked on phones. Sent and failed say so in the same place. The Contact newsletter form. -->
+{#let id = 'newsletter-' + section.id}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" id="newsletter">
+  <div class="mx-auto grid max-w-reading justify-items-center gap-space-lg text-center">
+    <div class="grid gap-space-sm">
+      <h2 class="font-heading text-h2 text-balance"><Rise text={ settings.heading } /></h2>
+      {#if settings.text}<p class="text-pretty">{ settings.text }</p>{/if}
+    </div>
+    <Form handle={ site.settings.newsletter_form } class="w-full" id={ id }>
+      {#if form.sent}
+        <p class="text-lead" role="status">{ form.success_message || t('form_success') }</p>
+      {:else}
+        <div class="flex flex-col gap-space-sm sm:flex-row">
+          {#for field in form.fields}
+            <label class="sr-only" for="{ id }-{ field.id }">{ field.label }</label>
+            <input class="block min-h-control min-w-0 flex-1 rounded-input border bg-scheme-input-background px-space-sm text-body text-scheme-input-foreground placeholder:text-scheme-muted { field.error || form.error ? 'border-scheme-error' : 'border-scheme-input-border' }" id="{ id }-{ field.id }" name={ field.id } type={ field.type } placeholder={ t('placeholder.newsletter') } autocomplete="email" maxlength={ field.max_length } required={ field.required } value={ field.value } aria-invalid={ field.error ? 'true' : 'false' } aria-describedby={ form.error ? id + '-error' : null } />
+          {/for}
+          <Button type="submit">{ form.submit_label || t('sign_up') }</Button>
+        </div>
+        {#if form.error}<p class="mt-space-xs text-small text-scheme-error" id="{ id }-error" role="alert">{ t('form_error') }</p>{/if}
+      {/if}
+    </Form>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Newsletter",
+  "description": "A heading and one email field, sent to the Contact newsletter form.",
+  "kind": "Contact",
+  "icon": "mail",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Newsletter" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "One email a month with what's on and photos from last time." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "cream" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "cream" } }
+  ]
+}
+</schema>

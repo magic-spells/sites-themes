@@ -1,0 +1,50 @@
+{
+  "name": "Community",
+  "version": "0.1.0",
+  "default_template": "page",
+  "not_found_template": "404",
+  "maintenance_template": "maintenance",
+  "query": ["kind", "topic"],
+  "groups": {
+    "header-group": {"label": "Header", "accepts": ["announcement-bar", "header"]},
+    "footer-group": {"label": "Footer", "accepts": ["footer"]},
+    "panel-group": {"label": "Panel", "accepts": ["mobile-menu", "cookie-notice"]}
+  },
+  "settings": [
+    {
+      "name": "Brand",
+      "settings": [
+        {"type": "image", "id": "logo", "label": "Logo", "info": "Leave empty to set the name in the heading face: the designed look, not a fallback."},
+        {"type": "range", "id": "logo_width", "label": "Logo width", "min": 6, "max": 14, "step": 1, "unit": "rem", "default": 10},
+        {"type": "text", "id": "name", "label": "Name", "default": "", "info": "On the header, the footer and every page title. Leave empty to use the workspace name."},
+        {"type": "image", "id": "favicon", "label": "Favicon"},
+        {"type": "checkbox", "id": "reveal", "label": "Reveal on scroll", "default": true, "info": "Rows, slips, cards and the photo wall's prints fade in once as the page scrolls. Never the first screen."},
+        {"type": "checkbox", "id": "heading_motion", "label": "Headings rise in", "default": true, "info": "Page titles and section headings rise in word by word."}
+      ]
+    },
+    {
+      "name": "House",
+      "settings": [
+        {"type": "textarea", "id": "address", "label": "Address", "default": ""},
+        {"type": "textarea", "id": "hours", "label": "Opening hours", "default": "", "info": "One line per day or range, the time last: Monday to Friday 9:00–16:00, Sunday Closed."},
+        {"type": "textarea", "id": "access", "label": "Access", "default": "", "info": "Step-free entrance, hearing loop, toilets, parking."},
+        {"type": "image", "id": "map_image", "label": "Map image", "info": "A map or a photo of the door, 4:3."},
+        {"type": "text", "id": "map_image_alt", "label": "Map image alt text", "default": ""},
+        {"type": "url", "id": "map_url", "label": "Directions link", "default": "", "info": "Get directions links here."},
+        {"type": "url", "id": "map_embed_url", "label": "Map embed link", "default": "", "info": "A map's embed address. Set, it replaces the map image on Visit."},
+        {"type": "text", "id": "ask_label", "label": "Header button label", "default": "Join in"},
+        {"type": "url", "id": "ask_url", "label": "Header button link", "default": "/visit", "info": "Leave the label or the link empty to hide the button."},
+        {"type": "url", "id": "give_url", "label": "Support link", "default": "", "info": "Adds Support the house to the footer. Empty hides it."}
+      ]
+    },
+    {
+      "name": "Contact",
+      "settings": [
+        {"type": "text", "id": "phone", "label": "Phone", "default": ""},
+        {"type": "text", "id": "email", "label": "Email", "default": ""},
+        {"type": "form", "id": "contact_form", "label": "Contact form", "default": "contact"},
+        {"type": "form", "id": "newsletter_form", "label": "Newsletter form", "default": "newsletter"}
+      ]
+    }
+  ]
+}

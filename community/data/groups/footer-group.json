@@ -1,0 +1,14 @@
+{
+  "sections": [
+    {
+      "id": "sg_footer",
+      "type": "footer",
+      "preset": "Default",
+      "settings": {
+        "colophon": "© Larch Street Community House",
+        "color_scheme": "umber"
+      },
+      "blocks": []
+    }
+  ]
+}

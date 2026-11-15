@@ -1,0 +1,27 @@
+<!-- Stub (code B builds the grid and lightbox): the album's title, date and photos as a plain list. -->
+{#let album = page.entry}
+{#if album}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-md">
+    <h1 class="font-heading text-h1 text-balance">{ album.title }</h1>
+    <p>{ album.fields.date | date('long') }</p>
+    <ul>{#for item in album.fields.photos.items}<li>{ item.alt }</li>{/for}</ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Album",
+  "description": "An album's page: its title, date and every photo, each opening larger.",
+  "kind": "Content",
+  "icon": "images",
+  "templates": ["album"],
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

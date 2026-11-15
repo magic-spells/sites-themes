@@ -1,0 +1,29 @@
+<!-- Stub (code B builds the sheet): the section head and every group as a plain list. -->
+{#let groups = content.groups.entries | sort('fields.start')}
+<section class="bg-scheme-background px-gutter py-section-tight text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ t('all_groups') } link_href="/groups" />
+    <ul>{#for entry in groups}<li><a href="/groups/{ entry.handle }">{ entry.title }</a> · { entry.fields.days } · { entry.fields.start }</li>{/for}</ul>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Every week",
+  "description": "The week on one sheet: every group, day by day, with its time and place.",
+  "kind": "Collections",
+  "icon": "calendar-days",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Every week" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "Everything that meets at the house. Just turn up unless it says otherwise." },
+    { "type": "select", "id": "days", "label": "Days", "default": "all", "options": [
+      { "value": "all", "label": "Monday to Sunday" },
+      { "value": "weekdays", "label": "Weekdays only" }
+    ] },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "mist" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "mist" } }
+  ]
+}
+</schema>

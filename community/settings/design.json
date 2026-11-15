@@ -1,0 +1,367 @@
+{
+  "colors": {
+    "brand": {
+      "primary": "#324575",
+      "secondary": "#404627",
+      "accent": "#9C4343"
+    },
+    "grey": {
+      "extra_light": "#F2F0E9",
+      "light": "#D4D7E0",
+      "medium": "#979DA9",
+      "dark": "#5F6675",
+      "extra_dark": "#131A2B"
+    },
+    "info": {
+      "bg": "#EEF2F8",
+      "fg": "#324575"
+    },
+    "success": {
+      "bg": "#E6EBDD",
+      "fg": "#404627"
+    },
+    "warning": {
+      "bg": "#F4F0E3",
+      "fg": "#6B4A12"
+    },
+    "error": {
+      "bg": "#F6E3DF",
+      "fg": "#9C2B23"
+    }
+  },
+  "fonts": {
+    "heading": {
+      "family": "Averia Serif Libre",
+      "weights": [
+        400
+      ],
+      "source": "self-hosted",
+      "url": "/_sites/theme/fonts/averia-serif-libre-400-normal.woff2"
+    },
+    "body": {
+      "family": "Radio Canada",
+      "weights": [
+        400,
+        500
+      ],
+      "source": "self-hosted",
+      "url": "/_sites/theme/fonts/radio-canada-latin-wght-normal.woff2"
+    },
+    "mono": {
+      "family": "Radio Canada",
+      "weights": [
+        400,
+        500
+      ],
+      "source": "self-hosted",
+      "url": "/_sites/theme/fonts/radio-canada-latin-wght-normal.woff2"
+    }
+  },
+  "type": {
+    "base": "1rem",
+    "scale": {
+      "xs": "0.8125rem",
+      "sm": "0.875rem",
+      "base": "1.0625rem",
+      "lg": "1.25rem",
+      "xl": "1.75rem",
+      "2xl": "2.5rem",
+      "3xl": "3.5rem",
+      "4xl": "3.5rem",
+      "5xl": "3.5rem"
+    },
+    "leading": {
+      "tight": "1.1",
+      "normal": "1.6",
+      "relaxed": "1.7"
+    }
+  },
+  "spacing": {
+    "xs": "0.5rem",
+    "sm": "0.75rem",
+    "md": "1rem",
+    "lg": "1.5rem",
+    "xl": "2rem",
+    "2xl": "3rem"
+  },
+  "radius": {
+    "none": "0",
+    "sm": "0.125rem",
+    "md": "0.25rem",
+    "lg": "0.5rem",
+    "full": "9999rem"
+  },
+  "shadow": {
+    "sm": "none",
+    "md": "none",
+    "lg": "0 1px 2px rgb(19 26 43 / 0.08), 0 6px 16px rgb(19 26 43 / 0.08)"
+  },
+  "border": {
+    "width": "1px",
+    "color": "#D4D7E0"
+  },
+  "input": {
+    "background": "#FAF9F5",
+    "border": "#5F6675",
+    "radius": "0.25rem",
+    "text": "#131A2B",
+    "placeholder": "#5F6675",
+    "focus_ring": "#131A2B"
+  },
+  "button": {
+    "radius": "9999rem",
+    "padding_x": "1.375rem",
+    "padding_y": "0.75rem",
+    "weight": "500",
+    "primary_bg": "#324575",
+    "primary_text": "#FAF9F5",
+    "secondary_bg": "transparent",
+    "secondary_text": "#131A2B"
+  },
+  "link": {
+    "color": "#131A2B",
+    "hover_color": "#131A2B",
+    "underline": "always"
+  },
+  "suggested_palettes": [
+    {
+      "name": "Stencil",
+      "colors": {
+        "brand": {
+          "primary": "#324575",
+          "secondary": "#404627",
+          "accent": "#9C4343"
+        },
+        "grey": {
+          "extra_light": "#F2F0E9",
+          "light": "#D4D7E0",
+          "medium": "#979DA9",
+          "dark": "#5F6675",
+          "extra_dark": "#131A2B"
+        },
+        "info": {
+          "bg": "#EEF2F8",
+          "fg": "#324575"
+        },
+        "success": {
+          "bg": "#E6EBDD",
+          "fg": "#404627"
+        },
+        "warning": {
+          "bg": "#F4F0E3",
+          "fg": "#6B4A12"
+        },
+        "error": {
+          "bg": "#F6E3DF",
+          "fg": "#9C2B23"
+        }
+      }
+    },
+    {
+      "name": "Hall Paint",
+      "colors": {
+        "brand": {
+          "primary": "#404627",
+          "secondary": "#1D4B5F",
+          "accent": "#98492C"
+        },
+        "grey": {
+          "extra_light": "#F0F1E9",
+          "light": "#D5D9D1",
+          "medium": "#989F95",
+          "dark": "#60695E",
+          "extra_dark": "#151D25"
+        },
+        "info": {
+          "bg": "#EEF2F8",
+          "fg": "#324575"
+        },
+        "success": {
+          "bg": "#E6EBDD",
+          "fg": "#404627"
+        },
+        "warning": {
+          "bg": "#F4F0E3",
+          "fg": "#6B4A12"
+        },
+        "error": {
+          "bg": "#F6E3DF",
+          "fg": "#9C2B23"
+        }
+      }
+    },
+    {
+      "name": "Tea Room",
+      "colors": {
+        "brand": {
+          "primary": "#482A1E",
+          "secondary": "#254067",
+          "accent": "#2F486D"
+        },
+        "grey": {
+          "extra_light": "#F2EDE4",
+          "light": "#DBD5CB",
+          "medium": "#A39A90",
+          "dark": "#6E6259",
+          "extra_dark": "#131B29"
+        },
+        "info": {
+          "bg": "#EEF2F8",
+          "fg": "#324575"
+        },
+        "success": {
+          "bg": "#E6EBDD",
+          "fg": "#404627"
+        },
+        "warning": {
+          "bg": "#F4F0E3",
+          "fg": "#6B4A12"
+        },
+        "error": {
+          "bg": "#F6E3DF",
+          "fg": "#9C2B23"
+        }
+      }
+    }
+  ],
+  "schemes": [
+    {
+      "handle": "paper",
+      "name": "Paper",
+      "background": "#FAF9F5",
+      "foreground": "$grey-extra-dark",
+      "heading": "$grey-extra-dark",
+      "input_background": "#FAF9F5",
+      "input_foreground": "$grey-extra-dark",
+      "input_border": "#5F6675",
+      "chip_background": "#F2F0E9",
+      "chip_foreground": "#5F6675",
+      "chip_border": "#D4D7E0",
+      "icons": "#5F6675",
+      "links": "$grey-extra-dark",
+      "button_background": "$brand-primary",
+      "button_foreground": "#FAF9F5",
+      "button_hover_background": "#4E6089",
+      "button_hover_foreground": "#FAF9F5",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "$grey-extra-dark",
+      "secondary_button_hover_background": "#F2F0E9",
+      "secondary_button_hover_foreground": "$grey-extra-dark"
+    },
+    {
+      "handle": "mist",
+      "name": "Mist",
+      "background": "#EEF2F8",
+      "foreground": "$grey-extra-dark",
+      "heading": "$grey-extra-dark",
+      "input_background": "#EEF2F8",
+      "input_foreground": "$grey-extra-dark",
+      "input_border": "#5A6273",
+      "chip_background": "#E5EAF1",
+      "chip_foreground": "#5A6273",
+      "chip_border": "#CDD3DB",
+      "icons": "#5A6273",
+      "links": "$grey-extra-dark",
+      "button_background": "$brand-primary",
+      "button_foreground": "#FAF9F5",
+      "button_hover_background": "#4D5F8A",
+      "button_hover_foreground": "#FAF9F5",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "$grey-extra-dark",
+      "secondary_button_hover_background": "#E5EAF1",
+      "secondary_button_hover_foreground": "$grey-extra-dark"
+    },
+    {
+      "handle": "cream",
+      "name": "Cream",
+      "background": "#F4F0E3",
+      "foreground": "$grey-extra-dark",
+      "heading": "$grey-extra-dark",
+      "input_background": "#F4F0E3",
+      "input_foreground": "$grey-extra-dark",
+      "input_border": "#665F55",
+      "chip_background": "#EDE7DB",
+      "chip_foreground": "#665F55",
+      "chip_border": "#D6D0C4",
+      "icons": "#665F55",
+      "links": "$grey-extra-dark",
+      "button_background": "$grey-extra-dark",
+      "button_foreground": "#F4F0E3",
+      "button_hover_background": "#313745",
+      "button_hover_foreground": "#F4F0E3",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "$grey-extra-dark",
+      "secondary_button_hover_background": "#EDE7DB",
+      "secondary_button_hover_foreground": "$grey-extra-dark"
+    },
+    {
+      "handle": "blue",
+      "name": "Blue",
+      "background": "$brand-primary",
+      "foreground": "#F8F7F1",
+      "heading": "#F8F7F1",
+      "input_background": "$brand-primary",
+      "input_foreground": "#F8F7F1",
+      "input_border": "#C8D1E5",
+      "chip_background": "#3F5280",
+      "chip_foreground": "#C8D1E5",
+      "chip_border": "#566892",
+      "icons": "#C8D1E5",
+      "links": "#F8F7F1",
+      "button_background": "#F8F7F1",
+      "button_foreground": "#324575",
+      "button_hover_background": "#D5D9DD",
+      "button_hover_foreground": "#324575",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#F8F7F1",
+      "secondary_button_hover_background": "#3F5280",
+      "secondary_button_hover_foreground": "#F8F7F1"
+    },
+    {
+      "handle": "moss",
+      "name": "Moss",
+      "background": "$brand-secondary",
+      "foreground": "#F8F7F1",
+      "heading": "#F8F7F1",
+      "input_background": "$brand-secondary",
+      "input_foreground": "#F8F7F1",
+      "input_border": "#CDD2C0",
+      "chip_background": "#4C5234",
+      "chip_foreground": "#CDD2C0",
+      "chip_border": "#61674A",
+      "icons": "#CDD2C0",
+      "links": "#F8F7F1",
+      "button_background": "#F8F7F1",
+      "button_foreground": "#404627",
+      "button_hover_background": "#D8D8CE",
+      "button_hover_foreground": "#404627",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#F8F7F1",
+      "secondary_button_hover_background": "#4C5234",
+      "secondary_button_hover_foreground": "#F8F7F1"
+    },
+    {
+      "handle": "umber",
+      "name": "Umber",
+      "background": "#3A281B",
+      "foreground": "#F6F3EC",
+      "heading": "#F6F3EC",
+      "input_background": "#3A281B",
+      "input_foreground": "#F6F3EC",
+      "input_border": "#BCAEA5",
+      "chip_background": "#463327",
+      "chip_foreground": "#BCAEA5",
+      "chip_border": "#5A473B",
+      "icons": "#BCAEA5",
+      "links": "#F6F3EC",
+      "button_background": "#F6F3EC",
+      "button_foreground": "#3A281B",
+      "button_hover_background": "#D5CFC7",
+      "button_hover_foreground": "#3A281B",
+      "secondary_button_background": "transparent",
+      "secondary_button_foreground": "#F6F3EC",
+      "secondary_button_hover_background": "#463327",
+      "secondary_button_hover_foreground": "#F6F3EC"
+    }
+  ]
+}

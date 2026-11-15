@@ -1,0 +1,49 @@
+<!-- Where the house talks between visits: full-width rows over hairlines, each a link (the label in H4, one line in muted, an arrow at the right) to the group chat, the mailing list or a social profile. -->
+{#if blocks.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <ul class="border-b border-scheme-border">
+      {#for block in blocks}
+        {#let b = block.settings}
+        <li class="border-t border-scheme-border" data-block={ block.editor_id }>
+          <a class="group flex items-center justify-between gap-space-md py-space-md" href="{ b.link }">
+            <span class="grid gap-space-3xs">
+              <span class="font-heading text-h4 group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{ b.label }</span>
+              {#if b.text}<span class="text-pretty text-scheme-muted">{ b.text }</span>{/if}
+            </span>
+            <Glyph name="arrow" cls="size-icon transition-transform duration-fast group-hover:translate-x-space-2xs" />
+          </a>
+        </li>
+      {/for}
+    </ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Community links",
+  "description": "Rows for the group chat, the mailing list and social profiles.",
+  "kind": "Contact",
+  "icon": "link",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Stay in touch" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "blocks": [
+    { "type": "link", "name": "Link", "settings": [
+      { "type": "text", "id": "label", "label": "Label", "default": "Join the group chat" },
+      { "type": "text", "id": "text", "label": "Line", "default": "Lifts, lost property and who is bringing cake." },
+      { "type": "url", "id": "link", "label": "Link", "default": "https://chat.whatsapp.com/" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {}, "blocks": [
+      { "type": "link", "settings": { "label": "Join the group chat", "text": "Lifts, lost property and who is bringing cake.", "link": "https://chat.whatsapp.com/" } },
+      { "type": "link", "settings": { "label": "Get the newsletter", "text": "One email a month with what's on.", "link": "/#newsletter" } }
+    ] }
+  ]
+}
+</schema>

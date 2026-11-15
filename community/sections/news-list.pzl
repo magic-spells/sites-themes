@@ -1,0 +1,66 @@
+<!-- News and newsletter issues, newest first: the first large (a 3:2 picture in seven parts, its H3, standfirst and date in five), then two to a row (picture, H4, date). With topic links on, plain chips filter by ?topic=. On a post's page: the next two others, no lead. Date only: no reading time, no author. -->
+{#let
+  topic = request.query.topic
+  all = content.posts.entries | sort('fields.date') | reverse
+  others = page.entry ? (all | reject('id', page.entry.id)) : all
+  picked = topic ? (others | where('fields.topic', topic)) : others
+  posts = picked | slice(0, page.entry ? 2 : 13)
+  lead = page.entry ? null : (posts | first)
+  rest = lead ? (posts | slice(1, 12)) : posts
+  topics = all | map('fields.topic') | compact | uniq
+  chip = 'inline-flex min-h-pill items-center rounded-full border border-scheme-muted px-space-md text-label current:border-scheme-foreground current:bg-scheme-foreground current:text-scheme-background'
+}
+{#if posts.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ page.entry ? t('all_news') : '' } link_href="/news" />
+    {#if settings.topic_links && !page.entry && topics.length > 1}
+      <nav class="mb-space-xl flex flex-wrap gap-space-xs" aria-label="{ t('topics') }">
+        <a class="{ chip }" href="{ page.path }" aria-current={ topic ? null : 'page' }>{ t('all') }</a>
+        {#for name in topics}<a class="{ chip }" href="{ page.path }?topic={ name }" aria-current={ topic == name ? 'page' : null }>{ name }</a>{/for}
+      </nav>
+    {/if}
+    {#if lead}
+      <a class="group mb-space-2xl grid items-center gap-space-lg md:grid-cols-seven-five md:gap-space-2xl" href="/news/{ lead.handle }">
+        <Well asset={ lead.fields.image } alt="" ratio="aspect-wide" width={ 1200 } sizes="(min-width: 48rem) 55vw, 100vw" />
+        <span class="grid gap-space-sm">
+          <span class="font-heading text-h3 text-balance group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{ lead.title }</span>
+          {#if lead.fields.standfirst}<span class="text-pretty">{ lead.fields.standfirst }</span>{/if}
+          <span class="text-label text-scheme-muted tnum">{ lead.fields.date | date('long') }</span>
+        </span>
+      </a>
+    {/if}
+    {#if rest.length}
+      <ul class="grid gap-x-space-xl gap-y-space-2xl md:grid-cols-2">
+        {#for entry in rest, i}
+          <li class="{ site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-delay={ site.settings.reveal ? (i % 2) * 60 : null }>
+            <a class="group grid content-start gap-space-sm" href="/news/{ entry.handle }">
+              <Well asset={ entry.fields.image } alt="" ratio="aspect-wide" width={ 960 } sizes="(min-width: 48rem) 40vw, 100vw" />
+              <span class="font-heading text-h4 text-balance group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{ entry.title }</span>
+              <span class="text-label text-scheme-muted tnum">{ entry.fields.date | date('long') }</span>
+            </a>
+          </li>
+        {/for}
+      </ul>
+    {/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "News list",
+  "description": "News and newsletter issues, newest first; on a post's page, two others.",
+  "kind": "Collections",
+  "icon": "newspaper",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "News" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "checkbox", "id": "topic_links", "label": "Topic links", "default": true, "info": "A row of the posts' topics above the list, each showing only its posts." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

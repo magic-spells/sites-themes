@@ -1,0 +1,10 @@
+<!-- component: PersonCard -->
+<!-- A person: the 4:5 portrait (the Monogram when there is none), the role in the label in muted over the name in H4, the role clamped to one line. -->
+{#let f = entry.fields}
+<figure class="grid content-start gap-space-sm">
+  {#if f.image}<Well asset={ f.image } alt="" ratio="aspect-portrait" width={ 640 } sizes="(min-width: 64rem) 18rem, (min-width: 48rem) 30vw, 45vw" />{:else}<Monogram name={ entry.title } ratio="aspect-portrait" />{/if}
+  <figcaption class="grid gap-space-3xs">
+    {#if f.role}<span class="line-clamp-1 text-label text-scheme-muted">{ f.role }</span>{/if}
+    <span class="font-heading text-h4">{ entry.title }</span>
+  </figcaption>
+</figure>

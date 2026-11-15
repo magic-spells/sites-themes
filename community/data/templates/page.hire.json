@@ -1,0 +1,73 @@
+{
+  "label": "Hire a room",
+  "description": "The rooms for hire, then the contact form.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "For parties, classes, meetings and supper clubs, by the hour. Community groups pay half."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_spaces",
+      "type": "spaces",
+      "preset": "Default",
+      "settings": {
+        "heading": "",
+        "text": "",
+        "link": {
+          "href": "/contact",
+          "label": "Ask about a booking"
+        }
+      },
+      "blocks": [
+        {
+          "id": "b_room_1",
+          "type": "room",
+          "settings": {
+            "image": "as_4x3_mist",
+            "image_alt": "Main hall",
+            "name": "Main hall",
+            "text": "Seats 80, or 120 standing. A stage, a piano and a hearing loop. Parties, classes and meetings.",
+            "price": "£25 an hour"
+          }
+        },
+        {
+          "id": "b_room_2",
+          "type": "room",
+          "settings": {
+            "image": "as_4x3_cream",
+            "image_alt": "Small room",
+            "name": "Small room",
+            "text": "Sixteen round one table, with a screen and a whiteboard. Meetings and workshops.",
+            "price": "£12 an hour"
+          }
+        },
+        {
+          "id": "b_room_3",
+          "type": "room",
+          "settings": {
+            "image": "as_4x3_stone",
+            "image_alt": "Kitchen",
+            "name": "Kitchen",
+            "text": "A six-ring cooker, two ovens and a dishwasher. For caterers and supper clubs, with the hall or alone.",
+            "price": "£15 an hour"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_contact",
+      "type": "contact",
+      "preset": "Default",
+      "settings": {
+        "heading": "Ask about a booking",
+        "text": "Tell us the day, the time and roughly how many. We reply within two working days."
+      },
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+<!-- Stub (code B builds the page): the group's title and summary. -->
+{#let entry = page.entry}
+{#if entry}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-md">
+    <h1 class="font-heading text-h1 text-balance">{ entry.title }</h1>
+    <p>{ entry.fields.summary }</p>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Group",
+  "description": "A group's page: when and where it meets, what it is, who hosts it and more like it.",
+  "kind": "Content",
+  "icon": "users",
+  "templates": ["group"],
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

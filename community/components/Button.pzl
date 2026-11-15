@@ -1,0 +1,7 @@
+<!-- component: Button -->
+<!-- The button: fully round, sentence case, 500. tone primary (the scheme's button, the default) or secondary (transparent with a hairline in the text colour, surface-2 on hover). size sm is the 2.5rem pill of a section head. ask is the header's one ask: the House label and link. With type it is a <button> of that type; wide fills the row; cls adds classes. -->
+{#let
+  look = tone == 'secondary' ? 'border-scheme-foreground text-scheme-foreground hover:bg-scheme-surface-2' : 'border-scheme-button-background bg-scheme-button-background text-scheme-button-foreground hover:border-scheme-button-hover-background hover:bg-scheme-button-hover-background hover:text-scheme-button-hover-foreground'
+  all = 'inline-flex items-center justify-center rounded-button border text-center transition-colors duration-fast ' + (size == 'sm' ? 'min-h-pill px-pill-x text-label ' : 'min-h-control px-button-x py-space-xs text-button ') + look + (wide ? ' w-full' : '') + (cls ? ' ' + cls : '')
+}
+{#if type}<button class="{ all }" type="{ type }"><Children/></button>{:else}<a class="{ all }" href="{ ask ? site.settings.ask_url : href }"><Children>{ ask ? site.settings.ask_label : '' }</Children></a>{/if}

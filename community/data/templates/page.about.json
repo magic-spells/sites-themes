@@ -1,0 +1,80 @@
+{
+  "label": "About",
+  "description": "The house, its story and the people who run it.",
+  "sections": [
+    {
+      "id": "s_header",
+      "type": "page-header",
+      "preset": "Default",
+      "settings": {
+        "text": "A community house in a former bank, run by neighbours since 1984."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_story",
+      "type": "rich-text",
+      "preset": "Default",
+      "settings": {
+        "body": "<p>The house opened in 1984, when the bank on the corner of Larch Street closed and a group of neighbours asked the council for the keys. It has been open ever since: a hall, a small room, a kitchen and a back garden, kept going by a part-time coordinator, a committee and about sixty volunteers.</p><p>Nothing here needs a membership. Most groups are free, and the ones that charge keep it low so nobody is left out.</p>"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_picture",
+      "type": "image-with-text",
+      "preset": "Default",
+      "settings": {
+        "heading": "Run by its neighbours",
+        "text": "<p>Every group started because someone asked. If there is something you would like to run, the room is probably free.</p>",
+        "image": "as_3x2_stone",
+        "image_alt": "Volunteers setting up the main hall",
+        "link": {
+          "href": "/contact",
+          "label": "Start a group"
+        }
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_committee",
+      "type": "people",
+      "preset": "Default",
+      "settings": {
+        "heading": "Committee",
+        "team": "committee"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_volunteers",
+      "type": "people",
+      "preset": "Default",
+      "settings": {
+        "heading": "Volunteers",
+        "team": "volunteers",
+        "color_scheme": "cream"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_cta",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "heading": "Lend a hand",
+        "text": "An hour a month or every week: there is always something.",
+        "link": {
+          "href": "/contact",
+          "label": "Volunteer"
+        },
+        "link_2": {
+          "href": "/visit",
+          "label": "Visit us"
+        },
+        "color_scheme": "blue"
+      },
+      "blocks": []
+    }
+  ]
+}

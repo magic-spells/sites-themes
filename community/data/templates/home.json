@@ -1,0 +1,170 @@
+{
+  "label": "Home",
+  "description": "The house's front page: the week, the groups, the noticeboard and the photos.",
+  "sections": [
+    {
+      "id": "s_hero",
+      "type": "hero",
+      "preset": "Default",
+      "settings": {
+        "heading": "A house on Larch Street, open to everyone",
+        "text": "Groups, meals and classes most days of the week, run by neighbours. Come along to anything on the sheet, or drop in for a cup of tea.",
+        "link": {
+          "href": "/groups",
+          "label": "See the week"
+        },
+        "link_2": {
+          "href": "/visit",
+          "label": "Visit us"
+        },
+        "photos": "hero-strip"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_week",
+      "type": "week",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "mist"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_note",
+      "type": "rich-text",
+      "preset": "Signed note",
+      "settings": {
+        "body": "<p>Larch Street is a small house with a lot going on. Almost all of it is run by neighbours who came along once for a cup of tea and stayed. If you are new, pick anything on the sheet above and come along, or drop in and say hello at the desk.</p>",
+        "person": "pp_ana_ruiz"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_groups",
+      "type": "groups-index",
+      "preset": "Default",
+      "settings": {
+        "source": "featured",
+        "limit": 6,
+        "color_scheme": "cream"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_notice",
+      "type": "noticeboard",
+      "preset": "Default",
+      "settings": {
+        "newsletter_link": "#newsletter",
+        "color_scheme": "blue"
+      },
+      "blocks": [
+        {
+          "id": "b_raincoat",
+          "type": "notice",
+          "settings": {
+            "text": "Found after Little Feet: a child's blue raincoat. It is on the hook by the desk."
+          }
+        },
+        {
+          "id": "b_rota",
+          "type": "notice",
+          "settings": {
+            "text": "Volunteers wanted for the Friday supper rota, one evening a month.",
+            "link": {
+              "href": "/contact",
+              "label": "Say hello"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_photos",
+      "type": "photo-wall",
+      "preset": "Default",
+      "settings": {
+        "source": "albums"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_visit",
+      "type": "visit",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "mist"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_social",
+      "type": "social",
+      "preset": "Default",
+      "settings": {
+        "handle": "@larchstreethouse",
+        "url": "https://www.instagram.com/"
+      },
+      "blocks": [
+        {
+          "id": "b_tile_1",
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_mist",
+            "image_alt": "Little Feet in the main hall"
+          }
+        },
+        {
+          "id": "b_tile_2",
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_cream",
+            "image_alt": "Lunch Club"
+          }
+        },
+        {
+          "id": "b_tile_3",
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_stone",
+            "image_alt": "The garden crew"
+          }
+        },
+        {
+          "id": "b_tile_4",
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_cream",
+            "image_alt": "Knit & Natter"
+          }
+        },
+        {
+          "id": "b_tile_5",
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_stone",
+            "image_alt": "The Repair Table"
+          }
+        },
+        {
+          "id": "b_tile_6",
+          "type": "tile",
+          "settings": {
+            "image": "as_1x1_mist",
+            "image_alt": "Friday supper"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "cream"
+      },
+      "blocks": []
+    }
+  ]
+}

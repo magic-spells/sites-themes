@@ -1,0 +1,26 @@
+<!-- Stub (code B builds the map and plate): the section head, the hours and the address. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <Hours />
+    <Address />
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Visit us",
+  "description": "The door plate (hours, address, access, phone and email) beside the map.",
+  "kind": "Contact",
+  "icon": "map-pin",
+  "settings": [
+    { "type": "paragraph", "content": "Everything here comes from the House and Contact settings." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Visit us" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "mist" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "mist" } }
+  ]
+}
+</schema>

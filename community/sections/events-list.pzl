@@ -1,0 +1,32 @@
+<!-- Stub (code B builds the rows): the section head and the events as a plain list. -->
+{#let
+  all = content.events.entries | sort('fields.date')
+  events = page.entry && settings.exclude_current ? (all | reject('id', page.entry.id)) : all
+}
+{#if events.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ t('all_events') } link_href="/whats-on" />
+    <ul>{#for entry in events | slice(0, settings.limit)}<li><a href="/whats-on/{ entry.handle }">{ entry.title }</a> · { entry.fields.date | date('medium') } · { entry.fields.time }</li>{/for}</ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Events",
+  "description": "Dated events as rows under month headings.",
+  "kind": "Collections",
+  "icon": "calendar-days",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Events" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "range", "id": "limit", "label": "Limit", "min": 1, "max": 24, "step": 1, "default": 24 },
+    { "type": "checkbox", "id": "exclude_current", "label": "Leave out the event on show", "default": true },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

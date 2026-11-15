@@ -1,0 +1,51 @@
+<!-- Write to the house: the labelled Contact form in seven parts; in five the door plate on paper (opening hours, a hairline, the address with directions, the phone and email as text links). Sent and failed say so in the form's place. -->
+{#let
+  s = site.settings
+  id = 'contact-' + section.id
+  link = 'justify-self-start underline decoration-1 underline-offset-4 hover:decoration-2'
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <div class="grid items-start gap-space-xl md:grid-cols-seven-five md:gap-space-2xl">
+      <Form handle={ s.contact_form } class="grid gap-space-md" id={ id }>
+        {#if form.sent}
+          <p class="text-lead" role="status">{ form.success_message || t('form_success') }</p>
+        {:else}
+          {#if form.error}<p class="text-small text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
+          <FormFields fields={ form.fields } prefix={ id } />
+          <div><Button type="submit">{ form.submit_label || t('send') }</Button></div>
+          <noscript><p class="text-small text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+        {/if}
+      </Form>
+      <div class="{ 'paper' | scheme_class } grid gap-space-md rounded-paper border border-scheme-border bg-scheme-background p-space-lg text-scheme-foreground md:p-space-xl">
+        {#if s.hours}<h3 class="font-heading text-h4">{ t('opening_hours') }</h3><Hours /><hr class="border-scheme-border" />{/if}
+        <Address />
+        {#if s.phone || s.email}
+          <p class="grid gap-space-2xs">
+            {#if s.phone}<a class="{ link } tnum" href="tel:{ s.phone | replace(' ', '') }">{ s.phone }</a>{/if}
+            {#if s.email}<a class="{ link }" href="mailto:{ s.email }">{ s.email }</a>{/if}
+          </p>
+        {/if}
+      </div>
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Contact",
+  "description": "The contact form beside the opening hours, the address, the phone and the email.",
+  "kind": "Contact",
+  "icon": "mail",
+  "settings": [
+    { "type": "paragraph", "content": "The form is the Contact form setting; the hours, address, phone and email come from the House and Contact settings." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Write to us" },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "We reply within two working days." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

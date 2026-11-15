@@ -1,0 +1,42 @@
+<!-- One line above the header in the label size, centred, the whole line a link when one is set, and a close button that hides it for that visitor until the text changes. Marquee: the line repeats on a slow ticker with a pause button; under reduced motion it stands still. -->
+{#let marquee = settings.motion == 'marquee'}
+{#if settings.text}
+<aside class="bg-scheme-background px-gutter text-scheme-foreground" data-dismiss-key="{ settings.text }" data-ticker={ marquee ? true : null } aria-label="{ t('announcement') }">
+  <div class="mx-auto flex min-h-control max-w-column items-center text-label { marquee ? '' : 'ps-control' }">
+    <a class="block min-w-0 flex-1 py-space-xs decoration-1 underline-offset-4 hover:underline" href={ settings.link || null }>
+      {#if marquee}
+        <scrolling-content class="block" speed="30" fade>
+          <scrolling-track>
+            <scrolling-item class="flex">{#for n in [1, 2, 3]}<span class="pe-space-3xl whitespace-nowrap">{ settings.text }</span>{/for}</scrolling-item>
+          </scrolling-track>
+        </scrolling-content>
+      {:else}
+        <span class="block text-center text-pretty">{ settings.text }</span>
+      {/if}
+    </a>
+    {#if marquee}<button class="flex size-control shrink-0 items-center justify-center" type="button" data-ticker-toggle aria-pressed="false"><Glyph name="pause" cls="size-icon-sm" /><span class="sr-only">{ t('pause') }</span></button>{/if}
+    <button class="-me-space-sm flex size-control shrink-0 items-center justify-center" type="button" data-dismiss><Glyph name="close" cls="size-icon-sm" /><span class="sr-only">{ t('dismiss') }</span></button>
+  </div>
+</aside>
+{/if}
+
+<schema>
+{
+  "name": "Announcement bar",
+  "description": "One notice above the header, with a close button.",
+  "kind": "Header",
+  "icon": "megaphone",
+  "settings": [
+    { "type": "text", "id": "text", "label": "Text", "default": "The house is closed on Monday 30 November for floor sanding.", "info": "A closure, new hours, a date to keep. A closed bar comes back when this changes." },
+    { "type": "url", "id": "link", "label": "Link", "default": "" },
+    { "type": "select", "id": "motion", "label": "Motion", "default": "static", "options": [
+      { "value": "static", "label": "Still" },
+      { "value": "marquee", "label": "Marquee" }
+    ], "info": "Marquee repeats the line on a slow ticker with a pause button. It stands still for visitors who ask for less motion." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "blue" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "blue" } }
+  ]
+}
+</schema>

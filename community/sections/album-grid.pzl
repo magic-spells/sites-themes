@@ -1,0 +1,31 @@
+<!-- Stub (code B builds the covers): the section head and the albums as a plain list. -->
+{#let
+  all = content.albums.entries | sort('fields.date') | reverse
+  albums = page.entry ? (all | reject('id', page.entry.id)) : all
+}
+{#if albums.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ t('all_photos') } link_href="/photos" />
+    <ul>{#for entry in albums | slice(0, settings.limit)}<li><a href="/photos/{ entry.handle }">{ entry.title }</a> · { entry.fields.date | date('medium') }</li>{/for}</ul>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Albums",
+  "description": "Photo albums as cover tiles, newest first.",
+  "kind": "Collections",
+  "icon": "images",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Albums" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "range", "id": "limit", "label": "Limit", "min": 1, "max": 24, "step": 1, "default": 24 },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

@@ -1,12 +1,13 @@
 {
   "label": "About",
-  "description": "Who we are and how we started.",
+  "description": "Who we are, the team and board, our reports and partners.",
   "sections": [
     {
       "id": "s_header",
       "type": "page-header",
       "preset": "Default",
       "settings": {
+        "heading": "About us",
         "text": "Neighbours feeding neighbours in Larkfield since 2009."
       },
       "blocks": []
@@ -25,6 +26,149 @@
         "text": "<p>Larkfield Community Kitchen started in a church hall in 2009 with one soup pot and six volunteers. Today we run a choice pantry, cook a free lunch twice a week and deliver groceries to neighbours who can't get out.</p><p>Anyone who lives in Larkfield or the river villages is welcome. There are no forms, and nobody asks why you came.</p>",
         "link_label": "",
         "link": ""
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_team",
+      "type": "team-grid",
+      "preset": "Staff",
+      "settings": {
+        "heading": "Our team",
+        "group": "Staff",
+        "color_scheme": "chalk"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_board",
+      "type": "team-grid",
+      "preset": "Board",
+      "settings": {
+        "heading": "Our board",
+        "group": "Board",
+        "color_scheme": "chalk"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_reports",
+      "type": "reports",
+      "preset": "Default",
+      "settings": {
+        "heading": "Reports",
+        "text": "Where the money came from and where it went, every year."
+      },
+      "blocks": [
+        {
+          "type": "report",
+          "settings": {
+            "title": "Annual report",
+            "year": "2025",
+            "link": "https://larkfieldkitchen.example/files/annual-report-2025.pdf"
+          }
+        },
+        {
+          "type": "report",
+          "settings": {
+            "title": "Financial statements",
+            "year": "2025",
+            "link": "https://larkfieldkitchen.example/files/financial-statements-2025.pdf"
+          }
+        },
+        {
+          "type": "report",
+          "settings": {
+            "title": "Annual report",
+            "year": "2024",
+            "link": "https://larkfieldkitchen.example/files/annual-report-2024.pdf"
+          }
+        },
+        {
+          "type": "report",
+          "settings": {
+            "title": "Safeguarding policy",
+            "year": "2026",
+            "link": "https://larkfieldkitchen.example/files/safeguarding-policy-2026.pdf"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_partners",
+      "type": "logos",
+      "preset": "Grid",
+      "settings": {
+        "heading": "Our partners",
+        "layout": "grid"
+      },
+      "blocks": [
+        {
+          "type": "logo",
+          "settings": {
+            "name": "Pellow's Corner Grocer",
+            "link": ""
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "name": "Fennel & Rye Bakery",
+            "link": ""
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "name": "Wenlow Valley Credit Union",
+            "link": ""
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "name": "Wenlow Public Library",
+            "link": ""
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "name": "Cotter's Hollow Farm",
+            "link": ""
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "name": "Tanner's Mead Farm",
+            "link": ""
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "name": "St Anne's Hall",
+            "link": ""
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "name": "Wenlow River Trust",
+            "link": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Default",
+      "settings": {
+        "heading": "Newsletter",
+        "text": "One email a month with what we cooked, who helped and what the pantry needs.",
+        "color_scheme": "chalk"
       },
       "blocks": []
     }

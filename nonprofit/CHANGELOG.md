@@ -14,3 +14,7 @@
   and newsletter forms ship as fixtures.
 - Fixtures for Larkfield Community Kitchen: programmes, events, posts, the team and the pages
   that show them.
+- The lists and their pages: programmes (a grid, and each programme's page); events (cards,
+  a carousel past three, or rows under each month, and each event's page); news (a feature,
+  a grid or a list, with topic links, and each post's page); the team; visit us (each
+  location's address and hours); reports; partners (a grid or a marquee); and social tiles.

@@ -1,13 +1,37 @@
 {
   "label": "Events",
-  "description": "What is coming up.",
+  "description": "What is coming up, by month.",
   "sections": [
     {
       "id": "s_header",
       "type": "page-header",
       "preset": "Default",
       "settings": {
+        "heading": "Events",
         "text": "Meals, swaps and classes in Larkfield. Everything is free unless it says so."
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_events",
+      "type": "events-list",
+      "preset": "List",
+      "settings": {
+        "layout": "list",
+        "heading": "",
+        "limit": 12,
+        "link_label": ""
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_newsletter",
+      "type": "newsletter",
+      "preset": "Default",
+      "settings": {
+        "heading": "Newsletter",
+        "text": "One email a month with what we cooked, who helped and what the pantry needs.",
+        "color_scheme": "chalk"
       },
       "blocks": []
     }

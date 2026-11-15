@@ -1,0 +1,17 @@
+<!-- component: Day -->
+<!-- A calendar day from a date field, in the text face with tabular figures. The engine's date() has no weekday, so it is worked out here from the ISO day (Sakamoto's rule; no clock is read), named by the locale's day.0 (Sunday) to day.6. view stamp: the day over the short month on the band's ground, at the top left of the well it sits in. day: the day over the short weekday (the list rows). month: "December 2026". Otherwise "Saturday 5 December 2026". -->
+{#let
+  iso = value | date('iso')
+  y = parseInt(iso | slice(0, 4))
+  m = parseInt(iso | slice(5, 2))
+  d = parseInt(iso | slice(8, 2))
+  month = value | date('long') | split(' ') | first
+  z = m < 3 ? y - 1 : y
+  weekday = t('day.' + (z + (z / 4 | floor) - (z / 100 | floor) + (z / 400 | floor) + [0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4][m - 1] + d) % 7)
+}
+{#case view}
+  {:when 'stamp'}<time class="absolute top-space-sm left-space-sm grid min-w-control justify-items-center rounded-sm bg-scheme-background px-space-xs py-space-2xs text-scheme-foreground tnum" datetime="{ iso }"><span class="text-h4">{ d }</span><span class="text-small">{ month | slice(0, 3) }</span></time>
+  {:when 'day'}<time class="grid w-control shrink-0 justify-items-center tnum" datetime="{ iso }"><span class="text-h4">{ d }</span><span class="text-small text-scheme-muted">{ weekday | slice(0, 3) }</span></time>
+  {:when 'month'}{ month } { y }
+  {:else}<time datetime="{ iso }">{ weekday } { d } { month } { y }</time>
+{/case}

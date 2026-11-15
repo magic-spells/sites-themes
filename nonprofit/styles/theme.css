@@ -344,6 +344,13 @@ select-dropdown {
 	display: block;
 }
 
+/* builder C */
+/* The events list's thumbnails and the partners' logos, each at one size. */
+@theme {
+	--spacing-thumb-lg: 8rem;
+	--spacing-logo: 2.5rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
 	*, *::before, *::after {
 		animation-duration: 0.001ms !important;

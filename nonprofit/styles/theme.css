@@ -179,10 +179,11 @@
 }
 
 /* Two bands on the same light scheme in a row read as one: the second drops
-   its top padding so the seam carries one section's space, not two. A section
-   that renders nothing (an embed with no address) leaves an empty wrapper,
-   which is no band. */
-main > :is(.sites-scheme-paper:not(:empty) + .sites-scheme-paper, .sites-scheme-chalk:not(:empty) + .sites-scheme-chalk, .sites-scheme-cream:not(:empty) + .sites-scheme-cream) > section {
+   its top padding so the seam carries one section's space, not two. A band is
+   a section that paints its scheme's ground; a panel section paints only its
+   panel, and a section that renders nothing (an embed with no address) paints
+   nothing. */
+main > :is(.sites-scheme-paper:has(> .bg-scheme-background) + .sites-scheme-paper, .sites-scheme-chalk:has(> .bg-scheme-background) + .sites-scheme-chalk, .sites-scheme-cream:has(> .bg-scheme-background) + .sites-scheme-cream) > .bg-scheme-background {
 	padding-top: 0;
 }
 

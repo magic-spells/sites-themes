@@ -1,11 +1,26 @@
-<!-- Stub (code B builds the grid and lightbox): the album's title, date and photos as a plain list. -->
-{#let album = page.entry}
+<!-- An album's page: the H1, the date, the description and, when it names one, the event it came from; then every photo as a square well, two, three then four across, each opening the lightbox (and linking the large photo for a page without JavaScript). -->
+{#let
+  album = page.entry
+  f = album?.fields
+  items = f?.photos ? f.photos.items : []
+  id = 'album-' + section.id
+  lb = { lightbox: true, navigation: { showButtons: false, showPagination: false } }
+}
 {#if album}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column gap-space-md">
-    <h1 class="font-heading text-h1 text-balance">{ album.title }</h1>
-    <p>{ album.fields.date | date('long') }</p>
-    <ul>{#for item in album.fields.photos.items}<li>{ item.alt }</li>{/for}</ul>
+  <div class="mx-auto grid max-w-column gap-space-xl">
+    <header class="grid max-w-hero gap-space-sm">
+      <h1 class="font-heading text-h1 text-balance"><Rise text={ album.title } /></h1>
+      {#if f.date}<p class="text-label text-scheme-muted tnum">{ f.date | date('long') }</p>{/if}
+      {#if f.description}<p class="max-w-reading pt-space-xs text-lead text-pretty">{ f.description }</p>{/if}
+      {#if f.event}<p><span class="text-scheme-muted">{ t('from_the_event') }</span> <a class="underline decoration-1 underline-offset-4 hover:decoration-2" href="/whats-on/{ f.event.handle }">{ f.event.title }</a></p>{/if}
+    </header>
+    {#if items.length}
+      <LightboxCompanion items={ items } id={ id }><script type="application/json" data-tarot-options>{ lb | json }</script></LightboxCompanion>
+      <ul class="grid grid-cols-2 gap-space-xs md:grid-cols-3 md:gap-space-sm lg:grid-cols-4">
+        {#for item in items, i}<li><a class="block cursor-zoom-in" href="{ image_url(item.asset, 2560) }" data-lightbox-open={ id } data-index={ i }><Well asset={ item.asset } alt={ item.alt } width={ 640 } sizes="(min-width: 64rem) 20rem, (min-width: 48rem) 30vw, 50vw" /></a></li>{/for}
+      </ul>
+    {/if}
   </div>
 </section>
 {/if}

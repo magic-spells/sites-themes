@@ -136,6 +136,22 @@
 	--transition-duration-fast: 150ms;
 	--transition-duration-settle: 500ms;
 	--ease-settle: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+	/* The week's day and time columns; a slip's inset; a print's caption
+	   strip under its photo. */
+	--spacing-day: 10rem;
+	--spacing-time: 6.5rem;
+	--spacing-slip: 1.25rem;
+	--leading-caption: 2.25rem;
+
+	/* Rows: a thumbnail, the text, and (from 48rem) a right-hand column
+	   for when a group meets, a room's price or an event's photo. */
+	--grid-template-columns-row: 4.5rem minmax(0, 1fr);
+	--grid-template-columns-row-md: 5rem minmax(0, 1fr) 14rem;
+	--grid-template-columns-room: 9rem minmax(0, 1fr);
+	--grid-template-columns-room-md: 12rem minmax(0, 1fr) auto;
+	--grid-template-columns-date: 4rem minmax(0, 1fr);
+	--grid-template-columns-date-md: 4rem minmax(0, 1fr) 7rem;
 }
 
 /* Sizes per breakpoint (phone, then from 48rem): each role reads a design

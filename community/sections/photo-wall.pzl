@@ -1,11 +1,50 @@
-<!-- Stub (code B builds the wall): the section head and the album covers or the gallery's photos as a plain list. -->
-{#let items = settings.source == 'gallery' ? (settings.gallery ? settings.gallery.items : []) : (content.albums.entries | sort('fields.date') | reverse)}
+<!-- Prints (Print) across the band, wider than the column: the albums' covers, newest first, each captioned with its album's title and linked to it; or one gallery's photos, captioned with their alt text, each opening the lightbox. collage: each print at its box in a stage of fixed ratio (left, top and width as fractions of the stage); five prints in a stepped row, or seven in two rows from seven photos; phones show a stepped column of five. Where two prints overlap, the one that ends higher lies on top, so no print covers another's caption; overlaps stay near a tenth of a print. mosaic: one large print and four small. Under three photos the wall hides. The prints settle in, in order. -->
+{#let
+  albums = settings.source != 'gallery'
+  all = albums ? (content.albums.entries | sort('fields.date') | reverse) : (settings.gallery ? settings.gallery.items : [])
+  mosaic = settings.layout == 'mosaic'
+  seven = !mosaic && all.length >= 7
+  items = all | slice(0, seven ? 7 : 5)
+  id = 'wall-' + section.id
+  phone = [
+    ['aspect-portrait', 'left-0 top-0 z-4'],
+    ['aspect-3/4', 'left-123/343 top-259/1318 z-3'],
+    ['aspect-square', 'left-0 top-535/1318 z-2'],
+    ['aspect-3/4', 'left-123/343 top-743/1318 z-1'],
+    ['aspect-portrait', 'left-0 top-1019/1318'],
+    ['', 'max-md:hidden'],
+    ['', 'max-md:hidden']
+  ]
+  wide = seven ? [
+    ['md:aspect-photo', 'md:left-0 md:top-1/10 md:w-19/50 md:z-2'],
+    ['md:aspect-3/4', 'md:left-179/500 md:top-0 md:w-11/50 md:z-3'],
+    ['md:aspect-photo', 'md:left-139/250 md:top-1/15 md:w-111/250 md:z-2'],
+    ['md:aspect-photo', 'md:left-1/50 md:top-3/5 md:w-11/50 md:z-0'],
+    ['md:aspect-2/1', 'md:left-27/100 md:top-11/20 md:w-7/25 md:z-0'],
+    ['md:aspect-photo', 'md:left-29/50 md:top-19/30 md:w-11/50'],
+    ['md:aspect-square', 'md:left-41/50 md:top-2/3 md:w-17/100']
+  ] : [
+    ['md:aspect-3/4', 'md:left-0 md:top-5/36 md:w-5/23 md:z-0'],
+    ['md:aspect-portrait', 'md:left-9/46 md:top-0 md:w-5/23 md:z-1'],
+    ['md:aspect-square', 'md:left-9/23 md:top-1/3 md:w-5/23 md:z-0'],
+    ['md:aspect-portrait', 'md:left-27/46 md:top-0 md:w-5/23 md:z-1'],
+    ['md:aspect-3/4', 'md:left-18/23 md:top-5/36 md:w-5/23']
+  ]
+  stage = mosaic ? 'grid grid-cols-2 gap-space-md md:grid-cols-4 md:gap-space-lg' : 'relative aspect-343/1318 ' + (seven ? 'md:aspect-5/3' : 'md:aspect-25/9')
+  settle = site.settings.reveal ? 'reveal reveal-settle reveal-duration-500' : ''
+  lb = { lightbox: true, navigation: { showButtons: false, showPagination: false } }
+}
 {#if items.length > 2}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto max-w-column">
-    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ t('all_photos') } link_href="/photos" />
-    <ul>{#for item in items}<li>{ item.title || item.alt }</li>{/for}</ul>
-  </div>
+  <div class="mx-auto max-w-column"><SectionHead heading={ settings.heading } text={ settings.text } link_label={ t('all_photos') } link_href="/photos" /></div>
+  {#if !albums}<LightboxCompanion items={ items } id={ id }><script type="application/json" data-tarot-options>{ lb | json }</script></LightboxCompanion>{/if}
+  <ul class="{ stage }">
+    {#for item in items, i}
+      <li class="{ mosaic ? (i ? '' : 'col-span-2 md:row-span-2') : 'absolute w-220/343 ' + phone[i][1] + ' ' + wide[i][1] } { settle }" data-reveal-delay={ settle ? i * 60 : null }>
+        <Print asset={ albums ? item.fields.cover : item.asset } caption={ albums ? item.title : item.alt } href={ albums ? '/photos/' + item.handle : image_url(item.asset, 2560) } open={ albums ? null : id } index={ i } ratio={ mosaic ? (i ? 'aspect-square' : 'aspect-photo md:aspect-auto md:flex-1 md:contain-size') : phone[i][0] + ' ' + wide[i][0] } />
+      </li>
+    {/for}
+  </ul>
 </section>
 {/if}
 
@@ -26,7 +65,7 @@
     { "type": "select", "id": "layout", "label": "Layout", "default": "collage", "options": [
       { "value": "collage", "label": "Collage" },
       { "value": "mosaic", "label": "Mosaic" }
-    ] },
+    ], "info": "Collage: five prints in a stepped row, or seven in two rows. Mosaic: one large print and four small." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [

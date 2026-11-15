@@ -1,8 +1,22 @@
-<!-- Stub (code B builds the rows): the section head and the rooms as a plain list. -->
+<!-- The rooms for hire as rows between hairlines, like the groups: a 4:3 photo (9rem, 12rem from 48rem), the name in H4 over its line in muted, and the price as typed: under the line on phones, at the right from 48rem. One enquiry button under the list. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } />
-    <ul>{#for block in blocks}<li data-block={ block.editor_id }>{ block.settings.name } · { block.settings.text } · { block.settings.price }</li>{/for}</ul>
+    {#if blocks.length}
+      <ul class="border-b border-scheme-border">
+        {#for block in blocks, i}
+          <li class="grid grid-cols-room items-start gap-x-space-md gap-y-space-2xs border-t border-scheme-border py-space-md md:grid-cols-room-md md:gap-x-space-xl { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-delay={ site.settings.reveal ? (i % 6) * 60 : null } data-block={ block.editor_id }>
+            <Well asset={ block.settings.image } alt={ block.settings.image_alt } ratio="aspect-photo" width={ 480 } sizes="12rem" />
+            <div class="grid gap-space-3xs">
+              <h3 class="font-heading text-h4 text-balance">{ block.settings.name }</h3>
+              {#if block.settings.text}<p class="text-pretty text-scheme-muted">{ block.settings.text }</p>{/if}
+            </div>
+            {#if block.settings.price}<p class="col-start-2 tnum md:col-start-3 md:text-right">{ block.settings.price }</p>{/if}
+          </li>
+        {/for}
+      </ul>
+    {/if}
+    {#if settings.link?.href}<Button href={ settings.link.href } cls="mt-space-xl">{ settings.link.label }</Button>{/if}
   </div>
 </section>
 

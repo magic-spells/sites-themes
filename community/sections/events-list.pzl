@@ -1,13 +1,21 @@
-<!-- Stub (code B builds the rows): the section head and the events as a plain list. -->
+<!-- Every event by date as rows (EventRow) under month headings, a heading wherever the month changes. On an event's page it can leave that event out. Nothing renders when there is no event. -->
 {#let
   all = content.events.entries | sort('fields.date')
-  events = page.entry && settings.exclude_current ? (all | reject('id', page.entry.id)) : all
+  events = (page.entry && settings.exclude_current ? (all | reject('id', page.entry.id)) : all) | slice(0, settings.limit)
 }
 {#if events.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } link_label={ t('all_events') } link_href="/whats-on" />
-    <ul>{#for entry in events | slice(0, settings.limit)}<li><a href="/whats-on/{ entry.handle }">{ entry.title }</a> · { entry.fields.date | date('medium') } · { entry.fields.time }</li>{/for}</ul>
+    <ul class="border-b border-scheme-border">
+      {#for entry in events, i}
+        {#let month = entry.fields.date | date('long') | split(' ')}
+        <li class="{ site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-delay={ site.settings.reveal ? (i % 6) * 60 : null }>
+          {#if (entry.fields.date | slice(0, 7)) != (events[i - 1].fields.date | slice(0, 7))}<h3 class="pb-space-md font-heading text-h3 { i ? 'pt-space-xl' : '' }">{ month[0] } { month[2] }</h3>{/if}
+          <EventRow entry={ entry } />
+        </li>
+      {/for}
+    </ul>
   </div>
 </section>
 {/if}

@@ -1,13 +1,25 @@
-<!-- Stub (code B builds the covers): the section head and the albums as a plain list. -->
+<!-- The albums, newest first, as covers: a 4:3 well, the title in H4 and the date in the label in muted, two across, three from 48rem. On an album's page it leaves that album out. Nothing renders when there is no album. -->
 {#let
   all = content.albums.entries | sort('fields.date') | reverse
-  albums = page.entry ? (all | reject('id', page.entry.id)) : all
+  albums = (page.entry ? (all | reject('id', page.entry.id)) : all) | slice(0, settings.limit)
 }
 {#if albums.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } link_label={ t('all_photos') } link_href="/photos" />
-    <ul>{#for entry in albums | slice(0, settings.limit)}<li><a href="/photos/{ entry.handle }">{ entry.title }</a> · { entry.fields.date | date('medium') }</li>{/for}</ul>
+    <ul class="grid grid-cols-2 gap-x-space-md gap-y-space-xl md:grid-cols-3 md:gap-x-space-lg">
+      {#for entry in albums, i}
+        <li class="{ site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-delay={ site.settings.reveal ? (i % 3) * 60 : null }>
+          <a class="group grid content-start gap-space-sm" href="/photos/{ entry.handle }">
+            <Well asset={ entry.fields.cover } alt="" ratio="aspect-photo" width={ 640 } sizes="(min-width: 48rem) 30vw, 50vw" />
+            <span class="grid gap-space-3xs">
+              <h3 class="font-heading text-h4 text-balance group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{ entry.title }</h3>
+              <span class="text-label text-scheme-muted tnum">{ entry.fields.date | date('long') }</span>
+            </span>
+          </a>
+        </li>
+      {/for}
+    </ul>
   </div>
 </section>
 {/if}

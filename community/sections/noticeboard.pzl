@@ -1,12 +1,24 @@
-<!-- Stub (code B builds the board): the section head, the events, then the notices as a plain list. -->
-{#let events = content.events.entries | sort('fields.date') | slice(0, settings.limit)}
+<!-- Paper slips on the band (Slip), each its own height: the ragged board. The next events by date (Events, 0 for none), then the notices. From 64rem the events take three columns and the notices stack in the fourth (either takes the whole board when the other is empty); from 48rem each two across, notices under events; on phones one column. With nothing pinned up, one slip says so and links the newsletter when its link is set. -->
+{#let
+  events = content.events.entries | sort('fields.date') | slice(0, settings.limit)
+  notices = blocks | slice(0, 6)
+}
 <section class="bg-scheme-background px-gutter py-section-tight text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } link_label={ t('all_events') } link_href="/whats-on" />
-    <ul>
-      {#for entry in events}<li><a href="/whats-on/{ entry.handle }">{ entry.title }</a> · { entry.fields.date | date('medium') }</li>{/for}
-      {#for block in blocks}<li data-block={ block.editor_id }>{ block.settings.text }</li>{/for}
-    </ul>
+    <div class="grid gap-space-md lg:grid-cols-4 lg:items-start">
+      {#if events.length}
+        <ul class="grid items-start gap-space-md md:grid-cols-2 { notices.length ? 'lg:col-span-3 lg:grid-cols-3' : 'lg:col-span-4 lg:grid-cols-4' }">
+          {#for entry in events, i}<Slip entry={ entry } i={ i } />{/for}
+        </ul>
+      {/if}
+      {#if notices.length || !events.length}
+        <ul class="grid items-start gap-space-md md:grid-cols-2 { events.length ? 'lg:grid-cols-1' : 'lg:col-span-4 lg:grid-cols-4' }">
+          {#for block in notices, i}<Slip text={ block.settings.text } link={ block.settings.link } editor_id={ block.editor_id } i={ i } />{/for}
+          {#if !notices.length}<Slip text={ t('nothing_pinned') } link={ settings.newsletter_link ? { href: settings.newsletter_link, label: t('get_newsletter') } : null } i={ 0 } />{/if}
+        </ul>
+      {/if}
+    </div>
   </div>
 </section>
 

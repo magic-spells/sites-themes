@@ -1174,11 +1174,6 @@
           "label": "Date"
         },
         {
-          "id": "cover",
-          "type": "image",
-          "label": "Cover (4:3)"
-        },
-        {
           "id": "photos",
           "type": "gallery",
           "label": "Photos"
@@ -1202,7 +1197,6 @@
           "title": "Street party",
           "fields": {
             "date": "2026-07-11",
-            "cover": "as_4x3_cream",
             "photos": "street-party",
             "description": "The road closed, forty tables and a brass band."
           }
@@ -1213,7 +1207,6 @@
           "title": "Summer concert",
           "fields": {
             "date": "2026-07-25",
-            "cover": "as_4x3_mist",
             "photos": "summer-concert",
             "description": "The Larch Street Singers in the back garden."
           }
@@ -1224,7 +1217,6 @@
           "title": "Harvest supper",
           "fields": {
             "date": "2026-10-03",
-            "cover": "as_4x3_stone",
             "photos": "harvest-supper",
             "description": "Soup from the garden for sixty neighbours."
           }
@@ -1235,7 +1227,6 @@
           "title": "Garden open day",
           "fields": {
             "date": "2026-06-13",
-            "cover": "as_4x3_stone",
             "photos": "garden-open-day",
             "description": "Beds, bees and the new pond."
           }
@@ -1246,7 +1237,6 @@
           "title": "Repair Table",
           "fields": {
             "date": "2026-09-02",
-            "cover": "as_4x3_mist",
             "photos": "repair-table",
             "description": "Toasters, lamps, a bike and a very old radio."
           }
@@ -1257,7 +1247,6 @@
           "title": "Lantern walk 2025",
           "fields": {
             "date": "2025-12-06",
-            "cover": "as_4x3_cream",
             "photos": "lantern-walk-2025",
             "description": "Paper lanterns round the park at dusk.",
             "event": "ev_lantern_walk"
@@ -1277,11 +1266,6 @@
           "id": "image",
           "type": "image",
           "label": "Portrait (4:5)"
-        },
-        {
-          "id": "bio",
-          "type": "richtext",
-          "label": "Bio"
         },
         {
           "id": "order",
@@ -1306,7 +1290,6 @@
           "title": "Ana Ruiz",
           "fields": {
             "role": "Coordinator",
-            "bio": "<p>Ana runs the house day to day: the room bookings, the rota and the kettle. Find her at the desk by the door most mornings.</p>",
             "order": 1,
             "team": "staff",
             "image": "as_4x5_mist"
@@ -1318,7 +1301,6 @@
           "title": "Femi Adeyemi",
           "fields": {
             "role": "Volunteer lead",
-            "bio": "<p>Femi looks after the sixty-odd volunteers who keep the groups going, and finds a job for anyone who asks.</p>",
             "order": 2,
             "team": "staff",
             "image": "as_4x5_cream"
@@ -1330,7 +1312,6 @@
           "title": "Margaret Doyle",
           "fields": {
             "role": "Chair",
-            "bio": "<p>Margaret has chaired the committee since 2019 and has lived on Larch Street for forty years.</p>",
             "order": 3,
             "team": "committee",
             "image": "as_4x5_stone"
@@ -1342,7 +1323,6 @@
           "title": "David Hale",
           "fields": {
             "role": "Treasurer",
-            "bio": "<p>David keeps the accounts, chases the grants and presents the numbers at the AGM every November.</p>",
             "order": 4,
             "team": "committee"
           }
@@ -1353,7 +1333,6 @@
           "title": "Priya Shah",
           "fields": {
             "role": "Garden lead",
-            "bio": "<p>Priya leads the Thursday garden crew and the spring seed swap.</p>",
             "order": 5,
             "team": "volunteers",
             "image": "as_4x5_stone"
@@ -1365,7 +1344,6 @@
           "title": "Owen Price",
           "fields": {
             "role": "Choir leader",
-            "bio": "<p>Owen leads the Larch Street Singers. No auditions, and no need to read music.</p>",
             "order": 6,
             "team": "volunteers",
             "image": "as_4x5_mist"
@@ -1377,7 +1355,6 @@
           "title": "Rosa Lindqvist",
           "fields": {
             "role": "Supper cook",
-            "bio": "<p>Rosa cooks Friday supper for forty with whoever turns up to help chop.</p>",
             "order": 7,
             "team": "volunteers"
           }
@@ -1388,7 +1365,6 @@
           "title": "Sam Kellett",
           "fields": {
             "role": "Youth worker",
-            "bio": "<p>Sam runs Homework club in term time and the summer holiday days.</p>",
             "order": 8,
             "team": "staff",
             "image": "as_4x5_cream"
@@ -2103,7 +2079,6 @@
         "title": "Street party",
         "fields": {
           "date": "2026-07-11",
-          "cover": "as_4x3_cream",
           "photos": "street-party",
           "description": "The road closed, forty tables and a brass band."
         }
@@ -2122,7 +2097,6 @@
         "title": "Summer concert",
         "fields": {
           "date": "2026-07-25",
-          "cover": "as_4x3_mist",
           "photos": "summer-concert",
           "description": "The Larch Street Singers in the back garden."
         }
@@ -2141,7 +2115,6 @@
         "title": "Harvest supper",
         "fields": {
           "date": "2026-10-03",
-          "cover": "as_4x3_stone",
           "photos": "harvest-supper",
           "description": "Soup from the garden for sixty neighbours."
         }
@@ -2160,7 +2133,6 @@
         "title": "Garden open day",
         "fields": {
           "date": "2026-06-13",
-          "cover": "as_4x3_stone",
           "photos": "garden-open-day",
           "description": "Beds, bees and the new pond."
         }
@@ -2179,7 +2151,6 @@
         "title": "Repair Table",
         "fields": {
           "date": "2026-09-02",
-          "cover": "as_4x3_mist",
           "photos": "repair-table",
           "description": "Toasters, lamps, a bike and a very old radio."
         }
@@ -2198,7 +2169,6 @@
         "title": "Lantern walk 2025",
         "fields": {
           "date": "2025-12-06",
-          "cover": "as_4x3_cream",
           "photos": "lantern-walk-2025",
           "description": "Paper lanterns round the park at dusk.",
           "event": "ev_lantern_walk"

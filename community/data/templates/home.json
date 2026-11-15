@@ -84,9 +84,7 @@
       "id": "s_photos",
       "type": "photo-wall",
       "preset": "Default",
-      "settings": {
-        "source": "albums"
-      },
+      "settings": {},
       "blocks": []
     },
     {

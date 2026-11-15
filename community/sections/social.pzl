@@ -21,7 +21,8 @@
   "kind": "Content",
   "icon": "camera",
   "settings": [
-    { "type": "text", "id": "handle", "label": "Handle", "default": "@larchstreethouse", "info": "The tiles are photos you upload: a live feed would need the engine to fetch it, which sections cannot." },
+    { "type": "paragraph", "content": "Add a Tile for each photo, up to six. The strip shows once it has one." },
+    { "type": "text", "id": "handle", "label": "Handle", "default": "" },
     { "type": "url", "id": "url", "label": "Profile link", "default": "https://www.instagram.com/" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],

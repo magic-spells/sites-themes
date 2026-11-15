@@ -44,8 +44,9 @@ sites.fixtures.json Larch Street Community House: pages, menus, forms and every 
   different times is two entries.
 - **events**: dated one-offs only. The date, the time in words, the place, one line, a
   description, a 3:2 photo, a link, the album from last time and the group it belongs to.
-- **albums**, **people** (role, a 4:5 portrait, a bio, the team: staff, committee or
-  volunteers) and **posts** (news and newsletter issues, by topic) as their sections describe.
+- **albums** (the first photo is the cover), **people** (role, a 4:5 portrait, the team: staff,
+  committee or volunteers) and **posts** (news and newsletter issues, by topic) as their sections
+  describe.
 
 ## House settings
 

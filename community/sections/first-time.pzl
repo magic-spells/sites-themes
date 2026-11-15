@@ -16,7 +16,7 @@
   "name": "First visit",
   "description": "What to expect the first time: the time, the cost, what to bring, children, access and who to ask.",
   "kind": "Content",
-  "icon": "footprints",
+  "icon": "list-checks",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Your first visit" },
     { "type": "text", "id": "text", "label": "Standfirst", "default": "New to the house? Here is what to expect." },

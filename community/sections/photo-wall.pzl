@@ -1,7 +1,7 @@
 <!-- Prints (Print) across the band, wider than the column: the albums' covers, newest first, each captioned with its album's title and linked to it; or one gallery's photos, captioned with their alt text, each opening the lightbox. collage: each print at its box in a stage of fixed ratio (left, top and width as fractions of the stage); five prints in a stepped row, or seven in two rows from seven photos; phones show a stepped column of five. Where two prints overlap, the one that ends higher lies on top, so no print covers another's caption; overlaps stay near a tenth of a print. mosaic: one large print and four small. Under five photos the wall hides. The prints settle in, in order. -->
 {#let
-  albums = settings.source != 'gallery'
-  all = albums ? (content.albums.entries | sort('fields.date') | reverse) : (settings.gallery ? settings.gallery.items : [])
+  albums = !settings.gallery
+  all = albums ? (content.albums.entries | sort('fields.date') | reverse) : settings.gallery.items
   mosaic = settings.layout == 'mosaic'
   seven = !mosaic && all.length >= 7
   items = all | slice(0, seven ? 7 : 5)
@@ -41,7 +41,7 @@
   <ul class="{ stage }">
     {#for item in items, i}
       <li class="{ mosaic ? (i ? '' : 'col-span-2 md:row-span-2') : 'absolute w-220/343 ' + phone[i][1] + ' ' + wide[i][1] } { settle }" data-reveal-delay={ settle ? i * 60 : null }>
-        <Print asset={ albums ? item.fields.cover : item.asset } caption={ albums ? item.title : item.alt } href={ albums ? '/photos/' + item.handle : image_url(item.asset, 2560) } open={ albums ? null : id } index={ i } ratio={ mosaic ? (i ? 'aspect-square' : 'aspect-photo md:aspect-auto md:flex-1 md:contain-size') : phone[i][0] + ' ' + wide[i][0] } />
+        <Print asset={ albums ? item.fields.photos.items[0].asset : item.asset } caption={ albums ? item.title : item.alt } href={ albums ? '/photos/' + item.handle : image_url(item.asset, 2560) } open={ albums ? null : id } index={ i } ratio={ mosaic ? (i ? 'aspect-square' : 'aspect-photo md:aspect-auto md:flex-1 md:contain-size') : phone[i][0] + ' ' + wide[i][0] } />
       </li>
     {/for}
   </ul>
@@ -57,11 +57,7 @@
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Photos" },
     { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
-    { "type": "select", "id": "source", "label": "Photos", "default": "albums", "options": [
-      { "value": "albums", "label": "Album covers" },
-      { "value": "gallery", "label": "A gallery" }
-    ], "info": "Album covers link to their albums; a gallery's photos open larger." },
-    { "type": "gallery", "id": "gallery", "label": "Gallery" },
+    { "type": "gallery", "id": "gallery", "label": "Gallery", "info": "Its photos open larger. Leave it empty to show the albums' first photos, each linking to its album. The wall needs five photos." },
     { "type": "select", "id": "layout", "label": "Layout", "default": "collage", "options": [
       { "value": "collage", "label": "Collage" },
       { "value": "mosaic", "label": "Mosaic" }

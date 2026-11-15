@@ -1,8 +1,9 @@
-<!-- The door plate beside the map, seven parts to five: the map embed when its link is set, else the map image, in a 4:3 well; the plate on paper with the opening hours, a hairline, the address and Get directions, the access note in small muted, then the phone and email. Below 64rem the plate comes first. With no map the plate stands alone at five parts, left. Everything comes from the House and Contact settings. -->
+<!-- The door plate beside the map, seven parts to five: the map embed when its link is set, else the map image, in a 4:3 well; the plate on paper with the opening hours, a hairline, the address and Get directions, the access note in small muted, then the phone and email. Below 64rem the plate comes first. With no map the plate stands alone at five parts, left; with neither, nothing renders. Everything comes from the House and Contact settings. -->
 {#let
   s = site.settings
   map = s.map_embed_url || s.map_image
 }
+{#if map || s.hours || s.address || s.phone || s.email}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } />
@@ -16,6 +17,7 @@
     </div>
   </div>
 </section>
+{/if}
 
 <schema>
 {

@@ -1,0 +1,7 @@
+<!-- component: PersonLine -->
+<!-- A person in one line: their portrait or initial at 3rem beside the role in the label in muted over the name in H4. The rich text's sign-off and a group's host. -->
+{#let f = person.fields}
+<p class="flex items-center gap-space-sm text-left">
+  <span class="w-space-2xl shrink-0">{#if f.image}<Well asset={ f.image } alt="" width={ 96 } sizes="3rem" />{:else}<Monogram name={ person.title } cls="text-h4" />{/if}</span>
+  <span class="grid">{#if f.role}<span class="text-label text-scheme-muted">{ f.role }</span>{/if}<span class="font-heading text-h4">{ person.title }</span></span>
+</p>

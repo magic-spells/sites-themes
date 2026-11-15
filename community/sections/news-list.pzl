@@ -8,17 +8,13 @@
   lead = page.entry ? null : (posts | first)
   rest = lead ? (posts | slice(1, 12)) : posts
   topics = all | map('fields.topic') | compact | uniq
-  chip = 'inline-flex min-h-pill items-center rounded-full border border-scheme-muted px-space-md text-label current:border-scheme-foreground current:bg-scheme-foreground current:text-scheme-background'
 }
 {#if posts.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } link_label={ page.entry ? t('all_news') : '' } link_href="/news" />
     {#if settings.topic_links && !page.entry && topics.length > 1}
-      <nav class="mb-space-xl flex flex-wrap gap-space-xs" aria-label="{ t('topics') }">
-        <a class="{ chip }" href="{ page.path }" aria-current={ topic ? null : 'page' }>{ t('all') }</a>
-        {#for name in topics}<a class="{ chip }" href="{ page.path }?topic={ name }" aria-current={ topic == name ? 'page' : null }>{ name }</a>{/for}
-      </nav>
+      <Chips names={ topics } current={ topic } param="topic" label={ t('topics') } />
     {/if}
     {#if lead}
       <a class="group mb-space-2xl grid items-center gap-space-lg md:grid-cols-seven-five md:gap-space-2xl" href="/news/{ lead.handle }">

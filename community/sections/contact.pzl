@@ -2,7 +2,6 @@
 {#let
   s = site.settings
   id = 'contact-' + section.id
-  link = 'justify-self-start underline decoration-1 underline-offset-4 hover:decoration-2'
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
@@ -18,16 +17,7 @@
           <noscript><p class="text-small text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
         {/if}
       </Form>
-      <div class="{ 'paper' | scheme_class } grid gap-space-md rounded-paper border border-scheme-border bg-scheme-background p-space-lg text-scheme-foreground md:p-space-xl">
-        {#if s.hours}<h3 class="font-heading text-h4">{ t('opening_hours') }</h3><Hours /><hr class="border-scheme-border" />{/if}
-        <Address />
-        {#if s.phone || s.email}
-          <p class="grid gap-space-2xs">
-            {#if s.phone}<a class="{ link } tnum" href="tel:{ s.phone | replace(' ', '') }">{ s.phone }</a>{/if}
-            {#if s.email}<a class="{ link }" href="mailto:{ s.email }">{ s.email }</a>{/if}
-          </p>
-        {/if}
-      </div>
+      <Plate cls="border border-scheme-border" />
     </div>
   </div>
 </section>

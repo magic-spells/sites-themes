@@ -5,17 +5,13 @@
   pool = settings.source == 'featured' ? (all | where('fields.featured')) : all
   kinds = pool | where('fields.kind') | map('fields.kind') | uniq
   groups = (kind ? (pool | where('fields.kind', kind)) : pool) | slice(0, settings.limit)
-  chip = 'inline-flex min-h-pill items-center rounded-full border border-scheme-muted px-space-md text-label current:border-scheme-foreground current:bg-scheme-foreground current:text-scheme-background'
 }
 {#if groups.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } link_label={ t('all_groups') } link_href="/groups" />
     {#if settings.show_kinds && kinds.length > 1}
-      <nav class="mb-space-xl hidden flex-wrap gap-space-xs md:flex" aria-label="{ t('kinds') }">
-        <a class="{ chip }" href="{ page.path }" aria-current={ kind ? null : 'page' }>{ t('all') }</a>
-        {#for name in kinds}<a class="{ chip }" href="{ page.path }?kind={ encodeURIComponent(name) }" aria-current={ kind == name ? 'page' : null }>{ name }</a>{/for}
-      </nav>
+      <Chips names={ kinds } current={ kind } param="kind" label={ t('kinds') } cls="hidden md:flex" />
       <div class="mb-space-xl md:hidden">
         <select-dropdown class="text-body" data-links>
           <select-trigger class="flex min-h-control items-center justify-between gap-space-sm rounded-input border border-scheme-input-border bg-scheme-input-background px-space-sm text-scheme-input-foreground" aria-label="{ t('kinds') }">

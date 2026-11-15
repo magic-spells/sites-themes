@@ -32,7 +32,7 @@
   ]
   stage = mosaic ? 'grid grid-cols-2 gap-space-md md:grid-cols-4 md:gap-space-lg' : 'relative aspect-343/1318 ' + (seven ? 'md:aspect-5/3' : 'md:aspect-25/9')
   settle = site.settings.reveal ? 'reveal reveal-settle reveal-duration-500' : ''
-  lb = { lightbox: true, navigation: { showButtons: false, showPagination: false } }
+  lb = { lightbox: { showCounter: false }, navigation: { showButtons: false, showPagination: false } }
 }
 {#if items.length > 2}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">

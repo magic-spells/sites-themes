@@ -4,7 +4,7 @@
   f = album?.fields
   items = f?.photos ? f.photos.items : []
   id = 'album-' + section.id
-  lb = { lightbox: true, navigation: { showButtons: false, showPagination: false } }
+  lb = { lightbox: { showCounter: false }, navigation: { showButtons: false, showPagination: false } }
 }
 {#if album}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">

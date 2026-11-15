@@ -28,10 +28,7 @@
           {#if host}
             <div class="grid gap-space-xs">
               <p class="text-label text-scheme-muted">{ t('hosted_by') }</p>
-              <p class="flex items-center gap-space-sm">
-                <span class="w-space-2xl shrink-0">{#if host.fields.image}<Well asset={ host.fields.image } alt="" width={ 160 } sizes="3rem" />{:else}<Monogram name={ host.title } cls="text-h4" />{/if}</span>
-                <span class="grid">{#if host.fields.role}<span class="text-label text-scheme-muted">{ host.fields.role }</span>{/if}<span class="font-heading text-h4">{ host.title }</span></span>
-              </p>
+              <PersonLine person={ host } />
             </div>
           {/if}
         </aside>

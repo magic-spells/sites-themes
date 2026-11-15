@@ -7,12 +7,7 @@
   <div class="mx-auto grid max-w-reading gap-space-lg { centre ? 'justify-items-center text-center' : '' }">
     {#if settings.heading}<h2 class="font-heading text-h2 text-balance"><Rise text={ settings.heading } /></h2>{/if}
     <div class="sites-prose text-pretty { who ? 'text-lead' : '' }">{#if settings.body}{ settings.body }{:else}{ page.content }{/if}</div>
-    {#if who}
-      <p class="flex items-center gap-space-sm text-left">
-        <span class="w-space-2xl shrink-0">{#if who.fields.image}<Well asset={ who.fields.image } alt="" width={ 96 } sizes="3rem" />{:else}<Monogram name={ who.title } cls="text-h4" />{/if}</span>
-        <span class="grid">{#if who.fields.role}<span class="text-label text-scheme-muted">{ who.fields.role }</span>{/if}<span class="font-heading text-h4">{ who.title }</span></span>
-      </p>
-    {/if}
+    {#if who}<PersonLine person={ who } />{/if}
   </div>
 </section>
 

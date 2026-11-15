@@ -5,7 +5,7 @@
     <div class="grid gap-space-xl md:grid-cols-2 lg:grid-cols-12">
       <div class="grid content-start gap-space-sm lg:col-span-4">
         <a class="justify-self-start font-heading text-h4" href="/">{ s.wordmark || site.name }</a>
-        {#if settings.tagline}<p class="max-w-xs text-pretty text-scheme-muted">{ settings.tagline }</p>{/if}
+        {#if settings.tagline}<p class="max-w-tagline text-pretty text-scheme-muted">{ settings.tagline }</p>{/if}
       </div>
       {#if s.address}
         <div class="grid content-start gap-space-xs lg:col-span-2">

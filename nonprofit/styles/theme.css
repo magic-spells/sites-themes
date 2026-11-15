@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import "tailwindcss" source(none);
 @import "./vendor/collapsible-content.css" layer(components);
 @import "./vendor/dialog-panel.css" layer(components);
 @import "./vendor/progress-bar.css" layer(components);
@@ -122,11 +122,11 @@
 	--container-page: 75rem;
 	--container-reading: 40rem;
 	--container-form: 32rem;
+	--container-tagline: 20rem;
 	--aspect-landscape: 4 / 3;
 	--aspect-portrait: 4 / 5;
 	--aspect-capsule: 3 / 5;
 	--ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
-	--opacity-dots-inactive: 35%;
 }
 
 /* Sizes per breakpoint (phones, from 48rem): each role reads a design token
@@ -194,12 +194,6 @@ main > :is(.sites-scheme-paper:has(> .bg-scheme-background) + .sites-scheme-pape
 
 body:has([data-bare]) [data-group] { display: none; }
 
-html.reveal-off .reveal:not(.is-revealed) {
-	opacity: 1;
-	transform: none;
-	filter: none;
-}
-
 /* split-text hides a heading until it upgrades; with no script to upgrade it, show it. */
 html.reveal-off split-text:not(:defined) {
 	visibility: visible;
@@ -227,12 +221,6 @@ html.reveal-off split-text:not(:defined) {
 }
 
 @layer base {
-	dialog {
-		border: 0;
-		padding: 0;
-		color: inherit;
-	}
-
 	[id] {
 		scroll-margin-top: calc(var(--spacing-header) + 1rem);
 	}
@@ -244,26 +232,16 @@ html.reveal-off split-text:not(:defined) {
 		margin-top: var(--sites-spacing-sm);
 	}
 
-	.prose :is(h2, h3, h4) {
-		margin-top: var(--sites-spacing-lg);
-		font-family: var(--font-heading);
-		font-weight: 500;
-		letter-spacing: -0.012em;
-		line-height: 1.2;
-		color: var(--sites-scheme-heading);
-	}
-
 	.prose h2 {
-		font-size: var(--np-h3);
+		@apply mt-space-lg font-heading text-h3 text-scheme-heading;
 	}
 
 	.prose :is(h3, h4) {
-		font-size: var(--np-h4);
+		@apply mt-space-lg font-heading text-h4 text-scheme-heading;
 	}
 
 	.prose a {
-		@apply link;
-		color: var(--sites-scheme-links);
+		@apply link text-link;
 	}
 
 	.prose :is(ul, ol) {
@@ -307,7 +285,7 @@ html.reveal-off split-text:not(:defined) {
    tarot upgrades, or with no JavaScript, a track lays its slides out as a row
    that scrolls. */
 tarot-carousel {
-	--color-pagination-dot: color-mix(in oklab, var(--sites-scheme-foreground) var(--opacity-dots-inactive), transparent);
+	--color-pagination-dot: color-mix(in oklab, var(--sites-scheme-foreground) 35%, transparent);
 	--color-pagination-dot-active: var(--sites-scheme-foreground);
 	--tarot-progress-height: 0.125rem;
 	--tarot-progress-margin: 0;
@@ -344,7 +322,6 @@ select-dropdown {
 	--select-color-hover: var(--sites-scheme-chip-background);
 	--select-color-focus: var(--sites-scheme-chip-background);
 	--select-color-selected: var(--sites-scheme-chip-background);
-	display: block;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -352,14 +329,12 @@ select-dropdown {
 		animation-duration: 0.001ms !important;
 		animation-iteration-count: 1 !important;
 		transition-duration: 0.001ms !important;
-		scroll-behavior: auto !important;
 	}
 	/* The marquee stands still: one copy, wrapped and centred, with no dot after its last notice. */
 	[data-ticker] scrolling-content { mask-image: none; }
 	[data-ticker] scrolling-track { width: auto; transform: none !important; }
 	[data-ticker] :is(scrolling-item[data-clone], scrolling-item > svg:last-child) { display: none; }
 	[data-ticker] scrolling-item { flex: auto; flex-wrap: wrap; justify-content: center; }
-	.reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
 }
 
 /* The impact split: each <meter> is its own hairline track (utilities), and

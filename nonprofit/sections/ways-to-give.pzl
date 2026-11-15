@@ -1,16 +1,11 @@
-<!-- Every way to give besides the card: the head in five parts of twelve beside the rows in seven from 64rem, stacked on phones. Each row opens to its text and link, and carries its anchor as its id, so /donate#food lands on that row and opens it. Under the rows, the Organisation tax line and the Contact address for cheques, one short line each. -->
+<!-- Every way to give besides the card: the head in five parts of twelve beside the rows in seven from 64rem, stacked on phones. Each row opens to its text and link, and carries its anchor as its id, so /donate#food lands on that row and opens it. Under the rows, the Contact address for cheques in one short line (the tax line sits under the giving band's buttons). -->
 {#let s = site.settings}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-page gap-x-space-xl lg:grid-cols-12">
     <div class="lg:col-span-5"><SectionHead heading={ settings.heading } text={ settings.text } /></div>
     <div class="grid content-start gap-space-md lg:col-span-7">
       <Rows items={ blocks } />
-      {#if s.tax_line || s.address}
-        <div class="grid gap-space-2xs text-small text-scheme-muted">
-          {#if s.tax_line}<p>{ s.tax_line }</p>{/if}
-          {#if s.address}<p>{ t('ways_to_give.cheques', { address: s.address | split('\n') | join(', ') }) }</p>{/if}
-        </div>
-      {/if}
+      {#if s.address}<p class="text-small text-scheme-muted">{ t('ways_to_give.cheques', { address: s.address | split('\n') | join(', ') }) }</p>{/if}
     </div>
   </div>
 </section>
@@ -24,7 +19,7 @@
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Other ways to give" },
     { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
-    { "type": "paragraph", "content": "The tax line and the cheque address under the rows come from the Organisation and Contact settings." },
+    { "type": "paragraph", "content": "The cheque address under the rows comes from the Contact settings." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "blocks": [

@@ -10,7 +10,7 @@
 }
 <div class={ cls ?? (short ? null : 'col-span-full') }>
   {#if field.type == 'checkbox'}
-    <label class="flex items-start gap-space-xs text-small"><input class="size-icon shrink-0 accent-scheme-button" id="{ id }" type="checkbox" name={ field.id } value="on" checked={ field.value == 'on' } required={ field.required } aria-invalid={ bad } aria-describedby={ err } />{ field.label }{#if field.required}<span aria-hidden="true"> *</span>{/if}</label>
+    <label class="flex items-start gap-space-xs text-small"><input class="size-icon shrink-0 accent-scheme-button" id="{ id }" type="checkbox" name={ field.id } value="on" checked={ field.value == 'on' } required={ field.required } aria-invalid={ bad } aria-describedby={ err } /><span>{ field.label }{#if field.required}<span aria-hidden="true"> *</span>{/if}</span></label>
   {:else if field.type == 'select' && field.options.length <= 3}
     <fieldset class="grid gap-inset md:grid-cols-2" aria-describedby={ err }>
       <legend class="mb-inset text-label">{ field.label }{#if field.required}<span aria-hidden="true"> *</span>{/if}</legend>

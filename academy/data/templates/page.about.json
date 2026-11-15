@@ -17,7 +17,6 @@
       "preset": "Default",
       "settings": {
         "image": "as_4x5_rose",
-        "image_alt": "The front of the Old Corn Exchange on Market Street",
         "color_scheme": "white"
       },
       "blocks": []
@@ -30,7 +29,6 @@
         "heading": "Adult classes",
         "text": "<p>Choir, tap and one-to-one lessons on weekday evenings. No audition, and no experience needed.</p>",
         "image": "as_4x3_rose",
-        "image_alt": "Adult Tap in Studio 2",
         "link_label": "",
         "ask": true,
         "color_scheme": "burgundy"
@@ -68,7 +66,6 @@
           "type": "image",
           "settings": {
             "image": "as_1x1_blue",
-            "alt": "Ballet 2 at the summer show",
             "caption": "Ballet 2 at the summer show"
           }
         },
@@ -76,7 +73,6 @@
           "type": "image",
           "settings": {
             "image": "as_1x1_manila",
-            "alt": "Youth Choir at the spring concert",
             "caption": "Youth Choir at the spring concert"
           }
         },
@@ -84,7 +80,6 @@
           "type": "image",
           "settings": {
             "image": "as_1x1_rose",
-            "alt": "Junior Tap, first number",
             "caption": "Junior Tap, first number"
           }
         },
@@ -92,7 +87,6 @@
           "type": "image",
           "settings": {
             "image": "as_1x1_blue",
-            "alt": "Junior Strings tuning up",
             "caption": "Junior Strings tuning up"
           }
         },
@@ -100,7 +94,6 @@
           "type": "image",
           "settings": {
             "image": "as_1x1_manila",
-            "alt": "Adult Choir in Room 1",
             "caption": "Adult Choir in Room 1"
           }
         },
@@ -108,7 +101,6 @@
           "type": "image",
           "settings": {
             "image": "as_1x1_rose",
-            "alt": "The final bow",
             "caption": "The final bow"
           }
         }

@@ -36,9 +36,9 @@
     {#if settings.show_map && embed}
       <div class="aspect-photo overflow-hidden rounded-lg bg-scheme-surface-2"><iframe class="size-full" src="{ f.map_embed_url }" title="{ loc.title }" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     {:else if settings.show_map && f.map_image}
-      <Well asset={ f.map_image } alt={ f.map_image_alt } width={ 1200 } sizes="(min-width: 48rem) 50vw, 100vw" />
+      <Well asset={ f.map_image } width={ 1200 } sizes="(min-width: 48rem) 50vw, 100vw" />
     {:else}
-      <Well asset={ f.image } alt={ f.image_alt } width={ 1200 } sizes="(min-width: 48rem) 50vw, 100vw" />
+      <Well asset={ f.image } width={ 1200 } sizes="(min-width: 48rem) 50vw, 100vw" />
     {/if}
   </div>
 </section>

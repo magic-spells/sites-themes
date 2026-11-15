@@ -498,11 +498,6 @@
           "label": "Image (3:2)"
         },
         {
-          "id": "image_alt",
-          "type": "text",
-          "label": "Image alt text"
-        },
-        {
           "id": "what_to_bring",
           "type": "textarea",
           "label": "What to bring (one per line)"
@@ -541,7 +536,6 @@
             "period": "a term",
             "coach": "coach_grace_okafor",
             "image": "as_3x2_blue",
-            "image_alt": "Piano lessons at Larkfield Academy",
             "what_to_bring": "Your music and a pencil\nA notebook for practice notes",
             "link": "",
             "featured": true,
@@ -565,7 +559,6 @@
             "period": "a term",
             "coach": "coach_tomas_reyes",
             "image": "as_3x2_manila",
-            "image_alt": "Violin lessons at Larkfield Academy",
             "what_to_bring": "Your music and a pencil\nA notebook for practice notes",
             "link": "",
             "featured": false,
@@ -589,7 +582,6 @@
             "period": "a term",
             "coach": "coach_ruth_adair",
             "image": "as_3x2_rose",
-            "image_alt": "Cello lessons at Larkfield Academy",
             "what_to_bring": "Your music and a pencil\nA notebook for practice notes",
             "link": "",
             "featured": false,
@@ -613,7 +605,6 @@
             "period": "a term",
             "coach": "coach_tomas_reyes",
             "image": "as_3x2_blue",
-            "image_alt": "Junior Strings at Larkfield Academy",
             "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
             "link": "",
             "featured": true,
@@ -637,7 +628,6 @@
             "period": "for three days",
             "coach": "coach_ruth_adair",
             "image": "as_3x2_manila",
-            "image_alt": "Easter Strings Workshop at Larkfield Academy",
             "what_to_bring": "A packed lunch and a water bottle\nYour instrument or dance shoes",
             "link": "",
             "featured": false,
@@ -661,7 +651,6 @@
             "period": "a term",
             "coach": "coach_hannah_blythe",
             "image": "as_3x2_rose",
-            "image_alt": "Singing lessons at Larkfield Academy",
             "what_to_bring": "Your music and a pencil\nA notebook for practice notes",
             "link": "",
             "featured": false,
@@ -685,7 +674,6 @@
             "period": "a term",
             "coach": "coach_hannah_blythe",
             "image": "as_3x2_blue",
-            "image_alt": "Youth Choir at Larkfield Academy",
             "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
             "link": "",
             "featured": true,
@@ -709,7 +697,6 @@
             "period": "a term",
             "coach": "coach_hannah_blythe",
             "image": "as_3x2_manila",
-            "image_alt": "Adult Choir at Larkfield Academy",
             "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
             "link": "",
             "featured": false,
@@ -733,7 +720,6 @@
             "period": "a term",
             "coach": "coach_priya_nair",
             "image": "as_3x2_rose",
-            "image_alt": "Pre-school Ballet at Larkfield Academy",
             "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
             "link": "",
             "featured": false,
@@ -757,7 +743,6 @@
             "period": "a term",
             "coach": "coach_priya_nair",
             "image": "as_3x2_blue",
-            "image_alt": "Ballet 1 at Larkfield Academy",
             "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
             "link": "",
             "featured": true,
@@ -781,7 +766,6 @@
             "period": "a term",
             "coach": "coach_priya_nair",
             "image": "as_3x2_manila",
-            "image_alt": "Ballet 2 at Larkfield Academy",
             "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
             "link": "",
             "featured": true,
@@ -805,7 +789,6 @@
             "period": "for the week",
             "coach": "coach_priya_nair",
             "image": "as_3x2_rose",
-            "image_alt": "Summer Dance Week at Larkfield Academy",
             "what_to_bring": "A packed lunch and a water bottle\nYour instrument or dance shoes",
             "link": "",
             "featured": false,
@@ -829,7 +812,6 @@
             "period": "a term",
             "coach": "coach_daniel_marsh",
             "image": "as_3x2_blue",
-            "image_alt": "Junior Tap at Larkfield Academy",
             "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
             "link": "",
             "featured": true,
@@ -853,7 +835,6 @@
             "period": "a term",
             "coach": "coach_daniel_marsh",
             "image": "as_3x2_manila",
-            "image_alt": "Adult Tap at Larkfield Academy",
             "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
             "link": "",
             "featured": false,
@@ -1266,11 +1247,6 @@
           "label": "Image (3:2)"
         },
         {
-          "id": "image_alt",
-          "type": "text",
-          "label": "Image alt text"
-        },
-        {
           "id": "link",
           "type": "url",
           "label": "Link"
@@ -1296,7 +1272,6 @@
             "description": "",
             "note": "",
             "image": "as_3x2_blue",
-            "image_alt": "Spring term",
             "link": "",
             "order": 1
           }
@@ -1315,7 +1290,6 @@
             "description": "",
             "note": "No classes",
             "image": "as_3x2_manila",
-            "image_alt": "Half term",
             "link": "",
             "order": 2
           }
@@ -1334,7 +1308,6 @@
             "description": "",
             "note": "Rooms 1 and 3",
             "image": "as_3x2_rose",
-            "image_alt": "Music exam day",
             "link": "",
             "order": 3
           }
@@ -1353,7 +1326,6 @@
             "description": "",
             "note": "In Studio 1, free to attend",
             "image": "as_3x2_blue",
-            "image_alt": "Spring concert",
             "link": "",
             "order": 4
           }
@@ -1372,7 +1344,6 @@
             "description": "",
             "note": "Two places left",
             "image": "as_3x2_manila",
-            "image_alt": "Easter Strings Workshop",
             "link": "",
             "order": 5
           }
@@ -1391,7 +1362,6 @@
             "description": "",
             "note": "",
             "image": "as_3x2_rose",
-            "image_alt": "Summer term",
             "link": "",
             "order": 6
           }
@@ -1410,7 +1380,6 @@
             "description": "",
             "note": "Watch any Saturday class",
             "image": "as_3x2_blue",
-            "image_alt": "Open morning",
             "link": "",
             "order": 7
           }
@@ -1429,7 +1398,6 @@
             "description": "",
             "note": "No classes",
             "image": "as_3x2_manila",
-            "image_alt": "Half term",
             "link": "",
             "order": 8
           }
@@ -1448,7 +1416,6 @@
             "description": "",
             "note": "Studio 1",
             "image": "as_3x2_rose",
-            "image_alt": "Dance exam day",
             "link": "",
             "order": 9
           }
@@ -1467,7 +1434,6 @@
             "description": "",
             "note": "Tickets from reception",
             "image": "as_3x2_blue",
-            "image_alt": "Summer show",
             "link": "",
             "order": 10
           }
@@ -1486,7 +1452,6 @@
             "description": "",
             "note": "Ages 6–12",
             "image": "as_3x2_manila",
-            "image_alt": "Summer Dance Week",
             "link": "",
             "order": 11
           }
@@ -1505,7 +1470,6 @@
             "description": "",
             "note": "",
             "image": "as_3x2_rose",
-            "image_alt": "Autumn term",
             "link": "",
             "order": 12
           }
@@ -1541,11 +1505,6 @@
           "label": "Portrait (4:5)"
         },
         {
-          "id": "image_alt",
-          "type": "text",
-          "label": "Portrait alt text"
-        },
-        {
           "id": "link",
           "type": "url",
           "label": "Link"
@@ -1572,7 +1531,6 @@
             "bio": "<p>Grace studied at a conservatoire in London and has taught piano at Larkfield for fifteen years. She still plays chamber music most weekends.</p>",
             "credentials": "Performance diploma, piano\nQualified music teacher\nExaminer for graded piano exams",
             "image": "as_4x5_blue",
-            "image_alt": "Grace Okafor, head of piano",
             "link": "",
             "featured": true,
             "order": 1
@@ -1588,7 +1546,6 @@
             "bio": "<p>Tomas plays in the county orchestra and leads Junior Strings. He came to Larkfield as a pupil at nine.</p>",
             "credentials": "Teaching diploma, violin\nCounty orchestra, first violins",
             "image": "as_4x5_manila",
-            "image_alt": "Tomas Reyes, violin and junior strings",
             "link": "",
             "featured": true,
             "order": 2
@@ -1604,7 +1561,6 @@
             "bio": "<p>Ruth teaches cello to children and adults and runs the Easter Strings Workshop every year.</p>",
             "credentials": "Performance degree, cello\nChamber music coach",
             "image": "as_4x5_rose",
-            "image_alt": "Ruth Adair, cello teacher",
             "link": "",
             "featured": true,
             "order": 3
@@ -1620,7 +1576,6 @@
             "bio": "<p>Hannah directs both choirs and teaches singing one-to-one. Her choirs sing at the spring concert and the summer show.</p>",
             "credentials": "Teaching diploma, voice\nChoral conducting certificate",
             "image": "as_4x5_blue",
-            "image_alt": "Hannah Blythe, choir director",
             "link": "",
             "featured": true,
             "order": 4
@@ -1636,7 +1591,6 @@
             "bio": "<p>Priya danced with a touring company before she began teaching. She choreographs the summer show.</p>",
             "credentials": "Registered ballet teacher\nDance teaching diploma",
             "image": "as_4x5_manila",
-            "image_alt": "Priya Nair, head of ballet",
             "link": "",
             "featured": true,
             "order": 5
@@ -1652,7 +1606,6 @@
             "bio": "<p>Daniel teaches every tap class at Larkfield, from six-year-olds to the weekday-evening adults.</p>",
             "credentials": "Registered tap teacher\nMusical theatre performer",
             "image": "as_4x5_rose",
-            "image_alt": "Daniel Marsh, tap teacher",
             "link": "",
             "featured": true,
             "order": 6
@@ -1684,11 +1637,6 @@
           "label": "Thumbnail (1:1)"
         },
         {
-          "id": "image_alt",
-          "type": "text",
-          "label": "Thumbnail alt text"
-        },
-        {
           "id": "featured",
           "type": "checkbox",
           "label": "Featured"
@@ -1709,7 +1657,6 @@
             "name": "Sophie Hart",
             "line": "Parent, Ballet 1",
             "image": "as_1x1_blue",
-            "image_alt": "Sophie Hart",
             "featured": true,
             "order": 1
           }
@@ -1723,7 +1670,6 @@
             "name": "Amira Shah",
             "line": "Parent, piano lessons",
             "image": "as_1x1_manila",
-            "image_alt": "Amira Shah",
             "featured": true,
             "order": 2
           }
@@ -1737,7 +1683,6 @@
             "name": "Kate Lowe",
             "line": "Parent, Junior Strings",
             "image": "as_1x1_rose",
-            "image_alt": "Kate Lowe",
             "featured": true,
             "order": 3
           }
@@ -1751,7 +1696,6 @@
             "name": "Martin Doyle",
             "line": "Adult Tap",
             "image": "as_1x1_blue",
-            "image_alt": "Martin Doyle",
             "featured": false,
             "order": 4
           }
@@ -1765,7 +1709,6 @@
             "name": "Pauline Grey",
             "line": "Adult Choir",
             "image": "as_1x1_manila",
-            "image_alt": "Pauline Grey",
             "featured": false,
             "order": 5
           }
@@ -1779,7 +1722,6 @@
             "name": "Ben Okoro",
             "line": "Parent of two",
             "image": "as_1x1_rose",
-            "image_alt": "Ben Okoro",
             "featured": false,
             "order": 6
           }
@@ -1825,19 +1767,9 @@
           "label": "Map image"
         },
         {
-          "id": "map_image_alt",
-          "type": "text",
-          "label": "Map image alt text"
-        },
-        {
           "id": "image",
           "type": "image",
           "label": "Image (3:2)"
-        },
-        {
-          "id": "image_alt",
-          "type": "text",
-          "label": "Image alt text"
         },
         {
           "id": "description",
@@ -1868,9 +1800,7 @@
             "map_url": "https://maps.example/?q=14+Market+Street+Larkfield",
             "map_embed_url": "",
             "map_image": "as_3x2_manila",
-            "map_image_alt": "Map of Market Street",
             "image": "as_3x2_rose",
-            "image_alt": "The Old Corn Exchange from Market Street",
             "description": "Two studios and three teaching rooms over two floors.",
             "note": "Step-free entrance on Corn Lane. Families wait in the café on the ground floor.",
             "order": 1
@@ -1907,11 +1837,6 @@
           "label": "Image (3:2)"
         },
         {
-          "id": "image_alt",
-          "type": "text",
-          "label": "Image alt text"
-        },
-        {
           "id": "body",
           "type": "richtext",
           "label": "Body"
@@ -1928,7 +1853,6 @@
             "author": "Hannah Blythe",
             "standfirst": "Both choirs, Junior Strings and four soloists, in Studio 1 on 20 March.",
             "image": "as_3x2_blue",
-            "image_alt": "Spring concert: the programme",
             "body": "<p>Both choirs, Junior Strings and four soloists, in Studio 1 on 20 March.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
           }
         },
@@ -1942,7 +1866,6 @@
             "author": "Grace Okafor",
             "standfirst": "Thirty-one pupils took graded exams this summer. Here is how they did.",
             "image": "as_3x2_manila",
-            "image_alt": "Grade exam results",
             "body": "<p>Thirty-one pupils took graded exams this summer. Here is how they did.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
           }
         },
@@ -1956,7 +1879,6 @@
             "author": "Ruth Adair",
             "standfirst": "The bursary fund bought a three-quarter cello for pupils to borrow.",
             "image": "as_3x2_rose",
-            "image_alt": "A new cello for the school",
             "body": "<p>The bursary fund bought a three-quarter cello for pupils to borrow.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
           }
         },
@@ -1970,7 +1892,6 @@
             "author": "Priya Nair",
             "standfirst": "Uniform, shoes and hair, and what can wait until Ballet 1.",
             "image": "as_3x2_blue",
-            "image_alt": "What to wear for Pre-school Ballet",
             "body": "<p>Uniform, shoes and hair, and what can wait until Ballet 1.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
           }
         },
@@ -1984,7 +1905,6 @@
             "author": "Tomas Reyes",
             "standfirst": "Ten minutes a day beats an hour on Sunday. A plan that works.",
             "image": "as_3x2_manila",
-            "image_alt": "Practising little and often",
             "body": "<p>Ten minutes a day beats an hour on Sunday. A plan that works.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
           }
         },
@@ -1998,7 +1918,6 @@
             "author": "Daniel Marsh",
             "standfirst": "Two performances, ninety dancers and one very long bow.",
             "image": "as_3x2_rose",
-            "image_alt": "Summer show photographs",
             "body": "<p>Two performances, ninety dancers and one very long bow.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
           }
         }
@@ -2095,7 +2014,6 @@
           "period": "a term",
           "coach": "coach_grace_okafor",
           "image": "as_3x2_blue",
-          "image_alt": "Piano lessons at Larkfield Academy",
           "what_to_bring": "Your music and a pencil\nA notebook for practice notes",
           "link": "",
           "featured": true,
@@ -2127,7 +2045,6 @@
           "period": "a term",
           "coach": "coach_tomas_reyes",
           "image": "as_3x2_manila",
-          "image_alt": "Violin lessons at Larkfield Academy",
           "what_to_bring": "Your music and a pencil\nA notebook for practice notes",
           "link": "",
           "featured": false,
@@ -2159,7 +2076,6 @@
           "period": "a term",
           "coach": "coach_ruth_adair",
           "image": "as_3x2_rose",
-          "image_alt": "Cello lessons at Larkfield Academy",
           "what_to_bring": "Your music and a pencil\nA notebook for practice notes",
           "link": "",
           "featured": false,
@@ -2191,7 +2107,6 @@
           "period": "a term",
           "coach": "coach_tomas_reyes",
           "image": "as_3x2_blue",
-          "image_alt": "Junior Strings at Larkfield Academy",
           "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
           "link": "",
           "featured": true,
@@ -2223,7 +2138,6 @@
           "period": "for three days",
           "coach": "coach_ruth_adair",
           "image": "as_3x2_manila",
-          "image_alt": "Easter Strings Workshop at Larkfield Academy",
           "what_to_bring": "A packed lunch and a water bottle\nYour instrument or dance shoes",
           "link": "",
           "featured": false,
@@ -2255,7 +2169,6 @@
           "period": "a term",
           "coach": "coach_hannah_blythe",
           "image": "as_3x2_rose",
-          "image_alt": "Singing lessons at Larkfield Academy",
           "what_to_bring": "Your music and a pencil\nA notebook for practice notes",
           "link": "",
           "featured": false,
@@ -2287,7 +2200,6 @@
           "period": "a term",
           "coach": "coach_hannah_blythe",
           "image": "as_3x2_blue",
-          "image_alt": "Youth Choir at Larkfield Academy",
           "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
           "link": "",
           "featured": true,
@@ -2319,7 +2231,6 @@
           "period": "a term",
           "coach": "coach_hannah_blythe",
           "image": "as_3x2_manila",
-          "image_alt": "Adult Choir at Larkfield Academy",
           "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
           "link": "",
           "featured": false,
@@ -2351,7 +2262,6 @@
           "period": "a term",
           "coach": "coach_priya_nair",
           "image": "as_3x2_rose",
-          "image_alt": "Pre-school Ballet at Larkfield Academy",
           "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
           "link": "",
           "featured": false,
@@ -2383,7 +2293,6 @@
           "period": "a term",
           "coach": "coach_priya_nair",
           "image": "as_3x2_blue",
-          "image_alt": "Ballet 1 at Larkfield Academy",
           "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
           "link": "",
           "featured": true,
@@ -2415,7 +2324,6 @@
           "period": "a term",
           "coach": "coach_priya_nair",
           "image": "as_3x2_manila",
-          "image_alt": "Ballet 2 at Larkfield Academy",
           "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
           "link": "",
           "featured": true,
@@ -2447,7 +2355,6 @@
           "period": "for the week",
           "coach": "coach_priya_nair",
           "image": "as_3x2_rose",
-          "image_alt": "Summer Dance Week at Larkfield Academy",
           "what_to_bring": "A packed lunch and a water bottle\nYour instrument or dance shoes",
           "link": "",
           "featured": false,
@@ -2479,7 +2386,6 @@
           "period": "a term",
           "coach": "coach_daniel_marsh",
           "image": "as_3x2_blue",
-          "image_alt": "Junior Tap at Larkfield Academy",
           "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
           "link": "",
           "featured": true,
@@ -2511,7 +2417,6 @@
           "period": "a term",
           "coach": "coach_daniel_marsh",
           "image": "as_3x2_manila",
-          "image_alt": "Adult Tap at Larkfield Academy",
           "what_to_bring": "Comfortable clothes or the class uniform\nA named water bottle",
           "link": "",
           "featured": false,
@@ -2536,7 +2441,6 @@
           "bio": "<p>Grace studied at a conservatoire in London and has taught piano at Larkfield for fifteen years. She still plays chamber music most weekends.</p>",
           "credentials": "Performance diploma, piano\nQualified music teacher\nExaminer for graded piano exams",
           "image": "as_4x5_blue",
-          "image_alt": "Grace Okafor, head of piano",
           "link": "",
           "featured": true,
           "order": 1
@@ -2560,7 +2464,6 @@
           "bio": "<p>Tomas plays in the county orchestra and leads Junior Strings. He came to Larkfield as a pupil at nine.</p>",
           "credentials": "Teaching diploma, violin\nCounty orchestra, first violins",
           "image": "as_4x5_manila",
-          "image_alt": "Tomas Reyes, violin and junior strings",
           "link": "",
           "featured": true,
           "order": 2
@@ -2584,7 +2487,6 @@
           "bio": "<p>Ruth teaches cello to children and adults and runs the Easter Strings Workshop every year.</p>",
           "credentials": "Performance degree, cello\nChamber music coach",
           "image": "as_4x5_rose",
-          "image_alt": "Ruth Adair, cello teacher",
           "link": "",
           "featured": true,
           "order": 3
@@ -2608,7 +2510,6 @@
           "bio": "<p>Hannah directs both choirs and teaches singing one-to-one. Her choirs sing at the spring concert and the summer show.</p>",
           "credentials": "Teaching diploma, voice\nChoral conducting certificate",
           "image": "as_4x5_blue",
-          "image_alt": "Hannah Blythe, choir director",
           "link": "",
           "featured": true,
           "order": 4
@@ -2632,7 +2533,6 @@
           "bio": "<p>Priya danced with a touring company before she began teaching. She choreographs the summer show.</p>",
           "credentials": "Registered ballet teacher\nDance teaching diploma",
           "image": "as_4x5_manila",
-          "image_alt": "Priya Nair, head of ballet",
           "link": "",
           "featured": true,
           "order": 5
@@ -2656,7 +2556,6 @@
           "bio": "<p>Daniel teaches every tap class at Larkfield, from six-year-olds to the weekday-evening adults.</p>",
           "credentials": "Registered tap teacher\nMusical theatre performer",
           "image": "as_4x5_rose",
-          "image_alt": "Daniel Marsh, tap teacher",
           "link": "",
           "featured": true,
           "order": 6
@@ -2680,7 +2579,6 @@
           "author": "Hannah Blythe",
           "standfirst": "Both choirs, Junior Strings and four soloists, in Studio 1 on 20 March.",
           "image": "as_3x2_blue",
-          "image_alt": "Spring concert: the programme",
           "body": "<p>Both choirs, Junior Strings and four soloists, in Studio 1 on 20 March.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
         }
       }
@@ -2702,7 +2600,6 @@
           "author": "Grace Okafor",
           "standfirst": "Thirty-one pupils took graded exams this summer. Here is how they did.",
           "image": "as_3x2_manila",
-          "image_alt": "Grade exam results",
           "body": "<p>Thirty-one pupils took graded exams this summer. Here is how they did.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
         }
       }
@@ -2724,7 +2621,6 @@
           "author": "Ruth Adair",
           "standfirst": "The bursary fund bought a three-quarter cello for pupils to borrow.",
           "image": "as_3x2_rose",
-          "image_alt": "A new cello for the school",
           "body": "<p>The bursary fund bought a three-quarter cello for pupils to borrow.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
         }
       }
@@ -2746,7 +2642,6 @@
           "author": "Priya Nair",
           "standfirst": "Uniform, shoes and hair, and what can wait until Ballet 1.",
           "image": "as_3x2_blue",
-          "image_alt": "What to wear for Pre-school Ballet",
           "body": "<p>Uniform, shoes and hair, and what can wait until Ballet 1.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
         }
       }
@@ -2768,7 +2663,6 @@
           "author": "Tomas Reyes",
           "standfirst": "Ten minutes a day beats an hour on Sunday. A plan that works.",
           "image": "as_3x2_manila",
-          "image_alt": "Practising little and often",
           "body": "<p>Ten minutes a day beats an hour on Sunday. A plan that works.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
         }
       }
@@ -2790,7 +2684,6 @@
           "author": "Daniel Marsh",
           "standfirst": "Two performances, ninety dancers and one very long bow.",
           "image": "as_3x2_rose",
-          "image_alt": "Summer show photographs",
           "body": "<p>Two performances, ninety dancers and one very long bow.</p><p>Every term ends with an open lesson, and every year with a show. Ask the office about anything you read here.</p>"
         }
       }

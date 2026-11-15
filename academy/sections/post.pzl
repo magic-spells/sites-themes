@@ -11,7 +11,7 @@
       <h1 class="font-heading text-h1 text-balance text-scheme-heading"><Rise text={ entry.title } /></h1>
       {#if f.standfirst}<p class="text-lead text-pretty text-scheme-muted">{ f.standfirst }</p>{/if}
     </header>
-    <Well asset={ f.image } alt={ f.image_alt } width={ 1600 } sizes="(min-width: 48rem) 42rem, 100vw" eager />
+    <Well asset={ f.image } width={ 1600 } sizes="(min-width: 48rem) 42rem, 100vw" eager />
     <div class="sites-prose text-body">{ f.body }</div>
     {#if f.author}<p class="text-small text-scheme-muted">{ f.author }</p>{/if}
   </div>

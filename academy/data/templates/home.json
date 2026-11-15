@@ -8,7 +8,6 @@
       "preset": "Split",
       "settings": {
         "image": "as_4x3_blue",
-        "image_alt": "A Ballet 1 class at the barre in Studio 1",
         "event": "ev_1"
       },
       "blocks": []
@@ -35,7 +34,6 @@
       "preset": "Default",
       "settings": {
         "image": "as_4x3_manila",
-        "image_alt": "Youth Choir at the spring concert",
         "color_scheme": "blue"
       },
       "blocks": []

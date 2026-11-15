@@ -2,7 +2,7 @@
 <!-- A testimonial in a row: the square thumbnail (md corners) left of the quote in the heading face, then "Name · line" in small muted. No stars. -->
 {#let f = entry.fields}
 <figure class="flex items-start gap-space-md { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
-  {#if f.image}<span class="w-avatar shrink-0"><Well asset={ f.image } alt={ f.image_alt } ratio="aspect-square" round="rounded-md" width={ 144 } sizes="4.5rem" /></span>{/if}
+  {#if f.image}<span class="w-avatar shrink-0"><Well asset={ f.image } ratio="aspect-square" round="rounded-md" width={ 144 } sizes="4.5rem" /></span>{/if}
   <div class="grid gap-space-sm">
     <blockquote class="font-heading text-large text-pretty">{ f.quote }</blockquote>
     <figcaption class="text-small text-scheme-muted">{ [f.name, f.line] | compact | join(' · ') }</figcaption>

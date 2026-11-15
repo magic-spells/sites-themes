@@ -20,7 +20,7 @@
           {#if f.link}<Button href={ f.link }>{ site.settings.ask_label }</Button>{:else}<Button ask />{/if}
         </div>
       </div>
-      <Well asset={ f.image } alt={ f.image_alt } width={ 960 } sizes="(min-width: 64rem) 30rem, 100vw" eager />
+      <Well asset={ f.image } width={ 960 } sizes="(min-width: 64rem) 30rem, 100vw" eager />
     </div>
     <div class="grid items-start gap-space-xl lg:grid-cols-wide-narrow lg:gap-space-2xl">
       <div class="grid gap-space-lg">

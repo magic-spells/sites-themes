@@ -1,30 +1,39 @@
-<!-- The menu drawer below 64rem: a dialog-panel from the right over the page dimmed by the text colour at 50%. It closes on the backdrop, Escape and its ×, and hands focus back to the menu icon. The main menu in H3. -->
-<dialog-panel id="mobile-menu" position="right">
-  <dialog-backdrop class="bg-backdrop"></dialog-backdrop>
-  <dialog class="overflow-y-auto bg-scheme-background text-scheme-foreground" aria-label="{ t('menu') }">
-    <div class="grid gap-space-lg px-gutter pb-space-xl">
-      <div class="flex min-h-header items-center justify-end"><button class="-me-space-xs flex size-tap items-center justify-center" type="button" data-action-hide-dialog><Glyph name="close" cls="size-glyph" /><span class="sr-only">{ t('close') }</span></button></div>
-      {#if settings.menu.items.length}
-        <nav aria-label="{ t('main_navigation') }">
-          <ul class="grid gap-space-xs font-heading text-h3">{#for item in settings.menu.items}<li><a class="block py-space-2xs hover:underline current:underline" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>{/for}</ul>
-        </nav>
-      {/if}
-    </div>
+<!-- The menu sheet below 64rem: a square sheet from the right edge on every viewport, over the page dimmed to half. The main menu in H3, the clients links under a rule, and the ask at the foot. It closes on the backdrop, a swipe, Escape and its close button, and hands focus back to the menu button. -->
+<dialog-panel>
+  <dialog class="rounded-none text-scheme-foreground" aria-label="{ t('menu') }">
+    <sheet-panel id="mobile-menu" position="right" desktop-mode="edge">
+      <sheet-header class="flex justify-end">
+        <button class="flex size-control items-center justify-center rounded-full bg-scheme-surface-2" type="button" data-action-hide-dialog><Glyph name="close" /><span class="sr-only">{ t('close') }</span></button>
+      </sheet-header>
+      <sheet-content class="flex flex-col gap-space-lg">
+        {#if menus.main.items.length}
+          <nav aria-label="{ t('main_navigation') }">
+            <ul class="grid gap-space-xs font-heading text-h3">{#for item in menus.main.items}<li><a class="hover:underline current:underline" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>{/for}</ul>
+          </nav>
+        {/if}
+        {#if menus.clients.items.length}
+          <nav aria-label="{ menus.clients.title }">
+            <ul class="grid gap-space-xs border-t border-scheme-border pt-space-md">{#for item in menus.clients.items}<li><a class="hover:underline" href="{ item.href }">{ item.label }</a></li>{/for}</ul>
+          </nav>
+        {/if}
+        <Button cls="mt-auto" />
+      </sheet-content>
+    </sheet-panel>
   </dialog>
 </dialog-panel>
 
 <schema>
 {
   "name": "Mobile menu",
-  "description": "The menu drawer below 64rem.",
+  "description": "The menu sheet below 64rem: the main menu, the clients links and the ask.",
   "kind": "Panels",
   "icon": "menu",
   "settings": [
-    { "type": "menu", "id": "menu", "label": "Menu" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+    { "type": "paragraph", "content": "The main and clients menus; the button is the ask, from the Firm settings." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "menu": "main" } }
+    { "name": "Default", "settings": { "color_scheme": "white" } }
   ]
 }
 </schema>

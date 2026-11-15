@@ -1,8 +1,8 @@
 <!-- The cookie notice: a card fixed to the foot of the screen with the line, the privacy link, Accept and Decline; either hides it for that visitor until the text changes. Hidden until the script shows it, so it never shows without JavaScript. -->
 <aside class="fixed inset-x-0 bottom-0 z-40 p-gutter md:max-w-reading" data-notice="{ settings.text }" aria-label="{ t('cookie_notice') }" hidden>
   <div class="grid gap-space-md rounded-card border border-scheme-border bg-scheme-background p-space-md text-scheme-foreground">
-    <p class="text-body-sm text-pretty">{ settings.text }{#if settings.privacy_url} <a class="underline" href="{ settings.privacy_url }">{ t('privacy') }</a>{/if}</p>
-    <div class="flex gap-space-sm" data-dismiss><Button type="button" small>{ t('accept') }</Button><Button type="button" tone="outline" small>{ t('decline') }</Button></div>
+    <p class="text-small text-pretty">{ settings.text }{#if settings.privacy_url} <a class="underline" href="{ settings.privacy_url }">{ t('privacy') }</a>{/if}</p>
+    <div class="flex gap-space-sm" data-dismiss><Button type="button" label={ t('accept') } /><Button type="button" label={ t('decline') } tone="outline" /></div>
   </div>
 </aside>
 

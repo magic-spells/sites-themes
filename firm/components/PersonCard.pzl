@@ -1,0 +1,7 @@
+<!-- A person from the team type, the card the link to their page: the photo (4:5, or with circle a 1:1 circle, the text centred), the role in small muted type over the name and letters in H4. -->
+{#let f = person.fields}
+<a class="group grid content-start gap-space-2xs { circle ? 'justify-items-center text-center' : '' }" href="/people/{ person.handle }">
+  <Well asset={ f.image } name={ person.title } cls="mb-inset w-full { circle ? 'aspect-square rounded-full' : 'aspect-portrait rounded-card' }" sizes="(min-width: 48rem) 25vw, 50vw" />
+  <span class="text-small text-scheme-muted">{ f.role }</span>
+  <span class="text-h4 text-balance text-scheme-heading group-hover:underline">{ person.title }{#if f.letters}, { f.letters }{/if}</span>
+</a>

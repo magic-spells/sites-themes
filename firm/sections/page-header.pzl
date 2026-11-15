@@ -2,7 +2,7 @@
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column justify-items-start gap-space-md">
     <h1 class="max-w-reading font-heading text-h1 text-balance text-scheme-heading">{ settings.heading || page.title }</h1>
-    {#if settings.text}<p class="max-w-reading text-body-lg text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+    {#if settings.text}<p class="max-w-reading text-lead text-pretty">{ settings.text }</p>{/if}
   </div>
 </section>
 

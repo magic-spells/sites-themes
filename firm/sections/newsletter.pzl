@@ -4,14 +4,14 @@
     <SectionHead heading={ settings.heading } text={ settings.text } center />
     <Form handle={ settings.form } class="grid w-full max-w-narrow gap-space-xs">
       {#if form.sent}
-        <p class="text-center text-body-lg" role="status">{ form.success_message || t('form_success') }</p>
+        <p class="text-center text-lead" role="status">{ form.success_message || t('form_success') }</p>
       {:else}
         <div class="flex flex-col gap-space-sm sm:flex-row sm:items-start">
           {#for field in form.fields}<Field field={ field } prefix="news" inline cls="flex-1" />{/for}
-          <Button type="submit">{ form.submit_label }</Button>
+          <Button type="submit" label={ form.submit_label } />
         </div>
-        {#if form.error}<p class="rounded-input bg-error-surface px-space-sm py-space-xs text-body-sm text-error" role="alert">{ t('form_error') }</p>{/if}
-        <noscript><p class="text-center text-body-sm text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+        {#if form.error}<p class="flex items-start gap-space-xs text-small" role="alert"><Glyph name="alert" cls="mt-space-2xs size-icon" />{ t('form_error') }</p>{/if}
+        <noscript><p class="text-center text-small text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
       {/if}
     </Form>
   </div>

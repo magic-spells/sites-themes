@@ -1,19 +1,19 @@
-<!-- The header: the logo or name left, the main menu from 64rem, the one ask button from 48rem, and below 64rem the menu icon alone, which opens the menu drawer. Sticky; never the phone. -->
+<!-- The header: the logo or the name in the heading face at the left, the main menu from 64rem, the ask (Button with no link) from 48rem, and below 64rem the menu button, a circle on the second surface, which opens the menu sheet. A rule under it, inside the column. Sticky; never the phone. -->
 {#let
   s = site.settings
   name = s.wordmark || site.name
 }
 <sticky-header class="block" settle-overshoot="0">
-  <header class="border-b border-scheme-border bg-scheme-background px-gutter text-scheme-foreground">
-    <div class="mx-auto flex min-h-header max-w-column items-center gap-space-md">
-      <a class="me-auto font-heading text-h4 text-scheme-heading" href="/">{#if s.logo}<img class="h-control w-auto" src="{ image_url(s.logo, 320) }" alt="{ s.logo.alt || name }" width={ s.logo.width } height={ s.logo.height } />{:else}{ name }{/if}</a>
-      {#if settings.menu.items.length}
+  <header class="bg-scheme-background px-gutter text-scheme-foreground">
+    <div class="mx-auto flex max-w-column items-center gap-space-lg border-b border-scheme-border py-space-sm">
+      <a class="me-auto font-heading text-wordmark whitespace-nowrap text-scheme-heading" href="/">{#if s.logo}<img class="h-control w-auto" src="{ image_url(s.logo, 320) }" alt="{ s.logo.alt || name }" width={ s.logo.width } height={ s.logo.height } />{:else}{ name }{/if}</a>
+      {#if menus.main.items.length}
         <nav class="max-lg:hidden" aria-label="{ t('main_navigation') }">
-          <ul class="flex">{#for item in settings.menu.items}<li><a class="flex min-h-header items-center px-space-sm hover:underline current:underline" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>{/for}</ul>
+          <ul class="flex gap-space-lg">{#for item in menus.main.items}<li><a class="hover:underline current:underline" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>{/for}</ul>
         </nav>
       {/if}
-      {#if settings.ask_label && settings.ask_link}<Button href={ settings.ask_link } cls="max-md:hidden">{ settings.ask_label }</Button>{/if}
-      <button class="-me-space-xs flex size-tap items-center justify-center lg:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu"><Glyph name="menu" cls="size-glyph" /><span class="sr-only">{ t('menu') }</span></button>
+      <Button cls="max-md:hidden" />
+      <button class="flex size-control items-center justify-center rounded-full bg-scheme-surface-2 lg:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog"><Glyph name="menu" /><span class="sr-only">{ t('menu') }</span></button>
     </div>
   </header>
 </sticky-header>
@@ -21,17 +21,15 @@
 <schema>
 {
   "name": "Header",
-  "description": "The logo or name, the menu and one ask button; the menu icon on phones and tablets.",
+  "description": "The logo or name, the main menu and the ask; the menu button on phones and tablets.",
   "kind": "Header",
   "icon": "panel-top",
   "settings": [
-    { "type": "menu", "id": "menu", "label": "Menu" },
-    { "type": "text", "id": "ask_label", "label": "Button label", "default": "Book a consultation", "info": "Book a consultation, Get in touch, Request a quote. Leave empty to hide the button." },
-    { "type": "url", "id": "ask_link", "label": "Button link", "default": "/contact" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+    { "type": "paragraph", "content": "The menu is the main menu; the button is the ask, from the Firm settings." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "navy" }
   ],
   "presets": [
-    { "name": "Default", "settings": { "menu": "main" } }
+    { "name": "Default", "settings": { "color_scheme": "navy" } }
   ]
 }
 </schema>

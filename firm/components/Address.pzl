@@ -1,9 +1,9 @@
-<!-- The firm's Contact settings: the address (one line per line), the phone as a call link and the email as a mail link, each only when set. cls sets the type. -->
+<!-- The firm's Contact settings as rows: the email as a mail link, the phone as a call link, then each place of the address (places are split by an empty line, one line per line of a place); each only when set. icons sets a line glyph before each row (the contact section). cls sets the type. -->
 {#let s = site.settings}
 {#if s.address || s.phone || s.email}
-<address class="grid gap-space-2xs not-italic { cls ?? '' }">
-  {#if s.address}<span class="mb-space-xs whitespace-pre-line">{ s.address }</span>{/if}
-  {#if s.phone}<a class="justify-self-start hover:underline" href="tel:{ s.phone | replace(' ', '') }">{ s.phone }</a>{/if}
-  {#if s.email}<a class="justify-self-start hover:underline" href="mailto:{ s.email }">{ s.email }</a>{/if}
-</address>
+<ul class="grid content-start gap-space-sm { cls ?? '' }">
+  {#if s.email}<li class="flex items-start gap-inset">{#if icons}<Glyph name="mail" cls="mt-space-2xs size-icon" />{/if}<a class="hover:underline" href="mailto:{ s.email }">{ s.email }</a></li>{/if}
+  {#if s.phone}<li class="flex items-start gap-inset">{#if icons}<Glyph name="phone" cls="mt-space-2xs size-icon" />{/if}<a class="tabular-nums hover:underline" href="tel:{ s.phone | replace(' ', '') }">{ s.phone }</a></li>{/if}
+  {#if s.address}{#for place in s.address | split('\n\n')}<li class="flex items-start gap-inset">{#if icons}<Glyph name="pin" cls="mt-space-2xs size-icon" />{/if}<span class="whitespace-pre-line">{ place }</span></li>{/for}{/if}
+</ul>
 {/if}

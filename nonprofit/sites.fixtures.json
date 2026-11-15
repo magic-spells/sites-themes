@@ -305,54 +305,6 @@
    "alt": "4:5 clay placeholder",
    "created_at": "2026-11-14T09:00:00Z"
   },
-  "as_1x1_oat": {
-   "id": "as_1x1_oat",
-   "status": "ready",
-   "file_name": "1x1-oat.svg",
-   "mime": "image/svg+xml",
-   "byte_size": 420,
-   "url": "/_sites/theme/photos/1x1-oat.svg",
-   "width": 1200,
-   "height": 1200,
-   "alt": "1:1 oat placeholder",
-   "created_at": "2026-11-14T09:00:00Z"
-  },
-  "as_1x1_moss": {
-   "id": "as_1x1_moss",
-   "status": "ready",
-   "file_name": "1x1-moss.svg",
-   "mime": "image/svg+xml",
-   "byte_size": 420,
-   "url": "/_sites/theme/photos/1x1-moss.svg",
-   "width": 1200,
-   "height": 1200,
-   "alt": "1:1 moss placeholder",
-   "created_at": "2026-11-14T09:00:00Z"
-  },
-  "as_16x9_oat": {
-   "id": "as_16x9_oat",
-   "status": "ready",
-   "file_name": "16x9-oat.svg",
-   "mime": "image/svg+xml",
-   "byte_size": 420,
-   "url": "/_sites/theme/photos/16x9-oat.svg",
-   "width": 1600,
-   "height": 900,
-   "alt": "16:9 oat placeholder",
-   "created_at": "2026-11-14T09:00:00Z"
-  },
-  "as_16x9_lake": {
-   "id": "as_16x9_lake",
-   "status": "ready",
-   "file_name": "16x9-lake.svg",
-   "mime": "image/svg+xml",
-   "byte_size": 420,
-   "url": "/_sites/theme/photos/16x9-lake.svg",
-   "width": 1600,
-   "height": 900,
-   "alt": "16:9 lake placeholder",
-   "created_at": "2026-11-14T09:00:00Z"
-  },
   "as_3x5_oat": {
    "id": "as_3x5_oat",
    "status": "ready",

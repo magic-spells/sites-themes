@@ -1,0 +1,37 @@
+<!-- The header: the wordmark left in the heading face, the main menu in the label weight, then the second route as an outline pill and the ask as the solid pill; never the phone. The menu and the second route from 80rem, the ask from 48rem, the menu icon below 80rem. Sticky unless switched off. -->
+{#let s = site.settings}
+<sticky-header class="block" settle-overshoot="0" disabled={ settings.sticky ? null : true }>
+  <header class="border-b border-scheme-border bg-scheme-background px-gutter text-scheme-foreground">
+    <div class="mx-auto flex min-h-header max-w-page items-center justify-between gap-space-lg">
+      <a class="font-heading text-h4" href="/">{ s.wordmark || site.name }</a>
+      {#if settings.menu.items.length}
+        <nav class="max-xl:hidden" aria-label="{ t('main_navigation') }">
+          <ul class="flex items-center gap-space-lg text-label">{#for item in settings.menu.items}<li><a class="flex min-h-tap items-center link-quiet" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>{/for}</ul>
+        </nav>
+      {/if}
+      <div class="flex items-center gap-space-sm">
+        {#if s.help_label}<Button href={ s.help_url } tone="outline" cls="max-xl:hidden">{ s.help_label }</Button>{/if}
+        <Button ask cls="max-md:hidden" />
+        <button class="-me-space-xs flex size-tap items-center justify-center xl:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu"><Glyph name="menu" cls="size-glyph" /><span class="sr-only">{ t('menu') }</span></button>
+      </div>
+    </div>
+  </header>
+</sticky-header>
+
+<schema>
+{
+  "name": "Header",
+  "description": "The wordmark, the menu, the second route and the ask button; the menu icon on smaller screens.",
+  "kind": "Header",
+  "icon": "panel-top",
+  "settings": [
+    { "type": "paragraph", "content": "The ask button and the second route come from the Organisation settings." },
+    { "type": "menu", "id": "menu", "label": "Menu" },
+    { "type": "checkbox", "id": "sticky", "label": "Stays at the top", "default": true },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "menu": "main" } }
+  ]
+}
+</schema>

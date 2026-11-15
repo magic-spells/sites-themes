@@ -1,0 +1,26 @@
+<!-- The cookie notice: a card fixed to the foot of the screen with the text (its privacy link inside it) and two buttons; either hides it for good for that visitor and key. Hidden until the script shows it, so it never shows without JavaScript. -->
+<aside class="fixed inset-x-0 bottom-0 z-40 p-gutter md:max-w-form" data-notice="{ settings.key }" aria-label="{ t('cookie_notice') }" hidden>
+  <div class="grid gap-space-md rounded-well border border-scheme-border bg-scheme-background p-space-md text-scheme-foreground shadow-lg md:p-space-lg">
+    <div class="prose text-small">{ settings.text }</div>
+    <div class="flex flex-wrap gap-space-sm"><Button type="button" small>{ settings.accept_label }</Button><Button type="button" tone="outline" small>{ settings.decline_label }</Button></div>
+  </div>
+</aside>
+
+<schema>
+{
+  "name": "Cookie notice",
+  "description": "A short notice at the foot of the screen with Accept and Decline.",
+  "kind": "Panels",
+  "icon": "cookie",
+  "settings": [
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>We use a few cookies to keep the site working. Nothing is sold. <a href=\"/privacy\">Privacy</a></p>" },
+    { "type": "text", "id": "accept_label", "label": "Accept label", "default": "Accept" },
+    { "type": "text", "id": "decline_label", "label": "Decline label", "default": "Decline" },
+    { "type": "text", "id": "key", "label": "Key", "default": "cookies", "info": "Change it to show the notice again to everyone." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

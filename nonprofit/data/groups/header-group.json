@@ -1,0 +1,24 @@
+{
+  "sections": [
+    {
+      "id": "sg_announcement",
+      "type": "announcement-bar",
+      "preset": "Default",
+      "settings": {
+        "text": "Winter coat swap, Saturday 5 December at Mill Hall\nHoliday lunch, Thursday 17 December, everyone welcome",
+        "dismissable": true,
+        "color_scheme": "deep"
+      },
+      "blocks": []
+    },
+    {
+      "id": "sg_header",
+      "type": "header",
+      "preset": "Default",
+      "settings": {
+        "menu": "main"
+      },
+      "blocks": []
+    }
+  ]
+}

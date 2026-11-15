@@ -1,0 +1,38 @@
+<!-- Questions and answers in the 40rem column, centred: the heading and standfirst centred, the rows that open and close, the first open when set, and the optional pill under them. -->
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-reading">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link } centred>
+      <Rows items={ blocks } first_open={ settings.first_open } />
+    </SectionHead>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "FAQ",
+  "description": "Questions and answers that open and close, in a narrow centred column.",
+  "kind": "Content",
+  "icon": "circle-help",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Questions" },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "checkbox", "id": "first_open", "label": "First one open", "default": false },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "", "info": "A pill under the questions: Ask us something else." },
+    { "type": "url", "id": "link", "label": "Link", "default": "/contact" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "blocks": [
+    { "type": "row", "name": "Question", "settings": [
+      { "type": "text", "id": "title", "label": "Question" },
+      { "type": "richtext", "id": "body", "label": "Answer" }
+    ] }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {}, "blocks": [
+      { "type": "row", "settings": { "title": "Is my gift tax-deductible?", "body": "<p>Yes. We send a receipt for every gift by email within a week.</p>" } },
+      { "type": "row", "settings": { "title": "Can I change or stop a monthly gift?", "body": "<p>Any time, from the link in your receipt, or write to us and we will do it for you.</p>" } },
+      { "type": "row", "settings": { "title": "How is my gift spent?", "body": "<p>On food, the van's fuel and keeping the hall warm. Our yearly report lists every line.</p>" } }
+    ] }
+  ]
+}
+</schema>

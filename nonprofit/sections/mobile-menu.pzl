@@ -1,0 +1,41 @@
+<!-- The menu drawer below 80rem: a dialog-panel from the right over the page dimmed at 50%. It closes on the backdrop, Escape and its ×, and hands focus back to the menu icon. The main menu in h3, the second menu under a hairline in the text size, then the second route and the ask button, full width. -->
+{#let s = site.settings}
+<dialog-panel id="mobile-menu" position="right">
+  <dialog-backdrop class="bg-backdrop"></dialog-backdrop>
+  <dialog class="overflow-y-auto bg-scheme-background text-scheme-foreground" aria-label="{ t('menu') }">
+    <div class="grid gap-space-lg px-gutter pb-space-xl">
+      <div class="flex min-h-header items-center justify-end">
+        <button class="-me-space-xs flex size-tap items-center justify-center" type="button" data-action-hide-dialog><Glyph name="close" cls="size-glyph" /><span class="sr-only">{ t('close') }</span></button>
+      </div>
+      {#if settings.menu.items.length}
+        <nav aria-label="{ t('main_navigation') }">
+          <ul class="grid gap-space-xs font-heading text-h3">{#for item in settings.menu.items}<li><a class="block py-space-2xs link-quiet" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>{/for}</ul>
+        </nav>
+      {/if}
+      {#if settings.menu_secondary.items.length}
+        <ul class="grid gap-space-sm border-t border-scheme-border pt-space-lg text-body">{#for item in settings.menu_secondary.items}<li><a class="link-quiet" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a></li>{/for}</ul>
+      {/if}
+      <div class="grid gap-space-sm">
+        {#if s.help_label}<Button href={ s.help_url } tone="outline">{ s.help_label }</Button>{/if}
+        <Button ask />
+      </div>
+    </div>
+  </dialog>
+</dialog-panel>
+
+<schema>
+{
+  "name": "Mobile menu",
+  "description": "The menu drawer on smaller screens: the menus, the second route and the ask button.",
+  "kind": "Panels",
+  "icon": "menu",
+  "settings": [
+    { "type": "menu", "id": "menu", "label": "Menu" },
+    { "type": "menu", "id": "menu_secondary", "label": "Second menu", "info": "Smaller links under the main menu: Contact, Accessibility." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "menu": "main", "menu_secondary": "legal" } }
+  ]
+}
+</schema>

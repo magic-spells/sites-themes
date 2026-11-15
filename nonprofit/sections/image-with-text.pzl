@@ -1,0 +1,54 @@
+<!-- A picture beside copy, 7 / 5 from 64rem, the picture left or right; stacked on phones, the picture first. Picture: one 4:3 well. Capsules: three tall rounded capsules side by side, the middle one dropped. The heading, the rich text and one text link; each picture keeps its own alt text. -->
+{#let
+  left = settings.image_side == 'left'
+  capsules = settings.layout == 'capsules'
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-page items-center gap-space-xl lg:grid-cols-12">
+    <div class="lg:col-span-7 { left ? '' : 'lg:order-last' }">
+      {#if capsules}
+        <div class="grid grid-cols-3 items-start gap-space-sm md:gap-space-md">
+          {#for image in [settings.image, settings.image_2, settings.image_3], i}<Well asset={ image } ratio="aspect-capsule" cls="rounded-full{ i == 1 ? ' mt-space-xl' : '' }" width={ 600 } sizes="(min-width: 64rem) 18vw, 30vw" />{/for}
+        </div>
+      {:else}
+        <Well asset={ settings.image } width={ 1200 } sizes="(min-width: 64rem) 45vw, 100vw" />
+      {/if}
+    </div>
+    <div class="grid max-w-reading justify-items-start gap-space-md lg:col-span-5">
+      <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Rise text={ settings.heading } /></h2>
+      <div class="prose text-body">{ settings.text }</div>
+      {#if settings.link_label && settings.link}<a class="text-link link" href="{ settings.link }">{ settings.link_label }</a>{/if}
+    </div>
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Image with text",
+  "description": "A picture, or three tall capsules, beside a heading, text and a link.",
+  "kind": "Content",
+  "icon": "columns-2",
+  "settings": [
+    { "type": "select", "id": "layout", "label": "Layout", "default": "picture", "options": [
+      { "value": "picture", "label": "One picture (4:3)" },
+      { "value": "capsules", "label": "Three capsules (3:5)" }
+    ] },
+    { "type": "select", "id": "image_side", "label": "Picture", "default": "left", "options": [
+      { "value": "left", "label": "Left" },
+      { "value": "right", "label": "Right" }
+    ] },
+    { "type": "image", "id": "image", "label": "Picture", "info": "The alt text is the picture's own." },
+    { "type": "image", "id": "image_2", "label": "Second capsule", "info": "Three capsules only." },
+    { "type": "image", "id": "image_3", "label": "Third capsule", "info": "Three capsules only." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What we do" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "" },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "About us" },
+    { "type": "url", "id": "link", "label": "Link", "default": "/about" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Picture", "settings": { "layout": "picture" } },
+    { "name": "Capsules", "settings": { "layout": "capsules" } }
+  ]
+}
+</schema>

@@ -8,14 +8,13 @@
 // State lives on data- and aria- attributes, never on classes: Tailwind
 // generates only what it reads in .pzl and styles/ files.
 
-import './vendor/dialog-panel.js';
-import './vendor/bottom-sheet.js';
 import './vendor/collapsible-content.js';
 import './vendor/dropdown-panel.js';
 import './vendor/lightbox.min.js';
 import './vendor/progress-bar.esm.js';
 import './vendor/scrolling-content.js';
 import './vendor/select-dropdown.js';
+import './vendor/sheet.min.js';
 import './vendor/split-text.esm.js';
 import './vendor/sticky-header.js';
 import './vendor/tab-group.js';
@@ -94,8 +93,7 @@ document.addEventListener('click', (event) => {
 const returned = new URLSearchParams(location.search).get('form');
 const sentFrom = returned ? [...document.forms].filter((f) => f.getAttribute('action')?.endsWith('/' + returned)) : [];
 if (sentFrom.length && sentFrom.every((form) => form.closest('dialog-panel'))) {
-	const sheet = sentFrom[0].closest('dialog-panel')?.querySelector('bottom-sheet') as Panel | null;
-	customElements.whenDefined('bottom-sheet').then(() => sheet?.show());
+	(sentFrom[0].closest('dialog-panel')?.querySelector('sheet-panel') as Panel | null)?.show();
 }
 
 // The cookie notice shows once per visitor and key; either button hides it

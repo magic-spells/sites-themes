@@ -8,8 +8,8 @@ them is an npm dependency of the theme; the build resolves only these relative i
 | tarot.esm.js, ../styles/vendor/tarot.css | @magic-spells/tarot | 0.1.0 (unpublished) | tarot monorepo packages/tarot/dist, built 2026-10-31 |
 | lightbox.min.js, ../styles/vendor/lightbox.css | @magic-spells/tarot-plugins | 0.1.0 (unpublished) | packages/tarot-plugins/dist (the UMD build carries morph-engine 0.4.2) |
 | progress-bar.esm.js, ../styles/vendor/progress-bar.css | @magic-spells/tarot-plugins | 0.1.0 (unpublished) | packages/tarot-plugins/dist and dist/css (the card carousels' progress bar) |
-| bottom-sheet.js, ../styles/vendor/bottom-sheet.css | @magic-spells/bottom-sheet | 2.0.2 | npm |
-| dialog-panel.js, ../styles/vendor/dialog-panel.css | @magic-spells/dialog-panel | 2.0.3 | npm (bottom-sheet's peer; copied from Folio's vendored copy) |
+| sheet.min.js, ../styles/vendor/sheet.css | @magic-spells/sheet | 0.2.0 | npm (the ask sheet; the UMD build, which carries dialog-panel 2.0.2, physics-engine, frame-engine and morph-engine 0.1.2, so it is the page's one dialog-panel, the menu drawer's too. Its ESM imports those four by bare name, which the theme build cannot resolve; the ESM plus vendored engines built to the same gzip size) |
+| ../styles/vendor/dialog-panel.css | @magic-spells/dialog-panel | 2.0.3 | npm (the stylesheet only, unchanged since 2.0.2; the script is inside sheet.min.js) |
 | dropdown-panel.js, ../styles/vendor/dropdown-panel.css | @magic-spells/dropdown-panel | 2.1.1 | npm |
 | select-dropdown.js, ../styles/vendor/select-dropdown.css | @magic-spells/select-dropdown | 0.3.0 | npm |
 | collapsible-content.js, ../styles/vendor/collapsible-content.css | @magic-spells/collapsible-content | 1.2.0 | npm |

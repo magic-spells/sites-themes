@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "./vendor/bottom-sheet.css" layer(components);
 @import "./vendor/collapsible-content.css" layer(components);
 @import "./vendor/dialog-panel.css" layer(components);
 @import "./vendor/dropdown-panel.css" layer(components);
@@ -8,6 +7,7 @@
 @import "./vendor/reveal.css";
 @import "./vendor/scrolling-content.css" layer(components);
 @import "./vendor/select-dropdown.css" layer(components);
+@import "./vendor/sheet.css" layer(components);
 @import "./vendor/split-text.css" layer(components);
 @import "./vendor/sticky-header.css" layer(components);
 @import "./vendor/tab-group.css" layer(components);
@@ -361,43 +361,19 @@ tarot-carousel:not(:defined) tarot-slide {
 	border-radius: var(--sites-radius-full);
 }
 
-/* The ask sheet and the cookie notice: the scheme's background over the
-   backdrop, lg-rounded top, the one shadow. */
-dialog-panel:has(bottom-sheet) {
-	--bs-panel-background: var(--sites-scheme-background);
-	--bs-panel-border-radius: var(--sites-radius-lg);
-	--bs-panel-box-shadow: var(--sites-shadow-lg);
-	--bs-handle-color: var(--sites-scheme-chip-border);
-	--bs-handle-width: 2.25rem;
-	--bs-handle-height: 0.25rem;
-	--bs-content-padding: var(--academy-gutter);
-	--bs-overlay-background: var(--color-backdrop);
-	--bs-overlay-blur: 0;
-}
-
-/* The ask panel is a sheet on a phone and a 30rem drawer from the right
-   from 48rem: the same markup, the sheet's rise turned into a slide. */
-@media (min-width: 48rem) {
-	dialog-panel:has(bottom-sheet[data-drawer]) {
-		--bs-panel-max-height: 100dvh;
-	}
-	dialog-panel:has(bottom-sheet[data-drawer]) > dialog {
-		inset: 0 0 0 auto;
-		width: min(100vw, var(--container-text));
-		height: 100dvh;
-		border-radius: 0;
-		box-shadow: var(--sites-shadow-lg);
-	}
-	dialog-panel:is([state="hidden"], [state="showing"], [state="hiding"]):has(bottom-sheet[data-drawer]) > dialog {
-		transform: translate3d(100%, 0, 0);
-		transition: transform var(--transition-duration-panel) var(--ease-out-soft);
-	}
-	dialog-panel[state="shown"]:has(bottom-sheet[data-drawer]) > dialog {
-		transform: none;
-	}
-	bottom-sheet[data-drawer] bottom-sheet-header::before {
-		content: none;
-	}
+/* The ask sheet: the scheme's background over the backdrop, lg-rounded top,
+   the one shadow; from 48rem the drawer is the text measure wide. */
+dialog-panel:has(sheet-panel) {
+	--sheet-panel-background: var(--sites-scheme-background);
+	--sheet-panel-border-radius: var(--sites-radius-lg);
+	--sheet-panel-box-shadow: var(--sites-shadow-lg);
+	--sheet-handle-color: var(--sites-scheme-chip-border);
+	--sheet-handle-width: 2.25rem;
+	--sheet-handle-height: 0.25rem;
+	--sheet-content-padding: var(--academy-gutter);
+	--sheet-overlay-background: var(--color-backdrop);
+	--sheet-overlay-blur: 0;
+	--sheet-active-size: var(--container-text);
 }
 
 /* The select lists: the field on the input colour in a muted hairline, the

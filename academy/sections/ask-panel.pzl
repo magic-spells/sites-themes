@@ -1,15 +1,15 @@
-<!-- The ask sheet behind every ask button: the School ask form in a bottom-sheet on a phone that becomes a 30rem drawer from the right from 48rem (styles/theme.css). The ask label leads as the h2 (or the heading set here), the confirm line under it; once sent it reads "Thank you" with a button that closes it. On a class page its class select starts on that class. It hands focus back to the button that opened it. Sent and error states come back on the page as ?form=…&sent=1 or &error=1, and the sheet opens on its own there. With School ask set to link it is not drawn. -->
+<!-- The ask sheet behind every ask button: the School ask form in a sheet-panel, a bottom sheet on a phone and a square drawer from the right from 48rem, as wide as the text measure (styles/theme.css). The ask label leads as the h2 (or the heading set here), the confirm line under it; once sent it reads "Thank you" with a button that closes it. On a class page its class select starts on that class. It hands focus back to the button that opened it. Sent and error states come back on the page as ?form=…&sent=1 or &error=1, and the sheet opens on its own there. With School ask set to link it is not drawn. -->
 {#if site.settings.ask != 'link'}
 <dialog-panel>
-  <dialog class="text-scheme-foreground" aria-labelledby="sheet-title">
-    <bottom-sheet id="ask" data-drawer>
-      <bottom-sheet-header class="flex justify-end pt-space-md">
+  <dialog class="text-scheme-foreground md:rounded-none" aria-labelledby="sheet-title">
+    <sheet-panel id="ask" desktop-position="right" desktop-mode="edge">
+      <sheet-header class="flex justify-end pt-space-md">
         <button class="flex size-control items-center justify-center rounded-full bg-scheme-surface-2 transition-colors duration-fast hover:bg-scheme-rule" type="button" data-action-hide-dialog><Icon name="close" /><span class="sr-only">{ t('close') }</span></button>
-      </bottom-sheet-header>
-      <bottom-sheet-content class="pb-space-xl">
+      </sheet-header>
+      <sheet-content class="pt-0 pb-space-xl">
         <AskFields heading={ settings.heading || site.settings.ask_label } prefix="sheet" close />
-      </bottom-sheet-content>
-    </bottom-sheet>
+      </sheet-content>
+    </sheet-panel>
   </dialog>
 </dialog-panel>
 {/if}

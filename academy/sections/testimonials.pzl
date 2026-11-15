@@ -2,7 +2,7 @@
 {#let
   all = content.testimonials.entries | sort('fields.order')
   quotes = (settings.featured_only ? all | where('fields.featured') : all) | slice(0, settings.limit)
-  options = { slidesPerView: 1, gap: '1.5rem', navigation: { showButtons: true, showPagination: true } }
+  options = { gap: '1.5rem' }
   arrow = 'absolute top-1/2 hidden size-control -translate-y-1/2 items-center justify-center rounded-full bg-scheme-surface-2 opacity-0 transition-opacity duration-fast group-hover:opacity-100 focus-visible:opacity-100 disabled:opacity-0 lg:flex'
 }
 {#if quotes.length}

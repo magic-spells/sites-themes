@@ -13,7 +13,7 @@
         <span class="block text-center text-pretty">{ settings.text }</span>
       {/if}
     </a>
-    <button class="flex size-control-sm shrink-0 items-center justify-center text-scheme-muted hover:text-scheme-foreground" type="button" data-dismiss><Icon name="close" cls="size-icon-sm" /><span class="sr-only">{ t('dismiss') }</span></button>
+    <button class="flex size-control-sm shrink-0 items-center justify-center text-scheme-muted hover:text-scheme-foreground" type="button"><Icon name="close" cls="size-icon-sm" /><span class="sr-only">{ t('dismiss') }</span></button>
   </div>
 </aside>
 {/if}

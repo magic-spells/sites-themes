@@ -3,7 +3,7 @@
   items = blocks | slice(0, 12)
   id = 'strip-' + section.id
   ratio = settings.slide_ratio == '4:5' ? 'aspect-portrait' : (settings.slide_ratio == '3:2' ? 'aspect-photo' : 'aspect-square')
-  options = { lightbox: true, progressBar: { selector: '#bar-' + id }, slidesPerView: 1.2, gap: '1rem', paddingLeft: '1rem', navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { lightbox: true, slidesPerView: 2, gap: '1.5rem', paddingLeft: 0, navigation: { showButtons: true, showPagination: false } }, '1024': { lightbox: true, slidesPerView: 3, gap: '1.5rem', paddingLeft: 0, navigation: { showButtons: true, showPagination: false } } } }
+  options = { lightbox: true, progressBar: { selector: '#bar-' + id }, slidesPerView: 1.2, gap: '1rem', paddingLeft: '1rem', navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { slidesPerView: 2, gap: '1.5rem', paddingLeft: 0, navigation: { showButtons: true } }, '1024': { slidesPerView: 3, gap: '1.5rem', paddingLeft: 0, navigation: { showButtons: true } } } }
 }
 {#if items.length}
 <section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter">

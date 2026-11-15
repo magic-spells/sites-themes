@@ -1,3 +1,0 @@
-<!-- component: Chip -->
-<!-- The timetable's subject toggle: a chip on surface-2 in a rule hairline with sm corners, never tinted; pressed fills it with the text colour. It filters the week to value (theme.ts; none pressed shows every subject). -->
-<button class="inline-flex min-h-control-sm shrink-0 items-center rounded-sm border border-scheme-rule bg-scheme-surface-2 px-chip text-label whitespace-nowrap transition-colors duration-fast hover:bg-scheme-rule current:border-scheme-foreground current:bg-scheme-foreground current:text-scheme-background" type="button" data-subject-filter={ value } aria-pressed="false">{ value }</button>

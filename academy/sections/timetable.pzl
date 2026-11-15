@@ -14,7 +14,7 @@
     <SectionHead heading={ settings.heading } text={ settings.text } view_all_label={ settings.view_all_label } view_all_href={ settings.view_all_href } />
     {#if settings.show_filter && taught.length > 1}
       <div class="-mx-gutter mb-space-lg flex gap-space-xs overflow-x-auto px-gutter md:mx-0 md:flex-wrap md:px-0" role="group" aria-label="{ site.settings.subject_label }">
-        {#for subject in taught}<Chip value={ subject } />{/for}
+        {#for subject in taught}<button class="inline-flex min-h-control-sm shrink-0 items-center rounded-sm border border-scheme-rule bg-scheme-surface-2 px-chip text-label whitespace-nowrap transition-colors duration-fast hover:bg-scheme-rule current:border-scheme-foreground current:bg-scheme-foreground current:text-scheme-background" type="button" data-subject-filter={ subject } aria-pressed="false">{ subject }</button>{/for}
       </div>
     {/if}
     <table class="hidden w-full table-fixed lg:table">

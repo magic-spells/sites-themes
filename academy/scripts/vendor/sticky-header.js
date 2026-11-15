@@ -1,6 +1,6 @@
 // @magic-spells/sticky-header 0.2.0 (MIT, Cory Schulz), vendored from the npm package's dist/sticky-header.esm.js.
 // The engine's pinned builder resolves no theme dependencies, so the module is
-// copied here; package.json pins the same version as its provenance.
+// copied here.
 var MAX_OVERSHOOT = .2;
 /**
 * Damping ratio that produces a given peak overshoot in a step response.

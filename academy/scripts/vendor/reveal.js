@@ -1,6 +1,6 @@
 // @magic-spells/reveal 0.1.1 (MIT, Cory Schulz), vendored from the npm package's dist/reveal.esm.js.
 // The engine's pinned builder resolves no theme dependencies, so the module is
-// copied here; package.json pins the same version as its provenance.
+// copied here.
 /**
  * Shared helpers for resolving element inputs and viewport-relative offsets.
  * Pure functions - no state, no DOM writes.

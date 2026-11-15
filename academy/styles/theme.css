@@ -43,7 +43,6 @@
 	--color-scheme-button-foreground: var(--sites-scheme-button-foreground);
 	--color-scheme-button-hover-background: var(--sites-scheme-button-hover-background);
 	--color-scheme-button-hover-foreground: var(--sites-scheme-button-hover-foreground);
-	--color-scheme-link: var(--sites-scheme-links);
 	--color-scheme-error: var(--academy-error);
 	--color-backdrop: color-mix(in srgb, var(--sites-color-grey-extra-dark) 50%, transparent);
 }
@@ -193,11 +192,6 @@ body:has([data-bare]) [data-group] {
 	display: none;
 }
 
-html.reveal-off .reveal:not(.is-revealed) {
-	opacity: 1;
-	transform: none;
-	filter: none;
-}
 /* split-text hides a heading until it upgrades; with no script to upgrade it, show it. */
 html.reveal-off split-text:not(:defined) {
 	visibility: visible;
@@ -239,12 +233,6 @@ html.reveal-off split-text:not(:defined) {
 }
 
 @layer base {
-	dialog {
-		border: 0;
-		padding: 0;
-		color: inherit;
-	}
-
 	[id] {
 		scroll-margin-top: calc(var(--spacing-header) + 1rem);
 	}
@@ -395,7 +383,6 @@ select-dropdown {
 	--select-color-hover: var(--sites-scheme-chip-background);
 	--select-color-focus: var(--sites-scheme-chip-background);
 	--select-color-selected: var(--sites-scheme-chip-background);
-	display: block;
 }
 /* "Select…" reads in muted until an option is chosen. */
 select-dropdown:not(:has(select-option[selected])) .select-label-text {
@@ -407,12 +394,10 @@ select-dropdown:not(:has(select-option[selected])) .select-label-text {
 		animation-duration: 0.001ms !important;
 		animation-iteration-count: 1 !important;
 		transition-duration: 0.001ms !important;
-		scroll-behavior: auto !important;
 	}
 	/* The ticker stands still: one copy, cut with an ellipsis. */
 	[data-ticker] scrolling-content { mask-image: none; }
 	[data-ticker] scrolling-track { width: auto; transform: none !important; }
 	[data-ticker] scrolling-item[data-clone] { display: none; }
 	[data-ticker] scrolling-item { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
-	.reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
 }

@@ -1,12 +1,4 @@
-// The whole of Academy's browser JavaScript. The carousels, the lightbox, the
-// ask sheet, the menu drawer, the Classes dropdown, the select lists, the faq
-// rows, the sticky header, the ticker, the day tabs, the heading rise-ins and
-// the scroll reveals are Magic Spells web components, vendored under ./vendor
-// (see vendor/VERSIONS.md); importing them registers the elements. This file
-// adds the small behaviours they do not cover.
-//
-// State lives on data- and aria- attributes, never on classes: Tailwind
-// generates only what it reads in .pzl and styles/ files.
+// Academy's browser JavaScript: the vendored components (vendor/VERSIONS.md) and what they leave out, with state on data- and aria- attributes.
 
 import './vendor/collapsible-content.js';
 import './vendor/dropdown-panel.js';
@@ -49,23 +41,14 @@ function remember(key: string): void {
 // A button or link names the panel it opens: the menu drawer, or the ask
 // sheet behind every ask button. A link keeps its href (the ask page) for a
 // page without JavaScript. A panel opened from inside another closes that one
-// first. Focus goes back to the trigger when the panel would otherwise drop
-// it on <body>.
+// first and hands focus back to the menu button when it closes.
 function openPanel(opener: HTMLElement, event: Event): void {
 	const panel = document.getElementById(opener.getAttribute('data-panel-open') ?? '') as Panel | null;
-	if (!panel || typeof panel.show !== 'function') return;
+	if (!panel) return;
 	event.preventDefault();
 	const outer = opener.closest('dialog-panel') as Panel | null;
-	const trigger = outer ? (document.querySelector<HTMLElement>('[data-panel-open="mobile-menu"]') ?? opener) : opener;
 	outer?.hide();
-	panel.show(trigger);
-	(panel.closest('dialog-panel') ?? panel).addEventListener(
-		'hidden',
-		() => {
-			if (document.activeElement === document.body || !document.activeElement) trigger.focus();
-		},
-		{ once: true },
-	);
+	panel.show(outer ? (document.querySelector('[data-panel-open="mobile-menu"]') ?? opener) : opener);
 }
 
 // The timetable's subject chips toggle: while any is pressed, every session
@@ -96,31 +79,17 @@ if (sentFrom.length && sentFrom.every((form) => form.closest('dialog-panel'))) {
 	(sentFrom[0].closest('dialog-panel')?.querySelector('sheet-panel') as Panel | null)?.show();
 }
 
-// The cookie notice shows once per visitor and key; either button hides it
-// for good.
-for (const notice of document.querySelectorAll<HTMLElement>('[data-notice]')) {
-	const key = notice.getAttribute('data-notice') || notice.id;
-	if (dismissed(key)) continue;
-	notice.hidden = false;
-	for (const button of notice.querySelectorAll('button')) {
+// The cookie notice and the announcement bar: any button in one hides it, and
+// with a key it stays hidden for that visitor.
+for (const el of document.querySelectorAll<HTMLElement>('[data-dismiss-key]')) {
+	const key = el.getAttribute('data-dismiss-key');
+	el.hidden = !!key && dismissed(key);
+	for (const button of el.querySelectorAll('button')) {
 		button.addEventListener('click', () => {
-			remember(key);
-			notice.hidden = true;
+			el.hidden = true;
+			if (key) remember(key);
 		});
 	}
-}
-
-// An announcement with a key hides for good once its × is pressed.
-for (const bar of document.querySelectorAll<HTMLElement>('[data-dismiss-key]')) {
-	const key = bar.getAttribute('data-dismiss-key') ?? '';
-	if (key && dismissed(key)) {
-		bar.hidden = true;
-		continue;
-	}
-	bar.querySelector('[data-dismiss]')?.addEventListener('click', () => {
-		bar.hidden = true;
-		if (key) remember(key);
-	});
 }
 
 // Scroll reveals on cards only. They write `reveal reveal-fade-up` only

@@ -19,7 +19,7 @@ them is an npm dependency of the theme; the build resolves only these relative i
 | split-text.esm.js, ../styles/vendor/split-text.css | @magic-spells/split-text | 0.2.0 | npm (the headings that rise in, under the reveal switch) |
 | tab-group.js, ../styles/vendor/tab-group.css | @magic-spells/tab-group | 1.2.0 | npm (the esm build; the timetable's day tabs below 64rem) |
 
-Tarot and tarot-plugins are unpublished and intentionally absent from package.json. All runtime builds here are imported by theme.ts; all vendor stylesheets are imported into the components layer. CSS lengths other than borders and shadows have been converted from px to rem at 16:1 for the theme rules; JavaScript builds are unchanged.
+Tarot and tarot-plugins are unpublished and intentionally absent from package.json. All runtime builds here are imported by theme.ts; every vendor stylesheet but reveal.css (whose @utility rules must stay unlayered) is imported into the components layer. CSS lengths other than borders and shadows have been converted from px to rem at 16:1 for the theme rules, except reveal.css, whose motion distances, blur and perspective stay in px as published; JavaScript builds are unchanged apart from the provenance comment at the top of reveal.js and sticky-header.js.
 
 The adjacent tarot.esm.d.ts and tsconfig exclusion mirror Ledger and Restaurant: TypeScript 7 rejects the valid static private access through this.constructor in the runtime build. The declaration covers the registration-only theme import; node --check validates the unmodified JavaScript.
 

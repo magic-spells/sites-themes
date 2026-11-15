@@ -3,6 +3,7 @@
   s = site.settings
   loc = content.locations.entries | sort('fields.order') | first
   heading = settings.heading || s.ask_label
+  row = 'grid gap-space-2xs border-b border-scheme-rule py-cell'
 }
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-column items-start gap-space-xl lg:grid-cols-wide-narrow lg:gap-space-2xl">
@@ -16,10 +17,10 @@
       <div class="max-w-prose"><AskFields heading={ heading } prefix={ section.id } /></div>
     {/if}
     <dl class="grid border-t border-scheme-rule text-small">
-      {#if loc.fields.address}<div class="grid gap-space-2xs border-b border-scheme-rule py-cell"><dt class="text-scheme-muted">{ t('address') }</dt><dd class="flex gap-space-xs"><Icon name="pin" cls="mt-space-2xs size-icon-sm" /><span class="whitespace-pre-line">{ [loc.title, loc.fields.address] | compact | join('\n') }</span></dd></div>{/if}
-      {#if loc.fields.hours}<div class="grid gap-space-2xs border-b border-scheme-rule py-cell"><dt class="text-scheme-muted">{ t('hours') }</dt><dd class="whitespace-pre-line">{ loc.fields.hours }</dd></div>{/if}
-      {#if s.phone}<div class="grid gap-space-2xs border-b border-scheme-rule py-cell"><dt class="text-scheme-muted">{ t('phone') }</dt><dd><a class="underline decoration-1 underline-offset-4" href="tel:{ s.phone | replace(' ', '') }">{ s.phone }</a></dd></div>{/if}
-      {#if s.email}<div class="grid gap-space-2xs border-b border-scheme-rule py-cell"><dt class="text-scheme-muted">{ t('email') }</dt><dd><a class="underline decoration-1 underline-offset-4" href="mailto:{ s.email }">{ s.email }</a></dd></div>{/if}
+      {#if loc.fields.address}<div class="{ row }"><dt class="text-scheme-muted">{ t('address') }</dt><dd class="flex gap-space-xs"><Icon name="pin" cls="mt-space-2xs size-icon-sm" /><span class="whitespace-pre-line">{ [loc.title, loc.fields.address] | compact | join('\n') }</span></dd></div>{/if}
+      {#if loc.fields.hours}<div class="{ row }"><dt class="text-scheme-muted">{ t('hours') }</dt><dd class="whitespace-pre-line">{ loc.fields.hours }</dd></div>{/if}
+      {#if s.phone}<div class="{ row }"><dt class="text-scheme-muted">{ t('phone') }</dt><dd><a class="underline decoration-1 underline-offset-4" href="tel:{ s.phone | replace(' ', '') }">{ s.phone }</a></dd></div>{/if}
+      {#if s.email}<div class="{ row }"><dt class="text-scheme-muted">{ t('email') }</dt><dd><a class="underline decoration-1 underline-offset-4" href="mailto:{ s.email }">{ s.email }</a></dd></div>{/if}
     </dl>
   </div>
 </section>

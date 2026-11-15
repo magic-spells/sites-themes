@@ -1,5 +1,5 @@
 <!-- A non-modal notice: the page stays usable behind it. It renders hidden; theme.ts shows it once per key, both buttons hide it and the choice is remembered. Full width on a phone with a rounded top, a card bottom right from 48rem. -->
-<section class="fixed inset-x-0 bottom-0 z-40 rounded-t-md border-t border-scheme-rule bg-scheme-background text-scheme-foreground shadow-panel md:inset-x-auto md:right-gutter md:bottom-gutter md:w-drawer md:rounded-md md:border" id="cookie-notice" data-notice="{ settings.key }" role="region" aria-label="{ t('cookie_notice') }" hidden>
+<section class="fixed inset-x-0 bottom-0 z-40 rounded-t-md border-t border-scheme-rule bg-scheme-background text-scheme-foreground shadow-panel md:inset-x-auto md:right-gutter md:bottom-gutter md:w-drawer md:rounded-md md:border" id="cookie-notice" data-dismiss-key="{ settings.key }" role="region" aria-label="{ t('cookie_notice') }" hidden>
   <div class="grid gap-space-md p-space-lg">
     <div class="sites-prose text-small">{ settings.body }</div>
     {#if settings.link_label}<p><a class="text-small font-medium underline decoration-1 underline-offset-4" href="{ settings.link_href }">{ settings.link_label }</a></p>{/if}

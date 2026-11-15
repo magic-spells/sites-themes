@@ -3,7 +3,7 @@
   s = site.settings
   subjects = content.classes.entries | where('fields.subject') | sort('fields.order') | map('fields.subject') | uniq
 }
-<sticky-header class="block" settle-overshoot="0" disabled={ settings.sticky ? null : true }>
+<sticky-header settle-overshoot="0" disabled={ settings.sticky ? null : true }>
   <header class="relative border-b border-transparent bg-scheme-background px-gutter text-scheme-foreground transition-colors duration-fast">
     <div class="mx-auto flex min-h-header max-w-column items-center justify-between gap-space-md">
       <a class="font-heading text-h4 whitespace-nowrap" href="/">{#if s.logo}<img class="h-control w-auto" src="{ image_url(s.logo, 320) }" alt="{ s.wordmark || site.name }" width={ s.logo.width } height={ s.logo.height } />{:else}{ s.wordmark || site.name }{/if}</a>

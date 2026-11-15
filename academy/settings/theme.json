@@ -16,7 +16,7 @@
       "settings": [
         { "type": "text", "id": "wordmark", "label": "Wordmark", "default": "Larkfield Academy", "info": "Set in the heading face in the header and the footer. Leave empty to use the site name." },
         { "type": "image", "id": "logo", "label": "Logo", "info": "Replaces the wordmark in the header and the footer. The wordmark stays as its alt text." },
-        { "type": "text", "id": "tagline", "label": "Tagline", "default": "Music and dance in Marlowe Cross", "info": "The line under the wordmark in the footer." },
+        { "type": "text", "id": "tagline", "label": "Tagline", "default": "Music and dance lessons for every age", "info": "The line under the wordmark in the footer." },
         { "type": "image", "id": "favicon", "label": "Favicon" },
         { "type": "text", "id": "currency_symbol", "label": "Currency symbol", "default": "£" },
         { "type": "checkbox", "id": "reveal", "label": "Reveal on scroll", "default": true, "info": "Cards fade up and headings rise in, word by word, as they enter view. Never the first screen." }
@@ -25,15 +25,15 @@
     {
       "name": "School",
       "settings": [
-        { "type": "text", "id": "ask_label", "label": "Ask button label", "default": "Ask about a class" },
+        { "type": "text", "id": "ask_label", "label": "Ask button label", "default": "Book a trial lesson" },
         { "type": "select", "id": "ask", "label": "Ask button", "default": "form", "options": [
           { "value": "form", "label": "Opens the ask form" },
           { "value": "link", "label": "Follows the ask link" }
         ], "info": "The theme takes requests, not bookings. Link sends every ask button to your own enrolment page." },
         { "type": "url", "id": "ask_url", "label": "Ask link", "default": "/ask", "info": "Where the ask button goes when it follows a link, and without JavaScript." },
-        { "type": "form", "id": "ask_form", "label": "Ask form", "default": "ask" },
-        { "type": "text", "id": "confirm_line", "label": "Confirm line", "default": "We reply within two working days.", "info": "Under every ask button." },
-        { "type": "text", "id": "portal_label", "label": "Portal label", "default": "Parent portal" },
+        { "type": "form", "id": "ask_form", "label": "Ask form", "default": "trial" },
+        { "type": "text", "id": "confirm_line", "label": "Confirm line", "default": "We reply within two working days", "info": "Under the ask in the sheet, the ask page and the closing band." },
+        { "type": "text", "id": "portal_label", "label": "Portal label", "default": "Parent login" },
         { "type": "url", "id": "portal_url", "label": "Portal link", "default": "", "info": "Your own parent or student portal. Leave empty to hide the link." },
         { "type": "textarea", "id": "accreditation_lines", "label": "Accreditation lines", "default": "", "info": "One registration or membership per line. Printed in the footer and the story." },
         { "type": "text", "id": "subject_label", "label": "Subject label", "default": "Subject", "info": "What the school calls the way it groups classes: Subject, Style, Department." }

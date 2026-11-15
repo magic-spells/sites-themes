@@ -1,4 +1,4 @@
-<!-- One location: the heading, the address, the phone and email as text links, the hours as a two-column table, the note, Directions; beside them the location's 3:2 photo, or its map (an image, or the embedded map when one is set and the setting asks). -->
+<!-- One location: the heading, the address with the pin, the phone and email as text links, the hours as a two-column table, the note, Directions; beside them the location's 3:2 photo, or its map (an image, or the embedded map when one is set and the setting asks). -->
 {#let
   loc = settings.location || (content.locations.entries | sort('fields.order') | first)
   f = loc.fields
@@ -10,7 +10,7 @@
     <div class="grid justify-items-start gap-space-lg">
       <div class="grid gap-space-sm">
         <h2 class="font-heading text-h2 text-balance text-scheme-heading">{ settings.heading || loc.title }</h2>
-        {#if f.address}<p class="text-lead whitespace-pre-line">{ f.address }</p>{/if}
+        {#if f.address}<p class="flex gap-space-xs text-lead"><Icon name="pin" cls="mt-space-2xs size-icon" /><span class="whitespace-pre-line">{ f.address }</span></p>{/if}
       </div>
       {#if f.phone || f.email}<p class="grid gap-space-2xs">
         {#if f.phone}<a class="justify-self-start underline decoration-1 underline-offset-4" href="tel:{ f.phone | replace(' ', '') }">{ f.phone }</a>{/if}

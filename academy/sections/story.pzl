@@ -1,13 +1,12 @@
-<!-- The school's story: the photo in seven parts beside the prose in five from 48rem, the photo left or right, with the School accreditation lines under the prose and one outlined button. The photo first on phones. -->
+<!-- The school's story: the text in seven parts beside the 4:5 photo in five from 64rem, the photo right or left. The heading, the prose and the School accreditation lines as a small ruled list. The photo after the text on phones. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column items-center gap-space-xl md:gap-space-2xl { settings.image_side == 'right' ? 'md:grid-cols-narrow-wide' : 'md:grid-cols-wide-narrow' }">
-    <div class="{ settings.image_side == 'right' ? 'md:order-last' : '' }"><Well asset={ settings.image } alt={ settings.image_alt } width={ 1200 } sizes="(min-width: 48rem) 55vw, 100vw" /></div>
-    <div class="grid justify-items-start gap-space-md">
+  <div class="mx-auto grid max-w-column items-center gap-space-xl lg:gap-space-2xl { settings.image_side == 'left' ? 'lg:grid-cols-narrow-wide' : 'lg:grid-cols-wide-narrow' }">
+    <div class="grid gap-space-md { settings.image_side == 'left' ? 'lg:order-last' : '' }">
       <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Rise text={ settings.heading } /></h2>
       <div class="sites-prose max-w-prose">{ settings.text }</div>
-      <Lines cls="text-scheme-muted" />
-      {#if settings.link_label && settings.link}<Button href={ settings.link } tone="outline">{ settings.link_label }</Button>{/if}
+      {#if settings.show_accreditation}<Lines cls="max-w-prose text-scheme-muted" ruled />{/if}
     </div>
+    <Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-portrait" width={ 960 } sizes="(min-width: 64rem) 30rem, 100vw" />
   </div>
 </section>
 
@@ -18,20 +17,19 @@
   "kind": "Content",
   "icon": "book-open",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Forty years above the high street" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Our story" },
     { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Larkfield started in 1986 with one piano and a borrowed hall. It now fills two studios and four teaching rooms, and some of the teachers were pupils here first.</p>" },
-    { "type": "image", "id": "image", "label": "Image (3:2)" },
+    { "type": "image", "id": "image", "label": "Image (4:5)" },
     { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "" },
-    { "type": "select", "id": "image_side", "label": "Image", "default": "left", "options": [
+    { "type": "select", "id": "image_side", "label": "Image", "default": "right", "options": [
       { "value": "left", "label": "Left" },
       { "value": "right", "label": "Right" }
     ] },
-    { "type": "text", "id": "link_label", "label": "Button label", "default": "" },
-    { "type": "url", "id": "link", "label": "Button link", "default": "" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+    { "type": "checkbox", "id": "show_accreditation", "label": "Accreditation lines", "default": true },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
   ],
   "presets": [
-    { "name": "Default", "settings": {} }
+    { "name": "Default", "settings": { "color_scheme": "white" } }
   ]
 }
 </schema>

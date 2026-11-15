@@ -5,7 +5,8 @@
       "type": "announcement-bar",
       "preset": "Default",
       "settings": {
-        "key": "autumn-2026",
+        "link": "/dates",
+        "key": "spring-2027",
         "color_scheme": "ink"
       },
       "blocks": []

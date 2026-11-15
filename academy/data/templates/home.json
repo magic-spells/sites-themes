@@ -1,14 +1,15 @@
 {
   "label": "Home",
-  "description": "The front page: the hero, featured classes, the week, a feature, the teachers, what families say, the ask, the dates and questions.",
+  "description": "The front page: the hero, featured classes, the week, a feature, the teachers, what parents say, the ask, the dates and questions.",
   "sections": [
     {
       "id": "s_hero",
       "type": "hero",
       "preset": "Split",
       "settings": {
-        "image": "as_3x2_blue",
-        "image_alt": "A Ballet 1 class at the barre in Studio 1"
+        "image": "as_4x3_blue",
+        "image_alt": "A Ballet 1 class at the barre in Studio 1",
+        "event": "ev_1"
       },
       "blocks": []
     },
@@ -25,9 +26,7 @@
       "id": "s_week",
       "type": "timetable",
       "preset": "Week",
-      "settings": {
-        "link_label": "Full timetable"
-      },
+      "settings": {},
       "blocks": []
     },
     {
@@ -35,8 +34,8 @@
       "type": "image-with-text",
       "preset": "Default",
       "settings": {
-        "image": "as_3x2_manila",
-        "image_alt": "Youth Choir rehearsing in Studio 2",
+        "image": "as_4x3_manila",
+        "image_alt": "Youth Choir at the spring concert",
         "color_scheme": "blue"
       },
       "blocks": []
@@ -53,7 +52,7 @@
     {
       "id": "s_quotes",
       "type": "testimonials",
-      "preset": "Carousel",
+      "preset": "Rows",
       "settings": {
         "color_scheme": "manila"
       },
@@ -73,9 +72,9 @@
       "type": "dates",
       "preset": "Everything",
       "settings": {
-        "heading": "Coming up",
+        "show_classes": false,
         "limit": 6,
-        "link_label": "All dates",
+        "view_all_label": "All dates",
         "color_scheme": "white"
       },
       "blocks": []
@@ -85,14 +84,14 @@
       "type": "faq",
       "preset": "Default",
       "settings": {
-        "color_scheme": "white"
+        "color_scheme": "light-blue"
       },
       "blocks": [
         {
           "type": "question",
           "settings": {
             "question": "Can my child try a class first?",
-            "answer": "<p>Yes. The first group class is a free trial. Ask about a class and we will offer a date.</p>"
+            "answer": "<p>Yes. The first group class is a free trial. Book a trial lesson and we will offer a date.</p>"
           }
         },
         {
@@ -106,14 +105,14 @@
           "type": "question",
           "settings": {
             "question": "Do you teach adults?",
-            "answer": "<p>Yes. Adult Choir and Adult Tap run in the evenings, and every one-to-one lesson is open to adults.</p>"
+            "answer": "<p>Yes. Adult Choir and Adult Tap run on weekday evenings, and every one-to-one lesson is open to adults.</p>"
           }
         },
         {
           "type": "question",
           "settings": {
             "question": "How do fees work?",
-            "answer": "<p>Group classes are paid by the term. One-to-one lessons are paid by the lesson, booked in blocks of ten.</p>"
+            "answer": "<p>Every class is paid by the term, before the first class. One-to-one lessons come ten to a term.</p>"
           }
         },
         {

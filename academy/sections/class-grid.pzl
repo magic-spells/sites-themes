@@ -1,12 +1,12 @@
 <!-- Featured classes as cards (photo, name, ages and level, price): three across from 64rem, two from 48rem; on phones a row that scrolls with the next card showing. -->
 {#let
   all = content.classes.entries | sort('fields.order')
-  classes = (settings.source == 'featured' ? all | where('fields.featured') : all) | slice(0, settings.limit)
+  classes = (settings.featured_only ? all | where('fields.featured') : all) | slice(0, settings.limit)
 }
 {#if classes.length}
 <section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter">
   <div class="mx-auto max-w-column px-gutter md:px-0">
-    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } />
+    <SectionHead heading={ settings.heading } text={ settings.text } view_all_label={ settings.view_all_label } view_all_href={ settings.view_all_href } />
   </div>
   <ul class="mx-auto flex max-w-column snap-x snap-mandatory scroll-px-gutter gap-space-lg overflow-x-auto px-gutter md:grid md:snap-none md:grid-cols-2 md:gap-y-space-xl md:overflow-visible md:px-0 lg:grid-cols-3">
     {#for entry in classes}<li class="w-4/5 shrink-0 snap-start md:w-auto"><ClassCard entry={ entry } /></li>{/for}
@@ -21,15 +21,12 @@
   "kind": "Collections",
   "icon": "layout-grid",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Classes" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Our classes" },
     { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
-    { "type": "select", "id": "source", "label": "Classes", "default": "featured", "options": [
-      { "value": "featured", "label": "Featured" },
-      { "value": "all", "label": "All" }
-    ] },
+    { "type": "checkbox", "id": "featured_only", "label": "Featured only", "default": true },
     { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 6 },
-    { "type": "text", "id": "link_label", "label": "Link label", "default": "All classes" },
-    { "type": "url", "id": "link_href", "label": "Link", "default": "/classes" },
+    { "type": "text", "id": "view_all_label", "label": "View all label", "default": "All classes" },
+    { "type": "url", "id": "view_all_href", "label": "View all link", "default": "/classes" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
   ],
   "presets": [

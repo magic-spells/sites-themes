@@ -1,11 +1,10 @@
-<!-- The header: the wordmark (or the Brand logo) left; from 64rem the main menu, the School portal link and the ask button right. The menu item that points at the classes page opens a dropdown-panel of every subject with its classes. The portal link waits for 80rem. Below 64rem: the wordmark and the menu icon. Sticky, with the one shadow once the page scrolls. No phone. -->
+<!-- The header: the wordmark (or the Brand logo) left; from 64rem the main menu, the School portal link as plain text and the ask button right. The menu item that points at the classes page opens a dropdown-panel listing every subject as a link to the class list on it, then All classes. The portal link waits for 80rem. Below 64rem: the wordmark and one round menu button on surface-2. Sticky unless turned off, with a rule under it once the page scrolls. No phone. -->
 {#let
   s = site.settings
-  classes = content.classes.entries | sort('fields.order')
-  subjects = classes | map('fields.subject') | uniq | compact
+  subjects = content.classes.entries | sort('fields.order') | map('fields.subject') | uniq | compact
 }
-<sticky-header class="block" settle-overshoot="0">
-  <header class="relative border-b border-scheme-rule bg-scheme-background px-gutter text-scheme-foreground">
+<sticky-header class="block" settle-overshoot="0" disabled={ settings.sticky ? null : true }>
+  <header class="relative border-b border-transparent bg-scheme-background px-gutter text-scheme-foreground transition-colors duration-fast">
     <div class="mx-auto flex min-h-header max-w-column items-center justify-between gap-space-md">
       <a class="font-heading text-h4 whitespace-nowrap" href="/">{#if s.logo}<img class="h-control w-auto" src="{ image_url(s.logo, 320) }" alt="{ s.wordmark || site.name }" width={ s.logo.width } height={ s.logo.height } />{:else}{ s.wordmark || site.name }{/if}</a>
       <div class="flex items-center gap-space-lg">
@@ -17,18 +16,11 @@
                   <li>
                     <dropdown-component trigger="both" close-delay="150">
                       <dropdown-trigger class="flex min-h-header cursor-pointer items-center gap-space-2xs px-cell">{ item.label }<Icon name="chevron-down" cls="size-icon-sm" /></dropdown-trigger>
-                      <dropdown-panel class="border-b border-scheme-rule bg-scheme-background px-gutter py-space-xl text-scheme-foreground shadow-panel" wide>
-                        <div class="mx-auto grid max-w-column gap-space-lg">
-                          <ul class="grid grid-cols-3 gap-space-xl xl:grid-cols-5">
-                            {#for subject in subjects}
-                              <li class="grid content-start gap-space-xs">
-                                <a class="font-heading text-h4 hover:underline hover:decoration-1 hover:underline-offset-4" href="{ settings.classes_path }?subject={ encodeURIComponent(subject) }">{ subject }</a>
-                                <ul class="grid gap-space-2xs text-small text-scheme-muted">{#for entry in classes | where('fields.subject', subject)}<li><a class="hover:text-scheme-foreground hover:underline hover:underline-offset-4" href="/classes/{ entry.handle }">{ entry.title }</a></li>{/for}</ul>
-                              </li>
-                            {/for}
-                          </ul>
-                          <a class="justify-self-end text-label underline decoration-1 underline-offset-4" href="{ settings.classes_path }">{ t('all_classes') }</a>
-                        </div>
+                      <dropdown-panel class="w-max rounded-md border border-scheme-rule bg-scheme-background p-space-xs text-scheme-foreground shadow-panel">
+                        <ul class="grid">
+                          {#for subject in subjects}<li><a class="flex items-center gap-space-sm rounded-sm px-cell py-space-xs hover:bg-scheme-surface-2" href="{ settings.classes_path }?subject={ encodeURIComponent(subject) }"><Swatch subject={ subject } />{ subject }</a></li>{/for}
+                          <li class="mt-space-2xs border-t border-scheme-rule pt-space-2xs"><a class="block rounded-sm px-cell py-space-xs text-label hover:bg-scheme-surface-2" href="{ settings.classes_path }">{ t('all_classes') }</a></li>
+                        </ul>
                       </dropdown-panel>
                     </dropdown-component>
                   </li>
@@ -39,9 +31,9 @@
             </ul>
           </nav>
         {/if}
-        {#if s.portal_url}<a class="hidden text-label whitespace-nowrap underline decoration-1 underline-offset-4 xl:inline" href="{ s.portal_url }">{ s.portal_label }</a>{/if}
+        {#if s.portal_url}<a class="hidden text-label whitespace-nowrap underline-offset-4 hover:underline xl:inline" href="{ s.portal_url }">{ s.portal_label }</a>{/if}
         <span class="hidden lg:contents"><Button ask /></span>
-        <button class="-me-space-xs flex size-control items-center justify-center lg:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu"><Icon name="menu" cls="size-space-md" /><span class="sr-only">{ t('menu') }</span></button>
+        <button class="flex size-control items-center justify-center rounded-full bg-scheme-surface-2 transition-colors duration-fast hover:bg-scheme-rule lg:hidden" type="button" data-panel-open="mobile-menu" aria-haspopup="dialog" aria-controls="mobile-menu"><Icon name="menu" /><span class="sr-only">{ t('menu') }</span></button>
       </div>
     </div>
   </header>
@@ -50,12 +42,13 @@
 <schema>
 {
   "name": "Header",
-  "description": "The wordmark, the menu with a Classes panel of every subject, the portal link and the ask button; the menu icon on phones and tablets.",
+  "description": "The wordmark, the menu with a Classes panel of every subject, the portal link and the ask button; the menu button on phones and tablets.",
   "kind": "Header",
   "icon": "panel-top",
   "settings": [
     { "type": "menu", "id": "menu", "label": "Menu" },
-    { "type": "url", "id": "classes_path", "label": "Classes page", "default": "/classes", "info": "The menu item pointing here opens every subject with its classes." },
+    { "type": "url", "id": "classes_path", "label": "Classes page", "default": "/classes", "info": "The menu item pointing here opens a list of every subject." },
+    { "type": "checkbox", "id": "sticky", "label": "Sticky", "default": true },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [

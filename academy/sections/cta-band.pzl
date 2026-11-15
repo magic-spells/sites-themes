@@ -1,10 +1,12 @@
-<!-- The band a page ends on: the h2, the School confirm line and the ask button, centred. -->
+<!-- The band a page ends on. From 48rem the h2 and the line left (in the 42rem reading width), with the School confirm line under them in small muted, and the ask button right on their last baseline; stacked on phones, the button full width. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-prose justify-items-center gap-space-md text-center">
-    <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Rise text={ settings.heading } /></h2>
-    {#if settings.text}<p class="text-lead text-pretty">{ settings.text }</p>{/if}
-    <div class="pt-space-xs"><Button ask /></div>
-    {#if site.settings.confirm_line}<p class="text-small text-scheme-muted">{ site.settings.confirm_line }</p>{/if}
+  <div class="mx-auto grid max-w-column gap-space-lg md:flex md:items-end md:justify-between">
+    <div class="grid max-w-prose gap-space-sm">
+      <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Rise text={ settings.heading } /></h2>
+      {#if settings.text}<p class="text-lead text-pretty">{ settings.text }</p>{/if}
+      {#if settings.show_confirm && site.settings.confirm_line}<p class="text-small text-scheme-muted">{ site.settings.confirm_line }</p>{/if}
+    </div>
+    <div class="shrink-0"><Button ask wide /></div>
   </div>
 </section>
 
@@ -16,7 +18,8 @@
   "icon": "mouse-pointer-click",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Come and try a class" },
-    { "type": "text", "id": "text", "label": "Text", "default": "The first group class is free. Tell us who it is for and which days suit." },
+    { "type": "text", "id": "text", "label": "Text", "default": "Tell us the class and the days that suit, and we will find a place." },
+    { "type": "checkbox", "id": "show_confirm", "label": "Confirm line", "default": true, "info": "The School confirm line under the text." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "brick" }
   ],
   "presets": [

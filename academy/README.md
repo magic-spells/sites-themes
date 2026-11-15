@@ -9,7 +9,7 @@ leaders from a name to its price or time. Libre Baskerville carries the headings
 Canada the rest, on eight schemes: feint, white, manila, light blue, ink, blue, burgundy and
 brick.
 
-The fixtures are an invented school, **Larkfield Academy** in Marlowe Cross, so `sites dev`
+The fixtures are an invented school, **Larkfield Academy** in the Old Corn Exchange, so `sites dev`
 shows five subjects, fourteen classes, twenty-two weekly sessions, twelve dates, six teachers,
 six testimonials, one building, six posts and three forms instead of placeholder text. The
 photographs are SVG placeholders; replace them before publishing.
@@ -33,10 +33,11 @@ assets/             Libre Baskerville and Radio Canada (OFL), glyphs.svg, the fa
 
 - **classes**: a short name for the timetable, the subject, ages and level as free text
   ("Ages 5–7", "Beginner"), a summary and description, the length, the price with
-  `price_from` and a period ("£88.50 / term", "From £22 / lesson"), the teacher, a 3:2 photo,
+  `price_from` and a period printed after it ("£132 a term", "£165 for the week"), the teacher, a 3:2 photo,
   what to bring, featured. A page each at `/classes/<handle>`. The class list narrows to one
   subject with `?subject=<subject>`; the subjects come from the classes, so there is nothing
-  else to enter.
+  else to enter. A subject's cover colour is its place among them in class order (blue, brick,
+  burgundy, ink, light blue), so reordering classes changes it.
 - A class never says when it runs. Its **sessions** (class, day, start, end, teacher, location
   and a note for the room) make the week; its **events** of kind `class` are dated runs; a class
   with neither is "By arrangement".
@@ -46,13 +47,13 @@ assets/             Libre Baskerville and Radio Canada (OFL), glyphs.svg, the fa
 - **coaches** (labelled Teachers), **testimonials**, **locations** and **posts**. The field
   ids a class, session, teacher or location shares with the other class themes mean the same
   here, so a workspace can switch and keep its data.
-- Forms are the workspace's: `ask`, `contact` and `newsletter`. On a class page the ask form's
+- Forms are the workspace's: `trial`, `contact` and `newsletter`. On a class page the ask form's
   class select starts on that class when one of its options reads the same as the class title.
 
 ## School settings
 
 The ask label, `ask` (open the ask sheet, or follow `ask_url` to the school's own enrolment
-page), the ask form, the confirm line under every ask, the parent portal link, the
+page), the ask form, the confirm line under the ask, the parent portal link, the
 accreditation lines and what the school calls a subject.
 
 ## Develop

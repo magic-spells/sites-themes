@@ -1,12 +1,12 @@
 <!-- component: Questions -->
-<!-- Rows on feint rules that open and close: the question one weight heavier than the answer, with a chevron; the answer in muted under it. items are blocks, each with settings.question and settings.answer. The first opens when first_open. Without JavaScript every row shows. -->
+<!-- Rows on feint rules that open and close: the question one weight heavier than the answer, with a plus that turns to a minus; the answer under it in the 42rem reading width. items are blocks, each with settings.question and settings.answer. The first opens when first_open. Without JavaScript every row shows. -->
 <ul class="border-t border-scheme-rule">
   {#for item in items, i}
     <li class="border-b border-scheme-rule" data-block={ item.editor_id }>
       <collapsible-component>
-        <h3><button class="group flex w-full items-center justify-between gap-space-md py-space-md text-left text-lead font-medium" type="button">{ item.settings.question }<Icon name="chevron-down" cls="size-icon transition-transform duration-fast group-aria-expanded:rotate-180" /></button></h3>
+        <h3><button class="group flex w-full items-center justify-between gap-space-md py-space-md text-left text-lead font-medium" type="button">{ item.settings.question }<Icon name="plus" cls="size-icon group-aria-expanded:hidden" /><Icon name="minus" cls="hidden size-icon group-aria-expanded:block" /></button></h3>
         <collapsible-content open={ first_open && i == 0 }>
-          <div class="sites-prose pb-space-md text-body text-scheme-muted">{ item.settings.answer }</div>
+          <div class="sites-prose max-w-prose pb-space-md text-body">{ item.settings.answer }</div>
         </collapsible-content>
       </collapsible-component>
     </li>

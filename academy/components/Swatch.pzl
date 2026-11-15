@@ -1,0 +1,7 @@
+<!-- component: Swatch -->
+<!-- A subject's cover: the scheme its place among the subjects gives it (the distinct subjects in class order, taken in turn from blue, brick, burgundy, ink and light blue), so an owner changes a cover by reordering classes. Bare, it is the 0.875rem square with sm corners and an inset hairline in the cover's rule colour; with cls it is that class list around its children (the subjects' covers). -->
+{#let
+  covers = ['blue', 'brick', 'burgundy', 'ink', 'light-blue']
+  subjects = content.classes.entries | sort('fields.order') | map('fields.subject') | uniq | compact
+}
+{#for name in subjects, i}{#if name == subject}<span class="{ covers[i % 5] | scheme_class } bg-scheme-background text-scheme-foreground { cls ?? 'inline-block size-swatch shrink-0 rounded-sm ring-1 ring-scheme-rule ring-inset' }" aria-hidden={ cls ? null : 'true' }><Children/></span>{/if}{/for}

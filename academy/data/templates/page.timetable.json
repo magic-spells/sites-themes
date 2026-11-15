@@ -1,6 +1,6 @@
 {
   "label": "Timetable",
-  "description": "The week, then the term dates and closures.",
+  "description": "The week, then the term dates and closures, then the ask.",
   "sections": [
     {
       "id": "s_header",
@@ -25,9 +25,18 @@
       "type": "dates",
       "preset": "Term dates",
       "settings": {
-        "heading": "Term dates",
-        "kinds": "terms",
+        "show_events": false,
+        "show_classes": false,
         "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_ask",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "brick"
       },
       "blocks": []
     }

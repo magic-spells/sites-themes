@@ -1,0 +1,3 @@
+<!-- component: FieldError -->
+<!-- A field's error under it: a dot and the message in the scheme's error colour, with the id the field's aria-describedby names. -->
+<p class="mt-space-xs flex items-baseline gap-space-xs text-small text-scheme-error" id="{ id }"><span class="size-dot shrink-0 rounded-full bg-current"></span>{ t('form_field_' + error) }</p>

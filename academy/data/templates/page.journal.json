@@ -23,7 +23,7 @@
       "type": "newsletter",
       "preset": "Default",
       "settings": {
-        "color_scheme": "white"
+        "color_scheme": "light-blue"
       },
       "blocks": []
     }

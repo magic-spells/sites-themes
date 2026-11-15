@@ -1,13 +1,13 @@
 {
   "label": "Fees",
-  "description": "Every class price by subject, the extra lines, then questions.",
+  "description": "Every class price by subject beside the extra lines, questions, then the ask.",
   "sections": [
     {
       "id": "s_header",
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "text": "Group classes are paid by the term, one-to-one lessons by the lesson."
+        "text": "Paid by the term, before the first class."
       },
       "blocks": []
     },
@@ -17,35 +17,28 @@
       "preset": "Default",
       "settings": {
         "heading": "",
-        "color_scheme": "white"
+        "text": ""
       },
       "blocks": [
         {
           "type": "line",
           "settings": {
-            "label": "Registration, once per family",
-            "amount": "£20"
+            "label": "Registration",
+            "value": "£25 a year, per family"
           }
         },
         {
           "type": "line",
           "settings": {
-            "label": "Exam entry, per exam",
-            "amount": "At cost"
+            "label": "Second child",
+            "value": "10% off"
           }
         },
         {
           "type": "line",
           "settings": {
-            "label": "Second child in the family",
-            "amount": "10% off"
-          }
-        },
-        {
-          "type": "line",
-          "settings": {
-            "label": "Ballet uniform, from the office",
-            "amount": "£32"
+            "label": "Exam entry",
+            "value": "at the board’s rate"
           }
         }
       ]
@@ -62,7 +55,7 @@
           "type": "question",
           "settings": {
             "question": "How do fees work?",
-            "answer": "<p>Group classes are paid by the term. One-to-one lessons are paid by the lesson, booked in blocks of ten.</p>"
+            "answer": "<p>Every class is paid by the term, before the first class. One-to-one lessons come ten to a term.</p>"
           }
         },
         {
@@ -83,7 +76,7 @@
           "type": "question",
           "settings": {
             "question": "Can my child try a class first?",
-            "answer": "<p>Yes. The first group class is a free trial. Ask about a class and we will offer a date.</p>"
+            "answer": "<p>Yes. The first group class is a free trial. Book a trial lesson and we will offer a date.</p>"
           }
         },
         {
@@ -94,6 +87,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "s_ask",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "brick"
+      },
+      "blocks": []
     }
   ]
 }

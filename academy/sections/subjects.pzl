@@ -1,19 +1,18 @@
-<!-- The subjects, as an index into the prospectus: one cover per subject, taken in turn from the blue, burgundy and brick schemes, each holding a label with the subject and its classes' short names, linking to the class list on that subject. The subjects come from the classes, in class order; there is nothing to enter. -->
+<!-- The subjects, as an index into the prospectus: one cover per subject in its Swatch scheme, each holding a label with the subject and its classes' short names, linking to the class list on that subject. The subjects come from the classes, in class order; there is nothing to enter. -->
 {#let
   classes = content.classes.entries | sort('fields.order')
   subjects = classes | map('fields.subject') | uniq | compact
-  covers = ['blue', 'burgundy', 'brick']
 }
 {#if subjects.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } />
     <ul class="grid gap-space-md md:grid-cols-2 lg:grid-cols-3">
-      {#for subject in subjects, i}
+      {#for subject in subjects}
         <li class="{ site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
-          <a class="{ covers[i % 3] | scheme_class } group flex aspect-photo items-end rounded-lg bg-scheme-background p-space-md" href="{ settings.base_path }?subject={ encodeURIComponent(subject) }">
+          <a class="group block" href="{ settings.base_path }?subject={ encodeURIComponent(subject) }"><Swatch subject={ subject } cls="flex aspect-photo items-end rounded-lg p-space-md">
             <Label><span class="font-heading text-h4 group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{ subject }</span><span class="text-small text-scheme-muted">{ classes | where('fields.subject', subject) | map('fields.short_name') | compact | join(' · ') }</span></Label>
-          </a>
+          </Swatch></a>
         </li>
       {/for}
     </ul>
@@ -28,7 +27,7 @@
   "kind": "Collections",
   "icon": "book-open",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Our classes" },
     { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
     { "type": "url", "id": "base_path", "label": "Class list page", "default": "/classes" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }

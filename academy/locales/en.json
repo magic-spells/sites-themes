@@ -1,4 +1,5 @@
 {
+  "address": "Address",
   "ages": "Ages",
   "all": "All",
   "all_classes": "All classes",
@@ -29,6 +30,7 @@
   "days": "Days",
   "directions": "Directions",
   "dismiss": "Dismiss",
+  "email": "Email",
   "every_week": "Every week",
   "fees": "Fees",
   "follow": "Follow",
@@ -41,7 +43,6 @@
   "form_requires_javascript": "Turn on JavaScript to send this form.",
   "form_success": "Thank you, we have your message.",
   "from": "From",
-  "from_date": "From {date}",
   "hours": "Hours",
   "length": "Length",
   "level": "Level",
@@ -59,7 +60,8 @@
   "password_label": "Password",
   "password_submit": "Enter",
   "pause": "Pause",
-  "placeholder.days": "Tuesdays or Saturdays",
+  "phone": "Phone",
+  "placeholder.age": "Age 7, or Year 3",
   "placeholder.email": "you@example.com",
   "placeholder.message": "Write your message here",
   "placeholder.name": "Your name",
@@ -69,9 +71,9 @@
   "send": "Send",
   "skip_to_content": "Skip to content",
   "social_post": "A post from the school",
-  "starts": "Starts {date}",
+  "starts": "Starts",
   "teacher": "Teacher",
+  "thank_you": "Thank you",
   "the_school": "The school",
-  "visit": "Visit",
   "what_to_bring": "What to bring"
 }

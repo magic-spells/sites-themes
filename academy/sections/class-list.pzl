@@ -16,7 +16,7 @@
     {/if}
     {#for subject in shown}
       <div class="grid gap-space-md md:grid-cols-narrow-wide md:gap-space-2xl">
-        <h2 class="font-heading text-h3">{ subject }</h2>
+        <h2 class="flex items-center gap-space-xs self-start font-heading text-h3"><Swatch subject={ subject } />{ subject }</h2>
         <ul class="border-t border-scheme-rule">{#for entry in classes | where('fields.subject', subject)}<ClassRow entry={ entry } />{/for}</ul>
       </div>
     {/for}

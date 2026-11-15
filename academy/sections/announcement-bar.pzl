@@ -1,20 +1,20 @@
-<!-- One line above the header, the whole line one link: the notice, then the link label underlined. Ticker: the line repeats on a marquee with a pause button; under reduced motion it stands still. A close button at the right that, with a key, hides it for good. -->
+<!-- One line above the header in the Label type, 2.5rem high, the whole line a link when it has one. Ticker: the line repeats on a marquee with a pause button; under reduced motion it stands still. A close button at the right that, with a key, hides it for good. -->
 {#if settings.text}
 <aside class="bg-scheme-background text-scheme-foreground" data-dismiss-key="{ settings.key }" aria-label="{ t('announcement') }" data-ticker={ settings.motion == 'ticker' ? true : null }>
-  <div class="flex items-center ps-control">
-    <a class="block min-w-0 flex-1 py-space-xs text-small" href={ settings.link || null }>
+  <div class="flex min-h-bar items-center ps-control-sm">
+    <a class="block min-w-0 flex-1 text-label" href={ settings.link || null }>
       {#if settings.motion == 'ticker'}
         <scrolling-content class="block" speed="30" fade>
           <scrolling-track>
-            <scrolling-item class="flex items-center">{#for n in [1, 2, 3]}<span class="whitespace-nowrap">{ settings.text }{#if settings.link_label} <span class="underline decoration-1 underline-offset-4">{ settings.link_label }</span>{/if}</span><Icon name="dot" cls="mx-space-lg size-dot" />{/for}</scrolling-item>
+            <scrolling-item class="flex items-center">{#for n in [1, 2, 3]}<span class="whitespace-nowrap">{ settings.text }</span><Icon name="dot" cls="mx-space-lg size-dot" />{/for}</scrolling-item>
           </scrolling-track>
         </scrolling-content>
       {:else}
-        <span class="block text-center text-pretty">{ settings.text }{#if settings.link_label} <span class="ms-space-xs underline decoration-1 underline-offset-4">{ settings.link_label }</span>{/if}</span>
+        <span class="block text-center text-pretty">{ settings.text }</span>
       {/if}
     </a>
-    {#if settings.motion == 'ticker'}<button class="flex size-control shrink-0 items-center justify-center text-scheme-muted hover:text-scheme-foreground" type="button" data-ticker-toggle aria-pressed="false"><Icon name="pause" cls="size-icon-sm" /><span class="sr-only">{ t('pause') }</span></button>{/if}
-    <button class="flex size-control shrink-0 items-center justify-center text-scheme-muted hover:text-scheme-foreground" type="button" data-dismiss><Icon name="close" cls="size-icon-sm" /><span class="sr-only">{ t('dismiss') }</span></button>
+    {#if settings.motion == 'ticker'}<button class="flex size-control-sm shrink-0 items-center justify-center text-scheme-muted hover:text-scheme-foreground" type="button" data-ticker-toggle aria-pressed="false"><Icon name="pause" cls="size-icon-sm" /><span class="sr-only">{ t('pause') }</span></button>{/if}
+    <button class="flex size-control-sm shrink-0 items-center justify-center text-scheme-muted hover:text-scheme-foreground" type="button" data-dismiss><Icon name="close" cls="size-icon-sm" /><span class="sr-only">{ t('dismiss') }</span></button>
   </div>
 </aside>
 {/if}
@@ -26,8 +26,7 @@
   "kind": "Header",
   "icon": "megaphone",
   "settings": [
-    { "type": "text", "id": "text", "label": "Text", "default": "Autumn term starts Monday 7 September" },
-    { "type": "text", "id": "link_label", "label": "Link label", "default": "Term dates" },
+    { "type": "text", "id": "text", "label": "Text", "default": "Spring term starts Monday 4 January" },
     { "type": "url", "id": "link", "label": "Link", "default": "/dates" },
     { "type": "select", "id": "motion", "label": "Motion", "default": "ticker", "options": [
       { "value": "static", "label": "Still" },

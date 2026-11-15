@@ -19,7 +19,7 @@
     { "type": "text", "id": "heading", "label": "Heading", "default": "Questions" },
     { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
     { "type": "checkbox", "id": "first_open", "label": "First one open", "default": true },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "light-blue" }
   ],
   "blocks": [
     { "type": "question", "name": "Question", "settings": [
@@ -28,7 +28,7 @@
     ] }
   ],
   "presets": [
-    { "name": "Default", "settings": {}, "blocks": [
+    { "name": "Default", "settings": { "color_scheme": "light-blue" }, "blocks": [
       { "type": "question", "settings": { "question": "Can my child try a class first?", "answer": "<p>Yes. The first group class is a free trial. Ask about a class and we will offer a date.</p>" } },
       { "type": "question", "settings": { "question": "What if a class is full?", "answer": "<p>We keep a waiting list for every class and offer places in the order we hear from you.</p>" } },
       { "type": "question", "settings": { "question": "Do you teach adults?", "answer": "<p>Yes. Adult Choir and Adult Tap run in the evenings, and every one-to-one lesson is open to adults.</p>" } },

@@ -1,13 +1,13 @@
 {
   "label": "Teachers",
-  "description": "Every teacher, with their role.",
+  "description": "Every teacher with their role, then what parents say.",
   "sections": [
     {
       "id": "s_header",
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "text": "Every teacher performs as well as teaches, and every one holds an enhanced safeguarding check."
+        "text": "Every teacher performs as well as teaches, and every one is DBS checked."
       },
       "blocks": []
     },
@@ -17,8 +17,18 @@
       "preset": "Default",
       "settings": {
         "heading": "",
-        "link_label": "",
-        "mobile": "stack"
+        "view_all_label": "",
+        "limit": 12,
+        "color_scheme": "feint"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_quotes",
+      "type": "testimonials",
+      "preset": "Rows",
+      "settings": {
+        "color_scheme": "manila"
       },
       "blocks": []
     }

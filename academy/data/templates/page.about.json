@@ -1,13 +1,13 @@
 {
   "label": "About",
-  "description": "The story, the teachers, what families say, the stage and the feed.",
+  "description": "The story, adult classes, the teachers, what parents say and the photos.",
   "sections": [
     {
       "id": "s_header",
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "text": "A school of music and dance in Marlowe Cross since 1986."
+        "text": "A school of music and dance in Larkfield since 1986."
       },
       "blocks": []
     },
@@ -16,9 +16,24 @@
       "type": "story",
       "preset": "Default",
       "settings": {
-        "image": "as_3x2_rose",
-        "image_alt": "The front of Larkfield House on Market Street",
+        "image": "as_4x5_rose",
+        "image_alt": "The front of the Old Corn Exchange on Market Street",
         "color_scheme": "white"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_adults",
+      "type": "image-with-text",
+      "preset": "Default",
+      "settings": {
+        "heading": "Adult classes",
+        "text": "<p>Choir, tap and one-to-one lessons on weekday evenings. No audition, and no experience needed.</p>",
+        "image": "as_4x3_rose",
+        "image_alt": "Adult Tap in Studio 2",
+        "link_label": "",
+        "ask": true,
+        "color_scheme": "burgundy"
       },
       "blocks": []
     },
@@ -34,7 +49,7 @@
     {
       "id": "s_quotes",
       "type": "testimonials",
-      "preset": "Carousel",
+      "preset": "Rows",
       "settings": {
         "color_scheme": "manila"
       },
@@ -45,62 +60,55 @@
       "type": "gallery-strip",
       "preset": "Default",
       "settings": {
-        "gallery": "on-stage"
+        "color_scheme": "white"
       },
-      "blocks": []
-    },
-    {
-      "id": "s_social",
-      "type": "social",
-      "preset": "Default",
-      "settings": {},
       "blocks": [
         {
-          "type": "tile",
+          "type": "image",
           "settings": {
             "image": "as_1x1_blue",
-            "image_alt": "Pre-ballet on a Saturday morning",
-            "link": ""
+            "alt": "Ballet 2 at the summer show",
+            "caption": "Ballet 2 at the summer show"
           }
         },
         {
-          "type": "tile",
+          "type": "image",
           "settings": {
             "image": "as_1x1_manila",
-            "image_alt": "A cello lesson in Room 3",
-            "link": ""
+            "alt": "Youth Choir at the spring concert",
+            "caption": "Youth Choir at the spring concert"
           }
         },
         {
-          "type": "tile",
+          "type": "image",
           "settings": {
             "image": "as_1x1_rose",
-            "image_alt": "Tap shoes lined up for the show",
-            "link": ""
+            "alt": "Junior Tap, first number",
+            "caption": "Junior Tap, first number"
           }
         },
         {
-          "type": "tile",
+          "type": "image",
           "settings": {
             "image": "as_1x1_blue",
-            "image_alt": "Youth Choir in the spring concert",
-            "link": ""
+            "alt": "Junior Strings tuning up",
+            "caption": "Junior Strings tuning up"
           }
         },
         {
-          "type": "tile",
+          "type": "image",
           "settings": {
             "image": "as_1x1_manila",
-            "image_alt": "Piano practice before an exam",
-            "link": ""
+            "alt": "Adult Choir in Room 1",
+            "caption": "Adult Choir in Room 1"
           }
         },
         {
-          "type": "tile",
+          "type": "image",
           "settings": {
             "image": "as_1x1_rose",
-            "image_alt": "Bows at the summer show",
-            "link": ""
+            "alt": "The final bow",
+            "caption": "The final bow"
           }
         }
       ]

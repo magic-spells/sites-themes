@@ -1,27 +1,27 @@
-<!-- The menu drawer below 64rem: a dialog-panel from the right over the page dimmed to 50%. It closes on the backdrop, Escape and its ×, and hands focus back to the menu icon. The main menu in the heading face, the subjects folded under Classes, a rule, the ask button full width, the confirm line and the School portal link. -->
+<!-- The menu drawer below 64rem: a dialog-panel from the right, full height and at most 24rem, over the page dimmed to 50% with a small blur. It closes on the backdrop, Escape and its ×, and hands focus back to the menu button. The main menu in the heading face, the subjects folded under Classes, the School portal link, and the ask button full width at the foot. -->
 {#let
   s = site.settings
   subjects = content.classes.entries | sort('fields.order') | map('fields.subject') | uniq | compact
 }
 <dialog-panel id="mobile-menu" position="right">
-  <dialog-backdrop class="bg-backdrop"></dialog-backdrop>
-  <dialog class="ms-auto h-dvh w-full max-w-drawer overflow-y-auto bg-scheme-background text-scheme-foreground" aria-label="{ t('menu') }">
-    <div class="grid gap-space-lg px-gutter pb-space-xl">
+  <dialog-backdrop class="bg-backdrop backdrop-blur-xs"></dialog-backdrop>
+  <dialog class="ms-auto h-dvh w-full max-w-drawer bg-scheme-background text-scheme-foreground" aria-label="{ t('menu') }">
+    <div class="flex h-full flex-col gap-space-lg overflow-y-auto px-gutter pb-space-lg">
       <div class="flex min-h-header items-center justify-end">
-        <button class="-me-space-xs flex size-control items-center justify-center" type="button" data-action-hide-dialog><Icon name="close" cls="size-space-md" /><span class="sr-only">{ t('close') }</span></button>
+        <button class="flex size-control items-center justify-center rounded-full bg-scheme-surface-2 transition-colors duration-fast hover:bg-scheme-rule" type="button" data-action-hide-dialog><Icon name="close" /><span class="sr-only">{ t('close') }</span></button>
       </div>
       {#if settings.menu.items.length}
         <nav aria-label="{ t('main_navigation') }">
-          <ul class="grid gap-space-xs font-heading text-h3">
+          <ul class="grid gap-space-sm font-heading text-large">
             {#for item in settings.menu.items}
               <li>
                 {#if item.href == settings.classes_path && subjects.length}
                   <collapsible-component>
-                    <button class="group flex items-center gap-space-xs" type="button">{ item.label }<Icon name="chevron-down" cls="size-icon transition-transform duration-fast group-aria-expanded:rotate-180" /></button>
+                    <button class="group flex w-full items-center justify-between gap-space-xs" type="button">{ item.label }<Icon name="chevron-down" cls="size-icon transition-transform duration-fast group-aria-expanded:rotate-180" /></button>
                     <collapsible-content>
                       <ul class="grid gap-space-sm py-space-sm ps-space-md font-body text-body">
+                        {#for subject in subjects}<li><a class="flex items-center gap-space-sm hover:underline hover:underline-offset-4" href="{ item.href }?subject={ encodeURIComponent(subject) }"><Swatch subject={ subject } />{ subject }</a></li>{/for}
                         <li><a class="hover:underline hover:underline-offset-4" href="{ item.href }">{ t('all_classes') }</a></li>
-                        {#for subject in subjects}<li><a class="hover:underline hover:underline-offset-4" href="{ item.href }?subject={ encodeURIComponent(subject) }">{ subject }</a></li>{/for}
                       </ul>
                     </collapsible-content>
                   </collapsible-component>
@@ -33,11 +33,8 @@
           </ul>
         </nav>
       {/if}
-      <div class="grid gap-space-md border-t border-scheme-rule pt-space-lg">
-        <Button ask wide />
-        {#if s.confirm_line}<p class="text-small text-scheme-muted">{ s.confirm_line }</p>{/if}
-        {#if s.portal_url}<a class="justify-self-start text-label underline decoration-1 underline-offset-4" href="{ s.portal_url }">{ s.portal_label }</a>{/if}
-      </div>
+      {#if s.portal_url}<a class="justify-self-start text-label underline decoration-1 underline-offset-4" href="{ s.portal_url }">{ s.portal_label }</a>{/if}
+      <div class="mt-auto"><Button ask wide /></div>
     </div>
   </dialog>
 </dialog-panel>

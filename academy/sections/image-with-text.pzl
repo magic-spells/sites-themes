@@ -1,12 +1,12 @@
-<!-- A photo beside copy: the 3:2 photo and the text in halves from 48rem, the photo left or right; stacked on phones, the photo first. The heading, the rich text and one outlined button. -->
+<!-- A photo beside copy: the text in seven parts and the 4:3 photo in five from 64rem, the photo right or left; stacked on phones, the photo first. The heading, the rich text and one outlined button, or the ask. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
-  <div class="mx-auto grid max-w-column items-center gap-space-xl md:grid-cols-2 md:gap-space-2xl">
-    <div class="grid justify-items-start gap-space-md { settings.image_side == 'left' ? 'md:order-last' : '' }">
+  <div class="mx-auto grid max-w-column items-center gap-space-xl lg:gap-space-2xl { settings.image_side == 'left' ? 'lg:grid-cols-narrow-wide' : 'lg:grid-cols-wide-narrow' }">
+    <div class="grid justify-items-start gap-space-md { settings.image_side == 'left' ? 'lg:order-last' : '' }">
       <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Rise text={ settings.heading } /></h2>
       <div class="sites-prose max-w-prose text-body">{ settings.text }</div>
-      {#if settings.link_label && settings.link}<Button href={ settings.link } tone="outline">{ settings.link_label }</Button>{/if}
+      {#if settings.ask}<Button ask tone="outline">{ settings.link_label || site.settings.ask_label }</Button>{:else if settings.link_label && settings.link}<Button href={ settings.link } tone="outline">{ settings.link_label }</Button>{/if}
     </div>
-    <div class="max-md:order-first"><Well asset={ settings.image } alt={ settings.image_alt } width={ 960 } sizes="(min-width: 48rem) 45vw, 100vw" /></div>
+    <div class="max-lg:order-first"><Well asset={ settings.image } alt={ settings.image_alt } ratio="aspect-picture" width={ 960 } sizes="(min-width: 64rem) 30rem, 100vw" /></div>
   </div>
 </section>
 
@@ -17,16 +17,17 @@
   "kind": "Content",
   "icon": "columns-2",
   "settings": [
-    { "type": "image", "id": "image", "label": "Image (3:2)" },
+    { "type": "image", "id": "image", "label": "Image (4:3)" },
     { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "" },
     { "type": "select", "id": "image_side", "label": "Image", "default": "right", "options": [
       { "value": "left", "label": "Left" },
       { "value": "right", "label": "Right" }
     ] },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Small classes, real progress" },
-    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Groups stay small enough for every pupil to be heard and seen. Each term ends with a lesson parents can watch.</p>" },
-    { "type": "text", "id": "link_label", "label": "Button label", "default": "About the school" },
-    { "type": "url", "id": "link", "label": "Button link", "default": "/about" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Exams and concerts" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Pupils take graded exams when they are ready, never before. Every term ends with a lesson families can watch, and every year with a concert and a show.</p>" },
+    { "type": "text", "id": "link_label", "label": "Button label", "default": "Term dates" },
+    { "type": "url", "id": "link", "label": "Button link", "default": "/dates" },
+    { "type": "checkbox", "id": "ask", "label": "Button asks", "default": false, "info": "The button opens the ask instead of following its link; an empty label reads the School ask label." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
   ],
   "presets": [

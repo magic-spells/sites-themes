@@ -1,29 +1,29 @@
 {
   "label": "Classes",
-  "description": "The prospectus: every subject, then every class with its ages, when it runs and its price.",
+  "description": "The prospectus: every class under its subject, with its ages, when it runs and its price, then the ask.",
   "sections": [
     {
       "id": "s_header",
       "type": "page-header",
       "preset": "Default",
       "settings": {
-        "text": "Group classes by the term and one-to-one lessons by the lesson. The first group class is a free trial."
+        "text": "Group classes and one-to-one lessons, paid by the term. The first group class is a free trial."
       },
-      "blocks": []
-    },
-    {
-      "id": "s_subjects",
-      "type": "subjects",
-      "preset": "Default",
-      "settings": {},
       "blocks": []
     },
     {
       "id": "s_list",
       "type": "class-list",
       "preset": "Default",
+      "settings": {},
+      "blocks": []
+    },
+    {
+      "id": "s_ask",
+      "type": "cta-band",
+      "preset": "Default",
       "settings": {
-        "color_scheme": "white"
+        "color_scheme": "brick"
       },
       "blocks": []
     }

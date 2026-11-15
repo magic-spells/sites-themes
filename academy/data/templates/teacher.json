@@ -1,12 +1,21 @@
 {
   "label": "Teacher",
-  "description": "A teacher's page: their photo, bio, credentials and the classes they teach.",
+  "description": "A teacher's page: their photo, bio, credentials and the classes they teach, then the ask.",
   "sections": [
     {
       "id": "s_detail",
       "type": "team-detail",
       "preset": "Default",
       "settings": {},
+      "blocks": []
+    },
+    {
+      "id": "s_ask",
+      "type": "cta-band",
+      "preset": "Default",
+      "settings": {
+        "color_scheme": "brick"
+      },
       "blocks": []
     }
   ]

@@ -1,3 +1,3 @@
 <!-- component: Lines -->
-<!-- The School accreditation lines, one per line, in small; cls adds classes. Nothing when there are none. -->
-{#if site.settings.accreditation_lines}<ul class="grid gap-space-2xs text-small { cls }">{#for line in site.settings.accreditation_lines | split('\n')}{#if line | strip}<li>{ line | strip }</li>{/if}{/for}</ul>{/if}
+<!-- The School accreditation lines, one per line, in small; ruled sets each on a rule (the story); cls adds classes. Nothing when there are none. -->
+{#if site.settings.accreditation_lines}<ul class="grid text-small { ruled ? 'border-t border-scheme-rule' : 'gap-space-2xs' } { cls }">{#for line in site.settings.accreditation_lines | split('\n')}{#if line | strip}<li class={ ruled ? 'border-b border-scheme-rule py-space-xs' : null }>{ line | strip }</li>{/if}{/for}</ul>{/if}

@@ -69,15 +69,15 @@ function openPanel(opener: HTMLElement, event: Event): void {
 	);
 }
 
-// The timetable's subject chips: a chip dims every session of another
-// subject, in the week table and the day tabs alike; All lifts the dim.
+// The timetable's subject chips toggle: while any is pressed, every session
+// of an unpressed subject dims, in the week table and the day tabs alike.
 function filterSubject(chip: HTMLElement): void {
 	const table = chip.closest('[data-timetable]');
 	if (!table) return;
-	const wanted = chip.getAttribute('data-subject-filter') ?? '';
-	for (const other of table.querySelectorAll('[data-subject-filter]')) other.setAttribute('aria-pressed', String(other === chip));
+	chip.setAttribute('aria-pressed', String(chip.getAttribute('aria-pressed') !== 'true'));
+	const wanted = [...table.querySelectorAll('[data-subject-filter][aria-pressed="true"]')].map((c) => c.getAttribute('data-subject-filter'));
 	for (const session of table.querySelectorAll('[data-session]')) {
-		session.toggleAttribute('data-dim', wanted !== '' && session.getAttribute('data-subject') !== wanted);
+		session.toggleAttribute('data-dim', wanted.length > 0 && !wanted.includes(session.getAttribute('data-subject')));
 	}
 }
 
@@ -102,7 +102,7 @@ document.addEventListener('click', (event) => {
 // &error=1). When that form lives only in the sheet, the sheet opens to show
 // the result.
 const returned = new URLSearchParams(location.search).get('form');
-const sentFrom = returned ? [...document.querySelectorAll(`form[action$="/${returned}"]`)] : [];
+const sentFrom = returned ? [...document.forms].filter((f) => f.getAttribute('action')?.endsWith('/' + returned)) : [];
 if (sentFrom.length && sentFrom.every((form) => form.closest('dialog-panel'))) {
 	const sheet = sentFrom[0].closest('dialog-panel')?.querySelector('bottom-sheet') as Panel | null;
 	customElements.whenDefined('bottom-sheet').then(() => sheet?.show());

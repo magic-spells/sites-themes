@@ -78,16 +78,12 @@ for (const notice of document.querySelectorAll<HTMLElement>('[data-notice]')) {
 }
 
 // An announcement bar that visitors may close hides for good once its × is
-// pressed, until its notices change (they are its key).
+// pressed, until its notices change (they are its key). The bar reads that
+// memory itself, inline, before it paints.
 for (const bar of document.querySelectorAll<HTMLElement>('[data-dismiss-key]')) {
-	const key = bar.getAttribute('data-dismiss-key') ?? '';
-	if (dismissed(key)) {
-		bar.hidden = true;
-		continue;
-	}
 	bar.querySelector('[data-dismiss]')?.addEventListener('click', () => {
 		bar.hidden = true;
-		remember(key);
+		remember(bar.dataset.dismissKey ?? '');
 	});
 }
 

@@ -1,16 +1,16 @@
-<!-- Ways to help, money one card among them: the head, then up to four cards, each a single link holding its picture, title and one line. On phones a column of rows, the square thumbnail beside the title; from 48rem two across with 4:3 wells over the text; from 64rem four across, or three when there are three. -->
+<!-- Ways to help, money one card among them: the head, then up to four cards, each a single link holding its picture, title and one line. On phones a column of rows, the square thumbnail beside the title; from 48rem two across with 4:3 wells over the text; from 64rem all in one row. -->
 {#let reveal = site.settings.reveal ? 'reveal reveal-fade-up' : ''}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-page">
     <SectionHead heading={ settings.heading } text={ settings.text }>
-      <ul class="grid gap-space-md md:grid-cols-2 md:gap-x-space-lg md:gap-y-space-xl { blocks.length == 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4' }">
+      <ul class="grid gap-space-md md:grid-cols-2 md:gap-x-space-lg md:gap-y-space-xl lg:grid-flow-col lg:grid-cols-none lg:auto-cols-fr">
         {#for block in blocks}
           {#let b = block.settings}
           <li class="{ reveal }" data-block={ block.editor_id }>
             <a class="group flex items-center gap-space-sm md:flex-col md:items-stretch" href="{ b.link }">
               <Well asset={ b.image } ratio="aspect-square md:aspect-landscape" cls="w-thumb shrink-0 md:w-full" sizes="(min-width: 64rem) 18rem, (min-width: 48rem) 45vw, 5rem" />
               <div class="grid gap-space-2xs">
-                <h3 class="font-heading text-h4 text-balance text-scheme-heading decoration-1 underline-offset-4 group-hover:underline">{ b.title }</h3>
+                <h3 class="font-heading text-h4 text-balance text-scheme-heading group-hover:link">{ b.title }</h3>
                 {#if b.text}<p class="text-scheme-muted">{ b.text }</p>{/if}
               </div>
             </a>

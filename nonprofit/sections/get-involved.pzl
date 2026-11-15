@@ -1,4 +1,4 @@
-<!-- Volunteer: the head and the roles as rows that open and close, beside the volunteer form on a surface card with a hairline edge (on Clay the surface is the ground), its labels kept. Stacked on phones, the submit full width; rows in five parts of twelve and the form in seven from 64rem. -->
+<!-- Volunteer: the head and the roles as rows that open and close, beside the volunteer form on a surface card with a hairline edge (on Clay, Moss and Lake the surface is the ground), its labels kept. Stacked on phones, the submit full width; rows in five parts of twelve and the form in seven from 64rem. -->
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto grid max-w-page gap-space-xl lg:grid-cols-12">
     <div class="lg:col-span-5">

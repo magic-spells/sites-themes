@@ -11,7 +11,7 @@ brick. Academy Serif is Libre Baskerville cut to the latin characters and the we
 600, and renamed because the font's licence reserves its name for the original.
 
 The fixtures are an invented school, **Larkfield Academy** in the Old Corn Exchange, so `sites dev`
-shows five subjects, fourteen classes, twenty-two weekly sessions, twelve dates, six teachers,
+shows five subjects, fourteen classes, twenty-two weekly sessions, twelve dates, eight teachers,
 six testimonials, one building, six posts and three forms instead of placeholder text. The
 photographs are SVG placeholders; replace them before publishing.
 

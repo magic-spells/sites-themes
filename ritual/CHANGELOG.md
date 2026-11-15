@@ -1,5 +1,10 @@
 # Ritual
 
+## 0.2.1
+
+- The gallery lightbox shows its photos again: it opened with the counter and the caption but no picture.
+  Each photo is now fitted whole to the screen on an opaque fern backdrop, its caption in linen.
+
 ## 0.2.0
 
 - The panel group is labelled Panel.

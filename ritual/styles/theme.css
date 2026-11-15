@@ -493,15 +493,18 @@ tarot-carousel[data-track]:not(:defined) tarot-slide {
 	visibility: visible;
 }
 
-/* The lightbox: fern backdrop at 92%, linen chrome, round buttons. */
-:root {
-	--tarot-lightbox-backdrop: color-mix(in srgb, var(--color-brand-primary) 92%, transparent);
+/* The lightbox: the photo on fern, fitted to the screen's width and to its
+   height less 8rem for the chrome and the caption; linen chrome, round
+   buttons. The fit needs the ratio the plugin writes on each image. */
+.tarot-lightbox {
+	--tarot-lightbox-backdrop: var(--color-brand-primary);
 	--tarot-lightbox-chrome-color: var(--color-on-photo);
-	--tarot-lightbox-chrome-size: 2.75rem;
-	--tarot-lightbox-chrome-inset: 1rem;
-	--tarot-lightbox-image-height: calc(100dvh - 8rem);
 }
-.tarot-lightbox__counter {
+.tarot-lightbox-content img {
+	--tarot-lightbox-image-height: min(100dvh - 8rem, 100vw / var(--tarot-lightbox-image-ratio));
+}
+.tarot-lightbox__counter,
+.tarot-lightbox [data-tarot-lightbox-fade] {
 	font-family: var(--sites-font-body-family), sans-serif;
 	font-size: var(--ritual-body-sm);
 	font-variant-numeric: tabular-nums;

@@ -111,9 +111,17 @@ document.addEventListener('click', (event) => {
 	const carousel = tile && (document.getElementById(tile.getAttribute('data-lightbox-open') ?? '') as Carousel | null);
 	const slide = carousel?.querySelectorAll<HTMLElement>('tarot-slide')[Number(tile?.getAttribute('data-index'))];
 	if (!tile || !carousel || !slide) return;
+	event.preventDefault();
 	if (!opened.has(carousel)) carousel.on('lightbox:closed', () => opened.get(carousel)?.focus());
 	opened.set(carousel, tile);
 	(slide.querySelector('img') ?? slide).click();
+});
+
+// A select whose options are links (the groups' kinds on phones): a choice
+// goes to its page.
+document.addEventListener('select-dropdown:change', (event) => {
+	const href = (event as CustomEvent<{ value: string }>).detail?.value;
+	if (href && (event.target as Element).hasAttribute('data-links')) location.assign(href);
 });
 
 // Rows, slips and cards fade up once as the page scrolls, while the Brand

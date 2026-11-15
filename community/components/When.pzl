@@ -1,0 +1,7 @@
+<!-- component: When -->
+<!-- When a group meets: its How often text when there is one, else its days as plural names (Mondays; Tuesdays and Thursdays; Mondays, Wednesdays and Fridays), then the time, tabular, the start alone when there is no end. Two spans: inside a grid they stack, in a line they read as one. -->
+{#let
+  f = entry.fields
+  days = f.days | split(',')
+}
+<span>{#if f.frequency}{ f.frequency }{:else}{#for d in days, i}{ i ? (i == days.length - 1 ? ' ' + t('and') + ' ' : ', ') : '' }{ t('day_plural.' + (d | strip | downcase | slice(0, 3))) }{/for}{/if}</span> <span class="tnum">{ f.start }{#if f.end}–{ f.end }{/if}</span>

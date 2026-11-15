@@ -1,10 +1,38 @@
-<!-- Stub (code B builds the rows): the section head and the groups as a plain list. -->
-{#let groups = content.groups.entries | sort('fields.order')}
+<!-- The groups as rows between hairlines (GroupRow), by Position then name: all of them or the featured ones, up to the limit. With kind links on, a row of ?kind= links above them, All first and the current one filled; on phones the same links as a select. Nothing renders when no group matches. -->
+{#let
+  kind = settings.show_kinds ? request.query.kind : null
+  all = content.groups.entries | sort('title') | sort('fields.order')
+  pool = settings.source == 'featured' ? (all | where('fields.featured')) : all
+  kinds = pool | where('fields.kind') | map('fields.kind') | uniq
+  groups = (kind ? (pool | where('fields.kind', kind)) : pool) | slice(0, settings.limit)
+  chip = 'inline-flex min-h-pill items-center rounded-full border border-scheme-muted px-space-md text-label current:border-scheme-foreground current:bg-scheme-foreground current:text-scheme-background'
+}
 {#if groups.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } link_label={ t('all_groups') } link_href="/groups" />
-    <ul>{#for entry in groups | slice(0, settings.limit)}<li><a href="/groups/{ entry.handle }">{ entry.title }</a> · { entry.fields.summary }</li>{/for}</ul>
+    {#if settings.show_kinds && kinds.length > 1}
+      <nav class="mb-space-xl hidden flex-wrap gap-space-xs md:flex" aria-label="{ t('kinds') }">
+        <a class="{ chip }" href="{ page.path }" aria-current={ kind ? null : 'page' }>{ t('all') }</a>
+        {#for name in kinds}<a class="{ chip }" href="{ page.path }?kind={ encodeURIComponent(name) }" aria-current={ kind == name ? 'page' : null }>{ name }</a>{/for}
+      </nav>
+      <div class="mb-space-xl md:hidden">
+        <select-dropdown class="text-body" data-links>
+          <select-trigger class="flex min-h-control items-center justify-between gap-space-sm rounded-input border border-scheme-input-border bg-scheme-input-background px-space-sm text-scheme-input-foreground" aria-label="{ t('kinds') }">
+            <span class="select-label-text truncate">{ kind || t('all') }</span>
+            <Glyph name="chevron-down" />
+          </select-trigger>
+          <input type="hidden" value="" />
+          <select-panel>
+            <select-option value="{ page.path }" selected={ !kind }>{ t('all') }</select-option>
+            {#for name in kinds}<select-option value="{ page.path }?kind={ encodeURIComponent(name) }" selected={ kind == name }>{ name }</select-option>{/for}
+          </select-panel>
+        </select-dropdown>
+      </div>
+    {/if}
+    <ul class="border-b border-scheme-border">
+      {#for entry in groups, i}<GroupRow entry={ entry } i={ i } />{/for}
+    </ul>
   </div>
 </section>
 {/if}

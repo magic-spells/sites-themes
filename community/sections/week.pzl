@@ -1,9 +1,29 @@
-<!-- Stub (code B builds the sheet): the section head and every group as a plain list. -->
-{#let groups = content.groups.entries | sort('fields.start')}
+<!-- The week on one paper sheet: a row per day, Monday to Sunday (or the weekdays), the day's name in H4 beside its lines from 48rem and above them on phones. A line is the time in a fixed tabular column (the start alone when there is no end), then the group's name linked to its page, then its place and how often in muted when set. Lines run by start time; a day with nothing on prints a muted en dash. Every group, no cap: it is the whole week. -->
+{#let
+  days = settings.days == 'weekdays' ? ['mon', 'tue', 'wed', 'thu', 'fri'] : ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+  groups = content.groups.entries | sort('fields.start')
+}
 <section class="bg-scheme-background px-gutter py-section-tight text-scheme-foreground">
   <div class="mx-auto max-w-column">
     <SectionHead heading={ settings.heading } text={ settings.text } link_label={ t('all_groups') } link_href="/groups" />
-    <ul>{#for entry in groups}<li><a href="/groups/{ entry.handle }">{ entry.title }</a> · { entry.fields.days } · { entry.fields.start }</li>{/for}</ul>
+    <div class="{ 'paper' | scheme_class } rounded-paper bg-scheme-background px-space-lg py-space-xs text-scheme-foreground tnum md:px-space-xl md:py-space-sm">
+      {#for d in days, i}
+        <div class="grid gap-y-space-2xs border-t border-scheme-border py-space-md first:border-t-0 md:flex md:items-baseline md:gap-x-space-xl { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" data-reveal-delay={ site.settings.reveal ? i * 60 : null }>
+          <h3 class="shrink-0 font-heading text-h4 md:w-day">{ t('day.' + d) }</h3>
+          <ul class="grid min-w-0 gap-space-2xs">
+            {#for g in groups}
+              {#if contains(g.fields.days | downcase, d)}
+                <li class="flex gap-x-space-sm">
+                  <span class="shrink-0 md:w-time">{ g.fields.start }{#if g.fields.end}–{ g.fields.end }{/if}</span>
+                  <span class="min-w-0 text-pretty"><a class="font-medium hover:underline hover:decoration-1 hover:underline-offset-4" href="/groups/{ g.handle }">{ g.title }</a>{#if g.fields.place}<span class="text-scheme-muted"> · { g.fields.place }</span>{/if}{#if g.fields.frequency}<span class="text-scheme-muted"> · { g.fields.frequency }</span>{/if}</span>
+                </li>
+              {/if}
+            {/for}
+            <li class="hidden text-scheme-muted only:block"><span aria-hidden="true">–</span><span class="sr-only">{ t('nothing_on') }</span></li>
+          </ul>
+        </div>
+      {/for}
+    </div>
   </div>
 </section>
 

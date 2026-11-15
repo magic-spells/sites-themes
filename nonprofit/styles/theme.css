@@ -345,10 +345,11 @@ select-dropdown {
 }
 
 /* builder C */
-/* The events list's thumbnails and the partners' logos, each at one size. */
+/* The events list's thumbnails, and the partners' logos at their two sizes. */
 @theme {
 	--spacing-thumb-lg: 8rem;
 	--spacing-logo: 2.5rem;
+	--spacing-logo-lg: 4rem;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -91,8 +91,8 @@ for (const bar of document.querySelectorAll<HTMLElement>('[data-dismiss-key]')) 
 	});
 }
 
-// The marquee's pause button (WCAG 2.2.2) sets the marquee's own paused
-// attribute.
+// The announcement bar's pause button (WCAG 2.2.2) sets the marquee's own
+// paused attribute.
 document.addEventListener('click', (event) => {
 	const button = closest(event, '[data-ticker-toggle]');
 	if (!button) return;
@@ -100,6 +100,14 @@ document.addEventListener('click', (event) => {
 	button.setAttribute('aria-pressed', String(paused));
 	button.closest('[data-ticker]')?.querySelector('scrolling-content')?.toggleAttribute('paused', paused);
 });
+
+// A marquee holds still while focus is inside it, as it does under the
+// pointer (scrolling-content pauses on hover itself).
+for (const type of ['focusin', 'focusout']) {
+	document.addEventListener(type, (event) => {
+		closest(event, 'scrolling-content')?.toggleAttribute('paused', type === 'focusin');
+	});
+}
 
 // Scroll reveals on cards and figures only. They write `reveal
 // reveal-fade-up` only while Brand motion is on.

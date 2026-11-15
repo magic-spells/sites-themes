@@ -214,7 +214,8 @@
       "preset": "Marquee",
       "settings": {
         "heading": "Our partners",
-        "layout": "marquee"
+        "layout": "marquee",
+        "size": "large"
       },
       "blocks": [
         {

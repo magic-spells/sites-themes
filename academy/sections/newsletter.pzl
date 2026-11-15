@@ -11,12 +11,12 @@
       {:else}
         <div class="flex gap-space-sm">
           {#for field in form.fields}
-            <label class="sr-only" for="news-{ field.id }">{ field.label }</label>
-            <input class="block min-h-control w-full min-w-0 rounded-input border bg-scheme-input px-cell text-body placeholder:text-scheme-muted focus:border-scheme-foreground focus:outline-none { field.error ? 'border-scheme-error' : 'border-scheme-input-border' }" id="news-{ field.id }" name={ field.id } type={ field.type } placeholder={ settings.placeholder } autocomplete="email" maxlength={ field.max_length } required={ field.required } value={ field.value } aria-invalid={ field.error ? 'true' : 'false' } aria-describedby={ field.error ? 'news-error' : null } />
+            <label class="sr-only" for="news-{ section.id }-{ field.id }">{ field.label }</label>
+            <input class="block min-h-control w-full min-w-0 rounded-input border bg-scheme-input px-cell text-body placeholder:text-scheme-muted focus:border-scheme-foreground focus:outline-none { field.error ? 'border-scheme-error' : 'border-scheme-input-border' }" id="news-{ section.id }-{ field.id }" name={ field.id } type={ field.type } placeholder={ settings.placeholder } autocomplete="email" maxlength={ field.max_length } required={ field.required } value={ field.value } aria-invalid={ field.error ? 'true' : 'false' } aria-describedby={ field.error ? 'news-error-' + section.id : null } />
           {/for}
           <Button type="submit">{ form.submit_label || t('send') }</Button>
         </div>
-        {#if form.error}<p class="text-small text-scheme-error" id="news-error" role="alert">{ t('form_error') }</p>{/if}
+        {#if form.error}<p class="text-small text-scheme-error" id="news-error-{ section.id }" role="alert">{ t('form_error') }</p>{/if}
         <noscript><p class="text-small text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
       {/if}
     </Form>

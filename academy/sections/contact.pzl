@@ -9,7 +9,7 @@
         {#if site.settings.email}<a class="text-body font-medium underline decoration-1 underline-offset-4" href="mailto:{ site.settings.email }">{ site.settings.email }</a>{/if}
         {#if site.settings.phone}<a class="text-body font-medium underline decoration-1 underline-offset-4" href="tel:{ site.settings.phone | replace(' ', '') }">{ site.settings.phone }</a>{/if}
       </div>
-      <div class="sites-scheme-white rounded-lg border border-scheme-rule bg-scheme-background p-space-lg text-scheme-foreground lg:p-space-xl"><AskFields handle={ settings.form } prefix="contact" /></div>
+      <div class="sites-scheme-white rounded-lg border border-scheme-rule bg-scheme-background p-space-lg text-scheme-foreground lg:p-space-xl"><AskFields handle={ settings.form } prefix={ section.id } /></div>
     </div>
     {#if loc}
       <div class="grid gap-space-sm">

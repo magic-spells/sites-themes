@@ -108,6 +108,7 @@
 	--spacing-button-x: var(--sites-button-padding-x);
 	--spacing-control: 2.75rem;
 	--spacing-control-sm: 2.25rem;
+	--spacing-option: 2.5rem;
 	--spacing-header: 4.5rem;
 	--spacing-bar: 2.5rem;
 	--spacing-icon-sm: 1rem;
@@ -394,6 +395,10 @@ select-dropdown {
 	--select-color-focus: var(--sites-scheme-chip-background);
 	--select-color-selected: var(--sites-scheme-chip-background);
 	display: block;
+}
+/* "Select…" reads in muted until an option is chosen. */
+select-dropdown:not(:has(select-option[selected])) .select-label-text {
+	color: var(--sites-scheme-chip-foreground);
 }
 
 @media (prefers-reduced-motion: reduce) {

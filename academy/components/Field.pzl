@@ -1,16 +1,16 @@
 <!-- component: Field -->
-<!-- A labelled input: the label above, the box on the scheme's input colour in a muted hairline, the hairline in the text colour on focus; the placeholder in the muted colour; an error doubles the hairline in the text colour and sets FieldError under it, tied by aria-describedby. -->
+<!-- A labelled input: the label above, the box on the scheme's input colour in a muted hairline, the hairline in the text colour on focus; an error doubles the hairline in the text colour and sets FieldError under it, tied by aria-describedby. -->
 {#let
   id = 'field-' + prefix + '-' + name
   err = error ? 'error-' + prefix + '-' + name : null
-  box = 'block w-full rounded-input border bg-scheme-input px-cell text-body text-scheme-foreground placeholder:text-scheme-muted focus:border-scheme-foreground focus:outline-none ' + (error ? 'border-scheme-foreground ring-1 ring-scheme-foreground ring-inset' : 'border-scheme-input-border')
+  box = 'block w-full rounded-input border bg-scheme-input px-cell text-body text-scheme-foreground focus:border-scheme-foreground focus:outline-none ' + (error ? 'border-scheme-foreground ring-1 ring-scheme-foreground ring-inset' : 'border-scheme-input-border')
 }
 <div class={ wide ? 'md:col-span-2' : null }>
   <label class="mb-space-xs block text-small font-medium" for="{ id }">{ label }{#if required}<span aria-hidden="true"> *</span>{/if}</label>
   {#if type == 'textarea'}
-    <textarea class="{ box } min-h-textarea resize-y py-cell" id="{ id }" name={ name } placeholder={ placeholder } maxlength={ maxlength } required={ required } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ err }>{ value }</textarea>
+    <textarea class="{ box } min-h-textarea resize-y py-cell" id="{ id }" name={ name } maxlength={ maxlength } required={ required } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ err }>{ value }</textarea>
   {:else}
-    <input class="{ box } min-h-control" id="{ id }" name={ name } type={ type ?? 'text' } placeholder={ placeholder } autocomplete={ autocomplete ?? (type == 'email' ? 'email' : (name == 'name' ? 'name' : (type == 'tel' ? 'tel' : 'off'))) } maxlength={ maxlength } required={ required } value={ value } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ err } />
+    <input class="{ box } min-h-control" id="{ id }" name={ name } type={ type ?? 'text' } autocomplete={ autocomplete ?? (type == 'email' ? 'email' : (name == 'name' ? 'name' : (type == 'tel' ? 'tel' : 'off'))) } maxlength={ maxlength } required={ required } value={ value } aria-invalid={ error ? 'true' : 'false' } aria-describedby={ err } />
   {/if}
   {#if error}<FieldError id={ err } error={ error } />{/if}
 </div>

@@ -13,7 +13,7 @@
         <Button ask />
       </div>
     {:else}
-      <div class="max-w-prose"><AskFields heading={ heading } prefix="page" /></div>
+      <div class="max-w-prose"><AskFields heading={ heading } prefix={ section.id } /></div>
     {/if}
     <dl class="grid border-t border-scheme-rule text-small">
       {#if loc.fields.address}<div class="grid gap-space-2xs border-b border-scheme-rule py-cell"><dt class="text-scheme-muted">{ t('address') }</dt><dd class="flex gap-space-xs"><Icon name="pin" cls="mt-space-2xs size-icon-sm" /><span class="whitespace-pre-line">{ [loc.title, loc.fields.address] | compact | join('\n') }</span></dd></div>{/if}

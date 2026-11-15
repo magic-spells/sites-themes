@@ -1,0 +1,4 @@
+<!-- component: Price -->
+<!-- A class's price with its period, in the Brand currency: "£145 / term", "From £30 / lesson"; pence only when the price has them. Nothing without a price. -->
+{#let f = entry.fields}
+{#if f.price}{#if f.price_from}{ t('from') } {/if}{ f.price | currency(site.settings.currency_symbol, f.price % 1 ? 2 : 0) }{#if f.period} / { f.period }{/if}{/if}

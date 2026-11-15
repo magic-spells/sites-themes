@@ -1,0 +1,3 @@
+<!-- component: Lines -->
+<!-- The School accreditation lines, one per line, in small; cls adds classes. Nothing when there are none. -->
+{#if site.settings.accreditation_lines}<ul class="grid gap-space-2xs text-small { cls }">{#for line in site.settings.accreditation_lines | split('\n')}{#if line | strip}<li>{ line | strip }</li>{/if}{/for}</ul>{/if}

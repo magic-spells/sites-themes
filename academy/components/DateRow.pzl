@@ -1,0 +1,15 @@
+<!-- component: DateRow -->
+<!-- A dated thing on a feint rule: the day or the range ("Sep 7", "Oct 26 – Oct 31"), the title (a link when it has one) with its note in small muted, and the time at the right. Stacked on phones. -->
+{#let
+  f = entry.fields
+  day = f.date | date | split(',') | first
+  last = f.end_date ? f.end_date | date | split(',') | first : ''
+}
+<li class="grid gap-space-2xs border-b border-scheme-rule py-space-md md:grid-cols-date md:items-baseline md:gap-space-lg">
+  <span class="text-label">{ day }{#if last && last != day} – { last }{/if}</span>
+  <span class="grid gap-space-2xs">
+    {#if f.link}<a class="font-heading text-h4 underline decoration-1 underline-offset-4 hover:decoration-2" href="{ f.link }">{ entry.title }</a>{:else}<span class="font-heading text-h4">{ entry.title }</span>{/if}
+    {#if f.note}<span class="text-small text-scheme-muted">{ f.note }</span>{/if}
+  </span>
+  {#if f.time}<span class="text-small text-scheme-muted">{ f.time }</span>{/if}
+</li>

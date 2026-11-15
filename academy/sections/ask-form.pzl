@@ -1,0 +1,38 @@
+<!-- The ask on the page (the School ask form, or the one the form setting names), the page the ask buttons fall back to without JavaScript: the heading, the standfirst and the first location's address and hours left; the form on a white card right. Stacked on phones, the form after the details. -->
+{#let loc = content.locations.entries | sort('fields.order') | first}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column items-start gap-space-xl md:grid-cols-2 md:gap-space-2xl">
+    <div class="grid gap-space-lg">
+      <div class="grid gap-space-md">
+        <h2 class="font-heading text-h2 text-balance text-scheme-heading"><Rise text={ settings.heading } /></h2>
+        {#if settings.text}<p class="max-w-prose text-lead text-pretty text-scheme-muted">{ settings.text }</p>{/if}
+      </div>
+      {#if loc}
+        <div class="grid gap-space-xs text-small">
+          <p class="font-heading text-h4">{ loc.title }</p>
+          {#if loc.fields.address}<p class="whitespace-pre-line">{ loc.fields.address }</p>{/if}
+          {#if loc.fields.hours}<p class="whitespace-pre-line text-scheme-muted">{ loc.fields.hours }</p>{/if}
+        </div>
+      {/if}
+    </div>
+    <FormCard handle={ settings.form } prefix="page" />
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Ask form",
+  "description": "The ask form on a card beside the school's address and hours.",
+  "kind": "Contact",
+  "icon": "send",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Ask about a class" },
+    { "type": "textarea", "id": "text", "label": "Standfirst", "default": "Tell us who the lessons are for and which days suit. We reply with a place, a trial date or the waiting list." },
+    { "type": "form", "id": "form", "label": "Form", "info": "Leave empty to use the School ask form." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

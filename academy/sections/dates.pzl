@@ -1,0 +1,51 @@
+<!-- One dated list from events, grouped by month and sorted from the first date: the day or range, the title, the note and the time on feint rules. Show picks term dates (terms and closures), events (events and dated classes) or both, the first of them up to the limit. Nothing says upcoming: there is no clock, so past dates are removed by hand. -->
+{#let
+  all = content.events.entries | sort('fields.date')
+  kinds = settings.kinds == 'terms' ? (all | reject('fields.kind', 'event') | reject('fields.kind', 'class')) : (settings.kinds == 'events' ? (all | reject('fields.kind', 'term') | reject('fields.kind', 'closed')) : all)
+  list = kinds | slice(0, settings.limit)
+}
+{#if list.length}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } />
+    <div class="grid gap-space-xl">
+      {#for entry in list, i}
+        {#let month = entry.fields.date | slice(0, 7)}
+        {#if i == 0 || (list[i - 1].fields.date | slice(0, 7)) != month}
+          {#let words = entry.fields.date | date('long') | split(' ')}
+          <div class="grid gap-space-xs md:grid-cols-narrow-wide md:gap-space-2xl { site.settings.reveal ? 'reveal reveal-fade-up' : '' }">
+            <h3 class="font-heading text-h3">{ words | first } { words | last }</h3>
+            <ul class="border-t border-scheme-rule">{#for item in list}{#if (item.fields.date | slice(0, 7)) == month}<DateRow entry={ item } />{/if}{/for}</ul>
+          </div>
+        {/if}
+      {/for}
+    </div>
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Dates",
+  "description": "Term dates, closures and events in one list, grouped by month.",
+  "kind": "Collections",
+  "icon": "calendar",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Dates" },
+    { "type": "text", "id": "text", "label": "Text", "default": "" },
+    { "type": "select", "id": "kinds", "label": "Show", "default": "all", "options": [
+      { "value": "all", "label": "Everything" },
+      { "value": "terms", "label": "Term dates and closures" },
+      { "value": "events", "label": "Events and dated classes" }
+    ] },
+    { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 48, "step": 1, "default": 48 },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "" },
+    { "type": "url", "id": "link_href", "label": "Link", "default": "/dates" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Everything", "settings": { "kinds": "all" } },
+    { "name": "Term dates", "settings": { "kinds": "terms" } }
+  ]
+}
+</schema>

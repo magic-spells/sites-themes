@@ -1,0 +1,21 @@
+<!-- component: AskFields -->
+<!-- A site form whole: its fields, the full-width button, the School confirm line under it, and the sent and error states (?form=…&sent=1 / &error=1). The School ask form by default, the one the sheet and ask-form share; handle names another (contact), which drops the confirm line and asks with Send unless the form names its button. On a class page the form's class select starts on that class. prefix keeps the field ids apart when two forms share a page. -->
+{#let
+  s = site.settings
+  h = handle || s.ask_form
+  confirm = h == s.ask_form ? s.confirm_line : null
+}
+<Form handle={ h } class="grid gap-space-md" id="form-{ prefix }">
+  {#if form.sent}
+    <div class="grid justify-items-start gap-space-sm" role="status">
+      <p class="font-heading text-h3">{ form.success_message || t('form_success') }</p>
+      {#if confirm}<p class="text-small text-scheme-muted">{ confirm }</p>{/if}
+    </div>
+  {:else}
+    {#if form.error}<p class="text-small text-scheme-error" role="alert">{ t('form_error') }</p>{/if}
+    <FormFields fields={ form.fields } prefix={ prefix } preset={ page.entry.title } />
+    <Button type="submit" wide>{ form.submit_label || (confirm ? s.ask_label : t('send')) }</Button>
+    {#if confirm}<p class="text-center text-small text-scheme-muted">{ confirm }</p>{/if}
+    <noscript><p class="text-small text-scheme-muted">{ t('form_requires_javascript') }</p></noscript>
+  {/if}
+</Form>

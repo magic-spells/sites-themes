@@ -1,0 +1,52 @@
+<!-- What families say: the section head, then quote cards (thumbnail, quote, "Name · line"). Rows: three across from 64rem, two from 48rem, one on phones. Carousel: the same cards on a tarot track, 1.1 across on phones with the next one showing, then 2 and 3 across, the progress hairline and round arrows under it. Featured first or all, capped at the limit. -->
+{#let
+  id = 'quotes-' + section.id
+  all = content.testimonials.entries | sort('fields.order')
+  quotes = (settings.source == 'featured' ? all | where('fields.featured') : all) | slice(0, settings.limit)
+  options = { progressBar: { selector: '#bar-' + id }, slidesPerView: 1.1, gap: '1rem', navigation: { showButtons: false, showPagination: false }, breakpoints: { '768': { slidesPerView: 2, gap: '1.5rem', navigation: { showButtons: true, showPagination: false } }, '1024': { slidesPerView: 3, gap: '1.5rem', navigation: { showButtons: true, showPagination: false } } } }
+}
+{#if quotes.length}
+<section class="overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    {#if settings.layout == 'carousel'}
+      <tarot-carousel class="block" id={ id }>
+        <script type="application/json" data-tarot-options>{ options | json }</script>
+        <tarot-viewport class="max-md:overflow-visible"><tarot-track>
+          {#for entry in quotes}<tarot-slide><QuoteCard entry={ entry } /></tarot-slide>{/for}
+        </tarot-track></tarot-viewport>
+        <Arrows bar="bar-{ id }" />
+      </tarot-carousel>
+    {:else}
+      <ul class="grid gap-space-sm md:grid-cols-2 md:gap-space-lg lg:grid-cols-3">{#for entry in quotes}<li><QuoteCard entry={ entry } /></li>{/for}</ul>
+    {/if}
+  </div>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Testimonials",
+  "description": "What families and pupils say, as cards in rows or a carousel.",
+  "kind": "Social proof",
+  "icon": "message-square-quote",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What families say" },
+    { "type": "text", "id": "text", "label": "Standfirst", "default": "" },
+    { "type": "select", "id": "layout", "label": "Layout", "default": "carousel", "options": [
+      { "value": "rows", "label": "Rows" },
+      { "value": "carousel", "label": "Carousel" }
+    ] },
+    { "type": "select", "id": "source", "label": "Testimonials", "default": "all", "options": [
+      { "value": "featured", "label": "Featured" },
+      { "value": "all", "label": "All" }
+    ] },
+    { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 12 },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "manila" }
+  ],
+  "presets": [
+    { "name": "Carousel", "settings": { "layout": "carousel", "color_scheme": "manila" } },
+    { "name": "Rows", "settings": { "layout": "rows", "source": "featured", "limit": 3, "color_scheme": "manila" } }
+  ]
+}
+</schema>

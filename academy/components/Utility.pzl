@@ -1,0 +1,5 @@
+<!-- component: Utility -->
+<!-- The utility pages' band: the page's own heading, line and action (its children) centred in the column. bare hides the header, footer and panel groups (styles/theme.css). scheme picks the band (feint by default). -->
+<section class="{ (scheme ?? 'feint') | scheme_class } flex flex-1 items-center bg-scheme-background px-gutter py-section text-scheme-foreground" data-bare={ bare ? true : null }>
+  <div class="mx-auto grid w-full max-w-column justify-items-center gap-space-md text-center"><Children/></div>
+</section>

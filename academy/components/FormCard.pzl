@@ -1,0 +1,3 @@
+<!-- component: FormCard -->
+<!-- A form on a white card with lg corners and a hairline: AskFields (handle and prefix passed through), or the caller's own children. -->
+<div class="sites-scheme-white grid gap-space-md rounded-lg border border-scheme-rule bg-scheme-background p-space-lg text-scheme-foreground lg:p-space-xl"><Children><AskFields handle={ handle } prefix={ prefix } /></Children></div>

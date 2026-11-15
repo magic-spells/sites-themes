@@ -1,0 +1,9 @@
+<!-- component: ClassRow -->
+<!-- A class in the prospectus, one link on a feint rule: the name in Card title, a dotted leader and the price; under it the ages, the level and when it runs in small muted. -->
+{#let f = entry.fields}
+<li class="border-b border-scheme-rule">
+  <a class="group grid gap-space-2xs py-space-md" href="/classes/{ entry.handle }">
+    <span class="flex items-baseline gap-space-sm"><span class="font-heading text-h4 group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{ entry.title }</span><Leader />{#if f.price}<span class="text-label whitespace-nowrap"><Price entry={ entry } /></span>{/if}</span>
+    <span class="text-small text-scheme-muted">{ [f.ages, f.level] | compact | join(' · ') } · <When entry={ entry } /></span>
+  </a>
+</li>

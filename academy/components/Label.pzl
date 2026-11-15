@@ -1,0 +1,3 @@
+<!-- component: Label -->
+<!-- The exercise book's label: a white panel with md corners set on a cover or a photo, holding a name and one line (its children). -->
+<div class="sites-scheme-white grid gap-space-2xs rounded-md bg-scheme-background px-space-md py-cell text-scheme-foreground"><Children/></div>

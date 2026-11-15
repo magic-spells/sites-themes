@@ -1,0 +1,10 @@
+<!-- component: Button -->
+<!-- The button: 2.75rem high, md corners, the label in the Label role. tone: solid (the scheme's button, the default), outline (a hairline in the text colour) or text (a link with a 1px underline). small is the 2.25rem height. With type it is a <button> of that type. With ask it is the ask: a link to the School ask link that opens the ask sheet instead while School ask is form (theme.ts), labelled with the School ask label unless the caller writes one. wide fills the row. -->
+{#let
+  s = site.settings
+  sheet = ask && s.ask != 'link'
+  url = ask ? s.ask_url : href
+  look = tone == 'text' ? 'px-0 underline decoration-1 underline-offset-4 hover:decoration-2' : (tone == 'outline' ? 'rounded-button border border-scheme-foreground px-button-x hover:bg-scheme-surface-2' : 'rounded-button border border-scheme-button-background bg-scheme-button-background px-button-x text-scheme-button-foreground hover:border-scheme-button-hover-background hover:bg-scheme-button-hover-background hover:text-scheme-button-hover-foreground')
+  cls = 'inline-flex items-center justify-center gap-space-xs text-label whitespace-nowrap transition-colors duration-fast ' + (small ? 'min-h-control-sm ' : 'min-h-control ') + look + (wide ? ' w-full' : '')
+}
+{#if type}<button class="{ cls }" type="{ type }"><Children/></button>{:else}<a class="{ cls }" href="{ url }" data-panel-open={ sheet ? 'ask' : null } aria-haspopup={ sheet ? 'dialog' : null }><Children>{ ask ? s.ask_label : '' }</Children></a>{/if}

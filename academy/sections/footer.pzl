@@ -1,0 +1,58 @@
+<!-- The colophon: the wordmark over the tagline and the School accreditation lines; the first location's address and hours under Visit, with the Contact email and phone; the main menu; the social links. A strip under a rule: the small print and the legal links. Four columns at 64rem, two at 48rem, one on phones. -->
+{#let
+  s = site.settings
+  loc = content.locations.entries | sort('fields.order') | first
+}
+<footer class="bg-scheme-background px-gutter pt-section pb-space-xl text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-2xl">
+    <div class="grid gap-space-xl md:grid-cols-2 lg:grid-cols-4">
+      <div class="grid content-start gap-space-md">
+        <a class="justify-self-start font-heading text-h3" href="/">{#if s.logo}<img class="h-control w-auto" src="{ image_url(s.logo, 320) }" alt="{ s.wordmark || site.name }" width={ s.logo.width } height={ s.logo.height } />{:else}{ s.wordmark || site.name }{/if}</a>
+        {#if s.tagline}<p class="text-small text-scheme-muted">{ s.tagline }</p>{/if}
+        <Lines cls="text-scheme-muted" />
+      </div>
+      <div class="grid content-start gap-space-sm text-small">
+        <h2 class="font-heading text-h4">{ t('visit') }</h2>
+        {#if loc.fields.address}<p class="whitespace-pre-line">{ loc.fields.address }</p>{/if}
+        {#if loc.fields.hours}<p class="whitespace-pre-line text-scheme-muted">{ loc.fields.hours }</p>{/if}
+        {#if s.email}<a class="justify-self-start underline decoration-1 underline-offset-4" href="mailto:{ s.email }">{ s.email }</a>{/if}
+        {#if s.phone}<a class="justify-self-start underline decoration-1 underline-offset-4" href="tel:{ s.phone | replace(' ', '') }">{ s.phone }</a>{/if}
+      </div>
+      {#if settings.menu.items.length}
+        <nav class="grid content-start gap-space-sm" aria-labelledby="footer-menu">
+          <h2 class="font-heading text-h4" id="footer-menu">{ t('the_school') }</h2>
+          <ul class="grid gap-space-xs">{#for item in settings.menu.items}<li><a class="hover:underline hover:decoration-1 hover:underline-offset-4" href="{ item.href }">{ item.label }</a></li>{/for}</ul>
+        </nav>
+      {/if}
+      {#if settings.social_menu.items.length}
+        <nav class="grid content-start gap-space-sm" aria-labelledby="footer-social">
+          <h2 class="font-heading text-h4" id="footer-social">{ t('follow') }</h2>
+          <ul class="grid gap-space-xs">{#for item in settings.social_menu.items}<li><a class="hover:underline hover:decoration-1 hover:underline-offset-4" href="{ item.href }">{ item.label }</a></li>{/for}</ul>
+        </nav>
+      {/if}
+    </div>
+    <div class="flex flex-wrap items-center gap-x-space-lg gap-y-space-sm border-t border-scheme-rule pt-space-lg text-small">
+      {#if settings.small_print}<p class="text-scheme-muted">{ settings.small_print }</p>{/if}
+      {#if settings.legal_menu.items.length}<ul class="flex flex-wrap gap-x-space-md lg:ms-auto">{#for item in settings.legal_menu.items}<li><a class="underline decoration-1 underline-offset-4" href="{ item.href }">{ item.label }</a></li>{/for}</ul>{/if}
+    </div>
+  </div>
+</footer>
+
+<schema>
+{
+  "name": "Footer",
+  "description": "The wordmark and accreditation lines, the address and hours, the menu and the social links, then the small print and the legal links.",
+  "kind": "Footer",
+  "icon": "panel-bottom",
+  "settings": [
+    { "type": "menu", "id": "menu", "label": "Menu" },
+    { "type": "menu", "id": "social_menu", "label": "Social links" },
+    { "type": "menu", "id": "legal_menu", "label": "Legal links" },
+    { "type": "text", "id": "small_print", "label": "Small print", "default": "© 2026 Larkfield Academy of Music and Dance" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "ink" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "menu": "main", "social_menu": "social", "legal_menu": "legal", "color_scheme": "ink" } }
+  ]
+}
+</schema>

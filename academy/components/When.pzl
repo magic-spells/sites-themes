@@ -1,0 +1,8 @@
+<!-- component: When -->
+<!-- When a class runs, as text: its first weekly session in week order ("Tue 17:30"), else its first dated run from events of kind class ("From Apr 6"), else "By arrangement". A class itself never says. -->
+{#let
+  weekly = content.sessions.entries | where('fields.class.handle', entry.handle) | sort('fields.start')
+  opener = [(weekly | find('fields.day', 'mon')), (weekly | find('fields.day', 'tue')), (weekly | find('fields.day', 'wed')), (weekly | find('fields.day', 'thu')), (weekly | find('fields.day', 'fri')), (weekly | find('fields.day', 'sat')), (weekly | find('fields.day', 'sun'))] | compact | first
+  run = content.events.entries | where('fields.kind', 'class') | where('fields.class.handle', entry.handle) | sort('fields.date') | first
+}
+{#if opener}{ t('day.' + opener.fields.day) } { opener.fields.start }{:else if run}{ t('from_date', { date: (run.fields.date | date | split(',') | first) }) }{:else}{ t('by_arrangement') }{/if}

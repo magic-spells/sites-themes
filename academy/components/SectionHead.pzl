@@ -1,0 +1,12 @@
+<!-- component: SectionHead -->
+<!-- A section's head: the heading in h2 (its words rise in), an optional standfirst under it, and at the right the small outlined "All …" button or whatever the section passes in (the timetable's subject chips). Stacks on phones. id names the heading for the section's aria-labelledby. extra keeps the row when the heading is empty but the section passes something in. -->
+{#if heading || extra}
+<div class="mb-space-xl flex flex-wrap items-end justify-between gap-x-space-lg gap-y-space-md">
+  {#if heading}<div class="grid max-w-prose gap-space-xs">
+    <h2 class="font-heading text-h2 text-balance text-scheme-heading" id={ id }><Rise text={ heading } /></h2>
+    {#if text}<p class="text-lead text-pretty text-scheme-muted">{ text }</p>{/if}
+  </div>{/if}
+  {#if link_label && link_href}<Button href={ link_href } tone="outline" small>{ link_label }</Button>{/if}
+  <Children/>
+</div>
+{/if}

@@ -1,0 +1,60 @@
+<!-- The fees as a real table from the classes, one body per subject: the class joined to its price and period by a dotted leader, the ages beside it from 48rem. Then the extra lines (blocks: registration, materials, a sibling discount) on the same leaders, and one note. -->
+{#let
+  classes = content.classes.entries | sort('fields.order')
+  subjects = classes | map('fields.subject') | uniq | compact
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-xl">
+    <SectionHead heading={ settings.heading } text={ settings.text } />
+    <table class="w-full text-left">
+      <caption class="sr-only">{ settings.heading || t('fees') }</caption>
+      <thead class="sr-only"><tr><th scope="col">{ t('class') }</th><th scope="col">{ t('ages') }</th><th scope="col">{ t('price') }</th></tr></thead>
+      {#for subject in subjects}
+        <tbody>
+          <tr><th class="pt-space-lg pb-space-xs font-heading text-h3 font-medium" colspan="3" scope="colgroup">{ subject }</th></tr>
+          {#for entry in classes | where('fields.subject', subject)}
+            <tr class="border-b border-scheme-rule">
+              <th class="py-cell font-normal" scope="row"><span class="flex items-baseline gap-space-sm"><a class="hover:underline hover:decoration-1 hover:underline-offset-4" href="/classes/{ entry.handle }">{ entry.title }</a><Leader /></span></th>
+              <td class="hidden py-cell ps-space-sm text-small whitespace-nowrap text-scheme-muted md:table-cell">{ entry.fields.ages }</td>
+              <td class="py-cell ps-space-sm text-right text-label whitespace-nowrap">{#if entry.fields.price}<Price entry={ entry } />{:else}{ t('ask') }{/if}</td>
+            </tr>
+          {/for}
+        </tbody>
+      {/for}
+    </table>
+    {#if blocks.length}
+      <ul class="border-t border-scheme-rule">
+        {#for block in blocks}<li class="flex items-baseline gap-space-sm border-b border-scheme-rule py-cell" data-block={ block.editor_id }><span>{ block.settings.label }</span><Leader /><span class="text-label whitespace-nowrap">{ block.settings.amount }</span></li>{/for}
+      </ul>
+    {/if}
+    {#if settings.note}<p class="max-w-prose text-small text-scheme-muted">{ settings.note }</p>{/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Fees",
+  "description": "Every class's price by subject in one table, the extra lines and a note.",
+  "kind": "Collections",
+  "icon": "receipt",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Fees" },
+    { "type": "text", "id": "text", "label": "Text", "default": "" },
+    { "type": "textarea", "id": "note", "label": "Note", "default": "Term fees are paid at the start of each term. Half-term weeks are not charged." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "blocks": [
+    { "type": "line", "name": "Line", "settings": [
+      { "type": "text", "id": "label", "label": "Label", "default": "Registration, once" },
+      { "type": "text", "id": "amount", "label": "Amount", "default": "£20", "info": "Typed as it should read: £20, 10% off." }
+    ] }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    { "name": "Default", "settings": {}, "blocks": [
+      { "type": "line", "settings": { "label": "Registration, once", "amount": "£20" } },
+      { "type": "line", "settings": { "label": "Second child in the family", "amount": "10% off" } }
+    ] }
+  ]
+}
+</schema>

@@ -1,0 +1,45 @@
+<!-- The teachers: 4:5 photos, each with the role over the name, one link to their page. Three across from 64rem, two from 48rem; on phones a row that scrolls with the next teacher showing, or a stack. -->
+{#let
+  team = content.coaches.entries | sort('fields.order')
+  people = (settings.source == 'featured' ? team | where('fields.featured') : team) | slice(0, settings.limit)
+  row = settings.mobile == 'row'
+}
+{#if people.length}
+<section class="bg-scheme-background py-section text-scheme-foreground md:px-gutter">
+  <div class="mx-auto max-w-column px-gutter md:px-0">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } />
+  </div>
+  <ul class="mx-auto max-w-column gap-x-space-lg gap-y-space-xl px-gutter md:grid md:grid-cols-2 md:px-0 lg:grid-cols-3 { row ? 'flex snap-x snap-mandatory scroll-px-gutter overflow-x-auto md:snap-none md:overflow-visible' : 'grid' }">
+    {#for entry in people}<li class="{ row ? 'w-3/4 shrink-0 snap-start md:w-auto' : '' }"><TeacherCard entry={ entry } base_path={ settings.base_path } /></li>{/for}
+  </ul>
+</section>
+{/if}
+
+<schema>
+{
+  "name": "Team grid",
+  "description": "The teachers, each with their role and a link to their page.",
+  "kind": "Team",
+  "icon": "users",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Teachers" },
+    { "type": "text", "id": "text", "label": "Text", "default": "" },
+    { "type": "select", "id": "source", "label": "Teachers", "default": "all", "options": [
+      { "value": "all", "label": "Everyone" },
+      { "value": "featured", "label": "Featured" }
+    ] },
+    { "type": "range", "id": "limit", "label": "Most to show", "min": 1, "max": 12, "step": 1, "default": 12 },
+    { "type": "select", "id": "mobile", "label": "On phones", "default": "row", "options": [
+      { "value": "row", "label": "A row that scrolls" },
+      { "value": "stack", "label": "A stack" }
+    ] },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "All teachers" },
+    { "type": "url", "id": "link_href", "label": "Link", "default": "/teachers" },
+    { "type": "url", "id": "base_path", "label": "Teacher page path", "default": "/teachers" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "white" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "color_scheme": "white" } }
+  ]
+}
+</schema>

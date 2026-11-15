@@ -1,0 +1,9 @@
+<!-- component: ClassCard -->
+<!-- A class, one link to its page: the 3:2 photo, the name in Card title, "Ages 5–7 · Beginner" in small muted, and the price with its period. -->
+{#let f = entry.fields}
+<a class="group grid content-start gap-space-xs { site.settings.reveal ? 'reveal reveal-fade-up' : '' }" href="/classes/{ entry.handle }">
+  <Well asset={ f.image } alt="" width={ 800 } sizes="(min-width: 64rem) 25rem, (min-width: 48rem) 50vw, 85vw" zoom />
+  <h3 class="mt-space-xs font-heading text-h4 text-balance group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{ entry.title }</h3>
+  <p class="text-small text-scheme-muted">{ [f.ages, f.level] | compact | join(' · ') }</p>
+  {#if f.price}<p class="text-label"><Price entry={ entry } /></p>{/if}
+</a>

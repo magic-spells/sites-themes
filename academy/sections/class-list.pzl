@@ -1,0 +1,39 @@
+<!-- The prospectus: subject chips that link to this page on one subject (?subject=, read in memory; an unknown one shows every subject), then every class under its subject as rows on feint rules: the name, a dotted leader and the price, and the ages, level and when it runs under it. -->
+{#let
+  classes = content.classes.entries | sort('fields.order')
+  subjects = classes | map('fields.subject') | uniq | compact
+  wanted = request.query.subject
+  picked = wanted && contains(subjects, wanted)
+  shown = picked ? [wanted] : subjects
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
+  <div class="mx-auto grid max-w-column gap-space-xl">
+    {#if subjects.length > 1}
+      <nav class="-mx-gutter flex gap-space-xs overflow-x-auto px-gutter md:mx-0 md:flex-wrap md:px-0" aria-label="{ site.settings.subject_label }">
+        <Chip href={ request.path } label={ t('all') } current={ !picked } />
+        {#for subject in subjects}<Chip href="{ request.path }?subject={ encodeURIComponent(subject) }" label={ subject } current={ picked && wanted == subject } />{/for}
+      </nav>
+    {/if}
+    {#for subject in shown}
+      <div class="grid gap-space-md md:grid-cols-narrow-wide md:gap-space-2xl">
+        <h2 class="font-heading text-h3">{ subject }</h2>
+        <ul class="border-t border-scheme-rule">{#for entry in classes | where('fields.subject', subject)}<ClassRow entry={ entry } />{/for}</ul>
+      </div>
+    {/for}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Class list",
+  "description": "Every class under its subject, with its ages, when it runs and its price; subject chips narrow the list.",
+  "kind": "Collections",
+  "icon": "list",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": {} }
+  ]
+}
+</schema>

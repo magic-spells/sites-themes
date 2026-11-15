@@ -1,0 +1,94 @@
+<!-- The week. From 64rem a ruled <table>, days across (scope="col"), each cell the day's sessions stacked by start time: the time over the class's short name, with the session's note (the room) in small. Below 64rem, day tabs (tab-group) over one day's ruled list. Subject chips beside the heading dim the sessions of every other subject in the browser (theme.ts); nothing moves. A key of the full class names sits under the week. The sessions are grouped by day once, in the {#let} below, and both views read those lists. No day or hour is marked as current: there is no clock. -->
+{#let
+  pool = content.sessions.entries | sort('fields.start')
+  days = settings.days == '5' ? ['mon', 'tue', 'wed', 'thu', 'fri'] : (settings.days == '6' ? ['mon', 'tue', 'wed', 'thu', 'fri', 'sat'] : ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'])
+  mon = pool | where('fields.day', 'mon')
+  tue = pool | where('fields.day', 'tue')
+  wed = pool | where('fields.day', 'wed')
+  thu = pool | where('fields.day', 'thu')
+  fri = pool | where('fields.day', 'fri')
+  sat = pool | where('fields.day', 'sat')
+  sun = pool | where('fields.day', 'sun')
+  by = { mon, tue, wed, thu, fri, sat, sun }
+  in_order = pool | sort('fields.class.fields.order')
+  subjects = in_order | map('fields.class.fields.subject') | uniq | compact
+  handles = in_order | map('fields.class.handle') | uniq
+  id = 'timetable-' + section.id
+}
+<section class="bg-scheme-background px-gutter py-section text-scheme-foreground" data-timetable>
+  <div class="mx-auto max-w-column">
+    <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link_href } id="{ id }-title" extra={ settings.show_filter && subjects.length > 1 }>
+      {#if settings.show_filter && subjects.length > 1}
+        <div class="-mx-gutter flex min-w-0 gap-space-xs overflow-x-auto px-gutter md:mx-0 md:px-0" role="group" aria-label="{ site.settings.subject_label }">
+          <Chip label={ t('all') } value="" current />
+          {#for subject in subjects}<Chip label={ subject } value={ subject } />{/for}
+        </div>
+      {/if}
+    </SectionHead>
+    <div class="-mx-space-sm hidden lg:block">
+      <table class="w-full table-fixed border-separate border-spacing-x-space-sm" aria-labelledby={ settings.heading ? id + '-title' : null }>
+        <thead>
+          <tr>{#for d in days}<th class="border-b border-scheme-foreground py-space-xs text-left text-label" scope="col">{ t('day_long.' + d) }</th>{/for}</tr>
+        </thead>
+        <tbody>
+          <tr>
+            {#for d in days}
+              <td class="align-top">
+                <ul>
+                  {#for slot in by[d]}<li class="border-b border-scheme-rule py-cell"><a class="grid gap-space-2xs hover:underline hover:decoration-1 hover:underline-offset-4" href="{ settings.base_path }/{ slot.fields.class.handle }" data-session data-subject={ slot.fields.class.fields.subject }><span class="text-label">{ slot.fields.start }{#if slot.fields.end}–{ slot.fields.end }{/if}</span><span class="font-heading text-body">{ slot.fields.class.fields.short_name || slot.fields.class.title }</span>{#if slot.fields.note}<span class="text-small text-scheme-muted">{ slot.fields.note }</span>{/if}</a></li>{/for}
+                  {#if !by[d].length}<li class="border-b border-scheme-rule py-cell text-small text-scheme-muted">{ t('no_classes') }</li>{/if}
+                </ul>
+              </td>
+            {/for}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <tab-group class="lg:hidden">
+      <tab-list class="-mx-gutter flex border-b border-scheme-rule px-gutter" aria-label="{ t('days') }">
+        {#for d in days}<tab-button class="-mb-px flex min-h-control flex-1 items-center justify-center border-b-2 border-transparent text-label text-scheme-muted current:border-scheme-foreground current:text-scheme-foreground">{ t('day.' + d) }</tab-button>{/for}
+      </tab-list>
+      {#for d in days}
+        <tab-panel class="block">
+          <h3 class="sr-only">{ t('day_long.' + d) }</h3>
+          <ul>
+            {#for slot in by[d]}<li class="border-b border-scheme-rule"><a class="flex items-baseline gap-space-sm py-cell" href="{ settings.base_path }/{ slot.fields.class.handle }" data-session data-subject={ slot.fields.class.fields.subject }><span class="w-control shrink-0 text-label">{ slot.fields.start }</span><span class="font-heading text-body">{ slot.fields.class.fields.short_name || slot.fields.class.title }</span><Leader /><span class="text-small text-scheme-muted">{ slot.fields.note }</span></a></li>{/for}
+            {#if !by[d].length}<li class="border-b border-scheme-rule py-cell text-small text-scheme-muted">{ t('no_classes') }</li>{/if}
+          </ul>
+        </tab-panel>
+      {/for}
+    </tab-group>
+    {#if settings.show_key && handles.length}
+      <ul class="mt-space-lg grid gap-x-space-xl gap-y-space-2xs text-small text-scheme-muted md:grid-cols-2 lg:grid-cols-3">
+        {#for h in handles}{#let k = content.classes.entries | find('handle', h)}<li><span class="text-scheme-foreground">{ k.fields.short_name || k.title }</span> · { k.title }{#if k.fields.ages} · { k.fields.ages }{/if}</li>{/for}
+      </ul>
+    {/if}
+  </div>
+</section>
+
+<schema>
+{
+  "name": "Timetable",
+  "description": "The week's classes: a ruled table on desktop, day tabs below, with subject chips.",
+  "kind": "Collections",
+  "icon": "calendar-clock",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "The week" },
+    { "type": "text", "id": "text", "label": "Text", "default": "" },
+    { "type": "select", "id": "days", "label": "Days", "default": "6", "options": [
+      { "value": "5", "label": "Monday to Friday" },
+      { "value": "6", "label": "Monday to Saturday" },
+      { "value": "7", "label": "Monday to Sunday" }
+    ] },
+    { "type": "checkbox", "id": "show_filter", "label": "Subject chips", "default": true, "info": "One chip per subject on the week; a chip dims every other subject." },
+    { "type": "checkbox", "id": "show_key", "label": "Key", "default": true, "info": "The full name and ages of every class under the week." },
+    { "type": "url", "id": "base_path", "label": "Class page path", "default": "/classes" },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "" },
+    { "type": "url", "id": "link_href", "label": "Link", "default": "/timetable" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Week", "settings": {} }
+  ]
+}
+</schema>

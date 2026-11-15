@@ -1,0 +1,60 @@
+<!-- The menu drawer below 64rem: a dialog-panel from the right over the page dimmed to 50%. It closes on the backdrop, Escape and its ×, and hands focus back to the menu icon. The main menu in the heading face, the subjects folded under Classes, a rule, the ask button full width, the confirm line and the School portal link. -->
+{#let
+  s = site.settings
+  subjects = content.classes.entries | sort('fields.order') | map('fields.subject') | uniq | compact
+}
+<dialog-panel id="mobile-menu" position="right">
+  <dialog-backdrop class="bg-backdrop"></dialog-backdrop>
+  <dialog class="ms-auto h-dvh w-full max-w-drawer overflow-y-auto bg-scheme-background text-scheme-foreground" aria-label="{ t('menu') }">
+    <div class="grid gap-space-lg px-gutter pb-space-xl">
+      <div class="flex min-h-header items-center justify-end">
+        <button class="-me-space-xs flex size-control items-center justify-center" type="button" data-action-hide-dialog><Icon name="close" cls="size-space-md" /><span class="sr-only">{ t('close') }</span></button>
+      </div>
+      {#if settings.menu.items.length}
+        <nav aria-label="{ t('main_navigation') }">
+          <ul class="grid gap-space-xs font-heading text-h3">
+            {#for item in settings.menu.items}
+              <li>
+                {#if item.href == settings.classes_path && subjects.length}
+                  <collapsible-component>
+                    <button class="group flex items-center gap-space-xs" type="button">{ item.label }<Icon name="chevron-down" cls="size-icon transition-transform duration-fast group-aria-expanded:rotate-180" /></button>
+                    <collapsible-content>
+                      <ul class="grid gap-space-sm py-space-sm ps-space-md font-body text-body">
+                        <li><a class="hover:underline hover:underline-offset-4" href="{ item.href }">{ t('all_classes') }</a></li>
+                        {#for subject in subjects}<li><a class="hover:underline hover:underline-offset-4" href="{ item.href }?subject={ encodeURIComponent(subject) }">{ subject }</a></li>{/for}
+                      </ul>
+                    </collapsible-content>
+                  </collapsible-component>
+                {:else}
+                  <a class="hover:underline hover:decoration-1 hover:underline-offset-4 current:underline" href="{ item.href }" aria-current={ item.active ? 'page' : null }>{ item.label }</a>
+                {/if}
+              </li>
+            {/for}
+          </ul>
+        </nav>
+      {/if}
+      <div class="grid gap-space-md border-t border-scheme-rule pt-space-lg">
+        <Button ask wide />
+        {#if s.confirm_line}<p class="text-small text-scheme-muted">{ s.confirm_line }</p>{/if}
+        {#if s.portal_url}<a class="justify-self-start text-label underline decoration-1 underline-offset-4" href="{ s.portal_url }">{ s.portal_label }</a>{/if}
+      </div>
+    </div>
+  </dialog>
+</dialog-panel>
+
+<schema>
+{
+  "name": "Mobile menu",
+  "description": "The menu drawer below 64rem: the menu, the subjects under Classes, the ask button and the portal link.",
+  "kind": "Panels",
+  "icon": "menu",
+  "settings": [
+    { "type": "menu", "id": "menu", "label": "Menu" },
+    { "type": "url", "id": "classes_path", "label": "Classes page", "default": "/classes", "info": "The menu item pointing here folds the subjects under it." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme" }
+  ],
+  "presets": [
+    { "name": "Default", "settings": { "menu": "main" } }
+  ]
+}
+</schema>

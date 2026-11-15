@@ -1,4 +1,4 @@
-<!-- What the year added up to, in plain dated figures: the head (its standfirst carries the period) with the report pill, then the figures, each the number in the heading face at H1 over its label, stacked between hairlines on phones and side by side between vertical hairlines from 48rem. The split, when it has a heading and rows: each share's label and percent over a <meter> bar, under the figures, and beside them from 64rem (figures 7 / split 5). No count-up. -->
+<!-- What the year added up to, in plain dated figures: the head (its standfirst carries the period) with the report pill, then the figures, each the number in the heading face at H1 over its label, on a hairline: stacked on phones, two across from 48rem, and from 64rem all in one row, or two across beside the split. The split, when it has a heading and rows: each share's label and percent over a <meter> bar, under the figures, and beside them from 64rem (figures 7 / split 5). No count-up. -->
 {#let
   figures = blocks | where('type', 'figure')
   shares = blocks | where('type', 'split')
@@ -9,9 +9,9 @@
   <div class="mx-auto max-w-page">
     <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link }>
       <div class="grid items-start gap-space-xl lg:grid-cols-12">
-        <ul class="grid divide-y divide-scheme-border md:grid-flow-col md:auto-cols-fr md:divide-x md:divide-y-0 { split ? 'lg:col-span-7' : 'lg:col-span-12' }">
+        <ul class="grid gap-space-lg { figures.length > 1 ? 'md:grid-cols-2' : '' } { split ? 'lg:col-span-7' : 'lg:col-span-12 lg:grid-flow-col lg:grid-cols-none lg:auto-cols-fr' }">
           {#for block in figures}
-            <li class="grid content-start gap-space-2xs py-space-md first:pt-0 last:pb-0 md:px-space-lg md:py-0 md:first:ps-0 md:last:pe-0 { reveal }" data-block={ block.editor_id }>
+            <li class="grid content-start gap-space-2xs border-t border-scheme-border pt-space-md { reveal }" data-block={ block.editor_id }>
               <p class="font-heading text-h1 text-scheme-heading">{ block.settings.figure }</p>
               <p>{ block.settings.label }</p>
             </li>

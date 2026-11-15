@@ -1,6 +1,6 @@
 {
   "label": "Home",
-  "description": "The first screen, our impact, what we do, a story, the ask, ways to help and the newsletter.",
+  "description": "The first screen, our impact, what we do, programmes, a story, events, the ask, ways to help, partners and the newsletter.",
   "sections": [
     {
       "id": "s_hero",
@@ -80,6 +80,20 @@
       "blocks": []
     },
     {
+      "id": "s_programs",
+      "type": "programs-grid",
+      "preset": "Featured",
+      "settings": {
+        "heading": "Our programmes",
+        "featured": true,
+        "limit": 3,
+        "link_label": "All programmes",
+        "link": "/programmes",
+        "color_scheme": "chalk"
+      },
+      "blocks": []
+    },
+    {
       "id": "s_story",
       "type": "story",
       "preset": "Post",
@@ -88,6 +102,19 @@
         "post": "post_ten_years_of_the_thursday_lunch",
         "link_label": "Read the story",
         "color_scheme": "cream"
+      },
+      "blocks": []
+    },
+    {
+      "id": "s_events",
+      "type": "events-list",
+      "preset": "Row",
+      "settings": {
+        "layout": "row",
+        "heading": "Events",
+        "limit": 3,
+        "link_label": "All events",
+        "link": "/events"
       },
       "blocks": []
     },
@@ -177,6 +204,73 @@
             "image": "as_4x3_clay",
             "image_alt": "",
             "link": "https://give.example/larkfieldkitchen"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s_partners",
+      "type": "logos",
+      "preset": "Marquee",
+      "settings": {
+        "heading": "Our partners",
+        "layout": "marquee"
+      },
+      "blocks": [
+        {
+          "type": "logo",
+          "settings": {
+            "name": "Pellow's Corner Grocer",
+            "link": ""
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "name": "Fennel & Rye Bakery",
+            "link": ""
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "name": "Wenlow Valley Credit Union",
+            "link": ""
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "name": "Wenlow Public Library",
+            "link": ""
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "name": "Cotter's Hollow Farm",
+            "link": ""
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "name": "Tanner's Mead Farm",
+            "link": ""
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "name": "St Anne's Hall",
+            "link": ""
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "name": "Wenlow River Trust",
+            "link": ""
           }
         }
       ]

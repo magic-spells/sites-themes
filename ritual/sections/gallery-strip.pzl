@@ -24,9 +24,7 @@
         <tarot-track>
           {#for item in items, i}
             <tarot-slide>
-              <a class="group block cursor-zoom-in" href="{ image_url(item.asset, 2560) }" data-tarot-lightbox aria-label="{ t('open_photo', { index: i + 1 }) }">
-                <span class="relative block overflow-hidden rounded-cap bg-scheme-surface-2 { ratio }"><img class="absolute inset-0 size-full object-cover" src="{ image_url(item.asset, 1024) }" srcset="{ image_srcset(item.asset, [480, 768, 1024]) }" sizes="(min-width: 64rem) 27rem, (min-width: 48rem) 45vw, 80vw" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } /></span>
-              </a>
+              <a class="block cursor-zoom-in" href="{ image_url(item.asset, 2560) }" data-tarot-lightbox aria-label="{ t('open_photo', { index: i + 1 }) }"><img class="w-full rounded-cap bg-scheme-surface-2 object-cover { ratio }" src="{ image_url(item.asset, 1024) }" srcset="{ image_srcset(item.asset, [480, 768, 1024]) }" sizes="(min-width: 64rem) 27rem, (min-width: 48rem) 45vw, 80vw" data-tarot-lightbox-src="{ image_url(item.asset, 2560) }" alt="{ item.alt }" loading="lazy" width={ item.asset.width } height={ item.asset.height } /></a>
               {#if item.caption}<p class="mt-space-xs text-body-sm text-scheme-meta" data-caption data-tarot-lightbox-fade>{ item.caption }</p>{/if}
             </tarot-slide>
           {/for}

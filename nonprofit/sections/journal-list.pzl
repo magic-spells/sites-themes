@@ -1,10 +1,11 @@
-<!-- News, newest first; on a post's page it leaves that post out. Grid: cards with the day stamped on the well, two across from 48rem and three from 64rem. Feature: the newest across the row, its picture beside the title and standfirst from 64rem, then two across. List: the topic and date over each title, on hairlines. Topics: a row of links, All then each topic, each reloading the page with ?topic= so it works without JavaScript; the current one underlined. -->
+<!-- News, newest first; on a post's page it leaves that post out, and with no other post the section shows nothing. Grid: cards with the day stamped on the well, two across from 48rem and three from 64rem. Feature: the newest across the row, its picture beside the title and standfirst from 64rem, then two across. List: the topic and date over each title, on hairlines. Topics: a row of links, All then each topic, each reloading the page with ?topic= so it works without JavaScript; the current one underlined. -->
 {#let
   all = content.posts.entries | sort('fields.date') | reverse | reject('id', page.entry.id)
   topic = settings.topics ? request.query.topic : null
   posts = (topic ? all | where('fields.topic', topic) : all) | slice(0, settings.limit)
   view = settings.view
 }
+{#if all.length}
 <section class="bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-page">
     <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link }>
@@ -20,6 +21,7 @@
     </SectionHead>
   </div>
 </section>
+{/if}
 
 <schema>
 {

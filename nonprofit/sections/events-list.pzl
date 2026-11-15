@@ -1,9 +1,10 @@
-<!-- Events by date. On an event's page it leaves that event out; past events are the workspace's to unpublish, so nothing here reads today's date. Row: cards, three across from 48rem; past three, a carousel with the progress bar and the arrows under it; on phones a row that swipes, the next card peeking. List (the Events page): rows under a heading for each month. With no events, the empty line stands in for them. -->
+<!-- Events by date. On an event's page it leaves that event out; past events are the workspace's to unpublish, so nothing here reads today's date. Row: cards, three across from 48rem; past three, a carousel with the progress bar and the arrows under it; on phones a row that swipes, the next card peeking. List (the Events page): rows under a heading for each month. With no events, the empty line stands in for them; on an entry's page the section shows nothing instead. -->
 {#let
   events = content.events.entries | sort('fields.date') | reject('id', page.entry.id) | slice(0, settings.limit)
   more = events.length > 3
   options = { slidesPerView: 1.15, gap: '1rem', progressBar: more && { selector: '#bar-' + section.id }, navigation: { showButtons: more, showPagination: false }, breakpoints: { '768': { slidesPerView: 3, gap: '1.5rem' } } }
 }
+{#if events.length || !page.entry}
 <section class="overflow-hidden bg-scheme-background px-gutter py-section text-scheme-foreground">
   <div class="mx-auto max-w-page">
     <SectionHead heading={ settings.heading } text={ settings.text } link_label={ settings.link_label } link_href={ settings.link }>
@@ -28,6 +29,7 @@
     </SectionHead>
   </div>
 </section>
+{/if}
 
 <schema>
 {
